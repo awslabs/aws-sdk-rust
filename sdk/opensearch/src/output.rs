@@ -42,6 +42,52 @@ pub struct UpgradeDomainOutput {
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpgradeDomainOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn upgrade_id(&self) -> std::option::Option<&str> {
+        self.upgrade_id.as_deref()
+    }
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The version of OpenSearch that you intend to upgrade the domain to.</p>
+    pub fn target_version(&self) -> std::option::Option<&str> {
+        self.target_version.as_deref()
+    }
+    /// <p>
+    /// When true, indicates that an upgrade eligibility check needs to be performed.
+    /// Does not actually perform the upgrade.
+    /// </p>
+    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+        self.perform_check_only
+    }
+    /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the
+    /// following advanced options are available:
+    /// </p>
+    /// <ul>
+    /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
+    /// access to individual sub-resources. By default, the value is <code>true</code>.
+    /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
+    /// </a> for more information.
+    /// </li>
+    /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
+    /// unbounded.
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
+    /// Advanced cluster parameters</a>.
+    /// </p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpgradeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeDomainOutput");
@@ -211,6 +257,13 @@ pub struct UpdatePackageOutput {
     /// </p>
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
+impl UpdatePackageOutput {
+    /// <p>Information about the package.
+    /// </p>
+    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+        self.package_details.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackageOutput");
@@ -266,6 +319,12 @@ pub struct UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
 }
+impl UpdateDomainConfigOutput {
+    /// <p>The status of the updated domain.</p>
+    pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
+        self.domain_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainConfigOutput");
@@ -318,6 +377,14 @@ impl UpdateDomainConfigOutput {
 pub struct StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch service software update.</p>
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
+}
+impl StartServiceSoftwareUpdateOutput {
+    /// <p>The current status of the OpenSearch service software update.</p>
+    pub fn service_software_options(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+        self.service_software_options.as_ref()
+    }
 }
 impl std::fmt::Debug for StartServiceSoftwareUpdateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -414,6 +481,17 @@ pub struct RejectInboundConnectionOutput {
     /// </p>
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
+impl RejectInboundConnectionOutput {
+    /// <p>The
+    /// <code>
+    /// <a>InboundConnection</a>
+    /// </code>
+    /// of the rejected inbound connection.
+    /// </p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
+        self.connection.as_ref()
+    }
+}
 impl std::fmt::Debug for RejectInboundConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectInboundConnectionOutput");
@@ -477,6 +555,16 @@ pub struct PurchaseReservedInstanceOfferingOutput {
     pub reserved_instance_id: std::option::Option<std::string::String>,
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub reservation_name: std::option::Option<std::string::String>,
+}
+impl PurchaseReservedInstanceOfferingOutput {
+    /// <p>Details of the reserved OpenSearch instance which was purchased.</p>
+    pub fn reserved_instance_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_id.as_deref()
+    }
+    /// <p>The customer-specified identifier used to track this reservation.</p>
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PurchaseReservedInstanceOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -556,6 +644,20 @@ pub struct ListVersionsOutput {
     /// a NextToken output in the response, which you can use to retrieve more results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVersionsOutput {
+    /// <p>List of supported OpenSearch versions.
+    /// </p>
+    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.versions.as_deref()
+    }
+    /// <p>
+    /// Paginated APIs accept the NextToken input to return the next page of results and provide
+    /// a NextToken output in the response, which you can use to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -637,6 +739,13 @@ pub struct ListTagsOutput {
     /// </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsOutput {
+    /// <p>List of <code>Tag</code> for the requested domain.
+    /// </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -705,6 +814,19 @@ pub struct ListPackagesForDomainOutput {
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     /// <p>Pagination token to supply to the next call to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagesForDomainOutput {
+    /// <p>List of <code>DomainPackageDetails</code> objects.
+    /// </p>
+    pub fn domain_package_details_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainPackageDetails]> {
+        self.domain_package_details_list.as_deref()
+    }
+    /// <p>Pagination token to supply to the next call to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagesForDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -790,6 +912,21 @@ pub struct ListInstanceTypeDetailsOutput {
     /// a NextToken output in the response, which you can use to retrieve more results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInstanceTypeDetailsOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn instance_type_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceTypeDetails]> {
+        self.instance_type_details.as_deref()
+    }
+    /// <p>
+    /// Paginated APIs accept the NextToken input to return the next page of results and provide
+    /// a NextToken output in the response, which you can use to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceTypeDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -880,6 +1017,19 @@ pub struct ListDomainsForPackageOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsForPackageOutput {
+    /// <p>List of <code>DomainPackageDetails</code> objects.
+    /// </p>
+    pub fn domain_package_details_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainPackageDetails]> {
+        self.domain_package_details_list.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsForPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsForPackageOutput");
@@ -958,6 +1108,12 @@ impl ListDomainsForPackageOutput {
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
     pub domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
+}
+impl ListDomainNamesOutput {
+    /// <p>List of domain names and respective engine types.</p>
+    pub fn domain_names(&self) -> std::option::Option<&[crate::model::DomainInfo]> {
+        self.domain_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDomainNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1044,6 +1200,39 @@ pub struct GetUpgradeStatusOutput {
     pub step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A string that briefly describes the update.</p>
     pub upgrade_name: std::option::Option<std::string::String>,
+}
+impl GetUpgradeStatusOutput {
+    /// <p>
+    /// One of three steps an upgrade or upgrade eligibility check goes through:
+    /// <ul>
+    /// <li>PreUpgradeCheck</li>
+    /// <li>Snapshot</li>
+    /// <li>Upgrade</li>
+    /// </ul>
+    /// </p>
+    pub fn upgrade_step(&self) -> std::option::Option<&crate::model::UpgradeStep> {
+        self.upgrade_step.as_ref()
+    }
+    /// <p>
+    /// One of four statuses an upgrade have, returned as part of the
+    /// <code>
+    /// <a>GetUpgradeStatusResponse</a>
+    /// </code>
+    /// object. The status can take one of the following values:
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// </p>
+    pub fn step_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
+        self.step_status.as_ref()
+    }
+    /// <p>A string that briefly describes the update.</p>
+    pub fn upgrade_name(&self) -> std::option::Option<&str> {
+        self.upgrade_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUpgradeStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1181,6 +1370,26 @@ pub struct GetUpgradeHistoryOutput {
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetUpgradeHistoryOutput {
+    /// <p>
+    /// A list of
+    /// <code>
+    /// <a>UpgradeHistory</a>
+    /// </code>
+    /// objects corresponding to each upgrade or upgrade eligibility check performed on a domain returned as part of the
+    /// <code>
+    /// <a>GetUpgradeHistoryResponse</a>
+    /// </code>
+    /// object.
+    /// </p>
+    pub fn upgrade_histories(&self) -> std::option::Option<&[crate::model::UpgradeHistory]> {
+        self.upgrade_histories.as_deref()
+    }
+    /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUpgradeHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUpgradeHistoryOutput");
@@ -1283,6 +1492,23 @@ pub struct GetPackageVersionHistoryOutput {
         std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetPackageVersionHistoryOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>List of <code>PackageVersionHistory</code> objects.
+    /// </p>
+    pub fn package_version_history_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PackageVersionHistory]> {
+        self.package_version_history_list.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPackageVersionHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1389,6 +1615,20 @@ pub struct GetCompatibleVersionsOutput {
     pub compatible_versions:
         std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
 }
+impl GetCompatibleVersionsOutput {
+    /// <p>
+    /// A map of compatible OpenSearch versions returned as part of the
+    /// <code>
+    /// <a>GetCompatibleVersions</a>
+    /// </code>
+    /// operation.
+    /// </p>
+    pub fn compatible_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompatibleVersionsMap]> {
+        self.compatible_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCompatibleVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCompatibleVersionsOutput");
@@ -1470,6 +1710,16 @@ pub struct DissociatePackageOutput {
     /// </p>
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
+impl DissociatePackageOutput {
+    /// <p>
+    /// <code>DomainPackageDetails</code>
+    /// </p>
+    pub fn domain_package_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainPackageDetails> {
+        self.domain_package_details.as_ref()
+    }
+}
 impl std::fmt::Debug for DissociatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DissociatePackageOutput");
@@ -1528,6 +1778,16 @@ pub struct DescribeReservedInstancesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of reserved OpenSearch instances.</p>
     pub reserved_instances: std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>,
+}
+impl DescribeReservedInstancesOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of reserved OpenSearch instances.</p>
+    pub fn reserved_instances(&self) -> std::option::Option<&[crate::model::ReservedInstance]> {
+        self.reserved_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1607,6 +1867,18 @@ pub struct DescribeReservedInstanceOfferingsOutput {
     /// <p>List of reserved OpenSearch instance offerings</p>
     pub reserved_instance_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
+}
+impl DescribeReservedInstanceOfferingsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of reserved OpenSearch instance offerings</p>
+    pub fn reserved_instance_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedInstanceOffering]> {
+        self.reserved_instance_offerings.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedInstanceOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1693,6 +1965,17 @@ pub struct DescribePackagesOutput {
     pub package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePackagesOutput {
+    /// <p>List of <code>PackageDetails</code> objects.
+    /// </p>
+    pub fn package_details_list(&self) -> std::option::Option<&[crate::model::PackageDetails]> {
+        self.package_details_list.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1783,6 +2066,23 @@ pub struct DescribeOutboundConnectionsOutput {
     /// NextToken to paginate the remaining results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeOutboundConnectionsOutput {
+    /// <p>A list of
+    /// <code>
+    /// <a>OutboundConnection</a>
+    /// </code>
+    /// matching the specified filter criteria.
+    /// </p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::OutboundConnection]> {
+        self.connections.as_deref()
+    }
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
+    /// NextToken to paginate the remaining results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOutboundConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1885,6 +2185,24 @@ pub struct DescribeInstanceTypeLimitsOutput {
     pub limits_by_role:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
 }
+impl DescribeInstanceTypeLimitsOutput {
+    /// <p>
+    /// The role of a given instance and all applicable limits.
+    /// The role performed by a given OpenSearch instance
+    /// can be one of the following:
+    /// <ul>
+    /// <li>data: If the given InstanceType is used as a data node</li>
+    /// <li>master: If the given InstanceType is used as a master node</li>
+    /// <li>ultra_warm: If the given InstanceType is used as a warm node</li>
+    /// </ul>
+    /// </p>
+    pub fn limits_by_role(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Limits>>
+    {
+        self.limits_by_role.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceTypeLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceTypeLimitsOutput");
@@ -1982,6 +2300,23 @@ pub struct DescribeInboundConnectionsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInboundConnectionsOutput {
+    /// <p>A list of
+    /// <code>
+    /// <a>InboundConnection</a>
+    /// </code>
+    /// matching the specified filter criteria.
+    /// </p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::InboundConnection]> {
+        self.connections.as_deref()
+    }
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
+    /// NextToken to paginate the remaining results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInboundConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInboundConnectionsOutput");
@@ -2069,6 +2404,13 @@ pub struct DescribeDomainsOutput {
     /// </p>
     pub domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
 }
+impl DescribeDomainsOutput {
+    /// <p>The status of the domains requested in the <code>DescribeDomains</code> request.
+    /// </p>
+    pub fn domain_status_list(&self) -> std::option::Option<&[crate::model::DomainStatus]> {
+        self.domain_status_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainsOutput");
@@ -2132,6 +2474,13 @@ pub struct DescribeDomainConfigOutput {
     /// </p>
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
 }
+impl DescribeDomainConfigOutput {
+    /// <p>The configuration information of the domain requested in the <code>DescribeDomainConfig</code> request.
+    /// </p>
+    pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
+        self.domain_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainConfigOutput");
@@ -2192,6 +2541,19 @@ pub struct DescribeDomainAutoTunesOutput {
     pub auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
     /// <p>An identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDomainAutoTunesOutput {
+    /// <p>The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn auto_tunes(&self) -> std::option::Option<&[crate::model::AutoTune]> {
+        self.auto_tunes.as_deref()
+    }
+    /// <p>An identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainAutoTunesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2271,6 +2633,12 @@ pub struct DescribeDomainOutput {
     /// <p>The current status of the domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
+impl DescribeDomainOutput {
+    /// <p>The current status of the domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainOutput");
@@ -2329,6 +2697,14 @@ pub struct DeletePackageOutput {
     /// <code>PackageDetails</code>
     /// </p>
     pub package_details: std::option::Option<crate::model::PackageDetails>,
+}
+impl DeletePackageOutput {
+    /// <p>
+    /// <code>PackageDetails</code>
+    /// </p>
+    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+        self.package_details.as_ref()
+    }
 }
 impl std::fmt::Debug for DeletePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2394,6 +2770,17 @@ pub struct DeleteOutboundConnectionOutput {
     /// of the deleted outbound connection.
     /// </p>
     pub connection: std::option::Option<crate::model::OutboundConnection>,
+}
+impl DeleteOutboundConnectionOutput {
+    /// <p>The
+    /// <code>
+    /// <a>OutboundConnection</a>
+    /// </code>
+    /// of the deleted outbound connection.
+    /// </p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::OutboundConnection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteOutboundConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2466,6 +2853,17 @@ pub struct DeleteInboundConnectionOutput {
     /// </p>
     pub connection: std::option::Option<crate::model::InboundConnection>,
 }
+impl DeleteInboundConnectionOutput {
+    /// <p>The
+    /// <code>
+    /// <a>InboundConnection</a>
+    /// </code>
+    /// of the deleted inbound connection.
+    /// </p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
+        self.connection.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteInboundConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInboundConnectionOutput");
@@ -2529,6 +2927,12 @@ pub struct DeleteDomainOutput {
     /// <p>The status of the domain being deleted.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
+impl DeleteDomainOutput {
+    /// <p>The status of the domain being deleted.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainOutput");
@@ -2586,6 +2990,13 @@ pub struct CreatePackageOutput {
     /// <p>Information about the package.
     /// </p>
     pub package_details: std::option::Option<crate::model::PackageDetails>,
+}
+impl CreatePackageOutput {
+    /// <p>Information about the package.
+    /// </p>
+    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+        self.package_details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2667,6 +3078,49 @@ pub struct CreateOutboundConnectionOutput {
     pub connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
     /// <p>The unique ID for the created outbound connection, which is used for subsequent operations on the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl CreateOutboundConnectionOutput {
+    /// <p>The
+    /// <code>
+    /// <a>AWSDomainInformation</a>
+    /// </code>
+    /// for the local OpenSearch domain.
+    /// </p>
+    pub fn local_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.local_domain_info.as_ref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>AWSDomainInformation</a>
+    /// </code>
+    /// for the remote OpenSearch domain.
+    /// </p>
+    pub fn remote_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.remote_domain_info.as_ref()
+    }
+    /// <p>The connection alias provided during the create connection request.</p>
+    pub fn connection_alias(&self) -> std::option::Option<&str> {
+        self.connection_alias.as_deref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>OutboundConnectionStatus</a>
+    /// </code>
+    /// for the newly created connection.
+    /// </p>
+    pub fn connection_status(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+    /// <p>The unique ID for the created outbound connection, which is used for subsequent operations on the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOutboundConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2822,6 +3276,12 @@ pub struct CreateDomainOutput {
     /// <p>The status of the newly created domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
+impl CreateDomainOutput {
+    /// <p>The status of the newly created domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainOutput");
@@ -2874,6 +3334,14 @@ impl CreateDomainOutput {
 pub struct CancelServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch service software update.</p>
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
+}
+impl CancelServiceSoftwareUpdateOutput {
+    /// <p>The current status of the OpenSearch service software update.</p>
+    pub fn service_software_options(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+        self.service_software_options.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelServiceSoftwareUpdateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2937,6 +3405,16 @@ pub struct AssociatePackageOutput {
     /// <code>DomainPackageDetails</code>
     /// </p>
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
+}
+impl AssociatePackageOutput {
+    /// <p>
+    /// <code>DomainPackageDetails</code>
+    /// </p>
+    pub fn domain_package_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainPackageDetails> {
+        self.domain_package_details.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3032,6 +3510,17 @@ pub struct AcceptInboundConnectionOutput {
     /// of the accepted inbound connection.
     /// </p>
     pub connection: std::option::Option<crate::model::InboundConnection>,
+}
+impl AcceptInboundConnectionOutput {
+    /// <p>The
+    /// <code>
+    /// <a>InboundConnection</a>
+    /// </code>
+    /// of the accepted inbound connection.
+    /// </p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptInboundConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

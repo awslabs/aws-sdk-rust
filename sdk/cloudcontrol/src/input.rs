@@ -95,10 +95,7 @@ impl CancelResourceRequestInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_resource_request(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -356,10 +353,8 @@ impl CreateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -582,10 +577,8 @@ impl DeleteResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -787,10 +780,7 @@ impl GetResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -950,10 +940,7 @@ impl GetResourceRequestStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resource_request_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1142,10 +1129,9 @@ impl ListResourceRequestsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_requests(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_requests(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1376,10 +1362,7 @@ impl ListResourcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1621,10 +1604,8 @@ impl UpdateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1715,6 +1696,44 @@ pub struct UpdateResourceInput {
     /// Guide</i>.</p>
     pub patch_document: std::option::Option<std::string::String>,
 }
+impl UpdateResourceInput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
+    pub fn type_version_id(&self) -> std::option::Option<&str> {
+        self.type_version_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+    /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
+    /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
+    /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
+    /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The identifier for the resource.</p>
+    /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
+    /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent
+    /// the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User
+    /// Guide</i>.</p>
+    pub fn patch_document(&self) -> std::option::Option<&str> {
+        self.patch_document.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceInput");
@@ -1753,6 +1772,40 @@ pub struct ListResourcesInput {
     /// <p>The resource model to use to select the resources to return.</p>
     pub resource_model: std::option::Option<std::string::String>,
 }
+impl ListResourcesInput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
+    pub fn type_version_id(&self) -> std::option::Option<&str> {
+        self.type_version_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+    /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
+    /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code> value
+    /// that you can assign to the <code>NextToken</code> request parameter to get the next set of
+    /// results.</p>
+    /// <p>The default is <code>20</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The resource model to use to select the resources to return.</p>
+    pub fn resource_model(&self) -> std::option::Option<&str> {
+        self.resource_model.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesInput");
@@ -1782,6 +1835,26 @@ pub struct ListResourceRequestsInput {
     pub resource_request_status_filter:
         std::option::Option<crate::model::ResourceRequestStatusFilter>,
 }
+impl ListResourceRequestsInput {
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code> value
+    /// that you can assign to the <code>NextToken</code> request parameter to get the next set of
+    /// results.</p>
+    /// <p>The default is <code>20</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The filter criteria to apply to the requests returned.</p>
+    pub fn resource_request_status_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceRequestStatusFilter> {
+        self.resource_request_status_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListResourceRequestsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceRequestsInput");
@@ -1803,6 +1876,14 @@ pub struct GetResourceRequestStatusInput {
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource
     /// operation request.</p>
     pub request_token: std::option::Option<std::string::String>,
+}
+impl GetResourceRequestStatusInput {
+    /// <p>A unique token used to track the progress of the resource operation request.</p>
+    /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource
+    /// operation request.</p>
+    pub fn request_token(&self) -> std::option::Option<&str> {
+        self.request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceRequestStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1831,6 +1912,31 @@ pub struct GetResourceInput {
     /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub identifier: std::option::Option<std::string::String>,
+}
+impl GetResourceInput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
+    pub fn type_version_id(&self) -> std::option::Option<&str> {
+        self.type_version_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+    /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
+    /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The identifier for the resource.</p>
+    /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
+    /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1867,6 +1973,38 @@ pub struct DeleteResourceInput {
     /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub identifier: std::option::Option<std::string::String>,
+}
+impl DeleteResourceInput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
+    pub fn type_version_id(&self) -> std::option::Option<&str> {
+        self.type_version_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+    /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
+    /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
+    /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
+    /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The identifier for the resource.</p>
+    /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
+    /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1921,6 +2059,54 @@ pub struct CreateResourceInput {
     /// CloudFormation Users Guide</i>.</p>
     pub desired_state: std::option::Option<std::string::String>,
 }
+impl CreateResourceInput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
+    pub fn type_version_id(&self) -> std::option::Option<&str> {
+        self.type_version_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code>
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+    /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
+    /// <p>If you do not specify a role, Cloud Control API uses a temporary session created using your Amazon Web Services user credentials.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A unique identifier to ensure the idempotency of the resource request. As a best practice, specify this token to ensure idempotency, so that Amazon Web Services Cloud Control API can accurately distinguish between request retries and new resource requests. You might retry a resource request to ensure that it was successfully received.</p>
+    /// <p>A client token is valid for 36 hours once used. After that, a resource request with the same client token is treated as a new request.</p>
+    /// <p>If you do not specify a client token, one is generated for inclusion in the request.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Structured data format representing the desired state of the resource, consisting of that
+    /// resource's properties and their desired values. </p>
+    /// <note>
+    /// <p>Cloud Control API currently supports JSON as a structured data format.</p>
+    /// </note>
+    ///
+    /// <p>Specify the desired state as one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A JSON blob</p>
+    /// </li>
+    /// <li>
+    /// <p>A local path containing the desired state in JSON data format</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User
+    /// Guide</i>.</p>
+    /// <p>For more information about the properties of a specific resource, refer to the related
+    /// topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>Amazon Web Services
+    /// CloudFormation Users Guide</i>.</p>
+    pub fn desired_state(&self) -> std::option::Option<&str> {
+        self.desired_state.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceInput");
@@ -1940,6 +2126,13 @@ pub struct CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the
     /// resource operation request.</p>
     pub request_token: std::option::Option<std::string::String>,
+}
+impl CancelResourceRequestInput {
+    /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the
+    /// resource operation request.</p>
+    pub fn request_token(&self) -> std::option::Option<&str> {
+        self.request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelResourceRequestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -70,6 +70,15 @@ pub struct DescribeHealthServiceStatusForOrganizationOutput {
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     pub health_service_access_status_for_organization: std::option::Option<std::string::String>,
 }
+impl DescribeHealthServiceStatusForOrganizationOutput {
+    /// <p>Information about the status of enabling or disabling AWS Health Organizational View in
+    /// your organization.</p>
+    /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    pub fn health_service_access_status_for_organization(&self) -> std::option::Option<&str> {
+        self.health_service_access_status_for_organization
+            .as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHealthServiceStatusForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHealthServiceStatusForOrganizationOutput");
@@ -144,6 +153,25 @@ pub struct DescribeEventTypesOutput {
     /// retrieve the next batch of results, reissue the search request and include the returned token.
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEventTypesOutput {
+    /// <p>A list of event types that match the filter criteria. Event types have a category
+    /// (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),
+    /// a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,
+    /// <code>BILLING</code>), and a code (in the format
+    /// <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+    /// </code>; for
+    /// example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.event_types.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -238,6 +266,19 @@ pub struct DescribeEventsForOrganizationOutput {
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventsForOrganizationOutput {
+    /// <p>The events that match the specified filter criteria.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::OrganizationEvent]> {
+        self.events.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsForOrganizationOutput");
@@ -319,6 +360,19 @@ pub struct DescribeEventsOutput {
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventsOutput {
+    /// <p>The events that match the specified filter criteria.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -397,6 +451,18 @@ pub struct DescribeEventDetailsForOrganizationOutput {
     /// <p>Error messages for any events that could not be retrieved.</p>
     pub failed_set:
         std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>,
+}
+impl DescribeEventDetailsForOrganizationOutput {
+    /// <p>Information about the events that could be retrieved.</p>
+    pub fn successful_set(&self) -> std::option::Option<&[crate::model::OrganizationEventDetails]> {
+        self.successful_set.as_deref()
+    }
+    /// <p>Error messages for any events that could not be retrieved.</p>
+    pub fn failed_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationEventDetailsErrorItem]> {
+        self.failed_set.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventDetailsForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -489,6 +555,16 @@ pub struct DescribeEventDetailsOutput {
     /// <p>Error messages for any events that could not be retrieved.</p>
     pub failed_set: std::option::Option<std::vec::Vec<crate::model::EventDetailsErrorItem>>,
 }
+impl DescribeEventDetailsOutput {
+    /// <p>Information about the events that could be retrieved.</p>
+    pub fn successful_set(&self) -> std::option::Option<&[crate::model::EventDetails]> {
+        self.successful_set.as_deref()
+    }
+    /// <p>Error messages for any events that could not be retrieved.</p>
+    pub fn failed_set(&self) -> std::option::Option<&[crate::model::EventDetailsErrorItem]> {
+        self.failed_set.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventDetailsOutput");
@@ -574,6 +650,19 @@ pub struct DescribeEventAggregatesOutput {
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEventAggregatesOutput {
+    /// <p>The number of events in each category that meet the optional filter criteria.</p>
+    pub fn event_aggregates(&self) -> std::option::Option<&[crate::model::EventAggregate]> {
+        self.event_aggregates.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventAggregatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventAggregatesOutput");
@@ -651,6 +740,12 @@ pub struct DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
     pub entity_aggregates: std::option::Option<std::vec::Vec<crate::model::EntityAggregate>>,
 }
+impl DescribeEntityAggregatesOutput {
+    /// <p>The number of entities that are affected by each of the specified events.</p>
+    pub fn entity_aggregates(&self) -> std::option::Option<&[crate::model::EntityAggregate]> {
+        self.entity_aggregates.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEntityAggregatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEntityAggregatesOutput");
@@ -722,6 +817,28 @@ pub struct DescribeAffectedEntitiesForOrganizationOutput {
     /// retrieve the next batch of results, reissue the search request and include the returned token.
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAffectedEntitiesForOrganizationOutput {
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and its
+    /// <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
+    /// <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::AffectedEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>,
+    /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+    pub fn failed_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrganizationAffectedEntitiesErrorItem]> {
+        self.failed_set.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAffectedEntitiesForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -838,6 +955,19 @@ pub struct DescribeAffectedEntitiesOutput {
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAffectedEntitiesOutput {
+    /// <p>The entities that match the filter criteria.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::AffectedEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAffectedEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAffectedEntitiesOutput");
@@ -938,6 +1068,41 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// retrieve the next batch of results, reissue the search request and include the returned token.
     /// When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAffectedAccountsForOrganizationOutput {
+    /// <p>A JSON set of elements of the affected accounts.</p>
+    pub fn affected_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.affected_accounts.as_deref()
+    }
+    /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+    /// <code>affectedAccounts</code> value is always empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
+    /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+    /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
+    /// have AWS accounts that use that service, those account IDs appear in the
+    /// response.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
+    /// <code>eventArn</code> that you specified in the request is invalid or doesn't
+    /// exist.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_scope_code(&self) -> std::option::Option<&crate::model::EventScopeCode> {
+        self.event_scope_code.as_ref()
+    }
+    /// <p>If the results of a search are large, only a portion of the
+    /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
+    /// retrieve the next batch of results, reissue the search request and include the returned token.
+    /// When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAffectedAccountsForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

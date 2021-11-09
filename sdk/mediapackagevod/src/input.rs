@@ -113,10 +113,7 @@ impl ConfigureLogsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_configure_logs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_configure_logs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -343,10 +340,7 @@ impl CreateAssetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_asset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_asset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -596,7 +590,7 @@ impl CreatePackagingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_packaging_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_packaging_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -801,10 +795,9 @@ impl CreatePackagingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_packaging_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_packaging_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2522,10 +2515,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2877,10 +2867,9 @@ impl UpdatePackagingGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_packaging_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_packaging_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2951,6 +2940,16 @@ pub struct UpdatePackagingGroupInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub id: std::option::Option<std::string::String>,
 }
+impl UpdatePackagingGroupInput {
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The ID of a MediaPackage VOD PackagingGroup resource.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePackagingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackagingGroupInput");
@@ -2968,6 +2967,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// A comma-separated list of the tag keys to remove from the resource.
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// A comma-separated list of the tag keys to remove from the resource.
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2988,6 +2997,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3003,6 +3025,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3020,6 +3048,16 @@ pub struct ListPackagingGroupsInput {
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagingGroupsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagingGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3040,6 +3078,20 @@ pub struct ListPackagingConfigurationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
     pub packaging_group_id: std::option::Option<std::string::String>,
+}
+impl ListPackagingConfigurationsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3062,6 +3114,20 @@ pub struct ListAssetsInput {
     /// Returns Assets associated with the specified PackagingGroup.
     pub packaging_group_id: std::option::Option<std::string::String>,
 }
+impl ListAssetsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Returns Assets associated with the specified PackagingGroup.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssetsInput");
@@ -3079,6 +3145,12 @@ pub struct DescribePackagingGroupInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribePackagingGroupInput {
+    /// The ID of a MediaPackage VOD PackagingGroup resource.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePackagingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackagingGroupInput");
@@ -3093,6 +3165,12 @@ impl std::fmt::Debug for DescribePackagingGroupInput {
 pub struct DescribePackagingConfigurationInput {
     /// The ID of a MediaPackage VOD PackagingConfiguration resource.
     pub id: std::option::Option<std::string::String>,
+}
+impl DescribePackagingConfigurationInput {
+    /// The ID of a MediaPackage VOD PackagingConfiguration resource.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePackagingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3109,6 +3187,12 @@ pub struct DescribeAssetInput {
     /// The ID of an MediaPackage VOD Asset resource.
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeAssetInput {
+    /// The ID of an MediaPackage VOD Asset resource.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssetInput");
@@ -3123,6 +3207,12 @@ impl std::fmt::Debug for DescribeAssetInput {
 pub struct DeletePackagingGroupInput {
     /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
     pub id: std::option::Option<std::string::String>,
+}
+impl DeletePackagingGroupInput {
+    /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePackagingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3139,6 +3229,12 @@ pub struct DeletePackagingConfigurationInput {
     /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
     pub id: std::option::Option<std::string::String>,
 }
+impl DeletePackagingConfigurationInput {
+    /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePackagingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackagingConfigurationInput");
@@ -3153,6 +3249,12 @@ impl std::fmt::Debug for DeletePackagingConfigurationInput {
 pub struct DeleteAssetInput {
     /// The ID of the MediaPackage VOD Asset resource to delete.
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteAssetInput {
+    /// The ID of the MediaPackage VOD Asset resource to delete.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3175,6 +3277,27 @@ pub struct CreatePackagingGroupInput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePackagingGroupInput {
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the PackagingGroup.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackagingGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3206,6 +3329,39 @@ pub struct CreatePackagingConfigurationInput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreatePackagingConfigurationInput {
+    /// A CMAF packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the PackagingConfiguration.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// The ID of a PackagingGroup.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackagingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3239,6 +3395,35 @@ pub struct CreateAssetInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAssetInput {
+    /// The unique identifier for the Asset.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the PackagingGroup for the Asset.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// The resource ID to include in SPEKE key requests.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// ARN of the source object in S3.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// The IAM role ARN used to access the source S3 bucket.
+    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+        self.source_role_arn.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssetInput");
@@ -3260,6 +3445,16 @@ pub struct ConfigureLogsInput {
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub id: std::option::Option<std::string::String>,
+}
+impl ConfigureLogsInput {
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of a MediaPackage VOD PackagingGroup resource.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigureLogsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

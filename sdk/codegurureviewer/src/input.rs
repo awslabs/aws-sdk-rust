@@ -200,10 +200,7 @@ impl AssociateRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_repository(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_repository(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -444,10 +441,7 @@ impl CreateCodeReviewInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_code_review(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_code_review(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2771,10 +2765,7 @@ impl PutRecommendationFeedbackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_recommendation_feedback(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3011,10 +3002,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3289,6 +3277,25 @@ pub struct UntagResourceInput {
     /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the  
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+    /// <code>RepositoryAssociation</code>
+    /// </a> object.
+    /// You can retrieve this ARN by calling
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code>
+    /// </a>.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -3332,6 +3339,43 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the  
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+    /// <code>RepositoryAssociation</code>
+    /// </a> object.
+    /// You can retrieve this ARN by calling
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code>
+    /// </a>.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// keys are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a <i>tag value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team name).
+    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+    /// values are case sensitive.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3359,6 +3403,27 @@ pub struct PutRecommendationFeedbackInput {
     /// </p>
     pub reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
 }
+impl PutRecommendationFeedbackInput {
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+    /// <code>CodeReview</code>
+    /// </a> object.
+    /// </p>
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+        self.code_review_arn.as_deref()
+    }
+    /// <p>
+    /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+    /// </p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>
+    /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
+    /// </p>
+    pub fn reactions(&self) -> std::option::Option<&[crate::model::Reaction]> {
+        self.reactions.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRecommendationFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecommendationFeedbackInput");
@@ -3384,6 +3449,21 @@ pub struct ListTagsForResourceInput {
     /// </a>.
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the  
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+    /// <code>RepositoryAssociation</code>
+    /// </a> object.
+    /// You can retrieve this ARN by calling
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code>
+    /// </a>.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3482,6 +3562,104 @@ pub struct ListRepositoryAssociationsInput {
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRepositoryAssociationsInput {
+    /// <p>List of provider types to use as a filter.</p>
+    pub fn provider_types(&self) -> std::option::Option<&[crate::model::ProviderType]> {
+        self.provider_types.as_deref()
+    }
+    /// <p>List of repository association states to use as a filter.</p>
+    /// <p>The valid repository association states are:</p>
+    /// <ul>
+    /// <li>            
+    /// <p>
+    /// <b>Associated</b>: The repository
+    /// association is complete.
+    /// </p>            
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Associating</b>: CodeGuru Reviewer is:               
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// Setting up pull request notifications. This is required
+    /// for pull requests to trigger a CodeGuru Reviewer review.
+    /// </p>
+    /// <note>
+    /// <p>
+    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
+    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
+    /// reviews of code in your repository cannot be triggered.
+    /// </p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
+    /// clone code in your repository.
+    /// </p>
+    /// </li>
+    /// </ul>            
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Failed</b>: The repository failed to associate or disassociate.
+    /// </p>            
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+    /// source code access.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
+    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
+    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
+    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn states(&self) -> std::option::Option<&[crate::model::RepositoryAssociationState]> {
+        self.states.as_deref()
+    }
+    /// <p>List of repository names to use as a filter.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>List of owners to use as a filter.
+    /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
+    /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
+    /// that was used to associate the repository. </p>
+    pub fn owners(&self) -> std::option::Option<&[std::string::String]> {
+        self.owners.as_deref()
+    }
+    /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
+    /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
+    /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
+    /// element. The remaining results of the initial request
+    /// can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned
+    /// <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
+    /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results
+    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
+    /// that returned the <code>nextToken</code> value.
+    /// </p>
+    /// <note>
+    /// <p>Treat this token as an opaque identifier that is only used to retrieve
+    /// the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRepositoryAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRepositoryAssociationsInput");
@@ -3512,6 +3690,27 @@ pub struct ListRecommendationsInput {
     /// </a> object.
     /// </p>
     pub code_review_arn: std::option::Option<std::string::String>,
+}
+impl ListRecommendationsInput {
+    /// <p>
+    /// Pagination token.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of results that are returned per call. The default is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+    /// <code>CodeReview</code>
+    /// </a> object.
+    /// </p>
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+        self.code_review_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecommendationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3554,6 +3753,45 @@ pub struct ListRecommendationFeedbackInput {
     /// Used to query the recommendation feedback for a given recommendation.
     /// </p>
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListRecommendationFeedbackInput {
+    /// <p>
+    /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of results that are returned per call. The default is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+    /// <code>CodeReview</code>
+    /// </a> object.
+    /// </p>
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+        self.code_review_arn.as_deref()
+    }
+    /// <p>
+    /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
+    /// </p>
+    /// <p>
+    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
+    /// </p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>
+    /// Used to query the recommendation feedback for a given recommendation.
+    /// </p>
+    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.recommendation_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecommendationFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3620,6 +3858,68 @@ pub struct ListCodeReviewsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCodeReviewsInput {
+    /// <p>
+    /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
+    /// </p>
+    pub fn provider_types(&self) -> std::option::Option<&[crate::model::ProviderType]> {
+        self.provider_types.as_deref()
+    }
+    /// <p>
+    /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
+    /// </p>
+    /// <p>The valid code review states are:</p>
+    /// <ul>
+    /// <li>            
+    /// <p>
+    /// <code>Completed</code>: The code review is complete.
+    /// </p>            
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Pending</code>: The code review started and has not completed or failed.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>: The code review failed.
+    /// </p>            
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Deleting</code>: The code review is being deleted.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn states(&self) -> std::option::Option<&[crate::model::JobState]> {
+        self.states.as_deref()
+    }
+    /// <p>
+    /// List of repository names for filtering that needs to be applied before displaying the result.
+    /// </p>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
+    /// <p>
+    /// The type of code reviews to list in the response.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>
+    /// The maximum number of results that are returned per call. The default is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCodeReviewsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCodeReviewsInput");
@@ -3649,6 +3949,21 @@ pub struct DisassociateRepositoryInput {
     /// </p>
     pub association_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateRepositoryInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the  
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+    /// <code>RepositoryAssociation</code>
+    /// </a> object.
+    /// You can retrieve this ARN by calling
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code>
+    /// </a>.
+    /// </p>
+    pub fn association_arn(&self) -> std::option::Option<&str> {
+        self.association_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateRepositoryInput");
@@ -3672,6 +3987,21 @@ pub struct DescribeRepositoryAssociationInput {
     /// </a>.
     /// </p>
     pub association_arn: std::option::Option<std::string::String>,
+}
+impl DescribeRepositoryAssociationInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the  
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+    /// <code>RepositoryAssociation</code>
+    /// </a> object.
+    /// You can retrieve this ARN by calling
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code>
+    /// </a>.
+    /// </p>
+    pub fn association_arn(&self) -> std::option::Option<&str> {
+        self.association_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRepositoryAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3704,6 +4034,32 @@ pub struct DescribeRecommendationFeedbackInput {
     /// </p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl DescribeRecommendationFeedbackInput {
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+    /// <code>CodeReview</code>
+    /// </a> object.
+    /// </p>
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+        self.code_review_arn.as_deref()
+    }
+    /// <p>
+    /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+    /// </p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>
+    /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
+    /// </p>
+    /// <p>
+    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
+    /// </p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRecommendationFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRecommendationFeedbackInput");
@@ -3723,6 +4079,15 @@ pub struct DescribeCodeReviewInput {
     /// </a> object.
     /// </p>
     pub code_review_arn: std::option::Option<std::string::String>,
+}
+impl DescribeCodeReviewInput {
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+    /// <code>CodeReview</code>
+    /// </a> object.
+    /// </p>
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+        self.code_review_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCodeReviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3768,6 +4133,48 @@ pub struct CreateCodeReviewInput {
     /// reviews if there are failures and retries.
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateCodeReviewInput {
+    /// <p>
+    /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the  
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+    /// <code>RepositoryAssociation</code>
+    /// </a> object.
+    /// You can retrieve this ARN by calling
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+    /// <code>ListRepositoryAssociations</code>
+    /// </a>.
+    /// </p>
+    /// <p>
+    /// A code review can only be created on an associated repository. This is the ARN of the
+    /// associated repository.
+    /// </p>
+    pub fn repository_association_arn(&self) -> std::option::Option<&str> {
+        self.repository_association_arn.as_deref()
+    }
+    /// <p>
+    /// The type of code review to create. This is specified using a
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+    /// <code>CodeReviewType</code>
+    /// </a>
+    /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CodeReviewType> {
+        self.r#type.as_ref()
+    }
+    /// <p>
+    /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
+    /// reviews if there are failures and retries.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCodeReviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3822,6 +4229,53 @@ pub struct AssociateRepositoryInput {
     /// </li>
     /// </ul>
     pub kms_key_details: std::option::Option<crate::model::KmsKeyDetails>,
+}
+impl AssociateRepositoryInput {
+    /// <p>The repository to associate.</p>
+    pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
+        self.repository.as_ref()
+    }
+    /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
+    /// associations if there are failures and retries. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>
+    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+    /// keys are case sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>An optional field known as a <i>tag value</i> (for example,
+    /// <code>111122223333</code>, <code>Production</code>, or a team name).
+    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+    /// values are case sensitive.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
+    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>The ID of the Amazon Web Services KMS key that
+    /// is associated with this respository association.</p>
+    /// </li>
+    /// </ul>
+    pub fn kms_key_details(&self) -> std::option::Option<&crate::model::KmsKeyDetails> {
+        self.kms_key_details.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

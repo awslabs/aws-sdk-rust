@@ -66,6 +66,12 @@ pub struct UpdatePullRequestTitleOutput {
     /// <p>Information about the updated pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
+impl UpdatePullRequestTitleOutput {
+    /// <p>Information about the updated pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePullRequestTitleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePullRequestTitleOutput");
@@ -117,6 +123,12 @@ pub struct UpdatePullRequestStatusOutput {
     /// <p>Information about the pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
+impl UpdatePullRequestStatusOutput {
+    /// <p>Information about the pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePullRequestStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePullRequestStatusOutput");
@@ -167,6 +179,12 @@ impl UpdatePullRequestStatusOutput {
 pub struct UpdatePullRequestDescriptionOutput {
     /// <p>Information about the updated pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+}
+impl UpdatePullRequestDescriptionOutput {
+    /// <p>Information about the updated pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePullRequestDescriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -249,6 +267,12 @@ pub struct UpdatePullRequestApprovalRuleContentOutput {
     /// <p>Information about the updated approval rule.</p>
     pub approval_rule: std::option::Option<crate::model::ApprovalRule>,
 }
+impl UpdatePullRequestApprovalRuleContentOutput {
+    /// <p>Information about the updated approval rule.</p>
+    pub fn approval_rule(&self) -> std::option::Option<&crate::model::ApprovalRule> {
+        self.approval_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePullRequestApprovalRuleContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePullRequestApprovalRuleContentOutput");
@@ -330,6 +354,12 @@ pub struct UpdateCommentOutput {
     /// <p>Information about the updated comment.</p>
     pub comment: std::option::Option<crate::model::Comment>,
 }
+impl UpdateCommentOutput {
+    /// <p>Information about the updated comment.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCommentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCommentOutput");
@@ -377,6 +407,14 @@ impl UpdateCommentOutput {
 pub struct UpdateApprovalRuleTemplateNameOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+}
+impl UpdateApprovalRuleTemplateNameOutput {
+    /// <p>The structure and content of the updated approval rule template.</p>
+    pub fn approval_rule_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
+        self.approval_rule_template.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApprovalRuleTemplateNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -429,6 +467,14 @@ pub struct UpdateApprovalRuleTemplateDescriptionOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
+impl UpdateApprovalRuleTemplateDescriptionOutput {
+    /// <p>The structure and content of the updated approval rule template.</p>
+    pub fn approval_rule_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
+        self.approval_rule_template.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApprovalRuleTemplateDescriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApprovalRuleTemplateDescriptionOutput");
@@ -479,6 +525,14 @@ impl UpdateApprovalRuleTemplateDescriptionOutput {
 pub struct UpdateApprovalRuleTemplateContentOutput {
     /// <p>Returns information about an approval rule template.</p>
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+}
+impl UpdateApprovalRuleTemplateContentOutput {
+    /// <p>Returns information about an approval rule template.</p>
+    pub fn approval_rule_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
+        self.approval_rule_template.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApprovalRuleTemplateContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -564,6 +618,19 @@ pub struct TestRepositoryTriggersOutput {
     /// triggers that could not be tested, separated by commas.</p>
     pub failed_executions:
         std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerExecutionFailure>>,
+}
+impl TestRepositoryTriggersOutput {
+    /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
+    pub fn successful_executions(&self) -> std::option::Option<&[std::string::String]> {
+        self.successful_executions.as_deref()
+    }
+    /// <p>The list of triggers that were not tested. This list provides the names of the
+    /// triggers that could not be tested, separated by commas.</p>
+    pub fn failed_executions(
+        &self,
+    ) -> std::option::Option<&[crate::model::RepositoryTriggerExecutionFailure]> {
+        self.failed_executions.as_deref()
+    }
 }
 impl std::fmt::Debug for TestRepositoryTriggersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -682,6 +749,12 @@ pub struct PutRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the create or update operation.</p>
     pub configuration_id: std::option::Option<std::string::String>,
 }
+impl PutRepositoryTriggersOutput {
+    /// <p>The system-generated unique ID for the create or update operation.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRepositoryTriggersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRepositoryTriggersOutput");
@@ -736,6 +809,20 @@ pub struct PutFileOutput {
     pub blob_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
     pub tree_id: std::option::Option<std::string::String>,
+}
+impl PutFileOutput {
+    /// <p>The full SHA ID of the commit that contains this file change.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    pub fn blob_id(&self) -> std::option::Option<&str> {
+        self.blob_id.as_deref()
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutFileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -841,6 +928,12 @@ pub struct PostCommentReplyOutput {
     /// <p>Information about the reply to a comment.</p>
     pub comment: std::option::Option<crate::model::Comment>,
 }
+impl PostCommentReplyOutput {
+    /// <p>Information about the reply to a comment.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
+}
 impl std::fmt::Debug for PostCommentReplyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PostCommentReplyOutput");
@@ -904,6 +997,42 @@ pub struct PostCommentForPullRequestOutput {
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The content of the comment you posted.</p>
     pub comment: std::option::Option<crate::model::Comment>,
+}
+impl PostCommentForPullRequestOutput {
+    /// <p>The name of the repository where you posted a comment on a pull request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The system-generated ID of the pull request. </p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The full commit ID of the commit in the source branch used to create the pull request,
+    /// or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+        self.before_commit_id.as_deref()
+    }
+    /// <p>The full commit ID of the commit in the destination branch where the pull request is
+    /// merged.</p>
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+        self.after_commit_id.as_deref()
+    }
+    /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
+    pub fn before_blob_id(&self) -> std::option::Option<&str> {
+        self.before_blob_id.as_deref()
+    }
+    /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
+    pub fn after_blob_id(&self) -> std::option::Option<&str> {
+        self.after_blob_id.as_deref()
+    }
+    /// <p>The location of the change where you posted your comment.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The content of the comment you posted.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
 }
 impl std::fmt::Debug for PostCommentForPullRequestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1078,6 +1207,36 @@ pub struct PostCommentForComparedCommitOutput {
     /// <p>The content of the comment you posted.</p>
     pub comment: std::option::Option<crate::model::Comment>,
 }
+impl PostCommentForComparedCommitOutput {
+    /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>In the directionality you established, the full commit ID of the before commit.</p>
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+        self.before_commit_id.as_deref()
+    }
+    /// <p>In the directionality you established, the full commit ID of the after commit.</p>
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+        self.after_commit_id.as_deref()
+    }
+    /// <p>In the directionality you established, the blob ID of the before blob.</p>
+    pub fn before_blob_id(&self) -> std::option::Option<&str> {
+        self.before_blob_id.as_deref()
+    }
+    /// <p>In the directionality you established, the blob ID of the after blob.</p>
+    pub fn after_blob_id(&self) -> std::option::Option<&str> {
+        self.after_blob_id.as_deref()
+    }
+    /// <p>The location of the comment in the comparison between the two commits.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The content of the comment you posted.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
+}
 impl std::fmt::Debug for PostCommentForComparedCommitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PostCommentForComparedCommitOutput");
@@ -1249,6 +1408,12 @@ pub struct MergePullRequestByThreeWayOutput {
     /// <p>Returns information about a pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
+impl MergePullRequestByThreeWayOutput {
+    /// <p>Returns information about a pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
+}
 impl std::fmt::Debug for MergePullRequestByThreeWayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergePullRequestByThreeWayOutput");
@@ -1300,6 +1465,12 @@ pub struct MergePullRequestBySquashOutput {
     /// <p>Returns information about a pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
+impl MergePullRequestBySquashOutput {
+    /// <p>Returns information about a pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
+}
 impl std::fmt::Debug for MergePullRequestBySquashOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergePullRequestBySquashOutput");
@@ -1350,6 +1521,12 @@ impl MergePullRequestBySquashOutput {
 pub struct MergePullRequestByFastForwardOutput {
     /// <p>Information about the specified pull request, including the merge.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+}
+impl MergePullRequestByFastForwardOutput {
+    /// <p>Information about the specified pull request, including the merge.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
 }
 impl std::fmt::Debug for MergePullRequestByFastForwardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1403,6 +1580,16 @@ pub struct MergeBranchesByThreeWayOutput {
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     pub tree_id: std::option::Option<std::string::String>,
+}
+impl MergeBranchesByThreeWayOutput {
+    /// <p>The commit ID of the merge in the destination or target branch.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The tree ID of the merge in the destination or target branch.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MergeBranchesByThreeWayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1467,6 +1654,16 @@ pub struct MergeBranchesBySquashOutput {
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     pub tree_id: std::option::Option<std::string::String>,
 }
+impl MergeBranchesBySquashOutput {
+    /// <p>The commit ID of the merge in the destination or target branch.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The tree ID of the merge in the destination or target branch.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
+}
 impl std::fmt::Debug for MergeBranchesBySquashOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeBranchesBySquashOutput");
@@ -1529,6 +1726,16 @@ pub struct MergeBranchesByFastForwardOutput {
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     pub tree_id: std::option::Option<std::string::String>,
+}
+impl MergeBranchesByFastForwardOutput {
+    /// <p>The commit ID of the merge in the destination or target branch.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The tree ID of the merge in the destination or target branch.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MergeBranchesByFastForwardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1593,6 +1800,19 @@ pub struct ListTagsForResourceOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1674,6 +1894,16 @@ pub struct ListRepositoriesForApprovalRuleTemplateOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRepositoriesForApprovalRuleTemplateOutput {
+    /// <p>A list of repository names that are associated with the specified approval rule template.</p>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRepositoriesForApprovalRuleTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRepositoriesForApprovalRuleTemplateOutput");
@@ -1748,6 +1978,18 @@ pub struct ListRepositoriesOutput {
     /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
     /// another page of 1,000 records is retrieved.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRepositoriesOutput {
+    /// <p>Lists the repositories called by the list repositories operation.</p>
+    pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositoryNameIdPair]> {
+        self.repositories.as_deref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.
+    /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
+    /// another page of 1,000 records is retrieved.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1829,6 +2071,16 @@ pub struct ListPullRequestsOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPullRequestsOutput {
+    /// <p>The system-generated IDs of the pull requests.</p>
+    pub fn pull_request_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.pull_request_ids.as_deref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPullRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPullRequestsOutput");
@@ -1901,6 +2153,16 @@ pub struct ListBranchesOutput {
     /// <p>An enumeration token that returns the batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBranchesOutput {
+    /// <p>The list of branch names.</p>
+    pub fn branches(&self) -> std::option::Option<&[std::string::String]> {
+        self.branches.as_deref()
+    }
+    /// <p>An enumeration token that returns the batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBranchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBranchesOutput");
@@ -1972,6 +2234,16 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     pub approval_rule_template_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    /// <p>The names of all approval rule templates associated with the repository.</p>
+    pub fn approval_rule_template_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.approval_rule_template_names.as_deref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2056,6 +2328,16 @@ pub struct ListApprovalRuleTemplatesOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApprovalRuleTemplatesOutput {
+    /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    pub fn approval_rule_template_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.approval_rule_template_names.as_deref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApprovalRuleTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApprovalRuleTemplatesOutput");
@@ -2135,6 +2417,16 @@ pub struct GetRepositoryTriggersOutput {
     /// <p>The JSON block of configuration information for each trigger.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
 }
+impl GetRepositoryTriggersOutput {
+    /// <p>The system-generated unique ID for the trigger.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>The JSON block of configuration information for each trigger.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::RepositoryTrigger]> {
+        self.triggers.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRepositoryTriggersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryTriggersOutput");
@@ -2208,6 +2500,12 @@ pub struct GetRepositoryOutput {
     /// <p>Information about the repository.</p>
     pub repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
 }
+impl GetRepositoryOutput {
+    /// <p>Information about the repository.</p>
+    pub fn repository_metadata(&self) -> std::option::Option<&crate::model::RepositoryMetadata> {
+        self.repository_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryOutput");
@@ -2260,6 +2558,16 @@ pub struct GetPullRequestOverrideStateOutput {
     pub overridden: bool,
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
     pub overrider: std::option::Option<std::string::String>,
+}
+impl GetPullRequestOverrideStateOutput {
+    /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
+    pub fn overridden(&self) -> bool {
+        self.overridden
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
+    pub fn overrider(&self) -> std::option::Option<&str> {
+        self.overrider.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPullRequestOverrideStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2322,6 +2630,12 @@ pub struct GetPullRequestApprovalStatesOutput {
     /// <p>Information about users who have approved the pull request.</p>
     pub approvals: std::option::Option<std::vec::Vec<crate::model::Approval>>,
 }
+impl GetPullRequestApprovalStatesOutput {
+    /// <p>Information about users who have approved the pull request.</p>
+    pub fn approvals(&self) -> std::option::Option<&[crate::model::Approval]> {
+        self.approvals.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPullRequestApprovalStatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPullRequestApprovalStatesOutput");
@@ -2379,6 +2693,12 @@ pub struct GetPullRequestOutput {
     /// <p>Information about the specified pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
 }
+impl GetPullRequestOutput {
+    /// <p>Information about the specified pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPullRequestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPullRequestOutput");
@@ -2435,6 +2755,24 @@ pub struct GetMergeOptionsOutput {
     pub destination_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
     pub base_commit_id: std::option::Option<std::string::String>,
+}
+impl GetMergeOptionsOutput {
+    /// <p>The merge option or strategy used to merge the code.</p>
+    pub fn merge_options(&self) -> std::option::Option<&[crate::model::MergeOptionTypeEnum]> {
+        self.merge_options.as_deref()
+    }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+        self.destination_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+        self.base_commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMergeOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2555,6 +2893,33 @@ pub struct GetMergeConflictsOutput {
     pub conflict_metadata_list: std::option::Option<std::vec::Vec<crate::model::ConflictMetadata>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetMergeConflictsOutput {
+    /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
+    pub fn mergeable(&self) -> bool {
+        self.mergeable
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+        self.destination_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+        self.base_commit_id.as_deref()
+    }
+    /// <p>A list of metadata for any conflicting files. If the specified merge strategy is
+    /// FAST_FORWARD_MERGE, this list is always empty.</p>
+    pub fn conflict_metadata_list(&self) -> std::option::Option<&[crate::model::ConflictMetadata]> {
+        self.conflict_metadata_list.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMergeConflictsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2701,6 +3066,26 @@ pub struct GetMergeCommitOutput {
     /// commit.</p>
     pub merged_commit_id: std::option::Option<std::string::String>,
 }
+impl GetMergeCommitOutput {
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+        self.destination_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+        self.base_commit_id.as_deref()
+    }
+    /// <p>The commit ID for the merge commit created when the source branch was merged into the
+    /// destination branch. If the fast-forward merge strategy was used, there is no merge
+    /// commit.</p>
+    pub fn merged_commit_id(&self) -> std::option::Option<&str> {
+        self.merged_commit_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMergeCommitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMergeCommitOutput");
@@ -2817,6 +3202,38 @@ pub struct GetFolderOutput {
     pub symbolic_links: std::option::Option<std::vec::Vec<crate::model::SymbolicLink>>,
     /// <p>The list of submodules in the specified folder, if any.</p>
     pub sub_modules: std::option::Option<std::vec::Vec<crate::model::SubModule>>,
+}
+impl GetFolderOutput {
+    /// <p>The full commit ID used as a reference for the returned version of the folder
+    /// content.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The fully qualified path of the folder whose contents are returned.</p>
+    pub fn folder_path(&self) -> std::option::Option<&str> {
+        self.folder_path.as_deref()
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
+    /// <p>The list of folders that exist under the specified folder, if any.</p>
+    pub fn sub_folders(&self) -> std::option::Option<&[crate::model::Folder]> {
+        self.sub_folders.as_deref()
+    }
+    /// <p>The list of files in the specified folder, if any.</p>
+    pub fn files(&self) -> std::option::Option<&[crate::model::File]> {
+        self.files.as_deref()
+    }
+    /// <p>The list of symbolic links to other files and folders in the specified folder, if
+    /// any.</p>
+    pub fn symbolic_links(&self) -> std::option::Option<&[crate::model::SymbolicLink]> {
+        self.symbolic_links.as_deref()
+    }
+    /// <p>The list of submodules in the specified folder, if any.</p>
+    pub fn sub_modules(&self) -> std::option::Option<&[crate::model::SubModule]> {
+        self.sub_modules.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3000,6 +3417,38 @@ pub struct GetFileOutput {
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
 }
+impl GetFileOutput {
+    /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The blob ID of the object that represents the file content.</p>
+    pub fn blob_id(&self) -> std::option::Option<&str> {
+        self.blob_id.as_deref()
+    }
+    /// <p>The fully qualified path to the specified file. Returns the name and extension of the
+    /// file.</p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p>
+    /// <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode
+    /// permission values, such as 100644, but rather extrapolated values. See the supported
+    /// return values.</p>
+    /// </note>
+    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+        self.file_mode.as_ref()
+    }
+    /// <p>The size of the contents of the file, in bytes.</p>
+    pub fn file_size(&self) -> i64 {
+        self.file_size
+    }
+    /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
+    pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.file_content.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFileOutput");
@@ -3134,6 +3583,17 @@ pub struct GetDifferencesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDifferencesOutput {
+    /// <p>A data type object that contains information about the differences, including whether
+    /// the difference is added, modified, or deleted (A, D, M).</p>
+    pub fn differences(&self) -> std::option::Option<&[crate::model::Difference]> {
+        self.differences.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDifferencesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDifferencesOutput");
@@ -3206,6 +3666,12 @@ pub struct GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
     pub commit: std::option::Option<crate::model::Commit>,
 }
+impl GetCommitOutput {
+    /// <p>A commit data type object that contains information about the specified commit.</p>
+    pub fn commit(&self) -> std::option::Option<&crate::model::Commit> {
+        self.commit.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCommitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommitOutput");
@@ -3256,6 +3722,18 @@ pub struct GetCommentsForPullRequestOutput {
         std::option::Option<std::vec::Vec<crate::model::CommentsForPullRequest>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCommentsForPullRequestOutput {
+    /// <p>An array of comment objects on the pull request.</p>
+    pub fn comments_for_pull_request_data(
+        &self,
+    ) -> std::option::Option<&[crate::model::CommentsForPullRequest]> {
+        self.comments_for_pull_request_data.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCommentsForPullRequestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3337,6 +3815,18 @@ pub struct GetCommentsForComparedCommitOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetCommentsForComparedCommitOutput {
+    /// <p>A list of comment objects on the compared commit.</p>
+    pub fn comments_for_compared_commit_data(
+        &self,
+    ) -> std::option::Option<&[crate::model::CommentsForComparedCommit]> {
+        self.comments_for_compared_commit_data.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCommentsForComparedCommitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommentsForComparedCommitOutput");
@@ -3416,6 +3906,18 @@ pub struct GetCommentReactionsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetCommentReactionsOutput {
+    /// <p>An array of reactions to the specified comment.</p>
+    pub fn reactions_for_comment(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReactionForComment]> {
+        self.reactions_for_comment.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCommentReactionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommentReactionsOutput");
@@ -3490,6 +3992,12 @@ pub struct GetCommentOutput {
     /// <p>The contents of the comment.</p>
     pub comment: std::option::Option<crate::model::Comment>,
 }
+impl GetCommentOutput {
+    /// <p>The contents of the comment.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCommentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommentOutput");
@@ -3537,6 +4045,12 @@ impl GetCommentOutput {
 pub struct GetBranchOutput {
     /// <p>The name of the branch.</p>
     pub branch: std::option::Option<crate::model::BranchInfo>,
+}
+impl GetBranchOutput {
+    /// <p>The name of the branch.</p>
+    pub fn branch(&self) -> std::option::Option<&crate::model::BranchInfo> {
+        self.branch.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBranchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3586,6 +4100,12 @@ pub struct GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
 }
+impl GetBlobOutput {
+    /// <p>The content of the blob, usually a file.</p>
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.content.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBlobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlobOutput");
@@ -3633,6 +4153,14 @@ impl GetBlobOutput {
 pub struct GetApprovalRuleTemplateOutput {
     /// <p>The content and structure of the approval rule template.</p>
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+}
+impl GetApprovalRuleTemplateOutput {
+    /// <p>The content and structure of the approval rule template.</p>
+    pub fn approval_rule_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
+        self.approval_rule_template.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApprovalRuleTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3685,6 +4213,13 @@ pub struct EvaluatePullRequestApprovalRulesOutput {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have
     /// not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub evaluation: std::option::Option<crate::model::Evaluation>,
+}
+impl EvaluatePullRequestApprovalRulesOutput {
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have
+    /// not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    pub fn evaluation(&self) -> std::option::Option<&crate::model::Evaluation> {
+        self.evaluation.as_ref()
+    }
 }
 impl std::fmt::Debug for EvaluatePullRequestApprovalRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3773,6 +4308,16 @@ pub struct DescribePullRequestEventsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePullRequestEventsOutput {
+    /// <p>Information about the pull request events.</p>
+    pub fn pull_request_events(&self) -> std::option::Option<&[crate::model::PullRequestEvent]> {
+        self.pull_request_events.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePullRequestEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePullRequestEventsOutput");
@@ -3856,6 +4401,32 @@ pub struct DescribeMergeConflictsOutput {
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
     pub base_commit_id: std::option::Option<std::string::String>,
+}
+impl DescribeMergeConflictsOutput {
+    /// <p>Contains metadata about the conflicts found in the merge.</p>
+    pub fn conflict_metadata(&self) -> std::option::Option<&crate::model::ConflictMetadata> {
+        self.conflict_metadata.as_ref()
+    }
+    /// <p>A list of merge hunks of the differences between the files or lines.</p>
+    pub fn merge_hunks(&self) -> std::option::Option<&[crate::model::MergeHunk]> {
+        self.merge_hunks.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+        self.destination_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+        self.base_commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMergeConflictsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3991,6 +4562,12 @@ pub struct DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
     pub repository_id: std::option::Option<std::string::String>,
 }
+impl DeleteRepositoryOutput {
+    /// <p>The ID of the repository that was deleted.</p>
+    pub fn repository_id(&self) -> std::option::Option<&str> {
+        self.repository_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryOutput");
@@ -4045,6 +4622,16 @@ pub struct DeletePullRequestApprovalRuleOutput {
     /// content.</p>
     /// </note>
     pub approval_rule_id: std::option::Option<std::string::String>,
+}
+impl DeletePullRequestApprovalRuleOutput {
+    /// <p>The ID of the deleted approval rule. </p>
+    /// <note>
+    /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without
+    /// content.</p>
+    /// </note>
+    pub fn approval_rule_id(&self) -> std::option::Option<&str> {
+        self.approval_rule_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePullRequestApprovalRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4111,6 +4698,25 @@ pub struct DeleteFileOutput {
     /// <p>The fully qualified path to the file to be deleted, including the full name and
     /// extension of that file.</p>
     pub file_path: std::option::Option<std::string::String>,
+}
+impl DeleteFileOutput {
+    /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The blob ID removed from the tree as part of deleting the file.</p>
+    pub fn blob_id(&self) -> std::option::Option<&str> {
+        self.blob_id.as_deref()
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
+    /// <p>The fully qualified path to the file to be deleted, including the full name and
+    /// extension of that file.</p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4201,6 +4807,12 @@ pub struct DeleteCommentContentOutput {
     /// <p>Information about the comment you just deleted.</p>
     pub comment: std::option::Option<crate::model::Comment>,
 }
+impl DeleteCommentContentOutput {
+    /// <p>Information about the comment you just deleted.</p>
+    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+        self.comment.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteCommentContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCommentContentOutput");
@@ -4248,6 +4860,12 @@ impl DeleteCommentContentOutput {
 pub struct DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     pub deleted_branch: std::option::Option<crate::model::BranchInfo>,
+}
+impl DeleteBranchOutput {
+    /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
+    pub fn deleted_branch(&self) -> std::option::Option<&crate::model::BranchInfo> {
+        self.deleted_branch.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteBranchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4300,6 +4918,13 @@ pub struct DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has
     /// been previously deleted, the only response is a 200 OK.</p>
     pub approval_rule_template_id: std::option::Option<std::string::String>,
+}
+impl DeleteApprovalRuleTemplateOutput {
+    /// <p>The system-generated ID of the deleted approval rule template. If the template has
+    /// been previously deleted, the only response is a 200 OK.</p>
+    pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApprovalRuleTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4355,6 +4980,16 @@ pub struct CreateUnreferencedMergeCommitOutput {
     pub commit_id: std::option::Option<std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
     pub tree_id: std::option::Option<std::string::String>,
+}
+impl CreateUnreferencedMergeCommitOutput {
+    /// <p>The full commit ID of the commit that contains your merge results.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUnreferencedMergeCommitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4417,6 +5052,12 @@ pub struct CreateRepositoryOutput {
     /// <p>Information about the newly created repository.</p>
     pub repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
 }
+impl CreateRepositoryOutput {
+    /// <p>Information about the newly created repository.</p>
+    pub fn repository_metadata(&self) -> std::option::Option<&crate::model::RepositoryMetadata> {
+        self.repository_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRepositoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRepositoryOutput");
@@ -4468,6 +5109,12 @@ pub struct CreatePullRequestApprovalRuleOutput {
     /// <p>Information about the created approval rule.</p>
     pub approval_rule: std::option::Option<crate::model::ApprovalRule>,
 }
+impl CreatePullRequestApprovalRuleOutput {
+    /// <p>Information about the created approval rule.</p>
+    pub fn approval_rule(&self) -> std::option::Option<&crate::model::ApprovalRule> {
+        self.approval_rule.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePullRequestApprovalRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePullRequestApprovalRuleOutput");
@@ -4518,6 +5165,12 @@ impl CreatePullRequestApprovalRuleOutput {
 pub struct CreatePullRequestOutput {
     /// <p>Information about the newly created pull request.</p>
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+}
+impl CreatePullRequestOutput {
+    /// <p>Information about the newly created pull request.</p>
+    pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
+        self.pull_request.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePullRequestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4577,6 +5230,28 @@ pub struct CreateCommitOutput {
     pub files_updated: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
     /// <p>The files deleted as part of the committed file changes.</p>
     pub files_deleted: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
+}
+impl CreateCommitOutput {
+    /// <p>The full commit ID of the commit that contains your committed file changes.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
+    pub fn tree_id(&self) -> std::option::Option<&str> {
+        self.tree_id.as_deref()
+    }
+    /// <p>The files added as part of the committed file changes.</p>
+    pub fn files_added(&self) -> std::option::Option<&[crate::model::FileMetadata]> {
+        self.files_added.as_deref()
+    }
+    /// <p>The files updated as part of the commited file changes.</p>
+    pub fn files_updated(&self) -> std::option::Option<&[crate::model::FileMetadata]> {
+        self.files_updated.as_deref()
+    }
+    /// <p>The files deleted as part of the committed file changes.</p>
+    pub fn files_deleted(&self) -> std::option::Option<&[crate::model::FileMetadata]> {
+        self.files_deleted.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCommitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4735,6 +5410,14 @@ pub struct CreateApprovalRuleTemplateOutput {
     /// <p>The content and structure of the created approval rule template.</p>
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
 }
+impl CreateApprovalRuleTemplateOutput {
+    /// <p>The content and structure of the created approval rule template.</p>
+    pub fn approval_rule_template(
+        &self,
+    ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
+        self.approval_rule_template.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateApprovalRuleTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApprovalRuleTemplateOutput");
@@ -4787,6 +5470,16 @@ pub struct BatchGetRepositoriesOutput {
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositoryMetadata>>,
     /// <p>Returns a list of repository names for which information could not be found.</p>
     pub repositories_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetRepositoriesOutput {
+    /// <p>A list of repositories returned by the batch get repositories operation.</p>
+    pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositoryMetadata]> {
+        self.repositories.as_deref()
+    }
+    /// <p>Returns a list of repository names for which information could not be found.</p>
+    pub fn repositories_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.repositories_not_found.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4871,6 +5564,18 @@ pub struct BatchGetCommitsOutput {
     /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
     /// repository, the ID returns an error object with more information.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
+}
+impl BatchGetCommitsOutput {
+    /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
+    pub fn commits(&self) -> std::option::Option<&[crate::model::Commit]> {
+        self.commits.as_deref()
+    }
+    /// <p>Returns any commit IDs for which information could not be found. For example, if one
+    /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
+    /// repository, the ID returns an error object with more information.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetCommitsError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetCommitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4959,6 +5664,21 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
     >,
+}
+impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
+    /// <p>A list of repository names that have had their association with the template
+    /// removed.</p>
+    pub fn disassociated_repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.disassociated_repository_names.as_deref()
+    }
+    /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<
+        &[crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError],
+    > {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5071,6 +5791,32 @@ pub struct BatchDescribeMergeConflictsOutput {
     pub source_commit_id: std::option::Option<std::string::String>,
     /// <p>The commit ID of the merge base.</p>
     pub base_commit_id: std::option::Option<std::string::String>,
+}
+impl BatchDescribeMergeConflictsOutput {
+    /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
+    pub fn conflicts(&self) -> std::option::Option<&[crate::model::Conflict]> {
+        self.conflicts.as_deref()
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of any errors returned while describing the merge conflicts for each file.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchDescribeMergeConflictsError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+        self.destination_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+        self.base_commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDescribeMergeConflictsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5221,6 +5967,19 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
     >,
+}
+impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    /// <p>A list of names of the repositories that have been associated with the template.</p>
+    pub fn associated_repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.associated_repository_names.as_deref()
+    }
+    /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError]>
+    {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

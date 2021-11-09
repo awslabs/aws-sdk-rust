@@ -71,6 +71,18 @@ pub struct ImportOptions {
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
     pub delimited_text_options: std::option::Option<crate::model::DelimitedTextImportOptions>,
 }
+impl ImportOptions {
+    /// <p>Options relating to the destination of the import request.</p>
+    pub fn destination_options(&self) -> std::option::Option<&crate::model::DestinationOptions> {
+        self.destination_options.as_ref()
+    }
+    /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
+    pub fn delimited_text_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DelimitedTextImportOptions> {
+        self.delimited_text_options.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportOptions");
@@ -149,6 +161,26 @@ pub struct DelimitedTextImportOptions {
     pub ignore_empty_rows: bool,
     /// <p>The encoding of the data in the input file.</p>
     pub data_character_encoding: std::option::Option<crate::model::ImportDataCharacterEncoding>,
+}
+impl DelimitedTextImportOptions {
+    /// <p>The delimiter to use for separating columns in a single row of the input.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
+    pub fn has_header_row(&self) -> bool {
+        self.has_header_row
+    }
+    /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
+    pub fn ignore_empty_rows(&self) -> bool {
+        self.ignore_empty_rows
+    }
+    /// <p>The encoding of the data in the input file.</p>
+    pub fn data_character_encoding(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportDataCharacterEncoding> {
+        self.data_character_encoding.as_ref()
+    }
 }
 impl std::fmt::Debug for DelimitedTextImportOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -324,6 +356,16 @@ pub struct DestinationOptions {
         std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>,
     >,
 }
+impl DestinationOptions {
+    /// <p>A map of the column id to the import properties for each column.</p>
+    pub fn column_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>,
+    > {
+        self.column_map.as_ref()
+    }
+}
 impl std::fmt::Debug for DestinationOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationOptions");
@@ -394,6 +436,12 @@ impl DestinationOptions {
 pub struct SourceDataColumnProperties {
     /// <p>The index of the column in the input file.</p>
     pub column_index: i32,
+}
+impl SourceDataColumnProperties {
+    /// <p>The index of the column in the input file.</p>
+    pub fn column_index(&self) -> i32 {
+        self.column_index
+    }
 }
 impl std::fmt::Debug for SourceDataColumnProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -494,6 +542,12 @@ pub struct ImportDataSource {
     /// <p>The configuration parameters for the data source of the import</p>
     pub data_source_config: std::option::Option<crate::model::ImportDataSourceConfig>,
 }
+impl ImportDataSource {
+    /// <p>The configuration parameters for the data source of the import</p>
+    pub fn data_source_config(&self) -> std::option::Option<&crate::model::ImportDataSourceConfig> {
+        self.data_source_config.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportDataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportDataSource");
@@ -548,6 +602,14 @@ pub struct ImportDataSourceConfig {
     /// The URL from which source data will be downloaded for the import request.
     /// </p>
     pub data_source_url: std::option::Option<std::string::String>,
+}
+impl ImportDataSourceConfig {
+    /// <p>
+    /// The URL from which source data will be downloaded for the import request.
+    /// </p>
+    pub fn data_source_url(&self) -> std::option::Option<&str> {
+        self.data_source_url.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -606,6 +668,17 @@ pub struct TableRow {
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
     /// </p>
     pub cells: std::option::Option<std::vec::Vec<crate::model::Cell>>,
+}
+impl TableRow {
+    /// <p>The id of the row in the table.</p>
+    pub fn row_id(&self) -> std::option::Option<&str> {
+        self.row_id.as_deref()
+    }
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.
+    /// </p>
+    pub fn cells(&self) -> std::option::Option<&[crate::model::Cell]> {
+        self.cells.as_deref()
+    }
 }
 impl std::fmt::Debug for TableRow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -734,6 +807,74 @@ pub struct Cell {
     /// below for how cells of different formats will have different raw and formatted values.
     /// </p>
     pub formatted_value: std::option::Option<std::string::String>,
+}
+impl Cell {
+    /// <p>
+    /// The formula contained in the cell. This field is empty if a cell does not have a formula.
+    /// </p>
+    pub fn formula(&self) -> std::option::Option<&str> {
+        self.formula.as_deref()
+    }
+    /// <p>The format of the cell. If this field is empty, then the format is either not specified in the
+    /// workbook or the format is set to AUTO.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The raw value of the data contained in the cell. The raw value depends on the format of the data in the
+    /// cell. However the attribute in the API return value is always a string containing the raw value.
+    /// </p>
+    /// <p>
+    /// Cells with format DATE, DATE_TIME or TIME have the raw value as a floating point
+    /// number where the whole number represents the number of days since 1/1/1900 and the fractional part
+    /// represents the fraction of the day since midnight. For example, a cell with date 11/3/2020 has the raw value
+    /// "44138". A cell with the time 9:00 AM has the raw value "0.375" and a cell with date/time value of
+    /// 11/3/2020 9:00 AM has the raw value "44138.375". Notice that even though the raw value is a number in all
+    /// three cases, it is still represented as a string.
+    /// </p>
+    /// <p>
+    /// Cells with format NUMBER, CURRENCY, PERCENTAGE and ACCOUNTING have the raw value of the data as the number
+    /// representing the data being displayed. For example, the number 1.325 with two decimal places in the format
+    /// will have it's raw value as "1.325" and formatted value as "1.33". A currency value for
+    /// $10 will have the raw value as "10" and formatted value as "$10.00". A value representing 20% with two
+    /// decimal places in the format will have its raw value as "0.2" and the formatted value as "20.00%". An
+    /// accounting value of -$25 will have "-25" as the raw value and "$  (25.00)" as the formatted value.
+    /// </p>
+    /// <p>
+    /// Cells with format TEXT will have the raw text as the raw value. For example, a cell with text "John Smith"
+    /// will have "John Smith" as both the raw value and the formatted value.
+    /// </p>
+    /// <p>
+    /// Cells with format CONTACT will have the name of the contact as a formatted value and the email address of
+    /// the contact as the raw value. For example, a contact for John Smith will have "John Smith" as the
+    /// formatted value and "john.smith@example.com" as the raw value.
+    /// </p>
+    /// <p>
+    /// Cells with format ROWLINK (aka picklist) will have the first column of the linked row as the formatted value
+    /// and the row id of the linked row as the raw value. For example, a cell containing a picklist to a table
+    /// that displays task status might have "Completed" as the formatted value and
+    /// "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value.
+    /// </p>
+    /// <p>
+    /// Cells with format AUTO or cells without any format that are auto-detected as one of the formats above will
+    /// contain the raw and formatted values as mentioned above, based on the auto-detected formats. If there is no
+    /// auto-detected format, the raw and formatted values will be the same as the data in the cell.
+    /// </p>
+    pub fn raw_value(&self) -> std::option::Option<&str> {
+        self.raw_value.as_deref()
+    }
+    /// <p>
+    /// The formatted value of the cell. This is the value that you see displayed in the cell in the UI.
+    /// </p>
+    /// <p>
+    /// Note that the formatted value of a cell is always represented as a string irrespective of the data that is
+    /// stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string
+    /// representation of the formatted date being shown in the cell in the UI. See details in the rawValue field
+    /// below for how cells of different formats will have different raw and formatted values.
+    /// </p>
+    pub fn formatted_value(&self) -> std::option::Option<&str> {
+        self.formatted_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Cell {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1043,6 +1184,26 @@ pub struct Filter {
     /// </p>
     pub context_row_id: std::option::Option<std::string::String>,
 }
+impl Filter {
+    /// <p>
+    /// A formula representing a filter function that returns zero or more matching rows from a table. Valid
+    /// formulas in this field return a list of rows from a table. The most common ways of writing a formula to
+    /// return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or
+    /// more rows is also acceptable. For example, you can use a formula that points to a cell that contains a
+    /// filter function.
+    /// </p>
+    pub fn formula(&self) -> std::option::Option<&str> {
+        self.formula.as_deref()
+    }
+    /// <p>
+    /// The optional contextRowId attribute can be used to specify the row id of the context row if the filter
+    /// formula contains unqualified references to table columns and needs a context row to evaluate them
+    /// successfully.
+    /// </p>
+    pub fn context_row_id(&self) -> std::option::Option<&str> {
+        self.context_row_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -1129,6 +1290,16 @@ pub struct Table {
     /// <p>The name of the table.</p>
     pub table_name: std::option::Option<std::string::String>,
 }
+impl Table {
+    /// <p>The id of the table.</p>
+    pub fn table_id(&self) -> std::option::Option<&str> {
+        self.table_id.as_deref()
+    }
+    /// <p>The name of the table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Table {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Table");
@@ -1196,6 +1367,23 @@ pub struct TableColumn {
     /// column format is the default value 'AUTO'.
     /// </p>
     pub format: std::option::Option<crate::model::Format>,
+}
+impl TableColumn {
+    /// <p>The id of the column in the table.</p>
+    pub fn table_column_id(&self) -> std::option::Option<&str> {
+        self.table_column_id.as_deref()
+    }
+    /// <p>The name of the column in the table.</p>
+    pub fn table_column_name(&self) -> std::option::Option<&str> {
+        self.table_column_name.as_deref()
+    }
+    /// <p>
+    /// The column level format that is applied in the table. An empty value in this field means that the
+    /// column format is the default value 'AUTO'.
+    /// </p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
 }
 impl std::fmt::Debug for TableColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1283,6 +1471,12 @@ pub struct VariableValue {
     /// <p>Raw value of the variable.</p>
     pub raw_value: std::option::Option<std::string::String>,
 }
+impl VariableValue {
+    /// <p>Raw value of the variable.</p>
+    pub fn raw_value(&self) -> std::option::Option<&str> {
+        self.raw_value.as_deref()
+    }
+}
 impl std::fmt::Debug for VariableValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValue");
@@ -1349,6 +1543,31 @@ pub struct ResultSet {
     /// cells will be present in the same order as they are defined in the header.
     /// </p>
     pub rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
+}
+impl ResultSet {
+    /// <p>
+    /// List of headers for all the data cells in the block. The header identifies the name and default format of
+    /// the data cell. Data cells appear in the same order in all rows as defined in the header. The names and
+    /// formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank
+    /// value is used.
+    /// </p>
+    /// <p>
+    /// For example, a task list that displays the task name, due date and assigned person might have headers
+    /// [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ].
+    /// Every row in the result will have the task name as the first item, due date as the second item and assigned
+    /// person as the third item. If a particular task does not have a due date, that row will still have a blank
+    /// value in the second element and the assigned person will still be in the third element.
+    /// </p>
+    pub fn headers(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+        self.headers.as_deref()
+    }
+    /// <p>
+    /// List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data
+    /// cells will be present in the same order as they are defined in the header.
+    /// </p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::ResultRow]> {
+        self.rows.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1461,6 +1680,16 @@ pub struct ResultRow {
     /// <p>List of all the data cells in a row.</p>
     pub data_items: std::option::Option<std::vec::Vec<crate::model::DataItem>>,
 }
+impl ResultRow {
+    /// <p>The ID for a particular row.</p>
+    pub fn row_id(&self) -> std::option::Option<&str> {
+        self.row_id.as_deref()
+    }
+    /// <p>List of all the data cells in a row.</p>
+    pub fn data_items(&self) -> std::option::Option<&[crate::model::DataItem]> {
+        self.data_items.as_deref()
+    }
+}
 impl std::fmt::Debug for ResultRow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultRow");
@@ -1537,6 +1766,23 @@ pub struct DataItem {
     pub raw_value: std::option::Option<std::string::String>,
     /// <p>The formatted value of the data. e.g. John Smith.</p>
     pub formatted_value: std::option::Option<std::string::String>,
+}
+impl DataItem {
+    /// <p>
+    /// The overrideFormat is optional and is specified only if a particular row of data has a different format for
+    /// the data than the default format defined on the screen or the table.
+    /// </p>
+    pub fn override_format(&self) -> std::option::Option<&crate::model::Format> {
+        self.override_format.as_ref()
+    }
+    /// <p>The raw value of the data. e.g. jsmith@example.com</p>
+    pub fn raw_value(&self) -> std::option::Option<&str> {
+        self.raw_value.as_deref()
+    }
+    /// <p>The formatted value of the data. e.g. John Smith.</p>
+    pub fn formatted_value(&self) -> std::option::Option<&str> {
+        self.formatted_value.as_deref()
+    }
 }
 impl std::fmt::Debug for DataItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1626,6 +1872,16 @@ pub struct ColumnMetadata {
     /// <p>The format of the column.</p>
     pub format: std::option::Option<crate::model::Format>,
 }
+impl ColumnMetadata {
+    /// <p>The name of the column.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The format of the column.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+}
 impl std::fmt::Debug for ColumnMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnMetadata");
@@ -1692,6 +1948,24 @@ pub struct TableDataImportJobMetadata {
     pub import_options: std::option::Option<crate::model::ImportOptions>,
     /// <p>The source of the data that was submitted for import.</p>
     pub data_source: std::option::Option<crate::model::ImportDataSource>,
+}
+impl TableDataImportJobMetadata {
+    /// <p>Details about the submitter of the import request.</p>
+    pub fn submitter(&self) -> std::option::Option<&crate::model::ImportJobSubmitter> {
+        self.submitter.as_ref()
+    }
+    /// <p>The timestamp when the job was submitted for import.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p>The options that was specified at the time of submitting the import request.</p>
+    pub fn import_options(&self) -> std::option::Option<&crate::model::ImportOptions> {
+        self.import_options.as_ref()
+    }
+    /// <p>The source of the data that was submitted for import.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::ImportDataSource> {
+        self.data_source.as_ref()
+    }
 }
 impl std::fmt::Debug for TableDataImportJobMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1794,6 +2068,16 @@ pub struct ImportJobSubmitter {
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl ImportJobSubmitter {
+    /// <p>The email id of the submitter of the import job, if available.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportJobSubmitter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportJobSubmitter");
@@ -1865,6 +2149,22 @@ pub struct FailedBatchItem {
     /// The error message that indicates why the batch item failed.
     /// </p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl FailedBatchItem {
+    /// <p>
+    /// The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and
+    /// BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows
+    /// operations.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The error message that indicates why the batch item failed.
+    /// </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for FailedBatchItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1951,6 +2251,22 @@ pub struct UpsertRowsResult {
     /// The result of the upsert action.
     /// </p>
     pub upsert_action: std::option::Option<crate::model::UpsertAction>,
+}
+impl UpsertRowsResult {
+    /// <p>
+    /// The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an
+    /// update, this list could potentially contain multiple rows that matched the filter and hence got updated.
+    /// If the upsert resulted in an append, this list would only have the single row that was appended.
+    /// </p>
+    pub fn row_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.row_ids.as_deref()
+    }
+    /// <p>
+    /// The result of the upsert action.
+    /// </p>
+    pub fn upsert_action(&self) -> std::option::Option<&crate::model::UpsertAction> {
+        self.upsert_action.as_ref()
+    }
 }
 impl std::fmt::Debug for UpsertRowsResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2118,6 +2434,41 @@ pub struct UpsertRowData {
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
 }
+impl UpsertRowData {
+    /// <p>
+    /// An external identifier that represents a single item in the request that is being upserted as part of the
+    /// BatchUpsertTableRows request. This can be any string that you can use to identify the item in the request.
+    /// The BatchUpsertTableRows API puts the batch item id in the results to allow you to link data in the
+    /// request to data in the results.
+    /// </p>
+    pub fn batch_item_id(&self) -> std::option::Option<&str> {
+        self.batch_item_id.as_deref()
+    }
+    /// <p>
+    /// The filter formula to use to find existing matching rows to update. The formula needs to return zero or more
+    /// rows. If the formula returns 0 rows, then a new row will be appended in the target table. If the formula
+    /// returns one or more rows, then the returned rows will be updated.
+    /// </p>
+    /// <p>
+    /// Note that the filter formula needs to return rows from the target table for the upsert operation to succeed.
+    /// If the filter formula has a syntax error or it doesn't evaluate to zero or more rows in the target table
+    /// for any one item in the input list, then the entire BatchUpsertTableRows request fails and no updates are
+    /// made to the table.
+    /// </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::Filter> {
+        self.filter.as_ref()
+    }
+    /// <p>
+    /// A map representing the cells to update for the matching rows or an appended row. The key is the column id
+    /// of the cell and the value is the CellInput object that represents the data to set in that cell.
+    /// </p>
+    pub fn cells_to_update(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
+    {
+        self.cells_to_update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpsertRowData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpsertRowData");
@@ -2253,6 +2604,15 @@ pub struct CellInput {
     /// </p>
     pub fact: std::option::Option<std::string::String>,
 }
+impl CellInput {
+    /// <p>
+    /// Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need
+    /// to start with the equals (=) sign.
+    /// </p>
+    pub fn fact(&self) -> std::option::Option<&str> {
+        self.fact.as_deref()
+    }
+}
 impl std::fmt::Debug for CellInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CellInput");
@@ -2315,6 +2675,24 @@ pub struct UpdateRowData {
     pub cells_to_update: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
+}
+impl UpdateRowData {
+    /// <p>
+    /// The id of the row that needs to be updated.
+    /// </p>
+    pub fn row_id(&self) -> std::option::Option<&str> {
+        self.row_id.as_deref()
+    }
+    /// <p>
+    /// A map representing the cells to update in the given row. The key is the column id of the
+    /// cell and the value is the CellInput object that represents the data to set in that cell.
+    /// </p>
+    pub fn cells_to_update(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
+    {
+        self.cells_to_update.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRowData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2417,6 +2795,27 @@ pub struct CreateRowData {
     pub cells_to_create: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CellInput>,
     >,
+}
+impl CreateRowData {
+    /// <p>
+    /// An external identifier that represents the single row that is being created as part of the
+    /// BatchCreateTableRows request. This can be any string that you can use to identify the row in the request.
+    /// The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the
+    /// request to data in the results.
+    /// </p>
+    pub fn batch_item_id(&self) -> std::option::Option<&str> {
+        self.batch_item_id.as_deref()
+    }
+    /// <p>
+    /// A map representing the cells to create in the new row. The key is the column id of the
+    /// cell and the value is the CellInput object that represents the data to set in that cell.
+    /// </p>
+    pub fn cells_to_create(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::CellInput>>
+    {
+        self.cells_to_create.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRowData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -95,10 +95,7 @@ impl AssociateMemberAccountInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_member_account(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -280,10 +277,9 @@ impl AssociateS3ResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_s3_resources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_s3_resources(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -441,10 +437,7 @@ impl DisassociateMemberAccountInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_member_account(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -629,10 +622,7 @@ impl DisassociateS3ResourcesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_s3_resources(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -802,10 +792,7 @@ impl ListMemberAccountsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_member_accounts(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_member_accounts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -990,10 +977,7 @@ impl ListS3ResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_s3_resources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_s3_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1173,10 +1157,7 @@ impl UpdateS3ResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_s3_resources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_s3_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1249,6 +1230,19 @@ pub struct UpdateS3ResourcesInput {
     pub s3_resources_update:
         std::option::Option<std::vec::Vec<crate::model::S3ResourceClassificationUpdate>>,
 }
+impl UpdateS3ResourcesInput {
+    /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
+    /// classification types you want to update. </p>
+    pub fn member_account_id(&self) -> std::option::Option<&str> {
+        self.member_account_id.as_deref()
+    }
+    /// <p>The S3 resources whose classification types you want to update.</p>
+    pub fn s3_resources_update(
+        &self,
+    ) -> std::option::Option<&[crate::model::S3ResourceClassificationUpdate]> {
+        self.s3_resources_update.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateS3ResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateS3ResourcesInput");
@@ -1273,6 +1267,24 @@ pub struct ListS3ResourcesInput {
     /// response. The default value is 250. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListS3ResourcesInput {
+    /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to
+    /// list. </p>
+    pub fn member_account_id(&self) -> std::option::Option<&str> {
+        self.member_account_id.as_deref()
+    }
+    /// <p>Use this parameter when paginating results. Set its value to null on your first call to
+    /// the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with
+    /// the value of nextToken from the previous response to continue listing data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Use this parameter to indicate the maximum number of items that you want in the
+    /// response. The default value is 250. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListS3ResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListS3ResourcesInput");
@@ -1296,6 +1308,20 @@ pub struct ListMemberAccountsInput {
     /// response. The default value is 250. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListMemberAccountsInput {
+    /// <p>Use this parameter when paginating results. Set the value of this parameter to null on
+    /// your first call to the ListMemberAccounts action. Subsequent calls to the action fill
+    /// nextToken in the request with the value of nextToken from the previous response to continue
+    /// listing data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Use this parameter to indicate the maximum number of items that you want in the
+    /// response. The default value is 250. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListMemberAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMemberAccountsInput");
@@ -1316,6 +1342,18 @@ pub struct DisassociateS3ResourcesInput {
     /// classified by Amazon Macie Classic. </p>
     pub associated_s3_resources: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
 }
+impl DisassociateS3ResourcesInput {
+    /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove
+    /// from being monitored by Macie Classic. </p>
+    pub fn member_account_id(&self) -> std::option::Option<&str> {
+        self.member_account_id.as_deref()
+    }
+    /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and
+    /// classified by Amazon Macie Classic. </p>
+    pub fn associated_s3_resources(&self) -> std::option::Option<&[crate::model::S3Resource]> {
+        self.associated_s3_resources.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateS3ResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateS3ResourcesInput");
@@ -1332,6 +1370,13 @@ pub struct DisassociateMemberAccountInput {
     /// <p>The ID of the member account that you want to remove from Amazon Macie
     /// Classic.</p>
     pub member_account_id: std::option::Option<std::string::String>,
+}
+impl DisassociateMemberAccountInput {
+    /// <p>The ID of the member account that you want to remove from Amazon Macie
+    /// Classic.</p>
+    pub fn member_account_id(&self) -> std::option::Option<&str> {
+        self.member_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateMemberAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1352,6 +1397,18 @@ pub struct AssociateS3ResourcesInput {
     /// and data classification. </p>
     pub s3_resources: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
 }
+impl AssociateS3ResourcesInput {
+    /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate
+    /// with Macie Classic. </p>
+    pub fn member_account_id(&self) -> std::option::Option<&str> {
+        self.member_account_id.as_deref()
+    }
+    /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring
+    /// and data classification. </p>
+    pub fn s3_resources(&self) -> std::option::Option<&[crate::model::S3ResourceClassification]> {
+        self.s3_resources.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateS3ResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateS3ResourcesInput");
@@ -1368,6 +1425,13 @@ pub struct AssociateMemberAccountInput {
     /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a
     /// member account.</p>
     pub member_account_id: std::option::Option<std::string::String>,
+}
+impl AssociateMemberAccountInput {
+    /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a
+    /// member account.</p>
+    pub fn member_account_id(&self) -> std::option::Option<&str> {
+        self.member_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateMemberAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

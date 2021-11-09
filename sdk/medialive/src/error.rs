@@ -9478,6 +9478,12 @@ pub struct UnprocessableEntityException {
     /// A collection of validation error responses.
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
 }
+impl UnprocessableEntityException {
+    /// A collection of validation error responses.
+    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationError]> {
+        self.validation_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnprocessableEntityException");

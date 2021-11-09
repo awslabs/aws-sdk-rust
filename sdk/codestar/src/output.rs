@@ -19,6 +19,35 @@ pub struct UpdateUserProfileOutput {
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateUserProfileOutput {
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The email address that is displayed as part of the user's profile in AWS
+    /// CodeStar.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
+    /// public/private keypair the user can use to access project resources if a project owner allows
+    /// the user remote access to those resources.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>The date the user profile was created, in timestamp format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The date the user profile was last modified, in timestamp format.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserProfileOutput");
@@ -155,6 +184,22 @@ pub struct UpdateTeamMemberOutput {
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH
     /// public key associated with the user's profile.</p>
     pub remote_access_allowed: std::option::Option<bool>,
+}
+impl UpdateTeamMemberOutput {
+    /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were
+    /// updated.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The project role granted to the user.</p>
+    pub fn project_role(&self) -> std::option::Option<&str> {
+        self.project_role.as_deref()
+    }
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH
+    /// public key associated with the user's profile.</p>
+    pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
+        self.remote_access_allowed
+    }
 }
 impl std::fmt::Debug for UpdateTeamMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -295,6 +340,15 @@ pub struct TagProjectOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagProjectOutput {
+    /// <p>The tags for the project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagProjectOutput");
@@ -360,6 +414,17 @@ pub struct ListUserProfilesOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are
     /// more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUserProfilesOutput {
+    /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
+    pub fn user_profiles(&self) -> std::option::Option<&[crate::model::UserProfileSummary]> {
+        self.user_profiles.as_deref()
+    }
+    /// <p>The continuation token to use when requesting the next set of results, if there are
+    /// more results to be returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -437,6 +502,17 @@ pub struct ListTeamMembersOutput {
     /// more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTeamMembersOutput {
+    /// <p>A list of team member objects for the project.</p>
+    pub fn team_members(&self) -> std::option::Option<&[crate::model::TeamMember]> {
+        self.team_members.as_deref()
+    }
+    /// <p>The continuation token to use when requesting the next set of results, if there are
+    /// more results to be returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTeamMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTeamMembersOutput");
@@ -511,6 +587,19 @@ pub struct ListTagsForProjectOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForProjectOutput {
+    /// <p>The tags for the project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -593,6 +682,17 @@ pub struct ListResourcesOutput {
     /// more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListResourcesOutput {
+    /// <p>An array of resources associated with the project. </p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// <p>The continuation token to use when requesting the next set of results, if there are
+    /// more results to be returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesOutput");
@@ -667,6 +767,17 @@ pub struct ListProjectsOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are
     /// more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectsOutput {
+    /// <p>A list of projects.</p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+        self.projects.as_deref()
+    }
+    /// <p>The continuation token to use when requesting the next set of results, if there are
+    /// more results to be returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -791,6 +902,44 @@ pub struct DescribeUserProfileOutput {
     /// <p>The date and time when the user profile was last modified, in timestamp
     /// format.</p>
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeUserProfileOutput {
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set
+    /// to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also
+    /// used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are
+    /// included in the display name, the first character that appears after the space will be used as
+    /// the second character in the user initial icon. The initial icon displays a maximum of two
+    /// characters, so a display name with more than one space (for example "Mary Jane Major") would
+    /// generate an initial icon using the first character and the first character after the space
+    /// ("MJ", not "MM").</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The email address for the user. Optional.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The SSH public key associated with the user. This SSH public key is associated with the
+    /// user profile, and can be used in conjunction with the associated private key for access to
+    /// project resources, such as Amazon EC2 instances, if a project owner grants remote access to
+    /// those resources.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
+    /// format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The date and time when the user profile was last modified, in timestamp
+    /// format.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -958,6 +1107,46 @@ pub struct DescribeProjectOutput {
     pub project_template_id: std::option::Option<std::string::String>,
     /// <p>The project creation or deletion status.</p>
     pub status: std::option::Option<crate::model::ProjectStatus>,
+}
+impl DescribeProjectOutput {
+    /// <p>The display name for the project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the project.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the project.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The description of the project, if any.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A user- or system-generated token that identifies the entity that requested project
+    /// creation. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The date and time the project was created, in timestamp format.</p>
+    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time_stamp.as_ref()
+    }
+    /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
+    /// project.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
+    pub fn project_template_id(&self) -> std::option::Option<&str> {
+        self.project_template_id.as_deref()
+    }
+    /// <p>The project creation or deletion status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProjectStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1127,6 +1316,12 @@ pub struct DeleteUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl DeleteUserProfileOutput {
+    /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserProfileOutput");
@@ -1177,6 +1372,17 @@ pub struct DeleteProjectOutput {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
     pub project_arn: std::option::Option<std::string::String>,
+}
+impl DeleteProjectOutput {
+    /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of
+    /// deleting the project and its resources.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1252,6 +1458,34 @@ pub struct CreateUserProfileOutput {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateUserProfileOutput {
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
+    /// public/private keypair the user can use to access project resources if a project owner allows
+    /// the user remote access to those resources.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>The date the user profile was created, in timestamp format.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The date the user profile was last modified, in timestamp format.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1389,6 +1623,25 @@ pub struct CreateProjectOutput {
     /// <p>Reserved for future use.</p>
     pub project_template_id: std::option::Option<std::string::String>,
 }
+impl CreateProjectOutput {
+    /// <p>The ID of the project.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the created project.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A user- or system-generated token that identifies the entity that requested project
+    /// creation.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn project_template_id(&self) -> std::option::Option<&str> {
+        self.project_template_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectOutput");
@@ -1484,6 +1737,13 @@ pub struct AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat
     /// the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl AssociateTeamMemberOutput {
+    /// <p>The user- or system-generated token from the initial request that can be used to repeat
+    /// the request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateTeamMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

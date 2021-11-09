@@ -90,10 +90,7 @@ impl DeleteReportDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_report_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -258,10 +255,7 @@ impl DescribeReportDefinitionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_report_definitions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -436,10 +430,7 @@ impl ModifyReportDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_report_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -594,10 +585,7 @@ impl PutReportDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -667,6 +655,13 @@ pub struct PutReportDefinitionInput {
     /// metadata and data file information. </p>
     pub report_definition: std::option::Option<crate::model::ReportDefinition>,
 }
+impl PutReportDefinitionInput {
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
+    /// metadata and data file information. </p>
+    pub fn report_definition(&self) -> std::option::Option<&crate::model::ReportDefinition> {
+        self.report_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for PutReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutReportDefinitionInput");
@@ -688,6 +683,20 @@ pub struct ModifyReportDefinitionInput {
     /// </p>
     pub report_definition: std::option::Option<crate::model::ReportDefinition>,
 }
+impl ModifyReportDefinitionInput {
+    /// <p>The name of the report that you want to create. The name must be unique,
+    /// is case sensitive, and can't include spaces. </p>
+    pub fn report_name(&self) -> std::option::Option<&str> {
+        self.report_name.as_deref()
+    }
+    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
+    /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
+    /// elements in the definition.
+    /// </p>
+    pub fn report_definition(&self) -> std::option::Option<&crate::model::ReportDefinition> {
+        self.report_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReportDefinitionInput");
@@ -706,6 +715,16 @@ pub struct DescribeReportDefinitionsInput {
     /// <p>A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeReportDefinitionsInput {
+    /// <p>The maximum number of results that AWS returns for the operation.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReportDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReportDefinitionsInput");
@@ -721,6 +740,12 @@ impl std::fmt::Debug for DescribeReportDefinitionsInput {
 pub struct DeleteReportDefinitionInput {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub report_name: std::option::Option<std::string::String>,
+}
+impl DeleteReportDefinitionInput {
+    /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
+    pub fn report_name(&self) -> std::option::Option<&str> {
+        self.report_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReportDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

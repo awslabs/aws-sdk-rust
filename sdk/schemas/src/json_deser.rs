@@ -40,10 +40,11 @@ pub fn deser_structure_crate_error_bad_request_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -90,10 +91,11 @@ pub fn deser_structure_crate_error_conflict_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -140,10 +142,11 @@ pub fn deser_structure_crate_error_forbidden_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -193,10 +196,11 @@ pub fn deser_structure_crate_error_internal_server_error_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -244,10 +248,11 @@ pub fn deser_structure_crate_error_service_unavailable_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -294,10 +299,11 @@ pub fn deser_structure_crate_error_unauthorized_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -386,10 +392,11 @@ pub fn deser_operation_crate_operation_create_discoverer(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -450,10 +457,11 @@ pub fn deser_operation_crate_operation_create_registry(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -548,10 +556,11 @@ pub fn deser_operation_crate_operation_create_schema(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -598,10 +607,11 @@ pub fn deser_structure_crate_error_not_found_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -649,10 +659,11 @@ pub fn deser_structure_crate_error_too_many_requests_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -719,10 +730,11 @@ pub fn deser_operation_crate_operation_describe_code_binding(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -812,10 +824,11 @@ pub fn deser_operation_crate_operation_describe_discoverer(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -876,10 +889,11 @@ pub fn deser_operation_crate_operation_describe_registry(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -983,10 +997,11 @@ pub fn deser_operation_crate_operation_describe_schema(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1060,10 +1075,11 @@ pub fn deser_operation_crate_operation_export_schema(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1102,10 +1118,11 @@ pub fn deser_operation_crate_operation_get_discovered_schema(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1153,10 +1170,11 @@ pub fn deser_operation_crate_operation_get_resource_policy(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1199,10 +1217,11 @@ pub fn deser_operation_crate_operation_list_discoverers(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1245,10 +1264,11 @@ pub fn deser_operation_crate_operation_list_registries(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1291,10 +1311,11 @@ pub fn deser_operation_crate_operation_list_schemas(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1338,10 +1359,11 @@ pub fn deser_operation_crate_operation_list_schema_versions(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1378,10 +1400,11 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1428,10 +1451,11 @@ pub fn deser_structure_crate_error_gone_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1497,10 +1521,11 @@ pub fn deser_operation_crate_operation_put_code_binding(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1548,10 +1573,11 @@ pub fn deser_structure_crate_error_precondition_failed_exception_json_err(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1599,10 +1625,11 @@ pub fn deser_operation_crate_operation_put_resource_policy(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1645,10 +1672,11 @@ pub fn deser_operation_crate_operation_search_schemas(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1698,10 +1726,11 @@ pub fn deser_operation_crate_operation_start_discoverer(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1751,10 +1780,11 @@ pub fn deser_operation_crate_operation_stop_discoverer(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1843,10 +1873,11 @@ pub fn deser_operation_crate_operation_update_discoverer(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -1907,10 +1938,11 @@ pub fn deser_operation_crate_operation_update_registry(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -2005,10 +2037,11 @@ pub fn deser_operation_crate_operation_update_schema(
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
-            _ => {
-                return Err(aws_smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
@@ -2058,10 +2091,11 @@ where
                             map.insert(key, value);
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
@@ -2345,10 +2379,11 @@ where
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
@@ -2406,10 +2441,11 @@ where
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
@@ -2483,10 +2519,11 @@ where
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
@@ -2558,10 +2595,11 @@ where
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
@@ -2626,10 +2664,11 @@ where
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
@@ -2731,10 +2770,11 @@ where
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }

@@ -6,6 +6,12 @@ pub struct UpdateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     pub queue: std::option::Option<crate::model::Queue>,
 }
+impl UpdateQueueOutput {
+    /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+        self.queue.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueOutput");
@@ -51,6 +57,12 @@ impl UpdateQueueOutput {
 pub struct UpdatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     pub preset: std::option::Option<crate::model::Preset>,
+}
+impl UpdatePresetOutput {
+    /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+        self.preset.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePresetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -99,6 +111,12 @@ impl UpdatePresetOutput {
 pub struct UpdateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+}
+impl UpdateJobTemplateOutput {
+    /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+        self.job_template.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateJobTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -211,6 +229,12 @@ pub struct PutPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub policy: std::option::Option<crate::model::Policy>,
 }
+impl PutPolicyOutput {
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPolicyOutput");
@@ -258,6 +282,12 @@ impl PutPolicyOutput {
 pub struct ListTagsForResourceOutput {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
     pub resource_tags: std::option::Option<crate::model::ResourceTags>,
+}
+impl ListTagsForResourceOutput {
+    /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+    pub fn resource_tags(&self) -> std::option::Option<&crate::model::ResourceTags> {
+        self.resource_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -311,6 +341,16 @@ pub struct ListQueuesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// List of queues.
     pub queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
+}
+impl ListQueuesOutput {
+    /// Use this string to request the next batch of queues.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// List of queues.
+    pub fn queues(&self) -> std::option::Option<&[crate::model::Queue]> {
+        self.queues.as_deref()
+    }
 }
 impl std::fmt::Debug for ListQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -384,6 +424,16 @@ pub struct ListPresetsOutput {
     /// List of presets
     pub presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
 }
+impl ListPresetsOutput {
+    /// Use this string to request the next batch of presets.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// List of presets
+    pub fn presets(&self) -> std::option::Option<&[crate::model::Preset]> {
+        self.presets.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPresetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPresetsOutput");
@@ -455,6 +505,16 @@ pub struct ListJobTemplatesOutput {
     pub job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
     /// Use this string to request the next batch of job templates.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobTemplatesOutput {
+    /// List of Job templates.
+    pub fn job_templates(&self) -> std::option::Option<&[crate::model::JobTemplate]> {
+        self.job_templates.as_deref()
+    }
+    /// Use this string to request the next batch of job templates.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -528,6 +588,16 @@ pub struct ListJobsOutput {
     /// Use this string to request the next batch of jobs.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobsOutput {
+    /// List of jobs
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// Use this string to request the next batch of jobs.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -598,6 +668,12 @@ pub struct GetQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     pub queue: std::option::Option<crate::model::Queue>,
 }
+impl GetQueueOutput {
+    /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+        self.queue.as_ref()
+    }
+}
 impl std::fmt::Debug for GetQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetQueueOutput");
@@ -643,6 +719,12 @@ impl GetQueueOutput {
 pub struct GetPresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     pub preset: std::option::Option<crate::model::Preset>,
+}
+impl GetPresetOutput {
+    /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+        self.preset.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPresetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -692,6 +774,12 @@ pub struct GetPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub policy: std::option::Option<crate::model::Policy>,
 }
+impl GetPolicyOutput {
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyOutput");
@@ -739,6 +827,12 @@ impl GetPolicyOutput {
 pub struct GetJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+}
+impl GetJobTemplateOutput {
+    /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+        self.job_template.as_ref()
+    }
 }
 impl std::fmt::Debug for GetJobTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -790,6 +884,12 @@ impl GetJobTemplateOutput {
 pub struct GetJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub job: std::option::Option<crate::model::Job>,
+}
+impl GetJobOutput {
+    /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for GetJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -868,6 +968,16 @@ pub struct DescribeEndpointsOutput {
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     /// Use this string to request the next batch of endpoints.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointsOutput {
+    /// List of endpoints
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// Use this string to request the next batch of endpoints.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1059,6 +1169,12 @@ pub struct CreateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     pub queue: std::option::Option<crate::model::Queue>,
 }
+impl CreateQueueOutput {
+    /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    pub fn queue(&self) -> std::option::Option<&crate::model::Queue> {
+        self.queue.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQueueOutput");
@@ -1104,6 +1220,12 @@ impl CreateQueueOutput {
 pub struct CreatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     pub preset: std::option::Option<crate::model::Preset>,
+}
+impl CreatePresetOutput {
+    /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+        self.preset.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePresetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1152,6 +1274,12 @@ impl CreatePresetOutput {
 pub struct CreateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+}
+impl CreateJobTemplateOutput {
+    /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    pub fn job_template(&self) -> std::option::Option<&crate::model::JobTemplate> {
+        self.job_template.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1203,6 +1331,12 @@ impl CreateJobTemplateOutput {
 pub struct CreateJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub job: std::option::Option<crate::model::Job>,
+}
+impl CreateJobOutput {
+    /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

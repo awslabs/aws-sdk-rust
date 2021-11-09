@@ -692,10 +692,7 @@ impl StartHumanLoopInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_human_loop(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_human_loop(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -842,10 +839,8 @@ impl StopHumanLoopInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_human_loop(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_human_loop(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -914,6 +909,12 @@ pub struct StopHumanLoopInput {
     /// <p>The name of the human loop that you want to stop.</p>
     pub human_loop_name: std::option::Option<std::string::String>,
 }
+impl StopHumanLoopInput {
+    /// <p>The name of the human loop that you want to stop.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopHumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopHumanLoopInput");
@@ -936,6 +937,26 @@ pub struct StartHumanLoopInput {
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
     /// is free of personally identifiable information and/or free of adult content.</p>
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
+}
+impl StartHumanLoopInput {
+    /// <p>The name of the human loop.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
+    /// loop.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
+    /// <p>An object that contains information about the human loop.</p>
+    pub fn human_loop_input(&self) -> std::option::Option<&crate::model::HumanLoopInput> {
+        self.human_loop_input.as_ref()
+    }
+    /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
+    /// is free of personally identifiable information and/or free of adult content.</p>
+    pub fn data_attributes(&self) -> std::option::Option<&crate::model::HumanLoopDataAttributes> {
+        self.data_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for StartHumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -968,6 +989,35 @@ pub struct ListHumanLoopsInput {
     /// the output. You can use this token to display the next page of results. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListHumanLoopsInput {
+    /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
+    /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+    /// <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A token to display the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of items to return. If the total number of available items is more than
+    /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
+    /// the output. You can use this token to display the next page of results. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListHumanLoopsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHumanLoopsInput");
@@ -988,6 +1038,12 @@ pub struct DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
     pub human_loop_name: std::option::Option<std::string::String>,
 }
+impl DescribeHumanLoopInput {
+    /// <p>The name of the human loop that you want information about.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHumanLoopInput");
@@ -1002,6 +1058,12 @@ impl std::fmt::Debug for DescribeHumanLoopInput {
 pub struct DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
     pub human_loop_name: std::option::Option<std::string::String>,
+}
+impl DeleteHumanLoopInput {
+    /// <p>The name of the human loop that you want to delete.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteHumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

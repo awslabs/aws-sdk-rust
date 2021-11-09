@@ -116,10 +116,8 @@ impl DescribeStreamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_stream(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -283,10 +281,7 @@ impl GetRecordsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_records(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_records(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -526,10 +521,7 @@ impl GetShardIteratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_shard_iterator(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_shard_iterator(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -709,10 +701,7 @@ impl ListStreamsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -787,6 +776,22 @@ pub struct ListStreamsInput {
     /// </p>
     pub exclusive_start_stream_arn: std::option::Option<std::string::String>,
 }
+impl ListStreamsInput {
+    /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The maximum number of streams to return. The upper limit is 100.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
+    /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
+    /// </p>
+    pub fn exclusive_start_stream_arn(&self) -> std::option::Option<&str> {
+        self.exclusive_start_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamsInput");
@@ -837,6 +842,48 @@ pub struct GetShardIteratorInput {
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub sequence_number: std::option::Option<std::string::String>,
 }
+impl GetShardIteratorInput {
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
+    pub fn shard_id(&self) -> std::option::Option<&str> {
+        self.shard_id.as_deref()
+    }
+    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
+    /// specific sequence number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
+    /// specific sequence number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
+    /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
+    /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
+    /// stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LATEST</code> - Start reading just after the most recent stream record in the
+    /// shard, so that you always read the most recent data in the shard.</p>
+    /// </li>
+    /// </ul>
+    pub fn shard_iterator_type(&self) -> std::option::Option<&crate::model::ShardIteratorType> {
+        self.shard_iterator_type.as_ref()
+    }
+    /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
+}
 impl std::fmt::Debug for GetShardIteratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetShardIteratorInput");
@@ -856,6 +903,16 @@ pub struct GetRecordsInput {
     pub shard_iterator: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
     pub limit: std::option::Option<i32>,
+}
+impl GetRecordsInput {
+    /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    pub fn shard_iterator(&self) -> std::option::Option<&str> {
+        self.shard_iterator.as_deref()
+    }
+    /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for GetRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -877,6 +934,21 @@ pub struct DescribeStreamInput {
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
     /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
+}
+impl DescribeStreamInput {
+    /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
+    /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
+        self.exclusive_start_shard_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

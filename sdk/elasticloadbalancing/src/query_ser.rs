@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_4) = &input.value {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_health_check(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::HealthCheck,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Target");
     if let Some(var_6) = &input.target {
@@ -58,13 +59,14 @@ pub fn serialize_structure_crate_model_health_check(
             aws_smithy_types::Number::NegInt((input.healthy_threshold).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_listener(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Listener,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("Protocol");
     if let Some(var_12) = &input.protocol {
@@ -96,13 +98,14 @@ pub fn serialize_structure_crate_model_listener(
     if let Some(var_18) = &input.ssl_certificate_id {
         scope_17.string(var_18);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_policy_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PolicyAttribute,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("AttributeName");
     if let Some(var_20) = &input.attribute_name {
@@ -113,46 +116,48 @@ pub fn serialize_structure_crate_model_policy_attribute(
     if let Some(var_22) = &input.attribute_value {
         scope_21.string(var_22);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_instance(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Instance,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("InstanceId");
     if let Some(var_24) = &input.instance_id {
         scope_23.string(var_24);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_load_balancer_attributes(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LoadBalancerAttributes,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("CrossZoneLoadBalancing");
     if let Some(var_26) = &input.cross_zone_load_balancing {
         crate::query_ser::serialize_structure_crate_model_cross_zone_load_balancing(
             scope_25, var_26,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("AccessLog");
     if let Some(var_28) = &input.access_log {
-        crate::query_ser::serialize_structure_crate_model_access_log(scope_27, var_28);
+        crate::query_ser::serialize_structure_crate_model_access_log(scope_27, var_28)?;
     }
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("ConnectionDraining");
     if let Some(var_30) = &input.connection_draining {
-        crate::query_ser::serialize_structure_crate_model_connection_draining(scope_29, var_30);
+        crate::query_ser::serialize_structure_crate_model_connection_draining(scope_29, var_30)?;
     }
     #[allow(unused_mut)]
     let mut scope_31 = writer.prefix("ConnectionSettings");
     if let Some(var_32) = &input.connection_settings {
-        crate::query_ser::serialize_structure_crate_model_connection_settings(scope_31, var_32);
+        crate::query_ser::serialize_structure_crate_model_connection_settings(scope_31, var_32)?;
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("AdditionalAttributes");
@@ -163,41 +168,44 @@ pub fn serialize_structure_crate_model_load_balancer_attributes(
             let mut entry_37 = list_36.entry();
             crate::query_ser::serialize_structure_crate_model_additional_attribute(
                 entry_37, item_35,
-            );
+            )?;
         }
         list_36.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_tag_key_only(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TagKeyOnly,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_38 = writer.prefix("Key");
     if let Some(var_39) = &input.key {
         scope_38.string(var_39);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_cross_zone_load_balancing(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CrossZoneLoadBalancing,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_40 = writer.prefix("Enabled");
     {
         scope_40.boolean(input.enabled);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_access_log(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AccessLog,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("Enabled");
     {
@@ -221,13 +229,14 @@ pub fn serialize_structure_crate_model_access_log(
     if let Some(var_47) = &input.s3_bucket_prefix {
         scope_46.string(var_47);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_connection_draining(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConnectionDraining,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_48 = writer.prefix("Enabled");
     {
@@ -241,13 +250,14 @@ pub fn serialize_structure_crate_model_connection_draining(
             aws_smithy_types::Number::NegInt((*var_50).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_connection_settings(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConnectionSettings,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_51 = writer.prefix("IdleTimeout");
     if let Some(var_52) = &input.idle_timeout {
@@ -256,13 +266,14 @@ pub fn serialize_structure_crate_model_connection_settings(
             aws_smithy_types::Number::NegInt((*var_52).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_additional_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AdditionalAttribute,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_53 = writer.prefix("Key");
     if let Some(var_54) = &input.key {
@@ -273,4 +284,5 @@ pub fn serialize_structure_crate_model_additional_attribute(
     if let Some(var_56) = &input.value {
         scope_55.string(var_56);
     }
+    Ok(())
 }

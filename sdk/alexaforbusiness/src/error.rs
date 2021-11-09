@@ -10106,6 +10106,12 @@ pub struct ResourceInUseException {
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl ResourceInUseException {
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInUseException");

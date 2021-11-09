@@ -6996,6 +6996,12 @@ pub struct ResourceAlreadyExistsFault {
     #[allow(missing_docs)] // documentation missing in model
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ResourceAlreadyExistsFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAlreadyExistsFault");

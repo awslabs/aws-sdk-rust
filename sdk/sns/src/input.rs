@@ -142,10 +142,7 @@ impl AddPermissionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_permission(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -291,7 +288,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_check_if_phone_number_is_opted_out(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_check_if_phone_number_is_opted_out(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -473,10 +470,7 @@ impl ConfirmSubscriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_confirm_subscription(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_confirm_subscription(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -671,10 +665,7 @@ impl CreatePlatformApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_platform_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -892,10 +883,7 @@ impl CreatePlatformEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_platform_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1060,7 +1048,7 @@ impl CreateSmsSandboxPhoneNumberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sms_sandbox_phone_number(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_sms_sandbox_phone_number(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1411,10 +1399,7 @@ impl CreateTopicInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_topic(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_topic(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1558,10 +1543,8 @@ impl DeleteEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1712,10 +1695,7 @@ impl DeletePlatformApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_platform_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1861,7 +1841,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_sms_sandbox_phone_number(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_sms_sandbox_phone_number(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2006,10 +1986,7 @@ impl DeleteTopicInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_topic(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_topic(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2156,10 +2133,7 @@ impl GetEndpointAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_endpoint_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2308,7 +2282,7 @@ impl GetPlatformApplicationAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_platform_application_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_platform_application_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2469,10 +2443,7 @@ impl GetSmsAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sms_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_sms_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2604,7 +2575,7 @@ impl GetSmsSandboxAccountStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sms_sandbox_account_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_sms_sandbox_account_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2748,10 +2719,7 @@ impl GetSubscriptionAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_subscription_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2896,10 +2864,7 @@ impl GetTopicAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_topic_attributes(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_topic_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3062,7 +3027,7 @@ impl ListEndpointsByPlatformApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_endpoints_by_platform_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_endpoints_by_platform_application(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3222,10 +3187,7 @@ impl ListOriginationNumbersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_origination_numbers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3377,10 +3339,7 @@ impl ListPhoneNumbersOptedOutInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_phone_numbers_opted_out(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3530,10 +3489,7 @@ impl ListPlatformApplicationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_platform_applications(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3693,7 +3649,7 @@ impl ListSmsSandboxPhoneNumbersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_sms_sandbox_phone_numbers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_sms_sandbox_phone_numbers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3839,10 +3795,7 @@ impl ListSubscriptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_subscriptions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_subscriptions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4002,10 +3955,7 @@ impl ListSubscriptionsByTopicInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_subscriptions_by_topic(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4150,10 +4100,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4297,10 +4246,7 @@ impl ListTopicsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_topics(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_topics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4445,10 +4391,7 @@ impl OptInPhoneNumberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_opt_in_phone_number(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_opt_in_phone_number(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4924,10 +4867,7 @@ impl PublishInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_publish(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_publish(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5079,10 +5019,7 @@ impl RemovePermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_permission(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_remove_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5302,10 +5239,7 @@ impl SetEndpointAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_endpoint_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5599,7 +5533,7 @@ impl SetPlatformApplicationAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_platform_application_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_platform_application_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5932,10 +5866,7 @@ impl SetSmsAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_sms_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_sms_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6214,10 +6145,7 @@ impl SetSubscriptionAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_subscription_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6508,10 +6436,7 @@ impl SetTopicAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_topic_attributes(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_topic_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7000,10 +6925,7 @@ impl SubscribeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_subscribe(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_subscribe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7168,10 +7090,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7318,10 +7237,7 @@ impl UnsubscribeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_unsubscribe(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_unsubscribe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7486,10 +7402,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7652,7 +7565,7 @@ impl VerifySmsSandboxPhoneNumberInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_sms_sandbox_phone_number(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_verify_sms_sandbox_phone_number(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7725,6 +7638,17 @@ pub struct VerifySmsSandboxPhoneNumberInput {
     /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
     pub one_time_password: std::option::Option<std::string::String>,
 }
+impl VerifySmsSandboxPhoneNumberInput {
+    /// <p>The destination phone number to verify.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The OTP sent to the destination number from the
+    /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    pub fn one_time_password(&self) -> std::option::Option<&str> {
+        self.one_time_password.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifySmsSandboxPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifySmsSandboxPhoneNumberInput");
@@ -7743,6 +7667,16 @@ pub struct UntagResourceInput {
     /// <p>The list of tag keys to remove from the specified topic.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the topic from which to remove tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys to remove from the specified topic.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7758,6 +7692,12 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct UnsubscribeInput {
     /// <p>The ARN of the subscription to be deleted.</p>
     pub subscription_arn: std::option::Option<std::string::String>,
+}
+impl UnsubscribeInput {
+    /// <p>The ARN of the subscription to be deleted.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UnsubscribeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7776,6 +7716,17 @@ pub struct TagResourceInput {
     /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
     /// optional value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the topic to which to add tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
+    /// optional value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7943,6 +7894,172 @@ pub struct SubscribeInput {
     /// <p>The default value is <code>false</code>.</p>
     pub return_subscription_arn: bool,
 }
+impl SubscribeInput {
+    /// <p>The ARN of the topic you want to subscribe to.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The protocol that you want to use. Supported protocols include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>http</code> – delivery of JSON-encoded message via HTTP
+    /// POST</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>https</code> – delivery of JSON-encoded message via HTTPS
+    /// POST</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>email</code> – delivery of message via SMTP</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>email-json</code> – delivery of JSON-encoded message via
+    /// SMTP</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sms</code> – delivery of message via SMS</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+    /// queue</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>application</code> – delivery of JSON-encoded message to an
+    /// EndpointArn for a mobile app and device</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>lambda</code> – delivery of JSON-encoded message to an Lambda
+    /// function</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon
+    /// Kinesis Data Firehose delivery stream.</p>
+    /// </li>
+    /// </ul>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
+    /// <p>The endpoint that you want to receive notifications. Endpoints vary by
+    /// protocol:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning
+    /// with <code>http://</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning
+    /// with <code>https://</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email
+    /// address.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+    /// SMS-enabled device.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
+    /// queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of
+    /// a mobile app and device.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda
+    /// function.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon
+    /// Kinesis Data Firehose delivery stream.</p>
+    /// </li>
+    /// </ul>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>A map of attributes with their corresponding values.</p>
+    /// <p>The following lists the names, descriptions, and values of the special request
+    /// parameters that the <code>Subscribe</code> action uses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+    /// failed deliveries to HTTP/S endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FilterPolicy</code> – The simple JSON object that lets your
+    /// subscriber receive only a subset of messages, rather than receiving every
+    /// message published to the topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+    /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+    /// need for the endpoints to process JSON formatting, which is otherwise created
+    /// for Amazon SNS metadata.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+    /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+    /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+    /// in the dead-letter queue for further analysis or reprocessing.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p>
+    /// </li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+    /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
+    /// subscription ARN, even if the subscription is not yet confirmed.</p>
+    /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all
+    /// cases, even if the subscription is not yet confirmed. In addition to the ARN for
+    /// confirmed subscriptions, the response also includes the <code>pending
+    /// subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+    /// subscription becomes confirmed when the subscriber calls the
+    /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+    /// <p></p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn return_subscription_arn(&self) -> bool {
+        self.return_subscription_arn
+    }
+}
 impl std::fmt::Debug for SubscribeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribeInput");
@@ -8024,6 +8141,78 @@ pub struct SetTopicAttributesInput {
     /// <p>The new value for the attribute.</p>
     pub attribute_value: std::option::Option<std::string::String>,
 }
+impl SetTopicAttributesInput {
+    /// <p>The ARN of the topic to modify.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>A map of attributes with their corresponding values.</p>
+    /// <p>The following lists the names, descriptions, and values of the special request
+    /// parameters that the <code>SetTopicAttributes</code> action uses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+    /// failed deliveries to HTTP/S endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DisplayName</code> – The display name to use for a topic with SMS
+    /// subscriptions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Policy</code> – The policy that defines who can access your
+    /// topic. By default, only the topic owner can publish or subscribe to the
+    /// topic.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
+    /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+    /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+    /// Reference</i>. </p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+    /// FIFO topics.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+    /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+    /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+    /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+    /// </li>
+    /// <li>
+    /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+    /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+    /// the body of the message (but not the attributes of the message).</p>
+    /// <p>(Optional) To override the generated value, you can specify a value
+    /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+    /// action.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The new value for the attribute.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
+}
 impl std::fmt::Debug for SetTopicAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTopicAttributesInput");
@@ -8093,6 +8282,69 @@ pub struct SetSubscriptionAttributesInput {
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The new value for the attribute in JSON format.</p>
     pub attribute_value: std::option::Option<std::string::String>,
+}
+impl SetSubscriptionAttributesInput {
+    /// <p>The ARN of the subscription to modify.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
+    /// <p>A map of attributes with their corresponding values.</p>
+    /// <p>The following lists the names, descriptions, and values of the special request
+    /// parameters that this action uses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+    /// failed deliveries to HTTP/S endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FilterPolicy</code> – The simple JSON object that lets your
+    /// subscriber receive only a subset of messages, rather than receiving every
+    /// message published to the topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+    /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+    /// need for the endpoints to process JSON formatting, which is otherwise created
+    /// for Amazon SNS metadata.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+    /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+    /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+    /// in the dead-letter queue for further analysis or reprocessing.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p>
+    /// </li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+    /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The new value for the attribute in JSON format.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
 }
 impl std::fmt::Debug for SetSubscriptionAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8197,6 +8449,100 @@ pub struct SetSmsAttributesInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SetSmsAttributesInput {
+    /// <p>The default settings for sending SMS messages from your account. You can set values
+    /// for the following attribute names:</p>
+    /// <p>
+    /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
+    /// each month to send SMS messages. When Amazon SNS determines that sending an SMS message would
+    /// incur a cost that exceeds this limit, it stops sending SMS messages within
+    /// minutes.</p>
+    /// <important>
+    /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During
+    /// that interval, if you continue to send SMS messages, you will incur costs that
+    /// exceed your limit.</p>
+    /// </important>
+    /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to
+    /// raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit
+    /// value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting
+    /// an SMS monthly spend limit increase.</p>
+    /// <p>
+    /// <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write
+    /// logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS
+    /// writes a log that includes the message price, the success or failure status, the reason
+    /// for failure (if the message failed), the message dwell time, and other
+    /// information.</p>
+    /// <p>
+    /// <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
+    /// deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an
+    /// integer from 0 - 100. For example, to write logs only for failed deliveries, set this
+    /// value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to
+    /// <code>10</code>.</p>
+    /// <p>
+    /// <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
+    /// as the sender on the receiving device. Support for sender IDs varies by country. The
+    /// sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one
+    /// letter.</p>
+    /// <p>
+    /// <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You
+    /// can assign the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Promotional</code> – (Default) Noncritical messages, such as marketing
+    /// messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Transactional</code> – Critical messages that support customer
+    /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
+    /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
+    /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
+    /// the bucket. The report includes the following information for each SMS message that was
+    /// successfully delivered by your account:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Time that the message was published (in UTC)</p>
+    /// </li>
+    /// <li>
+    /// <p>Message ID</p>
+    /// </li>
+    /// <li>
+    /// <p>Destination phone number</p>
+    /// </li>
+    /// <li>
+    /// <p>Message type</p>
+    /// </li>
+    /// <li>
+    /// <p>Delivery status</p>
+    /// </li>
+    /// <li>
+    /// <p>Message price (in USD)</p>
+    /// </li>
+    /// <li>
+    /// <p>Part number (a message is split into multiple parts if it is too long for a
+    /// single message)</p>
+    /// </li>
+    /// <li>
+    /// <p>Total number of parts</p>
+    /// </li>
+    /// </ul>
+    /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service
+    /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
+    /// actions.</p>
+    /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
+    /// <i>Amazon SNS Developer Guide</i>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for SetSmsAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetSmsAttributesInput");
@@ -8273,6 +8619,77 @@ pub struct SetPlatformApplicationAttributesInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SetPlatformApplicationAttributesInput {
+    /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
+    /// <p>A map of the platform application attributes. Attributes in this map include the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PlatformCredential</code> – The credential received from the
+    /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+    /// <code>PlatformCredential</code> is <code>private key</code>. For
+    /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
+    /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
+    /// is <code>client secret</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PlatformPrincipal</code> – The principal received from the
+    /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+    /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
+    /// <code>GCM</code> (Firebase Cloud Messaging), there is no
+    /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
+    /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventEndpointCreated</code> – Topic ARN to which
+    /// <code>EndpointCreated</code> event notifications are sent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventEndpointDeleted</code> – Topic ARN to which
+    /// <code>EndpointDeleted</code> event notifications are sent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventEndpointUpdated</code> – Topic ARN to which
+    /// <code>EndpointUpdate</code> event notifications are sent.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EventDeliveryFailure</code> – Topic ARN to which
+    /// <code>DeliveryFailure</code> event notifications are sent upon Direct
+    /// Publish delivery failure (permanent) to one of the application's
+    /// endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
+    /// write access to use CloudWatch Logs on your behalf.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
+    /// write access to use CloudWatch Logs on your behalf.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
+    /// of successfully delivered messages.</p>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for SetPlatformApplicationAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetPlatformApplicationAttributesInput");
@@ -8314,6 +8731,41 @@ pub struct SetEndpointAttributesInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SetEndpointAttributesInput {
+    /// <p>EndpointArn used for SetEndpointAttributes action.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CustomUserData</code> – arbitrary user data to associate with the
+    /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+    /// less than 2KB.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Enabled</code> – flag that enables/disables delivery to the
+    /// endpoint. Amazon SNS will set this to false when a notification service indicates to
+    /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+    /// after updating Token.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Token</code> – device token, also referred to as a registration id,
+    /// for an app and mobile device. This is returned from the notification service
+    /// when an app and mobile device are registered with the notification
+    /// service.</p>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for SetEndpointAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetEndpointAttributesInput");
@@ -8331,6 +8783,16 @@ pub struct RemovePermissionInput {
     pub topic_arn: std::option::Option<std::string::String>,
     /// <p>The unique label of the statement you want to remove.</p>
     pub label: std::option::Option<std::string::String>,
+}
+impl RemovePermissionInput {
+    /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The unique label of the statement you want to remove.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
 }
 impl std::fmt::Debug for RemovePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8472,6 +8934,154 @@ pub struct PublishInput {
     /// order). Every message must include a <code>MessageGroupId</code>.</p>
     pub message_group_id: std::option::Option<std::string::String>,
 }
+impl PublishInput {
+    /// <p>The topic you want to publish to.</p>
+    /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
+    /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must
+    /// specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+    /// parameters.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
+    /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
+    /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code>
+    /// parameters.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The message you want to send.</p>
+    /// <p>If you are publishing to a topic and you want to send the same message to all
+    /// transport protocols, include the text of the message as a String value. If you want to
+    /// send different messages for each transport protocol, set the value of the
+    /// <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object
+    /// for the <code>Message</code> parameter.
+    /// </p>
+    /// <p></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most
+    /// 256 KB in size (262,144 bytes, not 262,144 characters).</p>
+    /// </li>
+    /// <li>
+    /// <p>For SMS, each message can contain up to 140 characters. This character limit
+    /// depends on the encoding schema. For example, an SMS message can contain 160 GSM
+    /// characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+    /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message
+    /// as multiple messages, each fitting within the size limit. Messages aren't
+    /// truncated mid-word but are cut off at whole-word boundaries.</p>
+    /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600
+    /// characters.</p>
+    /// </li>
+    /// </ul>
+    /// <p>JSON-specific constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Keys in the JSON object that correspond to supported transport protocols must
+    /// have simple JSON string values.</p>
+    /// </li>
+    /// <li>
+    /// <p>The values will be parsed (unescaped) before they are used in outgoing
+    /// messages.</p>
+    /// </li>
+    /// <li>
+    /// <p>Outbound notifications are JSON encoded (meaning that the characters will be
+    /// reescaped for sending).</p>
+    /// </li>
+    /// <li>
+    /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p>
+    /// </li>
+    /// <li>
+    /// <p>Values have a maximum length bounded by the overall message size (so,
+    /// including multiple protocols may limit message sizes).</p>
+    /// </li>
+    /// <li>
+    /// <p>Non-string values will cause the key to be ignored.</p>
+    /// </li>
+    /// <li>
+    /// <p>Keys that do not correspond to supported transport protocols are
+    /// ignored.</p>
+    /// </li>
+    /// <li>
+    /// <p>Duplicate keys are not allowed.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failure to parse or validate any key or value in the message will cause the
+    /// <code>Publish</code> call to return an error (no partial delivery).</p>
+    /// </li>
+    /// </ul>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to
+    /// email endpoints. This field will also be included, if present, in the standard JSON
+    /// messages delivered to other endpoints.</p>
+    /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or
+    /// punctuation mark; must not include line breaks or control characters; and must be less
+    /// than 100 characters long.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
+    /// message for each protocol. For example, using one publish action, you can send a short
+    /// message to your SMS subscribers and a longer message to your email subscribers. If you
+    /// set <code>MessageStructure</code> to <code>json</code>, the value of the
+    /// <code>Message</code> parameter must: </p>
+    /// <ul>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p>
+    /// </li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a
+    /// string.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can define other top-level keys that define the message you want to send to a
+    /// specific transport protocol (e.g., "http").</p>
+    /// <p>Valid value: <code>json</code>
+    /// </p>
+    pub fn message_structure(&self) -> std::option::Option<&str> {
+        self.message_structure.as_deref()
+    }
+    /// <p>Message attributes for Publish action.</p>
+    pub fn message_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    > {
+        self.message_attributes.as_ref()
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+    /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
+    /// (a-z, A-Z, 0-9) and punctuation
+    /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
+    /// used for deduplication of sent messages. If a message with a particular
+    /// <code>MessageDeduplicationId</code> is sent successfully, any message sent with the
+    /// same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is
+    /// treated as a duplicate. </p>
+    /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
+    /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
+    /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
+    pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
+        self.message_deduplication_id.as_deref()
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+    /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
+    /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
+    /// specific message group. Messages that belong to the same message group are processed in
+    /// a FIFO manner (however, messages in different message groups might be processed out of
+    /// order). Every message must include a <code>MessageGroupId</code>.</p>
+    pub fn message_group_id(&self) -> std::option::Option<&str> {
+        self.message_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishInput");
@@ -8495,6 +9105,12 @@ pub struct OptInPhoneNumberInput {
     /// <p>The phone number to opt in. Use E.164 format.</p>
     pub phone_number: std::option::Option<std::string::String>,
 }
+impl OptInPhoneNumberInput {
+    /// <p>The phone number to opt in. Use E.164 format.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+}
 impl std::fmt::Debug for OptInPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OptInPhoneNumberInput");
@@ -8510,6 +9126,12 @@ pub struct ListTopicsInput {
     /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTopicsInput {
+    /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTopicsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTopicsInput");
@@ -8524,6 +9146,12 @@ impl std::fmt::Debug for ListTopicsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the topic for which to list tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the topic for which to list tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8542,6 +9170,16 @@ pub struct ListSubscriptionsByTopicInput {
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSubscriptionsByTopicInput {
+    /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSubscriptionsByTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSubscriptionsByTopicInput");
@@ -8557,6 +9195,12 @@ impl std::fmt::Debug for ListSubscriptionsByTopicInput {
 pub struct ListSubscriptionsInput {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSubscriptionsInput {
+    /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSubscriptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8576,6 +9220,17 @@ pub struct ListSmsSandboxPhoneNumbersInput {
     /// <p>The maximum number of phone numbers to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListSmsSandboxPhoneNumbersInput {
+    /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
+    /// returns.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of phone numbers to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSmsSandboxPhoneNumbersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSmsSandboxPhoneNumbersInput");
@@ -8592,6 +9247,13 @@ pub struct ListPlatformApplicationsInput {
     /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
     /// additional records that are available after the first page results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPlatformApplicationsInput {
+    /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
+    /// additional records that are available after the first page results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPlatformApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8610,6 +9272,14 @@ pub struct ListPhoneNumbersOptedOutInput {
     /// available after the first page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPhoneNumbersOptedOutInput {
+    /// <p>A <code>NextToken</code> string is used when you call the
+    /// <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are
+    /// available after the first page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPhoneNumbersOptedOutInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumbersOptedOutInput");
@@ -8626,6 +9296,16 @@ pub struct ListOriginationNumbersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of origination numbers to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListOriginationNumbersInput {
+    /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of origination numbers to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListOriginationNumbersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8646,6 +9326,17 @@ pub struct ListEndpointsByPlatformApplicationInput {
     /// retrieve additional records that are available after the first page results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEndpointsByPlatformApplicationInput {
+    /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
+    /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to
+    /// retrieve additional records that are available after the first page results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEndpointsByPlatformApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsByPlatformApplicationInput");
@@ -8662,6 +9353,12 @@ pub struct GetTopicAttributesInput {
     /// <p>The ARN of the topic whose properties you want to get.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl GetTopicAttributesInput {
+    /// <p>The ARN of the topic whose properties you want to get.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTopicAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTopicAttributesInput");
@@ -8676,6 +9373,12 @@ impl std::fmt::Debug for GetTopicAttributesInput {
 pub struct GetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
     pub subscription_arn: std::option::Option<std::string::String>,
+}
+impl GetSubscriptionAttributesInput {
+    /// <p>The ARN of the subscription whose properties you want to get.</p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSubscriptionAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8706,6 +9409,15 @@ pub struct GetSmsAttributesInput {
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetSmsAttributesInput {
+    /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for
+    /// which you want values.</p>
+    /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+    /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
+    pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSmsAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSmsAttributesInput");
@@ -8720,6 +9432,12 @@ impl std::fmt::Debug for GetSmsAttributesInput {
 pub struct GetPlatformApplicationAttributesInput {
     /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
     pub platform_application_arn: std::option::Option<std::string::String>,
+}
+impl GetPlatformApplicationAttributesInput {
+    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPlatformApplicationAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8736,6 +9454,12 @@ pub struct GetEndpointAttributesInput {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
+impl GetEndpointAttributesInput {
+    /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEndpointAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEndpointAttributesInput");
@@ -8750,6 +9474,12 @@ impl std::fmt::Debug for GetEndpointAttributesInput {
 pub struct DeleteTopicInput {
     /// <p>The ARN of the topic you want to delete.</p>
     pub topic_arn: std::option::Option<std::string::String>,
+}
+impl DeleteTopicInput {
+    /// <p>The ARN of the topic you want to delete.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8766,6 +9496,12 @@ pub struct DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
     pub phone_number: std::option::Option<std::string::String>,
 }
+impl DeleteSmsSandboxPhoneNumberInput {
+    /// <p>The destination phone number to delete.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSmsSandboxPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSmsSandboxPhoneNumberInput");
@@ -8781,6 +9517,12 @@ pub struct DeletePlatformApplicationInput {
     /// <p>PlatformApplicationArn of platform application object to delete.</p>
     pub platform_application_arn: std::option::Option<std::string::String>,
 }
+impl DeletePlatformApplicationInput {
+    /// <p>PlatformApplicationArn of platform application object to delete.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePlatformApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePlatformApplicationInput");
@@ -8795,6 +9537,12 @@ impl std::fmt::Debug for DeletePlatformApplicationInput {
 pub struct DeleteEndpointInput {
     /// <p>EndpointArn of endpoint to delete.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointInput {
+    /// <p>EndpointArn of endpoint to delete.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8894,6 +9642,101 @@ pub struct CreateTopicInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateTopicInput {
+    /// <p>The name of the topic you want to create.</p>
+    /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII
+    /// letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters
+    /// long.</p>
+    /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
+    /// suffix. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A map of attributes with their corresponding values.</p>
+    /// <p>The following lists the names, descriptions, and values of the special request
+    /// parameters that the <code>CreateTopic</code> action uses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+    /// failed deliveries to HTTP/S endpoints.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DisplayName</code> – The display name to use for a topic with SMS
+    /// subscriptions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FifoTopic</code> – Set to true to create a FIFO topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Policy</code> – The policy that defines who can access your
+    /// topic. By default, only the topic owner can publish or subscribe to the
+    /// topic.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+    /// encryption</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
+    /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+    /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+    /// Reference</i>. </p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
+    /// topic is created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+    /// FIFO topics.</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+    /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+    /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+    /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+    /// </li>
+    /// <li>
+    /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+    /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+    /// the body of the message (but not the attributes of the message).</p>
+    /// <p>(Optional) To override the generated value, you can specify a value
+    /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+    /// action.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The list of tags to add to a new topic.</p>
+    /// <note>
+    /// <p>To be able to tag a topic on creation, you must have the
+    /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
+    /// permissions.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTopicInput");
@@ -8914,6 +9757,18 @@ pub struct CreateSmsSandboxPhoneNumberInput {
     /// <p>The language to use for sending the OTP. The default value is
     /// <code>en-US</code>.</p>
     pub language_code: std::option::Option<crate::model::LanguageCodeString>,
+}
+impl CreateSmsSandboxPhoneNumberInput {
+    /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
+    /// to the list of verified phone numbers that you can send SMS messages to.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The language to use for sending the OTP. The default value is
+    /// <code>en-US</code>.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCodeString> {
+        self.language_code.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSmsSandboxPhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8944,6 +9799,33 @@ pub struct CreatePlatformEndpointInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreatePlatformEndpointInput {
+    /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an
+    /// endpoint.</p>
+    pub fn platform_application_arn(&self) -> std::option::Option<&str> {
+        self.platform_application_arn.as_deref()
+    }
+    /// <p>Unique identifier created by the notification service for an app on a device. The
+    /// specific name for Token will vary, depending on which notification service is being
+    /// used. For example, when using APNS as the notification service, you need the device
+    /// token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token
+    /// equivalent is called the registration ID.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The
+    /// data must be in UTF-8 format and less than 2KB.</p>
+    pub fn custom_user_data(&self) -> std::option::Option<&str> {
+        self.custom_user_data.as_deref()
+    }
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePlatformEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlatformEndpointInput");
@@ -8970,6 +9852,26 @@ pub struct CreatePlatformApplicationInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreatePlatformApplicationInput {
+    /// <p>Application names must be made up of only uppercase and lowercase ASCII letters,
+    /// numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters
+    /// long.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
+    /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePlatformApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePlatformApplicationInput");
@@ -8994,6 +9896,23 @@ pub struct ConfirmSubscriptionInput {
     /// requires Amazon Web Services authentication. </p>
     pub authenticate_on_unsubscribe: std::option::Option<std::string::String>,
 }
+impl ConfirmSubscriptionInput {
+    /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
+    /// parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic
+    /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
+    /// requires Amazon Web Services authentication. </p>
+    pub fn authenticate_on_unsubscribe(&self) -> std::option::Option<&str> {
+        self.authenticate_on_unsubscribe.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfirmSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmSubscriptionInput");
@@ -9013,6 +9932,12 @@ impl std::fmt::Debug for ConfirmSubscriptionInput {
 pub struct CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
     pub phone_number: std::option::Option<std::string::String>,
+}
+impl CheckIfPhoneNumberIsOptedOutInput {
+    /// <p>The phone number for which you want to check the opt out status.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckIfPhoneNumberIsOptedOutInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9037,6 +9962,27 @@ pub struct AddPermissionInput {
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
     pub action_name: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AddPermissionInput {
+    /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>A unique identifier for the new policy statement.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The account IDs of the users (principals) who will be given access to the
+    /// specified actions. The users must have account, but do not need to be signed up for
+    /// this service.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The action you want to allow for the specified principal(s).</p>
+    /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
+    pub fn action_name(&self) -> std::option::Option<&[std::string::String]> {
+        self.action_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AddPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

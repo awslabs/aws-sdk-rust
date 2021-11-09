@@ -180,10 +180,9 @@ impl AcceptPortfolioShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_portfolio_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_accept_portfolio_share(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -346,7 +345,7 @@ impl AssociateBudgetWithResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_budget_with_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_budget_with_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -571,7 +570,7 @@ impl AssociatePrincipalWithPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_principal_with_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_principal_with_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -793,7 +792,7 @@ impl AssociateProductWithPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_product_with_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_product_with_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1021,7 +1020,7 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_service_action_with_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_service_action_with_provisioning_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1189,7 +1188,7 @@ impl AssociateTagOptionWithResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_tag_option_with_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_tag_option_with_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1400,7 +1399,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_service_action_with_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_service_action_with_provisioning_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1613,7 +1612,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_service_action_from_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_service_action_from_provisioning_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1932,10 +1931,7 @@ impl CopyProductInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_copy_product(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_copy_product(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2352,10 +2348,7 @@ impl CreateConstraintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_constraint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_constraint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2616,10 +2609,7 @@ impl CreatePortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_portfolio(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_portfolio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2861,10 +2851,9 @@ impl CreatePortfolioShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_portfolio_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_portfolio_share(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3213,10 +3202,7 @@ impl CreateProductInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_product(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_product(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3578,7 +3564,7 @@ impl CreateProvisionedProductPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_provisioned_product_plan(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3810,10 +3796,7 @@ impl CreateProvisioningArtifactInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_provisioning_artifact(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4132,10 +4115,7 @@ impl CreateServiceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_service_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_service_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4297,10 +4277,7 @@ impl CreateTagOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_tag_option(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_tag_option(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4493,10 +4470,7 @@ impl DeleteConstraintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_constraint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_constraint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4689,10 +4663,7 @@ impl DeletePortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_portfolio(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_portfolio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4912,10 +4883,9 @@ impl DeletePortfolioShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_portfolio_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_portfolio_share(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5107,10 +5077,7 @@ impl DeleteProductInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_product(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_product(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5318,7 +5285,7 @@ impl DeleteProvisionedProductPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_provisioned_product_plan(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5530,10 +5497,7 @@ impl DeleteProvisioningArtifactInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_provisioning_artifact(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5726,10 +5690,7 @@ impl DeleteServiceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_service_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_service_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5877,10 +5838,7 @@ impl DeleteTagOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_tag_option(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_tag_option(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6073,10 +6031,7 @@ impl DescribeConstraintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_constraint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_constraint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6275,10 +6230,7 @@ impl DescribeCopyProductStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_copy_product_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6471,10 +6423,7 @@ impl DescribePortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_portfolio(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_portfolio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6674,10 +6623,7 @@ impl DescribePortfolioSharesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_shares(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6831,7 +6777,7 @@ impl DescribePortfolioShareStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_share_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_share_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7037,10 +6983,7 @@ impl DescribeProductInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_product(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_product(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7272,10 +7215,7 @@ impl DescribeProductAsAdminInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_product_as_admin(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7468,10 +7408,7 @@ impl DescribeProductViewInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_product_view(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_product_view(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7683,10 +7620,7 @@ impl DescribeProvisionedProductInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7904,7 +7838,7 @@ impl DescribeProvisionedProductPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product_plan(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8153,7 +8087,7 @@ impl DescribeProvisioningArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8418,7 +8352,7 @@ impl DescribeProvisioningParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8637,10 +8571,8 @@ impl DescribeRecordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_record(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_record(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8835,10 +8767,7 @@ impl DescribeServiceActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_service_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9053,7 +8982,7 @@ impl DescribeServiceActionExecutionParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_service_action_execution_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_service_action_execution_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9202,10 +9131,7 @@ impl DescribeTagOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_tag_option(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_tag_option(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9342,7 +9268,7 @@ impl DisableAwsOrganizationsAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_aws_organizations_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_aws_organizations_access(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9498,7 +9424,7 @@ impl DisassociateBudgetFromResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_budget_from_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_budget_from_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9708,7 +9634,7 @@ impl DisassociatePrincipalFromPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_principal_from_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_principal_from_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9915,7 +9841,7 @@ impl DisassociateProductFromPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_product_from_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_product_from_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10143,7 +10069,7 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_service_action_from_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_service_action_from_provisioning_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10312,7 +10238,7 @@ impl DisassociateTagOptionFromResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_tag_option_from_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_tag_option_from_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10450,7 +10376,7 @@ impl EnableAwsOrganizationsAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_aws_organizations_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_aws_organizations_access(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10657,7 +10583,7 @@ impl ExecuteProvisionedProductPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_plan(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10922,7 +10848,7 @@ impl ExecuteProvisionedProductServiceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_service_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_service_action(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11060,7 +10986,7 @@ impl GetAwsOrganizationsAccessStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aws_organizations_access_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aws_organizations_access_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11310,7 +11236,7 @@ impl GetProvisionedProductOutputsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_provisioned_product_outputs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_provisioned_product_outputs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11571,7 +11497,7 @@ impl ImportAsProvisionedProductInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_as_provisioned_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_import_as_provisioned_product(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11823,7 +11749,7 @@ impl ListAcceptedPortfolioSharesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_accepted_portfolio_shares(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_accepted_portfolio_shares(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12043,10 +11969,7 @@ impl ListBudgetsForResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_budgets_for_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12276,7 +12199,7 @@ impl ListConstraintsForPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_constraints_for_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_constraints_for_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12494,10 +12417,7 @@ impl ListLaunchPathsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_launch_paths(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_launch_paths(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12758,7 +12678,7 @@ impl ListOrganizationPortfolioAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_organization_portfolio_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_organization_portfolio_access(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12991,10 +12911,7 @@ impl ListPortfolioAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_portfolio_access(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_portfolio_access(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13198,10 +13115,8 @@ impl ListPortfoliosInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_portfolios(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_portfolios(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13421,10 +13336,7 @@ impl ListPortfoliosForProductInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_portfolios_for_product(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13642,7 +13554,7 @@ impl ListPrincipalsForPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_principals_for_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_principals_for_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13879,7 +13791,7 @@ impl ListProvisionedProductPlansInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_provisioned_product_plans(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_provisioned_product_plans(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14076,10 +13988,7 @@ impl ListProvisioningArtifactsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14303,7 +14212,7 @@ impl ListProvisioningArtifactsForServiceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts_for_service_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts_for_service_action(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14540,10 +14449,7 @@ impl ListRecordHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_record_history(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_record_history(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14760,7 +14666,7 @@ impl ListResourcesForTagOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resources_for_tag_option(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resources_for_tag_option(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14966,10 +14872,7 @@ impl ListServiceActionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_actions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_service_actions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15205,7 +15108,7 @@ impl ListServiceActionsForProvisioningArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_actions_for_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_service_actions_for_provisioning_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15429,7 +15332,7 @@ impl ListStackInstancesForProvisionedProductInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stack_instances_for_provisioned_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_instances_for_provisioned_product(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15607,10 +15510,7 @@ impl ListTagOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tag_options(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tag_options(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15998,10 +15898,7 @@ impl ProvisionProductInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_provision_product(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_provision_product(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16243,10 +16140,9 @@ impl RejectPortfolioShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_portfolio_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reject_portfolio_share(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16469,10 +16365,7 @@ impl ScanProvisionedProductsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_scan_provisioned_products(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16743,10 +16636,8 @@ impl SearchProductsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_products(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_products(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17047,10 +16938,7 @@ impl SearchProductsAsAdminInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_products_as_admin(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17353,10 +17241,7 @@ impl SearchProvisionedProductsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_provisioned_products(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17628,7 +17513,7 @@ impl TerminateProvisionedProductInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_provisioned_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_terminate_provisioned_product(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17948,10 +17833,7 @@ impl UpdateConstraintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_constraint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_constraint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18225,10 +18107,7 @@ impl UpdatePortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_portfolio(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_portfolio(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18460,10 +18339,9 @@ impl UpdatePortfolioShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_portfolio_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_portfolio_share(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18787,10 +18665,7 @@ impl UpdateProductInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_product(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_product(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19166,10 +19041,7 @@ impl UpdateProvisionedProductInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19449,7 +19321,7 @@ impl UpdateProvisionedProductPropertiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product_properties(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product_properties(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -19722,10 +19594,7 @@ impl UpdateProvisioningArtifactInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_provisioning_artifact(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19977,10 +19846,7 @@ impl UpdateServiceActionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_service_action(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_service_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20154,10 +20020,7 @@ impl UpdateTagOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_tag_option(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_tag_option(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20230,6 +20093,20 @@ pub struct UpdateTagOptionInput {
     /// <p>The updated active state.</p>
     pub active: std::option::Option<bool>,
 }
+impl UpdateTagOptionInput {
+    /// <p>The TagOption identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The updated value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The updated active state.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+}
 impl std::fmt::Debug for UpdateTagOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTagOptionInput");
@@ -20270,6 +20147,46 @@ pub struct UpdateServiceActionInput {
     /// </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
+}
+impl UpdateServiceActionInput {
+    /// <p>The self-service action identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The self-service action name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A map that defines the self-service action.</p>
+    pub fn definition(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
+    > {
+        self.definition.as_ref()
+    }
+    /// <p>The self-service action description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateServiceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20320,6 +20237,55 @@ pub struct UpdateProvisioningArtifactInput {
     /// users that the product version is deprecated. Users are able to make updates to a provisioned product
     /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
+}
+impl UpdateProvisioningArtifactInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The updated name of the provisioning artifact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description of the provisioning artifact.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the product version is active.</p>
+    /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
+    /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
+    /// users that the product version is deprecated. Users are able to make updates to a provisioned product
+    /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+    pub fn guidance(&self) -> std::option::Option<&crate::model::ProvisioningArtifactGuidance> {
+        self.guidance.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20382,6 +20348,60 @@ pub struct UpdateProvisionedProductPropertiesInput {
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl UpdateProvisionedProductPropertiesInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>A map that contains the provisioned product properties to be updated.</p>
+    /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+    /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
+    /// role that is associated with a provisioned product. This role is used when an end user
+    /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
+    /// <code>TerminateProvisionedProduct</code>, or
+    /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+    ///
+    /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
+    /// that has permission to see, update, terminate, and execute service actions in the
+    /// provisioned product.</p>
+    /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
+    /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
+    /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
+    /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+    /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
+    /// Service Catalog console such as update, terminate, and execute service actions.
+    /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
+    /// API or the Service Catalog console on that provisioned product.</p>
+    pub fn provisioned_product_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
+    > {
+        self.provisioned_product_properties.as_ref()
+    }
+    /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProvisionedProductPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProvisionedProductPropertiesInput");
@@ -20443,6 +20463,80 @@ pub struct UpdateProvisionedProductInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
     pub update_token: std::option::Option<std::string::String>,
+}
+impl UpdateProvisionedProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The name of the provisioned product. You cannot specify both
+    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_name.as_deref()
+    }
+    /// <p>The path identifier. This value is optional if the product
+    /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+    pub fn path_id(&self) -> std::option::Option<&str> {
+        self.path_id.as_deref()
+    }
+    /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    pub fn path_name(&self) -> std::option::Option<&str> {
+        self.path_name.as_deref()
+    }
+    /// <p>The new parameters.</p>
+    pub fn provisioning_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateProvisioningParameter]> {
+        self.provisioning_parameters.as_deref()
+    }
+    /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
+    pub fn provisioning_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateProvisioningPreferences> {
+        self.provisioning_preferences.as_ref()
+    }
+    /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateProvisionedProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20508,6 +20602,66 @@ pub struct UpdateProductInput {
     /// <p>The tags to remove from the product.</p>
     pub remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The updated product name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated owner of the product.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The updated description of the product.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated distributor of the product.</p>
+    pub fn distributor(&self) -> std::option::Option<&str> {
+        self.distributor.as_deref()
+    }
+    /// <p>The updated support description for the product.</p>
+    pub fn support_description(&self) -> std::option::Option<&str> {
+        self.support_description.as_deref()
+    }
+    /// <p>The updated support email for the product.</p>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The updated support URL for the product.</p>
+    pub fn support_url(&self) -> std::option::Option<&str> {
+        self.support_url.as_deref()
+    }
+    /// <p>The tags to add to the product.</p>
+    pub fn add_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.add_tags.as_deref()
+    }
+    /// <p>The tags to remove from the product.</p>
+    pub fn remove_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.remove_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProductInput");
@@ -20555,6 +20709,42 @@ pub struct UpdatePortfolioShareInput {
     /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
     pub share_tag_options: std::option::Option<bool>,
 }
+impl UpdatePortfolioShareInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Information about the organization node.</p>
+    pub fn organization_node(&self) -> std::option::Option<&crate::model::OrganizationNode> {
+        self.organization_node.as_ref()
+    }
+    /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
+    pub fn share_tag_options(&self) -> std::option::Option<bool> {
+        self.share_tag_options
+    }
+}
 impl std::fmt::Debug for UpdatePortfolioShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePortfolioShareInput");
@@ -20599,6 +20789,50 @@ pub struct UpdatePortfolioInput {
     pub add_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The tags to remove.</p>
     pub remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdatePortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name to use for display purposes.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The updated description of the portfolio.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated name of the portfolio provider.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The tags to add.</p>
+    pub fn add_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.add_tags.as_deref()
+    }
+    /// <p>The tags to remove.</p>
+    pub fn remove_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.remove_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20692,6 +20926,89 @@ pub struct UpdateConstraintInput {
     /// </dl>
     pub parameters: std::option::Option<std::string::String>,
 }
+impl UpdateConstraintInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the constraint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The updated description of the constraint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+    /// <dl>
+    /// <dt>LAUNCH</dt>
+    /// <dd>
+    /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
+    /// <p>Specify the <code>RoleArn</code> property as follows:</p>
+    /// <p>
+    /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+    /// </p>
+    /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
+    /// <p>
+    /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+    /// </p>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
+    /// account-agnostic so the administrator can create fewer resources per shared account.</p>
+    /// <note>
+    /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
+    /// </note>
+    /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+    /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
+    /// </dd>
+    /// <dt>NOTIFICATION</dt>
+    /// <dd>
+    /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
+    /// <p>
+    /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+    /// </p>
+    /// </dd>
+    /// <dt>RESOURCE_UPDATE</dt>
+    /// <dd>
+    /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
+    /// <p>
+    /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+    /// </p>
+    /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
+    /// </dd>
+    /// <dt>STACKSET</dt>
+    /// <dd>
+    /// <p>Specify the <code>Parameters</code> property as follows:</p>
+    /// <p>
+    /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+    /// </p>
+    /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+    /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
+    /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+    /// </dd>
+    /// <dt>TEMPLATE</dt>
+    /// <dd>
+    /// <p>Specify the <code>Rules</code> property. For more information, see
+    /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConstraintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConstraintInput");
@@ -20742,6 +21059,55 @@ pub struct TerminateProvisionedProductInput {
     /// stack, stack set, or the underlying resources of the deleted provisioned product. The
     /// default value is false.</p>
     pub retain_physical_resources: bool,
+}
+impl TerminateProvisionedProductInput {
+    /// <p>The name of the provisioned product. You cannot specify both
+    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioned product. You cannot specify both
+    /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>An idempotency token that uniquely identifies the termination request. This token is
+    /// only valid during the termination process. After the provisioned product is terminated,
+    /// subsequent requests to terminate the same provisioned product always return
+    /// <b>ResourceNotFound</b>.</p>
+    pub fn terminate_token(&self) -> std::option::Option<&str> {
+        self.terminate_token.as_deref()
+    }
+    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
+    /// if it cannot delete the underlying resources.</p>
+    pub fn ignore_errors(&self) -> bool {
+        self.ignore_errors
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
+    /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
+    /// stack, stack set, or the underlying resources of the deleted provisioned product. The
+    /// default value is false.</p>
+    pub fn retain_physical_resources(&self) -> bool {
+        self.retain_physical_resources
+    }
 }
 impl std::fmt::Debug for TerminateProvisionedProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20803,6 +21169,66 @@ pub struct SearchProvisionedProductsInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl SearchProvisionedProductsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    pub fn access_level_filter(&self) -> std::option::Option<&crate::model::AccessLevelFilter> {
+        self.access_level_filter.as_ref()
+    }
+    /// <p>The search filters.</p>
+    /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
+    /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
+    /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
+    /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+    /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
+    /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+    /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
+    /// </p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::ProvisionedProductViewFilterBy,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
+        self.filters.as_ref()
+    }
+    /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
+    /// and <code>lastRecordId</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&str> {
+        self.sort_by.as_deref()
+    }
+    /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchProvisionedProductsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchProvisionedProductsInput");
@@ -20858,6 +21284,62 @@ pub struct SearchProductsAsAdminInput {
     /// <p>Access level of the source of the product.</p>
     pub product_source: std::option::Option<crate::model::ProductSource>,
 }
+impl SearchProductsAsAdminInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The search filters. If no search filters are specified, the output includes all products
+    /// to which the administrator has access.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::ProductViewFilterBy,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
+        self.filters.as_ref()
+    }
+    /// <p>The sort field. If no value is specified, the results are not sorted.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ProductViewSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>Access level of the source of the product.</p>
+    pub fn product_source(&self) -> std::option::Option<&crate::model::ProductSource> {
+        self.product_source.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchProductsAsAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchProductsAsAdminInput");
@@ -20910,6 +21392,54 @@ pub struct SearchProductsInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl SearchProductsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The search filters. If no search filters are specified, the output includes
+    /// all products to which the caller has access.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::ProductViewFilterBy,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The sort field. If no value is specified, the results are not sorted.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ProductViewSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. If no value is specified, the results are not sorted.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchProductsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchProductsInput");
@@ -20949,6 +21479,38 @@ pub struct ScanProvisionedProductsInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl ScanProvisionedProductsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    pub fn access_level_filter(&self) -> std::option::Option<&crate::model::AccessLevelFilter> {
+        self.access_level_filter.as_ref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ScanProvisionedProductsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21002,6 +21564,51 @@ pub struct RejectPortfolioShareInput {
     /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
     /// </p>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
+}
+impl RejectPortfolioShareInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
+    /// organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IMPORTED</code> - Reject imported portfolios.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+    /// </p>
+    pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
+        self.portfolio_share_type.as_ref()
+    }
 }
 impl std::fmt::Debug for RejectPortfolioShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21064,6 +21671,83 @@ pub struct ProvisionProductInput {
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
     pub provision_token: std::option::Option<std::string::String>,
 }
+impl ProvisionProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier. You must provide the name or ID, but not both.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_name.as_deref()
+    }
+    /// <p>The path identifier of the product. This value is optional if the product
+    /// has a default path, and required if the product has more than one path.
+    /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+    pub fn path_id(&self) -> std::option::Option<&str> {
+        self.path_id.as_deref()
+    }
+    /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    pub fn path_name(&self) -> std::option::Option<&str> {
+        self.path_name.as_deref()
+    }
+    /// <p>A user-friendly name for the provisioned product. This value must be
+    /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>Parameters specified by the administrator that are required for provisioning the
+    /// product.</p>
+    pub fn provisioning_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningParameter]> {
+        self.provisioning_parameters.as_deref()
+    }
+    /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
+    pub fn provisioning_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningPreferences> {
+        self.provisioning_preferences.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+    /// events.</p>
+    pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_arns.as_deref()
+    }
+    /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
+    pub fn provision_token(&self) -> std::option::Option<&str> {
+        self.provision_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisionProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionProductInput");
@@ -21097,6 +21781,20 @@ pub struct ListTagOptionsInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl ListTagOptionsInput {
+    /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ListTagOptionsFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21134,6 +21832,38 @@ pub struct ListStackInstancesForProvisionedProductInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
+}
+impl ListStackInstancesForProvisionedProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListStackInstancesForProvisionedProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21175,6 +21905,42 @@ pub struct ListServiceActionsForProvisioningArtifactInput {
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
+impl ListServiceActionsForProvisioningArtifactInput {
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceActionsForProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceActionsForProvisioningArtifactInput");
@@ -21212,6 +21978,34 @@ pub struct ListServiceActionsInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl ListServiceActionsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceActionsInput");
@@ -21246,6 +22040,36 @@ pub struct ListResourcesForTagOptionInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl ListResourcesForTagOptionInput {
+    /// <p>The TagOption identifier.</p>
+    pub fn tag_option_id(&self) -> std::option::Option<&str> {
+        self.tag_option_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Portfolio</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Product</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourcesForTagOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21287,6 +22111,44 @@ pub struct ListRecordHistoryInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl ListRecordHistoryInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    pub fn access_level_filter(&self) -> std::option::Option<&crate::model::AccessLevelFilter> {
+        self.access_level_filter.as_ref()
+    }
+    /// <p>The search filter to scope the results.</p>
+    pub fn search_filter(
+        &self,
+    ) -> std::option::Option<&crate::model::ListRecordHistorySearchFilter> {
+        self.search_filter.as_ref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecordHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecordHistoryInput");
@@ -21326,6 +22188,38 @@ pub struct ListProvisioningArtifactsForServiceActionInput {
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
+impl ListProvisioningArtifactsForServiceActionInput {
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProvisioningArtifactsForServiceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProvisioningArtifactsForServiceActionInput");
@@ -21359,6 +22253,30 @@ pub struct ListProvisioningArtifactsInput {
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub product_id: std::option::Option<std::string::String>,
+}
+impl ListProvisioningArtifactsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProvisioningArtifactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21397,6 +22315,42 @@ pub struct ListProvisionedProductPlansInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub access_level_filter: std::option::Option<crate::model::AccessLevelFilter>,
+}
+impl ListProvisionedProductPlansInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn provision_product_id(&self) -> std::option::Option<&str> {
+        self.provision_product_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
+    pub fn access_level_filter(&self) -> std::option::Option<&crate::model::AccessLevelFilter> {
+        self.access_level_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ListProvisionedProductPlansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21437,6 +22391,38 @@ pub struct ListPrincipalsForPortfolioInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl ListPrincipalsForPortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPrincipalsForPortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPrincipalsForPortfolioInput");
@@ -21475,6 +22461,38 @@ pub struct ListPortfoliosForProductInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
 }
+impl ListPortfoliosForProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for ListPortfoliosForProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPortfoliosForProductInput");
@@ -21510,6 +22528,34 @@ pub struct ListPortfoliosInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
+}
+impl ListPortfoliosInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListPortfoliosInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21549,6 +22595,42 @@ pub struct ListPortfolioAccessInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
+}
+impl ListPortfolioAccessInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
+    pub fn organization_parent_id(&self) -> std::option::Option<&str> {
+        self.organization_parent_id.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListPortfolioAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21605,6 +22687,58 @@ pub struct ListOrganizationPortfolioAccessInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
 }
+impl ListOrganizationPortfolioAccessInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The organization node type that will be returned in the output.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
+    /// </li>
+    /// </ul>
+    pub fn organization_node_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationNodeType> {
+        self.organization_node_type.as_ref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for ListOrganizationPortfolioAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOrganizationPortfolioAccessInput");
@@ -21643,6 +22777,38 @@ pub struct ListLaunchPathsInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl ListLaunchPathsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLaunchPathsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21684,6 +22850,42 @@ pub struct ListConstraintsForPortfolioInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl ListConstraintsForPortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConstraintsForPortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConstraintsForPortfolioInput");
@@ -21722,6 +22924,38 @@ pub struct ListBudgetsForResourceInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl ListBudgetsForResourceInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBudgetsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21776,6 +23010,53 @@ pub struct ListAcceptedPortfolioSharesInput {
     /// </ul>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
 }
+impl ListAcceptedPortfolioSharesInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
+    /// account of your organization</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IMPORTED</code> - List imported portfolios</p>
+    /// </li>
+    /// </ul>
+    pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
+        self.portfolio_share_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAcceptedPortfolioSharesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAcceptedPortfolioSharesInput");
@@ -21821,6 +23102,49 @@ pub struct ImportAsProvisionedProductInput {
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl ImportAsProvisionedProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
+    /// account. The name cannot be updated after the product is provisioned. </p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The unique identifier of the resource to be imported. It only currently supports
+    /// CloudFormation stack IDs.</p>
+    pub fn physical_id(&self) -> std::option::Option<&str> {
+        self.physical_id.as_deref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportAsProvisionedProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportAsProvisionedProductInput");
@@ -21864,6 +23188,46 @@ pub struct GetProvisionedProductOutputsInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl GetProvisionedProductOutputsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the provisioned product that you want the outputs from.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>The name of the provisioned product that you want the outputs from.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
+    pub fn output_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.output_keys.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProvisionedProductOutputsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21922,6 +23286,48 @@ pub struct ExecuteProvisionedProductServiceActionInput {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl ExecuteProvisionedProductServiceActionInput {
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>An idempotency token that uniquely identifies the execute request.</p>
+    pub fn execute_token(&self) -> std::option::Option<&str> {
+        self.execute_token.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
+    /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
+    /// any special parameters such as <code>TARGET</code>.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecuteProvisionedProductServiceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteProvisionedProductServiceActionInput");
@@ -21960,6 +23366,35 @@ pub struct ExecuteProvisionedProductPlanInput {
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl ExecuteProvisionedProductPlanInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The plan identifier.</p>
+    pub fn plan_id(&self) -> std::option::Option<&str> {
+        self.plan_id.as_deref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecuteProvisionedProductPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteProvisionedProductPlanInput");
@@ -21989,6 +23424,16 @@ pub struct DisassociateTagOptionFromResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The TagOption identifier.</p>
     pub tag_option_id: std::option::Option<std::string::String>,
+}
+impl DisassociateTagOptionFromResourceInput {
+    /// <p>The resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The TagOption identifier.</p>
+    pub fn tag_option_id(&self) -> std::option::Option<&str> {
+        self.tag_option_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateTagOptionFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22025,6 +23470,38 @@ pub struct DisassociateServiceActionFromProvisioningArtifactInput {
     /// </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
+}
+impl DisassociateServiceActionFromProvisioningArtifactInput {
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateServiceActionFromProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22063,6 +23540,34 @@ pub struct DisassociateProductFromPortfolioInput {
     /// <p>The portfolio identifier.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
 }
+impl DisassociateProductFromPortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateProductFromPortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateProductFromPortfolioInput");
@@ -22098,6 +23603,34 @@ pub struct DisassociatePrincipalFromPortfolioInput {
     /// <p>The ARN of the principal (IAM user, role, or group).</p>
     pub principal_arn: std::option::Option<std::string::String>,
 }
+impl DisassociatePrincipalFromPortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociatePrincipalFromPortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociatePrincipalFromPortfolioInput");
@@ -22116,6 +23649,16 @@ pub struct DisassociateBudgetFromResourceInput {
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl DisassociateBudgetFromResourceInput {
+    /// <p>The name of the budget you want to disassociate.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateBudgetFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22143,6 +23686,12 @@ impl std::fmt::Debug for DisableAwsOrganizationsAccessInput {
 pub struct DescribeTagOptionInput {
     /// <p>The TagOption identifier.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DescribeTagOptionInput {
+    /// <p>The TagOption identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTagOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22177,6 +23726,34 @@ pub struct DescribeServiceActionExecutionParametersInput {
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
+impl DescribeServiceActionExecutionParametersInput {
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>The self-service action identifier.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceActionExecutionParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceActionExecutionParametersInput");
@@ -22209,6 +23786,30 @@ pub struct DescribeServiceActionInput {
     /// </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
+}
+impl DescribeServiceActionInput {
+    /// <p>The self-service action identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServiceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22246,6 +23847,39 @@ pub struct DescribeRecordInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
+}
+impl DescribeRecordInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The record identifier of the provisioned product. This identifier is returned by the
+    /// request operation.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for DescribeRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22292,6 +23926,52 @@ pub struct DescribeProvisioningParametersInput {
     pub path_id: std::option::Option<std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub path_name: std::option::Option<std::string::String>,
+}
+impl DescribeProvisioningParametersInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_name.as_deref()
+    }
+    /// <p>The path identifier of the product. This value is optional if the product
+    /// has a default path, and required if the product has more than one path.
+    /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+    pub fn path_id(&self) -> std::option::Option<&str> {
+        self.path_id.as_deref()
+    }
+    /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    pub fn path_name(&self) -> std::option::Option<&str> {
+        self.path_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProvisioningParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22341,6 +24021,46 @@ pub struct DescribeProvisioningArtifactInput {
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
     pub verbose: bool,
 }
+impl DescribeProvisioningArtifactInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The provisioning artifact name.</p>
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_name.as_deref()
+    }
+    /// <p>The product name.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>Indicates whether a verbose level of detail is enabled.</p>
+    pub fn verbose(&self) -> bool {
+        self.verbose
+    }
+}
 impl std::fmt::Debug for DescribeProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisioningArtifactInput");
@@ -22383,6 +24103,38 @@ pub struct DescribeProvisionedProductPlanInput {
     pub page_size: i32,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl DescribeProvisionedProductPlanInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The plan identifier.</p>
+    pub fn plan_id(&self) -> std::option::Option<&str> {
+        self.plan_id.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProvisionedProductPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22431,6 +24183,36 @@ pub struct DescribeProvisionedProductInput {
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribeProvisionedProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
+    /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
+    /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProvisionedProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisionedProductInput");
@@ -22463,6 +24245,30 @@ pub struct DescribeProductViewInput {
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product view identifier.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DescribeProductViewInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product view identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProductViewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22505,6 +24311,43 @@ pub struct DescribeProductAsAdminInput {
     /// product. Otherwise only local TagOptions will be returned. </p>
     pub source_portfolio_id: std::option::Option<std::string::String>,
 }
+impl DescribeProductAsAdminInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The product name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier of the shared portfolio that the specified product is associated
+    /// with.</p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
+    /// product. If this parameter is provided and if TagOptions sharing is enabled in the
+    /// portfolio share, the API returns both local and shared TagOptions associated with the
+    /// product. Otherwise only local TagOptions will be returned. </p>
+    pub fn source_portfolio_id(&self) -> std::option::Option<&str> {
+        self.source_portfolio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProductAsAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProductAsAdminInput");
@@ -22541,6 +24384,34 @@ pub struct DescribeProductInput {
     /// <p>The product name.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribeProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The product name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProductInput");
@@ -22557,6 +24428,12 @@ impl std::fmt::Debug for DescribeProductInput {
 pub struct DescribePortfolioShareStatusInput {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
     pub portfolio_share_token: std::option::Option<std::string::String>,
+}
+impl DescribePortfolioShareStatusInput {
+    /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
+    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+        self.portfolio_share_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePortfolioShareStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22582,6 +24459,28 @@ pub struct DescribePortfolioSharesInput {
     pub page_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: i32,
+}
+impl DescribePortfolioSharesInput {
+    /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
+    /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DescribePortfolioShareType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn page_size(&self) -> i32 {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for DescribePortfolioSharesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22617,6 +24516,30 @@ pub struct DescribePortfolioInput {
     /// <p>The portfolio identifier.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribePortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePortfolioInput");
@@ -22648,6 +24571,30 @@ pub struct DescribeCopyProductStatusInput {
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
     pub copy_product_token: std::option::Option<std::string::String>,
+}
+impl DescribeCopyProductStatusInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+    pub fn copy_product_token(&self) -> std::option::Option<&str> {
+        self.copy_product_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCopyProductStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22681,6 +24628,30 @@ pub struct DescribeConstraintInput {
     /// <p>The identifier of the constraint.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeConstraintInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the constraint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConstraintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConstraintInput");
@@ -22696,6 +24667,12 @@ impl std::fmt::Debug for DescribeConstraintInput {
 pub struct DeleteTagOptionInput {
     /// <p>The TagOption identifier.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteTagOptionInput {
+    /// <p>The TagOption identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTagOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22727,6 +24704,30 @@ pub struct DeleteServiceActionInput {
     /// </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
+}
+impl DeleteServiceActionInput {
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22761,6 +24762,34 @@ pub struct DeleteProvisioningArtifactInput {
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
+}
+impl DeleteProvisioningArtifactInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22798,6 +24827,35 @@ pub struct DeleteProvisionedProductPlanInput {
     /// if it cannot delete the underlying resources.</p>
     pub ignore_errors: bool,
 }
+impl DeleteProvisionedProductPlanInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The plan identifier.</p>
+    pub fn plan_id(&self) -> std::option::Option<&str> {
+        self.plan_id.as_deref()
+    }
+    /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
+    /// if it cannot delete the underlying resources.</p>
+    pub fn ignore_errors(&self) -> bool {
+        self.ignore_errors
+    }
+}
 impl std::fmt::Debug for DeleteProvisionedProductPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProvisionedProductPlanInput");
@@ -22830,6 +24888,30 @@ pub struct DeleteProductInput {
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The product identifier.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22867,6 +24949,38 @@ pub struct DeletePortfolioShareInput {
     /// <p>The organization node to whom you are going to stop sharing.</p>
     pub organization_node: std::option::Option<crate::model::OrganizationNode>,
 }
+impl DeletePortfolioShareInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The AWS account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The organization node to whom you are going to stop sharing.</p>
+    pub fn organization_node(&self) -> std::option::Option<&crate::model::OrganizationNode> {
+        self.organization_node.as_ref()
+    }
+}
 impl std::fmt::Debug for DeletePortfolioShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePortfolioShareInput");
@@ -22901,6 +25015,30 @@ pub struct DeletePortfolioInput {
     /// <p>The portfolio identifier.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeletePortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePortfolioInput");
@@ -22933,6 +25071,30 @@ pub struct DeleteConstraintInput {
     /// <p>The identifier of the constraint.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteConstraintInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The identifier of the constraint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConstraintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConstraintInput");
@@ -22950,6 +25112,16 @@ pub struct CreateTagOptionInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>The TagOption value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl CreateTagOptionInput {
+    /// <p>The TagOption key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The TagOption value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTagOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23016,6 +25188,75 @@ pub struct CreateServiceActionInput {
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CreateServiceActionInput {
+    /// <p>The self-service action name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    pub fn definition_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceActionDefinitionType> {
+        self.definition_type.as_ref()
+    }
+    /// <p>The self-service action definition. Can be one of the following:</p>
+    /// <dl>
+    /// <dt>Name</dt>
+    /// <dd>
+    /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+    /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
+    /// </dd>
+    /// <dt>Version</dt>
+    /// <dd>
+    /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+    /// </p>
+    /// </dd>
+    /// <dt>AssumeRole</dt>
+    /// <dd>
+    /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
+    /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
+    /// </dd>
+    /// <dt>Parameters</dt>
+    /// <dd>
+    /// <p>The list of parameters in JSON format.</p>
+    /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn definition(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
+    > {
+        self.definition.as_ref()
+    }
+    /// <p>The self-service action description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceActionInput");
@@ -23056,6 +25297,39 @@ pub struct CreateProvisioningArtifactInput {
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
+}
+impl CreateProvisioningArtifactInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The configuration for the provisioning artifact.</p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::ProvisioningArtifactProperties> {
+        self.parameters.as_ref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23116,6 +25390,75 @@ pub struct CreateProvisionedProductPlanInput {
     /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateProvisionedProductPlanInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The name of the plan.</p>
+    pub fn plan_name(&self) -> std::option::Option<&str> {
+        self.plan_name.as_deref()
+    }
+    /// <p>The plan type.</p>
+    pub fn plan_type(&self) -> std::option::Option<&crate::model::ProvisionedProductPlanType> {
+        self.plan_type.as_ref()
+    }
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+    /// events.</p>
+    pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_arns.as_deref()
+    }
+    /// <p>The path identifier of the product. This value is optional if the product
+    /// has a default path, and required if the product has more than one path.
+    /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+    pub fn path_id(&self) -> std::option::Option<&str> {
+        self.path_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>A user-friendly name for the provisioned product. This value must be
+    /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>Parameters specified by the administrator that are required for provisioning the
+    /// product.</p>
+    pub fn provisioning_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateProvisioningParameter]> {
+        self.provisioning_parameters.as_deref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProvisionedProductPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23182,6 +25525,75 @@ pub struct CreateProductInput {
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CreateProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The name of the product.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The owner of the product.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The description of the product.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The distributor of the product.</p>
+    pub fn distributor(&self) -> std::option::Option<&str> {
+        self.distributor.as_deref()
+    }
+    /// <p>The support information about the product.</p>
+    pub fn support_description(&self) -> std::option::Option<&str> {
+        self.support_description.as_deref()
+    }
+    /// <p>The contact email for product support.</p>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The contact URL for product support.</p>
+    /// <p>
+    /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    pub fn support_url(&self) -> std::option::Option<&str> {
+        self.support_url.as_deref()
+    }
+    /// <p>The type of product.</p>
+    pub fn product_type(&self) -> std::option::Option<&crate::model::ProductType> {
+        self.product_type.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The configuration of the provisioning artifact. </p>
+    pub fn provisioning_artifact_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifactProperties> {
+        self.provisioning_artifact_parameters.as_ref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProductInput");
@@ -23238,6 +25650,47 @@ pub struct CreatePortfolioShareInput {
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     pub share_tag_options: bool,
 }
+impl CreatePortfolioShareInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
+    /// is passed in, <code>PortfolioShare</code> will be created for the node an
+    /// ListOrganizationPortfolioAccessd its children (when applies), and a
+    /// <code>PortfolioShareToken</code> will be returned in the output in order for the
+    /// administrator to monitor the status of the <code>PortfolioShare</code> creation
+    /// process.</p>
+    pub fn organization_node(&self) -> std::option::Option<&crate::model::OrganizationNode> {
+        self.organization_node.as_ref()
+    }
+    /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
+    pub fn share_tag_options(&self) -> bool {
+        self.share_tag_options
+    }
+}
 impl std::fmt::Debug for CreatePortfolioShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePortfolioShareInput");
@@ -23281,6 +25734,47 @@ pub struct CreatePortfolioInput {
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
+}
+impl CreatePortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The name to use for display purposes.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description of the portfolio.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the portfolio provider.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23407,6 +25901,129 @@ pub struct CreateConstraintInput {
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CreateConstraintInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+    /// <dl>
+    /// <dt>LAUNCH</dt>
+    /// <dd>
+    /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
+    /// <p>Specify the <code>RoleArn</code> property as follows:</p>
+    /// <p>
+    /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+    /// </p>
+    /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
+    /// <p>
+    /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+    /// </p>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
+    /// account-agnostic so the administrator can create fewer resources per shared account.</p>
+    /// <note>
+    /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
+    /// </note>
+    /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+    /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
+    /// </dd>
+    /// <dt>NOTIFICATION</dt>
+    /// <dd>
+    /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
+    /// <p>
+    /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+    /// </p>
+    /// </dd>
+    /// <dt>RESOURCE_UPDATE</dt>
+    /// <dd>
+    /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
+    /// <p>
+    /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+    /// </p>
+    /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
+    /// </dd>
+    /// <dt>STACKSET</dt>
+    /// <dd>
+    /// <p>Specify the <code>Parameters</code> property as follows:</p>
+    /// <p>
+    /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+    /// </p>
+    /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+    /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
+    /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+    /// </dd>
+    /// <dt>TEMPLATE</dt>
+    /// <dd>
+    /// <p>Specify the <code>Rules</code> property. For more information, see
+    /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+    /// <p>The type of constraint.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LAUNCH</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOTIFICATION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESOURCE_UPDATE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STACKSET</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEMPLATE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The description of the constraint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConstraintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConstraintInput");
@@ -23464,6 +26081,60 @@ pub struct CopyProductInput {
     /// the same response is returned for each repeated request. </p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CopyProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source product.</p>
+    pub fn source_product_arn(&self) -> std::option::Option<&str> {
+        self.source_product_arn.as_deref()
+    }
+    /// <p>The identifier of the target product. By default, a new product is created.</p>
+    pub fn target_product_id(&self) -> std::option::Option<&str> {
+        self.target_product_id.as_deref()
+    }
+    /// <p>A name for the target product. The default is the name of the source product.</p>
+    pub fn target_product_name(&self) -> std::option::Option<&str> {
+        self.target_product_name.as_deref()
+    }
+    /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
+    /// By default, all provisioning artifacts are copied.</p>
+    pub fn source_provisioning_artifact_identifiers(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<
+            crate::model::ProvisioningArtifactPropertyName,
+            std::string::String,
+        >],
+    > {
+        self.source_provisioning_artifact_identifiers.as_deref()
+    }
+    /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
+    /// product are copied to the target product.</p>
+    pub fn copy_options(&self) -> std::option::Option<&[crate::model::CopyOption]> {
+        self.copy_options.as_deref()
+    }
+    /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request. </p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyProductInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyProductInput");
@@ -23505,6 +26176,32 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
+impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
+    /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+    pub fn service_action_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceActionAssociation]> {
+        self.service_action_associations.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisassociateServiceActionFromProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter =
@@ -23542,6 +26239,32 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
 }
+impl BatchAssociateServiceActionWithProvisioningArtifactInput {
+    /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
+    pub fn service_action_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceActionAssociation]> {
+        self.service_action_associations.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchAssociateServiceActionWithProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter =
@@ -23563,6 +26286,16 @@ pub struct AssociateTagOptionWithResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The TagOption identifier.</p>
     pub tag_option_id: std::option::Option<std::string::String>,
+}
+impl AssociateTagOptionWithResourceInput {
+    /// <p>The resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The TagOption identifier.</p>
+    pub fn tag_option_id(&self) -> std::option::Option<&str> {
+        self.tag_option_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateTagOptionWithResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23599,6 +26332,38 @@ pub struct AssociateServiceActionWithProvisioningArtifactInput {
     /// </li>
     /// </ul>
     pub accept_language: std::option::Option<std::string::String>,
+}
+impl AssociateServiceActionWithProvisioningArtifactInput {
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateServiceActionWithProvisioningArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23638,6 +26403,38 @@ pub struct AssociateProductWithPortfolioInput {
     /// <p>The identifier of the source portfolio.</p>
     pub source_portfolio_id: std::option::Option<std::string::String>,
 }
+impl AssociateProductWithPortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The identifier of the source portfolio.</p>
+    pub fn source_portfolio_id(&self) -> std::option::Option<&str> {
+        self.source_portfolio_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateProductWithPortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateProductWithPortfolioInput");
@@ -23676,6 +26473,38 @@ pub struct AssociatePrincipalWithPortfolioInput {
     /// <p>The principal type. The supported value is <code>IAM</code>.</p>
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
+impl AssociatePrincipalWithPortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+    /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociatePrincipalWithPortfolioInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatePrincipalWithPortfolioInput");
@@ -23695,6 +26524,16 @@ pub struct AssociateBudgetWithResourceInput {
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl AssociateBudgetWithResourceInput {
+    /// <p>The name of the budget you want to associate.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateBudgetWithResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23746,6 +26585,51 @@ pub struct AcceptPortfolioShareInput {
     /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
     /// </p>
     pub portfolio_share_type: std::option::Option<crate::model::PortfolioShareType>,
+}
+impl AcceptPortfolioShareInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>en</code> - English (default)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>jp</code> - Japanese</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zh</code> - Chinese</p>
+    /// </li>
+    /// </ul>
+    pub fn accept_language(&self) -> std::option::Option<&str> {
+        self.accept_language.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
+    /// organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IMPORTED</code> - Accept imported portfolios.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
+    /// </li>
+    /// </ul>
+    /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+    /// </p>
+    pub fn portfolio_share_type(&self) -> std::option::Option<&crate::model::PortfolioShareType> {
+        self.portfolio_share_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptPortfolioShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -145,27 +145,15 @@ impl AssociateAssetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_assets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_assets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -361,7 +349,7 @@ impl BatchAssociateProjectAssetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_project_assets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_project_assets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -369,17 +357,8 @@ impl BatchAssociateProjectAssetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -575,7 +554,7 @@ impl BatchDisassociateProjectAssetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_project_assets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_project_assets(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -583,17 +562,8 @@ impl BatchDisassociateProjectAssetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -748,7 +718,7 @@ impl BatchPutAssetPropertyValueInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_asset_property_value(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_asset_property_value(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -756,17 +726,8 @@ impl BatchPutAssetPropertyValueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -986,27 +947,15 @@ impl CreateAccessPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_access_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_access_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1207,27 +1156,15 @@ impl CreateAssetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_asset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_asset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1529,27 +1466,15 @@ impl CreateAssetModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_asset_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_asset_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1783,27 +1708,15 @@ impl CreateDashboardInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1989,27 +1902,15 @@ impl CreateGatewayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_gateway(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_gateway(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2352,27 +2253,15 @@ impl CreatePortalInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_portal(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_portal(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2585,27 +2474,15 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2790,17 +2667,8 @@ impl DeleteAccessPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2970,17 +2838,8 @@ impl DeleteAssetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3157,17 +3016,8 @@ impl DeleteAssetModelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3344,17 +3194,8 @@ impl DeleteDashboardInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3506,17 +3347,8 @@ impl DeleteGatewayInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3689,17 +3521,8 @@ impl DeletePortalInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -3872,17 +3695,8 @@ impl DeleteProjectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4037,17 +3851,8 @@ impl DescribeAccessPolicyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4195,17 +4000,8 @@ impl DescribeAssetInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4360,17 +4156,8 @@ impl DescribeAssetModelInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4550,17 +4337,8 @@ impl DescribeAssetPropertyInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4712,17 +4490,8 @@ impl DescribeDashboardInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -4842,17 +4611,8 @@ impl DescribeDefaultEncryptionConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5004,17 +4764,8 @@ impl DescribeGatewayInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5207,17 +4958,8 @@ impl DescribeGatewayCapabilityConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5335,17 +5077,8 @@ impl DescribeLoggingOptionsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5493,17 +5226,8 @@ impl DescribePortalInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5651,17 +5375,8 @@ impl DescribeProjectInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5780,17 +5495,8 @@ impl DescribeStorageConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -5985,27 +5691,15 @@ impl DisassociateAssetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_assets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_assets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6376,17 +6070,8 @@ impl GetAssetPropertyAggregatesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6567,17 +6252,8 @@ impl GetAssetPropertyValueInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -6896,17 +6572,8 @@ impl GetAssetPropertyValueHistoryInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7356,17 +7023,8 @@ impl GetInterpolatedAssetPropertyValuesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7624,17 +7282,8 @@ impl ListAccessPoliciesInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -7793,17 +7442,8 @@ impl ListAssetModelsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8031,17 +7671,8 @@ impl ListAssetRelationshipsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8271,17 +7902,8 @@ impl ListAssetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8543,17 +8165,8 @@ impl ListAssociatedAssetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8727,17 +8340,8 @@ impl ListDashboardsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -8896,17 +8500,8 @@ impl ListGatewaysInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9065,17 +8660,8 @@ impl ListPortalsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9266,17 +8852,8 @@ impl ListProjectAssetsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9450,17 +9027,8 @@ impl ListProjectsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9602,17 +9170,8 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9761,7 +9320,7 @@ impl PutDefaultEncryptionConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_default_encryption_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_default_encryption_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9769,17 +9328,8 @@ impl PutDefaultEncryptionConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -9921,27 +9471,15 @@ impl PutLoggingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10123,27 +9661,15 @@ impl PutStorageConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_storage_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10324,27 +9850,15 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10520,17 +10034,8 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10744,27 +10249,15 @@ impl UpdateAccessPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_access_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_access_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -10945,27 +10438,15 @@ impl UpdateAssetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_asset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_asset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11267,27 +10748,15 @@ impl UpdateAssetModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_asset_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_asset_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11537,27 +11006,15 @@ impl UpdateAssetPropertyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_asset_property(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_asset_property(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11778,27 +11235,15 @@ impl UpdateDashboardInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -11968,27 +11413,15 @@ impl UpdateGatewayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_gateway(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_gateway(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12189,7 +11622,7 @@ impl UpdateGatewayCapabilityConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_gateway_capability_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_gateway_capability_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12197,17 +11630,8 @@ impl UpdateGatewayCapabilityConfigurationInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12496,27 +11920,15 @@ impl UpdatePortalInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_portal(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_portal(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12712,27 +12124,15 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("monitor.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -12801,6 +12201,24 @@ pub struct UpdateProjectInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateProjectInput {
+    /// <p>The ID of the project to update.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>A new friendly name for the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A new description for the project.</p>
+    pub fn project_description(&self) -> std::option::Option<&str> {
+        self.project_description.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
@@ -12847,6 +12265,56 @@ pub struct UpdatePortalInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
+impl UpdatePortalInput {
+    /// <p>The ID of the portal to update.</p>
+    pub fn portal_id(&self) -> std::option::Option<&str> {
+        self.portal_id.as_deref()
+    }
+    /// <p>A new friendly name for the portal.</p>
+    pub fn portal_name(&self) -> std::option::Option<&str> {
+        self.portal_name.as_deref()
+    }
+    /// <p>A new description for the portal.</p>
+    pub fn portal_description(&self) -> std::option::Option<&str> {
+        self.portal_description.as_deref()
+    }
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
+    pub fn portal_contact_email(&self) -> std::option::Option<&str> {
+        self.portal_contact_email.as_deref()
+    }
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An image file. Choose this option to upload a new image.</p>
+    /// </li>
+    /// <li>
+    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
+    /// </li>
+    /// </ul>
+    pub fn portal_logo_image(&self) -> std::option::Option<&crate::model::Image> {
+        self.portal_logo_image.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The email address that sends alarm notifications.</p>
+    pub fn notification_sender_email(&self) -> std::option::Option<&str> {
+        self.notification_sender_email.as_deref()
+    }
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+    /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    pub fn alarms(&self) -> std::option::Option<&crate::model::Alarms> {
+        self.alarms.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePortalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePortalInput");
@@ -12879,6 +12347,25 @@ pub struct UpdateGatewayCapabilityConfigurationInput {
     /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub capability_configuration: std::option::Option<std::string::String>,
 }
+impl UpdateGatewayCapabilityConfigurationInput {
+    /// <p>The ID of the gateway to be updated.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The namespace of the gateway capability configuration to be updated.
+    /// For example, if you configure OPC-UA
+    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
+    /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
+    /// <code>1</code>.</p>
+    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+        self.capability_namespace.as_deref()
+    }
+    /// <p>The JSON document that defines the configuration for the gateway capability. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn capability_configuration(&self) -> std::option::Option<&str> {
+        self.capability_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGatewayCapabilityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayCapabilityConfigurationInput");
@@ -12897,6 +12384,16 @@ pub struct UpdateGatewayInput {
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>A unique, friendly name for the gateway.</p>
     pub gateway_name: std::option::Option<std::string::String>,
+}
+impl UpdateGatewayInput {
+    /// <p>The ID of the gateway to update.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>A unique, friendly name for the gateway.</p>
+    pub fn gateway_name(&self) -> std::option::Option<&str> {
+        self.gateway_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12922,6 +12419,29 @@ pub struct UpdateDashboardInput {
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl UpdateDashboardInput {
+    /// <p>The ID of the dashboard to update.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>A new friendly name for the dashboard.</p>
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+        self.dashboard_name.as_deref()
+    }
+    /// <p>A new description for the dashboard.</p>
+    pub fn dashboard_description(&self) -> std::option::Option<&str> {
+        self.dashboard_description.as_deref()
+    }
+    /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn dashboard_definition(&self) -> std::option::Option<&str> {
+        self.dashboard_definition.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12956,6 +12476,37 @@ pub struct UpdateAssetPropertyInput {
     pub property_notification_state: std::option::Option<crate::model::PropertyNotificationState>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl UpdateAssetPropertyInput {
+    /// <p>The ID of the asset to be updated.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property to be updated.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>If you omit this parameter, the alias is removed from the property.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The MQTT notification state (enabled or disabled) for this asset property.
+    /// When the notification state is enabled, IoT SiteWise publishes property value
+    /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
+    pub fn property_notification_state(
+        &self,
+    ) -> std::option::Option<&crate::model::PropertyNotificationState> {
+        self.property_notification_state.as_ref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssetPropertyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13004,6 +12555,52 @@ pub struct UpdateAssetModelInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateAssetModelInput {
+    /// <p>The ID of the asset model to update.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>A unique, friendly name for the asset model.</p>
+    pub fn asset_model_name(&self) -> std::option::Option<&str> {
+        self.asset_model_name.as_deref()
+    }
+    /// <p>A description for the asset model.</p>
+    pub fn asset_model_description(&self) -> std::option::Option<&str> {
+        self.asset_model_description.as_deref()
+    }
+    /// <p>The updated property definitions of the asset model. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>You can specify up to 200 properties per asset model. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelProperty]> {
+        self.asset_model_properties.as_deref()
+    }
+    /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
+    /// model whose assets can be children of any other assets created from this asset model. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>You can specify up to 10 hierarchies per asset model. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_hierarchies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelHierarchy]> {
+        self.asset_model_hierarchies.as_deref()
+    }
+    /// <p>The composite asset models that are part of this asset model.
+    /// Composite asset models are asset models that contain specific properties. Each composite model
+    /// has a type that defines the properties that the composite model supports. Use composite asset
+    /// models to define alarms on this asset model.</p>
+    pub fn asset_model_composite_models(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelCompositeModel]> {
+        self.asset_model_composite_models.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssetModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssetModelInput");
@@ -13032,6 +12629,20 @@ pub struct UpdateAssetInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateAssetInput {
+    /// <p>The ID of the asset to update.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>A unique, friendly name for the asset.</p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssetInput");
@@ -13057,6 +12668,28 @@ pub struct UpdateAccessPolicyInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateAccessPolicyInput {
+    /// <p>The ID of the access policy.</p>
+    pub fn access_policy_id(&self) -> std::option::Option<&str> {
+        self.access_policy_id.as_deref()
+    }
+    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
+        self.access_policy_identity.as_ref()
+    }
+    /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    pub fn access_policy_resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.access_policy_resource.as_ref()
+    }
+    /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    pub fn access_policy_permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.access_policy_permission.as_ref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccessPolicyInput");
@@ -13078,6 +12711,16 @@ pub struct UntagResourceInput {
     /// <p>A list of keys for tags to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of keys for tags to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -13098,6 +12741,21 @@ pub struct TagResourceInput {
     /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13128,6 +12786,27 @@ pub struct PutStorageConfigurationInput {
     /// you must specify a <code>MultiLayerStorage</code> object.</p>
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
 }
+impl PutStorageConfigurationInput {
+    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// </li>
+    /// </ul>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
+    /// you must specify a <code>MultiLayerStorage</code> object.</p>
+    pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
+        self.multi_layer_storage.as_ref()
+    }
+}
 impl std::fmt::Debug for PutStorageConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutStorageConfigurationInput");
@@ -13143,6 +12822,12 @@ impl std::fmt::Debug for PutStorageConfigurationInput {
 pub struct PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
+}
+impl PutLoggingOptionsInput {
+    /// <p>The logging options to set.</p>
+    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+        self.logging_options.as_ref()
+    }
 }
 impl std::fmt::Debug for PutLoggingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13162,6 +12847,17 @@ pub struct PutDefaultEncryptionConfigurationInput {
     /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl PutDefaultEncryptionConfigurationInput {
+    /// <p>The type of encryption used for the encryption configuration.</p>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
+    /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDefaultEncryptionConfigurationInput");
@@ -13177,6 +12873,12 @@ impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13197,6 +12899,21 @@ pub struct ListProjectsInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProjectsInput {
+    /// <p>The ID of the portal.</p>
+    pub fn portal_id(&self) -> std::option::Option<&str> {
+        self.portal_id.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13220,6 +12937,21 @@ pub struct ListProjectAssetsInput {
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListProjectAssetsInput {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListProjectAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectAssetsInput");
@@ -13240,6 +12972,17 @@ pub struct ListPortalsInput {
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPortalsInput {
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPortalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPortalsInput");
@@ -13258,6 +13001,17 @@ pub struct ListGatewaysInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListGatewaysInput {
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListGatewaysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13279,6 +13033,21 @@ pub struct ListDashboardsInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDashboardsInput {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDashboardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13324,6 +13093,47 @@ pub struct ListAssociatedAssetsInput {
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssociatedAssetsInput {
+    /// <p>The ID of the asset to query.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a
+    /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
+    /// parameter is required if you choose <code>CHILD</code> for
+    /// <code>traversalDirection</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_id.as_deref()
+    }
+    /// <p>The direction to list associated assets. Choose one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CHILD</code> – The list includes all child assets associated to the
+    /// asset. The <code>hierarchyId</code> parameter is required if you choose
+    /// <code>CHILD</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PARENT</code> – The list includes the asset's parent asset.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: <code>CHILD</code>
+    /// </p>
+    pub fn traversal_direction(&self) -> std::option::Option<&crate::model::TraversalDirection> {
+        self.traversal_direction.as_ref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssociatedAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedAssetsInput");
@@ -13366,6 +13176,41 @@ pub struct ListAssetsInput {
     /// </p>
     pub filter: std::option::Option<crate::model::ListAssetsFilter>,
 }
+impl ListAssetsInput {
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
+    /// required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code> – The list includes all assets for a given asset model ID. The
+    /// <code>assetModelId</code> parameter is required if you filter by
+    /// <code>ALL</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset
+    /// hierarchy tree.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: <code>ALL</code>
+    /// </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ListAssetsFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssetsInput");
@@ -13399,6 +13244,33 @@ pub struct ListAssetRelationshipsInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssetRelationshipsInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The type of traversal to use to identify asset relationships. Choose the following
+    /// option:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root
+    /// asset. The asset that you specify in <code>assetId</code> is the first result in the list
+    /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p>
+    /// </li>
+    /// </ul>
+    pub fn traversal_type(&self) -> std::option::Option<&crate::model::TraversalType> {
+        self.traversal_type.as_ref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssetRelationshipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssetRelationshipsInput");
@@ -13419,6 +13291,17 @@ pub struct ListAssetModelsInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAssetModelsInput {
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAssetModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13454,6 +13337,43 @@ pub struct ListAccessPoliciesInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAccessPoliciesInput {
+    /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
+    /// if you specify <code>identityId</code>.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
+    /// <code>GROUP</code> for <code>identityType</code>.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The type of resource (portal or project). This parameter is required if you specify
+    /// <code>resourceId</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The ID of the resource. This parameter is required if you specify
+    /// <code>resourceType</code>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+    /// <i>IAM User Guide</i>. This parameter is required if you specify
+    /// <code>IAM</code> for <code>identityType</code>.</p>
+    pub fn iam_arn(&self) -> std::option::Option<&str> {
+        self.iam_arn.as_deref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAccessPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13550,6 +13470,110 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// to compute the second interpolated value, and so on. </p>
     pub interval_window_in_seconds: std::option::Option<i64>,
 }
+impl GetInterpolatedAssetPropertyValuesInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
+    /// Unix epoch time.</p>
+    pub fn start_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.start_time_in_seconds
+    }
+    /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
+    pub fn start_time_offset_in_nanos(&self) -> std::option::Option<i32> {
+        self.start_time_offset_in_nanos
+    }
+    /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
+    /// Unix epoch time.</p>
+    pub fn end_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.end_time_in_seconds
+    }
+    /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
+    pub fn end_time_offset_in_nanos(&self) -> std::option::Option<i32> {
+        self.end_time_offset_in_nanos
+    }
+    /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
+    /// only the asset property values that have a specific quality.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::Quality> {
+        self.quality.as_ref()
+    }
+    /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
+    /// previous one ends.</p>
+    pub fn interval_in_seconds(&self) -> std::option::Option<i64> {
+        self.interval_in_seconds
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The interpolation type.</p>
+    /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
+    /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
+    /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
+    /// on July 3, 2021, at 9 AM, and so on.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
+    /// <p>If no data point is found for an interval,
+    /// IoT SiteWise returns the last observed data point for the previous interval
+    /// and carries forward this interpolated value until a new data point is found.</p>
+    /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
+    /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
+    /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
+    /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
+    /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
+    /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+    /// <note>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
+    /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If no data point is found during the specified query window,
+    /// IoT SiteWise won't return an interpolated value for the interval.
+    /// This indicates that there's a gap in the ingested data points.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    /// <p>For example, you can get the interpolated temperature values for a wind turbine
+    /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
+    /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
+    /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
+    /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
+    /// to compute the second interpolated value, and so on. </p>
+    pub fn interval_window_in_seconds(&self) -> std::option::Option<i64> {
+        self.interval_window_in_seconds
+    }
+}
 impl std::fmt::Debug for GetInterpolatedAssetPropertyValuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInterpolatedAssetPropertyValuesInput");
@@ -13605,6 +13629,50 @@ pub struct GetAssetPropertyValueHistoryInput {
     /// <p>Default: 100</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetAssetPropertyValueHistoryInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
+    /// <p>The quality by which to filter asset data.</p>
+    pub fn qualities(&self) -> std::option::Option<&[crate::model::Quality]> {
+        self.qualities.as_deref()
+    }
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code>
+    /// </p>
+    pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
+        self.time_ordering.as_ref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 100</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetAssetPropertyValueHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssetPropertyValueHistoryInput");
@@ -13634,6 +13702,23 @@ pub struct GetAssetPropertyValueInput {
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
+}
+impl GetAssetPropertyValueInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAssetPropertyValueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13678,6 +13763,58 @@ pub struct GetAssetPropertyAggregatesInput {
     /// <p>Default: 100</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetAssetPropertyAggregatesInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The data aggregating function.</p>
+    pub fn aggregate_types(&self) -> std::option::Option<&[crate::model::AggregateType]> {
+        self.aggregate_types.as_deref()
+    }
+    /// <p>The time interval over which to aggregate data.</p>
+    pub fn resolution(&self) -> std::option::Option<&str> {
+        self.resolution.as_deref()
+    }
+    /// <p>The quality by which to filter asset data.</p>
+    pub fn qualities(&self) -> std::option::Option<&[crate::model::Quality]> {
+        self.qualities.as_deref()
+    }
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code>
+    /// </p>
+    pub fn time_ordering(&self) -> std::option::Option<&crate::model::TimeOrdering> {
+        self.time_ordering.as_ref()
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 100</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetAssetPropertyAggregatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssetPropertyAggregatesInput");
@@ -13712,6 +13849,27 @@ pub struct DisassociateAssetsInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DisassociateAssetsInput {
+    /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
+    /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
+    /// to identify the correct asset to disassociate. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_id.as_deref()
+    }
+    /// <p>The ID of the child asset to disassociate.</p>
+    pub fn child_asset_id(&self) -> std::option::Option<&str> {
+        self.child_asset_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateAssetsInput");
@@ -13741,6 +13899,12 @@ pub struct DescribeProjectInput {
     /// <p>The ID of the project.</p>
     pub project_id: std::option::Option<std::string::String>,
 }
+impl DescribeProjectInput {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectInput");
@@ -13755,6 +13919,12 @@ impl std::fmt::Debug for DescribeProjectInput {
 pub struct DescribePortalInput {
     /// <p>The ID of the portal.</p>
     pub portal_id: std::option::Option<std::string::String>,
+}
+impl DescribePortalInput {
+    /// <p>The ID of the portal.</p>
+    pub fn portal_id(&self) -> std::option::Option<&str> {
+        self.portal_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePortalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13788,6 +13958,20 @@ pub struct DescribeGatewayCapabilityConfigurationInput {
     /// <code>1</code>.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
 }
+impl DescribeGatewayCapabilityConfigurationInput {
+    /// <p>The ID of the gateway that defines the capability configuration.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The namespace of the capability configuration.
+    /// For example, if you configure OPC-UA
+    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
+    /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
+    /// <code>1</code>.</p>
+    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+        self.capability_namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGatewayCapabilityConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGatewayCapabilityConfigurationInput");
@@ -13803,6 +13987,12 @@ impl std::fmt::Debug for DescribeGatewayCapabilityConfigurationInput {
 pub struct DescribeGatewayInput {
     /// <p>The ID of the gateway device.</p>
     pub gateway_id: std::option::Option<std::string::String>,
+}
+impl DescribeGatewayInput {
+    /// <p>The ID of the gateway device.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13830,6 +14020,12 @@ pub struct DescribeDashboardInput {
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
 }
+impl DescribeDashboardInput {
+    /// <p>The ID of the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDashboardInput");
@@ -13847,6 +14043,16 @@ pub struct DescribeAssetPropertyInput {
     /// <p>The ID of the asset property.</p>
     pub property_id: std::option::Option<std::string::String>,
 }
+impl DescribeAssetPropertyInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssetPropertyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssetPropertyInput");
@@ -13863,6 +14069,12 @@ pub struct DescribeAssetModelInput {
     /// <p>The ID of the asset model.</p>
     pub asset_model_id: std::option::Option<std::string::String>,
 }
+impl DescribeAssetModelInput {
+    /// <p>The ID of the asset model.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssetModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssetModelInput");
@@ -13878,6 +14090,12 @@ pub struct DescribeAssetInput {
     /// <p>The ID of the asset.</p>
     pub asset_id: std::option::Option<std::string::String>,
 }
+impl DescribeAssetInput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssetInput");
@@ -13892,6 +14110,12 @@ impl std::fmt::Debug for DescribeAssetInput {
 pub struct DescribeAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: std::option::Option<std::string::String>,
+}
+impl DescribeAccessPolicyInput {
+    /// <p>The ID of the access policy.</p>
+    pub fn access_policy_id(&self) -> std::option::Option<&str> {
+        self.access_policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13909,6 +14133,16 @@ pub struct DeleteProjectInput {
     pub project_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteProjectInput {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13928,6 +14162,16 @@ pub struct DeletePortalInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeletePortalInput {
+    /// <p>The ID of the portal to delete.</p>
+    pub fn portal_id(&self) -> std::option::Option<&str> {
+        self.portal_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePortalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePortalInput");
@@ -13943,6 +14187,12 @@ impl std::fmt::Debug for DeletePortalInput {
 pub struct DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
     pub gateway_id: std::option::Option<std::string::String>,
+}
+impl DeleteGatewayInput {
+    /// <p>The ID of the gateway to delete.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13960,6 +14210,16 @@ pub struct DeleteDashboardInput {
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteDashboardInput {
+    /// <p>The ID of the dashboard to delete.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13979,6 +14239,16 @@ pub struct DeleteAssetModelInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeleteAssetModelInput {
+    /// <p>The ID of the asset model to delete.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssetModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssetModelInput");
@@ -13997,6 +14267,16 @@ pub struct DeleteAssetInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeleteAssetInput {
+    /// <p>The ID of the asset to delete.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssetInput");
@@ -14014,6 +14294,16 @@ pub struct DeleteAccessPolicyInput {
     pub access_policy_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteAccessPolicyInput {
+    /// <p>The ID of the access policy to be deleted.</p>
+    pub fn access_policy_id(&self) -> std::option::Option<&str> {
+        self.access_policy_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14041,6 +14331,33 @@ pub struct CreateProjectInput {
     /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateProjectInput {
+    /// <p>The ID of the portal in which to create the project.</p>
+    pub fn portal_id(&self) -> std::option::Option<&str> {
+        self.portal_id.as_deref()
+    }
+    /// <p>A friendly name for the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A description for the project.</p>
+    pub fn project_description(&self) -> std::option::Option<&str> {
+        self.project_description.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14111,6 +14428,82 @@ pub struct CreatePortalInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
+impl CreatePortalInput {
+    /// <p>A friendly name for the portal.</p>
+    pub fn portal_name(&self) -> std::option::Option<&str> {
+        self.portal_name.as_deref()
+    }
+    /// <p>A description for the portal.</p>
+    pub fn portal_description(&self) -> std::option::Option<&str> {
+        self.portal_description.as_deref()
+    }
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
+    pub fn portal_contact_email(&self) -> std::option::Option<&str> {
+        self.portal_contact_email.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
+    /// image is displayed on a dark background.</p>
+    pub fn portal_logo_image_file(&self) -> std::option::Option<&crate::model::ImageFile> {
+        self.portal_logo_image_file.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The service to use to authenticate users to the portal. Choose from the following
+    /// options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+    /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
+    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
+    /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
+    /// the China Regions.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
+    /// user permissions. This option is only available in the China Regions.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can't change this value after you create a portal.</p>
+    /// <p>Default: <code>SSO</code>
+    /// </p>
+    pub fn portal_auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+        self.portal_auth_mode.as_ref()
+    }
+    /// <p>The email address that sends alarm notifications.</p>
+    /// <important>
+    /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
+    /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+    /// address in Amazon SES</a>.</p>
+    /// </important>
+    pub fn notification_sender_email(&self) -> std::option::Option<&str> {
+        self.notification_sender_email.as_deref()
+    }
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+    /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    pub fn alarms(&self) -> std::option::Option<&crate::model::Alarms> {
+        self.alarms.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePortalInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePortalInput");
@@ -14142,6 +14535,25 @@ pub struct CreateGatewayInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateGatewayInput {
+    /// <p>A unique, friendly name for the gateway.</p>
+    pub fn gateway_name(&self) -> std::option::Option<&str> {
+        self.gateway_name.as_deref()
+    }
+    /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
+    pub fn gateway_platform(&self) -> std::option::Option<&crate::model::GatewayPlatform> {
+        self.gateway_platform.as_ref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGatewayInput");
@@ -14172,6 +14584,38 @@ pub struct CreateDashboardInput {
     /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDashboardInput {
+    /// <p>The ID of the project in which to create the dashboard.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>A friendly name for the dashboard.</p>
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+        self.dashboard_name.as_deref()
+    }
+    /// <p>A description for the dashboard.</p>
+    pub fn dashboard_description(&self) -> std::option::Option<&str> {
+        self.dashboard_description.as_deref()
+    }
+    /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn dashboard_definition(&self) -> std::option::Option<&str> {
+        self.dashboard_definition.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14221,6 +14665,57 @@ pub struct CreateAssetModelInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAssetModelInput {
+    /// <p>A unique, friendly name for the asset model.</p>
+    pub fn asset_model_name(&self) -> std::option::Option<&str> {
+        self.asset_model_name.as_deref()
+    }
+    /// <p>A description for the asset model.</p>
+    pub fn asset_model_description(&self) -> std::option::Option<&str> {
+        self.asset_model_description.as_deref()
+    }
+    /// <p>The property definitions of the asset model. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>You can specify up to 200 properties per asset model. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelPropertyDefinition]> {
+        self.asset_model_properties.as_deref()
+    }
+    /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
+    /// whose assets can be children of any other assets created from this asset model. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>You can specify up to 10 hierarchies per asset model. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_hierarchies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelHierarchyDefinition]> {
+        self.asset_model_hierarchies.as_deref()
+    }
+    /// <p>The composite asset models that are part of this asset model.
+    /// Composite asset models are asset models that contain specific properties. Each composite model
+    /// has a type that defines the properties that the composite model supports. Use composite asset
+    /// models to define alarms on this asset model.</p>
+    pub fn asset_model_composite_models(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetModelCompositeModelDefinition]> {
+        self.asset_model_composite_models.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssetModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssetModelInput");
@@ -14254,6 +14749,29 @@ pub struct CreateAssetInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAssetInput {
+    /// <p>A unique, friendly name for the asset.</p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// <p>The ID of the asset model from which to create the asset.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssetInput");
@@ -14283,6 +14801,33 @@ pub struct CreateAccessPolicyInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAccessPolicyInput {
+    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
+    pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
+        self.access_policy_identity.as_ref()
+    }
+    /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    pub fn access_policy_resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.access_policy_resource.as_ref()
+    }
+    /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    pub fn access_policy_permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.access_policy_permission.as_ref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the access policy. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
+    /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessPolicyInput");
@@ -14303,6 +14848,13 @@ pub struct BatchPutAssetPropertyValueInput {
     /// 10 entries per request.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
 }
+impl BatchPutAssetPropertyValueInput {
+    /// <p>The list of asset property value entries for the batch put request. You can specify up to
+    /// 10 entries per request.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::PutAssetPropertyValueEntry]> {
+        self.entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchPutAssetPropertyValueInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutAssetPropertyValueInput");
@@ -14321,6 +14873,20 @@ pub struct BatchDisassociateProjectAssetsInput {
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl BatchDisassociateProjectAssetsInput {
+    /// <p>The ID of the project from which to disassociate the assets.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The IDs of the assets to be disassociated from the project.</p>
+    pub fn asset_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.asset_ids.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisassociateProjectAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14342,6 +14908,20 @@ pub struct BatchAssociateProjectAssetsInput {
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl BatchAssociateProjectAssetsInput {
+    /// <p>The ID of the project to which to associate the assets.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The IDs of the assets to be associated to the project.</p>
+    pub fn asset_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.asset_ids.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateProjectAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14367,6 +14947,26 @@ pub struct AssociateAssetsInput {
     pub child_asset_id: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl AssociateAssetsInput {
+    /// <p>The ID of the parent asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
+    /// of assets to be formed that all come from the same asset model. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_id.as_deref()
+    }
+    /// <p>The ID of the child asset to be associated.</p>
+    pub fn child_asset_id(&self) -> std::option::Option<&str> {
+        self.child_asset_id.as_deref()
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAssetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

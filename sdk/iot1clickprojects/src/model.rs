@@ -13,6 +13,25 @@ pub struct PlacementTemplate {
         std::collections::HashMap<std::string::String, crate::model::DeviceTemplate>,
     >,
 }
+impl PlacementTemplate {
+    /// <p>The default attributes (key/value pairs) to be applied to all placements using this
+    /// template.</p>
+    pub fn default_attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.default_attributes.as_ref()
+    }
+    /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
+    /// (<a>PlacementTemplate</a>) template.</p>
+    pub fn device_templates(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::DeviceTemplate>,
+    > {
+        self.device_templates.as_ref()
+    }
+}
 impl std::fmt::Debug for PlacementTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementTemplate");
@@ -116,6 +135,20 @@ pub struct DeviceTemplate {
     pub callback_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DeviceTemplate {
+    /// <p>The device type, which currently must be <code>"button"</code>.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
+    /// the placement template.</p>
+    pub fn callback_overrides(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.callback_overrides.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceTemplate");
@@ -206,6 +239,32 @@ pub struct ProjectSummary {
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ProjectSummary {
+    /// <p>The ARN of the project.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the project being summarized.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
+    /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_date.as_ref()
+    }
+    /// <p>The tags (metadata key/value pairs) associated with the project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ProjectSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -340,6 +399,26 @@ pub struct PlacementSummary {
     /// same.</p>
     pub updated_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PlacementSummary {
+    /// <p>The name of the project containing the placement.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The name of the placement being summarized.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
+    /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
+    /// same.</p>
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_date.as_ref()
+    }
+}
 impl std::fmt::Debug for PlacementSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementSummary");
@@ -454,6 +533,40 @@ pub struct ProjectDescription {
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ProjectDescription {
+    /// <p>The ARN of the project.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the project for which to obtain information from.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The description of the project.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
+    /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_date.as_ref()
+    }
+    /// <p>An object describing the project's placement specifications.</p>
+    pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
+        self.placement_template.as_ref()
+    }
+    /// <p>The tags (metadata key/value pairs) associated with the project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ProjectDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -619,6 +732,33 @@ pub struct PlacementDescription {
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
     pub updated_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PlacementDescription {
+    /// <p>The name of the project containing the placement.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The name of the placement.</p>
+    pub fn placement_name(&self) -> std::option::Option<&str> {
+        self.placement_name.as_deref()
+    }
+    /// <p>The user-defined attributes associated with the placement.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
+    /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
+    /// same.</p>
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_date.as_ref()
+    }
 }
 impl std::fmt::Debug for PlacementDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

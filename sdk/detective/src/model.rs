@@ -89,6 +89,120 @@ pub struct MemberDetail {
     /// <p>The date and time when the graph utilization percentage was last updated.</p>
     pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl MemberDetail {
+    /// <p>The AWS account identifier for the member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The AWS account root user email address for the member account.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The ARN of the behavior graph that the member account was invited to.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The AWS account identifier of the administrator account for the behavior graph.</p>
+    pub fn master_id(&self) -> std::option::Option<&str> {
+        self.master_id.as_deref()
+    }
+    /// <p>The AWS account identifier of the administrator account for the behavior graph.</p>
+    pub fn administrator_id(&self) -> std::option::Option<&str> {
+        self.administrator_id.as_deref()
+    }
+    /// <p>The current membership status of the member account. The status can have one of the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INVITED</code> - Indicates that the member was sent an invitation but has
+    /// not yet responded.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that the
+    /// account identifier and email address provided for the member account match. If they
+    /// do match, then Detective sends the invitation. If the email address and account
+    /// identifier don't match, then the member cannot be added to the behavior graph.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VERIFICATION_FAILED</code> - Indicates that the account and email address
+    /// provided for the member account do not match, and Detective did not send an invitation to
+    /// the account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Indicates that the member account accepted the invitation
+    /// to contribute to the behavior graph.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+    /// the invitation but is prevented from contributing data to the behavior graph.
+    /// <code>DisabledReason</code> provides the reason why the member account is not
+    /// enabled.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Member accounts that declined an invitation or that were removed from the behavior graph
+    /// are not included.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+        self.status.as_ref()
+    }
+    /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that
+    /// the member account is not enabled.</p>
+    /// <p>The reason can have one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would
+    /// cause the data volume for the behavior graph to be too high.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data
+    /// volume for the member account. This is usually because the member account is not
+    /// enrolled in Amazon GuardDuty. </p>
+    /// </li>
+    /// </ul>
+    pub fn disabled_reason(&self) -> std::option::Option<&crate::model::MemberDisabledReason> {
+        self.disabled_reason.as_ref()
+    }
+    /// <p>The date and time that Detective sent the invitation to the member account. The value is in
+    /// milliseconds since the epoch.</p>
+    pub fn invited_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.invited_time.as_ref()
+    }
+    /// <p>The date and time that the member account was last updated. The value is in milliseconds
+    /// since the epoch.</p>
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_time.as_ref()
+    }
+    /// <p>The data volume in bytes per day for the member account.</p>
+    pub fn volume_usage_in_bytes(&self) -> std::option::Option<i64> {
+        self.volume_usage_in_bytes
+    }
+    /// <p>The data and time when the member account data volume was last updated.</p>
+    pub fn volume_usage_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.volume_usage_updated_time.as_ref()
+    }
+    /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0
+    /// indicates 0 percent, and 100 indicates 100 percent.</p>
+    /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
+    /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data
+    /// volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then
+    /// <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed
+    /// data volume. </p>
+    pub fn percent_of_graph_utilization(&self) -> std::option::Option<f64> {
+        self.percent_of_graph_utilization
+    }
+    /// <p>The date and time when the graph utilization percentage was last updated.</p>
+    pub fn percent_of_graph_utilization_updated_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.percent_of_graph_utilization_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for MemberDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MemberDetail");
@@ -575,6 +689,17 @@ pub struct Graph {
     /// since the epoch.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Graph {
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the behavior graph was created. The value is in milliseconds
+    /// since the epoch.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Graph {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Graph");
@@ -644,6 +769,16 @@ pub struct UnprocessedAccount {
     /// <p>The reason that the member account request could not be processed.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl UnprocessedAccount {
+    /// <p>The AWS account identifier of the member account that was not processed.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The reason that the member account request could not be processed.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for UnprocessedAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnprocessedAccount");
@@ -707,6 +842,16 @@ pub struct Account {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The AWS account root user email address for the AWS account.</p>
     pub email_address: std::option::Option<std::string::String>,
+}
+impl Account {
+    /// <p>The account identifier of the AWS account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The AWS account root user email address for the AWS account.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
 }
 impl std::fmt::Debug for Account {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

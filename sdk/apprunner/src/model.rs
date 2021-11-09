@@ -47,6 +47,82 @@ pub struct Service {
     pub auto_scaling_configuration_summary:
         std::option::Option<crate::model::AutoScalingConfigurationSummary>,
 }
+impl Service {
+    /// <p>The customer-provided service name.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
+    pub fn service_id(&self) -> std::option::Option<&str> {
+        self.service_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this service.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
+    pub fn service_url(&self) -> std::option::Option<&str> {
+        self.service_url.as_deref()
+    }
+    /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
+    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deleted_at.as_ref()
+    }
+    /// <p>The current state of the App Runner service. These particular values mean the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> – The service failed to create. To troubleshoot this failure, read the failure events and logs, change any
+    /// parameters that need to be fixed, and retry the call to create the service.</p>
+    /// <p>The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the failure, delete the service.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure
+    /// that all related resources are removed.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>The runtime configuration of instances (scaling units) of this service.</p>
+    pub fn instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+        self.instance_configuration.as_ref()
+    }
+    /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be
+    /// either a customer-provided encryption key or an Amazon Web Services managed CMK.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
+    pub fn health_check_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
+        self.health_check_configuration.as_ref()
+    }
+    /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
+    pub fn auto_scaling_configuration_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingConfigurationSummary> {
+        self.auto_scaling_configuration_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
@@ -335,6 +411,21 @@ pub struct AutoScalingConfigurationSummary {
     /// <code>AutoScalingConfigurationName</code>.</p>
     pub auto_scaling_configuration_revision: i32,
 }
+impl AutoScalingConfigurationSummary {
+    /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_arn.as_deref()
+    }
+    /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_name.as_deref()
+    }
+    /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same
+    /// <code>AutoScalingConfigurationName</code>.</p>
+    pub fn auto_scaling_configuration_revision(&self) -> i32 {
+        self.auto_scaling_configuration_revision
+    }
+}
 impl std::fmt::Debug for AutoScalingConfigurationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingConfigurationSummary");
@@ -461,6 +552,47 @@ pub struct HealthCheckConfiguration {
     /// <p>Default: <code>5</code>
     /// </p>
     pub unhealthy_threshold: std::option::Option<i32>,
+}
+impl HealthCheckConfiguration {
+    /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
+    /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
+    /// <p>Default: <code>TCP</code>
+    /// </p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::HealthCheckProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The URL that health check requests are sent to.</p>
+    /// <p>
+    /// <code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.</p>
+    /// <p>Default: <code>"/"</code>
+    /// </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The time interval, in seconds, between health checks.</p>
+    /// <p>Default: <code>5</code>
+    /// </p>
+    pub fn interval(&self) -> std::option::Option<i32> {
+        self.interval
+    }
+    /// <p>The time, in seconds, to wait for a health check response before deciding it failed.</p>
+    /// <p>Default: <code>2</code>
+    /// </p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The number of consecutive checks that must succeed before App Runner decides that the service is healthy.</p>
+    /// <p>Default: <code>1</code>
+    /// </p>
+    pub fn healthy_threshold(&self) -> std::option::Option<i32> {
+        self.healthy_threshold
+    }
+    /// <p>The number of consecutive checks that must fail before App Runner decides that the service is unhealthy.</p>
+    /// <p>Default: <code>5</code>
+    /// </p>
+    pub fn unhealthy_threshold(&self) -> std::option::Option<i32> {
+        self.unhealthy_threshold
+    }
 }
 impl std::fmt::Debug for HealthCheckConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -663,6 +795,12 @@ pub struct EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     pub kms_key: std::option::Option<std::string::String>,
 }
+impl EncryptionConfiguration {
+    /// <p>The ARN of the KMS key that's used for encryption.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+}
 impl std::fmt::Debug for EncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionConfiguration");
@@ -719,6 +857,25 @@ pub struct InstanceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls
     /// any Amazon Web Services APIs.</p>
     pub instance_role_arn: std::option::Option<std::string::String>,
+}
+impl InstanceConfiguration {
+    /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
+    /// <p>Default: <code>1 vCPU</code>
+    /// </p>
+    pub fn cpu(&self) -> std::option::Option<&str> {
+        self.cpu.as_deref()
+    }
+    /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
+    /// <p>Default: <code>2 GB</code>
+    /// </p>
+    pub fn memory(&self) -> std::option::Option<&str> {
+        self.memory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls
+    /// any Amazon Web Services APIs.</p>
+    pub fn instance_role_arn(&self) -> std::option::Option<&str> {
+        self.instance_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for InstanceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -819,6 +976,32 @@ pub struct SourceConfiguration {
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub authentication_configuration:
         std::option::Option<crate::model::AuthenticationConfiguration>,
+}
+impl SourceConfiguration {
+    /// <p>The description of a source code repository.</p>
+    /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
+    pub fn code_repository(&self) -> std::option::Option<&crate::model::CodeRepository> {
+        self.code_repository.as_ref()
+    }
+    /// <p>The description of a source image
+    /// repository.</p>
+    /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
+    pub fn image_repository(&self) -> std::option::Option<&crate::model::ImageRepository> {
+        self.image_repository.as_ref()
+    }
+    /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source
+    /// code commit or new image version) starts a deployment.</p>
+    /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code
+    /// repository or a source image using a same-account ECR repository).</p>
+    pub fn auto_deployments_enabled(&self) -> std::option::Option<bool> {
+        self.auto_deployments_enabled
+    }
+    /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
+    pub fn authentication_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationConfiguration> {
+        self.authentication_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for SourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -939,6 +1122,18 @@ pub struct AuthenticationConfiguration {
     /// (but not for ECR Public repositories).</p>
     pub access_role_arn: std::option::Option<std::string::String>,
 }
+impl AuthenticationConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner connection that enables the App Runner service to connect to a source repository. It's required for GitHub code
+    /// repositories.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants the App Runner service access to a source repository. It's required for ECR image repositories
+    /// (but not for ECR Public repositories).</p>
+    pub fn access_role_arn(&self) -> std::option::Option<&str> {
+        self.access_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthenticationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationConfiguration");
@@ -1014,6 +1209,21 @@ pub struct ImageRepository {
     pub image_configuration: std::option::Option<crate::model::ImageConfiguration>,
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
     pub image_repository_type: std::option::Option<crate::model::ImageRepositoryType>,
+}
+impl ImageRepository {
+    /// <p>The identifier of an image.</p>
+    /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
+    pub fn image_identifier(&self) -> std::option::Option<&str> {
+        self.image_identifier.as_deref()
+    }
+    /// <p>Configuration for running the identified image.</p>
+    pub fn image_configuration(&self) -> std::option::Option<&crate::model::ImageConfiguration> {
+        self.image_configuration.as_ref()
+    }
+    /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
+    pub fn image_repository_type(&self) -> std::option::Option<&crate::model::ImageRepositoryType> {
+        self.image_repository_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ImageRepository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,6 +1374,27 @@ pub struct ImageConfiguration {
     /// </p>
     pub port: std::option::Option<std::string::String>,
 }
+impl ImageConfiguration {
+    /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs. Keys with a prefix of <code>AWSAPPRUNNER</code>
+    /// are reserved for system use and aren't valid.</p>
+    pub fn runtime_environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.runtime_environment_variables.as_ref()
+    }
+    /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start
+    /// command.</p>
+    pub fn start_command(&self) -> std::option::Option<&str> {
+        self.start_command.as_deref()
+    }
+    /// <p>The port that your application listens to in the container.</p>
+    /// <p>Default: <code>8080</code>
+    /// </p>
+    pub fn port(&self) -> std::option::Option<&str> {
+        self.port.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfiguration");
@@ -1273,6 +1504,20 @@ pub struct CodeRepository {
     /// <p>Configuration for building and running the service from a source code repository.</p>
     pub code_configuration: std::option::Option<crate::model::CodeConfiguration>,
 }
+impl CodeRepository {
+    /// <p>The location of the repository that contains the source code.</p>
+    pub fn repository_url(&self) -> std::option::Option<&str> {
+        self.repository_url.as_deref()
+    }
+    /// <p>The version that should be used within the source code repository.</p>
+    pub fn source_code_version(&self) -> std::option::Option<&crate::model::SourceCodeVersion> {
+        self.source_code_version.as_ref()
+    }
+    /// <p>Configuration for building and running the service from a source code repository.</p>
+    pub fn code_configuration(&self) -> std::option::Option<&crate::model::CodeConfiguration> {
+        self.code_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CodeRepository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeRepository");
@@ -1370,6 +1615,31 @@ pub struct CodeConfiguration {
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a
     /// <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
     pub code_configuration_values: std::option::Option<crate::model::CodeConfigurationValues>,
+}
+impl CodeConfiguration {
+    /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and
+    /// ignores <code>CodeConfigurationValues</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the
+    /// <code>apprunner.yaml</code> file in the source code repository.</p>
+    /// </li>
+    /// </ul>
+    pub fn configuration_source(&self) -> std::option::Option<&crate::model::ConfigurationSource> {
+        self.configuration_source.as_ref()
+    }
+    /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a
+    /// <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
+    pub fn code_configuration_values(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeConfigurationValues> {
+        self.code_configuration_values.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1482,6 +1752,36 @@ pub struct CodeConfigurationValues {
     /// <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
     pub runtime_environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CodeConfigurationValues {
+    /// <p>A runtime environment type for building and running an App Runner service.
+    /// It represents a
+    /// programming language runtime.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The command App Runner runs to build your application.</p>
+    pub fn build_command(&self) -> std::option::Option<&str> {
+        self.build_command.as_deref()
+    }
+    /// <p>The command App Runner runs to start your application.</p>
+    pub fn start_command(&self) -> std::option::Option<&str> {
+        self.start_command.as_deref()
+    }
+    /// <p>The port that your application listens to in the container.</p>
+    /// <p>Default: <code>8080</code>
+    /// </p>
+    pub fn port(&self) -> std::option::Option<&str> {
+        self.port.as_deref()
+    }
+    /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs. Keys with a prefix of
+    /// <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+    pub fn runtime_environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.runtime_environment_variables.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeConfigurationValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1733,6 +2033,18 @@ pub struct SourceCodeVersion {
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl SourceCodeVersion {
+    /// <p>The type of version identifier.</p>
+    /// <p>For a git-based repository, branches represent versions.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SourceCodeVersionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A source code version.</p>
+    /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for SourceCodeVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceCodeVersion");
@@ -1932,6 +2244,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -2018,6 +2340,49 @@ pub struct ServiceSummary {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ServiceStatus>,
+}
+impl ServiceSummary {
+    /// <p>The customer-provided service name.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
+    pub fn service_id(&self) -> std::option::Option<&str> {
+        self.service_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this service.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
+    pub fn service_url(&self) -> std::option::Option<&str> {
+        self.service_url.as_deref()
+    }
+    /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The current state of the App Runner service. These particular values mean the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any parameters that need to be fixed,
+    /// and retry the call to create the service.</p>
+    /// <p>The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the failure, delete the service.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure
+    /// that all related resources are removed.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2191,6 +2556,36 @@ pub struct OperationSummary {
     pub ended_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl OperationSummary {
+    /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of operation. It indicates a specific action that occured.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OperationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The current state of the operation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OperationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.ended_at.as_ref()
+    }
+    /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for OperationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2494,6 +2889,28 @@ pub struct ConnectionSummary {
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ConnectionSummary {
+    /// <p>The customer-provided connection name.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this connection.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The source repository provider.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for ConnectionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionSummary");
@@ -2733,6 +3150,29 @@ pub struct CustomDomain {
     /// <p>The current state of the domain name association.</p>
     pub status: std::option::Option<crate::model::CustomDomainAssociationStatus>,
 }
+impl CustomDomain {
+    /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example,
+    /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i>
+    /// </code> is associated with the App Runner service in addition to the base
+    /// domain.</p>
+    pub fn enable_www_subdomain(&self) -> std::option::Option<bool> {
+        self.enable_www_subdomain
+    }
+    /// <p>A list of certificate CNAME records that's used for this domain name.</p>
+    pub fn certificate_validation_records(
+        &self,
+    ) -> std::option::Option<&[crate::model::CertificateValidationRecord]> {
+        self.certificate_validation_records.as_deref()
+    }
+    /// <p>The current state of the domain name association.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CustomDomainAssociationStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomDomain {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomDomain");
@@ -2939,6 +3379,25 @@ pub struct CertificateValidationRecord {
     /// DNS.</p>
     pub status: std::option::Option<crate::model::CertificateValidationRecordStatus>,
 }
+impl CertificateValidationRecord {
+    /// <p>The certificate CNAME record name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The record type, always <code>CNAME</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The certificate CNAME record value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your
+    /// DNS.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateValidationRecordStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for CertificateValidationRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateValidationRecord");
@@ -3118,6 +3577,55 @@ pub struct AutoScalingConfiguration {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
     pub deleted_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AutoScalingConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_arn.as_deref()
+    }
+    /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_name.as_deref()
+    }
+    /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same
+    /// <code>AutoScalingConfigurationName</code>.</p>
+    pub fn auto_scaling_configuration_revision(&self) -> i32 {
+        self.auto_scaling_configuration_revision
+    }
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same
+    /// <code>Name</code>. It's set to <code>false</code> otherwise.</p>
+    pub fn latest(&self) -> bool {
+        self.latest
+    }
+    /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be
+    /// used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AutoScalingConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of concurrent requests that an instance processes. If the number of concurrent requests exceeds this limit, App Runner scales the service
+    /// up.</p>
+    pub fn max_concurrency(&self) -> i32 {
+        self.max_concurrency
+    }
+    /// <p>The minimum number of instances that App Runner provisions for a service. The service always has at least <code>MinSize</code> provisioned instances. Some
+    /// of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be
+    /// quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+    /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
+    pub fn min_size(&self) -> i32 {
+        self.min_size
+    }
+    /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
+    pub fn max_size(&self) -> i32 {
+        self.max_size
+    }
+    /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
+    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deleted_at.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoScalingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3395,6 +3903,28 @@ pub struct Connection {
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Connection {
+    /// <p>The customer-provided connection name.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this connection.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The source repository provider.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

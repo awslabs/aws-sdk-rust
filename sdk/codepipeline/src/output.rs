@@ -6,6 +6,12 @@ pub struct UpdatePipelineOutput {
     /// <p>The structure of the updated pipeline.</p>
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
 }
+impl UpdatePipelineOutput {
+    /// <p>The structure of the updated pipeline.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
+        self.pipeline.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePipelineOutput");
@@ -147,6 +153,12 @@ pub struct StopPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
+impl StopPipelineExecutionOutput {
+    /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopPipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopPipelineExecutionOutput");
@@ -198,6 +210,13 @@ pub struct StartPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was
     /// started.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
+}
+impl StartPipelineExecutionOutput {
+    /// <p>The unique system-generated ID of the pipeline execution that was
+    /// started.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartPipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -251,6 +270,12 @@ impl StartPipelineExecutionOutput {
 pub struct RetryStageExecutionOutput {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
+}
+impl RetryStageExecutionOutput {
+    /// <p>The ID of the current workflow execution in the failed stage.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RetryStageExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -333,6 +358,13 @@ pub struct PutWebhookOutput {
     /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
     /// URL, and webhook ARN.</p>
     pub webhook: std::option::Option<crate::model::ListWebhookItem>,
+}
+impl PutWebhookOutput {
+    /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
+    /// URL, and webhook ARN.</p>
+    pub fn webhook(&self) -> std::option::Option<&crate::model::ListWebhookItem> {
+        self.webhook.as_ref()
+    }
 }
 impl std::fmt::Debug for PutWebhookOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -507,6 +539,12 @@ pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
     pub approved_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PutApprovalResultOutput {
+    /// <p>The timestamp showing when the approval or rejection was submitted.</p>
+    pub fn approved_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.approved_at.as_ref()
+    }
+}
 impl std::fmt::Debug for PutApprovalResultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutApprovalResultOutput");
@@ -560,6 +598,17 @@ pub struct PutActionRevisionOutput {
     pub new_revision: bool,
     /// <p>The ID of the current workflow state of the pipeline.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
+}
+impl PutActionRevisionOutput {
+    /// <p>Indicates whether the artifact revision was previously used in an execution of the
+    /// specified pipeline.</p>
+    pub fn new_revision(&self) -> bool {
+        self.new_revision
+    }
+    /// <p>The ID of the current workflow state of the pipeline.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutActionRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -627,6 +676,12 @@ pub struct PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::ThirdPartyJob>>,
 }
+impl PollForThirdPartyJobsOutput {
+    /// <p>Information about the jobs to take action on.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::ThirdPartyJob]> {
+        self.jobs.as_deref()
+    }
+}
 impl std::fmt::Debug for PollForThirdPartyJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PollForThirdPartyJobsOutput");
@@ -681,6 +736,12 @@ impl PollForThirdPartyJobsOutput {
 pub struct PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
+}
+impl PollForJobsOutput {
+    /// <p>Information about the jobs to take action on.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
 }
 impl std::fmt::Debug for PollForJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -741,6 +802,19 @@ pub struct ListWebhooksOutput {
     /// returned and can be used in a subsequent ListWebhooks call to return the next set of
     /// webhooks in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListWebhooksOutput {
+    /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
+    /// call.</p>
+    pub fn webhooks(&self) -> std::option::Option<&[crate::model::ListWebhookItem]> {
+        self.webhooks.as_deref()
+    }
+    /// <p>If the amount of returned information is significantly large, an identifier is also
+    /// returned and can be used in a subsequent ListWebhooks call to return the next set of
+    /// webhooks in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWebhooksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -823,6 +897,19 @@ pub struct ListTagsForResourceOutput {
     /// pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If the amount of returned information is significantly large, an identifier is also
+    /// returned and can be used in a subsequent API call to return the next page of the list.
+    /// The ListTagsforResource call lists all available tags in one call and does not use
+    /// pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -903,6 +990,18 @@ pub struct ListPipelinesOutput {
     /// pipelines in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPipelinesOutput {
+    /// <p>The list of pipelines.</p>
+    pub fn pipelines(&self) -> std::option::Option<&[crate::model::PipelineSummary]> {
+        self.pipelines.as_deref()
+    }
+    /// <p>If the amount of returned information is significantly large, an identifier is also
+    /// returned. It can be used in a subsequent list pipelines call to return the next set of
+    /// pipelines in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelinesOutput");
@@ -981,6 +1080,20 @@ pub struct ListPipelineExecutionsOutput {
     /// view all items in the list, continue to call this operation with each subsequent token
     /// until no more nextToken values are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPipelineExecutionsOutput {
+    /// <p>A list of executions in the history of a pipeline.</p>
+    pub fn pipeline_execution_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::PipelineExecutionSummary]> {
+        self.pipeline_execution_summaries.as_deref()
+    }
+    /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To
+    /// view all items in the list, continue to call this operation with each subsequent token
+    /// until no more nextToken values are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPipelineExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1067,6 +1180,18 @@ pub struct ListActionTypesOutput {
     /// of action types in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListActionTypesOutput {
+    /// <p>Provides details of the action types.</p>
+    pub fn action_types(&self) -> std::option::Option<&[crate::model::ActionType]> {
+        self.action_types.as_deref()
+    }
+    /// <p>If the amount of returned information is significantly large, an identifier is also
+    /// returned. It can be used in a subsequent list action types call to return the next set
+    /// of action types in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListActionTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActionTypesOutput");
@@ -1145,6 +1270,20 @@ pub struct ListActionExecutionsOutput {
     /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
     /// return the next set of action executions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListActionExecutionsOutput {
+    /// <p>The details for a list of recent executions, such as action execution ID.</p>
+    pub fn action_execution_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ActionExecutionDetail]> {
+        self.action_execution_details.as_deref()
+    }
+    /// <p>If the amount of returned information is significantly large, an identifier is also
+    /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
+    /// return the next set of action executions in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListActionExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1225,6 +1364,13 @@ pub struct GetThirdPartyJobDetailsOutput {
     /// job.</p>
     pub job_details: std::option::Option<crate::model::ThirdPartyJobDetails>,
 }
+impl GetThirdPartyJobDetailsOutput {
+    /// <p>The details of the job, including any protected values defined for the
+    /// job.</p>
+    pub fn job_details(&self) -> std::option::Option<&crate::model::ThirdPartyJobDetails> {
+        self.job_details.as_ref()
+    }
+}
 impl std::fmt::Debug for GetThirdPartyJobDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetThirdPartyJobDetailsOutput");
@@ -1290,6 +1436,33 @@ pub struct GetPipelineStateOutput {
     pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub updated: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetPipelineStateOutput {
+    /// <p>The name of the pipeline for which you want to get the state.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The version number of the pipeline.</p>
+    /// <note>
+    /// <p>A newly created pipeline is always assigned a version number of
+    /// <code>1</code>.</p>
+    /// </note>
+    pub fn pipeline_version(&self) -> std::option::Option<i32> {
+        self.pipeline_version
+    }
+    /// <p>A list of the pipeline stage output information, including stage name, state, most
+    /// recent run details, whether the stage is disabled, and other data.</p>
+    pub fn stage_states(&self) -> std::option::Option<&[crate::model::StageState]> {
+        self.stage_states.as_deref()
+    }
+    /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPipelineStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1419,6 +1592,12 @@ pub struct GetPipelineExecutionOutput {
     /// <p>Represents information about the execution of a pipeline.</p>
     pub pipeline_execution: std::option::Option<crate::model::PipelineExecution>,
 }
+impl GetPipelineExecutionOutput {
+    /// <p>Represents information about the execution of a pipeline.</p>
+    pub fn pipeline_execution(&self) -> std::option::Option<&crate::model::PipelineExecution> {
+        self.pipeline_execution.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPipelineExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPipelineExecutionOutput");
@@ -1473,6 +1652,18 @@ pub struct GetPipelineOutput {
     /// <p>Represents the pipeline metadata information returned as part of the output of a
     /// <code>GetPipeline</code> action.</p>
     pub metadata: std::option::Option<crate::model::PipelineMetadata>,
+}
+impl GetPipelineOutput {
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
+    /// </p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
+        self.pipeline.as_ref()
+    }
+    /// <p>Represents the pipeline metadata information returned as part of the output of a
+    /// <code>GetPipeline</code> action.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::PipelineMetadata> {
+        self.metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1549,6 +1740,16 @@ pub struct GetJobDetailsOutput {
     /// </note>
     pub job_details: std::option::Option<crate::model::JobDetails>,
 }
+impl GetJobDetailsOutput {
+    /// <p>The details of the job.</p>
+    /// <note>
+    /// <p>If AWSSessionCredentials is used, a long-running job can call
+    /// <code>GetJobDetails</code> again to obtain new credentials.</p>
+    /// </note>
+    pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
+        self.job_details.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJobDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobDetailsOutput");
@@ -1608,6 +1809,13 @@ pub struct GetActionTypeOutput {
     /// <p>The action type information for the requested action type, such as the action type
     /// ID.</p>
     pub action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
+}
+impl GetActionTypeOutput {
+    /// <p>The action type information for the requested action type, such as the action type
+    /// ID.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionTypeDeclaration> {
+        self.action_type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetActionTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1845,6 +2053,17 @@ pub struct CreatePipelineOutput {
     /// <p>Specifies the tags applied to the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePipelineOutput {
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
+    /// </p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
+        self.pipeline.as_ref()
+    }
+    /// <p>Specifies the tags applied to the pipeline.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePipelineOutput");
@@ -1922,6 +2141,16 @@ pub struct CreateCustomActionTypeOutput {
     /// <p>Specifies the tags applied to the custom action.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateCustomActionTypeOutput {
+    /// <p>Returns information about the details of an action type.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>Specifies the tags applied to the custom action.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomActionTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomActionTypeOutput");
@@ -1995,6 +2224,12 @@ pub struct AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
 }
+impl AcknowledgeThirdPartyJobOutput {
+    /// <p>The status information for the third party job, if any.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AcknowledgeThirdPartyJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcknowledgeThirdPartyJobOutput");
@@ -2042,6 +2277,12 @@ impl AcknowledgeThirdPartyJobOutput {
 pub struct AcknowledgeJobOutput {
     /// <p>Whether the job worker has received the specified job.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
+}
+impl AcknowledgeJobOutput {
+    /// <p>Whether the job worker has received the specified job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for AcknowledgeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

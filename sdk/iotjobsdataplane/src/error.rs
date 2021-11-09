@@ -604,6 +604,12 @@ pub struct ThrottlingException {
     /// <p>The payload associated with the exception.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
+impl ThrottlingException {
+    /// <p>The payload associated with the exception.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");

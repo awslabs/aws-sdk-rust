@@ -159,6 +159,92 @@ pub struct User {
     /// <p>The identity ID for the user in the external login provider.</p>
     pub external_login_id: std::option::Option<std::string::String>,
 }
+impl User {
+    /// <p>The Amazon Resource Name (ARN) for the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The user's user name.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The user's email address.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the
+    /// following:.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses,
+    /// and dashboards.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+    /// Amazon QuickSight settings.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESTRICTED_READER</code>: This role isn't currently available for
+    /// use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
+    /// use.</p>
+    /// </li>
+    /// </ul>
+    pub fn role(&self) -> std::option::Option<&crate::model::UserRole> {
+        self.role.as_ref()
+    }
+    /// <p>The type of identity authentication used by the user.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The active status of user. When you create an Amazon QuickSight user that’s not an IAM
+    /// user or an Active Directory user, that user is inactive until they sign in and provide a
+    /// password.</p>
+    pub fn active(&self) -> bool {
+        self.active
+    }
+    /// <p>The principal ID of the user.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The custom permissions profile associated with this user.</p>
+    pub fn custom_permissions_name(&self) -> std::option::Option<&str> {
+        self.custom_permissions_name.as_deref()
+    }
+    /// <p>The type of supported external login provider that provides identity to let the user
+    /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p>
+    /// </li>
+    /// </ul>
+    pub fn external_login_federation_provider_type(&self) -> std::option::Option<&str> {
+        self.external_login_federation_provider_type.as_deref()
+    }
+    /// <p>The URL of the external login provider.</p>
+    pub fn external_login_federation_provider_url(&self) -> std::option::Option<&str> {
+        self.external_login_federation_provider_url.as_deref()
+    }
+    /// <p>The identity ID for the user in the external login provider.</p>
+    pub fn external_login_id(&self) -> std::option::Option<&str> {
+        self.external_login_id.as_deref()
+    }
+}
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
@@ -590,6 +676,30 @@ pub struct ResourcePermission {
     /// <p>The IAMaction to grant or revoke permissions on.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ResourcePermission {
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p>
+    /// </li>
+    /// <li>
+    /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
+    /// </li>
+    /// <li>
+    /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
+    /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
+    /// (This is less common.) </p>
+    /// </li>
+    /// </ul>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The IAMaction to grant or revoke permissions on.</p>
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.actions.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourcePermission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourcePermission");
@@ -691,6 +801,20 @@ pub struct ThemeAlias {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the theme alias.</p>
     pub theme_version_number: std::option::Option<i64>,
+}
+impl ThemeAlias {
+    /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The display name of the theme alias.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The version number of the theme alias.</p>
+    pub fn theme_version_number(&self) -> std::option::Option<i64> {
+        self.theme_version_number
+    }
 }
 impl std::fmt::Debug for ThemeAlias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -855,6 +979,21 @@ pub struct ThemeConfiguration {
     /// <p>Display options related to sheets.</p>
     pub sheet: std::option::Option<crate::model::SheetStyle>,
 }
+impl ThemeConfiguration {
+    /// <p>Color properties that apply to chart data colors.</p>
+    pub fn data_color_palette(&self) -> std::option::Option<&crate::model::DataColorPalette> {
+        self.data_color_palette.as_ref()
+    }
+    /// <p>Color properties that apply to the UI and to charts, excluding the colors that apply
+    /// to data. </p>
+    pub fn ui_color_palette(&self) -> std::option::Option<&crate::model::UiColorPalette> {
+        self.ui_color_palette.as_ref()
+    }
+    /// <p>Display options related to sheets.</p>
+    pub fn sheet(&self) -> std::option::Option<&crate::model::SheetStyle> {
+        self.sheet.as_ref()
+    }
+}
 impl std::fmt::Debug for ThemeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThemeConfiguration");
@@ -939,6 +1078,16 @@ pub struct SheetStyle {
     /// <p>The layout options for tiles.</p>
     pub tile_layout: std::option::Option<crate::model::TileLayoutStyle>,
 }
+impl SheetStyle {
+    /// <p>The display options for tiles.</p>
+    pub fn tile(&self) -> std::option::Option<&crate::model::TileStyle> {
+        self.tile.as_ref()
+    }
+    /// <p>The layout options for tiles.</p>
+    pub fn tile_layout(&self) -> std::option::Option<&crate::model::TileLayoutStyle> {
+        self.tile_layout.as_ref()
+    }
+}
 impl std::fmt::Debug for SheetStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SheetStyle");
@@ -1005,6 +1154,16 @@ pub struct TileLayoutStyle {
     /// <p>The margin settings that apply around the outside edge of sheets.</p>
     pub margin: std::option::Option<crate::model::MarginStyle>,
 }
+impl TileLayoutStyle {
+    /// <p>The gutter settings that apply between tiles. </p>
+    pub fn gutter(&self) -> std::option::Option<&crate::model::GutterStyle> {
+        self.gutter.as_ref()
+    }
+    /// <p>The margin settings that apply around the outside edge of sheets.</p>
+    pub fn margin(&self) -> std::option::Option<&crate::model::MarginStyle> {
+        self.margin.as_ref()
+    }
+}
 impl std::fmt::Debug for TileLayoutStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TileLayoutStyle");
@@ -1066,6 +1225,12 @@ pub struct MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     pub show: std::option::Option<bool>,
 }
+impl MarginStyle {
+    /// <p>This Boolean value controls whether to display sheet margins.</p>
+    pub fn show(&self) -> std::option::Option<bool> {
+        self.show
+    }
+}
 impl std::fmt::Debug for MarginStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MarginStyle");
@@ -1112,6 +1277,13 @@ pub struct GutterStyle {
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.
     /// </p>
     pub show: std::option::Option<bool>,
+}
+impl GutterStyle {
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.
+    /// </p>
+    pub fn show(&self) -> std::option::Option<bool> {
+        self.show
+    }
 }
 impl std::fmt::Debug for GutterStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1161,6 +1333,12 @@ pub struct TileStyle {
     /// <p>The border around a tile.</p>
     pub border: std::option::Option<crate::model::BorderStyle>,
 }
+impl TileStyle {
+    /// <p>The border around a tile.</p>
+    pub fn border(&self) -> std::option::Option<&crate::model::BorderStyle> {
+        self.border.as_ref()
+    }
+}
 impl std::fmt::Debug for TileStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TileStyle");
@@ -1208,6 +1386,12 @@ impl TileStyle {
 pub struct BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
     pub show: std::option::Option<bool>,
+}
+impl BorderStyle {
+    /// <p>The option to enable display of borders for visuals.</p>
+    pub fn show(&self) -> std::option::Option<bool> {
+        self.show
+    }
 }
 impl std::fmt::Debug for BorderStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1298,6 +1482,82 @@ pub struct UiColorPalette {
     /// <p>The foreground color that applies to any text or other elements that appear over the
     /// measure color.</p>
     pub measure_foreground: std::option::Option<std::string::String>,
+}
+impl UiColorPalette {
+    /// <p>The color of text and other foreground elements that appear over the primary
+    /// background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+    pub fn primary_foreground(&self) -> std::option::Option<&str> {
+        self.primary_foreground.as_deref()
+    }
+    /// <p>The background color that applies to visuals and other high emphasis UI.</p>
+    pub fn primary_background(&self) -> std::option::Option<&str> {
+        self.primary_background.as_deref()
+    }
+    /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that
+    /// appears over the secondary background.</p>
+    pub fn secondary_foreground(&self) -> std::option::Option<&str> {
+        self.secondary_foreground.as_deref()
+    }
+    /// <p>The background color that applies to the sheet background and sheet controls.</p>
+    pub fn secondary_background(&self) -> std::option::Option<&str> {
+        self.secondary_background.as_deref()
+    }
+    /// <p>This color is that applies to selected states and buttons.</p>
+    pub fn accent(&self) -> std::option::Option<&str> {
+        self.accent.as_deref()
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the
+    /// accent color.</p>
+    pub fn accent_foreground(&self) -> std::option::Option<&str> {
+        self.accent_foreground.as_deref()
+    }
+    /// <p>The color that applies to error messages.</p>
+    pub fn danger(&self) -> std::option::Option<&str> {
+        self.danger.as_deref()
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the
+    /// error color.</p>
+    pub fn danger_foreground(&self) -> std::option::Option<&str> {
+        self.danger_foreground.as_deref()
+    }
+    /// <p>This color that applies to warning and informational messages.</p>
+    pub fn warning(&self) -> std::option::Option<&str> {
+        self.warning.as_deref()
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the
+    /// warning color.</p>
+    pub fn warning_foreground(&self) -> std::option::Option<&str> {
+        self.warning_foreground.as_deref()
+    }
+    /// <p>The color that applies to success messages, for example the check mark for a
+    /// successful download.</p>
+    pub fn success(&self) -> std::option::Option<&str> {
+        self.success.as_deref()
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the
+    /// success color.</p>
+    pub fn success_foreground(&self) -> std::option::Option<&str> {
+        self.success_foreground.as_deref()
+    }
+    /// <p>The color that applies to the names of fields that are identified as
+    /// dimensions.</p>
+    pub fn dimension(&self) -> std::option::Option<&str> {
+        self.dimension.as_deref()
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the
+    /// dimension color.</p>
+    pub fn dimension_foreground(&self) -> std::option::Option<&str> {
+        self.dimension_foreground.as_deref()
+    }
+    /// <p>The color that applies to the names of fields that are identified as measures.</p>
+    pub fn measure(&self) -> std::option::Option<&str> {
+        self.measure.as_deref()
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the
+    /// measure color.</p>
+    pub fn measure_foreground(&self) -> std::option::Option<&str> {
+        self.measure_foreground.as_deref()
+    }
 }
 impl std::fmt::Debug for UiColorPalette {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1599,6 +1859,21 @@ pub struct DataColorPalette {
     /// highlighted.</p>
     pub empty_fill_color: std::option::Option<std::string::String>,
 }
+impl DataColorPalette {
+    /// <p>The hexadecimal codes for the colors.</p>
+    pub fn colors(&self) -> std::option::Option<&[std::string::String]> {
+        self.colors.as_deref()
+    }
+    /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
+    pub fn min_max_gradient(&self) -> std::option::Option<&[std::string::String]> {
+        self.min_max_gradient.as_deref()
+    }
+    /// <p>The hexadecimal code of a color that applies to charts where a lack of data is
+    /// highlighted.</p>
+    pub fn empty_fill_color(&self) -> std::option::Option<&str> {
+        self.empty_fill_color.as_deref()
+    }
+}
 impl std::fmt::Debug for DataColorPalette {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataColorPalette");
@@ -1700,6 +1975,20 @@ pub struct TemplateAlias {
     /// <p>The version number of the template alias.</p>
     pub template_version_number: std::option::Option<i64>,
 }
+impl TemplateAlias {
+    /// <p>The display name of the template alias.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template alias.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version number of the template alias.</p>
+    pub fn template_version_number(&self) -> std::option::Option<i64> {
+        self.template_version_number
+    }
+}
 impl std::fmt::Debug for TemplateAlias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateAlias");
@@ -1776,6 +2065,16 @@ pub struct TemplateSourceEntity {
     /// <p>The source template, if it is based on an template.</p>
     pub source_template: std::option::Option<crate::model::TemplateSourceTemplate>,
 }
+impl TemplateSourceEntity {
+    /// <p>The source analysis, if it is based on an analysis.</p>
+    pub fn source_analysis(&self) -> std::option::Option<&crate::model::TemplateSourceAnalysis> {
+        self.source_analysis.as_ref()
+    }
+    /// <p>The source template, if it is based on an template.</p>
+    pub fn source_template(&self) -> std::option::Option<&crate::model::TemplateSourceTemplate> {
+        self.source_template.as_ref()
+    }
+}
 impl std::fmt::Debug for TemplateSourceEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateSourceEntity");
@@ -1843,6 +2142,12 @@ pub struct TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl TemplateSourceTemplate {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplateSourceTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateSourceTemplate");
@@ -1891,6 +2196,17 @@ pub struct TemplateSourceAnalysis {
     /// <p>A structure containing information about the dataset references used as placeholders
     /// in the template.</p>
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
+}
+impl TemplateSourceAnalysis {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A structure containing information about the dataset references used as placeholders
+    /// in the template.</p>
+    pub fn data_set_references(&self) -> std::option::Option<&[crate::model::DataSetReference]> {
+        self.data_set_references.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateSourceAnalysis {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1969,6 +2285,16 @@ pub struct DataSetReference {
     pub data_set_placeholder: std::option::Option<std::string::String>,
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     pub data_set_arn: std::option::Option<std::string::String>,
+}
+impl DataSetReference {
+    /// <p>Dataset placeholder.</p>
+    pub fn data_set_placeholder(&self) -> std::option::Option<&str> {
+        self.data_set_placeholder.as_deref()
+    }
+    /// <p>Dataset Amazon Resource Name (ARN).</p>
+    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+        self.data_set_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSetReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2100,6 +2426,24 @@ pub struct Group {
     /// <p>The principal ID of the group.</p>
     pub principal_id: std::option::Option<std::string::String>,
 }
+impl Group {
+    /// <p>The Amazon Resource Name (ARN) for the group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The group description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The principal ID of the group.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
@@ -2188,6 +2532,12 @@ pub struct SslProperties {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     pub disable_ssl: bool,
 }
+impl SslProperties {
+    /// <p>A Boolean option to control whether SSL should be disabled.</p>
+    pub fn disable_ssl(&self) -> bool {
+        self.disable_ssl
+    }
+}
 impl std::fmt::Debug for SslProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SslProperties");
@@ -2235,6 +2585,12 @@ impl SslProperties {
 pub struct VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
     pub vpc_connection_arn: std::option::Option<std::string::String>,
+}
+impl VpcConnectionProperties {
+    /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
+    pub fn vpc_connection_arn(&self) -> std::option::Option<&str> {
+        self.vpc_connection_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConnectionProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2292,6 +2648,19 @@ pub struct DataSourceCredentials {
     /// data source in the ARN is used as the credentials for the
     /// <code>DataSourceCredentials</code> structure.</p>
     pub copy_source_arn: std::option::Option<std::string::String>,
+}
+impl DataSourceCredentials {
+    /// <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+    pub fn credential_pair(&self) -> std::option::Option<&crate::model::CredentialPair> {
+        self.credential_pair.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you
+    /// want to use. When <code>CopySourceArn</code> is not null, the credential pair from the
+    /// data source in the ARN is used as the credentials for the
+    /// <code>DataSourceCredentials</code> structure.</p>
+    pub fn copy_source_arn(&self) -> std::option::Option<&str> {
+        self.copy_source_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSourceCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2378,6 +2747,30 @@ pub struct CredentialPair {
     /// <code>Credentials</code> is automatically allowed.</p>
     pub alternate_data_source_parameters:
         std::option::Option<std::vec::Vec<crate::model::DataSourceParameters>>,
+}
+impl CredentialPair {
+    /// <p>User name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>Password.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>A set of alternate data source parameters that you want to share for these
+    /// credentials. The credentials are applied in tandem with the data source parameters when
+    /// you copy a data source by using a create or update request. The API operation compares
+    /// the <code>DataSourceParameters</code> structure that's in the request with the
+    /// structures in the <code>AlternateDataSourceParameters</code> allow list. If the
+    /// structures are an exact match, the request is allowed to use the new data source with
+    /// the existing credentials. If the <code>AlternateDataSourceParameters</code> list is
+    /// null, the <code>DataSourceParameters</code> originally used with these
+    /// <code>Credentials</code> is automatically allowed.</p>
+    pub fn alternate_data_source_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceParameters]> {
+        self.alternate_data_source_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for CredentialPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2526,6 +2919,15 @@ pub enum DataSourceParameters {
     TeradataParameters(crate::model::TeradataParameters),
     /// <p>The parameters for Twitter.</p>
     TwitterParameters(crate::model::TwitterParameters),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl DataSourceParameters {
     /// Tries to convert the enum instance into [`AmazonElasticsearchParameters`](crate::model::DataSourceParameters::AmazonElasticsearchParameters), extracting the inner [`AmazonElasticsearchParameters`](crate::model::AmazonElasticsearchParameters).
@@ -2837,6 +3239,10 @@ impl DataSourceParameters {
     pub fn is_twitter_parameters(&self) -> bool {
         self.as_twitter_parameters().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -2845,6 +3251,12 @@ impl DataSourceParameters {
 pub struct AmazonOpenSearchParameters {
     #[allow(missing_docs)] // documentation missing in model
     pub domain: std::option::Option<std::string::String>,
+}
+impl AmazonOpenSearchParameters {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
 }
 impl std::fmt::Debug for AmazonOpenSearchParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2895,6 +3307,16 @@ pub struct TwitterParameters {
     pub query: std::option::Option<std::string::String>,
     /// <p>Maximum number of rows to query Twitter.</p>
     pub max_rows: i32,
+}
+impl TwitterParameters {
+    /// <p>Twitter query string.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
+    /// <p>Maximum number of rows to query Twitter.</p>
+    pub fn max_rows(&self) -> i32 {
+        self.max_rows
+    }
 }
 impl std::fmt::Debug for TwitterParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2960,6 +3382,20 @@ pub struct TeradataParameters {
     pub port: i32,
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
+}
+impl TeradataParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
 }
 impl std::fmt::Debug for TeradataParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3039,6 +3475,20 @@ pub struct SqlServerParameters {
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
 }
+impl SqlServerParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
 impl std::fmt::Debug for SqlServerParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqlServerParameters");
@@ -3115,6 +3565,16 @@ pub struct SparkParameters {
     /// <p>Port.</p>
     pub port: i32,
 }
+impl SparkParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+}
 impl std::fmt::Debug for SparkParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SparkParameters");
@@ -3179,6 +3639,20 @@ pub struct SnowflakeParameters {
     pub database: std::option::Option<std::string::String>,
     /// <p>Warehouse.</p>
     pub warehouse: std::option::Option<std::string::String>,
+}
+impl SnowflakeParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>Warehouse.</p>
+    pub fn warehouse(&self) -> std::option::Option<&str> {
+        self.warehouse.as_deref()
+    }
 }
 impl std::fmt::Debug for SnowflakeParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3254,6 +3728,12 @@ pub struct ServiceNowParameters {
     /// <p>URL of the base site.</p>
     pub site_base_url: std::option::Option<std::string::String>,
 }
+impl ServiceNowParameters {
+    /// <p>URL of the base site.</p>
+    pub fn site_base_url(&self) -> std::option::Option<&str> {
+        self.site_base_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceNowParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceNowParameters");
@@ -3305,6 +3785,15 @@ pub struct S3Parameters {
     /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
     /// uploaded into Amazon QuickSight.</p>
     pub manifest_file_location: std::option::Option<crate::model::ManifestFileLocation>,
+}
+impl S3Parameters {
+    /// <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file was
+    /// uploaded into Amazon QuickSight.</p>
+    pub fn manifest_file_location(
+        &self,
+    ) -> std::option::Option<&crate::model::ManifestFileLocation> {
+        self.manifest_file_location.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Parameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3360,6 +3849,16 @@ pub struct ManifestFileLocation {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Amazon S3 key that identifies an object.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl ManifestFileLocation {
+    /// <p>Amazon S3 bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Amazon S3 key that identifies an object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for ManifestFileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3430,6 +3929,25 @@ pub struct RedshiftParameters {
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are
     /// provided.</p>
     pub cluster_id: std::option::Option<std::string::String>,
+}
+impl RedshiftParameters {
+    /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are
+    /// provided.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RedshiftParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3522,6 +4040,16 @@ pub struct RdsParameters {
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
 }
+impl RdsParameters {
+    /// <p>Instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
 impl std::fmt::Debug for RdsParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RdsParameters");
@@ -3586,6 +4114,20 @@ pub struct PrestoParameters {
     pub port: i32,
     /// <p>Catalog.</p>
     pub catalog: std::option::Option<std::string::String>,
+}
+impl PrestoParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Catalog.</p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
 }
 impl std::fmt::Debug for PrestoParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3665,6 +4207,20 @@ pub struct PostgreSqlParameters {
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
 }
+impl PostgreSqlParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
 impl std::fmt::Debug for PostgreSqlParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PostgreSqlParameters");
@@ -3742,6 +4298,20 @@ pub struct OracleParameters {
     pub port: i32,
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
+}
+impl OracleParameters {
+    /// <p>An Oracle host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
 }
 impl std::fmt::Debug for OracleParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3821,6 +4391,20 @@ pub struct MySqlParameters {
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
 }
+impl MySqlParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
 impl std::fmt::Debug for MySqlParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MySqlParameters");
@@ -3899,6 +4483,20 @@ pub struct MariaDbParameters {
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
 }
+impl MariaDbParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
 impl std::fmt::Debug for MariaDbParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MariaDbParameters");
@@ -3973,6 +4571,12 @@ pub struct JiraParameters {
     /// <p>The base URL of the Jira site.</p>
     pub site_base_url: std::option::Option<std::string::String>,
 }
+impl JiraParameters {
+    /// <p>The base URL of the Jira site.</p>
+    pub fn site_base_url(&self) -> std::option::Option<&str> {
+        self.site_base_url.as_deref()
+    }
+}
 impl std::fmt::Debug for JiraParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JiraParameters");
@@ -4023,6 +4627,12 @@ impl JiraParameters {
 pub struct AwsIotAnalyticsParameters {
     /// <p>Dataset name.</p>
     pub data_set_name: std::option::Option<std::string::String>,
+}
+impl AwsIotAnalyticsParameters {
+    /// <p>Dataset name.</p>
+    pub fn data_set_name(&self) -> std::option::Option<&str> {
+        self.data_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsIotAnalyticsParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4078,6 +4688,20 @@ pub struct AuroraPostgreSqlParameters {
     pub port: i32,
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub database: std::option::Option<std::string::String>,
+}
+impl AuroraPostgreSqlParameters {
+    /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
 }
 impl std::fmt::Debug for AuroraPostgreSqlParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4157,6 +4781,20 @@ pub struct AuroraParameters {
     /// <p>Database.</p>
     pub database: std::option::Option<std::string::String>,
 }
+impl AuroraParameters {
+    /// <p>Host.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Port.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+}
 impl std::fmt::Debug for AuroraParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuroraParameters");
@@ -4231,6 +4869,12 @@ pub struct AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
+impl AthenaParameters {
+    /// <p>The workgroup that Amazon Athena uses.</p>
+    pub fn work_group(&self) -> std::option::Option<&str> {
+        self.work_group.as_deref()
+    }
+}
 impl std::fmt::Debug for AthenaParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AthenaParameters");
@@ -4278,6 +4922,12 @@ impl AthenaParameters {
 pub struct AmazonElasticsearchParameters {
     /// <p>The OpenSearch domain.</p>
     pub domain: std::option::Option<std::string::String>,
+}
+impl AmazonElasticsearchParameters {
+    /// <p>The OpenSearch domain.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
 }
 impl std::fmt::Debug for AmazonElasticsearchParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4328,6 +4978,16 @@ pub struct DataSetUsageConfiguration {
     pub disable_use_as_direct_query_source: bool,
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
     pub disable_use_as_imported_source: bool,
+}
+impl DataSetUsageConfiguration {
+    /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
+    pub fn disable_use_as_direct_query_source(&self) -> bool {
+        self.disable_use_as_direct_query_source
+    }
+    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    pub fn disable_use_as_imported_source(&self) -> bool {
+        self.disable_use_as_imported_source
+    }
 }
 impl std::fmt::Debug for DataSetUsageConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4413,6 +5073,16 @@ pub struct ColumnLevelPermissionRule {
     /// <p>An array of column names.</p>
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ColumnLevelPermissionRule {
+    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.principals.as_deref()
+    }
+    /// <p>An array of column names.</p>
+    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.column_names.as_deref()
+    }
+}
 impl std::fmt::Debug for ColumnLevelPermissionRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnLevelPermissionRule");
@@ -4494,6 +5164,16 @@ pub struct RowLevelPermissionTagConfiguration {
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
     pub tag_rules: std::option::Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
 }
+impl RowLevelPermissionTagConfiguration {
+    /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
+    pub fn tag_rules(&self) -> std::option::Option<&[crate::model::RowLevelPermissionTagRule]> {
+        self.tag_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for RowLevelPermissionTagConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RowLevelPermissionTagConfiguration");
@@ -4573,6 +5253,24 @@ pub struct RowLevelPermissionTagRule {
     pub tag_multi_value_delimiter: std::option::Option<std::string::String>,
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
     pub match_all_value: std::option::Option<std::string::String>,
+}
+impl RowLevelPermissionTagRule {
+    /// <p>The unique key for a tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The column name that a tag key is assigned to.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
+    pub fn tag_multi_value_delimiter(&self) -> std::option::Option<&str> {
+        self.tag_multi_value_delimiter.as_deref()
+    }
+    /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
+    pub fn match_all_value(&self) -> std::option::Option<&str> {
+        self.match_all_value.as_deref()
+    }
 }
 impl std::fmt::Debug for RowLevelPermissionTagRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4736,6 +5434,34 @@ pub struct RowLevelPermissionDataSet {
     pub format_version: std::option::Option<crate::model::RowLevelPermissionFormatVersion>,
     /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl RowLevelPermissionDataSet {
+    /// <p>The namespace associated with the dataset that contains permissions for RLS.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
+    /// is included for backward compatibility only.</p>
+    pub fn permission_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionPolicy> {
+        self.permission_policy.as_ref()
+    }
+    /// <p>The user or group rules associated with the dataset that contains permissions for RLS.</p>
+    /// <p>By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.</p>
+    pub fn format_version(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionFormatVersion> {
+        self.format_version.as_ref()
+    }
+    /// <p>The status of the row-level security permission dataset. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RowLevelPermissionDataSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4963,6 +5689,16 @@ pub struct FieldFolder {
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
     pub columns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl FieldFolder {
+    /// <p>The description for a field folder.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A folder has a list of columns. A column can only be in one folder.</p>
+    pub fn columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.columns.as_deref()
+    }
+}
 impl std::fmt::Debug for FieldFolder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FieldFolder");
@@ -5035,6 +5771,14 @@ pub struct ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub geo_spatial_column_group: std::option::Option<crate::model::GeoSpatialColumnGroup>,
 }
+impl ColumnGroup {
+    /// <p>Geospatial column group that denotes a hierarchy.</p>
+    pub fn geo_spatial_column_group(
+        &self,
+    ) -> std::option::Option<&crate::model::GeoSpatialColumnGroup> {
+        self.geo_spatial_column_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ColumnGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnGroup");
@@ -5093,6 +5837,20 @@ pub struct GeoSpatialColumnGroup {
     pub country_code: std::option::Option<crate::model::GeoSpatialCountryCode>,
     /// <p>Columns in this hierarchy.</p>
     pub columns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GeoSpatialColumnGroup {
+    /// <p>A display name for the hierarchy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Country code.</p>
+    pub fn country_code(&self) -> std::option::Option<&crate::model::GeoSpatialCountryCode> {
+        self.country_code.as_ref()
+    }
+    /// <p>Columns in this hierarchy.</p>
+    pub fn columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.columns.as_deref()
+    }
 }
 impl std::fmt::Debug for GeoSpatialColumnGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5293,6 +6051,20 @@ pub struct LogicalTable {
     /// <p>Source of this logical table.</p>
     pub source: std::option::Option<crate::model::LogicalTableSource>,
 }
+impl LogicalTable {
+    /// <p>A display name for the logical table.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>Transform operations that act on this logical table.</p>
+    pub fn data_transforms(&self) -> std::option::Option<&[crate::model::TransformOperation]> {
+        self.data_transforms.as_deref()
+    }
+    /// <p>Source of this logical table.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::LogicalTableSource> {
+        self.source.as_ref()
+    }
+}
 impl std::fmt::Debug for LogicalTable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogicalTable");
@@ -5388,6 +6160,20 @@ pub struct LogicalTableSource {
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
     pub data_set_arn: std::option::Option<std::string::String>,
 }
+impl LogicalTableSource {
+    /// <p>Specifies the result of a join of two logical tables.</p>
+    pub fn join_instruction(&self) -> std::option::Option<&crate::model::JoinInstruction> {
+        self.join_instruction.as_ref()
+    }
+    /// <p>Physical table ID.</p>
+    pub fn physical_table_id(&self) -> std::option::Option<&str> {
+        self.physical_table_id.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+        self.data_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LogicalTableSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogicalTableSource");
@@ -5477,6 +6263,36 @@ pub struct JoinInstruction {
     pub r#type: std::option::Option<crate::model::JoinType>,
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
     pub on_clause: std::option::Option<std::string::String>,
+}
+impl JoinInstruction {
+    /// <p>The operand on the left side of a join.</p>
+    pub fn left_operand(&self) -> std::option::Option<&str> {
+        self.left_operand.as_deref()
+    }
+    /// <p>The operand on the right side of a join.</p>
+    pub fn right_operand(&self) -> std::option::Option<&str> {
+        self.right_operand.as_deref()
+    }
+    /// <p>Join key properties of the left operand.</p>
+    pub fn left_join_key_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::JoinKeyProperties> {
+        self.left_join_key_properties.as_ref()
+    }
+    /// <p>Join key properties of the right operand.</p>
+    pub fn right_join_key_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::JoinKeyProperties> {
+        self.right_join_key_properties.as_ref()
+    }
+    /// <p>The type of join that it is.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::JoinType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
+    pub fn on_clause(&self) -> std::option::Option<&str> {
+        self.on_clause.as_deref()
+    }
 }
 impl std::fmt::Debug for JoinInstruction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5664,6 +6480,13 @@ pub struct JoinKeyProperties {
     /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub unique_key: std::option::Option<bool>,
 }
+impl JoinKeyProperties {
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in
+    /// a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+    pub fn unique_key(&self) -> std::option::Option<bool> {
+        self.unique_key
+    }
+}
 impl std::fmt::Debug for JoinKeyProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JoinKeyProperties");
@@ -5728,6 +6551,15 @@ pub enum TransformOperation {
     TagColumnOperation(crate::model::TagColumnOperation),
     /// <p>A transform operation that removes tags associated with a column.</p>
     UntagColumnOperation(crate::model::UntagColumnOperation),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl TransformOperation {
     /// Tries to convert the enum instance into [`CastColumnTypeOperation`](crate::model::TransformOperation::CastColumnTypeOperation), extracting the inner [`CastColumnTypeOperation`](crate::model::CastColumnTypeOperation).
@@ -5835,6 +6667,10 @@ impl TransformOperation {
     pub fn is_untag_column_operation(&self) -> bool {
         self.as_untag_column_operation().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A transform operation that removes tags associated with a column.</p>
@@ -5845,6 +6681,16 @@ pub struct UntagColumnOperation {
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The column tags to remove from this column.</p>
     pub tag_names: std::option::Option<std::vec::Vec<crate::model::ColumnTagName>>,
+}
+impl UntagColumnOperation {
+    /// <p>The column that this operation acts on.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>The column tags to remove from this column.</p>
+    pub fn tag_names(&self) -> std::option::Option<&[crate::model::ColumnTagName]> {
+        self.tag_names.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagColumnOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5976,6 +6822,19 @@ pub struct TagColumnOperation {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ColumnTag>>,
 }
+impl TagColumnOperation {
+    /// <p>The column that this operation acts on.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>The dataset column tag, currently only used for geospatial type tagging.</p>
+    /// <note>
+    /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::ColumnTag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagColumnOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagColumnOperation");
@@ -6056,6 +6915,16 @@ pub struct ColumnTag {
     /// <p>A description for a column.</p>
     pub column_description: std::option::Option<crate::model::ColumnDescription>,
 }
+impl ColumnTag {
+    /// <p>A geospatial role for a column.</p>
+    pub fn column_geographic_role(&self) -> std::option::Option<&crate::model::GeoSpatialDataRole> {
+        self.column_geographic_role.as_ref()
+    }
+    /// <p>A description for a column.</p>
+    pub fn column_description(&self) -> std::option::Option<&crate::model::ColumnDescription> {
+        self.column_description.as_ref()
+    }
+}
 impl std::fmt::Debug for ColumnTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnTag");
@@ -6122,6 +6991,12 @@ impl ColumnTag {
 pub struct ColumnDescription {
     /// <p>The text of a description for a column.</p>
     pub text: std::option::Option<std::string::String>,
+}
+impl ColumnDescription {
+    /// <p>The text of a description for a column.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
 }
 impl std::fmt::Debug for ColumnDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6256,6 +7131,21 @@ pub struct CastColumnTypeOperation {
     /// <p>When casting a column from string to datetime type, you can supply a string in a
     /// format supported by Amazon QuickSight to denote the source data format.</p>
     pub format: std::option::Option<std::string::String>,
+}
+impl CastColumnTypeOperation {
+    /// <p>Column name.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>New column data type.</p>
+    pub fn new_column_type(&self) -> std::option::Option<&crate::model::ColumnDataType> {
+        self.new_column_type.as_ref()
+    }
+    /// <p>When casting a column from string to datetime type, you can supply a string in a
+    /// format supported by Amazon QuickSight to denote the source data format.</p>
+    pub fn format(&self) -> std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl std::fmt::Debug for CastColumnTypeOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6401,6 +7291,16 @@ pub struct RenameColumnOperation {
     /// <p>The new name for the column.</p>
     pub new_column_name: std::option::Option<std::string::String>,
 }
+impl RenameColumnOperation {
+    /// <p>The name of the column to be renamed.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>The new name for the column.</p>
+    pub fn new_column_name(&self) -> std::option::Option<&str> {
+        self.new_column_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RenameColumnOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RenameColumnOperation");
@@ -6466,6 +7366,12 @@ pub struct CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::CalculatedColumn>>,
 }
+impl CreateColumnsOperation {
+    /// <p>Calculated columns to create.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::CalculatedColumn]> {
+        self.columns.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateColumnsOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateColumnsOperation");
@@ -6528,6 +7434,22 @@ pub struct CalculatedColumn {
     pub column_id: std::option::Option<std::string::String>,
     /// <p>An expression that defines the calculated column.</p>
     pub expression: std::option::Option<std::string::String>,
+}
+impl CalculatedColumn {
+    /// <p>Column name.</p>
+    pub fn column_name(&self) -> std::option::Option<&str> {
+        self.column_name.as_deref()
+    }
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID
+    /// of a calculated column matches that of an existing calculated column, Amazon QuickSight
+    /// preserves the existing calculated column.</p>
+    pub fn column_id(&self) -> std::option::Option<&str> {
+        self.column_id.as_deref()
+    }
+    /// <p>An expression that defines the calculated column.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
 }
 impl std::fmt::Debug for CalculatedColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6608,6 +7530,13 @@ pub struct FilterOperation {
     /// evaluates to true are kept in the dataset.</p>
     pub condition_expression: std::option::Option<std::string::String>,
 }
+impl FilterOperation {
+    /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression
+    /// evaluates to true are kept in the dataset.</p>
+    pub fn condition_expression(&self) -> std::option::Option<&str> {
+        self.condition_expression.as_deref()
+    }
+}
 impl std::fmt::Debug for FilterOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FilterOperation");
@@ -6661,6 +7590,12 @@ impl FilterOperation {
 pub struct ProjectOperation {
     /// <p>Projected columns.</p>
     pub projected_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ProjectOperation {
+    /// <p>Projected columns.</p>
+    pub fn projected_columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.projected_columns.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6724,6 +7659,15 @@ pub enum PhysicalTable {
     RelationalTable(crate::model::RelationalTable),
     /// <p>A physical table type for as S3 data source.</p>
     S3Source(crate::model::S3Source),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl PhysicalTable {
     /// Tries to convert the enum instance into [`CustomSql`](crate::model::PhysicalTable::CustomSql), extracting the inner [`CustomSql`](crate::model::CustomSql).
@@ -6767,6 +7711,10 @@ impl PhysicalTable {
     pub fn is_s3_source(&self) -> bool {
         self.as_s3_source().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A physical table type for an S3 data source.</p>
@@ -6782,6 +7730,23 @@ pub struct S3Source {
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub input_columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
+}
+impl S3Source {
+    /// <p>The Amazon Resource Name (ARN) for the data source.</p>
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+        self.data_source_arn.as_deref()
+    }
+    /// <p>Information about the format for the S3 source file or files.</p>
+    pub fn upload_settings(&self) -> std::option::Option<&crate::model::UploadSettings> {
+        self.upload_settings.as_ref()
+    }
+    /// <p>A physical table type for an S3 data source.</p>
+    /// <note>
+    /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
+    /// </note>
+    pub fn input_columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
+        self.input_columns.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6879,6 +7844,16 @@ pub struct InputColumn {
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the column.</p>
     pub r#type: std::option::Option<crate::model::InputColumnDataType>,
+}
+impl InputColumn {
+    /// <p>The name of this column in the underlying data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the column.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InputColumnDataType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for InputColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7028,6 +8003,28 @@ pub struct UploadSettings {
     pub text_qualifier: std::option::Option<crate::model::TextQualifier>,
     /// <p>The delimiter between values in the file.</p>
     pub delimiter: std::option::Option<std::string::String>,
+}
+impl UploadSettings {
+    /// <p>File format.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::FileFormat> {
+        self.format.as_ref()
+    }
+    /// <p>A row number to start reading data from.</p>
+    pub fn start_from_row(&self) -> std::option::Option<i32> {
+        self.start_from_row
+    }
+    /// <p>Whether the file has a header row, or the files each have a header row.</p>
+    pub fn contains_header(&self) -> std::option::Option<bool> {
+        self.contains_header
+    }
+    /// <p>Text qualifier.</p>
+    pub fn text_qualifier(&self) -> std::option::Option<&crate::model::TextQualifier> {
+        self.text_qualifier.as_ref()
+    }
+    /// <p>The delimiter between values in the file.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
 }
 impl std::fmt::Debug for UploadSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7264,6 +8261,24 @@ pub struct CustomSql {
     /// <p>The column schema from the SQL query result set.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
 }
+impl CustomSql {
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+        self.data_source_arn.as_deref()
+    }
+    /// <p>A display name for the SQL query result.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The SQL query.</p>
+    pub fn sql_query(&self) -> std::option::Option<&str> {
+        self.sql_query.as_deref()
+    }
+    /// <p>The column schema from the SQL query result set.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
+        self.columns.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomSql {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomSql");
@@ -7370,6 +8385,28 @@ pub struct RelationalTable {
     pub name: std::option::Option<std::string::String>,
     /// <p>The column schema of the table.</p>
     pub input_columns: std::option::Option<std::vec::Vec<crate::model::InputColumn>>,
+}
+impl RelationalTable {
+    /// <p>The Amazon Resource Name (ARN) for the data source.</p>
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+        self.data_source_arn.as_deref()
+    }
+    /// <p>The catalog associated with a table.</p>
+    pub fn catalog(&self) -> std::option::Option<&str> {
+        self.catalog.as_deref()
+    }
+    /// <p>The schema name. This name applies to certain relational database engines.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The name of the relational table.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The column schema of the table.</p>
+    pub fn input_columns(&self) -> std::option::Option<&[crate::model::InputColumn]> {
+        self.input_columns.as_deref()
+    }
 }
 impl std::fmt::Debug for RelationalTable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7487,6 +8524,22 @@ pub struct DashboardPublishOptions {
     /// <p>Sheet controls option.</p>
     pub sheet_controls_option: std::option::Option<crate::model::SheetControlsOption>,
 }
+impl DashboardPublishOptions {
+    /// <p>Ad hoc (one-time) filtering option.</p>
+    pub fn ad_hoc_filtering_option(
+        &self,
+    ) -> std::option::Option<&crate::model::AdHocFilteringOption> {
+        self.ad_hoc_filtering_option.as_ref()
+    }
+    /// <p>Export to .csv option.</p>
+    pub fn export_to_csv_option(&self) -> std::option::Option<&crate::model::ExportToCsvOption> {
+        self.export_to_csv_option.as_ref()
+    }
+    /// <p>Sheet controls option.</p>
+    pub fn sheet_controls_option(&self) -> std::option::Option<&crate::model::SheetControlsOption> {
+        self.sheet_controls_option.as_ref()
+    }
+}
 impl std::fmt::Debug for DashboardPublishOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashboardPublishOptions");
@@ -7572,6 +8625,12 @@ impl DashboardPublishOptions {
 pub struct SheetControlsOption {
     /// <p>Visibility state.</p>
     pub visibility_state: std::option::Option<crate::model::DashboardUiState>,
+}
+impl SheetControlsOption {
+    /// <p>Visibility state.</p>
+    pub fn visibility_state(&self) -> std::option::Option<&crate::model::DashboardUiState> {
+        self.visibility_state.as_ref()
+    }
 }
 impl std::fmt::Debug for SheetControlsOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7679,6 +8738,12 @@ pub struct ExportToCsvOption {
     /// <p>Availability status.</p>
     pub availability_status: std::option::Option<crate::model::DashboardBehavior>,
 }
+impl ExportToCsvOption {
+    /// <p>Availability status.</p>
+    pub fn availability_status(&self) -> std::option::Option<&crate::model::DashboardBehavior> {
+        self.availability_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportToCsvOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportToCsvOption");
@@ -7785,6 +8850,12 @@ pub struct AdHocFilteringOption {
     /// <p>Availability status.</p>
     pub availability_status: std::option::Option<crate::model::DashboardBehavior>,
 }
+impl AdHocFilteringOption {
+    /// <p>Availability status.</p>
+    pub fn availability_status(&self) -> std::option::Option<&crate::model::DashboardBehavior> {
+        self.availability_status.as_ref()
+    }
+}
 impl std::fmt::Debug for AdHocFilteringOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdHocFilteringOption");
@@ -7841,6 +8912,24 @@ pub struct Parameters {
     pub decimal_parameters: std::option::Option<std::vec::Vec<crate::model::DecimalParameter>>,
     /// <p>The parameters that have a data type of date-time.</p>
     pub date_time_parameters: std::option::Option<std::vec::Vec<crate::model::DateTimeParameter>>,
+}
+impl Parameters {
+    /// <p>The parameters that have a data type of string.</p>
+    pub fn string_parameters(&self) -> std::option::Option<&[crate::model::StringParameter]> {
+        self.string_parameters.as_deref()
+    }
+    /// <p>The parameters that have a data type of integer.</p>
+    pub fn integer_parameters(&self) -> std::option::Option<&[crate::model::IntegerParameter]> {
+        self.integer_parameters.as_deref()
+    }
+    /// <p>The parameters that have a data type of decimal.</p>
+    pub fn decimal_parameters(&self) -> std::option::Option<&[crate::model::DecimalParameter]> {
+        self.decimal_parameters.as_deref()
+    }
+    /// <p>The parameters that have a data type of date-time.</p>
+    pub fn date_time_parameters(&self) -> std::option::Option<&[crate::model::DateTimeParameter]> {
+        self.date_time_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for Parameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7983,6 +9072,16 @@ pub struct DateTimeParameter {
     /// <p>The values for the date-time parameter.</p>
     pub values: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
 }
+impl DateTimeParameter {
+    /// <p>A display name for the date-time parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values for the date-time parameter.</p>
+    pub fn values(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for DateTimeParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DateTimeParameter");
@@ -8055,6 +9154,16 @@ pub struct DecimalParameter {
     /// <p>The values for the decimal parameter.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
+impl DecimalParameter {
+    /// <p>A display name for the decimal parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values for the decimal parameter.</p>
+    pub fn values(&self) -> std::option::Option<&[f64]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for DecimalParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecimalParameter");
@@ -8124,6 +9233,16 @@ pub struct IntegerParameter {
     /// <p>The values for the integer parameter.</p>
     pub values: std::option::Option<std::vec::Vec<i64>>,
 }
+impl IntegerParameter {
+    /// <p>The name of the integer parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values for the integer parameter.</p>
+    pub fn values(&self) -> std::option::Option<&[i64]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for IntegerParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntegerParameter");
@@ -8192,6 +9311,16 @@ pub struct StringParameter {
     pub name: std::option::Option<std::string::String>,
     /// <p>The values of a string parameter.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StringParameter {
+    /// <p>A display name for a string parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values of a string parameter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for StringParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8263,6 +9392,12 @@ pub struct DashboardSourceEntity {
     /// <p>Source template.</p>
     pub source_template: std::option::Option<crate::model::DashboardSourceTemplate>,
 }
+impl DashboardSourceEntity {
+    /// <p>Source template.</p>
+    pub fn source_template(&self) -> std::option::Option<&crate::model::DashboardSourceTemplate> {
+        self.source_template.as_ref()
+    }
+}
 impl std::fmt::Debug for DashboardSourceEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashboardSourceEntity");
@@ -8315,6 +9450,16 @@ pub struct DashboardSourceTemplate {
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DashboardSourceTemplate {
+    /// <p>Dataset references.</p>
+    pub fn data_set_references(&self) -> std::option::Option<&[crate::model::DataSetReference]> {
+        self.data_set_references.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DashboardSourceTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8390,6 +9535,12 @@ pub struct AnalysisSourceEntity {
     /// <p>The source template for the source entity of the analysis.</p>
     pub source_template: std::option::Option<crate::model::AnalysisSourceTemplate>,
 }
+impl AnalysisSourceEntity {
+    /// <p>The source template for the source entity of the analysis.</p>
+    pub fn source_template(&self) -> std::option::Option<&crate::model::AnalysisSourceTemplate> {
+        self.source_template.as_ref()
+    }
+}
 impl std::fmt::Debug for AnalysisSourceEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalysisSourceEntity");
@@ -8442,6 +9593,16 @@ pub struct AnalysisSourceTemplate {
     pub data_set_references: std::option::Option<std::vec::Vec<crate::model::DataSetReference>>,
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl AnalysisSourceTemplate {
+    /// <p>The dataset references of the source template of an analysis.</p>
+    pub fn data_set_references(&self) -> std::option::Option<&[crate::model::DataSetReference]> {
+        self.data_set_references.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AnalysisSourceTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8517,6 +9678,12 @@ pub struct AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
     pub default_theme: std::option::Option<std::string::String>,
 }
+impl AccountCustomization {
+    /// <p>The default theme for this Amazon QuickSight subscription.</p>
+    pub fn default_theme(&self) -> std::option::Option<&str> {
+        self.default_theme.as_deref()
+    }
+}
 impl std::fmt::Debug for AccountCustomization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountCustomization");
@@ -8570,6 +9737,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>Tag value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>Tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Tag value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8641,6 +9818,32 @@ pub struct FolderSummary {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the folder was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl FolderSummary {
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The display name of the folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of folder.</p>
+    pub fn folder_type(&self) -> std::option::Option<&crate::model::FolderType> {
+        self.folder_type.as_ref()
+    }
+    /// <p>The time that the folder was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time that the folder was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for FolderSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8818,6 +10021,20 @@ pub struct FolderSearchFilter {
     pub name: std::option::Option<crate::model::FolderFilterAttribute>,
     /// <p>The value of the named item (in this example, <code>PARENT_FOLDER_ARN</code>), that you want to use as a filter. For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:folder/folderId"</code>.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl FolderSearchFilter {
+    /// <p>The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FolderFilterAttribute> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the named item (in this example, <code>PARENT_FOLDER_ARN</code>), that you want to use as a filter. For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:folder/folderId"</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for FolderSearchFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9013,6 +10230,36 @@ pub struct DashboardSummary {
     /// <p>The last time that this dashboard was published.</p>
     pub last_published_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DashboardSummary {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Dashboard ID.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>A display name for the dashboard.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that this dashboard was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last time that this dashboard was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Published version number.</p>
+    pub fn published_version_number(&self) -> std::option::Option<i64> {
+        self.published_version_number
+    }
+    /// <p>The last time that this dashboard was published.</p>
+    pub fn last_published_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_published_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DashboardSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashboardSummary");
@@ -9155,6 +10402,24 @@ pub struct DashboardSearchFilter {
     /// to use as a filter, for example, <code>"Value":
     /// "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
     pub value: std::option::Option<std::string::String>,
+}
+impl DashboardSearchFilter {
+    /// <p>The comparison operator that you want to use as a filter, for example,
+    /// <code>"Operator": "StringEquals"</code>.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The name of the value that you want to use as a filter, for example, <code>"Name":
+    /// "QUICKSIGHT_USER"</code>. </p>
+    pub fn name(&self) -> std::option::Option<&crate::model::DashboardFilterAttribute> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
+    /// to use as a filter, for example, <code>"Value":
+    /// "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for DashboardSearchFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9306,6 +10571,33 @@ pub struct AnalysisSummary {
     /// <p>The time that the analysis was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AnalysisSummary {
+    /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the analysis. This ID displays in the URL.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The last known status for the analysis.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time that the analysis was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time that the analysis was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for AnalysisSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalysisSummary");
@@ -9437,6 +10729,24 @@ pub struct AnalysisSearchFilter {
     /// to use as a filter, for example <code>"Value"</code>. An example is
     /// <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl AnalysisSearchFilter {
+    /// <p>The comparison operator that you want to use as a filter, for example
+    /// <code>"Operator": "StringEquals"</code>.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The name of the value that you want to use as a filter, for example <code>"Name":
+    /// "QUICKSIGHT_USER"</code>.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::AnalysisFilterAttribute> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
+    /// to use as a filter, for example <code>"Value"</code>. An example is
+    /// <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for AnalysisSearchFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9585,6 +10895,28 @@ pub struct ThemeVersionSummary {
     /// <p>The status of the theme version.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
 }
+impl ThemeVersionSummary {
+    /// <p>The version number of the theme version.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The description of the theme version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that this theme version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The status of the theme version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ThemeVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThemeVersionSummary");
@@ -9700,6 +11032,32 @@ pub struct ThemeSummary {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last date and time that this theme was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ThemeSummary {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>the display name for the theme.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The latest version number for the theme. </p>
+    pub fn latest_version_number(&self) -> std::option::Option<i64> {
+        self.latest_version_number
+    }
+    /// <p>The date and time that this theme was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last date and time that this theme was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ThemeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9887,6 +11245,28 @@ pub struct TemplateVersionSummary {
     /// <p>The description of the template version.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl TemplateVersionSummary {
+    /// <p>The Amazon Resource Name (ARN) of the template version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version number of the template version.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The time that this template version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The status of the template version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The description of the template version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplateVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateVersionSummary");
@@ -10002,6 +11382,32 @@ pub struct TemplateSummary {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that this template was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TemplateSummary {
+    /// <p>A summary of a template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>A display name for the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A structure containing a list of version numbers for the template summary.</p>
+    pub fn latest_version_number(&self) -> std::option::Option<i64> {
+        self.latest_version_number
+    }
+    /// <p>The last time that this template was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last time that this template was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for TemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10132,6 +11538,32 @@ pub struct NamespaceInfoV2 {
     /// <p>An error that occurred when the namespace was created.</p>
     pub namespace_error: std::option::Option<crate::model::NamespaceError>,
 }
+impl NamespaceInfoV2 {
+    /// <p>The name of the error.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The namespace ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The namespace Amazon Web Services Region.</p>
+    pub fn capacity_region(&self) -> std::option::Option<&str> {
+        self.capacity_region.as_deref()
+    }
+    /// <p>The creation status of a namespace that is not yet completely created.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::NamespaceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The identity store used for the namespace.</p>
+    pub fn identity_store(&self) -> std::option::Option<&crate::model::IdentityStore> {
+        self.identity_store.as_ref()
+    }
+    /// <p>An error that occurred when the namespace was created.</p>
+    pub fn namespace_error(&self) -> std::option::Option<&crate::model::NamespaceError> {
+        self.namespace_error.as_ref()
+    }
+}
 impl std::fmt::Debug for NamespaceInfoV2 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NamespaceInfoV2");
@@ -10258,6 +11690,16 @@ pub struct NamespaceError {
     pub r#type: std::option::Option<crate::model::NamespaceErrorType>,
     /// <p>The message for the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl NamespaceError {
+    /// <p>The error type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::NamespaceErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The message for the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for NamespaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10521,6 +11963,52 @@ pub struct Ingestion {
     pub request_source: std::option::Option<crate::model::IngestionRequestSource>,
     /// <p>Type of this ingestion.</p>
     pub request_type: std::option::Option<crate::model::IngestionRequestType>,
+}
+impl Ingestion {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Ingestion ID.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
+    /// <p>Ingestion status.</p>
+    pub fn ingestion_status(&self) -> std::option::Option<&crate::model::IngestionStatus> {
+        self.ingestion_status.as_ref()
+    }
+    /// <p>Error information for this ingestion.</p>
+    pub fn error_info(&self) -> std::option::Option<&crate::model::ErrorInfo> {
+        self.error_info.as_ref()
+    }
+    /// <p>Information about rows for a data set SPICE ingestion.</p>
+    pub fn row_info(&self) -> std::option::Option<&crate::model::RowInfo> {
+        self.row_info.as_ref()
+    }
+    /// <p>Information about a queued dataset SPICE ingestion.</p>
+    pub fn queue_info(&self) -> std::option::Option<&crate::model::QueueInfo> {
+        self.queue_info.as_ref()
+    }
+    /// <p>The time that this ingestion started.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time that this ingestion took, measured in seconds.</p>
+    pub fn ingestion_time_in_seconds(&self) -> std::option::Option<i64> {
+        self.ingestion_time_in_seconds
+    }
+    /// <p>The size of the data ingested, in bytes.</p>
+    pub fn ingestion_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.ingestion_size_in_bytes
+    }
+    /// <p>Event source for this ingestion.</p>
+    pub fn request_source(&self) -> std::option::Option<&crate::model::IngestionRequestSource> {
+        self.request_source.as_ref()
+    }
+    /// <p>Type of this ingestion.</p>
+    pub fn request_type(&self) -> std::option::Option<&crate::model::IngestionRequestType> {
+        self.request_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Ingestion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10844,6 +12332,17 @@ pub struct QueueInfo {
     /// ingestion to complete.</p>
     pub queued_ingestion: std::option::Option<std::string::String>,
 }
+impl QueueInfo {
+    /// <p>The ID of the queued ingestion.</p>
+    pub fn waiting_on_ingestion(&self) -> std::option::Option<&str> {
+        self.waiting_on_ingestion.as_deref()
+    }
+    /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing
+    /// ingestion to complete.</p>
+    pub fn queued_ingestion(&self) -> std::option::Option<&str> {
+        self.queued_ingestion.as_deref()
+    }
+}
 impl std::fmt::Debug for QueueInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueueInfo");
@@ -10916,6 +12415,20 @@ pub struct RowInfo {
     pub rows_dropped: std::option::Option<i64>,
     /// <p>The total number of rows in the dataset.</p>
     pub total_rows_in_dataset: std::option::Option<i64>,
+}
+impl RowInfo {
+    /// <p>The number of rows that were ingested.</p>
+    pub fn rows_ingested(&self) -> std::option::Option<i64> {
+        self.rows_ingested
+    }
+    /// <p>The number of rows that were not ingested.</p>
+    pub fn rows_dropped(&self) -> std::option::Option<i64> {
+        self.rows_dropped
+    }
+    /// <p>The total number of rows in the dataset.</p>
+    pub fn total_rows_in_dataset(&self) -> std::option::Option<i64> {
+        self.total_rows_in_dataset
+    }
 }
 impl std::fmt::Debug for RowInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10992,6 +12505,16 @@ pub struct ErrorInfo {
     pub r#type: std::option::Option<crate::model::IngestionErrorType>,
     /// <p>Error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ErrorInfo {
+    /// <p>Error type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::IngestionErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11413,6 +12936,16 @@ pub struct ActiveIamPolicyAssignment {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl ActiveIamPolicyAssignment {
+    /// <p>A name for the IAMpolicy assignment.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ActiveIamPolicyAssignment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActiveIamPolicyAssignment");
@@ -11478,6 +13011,16 @@ pub struct IamPolicyAssignmentSummary {
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>Assignment status.</p>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
+}
+impl IamPolicyAssignmentSummary {
+    /// <p>Assignment name.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>Assignment status.</p>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
 }
 impl std::fmt::Debug for IamPolicyAssignmentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11549,6 +13092,16 @@ pub struct GroupMember {
     /// <p>The name of the group member (user).</p>
     pub member_name: std::option::Option<std::string::String>,
 }
+impl GroupMember {
+    /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the group member (user).</p>
+    pub fn member_name(&self) -> std::option::Option<&str> {
+        self.member_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupMember");
@@ -11611,6 +13164,16 @@ pub struct MemberIdArnPair {
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
     pub member_arn: std::option::Option<std::string::String>,
+}
+impl MemberIdArnPair {
+    /// <p>The ID of the member.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the member.</p>
+    pub fn member_arn(&self) -> std::option::Option<&str> {
+        self.member_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for MemberIdArnPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11709,6 +13272,76 @@ pub struct DataSource {
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
     /// <p>Error information from the last update or the creation of the data source.</p>
     pub error_info: std::option::Option<crate::model::DataSourceErrorInfo>,
+}
+impl DataSource {
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each
+    /// Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A display name for the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the data source. This type indicates which database engine the data source
+    /// connects to.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time that this data source was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last time that this data source was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This
+    /// is a variant type structure. For this structure to be valid, only one of the attributes
+    /// can be non-null.</p>
+    pub fn data_source_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceParameters> {
+        self.data_source_parameters.as_ref()
+    }
+    /// <p>A set of alternate data source parameters that you want to share for the credentials
+    /// stored with this data source. The credentials are applied in tandem with the data source
+    /// parameters when you copy a data source by using a create or update request. The API
+    /// operation compares the <code>DataSourceParameters</code> structure that's in the request
+    /// with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the
+    /// structures are an exact match, the request is allowed to use the credentials from this
+    /// existing data source. If the <code>AlternateDataSourceParameters</code> list is null,
+    /// the <code>Credentials</code> originally used with this <code>DataSourceParameters</code>
+    /// are automatically allowed.</p>
+    pub fn alternate_data_source_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSourceParameters]> {
+        self.alternate_data_source_parameters.as_deref()
+    }
+    /// <p>The VPC connection information. You need to use this parameter only when you want
+    /// Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    pub fn vpc_connection_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcConnectionProperties> {
+        self.vpc_connection_properties.as_ref()
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your
+    /// underlying source.</p>
+    pub fn ssl_properties(&self) -> std::option::Option<&crate::model::SslProperties> {
+        self.ssl_properties.as_ref()
+    }
+    /// <p>Error information from the last update or the creation of the data source.</p>
+    pub fn error_info(&self) -> std::option::Option<&crate::model::DataSourceErrorInfo> {
+        self.error_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11977,6 +13610,16 @@ pub struct DataSourceErrorInfo {
     pub r#type: std::option::Option<crate::model::DataSourceErrorInfoType>,
     /// <p>Error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DataSourceErrorInfo {
+    /// <p>Error type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceErrorInfoType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSourceErrorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12314,6 +13957,46 @@ pub struct DataSetSummary {
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub column_level_permission_rules_applied: bool,
 }
+impl DataSetSummary {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>A display name for the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that this dataset was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last time that this dataset was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>A value that indicates whether you want to import the data into SPICE.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::DataSetImportMode> {
+        self.import_mode.as_ref()
+    }
+    /// <p>The row-level security configuration for the dataset.</p>
+    pub fn row_level_permission_data_set(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionDataSet> {
+        self.row_level_permission_data_set.as_ref()
+    }
+    /// <p>Whether or not the row level permission tags are applied.</p>
+    pub fn row_level_permission_tag_configuration_applied(&self) -> bool {
+        self.row_level_permission_tag_configuration_applied
+    }
+    /// <p>A value that indicates if the dataset has column level permission configured.</p>
+    pub fn column_level_permission_rules_applied(&self) -> bool {
+        self.column_level_permission_rules_applied
+    }
+}
 impl std::fmt::Debug for DataSetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSetSummary");
@@ -12510,6 +14193,32 @@ pub struct DashboardVersionSummary {
     pub source_entity_arn: std::option::Option<std::string::String>,
     /// <p>Description.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl DashboardVersionSummary {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time that this dashboard version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Version number.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Source entity ARN.</p>
+    pub fn source_entity_arn(&self) -> std::option::Option<&str> {
+        self.source_entity_arn.as_deref()
+    }
+    /// <p>Description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for DashboardVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12728,6 +14437,54 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     pub q_search_bar:
         std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
 }
+impl RegisteredUserEmbeddingExperienceConfiguration {
+    /// <p>The configuration details for providing a dashboard embedding experience.</p>
+    pub fn dashboard(
+        &self,
+    ) -> std::option::Option<&crate::model::RegisteredUserDashboardEmbeddingConfiguration> {
+        self.dashboard.as_ref()
+    }
+    /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+    /// Guide</i>.</p>
+    /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+    /// you want to provide an authoring portal that allows users to create data sources,
+    /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
+    /// needs to belong to the author or admin security cohort. If you want to restrict permissions
+    /// to some of these features, add a custom permissions profile to the user with the
+    /// <code>
+    /// <a>UpdateUser</a>
+    /// </code> API operation. Use <code>
+    /// <a>RegisterUser</a>
+    /// </code> API operation to add a new user with a custom permission profile attached. For more
+    /// information, see the following sections in the <i>Amazon QuickSight User
+    /// Guide</i>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+    pub fn quick_sight_console(
+        &self,
+    ) -> std::option::Option<&crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>
+    {
+        self.quick_sight_console.as_ref()
+    }
+    /// <p>The configuration details for embedding the Q search bar.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    pub fn q_search_bar(
+        &self,
+    ) -> std::option::Option<&crate::model::RegisteredUserQSearchBarEmbeddingConfiguration> {
+        self.q_search_bar.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisteredUserEmbeddingExperienceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisteredUserEmbeddingExperienceConfiguration");
@@ -12883,6 +14640,13 @@ pub struct RegisteredUserQSearchBarEmbeddingConfiguration {
     /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
     pub initial_topic_id: std::option::Option<std::string::String>,
 }
+impl RegisteredUserQSearchBarEmbeddingConfiguration {
+    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+    pub fn initial_topic_id(&self) -> std::option::Option<&str> {
+        self.initial_topic_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisteredUserQSearchBarEmbeddingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisteredUserQSearchBarEmbeddingConfiguration");
@@ -12967,6 +14731,43 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// </li>
     /// </ul>
     pub initial_path: std::option::Option<std::string::String>,
+}
+impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+    /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
+    /// <p>The entry point URL is constrained to the following paths:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/start</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/analyses</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/dashboards</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/favorites</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p>
+    /// </li>
+    /// </ul>
+    pub fn initial_path(&self) -> std::option::Option<&str> {
+        self.initial_path.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13081,6 +14882,13 @@ pub struct RegisteredUserDashboardEmbeddingConfiguration {
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
     pub initial_dashboard_id: std::option::Option<std::string::String>,
 }
+impl RegisteredUserDashboardEmbeddingConfiguration {
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
+    /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
+    pub fn initial_dashboard_id(&self) -> std::option::Option<&str> {
+        self.initial_dashboard_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisteredUserDashboardEmbeddingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisteredUserDashboardEmbeddingConfiguration");
@@ -13133,6 +14941,14 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
 pub struct AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
     pub dashboard: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
+}
+impl AnonymousUserEmbeddingExperienceConfiguration {
+    /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+    pub fn dashboard(
+        &self,
+    ) -> std::option::Option<&crate::model::AnonymousUserDashboardEmbeddingConfiguration> {
+        self.dashboard.as_ref()
+    }
 }
 impl std::fmt::Debug for AnonymousUserEmbeddingExperienceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13190,6 +15006,13 @@ pub struct AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub initial_dashboard_id: std::option::Option<std::string::String>,
 }
+impl AnonymousUserDashboardEmbeddingConfiguration {
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
+    /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    pub fn initial_dashboard_id(&self) -> std::option::Option<&str> {
+        self.initial_dashboard_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AnonymousUserDashboardEmbeddingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnonymousUserDashboardEmbeddingConfiguration");
@@ -13244,6 +15067,16 @@ pub struct SessionTag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value that you want to assign the tag.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl SessionTag {
+    /// <p>The key for the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value that you want to assign the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SessionTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13318,6 +15151,37 @@ pub struct Theme {
     /// <p>The type of theme, based on how it was created. Valid values include:
     /// <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub r#type: std::option::Option<crate::model::ThemeType>,
+}
+impl Theme {
+    /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name that the user gives to the theme.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier that the user gives to the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>A version of a theme.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::ThemeVersion> {
+        self.version.as_ref()
+    }
+    /// <p>The date and time that the theme was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The date and time that the theme was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The type of theme, based on how it was created. Valid values include:
+    /// <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThemeType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Theme {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13470,6 +15334,41 @@ pub struct ThemeVersion {
     pub errors: std::option::Option<std::vec::Vec<crate::model::ThemeError>>,
     /// <p>The status of the theme version.</p>
     pub status: std::option::Option<crate::model::ResourceStatus>,
+}
+impl ThemeVersion {
+    /// <p>The version number of the theme.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The description of the theme.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All
+    /// themes initially inherit from a default Amazon QuickSight theme.</p>
+    pub fn base_theme_id(&self) -> std::option::Option<&str> {
+        self.base_theme_id.as_deref()
+    }
+    /// <p>The date and time that this theme version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The theme configuration, which contains all the theme display properties.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ThemeConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>Errors associated with the theme.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ThemeError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The status of the theme version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ThemeVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13635,6 +15534,16 @@ pub struct ThemeError {
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ThemeError {
+    /// <p>The type of error.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThemeErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThemeError");
@@ -13766,6 +15675,32 @@ pub struct Template {
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Time when this was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Template {
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The display name of the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A structure describing the versions of the template.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::TemplateVersion> {
+        self.version.as_ref()
+    }
+    /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>Time when this was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Time when this was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Template {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13908,6 +15843,49 @@ pub struct TemplateVersion {
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub sheets: std::option::Option<std::vec::Vec<crate::model::Sheet>>,
+}
+impl TemplateVersion {
+    /// <p>The time that this template version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Errors associated with this template version.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::TemplateError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The version number of the template version.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this
+    /// template should be bound to new datasets matching the same schema described through this
+    /// API operation.</p>
+    pub fn data_set_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataSetConfiguration]> {
+        self.data_set_configurations.as_deref()
+    }
+    /// <p>The description of the template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this
+    /// template.</p>
+    pub fn source_entity_arn(&self) -> std::option::Option<&str> {
+        self.source_entity_arn.as_deref()
+    }
+    /// <p>The ARN of the theme associated with this version of the template.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    pub fn sheets(&self) -> std::option::Option<&[crate::model::Sheet]> {
+        self.sheets.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14114,6 +16092,17 @@ pub struct Sheet {
     /// console.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl Sheet {
+    /// <p>The unique identifier associated with a sheet.</p>
+    pub fn sheet_id(&self) -> std::option::Option<&str> {
+        self.sheet_id.as_deref()
+    }
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
+    /// console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for Sheet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Sheet");
@@ -14181,6 +16170,22 @@ pub struct DataSetConfiguration {
     /// <p>A structure containing the list of column group schemas.</p>
     pub column_group_schema_list:
         std::option::Option<std::vec::Vec<crate::model::ColumnGroupSchema>>,
+}
+impl DataSetConfiguration {
+    /// <p>Placeholder.</p>
+    pub fn placeholder(&self) -> std::option::Option<&str> {
+        self.placeholder.as_deref()
+    }
+    /// <p>Dataset schema.</p>
+    pub fn data_set_schema(&self) -> std::option::Option<&crate::model::DataSetSchema> {
+        self.data_set_schema.as_ref()
+    }
+    /// <p>A structure containing the list of column group schemas.</p>
+    pub fn column_group_schema_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ColumnGroupSchema]> {
+        self.column_group_schema_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSetConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14275,6 +16280,18 @@ pub struct ColumnGroupSchema {
     pub column_group_column_schema_list:
         std::option::Option<std::vec::Vec<crate::model::ColumnGroupColumnSchema>>,
 }
+impl ColumnGroupSchema {
+    /// <p>The name of the column group schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A structure containing the list of schemas for column group columns.</p>
+    pub fn column_group_column_schema_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ColumnGroupColumnSchema]> {
+        self.column_group_column_schema_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ColumnGroupSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnGroupSchema");
@@ -14352,6 +16369,12 @@ pub struct ColumnGroupColumnSchema {
     /// <p>The name of the column group's column schema.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl ColumnGroupColumnSchema {
+    /// <p>The name of the column group's column schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for ColumnGroupColumnSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnGroupColumnSchema");
@@ -14397,6 +16420,12 @@ impl ColumnGroupColumnSchema {
 pub struct DataSetSchema {
     /// <p>A structure containing the list of column schemas.</p>
     pub column_schema_list: std::option::Option<std::vec::Vec<crate::model::ColumnSchema>>,
+}
+impl DataSetSchema {
+    /// <p>A structure containing the list of column schemas.</p>
+    pub fn column_schema_list(&self) -> std::option::Option<&[crate::model::ColumnSchema]> {
+        self.column_schema_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DataSetSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14459,6 +16488,20 @@ pub struct ColumnSchema {
     pub data_type: std::option::Option<std::string::String>,
     /// <p>The geographic role of the column schema.</p>
     pub geographic_role: std::option::Option<std::string::String>,
+}
+impl ColumnSchema {
+    /// <p>The name of the column schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the column schema.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>The geographic role of the column schema.</p>
+    pub fn geographic_role(&self) -> std::option::Option<&str> {
+        self.geographic_role.as_deref()
+    }
 }
 impl std::fmt::Debug for ColumnSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14538,6 +16581,16 @@ pub struct TemplateError {
     pub r#type: std::option::Option<crate::model::TemplateErrorType>,
     /// <p>Description of the error type.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl TemplateError {
+    /// <p>Type of error.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TemplateErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Description of the error type.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14682,6 +16735,36 @@ pub struct IamPolicyAssignment {
     >,
     /// <p>Assignment status.</p>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
+}
+impl IamPolicyAssignment {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>Assignment ID.</p>
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
+        self.assignment_id.as_deref()
+    }
+    /// <p>Assignment name.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>Identities.</p>
+    pub fn identities(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.identities.as_ref()
+    }
+    /// <p>Assignment status.</p>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
 }
 impl std::fmt::Debug for IamPolicyAssignment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14836,6 +16919,36 @@ pub struct Folder {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the folder was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Folder {
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The folder Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A display name for the folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the folder.</p>
+    pub fn folder_type(&self) -> std::option::Option<&crate::model::FolderType> {
+        self.folder_type.as_ref()
+    }
+    /// <p>An array of ancestor folder ARN strings.</p>
+    pub fn folder_path(&self) -> std::option::Option<&[std::string::String]> {
+        self.folder_path.as_deref()
+    }
+    /// <p>The time that the folder was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time that the folder was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Folder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15024,6 +17137,98 @@ pub struct DataSet {
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
+}
+impl DataSet {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>A display name for the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time that this dataset was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last time that this dataset was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Declares the physical tables that are available in the underlying data sources.</p>
+    pub fn physical_table_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PhysicalTable>,
+    > {
+        self.physical_table_map.as_ref()
+    }
+    /// <p>Configures the combination and transformation of the data from the physical
+    /// tables.</p>
+    pub fn logical_table_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::LogicalTable>,
+    > {
+        self.logical_table_map.as_ref()
+    }
+    /// <p>The list of columns after all transforms. These columns are available in templates,
+    /// analyses, and dashboards.</p>
+    pub fn output_columns(&self) -> std::option::Option<&[crate::model::OutputColumn]> {
+        self.output_columns.as_deref()
+    }
+    /// <p>A value that indicates whether you want to import the data into SPICE.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::DataSetImportMode> {
+        self.import_mode.as_ref()
+    }
+    /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't
+    /// imported into SPICE.</p>
+    pub fn consumed_spice_capacity_in_bytes(&self) -> i64 {
+        self.consumed_spice_capacity_in_bytes
+    }
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features.
+    /// Currently, only geospatial hierarchy is supported.</p>
+    pub fn column_groups(&self) -> std::option::Option<&[crate::model::ColumnGroup]> {
+        self.column_groups.as_deref()
+    }
+    /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    pub fn field_folders(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldFolder>,
+    > {
+        self.field_folders.as_ref()
+    }
+    /// <p>The row-level security configuration for the dataset.</p>
+    pub fn row_level_permission_data_set(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionDataSet> {
+        self.row_level_permission_data_set.as_ref()
+    }
+    /// <p>The element you can use to define tags for row-level security.</p>
+    pub fn row_level_permission_tag_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionTagConfiguration> {
+        self.row_level_permission_tag_configuration.as_ref()
+    }
+    /// <p>A set of one or more definitions of a <code>
+    /// <a>ColumnLevelPermissionRule</a>
+    /// </code>.</p>
+    pub fn column_level_permission_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::ColumnLevelPermissionRule]> {
+        self.column_level_permission_rules.as_deref()
+    }
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub fn data_set_usage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSetUsageConfiguration> {
+        self.data_set_usage_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15416,6 +17621,20 @@ pub struct OutputColumn {
     /// <p>Type.</p>
     pub r#type: std::option::Option<crate::model::ColumnDataType>,
 }
+impl OutputColumn {
+    /// <p>A display name for the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description for a column.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ColumnDataType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputColumn");
@@ -15504,6 +17723,36 @@ pub struct Dashboard {
     pub last_published_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that this dataset was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Dashboard {
+    /// <p>Dashboard ID.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A display name for the dashboard.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Version.</p>
+    pub fn version(&self) -> std::option::Option<&crate::model::DashboardVersion> {
+        self.version.as_ref()
+    }
+    /// <p>The time that this dataset was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The last time that this dataset was published.</p>
+    pub fn last_published_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_published_time.as_ref()
+    }
+    /// <p>The last time that this dataset was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Dashboard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15661,6 +17910,49 @@ pub struct DashboardVersion {
     pub theme_arn: std::option::Option<std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub sheets: std::option::Option<std::vec::Vec<crate::model::Sheet>>,
+}
+impl DashboardVersion {
+    /// <p>The time that this dashboard version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Errors associated with this dashboard version.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::DashboardError]> {
+        self.errors.as_deref()
+    }
+    /// <p>Version number for this version of the dashboard.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source entity ARN.</p>
+    pub fn source_entity_arn(&self) -> std::option::Option<&str> {
+        self.source_entity_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
+    /// version of the dashboard.</p>
+    pub fn data_set_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_set_arns.as_deref()
+    }
+    /// <p>Description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the theme associated with a version of the dashboard.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    pub fn sheets(&self) -> std::option::Option<&[crate::model::Sheet]> {
+        self.sheets.as_deref()
+    }
 }
 impl std::fmt::Debug for DashboardVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15867,6 +18159,16 @@ pub struct DashboardError {
     /// <p>Message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DashboardError {
+    /// <p>Type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DashboardErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashboardError");
@@ -16046,6 +18348,48 @@ pub struct Analysis {
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub sheets: std::option::Option<std::vec::Vec<crate::model::Sheet>>,
+}
+impl Analysis {
+    /// <p>The ID of the analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The descriptive name of the analysis.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Status associated with the analysis.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Errors associated with the analysis.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::AnalysisError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The ARNs of the datasets of the analysis.</p>
+    pub fn data_set_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.data_set_arns.as_deref()
+    }
+    /// <p>The ARN of the theme of the analysis.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>The time that the analysis was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time that the analysis was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
+    pub fn sheets(&self) -> std::option::Option<&[crate::model::Sheet]> {
+        self.sheets.as_deref()
+    }
 }
 impl std::fmt::Debug for Analysis {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16250,6 +18594,16 @@ pub struct AnalysisError {
     /// <p>The message associated with the analysis error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl AnalysisError {
+    /// <p>The type of the analysis error.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AnalysisErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The message associated with the analysis error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for AnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalysisError");
@@ -16420,6 +18774,27 @@ pub struct AccountSettings {
     pub default_namespace: std::option::Option<std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
+}
+impl AccountSettings {
+    /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account.
+    /// You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and
+    /// it appears only when users sign in.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The edition of Amazon QuickSight that you're currently subscribed to:
+    /// Enterprise edition or Standard edition.</p>
+    pub fn edition(&self) -> std::option::Option<&crate::model::Edition> {
+        self.edition.as_ref()
+    }
+    /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
+    pub fn default_namespace(&self) -> std::option::Option<&str> {
+        self.default_namespace.as_deref()
+    }
+    /// <p>The main notification email for your Amazon QuickSight subscription.</p>
+    pub fn notification_email(&self) -> std::option::Option<&str> {
+        self.notification_email.as_deref()
+    }
 }
 impl std::fmt::Debug for AccountSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16690,6 +19065,16 @@ pub struct FolderMember {
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The type of the asset.</p>
     pub member_type: std::option::Option<crate::model::MemberType>,
+}
+impl FolderMember {
+    /// <p>The ID of the asset.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The type of the asset.</p>
+    pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.member_type.as_ref()
+    }
 }
 impl std::fmt::Debug for FolderMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

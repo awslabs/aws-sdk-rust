@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_changeset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateChangesetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.change_type {
         object.key("changeType").string(var_1.as_str());
     }
@@ -39,13 +39,15 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         }
         object_13.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_working_location_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetWorkingLocationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.location_type {
         object.key("locationType").string(var_16.as_str());
     }
+    Ok(())
 }

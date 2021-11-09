@@ -15,7 +15,6 @@ use num_integer::div_mod_floor;
 use num_integer::Integer;
 use std::error::Error as StdError;
 use std::fmt;
-use std::str::FromStr;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 mod format;
@@ -113,10 +112,7 @@ impl Instant {
         match format {
             Format::DateTime => format::rfc3339::parse(s),
             Format::HttpDate => format::http_date::parse(s),
-            Format::EpochSeconds => <f64>::from_str(s)
-                // TODO: Parse base & fraction separately to achieve higher precision
-                .map(Self::from_f64)
-                .map_err(|_| DateParseError::Invalid("expected float")),
+            Format::EpochSeconds => format::epoch_seconds::parse(s),
         }
     }
 
@@ -226,14 +222,7 @@ impl Instant {
     pub fn fmt(&self, format: Format) -> String {
         match format {
             Format::DateTime => format::rfc3339::format(&self),
-            Format::EpochSeconds => {
-                if self.subsecond_nanos == 0 {
-                    format!("{}", self.seconds)
-                } else {
-                    let fraction = format!("{:0>9}", self.subsecond_nanos);
-                    format!("{}.{}", self.seconds, fraction.trim_end_matches('0'))
-                }
-            }
+            Format::EpochSeconds => format::epoch_seconds::format(&self),
             Format::HttpDate => format::http_date::format(&self),
         }
     }
@@ -297,7 +286,7 @@ mod test {
         assert_eq!(instant.fmt(Format::EpochSeconds), "1576540098.52");
         assert_eq!(
             instant.fmt(Format::HttpDate),
-            "Mon, 16 Dec 2019 23:48:18.520 GMT"
+            "Mon, 16 Dec 2019 23:48:18.52 GMT"
         );
     }
 

@@ -159,6 +159,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub tag_value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn tag_value(&self) -> std::option::Option<&str> {
+        self.tag_value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -416,6 +426,167 @@ pub struct KeyMetadata {
     /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
     /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
     pub pending_deletion_window_in_days: std::option::Option<i32>,
+}
+impl KeyMetadata {
+    /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The globally unique identifier for the KMS key.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General
+    /// Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time when the KMS key was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
+    /// <code>Enabled</code> this value is true, otherwise it is false.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The description of the KMS key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
+    pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsageType> {
+        self.key_usage.as_ref()
+    }
+    /// <p>The current status of the KMS key.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
+    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn key_state(&self) -> std::option::Option<&crate::model::KeyState> {
+        self.key_state.as_ref()
+    }
+    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when
+    /// the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is
+    /// <code>PendingDeletion</code>.</p>
+    /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
+    /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
+    /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deletion_date.as_ref()
+    }
+    /// <p>The time at which the imported key material expires. When the key material expires, KMS
+    /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
+    /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
+    /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    pub fn valid_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.valid_to.as_ref()
+    }
+    /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
+    /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was
+    /// imported or the KMS key doesn't have any key material. When this value is
+    /// <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with
+    /// a custom key store.</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::OriginType> {
+        self.origin.as_ref()
+    }
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is
+    /// present only when the KMS key is created in a custom key store.</p>
+    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
+        self.custom_key_store_id.as_deref()
+    }
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When
+    /// you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in
+    /// the associated CloudHSM cluster. This value is present only when the KMS key is created in a
+    /// custom key store.</p>
+    pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
+        self.cloud_hsm_cluster_id.as_deref()
+    }
+    /// <p>Specifies whether the KMS key's key material expires. This value is present only when
+    /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+    pub fn expiration_model(&self) -> std::option::Option<&crate::model::ExpirationModelType> {
+        self.expiration_model.as_ref()
+    }
+    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or
+    /// Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn key_manager(&self) -> std::option::Option<&crate::model::KeyManagerType> {
+        self.key_manager.as_ref()
+    }
+    /// <p>Instead, use the <code>KeySpec</code> field.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
+    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
+    /// avoid breaking changes, KMS will support both fields.</p>
+    pub fn customer_master_key_spec(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
+        self.customer_master_key_spec.as_ref()
+    }
+    /// <p>Describes the type of key material in the KMS key.</p>
+    pub fn key_spec(&self) -> std::option::Option<&crate::model::KeySpec> {
+        self.key_spec.as_ref()
+    }
+    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other
+    /// encryption algorithms within KMS.</p>
+    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is
+    /// <code>ENCRYPT_DECRYPT</code>.</p>
+    pub fn encryption_algorithms(
+        &self,
+    ) -> std::option::Option<&[crate::model::EncryptionAlgorithmSpec]> {
+        self.encryption_algorithms.as_deref()
+    }
+    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other
+    /// signing algorithms within KMS.</p>
+    /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is
+    /// <code>SIGN_VERIFY</code>.</p>
+    pub fn signing_algorithms(&self) -> std::option::Option<&[crate::model::SigningAlgorithmSpec]> {
+        self.signing_algorithms.as_deref()
+    }
+    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional
+    /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
+    /// replica keys and <code>False</code> for regional KMS keys.</p>
+    /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn multi_region(&self) -> std::option::Option<bool> {
+        self.multi_region
+    }
+    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only
+    /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+    /// <p>For more information about any listed KMS key, use the <a>DescribeKey</a>
+    /// operation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MultiRegionKeyType</code> indicates whether the KMS key is a
+    /// <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
+    /// displays the current KMS key if it is the primary key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
+    /// field includes the current KMS key if it is a replica key.</p>
+    /// </li>
+    /// </ul>
+    pub fn multi_region_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiRegionConfiguration> {
+        self.multi_region_configuration.as_ref()
+    }
+    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
+    /// period begins when the last of its replica keys is deleted. This value is present only when
+    /// the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That
+    /// indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for
+    /// deletion, and it still has existing replica keys.</p>
+    /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its
+    /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
+    /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
+    /// all of its replica keys are deleted. This value displays that waiting period. When the last
+    /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
+    /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
+    /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+    pub fn pending_deletion_window_in_days(&self) -> std::option::Option<i32> {
+        self.pending_deletion_window_in_days
+    }
 }
 impl std::fmt::Debug for KeyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -954,6 +1125,23 @@ pub struct MultiRegionConfiguration {
     /// key if it is a replica key.</p>
     pub replica_keys: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
 }
+impl MultiRegionConfiguration {
+    /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code>
+    /// key.</p>
+    pub fn multi_region_key_type(&self) -> std::option::Option<&crate::model::MultiRegionKeyType> {
+        self.multi_region_key_type.as_ref()
+    }
+    /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS
+    /// key if it is the primary key.</p>
+    pub fn primary_key(&self) -> std::option::Option<&crate::model::MultiRegionKey> {
+        self.primary_key.as_ref()
+    }
+    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS
+    /// key if it is a replica key.</p>
+    pub fn replica_keys(&self) -> std::option::Option<&[crate::model::MultiRegionKey]> {
+        self.replica_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for MultiRegionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MultiRegionConfiguration");
@@ -1050,6 +1238,16 @@ pub struct MultiRegionKey {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
     pub region: std::option::Option<std::string::String>,
+}
+impl MultiRegionKey {
+    /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Displays the Amazon Web Services Region of a primary or replica key in a multi-Region key.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 impl std::fmt::Debug for MultiRegionKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1652,6 +1850,50 @@ pub struct GrantListEntry {
     /// subsequent operations that the grant allows.</p>
     pub constraints: std::option::Option<crate::model::GrantConstraints>,
 }
+impl GrantListEntry {
+    /// <p>The unique identifier for the KMS key to which the grant applies.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The unique identifier for the grant.</p>
+    pub fn grant_id(&self) -> std::option::Option<&str> {
+        self.grant_id.as_deref()
+    }
+    /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date and time when the grant was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The identity that gets the permissions in the grant.</p>
+    /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
+    /// user or role designated as the grantee principal in the grant. However, when the grantee
+    /// principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains
+    /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+    /// principal</a>, which might represent several different grantee principals.</p>
+    pub fn grantee_principal(&self) -> std::option::Option<&str> {
+        self.grantee_principal.as_deref()
+    }
+    /// <p>The principal that can retire the grant.</p>
+    pub fn retiring_principal(&self) -> std::option::Option<&str> {
+        self.retiring_principal.as_deref()
+    }
+    /// <p>The Amazon Web Services account under which the grant was issued.</p>
+    pub fn issuing_account(&self) -> std::option::Option<&str> {
+        self.issuing_account.as_deref()
+    }
+    /// <p>The list of operations permitted by the grant.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::GrantOperation]> {
+        self.operations.as_deref()
+    }
+    /// <p>A list of key-value pairs that must be present in the encryption context of certain
+    /// subsequent operations that the grant allows.</p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::GrantConstraints> {
+        self.constraints.as_ref()
+    }
+}
 impl std::fmt::Debug for GrantListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantListEntry");
@@ -1866,6 +2108,27 @@ pub struct GrantConstraints {
     /// same as the encryption context specified in this constraint.</p>
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GrantConstraints {
+    /// <p>A list of key-value pairs that must be included in the encryption context of the
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption
+    /// context in the request includes the key-value pairs specified in this constraint, although it
+    /// can include additional key-value pairs.</p>
+    pub fn encryption_context_subset(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.encryption_context_subset.as_ref()
+    }
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a>
+    /// request. The grant allows the operation only when the encryption context in the request is the
+    /// same as the encryption context specified in this constraint.</p>
+    pub fn encryption_context_equals(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.encryption_context_equals.as_ref()
+    }
 }
 impl std::fmt::Debug for GrantConstraints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2096,6 +2359,16 @@ pub struct KeyListEntry {
     /// <p>ARN of the key.</p>
     pub key_arn: std::option::Option<std::string::String>,
 }
+impl KeyListEntry {
+    /// <p>Unique identifier of the key.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>ARN of the key.</p>
+    pub fn key_arn(&self) -> std::option::Option<&str> {
+        self.key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KeyListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyListEntry");
@@ -2166,6 +2439,30 @@ pub struct AliasListEntry {
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account
     /// and Region. Formatted as Unix time.</p>
     pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AliasListEntry {
+    /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>String that contains the key ARN.</p>
+    pub fn alias_arn(&self) -> std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
+    pub fn target_key_id(&self) -> std::option::Option<&str> {
+        self.target_key_id.as_deref()
+    }
+    /// <p>Date and time that the alias was most recently created in the account and Region.
+    /// Formatted as Unix time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>Date and time that the alias was most recently associated with a KMS key in the account
+    /// and Region. Formatted as Unix time.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
 }
 impl std::fmt::Debug for AliasListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2622,6 +2919,121 @@ pub struct CustomKeyStoresListEntry {
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
     /// <p>The date and time when the custom key store was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CustomKeyStoresListEntry {
+    /// <p>A unique identifier for the custom key store.</p>
+    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
+        self.custom_key_store_id.as_deref()
+    }
+    /// <p>The user-specified friendly name for the custom key store.</p>
+    pub fn custom_key_store_name(&self) -> std::option::Option<&str> {
+        self.custom_key_store_name.as_deref()
+    }
+    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key
+    /// store.</p>
+    pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
+        self.cloud_hsm_cluster_id.as_deref()
+    }
+    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
+    /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
+    /// file.</p>
+    pub fn trust_anchor_certificate(&self) -> std::option::Option<&str> {
+        self.trust_anchor_certificate.as_deref()
+    }
+    /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
+    /// <p>You can create and use KMS keys in your custom key stores only when its connection state
+    /// is <code>CONNECTED</code>.</p>
+    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you
+    /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
+    /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
+    /// its associated CloudHSM cluster is active and contains at least one active HSM.</p>
+    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
+    /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
+    /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionStateType> {
+        self.connection_state.as_ref()
+    }
+    /// <p>Describes the connection error. This field appears in the response only when the
+    /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
+    /// Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the
+    /// specified cluster ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not
+    /// contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster
+    /// must contain at least one active HSM.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal
+    /// error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the
+    /// custom key store before trying to connect again.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the
+    /// <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your
+    /// custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account
+    /// password and update the key store password value for the custom key store.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to
+    /// the custom key store.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was
+    /// deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to
+    /// connect the custom key store to the CloudHSM cluster fail. To fix this error, create a
+    /// cluster from a recent backup and associate it with your custom key store. (This process
+    /// creates a new cluster configuration with a VPC and private subnets.) For details, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
+    /// to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
+    /// the associated CloudHSM cluster due to too many failed password attempts. Before you can
+    /// connect your custom key store to its CloudHSM cluster, you must change the
+    /// <code>kmsuser</code> account password and update the key store password value for the
+    /// custom key store.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
+    /// the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code>
+    /// account password and logging into the cluster. Before you can connect your custom key
+    /// store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
+    /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
+    /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
+    /// and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in
+    /// the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM
+    /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
+    /// the key store password value for the custom key store.</p>
+    /// </li>
+    /// </ul>
+    pub fn connection_error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionErrorCodeType> {
+        self.connection_error_code.as_ref()
+    }
+    /// <p>The date and time when the custom key store was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for CustomKeyStoresListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

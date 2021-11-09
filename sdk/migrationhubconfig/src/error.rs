@@ -438,6 +438,12 @@ pub struct ThrottlingException {
     /// <p>The number of seconds the caller should wait before retrying.</p>
     pub retry_after_seconds: i32,
 }
+impl ThrottlingException {
+    /// <p>The number of seconds the caller should wait before retrying.</p>
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");

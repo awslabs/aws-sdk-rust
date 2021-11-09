@@ -348,10 +348,9 @@ impl CreateEnvironmentEc2Input {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment_ec2(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_environment_ec2(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -554,7 +553,7 @@ impl CreateEnvironmentMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment_membership(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_environment_membership(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -708,10 +707,7 @@ impl DeleteEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -879,7 +875,7 @@ impl DeleteEnvironmentMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_environment_membership(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_environment_membership(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1135,7 +1131,7 @@ impl DescribeEnvironmentMembershipsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_environment_memberships(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_environment_memberships(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1295,10 +1291,7 @@ impl DescribeEnvironmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_environments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_environments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1454,10 +1447,7 @@ impl DescribeEnvironmentStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_environment_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1627,10 +1617,7 @@ impl ListEnvironmentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_environments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_environments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1782,10 +1769,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1957,10 +1943,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2134,10 +2117,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2367,10 +2347,7 @@ impl UpdateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2577,7 +2554,7 @@ impl UpdateEnvironmentMembershipInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment_membership(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_environment_membership(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2664,6 +2641,33 @@ pub struct UpdateEnvironmentMembershipInput {
     /// </ul>
     pub permissions: std::option::Option<crate::model::MemberPermissions>,
 }
+impl UpdateEnvironmentMembershipInput {
+    /// <p>The ID of the environment for the environment member whose settings you want to
+    /// change.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to
+    /// change.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The replacement type of environment member permissions you want to associate with this
+    /// environment member. Available values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>read-only</code>: Has read-only access to the environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>read-write</code>: Has read-write access to the environment.</p>
+    /// </li>
+    /// </ul>
+    pub fn permissions(&self) -> std::option::Option<&crate::model::MemberPermissions> {
+        self.permissions.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentMembershipInput");
@@ -2704,6 +2708,43 @@ pub struct UpdateEnvironmentInput {
     /// </note>
     pub managed_credentials_action: std::option::Option<crate::model::ManagedCredentialsAction>,
 }
+impl UpdateEnvironmentInput {
+    /// <p>The ID of the environment to change settings.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>A replacement name for the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Any new or replacement description for the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary
+    /// credentials for an Cloud9 environment by using one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment
+    /// owner.</p>  
+    /// </note>
+    pub fn managed_credentials_action(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedCredentialsAction> {
+        self.managed_credentials_action.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
@@ -2729,6 +2770,18 @@ pub struct UntagResourceInput {
     /// environment.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags
+    /// from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag names of the tags to remove from the given Cloud9 development
+    /// environment.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2748,6 +2801,17 @@ pub struct TagResourceInput {
     /// <p>The list of tags to add to the given Cloud9 development environment.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags
+    /// to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tags to add to the given Cloud9 development environment.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2764,6 +2828,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags
     /// for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags
+    /// for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2786,6 +2857,20 @@ pub struct ListEnvironmentsInput {
     /// <p>The maximum number of environments to get identifiers for.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEnvironmentsInput {
+    /// <p>During a previous call, if there are more than 25 items in the list, only the first 25
+    /// items are returned, along with a unique string called a <i>next token</i>. To
+    /// get the next batch of items in the list, call this operation again, adding the next token to
+    /// the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of environments to get identifiers for.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnvironmentsInput");
@@ -2802,6 +2887,12 @@ pub struct DescribeEnvironmentStatusInput {
     /// <p>The ID of the environment to get status information about.</p>
     pub environment_id: std::option::Option<std::string::String>,
 }
+impl DescribeEnvironmentStatusInput {
+    /// <p>The ID of the environment to get status information about.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEnvironmentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEnvironmentStatusInput");
@@ -2816,6 +2907,12 @@ impl std::fmt::Debug for DescribeEnvironmentStatusInput {
 pub struct DescribeEnvironmentsInput {
     /// <p>The IDs of individual environments to get information about.</p>
     pub environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeEnvironmentsInput {
+    /// <p>The IDs of individual environments to get information about.</p>
+    pub fn environment_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.environment_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2862,6 +2959,50 @@ pub struct DescribeEnvironmentMembershipsInput {
     /// <p>The maximum number of environment members to get information about.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeEnvironmentMembershipsInput {
+    /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information
+    /// about. If no value is specified, information about all environment members are
+    /// returned.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The ID of the environment to get environment member information about.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The type of environment member permissions to get information about. Available values
+    /// include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>owner</code>: Owns the environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>read-only</code>: Has read-only access to the environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>read-write</code>: Has read-write access to the environment.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If no value is specified, information about all environment members are returned.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permissions]> {
+        self.permissions.as_deref()
+    }
+    /// <p>During a previous call, if there are more than 25 items in the list, only the first 25
+    /// items are returned, along with a unique string called a <i>next token</i>. To
+    /// get the next batch of items in the list, call this operation again, adding the next token to
+    /// the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of environment members to get information about.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeEnvironmentMembershipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEnvironmentMembershipsInput");
@@ -2884,6 +3025,17 @@ pub struct DeleteEnvironmentMembershipInput {
     /// environment.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl DeleteEnvironmentMembershipInput {
+    /// <p>The ID of the environment to delete the environment member from.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the
+    /// environment.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEnvironmentMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEnvironmentMembershipInput");
@@ -2899,6 +3051,12 @@ impl std::fmt::Debug for DeleteEnvironmentMembershipInput {
 pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment to delete.</p>
     pub environment_id: std::option::Option<std::string::String>,
+}
+impl DeleteEnvironmentInput {
+    /// <p>The ID of the environment to delete.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2929,6 +3087,31 @@ pub struct CreateEnvironmentMembershipInput {
     /// </li>
     /// </ul>
     pub permissions: std::option::Option<crate::model::MemberPermissions>,
+}
+impl CreateEnvironmentMembershipInput {
+    /// <p>The ID of the environment that contains the environment member you want to add.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The type of environment member permissions you want to associate with this environment
+    /// member. Available values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>read-only</code>: Has read-only access to the environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>read-write</code>: Has read-write access to the environment.</p>
+    /// </li>
+    /// </ul>
+    pub fn permissions(&self) -> std::option::Option<&crate::model::MemberPermissions> {
+        self.permissions.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3027,6 +3210,113 @@ pub struct CreateEnvironmentEc2Input {
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: std::option::Option<bool>,
+}
+impl CreateEnvironmentEc2Input {
+    /// <p>The name of the environment to create.</p>
+    /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment to create.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no
+    /// more than one time.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the
+    /// <i>Amazon EC2 API Reference</i>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The type of instance to connect to the environment (for example,
+    /// <code>t2.micro</code>).</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2
+    /// instance.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
+    /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM)
+    /// path.</p>
+    /// <p>The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+    /// Because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you
+    /// choose Amazon Linux 2, which includes long term support through 2023.</p>
+    /// <p>
+    /// <b>AMI aliases </b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Linux (default):
+    /// <code>amazonlinux-1-x86_64</code>
+    /// </b>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>SSM paths</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Linux (default):
+    /// <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
+    /// </b>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Linux 2:
+    /// <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Ubuntu 18.04:
+    /// <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The number of minutes until the running instance is shut down after the environment has
+    /// last been used.</p>
+    pub fn automatic_stop_time_minutes(&self) -> std::option::Option<i32> {
+        self.automatic_stop_time_minutes
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any
+    /// IAM principal. If this value is not specified, the ARN defaults to this environment's
+    /// creator.</p>
+    pub fn owner_arn(&self) -> std::option::Option<&str> {
+        self.owner_arn.as_deref()
+    }
+    /// <p>An array of key-value pairs that will be associated with the new Cloud9 development
+    /// environment.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are
+    /// <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
+    /// Amazon EC2 Systems Manager).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with
+    /// Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn dry_run(&self) -> std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentEc2Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

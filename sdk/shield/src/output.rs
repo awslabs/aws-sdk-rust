@@ -156,6 +156,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -212,6 +218,16 @@ pub struct ListResourcesInProtectionGroupOutput {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourcesInProtectionGroupOutput {
+    /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more resources in the protection group than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourcesInProtectionGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -286,6 +302,17 @@ pub struct ListProtectionsOutput {
     /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProtectionsOutput {
+    /// <p>The array of enabled <a>Protection</a> objects.</p>
+    pub fn protections(&self) -> std::option::Option<&[crate::model::Protection]> {
+        self.protections.as_deref()
+    }
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>
+    /// <p>Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProtectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProtectionsOutput");
@@ -359,6 +386,16 @@ pub struct ListProtectionGroupsOutput {
     pub protection_groups: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
     /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProtectionGroupsOutput {
+    /// <p></p>
+    pub fn protection_groups(&self) -> std::option::Option<&[crate::model::ProtectionGroup]> {
+        self.protection_groups.as_deref()
+    }
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more protection groups than the value of MaxResults, Shield Advanced returns this token that you can use in your next request, to get the next batch of objects. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProtectionGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -440,6 +477,20 @@ pub struct ListAttacksOutput {
     /// <p>Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more attack summary objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAttacksOutput {
+    /// <p>The attack information for the specified time range.</p>
+    pub fn attack_summaries(&self) -> std::option::Option<&[crate::model::AttackSummary]> {
+        self.attack_summaries.as_deref()
+    }
+    /// <p>The token returned by a previous call to indicate that there is more data available.
+    /// If not null, more results are available. Pass this value for the <code>NextMarker</code>
+    /// parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of
+    /// items.</p>
+    /// <p>Shield Advanced might return the list of <a>AttackSummary</a> objects in batches smaller than the number specified by MaxResults. If there are more attack summary objects to return, Shield Advanced will always also return a <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAttacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttacksOutput");
@@ -518,6 +569,12 @@ impl ListAttacksOutput {
 pub struct GetSubscriptionStateOutput {
     /// <p>The status of the subscription.</p>
     pub subscription_state: std::option::Option<crate::model::SubscriptionState>,
+}
+impl GetSubscriptionStateOutput {
+    /// <p>The status of the subscription.</p>
+    pub fn subscription_state(&self) -> std::option::Option<&crate::model::SubscriptionState> {
+        self.subscription_state.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSubscriptionStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -720,6 +777,12 @@ pub struct DescribeSubscriptionOutput {
     /// <p>The Shield Advanced subscription details for an account.</p>
     pub subscription: std::option::Option<crate::model::Subscription>,
 }
+impl DescribeSubscriptionOutput {
+    /// <p>The Shield Advanced subscription details for an account.</p>
+    pub fn subscription(&self) -> std::option::Option<&crate::model::Subscription> {
+        self.subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscriptionOutput");
@@ -770,6 +833,12 @@ impl DescribeSubscriptionOutput {
 pub struct DescribeProtectionGroupOutput {
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
     pub protection_group: std::option::Option<crate::model::ProtectionGroup>,
+}
+impl DescribeProtectionGroupOutput {
+    /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    pub fn protection_group(&self) -> std::option::Option<&crate::model::ProtectionGroup> {
+        self.protection_group.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeProtectionGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -822,6 +891,12 @@ pub struct DescribeProtectionOutput {
     /// <p>The <a>Protection</a> object that is described.</p>
     pub protection: std::option::Option<crate::model::Protection>,
 }
+impl DescribeProtectionOutput {
+    /// <p>The <a>Protection</a> object that is described.</p>
+    pub fn protection(&self) -> std::option::Option<&crate::model::Protection> {
+        self.protection.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeProtectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProtectionOutput");
@@ -872,6 +947,12 @@ impl DescribeProtectionOutput {
 pub struct DescribeEmergencyContactSettingsOutput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
+}
+impl DescribeEmergencyContactSettingsOutput {
+    /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
+    pub fn emergency_contact_list(&self) -> std::option::Option<&[crate::model::EmergencyContact]> {
+        self.emergency_contact_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEmergencyContactSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -935,6 +1016,16 @@ pub struct DescribeDrtAccessOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
     pub log_bucket_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeDrtAccessOutput {
+    /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
+    pub fn log_bucket_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_bucket_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDrtAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1007,6 +1098,16 @@ pub struct DescribeAttackStatisticsOutput {
     pub time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>The data that describes the attacks detected during the time period.</p>
     pub data_items: std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
+}
+impl DescribeAttackStatisticsOutput {
+    /// <p>The time range. </p>
+    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.time_range.as_ref()
+    }
+    /// <p>The data that describes the attacks detected during the time period.</p>
+    pub fn data_items(&self) -> std::option::Option<&[crate::model::AttackStatisticsDataItem]> {
+        self.data_items.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAttackStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1084,6 +1185,12 @@ impl DescribeAttackStatisticsOutput {
 pub struct DescribeAttackOutput {
     /// <p>The attack that is described.</p>
     pub attack: std::option::Option<crate::model::AttackDetail>,
+}
+impl DescribeAttackOutput {
+    /// <p>The attack that is described.</p>
+    pub fn attack(&self) -> std::option::Option<&crate::model::AttackDetail> {
+        self.attack.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAttackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1285,6 +1392,12 @@ impl CreateProtectionGroupOutput {
 pub struct CreateProtectionOutput {
     /// <p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>
     pub protection_id: std::option::Option<std::string::String>,
+}
+impl CreateProtectionOutput {
+    /// <p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>
+    pub fn protection_id(&self) -> std::option::Option<&str> {
+        self.protection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProtectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -10,6 +10,20 @@ pub struct UpdateLedgerPermissionsModeOutput {
     /// <p>The current permissions mode of the ledger.</p>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
 }
+impl UpdateLedgerPermissionsModeOutput {
+    /// <p>The name of the ledger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The current permissions mode of the ledger.</p>
+    pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
+        self.permissions_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLedgerPermissionsModeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLedgerPermissionsModeOutput");
@@ -102,6 +116,40 @@ pub struct UpdateLedgerOutput {
     /// current status, the KMS key, and when the key became inaccessible (in the case of an
     /// error).</p>
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
+}
+impl UpdateLedgerOutput {
+    /// <p>The name of the ledger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The current status of the ledger.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
+    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
+    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the
+    /// current status, the KMS key, and when the key became inaccessible (in the case of an
+    /// error).</p>
+    pub fn encryption_description(
+        &self,
+    ) -> std::option::Option<&crate::model::LedgerEncryptionDescription> {
+        self.encryption_description.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -299,6 +347,13 @@ pub struct StreamJournalToKinesisOutput {
     /// stream.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
+impl StreamJournalToKinesisOutput {
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
+    /// stream.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StreamJournalToKinesisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamJournalToKinesisOutput");
@@ -350,6 +405,16 @@ pub struct ListTagsForResourceOutput {
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags that are currently associated with the specified Amazon QLDB resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    > {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -433,6 +498,28 @@ pub struct ListLedgersOutput {
     /// </li>
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLedgersOutput {
+    /// <p>The array of ledger summaries that are associated with the current account and
+    /// Region.</p>
+    pub fn ledgers(&self) -> std::option::Option<&[crate::model::LedgerSummary]> {
+        self.ledgers.as_deref()
+    }
+    /// <p>A pagination token, indicating whether there are more results available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
+    /// processed and there are no more results to be retrieved.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
+    /// results available. To retrieve the next page of results, use the value of
+    /// <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p>
+    /// </li>
+    /// </ul>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLedgersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -542,6 +629,30 @@ pub struct ListJournalS3ExportsForLedgerOutput {
     /// </li>
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJournalS3ExportsForLedgerOutput {
+    /// <p>The array of journal export job descriptions that are associated with the specified
+    /// ledger.</p>
+    pub fn journal_s3_exports(
+        &self,
+    ) -> std::option::Option<&[crate::model::JournalS3ExportDescription]> {
+        self.journal_s3_exports.as_deref()
+    }
+    /// <ul>
+    /// <li>
+    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
+    /// processed and there are no more results to be retrieved.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
+    /// results available. To retrieve the next page of results, use the value of
+    /// <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code>
+    /// call.</p>
+    /// </li>
+    /// </ul>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJournalS3ExportsForLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -656,6 +767,30 @@ pub struct ListJournalS3ExportsOutput {
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJournalS3ExportsOutput {
+    /// <p>The array of journal export job descriptions for all ledgers that are associated with
+    /// the current account and Region.</p>
+    pub fn journal_s3_exports(
+        &self,
+    ) -> std::option::Option<&[crate::model::JournalS3ExportDescription]> {
+        self.journal_s3_exports.as_deref()
+    }
+    /// <ul>
+    /// <li>
+    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
+    /// processed and there are no more results to be retrieved.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
+    /// results available. To retrieve the next page of results, use the value of
+    /// <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code>
+    /// call.</p>
+    /// </li>
+    /// </ul>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJournalS3ExportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJournalS3ExportsOutput");
@@ -768,6 +903,28 @@ pub struct ListJournalKinesisStreamsForLedgerOutput {
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJournalKinesisStreamsForLedgerOutput {
+    /// <p>The array of QLDB journal stream descriptors that are associated with the given
+    /// ledger.</p>
+    pub fn streams(&self) -> std::option::Option<&[crate::model::JournalKinesisStreamDescription]> {
+        self.streams.as_deref()
+    }
+    /// <ul>
+    /// <li>
+    /// <p>If <code>NextToken</code> is empty, the last page of results has been processed
+    /// and there are no more results to be retrieved.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>NextToken</code> is <i>not</i> empty, more results are
+    /// available. To retrieve the next page of results, use the value of
+    /// <code>NextToken</code> in a subsequent
+    /// <code>ListJournalKinesisStreamsForLedger</code> call.</p>
+    /// </li>
+    /// </ul>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJournalKinesisStreamsForLedgerOutput");
@@ -872,6 +1029,18 @@ pub struct GetRevisionOutput {
     /// <p>The document revision data object in Amazon Ion format.</p>
     pub revision: std::option::Option<crate::model::ValueHolder>,
 }
+impl GetRevisionOutput {
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
+    /// proof contains the list of hash values that are required to recalculate the specified
+    /// digest using a Merkle tree, starting with the specified document revision.</p>
+    pub fn proof(&self) -> std::option::Option<&crate::model::ValueHolder> {
+        self.proof.as_ref()
+    }
+    /// <p>The document revision data object in Amazon Ion format.</p>
+    pub fn revision(&self) -> std::option::Option<&crate::model::ValueHolder> {
+        self.revision.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRevisionOutput");
@@ -944,6 +1113,19 @@ pub struct GetDigestOutput {
     /// Amazon Ion structure that has two fields: <code>strandId</code> and
     /// <code>sequenceNo</code>.</p>
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
+}
+impl GetDigestOutput {
+    /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
+    /// request.</p>
+    pub fn digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.digest.as_ref()
+    }
+    /// <p>The latest block location covered by the digest that you requested. An address is an
+    /// Amazon Ion structure that has two fields: <code>strandId</code> and
+    /// <code>sequenceNo</code>.</p>
+    pub fn digest_tip_address(&self) -> std::option::Option<&crate::model::ValueHolder> {
+        self.digest_tip_address.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDigestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1019,6 +1201,18 @@ pub struct GetBlockOutput {
     /// Merkle tree, starting with the specified block.</p>
     pub proof: std::option::Option<crate::model::ValueHolder>,
 }
+impl GetBlockOutput {
+    /// <p>The block data object in Amazon Ion format.</p>
+    pub fn block(&self) -> std::option::Option<&crate::model::ValueHolder> {
+        self.block.as_ref()
+    }
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A
+    /// proof contains the list of hash values required to recalculate the specified digest using a
+    /// Merkle tree, starting with the specified block.</p>
+    pub fn proof(&self) -> std::option::Option<&crate::model::ValueHolder> {
+        self.proof.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlockOutput");
@@ -1086,6 +1280,15 @@ pub struct ExportJournalToS3Output {
     /// <p>To describe your export request and check the status of the job, you can use
     /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     pub export_id: std::option::Option<std::string::String>,
+}
+impl ExportJournalToS3Output {
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
+    /// job.</p>
+    /// <p>To describe your export request and check the status of the job, you can use
+    /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportJournalToS3Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1158,6 +1361,44 @@ pub struct DescribeLedgerOutput {
     /// current status, the KMS key, and when the key became inaccessible (in the case of an
     /// error).</p>
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
+}
+impl DescribeLedgerOutput {
+    /// <p>The name of the ledger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The current status of the ledger.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
+    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The permissions mode of the ledger.</p>
+    pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
+        self.permissions_mode.as_ref()
+    }
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
+    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the
+    /// current status, the KMS key, and when the key became inaccessible (in the case of an
+    /// error).</p>
+    pub fn encryption_description(
+        &self,
+    ) -> std::option::Option<&crate::model::LedgerEncryptionDescription> {
+        self.encryption_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1311,6 +1552,15 @@ pub struct DescribeJournalS3ExportOutput {
     /// <code>DescribeJournalS3Export</code> request.</p>
     pub export_description: std::option::Option<crate::model::JournalS3ExportDescription>,
 }
+impl DescribeJournalS3ExportOutput {
+    /// <p>Information about the journal export job returned by a
+    /// <code>DescribeJournalS3Export</code> request.</p>
+    pub fn export_description(
+        &self,
+    ) -> std::option::Option<&crate::model::JournalS3ExportDescription> {
+        self.export_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeJournalS3ExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJournalS3ExportOutput");
@@ -1368,6 +1618,13 @@ pub struct DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a
     /// <code>DescribeJournalS3Export</code> request.</p>
     pub stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
+}
+impl DescribeJournalKinesisStreamOutput {
+    /// <p>Information about the QLDB journal stream returned by a
+    /// <code>DescribeJournalS3Export</code> request.</p>
+    pub fn stream(&self) -> std::option::Option<&crate::model::JournalKinesisStreamDescription> {
+        self.stream.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJournalKinesisStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1468,6 +1725,41 @@ pub struct CreateLedgerOutput {
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
     /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl CreateLedgerOutput {
+    /// <p>The name of the ledger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The current status of the ledger.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
+    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The permissions mode of the ledger that you created.</p>
+    pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
+        self.permissions_mode.as_ref()
+    }
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
+    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
+    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
+    /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLedgerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1610,6 +1902,12 @@ impl CreateLedgerOutput {
 pub struct CancelJournalKinesisStreamOutput {
     /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl CancelJournalKinesisStreamOutput {
+    /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelJournalKinesisStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

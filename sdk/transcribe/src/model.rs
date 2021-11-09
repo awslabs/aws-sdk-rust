@@ -284,6 +284,24 @@ pub struct CategoryProperties {
     /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CategoryProperties {
+    /// <p>The name of the call analytics category.</p>
+    pub fn category_name(&self) -> std::option::Option<&str> {
+        self.category_name.as_deref()
+    }
+    /// <p>The rules used to create a call analytics category.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>A timestamp that shows when the call analytics category was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CategoryProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CategoryProperties");
@@ -396,6 +414,15 @@ pub enum Rule {
     /// <p>A condition that catches particular words or phrases based on a exact match. For example, if you set the
     /// phrase "I want to speak to the manager", only that exact phrase will be returned.</p>
     TranscriptFilter(crate::model::TranscriptFilter),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Rule {
     /// Tries to convert the enum instance into [`InterruptionFilter`](crate::model::Rule::InterruptionFilter), extracting the inner [`InterruptionFilter`](crate::model::InterruptionFilter).
@@ -458,6 +485,10 @@ impl Rule {
     pub fn is_transcript_filter(&self) -> bool {
         self.as_transcript_filter().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>An object that enables you to specify a particular customer or agent sentiment. If at least 50 percent of the
@@ -476,6 +507,28 @@ pub struct SentimentFilter {
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
     /// <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the request. </p>
     pub negate: std::option::Option<bool>,
+}
+impl SentimentFilter {
+    /// <p>An array that enables you to specify sentiments for the customer or agent. You can specify one or more values.</p>
+    pub fn sentiments(&self) -> std::option::Option<&[crate::model::SentimentValue]> {
+        self.sentiments.as_deref()
+    }
+    /// <p>The time range, measured in seconds, of the sentiment.</p>
+    pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
+        self.absolute_time_range.as_ref()
+    }
+    /// <p>The time range, set in percentages, that correspond to proportion of the call.</p>
+    pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
+        self.relative_time_range.as_ref()
+    }
+    /// <p>A value that determines whether the sentiment belongs to the customer or the agent.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+    /// <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the request. </p>
+    pub fn negate(&self) -> std::option::Option<bool> {
+        self.negate
+    }
 }
 impl std::fmt::Debug for SentimentFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -686,6 +739,51 @@ pub struct RelativeTimeRange {
     /// milliseconds of the call.</p>
     pub last: std::option::Option<i32>,
 }
+impl RelativeTimeRange {
+    /// <p>A value that indicates the percentage of the beginning of the time range. To set a relative time range, you must
+    /// specify a start percentage and an end percentage. For example, if you specify the following values:</p>       
+    /// <ul>
+    /// <li>
+    /// <p>StartPercentage - 10</p>
+    /// </li>
+    /// <li>
+    /// <p>EndPercentage - 50</p>
+    /// </li>
+    /// </ul>
+    /// <p>This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For
+    /// a call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the
+    /// 50,000 millisecond mark.</p>
+    pub fn start_percentage(&self) -> std::option::Option<i32> {
+        self.start_percentage
+    }
+    /// <p>A value that indicates the percentage of the end of the time range. To set a relative time range, you must specify
+    /// a start percentage and an end percentage. For example, if you specify the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>StartPercentage - 10</p>
+    /// </li>
+    /// <li>
+    /// <p>EndPercentage - 50</p>
+    /// </li>
+    /// </ul>
+    /// <p>This looks at the time range starting from 10% of the way into the call to 50% of the way through the call. For a
+    /// call that lasts 100,000 milliseconds, this example range would apply from the 10,000 millisecond mark to the 50,000
+    /// millisecond mark.</p>
+    pub fn end_percentage(&self) -> std::option::Option<i32> {
+        self.end_percentage
+    }
+    /// <p>A range that takes the portion of the call up to the time in milliseconds set by the value that you've specified. For
+    /// example, if you specify <code>120000</code>, the time range is set for the first 120,000 milliseconds of the call.</p>
+    pub fn first(&self) -> std::option::Option<i32> {
+        self.first
+    }
+    /// <p>A range that takes the portion of the call from the time in milliseconds set by the value that you've specified to
+    /// the end of the call. For example, if you specify <code>120000</code>, the time range is set for the last 120,000
+    /// milliseconds of the call.</p>
+    pub fn last(&self) -> std::option::Option<i32> {
+        self.last
+    }
+}
 impl std::fmt::Debug for RelativeTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RelativeTimeRange");
@@ -854,6 +952,46 @@ pub struct AbsoluteTimeRange {
     /// <p>A time range from the value that you've specified to the end of the call. For example, if you specify 100000, the time
     /// range is set to the last 100,000 milliseconds of the call.</p>
     pub last: std::option::Option<i64>,
+}
+impl AbsoluteTimeRange {
+    /// <p>A value that indicates the beginning of the time range in seconds. To set absolute time range, you must specify a
+    /// start time and an end time. For example, if you specify the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>StartTime - 10000</p>
+    /// </li>
+    /// <li>
+    /// <p>Endtime - 50000</p>
+    /// </li>
+    /// </ul>
+    /// <p>The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.</p>
+    pub fn start_time(&self) -> std::option::Option<i64> {
+        self.start_time
+    }
+    /// <p>A value that indicates the end of the time range in milliseconds. To set absolute time range, you must specify a start
+    /// time and an end time. For example, if you specify the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>StartTime - 10000</p>
+    /// </li>
+    /// <li>
+    /// <p>Endtime - 50000</p>
+    /// </li>
+    /// </ul>
+    /// <p>The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+    pub fn end_time(&self) -> std::option::Option<i64> {
+        self.end_time
+    }
+    /// <p>A time range from the beginning of the call to the value that you've specified. For example, if you specify 100000, the
+    /// time range is set to the first 100,000 milliseconds of the call.</p>
+    pub fn first(&self) -> std::option::Option<i64> {
+        self.first
+    }
+    /// <p>A time range from the value that you've specified to the end of the call. For example, if you specify 100000, the time
+    /// range is set to the last 100,000 milliseconds of the call.</p>
+    pub fn last(&self) -> std::option::Option<i64> {
+        self.last
+    }
 }
 impl std::fmt::Debug for AbsoluteTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1066,6 +1204,40 @@ pub struct TranscriptFilter {
     /// <p>The phrases that you're specifying for the transcript filter to match.</p>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TranscriptFilter {
+    /// <p>Matches the phrase to the transcription output in a word for word fashion.
+    /// For example, if you specify the phrase "I want to speak to the manager." Amazon Transcribe attempts to match that specific
+    /// phrase to the transcription.</p>
+    pub fn transcript_filter_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptFilterType> {
+        self.transcript_filter_type.as_ref()
+    }
+    /// <p>A time range, set in seconds, between two points in the call.</p>
+    pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
+        self.absolute_time_range.as_ref()
+    }
+    /// <p>An object that allows percentages to specify the proportion of the call where you would like to apply a filter. For
+    /// example, you can specify the first half of the call. You can also specify the period of time between halfway through to
+    /// three-quarters of the way through the call. Because the length of conversation can vary between calls, you can
+    /// apply relative time ranges across all calls.</p>
+    pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
+        self.relative_time_range.as_ref()
+    }
+    /// <p>Determines whether the customer or the agent is speaking the phrases that you've specified.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+    /// <p>If <code>TRUE</code>, the rule that you specify is applied to everything except for the phrases that you
+    /// specify.</p>
+    pub fn negate(&self) -> std::option::Option<bool> {
+        self.negate
+    }
+    /// <p>The phrases that you're specifying for the transcript filter to match.</p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+}
 impl std::fmt::Debug for TranscriptFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TranscriptFilter");
@@ -1277,6 +1449,33 @@ pub struct InterruptionFilter {
     /// <p>Set to <code>TRUE</code> to look for a time period where there was no interruption.</p>
     pub negate: std::option::Option<bool>,
 }
+impl InterruptionFilter {
+    /// <p>The duration of the interruption.</p>
+    pub fn threshold(&self) -> std::option::Option<i64> {
+        self.threshold
+    }
+    /// <p>Indicates whether the caller or customer was interrupting.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+    /// <p>An object you can use to specify a time range (in milliseconds) for when you'd want to find the interruption. For
+    /// example, you could search for an interruption between the 30,000 millisecond mark and the 45,000 millisecond mark.
+    /// You could also specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds. </p>
+    pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
+        self.absolute_time_range.as_ref()
+    }
+    /// <p>An object that allows percentages to specify the proportion of the call where there was a interruption. For
+    /// example, you can specify the first half of the call. You can also specify the period of time between halfway through to
+    /// three-quarters of the way through the call. Because the length of conversation can vary between calls, you can apply
+    /// relative time ranges across all calls.</p>
+    pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
+        self.relative_time_range.as_ref()
+    }
+    /// <p>Set to <code>TRUE</code> to look for a time period where there was no interruption.</p>
+    pub fn negate(&self) -> std::option::Option<bool> {
+        self.negate
+    }
+}
 impl std::fmt::Debug for InterruptionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InterruptionFilter");
@@ -1408,6 +1607,29 @@ pub struct NonTalkTimeFilter {
     /// <p>Set to <code>TRUE</code> to look for a time period when people were talking.</p>
     pub negate: std::option::Option<bool>,
 }
+impl NonTalkTimeFilter {
+    /// <p>The duration of the period when neither the customer nor agent was talking.</p>
+    pub fn threshold(&self) -> std::option::Option<i64> {
+        self.threshold
+    }
+    /// <p>An object you can use to specify a time range (in milliseconds) for when no one is talking. For example, you
+    /// could specify a time period between the 30,000 millisecond mark and the 45,000 millisecond mark. You could also
+    /// specify the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.</p>
+    pub fn absolute_time_range(&self) -> std::option::Option<&crate::model::AbsoluteTimeRange> {
+        self.absolute_time_range.as_ref()
+    }
+    /// <p>An object that allows percentages to specify the proportion of the call where there was silence. For example, you
+    /// can specify the first half of the call. You can also specify the period of time between halfway through to three-quarters
+    /// of the way through the call. Because the length of conversation can vary between calls, you can apply relative time
+    /// ranges across all calls.</p>
+    pub fn relative_time_range(&self) -> std::option::Option<&crate::model::RelativeTimeRange> {
+        self.relative_time_range.as_ref()
+    }
+    /// <p>Set to <code>TRUE</code> to look for a time period when people were talking.</p>
+    pub fn negate(&self) -> std::option::Option<bool> {
+        self.negate
+    }
+}
 impl std::fmt::Debug for NonTalkTimeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NonTalkTimeFilter");
@@ -1515,6 +1737,18 @@ pub struct Tag {
     /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
     /// ‘Department’:’Sales’, the value is 'Sales'.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
+    /// ‘Department’:’Sales’, the key is 'Department'.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag
+    /// ‘Department’:’Sales’, the value is 'Sales'.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1668,6 +1902,145 @@ pub struct TranscriptionJob {
     pub language_id_settings: std::option::Option<
         std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
     >,
+}
+impl TranscriptionJob {
+    /// <p>The name of the transcription job.</p>
+    pub fn transcription_job_name(&self) -> std::option::Option<&str> {
+        self.transcription_job_name.as_deref()
+    }
+    /// <p>The status of the transcription job.</p>
+    pub fn transcription_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
+        self.transcription_job_status.as_ref()
+    }
+    /// <p>The language code for the input speech.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+    pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
+        self.media_sample_rate_hertz
+    }
+    /// <p>The format of the input media file.</p>
+    pub fn media_format(&self) -> std::option::Option<&crate::model::MediaFormat> {
+        self.media_format.as_ref()
+    }
+    /// <p>An object that describes the input media for the transcription job.</p>
+    pub fn media(&self) -> std::option::Option<&crate::model::Media> {
+        self.media.as_ref()
+    }
+    /// <p>An object that describes the output of the transcription job.</p>
+    pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
+        self.transcript.as_ref()
+    }
+    /// <p>A timestamp that shows when the job started processing.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
+    /// about why the job failed.</p>
+    /// <p>The <code>FailureReason</code> field can contain one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code>
+    /// field of the request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid
+    /// values.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The media format provided does not match the detected media format</code> - The media format
+    /// of the audio file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check
+    /// the media format of your media file and make sure that the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+    /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8,000 and
+    /// 48,000 Hertz.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the
+    /// audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the request.
+    /// Check the sample rate of your media file and make sure that the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon Transcribe can process.
+    /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid number of channels: number of channels too large</code> - Your audio contains more
+    /// channels than Amazon Transcribe is configured to process. To request additional channels, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon Transcribe Limits</a> in
+    /// the <i>Amazon Web Services General Reference</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+    /// maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing
+    /// the transcription job.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+        self.settings.as_ref()
+    }
+    /// <p>An object containing the details of your custom language model.</p>
+    pub fn model_settings(&self) -> std::option::Option<&crate::model::ModelSettings> {
+        self.model_settings.as_ref()
+    }
+    /// <p>Provides information about how a transcription job is executed.</p>
+    pub fn job_execution_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionSettings> {
+        self.job_execution_settings.as_ref()
+    }
+    /// <p>An object that describes content redaction settings for the transcription job.</p>
+    pub fn content_redaction(&self) -> std::option::Option<&crate::model::ContentRedaction> {
+        self.content_redaction.as_ref()
+    }
+    /// <p>A value that shows if automatic language identification was enabled for a transcription job.</p>
+    pub fn identify_language(&self) -> std::option::Option<bool> {
+        self.identify_language
+    }
+    /// <p>An object that shows the optional array of languages inputted for transcription jobs  with automatic language
+    /// identification enabled.</p>
+    pub fn language_options(&self) -> std::option::Option<&[crate::model::LanguageCode]> {
+        self.language_options.as_deref()
+    }
+    /// <p>A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source audio. Larger
+    /// values indicate that Amazon Transcribe has higher confidence in the language it identified.</p>
+    pub fn identified_language_score(&self) -> std::option::Option<f32> {
+        self.identified_language_score
+    }
+    /// <p>A key:value pair assigned to a given transcription job.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Generate subtitles for your batch transcription job.</p>
+    pub fn subtitles(&self) -> std::option::Option<&crate::model::SubtitlesOutput> {
+        self.subtitles.as_ref()
+    }
+    /// <p>Language-specific settings that can be specified when language identification is enabled for your transcription
+    /// job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+    /// <code>LanguageModelName</code>LanguageModelName.</p>
+    pub fn language_id_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+    > {
+        self.language_id_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for TranscriptionJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2158,6 +2531,26 @@ pub struct LanguageIdSettings {
     /// won't be applied.</p>
     pub language_model_name: std::option::Option<std::string::String>,
 }
+impl LanguageIdSettings {
+    /// <p>The name of the vocabulary you want to use when processing your transcription job. The
+    /// vocabulary you specify must have the same language code as the transcription job; if the languages don't
+    /// match, the vocabulary won't be applied.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The name of the vocabulary filter you want to use when transcribing your audio. The filter you specify
+    /// must have the same language code as the transcription job; if the languages don't match, the vocabulary
+    /// filter won't be applied.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The name of the language model you want to use when transcribing your audio. The model you specify
+    /// must have the same language code as the transcription job; if the languages don't match, the language model
+    /// won't be applied.</p>
+    pub fn language_model_name(&self) -> std::option::Option<&str> {
+        self.language_model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for LanguageIdSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LanguageIdSettings");
@@ -2254,6 +2647,16 @@ pub struct SubtitlesOutput {
     pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
     /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
     pub subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SubtitlesOutput {
+    /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are genereated.</p>
+    pub fn formats(&self) -> std::option::Option<&[crate::model::SubtitleFormat]> {
+        self.formats.as_deref()
+    }
+    /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
+    pub fn subtitle_file_uris(&self) -> std::option::Option<&[std::string::String]> {
+        self.subtitle_file_uris.as_deref()
+    }
 }
 impl std::fmt::Debug for SubtitlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2393,6 +2796,19 @@ pub struct ContentRedaction {
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
     /// unredacted transcripts.</p>
     pub redaction_output: std::option::Option<crate::model::RedactionOutput>,
+}
+impl ContentRedaction {
+    /// <p>Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.</p>
+    pub fn redaction_type(&self) -> std::option::Option<&crate::model::RedactionType> {
+        self.redaction_type.as_ref()
+    }
+    /// <p>The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
+    /// <p>When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.</p>
+    /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
+    /// unredacted transcripts.</p>
+    pub fn redaction_output(&self) -> std::option::Option<&crate::model::RedactionOutput> {
+        self.redaction_output.as_ref()
+    }
 }
 impl std::fmt::Debug for ContentRedaction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2587,6 +3003,28 @@ pub struct JobExecutionSettings {
     /// <code>DataAccessRoleArn</code> field.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
 }
+impl JobExecutionSettings {
+    /// <p>Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded. When the
+    /// <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of executing
+    /// jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+    /// <code>LimitExceededException</code> exception.</p>
+    /// <p>Note that job queuing is enabled by default for call analytics jobs.</p>
+    /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
+    /// <code>DataAccessRoleArn</code> field.</p>
+    pub fn allow_deferred_execution(&self) -> std::option::Option<bool> {
+        self.allow_deferred_execution
+    }
+    /// <p>The Amazon Resource Name (ARN), in the form
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>, of a role
+    /// that has access to the S3 bucket that contains the input files. Amazon Transcribe assumes this role to read queued
+    /// media files. If you have specified an output S3 bucket for the transcription results, this role should
+    /// have access to the output bucket as well.</p>      
+    /// <p>If you specify the <code>AllowDeferredExecution</code> field, you must specify the
+    /// <code>DataAccessRoleArn</code> field.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for JobExecutionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobExecutionSettings");
@@ -2675,6 +3113,12 @@ pub struct ModelSettings {
     /// <p>The name of your custom language model.</p>
     pub language_model_name: std::option::Option<std::string::String>,
 }
+impl ModelSettings {
+    /// <p>The name of your custom language model.</p>
+    pub fn language_model_name(&self) -> std::option::Option<&str> {
+        self.language_model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ModelSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModelSettings");
@@ -2759,6 +3203,62 @@ pub struct Settings {
     /// vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
     /// are not masked or removed.</p>
     pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
+}
+impl Settings {
+    /// <p>The name of a vocabulary to use when processing the transcription job.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+    /// audio. Speaker recognition labels individual speakers in the audio file. If you set the <code>ShowSpeakerLabels</code>
+    /// field to true, you must also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.</p>
+    /// <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+    /// request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    pub fn show_speaker_labels(&self) -> std::option::Option<bool> {
+        self.show_speaker_labels
+    }
+    /// <p>The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than
+    /// this number, multiple speakers are identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
+    /// field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+    pub fn max_speaker_labels(&self) -> std::option::Option<i32> {
+        self.max_speaker_labels
+    }
+    /// <p>Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of each
+    /// channel into a single transcription. </p>
+    /// <p>Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start time and
+    /// end time of the item and alternative transcriptions of the item including the confidence that Amazon Transcribe has in the
+    /// transcription.</p>
+    /// <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+    /// request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    pub fn channel_identification(&self) -> std::option::Option<bool> {
+        self.channel_identification
+    }
+    /// <p>Determines whether the transcription contains alternative transcriptions. If you set the
+    /// <code>ShowAlternatives</code> field to true, you must also set the maximum number of alternatives to return in the
+    /// <code>MaxAlternatives</code> field.</p>
+    pub fn show_alternatives(&self) -> std::option::Option<bool> {
+        self.show_alternatives
+    }
+    /// <p>The number of alternative transcriptions that the service should return. If you specify the
+    /// <code>MaxAlternatives</code> field, you must set the <code>ShowAlternatives</code> field to true.</p>
+    pub fn max_alternatives(&self) -> std::option::Option<i32> {
+        self.max_alternatives
+    }
+    /// <p>The name of the vocabulary filter to use when transcribing the audio. The filter that you specify must have the
+    /// same language code as the transcription job.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks ("***")
+    /// as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
+    /// placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
+    /// vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
+    /// are not masked or removed.</p>
+    pub fn vocabulary_filter_method(
+        &self,
+    ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
+        self.vocabulary_filter_method.as_ref()
+    }
 }
 impl std::fmt::Debug for Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3019,6 +3519,22 @@ pub struct Transcript {
     /// the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>
     pub redacted_transcript_file_uri: std::option::Option<std::string::String>,
 }
+impl Transcript {
+    /// <p>The S3 object location of the transcript.</p>
+    /// <p>Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code>
+    /// field when you created the job, this is the URI of that bucket. If you chose to store the transcript in Amazon Transcribe, this is a
+    /// shareable URL that provides secure access to that location.</p>
+    pub fn transcript_file_uri(&self) -> std::option::Option<&str> {
+        self.transcript_file_uri.as_deref()
+    }
+    /// <p>The S3 object location of the redacted transcript.</p>
+    /// <p>Use this URI to access the redacted transcript. If you specified an S3 bucket in the
+    /// <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store
+    /// the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>
+    pub fn redacted_transcript_file_uri(&self) -> std::option::Option<&str> {
+        self.redacted_transcript_file_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for Transcript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Transcript");
@@ -3112,6 +3628,23 @@ pub struct Media {
     pub media_file_uri: std::option::Option<std::string::String>,
     /// <p> The S3 object location for your redacted output media file. This is only supported for call analytics jobs.</p>
     pub redacted_media_file_uri: std::option::Option<std::string::String>,
+}
+impl Media {
+    /// <p>The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you
+    /// are calling. The general form is:</p>
+    ///
+    /// <p>For example:</p>
+    ///
+    ///
+    /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
+    /// Developer Guide</i>.</p>
+    pub fn media_file_uri(&self) -> std::option::Option<&str> {
+        self.media_file_uri.as_deref()
+    }
+    /// <p> The S3 object location for your redacted output media file. This is only supported for call analytics jobs.</p>
+    pub fn redacted_media_file_uri(&self) -> std::option::Option<&str> {
+        self.redacted_media_file_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for Media {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3332,6 +3865,12 @@ pub struct Subtitles {
     /// <p>Specify the output format for your subtitle file.</p>
     pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
 }
+impl Subtitles {
+    /// <p>Specify the output format for your subtitle file.</p>
+    pub fn formats(&self) -> std::option::Option<&[crate::model::SubtitleFormat]> {
+        self.formats.as_deref()
+    }
+}
 impl std::fmt::Debug for Subtitles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subtitles");
@@ -3472,6 +4011,129 @@ pub struct MedicalTranscriptionJob {
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>A key:value pair assigned to a given medical transcription job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl MedicalTranscriptionJob {
+    /// <p>The name for a given medical transcription job.</p>
+    pub fn medical_transcription_job_name(&self) -> std::option::Option<&str> {
+        self.medical_transcription_job_name.as_deref()
+    }
+    /// <p>The completion status of a medical transcription job.</p>
+    pub fn transcription_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
+        self.transcription_job_status.as_ref()
+    }
+    /// <p>The language code for the language spoken in the source audio file. US English (en-US) is the only supported
+    /// language for medical transcriptions. Any other value you enter for language code results in a
+    /// <code>BadRequestException</code> error.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The sample rate, in Hertz, of the source audio containing medical information.</p>
+    /// <p>If you don't specify the sample rate, Amazon Transcribe Medical determines it for you. If you choose to specify the sample rate, it
+    /// must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave the
+    /// <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe Medical determine the sample rate.</p>
+    pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
+        self.media_sample_rate_hertz
+    }
+    /// <p>The format of the input media file.</p>
+    pub fn media_format(&self) -> std::option::Option<&crate::model::MediaFormat> {
+        self.media_format.as_ref()
+    }
+    /// <p>Describes the input media file in a transcription request.</p>
+    pub fn media(&self) -> std::option::Option<&crate::model::Media> {
+        self.media.as_ref()
+    }
+    /// <p>An object that contains the <code>MedicalTranscript</code>. The <code>MedicalTranscript</code> contains the
+    /// <code>TranscriptFileUri</code>.</p>
+    pub fn transcript(&self) -> std::option::Option<&crate::model::MedicalTranscript> {
+        self.transcript.as_ref()
+    }
+    /// <p>A timestamp that shows when the job started processing.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
+    /// about why the job failed.</p>
+    /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Unsupported media format</code>- The media format specified in the
+    /// <code>MediaFormat</code> field of the request isn't valid. See the description of the
+    /// <code>MediaFormat</code> field for a list of valid values.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The media format provided does not match the detected media format</code>- The media format
+    /// of the audio file doesn't match the format specified in the <code>MediaFormat</code> field in the request.
+    /// Check the media format of your media file and make sure the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid sample rate for audio file</code>- The sample rate specified in the
+    /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8,000 and
+    /// 48,000 Hertz.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The sample rate provided does not match the detected sample rate</code>- The sample rate in the
+    /// audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the request.
+    /// Check the sample rate of your media file and make sure that the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon Transcribe Medical can
+    /// process. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a> in the <i>Amazon Transcribe Medical
+    /// Guide</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid number of channels: number of channels too large</code>- Your audio contains more channels
+    /// than Amazon Transcribe Medical is configured to process. To request additional channels, see <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon
+    /// Web Services General Reference</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Object that contains  object.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::MedicalTranscriptionSetting> {
+        self.settings.as_ref()
+    }
+    /// <p>Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription job. If the value is
+    /// <code>PHI</code>, you've configured the job to identify personal health information (PHI) in the transcription output.</p>
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
+        self.content_identification_type.as_ref()
+    }
+    /// <p>The medical specialty of any clinicians providing a dictation or having a conversation. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing a medical conversation</a>for a
+    /// list of supported specialties.</p>
+    pub fn specialty(&self) -> std::option::Option<&crate::model::Specialty> {
+        self.specialty.as_ref()
+    }
+    /// <p>The type of speech in the transcription job. <code>CONVERSATION</code> is generally used for patient-physician
+    /// dialogues. <code>DICTATION</code> is the setting for physicians speaking their notes after seeing a patient. For more
+    /// information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What is
+    /// Amazon Transcribe Medical?</a>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>A key:value pair assigned to a given medical transcription job.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for MedicalTranscriptionJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4069,6 +4731,49 @@ pub struct MedicalTranscriptionSetting {
     /// <p>The name of the vocabulary to use when processing a medical transcription job.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
 }
+impl MedicalTranscriptionSetting {
+    /// <p>Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+    /// audio. Speaker recognition labels individual speakers in the audio file. If you set the <code>ShowSpeakerLabels</code>
+    /// field to true, you must also set the maximum number of speaker labels in the <code>MaxSpeakerLabels</code>
+    /// field.</p>
+    /// <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+    /// request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    pub fn show_speaker_labels(&self) -> std::option::Option<bool> {
+        self.show_speaker_labels
+    }
+    /// <p>The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this
+    /// number, multiple speakers are identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code> field,
+    /// you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+    pub fn max_speaker_labels(&self) -> std::option::Option<i32> {
+        self.max_speaker_labels
+    }
+    /// <p>Instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each
+    /// channel into a single transcription.</p>
+    /// <p>Amazon Transcribe Medical also produces a transcription of each item detected on an audio channel, including the start time and end
+    /// time of the item and alternative transcriptions of item. The alternative transcriptions also come with confidence scores
+    /// provided by Amazon Transcribe Medical.</p>
+    /// <p>You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+    /// request. If you set both, your request returns a <code>BadRequestException</code>
+    /// </p>
+    pub fn channel_identification(&self) -> std::option::Option<bool> {
+        self.channel_identification
+    }
+    /// <p>Determines whether alternative transcripts are generated along with the transcript that has the highest confidence.
+    /// If you set <code>ShowAlternatives</code> field to true, you must also set the maximum number of alternatives to
+    /// return in the <code>MaxAlternatives</code> field.</p>
+    pub fn show_alternatives(&self) -> std::option::Option<bool> {
+        self.show_alternatives
+    }
+    /// <p>The maximum number of alternatives that you tell the service to return. If you specify the
+    /// <code>MaxAlternatives</code> field, you must set the <code>ShowAlternatives</code> field to true.</p>
+    pub fn max_alternatives(&self) -> std::option::Option<i32> {
+        self.max_alternatives
+    }
+    /// <p>The name of the vocabulary to use when processing a medical transcription job.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+}
 impl std::fmt::Debug for MedicalTranscriptionSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MedicalTranscriptionSetting");
@@ -4221,6 +4926,14 @@ pub struct MedicalTranscript {
     /// transcript.</p>
     pub transcript_file_uri: std::option::Option<std::string::String>,
 }
+impl MedicalTranscript {
+    /// <p>The S3 object location of the medical transcript.</p>
+    /// <p>Use this URI to access the medical transcript. This URI points to the S3 bucket you created to store the medical
+    /// transcript.</p>
+    pub fn transcript_file_uri(&self) -> std::option::Option<&str> {
+        self.transcript_file_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for MedicalTranscript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MedicalTranscript");
@@ -4354,6 +5067,120 @@ pub struct CallAnalyticsJob {
     /// <p>Shows numeric values to indicate the channel assigned to the agent's audio and the channel assigned to the
     /// customer's audio. </p>
     pub channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+}
+impl CallAnalyticsJob {
+    /// <p>The name of the call analytics job.</p>
+    pub fn call_analytics_job_name(&self) -> std::option::Option<&str> {
+        self.call_analytics_job_name.as_deref()
+    }
+    /// <p>The status of the analytics job.</p>
+    pub fn call_analytics_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CallAnalyticsJobStatus> {
+        self.call_analytics_job_status.as_ref()
+    }
+    /// <p>If you know the language spoken between the customer and the agent, specify a language code for this field.</p>
+    /// <p>If you don't know the language, you can leave this field blank, and Amazon Transcribe will use machine learning to automatically
+    /// identify the language. To improve the accuracy of language identification, you can provide an array containing the
+    /// possible language codes for the language spoken in your audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported languages and language-specific features</a> for
+    /// additional information.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The sample rate, in Hertz, of the audio.</p>
+    pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
+        self.media_sample_rate_hertz
+    }
+    /// <p>The format of the input audio file. Note: for call analytics jobs, only the following media formats are supported: MP3,
+    /// MP4, WAV, FLAC, OGG, and WebM. </p>
+    pub fn media_format(&self) -> std::option::Option<&crate::model::MediaFormat> {
+        self.media_format.as_ref()
+    }
+    /// <p>Describes the input media file in a transcription request.</p>
+    pub fn media(&self) -> std::option::Option<&crate::model::Media> {
+        self.media.as_ref()
+    }
+    /// <p>Identifies the location of a transcription.</p>
+    pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
+        self.transcript.as_ref()
+    }
+    /// <p>A timestamp that shows when the analytics job started processing.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the analytics job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the analytics job was completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>If the <code>AnalyticsJobStatus</code> is <code>FAILED</code>, this field contains information about why
+    /// the job failed.</p>
+    /// <p>The <code>FailureReason</code> field can contain one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Unsupported media format</code>: The media format specified in the
+    /// <code>MediaFormat</code> field of the request isn't valid. See the description of the <code>MediaFormat</code>
+    /// field for a list of valid values.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The media format provided does not match the detected media format</code>: The media
+    /// format of the audio file doesn't match the format specified in the <code>MediaFormat</code> field in the request.
+    /// Check the media format of your media file and make sure the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid sample rate for audio file</code>: The sample rate specified in the
+    /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8,000 and 48,000
+    /// Hertz.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The sample rate provided does not match the detected sample rate</code>: The sample rate
+    /// in the audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the
+    /// request. Check the sample rate of your media file and make sure that the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid file size: file size too large</code>: The size of your audio file is larger than what Amazon Transcribe Medical
+    /// can process. For more information, see <i>Guidelines and Quotas</i> in the Amazon Transcribe Medical
+    /// Guide.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid number of channels: number of channels too large</code>: Your audio contains more
+    /// channels than Amazon Transcribe Medical is configured to process. To request additional channels, see Amazon Transcribe Medical Endpoints and Quotas in the
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/Welcome.html">Amazon Web Services General
+    /// Reference</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Number (ARN) that you use to access the analytics job. ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source audio. This value
+    /// appears only when you don't provide a single language code. Larger values indicate that Amazon Transcribe has higher confidence in
+    /// the language that it identified</p>
+    pub fn identified_language_score(&self) -> std::option::Option<f32> {
+        self.identified_language_score
+    }
+    /// <p>Provides information about the settings used to run a transcription job.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::CallAnalyticsJobSettings> {
+        self.settings.as_ref()
+    }
+    /// <p>Shows numeric values to indicate the channel assigned to the agent's audio and the channel assigned to the
+    /// customer's audio. </p>
+    pub fn channel_definitions(&self) -> std::option::Option<&[crate::model::ChannelDefinition]> {
+        self.channel_definitions.as_deref()
+    }
 }
 impl std::fmt::Debug for CallAnalyticsJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4738,6 +5565,16 @@ pub struct ChannelDefinition {
     /// <p>Indicates whether the person speaking on the audio channel is the agent or customer.</p>
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
 }
+impl ChannelDefinition {
+    /// <p>A value that indicates the audio channel.</p>
+    pub fn channel_id(&self) -> i32 {
+        self.channel_id
+    }
+    /// <p>Indicates whether the person speaking on the audio channel is the agent or customer.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelDefinition");
@@ -4827,6 +5664,54 @@ pub struct CallAnalyticsJobSettings {
     pub language_id_settings: std::option::Option<
         std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
     >,
+}
+impl CallAnalyticsJobSettings {
+    /// <p>The name of a vocabulary to use when processing the call analytics job.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The name of the vocabulary filter to use when running a call analytics job. The filter that you specify must have the
+    /// same language code as the analytics job.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>Set to mask to remove filtered text from the transcript and replace it with three asterisks ("***") as placeholder text.
+    /// Set to <code>remove</code> to remove filtered text from the transcript without using placeholder text. Set to
+    /// <code>tag</code> to mark the word in the transcription output that matches the vocabulary filter. When you set the
+    /// filter method to <code>tag</code>, the words matching your vocabulary filter are not masked or removed.</p>
+    pub fn vocabulary_filter_method(
+        &self,
+    ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
+        self.vocabulary_filter_method.as_ref()
+    }
+    /// <p>The structure used to describe a custom language model.</p>
+    pub fn language_model_name(&self) -> std::option::Option<&str> {
+        self.language_model_name.as_deref()
+    }
+    /// <p>Settings for content redaction within a transcription job.</p>
+    pub fn content_redaction(&self) -> std::option::Option<&crate::model::ContentRedaction> {
+        self.content_redaction.as_ref()
+    }
+    /// <p>When you run a call analytics job, you can specify the language spoken in the audio, or you can have Amazon Transcribe identify
+    /// the language for you.</p>
+    /// <p>To specify a language, specify an array with one language code. If you don't know the language, you can leave this
+    /// field blank and Amazon Transcribe will use machine learning to identify the language for you. To improve the ability of Amazon Transcribe to
+    /// correctly identify the language, you can provide an array of the languages that can be present in the audio. Refer to
+    /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported languages and language-specific
+    /// features</a> for additional information.</p>
+    pub fn language_options(&self) -> std::option::Option<&[crate::model::LanguageCode]> {
+        self.language_options.as_deref()
+    }
+    /// <p>The language identification settings associated with your call analytics job. These settings include
+    /// <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+    /// <code>LanguageModelName</code>.</p>
+    pub fn language_id_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>,
+    > {
+        self.language_id_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for CallAnalyticsJobSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5093,6 +5978,20 @@ pub struct VocabularyFilterInfo {
     /// <p>The date and time that the vocabulary was last updated.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl VocabularyFilterInfo {
+    /// <p>The name of the vocabulary filter. The name must be unique in the account that holds the filter.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The language code of the words in the vocabulary filter.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+}
 impl std::fmt::Debug for VocabularyFilterInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VocabularyFilterInfo");
@@ -5182,6 +6081,25 @@ pub struct VocabularyInfo {
     /// <p>The processing state of the vocabulary. If the state is <code>READY</code> you can use
     /// the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
+}
+impl VocabularyInfo {
+    /// <p>The name of the vocabulary.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The processing state of the vocabulary. If the state is <code>READY</code> you can use
+    /// the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
 }
 impl std::fmt::Debug for VocabularyInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5312,6 +6230,65 @@ pub struct TranscriptionJobSummary {
     /// <p>A value between zero and one that Amazon Transcribe assigned to the language it identified in the source audio. A higher
     /// score indicates that Amazon Transcribe is more confident in the language it identified.</p>
     pub identified_language_score: std::option::Option<f32>,
+}
+impl TranscriptionJobSummary {
+    /// <p>The name of the transcription job.</p>
+    pub fn transcription_job_name(&self) -> std::option::Option<&str> {
+        self.transcription_job_name.as_deref()
+    }
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job started processing.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The language code for the input speech.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The status of the transcription job. When the status is <code>COMPLETED</code>, use the
+    /// <code>GetTranscriptionJob</code> operation to get the results of the transcription.</p>
+    pub fn transcription_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
+        self.transcription_job_status.as_ref()
+    }
+    /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Indicates the location of the output of the transcription job.</p>
+    /// <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the
+    /// <code>outputBucketName</code> field when the transcription job was started with the
+    /// <code>StartTranscriptionJob</code> operation.</p>
+    /// <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using
+    /// the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>
+    pub fn output_location_type(&self) -> std::option::Option<&crate::model::OutputLocationType> {
+        self.output_location_type.as_ref()
+    }
+    /// <p>The content redaction settings of the transcription job.</p>
+    pub fn content_redaction(&self) -> std::option::Option<&crate::model::ContentRedaction> {
+        self.content_redaction.as_ref()
+    }
+    /// <p>The object used to call your custom language model to your transcription job.</p>
+    pub fn model_settings(&self) -> std::option::Option<&crate::model::ModelSettings> {
+        self.model_settings.as_ref()
+    }
+    /// <p>Whether automatic language identification was enabled for a transcription job.</p>
+    pub fn identify_language(&self) -> std::option::Option<bool> {
+        self.identify_language
+    }
+    /// <p>A value between zero and one that Amazon Transcribe assigned to the language it identified in the source audio. A higher
+    /// score indicates that Amazon Transcribe is more confident in the language it identified.</p>
+    pub fn identified_language_score(&self) -> std::option::Option<f32> {
+        self.identified_language_score
+    }
 }
 impl std::fmt::Debug for TranscriptionJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5631,6 +6608,59 @@ pub struct MedicalTranscriptionJobSummary {
     /// <p>The speech of the clinician in the input audio.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl MedicalTranscriptionJobSummary {
+    /// <p>The name of a medical transcription job.</p>
+    pub fn medical_transcription_job_name(&self) -> std::option::Option<&str> {
+        self.medical_transcription_job_name.as_deref()
+    }
+    /// <p>A timestamp that shows when the medical transcription job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job began processing.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The language of the transcript in the source audio file.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The status of the medical transcription job.</p>
+    pub fn transcription_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
+        self.transcription_job_status.as_ref()
+    }
+    /// <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Indicates the location of the transcription job's output. This field must be the path of an S3 bucket; if you don't
+    /// already have an S3 bucket, one is created based on the path you add.</p>
+    pub fn output_location_type(&self) -> std::option::Option<&crate::model::OutputLocationType> {
+        self.output_location_type.as_ref()
+    }
+    /// <p>The medical specialty of the transcription job. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing a medical conversation</a>for a
+    /// list of supported specialties.</p>
+    pub fn specialty(&self) -> std::option::Option<&crate::model::Specialty> {
+        self.specialty.as_ref()
+    }
+    /// <p>Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription job. If the value is
+    /// <code>PHI</code>, you've configured the transcription job to identify personal health information (PHI).</p>
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
+        self.content_identification_type.as_ref()
+    }
+    /// <p>The speech of the clinician in the input audio.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for MedicalTranscriptionJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MedicalTranscriptionJobSummary");
@@ -5880,6 +6910,46 @@ pub struct LanguageModel {
     /// <p>The data access role and Amazon S3 prefixes for the input files used to train the custom language model.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
 }
+impl LanguageModel {
+    /// <p>The name of the custom language model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The time the custom language model was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The most recent time the custom language model was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The language code you used to create your custom language model.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::ClmLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Transcribe standard language model, or base model used to create the custom language model.</p>
+    pub fn base_model_name(&self) -> std::option::Option<&crate::model::BaseModelName> {
+        self.base_model_name.as_ref()
+    }
+    /// <p>The creation status of a custom language model. When the status is <code>COMPLETED</code> the model is
+    /// ready for use.</p>
+    pub fn model_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.model_status.as_ref()
+    }
+    /// <p>Whether the base model used for the custom language model is up to date. If this field is <code>true</code>
+    /// then you are running the most up-to-date version of the base model in your custom language model.</p>
+    pub fn upgrade_availability(&self) -> std::option::Option<bool> {
+        self.upgrade_availability
+    }
+    /// <p>The reason why the custom language model couldn't be created.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The data access role and Amazon S3 prefixes for the input files used to train the custom language model.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+}
 impl std::fmt::Debug for LanguageModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LanguageModel");
@@ -6063,6 +7133,22 @@ pub struct InputDataConfig {
     /// Amazon S3 buckets containing your media files or text data. ARNs have the format
     /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
+}
+impl InputDataConfig {
+    /// <p>The Amazon S3 prefix you specify to access the plain text files that you use to train your custom language model.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>The Amazon S3 prefix you specify to access the plain text files that you use to tune your custom language model.</p>
+    pub fn tuning_data_s3_uri(&self) -> std::option::Option<&str> {
+        self.tuning_data_s3_uri.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions you've given Amazon Transcribe to access your
+    /// Amazon S3 buckets containing your media files or text data. ARNs have the format
+    /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for InputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6340,6 +7426,38 @@ pub struct CallAnalyticsJobSummary {
     pub call_analytics_job_status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
     /// <p>If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl CallAnalyticsJobSummary {
+    /// <p>The name of the call analytics job.</p>
+    pub fn call_analytics_job_name(&self) -> std::option::Option<&str> {
+        self.call_analytics_job_name.as_deref()
+    }
+    /// <p>A timestamp that shows when the call analytics job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job began processing.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The language of the transcript in the source audio file.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The status of the call analytics job.</p>
+    pub fn call_analytics_job_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CallAnalyticsJobStatus> {
+        self.call_analytics_job_status.as_ref()
+    }
+    /// <p>If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of the error.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for CallAnalyticsJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -130,6 +130,20 @@ pub struct UpdateGroupCertificateConfigurationOutput {
     /// The ID of the group certificate configuration.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl UpdateGroupCertificateConfigurationOutput {
+    /// The amount of time remaining before the certificate authority expires, in milliseconds.
+    pub fn certificate_authority_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+        self.certificate_authority_expiry_in_milliseconds.as_deref()
+    }
+    /// The amount of time remaining before the certificate expires, in milliseconds.
+    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+        self.certificate_expiry_in_milliseconds.as_deref()
+    }
+    /// The ID of the group certificate configuration.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupCertificateConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupCertificateConfigurationOutput");
@@ -376,6 +390,16 @@ pub struct UpdateConnectivityInfoOutput {
     /// The new version of the connectivity info.
     pub version: std::option::Option<std::string::String>,
 }
+impl UpdateConnectivityInfoOutput {
+    /// A message about the connectivity info update request.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// The new version of the connectivity info.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectivityInfoOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectivityInfoOutput");
@@ -529,6 +553,16 @@ pub struct StartBulkDeploymentOutput {
     /// The ID of the bulk deployment.
     pub bulk_deployment_id: std::option::Option<std::string::String>,
 }
+impl StartBulkDeploymentOutput {
+    /// The ARN of the bulk deployment.
+    pub fn bulk_deployment_arn(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_arn.as_deref()
+    }
+    /// The ID of the bulk deployment.
+    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartBulkDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartBulkDeploymentOutput");
@@ -598,6 +632,16 @@ pub struct ResetDeploymentsOutput {
     /// The ID of the deployment.
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl ResetDeploymentsOutput {
+    /// The ARN of the deployment.
+    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+        self.deployment_arn.as_deref()
+    }
+    /// The ID of the deployment.
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetDeploymentsOutput");
@@ -666,6 +710,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// The key-value pair for the resource tag.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -730,6 +783,16 @@ pub struct ListSubscriptionDefinitionVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
+}
+impl ListSubscriptionDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSubscriptionDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -802,6 +865,16 @@ pub struct ListSubscriptionDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSubscriptionDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSubscriptionDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -879,6 +952,16 @@ pub struct ListResourceDefinitionVersionsOutput {
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
+impl ListResourceDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceDefinitionVersionsOutput");
@@ -950,6 +1033,16 @@ pub struct ListResourceDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1027,6 +1120,16 @@ pub struct ListLoggerDefinitionVersionsOutput {
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
+impl ListLoggerDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLoggerDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLoggerDefinitionVersionsOutput");
@@ -1098,6 +1201,16 @@ pub struct ListLoggerDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLoggerDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLoggerDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1175,6 +1288,16 @@ pub struct ListGroupVersionsOutput {
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
+impl ListGroupVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupVersionsOutput");
@@ -1247,6 +1370,16 @@ pub struct ListGroupsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupsOutput {
+    /// Information about a group.
+    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupInformation]> {
+        self.groups.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsOutput");
@@ -1318,6 +1451,14 @@ pub struct ListGroupCertificateAuthoritiesOutput {
     pub group_certificate_authorities:
         std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
 }
+impl ListGroupCertificateAuthoritiesOutput {
+    /// A list of certificate authorities associated with the group.
+    pub fn group_certificate_authorities(
+        &self,
+    ) -> std::option::Option<&[crate::model::GroupCertificateAuthorityProperties]> {
+        self.group_certificate_authorities.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupCertificateAuthoritiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupCertificateAuthoritiesOutput");
@@ -1385,6 +1526,16 @@ pub struct ListFunctionDefinitionVersionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
+}
+impl ListFunctionDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFunctionDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1457,6 +1608,16 @@ pub struct ListFunctionDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFunctionDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFunctionDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1534,6 +1695,16 @@ pub struct ListDeviceDefinitionVersionsOutput {
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
+impl ListDeviceDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceDefinitionVersionsOutput");
@@ -1605,6 +1776,16 @@ pub struct ListDeviceDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeviceDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeviceDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1682,6 +1863,16 @@ pub struct ListDeploymentsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentsOutput {
+    /// A list of deployments for the requested groups.
+    pub fn deployments(&self) -> std::option::Option<&[crate::model::Deployment]> {
+        self.deployments.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentsOutput");
@@ -1754,6 +1945,16 @@ pub struct ListCoreDefinitionVersionsOutput {
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
+impl ListCoreDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCoreDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCoreDefinitionVersionsOutput");
@@ -1825,6 +2026,16 @@ pub struct ListCoreDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCoreDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCoreDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1902,6 +2113,16 @@ pub struct ListConnectorDefinitionVersionsOutput {
     /// Information about a version.
     pub versions: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
 }
+impl ListConnectorDefinitionVersionsOutput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Information about a version.
+    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+        self.versions.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectorDefinitionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorDefinitionVersionsOutput");
@@ -1973,6 +2194,16 @@ pub struct ListConnectorDefinitionsOutput {
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConnectorDefinitionsOutput {
+    /// Information about a definition.
+    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+        self.definitions.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConnectorDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2050,6 +2281,16 @@ pub struct ListBulkDeploymentsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBulkDeploymentsOutput {
+    /// A list of bulk deployments.
+    pub fn bulk_deployments(&self) -> std::option::Option<&[crate::model::BulkDeployment]> {
+        self.bulk_deployments.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBulkDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBulkDeploymentsOutput");
@@ -2123,6 +2364,16 @@ pub struct ListBulkDeploymentDetailedReportsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBulkDeploymentDetailedReportsOutput {
+    /// A list of the individual group deployments in the bulk deployment operation.
+    pub fn deployments(&self) -> std::option::Option<&[crate::model::BulkDeploymentResult]> {
+        self.deployments.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBulkDeploymentDetailedReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBulkDeploymentDetailedReportsOutput");
@@ -2194,6 +2445,14 @@ pub struct GetThingRuntimeConfigurationOutput {
     /// Runtime configuration for a thing.
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
+impl GetThingRuntimeConfigurationOutput {
+    /// Runtime configuration for a thing.
+    pub fn runtime_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
+        self.runtime_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetThingRuntimeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetThingRuntimeConfigurationOutput");
@@ -2254,6 +2513,32 @@ pub struct GetSubscriptionDefinitionVersionOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the subscription definition version.
     pub version: std::option::Option<std::string::String>,
+}
+impl GetSubscriptionDefinitionVersionOutput {
+    /// The ARN of the subscription definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the subscription definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the subscription definition version.
+    pub fn definition(&self) -> std::option::Option<&crate::model::SubscriptionDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the subscription definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The version of the subscription definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSubscriptionDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2388,6 +2673,43 @@ pub struct GetSubscriptionDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetSubscriptionDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSubscriptionDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2559,6 +2881,16 @@ pub struct GetServiceRoleForAccountOutput {
     /// The ARN of the role which is associated with the account.
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl GetServiceRoleForAccountOutput {
+    /// The time when the service role was associated with the account.
+    pub fn associated_at(&self) -> std::option::Option<&str> {
+        self.associated_at.as_deref()
+    }
+    /// The ARN of the role which is associated with the account.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceRoleForAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceRoleForAccountOutput");
@@ -2630,6 +2962,28 @@ pub struct GetResourceDefinitionVersionOutput {
     pub id: std::option::Option<std::string::String>,
     /// The version of the resource definition version.
     pub version: std::option::Option<std::string::String>,
+}
+impl GetResourceDefinitionVersionOutput {
+    /// Arn of the resource definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the resource definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the definition.
+    pub fn definition(&self) -> std::option::Option<&crate::model::ResourceDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the resource definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The version of the resource definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2751,6 +3105,43 @@ pub struct GetResourceDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetResourceDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResourceDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2928,6 +3319,28 @@ pub struct GetLoggerDefinitionVersionOutput {
     /// The version of the logger definition version.
     pub version: std::option::Option<std::string::String>,
 }
+impl GetLoggerDefinitionVersionOutput {
+    /// The ARN of the logger definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the logger definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the logger definition version.
+    pub fn definition(&self) -> std::option::Option<&crate::model::LoggerDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the logger definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The version of the logger definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLoggerDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoggerDefinitionVersionOutput");
@@ -3048,6 +3461,43 @@ pub struct GetLoggerDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetLoggerDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLoggerDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3225,6 +3675,28 @@ pub struct GetGroupVersionOutput {
     /// The ID of the group version.
     pub version: std::option::Option<std::string::String>,
 }
+impl GetGroupVersionOutput {
+    /// The ARN of the group version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the group version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the group version definition.
+    pub fn definition(&self) -> std::option::Option<&crate::model::GroupVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the group that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the group version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupVersionOutput");
@@ -3335,6 +3807,20 @@ pub struct GetGroupCertificateConfigurationOutput {
     /// The ID of the group certificate configuration.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl GetGroupCertificateConfigurationOutput {
+    /// The amount of time remaining before the certificate authority expires, in milliseconds.
+    pub fn certificate_authority_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+        self.certificate_authority_expiry_in_milliseconds.as_deref()
+    }
+    /// The amount of time remaining before the certificate expires, in milliseconds.
+    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+        self.certificate_expiry_in_milliseconds.as_deref()
+    }
+    /// The ID of the group certificate configuration.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupCertificateConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupCertificateConfigurationOutput");
@@ -3432,6 +3918,20 @@ pub struct GetGroupCertificateAuthorityOutput {
     pub group_certificate_authority_id: std::option::Option<std::string::String>,
     /// The PEM encoded certificate for the group.
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
+}
+impl GetGroupCertificateAuthorityOutput {
+    /// The ARN of the certificate authority for the group.
+    pub fn group_certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.group_certificate_authority_arn.as_deref()
+    }
+    /// The ID of the certificate authority for the group.
+    pub fn group_certificate_authority_id(&self) -> std::option::Option<&str> {
+        self.group_certificate_authority_id.as_deref()
+    }
+    /// The PEM encoded certificate for the group.
+    pub fn pem_encoded_certificate(&self) -> std::option::Option<&str> {
+        self.pem_encoded_certificate.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupCertificateAuthorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3542,6 +4042,43 @@ pub struct GetGroupOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetGroupOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3721,6 +4258,32 @@ pub struct GetFunctionDefinitionVersionOutput {
     /// The version of the function definition version.
     pub version: std::option::Option<std::string::String>,
 }
+impl GetFunctionDefinitionVersionOutput {
+    /// The ARN of the function definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the function definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information on the definition.
+    pub fn definition(&self) -> std::option::Option<&crate::model::FunctionDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the function definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The version of the function definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFunctionDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionDefinitionVersionOutput");
@@ -3854,6 +4417,43 @@ pub struct GetFunctionDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetFunctionDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFunctionDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4033,6 +4633,32 @@ pub struct GetDeviceDefinitionVersionOutput {
     /// The version of the device definition version.
     pub version: std::option::Option<std::string::String>,
 }
+impl GetDeviceDefinitionVersionOutput {
+    /// The ARN of the device definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the device definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the device definition version.
+    pub fn definition(&self) -> std::option::Option<&crate::model::DeviceDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the device definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The version of the device definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceDefinitionVersionOutput");
@@ -4166,6 +4792,43 @@ pub struct GetDeviceDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDeviceDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeviceDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4343,6 +5006,28 @@ pub struct GetDeploymentStatusOutput {
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
     pub updated_at: std::option::Option<std::string::String>,
 }
+impl GetDeploymentStatusOutput {
+    /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    pub fn deployment_status(&self) -> std::option::Option<&str> {
+        self.deployment_status.as_deref()
+    }
+    /// The type of the deployment.
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// Error details
+    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.error_details.as_deref()
+    }
+    /// Error message
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the deployment status was updated.
+    pub fn updated_at(&self) -> std::option::Option<&str> {
+        self.updated_at.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentStatusOutput");
@@ -4470,6 +5155,32 @@ pub struct GetCoreDefinitionVersionOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// The version of the core definition version.
     pub version: std::option::Option<std::string::String>,
+}
+impl GetCoreDefinitionVersionOutput {
+    /// The ARN of the core definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the core definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the core definition version.
+    pub fn definition(&self) -> std::option::Option<&crate::model::CoreDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the core definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The version of the core definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCoreDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4604,6 +5315,43 @@ pub struct GetCoreDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetCoreDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCoreDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4783,6 +5531,32 @@ pub struct GetConnectorDefinitionVersionOutput {
     /// The version of the connector definition version.
     pub version: std::option::Option<std::string::String>,
 }
+impl GetConnectorDefinitionVersionOutput {
+    /// The ARN of the connector definition version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the connector definition version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// Information about the connector definition version.
+    pub fn definition(&self) -> std::option::Option<&crate::model::ConnectorDefinitionVersion> {
+        self.definition.as_ref()
+    }
+    /// The ID of the connector definition version.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The version of the connector definition version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectorDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectorDefinitionVersionOutput");
@@ -4916,6 +5690,43 @@ pub struct GetConnectorDefinitionOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetConnectorDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConnectorDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5087,6 +5898,16 @@ pub struct GetConnectivityInfoOutput {
     /// A message about the connectivity info request.
     pub message: std::option::Option<std::string::String>,
 }
+impl GetConnectivityInfoOutput {
+    /// Connectivity info list.
+    pub fn connectivity_info(&self) -> std::option::Option<&[crate::model::ConnectivityInfo]> {
+        self.connectivity_info.as_deref()
+    }
+    /// A message about the connectivity info request.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectivityInfoOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectivityInfoOutput");
@@ -5171,6 +5992,39 @@ pub struct GetBulkDeploymentStatusOutput {
     /// Tag(s) attached to the resource arn.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetBulkDeploymentStatusOutput {
+    /// Relevant metrics on input records processed during bulk deployment.
+    pub fn bulk_deployment_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::BulkDeploymentMetrics> {
+        self.bulk_deployment_metrics.as_ref()
+    }
+    /// The status of the bulk deployment.
+    pub fn bulk_deployment_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BulkDeploymentStatus> {
+        self.bulk_deployment_status.as_ref()
+    }
+    /// The time, in ISO format, when the deployment was created.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// Error details
+    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.error_details.as_deref()
+    }
+    /// Error message
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBulkDeploymentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5326,6 +6180,16 @@ pub struct GetAssociatedRoleOutput {
     /// The ARN of the role that is associated with the group.
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl GetAssociatedRoleOutput {
+    /// The time when the role was associated with the group.
+    pub fn associated_at(&self) -> std::option::Option<&str> {
+        self.associated_at.as_deref()
+    }
+    /// The ARN of the role that is associated with the group.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssociatedRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssociatedRoleOutput");
@@ -5390,6 +6254,12 @@ pub struct DisassociateServiceRoleFromAccountOutput {
     /// The time when the service role was disassociated from the account.
     pub disassociated_at: std::option::Option<std::string::String>,
 }
+impl DisassociateServiceRoleFromAccountOutput {
+    /// The time when the service role was disassociated from the account.
+    pub fn disassociated_at(&self) -> std::option::Option<&str> {
+        self.disassociated_at.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateServiceRoleFromAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateServiceRoleFromAccountOutput");
@@ -5440,6 +6310,12 @@ impl DisassociateServiceRoleFromAccountOutput {
 pub struct DisassociateRoleFromGroupOutput {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
     pub disassociated_at: std::option::Option<std::string::String>,
+}
+impl DisassociateRoleFromGroupOutput {
+    /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
+    pub fn disassociated_at(&self) -> std::option::Option<&str> {
+        self.disassociated_at.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateRoleFromGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5738,6 +6614,24 @@ pub struct CreateSubscriptionDefinitionVersionOutput {
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateSubscriptionDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSubscriptionDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSubscriptionDefinitionVersionOutput");
@@ -5839,6 +6733,36 @@ pub struct CreateSubscriptionDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateSubscriptionDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSubscriptionDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5982,6 +6906,20 @@ pub struct CreateSoftwareUpdateJobOutput {
     /// The software version installed on the device or devices after the update.
     pub platform_software_version: std::option::Option<std::string::String>,
 }
+impl CreateSoftwareUpdateJobOutput {
+    /// The IoT Job ARN corresponding to this update.
+    pub fn iot_job_arn(&self) -> std::option::Option<&str> {
+        self.iot_job_arn.as_deref()
+    }
+    /// The IoT Job Id corresponding to this update.
+    pub fn iot_job_id(&self) -> std::option::Option<&str> {
+        self.iot_job_id.as_deref()
+    }
+    /// The software version installed on the device or devices after the update.
+    pub fn platform_software_version(&self) -> std::option::Option<&str> {
+        self.platform_software_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSoftwareUpdateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSoftwareUpdateJobOutput");
@@ -6064,6 +7002,24 @@ pub struct CreateResourceDefinitionVersionOutput {
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
+}
+impl CreateResourceDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateResourceDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6166,6 +7122,36 @@ pub struct CreateResourceDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateResourceDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateResourceDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6311,6 +7297,24 @@ pub struct CreateLoggerDefinitionVersionOutput {
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateLoggerDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLoggerDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoggerDefinitionVersionOutput");
@@ -6412,6 +7416,36 @@ pub struct CreateLoggerDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateLoggerDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoggerDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6557,6 +7591,24 @@ pub struct CreateGroupVersionOutput {
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateGroupVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupVersionOutput");
@@ -6647,6 +7699,12 @@ pub struct CreateGroupCertificateAuthorityOutput {
     /// The ARN of the group certificate authority.
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
 }
+impl CreateGroupCertificateAuthorityOutput {
+    /// The ARN of the group certificate authority.
+    pub fn group_certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.group_certificate_authority_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupCertificateAuthorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupCertificateAuthorityOutput");
@@ -6715,6 +7773,36 @@ pub struct CreateGroupOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateGroupOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6860,6 +7948,24 @@ pub struct CreateFunctionDefinitionVersionOutput {
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateFunctionDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFunctionDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFunctionDefinitionVersionOutput");
@@ -6961,6 +8067,36 @@ pub struct CreateFunctionDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateFunctionDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7106,6 +8242,24 @@ pub struct CreateDeviceDefinitionVersionOutput {
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateDeviceDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeviceDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeviceDefinitionVersionOutput");
@@ -7207,6 +8361,36 @@ pub struct CreateDeviceDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateDeviceDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeviceDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7348,6 +8532,16 @@ pub struct CreateDeploymentOutput {
     /// The ID of the deployment.
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl CreateDeploymentOutput {
+    /// The ARN of the deployment.
+    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+        self.deployment_arn.as_deref()
+    }
+    /// The ID of the deployment.
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentOutput");
@@ -7420,6 +8614,24 @@ pub struct CreateCoreDefinitionVersionOutput {
     pub id: std::option::Option<std::string::String>,
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
+}
+impl CreateCoreDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCoreDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7522,6 +8734,36 @@ pub struct CreateCoreDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateCoreDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCoreDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7667,6 +8909,24 @@ pub struct CreateConnectorDefinitionVersionOutput {
     /// The ID of the version.
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateConnectorDefinitionVersionOutput {
+    /// The ARN of the version.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the version was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the parent definition that the version is associated with.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the version.
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConnectorDefinitionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectorDefinitionVersionOutput");
@@ -7768,6 +9028,36 @@ pub struct CreateConnectorDefinitionOutput {
     pub latest_version_arn: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateConnectorDefinitionOutput {
+    /// The ARN of the definition.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was created.
+    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+        self.creation_timestamp.as_deref()
+    }
+    /// The ID of the definition.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The time, in milliseconds since the epoch, when the definition was last updated.
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+        self.last_updated_timestamp.as_deref()
+    }
+    /// The ID of the latest version associated with the definition.
+    pub fn latest_version(&self) -> std::option::Option<&str> {
+        self.latest_version.as_deref()
+    }
+    /// The ARN of the latest version associated with the definition.
+    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectorDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7907,6 +9197,12 @@ pub struct AssociateServiceRoleToAccountOutput {
     /// The time when the service role was associated with the account.
     pub associated_at: std::option::Option<std::string::String>,
 }
+impl AssociateServiceRoleToAccountOutput {
+    /// The time when the service role was associated with the account.
+    pub fn associated_at(&self) -> std::option::Option<&str> {
+        self.associated_at.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateServiceRoleToAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateServiceRoleToAccountOutput");
@@ -7957,6 +9253,12 @@ impl AssociateServiceRoleToAccountOutput {
 pub struct AssociateRoleToGroupOutput {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
     pub associated_at: std::option::Option<std::string::String>,
+}
+impl AssociateRoleToGroupOutput {
+    /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
+    pub fn associated_at(&self) -> std::option::Option<&str> {
+        self.associated_at.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateRoleToGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

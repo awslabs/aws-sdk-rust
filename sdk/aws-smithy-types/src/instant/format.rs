@@ -27,18 +27,65 @@ impl fmt::Display for DateParseError {
     }
 }
 
-pub(crate) mod http_date {
+fn remove_trailing_zeros(string: &mut String) {
+    while let Some(b'0') = string.as_bytes().last() {
+        string.pop();
+    }
+}
+
+pub(crate) mod epoch_seconds {
+    use super::remove_trailing_zeros;
+    use super::DateParseError;
+    use crate::Instant;
     use std::str::FromStr;
 
-    use chrono::{Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike, Weekday};
+    /// Formats an `Instant` into the Smithy epoch seconds date-time format.
+    pub(crate) fn format(instant: &Instant) -> String {
+        if instant.subsecond_nanos == 0 {
+            format!("{}", instant.seconds)
+        } else {
+            let mut result = format!("{}.{:0>9}", instant.seconds, instant.subsecond_nanos);
+            remove_trailing_zeros(&mut result);
+            result
+        }
+    }
 
+    /// Parses the Smithy epoch seconds date-time format into an `Instant`.
+    pub(crate) fn parse(value: &str) -> Result<Instant, DateParseError> {
+        let mut parts = value.splitn(2, '.');
+        let (mut whole, mut decimal) = (0i64, 0u32);
+        if let Some(whole_str) = parts.next() {
+            whole = <i64>::from_str(whole_str).map_err(|_| DateParseError::IntParseError)?;
+        }
+        if let Some(decimal_str) = parts.next() {
+            if decimal_str.starts_with('+') || decimal_str.starts_with('-') {
+                return Err(DateParseError::Invalid("invalid epoch-seconds timestamp"));
+            }
+            if decimal_str.len() > 9 {
+                return Err(DateParseError::Invalid("decimal is longer than 9 digits"));
+            }
+            let missing_places = 9 - decimal_str.len() as isize;
+            decimal = <u32>::from_str(decimal_str).map_err(|_| DateParseError::IntParseError)?;
+            for _ in 0..missing_places {
+                decimal *= 10;
+            }
+        }
+        Ok(Instant::from_secs_and_nanos(whole, decimal))
+    }
+}
+
+pub(crate) mod http_date {
+    use super::remove_trailing_zeros;
+    use crate::instant::format::{DateParseError, NANOS_PER_SECOND};
     use crate::Instant;
+    use chrono::{Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike, Weekday};
+    use std::str::FromStr;
+
     // This code is taken from https://github.com/pyfisch/httpdate and modified under an
     // Apache 2.0 License. Modifications:
     // - Removed use of unsafe
     // - Add serialization and deserialization of subsecond nanos
-    use crate::instant::format::{DateParseError, NANOS_PER_SECOND};
-
+    //
     /// Format an `instant` in the HTTP date format (imf-fixdate) with added support for subsecond precision
     ///
     /// Example: "Mon, 16 Dec 2019 23:48:18 GMT"
@@ -129,11 +176,12 @@ pub(crate) mod http_date {
 
         // If non-zero nanos, push a 3-digit fractional second
         let nanos = structured.timestamp_subsec_nanos();
-        if nanos != 0 {
+        if nanos / (NANOS_PER_SECOND / 1000) != 0 {
             out.push('.');
             push_digit(&mut out, (nanos / (NANOS_PER_SECOND / 10)) as u8);
             push_digit(&mut out, (nanos / (NANOS_PER_SECOND / 100) % 10) as u8);
             push_digit(&mut out, (nanos / (NANOS_PER_SECOND / 1000) % 10) as u8);
+            remove_trailing_zeros(&mut out);
         }
 
         out.push_str(" GMT");
@@ -252,155 +300,6 @@ pub(crate) mod http_date {
     }
 }
 
-#[cfg(test)]
-mod test_http_date {
-    use proptest::prelude::*;
-
-    use crate::instant::format::{http_date, rfc3339, DateParseError};
-    use crate::Instant;
-
-    #[test]
-    fn http_date_format() {
-        let basic_http_date = "Mon, 16 Dec 2019 23:48:18 GMT";
-        let ts = 1576540098;
-        let instant = Instant::from_epoch_seconds(ts);
-        assert_eq!(http_date::format(&instant), basic_http_date);
-        assert_eq!(http_date::parse(basic_http_date), Ok(instant));
-    }
-
-    #[test]
-    fn http_date_pre_epoch() {
-        let pre_epoch = "Sat, 27 Jan 1962 20:40:12.120 GMT";
-        let instant = Instant::from_secs_and_nanos(-250139988, 120_000_000);
-        assert_eq!(http_date::parse(pre_epoch), Ok(instant));
-        assert_eq!(http_date::format(&instant), pre_epoch);
-    }
-
-    #[test]
-    fn http_date_format_fractional_zeroed() {
-        let basic_http_date = "Mon, 16 Dec 2019 23:48:18 GMT";
-        let fractional = "Mon, 16 Dec 2019 23:48:18.000 GMT";
-        let ts = 1576540098;
-        let instant = Instant::from_epoch_seconds(ts);
-        assert_eq!(http_date::format(&instant), basic_http_date);
-        assert_eq!(http_date::parse(fractional), Ok(instant));
-    }
-
-    #[test]
-    fn http_date_format_fractional_nonzero() {
-        let fractional = "Mon, 16 Dec 2019 23:48:18.12 GMT";
-        let fractional_normalized = "Mon, 16 Dec 2019 23:48:18.120 GMT";
-        let ts = 1576540098;
-        let instant = Instant::from_fractional_seconds(ts, 0.12);
-        assert_eq!(http_date::parse(fractional), Ok(instant));
-        assert_eq!(http_date::format(&instant), fractional_normalized);
-    }
-
-    #[test]
-    fn http_date_format_fractional_nonzero2() {
-        let fractional = "Mon, 16 Dec 2019 23:48:18.123 GMT";
-        let fractional_normalized = "Mon, 16 Dec 2019 23:48:18.123 GMT";
-        let ts = 1576540098;
-        let instant = Instant::from_fractional_seconds(ts, 0.123);
-        assert_eq!(http_date::parse(fractional), Ok(instant));
-        assert_eq!(http_date::format(&instant), fractional_normalized);
-    }
-
-    #[test]
-    fn too_much_fraction() {
-        let fractional = "Mon, 16 Dec 2019 23:48:18.1212 GMT";
-        assert_eq!(
-            http_date::parse(fractional),
-            Err(DateParseError::Invalid("incorrectly shaped string"))
-        );
-    }
-
-    #[test]
-    fn no_fraction() {
-        let fractional = "Mon, 16 Dec 2019 23:48:18. GMT";
-        assert_eq!(
-            http_date::parse(fractional),
-            Err(DateParseError::IntParseError)
-        );
-    }
-
-    #[test]
-    fn read_date() {
-        let fractional = "Mon, 16 Dec 2019 23:48:18.123 GMT,some more stuff";
-        let ts = 1576540098;
-        let expected = Instant::from_fractional_seconds(ts, 0.123);
-        let (actual, rest) = http_date::read(fractional).expect("valid");
-        assert_eq!(rest, ",some more stuff");
-        assert_eq!(expected, actual);
-        http_date::read(rest).expect_err("invalid date");
-    }
-
-    #[track_caller]
-    fn check_roundtrip(epoch_secs: i64, subsecond_nanos: u32) {
-        let instant = Instant::from_secs_and_nanos(epoch_secs, subsecond_nanos);
-        let formatted = http_date::format(&instant);
-        let parsed = http_date::parse(&formatted);
-        let read = http_date::read(&formatted);
-        match parsed {
-            Err(failure) => panic!("Date failed to parse {:?}", failure),
-            Ok(date) => {
-                assert!(read.is_ok());
-                if date.subsecond_nanos != subsecond_nanos {
-                    assert_eq!(http_date::format(&instant), formatted);
-                } else {
-                    assert_eq!(date, instant)
-                }
-            }
-        }
-    }
-
-    #[test]
-    fn http_date_roundtrip() {
-        for epoch_secs in -1000..1000 {
-            check_roundtrip(epoch_secs, 1);
-        }
-
-        check_roundtrip(1576540098, 0);
-        check_roundtrip(9999999999, 0);
-    }
-
-    #[test]
-    fn valid_iso_date() {
-        let date = "1985-04-12T23:20:50.52Z";
-        let expected = Instant::from_secs_and_nanos(482196050, 520000000);
-        assert_eq!(rfc3339::parse(date), Ok(expected));
-    }
-
-    #[test]
-    fn iso_date_no_fractional() {
-        let date = "1985-04-12T23:20:50Z";
-        let expected = Instant::from_secs_and_nanos(482196050, 0);
-        assert_eq!(rfc3339::parse(date), Ok(expected));
-    }
-
-    #[test]
-    fn read_iso_date_comma_split() {
-        let date = "1985-04-12T23:20:50Z,1985-04-12T23:20:51Z";
-        let (e1, date) = rfc3339::read(date).expect("should succeed");
-        let (e2, date2) = rfc3339::read(&date[1..]).expect("should succeed");
-        assert_eq!(date2, "");
-        assert_eq!(date, ",1985-04-12T23:20:51Z");
-        let expected = Instant::from_secs_and_nanos(482196050, 0);
-        assert_eq!(e1, expected);
-        let expected = Instant::from_secs_and_nanos(482196051, 0);
-        assert_eq!(e2, expected);
-    }
-
-    proptest! {
-        #![proptest_config(ProptestConfig::with_cases(10000))]
-
-        #[test]
-        fn round_trip(secs in -10000000..9999999999i64, nanos in 0..1_000_000_000u32) {
-            check_roundtrip(secs, nanos);
-        }
-    }
-}
-
 pub(crate) mod rfc3339 {
     use chrono::format;
 
@@ -490,82 +389,217 @@ pub(crate) mod rfc3339 {
 }
 
 #[cfg(test)]
-mod test {
-    use super::rfc3339::format;
+mod tests {
+    use super::*;
     use crate::Instant;
-    use proptest::proptest;
+    use lazy_static::lazy_static;
+    use proptest::prelude::*;
+    use std::fs::File;
+    use std::io::Read;
+    use std::str::FromStr;
+
+    #[derive(Debug, serde::Deserialize)]
+    struct TestCase {
+        canonical_seconds: String,
+        canonical_nanos: u32,
+        iso8601: String,
+        error: bool,
+        smithy_format_value: Option<String>,
+    }
+    impl TestCase {
+        fn time(&self) -> Instant {
+            Instant::from_secs_and_nanos(
+                <i64>::from_str(&self.canonical_seconds).unwrap(),
+                self.canonical_nanos,
+            )
+        }
+    }
+
+    #[derive(serde::Deserialize)]
+    struct TestCases {
+        format_date_time: Vec<TestCase>,
+        format_http_date: Vec<TestCase>,
+        format_epoch_seconds: Vec<TestCase>,
+        parse_date_time: Vec<TestCase>,
+        parse_http_date: Vec<TestCase>,
+        parse_epoch_seconds: Vec<TestCase>,
+    }
+
+    lazy_static! {
+        static ref TEST_CASES: TestCases = {
+            // This test suite can be regenerated by the following Kotlin class:
+            // `codegen/src/test/kotlin/software/amazon/smithy/rust/tool/TimeTestSuiteGenerator.kt`
+            let mut json = Vec::new();
+            let mut file = File::open("test_data/date_time_format_test_suite.json").expect("open test data file");
+            file.read_to_end(&mut json).expect("read test data");
+            serde_json::from_slice(&json).expect("valid test data")
+        };
+    }
+
+    fn format_test<F>(test_cases: &[TestCase], format: F)
+    where
+        F: Fn(&Instant) -> String,
+    {
+        for test_case in test_cases {
+            if let Some(expected) = test_case.smithy_format_value.as_ref() {
+                let actual = format(&test_case.time());
+                assert_eq!(expected, &actual, "Additional context:\n{:#?}", test_case);
+            } else {
+                // TODO: Expand testing to test error cases once formatting is refactored to be fallible
+            }
+        }
+    }
+
+    fn parse_test<F>(test_cases: &[TestCase], parse: F)
+    where
+        F: Fn(&str) -> Result<Instant, DateParseError>,
+    {
+        for test_case in test_cases {
+            let expected = test_case.time();
+            let to_parse = test_case
+                .smithy_format_value
+                .as_ref()
+                .expect("parse test cases should always have a formatted value");
+            let actual = parse(&to_parse);
+
+            assert!(
+                actual.is_ok(),
+                "Failed to parse `{}`: {}\nAdditional context:\n{:#?}",
+                to_parse,
+                actual.err().unwrap(),
+                test_case
+            );
+            assert_eq!(
+                expected,
+                actual.unwrap(),
+                "Additional context:\n{:#?}",
+                test_case
+            );
+        }
+    }
 
     #[test]
-    fn no_fraction() {
+    fn format_epoch_seconds() {
+        format_test(&TEST_CASES.format_epoch_seconds, epoch_seconds::format);
+    }
+
+    #[test]
+    fn parse_epoch_seconds() {
+        parse_test(&TEST_CASES.parse_epoch_seconds, epoch_seconds::parse);
+    }
+
+    #[test]
+    fn format_http_date() {
+        format_test(&TEST_CASES.format_http_date, http_date::format);
+    }
+
+    #[test]
+    fn parse_http_date() {
+        parse_test(&TEST_CASES.parse_http_date, http_date::parse);
+    }
+
+    #[test]
+    fn format_date_time() {
+        format_test(&TEST_CASES.format_date_time, rfc3339::format);
+    }
+
+    #[test]
+    fn parse_date_time() {
+        parse_test(&TEST_CASES.parse_date_time, rfc3339::parse);
+    }
+
+    #[test]
+    fn epoch_seconds_invalid_cases() {
+        assert!(epoch_seconds::parse("").is_err());
+        assert!(epoch_seconds::parse("123.+456").is_err());
+        assert!(epoch_seconds::parse("123.-456").is_err());
+        assert!(epoch_seconds::parse("123.456.789").is_err());
+        assert!(epoch_seconds::parse("123 . 456").is_err());
+        assert!(epoch_seconds::parse("123.456  ").is_err());
+        assert!(epoch_seconds::parse("  123.456").is_err());
+        assert!(epoch_seconds::parse("a.456").is_err());
+        assert!(epoch_seconds::parse("123.a").is_err());
+        assert!(epoch_seconds::parse("123..").is_err());
+        assert!(epoch_seconds::parse(".123").is_err());
+    }
+
+    #[test]
+    fn read_rfc3339_date_comma_split() {
+        let date = "1985-04-12T23:20:50Z,1985-04-12T23:20:51Z";
+        let (e1, date) = rfc3339::read(date).expect("should succeed");
+        let (e2, date2) = rfc3339::read(&date[1..]).expect("should succeed");
+        assert_eq!(date2, "");
+        assert_eq!(date, ",1985-04-12T23:20:51Z");
+        let expected = Instant::from_secs_and_nanos(482196050, 0);
+        assert_eq!(e1, expected);
+        let expected = Instant::from_secs_and_nanos(482196051, 0);
+        assert_eq!(e2, expected);
+    }
+
+    #[test]
+    fn http_date_too_much_fraction() {
+        let fractional = "Mon, 16 Dec 2019 23:48:18.1212 GMT";
         assert_eq!(
-            "1970-01-01T00:00:00Z",
-            format(&Instant::from_epoch_seconds(0))
-        );
-        assert_eq!(
-            "2021-06-09T23:17:26Z",
-            format(&Instant::from_epoch_seconds(1623280646))
-        );
-        assert_eq!(
-            "1969-12-31T18:22:50Z",
-            format(&Instant::from_epoch_seconds(-20230))
+            http_date::parse(fractional),
+            Err(DateParseError::Invalid("incorrectly shaped string"))
         );
     }
 
     #[test]
-    fn with_fraction() {
+    fn http_date_bad_fraction() {
+        let fractional = "Mon, 16 Dec 2019 23:48:18. GMT";
         assert_eq!(
-            "1970-01-01T00:00:00.987Z",
-            format(&Instant::from_secs_and_nanos(0, 987_000_000))
+            http_date::parse(fractional),
+            Err(DateParseError::IntParseError)
         );
-        assert_eq!(
-            "1970-01-01T00:00:00.1Z",
-            format(&Instant::from_secs_and_nanos(0, 100_000_000))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00.01Z",
-            format(&Instant::from_secs_and_nanos(0, 10_000_000))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00.001Z",
-            format(&Instant::from_secs_and_nanos(0, 1_000_000))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00.987654Z",
-            format(&Instant::from_secs_and_nanos(0, 987_654_000))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00.987654Z",
-            format(&Instant::from_secs_and_nanos(0, 987_654_321))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00.000001Z",
-            format(&Instant::from_secs_and_nanos(0, 1_000))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00Z",
-            format(&Instant::from_secs_and_nanos(0, 1))
-        );
-        assert_eq!(
-            "1970-01-01T00:00:00.101Z",
-            format(&Instant::from_secs_and_nanos(0, 101_000_000))
-        );
+    }
+
+    #[test]
+    fn http_date_read_date() {
+        let fractional = "Mon, 16 Dec 2019 23:48:18.123 GMT,some more stuff";
+        let ts = 1576540098;
+        let expected = Instant::from_fractional_seconds(ts, 0.123);
+        let (actual, rest) = http_date::read(fractional).expect("valid");
+        assert_eq!(rest, ",some more stuff");
+        assert_eq!(expected, actual);
+        http_date::read(rest).expect_err("invalid date");
+    }
+
+    #[track_caller]
+    fn http_date_check_roundtrip(epoch_secs: i64, subsecond_nanos: u32) {
+        let instant = Instant::from_secs_and_nanos(epoch_secs, subsecond_nanos);
+        let formatted = http_date::format(&instant);
+        let parsed = http_date::parse(&formatted);
+        let read = http_date::read(&formatted);
+        match parsed {
+            Err(failure) => panic!("Date failed to parse {:?}", failure),
+            Ok(date) => {
+                assert!(read.is_ok());
+                if date.subsecond_nanos != subsecond_nanos {
+                    assert_eq!(http_date::format(&instant), formatted);
+                } else {
+                    assert_eq!(date, instant)
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn http_date_roundtrip() {
+        for epoch_secs in -1000..1000 {
+            http_date_check_roundtrip(epoch_secs, 1);
+        }
+
+        http_date_check_roundtrip(1576540098, 0);
+        http_date_check_roundtrip(9999999999, 0);
     }
 
     proptest! {
-        // Sanity test against chrono
-        #[test]
-        #[cfg(feature = "chrono-conversions")]
-        fn proptest_rfc3339(
-            seconds in 0..253_402_300_799i64, // 0 to 9999-12-31T23:59:59
-            micros in 0..1_000_000u32
-        ) {
-            use chrono::DateTime;
+        #![proptest_config(ProptestConfig::with_cases(10000))]
 
-            let nanos = micros * 1000;
-            let instant = Instant::from_secs_and_nanos(seconds, nanos);
-            let formatted = format(&instant);
-            let parsed: Instant = DateTime::parse_from_rfc3339(&formatted).unwrap().into();
-            assert_eq!(instant, parsed);
+        #[test]
+        fn round_trip(secs in -10000000..9999999999i64, nanos in 0..1_000_000_000u32) {
+            http_date_check_roundtrip(secs, nanos);
         }
     }
 }

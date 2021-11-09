@@ -25,6 +25,35 @@ pub struct SlotValueSelectionSetting {
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub regex_filter: std::option::Option<crate::model::SlotValueRegexFilter>,
 }
+impl SlotValueSelectionSetting {
+    /// <p>Determines the slot resolution strategy that Amazon Lex uses to
+    /// return slot type values. The field can be set to one of the following
+    /// values:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>OriginalValue - Returns the value entered by the user, if the
+    /// user value is similar to the slot value.</p>
+    /// </li>
+    /// <li>
+    /// <p>TopResolution - If there is a resolution list for the slot,
+    /// return the first value in the resolution list as the slot type
+    /// value. If there is no resolution list, null is returned.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If you don't specify the valueSelectionStrategy, the default is
+    /// OriginalValue. </p>
+    pub fn resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotValueResolutionStrategy> {
+        self.resolution_strategy.as_ref()
+    }
+    /// <p>A regular expression used to validate the value of a slot.</p>
+    pub fn regex_filter(&self) -> std::option::Option<&crate::model::SlotValueRegexFilter> {
+        self.regex_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for SlotValueSelectionSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotValueSelectionSetting");
@@ -154,6 +183,36 @@ pub struct SlotValueRegexFilter {
     /// </li>
     /// </ul>
     pub pattern: std::option::Option<std::string::String>,
+}
+impl SlotValueRegexFilter {
+    /// <p>A regular expression used to validate the value of a slot.</p>
+    /// <p> Use a standard regular expression. Amazon Lex supports the following
+    /// characters in the regular expression: </p>
+    /// <ul>
+    /// <li>
+    /// <p>A-Z, a-z</p>
+    /// </li>
+    /// <li>
+    /// <p>0-9</p>
+    /// </li>
+    /// <li>
+    /// <p>Unicode characters ("\ u<Unicode>")</p>
+    /// </li>
+    /// </ul>
+    /// <p> Represent Unicode characters with four digits, for example "\u0041"
+    /// or "\u005A". </p>
+    /// <p> The following regular expression operators are not supported: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p>
+    /// </li>
+    /// <li>
+    /// <p>Wild card (.)</p>
+    /// </li>
+    /// </ul>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
 }
 impl std::fmt::Debug for SlotValueRegexFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -310,6 +369,16 @@ pub struct SlotTypeValue {
     /// <p>Additional values related to the slot type entry.</p>
     pub synonyms: std::option::Option<std::vec::Vec<crate::model::SampleValue>>,
 }
+impl SlotTypeValue {
+    /// <p>The value of the slot type entry.</p>
+    pub fn sample_value(&self) -> std::option::Option<&crate::model::SampleValue> {
+        self.sample_value.as_ref()
+    }
+    /// <p>Additional values related to the slot type entry.</p>
+    pub fn synonyms(&self) -> std::option::Option<&[crate::model::SampleValue]> {
+        self.synonyms.as_deref()
+    }
+}
 impl std::fmt::Debug for SlotTypeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotTypeValue");
@@ -383,6 +452,12 @@ pub struct SampleValue {
     /// <p>The value that can be used for a slot type.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl SampleValue {
+    /// <p>The value that can be used for a slot type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for SampleValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SampleValue");
@@ -436,6 +511,20 @@ pub struct MultipleValuesSetting {
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default
     /// value is <code>false</code>.</p>
     pub allow_multiple_values: bool,
+}
+impl MultipleValuesSetting {
+    /// <p>Indicates whether a slot can return multiple values. When
+    /// <code>true</code>, the slot may return more than one value in a
+    /// response. When <code>false</code>, the slot returns only a single
+    /// value.</p>
+    /// <p>Multi-value slots are only available in the en-US locale. If you set
+    /// this value to <code>true</code> in any other locale, Amazon Lex throws a
+    /// <code>ValidationException</code>.</p>
+    /// <p>If the <code>allowMutlipleValues</code> is not set, the default
+    /// value is <code>false</code>.</p>
+    pub fn allow_multiple_values(&self) -> bool {
+        self.allow_multiple_values
+    }
 }
 impl std::fmt::Debug for MultipleValuesSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -502,6 +591,15 @@ pub struct ObfuscationSetting {
     /// <p>Value that determines whether Amazon Lex obscures slot values in
     /// conversation logs. The default is to obscure the values.</p>
     pub obfuscation_setting_type: std::option::Option<crate::model::ObfuscationSettingType>,
+}
+impl ObfuscationSetting {
+    /// <p>Value that determines whether Amazon Lex obscures slot values in
+    /// conversation logs. The default is to obscure the values.</p>
+    pub fn obfuscation_setting_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ObfuscationSettingType> {
+        self.obfuscation_setting_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ObfuscationSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -632,6 +730,40 @@ pub struct SlotValueElicitationSetting {
     /// customer input. </p>
     pub wait_and_continue_specification:
         std::option::Option<crate::model::WaitAndContinueSpecification>,
+}
+impl SlotValueElicitationSetting {
+    /// <p>A list of default values for a slot. Default values are used when
+    /// Amazon Lex hasn't determined a value for a slot. You can specify default
+    /// values from context variables, session attributes, and defined
+    /// values.</p>
+    pub fn default_value_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::SlotDefaultValueSpecification> {
+        self.default_value_specification.as_ref()
+    }
+    /// <p>Specifies whether the slot is required or optional.</p>
+    pub fn slot_constraint(&self) -> std::option::Option<&crate::model::SlotConstraint> {
+        self.slot_constraint.as_ref()
+    }
+    /// <p>The prompt that Amazon Lex uses to elicit the slot value from the
+    /// user.</p>
+    pub fn prompt_specification(&self) -> std::option::Option<&crate::model::PromptSpecification> {
+        self.prompt_specification.as_ref()
+    }
+    /// <p>If you know a specific pattern that users might respond to an Amazon Lex
+    /// request for a slot value, you can provide those utterances to improve
+    /// accuracy. This is optional. In most cases, Amazon Lex is capable of
+    /// understanding user utterances.</p>
+    pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
+        self.sample_utterances.as_deref()
+    }
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for
+    /// customer input. </p>
+    pub fn wait_and_continue_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::WaitAndContinueSpecification> {
+        self.wait_and_continue_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for SlotValueElicitationSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -802,6 +934,32 @@ pub struct WaitAndContinueSpecification {
     /// true.</p>
     pub active: std::option::Option<bool>,
 }
+impl WaitAndContinueSpecification {
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting
+    /// for the conversation to continue.</p>
+    pub fn waiting_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.waiting_response.as_ref()
+    }
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to
+    /// continue the conversation.</p>
+    pub fn continue_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.continue_response.as_ref()
+    }
+    /// <p>A response that Amazon Lex sends periodically to the user to indicate
+    /// that the bot is still waiting for input from the user.</p>
+    pub fn still_waiting_response(
+        &self,
+    ) -> std::option::Option<&crate::model::StillWaitingResponseSpecification> {
+        self.still_waiting_response.as_ref()
+    }
+    /// <p>Specifies whether the bot will wait for a user to respond. When this
+    /// field is false, wait and continue responses for a slot aren't used. If
+    /// the <code>active</code> field isn't specified, the default is
+    /// true.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+}
 impl std::fmt::Debug for WaitAndContinueSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WaitAndContinueSpecification");
@@ -925,6 +1083,28 @@ pub struct StillWaitingResponseSpecification {
     /// the message is being played.</p>
     pub allow_interrupt: std::option::Option<bool>,
 }
+impl StillWaitingResponseSpecification {
+    /// <p>One or more message groups, each containing one or more messages,
+    /// that define the prompts that Amazon Lex sends to the user.</p>
+    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+        self.message_groups.as_deref()
+    }
+    /// <p>How often a message should be sent to the user. Minimum of 1 second,
+    /// maximum of 5 minutes.</p>
+    pub fn frequency_in_seconds(&self) -> std::option::Option<i32> {
+        self.frequency_in_seconds
+    }
+    /// <p>If Amazon Lex waits longer than this length of time for a response, it
+    /// will stop sending messages.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>Indicates that the user can interrupt the response by speaking while
+    /// the message is being played.</p>
+    pub fn allow_interrupt(&self) -> std::option::Option<bool> {
+        self.allow_interrupt
+    }
+}
 impl std::fmt::Debug for StillWaitingResponseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StillWaitingResponseSpecification");
@@ -1034,6 +1214,18 @@ pub struct MessageGroup {
     /// the user.</p>
     pub variations: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
+impl MessageGroup {
+    /// <p>The primary message that Amazon Lex should send to the user.</p>
+    pub fn message(&self) -> std::option::Option<&crate::model::Message> {
+        self.message.as_ref()
+    }
+    /// <p>Message variations to send to the user. When variations are defined,
+    /// Amazon Lex chooses the primary message or one of the variations to send to
+    /// the user.</p>
+    pub fn variations(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.variations.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageGroup");
@@ -1115,6 +1307,26 @@ pub struct Message {
     /// <p>A message that defines a response card that the client application
     /// can show to the user.</p>
     pub image_response_card: std::option::Option<crate::model::ImageResponseCard>,
+}
+impl Message {
+    /// <p>A message in plain text format.</p>
+    pub fn plain_text_message(&self) -> std::option::Option<&crate::model::PlainTextMessage> {
+        self.plain_text_message.as_ref()
+    }
+    /// <p>A message in a custom format defined by the client
+    /// application.</p>
+    pub fn custom_payload(&self) -> std::option::Option<&crate::model::CustomPayload> {
+        self.custom_payload.as_ref()
+    }
+    /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
+    pub fn ssml_message(&self) -> std::option::Option<&crate::model::SsmlMessage> {
+        self.ssml_message.as_ref()
+    }
+    /// <p>A message that defines a response card that the client application
+    /// can show to the user.</p>
+    pub fn image_response_card(&self) -> std::option::Option<&crate::model::ImageResponseCard> {
+        self.image_response_card.as_ref()
+    }
 }
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1235,6 +1447,31 @@ pub struct ImageResponseCard {
     /// the button.</p>
     pub buttons: std::option::Option<std::vec::Vec<crate::model::Button>>,
 }
+impl ImageResponseCard {
+    /// <p>The title to display on the response card. The format of the title
+    /// is determined by the platform displaying the response card.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The subtitle to display on the response card. The format of the
+    /// subtitle is determined by the platform displaying the response
+    /// card.</p>
+    pub fn subtitle(&self) -> std::option::Option<&str> {
+        self.subtitle.as_deref()
+    }
+    /// <p>The URL of an image to display on the response card. The image URL
+    /// must be publicly available so that the platform displaying the response
+    /// card has access to the image.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>A list of buttons that should be displayed on the response card. The
+    /// arrangement of the buttons is determined by the platform that displays
+    /// the button.</p>
+    pub fn buttons(&self) -> std::option::Option<&[crate::model::Button]> {
+        self.buttons.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageResponseCard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageResponseCard");
@@ -1350,6 +1587,18 @@ pub struct Button {
     /// must be one of the slot values configured for the slot.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Button {
+    /// <p>The text that appears on the button. Use this to tell the user what
+    /// value is returned when they choose this button.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The value returned to Amazon Lex when the user chooses this button. This
+    /// must be one of the slot values configured for the slot.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Button {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Button");
@@ -1415,6 +1664,12 @@ pub struct SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl SsmlMessage {
+    /// <p>The SSML text that defines the prompt.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for SsmlMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SsmlMessage");
@@ -1462,6 +1717,12 @@ pub struct CustomPayload {
     /// <p>The string that is sent to your application.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl CustomPayload {
+    /// <p>The string that is sent to your application.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomPayload");
@@ -1507,6 +1768,12 @@ impl CustomPayload {
 pub struct PlainTextMessage {
     /// <p>The message to send to the user.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl PlainTextMessage {
+    /// <p>The message to send to the user.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for PlainTextMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1558,6 +1825,18 @@ pub struct ResponseSpecification {
     /// <p>Indicates whether the user can interrupt a speech response from
     /// Amazon Lex.</p>
     pub allow_interrupt: std::option::Option<bool>,
+}
+impl ResponseSpecification {
+    /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex
+    /// chooses the actual response to send at runtime.</p>
+    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+        self.message_groups.as_deref()
+    }
+    /// <p>Indicates whether the user can interrupt a speech response from
+    /// Amazon Lex.</p>
+    pub fn allow_interrupt(&self) -> std::option::Option<bool> {
+        self.allow_interrupt
+    }
 }
 impl std::fmt::Debug for ResponseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1635,6 +1914,13 @@ pub struct SampleUtterance {
     /// model to recognize intents.</p>
     pub utterance: std::option::Option<std::string::String>,
 }
+impl SampleUtterance {
+    /// <p>The sample utterance that Amazon Lex uses to build its machine-learning
+    /// model to recognize intents.</p>
+    pub fn utterance(&self) -> std::option::Option<&str> {
+        self.utterance.as_deref()
+    }
+}
 impl std::fmt::Debug for SampleUtterance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SampleUtterance");
@@ -1692,6 +1978,23 @@ pub struct PromptSpecification {
     /// <p>Indicates whether the user can interrupt a speech prompt from the
     /// bot.</p>
     pub allow_interrupt: std::option::Option<bool>,
+}
+impl PromptSpecification {
+    /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex
+    /// chooses the actual message to send at runtime.</p>
+    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+        self.message_groups.as_deref()
+    }
+    /// <p>The maximum number of times the bot tries to elicit a response from
+    /// the user using this prompt.</p>
+    pub fn max_retries(&self) -> std::option::Option<i32> {
+        self.max_retries
+    }
+    /// <p>Indicates whether the user can interrupt a speech prompt from the
+    /// bot.</p>
+    pub fn allow_interrupt(&self) -> std::option::Option<bool> {
+        self.allow_interrupt
+    }
 }
 impl std::fmt::Debug for PromptSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1839,6 +2142,13 @@ pub struct SlotDefaultValueSpecification {
     /// the order that they are presented in the list.</p>
     pub default_value_list: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
 }
+impl SlotDefaultValueSpecification {
+    /// <p>A list of default values. Amazon Lex chooses the default value to use in
+    /// the order that they are presented in the list.</p>
+    pub fn default_value_list(&self) -> std::option::Option<&[crate::model::SlotDefaultValue]> {
+        self.default_value_list.as_deref()
+    }
+}
 impl std::fmt::Debug for SlotDefaultValueSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotDefaultValueSpecification");
@@ -1903,6 +2213,13 @@ pub struct SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a
     /// slot.</p>
     pub default_value: std::option::Option<std::string::String>,
+}
+impl SlotDefaultValue {
+    /// <p>The default value to use when a user doesn't provide a value for a
+    /// slot.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
 }
 impl std::fmt::Debug for SlotDefaultValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1969,6 +2286,26 @@ pub struct KendraConfiguration {
     /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering
     /// queries</a>.</p>
     pub query_filter_string: std::option::Option<std::string::String>,
+}
+impl KendraConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+    /// AMAZON.KendraSearchIntent intent to search. The index must be in the
+    /// same account and Region as the Amazon Lex bot.</p>
+    pub fn kendra_index(&self) -> std::option::Option<&str> {
+        self.kendra_index.as_deref()
+    }
+    /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a
+    /// custom query string to query the Amazon Kendra index.</p>
+    pub fn query_filter_string_enabled(&self) -> bool {
+        self.query_filter_string_enabled
+    }
+    /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from
+    /// a query. The filter is in the format defined by Amazon Kendra. For more
+    /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering
+    /// queries</a>.</p>
+    pub fn query_filter_string(&self) -> std::option::Option<&str> {
+        self.query_filter_string.as_deref()
+    }
 }
 impl std::fmt::Debug for KendraConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2071,6 +2408,24 @@ pub struct OutputContext {
     /// the context is sent to the user.</p>
     pub turns_to_live: std::option::Option<i32>,
 }
+impl OutputContext {
+    /// <p>The name of the output context.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The amount of time, in seconds, that the output context should
+    /// remain active. The time is figured from the first time the context is
+    /// sent to the user.</p>
+    pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
+        self.time_to_live_in_seconds
+    }
+    /// <p>The number of conversation turns that the output context should
+    /// remain active. The number of turns is counted from the first time that
+    /// the context is sent to the user.</p>
+    pub fn turns_to_live(&self) -> std::option::Option<i32> {
+        self.turns_to_live
+    }
+}
 impl std::fmt::Debug for OutputContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputContext");
@@ -2154,6 +2509,12 @@ pub struct InputContext {
     /// <p>The name of the context.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl InputContext {
+    /// <p>The name of the context.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for InputContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputContext");
@@ -2206,6 +2567,20 @@ pub struct IntentClosingSetting {
     /// <code>active</code> field isn't specified, the default is
     /// true.</p>
     pub active: std::option::Option<bool>,
+}
+impl IntentClosingSetting {
+    /// <p>The response that Amazon Lex sends to the user when the intent is
+    /// complete.</p>
+    pub fn closing_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.closing_response.as_ref()
+    }
+    /// <p>Specifies whether an intent's closing response is used. When this
+    /// field is false, the closing response isn't sent to the user. If the
+    /// <code>active</code> field isn't specified, the default is
+    /// true.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
 }
 impl std::fmt::Debug for IntentClosingSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2295,6 +2670,34 @@ pub struct IntentConfirmationSetting {
     /// sent. If the <code>active</code> field isn't specified, the default is
     /// true.</p>
     pub active: std::option::Option<bool>,
+}
+impl IntentConfirmationSetting {
+    /// <p>Prompts the user to confirm the intent. This question should have a
+    /// yes or no answer.</p>
+    /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the
+    /// intent is ready for fulfillment. For example, with the
+    /// <code>OrderPizza</code> intent, you might want to confirm that the
+    /// order is correct before placing it. For other intents, such as intents
+    /// that simply respond to user questions, you might not need to ask the
+    /// user for confirmation before providing the information. </p>
+    pub fn prompt_specification(&self) -> std::option::Option<&crate::model::PromptSpecification> {
+        self.prompt_specification.as_ref()
+    }
+    /// <p>When the user answers "no" to the question defined in
+    /// <code>promptSpecification</code>, Amazon Lex responds with this response
+    /// to acknowledge that the intent was canceled. </p>
+    pub fn declination_response(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.declination_response.as_ref()
+    }
+    /// <p>Specifies whether the intent's confirmation is sent to the user.
+    /// When this field is false, confirmation and declination responses aren't
+    /// sent. If the <code>active</code> field isn't specified, the default is
+    /// true.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
 }
 impl std::fmt::Debug for IntentConfirmationSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2403,6 +2806,16 @@ pub struct SlotPriority {
     /// <p>The unique identifier of the slot.</p>
     pub slot_id: std::option::Option<std::string::String>,
 }
+impl SlotPriority {
+    /// <p>The priority that a slot should be elicited.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The unique identifier of the slot.</p>
+    pub fn slot_id(&self) -> std::option::Option<&str> {
+        self.slot_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SlotPriority {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotPriority");
@@ -2475,6 +2888,29 @@ pub struct FulfillmentCodeHookSettings {
     /// used only with streaming conversations.</p>
     pub fulfillment_updates_specification:
         std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
+}
+impl FulfillmentCodeHookSettings {
+    /// <p>Indicates whether a Lambda function should be invoked to fulfill a
+    /// specific intent.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Provides settings for messages sent to the user for after the Lambda
+    /// fulfillment function completes. Post-fulfillment messages can be sent
+    /// for both streaming and non-streaming conversations.</p>
+    pub fn post_fulfillment_status_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::PostFulfillmentStatusSpecification> {
+        self.post_fulfillment_status_specification.as_ref()
+    }
+    /// <p>Provides settings for update messages sent to the user for
+    /// long-running Lambda fulfillment functions. Fulfillment updates can be
+    /// used only with streaming conversations.</p>
+    pub fn fulfillment_updates_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::FulfillmentUpdatesSpecification> {
+        self.fulfillment_updates_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for FulfillmentCodeHookSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2593,6 +3029,35 @@ pub struct FulfillmentUpdatesSpecification {
     /// <p>The length of time that the fulfillment Lambda function should run
     /// before it times out.</p>
     pub timeout_in_seconds: std::option::Option<i32>,
+}
+impl FulfillmentUpdatesSpecification {
+    /// <p>Determines whether fulfillment updates are sent to the user. When
+    /// this field is true, updates are sent.</p>
+    /// <p>If the <code>active</code> field is set to true, the
+    /// <code>startResponse</code>, <code>updateResponse</code>, and
+    /// <code>timeoutInSeconds</code> fields are required.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>Provides configuration information for the message sent to users
+    /// when the fulfillment Lambda functions starts running.</p>
+    pub fn start_response(
+        &self,
+    ) -> std::option::Option<&crate::model::FulfillmentStartResponseSpecification> {
+        self.start_response.as_ref()
+    }
+    /// <p>Provides configuration information for messages sent periodically to
+    /// the user while the fulfillment Lambda function is running.</p>
+    pub fn update_response(
+        &self,
+    ) -> std::option::Option<&crate::model::FulfillmentUpdateResponseSpecification> {
+        self.update_response.as_ref()
+    }
+    /// <p>The length of time that the fulfillment Lambda function should run
+    /// before it times out.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
 }
 impl std::fmt::Debug for FulfillmentUpdatesSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2719,6 +3184,25 @@ pub struct FulfillmentUpdateResponseSpecification {
     /// is playing.</p>
     pub allow_interrupt: std::option::Option<bool>,
 }
+impl FulfillmentUpdateResponseSpecification {
+    /// <p>The frequency that a message is sent to the user. When the period
+    /// ends, Amazon Lex chooses a message from the message groups and plays it to
+    /// the user. If the fulfillment Lambda returns before the first period
+    /// ends, an update message is not played to the user.</p>
+    pub fn frequency_in_seconds(&self) -> std::option::Option<i32> {
+        self.frequency_in_seconds
+    }
+    /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses
+    /// one of the messages to play to the user.</p>
+    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+        self.message_groups.as_deref()
+    }
+    /// <p>Determines whether the user can interrupt an update message while it
+    /// is playing.</p>
+    pub fn allow_interrupt(&self) -> std::option::Option<bool> {
+        self.allow_interrupt
+    }
+}
 impl std::fmt::Debug for FulfillmentUpdateResponseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FulfillmentUpdateResponseSpecification");
@@ -2821,6 +3305,24 @@ pub struct FulfillmentStartResponseSpecification {
     /// is playing.</p>
     pub allow_interrupt: std::option::Option<bool>,
 }
+impl FulfillmentStartResponseSpecification {
+    /// <p>The delay between when the Lambda fulfillment function starts running
+    /// and the start message is played. If the Lambda function returns before
+    /// the delay is over, the start message isn't played.</p>
+    pub fn delay_in_seconds(&self) -> std::option::Option<i32> {
+        self.delay_in_seconds
+    }
+    /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses
+    /// one of the messages to play to the user.</p>
+    pub fn message_groups(&self) -> std::option::Option<&[crate::model::MessageGroup]> {
+        self.message_groups.as_deref()
+    }
+    /// <p>Determines whether the user can interrupt the start message while it
+    /// is playing.</p>
+    pub fn allow_interrupt(&self) -> std::option::Option<bool> {
+        self.allow_interrupt
+    }
+}
 impl std::fmt::Debug for FulfillmentStartResponseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FulfillmentStartResponseSpecification");
@@ -2921,6 +3423,23 @@ pub struct PostFulfillmentStatusSpecification {
     /// user input.</p>
     pub timeout_response: std::option::Option<crate::model::ResponseSpecification>,
 }
+impl PostFulfillmentStatusSpecification {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+    /// user input.</p>
+    pub fn success_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.success_response.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+    /// user input.</p>
+    pub fn failure_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.failure_response.as_ref()
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+    /// user input.</p>
+    pub fn timeout_response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
+        self.timeout_response.as_ref()
+    }
+}
 impl std::fmt::Debug for PostFulfillmentStatusSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PostFulfillmentStatusSpecification");
@@ -3011,6 +3530,13 @@ pub struct DialogCodeHookSettings {
     /// <p>Enables the dialog code hook so that it processes user
     /// requests.</p>
     pub enabled: bool,
+}
+impl DialogCodeHookSettings {
+    /// <p>Enables the dialog code hook so that it processes user
+    /// requests.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for DialogCodeHookSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3181,6 +3707,20 @@ pub struct ExportResourceSpecification {
     pub bot_locale_export_specification:
         std::option::Option<crate::model::BotLocaleExportSpecification>,
 }
+impl ExportResourceSpecification {
+    /// <p>Parameters for exporting a bot.</p>
+    pub fn bot_export_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::BotExportSpecification> {
+        self.bot_export_specification.as_ref()
+    }
+    /// <p>Parameters for exporting a bot locale.</p>
+    pub fn bot_locale_export_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::BotLocaleExportSpecification> {
+        self.bot_locale_export_specification.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportResourceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportResourceSpecification");
@@ -3265,6 +3805,21 @@ pub struct BotLocaleExportSpecification {
     /// match one of the locales in the bot.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
+impl BotLocaleExportSpecification {
+    /// <p>The identifier of the bot to create the locale for.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot to export.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale to export. The string must
+    /// match one of the locales in the bot.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BotLocaleExportSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotLocaleExportSpecification");
@@ -3343,6 +3898,17 @@ pub struct BotExportSpecification {
     /// <p>The version of the bot that was exported. This will be either
     /// <code>DRAFT</code> or the version number.</p>
     pub bot_version: std::option::Option<std::string::String>,
+}
+impl BotExportSpecification {
+    /// <p>The identifier of the bot assigned by Amazon Lex.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that was exported. This will be either
+    /// <code>DRAFT</code> or the version number.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
 }
 impl std::fmt::Debug for BotExportSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3496,6 +4062,12 @@ pub struct VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
     pub voice_id: std::option::Option<std::string::String>,
 }
+impl VoiceSettings {
+    /// <p>The identifier of the Amazon Polly voice to use.</p>
+    pub fn voice_id(&self) -> std::option::Option<&str> {
+        self.voice_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VoiceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceSettings");
@@ -3609,6 +4181,13 @@ pub struct SentimentAnalysisSettings {
     /// utterances.</p>
     pub detect_sentiment: bool,
 }
+impl SentimentAnalysisSettings {
+    /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user
+    /// utterances.</p>
+    pub fn detect_sentiment(&self) -> bool {
+        self.detect_sentiment
+    }
+}
 impl std::fmt::Debug for SentimentAnalysisSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SentimentAnalysisSettings");
@@ -3661,6 +4240,16 @@ pub struct ConversationLogSettings {
     pub text_log_settings: std::option::Option<std::vec::Vec<crate::model::TextLogSetting>>,
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
     pub audio_log_settings: std::option::Option<std::vec::Vec<crate::model::AudioLogSetting>>,
+}
+impl ConversationLogSettings {
+    /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
+    pub fn text_log_settings(&self) -> std::option::Option<&[crate::model::TextLogSetting]> {
+        self.text_log_settings.as_deref()
+    }
+    /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
+    pub fn audio_log_settings(&self) -> std::option::Option<&[crate::model::AudioLogSetting]> {
+        self.audio_log_settings.as_deref()
+    }
 }
 impl std::fmt::Debug for ConversationLogSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3751,6 +4340,17 @@ pub struct AudioLogSetting {
     /// is enabled for a bot.</p>
     pub destination: std::option::Option<crate::model::AudioLogDestination>,
 }
+impl AudioLogSetting {
+    /// <p>Determines whether audio logging in enabled for the bot.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The location of audio log files collected when conversation logging
+    /// is enabled for a bot.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::AudioLogDestination> {
+        self.destination.as_ref()
+    }
+}
 impl std::fmt::Debug for AudioLogSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioLogSetting");
@@ -3820,6 +4420,14 @@ pub struct AudioLogDestination {
     /// this bucket.</p>
     pub s3_bucket: std::option::Option<crate::model::S3BucketLogDestination>,
 }
+impl AudioLogDestination {
+    /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM
+    /// role specified in the <code>roleArn</code> parameter of the <a>CreateBot</a> operation must have permission to write to
+    /// this bucket.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3BucketLogDestination> {
+        self.s3_bucket.as_ref()
+    }
+}
 impl std::fmt::Debug for AudioLogDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AudioLogDestination");
@@ -3880,6 +4488,22 @@ pub struct S3BucketLogDestination {
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>The S3 prefix to assign to audio log files.</p>
     pub log_prefix: std::option::Option<std::string::String>,
+}
+impl S3BucketLogDestination {
+    /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service
+    /// (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio
+    /// log files are stored.</p>
+    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+        self.s3_bucket_arn.as_deref()
+    }
+    /// <p>The S3 prefix to assign to audio log files.</p>
+    pub fn log_prefix(&self) -> std::option::Option<&str> {
+        self.log_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3BucketLogDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3966,6 +4590,18 @@ pub struct TextLogSetting {
     /// conversation text logs.</p>
     pub destination: std::option::Option<crate::model::TextLogDestination>,
 }
+impl TextLogSetting {
+    /// <p>Determines whether conversation logs should be stored for an
+    /// alias.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Defines the Amazon CloudWatch Logs destination log group for
+    /// conversation text logs.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::TextLogDestination> {
+        self.destination.as_ref()
+    }
+}
 impl std::fmt::Debug for TextLogSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TextLogSetting");
@@ -4036,6 +4672,15 @@ pub struct TextLogDestination {
     /// delivered.</p>
     pub cloud_watch: std::option::Option<crate::model::CloudWatchLogGroupLogDestination>,
 }
+impl TextLogDestination {
+    /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are
+    /// delivered.</p>
+    pub fn cloud_watch(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogGroupLogDestination> {
+        self.cloud_watch.as_ref()
+    }
+}
 impl std::fmt::Debug for TextLogDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TextLogDestination");
@@ -4096,6 +4741,18 @@ pub struct CloudWatchLogGroupLogDestination {
     /// <p>The prefix of the log stream name within the log group that you
     /// specified </p>
     pub log_prefix: std::option::Option<std::string::String>,
+}
+impl CloudWatchLogGroupLogDestination {
+    /// <p>The Amazon Resource Name (ARN) of the log group where text and
+    /// metadata logs are delivered.</p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p>The prefix of the log stream name within the log group that you
+    /// specified </p>
+    pub fn log_prefix(&self) -> std::option::Option<&str> {
+        self.log_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchLogGroupLogDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4169,6 +4826,20 @@ pub struct BotAliasLocaleSettings {
     /// <p>Specifies the Lambda function that should be used in the
     /// locale.</p>
     pub code_hook_specification: std::option::Option<crate::model::CodeHookSpecification>,
+}
+impl BotAliasLocaleSettings {
+    /// <p>Determines whether the locale is enabled for the bot. If the value
+    /// is <code>false</code>, the locale isn't available for use.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Specifies the Lambda function that should be used in the
+    /// locale.</p>
+    pub fn code_hook_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeHookSpecification> {
+        self.code_hook_specification.as_ref()
+    }
 }
 impl std::fmt::Debug for BotAliasLocaleSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4244,6 +4915,13 @@ pub struct CodeHookSpecification {
     /// fulfills the user's request to a bot.</p>
     pub lambda_code_hook: std::option::Option<crate::model::LambdaCodeHook>,
 }
+impl CodeHookSpecification {
+    /// <p>Specifies a Lambda function that verifies requests to a bot or
+    /// fulfills the user's request to a bot.</p>
+    pub fn lambda_code_hook(&self) -> std::option::Option<&crate::model::LambdaCodeHook> {
+        self.lambda_code_hook.as_ref()
+    }
+}
 impl std::fmt::Debug for CodeHookSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeHookSpecification");
@@ -4300,6 +4978,17 @@ pub struct LambdaCodeHook {
     /// <p>The version of the request-response that you want Amazon Lex to use to
     /// invoke your Lambda function.</p>
     pub code_hook_interface_version: std::option::Option<std::string::String>,
+}
+impl LambdaCodeHook {
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+    /// <p>The version of the request-response that you want Amazon Lex to use to
+    /// invoke your Lambda function.</p>
+    pub fn code_hook_interface_version(&self) -> std::option::Option<&str> {
+        self.code_hook_interface_version.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaCodeHook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4483,6 +5172,37 @@ pub struct DataPrivacy {
     /// or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex
     /// FAQ</a>.</p>
     pub child_directed: bool,
+}
+impl DataPrivacy {
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
+    /// you must specify whether your use of Amazon Lex is related to a website,
+    /// program, or other application that is directed or targeted, in whole or
+    /// in part, to children under age 13 and subject to the Children's Online
+    /// Privacy Protection Act (COPPA) by specifying <code>true</code> or
+    /// <code>false</code> in the <code>childDirected</code> field. By
+    /// specifying <code>true</code> in the <code>childDirected</code> field,
+    /// you confirm that your use of Amazon Lex <b>is</b>
+    /// related to a website, program, or other application that is directed or
+    /// targeted, in whole or in part, to children under age 13 and subject to
+    /// COPPA. By specifying <code>false</code> in the
+    /// <code>childDirected</code> field, you confirm that your use of Amazon Lex
+    /// <b>is not</b> related to a website,
+    /// program, or other application that is directed or targeted, in whole or
+    /// in part, to children under age 13 and subject to COPPA. You may not
+    /// specify a default value for the <code>childDirected</code> field that
+    /// does not accurately reflect whether your use of Amazon Lex is related to a
+    /// website, program, or other application that is directed or targeted, in
+    /// whole or in part, to children under age 13 and subject to COPPA. If
+    /// your use of Amazon Lex relates to a website, program, or other application
+    /// that is directed in whole or in part, to children under age 13, you
+    /// must obtain any required verifiable parental consent under COPPA. For
+    /// information regarding the use of Amazon Lex in connection with websites,
+    /// programs, or other applications that are directed or targeted, in whole
+    /// or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex
+    /// FAQ</a>.</p>
+    pub fn child_directed(&self) -> bool {
+        self.child_directed
+    }
 }
 impl std::fmt::Debug for DataPrivacy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4705,6 +5425,20 @@ pub struct ImportResourceSpecification {
     pub bot_locale_import_specification:
         std::option::Option<crate::model::BotLocaleImportSpecification>,
 }
+impl ImportResourceSpecification {
+    /// <p>Parameters for importing a bot.</p>
+    pub fn bot_import_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::BotImportSpecification> {
+        self.bot_import_specification.as_ref()
+    }
+    /// <p>Parameters for importing a bot locale.</p>
+    pub fn bot_locale_import_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::BotLocaleImportSpecification> {
+        self.bot_locale_import_specification.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportResourceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportResourceSpecification");
@@ -4829,6 +5563,66 @@ pub struct BotLocaleImportSpecification {
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a
     /// user.</p>
     pub voice_settings: std::option::Option<crate::model::VoiceSettings>,
+}
+impl BotLocaleImportSpecification {
+    /// <p>The identifier of the bot to import the locale to.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot to import the locale to. This can only be the
+    /// <code>DRAFT</code> version of the bot.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale that the bot will be used
+    /// in. The string must match one of the supported locales. All of the
+    /// intents, slot types, and slots used in the bot must have the same
+    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+    /// languages</a>.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>Determines the threshold where Amazon Lex will insert the
+    /// <code>AMAZON.FallbackIntent</code>,
+    /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
+    /// alternative intents. <code>AMAZON.FallbackIntent</code> and
+    /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
+    /// configured for the bot. </p>
+    /// <p>For example, suppose a bot is configured with the confidence
+    /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon
+    /// Lex returns three alternative intents with the following confidence
+    /// scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response
+    /// from the <code>PostText</code> operation would be:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AMAZON.FallbackIntent</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IntentA</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IntentB</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IntentC</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
+        self.nlu_intent_confidence_threshold
+    }
+    /// <p>Defines settings for using an Amazon Polly voice to communicate with a
+    /// user.</p>
+    pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
+        self.voice_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for BotLocaleImportSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5043,6 +5837,54 @@ pub struct BotImportSpecification {
     pub test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl BotImportSpecification {
+    /// <p>The name that Amazon Lex should use for the bot.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run
+    /// the bot.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>By default, data stored by Amazon Lex is encrypted. The
+    /// <code>DataPrivacy</code> structure provides settings that determine
+    /// how Amazon Lex handles special cases of securing the data for your bot.
+    /// </p>
+    pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
+        self.data_privacy.as_ref()
+    }
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a
+    /// user's conversation with the bot. </p>
+    /// <p>A user interaction remains active for the amount of time specified.
+    /// If no conversation occurs during this time, the session expires and
+    /// Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
+    /// seconds.</p>
+    pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_session_ttl_in_seconds
+    }
+    /// <p>A list of tags to add to the bot. You can only add tags when you
+    /// import a bot. You can't use the <code>UpdateBot</code> operation to
+    /// update tags. To update tags, use the <code>TagResource</code>
+    /// operation.</p>
+    pub fn bot_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.bot_tags.as_ref()
+    }
+    /// <p>A list of tags to add to the test alias for a bot. You can only add
+    /// tags when you import a bot. You can't use the <code>UpdateAlias</code>
+    /// operation to update tags. To update tags on the test alias, use the
+    /// <code>TagResource</code> operation.</p>
+    pub fn test_bot_alias_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.test_bot_alias_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for BotImportSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotImportSpecification");
@@ -5238,6 +6080,30 @@ pub struct SlotTypeSummary {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SlotTypeSummary {
+    /// <p>The unique identifier assigned to the slot type.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>The name of the slot type.</p>
+    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+        self.slot_type_name.as_deref()
+    }
+    /// <p>The description of the slot type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If the slot type is derived from a built-on slot type, the name of
+    /// the parent slot type.</p>
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+        self.parent_slot_type_signature.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the slot type was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for SlotTypeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotTypeSummary");
@@ -5362,6 +6228,24 @@ pub struct SlotTypeFilter {
     /// <code>ListSlotTypes</code> operation should return aliases that
     /// contain the specified value.</p>
     pub operator: std::option::Option<crate::model::SlotTypeFilterOperator>,
+}
+impl SlotTypeFilter {
+    /// <p>The name of the field to use for filtering.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SlotTypeFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to use to filter the response.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListSlotTypes</code> operation should return only aliases that
+    /// equal the specified value. Specify <code>CO</code> when the
+    /// <code>ListSlotTypes</code> operation should return aliases that
+    /// contain the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::SlotTypeFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for SlotTypeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5569,6 +6453,17 @@ pub struct SlotTypeSortBy {
     /// descending.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl SlotTypeSortBy {
+    /// <p>The attribute to use to sort the list of slot types.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::SlotTypeSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can say ascending or
+    /// descending.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for SlotTypeSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotTypeSortBy");
@@ -5763,6 +6658,42 @@ pub struct SlotSummary {
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SlotSummary {
+    /// <p>The unique identifier of the slot.</p>
+    pub fn slot_id(&self) -> std::option::Option<&str> {
+        self.slot_id.as_deref()
+    }
+    /// <p>The name given to the slot.</p>
+    pub fn slot_name(&self) -> std::option::Option<&str> {
+        self.slot_name.as_deref()
+    }
+    /// <p>The description of the slot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Whether the slot is required or optional. An intent is complete when
+    /// all required slots are filled.</p>
+    pub fn slot_constraint(&self) -> std::option::Option<&crate::model::SlotConstraint> {
+        self.slot_constraint.as_ref()
+    }
+    /// <p>The unique identifier for the slot type that defines the values for
+    /// the slot.</p>
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+        self.slot_type_id.as_deref()
+    }
+    /// <p>Prompts that are sent to the user to elicit a value for the
+    /// slot.</p>
+    pub fn value_elicitation_prompt_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::PromptSpecification> {
+        self.value_elicitation_prompt_specification.as_ref()
+    }
+    /// <p>The timestamp of the last date and time that the slot was
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for SlotSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotSummary");
@@ -5921,6 +6852,24 @@ pub struct SlotFilter {
     /// <code>ListSlots</code> operation should return aliases that contain
     /// the specified value.</p>
     pub operator: std::option::Option<crate::model::SlotFilterOperator>,
+}
+impl SlotFilter {
+    /// <p>The name of the field to use for filtering.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SlotFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to use to filter the response.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListSlots</code> operation should return only aliases that
+    /// equal the specified value. Specify <code>CO</code> when the
+    /// <code>ListSlots</code> operation should return aliases that contain
+    /// the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::SlotFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for SlotFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6128,6 +7077,17 @@ pub struct SlotSortBy {
     /// descending.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl SlotSortBy {
+    /// <p>The attribute to use to sort the list.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::SlotSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can choose ascending or
+    /// descending.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for SlotSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SlotSortBy");
@@ -6267,6 +7227,42 @@ pub struct IntentSummary {
     /// <p>The timestamp of the date and time that the intent was last
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl IntentSummary {
+    /// <p>The unique identifier assigned to the intent. Use this ID to get
+    /// detailed information about the intent with the
+    /// <code>DescribeIntent</code> operation.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The name of the intent.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>The description of the intent.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If this intent is derived from a built-in intent, the name of the
+    /// parent intent.</p>
+    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+        self.parent_intent_signature.as_deref()
+    }
+    /// <p>The input contexts that must be active for this intent to be
+    /// considered for recognition.</p>
+    pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
+        self.input_contexts.as_deref()
+    }
+    /// <p>The output contexts that are activated when this intent is
+    /// fulfilled.</p>
+    pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
+        self.output_contexts.as_deref()
+    }
+    /// <p>The timestamp of the date and time that the intent was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for IntentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6438,6 +7434,24 @@ pub struct IntentFilter {
     /// <code>ListIntents</code> operation should return aliases that
     /// contain the specified value.</p>
     pub operator: std::option::Option<crate::model::IntentFilterOperator>,
+}
+impl IntentFilter {
+    /// <p>The name of the field to use for the filter.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::IntentFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to use for the filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListIntents</code> operation should return only aliases that
+    /// equal the specified value. Specify <code>CO</code> when the
+    /// <code>ListIntents</code> operation should return aliases that
+    /// contain the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::IntentFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for IntentFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6645,6 +7659,17 @@ pub struct IntentSortBy {
     /// descending.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl IntentSortBy {
+    /// <p>The attribute to use to sort the list of intents.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::IntentSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can choose ascending or
+    /// descending.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for IntentSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntentSortBy");
@@ -6781,6 +7806,39 @@ pub struct ImportSummary {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the import was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ImportSummary {
+    /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
+    pub fn import_id(&self) -> std::option::Option<&str> {
+        self.import_id.as_deref()
+    }
+    /// <p>The unique identifier that Amazon Lex assigned to the imported
+    /// resource.</p>
+    pub fn imported_resource_id(&self) -> std::option::Option<&str> {
+        self.imported_resource_id.as_deref()
+    }
+    /// <p>The name that you gave the imported resource.</p>
+    pub fn imported_resource_name(&self) -> std::option::Option<&str> {
+        self.imported_resource_name.as_deref()
+    }
+    /// <p>The status of the resource. When the status is
+    /// <code>Completed</code> the resource is ready to build.</p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
+        self.import_status.as_ref()
+    }
+    /// <p>The strategy used to merge existing bot or bot locale definitions
+    /// with the imported definition.</p>
+    pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
+        self.merge_strategy.as_ref()
+    }
+    /// <p>The date and time that the import was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the import was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6940,6 +7998,24 @@ pub struct ImportFilter {
     /// <code>ListImports</code> operation should return resource types that
     /// contain the specified value.</p>
     pub operator: std::option::Option<crate::model::ImportFilterOperator>,
+}
+impl ImportFilter {
+    /// <p>The name of the field to use for filtering.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ImportFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The values to use to filter the response.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify EQ when the
+    /// <code>ListImports</code> operation should return only resource types
+    /// that equal the specified value. Specify CO when the
+    /// <code>ListImports</code> operation should return resource types that
+    /// contain the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::ImportFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7146,6 +8222,16 @@ pub struct ImportSortBy {
     /// <p>The order to sort the list.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl ImportSortBy {
+    /// <p>The export field to use for sorting.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::ImportSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportSortBy");
@@ -7272,6 +8358,35 @@ pub struct ExportSummary {
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the export was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ExportSummary {
+    /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>Information about the bot or bot locale that was exported.</p>
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
+        self.resource_specification.as_ref()
+    }
+    /// <p>The file format used in the export files.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
+        self.file_format.as_ref()
+    }
+    /// <p>The status of the export. When the status is <code>Completed</code>
+    /// the export is ready to download.</p>
+    pub fn export_status(&self) -> std::option::Option<&crate::model::ExportStatus> {
+        self.export_status.as_ref()
+    }
+    /// <p>The date and time that the export was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the export was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7415,6 +8530,24 @@ pub struct ExportFilter {
     /// <code>ListExports</code> operation should return resource types that
     /// contain the specified value.</p>
     pub operator: std::option::Option<crate::model::ExportFilterOperator>,
+}
+impl ExportFilter {
+    /// <p>The name of the field to use for filtering.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ExportFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The values to use to filter the response.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify EQ when the
+    /// <code>ListExports</code> operation should return only resource types
+    /// that equal the specified value. Specify CO when the
+    /// <code>ListExports</code> operation should return resource types that
+    /// contain the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::ExportFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7621,6 +8754,16 @@ pub struct ExportSortBy {
     /// <p>The order to sort the list.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl ExportSortBy {
+    /// <p>The export field to use for sorting.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::ExportSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportSortBy");
@@ -7740,6 +8883,17 @@ pub struct BuiltInSlotTypeSummary {
     /// <p>The description of the built-in slot type.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl BuiltInSlotTypeSummary {
+    /// <p>The signature of the built-in slot type. Use this to specify the
+    /// parent slot type of a derived slot type.</p>
+    pub fn slot_type_signature(&self) -> std::option::Option<&str> {
+        self.slot_type_signature.as_deref()
+    }
+    /// <p>The description of the built-in slot type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for BuiltInSlotTypeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BuiltInSlotTypeSummary");
@@ -7809,6 +8963,17 @@ pub struct BuiltInSlotTypeSortBy {
     /// <p>The order to sort the list. You can choose ascending or
     /// descending.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
+}
+impl BuiltInSlotTypeSortBy {
+    /// <p>The attribute to use to sort the list of built-in intents.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::BuiltInSlotTypeSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can choose ascending or
+    /// descending.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for BuiltInSlotTypeSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7930,6 +9095,17 @@ pub struct BuiltInIntentSummary {
     /// <p>The description of the intent.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl BuiltInIntentSummary {
+    /// <p>The signature of the built-in intent. Use this to specify the parent
+    /// intent of a derived intent.</p>
+    pub fn intent_signature(&self) -> std::option::Option<&str> {
+        self.intent_signature.as_deref()
+    }
+    /// <p>The description of the intent.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for BuiltInIntentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BuiltInIntentSummary");
@@ -7998,6 +9174,17 @@ pub struct BuiltInIntentSortBy {
     /// <p>The order to sort the list. You can specify ascending or descending
     /// order.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
+}
+impl BuiltInIntentSortBy {
+    /// <p>The attribute to use to sort the list of built-in intents.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::BuiltInIntentSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can specify ascending or descending
+    /// order.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for BuiltInIntentSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8127,6 +9314,31 @@ pub struct BotVersionSummary {
     /// created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BotVersionSummary {
+    /// <p>The name of the bot associated with the version.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate
+    /// that this is the version of the bot that can be updated..</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The description of the version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the bot. When the status is available, the version of
+    /// the bot is ready for use.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the version was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for BotVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotVersionSummary");
@@ -8241,6 +9453,17 @@ pub struct BotVersionSortBy {
     /// <p>The order to sort the list. You can specify ascending or descending
     /// order.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
+}
+impl BotVersionSortBy {
+    /// <p>The attribute to use to sort the list of versions.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::BotVersionSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can specify ascending or descending
+    /// order.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for BotVersionSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8370,6 +9593,34 @@ pub struct BotSummary {
     pub latest_bot_version: std::option::Option<std::string::String>,
     /// <p>The date and time that the bot was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BotSummary {
+    /// <p>The unique identifier assigned to the bot. Use this ID to get
+    /// detailed information about the bot with the <a>DescribeBot</a> operation.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The name of the bot.</p>
+    pub fn bot_name(&self) -> std::option::Option<&str> {
+        self.bot_name.as_deref()
+    }
+    /// <p>The description of the bot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the bot. When the status is
+    /// <code>Available</code> the bot is ready for use.</p>
+    pub fn bot_status(&self) -> std::option::Option<&crate::model::BotStatus> {
+        self.bot_status.as_ref()
+    }
+    /// <p>The latest numerical version in use for the bot.</p>
+    pub fn latest_bot_version(&self) -> std::option::Option<&str> {
+        self.latest_bot_version.as_deref()
+    }
+    /// <p>The date and time that the bot was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for BotSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8505,6 +9756,24 @@ pub struct BotFilter {
     /// <code>ListBots</code> operation should return aliases that contain
     /// the specified value.</p>
     pub operator: std::option::Option<crate::model::BotFilterOperator>,
+}
+impl BotFilter {
+    /// <p>The name of the field to filter the list of bots.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::BotFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to use for filtering the list of bots.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListBots</code> operation should return only aliases that
+    /// equal the specified value. Specify <code>CO</code> when the
+    /// <code>ListBots</code> operation should return aliases that contain
+    /// the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::BotFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for BotFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8709,6 +9978,17 @@ pub struct BotSortBy {
     /// descending.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl BotSortBy {
+    /// <p>The attribute to use to sort the list of bots.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::BotSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The order to sort the list. You can choose ascending or
+    /// descending.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for BotSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotSortBy");
@@ -8838,6 +10118,37 @@ pub struct BotLocaleSummary {
     /// <p>A timestamp of the date and time that the bot locale was last
     /// built.</p>
     pub last_build_submitted_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BotLocaleSummary {
+    /// <p>The language and locale of the bot locale.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The name of the bot locale.</p>
+    pub fn locale_name(&self) -> std::option::Option<&str> {
+        self.locale_name.as_deref()
+    }
+    /// <p>The description of the bot locale.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the bot locale. When the status is
+    /// <code>Built</code> the locale is ready for use.</p>
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::model::BotLocaleStatus> {
+        self.bot_locale_status.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot locale was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot locale was last
+    /// built.</p>
+    pub fn last_build_submitted_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_build_submitted_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for BotLocaleSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8978,6 +10289,24 @@ pub struct BotLocaleFilter {
     /// <code>ListBotLocales</code> operation should return aliases that
     /// contain the specified value.</p>
     pub operator: std::option::Option<crate::model::BotLocaleFilterOperator>,
+}
+impl BotLocaleFilter {
+    /// <p>The name of the field to filter the list of bots.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::BotLocaleFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to use for filtering the list of bots.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListBotLocales</code> operation should return only aliases
+    /// that equal the specified value. Specify <code>CO</code> when the
+    /// <code>ListBotLocales</code> operation should return aliases that
+    /// contain the specified value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::BotLocaleFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for BotLocaleFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9185,6 +10514,17 @@ pub struct BotLocaleSortBy {
     /// order.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl BotLocaleSortBy {
+    /// <p>The bot locale attribute to sort by.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::BotLocaleSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>Specifies whether to sort the bot locales in ascending or descending
+    /// order.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for BotLocaleSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotLocaleSortBy");
@@ -9317,6 +10657,40 @@ pub struct BotAliasSummary {
     /// <p>A timestamp of the date and time that the bot alias was last
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BotAliasSummary {
+    /// <p>The unique identifier assigned to the bot alias. You can use this ID
+    /// to get detailed information about the alias using the <a>DescribeBotAlias</a> operation.</p>
+    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+        self.bot_alias_id.as_deref()
+    }
+    /// <p>The name of the bot alias.</p>
+    pub fn bot_alias_name(&self) -> std::option::Option<&str> {
+        self.bot_alias_name.as_deref()
+    }
+    /// <p>The description of the bot alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version of the bot that the bot alias references.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The current state of the bot alias. If the status is
+    /// <code>Available</code>, the alias is ready for use.</p>
+    pub fn bot_alias_status(&self) -> std::option::Option<&crate::model::BotAliasStatus> {
+        self.bot_alias_status.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot alias was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot alias was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for BotAliasSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9491,6 +10865,50 @@ pub struct AggregatedUtterancesSummary {
     /// this kind of data, this field is set to true.</p>
     pub contains_data_from_deleted_resources: std::option::Option<bool>,
 }
+impl AggregatedUtterancesSummary {
+    /// <p>The text of the utterance. If the utterance was used with the
+    /// <code>RecognizeUtterance</code> operation, the text is the
+    /// transcription of the audio utterance.</p>
+    pub fn utterance(&self) -> std::option::Option<&str> {
+        self.utterance.as_deref()
+    }
+    /// <p>The number of times that the utterance was detected by Amazon Lex during
+    /// the time period. When an utterance is detected, it activates an intent
+    /// or a slot.</p>
+    pub fn hit_count(&self) -> std::option::Option<i32> {
+        self.hit_count
+    }
+    /// <p>The number of times that the utterance was missed by Amazon Lex An
+    /// utterance is missed when it doesn't activate an intent or slot.</p>
+    pub fn missed_count(&self) -> std::option::Option<i32> {
+        self.missed_count
+    }
+    /// <p>The date and time that the utterance was first recorded in the time
+    /// window for aggregation. An utterance may have been sent to Amazon Lex before
+    /// that time, but only utterances within the time window are
+    /// counted.</p>
+    pub fn utterance_first_recorded_in_aggregation_duration(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.utterance_first_recorded_in_aggregation_duration
+            .as_ref()
+    }
+    /// <p>The last date and time that an utterance was recorded in the time
+    /// window for aggregation. An utterance may be sent to Amazon Lex after that
+    /// time, but only utterances within the time window are counted.</p>
+    pub fn utterance_last_recorded_in_aggregation_duration(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.utterance_last_recorded_in_aggregation_duration
+            .as_ref()
+    }
+    /// <p>Aggregated utterance data may contain utterances from versions of
+    /// your bot that have since been deleted. When the aggregated contains
+    /// this kind of data, this field is set to true.</p>
+    pub fn contains_data_from_deleted_resources(&self) -> std::option::Option<bool> {
+        self.contains_data_from_deleted_resources
+    }
+}
 impl std::fmt::Debug for AggregatedUtterancesSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregatedUtterancesSummary");
@@ -9658,6 +11076,14 @@ pub struct UtteranceAggregationDuration {
     pub relative_aggregation_duration:
         std::option::Option<crate::model::RelativeAggregationDuration>,
 }
+impl UtteranceAggregationDuration {
+    /// <p>The desired time window for aggregating utterances. </p>
+    pub fn relative_aggregation_duration(
+        &self,
+    ) -> std::option::Option<&crate::model::RelativeAggregationDuration> {
+        self.relative_aggregation_duration.as_ref()
+    }
+}
 impl std::fmt::Debug for UtteranceAggregationDuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UtteranceAggregationDuration");
@@ -9763,6 +11189,33 @@ pub struct RelativeAggregationDuration {
     /// </li>
     /// </ul>
     pub time_value: i32,
+}
+impl RelativeAggregationDuration {
+    /// <p>The type of time period that the <code>timeValue</code> field
+    /// represents. </p>
+    pub fn time_dimension(&self) -> std::option::Option<&crate::model::TimeDimension> {
+        self.time_dimension.as_ref()
+    }
+    /// <p>The period of the time window to gather statistics for. The valid
+    /// value depends on the setting of the <code>timeDimension</code>
+    /// field.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Hours</code> - 1/3/6/12/24</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Days</code> - 3</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Weeks</code> - 1/2</p>
+    /// </li>
+    /// </ul>
+    pub fn time_value(&self) -> i32 {
+        self.time_value
+    }
 }
 impl std::fmt::Debug for RelativeAggregationDuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9929,6 +11382,26 @@ pub struct AggregatedUtterancesFilter {
     /// the <code>ListAggregatedUtterances</code> operation should return
     /// utterances that contain the specified value.</p>
     pub operator: std::option::Option<crate::model::AggregatedUtterancesFilterOperator>,
+}
+impl AggregatedUtterancesFilter {
+    /// <p>The name of the field to filter the utterance list.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::AggregatedUtterancesFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value to use for filtering the list of bots.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the
+    /// <code>ListAggregatedUtterances</code> operation should return only
+    /// utterances that equal the specified value. Specify <code>CO</code> when
+    /// the <code>ListAggregatedUtterances</code> operation should return
+    /// utterances that contain the specified value.</p>
+    pub fn operator(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregatedUtterancesFilterOperator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for AggregatedUtterancesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10136,6 +11609,19 @@ pub struct AggregatedUtterancesSortBy {
     /// descending order.</p>
     pub order: std::option::Option<crate::model::SortOrder>,
 }
+impl AggregatedUtterancesSortBy {
+    /// <p>The utterance attribute to sort by.</p>
+    pub fn attribute(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregatedUtterancesSortAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>Specifies whether to sort the aggregated utterances in ascending or
+    /// descending order.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.order.as_ref()
+    }
+}
 impl std::fmt::Debug for AggregatedUtterancesSortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregatedUtterancesSortBy");
@@ -10260,6 +11746,16 @@ pub struct BotLocaleHistoryEvent {
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub event_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BotLocaleHistoryEvent {
+    /// <p>A description of the event that occurred.</p>
+    pub fn event(&self) -> std::option::Option<&str> {
+        self.event.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the event occurred.</p>
+    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_date.as_ref()
+    }
+}
 impl std::fmt::Debug for BotLocaleHistoryEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BotLocaleHistoryEvent");
@@ -10328,6 +11824,20 @@ pub struct BotAliasHistoryEvent {
     pub start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the event ended.</p>
     pub end_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl BotAliasHistoryEvent {
+    /// <p>The version of the bot that was used in the event. </p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The date and time that the event started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>The date and time that the event ended.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
 }
 impl std::fmt::Debug for BotAliasHistoryEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10413,6 +11923,17 @@ pub struct Principal {
     pub service: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl Principal {
+    /// <p>The name of the AWS service that should allowed or denied access to
+    /// an Amazon Lex action.</p>
+    pub fn service(&self) -> std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Principal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10531,6 +12052,12 @@ impl AsRef<str> for Effect {
 pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
     pub source_bot_version: std::option::Option<std::string::String>,
+}
+impl BotVersionLocaleDetails {
+    /// <p>The version of a bot used for a bot locale.</p>
+    pub fn source_bot_version(&self) -> std::option::Option<&str> {
+        self.source_bot_version.as_deref()
+    }
 }
 impl std::fmt::Debug for BotVersionLocaleDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -10,6 +10,16 @@ pub struct UpdateDeploymentGroupOutput {
     /// account.</p>
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
+impl UpdateDeploymentGroupOutput {
+    /// <p>If the output contains no data, and the corresponding deployment group contained at
+    /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
+    /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
+    /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
+    /// account.</p>
+    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+        self.hooks_not_cleaned_up.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeploymentGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeploymentGroupOutput");
@@ -178,6 +188,24 @@ pub struct StopDeploymentOutput {
     pub status: std::option::Option<crate::model::StopStatus>,
     /// <p>An accompanying status message.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl StopDeploymentOutput {
+    /// <p>The status of the stop deployment operation:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending: The stop operation is pending.</p>
+    /// </li>
+    /// <li>
+    /// <p>Succeeded: The stop operation was successful.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::StopStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An accompanying status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for StopDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,6 +408,13 @@ pub struct PutLifecycleEventHookExecutionStatusOutput {
     /// <code>hooks</code> section of the deployment's AppSpec file.</p>
     pub lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
 }
+impl PutLifecycleEventHookExecutionStatusOutput {
+    /// <p>The execution ID of the lifecycle event hook. A hook is specified in the
+    /// <code>hooks</code> section of the deployment's AppSpec file.</p>
+    pub fn lifecycle_event_hook_execution_id(&self) -> std::option::Option<&str> {
+        self.lifecycle_event_hook_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutLifecycleEventHookExecutionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLifecycleEventHookExecutionStatusOutput");
@@ -443,6 +478,19 @@ pub struct ListTagsForResourceOutput {
     /// be used in a subsequent list application revisions call to return the next set of
     /// application revisions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
+    /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list application revisions call to return the next set of
+    /// application revisions in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -524,6 +572,18 @@ pub struct ListOnPremisesInstancesOutput {
     /// on-premises instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOnPremisesInstancesOutput {
+    /// <p>The list of matching on-premises instance names.</p>
+    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_names.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list on-premises instances call to return the next set of
+    /// on-premises instances in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOnPremisesInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOnPremisesInstancesOutput");
@@ -601,6 +661,18 @@ pub struct ListGitHubAccountTokenNamesOutput {
     /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
     /// set of names in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGitHubAccountTokenNamesOutput {
+    /// <p>A list of names of connections to GitHub accounts.</p>
+    pub fn token_name_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_name_list.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
+    /// set of names in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGitHubAccountTokenNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -680,6 +752,18 @@ pub struct ListDeploymentTargetsOutput {
     /// set of deployment targets in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentTargetsOutput {
+    /// <p> The unique IDs of deployment targets. </p>
+    pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_ids.as_deref()
+    }
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It
+    /// can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next
+    /// set of deployment targets in the list. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentTargetsOutput");
@@ -758,6 +842,18 @@ pub struct ListDeploymentsOutput {
     /// the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentsOutput {
+    /// <p>A list of deployment IDs.</p>
+    pub fn deployments(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployments.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list deployments call to return the next set of deployments in
+    /// the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentsOutput");
@@ -835,6 +931,18 @@ pub struct ListDeploymentInstancesOutput {
     /// be used in a subsequent list deployment instances call to return the next set of
     /// deployment instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeploymentInstancesOutput {
+    /// <p>A list of instance IDs.</p>
+    pub fn instances_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.instances_list.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list deployment instances call to return the next set of
+    /// deployment instances in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -915,6 +1023,22 @@ pub struct ListDeploymentGroupsOutput {
     /// be used in a subsequent list deployment groups call to return the next set of deployment
     /// groups in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeploymentGroupsOutput {
+    /// <p>The application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>A list of deployment group names.</p>
+    pub fn deployment_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_groups.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list deployment groups call to return the next set of deployment
+    /// groups in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1011,6 +1135,19 @@ pub struct ListDeploymentConfigsOutput {
     /// deployment configurations in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeploymentConfigsOutput {
+    /// <p>A list of deployment configurations, including built-in configurations such as
+    /// <code>CodeDeployDefault.OneAtATime</code>.</p>
+    pub fn deployment_configs_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_configs_list.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list deployment configurations call to return the next set of
+    /// deployment configurations in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeploymentConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentConfigsOutput");
@@ -1091,6 +1228,18 @@ pub struct ListApplicationsOutput {
     /// the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationsOutput {
+    /// <p>A list of application names.</p>
+    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
+        self.applications.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list applications call to return the next set of applications in
+    /// the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationsOutput");
@@ -1169,6 +1318,18 @@ pub struct ListApplicationRevisionsOutput {
     /// application revisions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationRevisionsOutput {
+    /// <p>A list of locations that contain the matching revisions.</p>
+    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionLocation]> {
+        self.revisions.as_deref()
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can
+    /// be used in a subsequent list application revisions call to return the next set of
+    /// application revisions in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationRevisionsOutput");
@@ -1243,6 +1404,12 @@ pub struct GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
     pub instance_info: std::option::Option<crate::model::InstanceInfo>,
 }
+impl GetOnPremisesInstanceOutput {
+    /// <p> Information about the on-premises instance. </p>
+    pub fn instance_info(&self) -> std::option::Option<&crate::model::InstanceInfo> {
+        self.instance_info.as_ref()
+    }
+}
 impl std::fmt::Debug for GetOnPremisesInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOnPremisesInstanceOutput");
@@ -1297,6 +1464,16 @@ pub struct GetDeploymentTargetOutput {
     /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
     /// <code>ecsTarget</code>). </p>
     pub deployment_target: std::option::Option<crate::model::DeploymentTarget>,
+}
+impl GetDeploymentTargetOutput {
+    /// <p> A deployment target that contains information about a deployment such as its status,
+    /// lifecycle events, and when it was last updated. It also contains metadata about the
+    /// deployment target. The deployment target metadata depends on the deployment target's
+    /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
+    /// <code>ecsTarget</code>). </p>
+    pub fn deployment_target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
+        self.deployment_target.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1357,6 +1534,12 @@ pub struct GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
     pub instance_summary: std::option::Option<crate::model::InstanceSummary>,
 }
+impl GetDeploymentInstanceOutput {
+    /// <p> Information about the instance. </p>
+    pub fn instance_summary(&self) -> std::option::Option<&crate::model::InstanceSummary> {
+        self.instance_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentInstanceOutput");
@@ -1407,6 +1590,12 @@ impl GetDeploymentInstanceOutput {
 pub struct GetDeploymentGroupOutput {
     /// <p>Information about the deployment group.</p>
     pub deployment_group_info: std::option::Option<crate::model::DeploymentGroupInfo>,
+}
+impl GetDeploymentGroupOutput {
+    /// <p>Information about the deployment group.</p>
+    pub fn deployment_group_info(&self) -> std::option::Option<&crate::model::DeploymentGroupInfo> {
+        self.deployment_group_info.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1459,6 +1648,14 @@ pub struct GetDeploymentConfigOutput {
     /// <p>Information about the deployment configuration.</p>
     pub deployment_config_info: std::option::Option<crate::model::DeploymentConfigInfo>,
 }
+impl GetDeploymentConfigOutput {
+    /// <p>Information about the deployment configuration.</p>
+    pub fn deployment_config_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentConfigInfo> {
+        self.deployment_config_info.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentConfigOutput");
@@ -1509,6 +1706,12 @@ impl GetDeploymentConfigOutput {
 pub struct GetDeploymentOutput {
     /// <p>Information about the deployment.</p>
     pub deployment_info: std::option::Option<crate::model::DeploymentInfo>,
+}
+impl GetDeploymentOutput {
+    /// <p>Information about the deployment.</p>
+    pub fn deployment_info(&self) -> std::option::Option<&crate::model::DeploymentInfo> {
+        self.deployment_info.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1564,6 +1767,20 @@ pub struct GetApplicationRevisionOutput {
     pub revision: std::option::Option<crate::model::RevisionLocation>,
     /// <p>General information about the revision.</p>
     pub revision_info: std::option::Option<crate::model::GenericRevisionInfo>,
+}
+impl GetApplicationRevisionOutput {
+    /// <p>The name of the application that corresponds to the revision.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Additional information about the revision, including type and location.</p>
+    pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.revision.as_ref()
+    }
+    /// <p>General information about the revision.</p>
+    pub fn revision_info(&self) -> std::option::Option<&crate::model::GenericRevisionInfo> {
+        self.revision_info.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApplicationRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1647,6 +1864,12 @@ impl GetApplicationRevisionOutput {
 pub struct GetApplicationOutput {
     /// <p>Information about the application.</p>
     pub application: std::option::Option<crate::model::ApplicationInfo>,
+}
+impl GetApplicationOutput {
+    /// <p>Information about the application.</p>
+    pub fn application(&self) -> std::option::Option<&crate::model::ApplicationInfo> {
+        self.application.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1759,6 +1982,12 @@ pub struct DeleteGitHubAccountTokenOutput {
     /// <p>The name of the GitHub account connection that was deleted.</p>
     pub token_name: std::option::Option<std::string::String>,
 }
+impl DeleteGitHubAccountTokenOutput {
+    /// <p>The name of the GitHub account connection that was deleted.</p>
+    pub fn token_name(&self) -> std::option::Option<&str> {
+        self.token_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGitHubAccountTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGitHubAccountTokenOutput");
@@ -1810,6 +2039,16 @@ pub struct DeleteDeploymentGroupOutput {
     /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
     /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
+}
+impl DeleteDeploymentGroupOutput {
+    /// <p>If the output contains no data, and the corresponding deployment group contained at
+    /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
+    /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
+    /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
+    /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+        self.hooks_not_cleaned_up.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDeploymentGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1940,6 +2179,12 @@ pub struct CreateDeploymentGroupOutput {
     /// <p>A unique deployment group ID.</p>
     pub deployment_group_id: std::option::Option<std::string::String>,
 }
+impl CreateDeploymentGroupOutput {
+    /// <p>A unique deployment group ID.</p>
+    pub fn deployment_group_id(&self) -> std::option::Option<&str> {
+        self.deployment_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentGroupOutput");
@@ -1990,6 +2235,12 @@ impl CreateDeploymentGroupOutput {
 pub struct CreateDeploymentConfigOutput {
     /// <p>A unique deployment configuration ID.</p>
     pub deployment_config_id: std::option::Option<std::string::String>,
+}
+impl CreateDeploymentConfigOutput {
+    /// <p>A unique deployment configuration ID.</p>
+    pub fn deployment_config_id(&self) -> std::option::Option<&str> {
+        self.deployment_config_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2042,6 +2293,12 @@ pub struct CreateDeploymentOutput {
     /// <p> The unique ID of a deployment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl CreateDeploymentOutput {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentOutput");
@@ -2092,6 +2349,12 @@ impl CreateDeploymentOutput {
 pub struct CreateApplicationOutput {
     /// <p>A unique application ID.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl CreateApplicationOutput {
+    /// <p>A unique application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2174,6 +2437,12 @@ pub struct BatchGetOnPremisesInstancesOutput {
     /// <p>Information about the on-premises instances.</p>
     pub instance_infos: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
 }
+impl BatchGetOnPremisesInstancesOutput {
+    /// <p>Information about the on-premises instances.</p>
+    pub fn instance_infos(&self) -> std::option::Option<&[crate::model::InstanceInfo]> {
+        self.instance_infos.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetOnPremisesInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetOnPremisesInstancesOutput");
@@ -2254,6 +2523,36 @@ pub struct BatchGetDeploymentTargetsOutput {
     /// </li>
     /// </ul>
     pub deployment_targets: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
+}
+impl BatchGetDeploymentTargetsOutput {
+    /// <p> A list of target objects for a deployment. Each target object contains details about
+    /// the target, such as its status and lifecycle events. The type of the target objects
+    /// depends on the deployment' compute platform. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>EC2/On-premises</b>: Each target object is an EC2
+    /// or on-premises instance. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AWS Lambda</b>: The target object is a specific
+    /// version of an AWS Lambda function. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon ECS</b>: The target object is an Amazon ECS
+    /// service. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CloudFormation</b>: The target object is an AWS
+    /// CloudFormation blue/green deployment. </p>
+    /// </li>
+    /// </ul>
+    pub fn deployment_targets(&self) -> std::option::Option<&[crate::model::DeploymentTarget]> {
+        self.deployment_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetDeploymentTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2364,6 +2663,12 @@ pub struct BatchGetDeploymentsOutput {
     /// <p> Information about the deployments. </p>
     pub deployments_info: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
 }
+impl BatchGetDeploymentsOutput {
+    /// <p> Information about the deployments. </p>
+    pub fn deployments_info(&self) -> std::option::Option<&[crate::model::DeploymentInfo]> {
+        self.deployments_info.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDeploymentsOutput");
@@ -2423,6 +2728,16 @@ pub struct BatchGetDeploymentInstancesOutput {
     pub instances_summary: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl BatchGetDeploymentInstancesOutput {
+    /// <p>Information about the instance.</p>
+    pub fn instances_summary(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+        self.instances_summary.as_deref()
+    }
+    /// <p>Information about errors that might have occurred during the API call.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetDeploymentInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2504,6 +2819,18 @@ pub struct BatchGetDeploymentGroupsOutput {
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchGetDeploymentGroupsOutput {
+    /// <p>Information about the deployment groups.</p>
+    pub fn deployment_groups_info(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeploymentGroupInfo]> {
+        self.deployment_groups_info.as_deref()
+    }
+    /// <p>Information about errors that might have occurred during the API call.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetDeploymentGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetDeploymentGroupsOutput");
@@ -2581,6 +2908,12 @@ pub struct BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
     pub applications_info: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
 }
+impl BatchGetApplicationsOutput {
+    /// <p>Information about the applications.</p>
+    pub fn applications_info(&self) -> std::option::Option<&[crate::model::ApplicationInfo]> {
+        self.applications_info.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetApplicationsOutput");
@@ -2645,6 +2978,20 @@ pub struct BatchGetApplicationRevisionsOutput {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Additional information about the revisions, including the type and location.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionInfo>>,
+}
+impl BatchGetApplicationRevisionsOutput {
+    /// <p>The name of the application that corresponds to the revisions.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>Information about errors that might have occurred during the API call.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Additional information about the revisions, including the type and location.</p>
+    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionInfo]> {
+        self.revisions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetApplicationRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

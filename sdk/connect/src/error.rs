@@ -16117,6 +16117,16 @@ pub struct ResourceInUseException {
     /// <p>The identifier for the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl ResourceInUseException {
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The identifier for the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInUseException");
@@ -16275,6 +16285,12 @@ pub struct InvalidContactFlowException {
     pub problems: std::option::Option<std::vec::Vec<crate::model::ProblemDetail>>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidContactFlowException {
+    /// <p>The problems with the contact flow. Please fix before trying again.</p>
+    pub fn problems(&self) -> std::option::Option<&[crate::model::ProblemDetail]> {
+        self.problems.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidContactFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

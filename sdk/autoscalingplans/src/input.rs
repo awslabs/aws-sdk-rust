@@ -139,10 +139,7 @@ impl CreateScalingPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_scaling_plan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_scaling_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -309,10 +306,7 @@ impl DeleteScalingPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_scaling_plan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_scaling_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -506,7 +500,7 @@ impl DescribeScalingPlanResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plan_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plan_resources(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -743,10 +737,9 @@ impl DescribeScalingPlansInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plans(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plans(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1063,7 +1056,7 @@ impl GetScalingPlanResourceForecastDataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_scaling_plan_resource_forecast_data(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_scaling_plan_resource_forecast_data(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1275,10 +1268,7 @@ impl UpdateScalingPlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_scaling_plan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_scaling_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1356,6 +1346,27 @@ pub struct UpdateScalingPlanInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub scaling_instructions: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
 }
+impl UpdateScalingPlanInput {
+    /// <p>The name of the scaling plan.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
+    /// Currently, you cannot have multiple scaling plan versions.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
+    /// <p>A CloudFormation stack or set of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn application_source(&self) -> std::option::Option<&crate::model::ApplicationSource> {
+        self.application_source.as_ref()
+    }
+    /// <p>The scaling instructions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn scaling_instructions(&self) -> std::option::Option<&[crate::model::ScalingInstruction]> {
+        self.scaling_instructions.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateScalingPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateScalingPlanInput");
@@ -1420,6 +1431,72 @@ pub struct GetScalingPlanResourceForecastDataInput {
     /// periods of two days in advance.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetScalingPlanResourceForecastDataInput {
+    /// <p>The name of the scaling plan.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is
+    /// <code>1</code>.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
+    /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
+    /// </p>
+    pub fn service_namespace(&self) -> std::option::Option<&crate::model::ServiceNamespace> {
+        self.service_namespace.as_ref()
+    }
+    /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
+    /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
+    /// <code>autoScalingGroup/my-asg</code>. </p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The scalable dimension for the resource. The only valid value is
+    /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    pub fn scalable_dimension(&self) -> std::option::Option<&crate::model::ScalableDimension> {
+        self.scalable_dimension.as_ref()
+    }
+    /// <p>The type of forecast data to get.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LoadForecast</code>: The load metric forecast. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CapacityForecast</code>: The capacity forecast. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
+    /// scaling action. This data is calculated as the larger of two values: the capacity
+    /// forecast or the minimum capacity in the scaling instruction.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
+    /// scaling action. The calculation used is determined by the predictive scaling maximum
+    /// capacity behavior setting in the scaling instruction.</p>
+    /// </li>
+    /// </ul>
+    pub fn forecast_data_type(&self) -> std::option::Option<&crate::model::ForecastDataType> {
+        self.forecast_data_type.as_ref()
+    }
+    /// <p>The inclusive start time of the time range for the forecast data to get. The date and
+    /// time can be at most 56 days before the current date and time. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
+    /// duration between the start and end time is seven days. </p>
+    /// <p>Although this parameter can accept a date and time that is more than two days in the
+    /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
+    /// periods of two days in advance.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetScalingPlanResourceForecastDataInput");
@@ -1458,6 +1535,36 @@ pub struct DescribeScalingPlansInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeScalingPlansInput {
+    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
+    /// cannot specify scaling plan names.</p>
+    pub fn scaling_plan_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.scaling_plan_names.as_deref()
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is
+    /// <code>1</code>.</p>
+    /// <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan
+    /// name.</p>
+    /// </note>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
+    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
+    /// cannot specify application sources.</p>
+    pub fn application_sources(&self) -> std::option::Option<&[crate::model::ApplicationSource]> {
+        self.application_sources.as_deref()
+    }
+    /// <p>The maximum number of scalable resources to return. This value can be between
+    /// 1 and 50. The default value is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeScalingPlansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScalingPlansInput");
@@ -1485,6 +1592,26 @@ pub struct DescribeScalingPlanResourcesInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeScalingPlanResourcesInput {
+    /// <p>The name of the scaling plan.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is
+    /// <code>1</code>.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
+    /// <p>The maximum number of scalable resources to return. The value must be between
+    /// 1 and 50. The default value is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeScalingPlanResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScalingPlanResourcesInput");
@@ -1505,6 +1632,17 @@ pub struct DeleteScalingPlanInput {
     /// <p>The version number of the scaling plan. Currently, the only valid value is
     /// <code>1</code>.</p>
     pub scaling_plan_version: std::option::Option<i64>,
+}
+impl DeleteScalingPlanInput {
+    /// <p>The name of the scaling plan.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is
+    /// <code>1</code>.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
 }
 impl std::fmt::Debug for DeleteScalingPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1529,6 +1667,24 @@ pub struct CreateScalingPlanInput {
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub scaling_instructions: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
+}
+impl CreateScalingPlanInput {
+    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
+    /// slashes.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
+    /// source.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn application_source(&self) -> std::option::Option<&crate::model::ApplicationSource> {
+        self.application_source.as_ref()
+    }
+    /// <p>The scaling instructions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn scaling_instructions(&self) -> std::option::Option<&[crate::model::ScalingInstruction]> {
+        self.scaling_instructions.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateScalingPlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

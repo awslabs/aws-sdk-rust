@@ -1,0 +1,37 @@
+[package]
+name = "aws-smithy-types-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.aws-smithy-types]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "parse_epoch_seconds"
+path = "fuzz_targets/parse_epoch_seconds.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "parse_http_date"
+path = "fuzz_targets/parse_http_date.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "parse_date_time"
+path = "fuzz_targets/parse_date_time.rs"
+test = false
+doc = false

@@ -87,10 +87,7 @@ impl AcceptGrantInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_accept_grant(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_accept_grant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -255,10 +252,7 @@ impl CheckInLicenseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_check_in_license(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_check_in_license(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -497,10 +491,7 @@ impl CheckoutBorrowLicenseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_checkout_borrow_license(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -737,10 +728,7 @@ impl CheckoutLicenseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_checkout_license(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_checkout_license(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -971,10 +959,7 @@ impl CreateGrantInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_grant(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_grant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1215,10 +1200,7 @@ impl CreateGrantVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_grant_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_grant_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1519,10 +1501,7 @@ impl CreateLicenseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_license(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_license(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1879,10 +1858,7 @@ impl CreateLicenseConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_license_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2074,7 +2050,7 @@ impl CreateLicenseConversionTaskForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_license_conversion_task_for_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_license_conversion_task_for_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2342,7 +2318,7 @@ impl CreateLicenseManagerReportGeneratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_license_manager_report_generator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2663,10 +2639,9 @@ impl CreateLicenseVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_license_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_license_version(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2887,10 +2862,7 @@ impl CreateTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_token(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3066,10 +3038,7 @@ impl DeleteGrantInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_grant(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_grant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3233,10 +3202,7 @@ impl DeleteLicenseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_license(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_license(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3392,10 +3358,7 @@ impl DeleteLicenseConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_license_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3553,7 +3516,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_license_manager_report_generator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3703,10 +3666,7 @@ impl DeleteTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_token(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3874,10 +3834,7 @@ impl ExtendLicenseConsumptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_extend_license_consumption(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4048,10 +4005,7 @@ impl GetAccessTokenInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_access_token(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_access_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4210,10 +4164,7 @@ impl GetGrantInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_grant(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_grant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4372,10 +4323,7 @@ impl GetLicenseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_license(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_license(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4531,10 +4479,7 @@ impl GetLicenseConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_license_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4690,10 +4635,7 @@ impl GetLicenseConversionTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_license_conversion_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4850,7 +4792,7 @@ impl GetLicenseManagerReportGeneratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_license_manager_report_generator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5001,10 +4943,7 @@ impl GetLicenseUsageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_license_usage(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_license_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5140,10 +5079,7 @@ impl GetServiceSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_settings(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_service_settings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5314,7 +5250,7 @@ impl ListAssociationsForLicenseConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associations_for_license_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_associations_for_license_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5575,10 +5511,7 @@ impl ListDistributedGrantsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_distributed_grants(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5759,7 +5692,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_failures_for_license_configuration_operations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_failures_for_license_configuration_operations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6007,10 +5940,7 @@ impl ListLicenseConfigurationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_license_configurations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6198,7 +6128,7 @@ impl ListLicenseConversionTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_conversion_tasks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_license_conversion_tasks(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6397,7 +6327,7 @@ impl ListLicenseManagerReportGeneratorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_manager_report_generators(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_license_manager_report_generators(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6645,10 +6575,7 @@ impl ListLicensesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_licenses(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_licenses(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6824,7 +6751,7 @@ impl ListLicenseSpecificationsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_specifications_for_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_license_specifications_for_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6999,10 +6926,7 @@ impl ListLicenseVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_license_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7260,10 +7184,7 @@ impl ListReceivedGrantsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_received_grants(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_received_grants(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7521,10 +7442,9 @@ impl ListReceivedLicensesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_received_licenses(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_received_licenses(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7785,10 +7705,7 @@ impl ListResourceInventoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_inventory(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7938,10 +7855,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8158,10 +8074,7 @@ impl ListTokensInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tokens(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tokens(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8396,7 +8309,7 @@ impl ListUsageForLicenseConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_usage_for_license_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_usage_for_license_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8546,10 +8459,7 @@ impl RejectGrantInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reject_grant(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reject_grant(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8719,10 +8629,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8892,10 +8799,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9178,10 +9082,7 @@ impl UpdateLicenseConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_license_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9445,7 +9346,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_license_manager_report_generator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9648,7 +9549,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_license_specifications_for_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_license_specifications_for_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9853,10 +9754,7 @@ impl UpdateServiceSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9931,6 +9829,26 @@ pub struct UpdateServiceSettingsInput {
     /// <p>Activates cross-account discovery.</p>
     pub enable_cross_accounts_discovery: std::option::Option<bool>,
 }
+impl UpdateServiceSettingsInput {
+    /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
+    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+        self.s3_bucket_arn.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>Enables integration with Organizations for cross-account discovery.</p>
+    pub fn organization_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationConfiguration> {
+        self.organization_configuration.as_ref()
+    }
+    /// <p>Activates cross-account discovery.</p>
+    pub fn enable_cross_accounts_discovery(&self) -> std::option::Option<bool> {
+        self.enable_cross_accounts_discovery
+    }
+}
 impl std::fmt::Debug for UpdateServiceSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceSettingsInput");
@@ -9960,6 +9878,24 @@ pub struct UpdateLicenseSpecificationsForResourceInput {
     /// <p>ARNs of the license configurations to remove.</p>
     pub remove_license_specifications:
         std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+}
+impl UpdateLicenseSpecificationsForResourceInput {
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>ARNs of the license configurations to add.</p>
+    pub fn add_license_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseSpecification]> {
+        self.add_license_specifications.as_deref()
+    }
+    /// <p>ARNs of the license configurations to remove.</p>
+    pub fn remove_license_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseSpecification]> {
+        self.remove_license_specifications.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLicenseSpecificationsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10004,6 +9940,44 @@ pub struct UpdateLicenseManagerReportGeneratorInput {
     /// <p>Description of the report generator.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateLicenseManagerReportGeneratorInput {
+    /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+        self.license_manager_report_generator_arn.as_deref()
+    }
+    /// <p>Name of the report generator.</p>
+    pub fn report_generator_name(&self) -> std::option::Option<&str> {
+        self.report_generator_name.as_deref()
+    }
+    /// <p>Type of reports to generate. The following report types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&[crate::model::ReportType]> {
+        self.r#type.as_deref()
+    }
+    /// <p>The report context.</p>
+    pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
+        self.report_context.as_ref()
+    }
+    /// <p>Frequency by which reports are generated.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLicenseManagerReportGeneratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLicenseManagerReportGeneratorInput");
@@ -10046,6 +10020,49 @@ pub struct UpdateLicenseConfigurationInput {
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: std::option::Option<bool>,
 }
+impl UpdateLicenseConfigurationInput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>New status of the license configuration.</p>
+    pub fn license_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConfigurationStatus> {
+        self.license_configuration_status.as_ref()
+    }
+    /// <p>New license rule. The only rule that you can add after you create a license
+    /// configuration is licenseAffinityToHost.</p>
+    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_rules.as_deref()
+    }
+    /// <p>New number of licenses managed by the license configuration.</p>
+    pub fn license_count(&self) -> std::option::Option<i64> {
+        self.license_count
+    }
+    /// <p>New hard limit of the number of available licenses.</p>
+    pub fn license_count_hard_limit(&self) -> std::option::Option<bool> {
+        self.license_count_hard_limit
+    }
+    /// <p>New name of the license configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>New description of the license configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>New product information.</p>
+    pub fn product_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+        self.product_information_list.as_deref()
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn disassociate_when_not_found(&self) -> std::option::Option<bool> {
+        self.disassociate_when_not_found
+    }
+}
 impl std::fmt::Debug for UpdateLicenseConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLicenseConfigurationInput");
@@ -10077,6 +10094,16 @@ pub struct UntagResourceInput {
     /// <p>Keys identifying the tags to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys identifying the tags to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10095,6 +10122,16 @@ pub struct TagResourceInput {
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -10110,6 +10147,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct RejectGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub grant_arn: std::option::Option<std::string::String>,
+}
+impl RejectGrantInput {
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10150,6 +10193,42 @@ pub struct ListUsageForLicenseConfigurationInput {
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListUsageForLicenseConfigurationInput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters and logical operators
+    /// are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>resourceArn</code> - The ARN of the license configuration resource.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>resourceAccount</code> - The ID of the account that owns the resource.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsageForLicenseConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsageForLicenseConfigurationInput");
@@ -10181,6 +10260,31 @@ pub struct ListTokensInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTokensInput {
+    /// <p>Token IDs.</p>
+    pub fn token_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_ids.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filter is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LicenseArns</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTokensInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTokensInput");
@@ -10198,6 +10302,12 @@ impl std::fmt::Debug for ListTokensInput {
 pub struct ListTagsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10256,6 +10366,58 @@ pub struct ListResourceInventoryInput {
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
 }
+impl ListResourceInventoryInput {
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters and logical operators
+    /// are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>application_name</code> - The name of the application.
+    /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>license_included</code> - The type of license included.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+    /// Possible values are <code>sql-server-enterprise</code> |
+    /// <code>sql-server-standard</code> |
+    /// <code>sql-server-web</code> |  
+    /// <code>windows-server-datacenter</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code> - The platform of the resource.
+    /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>resource_id</code> - The ID of the resource.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tag:<key></code> - The key/value combination of a tag assigned
+    /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
+    /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::InventoryFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceInventoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceInventoryInput");
@@ -10305,6 +10467,51 @@ pub struct ListReceivedLicensesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListReceivedLicensesInput {
+    /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    pub fn license_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_arns.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ProductSKU</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fingerprint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IssuerName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Beneficiary</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListReceivedLicensesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10357,6 +10564,51 @@ pub struct ListReceivedGrantsInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListReceivedGrantsInput {
+    /// <p>Amazon Resource Names (ARNs) of the grants.</p>
+    pub fn grant_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.grant_arns.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ProductSKU</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LicenseIssuerName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LicenseArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GrantStatus</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GranterAccountId</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListReceivedGrantsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReceivedGrantsInput");
@@ -10379,6 +10631,20 @@ pub struct ListLicenseVersionsInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListLicenseVersionsInput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListLicenseVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicenseVersionsInput");
@@ -10399,6 +10665,20 @@ pub struct ListLicenseSpecificationsForResourceInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLicenseSpecificationsForResourceInput {
+    /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLicenseSpecificationsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10445,6 +10725,46 @@ pub struct ListLicensesInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListLicensesInput {
+    /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    pub fn license_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_arns.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Beneficiary</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProductSKU</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fingerprint</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListLicensesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicensesInput");
@@ -10474,6 +10794,27 @@ pub struct ListLicenseManagerReportGeneratorsInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListLicenseManagerReportGeneratorsInput {
+    /// <p>Filters to scope the results. The following filters are supported: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LicenseConfigurationArn</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListLicenseManagerReportGeneratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicenseManagerReportGeneratorsInput");
@@ -10496,6 +10837,22 @@ pub struct ListLicenseConversionTasksInput {
     /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
     /// </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListLicenseConversionTasksInput {
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLicenseConversionTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10539,6 +10896,43 @@ pub struct ListLicenseConfigurationsInput {
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListLicenseConfigurationsInput {
+    /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
+    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_configuration_arns.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters and logical operators
+    /// are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
+    /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
+    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLicenseConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicenseConfigurationsInput");
@@ -10563,6 +10957,20 @@ pub struct ListFailuresForLicenseConfigurationOperationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFailuresForLicenseConfigurationOperationsInput {
+    /// <p>Amazon Resource Name of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10614,6 +11022,51 @@ pub struct ListDistributedGrantsInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDistributedGrantsInput {
+    /// <p>Amazon Resource Names (ARNs) of the grants.</p>
+    pub fn grant_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.grant_arns.as_deref()
+    }
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LicenseArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GrantStatus</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GranteePrincipalARN</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ProductSKU</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LicenseIssuerName</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDistributedGrantsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributedGrantsInput");
@@ -10635,6 +11088,20 @@ pub struct ListAssociationsForLicenseConfigurationInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociationsForLicenseConfigurationInput {
+    /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociationsForLicenseConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10664,6 +11131,12 @@ pub struct GetLicenseUsageInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub license_arn: std::option::Option<std::string::String>,
 }
+impl GetLicenseUsageInput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLicenseUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLicenseUsageInput");
@@ -10678,6 +11151,12 @@ impl std::fmt::Debug for GetLicenseUsageInput {
 pub struct GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
+}
+impl GetLicenseManagerReportGeneratorInput {
+    /// <p>Amazon Resource Name (ARN) of the report generator.</p>
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+        self.license_manager_report_generator_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLicenseManagerReportGeneratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10697,6 +11176,12 @@ pub struct GetLicenseConversionTaskInput {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     pub license_conversion_task_id: std::option::Option<std::string::String>,
 }
+impl GetLicenseConversionTaskInput {
+    /// <p>ID of the license type conversion task to retrieve information on.</p>
+    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+        self.license_conversion_task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLicenseConversionTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLicenseConversionTaskInput");
@@ -10715,6 +11200,12 @@ pub struct GetLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
+impl GetLicenseConfigurationInput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLicenseConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLicenseConfigurationInput");
@@ -10731,6 +11222,16 @@ pub struct GetLicenseInput {
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl GetLicenseInput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10750,6 +11251,16 @@ pub struct GetGrantInput {
     /// <p>Grant version.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl GetGrantInput {
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGrantInput");
@@ -10767,6 +11278,16 @@ pub struct GetAccessTokenInput {
     pub token: std::option::Option<std::string::String>,
     /// <p>Token properties to validate against those present in the JWT token.</p>
     pub token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetAccessTokenInput {
+    /// <p>Refresh token, encoded as a JWT token.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>Token properties to validate against those present in the JWT token.</p>
+    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_properties.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10786,6 +11307,16 @@ pub struct ExtendLicenseConsumptionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
     pub dry_run: bool,
 }
+impl ExtendLicenseConsumptionInput {
+    /// <p>License consumption token.</p>
+    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+        self.license_consumption_token.as_deref()
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for ExtendLicenseConsumptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExtendLicenseConsumptionInput");
@@ -10802,6 +11333,12 @@ pub struct DeleteTokenInput {
     /// <p>Token ID.</p>
     pub token_id: std::option::Option<std::string::String>,
 }
+impl DeleteTokenInput {
+    /// <p>Token ID.</p>
+    pub fn token_id(&self) -> std::option::Option<&str> {
+        self.token_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTokenInput");
@@ -10816,6 +11353,12 @@ impl std::fmt::Debug for DeleteTokenInput {
 pub struct DeleteLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
+}
+impl DeleteLicenseManagerReportGeneratorInput {
+    /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+        self.license_manager_report_generator_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLicenseManagerReportGeneratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10835,6 +11378,12 @@ pub struct DeleteLicenseConfigurationInput {
     /// <p>ID of the license configuration.</p>
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
+impl DeleteLicenseConfigurationInput {
+    /// <p>ID of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLicenseConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLicenseConfigurationInput");
@@ -10851,6 +11400,16 @@ pub struct DeleteLicenseInput {
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>Current version of the license.</p>
     pub source_version: std::option::Option<std::string::String>,
+}
+impl DeleteLicenseInput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>Current version of the license.</p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10871,6 +11430,20 @@ pub struct DeleteGrantInput {
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Current version of the grant.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl DeleteGrantInput {
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>The Status reason for the delete request.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Current version of the grant.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10899,6 +11472,31 @@ pub struct CreateTokenInput {
     pub token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateTokenInput {
+    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
+    /// JWT token.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
+    /// License Manager does not check whether the roles are in use.</p>
+    pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.role_arns.as_deref()
+    }
+    /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
+    pub fn expiration_in_days(&self) -> std::option::Option<i32> {
+        self.expiration_in_days
+    }
+    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
+    /// to the amr claim of the JWT token.</p>
+    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+        self.token_properties.as_deref()
+    }
+    /// <p>Idempotency token, valid for 10 minutes.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10942,6 +11540,60 @@ pub struct CreateLicenseVersionInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Current version of the license.</p>
     pub source_version: std::option::Option<std::string::String>,
+}
+impl CreateLicenseVersionInput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License name.</p>
+    pub fn license_name(&self) -> std::option::Option<&str> {
+        self.license_name.as_deref()
+    }
+    /// <p>Product name.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>License issuer.</p>
+    pub fn issuer(&self) -> std::option::Option<&crate::model::Issuer> {
+        self.issuer.as_ref()
+    }
+    /// <p>Home Region of the license.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+        self.validity.as_ref()
+    }
+    /// <p>Information about the license.</p>
+    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.license_metadata.as_deref()
+    }
+    /// <p>License entitlements.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
+    /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
+    /// usage.</p>
+    pub fn consumption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+        self.consumption_configuration.as_ref()
+    }
+    /// <p>License status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Current version of the license.</p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLicenseVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10989,6 +11641,44 @@ pub struct CreateLicenseManagerReportGeneratorInput {
     /// <p>Tags to add to the report generator.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateLicenseManagerReportGeneratorInput {
+    /// <p>Name of the report generator.</p>
+    pub fn report_generator_name(&self) -> std::option::Option<&str> {
+        self.report_generator_name.as_deref()
+    }
+    /// <p>Type of reports to generate. The following report types an be generated:</p>
+    /// <ul>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&[crate::model::ReportType]> {
+        self.r#type.as_deref()
+    }
+    /// <p>Defines the type of license configuration the report generator tracks.</p>
+    pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
+        self.report_context.as_ref()
+    }
+    /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+        self.report_frequency.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Tags to add to the report generator.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLicenseManagerReportGeneratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLicenseManagerReportGeneratorInput");
@@ -11014,6 +11704,25 @@ pub struct CreateLicenseConversionTaskForResourceInput {
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
     pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
+}
+impl CreateLicenseConversionTaskForResourceInput {
+    /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Information that identifies the license type you are converting from.
+    /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    pub fn source_license_context(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+        self.source_license_context.as_ref()
+    }
+    /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    pub fn destination_license_context(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+        self.destination_license_context.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLicenseConversionTaskForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11089,6 +11798,83 @@ pub struct CreateLicenseConfigurationInput {
     pub product_information_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
 }
+impl CreateLicenseConfigurationInput {
+    /// <p>Name of the license configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description of the license configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Dimension used to track the license inventory.</p>
+    pub fn license_counting_type(&self) -> std::option::Option<&crate::model::LicenseCountingType> {
+        self.license_counting_type.as_ref()
+    }
+    /// <p>Number of licenses managed by the license configuration.</p>
+    pub fn license_count(&self) -> std::option::Option<i64> {
+        self.license_count
+    }
+    /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
+    /// blocks the launch of new instances.</p>
+    pub fn license_count_hard_limit(&self) -> std::option::Option<bool> {
+        self.license_count_hard_limit
+    }
+    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+    /// vary by dimension, as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
+    /// <code>licenseAffinityToHost</code> |
+    /// <code>maximumCores</code> | <code>minimumCores</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
+    /// <code>maximumCores</code> | <code>minimumCores</code> |
+    /// <code>maximumSockets</code> | <code>minimumSockets</code> |
+    /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+    /// <code>licenseAffinityToHost</code> |
+    /// <code>maximumSockets</code> | <code>minimumSockets</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+    /// <code>honorVcpuOptimization</code> |
+    /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
+    /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+    /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+    /// <code>True</code> and <code>False</code>.</p>
+    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_rules.as_deref()
+    }
+    /// <p>Tags to add to the license configuration.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn disassociate_when_not_found(&self) -> std::option::Option<bool> {
+        self.disassociate_when_not_found
+    }
+    /// <p>Product information.</p>
+    pub fn product_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+        self.product_information_list.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLicenseConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLicenseConfigurationInput");
@@ -11137,6 +11923,56 @@ pub struct CreateLicenseInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateLicenseInput {
+    /// <p>License name.</p>
+    pub fn license_name(&self) -> std::option::Option<&str> {
+        self.license_name.as_deref()
+    }
+    /// <p>Product name.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>Product SKU.</p>
+    pub fn product_sku(&self) -> std::option::Option<&str> {
+        self.product_sku.as_deref()
+    }
+    /// <p>License issuer.</p>
+    pub fn issuer(&self) -> std::option::Option<&crate::model::Issuer> {
+        self.issuer.as_ref()
+    }
+    /// <p>Home Region for the license.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+        self.validity.as_ref()
+    }
+    /// <p>License entitlements.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>License beneficiary.</p>
+    pub fn beneficiary(&self) -> std::option::Option<&str> {
+        self.beneficiary.as_deref()
+    }
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
+    /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
+    /// usage.</p>
+    pub fn consumption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+        self.consumption_configuration.as_ref()
+    }
+    /// <p>Information about the license.</p>
+    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.license_metadata.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLicenseInput");
@@ -11174,6 +12010,36 @@ pub struct CreateGrantVersionInput {
     /// <p>Current version of the grant.</p>
     pub source_version: std::option::Option<std::string::String>,
 }
+impl CreateGrantVersionInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant name.</p>
+    pub fn grant_name(&self) -> std::option::Option<&str> {
+        self.grant_name.as_deref()
+    }
+    /// <p>Allowed operations for the grant.</p>
+    pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+        self.allowed_operations.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Grant status reason.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Current version of the grant.</p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGrantVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGrantVersionInput");
@@ -11204,6 +12070,32 @@ pub struct CreateGrantInput {
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Allowed operations for the grant.</p>
     pub allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
+}
+impl CreateGrantInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Grant name.</p>
+    pub fn grant_name(&self) -> std::option::Option<&str> {
+        self.grant_name.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>The grant principals.</p>
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.principals.as_deref()
+    }
+    /// <p>Home Region of the grant.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Allowed operations for the grant.</p>
+    pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+        self.allowed_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11237,6 +12129,36 @@ pub struct CheckoutLicenseInput {
     /// <p>Node ID.</p>
     pub node_id: std::option::Option<std::string::String>,
 }
+impl CheckoutLicenseInput {
+    /// <p>Product SKU.</p>
+    pub fn product_sku(&self) -> std::option::Option<&str> {
+        self.product_sku.as_deref()
+    }
+    /// <p>Checkout type.</p>
+    pub fn checkout_type(&self) -> std::option::Option<&crate::model::CheckoutType> {
+        self.checkout_type.as_ref()
+    }
+    /// <p>Key fingerprint identifying the license.</p>
+    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+        self.key_fingerprint.as_deref()
+    }
+    /// <p>License entitlements.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>License beneficiary.</p>
+    pub fn beneficiary(&self) -> std::option::Option<&str> {
+        self.beneficiary.as_deref()
+    }
+    /// <p>Node ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CheckoutLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CheckoutLicenseInput");
@@ -11269,6 +12191,35 @@ pub struct CheckoutBorrowLicenseInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CheckoutBorrowLicenseInput {
+    /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License entitlements. Partial checkouts are not supported.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
+    /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    pub fn digital_signature_method(
+        &self,
+    ) -> std::option::Option<&crate::model::DigitalSignatureMethod> {
+        self.digital_signature_method.as_ref()
+    }
+    /// <p>Node ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>Information about constraints.</p>
+    pub fn checkout_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.checkout_metadata.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CheckoutBorrowLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CheckoutBorrowLicenseInput");
@@ -11291,6 +12242,16 @@ pub struct CheckInLicenseInput {
     /// <p>License beneficiary.</p>
     pub beneficiary: std::option::Option<std::string::String>,
 }
+impl CheckInLicenseInput {
+    /// <p>License consumption token.</p>
+    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+        self.license_consumption_token.as_deref()
+    }
+    /// <p>License beneficiary.</p>
+    pub fn beneficiary(&self) -> std::option::Option<&str> {
+        self.beneficiary.as_deref()
+    }
+}
 impl std::fmt::Debug for CheckInLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CheckInLicenseInput");
@@ -11306,6 +12267,12 @@ impl std::fmt::Debug for CheckInLicenseInput {
 pub struct AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub grant_arn: std::option::Option<std::string::String>,
+}
+impl AcceptGrantInput {
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptGrantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

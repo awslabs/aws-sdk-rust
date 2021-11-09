@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_batch_execute_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchExecuteStatementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.sqls {
         let mut array_2 = object.key("Sqls").start_array();
         for item_3 in var_1 {
@@ -30,30 +30,33 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
     if let Some(var_9) = &input.statement_name {
         object.key("StatementName").string(var_9);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_cancel_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CancelStatementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.id {
         object.key("Id").string(var_10);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeStatementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.id {
         object.key("Id").string(var_11);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_table_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTableInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_12);
     }
@@ -84,12 +87,13 @@ pub fn serialize_structure_crate_input_describe_table_input(
             aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_execute_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExecuteStatementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.sql {
         object.key("Sql").string(var_20);
     }
@@ -119,30 +123,32 @@ pub fn serialize_structure_crate_input_execute_statement_input(
                 crate::json_ser::serialize_structure_crate_model_sql_parameter(
                     &mut object_30,
                     item_29,
-                );
+                )?;
                 object_30.finish();
             }
         }
         array_28.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_statement_result_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetStatementResultInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.id {
         object.key("Id").string(var_31);
     }
     if let Some(var_32) = &input.next_token {
         object.key("NextToken").string(var_32);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_databases_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDatabasesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_33);
     }
@@ -164,12 +170,13 @@ pub fn serialize_structure_crate_input_list_databases_input(
             aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_schemas_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSchemasInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_38);
     }
@@ -197,12 +204,13 @@ pub fn serialize_structure_crate_input_list_schemas_input(
             aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_statements_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListStatementsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.next_token {
         object.key("NextToken").string(var_45);
     }
@@ -221,12 +229,13 @@ pub fn serialize_structure_crate_input_list_statements_input(
     if let Some(var_48) = &input.role_level {
         object.key("RoleLevel").boolean(*var_48);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tables_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTablesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_49);
     }
@@ -257,16 +266,18 @@ pub fn serialize_structure_crate_input_list_tables_input(
             aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_sql_parameter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SqlParameter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.name {
         object.key("name").string(var_57);
     }
     if let Some(var_58) = &input.value {
         object.key("value").string(var_58);
     }
+    Ok(())
 }

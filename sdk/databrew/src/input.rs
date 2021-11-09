@@ -131,10 +131,7 @@ impl BatchDeleteRecipeVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_recipe_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -367,10 +364,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -738,10 +732,7 @@ impl CreateProfileJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_profile_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_profile_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -968,10 +959,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1181,10 +1169,7 @@ impl CreateRecipeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_recipe(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_recipe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1594,10 +1579,7 @@ impl CreateRecipeJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_recipe_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_recipe_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1814,10 +1796,8 @@ impl CreateScheduleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_schedule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_schedule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5043,10 +5023,7 @@ impl PublishRecipeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_publish_recipe(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_publish_recipe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5289,10 +5266,7 @@ impl SendProjectSessionActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_project_session_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5612,10 +5586,7 @@ impl StartProjectSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_project_session(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_project_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5987,10 +5958,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6386,10 +6354,7 @@ impl UpdateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6731,10 +6696,7 @@ impl UpdateProfileJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_profile_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_profile_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6919,10 +6881,7 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7116,10 +7075,7 @@ impl UpdateRecipeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_recipe(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_recipe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7472,10 +7428,7 @@ impl UpdateRecipeJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_recipe_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_recipe_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7676,10 +7629,8 @@ impl UpdateScheduleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_schedule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_schedule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7755,6 +7706,23 @@ pub struct UpdateScheduleInput {
     /// <p>The name of the schedule to update.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateScheduleInput {
+    /// <p>The name or names of one or more jobs to be run for this schedule.</p>
+    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_names.as_deref()
+    }
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information,
+    /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+    /// expressions</a> in the <i>Glue DataBrew Developer
+    /// Guide</i>.</p>
+    pub fn cron_expression(&self) -> std::option::Option<&str> {
+        self.cron_expression.as_deref()
+    }
+    /// <p>The name of the schedule to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateScheduleInput");
@@ -7808,6 +7776,68 @@ pub struct UpdateRecipeJobInput {
     /// period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
 }
+impl UpdateRecipeJobInput {
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
+    /// job.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+        self.encryption_mode.as_ref()
+    }
+    /// <p>The name of the job to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+    /// CloudWatch writes one log stream for each job run.</p>
+    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+        self.log_subscription.as_ref()
+    }
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes
+    /// data.</p>
+    pub fn max_capacity(&self) -> i32 {
+        self.max_capacity
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>One or more artifacts that represent the output from running the job. </p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
+        self.data_catalog_outputs.as_deref()
+    }
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a
+    /// DataBrew recipe job to write into.</p>
+    pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
+        self.database_outputs.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+    /// be assumed when DataBrew runs the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
+    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
+}
 impl std::fmt::Debug for UpdateRecipeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecipeJobInput");
@@ -7838,6 +7868,21 @@ pub struct UpdateRecipeInput {
     /// the conditions under which the action should succeed.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
 }
+impl UpdateRecipeInput {
+    /// <p>A description of the recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the recipe to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
+    /// the conditions under which the action should succeed.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
+        self.steps.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecipeInput");
@@ -7859,6 +7904,21 @@ pub struct UpdateProjectInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the project to be updated.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateProjectInput {
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
+    /// analysis.</p>
+    pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
+        self.sample.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the project to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7919,6 +7979,74 @@ pub struct UpdateProfileJobInput {
     /// 20000 for the size parameter.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
+impl UpdateProfileJobInput {
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+    /// and override default parameters of evaluations. When configuration is null, the
+    /// profile job will run with default settings.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ProfileConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
+    /// job.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
+    /// S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+        self.encryption_mode.as_ref()
+    }
+    /// <p>The name of the job to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+    /// CloudWatch writes one log stream for each job run.</p>
+    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+        self.log_subscription.as_ref()
+    }
+    /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
+    /// data.</p>
+    pub fn max_capacity(&self) -> i32 {
+        self.max_capacity
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
+    /// input data, or write output from a job.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.output_location.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+    /// be assumed when DataBrew runs the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
+    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
+    /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
+    /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
+    /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
+    /// 20000 for the size parameter.</p>
+    pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
+        self.job_sample.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProfileJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProfileJobInput");
@@ -7954,6 +8082,30 @@ pub struct UpdateDatasetInput {
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub path_options: std::option::Option<crate::model::PathOptions>,
 }
+impl UpdateDatasetInput {
+    /// <p>The name of the dataset to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.format.as_ref()
+    }
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
+    /// Excel, or JSON input.</p>
+    pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
+        self.format_options.as_ref()
+    }
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
+    /// Amazon S3.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    pub fn path_options(&self) -> std::option::Option<&crate::model::PathOptions> {
+        self.path_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatasetInput");
@@ -7976,6 +8128,17 @@ pub struct UntagResourceInput {
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
+    /// parameter is an Amazon Resource Name (ARN). </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys (names) of one or more tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7997,6 +8160,21 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
+    /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
+    /// a recipe.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags to be assigned to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -8014,6 +8192,16 @@ pub struct StopJobRunInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the job run to be stopped.</p>
     pub run_id: std::option::Option<std::string::String>,
+}
+impl StopJobRunInput {
+    /// <p>The name of the job to be stopped.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the job run to be stopped.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8034,6 +8222,17 @@ pub struct StartProjectSessionInput {
     /// client is currently accessing the project.</p>
     pub assume_control: bool,
 }
+impl StartProjectSessionInput {
+    /// <p>The name of the project to act upon.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A value that, if true, enables you to take control of a session, even if a different
+    /// client is currently accessing the project.</p>
+    pub fn assume_control(&self) -> bool {
+        self.assume_control
+    }
+}
 impl std::fmt::Debug for StartProjectSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartProjectSessionInput");
@@ -8049,6 +8248,12 @@ impl std::fmt::Debug for StartProjectSessionInput {
 pub struct StartJobRunInput {
     /// <p>The name of the job to be run.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl StartJobRunInput {
+    /// <p>The name of the job to be run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8078,6 +8283,35 @@ pub struct SendProjectSessionActionInput {
     /// <p>Represents the data being transformed during an action.</p>
     pub view_frame: std::option::Option<crate::model::ViewFrame>,
 }
+impl SendProjectSessionActionInput {
+    /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
+    pub fn preview(&self) -> bool {
+        self.preview
+    }
+    /// <p>The name of the project to apply the action to.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
+    pub fn recipe_step(&self) -> std::option::Option<&crate::model::RecipeStep> {
+        self.recipe_step.as_ref()
+    }
+    /// <p>The index from which to preview a step. This index is used to preview the result of
+    /// steps that have already been applied, so that the resulting view frame is from earlier
+    /// in the view frame stack.</p>
+    pub fn step_index(&self) -> std::option::Option<i32> {
+        self.step_index
+    }
+    /// <p>A unique identifier for an interactive session that's currently open and ready for
+    /// work. The action will be performed on this session.</p>
+    pub fn client_session_id(&self) -> std::option::Option<&str> {
+        self.client_session_id.as_deref()
+    }
+    /// <p>Represents the data being transformed during an action.</p>
+    pub fn view_frame(&self) -> std::option::Option<&crate::model::ViewFrame> {
+        self.view_frame.as_ref()
+    }
+}
 impl std::fmt::Debug for SendProjectSessionActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendProjectSessionActionInput");
@@ -8100,6 +8334,16 @@ pub struct PublishRecipeInput {
     /// <p>The name of the recipe to be published.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl PublishRecipeInput {
+    /// <p>A description of the recipe to be published, for this version of the recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the recipe to be published.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishRecipeInput");
@@ -8116,6 +8360,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8135,6 +8386,20 @@ pub struct ListSchedulesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSchedulesInput {
+    /// <p>The name of the job that these schedules apply to.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchedulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8156,6 +8421,20 @@ pub struct ListRecipeVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the recipe for which to return version information.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl ListRecipeVersionsInput {
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the recipe for which to return version information.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecipeVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8183,6 +8462,25 @@ pub struct ListRecipesInput {
     /// </p>
     pub recipe_version: std::option::Option<std::string::String>,
 }
+impl ListRecipesInput {
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
+    /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
+    /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
+    /// versions.</p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
+    /// </p>
+    pub fn recipe_version(&self) -> std::option::Option<&str> {
+        self.recipe_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecipesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecipesInput");
@@ -8201,6 +8499,16 @@ pub struct ListProjectsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProjectsInput {
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8228,6 +8536,28 @@ pub struct ListJobsInput {
     /// are associated with the specified project.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
+impl ListJobsInput {
+    /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
+    /// act on the specified dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token generated by DataBrew that specifies where to continue pagination if a
+    /// previous request was truncated. To get the next set of pages, pass in the NextToken
+    /// value from the response object of the previous page call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of a project. Using this parameter indicates to return only those jobs that
+    /// are associated with the specified project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -8250,6 +8580,20 @@ pub struct ListJobRunsInput {
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobRunsInput {
+    /// <p>The name of the job.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobRunsInput");
@@ -8269,6 +8613,16 @@ pub struct ListDatasetsInput {
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetsInput {
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsInput");
@@ -8284,6 +8638,12 @@ impl std::fmt::Debug for ListDatasetsInput {
 pub struct DescribeScheduleInput {
     /// <p>The name of the schedule to be described.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeScheduleInput {
+    /// <p>The name of the schedule to be described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8303,6 +8663,17 @@ pub struct DescribeRecipeInput {
     /// published version is returned.</p>
     pub recipe_version: std::option::Option<std::string::String>,
 }
+impl DescribeRecipeInput {
+    /// <p>The name of the recipe to be described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
+    /// published version is returned.</p>
+    pub fn recipe_version(&self) -> std::option::Option<&str> {
+        self.recipe_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRecipeInput");
@@ -8318,6 +8689,12 @@ impl std::fmt::Debug for DescribeRecipeInput {
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeProjectInput {
+    /// <p>The name of the project to be described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8336,6 +8713,16 @@ pub struct DescribeJobRunInput {
     /// <p>The unique identifier of the job run.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl DescribeJobRunInput {
+    /// <p>The name of the job being processed during this run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier of the job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobRunInput");
@@ -8352,6 +8739,12 @@ pub struct DescribeJobInput {
     /// <p>The name of the job to be described.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribeJobInput {
+    /// <p>The name of the job to be described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobInput");
@@ -8367,6 +8760,12 @@ pub struct DescribeDatasetInput {
     /// <p>The name of the dataset to be described.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetInput {
+    /// <p>The name of the dataset to be described.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetInput");
@@ -8381,6 +8780,12 @@ impl std::fmt::Debug for DescribeDatasetInput {
 pub struct DeleteScheduleInput {
     /// <p>The name of the schedule to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteScheduleInput {
+    /// <p>The name of the schedule to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8401,6 +8806,18 @@ pub struct DeleteRecipeVersionInput {
     /// not supported.</p>
     pub recipe_version: std::option::Option<std::string::String>,
 }
+impl DeleteRecipeVersionInput {
+    /// <p>The name of the recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the recipe to be deleted. You can specify a numeric versions
+    /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
+    /// not supported.</p>
+    pub fn recipe_version(&self) -> std::option::Option<&str> {
+        self.recipe_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRecipeVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRecipeVersionInput");
@@ -8417,6 +8834,12 @@ pub struct DeleteProjectInput {
     /// <p>The name of the project to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteProjectInput {
+    /// <p>The name of the project to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectInput");
@@ -8432,6 +8855,12 @@ pub struct DeleteJobInput {
     /// <p>The name of the job to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteJobInput {
+    /// <p>The name of the job to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteJobInput");
@@ -8446,6 +8875,12 @@ impl std::fmt::Debug for DeleteJobInput {
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteDatasetInput {
+    /// <p>The name of the dataset to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8472,6 +8907,31 @@ pub struct CreateScheduleInput {
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
     /// hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateScheduleInput {
+    /// <p>The name or names of one or more jobs to be run.</p>
+    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_names.as_deref()
+    }
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information,
+    /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+    /// expressions</a> in the <i>Glue DataBrew Developer
+    /// Guide</i>.</p>
+    pub fn cron_expression(&self) -> std::option::Option<&str> {
+        self.cron_expression.as_deref()
+    }
+    /// <p>Metadata tags to apply to this schedule.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+    /// hyphen (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8538,6 +8998,89 @@ pub struct CreateRecipeJobInput {
     /// period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
 }
+impl CreateRecipeJobInput {
+    /// <p>The name of the dataset that this job processes.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
+    /// job.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+        self.encryption_mode.as_ref()
+    }
+    /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
+    /// (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+    /// CloudWatch writes one log stream for each job run.</p>
+    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+        self.log_subscription.as_ref()
+    }
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes
+    /// data.</p>
+    pub fn max_capacity(&self) -> i32 {
+        self.max_capacity
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>One or more artifacts that represent the output from running the job.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
+        self.data_catalog_outputs.as_deref()
+    }
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for
+    /// a DataBrew recipe job to write to. </p>
+    pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
+        self.database_outputs.as_deref()
+    }
+    /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
+    /// associate with the recipe.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>Represents the name and version of a DataBrew recipe.</p>
+    pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
+        self.recipe_reference.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+    /// be assumed when DataBrew runs the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata tags to apply to this job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
+    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
+}
 impl std::fmt::Debug for CreateRecipeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRecipeJobInput");
@@ -8576,6 +9119,29 @@ pub struct CreateRecipeInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRecipeInput {
+    /// <p>A description for the recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+    /// hyphen (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
+    /// of one recipe action and (optionally) an array of condition expressions.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
+        self.steps.as_deref()
+    }
+    /// <p>Metadata tags to apply to this recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRecipeInput");
@@ -8607,6 +9173,38 @@ pub struct CreateProjectInput {
     /// <p>Metadata tags to apply to this project.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateProjectInput {
+    /// <p>The name of an existing dataset to associate this project with.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+    /// hyphen (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of an existing recipe to associate with the project.</p>
+    pub fn recipe_name(&self) -> std::option::Option<&str> {
+        self.recipe_name.as_deref()
+    }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
+    /// analysis.</p>
+    pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
+        self.sample.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+    /// be assumed for this request.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata tags to apply to this project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8675,6 +9273,85 @@ pub struct CreateProfileJobInput {
     /// size parameter.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
+impl CreateProfileJobInput {
+    /// <p>The name of the dataset that this job is to act upon.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
+    /// job.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
+    /// KMS-managed keys.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+        self.encryption_mode.as_ref()
+    }
+    /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+    /// hyphen (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+    /// CloudWatch writes one log stream for each job run.</p>
+    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+        self.log_subscription.as_ref()
+    }
+    /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
+    pub fn max_capacity(&self) -> i32 {
+        self.max_capacity
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
+    /// input data, or write output from a job.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.output_location.as_ref()
+    }
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+    /// and override default parameters of evaluations. When configuration is null, the
+    /// profile job will run with default settings.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ProfileConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
+    /// be assumed when DataBrew runs the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata tags to apply to this job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
+    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
+    /// profile job will be executed. If a JobSample value is not provided, the default value
+    /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
+    /// size parameter.</p>
+    pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
+        self.job_sample.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProfileJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProfileJobInput");
@@ -8716,6 +9393,38 @@ pub struct CreateDatasetInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDatasetInput {
+    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
+    /// 0-9), hyphen (-), period (.), and space.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.format.as_ref()
+    }
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
+    /// Excel, or JSON input.</p>
+    pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
+        self.format_options.as_ref()
+    }
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
+    /// Amazon S3.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    pub fn path_options(&self) -> std::option::Option<&crate::model::PathOptions> {
+        self.path_options.as_ref()
+    }
+    /// <p>Metadata tags to apply to this dataset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetInput");
@@ -8739,6 +9448,18 @@ pub struct BatchDeleteRecipeVersionInput {
     /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
     /// <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub recipe_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteRecipeVersionInput {
+    /// <p>The name of the recipe whose versions are to be deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
+    /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
+    /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+    pub fn recipe_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.recipe_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteRecipeVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

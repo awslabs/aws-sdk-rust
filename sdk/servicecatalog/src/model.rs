@@ -14,6 +14,28 @@ pub struct TagOptionDetail {
     /// <p>The AWS account Id of the owner account that created the TagOption.</p>
     pub owner: std::option::Option<std::string::String>,
 }
+impl TagOptionDetail {
+    /// <p>The TagOption key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The TagOption value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The TagOption active state.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>The TagOption identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The AWS account Id of the owner account that created the TagOption.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+}
 impl std::fmt::Debug for TagOptionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagOptionDetail");
@@ -117,6 +139,22 @@ pub struct ServiceActionDetail {
     pub definition: std::option::Option<
         std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
     >,
+}
+impl ServiceActionDetail {
+    /// <p>Summary information about the self-service action.</p>
+    pub fn service_action_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceActionSummary> {
+        self.service_action_summary.as_ref()
+    }
+    /// <p>A map that defines the self-service action.</p>
+    pub fn definition(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
+    > {
+        self.definition.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceActionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -273,6 +311,26 @@ pub struct ServiceActionSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
     pub definition_type: std::option::Option<crate::model::ServiceActionDefinitionType>,
+}
+impl ServiceActionSummary {
+    /// <p>The self-service action identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The self-service action name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The self-service action description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    pub fn definition_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceActionDefinitionType> {
+        self.definition_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceActionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -499,6 +557,50 @@ pub struct ProvisioningArtifactDetail {
     pub active: std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
+}
+impl ProvisioningArtifactDetail {
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the provisioning artifact.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of provisioning artifact.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Indicates whether the product version is active.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
+    /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    pub fn guidance(&self) -> std::option::Option<&crate::model::ProvisioningArtifactGuidance> {
+        self.guidance.as_ref()
+    }
 }
 impl std::fmt::Debug for ProvisioningArtifactDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -976,6 +1078,105 @@ pub struct RecordDetail {
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     pub launch_role_arn: std::option::Option<std::string::String>,
 }
+impl RecordDetail {
+    /// <p>The identifier of the record.</p>
+    pub fn record_id(&self) -> std::option::Option<&str> {
+        self.record_id.as_deref()
+    }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The status of the provisioned product.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code> - The request was created but the operation has not started.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code> - The requested operation is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
+    /// requested operation failed and some remediation is occurring. For example, a rollback.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCEEDED</code> - The requested operation has successfully completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The requested operation has unsuccessfully completed.
+    /// Investigate using the error messages returned.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecordStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time when the record was last updated.</p>
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_time.as_ref()
+    }
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    pub fn provisioned_product_type(&self) -> std::option::Option<&str> {
+        self.provisioned_product_type.as_deref()
+    }
+    /// <p>The record type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PROVISION_PRODUCT</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_PROVISIONED_PRODUCT</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE_PROVISIONED_PRODUCT</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn record_type(&self) -> std::option::Option<&str> {
+        self.record_type.as_deref()
+    }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The path identifier.</p>
+    pub fn path_id(&self) -> std::option::Option<&str> {
+        self.path_id.as_deref()
+    }
+    /// <p>The errors that occurred.</p>
+    pub fn record_errors(&self) -> std::option::Option<&[crate::model::RecordError]> {
+        self.record_errors.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn record_tags(&self) -> std::option::Option<&[crate::model::RecordTag]> {
+        self.record_tags.as_deref()
+    }
+    /// <p>The ARN of the launch role associated with the provisioned product.</p>
+    pub fn launch_role_arn(&self) -> std::option::Option<&str> {
+        self.launch_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RecordDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordDetail");
@@ -1319,6 +1520,16 @@ pub struct RecordTag {
     /// <p>The value for this tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl RecordTag {
+    /// <p>The key for this tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for this tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for RecordTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordTag");
@@ -1381,6 +1592,16 @@ pub struct RecordError {
     pub code: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl RecordError {
+    /// <p>The numeric value of the error.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The description of the error.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for RecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1445,6 +1666,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for this key.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for this key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1552,6 +1783,72 @@ pub struct UpdateProvisioningPreferences {
     /// </dd>
     /// </dl>
     pub stack_set_operation_type: std::option::Option<crate::model::StackSetOperationType>,
+}
+impl UpdateProvisioningPreferences {
+    /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
+    pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_set_accounts.as_deref()
+    }
+    /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_set_regions.as_deref()
+    }
+    /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+    /// <p>The default value is <code>0</code> if no value is specified.</p>
+    pub fn stack_set_failure_tolerance_count(&self) -> std::option::Option<i32> {
+        self.stack_set_failure_tolerance_count
+    }
+    /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+    pub fn stack_set_failure_tolerance_percentage(&self) -> std::option::Option<i32> {
+        self.stack_set_failure_tolerance_percentage
+    }
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
+    /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    pub fn stack_set_max_concurrency_count(&self) -> std::option::Option<i32> {
+        self.stack_set_max_concurrency_count
+    }
+    /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+    /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    pub fn stack_set_max_concurrency_percentage(&self) -> std::option::Option<i32> {
+        self.stack_set_max_concurrency_percentage
+    }
+    /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <dl>
+    /// <dt>CREATE</dt>
+    /// <dd>
+    /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
+    /// </dd>
+    /// <dt>UPDATE</dt>
+    /// <dd>
+    /// <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>
+    /// </dd>
+    /// <dt>DELETE</dt>
+    /// <dd>
+    /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
+    /// </dd>
+    /// </dl>
+    pub fn stack_set_operation_type(
+        &self,
+    ) -> std::option::Option<&crate::model::StackSetOperationType> {
+        self.stack_set_operation_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProvisioningPreferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1859,6 +2156,20 @@ pub struct UpdateProvisioningParameter {
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
     pub use_previous_value: bool,
 }
+impl UpdateProvisioningParameter {
+    /// <p>The parameter key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The parameter value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
+    pub fn use_previous_value(&self) -> bool {
+        self.use_previous_value
+    }
+}
 impl std::fmt::Debug for UpdateProvisioningParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProvisioningParameter");
@@ -1952,6 +2263,38 @@ pub struct ProductViewDetail {
     pub product_arn: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ProductViewDetail {
+    /// <p>Summary information about the product view.</p>
+    pub fn product_view_summary(&self) -> std::option::Option<&crate::model::ProductViewSummary> {
+        self.product_view_summary.as_ref()
+    }
+    /// <p>The status of the product.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - The product is ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - Product creation has started; the product is not ready for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - An action failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The ARN of the product.</p>
+    pub fn product_arn(&self) -> std::option::Option<&str> {
+        self.product_arn.as_deref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ProductViewDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2101,6 +2444,60 @@ pub struct ProductViewSummary {
     pub support_description: std::option::Option<std::string::String>,
     /// <p>The URL information to obtain support for this Product.</p>
     pub support_url: std::option::Option<std::string::String>,
+}
+impl ProductViewSummary {
+    /// <p>The product view identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The name of the product.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The owner of the product. Contact the product administrator for the significance of
+    /// this value.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>Short description of the product.</p>
+    pub fn short_description(&self) -> std::option::Option<&str> {
+        self.short_description.as_deref()
+    }
+    /// <p>The product type. Contact the product administrator for the significance of this
+    /// value. If this value is <code>MARKETPLACE</code>, the product was created by AWS
+    /// Marketplace.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ProductType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The distributor of the product. Contact the product administrator for the
+    /// significance of this value.</p>
+    pub fn distributor(&self) -> std::option::Option<&str> {
+        self.distributor.as_deref()
+    }
+    /// <p>Indicates whether the product has a default path.
+    /// If the product does not have a default path, call <a>ListLaunchPaths</a>
+    /// to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not
+    /// required, and the output of <a>ProductViewSummary</a> can be used directly with
+    /// <a>DescribeProvisioningParameters</a>.</p>
+    pub fn has_default_path(&self) -> bool {
+        self.has_default_path
+    }
+    /// <p>The email contact information to obtain support for this Product.</p>
+    pub fn support_email(&self) -> std::option::Option<&str> {
+        self.support_email.as_deref()
+    }
+    /// <p>The description of the support for this Product.</p>
+    pub fn support_description(&self) -> std::option::Option<&str> {
+        self.support_description.as_deref()
+    }
+    /// <p>The URL information to obtain support for this Product.</p>
+    pub fn support_url(&self) -> std::option::Option<&str> {
+        self.support_url.as_deref()
+    }
 }
 impl std::fmt::Debug for ProductViewSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2435,6 +2832,16 @@ pub struct OrganizationNode {
     /// <p>The identifier of the organization node.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl OrganizationNode {
+    /// <p>The organization node type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OrganizationNodeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The identifier of the organization node.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for OrganizationNode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationNode");
@@ -2567,6 +2974,32 @@ pub struct PortfolioDetail {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the portfolio provider.</p>
     pub provider_name: std::option::Option<std::string::String>,
+}
+impl PortfolioDetail {
+    /// <p>The portfolio identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN assigned to the portfolio.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name to use for display purposes.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description of the portfolio.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The name of the portfolio provider.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PortfolioDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2716,6 +3149,52 @@ pub struct ConstraintDetail {
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
     pub portfolio_id: std::option::Option<std::string::String>,
+}
+impl ConstraintDetail {
+    /// <p>The identifier of the constraint.</p>
+    pub fn constraint_id(&self) -> std::option::Option<&str> {
+        self.constraint_id.as_deref()
+    }
+    /// <p>The type of constraint.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LAUNCH</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOTIFICATION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>STACKSET</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEMPLATE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The description of the constraint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The owner of the constraint.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ConstraintDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2981,6 +3460,157 @@ pub struct ProvisionedProductAttribute {
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
     pub user_arn_session: std::option::Option<std::string::String>,
+}
+impl ProvisionedProductAttribute {
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the provisioned product.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+    /// recent operation succeeded and completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
+    /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
+    /// completed the requested operation but is not exactly what was requested. For example, a
+    /// request to update to a new version failed and the stack rolled back to the current version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+    /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+    /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedProductStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The current status message of the provisioned product.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>The record identifier of the last request performed on this provisioned product.</p>
+    pub fn last_record_id(&self) -> std::option::Option<&str> {
+        self.last_record_id.as_deref()
+    }
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// ProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// UpdateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// ExecuteProvisionedProductPlan
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// TerminateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn last_provisioning_record_id(&self) -> std::option::Option<&str> {
+        self.last_provisioning_record_id.as_deref()
+    }
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// ProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// UpdateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// ExecuteProvisionedProductPlan
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// TerminateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<&str> {
+        self.last_successful_provisioning_record_id.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
+    pub fn physical_id(&self) -> std::option::Option<&str> {
+        self.physical_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The name of the product.</p>
+    pub fn product_name(&self) -> std::option::Option<&str> {
+        self.product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
+    pub fn user_arn_session(&self) -> std::option::Option<&str> {
+        self.user_arn_session.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvisionedProductAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3659,6 +4289,30 @@ pub struct AccessLevelFilter {
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl AccessLevelFilter {
+    /// <p>The access level.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Account</code> - Filter results based on the account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Role</code> - Filter results based on the federated role of the specified user.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>User</code> - Filter results based on the specified user.</p>
+    /// </li>
+    /// </ul>
+    pub fn key(&self) -> std::option::Option<&crate::model::AccessLevelFilterKey> {
+        self.key.as_ref()
+    }
+    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessLevelFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessLevelFilter");
@@ -3986,6 +4640,16 @@ pub struct ProductViewAggregationValue {
     /// <p>An approximate count of the products that match the value.</p>
     pub approximate_count: i32,
 }
+impl ProductViewAggregationValue {
+    /// <p>The value of the product view aggregation.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>An approximate count of the products that match the value.</p>
+    pub fn approximate_count(&self) -> i32 {
+        self.approximate_count
+    }
+}
 impl std::fmt::Debug for ProductViewAggregationValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProductViewAggregationValue");
@@ -4145,6 +4809,137 @@ pub struct ProvisionedProductDetail {
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     pub launch_role_arn: std::option::Option<std::string::String>,
+}
+impl ProvisionedProductDetail {
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the provisioned product.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+    /// recent operation succeeded and completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
+    /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
+    /// completed the requested operation but is not exactly what was requested. For example, a
+    /// request to update to a new version failed and the stack rolled back to the current version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+    /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+    /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedProductStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The current status message of the provisioned product.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+    /// the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>The record identifier of the last request performed on this provisioned product.</p>
+    pub fn last_record_id(&self) -> std::option::Option<&str> {
+        self.last_record_id.as_deref()
+    }
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// ProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// UpdateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// ExecuteProvisionedProductPlan
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// TerminateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn last_provisioning_record_id(&self) -> std::option::Option<&str> {
+        self.last_provisioning_record_id.as_deref()
+    }
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// ProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// UpdateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// ExecuteProvisionedProductPlan
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// TerminateProvisionedProduct
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<&str> {
+        self.last_successful_provisioning_record_id.as_deref()
+    }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The ARN of the launch role associated with the provisioned product.</p>
+    pub fn launch_role_arn(&self) -> std::option::Option<&str> {
+        self.launch_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvisionedProductDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4645,6 +5440,51 @@ pub struct ProvisioningPreferences {
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     pub stack_set_max_concurrency_percentage: std::option::Option<i32>,
 }
+impl ProvisioningPreferences {
+    /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
+    pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_set_accounts.as_deref()
+    }
+    /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+    /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
+    pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_set_regions.as_deref()
+    }
+    /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+    /// <p>The default value is <code>0</code> if no value is specified.</p>
+    pub fn stack_set_failure_tolerance_count(&self) -> std::option::Option<i32> {
+        self.stack_set_failure_tolerance_count
+    }
+    /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+    pub fn stack_set_failure_tolerance_percentage(&self) -> std::option::Option<i32> {
+        self.stack_set_failure_tolerance_percentage
+    }
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
+    /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    pub fn stack_set_max_concurrency_count(&self) -> std::option::Option<i32> {
+        self.stack_set_max_concurrency_count
+    }
+    /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+    /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
+    pub fn stack_set_max_concurrency_percentage(&self) -> std::option::Option<i32> {
+        self.stack_set_max_concurrency_percentage
+    }
+}
 impl std::fmt::Debug for ProvisioningPreferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisioningPreferences");
@@ -4840,6 +5680,16 @@ pub struct ProvisioningParameter {
     /// <p>The parameter value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ProvisioningParameter {
+    /// <p>The parameter key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The parameter value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisioningParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisioningParameter");
@@ -4904,6 +5754,20 @@ pub struct ListTagOptionsFilters {
     pub value: std::option::Option<std::string::String>,
     /// <p>The active state.</p>
     pub active: std::option::Option<bool>,
+}
+impl ListTagOptionsFilters {
+    /// <p>The TagOption key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The TagOption value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The active state.</p>
+    pub fn active(&self) -> std::option::Option<bool> {
+        self.active
+    }
 }
 impl std::fmt::Debug for ListTagOptionsFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4998,6 +5862,36 @@ pub struct StackInstance {
     /// </li>
     /// </ul>
     pub stack_instance_status: std::option::Option<crate::model::StackInstanceStatus>,
+}
+impl StackInstance {
+    /// <p>The name of the AWS account that the stack instance is associated with.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>The name of the AWS region that the stack instance is associated with.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either            
+    /// the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation,           
+    /// or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
+    /// </li>
+    /// </ul>
+    pub fn stack_instance_status(&self) -> std::option::Option<&crate::model::StackInstanceStatus> {
+        self.stack_instance_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StackInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5175,6 +6069,28 @@ pub struct ResourceDetail {
     /// <p>The creation time of the resource.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ResourceDetail {
+    /// <p>The identifier of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The creation time of the resource.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDetail");
@@ -5290,6 +6206,26 @@ pub struct ListRecordHistorySearchFilter {
     /// <p>The filter value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ListRecordHistorySearchFilter {
+    /// <p>The filter key.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>product</code> - Filter results based on the specified product identifier.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p>
+    /// </li>
+    /// </ul>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The filter value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecordHistorySearchFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecordHistorySearchFilter");
@@ -5373,6 +6309,18 @@ pub struct ProvisioningArtifactView {
     /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
     pub provisioning_artifact: std::option::Option<crate::model::ProvisioningArtifact>,
 }
+impl ProvisioningArtifactView {
+    /// <p>Summary information about a product view.</p>
+    pub fn product_view_summary(&self) -> std::option::Option<&crate::model::ProductViewSummary> {
+        self.product_view_summary.as_ref()
+    }
+    /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
+    pub fn provisioning_artifact(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifact> {
+        self.provisioning_artifact.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisioningArtifactView {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisioningArtifactView");
@@ -5447,6 +6395,28 @@ pub struct ProvisioningArtifact {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
+}
+impl ProvisioningArtifact {
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the provisioning artifact.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+    pub fn guidance(&self) -> std::option::Option<&crate::model::ProvisioningArtifactGuidance> {
+        self.guidance.as_ref()
+    }
 }
 impl std::fmt::Debug for ProvisioningArtifact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5563,6 +6533,32 @@ pub struct ProvisionedProductPlanSummary {
     pub plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
+}
+impl ProvisionedProductPlanSummary {
+    /// <p>The name of the plan.</p>
+    pub fn plan_name(&self) -> std::option::Option<&str> {
+        self.plan_name.as_deref()
+    }
+    /// <p>The plan identifier.</p>
+    pub fn plan_id(&self) -> std::option::Option<&str> {
+        self.plan_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn provision_product_id(&self) -> std::option::Option<&str> {
+        self.provision_product_id.as_deref()
+    }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn provision_product_name(&self) -> std::option::Option<&str> {
+        self.provision_product_name.as_deref()
+    }
+    /// <p>The plan type.</p>
+    pub fn plan_type(&self) -> std::option::Option<&crate::model::ProvisionedProductPlanType> {
+        self.plan_type.as_ref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvisionedProductPlanSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5742,6 +6738,16 @@ pub struct Principal {
     /// <p>The principal type. The supported value is <code>IAM</code>.</p>
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
 }
+impl Principal {
+    /// <p>The ARN of the principal (IAM user, role, or group).</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+    /// <p>The principal type. The supported value is <code>IAM</code>.</p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
+    }
+}
 impl std::fmt::Debug for Principal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Principal");
@@ -5865,6 +6871,24 @@ pub struct LaunchPathSummary {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the portfolio to which the user was assigned.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl LaunchPathSummary {
+    /// <p>The identifier of the product path.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The constraints on the portfolio-product relationship.</p>
+    pub fn constraint_summaries(&self) -> std::option::Option<&[crate::model::ConstraintSummary]> {
+        self.constraint_summaries.as_deref()
+    }
+    /// <p>The tags associated with this product path.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the portfolio to which the user was assigned.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchPathSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5997,6 +7021,36 @@ pub struct ConstraintSummary {
     /// <p>The description of the constraint.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl ConstraintSummary {
+    /// <p>The type of constraint.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LAUNCH</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOTIFICATION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>STACKSET</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEMPLATE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The description of the constraint.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for ConstraintSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConstraintSummary");
@@ -6098,6 +7152,12 @@ pub struct BudgetDetail {
     /// <p>Name of the associated budget.</p>
     pub budget_name: std::option::Option<std::string::String>,
 }
+impl BudgetDetail {
+    /// <p>Name of the associated budget.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+}
 impl std::fmt::Debug for BudgetDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BudgetDetail");
@@ -6150,6 +7210,20 @@ pub struct RecordOutput {
     pub output_value: std::option::Option<std::string::String>,
     /// <p>The description of the output.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl RecordOutput {
+    /// <p>The output key.</p>
+    pub fn output_key(&self) -> std::option::Option<&str> {
+        self.output_key.as_deref()
+    }
+    /// <p>The output value.</p>
+    pub fn output_value(&self) -> std::option::Option<&str> {
+        self.output_value.as_deref()
+    }
+    /// <p>The description of the output.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for RecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6288,6 +7362,20 @@ pub struct ExecutionParameter {
     /// <p>The default values for the execution parameter.</p>
     pub default_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ExecutionParameter {
+    /// <p>The name of the execution parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The execution parameter type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The default values for the execution parameter.</p>
+    pub fn default_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.default_values.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecutionParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionParameter");
@@ -6373,6 +7461,16 @@ pub struct ProvisioningArtifactOutput {
     /// <p>Description of the provisioning artifact output key.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl ProvisioningArtifactOutput {
+    /// <p>The provisioning artifact output key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Description of the provisioning artifact output key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisioningArtifactOutput");
@@ -6438,6 +7536,18 @@ pub struct ProvisioningArtifactPreferences {
     /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ProvisioningArtifactPreferences {
+    /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_set_accounts.as_deref()
+    }
+    /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+    /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+    pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_set_regions.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvisioningArtifactPreferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6524,6 +7634,16 @@ pub struct TagOptionSummary {
     /// <p>The TagOption value.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TagOptionSummary {
+    /// <p>The TagOption key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The TagOption value.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for TagOptionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagOptionSummary");
@@ -6596,6 +7716,16 @@ pub struct UsageInstruction {
     /// <p>The usage instruction value for this type.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl UsageInstruction {
+    /// <p>The usage instruction type for the value.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The usage instruction value for this type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for UsageInstruction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsageInstruction");
@@ -6667,6 +7797,35 @@ pub struct ProvisioningArtifactParameter {
     pub description: std::option::Option<std::string::String>,
     /// <p>Constraints that the administrator has put on a parameter.</p>
     pub parameter_constraints: std::option::Option<crate::model::ParameterConstraints>,
+}
+impl ProvisioningArtifactParameter {
+    /// <p>The parameter key.</p>
+    pub fn parameter_key(&self) -> std::option::Option<&str> {
+        self.parameter_key.as_deref()
+    }
+    /// <p>The default value.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The parameter type.</p>
+    pub fn parameter_type(&self) -> std::option::Option<&str> {
+        self.parameter_type.as_deref()
+    }
+    /// <p>If this value is true, the value for this parameter is obfuscated from view when the
+    /// parameter is retrieved. This parameter is used to hide sensitive information.</p>
+    pub fn is_no_echo(&self) -> bool {
+        self.is_no_echo
+    }
+    /// <p>The description of the parameter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Constraints that the administrator has put on a parameter.</p>
+    pub fn parameter_constraints(
+        &self,
+    ) -> std::option::Option<&crate::model::ParameterConstraints> {
+        self.parameter_constraints.as_ref()
+    }
 }
 impl std::fmt::Debug for ProvisioningArtifactParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6816,6 +7975,46 @@ pub struct ParameterConstraints {
     pub max_value: std::option::Option<std::string::String>,
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
     pub min_value: std::option::Option<std::string::String>,
+}
+impl ParameterConstraints {
+    /// <p>The values that the administrator has allowed for the parameter.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_values.as_deref()
+    }
+    /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
+    pub fn allowed_pattern(&self) -> std::option::Option<&str> {
+        self.allowed_pattern.as_deref()
+    }
+    /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
+    ///
+    /// <p>
+    /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
+    /// </p>
+    ///
+    /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    ///
+    /// <p>
+    /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
+    /// </p>
+    pub fn constraint_description(&self) -> std::option::Option<&str> {
+        self.constraint_description.as_deref()
+    }
+    /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
+    pub fn max_length(&self) -> std::option::Option<&str> {
+        self.max_length.as_deref()
+    }
+    /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
+    pub fn min_length(&self) -> std::option::Option<&str> {
+        self.min_length.as_deref()
+    }
+    /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
+    pub fn max_value(&self) -> std::option::Option<&str> {
+        self.max_value.as_deref()
+    }
+    /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
+    pub fn min_value(&self) -> std::option::Option<&str> {
+        self.min_value.as_deref()
+    }
 }
 impl std::fmt::Debug for ParameterConstraints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6991,6 +8190,37 @@ pub struct ResourceChange {
     /// <p>Information about the resource changes.</p>
     pub details: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
 }
+impl ResourceChange {
+    /// <p>The change action.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+        self.action.as_ref()
+    }
+    /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+        self.logical_resource_id.as_deref()
+    }
+    /// <p>The ID of the resource, if it was already created.</p>
+    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
+        self.physical_resource_id.as_deref()
+    }
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource
+    /// is deleted and replaced with a new one.</p>
+    pub fn replacement(&self) -> std::option::Option<&crate::model::Replacement> {
+        self.replacement.as_ref()
+    }
+    /// <p>The change scope.</p>
+    pub fn scope(&self) -> std::option::Option<&[crate::model::ResourceAttribute]> {
+        self.scope.as_deref()
+    }
+    /// <p>Information about the resource changes.</p>
+    pub fn details(&self) -> std::option::Option<&[crate::model::ResourceChangeDetail]> {
+        self.details.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceChange");
@@ -7157,6 +8387,21 @@ pub struct ResourceChangeDetail {
     /// <p>The ID of the entity that caused the change.</p>
     pub causing_entity: std::option::Option<std::string::String>,
 }
+impl ResourceChangeDetail {
+    /// <p>Information about the resource attribute to be modified.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::ResourceTargetDefinition> {
+        self.target.as_ref()
+    }
+    /// <p>For static evaluations, the value of the resource attribute will change and the new value is known.
+    /// For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
+    pub fn evaluation(&self) -> std::option::Option<&crate::model::EvaluationType> {
+        self.evaluation.as_ref()
+    }
+    /// <p>The ID of the entity that caused the change.</p>
+    pub fn causing_entity(&self) -> std::option::Option<&str> {
+        self.causing_entity.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceChangeDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceChangeDetail");
@@ -7302,6 +8547,22 @@ pub struct ResourceTargetDefinition {
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
     /// causes the resource to be re-created.</p>
     pub requires_recreation: std::option::Option<crate::model::RequiresRecreation>,
+}
+impl ResourceTargetDefinition {
+    /// <p>The attribute to be changed.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::ResourceAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>If the attribute is <code>Properties</code>, the value is the name of the property.
+    /// Otherwise, the value is null.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
+    /// causes the resource to be re-created.</p>
+    pub fn requires_recreation(&self) -> std::option::Option<&crate::model::RequiresRecreation> {
+        self.requires_recreation.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceTargetDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7675,6 +8936,74 @@ pub struct ProvisionedProductPlanDetails {
     /// <p>The status message.</p>
     pub status_message: std::option::Option<std::string::String>,
 }
+impl ProvisionedProductPlanDetails {
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The path identifier of the product. This value is optional if the product
+    /// has a default path, and required if the product has more than one path.
+    /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+    pub fn path_id(&self) -> std::option::Option<&str> {
+        self.path_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The name of the plan.</p>
+    pub fn plan_name(&self) -> std::option::Option<&str> {
+        self.plan_name.as_deref()
+    }
+    /// <p>The plan identifier.</p>
+    pub fn plan_id(&self) -> std::option::Option<&str> {
+        self.plan_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn provision_product_id(&self) -> std::option::Option<&str> {
+        self.provision_product_id.as_deref()
+    }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn provision_product_name(&self) -> std::option::Option<&str> {
+        self.provision_product_name.as_deref()
+    }
+    /// <p>The plan type.</p>
+    pub fn plan_type(&self) -> std::option::Option<&crate::model::ProvisionedProductPlanType> {
+        self.plan_type.as_ref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedProductPlanStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time when the plan was last updated.</p>
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_time.as_ref()
+    }
+    /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+    /// events.</p>
+    pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_arns.as_deref()
+    }
+    /// <p>Parameters specified by the administrator that are required for provisioning the
+    /// product.</p>
+    pub fn provisioning_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateProvisioningParameter]> {
+        self.provisioning_parameters.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisionedProductPlanDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedProductPlanDetails");
@@ -8046,6 +9375,12 @@ pub struct CloudWatchDashboard {
     /// <p>The name of the CloudWatch dashboard.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CloudWatchDashboard {
+    /// <p>The name of the CloudWatch dashboard.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchDashboard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchDashboard");
@@ -8100,6 +9435,31 @@ pub struct ProvisioningArtifactSummary {
     /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
     pub provisioning_artifact_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ProvisioningArtifactSummary {
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the provisioning artifact.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
+    pub fn provisioning_artifact_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.provisioning_artifact_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for ProvisioningArtifactSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8226,6 +9586,16 @@ pub struct LaunchPath {
     /// <p>The name of the launch path.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl LaunchPath {
+    /// <p>The identifier of the launch path.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the launch path.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for LaunchPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchPath");
@@ -8288,6 +9658,16 @@ pub struct ShareDetails {
     pub successful_shares: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of errors.</p>
     pub share_errors: std::option::Option<std::vec::Vec<crate::model::ShareError>>,
+}
+impl ShareDetails {
+    /// <p>List of accounts for whom the operation succeeded.</p>
+    pub fn successful_shares(&self) -> std::option::Option<&[std::string::String]> {
+        self.successful_shares.as_deref()
+    }
+    /// <p>List of errors.</p>
+    pub fn share_errors(&self) -> std::option::Option<&[crate::model::ShareError]> {
+        self.share_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for ShareDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8371,6 +9751,20 @@ pub struct ShareError {
     pub message: std::option::Option<std::string::String>,
     /// <p>Error type that happened when processing the operation.</p>
     pub error: std::option::Option<std::string::String>,
+}
+impl ShareError {
+    /// <p>List of accounts impacted by the error.</p>
+    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.accounts.as_deref()
+    }
+    /// <p>Information about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Error type that happened when processing the operation.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
 }
 impl std::fmt::Debug for ShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8466,6 +9860,30 @@ pub struct PortfolioShareDetail {
     pub accepted: bool,
     /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
     pub share_tag_options: bool,
+}
+impl PortfolioShareDetail {
+    /// <p>The identifier of the recipient entity that received the portfolio share.
+    /// The recipient entities can be one of the following:
+    /// </p>
+    /// <p>1. An external account.</p>
+    /// <p>2. An organziation member account.</p>
+    /// <p>3. An organzational unit (OU).</p>
+    /// <p>4. The organization itself. (This shares with every account in the organization).</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The type of the portfolio share.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DescribePortfolioShareType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
+    pub fn accepted(&self) -> bool {
+        self.accepted
+    }
+    /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
+    pub fn share_tag_options(&self) -> bool {
+        self.share_tag_options
+    }
 }
 impl std::fmt::Debug for PortfolioShareDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8728,6 +10146,55 @@ pub struct ProvisioningArtifactProperties {
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
     pub disable_template_validation: bool,
+}
+impl ProvisioningArtifactProperties {
+    /// <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the provisioning artifact, including how it differs from the previous provisioning artifact.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specify the template source with one of the following options, but not both.
+    /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+    /// <p>
+    /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+    /// </p>
+    /// <p>
+    /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
+    /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
+    /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+    /// </p>
+    pub fn info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.info.as_ref()
+    }
+    /// <p>The type of provisioning artifact.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ProvisioningArtifactType> {
+        self.r#type.as_ref()
+    }
+    /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    pub fn disable_template_validation(&self) -> bool {
+        self.disable_template_validation
+    }
 }
 impl std::fmt::Debug for ProvisioningArtifactProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9010,6 +10477,30 @@ pub struct FailedServiceActionAssociation {
     /// <p>A text description of the error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl FailedServiceActionAssociation {
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+    /// <p>The error code. Valid values are listed below.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceActionAssociationErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A text description of the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for FailedServiceActionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailedServiceActionAssociation");
@@ -9201,6 +10692,20 @@ pub struct ServiceActionAssociation {
     pub product_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
+}
+impl ServiceActionAssociation {
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn service_action_id(&self) -> std::option::Option<&str> {
+        self.service_action_id.as_deref()
+    }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceActionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -10,6 +10,20 @@ pub struct SamplingRuleRecord {
     /// <p>When the rule was last modified.</p>
     pub modified_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl SamplingRuleRecord {
+    /// <p>The sampling rule.</p>
+    pub fn sampling_rule(&self) -> std::option::Option<&crate::model::SamplingRule> {
+        self.sampling_rule.as_ref()
+    }
+    /// <p>When the rule was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>When the rule was last modified.</p>
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_at.as_ref()
+    }
+}
 impl std::fmt::Debug for SamplingRuleRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SamplingRuleRecord");
@@ -121,6 +135,65 @@ pub struct SamplingRule {
     /// <p>Matches attributes derived from the request.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SamplingRule {
+    /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The priority of the sampling rule.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The percentage of matching requests to instrument, after the reservoir is
+    /// exhausted.</p>
+    pub fn fixed_rate(&self) -> f64 {
+        self.fixed_rate
+    }
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the
+    /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    pub fn reservoir_size(&self) -> i32 {
+        self.reservoir_size
+    }
+    /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
+    pub fn service_type(&self) -> std::option::Option<&str> {
+        self.service_type.as_deref()
+    }
+    /// <p>Matches the hostname from a request URL.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Matches the HTTP method of a request.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>Matches the path from a request URL.</p>
+    pub fn url_path(&self) -> std::option::Option<&str> {
+        self.url_path.as_deref()
+    }
+    /// <p>The version of the sampling rule format (<code>1</code>).</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
+    /// <p>Matches attributes derived from the request.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for SamplingRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +445,61 @@ pub struct SamplingRuleUpdate {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SamplingRuleUpdate {
+    /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
+    /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The priority of the sampling rule.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The percentage of matching requests to instrument, after the reservoir is
+    /// exhausted.</p>
+    pub fn fixed_rate(&self) -> std::option::Option<f64> {
+        self.fixed_rate
+    }
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the
+    /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    pub fn reservoir_size(&self) -> std::option::Option<i32> {
+        self.reservoir_size
+    }
+    /// <p>Matches the hostname from a request URL.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
+    pub fn service_type(&self) -> std::option::Option<&str> {
+        self.service_type.as_deref()
+    }
+    /// <p>Matches the HTTP method of a request.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>Matches the path from a request URL.</p>
+    pub fn url_path(&self) -> std::option::Option<&str> {
+        self.url_path.as_deref()
+    }
+    /// <p>Matches attributes derived from the request.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for SamplingRuleUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SamplingRuleUpdate");
@@ -600,6 +728,36 @@ pub struct Group {
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
+impl Group {
+    /// <p>The unique case-sensitive name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The filter expression defining the parameters to include traces.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
+    /// group or false to disable insights for the group.</p>
+    /// </li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights
+    /// notifications through Amazon EventBridge for the group.</p>
+    /// </li>
+    /// </ul>
+    pub fn insights_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InsightsConfiguration> {
+        self.insights_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
@@ -720,6 +878,18 @@ pub struct InsightsConfiguration {
     /// enabled on a group with InsightsEnabled set to true.</p>
     pub notifications_enabled: std::option::Option<bool>,
 }
+impl InsightsConfiguration {
+    /// <p>Set the InsightsEnabled value to true to enable insights or false to disable
+    /// insights.</p>
+    pub fn insights_enabled(&self) -> std::option::Option<bool> {
+        self.insights_enabled
+    }
+    /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
+    /// enabled on a group with InsightsEnabled set to true.</p>
+    pub fn notifications_enabled(&self) -> std::option::Option<bool> {
+        self.notifications_enabled
+    }
+}
 impl std::fmt::Debug for InsightsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsightsConfiguration");
@@ -808,6 +978,22 @@ pub struct Tag {
     /// </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The
+    /// key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators,
+    /// or the following special characters: <code>+ - = . _ : /</code>
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be
+    /// a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
+    /// special characters: <code>+ - = . _ : /</code>
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -884,6 +1070,20 @@ pub struct UnprocessedTraceSegment {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl UnprocessedTraceSegment {
+    /// <p>The segment's ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The error that caused processing to fail.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for UnprocessedTraceSegment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -968,6 +1168,34 @@ pub struct TelemetryRecord {
     pub segments_rejected_count: std::option::Option<i32>,
     /// <p></p>
     pub backend_connection_errors: std::option::Option<crate::model::BackendConnectionErrors>,
+}
+impl TelemetryRecord {
+    /// <p></p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p></p>
+    pub fn segments_received_count(&self) -> std::option::Option<i32> {
+        self.segments_received_count
+    }
+    /// <p></p>
+    pub fn segments_sent_count(&self) -> std::option::Option<i32> {
+        self.segments_sent_count
+    }
+    /// <p></p>
+    pub fn segments_spillover_count(&self) -> std::option::Option<i32> {
+        self.segments_spillover_count
+    }
+    /// <p></p>
+    pub fn segments_rejected_count(&self) -> std::option::Option<i32> {
+        self.segments_rejected_count
+    }
+    /// <p></p>
+    pub fn backend_connection_errors(
+        &self,
+    ) -> std::option::Option<&crate::model::BackendConnectionErrors> {
+        self.backend_connection_errors.as_ref()
+    }
 }
 impl std::fmt::Debug for TelemetryRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1102,6 +1330,32 @@ pub struct BackendConnectionErrors {
     /// <p></p>
     pub other_count: std::option::Option<i32>,
 }
+impl BackendConnectionErrors {
+    /// <p></p>
+    pub fn timeout_count(&self) -> std::option::Option<i32> {
+        self.timeout_count
+    }
+    /// <p></p>
+    pub fn connection_refused_count(&self) -> std::option::Option<i32> {
+        self.connection_refused_count
+    }
+    /// <p></p>
+    pub fn http_code4_xx_count(&self) -> std::option::Option<i32> {
+        self.http_code4_xx_count
+    }
+    /// <p></p>
+    pub fn http_code5_xx_count(&self) -> std::option::Option<i32> {
+        self.http_code5_xx_count
+    }
+    /// <p></p>
+    pub fn unknown_host_count(&self) -> std::option::Option<i32> {
+        self.unknown_host_count
+    }
+    /// <p></p>
+    pub fn other_count(&self) -> std::option::Option<i32> {
+        self.other_count
+    }
+}
 impl std::fmt::Debug for BackendConnectionErrors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackendConnectionErrors");
@@ -1219,6 +1473,21 @@ pub struct EncryptionConfig {
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
     /// default encryption.</p>
     pub r#type: std::option::Option<crate::model::EncryptionType>,
+}
+impl EncryptionConfig {
+    /// <p>The ID of the KMS key used for encryption, if applicable.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EncryptionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
+    /// default encryption.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1464,6 +1733,107 @@ pub struct TraceSummary {
     pub revision: i32,
     /// <p>The matched time stamp of a defined event.</p>
     pub matched_event_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TraceSummary {
+    /// <p>The unique identifier for the request that generated the trace's segments and
+    /// subsegments.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The length of time in seconds between the start time of the root segment and the end
+    /// time of the last segment that completed.</p>
+    pub fn duration(&self) -> std::option::Option<f64> {
+        self.duration
+    }
+    /// <p>The length of time in seconds between the start and end times of the root segment. If
+    /// the service performs work asynchronously, the response time measures the time before the
+    /// response is sent to the user, while the duration measures the amount of time before the last
+    /// traced activity completes.</p>
+    pub fn response_time(&self) -> std::option::Option<f64> {
+        self.response_time
+    }
+    /// <p>The root segment document has a 500 series error.</p>
+    pub fn has_fault(&self) -> std::option::Option<bool> {
+        self.has_fault
+    }
+    /// <p>The root segment document has a 400 series error.</p>
+    pub fn has_error(&self) -> std::option::Option<bool> {
+        self.has_error
+    }
+    /// <p>One or more of the segment documents has a 429 throttling error.</p>
+    pub fn has_throttle(&self) -> std::option::Option<bool> {
+        self.has_throttle
+    }
+    /// <p>One or more of the segment documents is in progress.</p>
+    pub fn is_partial(&self) -> std::option::Option<bool> {
+        self.is_partial
+    }
+    /// <p>Information about the HTTP request served by the trace.</p>
+    pub fn http(&self) -> std::option::Option<&crate::model::Http> {
+        self.http.as_ref()
+    }
+    /// <p>Annotations from the trace's segment documents.</p>
+    pub fn annotations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::ValueWithServiceIds>,
+        >,
+    > {
+        self.annotations.as_ref()
+    }
+    /// <p>Users from the trace's segment documents.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::TraceUser]> {
+        self.users.as_deref()
+    }
+    /// <p>Service IDs from the trace's segment documents.</p>
+    pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
+        self.service_ids.as_deref()
+    }
+    /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
+    pub fn resource_ar_ns(&self) -> std::option::Option<&[crate::model::ResourceArnDetail]> {
+        self.resource_ar_ns.as_deref()
+    }
+    /// <p>A list of EC2 instance IDs for any instance corresponding to the trace
+    /// segments.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[crate::model::InstanceIdDetail]> {
+        self.instance_ids.as_deref()
+    }
+    /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
+    pub fn availability_zones(
+        &self,
+    ) -> std::option::Option<&[crate::model::AvailabilityZoneDetail]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The root of a trace.</p>
+    pub fn entry_point(&self) -> std::option::Option<&crate::model::ServiceId> {
+        self.entry_point.as_ref()
+    }
+    /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
+    pub fn fault_root_causes(&self) -> std::option::Option<&[crate::model::FaultRootCause]> {
+        self.fault_root_causes.as_deref()
+    }
+    /// <p>A collection of ErrorRootCause structures corresponding to the trace
+    /// segments.</p>
+    pub fn error_root_causes(&self) -> std::option::Option<&[crate::model::ErrorRootCause]> {
+        self.error_root_causes.as_deref()
+    }
+    /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+    /// segments.</p>
+    pub fn response_time_root_causes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResponseTimeRootCause]> {
+        self.response_time_root_causes.as_deref()
+    }
+    /// <p>The revision number of a trace.</p>
+    pub fn revision(&self) -> i32 {
+        self.revision
+    }
+    /// <p>The matched time stamp of a defined event.</p>
+    pub fn matched_event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.matched_event_time.as_ref()
+    }
 }
 impl std::fmt::Debug for TraceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1891,6 +2261,17 @@ pub struct ResponseTimeRootCause {
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub client_impacting: std::option::Option<bool>,
 }
+impl ResponseTimeRootCause {
+    /// <p>A list of corresponding services. A service identifies a segment and contains a name,
+    /// account ID, type, and inferred flag.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::ResponseTimeRootCauseService]> {
+        self.services.as_deref()
+    }
+    /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    pub fn client_impacting(&self) -> std::option::Option<bool> {
+        self.client_impacting
+    }
+}
 impl std::fmt::Debug for ResponseTimeRootCause {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResponseTimeRootCause");
@@ -1976,6 +2357,32 @@ pub struct ResponseTimeRootCauseService {
     pub entity_path: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub inferred: std::option::Option<bool>,
+}
+impl ResponseTimeRootCauseService {
+    /// <p>The service name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A collection of associated service names.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The type associated to the service.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The account ID associated to the service.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The path of root cause entities found on the service. </p>
+    pub fn entity_path(&self) -> std::option::Option<&[crate::model::ResponseTimeRootCauseEntity]> {
+        self.entity_path.as_deref()
+    }
+    /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    pub fn inferred(&self) -> std::option::Option<bool> {
+        self.inferred
+    }
 }
 impl std::fmt::Debug for ResponseTimeRootCauseService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2117,6 +2524,20 @@ pub struct ResponseTimeRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub remote: std::option::Option<bool>,
 }
+impl ResponseTimeRootCauseEntity {
+    /// <p>The name of the entity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type and messages of the exceptions.</p>
+    pub fn coverage(&self) -> std::option::Option<f64> {
+        self.coverage
+    }
+    /// <p>A flag that denotes a remote subsegment.</p>
+    pub fn remote(&self) -> std::option::Option<bool> {
+        self.remote
+    }
+}
 impl std::fmt::Debug for ResponseTimeRootCauseEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResponseTimeRootCauseEntity");
@@ -2193,6 +2614,17 @@ pub struct ErrorRootCause {
     pub services: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub client_impacting: std::option::Option<bool>,
+}
+impl ErrorRootCause {
+    /// <p>A list of services corresponding to an error. A service identifies a segment and it
+    /// contains a name, account ID, type, and inferred flag.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::ErrorRootCauseService]> {
+        self.services.as_deref()
+    }
+    /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    pub fn client_impacting(&self) -> std::option::Option<bool> {
+        self.client_impacting
+    }
 }
 impl std::fmt::Debug for ErrorRootCause {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2276,6 +2708,32 @@ pub struct ErrorRootCauseService {
     pub entity_path: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub inferred: std::option::Option<bool>,
+}
+impl ErrorRootCauseService {
+    /// <p>The service name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A collection of associated service names.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The type associated to the service.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The account ID associated to the service.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The path of root cause entities found on the service. </p>
+    pub fn entity_path(&self) -> std::option::Option<&[crate::model::ErrorRootCauseEntity]> {
+        self.entity_path.as_deref()
+    }
+    /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    pub fn inferred(&self) -> std::option::Option<bool> {
+        self.inferred
+    }
 }
 impl std::fmt::Debug for ErrorRootCauseService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2414,6 +2872,20 @@ pub struct ErrorRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub remote: std::option::Option<bool>,
 }
+impl ErrorRootCauseEntity {
+    /// <p>The name of the entity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The types and messages of the exceptions.</p>
+    pub fn exceptions(&self) -> std::option::Option<&[crate::model::RootCauseException]> {
+        self.exceptions.as_deref()
+    }
+    /// <p>A flag that denotes a remote subsegment.</p>
+    pub fn remote(&self) -> std::option::Option<bool> {
+        self.remote
+    }
+}
 impl std::fmt::Debug for ErrorRootCauseEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorRootCauseEntity");
@@ -2499,6 +2971,16 @@ pub struct RootCauseException {
     /// <p>The message of the exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl RootCauseException {
+    /// <p>The name of the exception.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The message of the exception.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for RootCauseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RootCauseException");
@@ -2562,6 +3044,17 @@ pub struct FaultRootCause {
     pub services: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub client_impacting: std::option::Option<bool>,
+}
+impl FaultRootCause {
+    /// <p>A list of corresponding services. A service identifies a segment and it contains a
+    /// name, account ID, type, and inferred flag.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::FaultRootCauseService]> {
+        self.services.as_deref()
+    }
+    /// <p>A flag that denotes that the root cause impacts the trace client.</p>
+    pub fn client_impacting(&self) -> std::option::Option<bool> {
+        self.client_impacting
+    }
 }
 impl std::fmt::Debug for FaultRootCause {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2645,6 +3138,32 @@ pub struct FaultRootCauseService {
     pub entity_path: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub inferred: std::option::Option<bool>,
+}
+impl FaultRootCauseService {
+    /// <p>The service name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A collection of associated service names.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The type associated to the service.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The account ID associated to the service.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The path of root cause entities found on the service. </p>
+    pub fn entity_path(&self) -> std::option::Option<&[crate::model::FaultRootCauseEntity]> {
+        self.entity_path.as_deref()
+    }
+    /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    pub fn inferred(&self) -> std::option::Option<bool> {
+        self.inferred
+    }
 }
 impl std::fmt::Debug for FaultRootCauseService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2783,6 +3302,20 @@ pub struct FaultRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub remote: std::option::Option<bool>,
 }
+impl FaultRootCauseEntity {
+    /// <p>The name of the entity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The types and messages of the exceptions.</p>
+    pub fn exceptions(&self) -> std::option::Option<&[crate::model::RootCauseException]> {
+        self.exceptions.as_deref()
+    }
+    /// <p>A flag that denotes a remote subsegment.</p>
+    pub fn remote(&self) -> std::option::Option<bool> {
+        self.remote
+    }
+}
 impl std::fmt::Debug for FaultRootCauseEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FaultRootCauseEntity");
@@ -2871,6 +3404,24 @@ pub struct ServiceId {
     pub account_id: std::option::Option<std::string::String>,
     /// <p></p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl ServiceId {
+    /// <p></p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p></p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p></p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2968,6 +3519,12 @@ pub struct AvailabilityZoneDetail {
     /// <p>The name of a corresponding Availability Zone.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl AvailabilityZoneDetail {
+    /// <p>The name of a corresponding Availability Zone.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZoneDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZoneDetail");
@@ -3014,6 +3571,12 @@ pub struct InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl InstanceIdDetail {
+    /// <p>The ID of a corresponding EC2 instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceIdDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceIdDetail");
@@ -3059,6 +3622,12 @@ impl InstanceIdDetail {
 pub struct ResourceArnDetail {
     /// <p>The ARN of a corresponding resource.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ResourceArnDetail {
+    /// <p>The ARN of a corresponding resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceArnDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3107,6 +3676,16 @@ pub struct TraceUser {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>Services that the user's request hit.</p>
     pub service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
+}
+impl TraceUser {
+    /// <p>The user's name.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Services that the user's request hit.</p>
+    pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
+        self.service_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for TraceUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3179,6 +3758,16 @@ pub struct ValueWithServiceIds {
     pub annotation_value: std::option::Option<crate::model::AnnotationValue>,
     /// <p>Services to which the annotation applies.</p>
     pub service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
+}
+impl ValueWithServiceIds {
+    /// <p>Values of the annotation.</p>
+    pub fn annotation_value(&self) -> std::option::Option<&crate::model::AnnotationValue> {
+        self.annotation_value.as_ref()
+    }
+    /// <p>Services to which the annotation applies.</p>
+    pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
+        self.service_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ValueWithServiceIds {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3256,6 +3845,15 @@ pub enum AnnotationValue {
     NumberValue(f64),
     /// <p>Value for a String annotation.</p>
     StringValue(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AnnotationValue {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::AnnotationValue::BooleanValue), extracting the inner [`bool`](bool).
@@ -3297,6 +3895,10 @@ impl AnnotationValue {
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Information about an HTTP request.</p>
@@ -3313,6 +3915,28 @@ pub struct Http {
     pub user_agent: std::option::Option<std::string::String>,
     /// <p>The IP address of the requestor.</p>
     pub client_ip: std::option::Option<std::string::String>,
+}
+impl Http {
+    /// <p>The request URL.</p>
+    pub fn http_url(&self) -> std::option::Option<&str> {
+        self.http_url.as_deref()
+    }
+    /// <p>The response status.</p>
+    pub fn http_status(&self) -> std::option::Option<i32> {
+        self.http_status
+    }
+    /// <p>The request method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>The request's user agent string.</p>
+    pub fn user_agent(&self) -> std::option::Option<&str> {
+        self.user_agent.as_deref()
+    }
+    /// <p>The IP address of the requestor.</p>
+    pub fn client_ip(&self) -> std::option::Option<&str> {
+        self.client_ip.as_deref()
+    }
 }
 impl std::fmt::Debug for Http {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3415,6 +4039,16 @@ pub struct SamplingStrategy {
     pub name: std::option::Option<crate::model::SamplingStrategyName>,
     /// <p>The value of a sampling rule.</p>
     pub value: std::option::Option<f64>,
+}
+impl SamplingStrategy {
+    /// <p>The name of a sampling rule.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SamplingStrategyName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of a sampling rule.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
 }
 impl std::fmt::Debug for SamplingStrategy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3634,6 +4268,80 @@ pub struct Service {
     pub duration_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     /// <p>A histogram that maps the spread of service response times.</p>
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+}
+impl Service {
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    pub fn reference_id(&self) -> std::option::Option<i32> {
+        self.reference_id
+    }
+    /// <p>The canonical name of the service.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of names for the service, including the canonical name.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>Indicates that the service was the first service to process a request.</p>
+    pub fn root(&self) -> std::option::Option<bool> {
+        self.root
+    }
+    /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The type of service.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an
+    /// application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
+    /// application used.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code>
+    /// for downstream calls to Amazon DynamoDB that didn't target a specific table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>client</code> - Represents the clients that sent requests to a root
+    /// service.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>remote</code> - A downstream service of indeterminate type.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The service's state.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The start time of the first segment that the service generated.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the last segment that the service generated.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Connections to downstream services.</p>
+    pub fn edges(&self) -> std::option::Option<&[crate::model::Edge]> {
+        self.edges.as_deref()
+    }
+    /// <p>Aggregated statistics for the service.</p>
+    pub fn summary_statistics(&self) -> std::option::Option<&crate::model::ServiceStatistics> {
+        self.summary_statistics.as_ref()
+    }
+    /// <p>A histogram that maps the spread of service durations.</p>
+    pub fn duration_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+        self.duration_histogram.as_deref()
+    }
+    /// <p>A histogram that maps the spread of service response times.</p>
+    pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+        self.response_time_histogram.as_deref()
+    }
 }
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3935,6 +4643,16 @@ pub struct HistogramEntry {
     /// <p>The prevalence of the entry.</p>
     pub count: i32,
 }
+impl HistogramEntry {
+    /// <p>The value of the entry.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+    /// <p>The prevalence of the entry.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+}
 impl std::fmt::Debug for HistogramEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HistogramEntry");
@@ -4003,6 +4721,28 @@ pub struct ServiceStatistics {
     pub total_count: std::option::Option<i64>,
     /// <p>The aggregate response time of completed requests.</p>
     pub total_response_time: std::option::Option<f64>,
+}
+impl ServiceStatistics {
+    /// <p>The number of requests that completed with a 2xx Success status code.</p>
+    pub fn ok_count(&self) -> std::option::Option<i64> {
+        self.ok_count
+    }
+    /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
+    pub fn error_statistics(&self) -> std::option::Option<&crate::model::ErrorStatistics> {
+        self.error_statistics.as_ref()
+    }
+    /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
+    pub fn fault_statistics(&self) -> std::option::Option<&crate::model::FaultStatistics> {
+        self.fault_statistics.as_ref()
+    }
+    /// <p>The total number of completed requests.</p>
+    pub fn total_count(&self) -> std::option::Option<i64> {
+        self.total_count
+    }
+    /// <p>The aggregate response time of completed requests.</p>
+    pub fn total_response_time(&self) -> std::option::Option<f64> {
+        self.total_response_time
+    }
 }
 impl std::fmt::Debug for ServiceStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4113,6 +4853,17 @@ pub struct FaultStatistics {
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub total_count: std::option::Option<i64>,
 }
+impl FaultStatistics {
+    /// <p>The number of requests that failed with untracked 5xx Server Error status
+    /// codes.</p>
+    pub fn other_count(&self) -> std::option::Option<i64> {
+        self.other_count
+    }
+    /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
+    pub fn total_count(&self) -> std::option::Option<i64> {
+        self.total_count
+    }
+}
 impl std::fmt::Debug for FaultStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FaultStatistics");
@@ -4180,6 +4931,21 @@ pub struct ErrorStatistics {
     pub other_count: std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
     pub total_count: std::option::Option<i64>,
+}
+impl ErrorStatistics {
+    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    pub fn throttle_count(&self) -> std::option::Option<i64> {
+        self.throttle_count
+    }
+    /// <p>The number of requests that failed with untracked 4xx Client Error status
+    /// codes.</p>
+    pub fn other_count(&self) -> std::option::Option<i64> {
+        self.other_count
+    }
+    /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
+    pub fn total_count(&self) -> std::option::Option<i64> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for ErrorStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4266,6 +5032,32 @@ pub struct Edge {
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     /// <p>Aliases for the edge.</p>
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
+}
+impl Edge {
+    /// <p>Identifier of the edge. Unique within a service map.</p>
+    pub fn reference_id(&self) -> std::option::Option<i32> {
+        self.reference_id
+    }
+    /// <p>The start time of the first segment on the edge.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the last segment on the edge.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Response statistics for segments on the edge.</p>
+    pub fn summary_statistics(&self) -> std::option::Option<&crate::model::EdgeStatistics> {
+        self.summary_statistics.as_ref()
+    }
+    /// <p>A histogram that maps the spread of client response times on an edge.</p>
+    pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+        self.response_time_histogram.as_deref()
+    }
+    /// <p>Aliases for the edge.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+        self.aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for Edge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4415,6 +5207,20 @@ pub struct Alias {
     /// <p>The type of the alias.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl Alias {
+    /// <p>The canonical name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of names for the alias, including the canonical name.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>The type of the alias.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for Alias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Alias");
@@ -4505,6 +5311,28 @@ pub struct EdgeStatistics {
     pub total_count: std::option::Option<i64>,
     /// <p>The aggregate response time of completed requests.</p>
     pub total_response_time: std::option::Option<f64>,
+}
+impl EdgeStatistics {
+    /// <p>The number of requests that completed with a 2xx Success status code.</p>
+    pub fn ok_count(&self) -> std::option::Option<i64> {
+        self.ok_count
+    }
+    /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
+    pub fn error_statistics(&self) -> std::option::Option<&crate::model::ErrorStatistics> {
+        self.error_statistics.as_ref()
+    }
+    /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
+    pub fn fault_statistics(&self) -> std::option::Option<&crate::model::FaultStatistics> {
+        self.fault_statistics.as_ref()
+    }
+    /// <p>The total number of completed requests.</p>
+    pub fn total_count(&self) -> std::option::Option<i64> {
+        self.total_count
+    }
+    /// <p>The aggregate response time of completed requests.</p>
+    pub fn total_response_time(&self) -> std::option::Option<f64> {
+        self.total_response_time
+    }
 }
 impl std::fmt::Debug for EdgeStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4619,6 +5447,32 @@ pub struct TimeSeriesServiceStatistics {
     pub service_forecast_statistics: std::option::Option<crate::model::ForecastStatistics>,
     /// <p>The response time histogram for the selected entities.</p>
     pub response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+}
+impl TimeSeriesServiceStatistics {
+    /// <p>Timestamp of the window for which statistics are aggregated.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>Response statistics for an edge.</p>
+    pub fn edge_summary_statistics(&self) -> std::option::Option<&crate::model::EdgeStatistics> {
+        self.edge_summary_statistics.as_ref()
+    }
+    /// <p>Response statistics for a service.</p>
+    pub fn service_summary_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceStatistics> {
+        self.service_summary_statistics.as_ref()
+    }
+    /// <p>The forecasted high and low fault count values.</p>
+    pub fn service_forecast_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::ForecastStatistics> {
+        self.service_forecast_statistics.as_ref()
+    }
+    /// <p>The response time histogram for the selected entities.</p>
+    pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+        self.response_time_histogram.as_deref()
+    }
 }
 impl std::fmt::Debug for TimeSeriesServiceStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4761,6 +5615,16 @@ pub struct ForecastStatistics {
     /// <p>The lower limit of fault counts for a service.</p>
     pub fault_count_low: std::option::Option<i64>,
 }
+impl ForecastStatistics {
+    /// <p>The upper limit of fault counts for a service.</p>
+    pub fn fault_count_high(&self) -> std::option::Option<i64> {
+        self.fault_count_high
+    }
+    /// <p>The lower limit of fault counts for a service.</p>
+    pub fn fault_count_low(&self) -> std::option::Option<i64> {
+        self.fault_count_low
+    }
+}
 impl std::fmt::Debug for ForecastStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForecastStatistics");
@@ -4826,6 +5690,20 @@ pub struct UnprocessedStatistics {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl UnprocessedStatistics {
+    /// <p>The name of the sampling rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for UnprocessedStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4912,6 +5790,30 @@ pub struct SamplingTargetDocument {
     /// <p>The number of seconds for the service to wait before getting sampling targets
     /// again.</p>
     pub interval: std::option::Option<i32>,
+}
+impl SamplingTargetDocument {
+    /// <p>The name of the sampling rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The percentage of matching requests to instrument, after the reservoir is
+    /// exhausted.</p>
+    pub fn fixed_rate(&self) -> f64 {
+        self.fixed_rate
+    }
+    /// <p>The number of requests per second that X-Ray allocated for this service.</p>
+    pub fn reservoir_quota(&self) -> std::option::Option<i32> {
+        self.reservoir_quota
+    }
+    /// <p>When the reservoir quota expires.</p>
+    pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.reservoir_quota_ttl.as_ref()
+    }
+    /// <p>The number of seconds for the service to wait before getting sampling targets
+    /// again.</p>
+    pub fn interval(&self) -> std::option::Option<i32> {
+        self.interval
+    }
 }
 impl std::fmt::Debug for SamplingTargetDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5031,6 +5933,32 @@ pub struct SamplingStatisticsDocument {
     pub sampled_count: i32,
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub borrow_count: i32,
+}
+impl SamplingStatisticsDocument {
+    /// <p>The name of the sampling rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>A unique identifier for the service in hexadecimal.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The current time.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The number of requests that matched the rule.</p>
+    pub fn request_count(&self) -> i32 {
+        self.request_count
+    }
+    /// <p>The number of requests recorded.</p>
+    pub fn sampled_count(&self) -> i32 {
+        self.sampled_count
+    }
+    /// <p>The number of requests recorded with borrowed reservoir quota.</p>
+    pub fn borrow_count(&self) -> i32 {
+        self.borrow_count
+    }
 }
 impl std::fmt::Debug for SamplingStatisticsDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5155,6 +6083,28 @@ pub struct SamplingStatisticSummary {
     pub borrow_count: i32,
     /// <p>The number of requests recorded.</p>
     pub sampled_count: i32,
+}
+impl SamplingStatisticSummary {
+    /// <p>The name of the sampling rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The start time of the reporting window.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The number of requests that matched the rule.</p>
+    pub fn request_count(&self) -> i32 {
+        self.request_count
+    }
+    /// <p>The number of requests recorded with borrowed reservoir quota.</p>
+    pub fn borrow_count(&self) -> i32 {
+        self.borrow_count
+    }
+    /// <p>The number of requests recorded.</p>
+    pub fn sampled_count(&self) -> i32 {
+        self.sampled_count
+    }
 }
 impl std::fmt::Debug for SamplingStatisticSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5286,6 +6236,66 @@ pub struct InsightSummary {
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl InsightSummary {
+    /// <p>The insights unique identifier. </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The name of the group  that the insight belongs to.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p></p>
+    pub fn root_cause_service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
+        self.root_cause_service_id.as_ref()
+    }
+    /// <p> Categories The categories that label and describe the type of insight.</p>
+    pub fn categories(&self) -> std::option::Option<&[crate::model::InsightCategory]> {
+        self.categories.as_deref()
+    }
+    /// <p>The current state of the insight.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::InsightState> {
+        self.state.as_ref()
+    }
+    /// <p>The time, in Unix seconds, at which the insight began.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time, in Unix seconds, at which the insight ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A brief description of the insight.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The impact statistics of the client side service. This includes the number of requests
+    /// to the client service and whether the requests were faults or okay. </p>
+    pub fn client_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+        self.client_request_impact_statistics.as_ref()
+    }
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to
+    /// the client service and whether the requests were faults or okay. </p>
+    pub fn root_cause_service_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+        self.root_cause_service_request_impact_statistics.as_ref()
+    }
+    /// <p>The service within the insight that is most impacted by the incident.</p>
+    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
+        self.top_anomalous_services.as_deref()
+    }
+    /// <p>The time, in Unix seconds, that the insight was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for InsightSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5550,6 +6560,12 @@ pub struct AnomalousService {
     /// <p></p>
     pub service_id: std::option::Option<crate::model::ServiceId>,
 }
+impl AnomalousService {
+    /// <p></p>
+    pub fn service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
+        self.service_id.as_ref()
+    }
+}
 impl std::fmt::Debug for AnomalousService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnomalousService");
@@ -5604,6 +6620,20 @@ pub struct RequestImpactStatistics {
     pub ok_count: std::option::Option<i64>,
     /// <p>The total number of requests to the service.</p>
     pub total_count: std::option::Option<i64>,
+}
+impl RequestImpactStatistics {
+    /// <p>The number of requests that have resulted in a fault,</p>
+    pub fn fault_count(&self) -> std::option::Option<i64> {
+        self.fault_count
+    }
+    /// <p>The number of successful requests.</p>
+    pub fn ok_count(&self) -> std::option::Option<i64> {
+        self.ok_count
+    }
+    /// <p>The total number of requests to the service.</p>
+    pub fn total_count(&self) -> std::option::Option<i64> {
+        self.total_count
+    }
 }
 impl std::fmt::Debug for RequestImpactStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5813,6 +6843,49 @@ pub struct InsightImpactGraphService {
     /// <p>Connections to downstream services.</p>
     pub edges: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphEdge>>,
 }
+impl InsightImpactGraphService {
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    pub fn reference_id(&self) -> std::option::Option<i32> {
+        self.reference_id
+    }
+    /// <p>Identifier for the service. Unique within the service map.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running
+    /// on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
+    /// DynamoDB that didn't target a specific table. </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
+    /// DynamoDB that didn't target a specific table. </p>
+    /// </li>
+    /// <li>
+    /// <p>remote - A downstream service of indeterminate type.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The canonical name of the service.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of names for the service, including the canonical name.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+    /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Connections to downstream services.</p>
+    pub fn edges(&self) -> std::option::Option<&[crate::model::InsightImpactGraphEdge]> {
+        self.edges.as_deref()
+    }
+}
 impl std::fmt::Debug for InsightImpactGraphService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsightImpactGraphService");
@@ -5978,6 +7051,12 @@ pub struct InsightImpactGraphEdge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub reference_id: std::option::Option<i32>,
 }
+impl InsightImpactGraphEdge {
+    /// <p>Identifier of the edge. Unique within a service map.</p>
+    pub fn reference_id(&self) -> std::option::Option<i32> {
+        self.reference_id
+    }
+}
 impl std::fmt::Debug for InsightImpactGraphEdge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsightImpactGraphEdge");
@@ -6038,6 +7117,34 @@ pub struct InsightEvent {
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
+}
+impl InsightEvent {
+    /// <p>A brief description of the event.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The time, in Unix seconds, at which the event was recorded.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
+    /// and whether the requests were faults or okay.</p>
+    pub fn client_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+        self.client_request_impact_statistics.as_ref()
+    }
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
+    /// and whether the requests were faults or okay.</p>
+    pub fn root_cause_service_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+        self.root_cause_service_request_impact_statistics.as_ref()
+    }
+    /// <p>The service during the event that is most impacted by the incident.</p>
+    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
+        self.top_anomalous_services.as_deref()
+    }
 }
 impl std::fmt::Debug for InsightEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6206,6 +7313,62 @@ pub struct Insight {
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
+}
+impl Insight {
+    /// <p>The insights unique identifier. </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The name of the group  that the insight belongs to.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p></p>
+    pub fn root_cause_service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
+        self.root_cause_service_id.as_ref()
+    }
+    /// <p>The categories that label and describe the type of insight.</p>
+    pub fn categories(&self) -> std::option::Option<&[crate::model::InsightCategory]> {
+        self.categories.as_deref()
+    }
+    /// <p>The current state of the insight.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::InsightState> {
+        self.state.as_ref()
+    }
+    /// <p>The time, in Unix seconds, at which the insight began.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time, in Unix seconds, at which the insight ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A brief description of the insight.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
+    /// and whether the requests were faults or okay.</p>
+    pub fn client_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+        self.client_request_impact_statistics.as_ref()
+    }
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
+    /// and whether the requests were faults or okay.</p>
+    pub fn root_cause_service_request_impact_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+        self.root_cause_service_request_impact_statistics.as_ref()
+    }
+    /// <p>The service within the insight that is most impacted by the incident.</p>
+    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
+        self.top_anomalous_services.as_deref()
+    }
 }
 impl std::fmt::Debug for Insight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6470,6 +7633,36 @@ pub struct GroupSummary {
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
+impl GroupSummary {
+    /// <p>The unique case-sensitive name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ARN of the group generated based on the GroupName.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The filter expression defining the parameters to include traces.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
+    /// group or false to disable insights for the group.</p>
+    /// </li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications.
+    /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
+    /// </li>
+    /// </ul>
+    pub fn insights_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InsightsConfiguration> {
+        self.insights_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupSummary");
@@ -6595,6 +7788,27 @@ pub struct Trace {
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
     pub segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
 }
+impl Trace {
+    /// <p>The unique identifier for the request that generated the trace's segments and
+    /// subsegments.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The length of time in seconds between the start time of the root segment and the end
+    /// time of the last segment that completed.</p>
+    pub fn duration(&self) -> std::option::Option<f64> {
+        self.duration
+    }
+    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For
+    /// more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    pub fn limit_exceeded(&self) -> std::option::Option<bool> {
+        self.limit_exceeded
+    }
+    /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
+    pub fn segments(&self) -> std::option::Option<&[crate::model::Segment]> {
+        self.segments.as_deref()
+    }
+}
 impl std::fmt::Debug for Trace {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Trace");
@@ -6703,6 +7917,16 @@ pub struct Segment {
     pub id: std::option::Option<std::string::String>,
     /// <p>The segment document.</p>
     pub document: std::option::Option<std::string::String>,
+}
+impl Segment {
+    /// <p>The segment's ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The segment document.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
 }
 impl std::fmt::Debug for Segment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

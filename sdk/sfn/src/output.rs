@@ -6,6 +6,12 @@ pub struct UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
     pub update_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateStateMachineOutput {
+    /// <p>The date and time the state machine was updated.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStateMachineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStateMachineOutput");
@@ -117,6 +123,12 @@ pub struct StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
     pub stop_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StopExecutionOutput {
+    /// <p>The date the execution is stopped.</p>
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_date.as_ref()
+    }
+}
 impl std::fmt::Debug for StopExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopExecutionOutput");
@@ -198,6 +210,73 @@ pub struct StartSyncExecutionOutput {
     /// <p>An object that describes workflow billing details, including billed duration
     /// and memory use.</p>
     pub billing_details: std::option::Option<crate::model::BillingDetails>,
+}
+impl StartSyncExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the execution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date the execution is started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_date.as_ref()
+    }
+    /// <p>The current status of the execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SyncExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The error code of the failure.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn cause(&self) -> std::option::Option<&str> {
+        self.cause.as_deref()
+    }
+    /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Provides details about execution input or output.</p>
+    pub fn input_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+        self.input_details.as_ref()
+    }
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    /// <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
+    /// null.</p>
+    /// </note>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Provides details about execution input or output.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
+    /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    pub fn trace_header(&self) -> std::option::Option<&str> {
+        self.trace_header.as_deref()
+    }
+    /// <p>An object that describes workflow billing details, including billed duration
+    /// and memory use.</p>
+    pub fn billing_details(&self) -> std::option::Option<&crate::model::BillingDetails> {
+        self.billing_details.as_ref()
+    }
 }
 impl std::fmt::Debug for StartSyncExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -460,6 +539,16 @@ pub struct StartExecutionOutput {
     /// <p>The date the execution is started.</p>
     pub start_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StartExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The date the execution is started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+}
 impl std::fmt::Debug for StartExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExecutionOutput");
@@ -617,6 +706,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>An array of tags associated with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>An array of tags associated with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -674,6 +769,17 @@ pub struct ListStateMachinesOutput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStateMachinesOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn state_machines(&self) -> std::option::Option<&[crate::model::StateMachineListItem]> {
+        self.state_machines.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStateMachinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -753,6 +859,17 @@ pub struct ListExecutionsOutput {
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExecutionsOutput {
+    /// <p>The list of matching executions.</p>
+    pub fn executions(&self) -> std::option::Option<&[crate::model::ExecutionListItem]> {
+        self.executions.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExecutionsOutput");
@@ -828,6 +945,17 @@ pub struct ListActivitiesOutput {
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListActivitiesOutput {
+    /// <p>The list of activities.</p>
+    pub fn activities(&self) -> std::option::Option<&[crate::model::ActivityListItem]> {
+        self.activities.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListActivitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActivitiesOutput");
@@ -902,6 +1030,17 @@ pub struct GetExecutionHistoryOutput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetExecutionHistoryOutput {
+    /// <p>The list of events that occurred in the execution.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::HistoryEvent]> {
+        self.events.as_deref()
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
+    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExecutionHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -979,6 +1118,19 @@ pub struct GetActivityTaskOutput {
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: std::option::Option<std::string::String>,
+}
+impl GetActivityTaskOutput {
+    /// <p>A token that identifies the scheduled task. This token must be copied and included in
+    /// subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or
+    /// <a>SendTaskFailure</a> in order to report the progress or completion of the
+    /// task.</p>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
 }
 impl std::fmt::Debug for GetActivityTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1060,6 +1212,42 @@ pub struct DescribeStateMachineForExecutionOutput {
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
+}
+impl DescribeStateMachineForExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the state machine associated with the execution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The date and time the state machine associated with an execution was updated. For a newly
+    /// created state machine, this is the creation date.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
+    /// options.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TracingConfiguration> {
+        self.tracing_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1243,6 +1431,73 @@ pub struct DescribeStateMachineOutput {
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
+}
+impl DescribeStateMachineOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the state machine.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the state machine.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StateMachineStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
+    /// maintains security by granting Step Functions access to AWS resources.)</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or
+    /// <code>EXPRESS</code>).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StateMachineType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The date the state machine is created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
+    /// options.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TracingConfiguration> {
+        self.tracing_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStateMachineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1509,6 +1764,82 @@ pub struct DescribeExecutionOutput {
     pub output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
     /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
     pub trace_header: std::option::Option<std::string::String>,
+}
+impl DescribeExecutionOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
+        self.execution_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The name of the execution.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date the execution is started.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>If the execution has already ended, the date the execution stopped.</p>
+    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_date.as_ref()
+    }
+    /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>Provides details about execution input or output.</p>
+    pub fn input_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+        self.input_details.as_ref()
+    }
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    /// <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
+    /// null.</p>
+    /// </note>
+    pub fn output(&self) -> std::option::Option<&str> {
+        self.output.as_deref()
+    }
+    /// <p>Provides details about execution input or output.</p>
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+        self.output_details.as_ref()
+    }
+    /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
+    pub fn trace_header(&self) -> std::option::Option<&str> {
+        self.trace_header.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1795,6 +2126,42 @@ pub struct DescribeActivityOutput {
     /// <p>The date the activity is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeActivityOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
+    pub fn activity_arn(&self) -> std::option::Option<&str> {
+        self.activity_arn.as_deref()
+    }
+    /// <p>The name of the activity.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li>
+    /// <p>white space</p>
+    /// </li>
+    /// <li>
+    /// <p>brackets <code>< > { } [ ]</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date the activity is created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeActivityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActivityOutput");
@@ -1978,6 +2345,16 @@ pub struct CreateStateMachineOutput {
     /// <p>The date the state machine is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateStateMachineOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+        self.state_machine_arn.as_deref()
+    }
+    /// <p>The date the state machine is created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStateMachineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStateMachineOutput");
@@ -2046,6 +2423,16 @@ pub struct CreateActivityOutput {
     pub activity_arn: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateActivityOutput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
+    pub fn activity_arn(&self) -> std::option::Option<&str> {
+        self.activity_arn.as_deref()
+    }
+    /// <p>The date the activity is created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateActivityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

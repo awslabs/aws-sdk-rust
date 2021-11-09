@@ -6,6 +6,12 @@ pub struct UpdateWorkflowOutput {
     /// <p>The name of the workflow which was specified in input.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateWorkflowOutput {
+    /// <p>The name of the workflow which was specified in input.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkflowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowOutput");
@@ -81,6 +87,12 @@ impl UpdateUserDefinedFunctionOutput {
 pub struct UpdateTriggerOutput {
     /// <p>The resulting trigger definition.</p>
     pub trigger: std::option::Option<crate::model::Trigger>,
+}
+impl UpdateTriggerOutput {
+    /// <p>The resulting trigger definition.</p>
+    pub fn trigger(&self) -> std::option::Option<&crate::model::Trigger> {
+        self.trigger.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTriggerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -164,6 +176,20 @@ pub struct UpdateSchemaOutput {
     /// <p>The name of the registry that contains the schema.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl UpdateSchemaOutput {
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The name of the registry that contains the schema.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSchemaOutput");
@@ -242,6 +268,16 @@ pub struct UpdateRegistryOutput {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource name (ARN) of the updated registry.</p>
     pub registry_arn: std::option::Option<std::string::String>,
+}
+impl UpdateRegistryOutput {
+    /// <p>The name of the updated registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The Amazon Resource name (ARN) of the updated registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -337,6 +373,12 @@ pub struct UpdateMlTransformOutput {
     /// <p>The unique identifier for the transform that was updated.</p>
     pub transform_id: std::option::Option<std::string::String>,
 }
+impl UpdateMlTransformOutput {
+    /// <p>The unique identifier for the transform that was updated.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMlTransformOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMlTransformOutput");
@@ -384,6 +426,12 @@ impl UpdateMlTransformOutput {
 pub struct UpdateJobOutput {
     /// <p>Returns the name of the updated job definition.</p>
     pub job_name: std::option::Option<std::string::String>,
+}
+impl UpdateJobOutput {
+    /// <p>Returns the name of the updated job definition.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -583,6 +631,12 @@ pub struct UpdateColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatisticsErrors.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsError>>,
 }
+impl UpdateColumnStatisticsForTableOutput {
+    /// <p>List of ColumnStatisticsErrors.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ColumnStatisticsError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateColumnStatisticsForTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateColumnStatisticsForTableOutput");
@@ -639,6 +693,12 @@ impl UpdateColumnStatisticsForTableOutput {
 pub struct UpdateColumnStatisticsForPartitionOutput {
     /// <p>Error occurred during updating column statistics data.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsError>>,
+}
+impl UpdateColumnStatisticsForPartitionOutput {
+    /// <p>Error occurred during updating column statistics data.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ColumnStatisticsError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateColumnStatisticsForPartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -726,6 +786,12 @@ impl UpdateClassifierOutput {
 pub struct UpdateBlueprintOutput {
     /// <p>Returns the name of the blueprint that was updated.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateBlueprintOutput {
+    /// <p>Returns the name of the blueprint that was updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBlueprintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -863,6 +929,12 @@ pub struct StopTriggerOutput {
     /// <p>The name of the trigger that was stopped.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StopTriggerOutput {
+    /// <p>The name of the trigger that was stopped.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopTriggerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTriggerOutput");
@@ -969,6 +1041,12 @@ pub struct StartWorkflowRunOutput {
     /// <p>An Id for the new run.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl StartWorkflowRunOutput {
+    /// <p>An Id for the new run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartWorkflowRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartWorkflowRunOutput");
@@ -1017,6 +1095,12 @@ pub struct StartTriggerOutput {
     /// <p>The name of the trigger that was started.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StartTriggerOutput {
+    /// <p>The name of the trigger that was started.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTriggerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTriggerOutput");
@@ -1062,6 +1146,12 @@ impl StartTriggerOutput {
 pub struct StartMlLabelingSetGenerationTaskRunOutput {
     /// <p>The unique run identifier that is associated with this task run.</p>
     pub task_run_id: std::option::Option<std::string::String>,
+}
+impl StartMlLabelingSetGenerationTaskRunOutput {
+    /// <p>The unique run identifier that is associated with this task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartMlLabelingSetGenerationTaskRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1111,6 +1201,12 @@ pub struct StartMlEvaluationTaskRunOutput {
     /// <p>The unique identifier associated with this run.</p>
     pub task_run_id: std::option::Option<std::string::String>,
 }
+impl StartMlEvaluationTaskRunOutput {
+    /// <p>The unique identifier associated with this run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartMlEvaluationTaskRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMlEvaluationTaskRunOutput");
@@ -1158,6 +1254,12 @@ impl StartMlEvaluationTaskRunOutput {
 pub struct StartJobRunOutput {
     /// <p>The ID assigned to this job run.</p>
     pub job_run_id: std::option::Option<std::string::String>,
+}
+impl StartJobRunOutput {
+    /// <p>The ID assigned to this job run.</p>
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
+        self.job_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1207,6 +1309,12 @@ pub struct StartImportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
     pub task_run_id: std::option::Option<std::string::String>,
 }
+impl StartImportLabelsTaskRunOutput {
+    /// <p>The unique identifier for the task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartImportLabelsTaskRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImportLabelsTaskRunOutput");
@@ -1254,6 +1362,12 @@ impl StartImportLabelsTaskRunOutput {
 pub struct StartExportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
     pub task_run_id: std::option::Option<std::string::String>,
+}
+impl StartExportLabelsTaskRunOutput {
+    /// <p>The unique identifier for the task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartExportLabelsTaskRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1363,6 +1477,12 @@ pub struct StartBlueprintRunOutput {
     /// <p>The run ID for this blueprint run.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl StartBlueprintRunOutput {
+    /// <p>The run ID for this blueprint run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartBlueprintRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartBlueprintRunOutput");
@@ -1412,6 +1532,16 @@ pub struct SearchTablesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
     pub table_list: std::option::Option<std::vec::Vec<crate::model::Table>>,
+}
+impl SearchTablesOutput {
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
+    pub fn table_list(&self) -> std::option::Option<&[crate::model::Table]> {
+        self.table_list.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1485,6 +1615,16 @@ pub struct ResumeWorkflowRunOutput {
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
     pub node_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ResumeWorkflowRunOutput {
+    /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
+    pub fn node_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ResumeWorkflowRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResumeWorkflowRunOutput");
@@ -1555,6 +1695,12 @@ pub struct ResetJobBookmarkOutput {
     /// <p>The reset bookmark entry.</p>
     pub job_bookmark_entry: std::option::Option<crate::model::JobBookmarkEntry>,
 }
+impl ResetJobBookmarkOutput {
+    /// <p>The reset bookmark entry.</p>
+    pub fn job_bookmark_entry(&self) -> std::option::Option<&crate::model::JobBookmarkEntry> {
+        self.job_bookmark_entry.as_ref()
+    }
+}
 impl std::fmt::Debug for ResetJobBookmarkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetJobBookmarkOutput");
@@ -1619,6 +1765,40 @@ pub struct RemoveSchemaVersionMetadataOutput {
     pub metadata_key: std::option::Option<std::string::String>,
     /// <p>The value of the metadata key.</p>
     pub metadata_value: std::option::Option<std::string::String>,
+}
+impl RemoveSchemaVersionMetadataOutput {
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The latest version of the schema.</p>
+    pub fn latest_version(&self) -> bool {
+        self.latest_version
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The version ID for the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The metadata key.</p>
+    pub fn metadata_key(&self) -> std::option::Option<&str> {
+        self.metadata_key.as_deref()
+    }
+    /// <p>The value of the metadata key.</p>
+    pub fn metadata_value(&self) -> std::option::Option<&str> {
+        self.metadata_value.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveSchemaVersionMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1772,6 +1952,20 @@ pub struct RegisterSchemaVersionOutput {
     /// <p>The status of the schema version.</p>
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
 }
+impl RegisterSchemaVersionOutput {
+    /// <p>The unique ID that represents the version of this schema.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The status of the schema version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaVersionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterSchemaVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterSchemaVersionOutput");
@@ -1857,6 +2051,24 @@ pub struct QuerySchemaVersionMetadataOutput {
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl QuerySchemaVersionMetadataOutput {
+    /// <p>A map of a metadata key and associated values.</p>
+    pub fn metadata_info_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetadataInfo>,
+    > {
+        self.metadata_info_map.as_ref()
+    }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for QuerySchemaVersionMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1995,6 +2207,40 @@ pub struct PutSchemaVersionMetadataOutput {
     pub metadata_key: std::option::Option<std::string::String>,
     /// <p>The value of the metadata key.</p>
     pub metadata_value: std::option::Option<std::string::String>,
+}
+impl PutSchemaVersionMetadataOutput {
+    /// <p>The Amazon Resource Name (ARN) for the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name for the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The name for the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The latest version of the schema.</p>
+    pub fn latest_version(&self) -> bool {
+        self.latest_version
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The metadata key.</p>
+    pub fn metadata_key(&self) -> std::option::Option<&str> {
+        self.metadata_key.as_deref()
+    }
+    /// <p>The value of the metadata key.</p>
+    pub fn metadata_value(&self) -> std::option::Option<&str> {
+        self.metadata_value.as_deref()
+    }
 }
 impl std::fmt::Debug for PutSchemaVersionMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2146,6 +2392,14 @@ pub struct PutResourcePolicyOutput {
     /// this policy.</p>
     pub policy_hash: std::option::Option<std::string::String>,
 }
+impl PutResourcePolicyOutput {
+    /// <p>A hash of the policy that has just been set. This must
+    /// be included in a subsequent call that overwrites or updates
+    /// this policy.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyOutput");
@@ -2230,6 +2484,16 @@ pub struct ListWorkflowsOutput {
     /// <p>A continuation token, if not all workflow names have been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkflowsOutput {
+    /// <p>List of names of workflows in the account.</p>
+    pub fn workflows(&self) -> std::option::Option<&[std::string::String]> {
+        self.workflows.as_deref()
+    }
+    /// <p>A continuation token, if not all workflow names have been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkflowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkflowsOutput");
@@ -2302,6 +2566,17 @@ pub struct ListTriggersOutput {
     /// <p>A continuation token, if the returned list does not contain the
     /// last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTriggersOutput {
+    /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
+    pub fn trigger_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.trigger_names.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the
+    /// last metric available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTriggersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2377,6 +2652,16 @@ pub struct ListSchemaVersionsOutput {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSchemaVersionsOutput {
+    /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
+    pub fn schemas(&self) -> std::option::Option<&[crate::model::SchemaVersionListItem]> {
+        self.schemas.as_deref()
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemaVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemaVersionsOutput");
@@ -2449,6 +2734,16 @@ pub struct ListSchemasOutput {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSchemasOutput {
+    /// <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
+    pub fn schemas(&self) -> std::option::Option<&[crate::model::SchemaListItem]> {
+        self.schemas.as_deref()
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasOutput");
@@ -2520,6 +2815,16 @@ pub struct ListRegistriesOutput {
     pub registries: std::option::Option<std::vec::Vec<crate::model::RegistryListItem>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRegistriesOutput {
+    /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
+    pub fn registries(&self) -> std::option::Option<&[crate::model::RegistryListItem]> {
+        self.registries.as_deref()
+    }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRegistriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2594,6 +2899,18 @@ pub struct ListMlTransformsOutput {
     /// <p>A continuation token, if the returned list does not contain the
     /// last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMlTransformsOutput {
+    /// <p>The identifiers of all the machine learning transforms in the account, or the
+    /// machine learning transforms with the specified tags.</p>
+    pub fn transform_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.transform_ids.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the
+    /// last metric available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMlTransformsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2672,6 +2989,17 @@ pub struct ListJobsOutput {
     /// last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobsOutput {
+    /// <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
+    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_names.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the
+    /// last metric available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -2747,6 +3075,18 @@ pub struct ListDevEndpointsOutput {
     /// <p>A continuation token, if the returned list does not contain the
     /// last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevEndpointsOutput {
+    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
+    /// <code>DevEndpoint</code>s with the specified tags.</p>
+    pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.dev_endpoint_names.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the
+    /// last metric available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2825,6 +3165,17 @@ pub struct ListCrawlersOutput {
     /// last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCrawlersOutput {
+    /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
+    pub fn crawler_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.crawler_names.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the
+    /// last metric available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCrawlersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCrawlersOutput");
@@ -2898,6 +3249,16 @@ pub struct ListBlueprintsOutput {
     pub blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBlueprintsOutput {
+    /// <p>List of names of blueprints in the account.</p>
+    pub fn blueprints(&self) -> std::option::Option<&[std::string::String]> {
+        self.blueprints.as_deref()
+    }
+    /// <p>A continuation token, if not all blueprint names have been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBlueprintsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3001,6 +3362,16 @@ pub struct GetWorkflowRunsOutput {
     /// <p>A continuation token, if not all requested workflow runs have been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetWorkflowRunsOutput {
+    /// <p>A list of workflow run metadata objects.</p>
+    pub fn runs(&self) -> std::option::Option<&[crate::model::WorkflowRun]> {
+        self.runs.as_deref()
+    }
+    /// <p>A continuation token, if not all requested workflow runs have been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWorkflowRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowRunsOutput");
@@ -3072,6 +3443,15 @@ pub struct GetWorkflowRunPropertiesOutput {
     pub run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetWorkflowRunPropertiesOutput {
+    /// <p>The workflow run properties which were set during the specified run.</p>
+    pub fn run_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.run_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWorkflowRunPropertiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowRunPropertiesOutput");
@@ -3137,6 +3517,12 @@ pub struct GetWorkflowRunOutput {
     /// <p>The requested workflow run metadata.</p>
     pub run: std::option::Option<crate::model::WorkflowRun>,
 }
+impl GetWorkflowRunOutput {
+    /// <p>The requested workflow run metadata.</p>
+    pub fn run(&self) -> std::option::Option<&crate::model::WorkflowRun> {
+        self.run.as_ref()
+    }
+}
 impl std::fmt::Debug for GetWorkflowRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowRunOutput");
@@ -3182,6 +3568,12 @@ impl GetWorkflowRunOutput {
 pub struct GetWorkflowOutput {
     /// <p>The resource metadata for the workflow.</p>
     pub workflow: std::option::Option<crate::model::Workflow>,
+}
+impl GetWorkflowOutput {
+    /// <p>The resource metadata for the workflow.</p>
+    pub fn workflow(&self) -> std::option::Option<&crate::model::Workflow> {
+        self.workflow.as_ref()
+    }
 }
 impl std::fmt::Debug for GetWorkflowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3234,6 +3626,19 @@ pub struct GetUserDefinedFunctionsOutput {
     /// <p>A continuation token, if the list of functions returned does
     /// not include the last requested function.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetUserDefinedFunctionsOutput {
+    /// <p>A list of requested function definitions.</p>
+    pub fn user_defined_functions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UserDefinedFunction]> {
+        self.user_defined_functions.as_deref()
+    }
+    /// <p>A continuation token, if the list of functions returned does
+    /// not include the last requested function.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUserDefinedFunctionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3311,6 +3716,12 @@ pub struct GetUserDefinedFunctionOutput {
     /// <p>The requested function definition.</p>
     pub user_defined_function: std::option::Option<crate::model::UserDefinedFunction>,
 }
+impl GetUserDefinedFunctionOutput {
+    /// <p>The requested function definition.</p>
+    pub fn user_defined_function(&self) -> std::option::Option<&crate::model::UserDefinedFunction> {
+        self.user_defined_function.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUserDefinedFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserDefinedFunctionOutput");
@@ -3364,6 +3775,17 @@ pub struct GetTriggersOutput {
     /// <p>A continuation token, if not all the requested triggers
     /// have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTriggersOutput {
+    /// <p>A list of triggers for the specified job.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::Trigger]> {
+        self.triggers.as_deref()
+    }
+    /// <p>A continuation token, if not all the requested triggers
+    /// have yet been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTriggersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3437,6 +3859,12 @@ pub struct GetTriggerOutput {
     /// <p>The requested trigger definition.</p>
     pub trigger: std::option::Option<crate::model::Trigger>,
 }
+impl GetTriggerOutput {
+    /// <p>The requested trigger definition.</p>
+    pub fn trigger(&self) -> std::option::Option<&crate::model::Trigger> {
+        self.trigger.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTriggerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTriggerOutput");
@@ -3485,6 +3913,15 @@ pub struct GetTagsOutput {
     /// <p>The requested tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetTagsOutput {
+    /// <p>The requested tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3552,6 +3989,18 @@ pub struct GetTableVersionsOutput {
     /// <p>A continuation token, if the list of available versions does
     /// not include the last one.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTableVersionsOutput {
+    /// <p>A list of strings identifying available versions of the
+    /// specified table.</p>
+    pub fn table_versions(&self) -> std::option::Option<&[crate::model::TableVersion]> {
+        self.table_versions.as_deref()
+    }
+    /// <p>A continuation token, if the list of available versions does
+    /// not include the last one.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTableVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3627,6 +4076,12 @@ pub struct GetTableVersionOutput {
     /// <p>The requested table version.</p>
     pub table_version: std::option::Option<crate::model::TableVersion>,
 }
+impl GetTableVersionOutput {
+    /// <p>The requested table version.</p>
+    pub fn table_version(&self) -> std::option::Option<&crate::model::TableVersion> {
+        self.table_version.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTableVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTableVersionOutput");
@@ -3680,6 +4135,17 @@ pub struct GetTablesOutput {
     /// <p>A continuation token, present if the current list segment is
     /// not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTablesOutput {
+    /// <p>A list of the requested <code>Table</code> objects.</p>
+    pub fn table_list(&self) -> std::option::Option<&[crate::model::Table]> {
+        self.table_list.as_deref()
+    }
+    /// <p>A continuation token, present if the current list segment is
+    /// not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3753,6 +4219,12 @@ pub struct GetTableOutput {
     /// <p>The <code>Table</code> object that defines the specified table.</p>
     pub table: std::option::Option<crate::model::Table>,
 }
+impl GetTableOutput {
+    /// <p>The <code>Table</code> object that defines the specified table.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::Table> {
+        self.table.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTableOutput");
@@ -3802,6 +4274,19 @@ pub struct GetSecurityConfigurationsOutput {
     /// <p>A continuation token, if there are more security
     /// configurations to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetSecurityConfigurationsOutput {
+    /// <p>A list of security configurations.</p>
+    pub fn security_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SecurityConfiguration]> {
+        self.security_configurations.as_deref()
+    }
+    /// <p>A continuation token, if there are more security
+    /// configurations to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSecurityConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3879,6 +4364,14 @@ pub struct GetSecurityConfigurationOutput {
     /// <p>The requested security configuration.</p>
     pub security_configuration: std::option::Option<crate::model::SecurityConfiguration>,
 }
+impl GetSecurityConfigurationOutput {
+    /// <p>The requested security configuration.</p>
+    pub fn security_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SecurityConfiguration> {
+        self.security_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSecurityConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSecurityConfigurationOutput");
@@ -3932,6 +4425,12 @@ impl GetSecurityConfigurationOutput {
 pub struct GetSchemaVersionsDiffOutput {
     /// <p>The difference between schemas as a string in JsonPatch format.</p>
     pub diff: std::option::Option<std::string::String>,
+}
+impl GetSchemaVersionsDiffOutput {
+    /// <p>The difference between schemas as a string in JsonPatch format.</p>
+    pub fn diff(&self) -> std::option::Option<&str> {
+        self.diff.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSchemaVersionsDiffOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3990,6 +4489,36 @@ pub struct GetSchemaVersionOutput {
     pub status: std::option::Option<crate::model::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
     pub created_time: std::option::Option<std::string::String>,
+}
+impl GetSchemaVersionOutput {
+    /// <p>The <code>SchemaVersionId</code> of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The schema definition for the schema ID.</p>
+    pub fn schema_definition(&self) -> std::option::Option<&str> {
+        self.schema_definition.as_deref()
+    }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The status of the schema version. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time the schema version was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSchemaVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4137,6 +4666,28 @@ pub struct GetSchemaByDefinitionOutput {
     /// <p>The date and time the schema was created.</p>
     pub created_time: std::option::Option<std::string::String>,
 }
+impl GetSchemaByDefinitionOutput {
+    /// <p>The schema ID of the schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The status of the schema version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time the schema was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSchemaByDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSchemaByDefinitionOutput");
@@ -4269,6 +4820,60 @@ pub struct GetSchemaOutput {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date and time the schema was updated.</p>
     pub updated_time: std::option::Option<std::string::String>,
+}
+impl GetSchemaOutput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>A description of schema if specified when created</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The compatibility mode of the schema.</p>
+    pub fn compatibility(&self) -> std::option::Option<&crate::model::Compatibility> {
+        self.compatibility.as_ref()
+    }
+    /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    pub fn schema_checkpoint(&self) -> i64 {
+        self.schema_checkpoint
+    }
+    /// <p>The latest version of the schema associated with the returned schema definition.</p>
+    pub fn latest_schema_version(&self) -> i64 {
+        self.latest_schema_version
+    }
+    /// <p>The next version of the schema associated with the returned schema definition.</p>
+    pub fn next_schema_version(&self) -> i64 {
+        self.next_schema_version
+    }
+    /// <p>The status of the schema.</p>
+    pub fn schema_status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
+        self.schema_status.as_ref()
+    }
+    /// <p>The date and time the schema was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The date and time the schema was updated.</p>
+    pub fn updated_time(&self) -> std::option::Option<&str> {
+        self.updated_time.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4492,6 +5097,24 @@ pub struct GetResourcePolicyOutput {
     /// <p>The date and time at which the policy was last updated.</p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetResourcePolicyOutput {
+    /// <p>Contains the requested policy document, in JSON format.</p>
+    pub fn policy_in_json(&self) -> std::option::Option<&str> {
+        self.policy_in_json.as_deref()
+    }
+    /// <p>Contains the hash value associated with this policy.</p>
+    pub fn policy_hash(&self) -> std::option::Option<&str> {
+        self.policy_hash.as_deref()
+    }
+    /// <p>The date and time at which the policy was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The date and time at which the policy was last updated.</p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyOutput");
@@ -4591,6 +5214,18 @@ pub struct GetResourcePoliciesOutput {
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourcePoliciesOutput {
+    /// <p>A list of the individual resource policies and the account-level resource policy.</p>
+    pub fn get_resource_policies_response_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::GluePolicy]> {
+        self.get_resource_policies_response_list.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePoliciesOutput");
@@ -4677,6 +5312,32 @@ pub struct GetRegistryOutput {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The date and time the registry was updated.</p>
     pub updated_time: std::option::Option<std::string::String>,
+}
+impl GetRegistryOutput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>A description of the registry.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the registry.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RegistryStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time the registry was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The date and time the registry was updated.</p>
+    pub fn updated_time(&self) -> std::option::Option<&str> {
+        self.updated_time.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4799,6 +5460,16 @@ pub struct GetPlanOutput {
     /// <p>The Scala code to perform the mapping.</p>
     pub scala_code: std::option::Option<std::string::String>,
 }
+impl GetPlanOutput {
+    /// <p>A Python script to perform the mapping.</p>
+    pub fn python_script(&self) -> std::option::Option<&str> {
+        self.python_script.as_deref()
+    }
+    /// <p>The Scala code to perform the mapping.</p>
+    pub fn scala_code(&self) -> std::option::Option<&str> {
+        self.scala_code.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlanOutput");
@@ -4865,6 +5536,17 @@ pub struct GetPartitionsOutput {
     /// <p>A continuation token, if the returned list of partitions does not include the last
     /// one.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetPartitionsOutput {
+    /// <p>A list of requested partitions.</p>
+    pub fn partitions(&self) -> std::option::Option<&[crate::model::Partition]> {
+        self.partitions.as_deref()
+    }
+    /// <p>A continuation token, if the returned list of partitions does not include the last
+    /// one.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPartitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4940,6 +5622,18 @@ pub struct GetPartitionIndexesOutput {
         std::option::Option<std::vec::Vec<crate::model::PartitionIndexDescriptor>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetPartitionIndexesOutput {
+    /// <p>A list of index descriptors.</p>
+    pub fn partition_index_descriptor_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PartitionIndexDescriptor]> {
+        self.partition_index_descriptor_list.as_deref()
+    }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPartitionIndexesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5019,6 +5713,13 @@ pub struct GetPartitionOutput {
     /// object.</p>
     pub partition: std::option::Option<crate::model::Partition>,
 }
+impl GetPartitionOutput {
+    /// <p>The requested information, in the form of a <code>Partition</code>
+    /// object.</p>
+    pub fn partition(&self) -> std::option::Option<&crate::model::Partition> {
+        self.partition.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPartitionOutput");
@@ -5073,6 +5774,16 @@ pub struct GetMlTransformsOutput {
     pub transforms: std::option::Option<std::vec::Vec<crate::model::MlTransform>>,
     /// <p>A pagination token, if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetMlTransformsOutput {
+    /// <p>A list of machine learning transforms.</p>
+    pub fn transforms(&self) -> std::option::Option<&[crate::model::MlTransform]> {
+        self.transforms.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMlTransformsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5198,6 +5909,103 @@ pub struct GetMlTransformOutput {
     pub max_retries: std::option::Option<i32>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
+}
+impl GetMlTransformOutput {
+    /// <p>The unique identifier of the transform, generated at the time that the transform was
+    /// created.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The unique name given to the transform when it was created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the transform.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TransformStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the transform was created.</p>
+    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_on.as_ref()
+    }
+    /// <p>The date and time when the transform was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>A list of Glue table definitions used by the transform.</p>
+    pub fn input_record_tables(&self) -> std::option::Option<&[crate::model::GlueTable]> {
+        self.input_record_tables.as_deref()
+    }
+    /// <p>The configuration parameters that are specific to the algorithm used.</p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>The latest evaluation metrics.</p>
+    pub fn evaluation_metrics(&self) -> std::option::Option<&crate::model::EvaluationMetrics> {
+        self.evaluation_metrics.as_ref()
+    }
+    /// <p>The number of labels available for this transform.</p>
+    pub fn label_count(&self) -> i32 {
+        self.label_count
+    }
+    /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
+    /// transform accepts. Has an upper bound of 100 columns.</p>
+    pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
+        self.schema.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
+    /// permissions.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
+    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+    /// page</a>. </p>
+    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    pub fn max_capacity(&self) -> std::option::Option<f64> {
+        self.max_capacity
+    }
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+    /// </li>
+    /// </ul>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    pub fn max_retries(&self) -> std::option::Option<i32> {
+        self.max_retries
+    }
+    /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    pub fn transform_encryption(&self) -> std::option::Option<&crate::model::TransformEncryption> {
+        self.transform_encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMlTransformOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5560,6 +6368,16 @@ pub struct GetMlTaskRunsOutput {
     /// <p>A pagination token, if more results are available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetMlTaskRunsOutput {
+    /// <p>A list of task runs that are associated with the transform.</p>
+    pub fn task_runs(&self) -> std::option::Option<&[crate::model::TaskRun]> {
+        self.task_runs.as_deref()
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMlTaskRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMlTaskRunsOutput");
@@ -5647,6 +6465,48 @@ pub struct GetMlTaskRunOutput {
     pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub execution_time: i32,
+}
+impl GetMlTaskRunOutput {
+    /// <p>The unique identifier of the task run.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
+    /// <p>The status for this task run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The names of the log groups that are associated with the task run.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The list of properties that are associated with the task run.</p>
+    pub fn properties(&self) -> std::option::Option<&crate::model::TaskRunProperties> {
+        self.properties.as_ref()
+    }
+    /// <p>The error strings that are associated with the task run.</p>
+    pub fn error_string(&self) -> std::option::Option<&str> {
+        self.error_string.as_deref()
+    }
+    /// <p>The date and time when this task run started.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>The date and time when this task run was last modified.</p>
+    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_on.as_ref()
+    }
+    /// <p>The date and time when this task run was completed.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
+    pub fn execution_time(&self) -> i32 {
+        self.execution_time
+    }
 }
 impl std::fmt::Debug for GetMlTaskRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5831,6 +6691,12 @@ pub struct GetMappingOutput {
     /// <p>A list of mappings to the specified targets.</p>
     pub mapping: std::option::Option<std::vec::Vec<crate::model::MappingEntry>>,
 }
+impl GetMappingOutput {
+    /// <p>A list of mappings to the specified targets.</p>
+    pub fn mapping(&self) -> std::option::Option<&[crate::model::MappingEntry]> {
+        self.mapping.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMappingOutput");
@@ -5889,6 +6755,16 @@ pub struct GetJobsOutput {
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>A continuation token, if not all job definitions have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetJobsOutput {
+    /// <p>A list of job definitions.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// <p>A continuation token, if not all job definitions have yet been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5962,6 +6838,16 @@ pub struct GetJobRunsOutput {
     /// <p>A continuation token, if not all requested job runs have been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetJobRunsOutput {
+    /// <p>A list of job-run metadata objects.</p>
+    pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
+        self.job_runs.as_deref()
+    }
+    /// <p>A continuation token, if not all requested job runs have been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobRunsOutput");
@@ -6032,6 +6918,12 @@ pub struct GetJobRunOutput {
     /// <p>The requested job-run metadata.</p>
     pub job_run: std::option::Option<crate::model::JobRun>,
 }
+impl GetJobRunOutput {
+    /// <p>The requested job-run metadata.</p>
+    pub fn job_run(&self) -> std::option::Option<&crate::model::JobRun> {
+        self.job_run.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobRunOutput");
@@ -6079,6 +6971,12 @@ impl GetJobRunOutput {
 pub struct GetJobBookmarkOutput {
     /// <p>A structure that defines a point that a job can resume processing.</p>
     pub job_bookmark_entry: std::option::Option<crate::model::JobBookmarkEntry>,
+}
+impl GetJobBookmarkOutput {
+    /// <p>A structure that defines a point that a job can resume processing.</p>
+    pub fn job_bookmark_entry(&self) -> std::option::Option<&crate::model::JobBookmarkEntry> {
+        self.job_bookmark_entry.as_ref()
+    }
 }
 impl std::fmt::Debug for GetJobBookmarkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6131,6 +7029,12 @@ pub struct GetJobOutput {
     /// <p>The requested job definition.</p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl GetJobOutput {
+    /// <p>The requested job definition.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobOutput");
@@ -6179,6 +7083,17 @@ pub struct GetDevEndpointsOutput {
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
     /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetDevEndpointsOutput {
+    /// <p>A list of <code>DevEndpoint</code> definitions.</p>
+    pub fn dev_endpoints(&self) -> std::option::Option<&[crate::model::DevEndpoint]> {
+        self.dev_endpoints.as_deref()
+    }
+    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDevEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6252,6 +7167,12 @@ pub struct GetDevEndpointOutput {
     /// <p>A <code>DevEndpoint</code> definition.</p>
     pub dev_endpoint: std::option::Option<crate::model::DevEndpoint>,
 }
+impl GetDevEndpointOutput {
+    /// <p>A <code>DevEndpoint</code> definition.</p>
+    pub fn dev_endpoint(&self) -> std::option::Option<&crate::model::DevEndpoint> {
+        self.dev_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDevEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevEndpointOutput");
@@ -6304,6 +7225,16 @@ pub struct GetDataflowGraphOutput {
     pub dag_nodes: std::option::Option<std::vec::Vec<crate::model::CodeGenNode>>,
     /// <p>A list of the edges in the resulting DAG.</p>
     pub dag_edges: std::option::Option<std::vec::Vec<crate::model::CodeGenEdge>>,
+}
+impl GetDataflowGraphOutput {
+    /// <p>A list of the nodes in the resulting DAG.</p>
+    pub fn dag_nodes(&self) -> std::option::Option<&[crate::model::CodeGenNode]> {
+        self.dag_nodes.as_deref()
+    }
+    /// <p>A list of the edges in the resulting DAG.</p>
+    pub fn dag_edges(&self) -> std::option::Option<&[crate::model::CodeGenEdge]> {
+        self.dag_edges.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDataflowGraphOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6385,6 +7316,14 @@ pub struct GetDataCatalogEncryptionSettingsOutput {
     pub data_catalog_encryption_settings:
         std::option::Option<crate::model::DataCatalogEncryptionSettings>,
 }
+impl GetDataCatalogEncryptionSettingsOutput {
+    /// <p>The requested security configuration.</p>
+    pub fn data_catalog_encryption_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DataCatalogEncryptionSettings> {
+        self.data_catalog_encryption_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDataCatalogEncryptionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataCatalogEncryptionSettingsOutput");
@@ -6445,6 +7384,17 @@ pub struct GetDatabasesOutput {
     /// <p>A continuation token for paginating the returned list of tokens,
     /// returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetDatabasesOutput {
+    /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
+    pub fn database_list(&self) -> std::option::Option<&[crate::model::Database]> {
+        self.database_list.as_deref()
+    }
+    /// <p>A continuation token for paginating the returned list of tokens,
+    /// returned if the current segment of the list is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDatabasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6518,6 +7468,12 @@ pub struct GetDatabaseOutput {
     /// <p>The definition of the specified database in the Data Catalog.</p>
     pub database: std::option::Option<crate::model::Database>,
 }
+impl GetDatabaseOutput {
+    /// <p>The definition of the specified database in the Data Catalog.</p>
+    pub fn database(&self) -> std::option::Option<&crate::model::Database> {
+        self.database.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDatabaseOutput");
@@ -6568,6 +7524,17 @@ pub struct GetCrawlersOutput {
     /// <p>A continuation token, if the returned list has not reached the end
     /// of those defined in this customer account.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCrawlersOutput {
+    /// <p>A list of crawler metadata.</p>
+    pub fn crawlers(&self) -> std::option::Option<&[crate::model::Crawler]> {
+        self.crawlers.as_deref()
+    }
+    /// <p>A continuation token, if the returned list has not reached the end
+    /// of those defined in this customer account.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCrawlersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6643,6 +7610,17 @@ pub struct GetCrawlerMetricsOutput {
     /// <p>A continuation token, if the returned list does not contain the
     /// last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCrawlerMetricsOutput {
+    /// <p>A list of metrics for the specified crawler.</p>
+    pub fn crawler_metrics_list(&self) -> std::option::Option<&[crate::model::CrawlerMetrics]> {
+        self.crawler_metrics_list.as_deref()
+    }
+    /// <p>A continuation token, if the returned list does not contain the
+    /// last metric available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCrawlerMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6720,6 +7698,12 @@ pub struct GetCrawlerOutput {
     /// <p>The metadata for the specified crawler.</p>
     pub crawler: std::option::Option<crate::model::Crawler>,
 }
+impl GetCrawlerOutput {
+    /// <p>The metadata for the specified crawler.</p>
+    pub fn crawler(&self) -> std::option::Option<&crate::model::Crawler> {
+        self.crawler.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCrawlerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCrawlerOutput");
@@ -6770,6 +7754,17 @@ pub struct GetConnectionsOutput {
     /// <p>A continuation token, if the list of connections returned does not
     /// include the last of the filtered connections.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetConnectionsOutput {
+    /// <p>A list of requested connection definitions.</p>
+    pub fn connection_list(&self) -> std::option::Option<&[crate::model::Connection]> {
+        self.connection_list.as_deref()
+    }
+    /// <p>A continuation token, if the list of connections returned does not
+    /// include the last of the filtered connections.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6843,6 +7838,12 @@ pub struct GetConnectionOutput {
     /// <p>The requested connection definition.</p>
     pub connection: std::option::Option<crate::model::Connection>,
 }
+impl GetConnectionOutput {
+    /// <p>The requested connection definition.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
+}
 impl std::fmt::Debug for GetConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionOutput");
@@ -6895,6 +7896,16 @@ pub struct GetColumnStatisticsForTableOutput {
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnError>>,
+}
+impl GetColumnStatisticsForTableOutput {
+    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    pub fn column_statistics_list(&self) -> std::option::Option<&[crate::model::ColumnStatistics]> {
+        self.column_statistics_list.as_deref()
+    }
+    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ColumnError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetColumnStatisticsForTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6980,6 +7991,16 @@ pub struct GetColumnStatisticsForPartitionOutput {
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
     /// <p>Error occurred during retrieving column statistics data.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ColumnError>>,
+}
+impl GetColumnStatisticsForPartitionOutput {
+    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    pub fn column_statistics_list(&self) -> std::option::Option<&[crate::model::ColumnStatistics]> {
+        self.column_statistics_list.as_deref()
+    }
+    /// <p>Error occurred during retrieving column statistics data.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ColumnError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetColumnStatisticsForPartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7067,6 +8088,17 @@ pub struct GetClassifiersOutput {
     /// <p>A continuation token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetClassifiersOutput {
+    /// <p>The requested list of classifier
+    /// objects.</p>
+    pub fn classifiers(&self) -> std::option::Option<&[crate::model::Classifier]> {
+        self.classifiers.as_deref()
+    }
+    /// <p>A continuation token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetClassifiersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClassifiersOutput");
@@ -7139,6 +8171,12 @@ pub struct GetClassifierOutput {
     /// <p>The requested classifier.</p>
     pub classifier: std::option::Option<crate::model::Classifier>,
 }
+impl GetClassifierOutput {
+    /// <p>The requested classifier.</p>
+    pub fn classifier(&self) -> std::option::Option<&crate::model::Classifier> {
+        self.classifier.as_ref()
+    }
+}
 impl std::fmt::Debug for GetClassifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClassifierOutput");
@@ -7189,6 +8227,12 @@ impl GetClassifierOutput {
 pub struct GetCatalogImportStatusOutput {
     /// <p>The status of the specified catalog migration.</p>
     pub import_status: std::option::Option<crate::model::CatalogImportStatus>,
+}
+impl GetCatalogImportStatusOutput {
+    /// <p>The status of the specified catalog migration.</p>
+    pub fn import_status(&self) -> std::option::Option<&crate::model::CatalogImportStatus> {
+        self.import_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCatalogImportStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7242,6 +8286,16 @@ pub struct GetBlueprintRunsOutput {
     pub blueprint_runs: std::option::Option<std::vec::Vec<crate::model::BlueprintRun>>,
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetBlueprintRunsOutput {
+    /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
+    pub fn blueprint_runs(&self) -> std::option::Option<&[crate::model::BlueprintRun]> {
+        self.blueprint_runs.as_deref()
+    }
+    /// <p>A continuation token, if not all blueprint runs have been returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBlueprintRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7313,6 +8367,12 @@ pub struct GetBlueprintRunOutput {
     /// <p>Returns a <code>BlueprintRun</code> object.</p>
     pub blueprint_run: std::option::Option<crate::model::BlueprintRun>,
 }
+impl GetBlueprintRunOutput {
+    /// <p>Returns a <code>BlueprintRun</code> object.</p>
+    pub fn blueprint_run(&self) -> std::option::Option<&crate::model::BlueprintRun> {
+        self.blueprint_run.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBlueprintRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlueprintRunOutput");
@@ -7364,6 +8424,12 @@ pub struct GetBlueprintOutput {
     /// <p>Returns a <code>Blueprint</code> object.</p>
     pub blueprint: std::option::Option<crate::model::Blueprint>,
 }
+impl GetBlueprintOutput {
+    /// <p>Returns a <code>Blueprint</code> object.</p>
+    pub fn blueprint(&self) -> std::option::Option<&crate::model::Blueprint> {
+        self.blueprint.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBlueprintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlueprintOutput");
@@ -7414,6 +8480,12 @@ impl GetBlueprintOutput {
 pub struct DeleteWorkflowOutput {
     /// <p>Name of the workflow specified in input.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteWorkflowOutput {
+    /// <p>Name of the workflow specified in input.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkflowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7490,6 +8562,12 @@ impl DeleteUserDefinedFunctionOutput {
 pub struct DeleteTriggerOutput {
     /// <p>The name of the trigger that was deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteTriggerOutput {
+    /// <p>The name of the trigger that was deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTriggerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7628,6 +8706,14 @@ pub struct DeleteSchemaVersionsOutput {
     pub schema_version_errors:
         std::option::Option<std::vec::Vec<crate::model::SchemaVersionErrorItem>>,
 }
+impl DeleteSchemaVersionsOutput {
+    /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
+    pub fn schema_version_errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::SchemaVersionErrorItem]> {
+        self.schema_version_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSchemaVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSchemaVersionsOutput");
@@ -7692,6 +8778,20 @@ pub struct DeleteSchemaOutput {
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The status of the schema.</p>
     pub status: std::option::Option<crate::model::SchemaStatus>,
+}
+impl DeleteSchemaOutput {
+    /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema being deleted.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The status of the schema.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7803,6 +8903,20 @@ pub struct DeleteRegistryOutput {
     pub registry_arn: std::option::Option<std::string::String>,
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
     pub status: std::option::Option<crate::model::RegistryStatus>,
+}
+impl DeleteRegistryOutput {
+    /// <p>The name of the registry being deleted.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RegistryStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7944,6 +9058,12 @@ pub struct DeleteMlTransformOutput {
     /// <p>The unique identifier of the transform that was deleted.</p>
     pub transform_id: std::option::Option<std::string::String>,
 }
+impl DeleteMlTransformOutput {
+    /// <p>The unique identifier of the transform that was deleted.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMlTransformOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMlTransformOutput");
@@ -7991,6 +9111,12 @@ impl DeleteMlTransformOutput {
 pub struct DeleteJobOutput {
     /// <p>The name of the job definition that was deleted.</p>
     pub job_name: std::option::Option<std::string::String>,
+}
+impl DeleteJobOutput {
+    /// <p>The name of the job definition that was deleted.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8250,6 +9376,12 @@ pub struct DeleteBlueprintOutput {
     /// <p>Returns the name of the blueprint that was deleted.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteBlueprintOutput {
+    /// <p>Returns the name of the blueprint that was deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBlueprintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBlueprintOutput");
@@ -8295,6 +9427,12 @@ impl DeleteBlueprintOutput {
 pub struct CreateWorkflowOutput {
     /// <p>The name of the workflow which was provided as part of the request.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateWorkflowOutput {
+    /// <p>The name of the workflow which was provided as part of the request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkflowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8371,6 +9509,12 @@ impl CreateUserDefinedFunctionOutput {
 pub struct CreateTriggerOutput {
     /// <p>The name of the trigger.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateTriggerOutput {
+    /// <p>The name of the trigger.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTriggerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8450,6 +9594,16 @@ pub struct CreateSecurityConfigurationOutput {
     /// <p>The time at which the new security configuration was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateSecurityConfigurationOutput {
+    /// <p>The name assigned to the new security configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time at which the new security configuration was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSecurityConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSecurityConfigurationOutput");
@@ -8515,6 +9669,16 @@ pub struct CreateScriptOutput {
     pub python_script: std::option::Option<std::string::String>,
     /// <p>The Scala code generated from the DAG.</p>
     pub scala_code: std::option::Option<std::string::String>,
+}
+impl CreateScriptOutput {
+    /// <p>The Python script generated from the DAG.</p>
+    pub fn python_script(&self) -> std::option::Option<&str> {
+        self.python_script.as_deref()
+    }
+    /// <p>The Scala code generated from the DAG.</p>
+    pub fn scala_code(&self) -> std::option::Option<&str> {
+        self.scala_code.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateScriptOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8606,6 +9770,67 @@ pub struct CreateSchemaOutput {
     pub schema_version_id: std::option::Option<std::string::String>,
     /// <p>The status of the first schema version created.</p>
     pub schema_version_status: std::option::Option<crate::model::SchemaVersionStatus>,
+}
+impl CreateSchemaOutput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>A description of the schema if specified when created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    pub fn data_format(&self) -> std::option::Option<&crate::model::DataFormat> {
+        self.data_format.as_ref()
+    }
+    /// <p>The schema compatibility mode.</p>
+    pub fn compatibility(&self) -> std::option::Option<&crate::model::Compatibility> {
+        self.compatibility.as_ref()
+    }
+    /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    pub fn schema_checkpoint(&self) -> i64 {
+        self.schema_checkpoint
+    }
+    /// <p>The latest version of the schema associated with the returned schema definition.</p>
+    pub fn latest_schema_version(&self) -> i64 {
+        self.latest_schema_version
+    }
+    /// <p>The next version of the schema associated with the returned schema definition.</p>
+    pub fn next_schema_version(&self) -> i64 {
+        self.next_schema_version
+    }
+    /// <p>The status of the schema. </p>
+    pub fn schema_status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
+        self.schema_status.as_ref()
+    }
+    /// <p>The tags for the schema.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The unique identifier of the first schema version.</p>
+    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+        self.schema_version_id.as_deref()
+    }
+    /// <p>The status of the first schema version created.</p>
+    pub fn schema_version_status(&self) -> std::option::Option<&crate::model::SchemaVersionStatus> {
+        self.schema_version_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8866,6 +10091,27 @@ pub struct CreateRegistryOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRegistryOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>A description of the registry.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags for the registry.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRegistryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRegistryOutput");
@@ -9033,6 +10279,12 @@ pub struct CreateMlTransformOutput {
     /// <p>A unique identifier that is generated for the transform.</p>
     pub transform_id: std::option::Option<std::string::String>,
 }
+impl CreateMlTransformOutput {
+    /// <p>A unique identifier that is generated for the transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMlTransformOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMlTransformOutput");
@@ -9080,6 +10332,12 @@ impl CreateMlTransformOutput {
 pub struct CreateJobOutput {
     /// <p>The unique name that was provided for this job definition.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateJobOutput {
+    /// <p>The unique name that was provided for this job definition.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9180,6 +10438,104 @@ pub struct CreateDevEndpointOutput {
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDevEndpointOutput {
+    /// <p>The name assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The current status of the new <code>DevEndpoint</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
+    /// <code>DevEndpoint</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
+    pub fn yarn_endpoint_address(&self) -> std::option::Option<&str> {
+        self.yarn_endpoint_address.as_deref()
+    }
+    /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    pub fn zeppelin_remote_spark_interpreter_port(&self) -> i32 {
+        self.zeppelin_remote_spark_interpreter_port
+    }
+    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.</p>
+    pub fn number_of_nodes(&self) -> i32 {
+        self.number_of_nodes
+    }
+    /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
+    pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    ///
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    pub fn glue_version(&self) -> std::option::Option<&str> {
+        self.glue_version.as_deref()
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
+    /// <code>DevEndpoint</code>.</p>
+    pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_python_libs_s3_path.as_deref()
+    }
+    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
+    /// your <code>DevEndpoint</code>.</p>
+    pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
+        self.extra_jars_s3_path.as_deref()
+    }
+    /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
+    /// <code>DevEndpoint</code>.</p>
+    pub fn security_configuration(&self) -> std::option::Option<&str> {
+        self.security_configuration.as_deref()
+    }
+    /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
+    ///
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>"--enable-glue-datacatalog": ""</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn arguments(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.arguments.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDevEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9678,6 +11034,12 @@ pub struct CreateBlueprintOutput {
     /// <p>Returns the name of the blueprint that was registered.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateBlueprintOutput {
+    /// <p>Returns the name of the blueprint that was registered.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBlueprintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBlueprintOutput");
@@ -9725,6 +11087,16 @@ pub struct CheckSchemaVersionValidityOutput {
     pub valid: bool,
     /// <p>A validation failure error message.</p>
     pub error: std::option::Option<std::string::String>,
+}
+impl CheckSchemaVersionValidityOutput {
+    /// <p>Return true, if the schema is valid and false otherwise.</p>
+    pub fn valid(&self) -> bool {
+        self.valid
+    }
+    /// <p>A validation failure error message.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckSchemaVersionValidityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9790,6 +11162,20 @@ pub struct CancelMlTaskRunOutput {
     pub task_run_id: std::option::Option<std::string::String>,
     /// <p>The status for this run.</p>
     pub status: std::option::Option<crate::model::TaskStatusType>,
+}
+impl CancelMlTaskRunOutput {
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn transform_id(&self) -> std::option::Option<&str> {
+        self.transform_id.as_deref()
+    }
+    /// <p>The unique identifier for the task run.</p>
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
+        self.task_run_id.as_deref()
+    }
+    /// <p>The status for this run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TaskStatusType> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelMlTaskRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9868,6 +11254,12 @@ pub struct BatchUpdatePartitionOutput {
     /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdatePartitionFailureEntry>>,
 }
+impl BatchUpdatePartitionOutput {
+    /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchUpdatePartitionFailureEntry]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdatePartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdatePartitionOutput");
@@ -9935,6 +11327,20 @@ pub struct BatchStopJobRunOutput {
     /// including the <code>JobRunId</code> for which each error was encountered and details about the
     /// error.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
+}
+impl BatchStopJobRunOutput {
+    /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
+    pub fn successful_submissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchStopJobRunSuccessfulSubmission]> {
+        self.successful_submissions.as_deref()
+    }
+    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
+    /// including the <code>JobRunId</code> for which each error was encountered and details about the
+    /// error.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchStopJobRunError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchStopJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10027,6 +11433,16 @@ pub struct BatchGetWorkflowsOutput {
     /// <p>A list of names of workflows not found.</p>
     pub missing_workflows: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetWorkflowsOutput {
+    /// <p>A list of workflow resource metadata.</p>
+    pub fn workflows(&self) -> std::option::Option<&[crate::model::Workflow]> {
+        self.workflows.as_deref()
+    }
+    /// <p>A list of names of workflows not found.</p>
+    pub fn missing_workflows(&self) -> std::option::Option<&[std::string::String]> {
+        self.missing_workflows.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetWorkflowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetWorkflowsOutput");
@@ -10107,6 +11523,16 @@ pub struct BatchGetTriggersOutput {
     pub triggers: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
     /// <p>A list of names of triggers not found.</p>
     pub triggers_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetTriggersOutput {
+    /// <p>A list of trigger definitions.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::Trigger]> {
+        self.triggers.as_deref()
+    }
+    /// <p>A list of names of triggers not found.</p>
+    pub fn triggers_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.triggers_not_found.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetTriggersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10189,6 +11615,17 @@ pub struct BatchGetPartitionOutput {
     /// <p>A list of the partition values in the request for which partitions were not
     /// returned.</p>
     pub unprocessed_keys: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
+}
+impl BatchGetPartitionOutput {
+    /// <p>A list of the requested partitions.</p>
+    pub fn partitions(&self) -> std::option::Option<&[crate::model::Partition]> {
+        self.partitions.as_deref()
+    }
+    /// <p>A list of the partition values in the request for which partitions were not
+    /// returned.</p>
+    pub fn unprocessed_keys(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
+        self.unprocessed_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetPartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10277,6 +11714,16 @@ pub struct BatchGetJobsOutput {
     /// <p>A list of names of jobs not found.</p>
     pub jobs_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetJobsOutput {
+    /// <p>A list of job definitions.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// <p>A list of names of jobs not found.</p>
+    pub fn jobs_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.jobs_not_found.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetJobsOutput");
@@ -10357,6 +11804,16 @@ pub struct BatchGetDevEndpointsOutput {
     pub dev_endpoints: std::option::Option<std::vec::Vec<crate::model::DevEndpoint>>,
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
     pub dev_endpoints_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetDevEndpointsOutput {
+    /// <p>A list of <code>DevEndpoint</code> definitions.</p>
+    pub fn dev_endpoints(&self) -> std::option::Option<&[crate::model::DevEndpoint]> {
+        self.dev_endpoints.as_deref()
+    }
+    /// <p>A list of <code>DevEndpoints</code> not found.</p>
+    pub fn dev_endpoints_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.dev_endpoints_not_found.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetDevEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10439,6 +11896,16 @@ pub struct BatchGetCrawlersOutput {
     /// <p>A list of names of crawlers that were not found.</p>
     pub crawlers_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetCrawlersOutput {
+    /// <p>A list of crawler definitions.</p>
+    pub fn crawlers(&self) -> std::option::Option<&[crate::model::Crawler]> {
+        self.crawlers.as_deref()
+    }
+    /// <p>A list of names of crawlers that were not found.</p>
+    pub fn crawlers_not_found(&self) -> std::option::Option<&[std::string::String]> {
+        self.crawlers_not_found.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetCrawlersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetCrawlersOutput");
@@ -10520,6 +11987,16 @@ pub struct BatchGetBlueprintsOutput {
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
     pub missing_blueprints: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetBlueprintsOutput {
+    /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
+    pub fn blueprints(&self) -> std::option::Option<&[crate::model::Blueprint]> {
+        self.blueprints.as_deref()
+    }
+    /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
+    pub fn missing_blueprints(&self) -> std::option::Option<&[std::string::String]> {
+        self.missing_blueprints.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetBlueprintsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetBlueprintsOutput");
@@ -10600,6 +12077,13 @@ pub struct BatchDeleteTableVersionOutput {
     /// the specified table versions.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::TableVersionError>>,
 }
+impl BatchDeleteTableVersionOutput {
+    /// <p>A list of errors encountered while trying to delete
+    /// the specified table versions.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::TableVersionError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteTableVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteTableVersionOutput");
@@ -10659,6 +12143,12 @@ pub struct BatchDeleteTableOutput {
     /// <p>A list of errors encountered in attempting to delete the specified tables.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::TableError>>,
 }
+impl BatchDeleteTableOutput {
+    /// <p>A list of errors encountered in attempting to delete the specified tables.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::TableError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteTableOutput");
@@ -10715,6 +12205,12 @@ impl BatchDeleteTableOutput {
 pub struct BatchDeletePartitionOutput {
     /// <p>The errors encountered when trying to delete the requested partitions.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::PartitionError>>,
+}
+impl BatchDeletePartitionOutput {
+    /// <p>The errors encountered when trying to delete the requested partitions.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::PartitionError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeletePartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10778,6 +12274,22 @@ pub struct BatchDeleteConnectionOutput {
     pub errors: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ErrorDetail>,
     >,
+}
+impl BatchDeleteConnectionOutput {
+    /// <p>A list of names of the connection definitions that were
+    /// successfully deleted.</p>
+    pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
+        self.succeeded.as_deref()
+    }
+    /// <p>A map of the names of connections that were not successfully
+    /// deleted to error details.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ErrorDetail>,
+    > {
+        self.errors.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10869,6 +12381,12 @@ impl BatchDeleteConnectionOutput {
 pub struct BatchCreatePartitionOutput {
     /// <p>The errors encountered when trying to create the requested partitions.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::PartitionError>>,
+}
+impl BatchCreatePartitionOutput {
+    /// <p>The errors encountered when trying to create the requested partitions.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::PartitionError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreatePartitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -22,6 +22,44 @@ pub struct PackageDetails {
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
+impl PackageDetails {
+    /// <p>Internal ID of the package.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>User-specified name of the package.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>Currently supports only TXT-DICTIONARY.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>User-specified description of the package.</p>
+    pub fn package_description(&self) -> std::option::Option<&str> {
+        self.package_description.as_deref()
+    }
+    /// <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.</p>
+    pub fn package_status(&self) -> std::option::Option<&crate::model::PackageStatus> {
+        self.package_status.as_ref()
+    }
+    /// <p>The timestamp of when the package was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn available_package_version(&self) -> std::option::Option<&str> {
+        self.available_package_version.as_deref()
+    }
+    /// <p>Additional information if the package is in an error state. Null otherwise.</p>
+    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error_details.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageDetails");
@@ -196,6 +234,16 @@ pub struct ErrorDetails {
     pub error_type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub error_message: std::option::Option<std::string::String>,
+}
+impl ErrorDetails {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_type(&self) -> std::option::Option<&str> {
+        self.error_type.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -404,6 +452,16 @@ pub struct PackageSource {
     /// <p>Key (file name) of the package.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
+impl PackageSource {
+    /// <p>The name of the Amazon S3 bucket containing the package.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Key (file name) of the package.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+}
 impl std::fmt::Debug for PackageSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageSource");
@@ -508,6 +566,87 @@ pub struct DomainConfig {
     /// <p>Specifies <code>AutoTuneOptions</code> for the domain.
     /// </p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsStatus>,
+}
+impl DomainConfig {
+    /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or Elasticsearch domain.</p>
+    pub fn engine_version(&self) -> std::option::Option<&crate::model::VersionStatus> {
+        self.engine_version.as_ref()
+    }
+    /// <p>The <code>ClusterConfig</code> for the domain.
+    /// </p>
+    pub fn cluster_config(&self) -> std::option::Option<&crate::model::ClusterConfigStatus> {
+        self.cluster_config.as_ref()
+    }
+    /// <p>The <code>EBSOptions</code> for the domain.
+    /// </p>
+    pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptionsStatus> {
+        self.ebs_options.as_ref()
+    }
+    /// <p>IAM access policy as a JSON-formatted string.</p>
+    pub fn access_policies(&self) -> std::option::Option<&crate::model::AccessPoliciesStatus> {
+        self.access_policies.as_ref()
+    }
+    /// <p>The <code>SnapshotOptions</code> for the domain.
+    /// </p>
+    pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptionsStatus> {
+        self.snapshot_options.as_ref()
+    }
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
+    /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
+    /// </p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcDerivedInfoStatus> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+    /// </p>
+    pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptionsStatus> {
+        self.cognito_options.as_ref()
+    }
+    /// <p>The <code>EncryptionAtRestOptions</code> for the domain.
+    /// </p>
+    pub fn encryption_at_rest_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAtRestOptionsStatus> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain.
+    /// </p>
+    pub fn node_to_node_encryption_options(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptionsStatus> {
+        self.node_to_node_encryption_options.as_ref()
+    }
+    /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
+    /// </a> for more information.
+    /// </p>
+    pub fn advanced_options(&self) -> std::option::Option<&crate::model::AdvancedOptionsStatus> {
+        self.advanced_options.as_ref()
+    }
+    /// <p>Log publishing options for the given domain.</p>
+    pub fn log_publishing_options(
+        &self,
+    ) -> std::option::Option<&crate::model::LogPublishingOptionsStatus> {
+        self.log_publishing_options.as_ref()
+    }
+    /// <p>The <code>DomainEndpointOptions</code> for the domain.
+    /// </p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptionsStatus> {
+        self.domain_endpoint_options.as_ref()
+    }
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.
+    /// </p>
+    pub fn advanced_security_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityOptionsStatus> {
+        self.advanced_security_options.as_ref()
+    }
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.
+    /// </p>
+    pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptionsStatus> {
+        self.auto_tune_options.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -822,6 +961,16 @@ pub struct AutoTuneOptionsStatus {
     /// <p>The status of the Auto-Tune options for the domain.</p>
     pub status: std::option::Option<crate::model::AutoTuneStatus>,
 }
+impl AutoTuneOptionsStatus {
+    /// <p>Specifies Auto-Tune options for the domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::AutoTuneOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the Auto-Tune options for the domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AutoTuneStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoTuneOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoTuneOptionsStatus");
@@ -899,6 +1048,33 @@ pub struct AutoTuneStatus {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Indicates whether the domain is being deleted.</p>
     pub pending_deletion: std::option::Option<bool>,
+}
+impl AutoTuneStatus {
+    /// <p>The timestamp of the Auto-Tune options creation date.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The timestamp of when the Auto-Tune options were last updated.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+    /// <p>The latest version of the Auto-Tune options.</p>
+    pub fn update_version(&self) -> i32 {
+        self.update_version
+    }
+    /// <p>The <code>AutoTuneState</code> for the domain.
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AutoTuneState> {
+        self.state.as_ref()
+    }
+    /// <p>The error message while enabling or disabling Auto-Tune.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Indicates whether the domain is being deleted.</p>
+    pub fn pending_deletion(&self) -> std::option::Option<bool> {
+        self.pending_deletion
+    }
 }
 impl std::fmt::Debug for AutoTuneStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1133,6 +1309,26 @@ pub struct AutoTuneOptions {
     pub maintenance_schedules:
         std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
 }
+impl AutoTuneOptions {
+    /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
+    pub fn desired_state(&self) -> std::option::Option<&crate::model::AutoTuneDesiredState> {
+        self.desired_state.as_ref()
+    }
+    /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+    /// </p>
+    pub fn rollback_on_disable(&self) -> std::option::Option<&crate::model::RollbackOnDisable> {
+        self.rollback_on_disable.as_ref()
+    }
+    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn maintenance_schedules(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoTuneMaintenanceSchedule]> {
+        self.maintenance_schedules.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoTuneOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoTuneOptions");
@@ -1247,6 +1443,26 @@ pub struct AutoTuneMaintenanceSchedule {
     /// </p>
     pub cron_expression_for_recurrence: std::option::Option<std::string::String>,
 }
+impl AutoTuneMaintenanceSchedule {
+    /// <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+    pub fn start_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_at.as_ref()
+    }
+    /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn duration(&self) -> std::option::Option<&crate::model::Duration> {
+        self.duration.as_ref()
+    }
+    /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn cron_expression_for_recurrence(&self) -> std::option::Option<&str> {
+        self.cron_expression_for_recurrence.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoTuneMaintenanceSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoTuneMaintenanceSchedule");
@@ -1355,6 +1571,22 @@ pub struct Duration {
     /// </a> for more information.
     /// </p>
     pub unit: std::option::Option<crate::model::TimeUnit>,
+}
+impl Duration {
+    /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn value(&self) -> i64 {
+        self.value
+    }
+    /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
+        self.unit.as_ref()
+    }
 }
 impl std::fmt::Debug for Duration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1596,6 +1828,16 @@ pub struct AdvancedSecurityOptionsStatus {
     /// <p>Status of the advanced security options for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl AdvancedSecurityOptionsStatus {
+    /// <p>Advanced security options for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::AdvancedSecurityOptions> {
+        self.options.as_ref()
+    }
+    /// <p>Status of the advanced security options for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AdvancedSecurityOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdvancedSecurityOptionsStatus");
@@ -1671,6 +1913,29 @@ pub struct OptionStatus {
     pub state: std::option::Option<crate::model::OptionState>,
     /// <p>Indicates whether the domain is being deleted.</p>
     pub pending_deletion: std::option::Option<bool>,
+}
+impl OptionStatus {
+    /// <p>The timestamp of when the entity was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The timestamp of the last time the entity was updated.</p>
+    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date.as_ref()
+    }
+    /// <p>The latest version of the entity.</p>
+    pub fn update_version(&self) -> i32 {
+        self.update_version
+    }
+    /// <p>Provides the <code>OptionState</code> for the domain.
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::OptionState> {
+        self.state.as_ref()
+    }
+    /// <p>Indicates whether the domain is being deleted.</p>
+    pub fn pending_deletion(&self) -> std::option::Option<bool> {
+        self.pending_deletion
+    }
 }
 impl std::fmt::Debug for OptionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1849,6 +2114,20 @@ pub struct AdvancedSecurityOptions {
     /// <p>Describes the SAML application configured for a domain.</p>
     pub saml_options: std::option::Option<crate::model::SamlOptionsOutput>,
 }
+impl AdvancedSecurityOptions {
+    /// <p>True if advanced security is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>True if the internal user database is enabled.</p>
+    pub fn internal_user_database_enabled(&self) -> std::option::Option<bool> {
+        self.internal_user_database_enabled
+    }
+    /// <p>Describes the SAML application configured for a domain.</p>
+    pub fn saml_options(&self) -> std::option::Option<&crate::model::SamlOptionsOutput> {
+        self.saml_options.as_ref()
+    }
+}
 impl std::fmt::Debug for AdvancedSecurityOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdvancedSecurityOptions");
@@ -1939,6 +2218,28 @@ pub struct SamlOptionsOutput {
     pub roles_key: std::option::Option<std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub session_timeout_minutes: std::option::Option<i32>,
+}
+impl SamlOptionsOutput {
+    /// <p>True if SAML is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>Describes the SAML identity provider's information.</p>
+    pub fn idp(&self) -> std::option::Option<&crate::model::SamlIdp> {
+        self.idp.as_ref()
+    }
+    /// <p>The key used for matching the SAML subject attribute.</p>
+    pub fn subject_key(&self) -> std::option::Option<&str> {
+        self.subject_key.as_deref()
+    }
+    /// <p>The key used for matching the SAML roles attribute.</p>
+    pub fn roles_key(&self) -> std::option::Option<&str> {
+        self.roles_key.as_deref()
+    }
+    /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
+    pub fn session_timeout_minutes(&self) -> std::option::Option<i32> {
+        self.session_timeout_minutes
+    }
 }
 impl std::fmt::Debug for SamlOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2042,6 +2343,16 @@ pub struct SamlIdp {
     /// <p>The unique entity ID of the application in SAML identity provider.</p>
     pub entity_id: std::option::Option<std::string::String>,
 }
+impl SamlIdp {
+    /// <p>The metadata of the SAML application in XML format.</p>
+    pub fn metadata_content(&self) -> std::option::Option<&str> {
+        self.metadata_content.as_deref()
+    }
+    /// <p>The unique entity ID of the application in SAML identity provider.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SamlIdp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SamlIdp");
@@ -2109,6 +2420,18 @@ pub struct DomainEndpointOptionsStatus {
     /// information that's included.
     /// </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl DomainEndpointOptionsStatus {
+    /// <p>Options to configure the endpoint for the domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
+    /// information that's included.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainEndpointOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2201,6 +2524,41 @@ pub struct DomainEndpointOptions {
     pub custom_endpoint: std::option::Option<std::string::String>,
     /// <p>The ACM certificate ARN for your custom endpoint.</p>
     pub custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
+}
+impl DomainEndpointOptions {
+    /// <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
+    pub fn enforce_https(&self) -> std::option::Option<bool> {
+        self.enforce_https
+    }
+    /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+    /// <br></br>
+    /// Can be one of the following values:
+    /// <ul>
+    /// <li>
+    /// <b>Policy-Min-TLS-1-0-2019-07:</b>
+    /// TLS security policy which supports TLSv1.0 and higher.
+    /// </li>
+    /// <li>
+    /// <b>Policy-Min-TLS-1-2-2019-07:</b>
+    /// TLS security policy which supports only TLSv1.2
+    /// </li>
+    /// </ul>
+    /// </p>
+    pub fn tls_security_policy(&self) -> std::option::Option<&crate::model::TlsSecurityPolicy> {
+        self.tls_security_policy.as_ref()
+    }
+    /// <p>Whether to enable a custom endpoint for the domain.</p>
+    pub fn custom_endpoint_enabled(&self) -> std::option::Option<bool> {
+        self.custom_endpoint_enabled
+    }
+    /// <p>The fully qualified domain for your custom endpoint.</p>
+    pub fn custom_endpoint(&self) -> std::option::Option<&str> {
+        self.custom_endpoint.as_deref()
+    }
+    /// <p>The ACM certificate ARN for your custom endpoint.</p>
+    pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<&str> {
+        self.custom_endpoint_certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DomainEndpointOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2404,6 +2762,22 @@ pub struct LogPublishingOptionsStatus {
     /// </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl LogPublishingOptionsStatus {
+    /// <p>The log publishing options configured for the domain.</p>
+    pub fn options(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
+    > {
+        self.options.as_ref()
+    }
+    /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the
+    /// status information that's included.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for LogPublishingOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogPublishingOptionsStatus");
@@ -2496,6 +2870,16 @@ pub struct LogPublishingOption {
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Whether the given log publishing option is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl LogPublishingOption {
+    /// <p>ARN of the Cloudwatch log group to publish logs to.</p>
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_log_group_arn.as_deref()
+    }
+    /// <p>Whether the given log publishing option is enabled or not.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for LogPublishingOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2667,6 +3051,20 @@ pub struct AdvancedOptionsStatus {
     /// </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl AdvancedOptionsStatus {
+    /// <p>The status of advanced options for the specified domain.</p>
+    pub fn options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.options.as_ref()
+    }
+    /// <p>The <code>OptionStatus</code> for advanced options for the specified domain.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for AdvancedOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdvancedOptionsStatus");
@@ -2752,6 +3150,16 @@ pub struct NodeToNodeEncryptionOptionsStatus {
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl NodeToNodeEncryptionOptionsStatus {
+    /// <p>The node-to-node encryption options for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the node-to-node encryption options for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for NodeToNodeEncryptionOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeToNodeEncryptionOptionsStatus");
@@ -2819,6 +3227,12 @@ pub struct NodeToNodeEncryptionOptions {
     /// <p>True to enable node-to-node encryption.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl NodeToNodeEncryptionOptions {
+    /// <p>True to enable node-to-node encryption.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for NodeToNodeEncryptionOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeToNodeEncryptionOptions");
@@ -2868,6 +3282,16 @@ pub struct EncryptionAtRestOptionsStatus {
     pub options: std::option::Option<crate::model::EncryptionAtRestOptions>,
     /// <p>The status of the Encryption At Rest options for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl EncryptionAtRestOptionsStatus {
+    /// <p>The Encryption At Rest options for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the Encryption At Rest options for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptionAtRestOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2938,6 +3362,16 @@ pub struct EncryptionAtRestOptions {
     /// <p>The KMS key ID for encryption at rest options.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl EncryptionAtRestOptions {
+    /// <p>The option to enable encryption at rest.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The KMS key ID for encryption at rest options.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EncryptionAtRestOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionAtRestOptions");
@@ -3000,6 +3434,16 @@ pub struct CognitoOptionsStatus {
     pub options: std::option::Option<crate::model::CognitoOptions>,
     /// <p>The status of the Cognito options for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl CognitoOptionsStatus {
+    /// <p>Cognito options for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the Cognito options for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CognitoOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3074,6 +3518,24 @@ pub struct CognitoOptions {
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The role ARN that provides OpenSearch permissions for accessing Cognito resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CognitoOptions {
+    /// <p>The option to enable Cognito for OpenSearch Dashboards authentication.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The Cognito user pool ID for OpenSearch Dashboards authentication.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The Cognito identity pool ID for OpenSearch Dashboards authentication.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The role ARN that provides OpenSearch permissions for accessing Cognito resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CognitoOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3167,6 +3629,16 @@ pub struct VpcDerivedInfoStatus {
     /// <p>The status of the VPC options for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl VpcDerivedInfoStatus {
+    /// <p>The VPC options for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::VpcDerivedInfo> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the VPC options for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for VpcDerivedInfoStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcDerivedInfoStatus");
@@ -3241,6 +3713,24 @@ pub struct VpcDerivedInfo {
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups for the VPC endpoint.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcDerivedInfo {
+    /// <p>The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The subnets for the VPC endpoint.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The security groups for the VPC endpoint.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcDerivedInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3358,6 +3848,16 @@ pub struct SnapshotOptionsStatus {
     /// <p>The status of a daily automated snapshot.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl SnapshotOptionsStatus {
+    /// <p>The daily snapshot options specified for the domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of a daily automated snapshot.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for SnapshotOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotOptionsStatus");
@@ -3429,6 +3929,14 @@ pub struct SnapshotOptions {
     /// </p>
     pub automated_snapshot_start_hour: std::option::Option<i32>,
 }
+impl SnapshotOptions {
+    /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified
+    /// domain. Default is <code>0</code> hours.
+    /// </p>
+    pub fn automated_snapshot_start_hour(&self) -> std::option::Option<i32> {
+        self.automated_snapshot_start_hour
+    }
+}
 impl std::fmt::Debug for SnapshotOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotOptions");
@@ -3495,6 +4003,21 @@ pub struct AccessPoliciesStatus {
     /// information that's included.
     /// </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl AccessPoliciesStatus {
+    /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or
+    /// IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank">
+    /// Configuring access policies</a>for more information.
+    /// </p>
+    pub fn options(&self) -> std::option::Option<&str> {
+        self.options.as_deref()
+    }
+    /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status
+    /// information that's included.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessPoliciesStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3572,6 +4095,16 @@ pub struct EbsOptionsStatus {
     /// <p>The status of the EBS options for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl EbsOptionsStatus {
+    /// <p>The EBS options for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::EbsOptions> {
+        self.options.as_ref()
+    }
+    /// <p>The status of the EBS options for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for EbsOptionsStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EbsOptionsStatus");
@@ -3641,6 +4174,24 @@ pub struct EbsOptions {
     pub volume_size: std::option::Option<i32>,
     /// <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
     pub iops: std::option::Option<i32>,
+}
+impl EbsOptions {
+    /// <p>Whether EBS-based storage is enabled.</p>
+    pub fn ebs_enabled(&self) -> std::option::Option<bool> {
+        self.ebs_enabled
+    }
+    /// <p>The volume type for EBS-based storage.</p>
+    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+        self.volume_type.as_ref()
+    }
+    /// <p>Integer to specify the size of an EBS volume.</p>
+    pub fn volume_size(&self) -> std::option::Option<i32> {
+        self.volume_size
+    }
+    /// <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
 }
 impl std::fmt::Debug for EbsOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3794,6 +4345,16 @@ pub struct ClusterConfigStatus {
     /// <p>The cluster configuration status for the specified domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
+impl ClusterConfigStatus {
+    /// <p>The cluster configuration for the specified domain.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::ClusterConfig> {
+        self.options.as_ref()
+    }
+    /// <p>The cluster configuration status for the specified domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ClusterConfigStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterConfigStatus");
@@ -3885,6 +4446,63 @@ pub struct ClusterConfig {
     pub warm_count: std::option::Option<i32>,
     /// <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
     pub cold_storage_options: std::option::Option<crate::model::ColdStorageOptions>,
+}
+impl ClusterConfig {
+    /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
+    /// </p>
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of instances in the specified domain cluster.</p>
+    pub fn instance_count(&self) -> std::option::Option<i32> {
+        self.instance_count
+    }
+    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn dedicated_master_enabled(&self) -> std::option::Option<bool> {
+        self.dedicated_master_enabled
+    }
+    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn zone_awareness_enabled(&self) -> std::option::Option<bool> {
+        self.zone_awareness_enabled
+    }
+    /// <p>The zone awareness configuration for a domain when zone awareness is enabled.</p>
+    pub fn zone_awareness_config(&self) -> std::option::Option<&crate::model::ZoneAwarenessConfig> {
+        self.zone_awareness_config.as_ref()
+    }
+    /// <p>The instance type for a dedicated master node.</p>
+    pub fn dedicated_master_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
+        self.dedicated_master_type.as_ref()
+    }
+    /// <p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>
+    pub fn dedicated_master_count(&self) -> std::option::Option<i32> {
+        self.dedicated_master_count
+    }
+    /// <p>True to enable UltraWarm storage.</p>
+    pub fn warm_enabled(&self) -> std::option::Option<bool> {
+        self.warm_enabled
+    }
+    /// <p>The instance type for the OpenSearch cluster's warm nodes.</p>
+    pub fn warm_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchWarmPartitionInstanceType> {
+        self.warm_type.as_ref()
+    }
+    /// <p>The number of UltraWarm nodes in the cluster.</p>
+    pub fn warm_count(&self) -> std::option::Option<i32> {
+        self.warm_count
+    }
+    /// <p>Specifies the <code>ColdStorageOptions</code> config for a Domain</p>
+    pub fn cold_storage_options(&self) -> std::option::Option<&crate::model::ColdStorageOptions> {
+        self.cold_storage_options.as_ref()
+    }
 }
 impl std::fmt::Debug for ClusterConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4100,6 +4718,12 @@ impl ClusterConfig {
 pub struct ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub enabled: std::option::Option<bool>,
+}
+impl ColdStorageOptions {
+    /// <p>Enable cold storage option. Accepted values true or false</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for ColdStorageOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4745,6 +5369,14 @@ pub struct ZoneAwarenessConfig {
     /// </p>
     pub availability_zone_count: std::option::Option<i32>,
 }
+impl ZoneAwarenessConfig {
+    /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
+    /// should be equal to number of subnets if VPC endpoints is enabled.
+    /// </p>
+    pub fn availability_zone_count(&self) -> std::option::Option<i32> {
+        self.availability_zone_count
+    }
+}
 impl std::fmt::Debug for ZoneAwarenessConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZoneAwarenessConfig");
@@ -4798,6 +5430,16 @@ pub struct VersionStatus {
     pub options: std::option::Option<std::string::String>,
     /// <p>The status of the OpenSearch version options for the specified OpenSearch domain.</p>
     pub status: std::option::Option<crate::model::OptionStatus>,
+}
+impl VersionStatus {
+    /// <p>The OpenSearch version for the specified OpenSearch domain.</p>
+    pub fn options(&self) -> std::option::Option<&str> {
+        self.options.as_deref()
+    }
+    /// <p>The status of the OpenSearch version options for the specified OpenSearch domain.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for VersionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4871,6 +5513,24 @@ pub struct AdvancedSecurityOptionsInput {
     pub master_user_options: std::option::Option<crate::model::MasterUserOptions>,
     /// <p>The SAML application configuration for the domain.</p>
     pub saml_options: std::option::Option<crate::model::SamlOptionsInput>,
+}
+impl AdvancedSecurityOptionsInput {
+    /// <p>True if advanced security is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>True if the internal user database is enabled.</p>
+    pub fn internal_user_database_enabled(&self) -> std::option::Option<bool> {
+        self.internal_user_database_enabled
+    }
+    /// <p>Credentials for the master user: username and password, ARN, or both.</p>
+    pub fn master_user_options(&self) -> std::option::Option<&crate::model::MasterUserOptions> {
+        self.master_user_options.as_ref()
+    }
+    /// <p>The SAML application configuration for the domain.</p>
+    pub fn saml_options(&self) -> std::option::Option<&crate::model::SamlOptionsInput> {
+        self.saml_options.as_ref()
+    }
 }
 impl std::fmt::Debug for AdvancedSecurityOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4984,6 +5644,38 @@ pub struct SamlOptionsInput {
     /// and the default value is 60.
     /// </p>
     pub session_timeout_minutes: std::option::Option<i32>,
+}
+impl SamlOptionsInput {
+    /// <p>True if SAML is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The SAML Identity Provider's information.</p>
+    pub fn idp(&self) -> std::option::Option<&crate::model::SamlIdp> {
+        self.idp.as_ref()
+    }
+    /// <p>The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
+    pub fn master_user_name(&self) -> std::option::Option<&str> {
+        self.master_user_name.as_deref()
+    }
+    /// <p>The backend role that the SAML master user is mapped to.</p>
+    pub fn master_backend_role(&self) -> std::option::Option<&str> {
+        self.master_backend_role.as_deref()
+    }
+    /// <p>Element of the SAML assertion to use for username. Default is NameID.</p>
+    pub fn subject_key(&self) -> std::option::Option<&str> {
+        self.subject_key.as_deref()
+    }
+    /// <p>Element of the SAML assertion to use for backend roles. Default is roles.</p>
+    pub fn roles_key(&self) -> std::option::Option<&str> {
+        self.roles_key.as_deref()
+    }
+    /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440,
+    /// and the default value is 60.
+    /// </p>
+    pub fn session_timeout_minutes(&self) -> std::option::Option<i32> {
+        self.session_timeout_minutes
+    }
 }
 impl std::fmt::Debug for SamlOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5125,6 +5817,20 @@ pub struct MasterUserOptions {
     /// <p>The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
     pub master_user_password: std::option::Option<std::string::String>,
 }
+impl MasterUserOptions {
+    /// <p>ARN for the master user (if IAM is enabled).</p>
+    pub fn master_user_arn(&self) -> std::option::Option<&str> {
+        self.master_user_arn.as_deref()
+    }
+    /// <p>The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
+    pub fn master_user_name(&self) -> std::option::Option<&str> {
+        self.master_user_name.as_deref()
+    }
+    /// <p>The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+}
 impl std::fmt::Debug for MasterUserOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MasterUserOptions");
@@ -5211,6 +5917,16 @@ pub struct VpcOptions {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups for the VPC endpoint.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcOptions {
+    /// <p>The subnets for the VPC endpoint.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups for the VPC endpoint.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5322,6 +6038,58 @@ pub struct ServiceSoftwareOptions {
     /// updated after <code>AutomatedUpdateDate</code>.
     /// </p>
     pub optional_deployment: std::option::Option<bool>,
+}
+impl ServiceSoftwareOptions {
+    /// <p>The current service software version present on the domain.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>The new service software version if one is available.</p>
+    pub fn new_version(&self) -> std::option::Option<&str> {
+        self.new_version.as_deref()
+    }
+    /// <p>
+    /// <code>True</code>
+    /// if you're able to update your service software version. <code>False</code> if you can't update your
+    /// service software version.
+    /// </p>
+    pub fn update_available(&self) -> std::option::Option<bool> {
+        self.update_available
+    }
+    /// <p>
+    /// <code>True</code>
+    /// if you're able to cancel your service software version update. <code>False</code> if you can't cancel
+    /// your service software update.
+    /// </p>
+    pub fn cancellable(&self) -> std::option::Option<bool> {
+        self.cancellable
+    }
+    /// <p>The status of your service software update. This field can take the following values: <code>
+    /// ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>
+    /// NOT_ELIGIBLE</code>.
+    /// </p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p>The description of the <code>UpdateStatus</code>.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we
+    /// automatically update your service software.
+    /// </p>
+    pub fn automated_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.automated_update_date.as_ref()
+    }
+    /// <p>
+    /// <code>True</code>
+    /// if a service software is never automatically updated. <code>False</code> if a service software is automatically
+    /// updated after <code>AutomatedUpdateDate</code>.
+    /// </p>
+    pub fn optional_deployment(&self) -> std::option::Option<bool> {
+        self.optional_deployment
+    }
 }
 impl std::fmt::Debug for ServiceSoftwareOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5601,6 +6369,43 @@ pub struct InboundConnection {
     /// </p>
     pub connection_status: std::option::Option<crate::model::InboundConnectionStatus>,
 }
+impl InboundConnection {
+    /// <p>The
+    /// <code>
+    /// <a>AWSDomainInformation</a>
+    /// </code>
+    /// for the local OpenSearch domain.
+    /// </p>
+    pub fn local_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.local_domain_info.as_ref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>AWSDomainInformation</a>
+    /// </code>
+    /// for the remote OpenSearch domain.
+    /// </p>
+    pub fn remote_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.remote_domain_info.as_ref()
+    }
+    /// <p>The connection ID for the inbound cross-cluster connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>InboundConnectionStatus</a>
+    /// </code>
+    /// for the outbound connection.
+    /// </p>
+    pub fn connection_status(&self) -> std::option::Option<&crate::model::InboundConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+}
 impl std::fmt::Debug for InboundConnection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InboundConnection");
@@ -5748,6 +6553,26 @@ pub struct InboundConnectionStatus {
     pub status_code: std::option::Option<crate::model::InboundConnectionStatusCode>,
     /// <p>Verbose information for the inbound connection status.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InboundConnectionStatus {
+    /// <p>The state code for the inbound connection. Can be one of the following:</p>
+    /// <ul>
+    /// <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
+    /// <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
+    /// <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
+    /// <li>ACTIVE: Inbound connection is active and ready to use.</li>
+    /// <li>REJECTING: Inbound connection rejection is in process.</li>
+    /// <li>REJECTED: Inbound connection is rejected.</li>
+    /// <li>DELETING: Inbound connection deletion is in progress.</li>
+    /// <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+    /// </ul>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::InboundConnectionStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>Verbose information for the inbound connection status.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for InboundConnectionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5921,6 +6746,14 @@ pub struct DomainInformationContainer {
     #[allow(missing_docs)] // documentation missing in model
     pub aws_domain_information: std::option::Option<crate::model::AwsDomainInformation>,
 }
+impl DomainInformationContainer {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn aws_domain_information(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsDomainInformation> {
+        self.aws_domain_information.as_ref()
+    }
+}
 impl std::fmt::Debug for DomainInformationContainer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainInformationContainer");
@@ -5978,6 +6811,23 @@ pub struct AwsDomainInformation {
     pub domain_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub region: std::option::Option<std::string::String>,
+}
+impl AwsDomainInformation {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsDomainInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6067,6 +6917,22 @@ pub struct Tag {
     /// </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to
+    /// which they are attached.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
+    /// don't have to be unique in a tag set. For example, you can have a key value
+    /// pair in a tag set of <code>project : Trinity</code> and
+    /// <code>cost-center : Trinity</code>
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -6155,6 +7021,44 @@ pub struct DomainPackageDetails {
     pub reference_path: std::option::Option<std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
+}
+impl DomainPackageDetails {
+    /// <p>The internal ID of the package.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>User-specified name of the package.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>Currently supports only TXT-DICTIONARY.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>The timestamp of the most recent update to the package association status.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The name of the domain you've associated a package with.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and DISSOCIATION_FAILED.</p>
+    pub fn domain_package_status(&self) -> std::option::Option<&crate::model::DomainPackageStatus> {
+        self.domain_package_status.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package is a synonym file.</p>
+    pub fn reference_path(&self) -> std::option::Option<&str> {
+        self.reference_path.as_deref()
+    }
+    /// <p>Additional information if the package is in an error state. Null otherwise.</p>
+    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error_details.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainPackageDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6411,6 +7315,38 @@ pub struct InstanceTypeDetails {
     #[allow(missing_docs)] // documentation missing in model
     pub instance_role: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl InstanceTypeDetails {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
+        self.instance_type.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn encryption_enabled(&self) -> std::option::Option<bool> {
+        self.encryption_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn cognito_enabled(&self) -> std::option::Option<bool> {
+        self.cognito_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn app_logs_enabled(&self) -> std::option::Option<bool> {
+        self.app_logs_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn advanced_security_enabled(&self) -> std::option::Option<bool> {
+        self.advanced_security_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn warm_enabled(&self) -> std::option::Option<bool> {
+        self.warm_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn instance_role(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_role.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceTypeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceTypeDetails");
@@ -6554,6 +7490,17 @@ pub struct DomainInfo {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Specifies the <code>EngineType</code> of the domain.</p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
+}
+impl DomainInfo {
+    /// <p>The <code>DomainName</code>.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> Specifies the <code>EngineType</code> of the domain.</p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6823,6 +7770,38 @@ pub struct UpgradeHistory {
     /// </p>
     pub steps_list: std::option::Option<std::vec::Vec<crate::model::UpgradeStepItem>>,
 }
+impl UpgradeHistory {
+    /// <p>A string that briefly describes the upgrade.</p>
+    pub fn upgrade_name(&self) -> std::option::Option<&str> {
+        self.upgrade_name.as_deref()
+    }
+    /// <p>UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>
+    /// The current status of the upgrade. The status can take one of the following values:
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// </p>
+    pub fn upgrade_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
+        self.upgrade_status.as_ref()
+    }
+    /// <p>
+    /// A list of
+    /// <code>
+    /// <a>UpgradeStepItem</a>
+    /// </code>
+    /// s representing information about each step performed as part of a specific upgrade or upgrade eligibility check.
+    /// </p>
+    pub fn steps_list(&self) -> std::option::Option<&[crate::model::UpgradeStepItem]> {
+        self.steps_list.as_deref()
+    }
+}
 impl std::fmt::Debug for UpgradeHistory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeHistory");
@@ -6974,6 +7953,39 @@ pub struct UpgradeStepItem {
     /// <p>The floating point value representing the progress percentage of a particular step.</p>
     pub progress_percent: std::option::Option<f64>,
 }
+impl UpgradeStepItem {
+    /// <p>
+    /// One of three steps an upgrade or upgrade eligibility check goes through:
+    /// <ul>
+    /// <li>PreUpgradeCheck</li>
+    /// <li>Snapshot</li>
+    /// <li>Upgrade</li>
+    /// </ul>
+    /// </p>
+    pub fn upgrade_step(&self) -> std::option::Option<&crate::model::UpgradeStep> {
+        self.upgrade_step.as_ref()
+    }
+    /// <p>
+    /// The current status of the upgrade. The status can take one of the following values:
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// </p>
+    pub fn upgrade_step_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
+        self.upgrade_step_status.as_ref()
+    }
+    /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
+    pub fn issues(&self) -> std::option::Option<&[std::string::String]> {
+        self.issues.as_deref()
+    }
+    /// <p>The floating point value representing the progress percentage of a particular step.</p>
+    pub fn progress_percent(&self) -> std::option::Option<f64> {
+        self.progress_percent
+    }
+}
 impl std::fmt::Debug for UpgradeStepItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeStepItem");
@@ -7110,6 +8122,20 @@ pub struct PackageVersionHistory {
     /// <p>The timestamp of when the package was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PackageVersionHistory {
+    /// <p>The package version.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>A message associated with the package version.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>The timestamp of when the package was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for PackageVersionHistory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageVersionHistory");
@@ -7205,6 +8231,17 @@ pub struct CompatibleVersionsMap {
     /// <p>List of supported OpenSearch versions.
     /// </p>
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CompatibleVersionsMap {
+    /// <p>The current version of OpenSearch a domain is on.</p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+    /// <p>List of supported OpenSearch versions.
+    /// </p>
+    pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for CompatibleVersionsMap {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7306,6 +8343,68 @@ pub struct ReservedInstance {
     pub payment_option: std::option::Option<crate::model::ReservedInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+}
+impl ReservedInstance {
+    /// <p>The customer-specified identifier to track this reservation.</p>
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
+    /// <p>The unique identifier for the reservation.</p>
+    pub fn reserved_instance_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn billing_subscription_id(&self) -> std::option::Option<i64> {
+        self.billing_subscription_id
+    }
+    /// <p>The offering identifier.</p>
+    pub fn reserved_instance_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_offering_id.as_deref()
+    }
+    /// <p>The OpenSearch instance type offered by the reserved instance offering.</p>
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The time the reservation started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The duration, in seconds, for which the OpenSearch instance is reserved.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.</p>
+    pub fn fixed_price(&self) -> std::option::Option<f64> {
+        self.fixed_price
+    }
+    /// <p>The rate you are charged for each hour for the domain that is using this reserved instance.</p>
+    pub fn usage_price(&self) -> std::option::Option<f64> {
+        self.usage_price
+    }
+    /// <p>The currency code for the reserved OpenSearch instance offering.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>The number of OpenSearch instances that have been reserved.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+    /// <p>The state of the reserved OpenSearch instance.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The payment option as defined in the reserved OpenSearch instance offering.</p>
+    pub fn payment_option(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedInstancePaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+        self.recurring_charges.as_deref()
+    }
 }
 impl std::fmt::Debug for ReservedInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7575,6 +8674,16 @@ pub struct RecurringCharge {
     /// <p>The frequency of the recurring charge.</p>
     pub recurring_charge_frequency: std::option::Option<std::string::String>,
 }
+impl RecurringCharge {
+    /// <p>The monetary amount of the recurring charge.</p>
+    pub fn recurring_charge_amount(&self) -> std::option::Option<f64> {
+        self.recurring_charge_amount
+    }
+    /// <p>The frequency of the recurring charge.</p>
+    pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
+        self.recurring_charge_frequency.as_deref()
+    }
+}
 impl std::fmt::Debug for RecurringCharge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecurringCharge");
@@ -7714,6 +8823,44 @@ pub struct ReservedInstanceOffering {
     pub payment_option: std::option::Option<crate::model::ReservedInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+}
+impl ReservedInstanceOffering {
+    /// <p>The OpenSearch reserved instance offering identifier.</p>
+    pub fn reserved_instance_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_offering_id.as_deref()
+    }
+    /// <p>The OpenSearch instance type offered by the reserved instance offering.</p>
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.</p>
+    pub fn fixed_price(&self) -> std::option::Option<f64> {
+        self.fixed_price
+    }
+    /// <p>The rate you are charged for each hour the domain that is using the offering is running.</p>
+    pub fn usage_price(&self) -> std::option::Option<f64> {
+        self.usage_price
+    }
+    /// <p>The currency code for the reserved OpenSearch instance offering.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>Payment option for the reserved OpenSearch instance offering</p>
+    pub fn payment_option(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedInstancePaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+        self.recurring_charges.as_deref()
+    }
 }
 impl std::fmt::Debug for ReservedInstanceOffering {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7896,6 +9043,17 @@ pub struct DescribePackagesFilter {
     /// <p>A list of values for the specified field.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribePackagesFilter {
+    /// <p>Any field from <code>PackageDetails</code>.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&crate::model::DescribePackagesFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>A list of values for the specified field.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePackagesFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackagesFilter");
@@ -8052,6 +9210,49 @@ pub struct OutboundConnection {
     /// for the outbound connection.
     /// </p>
     pub connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
+}
+impl OutboundConnection {
+    /// <p>The
+    /// <code>
+    /// <a>DomainInformation</a>
+    /// </code>
+    /// for the local OpenSearch domain.
+    /// </p>
+    pub fn local_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.local_domain_info.as_ref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>DomainInformation</a>
+    /// </code>
+    /// for the remote OpenSearch domain.
+    /// </p>
+    pub fn remote_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.remote_domain_info.as_ref()
+    }
+    /// <p>The connection ID for the outbound cross-cluster connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The connection alias for the outbound cross-cluster connection.</p>
+    pub fn connection_alias(&self) -> std::option::Option<&str> {
+        self.connection_alias.as_deref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>OutboundConnectionStatus</a>
+    /// </code>
+    /// for the outbound connection.
+    /// </p>
+    pub fn connection_status(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundConnectionStatus> {
+        self.connection_status.as_ref()
+    }
 }
 impl std::fmt::Debug for OutboundConnection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8220,6 +9421,30 @@ pub struct OutboundConnectionStatus {
     pub status_code: std::option::Option<crate::model::OutboundConnectionStatusCode>,
     /// <p>Verbose information for the outbound connection status.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl OutboundConnectionStatus {
+    /// <p>The state code for the outbound connection. Can be one of the following:</p>
+    /// <ul>
+    /// <li>VALIDATING: The outbound connection request is being validated.</li>
+    /// <li>VALIDATION_FAILED: Validation failed for the connection request.</li>
+    /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain
+    /// owner.
+    /// </li>
+    /// <li>APPROVED: Outbound connection has been approved by the remote domain owner for getting provisioned.</li>
+    /// <li>PROVISIONING: Outbound connection request is in process.</li>
+    /// <li>ACTIVE: Outbound connection is active and ready to use.</li>
+    /// <li>REJECTING: Outbound connection rejection by remote domain owner is in progress.</li>
+    /// <li>REJECTED: Outbound connection request is rejected by remote domain owner.</li>
+    /// <li>DELETING: Outbound connection deletion is in progress.</li>
+    /// <li>DELETED: Outbound connection is deleted and can no longer be used.</li>
+    /// </ul>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::OutboundConnectionStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>Verbose information for the outbound connection status.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for OutboundConnectionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8422,6 +9647,20 @@ pub struct Filter {
     /// </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Filter {
+    /// <p>
+    /// The name of the filter.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// Contains one or more values for the filter.
+    /// </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -8526,6 +9765,29 @@ pub struct Limits {
     /// .
     /// </p>
     pub additional_limits: std::option::Option<std::vec::Vec<crate::model::AdditionalLimit>>,
+}
+impl Limits {
+    /// <p>Storage-related types and attributes
+    /// that are available for a given InstanceType.
+    /// </p>
+    pub fn storage_types(&self) -> std::option::Option<&[crate::model::StorageType]> {
+        self.storage_types.as_deref()
+    }
+    /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
+    /// </p>
+    pub fn instance_limits(&self) -> std::option::Option<&crate::model::InstanceLimits> {
+        self.instance_limits.as_ref()
+    }
+    /// <p>
+    /// List of additional limits that are specific to a given InstanceType and for each of its
+    /// <code>
+    /// <a>InstanceRole</a>
+    /// </code>
+    /// .
+    /// </p>
+    pub fn additional_limits(&self) -> std::option::Option<&[crate::model::AdditionalLimit]> {
+        self.additional_limits.as_deref()
+    }
 }
 impl std::fmt::Debug for Limits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8683,6 +9945,47 @@ pub struct AdditionalLimit {
     /// </p>
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AdditionalLimit {
+    /// <p>
+    /// Additional limit is specific to a given InstanceType and for each of its
+    /// <code>
+    /// <a>InstanceRole</a>
+    /// </code>
+    /// etc.
+    /// <br></br>
+    /// Attributes and their details:
+    /// <br></br>
+    /// <ul>
+    /// <li>MaximumNumberOfDataNodesSupported</li>
+    /// This attribute is present on the master node only to specify how
+    /// much data nodes up to which given
+    /// <code>
+    /// <a>ESPartitionInstanceType</a>
+    /// </code>
+    /// can support as master node.
+    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
+    /// This attribute is present on data node only to specify how much
+    /// data nodes of given
+    /// <code>
+    /// <a>ESPartitionInstanceType</a>
+    /// </code>
+    /// up to which you don't need any master nodes to govern them.
+    /// </ul>
+    /// </p>
+    pub fn limit_name(&self) -> std::option::Option<&str> {
+        self.limit_name.as_deref()
+    }
+    /// <p>
+    /// Value for a given
+    /// <code>
+    /// <a>AdditionalLimit$LimitName</a>
+    /// </code>
+    /// .
+    /// </p>
+    pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.limit_values.as_deref()
+    }
+}
 impl std::fmt::Debug for AdditionalLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdditionalLimit");
@@ -8819,6 +10122,15 @@ pub struct InstanceLimits {
     /// </p>
     pub instance_count_limits: std::option::Option<crate::model::InstanceCountLimits>,
 }
+impl InstanceLimits {
+    /// <p>
+    /// InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for
+    /// a given InstanceType.
+    /// </p>
+    pub fn instance_count_limits(&self) -> std::option::Option<&crate::model::InstanceCountLimits> {
+        self.instance_count_limits.as_ref()
+    }
+}
 impl std::fmt::Debug for InstanceLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceLimits");
@@ -8884,6 +10196,20 @@ pub struct InstanceCountLimits {
     /// Maximum number of instances that can be instantiated for a given InstanceType.
     /// </p>
     pub maximum_instance_count: i32,
+}
+impl InstanceCountLimits {
+    /// <p>
+    /// Minimum number of instances that can be instantiated for a given InstanceType.
+    /// </p>
+    pub fn minimum_instance_count(&self) -> i32 {
+        self.minimum_instance_count
+    }
+    /// <p>
+    /// Maximum number of instances that can be instantiated for a given InstanceType.
+    /// </p>
+    pub fn maximum_instance_count(&self) -> i32 {
+        self.maximum_instance_count
+    }
 }
 impl std::fmt::Debug for InstanceCountLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8984,6 +10310,45 @@ pub struct StorageType {
     /// <p>Limits that are applicable for the given storage type.
     /// </p>
     pub storage_type_limits: std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
+}
+impl StorageType {
+    /// <p>
+    /// Type of storage.
+    /// List of available storage options:
+    /// <ol>
+    /// <li>instance</li>
+    /// Built-in storage available for the instance
+    /// <li>ebs</li>
+    /// Elastic block storage attached to the instance
+    /// </ol>
+    /// </p>
+    pub fn storage_type_name(&self) -> std::option::Option<&str> {
+        self.storage_type_name.as_deref()
+    }
+    /// <p>
+    /// Sub-type of the given storage type.
+    /// List of available sub-storage options:
+    /// "instance" storageType has no storageSubType.
+    /// "ebs" storageType has the following valid storageSubTypes:
+    /// <ol>
+    /// <li>standard</li>
+    /// <li>gp2</li>
+    /// <li>io1</li>
+    /// </ol>
+    /// See
+    /// <code>
+    /// <a>VolumeType</a>
+    /// </code>
+    /// for more information regarding each EBS storage option.
+    /// </p>
+    pub fn storage_sub_type_name(&self) -> std::option::Option<&str> {
+        self.storage_sub_type_name.as_deref()
+    }
+    /// <p>Limits that are applicable for the given storage type.
+    /// </p>
+    pub fn storage_type_limits(&self) -> std::option::Option<&[crate::model::StorageTypeLimit]> {
+        self.storage_type_limits.as_deref()
+    }
 }
 impl std::fmt::Debug for StorageType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9153,6 +10518,39 @@ pub struct StorageTypeLimit {
     /// .
     /// </p>
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StorageTypeLimit {
+    /// <p>
+    /// Name of storage limits that are applicable for the given storage type.
+    /// If
+    /// <code>
+    /// <a>StorageType</a>
+    /// </code>
+    /// is "ebs", the following storage options are applicable:
+    /// <ol>
+    /// <li>MinimumVolumeSize</li>
+    /// Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+    /// <li>MaximumVolumeSize</li>
+    /// Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+    /// <li>MaximumIops</li>
+    /// Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumIops</li>
+    /// Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// </ol>
+    /// </p>
+    pub fn limit_name(&self) -> std::option::Option<&str> {
+        self.limit_name.as_deref()
+    }
+    /// <p>
+    /// Values for the
+    /// <code>
+    /// <a>StorageTypeLimit$LimitName</a>
+    /// </code>
+    /// .
+    /// </p>
+    pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.limit_values.as_deref()
+    }
 }
 impl std::fmt::Debug for StorageTypeLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9347,6 +10745,151 @@ pub struct DomainStatus {
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptions>,
     /// <p>The current status of the domain's Auto-Tune options.</p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsOutput>,
+}
+impl DomainStatus {
+    /// <p>The unique identifier for the specified domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers
+    /// </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code>
+    /// False
+    /// </code> if domain creation is still in progress.
+    /// </p>
+    pub fn created(&self) -> std::option::Option<bool> {
+        self.created
+    }
+    /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
+    /// cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
+    /// complete, the status of the domain is no longer returned.
+    /// </p>
+    pub fn deleted(&self) -> std::option::Option<bool> {
+        self.deleted
+    }
+    /// <p>The domain endpoint that you use to submit index and search requests.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key,
+    /// value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+    /// </p>
+    pub fn endpoints(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.endpoints.as_ref()
+    }
+    /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is
+    /// processing configuration changes. <code>False</code> if the configuration is active.
+    /// </p>
+    pub fn processing(&self) -> std::option::Option<bool> {
+        self.processing
+    }
+    /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is
+    /// undergoing a version upgrade. <code>False</code> if the configuration is active.
+    /// </p>
+    pub fn upgrade_processing(&self) -> std::option::Option<bool> {
+        self.upgrade_processing
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The type and number of instances in the domain.</p>
+    pub fn cluster_config(&self) -> std::option::Option<&crate::model::ClusterConfig> {
+        self.cluster_config.as_ref()
+    }
+    /// <p>The <code>EBSOptions</code> for the specified domain.
+    /// </p>
+    pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
+        self.ebs_options.as_ref()
+    }
+    /// <p>IAM access policy as a JSON-formatted string.</p>
+    pub fn access_policies(&self) -> std::option::Option<&str> {
+        self.access_policies.as_deref()
+    }
+    /// <p>The status of the
+    /// <code>SnapshotOptions</code>.
+    /// </p>
+    pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
+        self.snapshot_options.as_ref()
+    }
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
+    /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
+    /// </p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcDerivedInfo> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+    /// </p>
+    pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
+        self.cognito_options.as_ref()
+    }
+    /// <p>The status of the <code>EncryptionAtRestOptions</code>.
+    /// </p>
+    pub fn encryption_at_rest_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>.
+    /// </p>
+    pub fn node_to_node_encryption_options(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
+        self.node_to_node_encryption_options.as_ref()
+    }
+    /// <p>The status of the
+    /// <code>AdvancedOptions</code>.
+    /// </p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+    /// <p>Log publishing options for the given domain.</p>
+    pub fn log_publishing_options(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
+    > {
+        self.log_publishing_options.as_ref()
+    }
+    /// <p>The current status of the domain's service software.</p>
+    pub fn service_software_options(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+        self.service_software_options.as_ref()
+    }
+    /// <p>The current status of the domain's endpoint options.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.domain_endpoint_options.as_ref()
+    }
+    /// <p>The current status of the domain's advanced security options.</p>
+    pub fn advanced_security_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityOptions> {
+        self.advanced_security_options.as_ref()
+    }
+    /// <p>The current status of the domain's Auto-Tune options.</p>
+    pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptionsOutput> {
+        self.auto_tune_options.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9869,6 +11412,17 @@ pub struct AutoTuneOptionsOutput {
     /// <p>The error message while enabling or disabling Auto-Tune.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl AutoTuneOptionsOutput {
+    /// <p>The <code>AutoTuneState</code> for the domain.
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AutoTuneState> {
+        self.state.as_ref()
+    }
+    /// <p>The error message while enabling or disabling Auto-Tune.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoTuneOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoTuneOptionsOutput");
@@ -9942,6 +11496,19 @@ pub struct AutoTune {
     /// </a> for more information.
     /// </p>
     pub auto_tune_details: std::option::Option<crate::model::AutoTuneDetails>,
+}
+impl AutoTune {
+    /// <p>Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.</p>
+    pub fn auto_tune_type(&self) -> std::option::Option<&crate::model::AutoTuneType> {
+        self.auto_tune_type.as_ref()
+    }
+    /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn auto_tune_details(&self) -> std::option::Option<&crate::model::AutoTuneDetails> {
+        self.auto_tune_details.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoTune {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10022,6 +11589,17 @@ pub struct AutoTuneDetails {
     /// </p>
     pub scheduled_auto_tune_details: std::option::Option<crate::model::ScheduledAutoTuneDetails>,
 }
+impl AutoTuneDetails {
+    /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn scheduled_auto_tune_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ScheduledAutoTuneDetails> {
+        self.scheduled_auto_tune_details.as_ref()
+    }
+}
 impl std::fmt::Debug for AutoTuneDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoTuneDetails");
@@ -10094,6 +11672,24 @@ pub struct ScheduledAutoTuneDetails {
     pub action: std::option::Option<std::string::String>,
     /// <p>The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.</p>
     pub severity: std::option::Option<crate::model::ScheduledAutoTuneSeverityType>,
+}
+impl ScheduledAutoTuneDetails {
+    /// <p>The timestamp of the Auto-Tune action scheduled for the domain.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ScheduledAutoTuneActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>The Auto-Tune action description.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::ScheduledAutoTuneSeverityType> {
+        self.severity.as_ref()
+    }
 }
 impl std::fmt::Debug for ScheduledAutoTuneDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10359,6 +11955,21 @@ pub struct AutoTuneOptionsInput {
     /// </p>
     pub maintenance_schedules:
         std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
+}
+impl AutoTuneOptionsInput {
+    /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
+    pub fn desired_state(&self) -> std::option::Option<&crate::model::AutoTuneDesiredState> {
+        self.desired_state.as_ref()
+    }
+    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+    /// Auto-Tune for Amazon OpenSearch Service
+    /// </a> for more information.
+    /// </p>
+    pub fn maintenance_schedules(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoTuneMaintenanceSchedule]> {
+        self.maintenance_schedules.as_deref()
+    }
 }
 impl std::fmt::Debug for AutoTuneOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

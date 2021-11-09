@@ -2460,6 +2460,16 @@ pub struct UnsupportedLanguagePairException {
     /// <p>The language code for the language of the translated text. </p>
     pub target_language_code: std::option::Option<std::string::String>,
 }
+impl UnsupportedLanguagePairException {
+    /// <p>The language code for the language of the input text. </p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language code for the language of the translated text. </p>
+    pub fn target_language_code(&self) -> std::option::Option<&str> {
+        self.target_language_code.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsupportedLanguagePairException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedLanguagePairException");
@@ -2690,6 +2700,12 @@ pub struct DetectedLanguageLowConfidenceException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The language code of the auto-detected language from Amazon Comprehend.</p>
     pub detected_language_code: std::option::Option<std::string::String>,
+}
+impl DetectedLanguageLowConfidenceException {
+    /// <p>The language code of the auto-detected language from Amazon Comprehend.</p>
+    pub fn detected_language_code(&self) -> std::option::Option<&str> {
+        self.detected_language_code.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectedLanguageLowConfidenceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

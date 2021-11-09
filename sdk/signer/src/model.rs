@@ -7,6 +7,12 @@ pub struct Destination {
     /// <p>The <code>S3Destination</code> object.</p>
     pub s3: std::option::Option<crate::model::S3Destination>,
 }
+impl Destination {
+    /// <p>The <code>S3Destination</code> object.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Destination");
@@ -55,6 +61,17 @@ pub struct S3Destination {
     /// <p>An Amazon S3 prefix that you can use to limit responses to those that begin with the
     /// specified prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl S3Destination {
+    /// <p>Name of the S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>An Amazon S3 prefix that you can use to limit responses to those that begin with the
+    /// specified prefix.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -120,6 +137,12 @@ pub struct Source {
     /// <p>The <code>S3Source</code> object.</p>
     pub s3: std::option::Option<crate::model::S3Source>,
 }
+impl Source {
+    /// <p>The <code>S3Source</code> object.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Source> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Source");
@@ -169,6 +192,20 @@ pub struct S3Source {
     pub key: std::option::Option<std::string::String>,
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl S3Source {
+    /// <p>Name of the S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>Key name of the bucket object that contains your unsigned code.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Version of your source image in your version enabled S3 bucket.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -252,6 +289,24 @@ pub struct SigningPlatformOverrides {
     /// signing image has the payload embedded in it. With <code>JSONDetached</code>, the
     /// payload is not be embedded in the signing image.</p>
     pub signing_image_format: std::option::Option<crate::model::ImageFormat>,
+}
+impl SigningPlatformOverrides {
+    /// <p>A signing configuration that overrides the default encryption or hash algorithm of a
+    /// signing job.</p>
+    pub fn signing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SigningConfigurationOverrides> {
+        self.signing_configuration.as_ref()
+    }
+    /// <p>A signed image is a JSON object. When overriding the default signing platform
+    /// configuration, a customer can select either of two signing formats,
+    /// <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+    /// <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the
+    /// signing image has the payload embedded in it. With <code>JSONDetached</code>, the
+    /// payload is not be embedded in the signing image.</p>
+    pub fn signing_image_format(&self) -> std::option::Option<&crate::model::ImageFormat> {
+        self.signing_image_format.as_ref()
+    }
 }
 impl std::fmt::Debug for SigningPlatformOverrides {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -399,6 +454,18 @@ pub struct SigningConfigurationOverrides {
     /// <p>A specified override of the default hash algorithm that is used in a code signing
     /// job.</p>
     pub hash_algorithm: std::option::Option<crate::model::HashAlgorithm>,
+}
+impl SigningConfigurationOverrides {
+    /// <p>A specified override of the default encryption algorithm that is used in a code signing
+    /// job.</p>
+    pub fn encryption_algorithm(&self) -> std::option::Option<&crate::model::EncryptionAlgorithm> {
+        self.encryption_algorithm.as_ref()
+    }
+    /// <p>A specified override of the default hash algorithm that is used in a code signing
+    /// job.</p>
+    pub fn hash_algorithm(&self) -> std::option::Option<&crate::model::HashAlgorithm> {
+        self.hash_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for SigningConfigurationOverrides {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -584,6 +651,17 @@ pub struct SignatureValidityPeriod {
     /// validity.</p>
     pub r#type: std::option::Option<crate::model::ValidityType>,
 }
+impl SignatureValidityPeriod {
+    /// <p>The numerical value of the time unit for signature validity.</p>
+    pub fn value(&self) -> i32 {
+        self.value
+    }
+    /// <p>The time unit for signature
+    /// validity.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ValidityType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for SignatureValidityPeriod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SignatureValidityPeriod");
@@ -707,6 +785,13 @@ pub struct SigningMaterial {
     /// code.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
+impl SigningMaterial {
+    /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your
+    /// code.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SigningMaterial {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SigningMaterial");
@@ -782,6 +867,60 @@ pub struct SigningProfile {
     /// <p>A list of tags associated with the signing profile.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SigningProfile {
+    /// <p>The name of the signing profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The version of a signing profile.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>The ARN of a signing profile, including the profile version.</p>
+    pub fn profile_version_arn(&self) -> std::option::Option<&str> {
+        self.profile_version_arn.as_deref()
+    }
+    /// <p>The ACM certificate that is available for use by a signing profile.</p>
+    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+        self.signing_material.as_ref()
+    }
+    /// <p>The validity period for a signing job created using this signing profile.</p>
+    pub fn signature_validity_period(
+        &self,
+    ) -> std::option::Option<&crate::model::SignatureValidityPeriod> {
+        self.signature_validity_period.as_ref()
+    }
+    /// <p>The ID of a platform that is available for use by a signing profile.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>The name of the signing platform.</p>
+    pub fn platform_display_name(&self) -> std::option::Option<&str> {
+        self.platform_display_name.as_deref()
+    }
+    /// <p>The parameters that are available for use by a code signing user.</p>
+    pub fn signing_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.signing_parameters.as_ref()
+    }
+    /// <p>The status of a code signing profile.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SigningProfileStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A list of tags associated with the signing profile.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for SigningProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1094,6 +1233,47 @@ pub struct SigningPlatform {
     /// <p>Indicates whether revocation is supported for the platform.</p>
     pub revocation_supported: bool,
 }
+impl SigningPlatform {
+    /// <p>The ID of a code signing; platform.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>The display name of a code signing platform.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>Any partner entities linked to a code signing platform.</p>
+    pub fn partner(&self) -> std::option::Option<&str> {
+        self.partner.as_deref()
+    }
+    /// <p>The types of targets that can be signed by a code signing platform.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The category of a code signing platform.</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::Category> {
+        self.category.as_ref()
+    }
+    /// <p>The configuration of a code signing platform. This includes the designated hash algorithm
+    /// and encryption algorithm of a signing platform.</p>
+    pub fn signing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SigningConfiguration> {
+        self.signing_configuration.as_ref()
+    }
+    /// <p>The image format of a code signing platform or profile.</p>
+    pub fn signing_image_format(&self) -> std::option::Option<&crate::model::SigningImageFormat> {
+        self.signing_image_format.as_ref()
+    }
+    /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>
+    pub fn max_size_in_mb(&self) -> i32 {
+        self.max_size_in_mb
+    }
+    /// <p>Indicates whether revocation is supported for the platform.</p>
+    pub fn revocation_supported(&self) -> bool {
+        self.revocation_supported
+    }
+}
 impl std::fmt::Debug for SigningPlatform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SigningPlatform");
@@ -1256,6 +1436,16 @@ pub struct SigningImageFormat {
     /// <p>The default format of a code signing image.</p>
     pub default_format: std::option::Option<crate::model::ImageFormat>,
 }
+impl SigningImageFormat {
+    /// <p>The supported formats of a code signing image.</p>
+    pub fn supported_formats(&self) -> std::option::Option<&[crate::model::ImageFormat]> {
+        self.supported_formats.as_deref()
+    }
+    /// <p>The default format of a code signing image.</p>
+    pub fn default_format(&self) -> std::option::Option<&crate::model::ImageFormat> {
+        self.default_format.as_ref()
+    }
+}
 impl std::fmt::Debug for SigningImageFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SigningImageFormat");
@@ -1330,6 +1520,20 @@ pub struct SigningConfiguration {
     pub encryption_algorithm_options: std::option::Option<crate::model::EncryptionAlgorithmOptions>,
     /// <p>The hash algorithm options that are available for a code signing job.</p>
     pub hash_algorithm_options: std::option::Option<crate::model::HashAlgorithmOptions>,
+}
+impl SigningConfiguration {
+    /// <p>The encryption algorithm options that are available for a code signing job.</p>
+    pub fn encryption_algorithm_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAlgorithmOptions> {
+        self.encryption_algorithm_options.as_ref()
+    }
+    /// <p>The hash algorithm options that are available for a code signing job.</p>
+    pub fn hash_algorithm_options(
+        &self,
+    ) -> std::option::Option<&crate::model::HashAlgorithmOptions> {
+        self.hash_algorithm_options.as_ref()
+    }
 }
 impl std::fmt::Debug for SigningConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1407,6 +1611,16 @@ pub struct HashAlgorithmOptions {
     /// <p>The default hash algorithm that is used in a code signing job.</p>
     pub default_value: std::option::Option<crate::model::HashAlgorithm>,
 }
+impl HashAlgorithmOptions {
+    /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&[crate::model::HashAlgorithm]> {
+        self.allowed_values.as_deref()
+    }
+    /// <p>The default hash algorithm that is used in a code signing job.</p>
+    pub fn default_value(&self) -> std::option::Option<&crate::model::HashAlgorithm> {
+        self.default_value.as_ref()
+    }
+}
 impl std::fmt::Debug for HashAlgorithmOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HashAlgorithmOptions");
@@ -1481,6 +1695,16 @@ pub struct EncryptionAlgorithmOptions {
     pub allowed_values: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithm>>,
     /// <p>The default encryption algorithm that is used by a code signing job.</p>
     pub default_value: std::option::Option<crate::model::EncryptionAlgorithm>,
+}
+impl EncryptionAlgorithmOptions {
+    /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&[crate::model::EncryptionAlgorithm]> {
+        self.allowed_values.as_deref()
+    }
+    /// <p>The default encryption algorithm that is used by a code signing job.</p>
+    pub fn default_value(&self) -> std::option::Option<&crate::model::EncryptionAlgorithm> {
+        self.default_value.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptionAlgorithmOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1638,6 +1862,67 @@ pub struct SigningJob {
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the job invoker.</p>
     pub job_invoker: std::option::Option<std::string::String>,
+}
+impl SigningJob {
+    /// <p>The ID of the signing job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>A <code>Source</code> that contains information about a signing job's code image
+    /// source.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>A <code>SignedObject</code> structure that contains information about a signing job's
+    /// signed code image.</p>
+    pub fn signed_object(&self) -> std::option::Option<&crate::model::SignedObject> {
+        self.signed_object.as_ref()
+    }
+    /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of
+    /// the certificate used for the signing job.</p>
+    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+        self.signing_material.as_ref()
+    }
+    /// <p>The date and time that the signing job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The status of the signing job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SigningStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates whether the signing job is revoked.</p>
+    pub fn is_revoked(&self) -> bool {
+        self.is_revoked
+    }
+    /// <p>The name of the signing profile that created a signing job.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The version of the signing profile that created a signing job.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
+    /// <p>The unique identifier for a signing platform.</p>
+    pub fn platform_id(&self) -> std::option::Option<&str> {
+        self.platform_id.as_deref()
+    }
+    /// <p>The name of a signing platform.</p>
+    pub fn platform_display_name(&self) -> std::option::Option<&str> {
+        self.platform_display_name.as_deref()
+    }
+    /// <p>The time when the signature of a signing job expires.</p>
+    pub fn signature_expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.signature_expires_at.as_ref()
+    }
+    /// <p>The AWS account ID of the job owner.</p>
+    pub fn job_owner(&self) -> std::option::Option<&str> {
+        self.job_owner.as_deref()
+    }
+    /// <p>The AWS account ID of the job invoker.</p>
+    pub fn job_invoker(&self) -> std::option::Option<&str> {
+        self.job_invoker.as_deref()
+    }
 }
 impl std::fmt::Debug for SigningJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1943,6 +2228,12 @@ pub struct SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
     pub s3: std::option::Option<crate::model::S3SignedObject>,
 }
+impl SignedObject {
+    /// <p>The <code>S3SignedObject</code>.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3SignedObject> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for SignedObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SignedObject");
@@ -1990,6 +2281,16 @@ pub struct S3SignedObject {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl S3SignedObject {
+    /// <p>Name of the S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3SignedObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2057,6 +2358,24 @@ pub struct Permission {
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>The signing profile version that a permission applies to.</p>
     pub profile_version: std::option::Option<std::string::String>,
+}
+impl Permission {
+    /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The AWS principal that has been granted a cross-account permission.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>A unique identifier for a cross-account permission statement.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>The signing profile version that a permission applies to.</p>
+    pub fn profile_version(&self) -> std::option::Option<&str> {
+        self.profile_version.as_deref()
+    }
 }
 impl std::fmt::Debug for Permission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2152,6 +2471,20 @@ pub struct SigningProfileRevocationRecord {
     /// <p>The identity of the revoker.</p>
     pub revoked_by: std::option::Option<std::string::String>,
 }
+impl SigningProfileRevocationRecord {
+    /// <p>The time when revocation becomes effective.</p>
+    pub fn revocation_effective_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.revocation_effective_from.as_ref()
+    }
+    /// <p>The time when the signing profile was revoked.</p>
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.revoked_at.as_ref()
+    }
+    /// <p>The identity of the revoker.</p>
+    pub fn revoked_by(&self) -> std::option::Option<&str> {
+        self.revoked_by.as_deref()
+    }
+}
 impl std::fmt::Debug for SigningProfileRevocationRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SigningProfileRevocationRecord");
@@ -2235,6 +2568,20 @@ pub struct SigningJobRevocationRecord {
     pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The identity of the revoker.</p>
     pub revoked_by: std::option::Option<std::string::String>,
+}
+impl SigningJobRevocationRecord {
+    /// <p>A caller-supplied reason for revocation.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The time of revocation.</p>
+    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.revoked_at.as_ref()
+    }
+    /// <p>The identity of the revoker.</p>
+    pub fn revoked_by(&self) -> std::option::Option<&str> {
+        self.revoked_by.as_deref()
+    }
 }
 impl std::fmt::Debug for SigningJobRevocationRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

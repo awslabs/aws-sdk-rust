@@ -1398,6 +1398,112 @@ pub struct StartStreamTranscriptionInput {
     /// <p>The name of the language model you want to use.</p>
     pub language_model_name: std::option::Option<std::string::String>,
 }
+impl StartStreamTranscriptionInput {
+    /// <p>Indicates the source language used in the input audio stream.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000 Hz for low
+    /// quality audio and 16,000 Hz for high quality audio.</p>
+    pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
+        self.media_sample_rate_hertz
+    }
+    /// <p>The encoding used for the input audio.</p>
+    pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
+        self.media_encoding.as_ref()
+    }
+    /// <p>The name of the vocabulary to use when processing the transcription job.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>A identifier for the transcription session. Use this parameter when you want to retry a
+    /// session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in
+    /// the response.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data
+    /// frame.</p>
+    pub fn audio_stream(
+        &self,
+    ) -> &aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream> {
+        &self.audio_stream
+    }
+    /// <p>The name of the vocabulary filter you've created that is unique to your account.
+    /// Provide the name in this field to successfully use it in a stream.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The manner in which you use your vocabulary filter to filter words in your transcript.
+    /// <code>Remove</code> removes filtered words from your transcription results.
+    /// <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results.
+    /// <code>Tag</code> keeps the filtered words in your transcription results and tags them. The
+    /// tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>
+    /// </p>
+    pub fn vocabulary_filter_method(
+        &self,
+    ) -> std::option::Option<&crate::model::VocabularyFilterMethod> {
+        self.vocabulary_filter_method.as_ref()
+    }
+    /// <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
+    pub fn show_speaker_label(&self) -> bool {
+        self.show_speaker_label
+    }
+    /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately and then
+    /// merge the transcription output of each channel into a single transcription.</p>
+    /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end
+    /// time, and any alternative transcriptions.</p>
+    /// <p>You can't set both <code>ShowSpeakerLabel</code> and
+    /// <code>EnableChannelIdentification</code> in the same request. If you set both, your request
+    /// returns a <code>BadRequestException</code>.</p>
+    pub fn enable_channel_identification(&self) -> bool {
+        self.enable_channel_identification
+    }
+    /// <p>The number of channels that are in your audio stream.</p>
+    pub fn number_of_channels(&self) -> std::option::Option<i32> {
+        self.number_of_channels
+    }
+    /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the
+    /// partial results stabilized. Normally, any word or phrase from one partial result can change in
+    /// a subsequent partial result. With partial results stabilization enabled, only the last few
+    /// words of one partial result can change in another partial result.</p>
+    pub fn enable_partial_results_stabilization(&self) -> bool {
+        self.enable_partial_results_stabilization
+    }
+    /// <p>You can use this field to set the stability level of the transcription results. A higher
+    /// stability level means that the transcription results are less likely to change. Higher
+    /// stability levels can come with lower overall transcription accuracy.</p>
+    pub fn partial_results_stability(
+        &self,
+    ) -> std::option::Option<&crate::model::PartialResultsStability> {
+        self.partial_results_stability.as_ref()
+    }
+    /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p>
+    /// <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentIdentificationType> {
+        self.content_identification_type.as_ref()
+    }
+    /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+    /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+    pub fn content_redaction_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentRedactionType> {
+        self.content_redaction_type.as_ref()
+    }
+    /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
+    /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>    
+    /// <p>
+    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    pub fn pii_entity_types(&self) -> std::option::Option<&str> {
+        self.pii_entity_types.as_deref()
+    }
+    /// <p>The name of the language model you want to use.</p>
+    pub fn language_model_name(&self) -> std::option::Option<&str> {
+        self.language_model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartStreamTranscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartStreamTranscriptionInput");
@@ -1472,6 +1578,73 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// transcription output.</p>
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
+}
+impl StartMedicalStreamTranscriptionInput {
+    /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US
+    /// English (en-US). </p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The sample rate of the input audio in Hertz.</p>
+    pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
+        self.media_sample_rate_hertz
+    }
+    /// <p>The encoding used for the input audio.</p>
+    pub fn media_encoding(&self) -> std::option::Option<&crate::model::MediaEncoding> {
+        self.media_encoding.as_ref()
+    }
+    /// <p>The name of the medical custom vocabulary to use when processing the real-time
+    /// stream.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The medical specialty of the clinician or provider.</p>
+    pub fn specialty(&self) -> std::option::Option<&crate::model::Specialty> {
+        self.specialty.as_ref()
+    }
+    /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating
+    /// patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one
+    /// or more medical professionanls.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>When <code>true</code>, enables speaker identification in your real-time
+    /// stream.</p>
+    pub fn show_speaker_label(&self) -> bool {
+        self.show_speaker_label
+    }
+    /// <p> Optional. An identifier for the transcription session. If you don't provide a session
+    /// ID, Amazon Transcribe generates one for you and returns it in the response. </p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
+    pub fn audio_stream(
+        &self,
+    ) -> &aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream> {
+        &self.audio_stream
+    }
+    /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and
+    /// then merge the transcription output of each channel into a single transcription.</p>
+    /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time,
+    /// end time, and any alternative transcriptions.</p>
+    /// <p>You can't set both <code>ShowSpeakerLabel</code> and
+    /// <code>EnableChannelIdentification</code> in the same request. If you set both, your
+    /// request returns a <code>BadRequestException</code>.</p>
+    pub fn enable_channel_identification(&self) -> bool {
+        self.enable_channel_identification
+    }
+    /// <p>The number of channels that are in your audio stream.</p>
+    pub fn number_of_channels(&self) -> std::option::Option<i32> {
+        self.number_of_channels
+    }
+    /// <p>Set this field to <code>PHI</code> to identify personal health information in the
+    /// transcription output.</p>
+    pub fn content_identification_type(
+        &self,
+    ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
+        self.content_identification_type.as_ref()
+    }
 }
 impl std::fmt::Debug for StartMedicalStreamTranscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

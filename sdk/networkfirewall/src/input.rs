@@ -141,10 +141,7 @@ impl AssociateFirewallPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_firewall_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -350,10 +347,7 @@ impl AssociateSubnetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_subnets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_subnets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -647,10 +641,8 @@ impl CreateFirewallInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_firewall(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -873,10 +865,9 @@ impl CreateFirewallPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_firewall_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1235,10 +1226,7 @@ impl CreateRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1406,10 +1394,8 @@ impl DeleteFirewallInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_firewall(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1581,10 +1567,9 @@ impl DeleteFirewallPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1734,10 +1719,9 @@ impl DeleteResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1929,10 +1913,7 @@ impl DeleteRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2101,10 +2082,7 @@ impl DescribeFirewallInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_firewall(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_firewall(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2278,10 +2256,7 @@ impl DescribeFirewallPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_firewall_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2451,7 +2426,7 @@ impl DescribeLoggingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_logging_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_logging_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2604,10 +2579,7 @@ impl DescribeResourcePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_resource_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2799,10 +2771,7 @@ impl DescribeRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3008,10 +2977,7 @@ impl DisassociateSubnetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_subnets(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_subnets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3181,10 +3147,9 @@ impl ListFirewallPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_firewall_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_policies(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3376,10 +3341,7 @@ impl ListFirewallsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_firewalls(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_firewalls(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3549,10 +3511,7 @@ impl ListRuleGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3734,10 +3693,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3957,10 +3915,7 @@ impl PutResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4130,10 +4085,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4303,10 +4255,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4508,7 +4457,7 @@ impl UpdateFirewallDeleteProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_delete_protection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_delete_protection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4711,10 +4660,7 @@ impl UpdateFirewallDescriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_description(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4949,10 +4895,9 @@ impl UpdateFirewallPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5160,7 +5105,7 @@ impl UpdateFirewallPolicyChangeProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy_change_protection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy_change_protection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5350,10 +5295,7 @@ impl UpdateLoggingConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_logging_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5638,10 +5580,7 @@ impl UpdateRuleGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5843,7 +5782,7 @@ impl UpdateSubnetChangeProtectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_subnet_change_protection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_subnet_change_protection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5925,6 +5864,30 @@ pub struct UpdateSubnetChangeProtectionInput {
     /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub subnet_change_protection: bool,
 }
+impl UpdateSubnetChangeProtectionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
+    /// Use this setting to protect against
+    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn subnet_change_protection(&self) -> bool {
+        self.subnet_change_protection
+    }
+}
 impl std::fmt::Debug for UpdateSubnetChangeProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSubnetChangeProtectionInput");
@@ -5978,6 +5941,61 @@ pub struct UpdateRuleGroupInput {
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
+impl UpdateRuleGroupInput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
+    /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+        self.rule_group_arn.as_deref()
+    }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+        self.rule_group_name.as_deref()
+    }
+    /// <p>An object that defines the rule group rules. </p>
+    /// <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// </note>
+    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+        self.rule_group.as_ref()
+    }
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
+    /// per line. Use this to import your existing Suricata compatible rule groups. </p>
+    /// <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>  
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
+    /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+    pub fn rules(&self) -> std::option::Option<&str> {
+        self.rules.as_deref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
+    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    /// <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// </note>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A description of the rule group. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
+    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
+    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for UpdateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleGroupInput");
@@ -6007,6 +6025,25 @@ pub struct UpdateLoggingConfigurationInput {
     /// Network Firewall disables logging for the firewall.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
+impl UpdateLoggingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
+    /// Network Firewall disables logging for the firewall.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoggingConfigurationInput");
@@ -6035,6 +6072,30 @@ pub struct UpdateFirewallPolicyChangeProtectionInput {
     /// Use this setting to protect against
     /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub firewall_policy_change_protection: bool,
+}
+impl UpdateFirewallPolicyChangeProtectionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
+    /// Use this setting to protect against
+    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn firewall_policy_change_protection(&self) -> bool {
+        self.firewall_policy_change_protection
+    }
 }
 impl std::fmt::Debug for UpdateFirewallPolicyChangeProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6075,6 +6136,40 @@ pub struct UpdateFirewallPolicyInput {
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
+impl UpdateFirewallPolicyInput {
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+        self.firewall_policy_name.as_deref()
+    }
+    /// <p>The updated firewall policy to use for the firewall. </p>
+    pub fn firewall_policy(&self) -> std::option::Option<&crate::model::FirewallPolicy> {
+        self.firewall_policy.as_ref()
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
+    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
+    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for UpdateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallPolicyInput");
@@ -6106,6 +6201,29 @@ pub struct UpdateFirewallDescriptionInput {
     /// the description for the firewall.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateFirewallDescriptionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
+    /// the description for the firewall.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFirewallDescriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallDescriptionInput");
@@ -6136,6 +6254,30 @@ pub struct UpdateFirewallDeleteProtectionInput {
     /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub delete_protection: bool,
 }
+impl UpdateFirewallDeleteProtectionInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
+    /// that the firewall is protected against deletion. Use this setting to protect against
+    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    pub fn delete_protection(&self) -> bool {
+        self.delete_protection
+    }
+}
 impl std::fmt::Debug for UpdateFirewallDeleteProtectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFirewallDeleteProtectionInput");
@@ -6156,6 +6298,16 @@ pub struct UntagResourceInput {
     /// <p></p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6173,6 +6325,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6221,6 +6383,45 @@ pub struct PutResourcePolicyInput {
     /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
+    /// and the operations that you want the accounts to be able to perform. </p>
+    /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>network-firewall:CreateFirewallPolicy</p>
+    /// </li>
+    /// <li>
+    /// <p>network-firewall:UpdateFirewallPolicy</p>
+    /// </li>
+    /// <li>
+    /// <p>network-firewall:ListRuleGroups</p>
+    /// </li>
+    /// </ul>
+    /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li>
+    /// <p>network-firewall:CreateFirewall</p>
+    /// </li>
+    /// <li>
+    /// <p>network-firewall:UpdateFirewall</p>
+    /// </li>
+    /// <li>
+    /// <p>network-firewall:AssociateFirewallPolicy</p>
+    /// </li>
+    /// <li>
+    /// <p>network-firewall:ListFirewallPolicies</p>
+    /// </li>
+    /// </ul>
+    /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyInput");
@@ -6245,6 +6446,24 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
+    /// objects are available, in the response, Network Firewall provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6267,6 +6486,20 @@ pub struct ListRuleGroupsInput {
     /// objects are available, in the response, Network Firewall provides a
     /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRuleGroupsInput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
+    /// objects are available, in the response, Network Firewall provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRuleGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6293,6 +6526,25 @@ pub struct ListFirewallsInput {
     /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFirewallsInput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
+    /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
+    pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.vpc_ids.as_deref()
+    }
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
+    /// objects are available, in the response, Network Firewall provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFirewallsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFirewallsInput");
@@ -6315,6 +6567,20 @@ pub struct ListFirewallPoliciesInput {
     /// objects are available, in the response, Network Firewall provides a
     /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFirewallPoliciesInput {
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
+    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
+    /// objects are available, in the response, Network Firewall provides a
+    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFirewallPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6341,6 +6607,28 @@ pub struct DisassociateSubnetsInput {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisassociateSubnetsInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6370,6 +6658,26 @@ pub struct DescribeRuleGroupInput {
     /// </note>
     pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
+impl DescribeRuleGroupInput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+        self.rule_group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+        self.rule_group_arn.as_deref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
+    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    /// <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// </note>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRuleGroupInput");
@@ -6386,6 +6694,12 @@ impl std::fmt::Debug for DescribeRuleGroupInput {
 pub struct DescribeResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DescribeResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6405,6 +6719,18 @@ pub struct DescribeLoggingConfigurationInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_name: std::option::Option<std::string::String>,
+}
+impl DescribeLoggingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoggingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6426,6 +6752,18 @@ pub struct DescribeFirewallPolicyInput {
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_policy_arn: std::option::Option<std::string::String>,
 }
+impl DescribeFirewallPolicyInput {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+        self.firewall_policy_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFirewallPolicyInput");
@@ -6445,6 +6783,18 @@ pub struct DescribeFirewallInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_arn: std::option::Option<std::string::String>,
+}
+impl DescribeFirewallInput {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6472,6 +6822,26 @@ pub struct DeleteRuleGroupInput {
     /// </note>
     pub r#type: std::option::Option<crate::model::RuleGroupType>,
 }
+impl DeleteRuleGroupInput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+        self.rule_group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+        self.rule_group_arn.as_deref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
+    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    /// <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// </note>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRuleGroupInput");
@@ -6488,6 +6858,12 @@ impl std::fmt::Debug for DeleteRuleGroupInput {
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DeleteResourcePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6508,6 +6884,18 @@ pub struct DeleteFirewallPolicyInput {
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_policy_arn: std::option::Option<std::string::String>,
 }
+impl DeleteFirewallPolicyInput {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+        self.firewall_policy_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFirewallPolicyInput");
@@ -6527,6 +6915,18 @@ pub struct DeleteFirewallInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub firewall_arn: std::option::Option<std::string::String>,
+}
+impl DeleteFirewallInput {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6613,6 +7013,95 @@ pub struct CreateRuleGroupInput {
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
 }
+impl CreateRuleGroupInput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+        self.rule_group_name.as_deref()
+    }
+    /// <p>An object that defines the rule group rules. </p>
+    /// <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// </note>
+    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+        self.rule_group.as_ref()
+    }
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
+    /// per line. Use this to import your existing Suricata compatible rule groups. </p>
+    /// <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>  
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
+    /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+    pub fn rules(&self) -> std::option::Option<&str> {
+        self.rules.as_deref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
+    /// stateless rules. If it is stateful, it contains stateful rules. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A description of the rule group. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
+    /// When you update a rule group, you are limited to this capacity. When you reference a rule group
+    /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
+    /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+    /// <note>
+    /// <p>You can't change or exceed this capacity when you update the rule group, so leave
+    /// room for your rule group to grow. </p>
+    /// </note>
+    /// <p>
+    /// <b>Capacity for a stateless rule group</b>
+    /// </p>
+    /// <p>For a stateless rule group, the capacity required is the sum of the capacity
+    /// requirements of the individual rules that you expect to have in the rule group. </p>
+    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
+    /// requirement values of each of the rule's match settings:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A match setting with no criteria specified has a value of 1. </p>
+    /// </li>
+    /// <li>
+    /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
+    /// </li>
+    /// <li>
+    /// <p>All other match settings have a value equal to the number of elements provided in
+    /// the setting. For example, a protocol setting ["UDP"] and a source setting
+    /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
+    /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity
+    /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
+    /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
+    /// for each of the other match settings has a capacity requirement of 6. </p>
+    /// <p>
+    /// <b>Capacity for a stateful rule group</b>
+    /// </p>
+    /// <p>For
+    /// a stateful rule group, the minimum capacity required is the number of individual rules that
+    /// you expect to have in the rule group. </p>
+    pub fn capacity(&self) -> std::option::Option<i32> {
+        self.capacity
+    }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
+    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
+    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for CreateRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleGroupInput");
@@ -6647,6 +7136,33 @@ pub struct CreateFirewallPolicyInput {
     /// the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
     pub dry_run: bool,
+}
+impl CreateFirewallPolicyInput {
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+        self.firewall_policy_name.as_deref()
+    }
+    /// <p>The rule groups and policy actions to use in the firewall policy.</p>
+    pub fn firewall_policy(&self) -> std::option::Option<&crate::model::FirewallPolicy> {
+        self.firewall_policy.as_ref()
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+    /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
+    /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
+    /// the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for CreateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6693,6 +7209,54 @@ pub struct CreateFirewallInput {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateFirewallInput {
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
+    /// use for the firewall.</p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
+    /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
+    /// <p>You can't change this setting after you create the firewall. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
+    /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
+    /// subnet. </p>
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+        self.subnet_mappings.as_deref()
+    }
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
+    /// that the firewall is protected against deletion. Use this setting to protect against
+    /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    pub fn delete_protection(&self) -> bool {
+        self.delete_protection
+    }
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
+    /// Use this setting to protect against
+    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn subnet_change_protection(&self) -> bool {
+        self.subnet_change_protection
+    }
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
+    /// Use this setting to protect against
+    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn firewall_policy_change_protection(&self) -> bool {
+        self.firewall_policy_change_protection
+    }
+    /// <p>A description of the firewall.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFirewallInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFirewallInput");
@@ -6729,6 +7293,28 @@ pub struct AssociateSubnetsInput {
     /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
 }
+impl AssociateSubnetsInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
+    pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
+        self.subnet_mappings.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateSubnetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSubnetsInput");
@@ -6756,6 +7342,28 @@ pub struct AssociateFirewallPolicyInput {
     pub firewall_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub firewall_policy_arn: std::option::Option<std::string::String>,
+}
+impl AssociateFirewallPolicyInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn update_token(&self) -> std::option::Option<&str> {
+        self.update_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+        self.firewall_arn.as_deref()
+    }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
+        self.firewall_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+        self.firewall_policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateFirewallPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -190,6 +190,20 @@ pub struct RejectGrantOutput {
     /// <p>Grant version.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl RejectGrantOutput {
+    /// <p>Grant ARN.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Grant version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectGrantOutput");
@@ -266,6 +280,18 @@ pub struct ListUsageForLicenseConfigurationOutput {
         std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUsageForLicenseConfigurationOutput {
+    /// <p>Information about the license configurations.</p>
+    pub fn license_configuration_usage_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseConfigurationUsage]> {
+        self.license_configuration_usage_list.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUsageForLicenseConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -346,6 +372,16 @@ pub struct ListTokensOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTokensOutput {
+    /// <p>Received token details.</p>
+    pub fn tokens(&self) -> std::option::Option<&[crate::model::TokenData]> {
+        self.tokens.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTokensOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTokensOutput");
@@ -416,6 +452,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -473,6 +515,18 @@ pub struct ListResourceInventoryOutput {
         std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceInventoryOutput {
+    /// <p>Information about the resources.</p>
+    pub fn resource_inventory_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceInventory]> {
+        self.resource_inventory_list.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceInventoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -550,6 +604,16 @@ pub struct ListReceivedLicensesOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListReceivedLicensesOutput {
+    /// <p>Received license details.</p>
+    pub fn licenses(&self) -> std::option::Option<&[crate::model::GrantedLicense]> {
+        self.licenses.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReceivedLicensesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReceivedLicensesOutput");
@@ -621,6 +685,16 @@ pub struct ListReceivedGrantsOutput {
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReceivedGrantsOutput {
+    /// <p>Received grant details.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+        self.grants.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReceivedGrantsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -694,6 +768,16 @@ pub struct ListLicenseVersionsOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLicenseVersionsOutput {
+    /// <p>License details.</p>
+    pub fn licenses(&self) -> std::option::Option<&[crate::model::License]> {
+        self.licenses.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLicenseVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicenseVersionsOutput");
@@ -766,6 +850,18 @@ pub struct ListLicenseSpecificationsForResourceOutput {
         std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLicenseSpecificationsForResourceOutput {
+    /// <p>License configurations associated with a resource.</p>
+    pub fn license_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseSpecification]> {
+        self.license_specifications.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLicenseSpecificationsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -843,6 +939,16 @@ pub struct ListLicensesOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLicensesOutput {
+    /// <p>License details.</p>
+    pub fn licenses(&self) -> std::option::Option<&[crate::model::License]> {
+        self.licenses.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLicensesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicensesOutput");
@@ -914,6 +1020,16 @@ pub struct ListLicenseManagerReportGeneratorsOutput {
     pub report_generators: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLicenseManagerReportGeneratorsOutput {
+    /// <p>A report generator that creates periodic reports about your license configurations.</p>
+    pub fn report_generators(&self) -> std::option::Option<&[crate::model::ReportGenerator]> {
+        self.report_generators.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLicenseManagerReportGeneratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1108,18 @@ pub struct ListLicenseConversionTasksOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLicenseConversionTasksOutput {
+    /// <p>Information about the license configuration tasks for your account.</p>
+    pub fn license_conversion_tasks(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseConversionTask]> {
+        self.license_conversion_tasks.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLicenseConversionTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicenseConversionTasksOutput");
@@ -1069,6 +1197,18 @@ pub struct ListLicenseConfigurationsOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLicenseConfigurationsOutput {
+    /// <p>Information about the license configurations.</p>
+    pub fn license_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseConfiguration]> {
+        self.license_configurations.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLicenseConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLicenseConfigurationsOutput");
@@ -1145,6 +1285,18 @@ pub struct ListFailuresForLicenseConfigurationOperationsOutput {
         std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFailuresForLicenseConfigurationOperationsOutput {
+    /// <p>License configuration operations that failed.</p>
+    pub fn license_operation_failure_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseOperationFailure]> {
+        self.license_operation_failure_list.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1226,6 +1378,16 @@ pub struct ListDistributedGrantsOutput {
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDistributedGrantsOutput {
+    /// <p>Distributed grant details.</p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+        self.grants.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDistributedGrantsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributedGrantsOutput");
@@ -1298,6 +1460,18 @@ pub struct ListAssociationsForLicenseConfigurationOutput {
         std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssociationsForLicenseConfigurationOutput {
+    /// <p>Information about the associations for the license configuration.</p>
+    pub fn license_configuration_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LicenseConfigurationAssociation]> {
+        self.license_configuration_associations.as_deref()
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssociationsForLicenseConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1388,6 +1562,33 @@ pub struct GetServiceSettingsOutput {
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
     /// provides member accounts with access to this share.</p>
     pub license_manager_resource_share_arn: std::option::Option<std::string::String>,
+}
+impl GetServiceSettingsOutput {
+    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
+    /// and so on.</p>
+    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+        self.s3_bucket_arn.as_deref()
+    }
+    /// <p>SNS topic configured to receive notifications from License Manager.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>Indicates whether Organizations is integrated with License Manager for
+    /// cross-account discovery.</p>
+    pub fn organization_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationConfiguration> {
+        self.organization_configuration.as_ref()
+    }
+    /// <p>Indicates whether cross-account discovery is enabled.</p>
+    pub fn enable_cross_accounts_discovery(&self) -> std::option::Option<bool> {
+        self.enable_cross_accounts_discovery
+    }
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
+    /// provides member accounts with access to this share.</p>
+    pub fn license_manager_resource_share_arn(&self) -> std::option::Option<&str> {
+        self.license_manager_resource_share_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServiceSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1526,6 +1727,12 @@ pub struct GetLicenseUsageOutput {
     /// <p>License usage details.</p>
     pub license_usage: std::option::Option<crate::model::LicenseUsage>,
 }
+impl GetLicenseUsageOutput {
+    /// <p>License usage details.</p>
+    pub fn license_usage(&self) -> std::option::Option<&crate::model::LicenseUsage> {
+        self.license_usage.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLicenseUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLicenseUsageOutput");
@@ -1576,6 +1783,12 @@ impl GetLicenseUsageOutput {
 pub struct GetLicenseManagerReportGeneratorOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
     pub report_generator: std::option::Option<crate::model::ReportGenerator>,
+}
+impl GetLicenseManagerReportGeneratorOutput {
+    /// <p>A report generator that creates periodic reports about your license configurations.</p>
+    pub fn report_generator(&self) -> std::option::Option<&crate::model::ReportGenerator> {
+        self.report_generator.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLicenseManagerReportGeneratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1643,6 +1856,48 @@ pub struct GetLicenseConversionTaskOutput {
     pub license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Time at which the license type conversion task was completed.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetLicenseConversionTaskOutput {
+    /// <p>ID of the license type conversion task.</p>
+    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+        self.license_conversion_task_id.as_deref()
+    }
+    /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Information about the license type converted from.</p>
+    pub fn source_license_context(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+        self.source_license_context.as_ref()
+    }
+    /// <p>Information about the license type converted to.</p>
+    pub fn destination_license_context(
+        &self,
+    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+        self.destination_license_context.as_ref()
+    }
+    /// <p>The status message for the conversion task.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Status of the license type conversion task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseConversionTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Time at which the license type conversion task was started .</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Amount of time to complete the license type conversion.</p>
+    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.license_conversion_time.as_ref()
+    }
+    /// <p>Time at which the license type conversion task was completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLicenseConversionTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1869,6 +2124,84 @@ pub struct GetLicenseConfigurationOutput {
         std::option::Option<crate::model::AutomatedDiscoveryInformation>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: std::option::Option<bool>,
+}
+impl GetLicenseConfigurationOutput {
+    /// <p>Unique ID for the license configuration.</p>
+    pub fn license_configuration_id(&self) -> std::option::Option<&str> {
+        self.license_configuration_id.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
+    /// <p>Name of the license configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description of the license configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Dimension for which the licenses are counted.</p>
+    pub fn license_counting_type(&self) -> std::option::Option<&crate::model::LicenseCountingType> {
+        self.license_counting_type.as_ref()
+    }
+    /// <p>License rules.</p>
+    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+        self.license_rules.as_deref()
+    }
+    /// <p>Number of available licenses.</p>
+    pub fn license_count(&self) -> std::option::Option<i64> {
+        self.license_count
+    }
+    /// <p>Sets the number of available licenses as a hard limit.</p>
+    pub fn license_count_hard_limit(&self) -> std::option::Option<bool> {
+        self.license_count_hard_limit
+    }
+    /// <p>Number of licenses assigned to resources.</p>
+    pub fn consumed_licenses(&self) -> std::option::Option<i64> {
+        self.consumed_licenses
+    }
+    /// <p>License configuration status.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Account ID of the owner of the license configuration.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>Summaries of the licenses consumed by resources.</p>
+    pub fn consumed_license_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConsumedLicenseSummary]> {
+        self.consumed_license_summary_list.as_deref()
+    }
+    /// <p>Summaries of the managed resources.</p>
+    pub fn managed_resource_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ManagedResourceSummary]> {
+        self.managed_resource_summary_list.as_deref()
+    }
+    /// <p>Tags for the license configuration.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Product information.</p>
+    pub fn product_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+        self.product_information_list.as_deref()
+    }
+    /// <p>Automated discovery information.</p>
+    pub fn automated_discovery_information(
+        &self,
+    ) -> std::option::Option<&crate::model::AutomatedDiscoveryInformation> {
+        self.automated_discovery_information.as_ref()
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn disassociate_when_not_found(&self) -> std::option::Option<bool> {
+        self.disassociate_when_not_found
+    }
 }
 impl std::fmt::Debug for GetLicenseConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2214,6 +2547,12 @@ pub struct GetLicenseOutput {
     /// <p>License details.</p>
     pub license: std::option::Option<crate::model::License>,
 }
+impl GetLicenseOutput {
+    /// <p>License details.</p>
+    pub fn license(&self) -> std::option::Option<&crate::model::License> {
+        self.license.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLicenseOutput");
@@ -2262,6 +2601,12 @@ pub struct GetGrantOutput {
     /// <p>Grant details.</p>
     pub grant: std::option::Option<crate::model::Grant>,
 }
+impl GetGrantOutput {
+    /// <p>Grant details.</p>
+    pub fn grant(&self) -> std::option::Option<&crate::model::Grant> {
+        self.grant.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGrantOutput");
@@ -2307,6 +2652,12 @@ impl GetGrantOutput {
 pub struct GetAccessTokenOutput {
     /// <p>Temporary access token.</p>
     pub access_token: std::option::Option<std::string::String>,
+}
+impl GetAccessTokenOutput {
+    /// <p>Temporary access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2357,6 +2708,16 @@ pub struct ExtendLicenseConsumptionOutput {
     pub license_consumption_token: std::option::Option<std::string::String>,
     /// <p>Date and time at which the license consumption expires.</p>
     pub expiration: std::option::Option<std::string::String>,
+}
+impl ExtendLicenseConsumptionOutput {
+    /// <p>License consumption token.</p>
+    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+        self.license_consumption_token.as_deref()
+    }
+    /// <p>Date and time at which the license consumption expires.</p>
+    pub fn expiration(&self) -> std::option::Option<&str> {
+        self.expiration.as_deref()
+    }
 }
 impl std::fmt::Debug for ExtendLicenseConsumptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2514,6 +2875,16 @@ pub struct DeleteLicenseOutput {
     /// <p>Date when the license is deleted.</p>
     pub deletion_date: std::option::Option<std::string::String>,
 }
+impl DeleteLicenseOutput {
+    /// <p>License status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseDeletionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Date when the license is deleted.</p>
+    pub fn deletion_date(&self) -> std::option::Option<&str> {
+        self.deletion_date.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLicenseOutput");
@@ -2584,6 +2955,20 @@ pub struct DeleteGrantOutput {
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl DeleteGrantOutput {
+    /// <p>Grant ARN.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Grant version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2662,6 +3047,20 @@ pub struct CreateTokenOutput {
     pub token_type: std::option::Option<crate::model::TokenType>,
     /// <p>Refresh token, encoded as a JWT token.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl CreateTokenOutput {
+    /// <p>Token ID.</p>
+    pub fn token_id(&self) -> std::option::Option<&str> {
+        self.token_id.as_deref()
+    }
+    /// <p>Token type.</p>
+    pub fn token_type(&self) -> std::option::Option<&crate::model::TokenType> {
+        self.token_type.as_ref()
+    }
+    /// <p>Refresh token, encoded as a JWT token.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2744,6 +3143,20 @@ pub struct CreateLicenseVersionOutput {
     /// <p>License status.</p>
     pub status: std::option::Option<crate::model::LicenseStatus>,
 }
+impl CreateLicenseVersionOutput {
+    /// <p>License ARN.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>New version of the license.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>License status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLicenseVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLicenseVersionOutput");
@@ -2821,6 +3234,12 @@ pub struct CreateLicenseManagerReportGeneratorOutput {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
+impl CreateLicenseManagerReportGeneratorOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+        self.license_manager_report_generator_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLicenseManagerReportGeneratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLicenseManagerReportGeneratorOutput");
@@ -2878,6 +3297,12 @@ pub struct CreateLicenseConversionTaskForResourceOutput {
     /// <p>The ID of the created license type conversion task.</p>
     pub license_conversion_task_id: std::option::Option<std::string::String>,
 }
+impl CreateLicenseConversionTaskForResourceOutput {
+    /// <p>The ID of the created license type conversion task.</p>
+    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+        self.license_conversion_task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLicenseConversionTaskForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLicenseConversionTaskForResourceOutput");
@@ -2931,6 +3356,12 @@ impl CreateLicenseConversionTaskForResourceOutput {
 pub struct CreateLicenseConfigurationOutput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub license_configuration_arn: std::option::Option<std::string::String>,
+}
+impl CreateLicenseConfigurationOutput {
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+        self.license_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLicenseConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2986,6 +3417,20 @@ pub struct CreateLicenseOutput {
     pub status: std::option::Option<crate::model::LicenseStatus>,
     /// <p>License version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl CreateLicenseOutput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>License version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3068,6 +3513,20 @@ pub struct CreateGrantVersionOutput {
     /// <p>New version of the grant.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl CreateGrantVersionOutput {
+    /// <p>Grant ARN.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>New version of the grant.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGrantVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGrantVersionOutput");
@@ -3145,6 +3604,20 @@ pub struct CreateGrantOutput {
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl CreateGrantOutput {
+    /// <p>Grant ARN.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Grant version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3233,6 +3706,40 @@ pub struct CheckoutLicenseOutput {
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
     pub license_arn: std::option::Option<std::string::String>,
+}
+impl CheckoutLicenseOutput {
+    /// <p>Checkout type.</p>
+    pub fn checkout_type(&self) -> std::option::Option<&crate::model::CheckoutType> {
+        self.checkout_type.as_ref()
+    }
+    /// <p>License consumption token.</p>
+    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+        self.license_consumption_token.as_deref()
+    }
+    /// <p>Allowed license entitlements.</p>
+    pub fn entitlements_allowed(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+        self.entitlements_allowed.as_deref()
+    }
+    /// <p>Signed token.</p>
+    pub fn signed_token(&self) -> std::option::Option<&str> {
+        self.signed_token.as_deref()
+    }
+    /// <p>Node ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>Date and time at which the license checkout is issued.</p>
+    pub fn issued_at(&self) -> std::option::Option<&str> {
+        self.issued_at.as_deref()
+    }
+    /// <p>Date and time at which the license checkout expires.</p>
+    pub fn expiration(&self) -> std::option::Option<&str> {
+        self.expiration.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckoutLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3405,6 +3912,40 @@ pub struct CheckoutBorrowLicenseOutput {
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Information about constraints.</p>
     pub checkout_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
+}
+impl CheckoutBorrowLicenseOutput {
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn license_arn(&self) -> std::option::Option<&str> {
+        self.license_arn.as_deref()
+    }
+    /// <p>License consumption token.</p>
+    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+        self.license_consumption_token.as_deref()
+    }
+    /// <p>Allowed license entitlements.</p>
+    pub fn entitlements_allowed(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+        self.entitlements_allowed.as_deref()
+    }
+    /// <p>Node ID.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>Signed token.</p>
+    pub fn signed_token(&self) -> std::option::Option<&str> {
+        self.signed_token.as_deref()
+    }
+    /// <p>Date and time at which the license checkout is issued.</p>
+    pub fn issued_at(&self) -> std::option::Option<&str> {
+        self.issued_at.as_deref()
+    }
+    /// <p>Date and time at which the license checkout expires.</p>
+    pub fn expiration(&self) -> std::option::Option<&str> {
+        self.expiration.as_deref()
+    }
+    /// <p>Information about constraints.</p>
+    pub fn checkout_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+        self.checkout_metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for CheckoutBorrowLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3603,6 +4144,20 @@ pub struct AcceptGrantOutput {
     pub status: std::option::Option<crate::model::GrantStatus>,
     /// <p>Grant version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl AcceptGrantOutput {
+    /// <p>Grant ARN.</p>
+    pub fn grant_arn(&self) -> std::option::Option<&str> {
+        self.grant_arn.as_deref()
+    }
+    /// <p>Grant status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Grant version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptGrantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

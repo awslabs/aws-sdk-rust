@@ -6,6 +6,12 @@ pub struct UpdateSiteOutput {
     /// <p>Information about the site.</p>
     pub site: std::option::Option<crate::model::Site>,
 }
+impl UpdateSiteOutput {
+    /// <p>Information about the site.</p>
+    pub fn site(&self) -> std::option::Option<&crate::model::Site> {
+        self.site.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSiteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSiteOutput");
@@ -54,6 +60,19 @@ pub struct UpdateNetworkResourceMetadataOutput {
     /// <p>The updated resource metadata.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateNetworkResourceMetadataOutput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The updated resource metadata.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNetworkResourceMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -133,6 +152,12 @@ pub struct UpdateLinkOutput {
     /// <p>Information about the link.</p>
     pub link: std::option::Option<crate::model::Link>,
 }
+impl UpdateLinkOutput {
+    /// <p>Information about the link.</p>
+    pub fn link(&self) -> std::option::Option<&crate::model::Link> {
+        self.link.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLinkOutput");
@@ -178,6 +203,12 @@ impl UpdateLinkOutput {
 pub struct UpdateGlobalNetworkOutput {
     /// <p>Information about the global network object.</p>
     pub global_network: std::option::Option<crate::model::GlobalNetwork>,
+}
+impl UpdateGlobalNetworkOutput {
+    /// <p>Information about the global network object.</p>
+    pub fn global_network(&self) -> std::option::Option<&crate::model::GlobalNetwork> {
+        self.global_network.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGlobalNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -230,6 +261,12 @@ pub struct UpdateDeviceOutput {
     /// <p>Information about the device.</p>
     pub device: std::option::Option<crate::model::Device>,
 }
+impl UpdateDeviceOutput {
+    /// <p>Information about the device.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+        self.device.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceOutput");
@@ -277,6 +314,12 @@ impl UpdateDeviceOutput {
 pub struct UpdateConnectionOutput {
     /// <p>Information about the connection.</p>
     pub connection: std::option::Option<crate::model::Connection>,
+}
+impl UpdateConnectionOutput {
+    /// <p>Information about the connection.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -389,6 +432,12 @@ pub struct StartRouteAnalysisOutput {
     /// <p>The route analysis.</p>
     pub route_analysis: std::option::Option<crate::model::RouteAnalysis>,
 }
+impl StartRouteAnalysisOutput {
+    /// <p>The route analysis.</p>
+    pub fn route_analysis(&self) -> std::option::Option<&crate::model::RouteAnalysis> {
+        self.route_analysis.as_ref()
+    }
+}
 impl std::fmt::Debug for StartRouteAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartRouteAnalysisOutput");
@@ -439,6 +488,14 @@ impl StartRouteAnalysisOutput {
 pub struct RegisterTransitGatewayOutput {
     /// <p>Information about the transit gateway registration.</p>
     pub transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
+}
+impl RegisterTransitGatewayOutput {
+    /// <p>Information about the transit gateway registration.</p>
+    pub fn transit_gateway_registration(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRegistration> {
+        self.transit_gateway_registration.as_ref()
+    }
 }
 impl std::fmt::Debug for RegisterTransitGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -497,6 +554,12 @@ impl RegisterTransitGatewayOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The list of tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -557,6 +620,18 @@ pub struct GetTransitGatewayRegistrationsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayRegistration>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayRegistrationsOutput {
+    /// <p>The transit gateway registrations.</p>
+    pub fn transit_gateway_registrations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayRegistration]> {
+        self.transit_gateway_registrations.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayRegistrationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -637,6 +712,18 @@ pub struct GetTransitGatewayConnectPeerAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeerAssociation>>,
     /// <p>The token to use for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayConnectPeerAssociationsOutput {
+    /// <p>Information about the transit gateway Connect peer associations.</p>
+    pub fn transit_gateway_connect_peer_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransitGatewayConnectPeerAssociation]> {
+        self.transit_gateway_connect_peer_associations.as_deref()
+    }
+    /// <p>The token to use for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayConnectPeerAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -723,6 +810,16 @@ pub struct GetSitesOutput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSitesOutput {
+    /// <p>The sites.</p>
+    pub fn sites(&self) -> std::option::Option<&[crate::model::Site]> {
+        self.sites.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSitesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSitesOutput");
@@ -793,6 +890,12 @@ pub struct GetRouteAnalysisOutput {
     /// <p>The route analysis.</p>
     pub route_analysis: std::option::Option<crate::model::RouteAnalysis>,
 }
+impl GetRouteAnalysisOutput {
+    /// <p>The route analysis.</p>
+    pub fn route_analysis(&self) -> std::option::Option<&crate::model::RouteAnalysis> {
+        self.route_analysis.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRouteAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRouteAnalysisOutput");
@@ -845,6 +948,16 @@ pub struct GetNetworkTelemetryOutput {
     pub network_telemetry: std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetNetworkTelemetryOutput {
+    /// <p>The network telemetry.</p>
+    pub fn network_telemetry(&self) -> std::option::Option<&[crate::model::NetworkTelemetry]> {
+        self.network_telemetry.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNetworkTelemetryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -925,6 +1038,24 @@ pub struct GetNetworkRoutesOutput {
     pub route_table_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The network routes.</p>
     pub network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
+}
+impl GetNetworkRoutesOutput {
+    /// <p>The ARN of the route table.</p>
+    pub fn route_table_arn(&self) -> std::option::Option<&str> {
+        self.route_table_arn.as_deref()
+    }
+    /// <p>The route table type.</p>
+    pub fn route_table_type(&self) -> std::option::Option<&crate::model::RouteTableType> {
+        self.route_table_type.as_ref()
+    }
+    /// <p>The route table creation time.</p>
+    pub fn route_table_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.route_table_timestamp.as_ref()
+    }
+    /// <p>The network routes.</p>
+    pub fn network_routes(&self) -> std::option::Option<&[crate::model::NetworkRoute]> {
+        self.network_routes.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNetworkRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1033,6 +1164,16 @@ pub struct GetNetworkResourcesOutput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetNetworkResourcesOutput {
+    /// <p>The network resources.</p>
+    pub fn network_resources(&self) -> std::option::Option<&[crate::model::NetworkResource]> {
+        self.network_resources.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourcesOutput");
@@ -1109,6 +1250,16 @@ pub struct GetNetworkResourceRelationshipsOutput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetNetworkResourceRelationshipsOutput {
+    /// <p>The resource relationships.</p>
+    pub fn relationships(&self) -> std::option::Option<&[crate::model::Relationship]> {
+        self.relationships.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkResourceRelationshipsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourceRelationshipsOutput");
@@ -1181,6 +1332,18 @@ pub struct GetNetworkResourceCountsOutput {
         std::option::Option<std::vec::Vec<crate::model::NetworkResourceCount>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetNetworkResourceCountsOutput {
+    /// <p>The count of resources.</p>
+    pub fn network_resource_counts(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkResourceCount]> {
+        self.network_resource_counts.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNetworkResourceCountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1258,6 +1421,16 @@ pub struct GetLinksOutput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetLinksOutput {
+    /// <p>The links.</p>
+    pub fn links(&self) -> std::option::Option<&[crate::model::Link]> {
+        self.links.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLinksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLinksOutput");
@@ -1329,6 +1502,16 @@ pub struct GetLinkAssociationsOutput {
     pub link_associations: std::option::Option<std::vec::Vec<crate::model::LinkAssociation>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetLinkAssociationsOutput {
+    /// <p>The link associations.</p>
+    pub fn link_associations(&self) -> std::option::Option<&[crate::model::LinkAssociation]> {
+        self.link_associations.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLinkAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1406,6 +1589,16 @@ pub struct GetDevicesOutput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDevicesOutput {
+    /// <p>The devices.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicesOutput");
@@ -1478,6 +1671,18 @@ pub struct GetCustomerGatewayAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::CustomerGatewayAssociation>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCustomerGatewayAssociationsOutput {
+    /// <p>The customer gateway associations.</p>
+    pub fn customer_gateway_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomerGatewayAssociation]> {
+        self.customer_gateway_associations.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCustomerGatewayAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1558,6 +1763,16 @@ pub struct GetConnectionsOutput {
     /// <p>The token to use for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetConnectionsOutput {
+    /// <p>Information about the connections.</p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+        self.connections.as_deref()
+    }
+    /// <p>The token to use for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionsOutput");
@@ -1629,6 +1844,14 @@ pub struct DisassociateTransitGatewayConnectPeerOutput {
     pub transit_gateway_connect_peer_association:
         std::option::Option<crate::model::TransitGatewayConnectPeerAssociation>,
 }
+impl DisassociateTransitGatewayConnectPeerOutput {
+    /// <p>The transit gateway Connect peer association.</p>
+    pub fn transit_gateway_connect_peer_association(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnectPeerAssociation> {
+        self.transit_gateway_connect_peer_association.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateTransitGatewayConnectPeerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTransitGatewayConnectPeerOutput");
@@ -1688,6 +1911,12 @@ pub struct DisassociateLinkOutput {
     /// <p>Information about the link association.</p>
     pub link_association: std::option::Option<crate::model::LinkAssociation>,
 }
+impl DisassociateLinkOutput {
+    /// <p>Information about the link association.</p>
+    pub fn link_association(&self) -> std::option::Option<&crate::model::LinkAssociation> {
+        self.link_association.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateLinkOutput");
@@ -1738,6 +1967,14 @@ impl DisassociateLinkOutput {
 pub struct DisassociateCustomerGatewayOutput {
     /// <p>Information about the customer gateway association.</p>
     pub customer_gateway_association: std::option::Option<crate::model::CustomerGatewayAssociation>,
+}
+impl DisassociateCustomerGatewayOutput {
+    /// <p>Information about the customer gateway association.</p>
+    pub fn customer_gateway_association(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerGatewayAssociation> {
+        self.customer_gateway_association.as_ref()
+    }
 }
 impl std::fmt::Debug for DisassociateCustomerGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1798,6 +2035,16 @@ pub struct DescribeGlobalNetworksOutput {
     pub global_networks: std::option::Option<std::vec::Vec<crate::model::GlobalNetwork>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeGlobalNetworksOutput {
+    /// <p>Information about the global networks.</p>
+    pub fn global_networks(&self) -> std::option::Option<&[crate::model::GlobalNetwork]> {
+        self.global_networks.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGlobalNetworksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1869,6 +2116,14 @@ pub struct DeregisterTransitGatewayOutput {
     /// <p>The transit gateway registration information.</p>
     pub transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
 }
+impl DeregisterTransitGatewayOutput {
+    /// <p>The transit gateway registration information.</p>
+    pub fn transit_gateway_registration(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRegistration> {
+        self.transit_gateway_registration.as_ref()
+    }
+}
 impl std::fmt::Debug for DeregisterTransitGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTransitGatewayOutput");
@@ -1927,6 +2182,12 @@ pub struct DeleteSiteOutput {
     /// <p>Information about the site.</p>
     pub site: std::option::Option<crate::model::Site>,
 }
+impl DeleteSiteOutput {
+    /// <p>Information about the site.</p>
+    pub fn site(&self) -> std::option::Option<&crate::model::Site> {
+        self.site.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSiteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSiteOutput");
@@ -1973,6 +2234,12 @@ pub struct DeleteLinkOutput {
     /// <p>Information about the link.</p>
     pub link: std::option::Option<crate::model::Link>,
 }
+impl DeleteLinkOutput {
+    /// <p>Information about the link.</p>
+    pub fn link(&self) -> std::option::Option<&crate::model::Link> {
+        self.link.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLinkOutput");
@@ -2018,6 +2285,12 @@ impl DeleteLinkOutput {
 pub struct DeleteGlobalNetworkOutput {
     /// <p>Information about the global network.</p>
     pub global_network: std::option::Option<crate::model::GlobalNetwork>,
+}
+impl DeleteGlobalNetworkOutput {
+    /// <p>Information about the global network.</p>
+    pub fn global_network(&self) -> std::option::Option<&crate::model::GlobalNetwork> {
+        self.global_network.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteGlobalNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2070,6 +2343,12 @@ pub struct DeleteDeviceOutput {
     /// <p>Information about the device.</p>
     pub device: std::option::Option<crate::model::Device>,
 }
+impl DeleteDeviceOutput {
+    /// <p>Information about the device.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+        self.device.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceOutput");
@@ -2117,6 +2396,12 @@ impl DeleteDeviceOutput {
 pub struct DeleteConnectionOutput {
     /// <p>Information about the connection.</p>
     pub connection: std::option::Option<crate::model::Connection>,
+}
+impl DeleteConnectionOutput {
+    /// <p>Information about the connection.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2169,6 +2454,12 @@ pub struct CreateSiteOutput {
     /// <p>Information about the site.</p>
     pub site: std::option::Option<crate::model::Site>,
 }
+impl CreateSiteOutput {
+    /// <p>Information about the site.</p>
+    pub fn site(&self) -> std::option::Option<&crate::model::Site> {
+        self.site.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSiteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSiteOutput");
@@ -2215,6 +2506,12 @@ pub struct CreateLinkOutput {
     /// <p>Information about the link.</p>
     pub link: std::option::Option<crate::model::Link>,
 }
+impl CreateLinkOutput {
+    /// <p>Information about the link.</p>
+    pub fn link(&self) -> std::option::Option<&crate::model::Link> {
+        self.link.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLinkOutput");
@@ -2260,6 +2557,12 @@ impl CreateLinkOutput {
 pub struct CreateGlobalNetworkOutput {
     /// <p>Information about the global network object.</p>
     pub global_network: std::option::Option<crate::model::GlobalNetwork>,
+}
+impl CreateGlobalNetworkOutput {
+    /// <p>Information about the global network object.</p>
+    pub fn global_network(&self) -> std::option::Option<&crate::model::GlobalNetwork> {
+        self.global_network.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGlobalNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2312,6 +2615,12 @@ pub struct CreateDeviceOutput {
     /// <p>Information about the device.</p>
     pub device: std::option::Option<crate::model::Device>,
 }
+impl CreateDeviceOutput {
+    /// <p>Information about the device.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+        self.device.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeviceOutput");
@@ -2359,6 +2668,12 @@ impl CreateDeviceOutput {
 pub struct CreateConnectionOutput {
     /// <p>Information about the connection.</p>
     pub connection: std::option::Option<crate::model::Connection>,
+}
+impl CreateConnectionOutput {
+    /// <p>Information about the connection.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2411,6 +2726,14 @@ pub struct AssociateTransitGatewayConnectPeerOutput {
     /// <p>The transit gateway Connect peer association.</p>
     pub transit_gateway_connect_peer_association:
         std::option::Option<crate::model::TransitGatewayConnectPeerAssociation>,
+}
+impl AssociateTransitGatewayConnectPeerOutput {
+    /// <p>The transit gateway Connect peer association.</p>
+    pub fn transit_gateway_connect_peer_association(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnectPeerAssociation> {
+        self.transit_gateway_connect_peer_association.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateTransitGatewayConnectPeerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2471,6 +2794,12 @@ pub struct AssociateLinkOutput {
     /// <p>The link association.</p>
     pub link_association: std::option::Option<crate::model::LinkAssociation>,
 }
+impl AssociateLinkOutput {
+    /// <p>The link association.</p>
+    pub fn link_association(&self) -> std::option::Option<&crate::model::LinkAssociation> {
+        self.link_association.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociateLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateLinkOutput");
@@ -2521,6 +2850,14 @@ impl AssociateLinkOutput {
 pub struct AssociateCustomerGatewayOutput {
     /// <p>The customer gateway association.</p>
     pub customer_gateway_association: std::option::Option<crate::model::CustomerGatewayAssociation>,
+}
+impl AssociateCustomerGatewayOutput {
+    /// <p>The customer gateway association.</p>
+    pub fn customer_gateway_association(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerGatewayAssociation> {
+        self.customer_gateway_association.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateCustomerGatewayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

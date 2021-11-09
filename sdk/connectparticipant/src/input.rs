@@ -152,10 +152,7 @@ impl CompleteAttachmentUploadInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_complete_attachment_upload(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -367,7 +364,7 @@ impl CreateParticipantConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_participant_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_participant_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -557,10 +554,9 @@ impl DisconnectParticipantInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disconnect_participant(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disconnect_participant(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -746,10 +742,7 @@ impl GetAttachmentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_attachment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_attachment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1002,10 +995,7 @@ impl GetTranscriptInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_transcript(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_transcript(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1235,10 +1225,7 @@ impl SendEventInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_event(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1448,10 +1435,7 @@ impl SendMessageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_message(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_message(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1680,10 +1664,7 @@ impl StartAttachmentUploadInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_attachment_upload(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1760,6 +1741,28 @@ pub struct StartAttachmentUploadInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
 }
+impl StartAttachmentUploadInput {
+    /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The size of the attachment in bytes.</p>
+    pub fn attachment_size_in_bytes(&self) -> i64 {
+        self.attachment_size_in_bytes
+    }
+    /// <p>A case-sensitive name of the attachment being uploaded.</p>
+    pub fn attachment_name(&self) -> std::option::Option<&str> {
+        self.attachment_name.as_deref()
+    }
+    /// <p>A unique case sensitive identifier to support idempotency of request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartAttachmentUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAttachmentUploadInput");
@@ -1785,6 +1788,25 @@ pub struct SendMessageInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
+}
+impl SendMessageInput {
+    /// <p>The type of the content. Supported types are text/plain.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The content of the message.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The authentication token associated with the connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SendMessageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1821,6 +1843,35 @@ pub struct SendEventInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
 }
+impl SendEventInput {
+    /// <p>The content type of the request. Supported types are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.typing</p>
+    /// </li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
+    /// </li>
+    /// </ul>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The content of the event to be sent (for example, message text). This is not yet
+    /// supported.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEventInput");
@@ -1853,6 +1904,38 @@ pub struct GetTranscriptInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
 }
+impl GetTranscriptInput {
+    /// <p>The contactId from the current contact chain for which transcript is needed.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in the page. Default: 10. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request
+    /// to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
+    /// when no StartPosition is provided, FORWARD with StartPosition. </p>
+    pub fn scan_direction(&self) -> std::option::Option<&crate::model::ScanDirection> {
+        self.scan_direction.as_ref()
+    }
+    /// <p>The sort order for the records. Default: DESCENDING.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortKey> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A filtering option for where to start.</p>
+    pub fn start_position(&self) -> std::option::Option<&crate::model::StartPosition> {
+        self.start_position.as_ref()
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTranscriptInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTranscriptInput");
@@ -1876,6 +1959,16 @@ pub struct GetAttachmentInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
 }
+impl GetAttachmentInput {
+    /// <p>A unique identifier for the attachment.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAttachmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAttachmentInput");
@@ -1894,6 +1987,17 @@ pub struct DisconnectParticipantInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
+}
+impl DisconnectParticipantInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DisconnectParticipantInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1918,6 +2022,23 @@ pub struct CreateParticipantConnectionInput {
     /// streaming.</p>
     pub connect_participant: std::option::Option<bool>,
 }
+impl CreateParticipantConnectionInput {
+    /// <p>Type of connection information required.</p>
+    pub fn r#type(&self) -> std::option::Option<&[crate::model::ConnectionType]> {
+        self.r#type.as_deref()
+    }
+    /// <p>This is a header parameter.</p>
+    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+    /// API response.</p>
+    pub fn participant_token(&self) -> std::option::Option<&str> {
+        self.participant_token.as_deref()
+    }
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for message
+    /// streaming.</p>
+    pub fn connect_participant(&self) -> std::option::Option<bool> {
+        self.connect_participant
+    }
+}
 impl std::fmt::Debug for CreateParticipantConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateParticipantConnectionInput");
@@ -1939,6 +2060,21 @@ pub struct CompleteAttachmentUploadInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
+}
+impl CompleteAttachmentUploadInput {
+    /// <p>A list of unique identifiers for the attachments.</p>
+    pub fn attachment_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.attachment_ids.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CompleteAttachmentUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

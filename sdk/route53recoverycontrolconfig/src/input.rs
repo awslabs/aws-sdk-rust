@@ -97,10 +97,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -275,10 +272,7 @@ impl CreateControlPanelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_control_panel(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_control_panel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -468,10 +462,9 @@ impl CreateRoutingControlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_routing_control(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_routing_control(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -649,10 +642,7 @@ impl CreateSafetyRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_safety_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_safety_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2937,10 +2927,7 @@ impl UpdateControlPanelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_control_panel(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_control_panel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3103,10 +3090,9 @@ impl UpdateRoutingControlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_control(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_routing_control(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3269,10 +3255,7 @@ impl UpdateSafetyRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_safety_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_safety_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3343,6 +3326,16 @@ pub struct UpdateSafetyRuleInput {
     /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
     pub gating_rule_update: std::option::Option<crate::model::GatingRuleUpdate>,
 }
+impl UpdateSafetyRuleInput {
+    /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+    pub fn assertion_rule_update(&self) -> std::option::Option<&crate::model::AssertionRuleUpdate> {
+        self.assertion_rule_update.as_ref()
+    }
+    /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+    pub fn gating_rule_update(&self) -> std::option::Option<&crate::model::GatingRuleUpdate> {
+        self.gating_rule_update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSafetyRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSafetyRuleInput");
@@ -3361,6 +3354,16 @@ pub struct UpdateRoutingControlInput {
     /// <p>The name of the routing control.</p>
     pub routing_control_name: std::option::Option<std::string::String>,
 }
+impl UpdateRoutingControlInput {
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn routing_control_name(&self) -> std::option::Option<&str> {
+        self.routing_control_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRoutingControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoutingControlInput");
@@ -3378,6 +3381,16 @@ pub struct UpdateControlPanelInput {
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the control panel.</p>
     pub control_panel_name: std::option::Option<std::string::String>,
+}
+impl UpdateControlPanelInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The name of the control panel.</p>
+    pub fn control_panel_name(&self) -> std::option::Option<&str> {
+        self.control_panel_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateControlPanelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3398,6 +3411,20 @@ pub struct ListSafetyRulesInput {
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSafetyRulesInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSafetyRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3420,6 +3447,20 @@ pub struct ListRoutingControlsInput {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRoutingControlsInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRoutingControlsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRoutingControlsInput");
@@ -3441,6 +3482,20 @@ pub struct ListControlPanelsInput {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListControlPanelsInput {
+    /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListControlPanelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListControlPanelsInput");
@@ -3459,6 +3514,16 @@ pub struct ListClustersInput {
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersInput {
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3480,6 +3545,20 @@ pub struct ListAssociatedRoute53HealthChecksInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
+impl ListAssociatedRoute53HealthChecksInput {
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociatedRoute53HealthChecksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedRoute53HealthChecksInput");
@@ -3497,6 +3576,12 @@ pub struct DescribeSafetyRuleInput {
     /// <p>The request body that you include when you update a safety rule.</p>
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
+impl DescribeSafetyRuleInput {
+    /// <p>The request body that you include when you update a safety rule.</p>
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+        self.safety_rule_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSafetyRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSafetyRuleInput");
@@ -3511,6 +3596,12 @@ impl std::fmt::Debug for DescribeSafetyRuleInput {
 pub struct DescribeRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
+}
+impl DescribeRoutingControlInput {
+    /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRoutingControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3527,6 +3618,12 @@ pub struct DescribeControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
+impl DescribeControlPanelInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeControlPanelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeControlPanelInput");
@@ -3541,6 +3638,12 @@ impl std::fmt::Debug for DescribeControlPanelInput {
 pub struct DescribeClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
+}
+impl DescribeClusterInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3557,6 +3660,12 @@ pub struct DeleteSafetyRuleInput {
     /// <p>The request body that you include when you update a safety rule.</p>
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
+impl DeleteSafetyRuleInput {
+    /// <p>The request body that you include when you update a safety rule.</p>
+    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+        self.safety_rule_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSafetyRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSafetyRuleInput");
@@ -3571,6 +3680,12 @@ impl std::fmt::Debug for DeleteSafetyRuleInput {
 pub struct DeleteRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
+}
+impl DeleteRoutingControlInput {
+    /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRoutingControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3587,6 +3702,12 @@ pub struct DeleteControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
+impl DeleteControlPanelInput {
+    /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteControlPanelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteControlPanelInput");
@@ -3601,6 +3722,12 @@ impl std::fmt::Debug for DeleteControlPanelInput {
 pub struct DeleteClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
+}
+impl DeleteClusterInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3620,6 +3747,20 @@ pub struct CreateSafetyRuleInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A new gating rule for a control panel.</p>
     pub gating_rule: std::option::Option<crate::model::NewGatingRule>,
+}
+impl CreateSafetyRuleInput {
+    /// <p>A new assertion rule for a control panel.</p>
+    pub fn assertion_rule(&self) -> std::option::Option<&crate::model::NewAssertionRule> {
+        self.assertion_rule.as_ref()
+    }
+    /// <p>Unique client idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A new gating rule for a control panel.</p>
+    pub fn gating_rule(&self) -> std::option::Option<&crate::model::NewGatingRule> {
+        self.gating_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSafetyRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3644,6 +3785,24 @@ pub struct CreateRoutingControlInput {
     /// <p>The name of the routing control.</p>
     pub routing_control_name: std::option::Option<std::string::String>,
 }
+impl CreateRoutingControlInput {
+    /// <p>Unique client idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+        self.control_panel_arn.as_deref()
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn routing_control_name(&self) -> std::option::Option<&str> {
+        self.routing_control_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRoutingControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoutingControlInput");
@@ -3666,6 +3825,20 @@ pub struct CreateControlPanelInput {
     /// <p>The name of the control panel.</p>
     pub control_panel_name: std::option::Option<std::string::String>,
 }
+impl CreateControlPanelInput {
+    /// <p>Unique client idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The name of the control panel.</p>
+    pub fn control_panel_name(&self) -> std::option::Option<&str> {
+        self.control_panel_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateControlPanelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateControlPanelInput");
@@ -3684,6 +3857,16 @@ pub struct CreateClusterInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
+}
+impl CreateClusterInput {
+    /// <p>Unique client idempotency token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

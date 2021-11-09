@@ -6,6 +6,12 @@ pub struct UpdateTagOptionOutput {
     /// <p>Information about the TagOption.</p>
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
+impl UpdateTagOptionOutput {
+    /// <p>Information about the TagOption.</p>
+    pub fn tag_option_detail(&self) -> std::option::Option<&crate::model::TagOptionDetail> {
+        self.tag_option_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTagOptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTagOptionOutput");
@@ -56,6 +62,12 @@ impl UpdateTagOptionOutput {
 pub struct UpdateServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
+}
+impl UpdateServiceActionOutput {
+    /// <p>Detailed information about the self-service action.</p>
+    pub fn service_action_detail(&self) -> std::option::Option<&crate::model::ServiceActionDetail> {
+        self.service_action_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateServiceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -112,6 +124,25 @@ pub struct UpdateProvisioningArtifactOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl UpdateProvisioningArtifactOutput {
+    /// <p>Information about the provisioning artifact.</p>
+    pub fn provisioning_artifact_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+        self.provisioning_artifact_detail.as_ref()
+    }
+    /// <p>The URL of the CloudFormation template in Amazon S3.</p>
+    pub fn info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.info.as_ref()
+    }
+    /// <p>The status of the current request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -221,6 +252,28 @@ pub struct UpdateProvisionedProductPropertiesOutput {
     pub record_id: std::option::Option<std::string::String>,
     /// <p>The status of the request.</p>
     pub status: std::option::Option<crate::model::RecordStatus>,
+}
+impl UpdateProvisionedProductPropertiesOutput {
+    /// <p>The provisioned product identifier.</p>
+    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+        self.provisioned_product_id.as_deref()
+    }
+    /// <p>A map that contains the properties updated.</p>
+    pub fn provisioned_product_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::PropertyKey, std::string::String>,
+    > {
+        self.provisioned_product_properties.as_ref()
+    }
+    /// <p>The identifier of the record.</p>
+    pub fn record_id(&self) -> std::option::Option<&str> {
+        self.record_id.as_deref()
+    }
+    /// <p>The status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecordStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProvisionedProductPropertiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -335,6 +388,12 @@ pub struct UpdateProvisionedProductOutput {
     /// <p>Information about the result of the request.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
+impl UpdateProvisionedProductOutput {
+    /// <p>Information about the result of the request.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProvisionedProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProvisionedProductOutput");
@@ -387,6 +446,16 @@ pub struct UpdateProductOutput {
     pub product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
     /// <p>Information about the tags associated with the product.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UpdateProductOutput {
+    /// <p>Information about the product view.</p>
+    pub fn product_view_detail(&self) -> std::option::Option<&crate::model::ProductViewDetail> {
+        self.product_view_detail.as_ref()
+    }
+    /// <p>Information about the tags associated with the product.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -465,6 +534,18 @@ pub struct UpdatePortfolioShareOutput {
     /// </p>
     pub status: std::option::Option<crate::model::ShareStatus>,
 }
+impl UpdatePortfolioShareOutput {
+    /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or  organizational type sharing.</p>
+    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+        self.portfolio_share_token.as_deref()
+    }
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation.
+    /// You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePortfolioShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePortfolioShareOutput");
@@ -534,6 +615,16 @@ pub struct UpdatePortfolioOutput {
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl UpdatePortfolioOutput {
+    /// <p>Information about the portfolio.</p>
+    pub fn portfolio_detail(&self) -> std::option::Option<&crate::model::PortfolioDetail> {
+        self.portfolio_detail.as_ref()
+    }
+    /// <p>Information about the tags associated with the portfolio.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePortfolioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -611,6 +702,20 @@ pub struct UpdateConstraintOutput {
     pub constraint_parameters: std::option::Option<std::string::String>,
     /// <p>The status of the current request.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl UpdateConstraintOutput {
+    /// <p>Information about the constraint.</p>
+    pub fn constraint_detail(&self) -> std::option::Option<&crate::model::ConstraintDetail> {
+        self.constraint_detail.as_ref()
+    }
+    /// <p>The constraint parameters.</p>
+    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+        self.constraint_parameters.as_deref()
+    }
+    /// <p>The status of the current request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateConstraintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -692,6 +797,12 @@ pub struct TerminateProvisionedProductOutput {
     /// <p>Information about the result of this request.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
+impl TerminateProvisionedProductOutput {
+    /// <p>Information about the result of this request.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for TerminateProvisionedProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateProvisionedProductOutput");
@@ -747,6 +858,22 @@ pub struct SearchProvisionedProductsOutput {
     pub total_results_count: i32,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl SearchProvisionedProductsOutput {
+    /// <p>Information about the provisioned products.</p>
+    pub fn provisioned_products(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisionedProductAttribute]> {
+        self.provisioned_products.as_deref()
+    }
+    /// <p>The number of provisioned products found.</p>
+    pub fn total_results_count(&self) -> i32 {
+        self.total_results_count
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchProvisionedProductsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -840,6 +967,16 @@ pub struct SearchProductsAsAdminOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl SearchProductsAsAdminOutput {
+    /// <p>Information about the product views.</p>
+    pub fn product_view_details(&self) -> std::option::Option<&[crate::model::ProductViewDetail]> {
+        self.product_view_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchProductsAsAdminOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchProductsAsAdminOutput");
@@ -926,6 +1063,29 @@ pub struct SearchProductsOutput {
     >,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl SearchProductsOutput {
+    /// <p>Information about the product views.</p>
+    pub fn product_view_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductViewSummary]> {
+        self.product_view_summaries.as_deref()
+    }
+    /// <p>The product view aggregations.</p>
+    pub fn product_view_aggregations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::ProductViewAggregationValue>,
+        >,
+    > {
+        self.product_view_aggregations.as_ref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchProductsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1043,6 +1203,18 @@ pub struct ScanProvisionedProductsOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ScanProvisionedProductsOutput {
+    /// <p>Information about the provisioned products.</p>
+    pub fn provisioned_products(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisionedProductDetail]> {
+        self.provisioned_products.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ScanProvisionedProductsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScanProvisionedProductsOutput");
@@ -1150,6 +1322,12 @@ pub struct ProvisionProductOutput {
     /// <p>Information about the result of provisioning the product.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
+impl ProvisionProductOutput {
+    /// <p>Information about the result of provisioning the product.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionProductOutput");
@@ -1202,6 +1380,16 @@ pub struct ListTagOptionsOutput {
     pub tag_option_details: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
+}
+impl ListTagOptionsOutput {
+    /// <p>Information about the TagOptions.</p>
+    pub fn tag_option_details(&self) -> std::option::Option<&[crate::model::TagOptionDetail]> {
+        self.tag_option_details.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1279,6 +1467,16 @@ pub struct ListStackInstancesForProvisionedProductOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListStackInstancesForProvisionedProductOutput {
+    /// <p>List of stack instances.</p>
+    pub fn stack_instances(&self) -> std::option::Option<&[crate::model::StackInstance]> {
+        self.stack_instances.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStackInstancesForProvisionedProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStackInstancesForProvisionedProductOutput");
@@ -1355,6 +1553,18 @@ pub struct ListServiceActionsForProvisioningArtifactOutput {
         std::option::Option<std::vec::Vec<crate::model::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListServiceActionsForProvisioningArtifactOutput {
+    /// <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
+    pub fn service_action_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceActionSummary]> {
+        self.service_action_summaries.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServiceActionsForProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1437,6 +1647,18 @@ pub struct ListServiceActionsOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListServiceActionsOutput {
+    /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
+    pub fn service_action_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceActionSummary]> {
+        self.service_action_summaries.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListServiceActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServiceActionsOutput");
@@ -1516,6 +1738,16 @@ pub struct ListResourcesForTagOptionOutput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: std::option::Option<std::string::String>,
 }
+impl ListResourcesForTagOptionOutput {
+    /// <p>Information about the resources.</p>
+    pub fn resource_details(&self) -> std::option::Option<&[crate::model::ResourceDetail]> {
+        self.resource_details.as_deref()
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn page_token(&self) -> std::option::Option<&str> {
+        self.page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourcesForTagOptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesForTagOptionOutput");
@@ -1588,6 +1820,16 @@ pub struct ListRecordHistoryOutput {
     pub record_details: std::option::Option<std::vec::Vec<crate::model::RecordDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListRecordHistoryOutput {
+    /// <p>The records, in reverse chronological order.</p>
+    pub fn record_details(&self) -> std::option::Option<&[crate::model::RecordDetail]> {
+        self.record_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecordHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1664,6 +1906,18 @@ pub struct ListProvisioningArtifactsForServiceActionOutput {
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListProvisioningArtifactsForServiceActionOutput {
+    /// <p>An array of objects with information about product views and provisioning artifacts.</p>
+    pub fn provisioning_artifact_views(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifactView]> {
+        self.provisioning_artifact_views.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProvisioningArtifactsForServiceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1749,6 +2003,18 @@ pub struct ListProvisioningArtifactsOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListProvisioningArtifactsOutput {
+    /// <p>Information about the provisioning artifacts.</p>
+    pub fn provisioning_artifact_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifactDetail]> {
+        self.provisioning_artifact_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProvisioningArtifactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProvisioningArtifactsOutput");
@@ -1832,6 +2098,18 @@ pub struct ListProvisionedProductPlansOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListProvisionedProductPlansOutput {
+    /// <p>Information about the plans.</p>
+    pub fn provisioned_product_plans(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisionedProductPlanSummary]> {
+        self.provisioned_product_plans.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProvisionedProductPlansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProvisionedProductPlansOutput");
@@ -1911,6 +2189,16 @@ pub struct ListPrincipalsForPortfolioOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListPrincipalsForPortfolioOutput {
+    /// <p>The IAM principals (users or roles) associated with the portfolio.</p>
+    pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
+        self.principals.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPrincipalsForPortfolioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPrincipalsForPortfolioOutput");
@@ -1985,6 +2273,16 @@ pub struct ListPortfoliosForProductOutput {
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListPortfoliosForProductOutput {
+    /// <p>Information about the portfolios.</p>
+    pub fn portfolio_details(&self) -> std::option::Option<&[crate::model::PortfolioDetail]> {
+        self.portfolio_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPortfoliosForProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2065,6 +2363,16 @@ pub struct ListPortfoliosOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListPortfoliosOutput {
+    /// <p>Information about the portfolios.</p>
+    pub fn portfolio_details(&self) -> std::option::Option<&[crate::model::PortfolioDetail]> {
+        self.portfolio_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPortfoliosOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPortfoliosOutput");
@@ -2144,6 +2452,16 @@ pub struct ListPortfolioAccessOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListPortfolioAccessOutput {
+    /// <p>Information about the AWS accounts with access to the portfolio.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPortfolioAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPortfolioAccessOutput");
@@ -2218,6 +2536,16 @@ pub struct ListOrganizationPortfolioAccessOutput {
     pub organization_nodes: std::option::Option<std::vec::Vec<crate::model::OrganizationNode>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationPortfolioAccessOutput {
+    /// <p>Displays information about the organization nodes.</p>
+    pub fn organization_nodes(&self) -> std::option::Option<&[crate::model::OrganizationNode]> {
+        self.organization_nodes.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationPortfolioAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2298,6 +2626,16 @@ pub struct ListLaunchPathsOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListLaunchPathsOutput {
+    /// <p>Information about the launch path.</p>
+    pub fn launch_path_summaries(&self) -> std::option::Option<&[crate::model::LaunchPathSummary]> {
+        self.launch_path_summaries.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLaunchPathsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLaunchPathsOutput");
@@ -2376,6 +2714,16 @@ pub struct ListConstraintsForPortfolioOutput {
     pub constraint_details: std::option::Option<std::vec::Vec<crate::model::ConstraintDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListConstraintsForPortfolioOutput {
+    /// <p>Information about the constraints.</p>
+    pub fn constraint_details(&self) -> std::option::Option<&[crate::model::ConstraintDetail]> {
+        self.constraint_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConstraintsForPortfolioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2456,6 +2804,16 @@ pub struct ListBudgetsForResourceOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListBudgetsForResourceOutput {
+    /// <p>Information about the associated budgets.</p>
+    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+        self.budgets.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBudgetsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBudgetsForResourceOutput");
@@ -2530,6 +2888,16 @@ pub struct ListAcceptedPortfolioSharesOutput {
     pub portfolio_details: std::option::Option<std::vec::Vec<crate::model::PortfolioDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListAcceptedPortfolioSharesOutput {
+    /// <p>Information about the portfolios.</p>
+    pub fn portfolio_details(&self) -> std::option::Option<&[crate::model::PortfolioDetail]> {
+        self.portfolio_details.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAcceptedPortfolioSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2608,6 +2976,12 @@ pub struct ImportAsProvisionedProductOutput {
     /// <p>Information about a request operation.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
+impl ImportAsProvisionedProductOutput {
+    /// <p>Information about a request operation.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportAsProvisionedProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportAsProvisionedProductOutput");
@@ -2661,6 +3035,17 @@ pub struct GetProvisionedProductOutputsOutput {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetProvisionedProductOutputsOutput {
+    /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
+    /// </p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::RecordOutput]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProvisionedProductOutputsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2737,6 +3122,12 @@ pub struct GetAwsOrganizationsAccessStatusOutput {
     /// <p>The status of the portfolio share feature.</p>
     pub access_status: std::option::Option<crate::model::AccessStatus>,
 }
+impl GetAwsOrganizationsAccessStatusOutput {
+    /// <p>The status of the portfolio share feature.</p>
+    pub fn access_status(&self) -> std::option::Option<&crate::model::AccessStatus> {
+        self.access_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAwsOrganizationsAccessStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAwsOrganizationsAccessStatusOutput");
@@ -2788,6 +3179,12 @@ pub struct ExecuteProvisionedProductServiceActionOutput {
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
 }
+impl ExecuteProvisionedProductServiceActionOutput {
+    /// <p>An object containing detailed information about the result of provisioning the product.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecuteProvisionedProductServiceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteProvisionedProductServiceActionOutput");
@@ -2838,6 +3235,12 @@ impl ExecuteProvisionedProductServiceActionOutput {
 pub struct ExecuteProvisionedProductPlanOutput {
     /// <p>Information about the result of provisioning the product.</p>
     pub record_detail: std::option::Option<crate::model::RecordDetail>,
+}
+impl ExecuteProvisionedProductPlanOutput {
+    /// <p>Information about the result of provisioning the product.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteProvisionedProductPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3104,6 +3507,12 @@ pub struct DescribeTagOptionOutput {
     /// <p>Information about the TagOption.</p>
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
+impl DescribeTagOptionOutput {
+    /// <p>Information about the TagOption.</p>
+    pub fn tag_option_detail(&self) -> std::option::Option<&crate::model::TagOptionDetail> {
+        self.tag_option_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTagOptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagOptionOutput");
@@ -3155,6 +3564,14 @@ pub struct DescribeServiceActionExecutionParametersOutput {
     /// <p>The parameters of the self-service action.</p>
     pub service_action_parameters:
         std::option::Option<std::vec::Vec<crate::model::ExecutionParameter>>,
+}
+impl DescribeServiceActionExecutionParametersOutput {
+    /// <p>The parameters of the self-service action.</p>
+    pub fn service_action_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExecutionParameter]> {
+        self.service_action_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServiceActionExecutionParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3218,6 +3635,12 @@ pub struct DescribeServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
 }
+impl DescribeServiceActionOutput {
+    /// <p>Detailed information about the self-service action.</p>
+    pub fn service_action_detail(&self) -> std::option::Option<&crate::model::ServiceActionDetail> {
+        self.service_action_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceActionOutput");
@@ -3273,6 +3696,21 @@ pub struct DescribeRecordOutput {
     pub record_outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl DescribeRecordOutput {
+    /// <p>Information about the product.</p>
+    pub fn record_detail(&self) -> std::option::Option<&crate::model::RecordDetail> {
+        self.record_detail.as_ref()
+    }
+    /// <p>Information about the product created as the result of a request. For example, the output for  
+    /// a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
+    pub fn record_outputs(&self) -> std::option::Option<&[crate::model::RecordOutput]> {
+        self.record_outputs.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3378,6 +3816,39 @@ pub struct DescribeProvisioningParametersOutput {
     /// <p>The output of the provisioning artifact.</p>
     pub provisioning_artifact_outputs:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifactOutput>>,
+}
+impl DescribeProvisioningParametersOutput {
+    /// <p>Information about the parameters used to provision the product.</p>
+    pub fn provisioning_artifact_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifactParameter]> {
+        self.provisioning_artifact_parameters.as_deref()
+    }
+    /// <p>Information about the constraints used to provision the product.</p>
+    pub fn constraint_summaries(&self) -> std::option::Option<&[crate::model::ConstraintSummary]> {
+        self.constraint_summaries.as_deref()
+    }
+    /// <p>Any additional metadata specifically related to the provisioning of the product. For
+    /// example, see the <code>Version</code> field of the CloudFormation template.</p>
+    pub fn usage_instructions(&self) -> std::option::Option<&[crate::model::UsageInstruction]> {
+        self.usage_instructions.as_deref()
+    }
+    /// <p>Information about the TagOptions associated with the resource.</p>
+    pub fn tag_options(&self) -> std::option::Option<&[crate::model::TagOptionSummary]> {
+        self.tag_options.as_deref()
+    }
+    /// <p>An object that contains information about preferences, such as regions and accounts, for the provisioning artifact.</p>
+    pub fn provisioning_artifact_preferences(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifactPreferences> {
+        self.provisioning_artifact_preferences.as_ref()
+    }
+    /// <p>The output of the provisioning artifact.</p>
+    pub fn provisioning_artifact_outputs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifactOutput]> {
+        self.provisioning_artifact_outputs.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProvisioningParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3576,6 +4047,25 @@ pub struct DescribeProvisioningArtifactOutput {
     /// <p>The status of the current request.</p>
     pub status: std::option::Option<crate::model::Status>,
 }
+impl DescribeProvisioningArtifactOutput {
+    /// <p>Information about the provisioning artifact.</p>
+    pub fn provisioning_artifact_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+        self.provisioning_artifact_detail.as_ref()
+    }
+    /// <p>The URL of the CloudFormation template in Amazon S3.</p>
+    pub fn info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.info.as_ref()
+    }
+    /// <p>The status of the current request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisioningArtifactOutput");
@@ -3682,6 +4172,22 @@ pub struct DescribeProvisionedProductPlanOutput {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl DescribeProvisionedProductPlanOutput {
+    /// <p>Information about the plan.</p>
+    pub fn provisioned_product_plan_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedProductPlanDetails> {
+        self.provisioned_product_plan_details.as_ref()
+    }
+    /// <p>Information about the resource changes that will occur when the plan is executed.</p>
+    pub fn resource_changes(&self) -> std::option::Option<&[crate::model::ResourceChange]> {
+        self.resource_changes.as_deref()
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProvisionedProductPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisionedProductPlanOutput");
@@ -3782,6 +4288,20 @@ pub struct DescribeProvisionedProductOutput {
     pub cloud_watch_dashboards:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDashboard>>,
 }
+impl DescribeProvisionedProductOutput {
+    /// <p>Information about the provisioned product.</p>
+    pub fn provisioned_product_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisionedProductDetail> {
+        self.provisioned_product_detail.as_ref()
+    }
+    /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
+    pub fn cloud_watch_dashboards(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchDashboard]> {
+        self.cloud_watch_dashboards.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProvisionedProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProvisionedProductOutput");
@@ -3869,6 +4389,18 @@ pub struct DescribeProductViewOutput {
     pub provisioning_artifacts:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningArtifact>>,
 }
+impl DescribeProductViewOutput {
+    /// <p>Summary information about the product.</p>
+    pub fn product_view_summary(&self) -> std::option::Option<&crate::model::ProductViewSummary> {
+        self.product_view_summary.as_ref()
+    }
+    /// <p>Information about the provisioning artifacts for the product.</p>
+    pub fn provisioning_artifacts(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifact]> {
+        self.provisioning_artifacts.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProductViewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProductViewOutput");
@@ -3954,6 +4486,30 @@ pub struct DescribeProductAsAdminOutput {
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
+}
+impl DescribeProductAsAdminOutput {
+    /// <p>Information about the product view.</p>
+    pub fn product_view_detail(&self) -> std::option::Option<&crate::model::ProductViewDetail> {
+        self.product_view_detail.as_ref()
+    }
+    /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
+    pub fn provisioning_artifact_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifactSummary]> {
+        self.provisioning_artifact_summaries.as_deref()
+    }
+    /// <p>Information about the tags associated with the product.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Information about the TagOptions associated with the product.</p>
+    pub fn tag_options(&self) -> std::option::Option<&[crate::model::TagOptionDetail]> {
+        self.tag_options.as_deref()
+    }
+    /// <p>Information about the associated budgets.</p>
+    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+        self.budgets.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeProductAsAdminOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4108,6 +4664,26 @@ pub struct DescribeProductOutput {
     /// <p>Information about the associated launch paths.</p>
     pub launch_paths: std::option::Option<std::vec::Vec<crate::model::LaunchPath>>,
 }
+impl DescribeProductOutput {
+    /// <p>Summary information about the product view.</p>
+    pub fn product_view_summary(&self) -> std::option::Option<&crate::model::ProductViewSummary> {
+        self.product_view_summary.as_ref()
+    }
+    /// <p>Information about the provisioning artifacts for the specified product.</p>
+    pub fn provisioning_artifacts(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProvisioningArtifact]> {
+        self.provisioning_artifacts.as_deref()
+    }
+    /// <p>Information about the associated budgets.</p>
+    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+        self.budgets.as_deref()
+    }
+    /// <p>Information about the associated launch paths.</p>
+    pub fn launch_paths(&self) -> std::option::Option<&[crate::model::LaunchPath]> {
+        self.launch_paths.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProductOutput");
@@ -4237,6 +4813,28 @@ pub struct DescribePortfolioShareStatusOutput {
     /// <p>Information about the portfolio share operation.</p>
     pub share_details: std::option::Option<crate::model::ShareDetails>,
 }
+impl DescribePortfolioShareStatusOutput {
+    /// <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
+    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+        self.portfolio_share_token.as_deref()
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+        self.portfolio_id.as_deref()
+    }
+    /// <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
+    pub fn organization_node_value(&self) -> std::option::Option<&str> {
+        self.organization_node_value.as_deref()
+    }
+    /// <p>Status of the portfolio share operation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information about the portfolio share operation.</p>
+    pub fn share_details(&self) -> std::option::Option<&crate::model::ShareDetails> {
+        self.share_details.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePortfolioShareStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePortfolioShareStatusOutput");
@@ -4349,6 +4947,18 @@ pub struct DescribePortfolioSharesOutput {
     pub portfolio_share_details:
         std::option::Option<std::vec::Vec<crate::model::PortfolioShareDetail>>,
 }
+impl DescribePortfolioSharesOutput {
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>Summaries about each of the portfolio shares.</p>
+    pub fn portfolio_share_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::PortfolioShareDetail]> {
+        self.portfolio_share_details.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePortfolioSharesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePortfolioSharesOutput");
@@ -4431,6 +5041,24 @@ pub struct DescribePortfolioOutput {
     pub tag_options: std::option::Option<std::vec::Vec<crate::model::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
     pub budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
+}
+impl DescribePortfolioOutput {
+    /// <p>Information about the portfolio.</p>
+    pub fn portfolio_detail(&self) -> std::option::Option<&crate::model::PortfolioDetail> {
+        self.portfolio_detail.as_ref()
+    }
+    /// <p>Information about the tags associated with the portfolio.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Information about the TagOptions associated with the portfolio.</p>
+    pub fn tag_options(&self) -> std::option::Option<&[crate::model::TagOptionDetail]> {
+        self.tag_options.as_deref()
+    }
+    /// <p>Information about the associated budgets.</p>
+    pub fn budgets(&self) -> std::option::Option<&[crate::model::BudgetDetail]> {
+        self.budgets.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePortfolioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4553,6 +5181,20 @@ pub struct DescribeCopyProductStatusOutput {
     /// <p>The status message.</p>
     pub status_detail: std::option::Option<std::string::String>,
 }
+impl DescribeCopyProductStatusOutput {
+    /// <p>The status of the copy product operation.</p>
+    pub fn copy_product_status(&self) -> std::option::Option<&crate::model::CopyProductStatus> {
+        self.copy_product_status.as_ref()
+    }
+    /// <p>The identifier of the copied product.</p>
+    pub fn target_product_id(&self) -> std::option::Option<&str> {
+        self.target_product_id.as_deref()
+    }
+    /// <p>The status message.</p>
+    pub fn status_detail(&self) -> std::option::Option<&str> {
+        self.status_detail.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCopyProductStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCopyProductStatusOutput");
@@ -4639,6 +5281,20 @@ pub struct DescribeConstraintOutput {
     pub constraint_parameters: std::option::Option<std::string::String>,
     /// <p>The status of the current request.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl DescribeConstraintOutput {
+    /// <p>Information about the constraint.</p>
+    pub fn constraint_detail(&self) -> std::option::Option<&crate::model::ConstraintDetail> {
+        self.constraint_detail.as_ref()
+    }
+    /// <p>The constraint parameters.</p>
+    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+        self.constraint_parameters.as_deref()
+    }
+    /// <p>The status of the current request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeConstraintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4870,6 +5526,12 @@ pub struct DeletePortfolioShareOutput {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
+impl DeletePortfolioShareOutput {
+    /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
+    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+        self.portfolio_share_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePortfolioShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePortfolioShareOutput");
@@ -4981,6 +5643,12 @@ pub struct CreateTagOptionOutput {
     /// <p>Information about the TagOption.</p>
     pub tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
 }
+impl CreateTagOptionOutput {
+    /// <p>Information about the TagOption.</p>
+    pub fn tag_option_detail(&self) -> std::option::Option<&crate::model::TagOptionDetail> {
+        self.tag_option_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTagOptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTagOptionOutput");
@@ -5031,6 +5699,12 @@ impl CreateTagOptionOutput {
 pub struct CreateServiceActionOutput {
     /// <p>An object containing information about the self-service action.</p>
     pub service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
+}
+impl CreateServiceActionOutput {
+    /// <p>An object containing information about the self-service action.</p>
+    pub fn service_action_detail(&self) -> std::option::Option<&crate::model::ServiceActionDetail> {
+        self.service_action_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateServiceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5098,6 +5772,36 @@ pub struct CreateProvisioningArtifactOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl CreateProvisioningArtifactOutput {
+    /// <p>Information about the provisioning artifact.</p>
+    pub fn provisioning_artifact_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+        self.provisioning_artifact_detail.as_ref()
+    }
+    /// <p>Specify the template source with one of the following options, but not both. Keys
+    /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>The URL of the CloudFormation template in Amazon S3, in JSON format. </p>
+    /// <p>
+    /// <code>LoadTemplateFromURL</code>
+    /// </p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 in JSON format.</p>
+    /// <p>
+    /// <code>ImportFromPhysicalId</code>
+    /// </p>
+    /// <p>Use the physical id of the resource that contains the template; currently supports
+    /// CloudFormation stack ARN.</p>
+    pub fn info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.info.as_ref()
+    }
+    /// <p>The status of the current request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5230,6 +5934,28 @@ pub struct CreateProvisionedProductPlanOutput {
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
 }
+impl CreateProvisionedProductPlanOutput {
+    /// <p>The name of the plan.</p>
+    pub fn plan_name(&self) -> std::option::Option<&str> {
+        self.plan_name.as_deref()
+    }
+    /// <p>The plan identifier.</p>
+    pub fn plan_id(&self) -> std::option::Option<&str> {
+        self.plan_id.as_deref()
+    }
+    /// <p>The product identifier.</p>
+    pub fn provision_product_id(&self) -> std::option::Option<&str> {
+        self.provision_product_id.as_deref()
+    }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+        self.provisioned_product_name.as_deref()
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+        self.provisioning_artifact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProvisionedProductPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProvisionedProductPlanOutput");
@@ -5343,6 +6069,22 @@ pub struct CreateProductOutput {
     /// <p>Information about the tags associated with the product.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateProductOutput {
+    /// <p>Information about the product view.</p>
+    pub fn product_view_detail(&self) -> std::option::Option<&crate::model::ProductViewDetail> {
+        self.product_view_detail.as_ref()
+    }
+    /// <p>Information about the provisioning artifact. </p>
+    pub fn provisioning_artifact_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ProvisioningArtifactDetail> {
+        self.provisioning_artifact_detail.as_ref()
+    }
+    /// <p>Information about the tags associated with the product.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProductOutput");
@@ -5439,6 +6181,12 @@ pub struct CreatePortfolioShareOutput {
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
     pub portfolio_share_token: std::option::Option<std::string::String>,
 }
+impl CreatePortfolioShareOutput {
+    /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
+    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+        self.portfolio_share_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePortfolioShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePortfolioShareOutput");
@@ -5491,6 +6239,16 @@ pub struct CreatePortfolioOutput {
     pub portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreatePortfolioOutput {
+    /// <p>Information about the portfolio.</p>
+    pub fn portfolio_detail(&self) -> std::option::Option<&crate::model::PortfolioDetail> {
+        self.portfolio_detail.as_ref()
+    }
+    /// <p>Information about the tags associated with the portfolio.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePortfolioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5568,6 +6326,20 @@ pub struct CreateConstraintOutput {
     pub constraint_parameters: std::option::Option<std::string::String>,
     /// <p>The status of the current request.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl CreateConstraintOutput {
+    /// <p>Information about the constraint.</p>
+    pub fn constraint_detail(&self) -> std::option::Option<&crate::model::ConstraintDetail> {
+        self.constraint_detail.as_ref()
+    }
+    /// <p>The constraint parameters.</p>
+    pub fn constraint_parameters(&self) -> std::option::Option<&str> {
+        self.constraint_parameters.as_deref()
+    }
+    /// <p>The status of the current request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConstraintOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5649,6 +6421,12 @@ pub struct CopyProductOutput {
     /// <p>The token to use to track the progress of the operation.</p>
     pub copy_product_token: std::option::Option<std::string::String>,
 }
+impl CopyProductOutput {
+    /// <p>The token to use to track the progress of the operation.</p>
+    pub fn copy_product_token(&self) -> std::option::Option<&str> {
+        self.copy_product_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyProductOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyProductOutput");
@@ -5700,6 +6478,14 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
     pub failed_service_action_associations:
         std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+}
+impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+    /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
+    pub fn failed_service_action_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedServiceActionAssociation]> {
+        self.failed_service_action_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5770,6 +6556,14 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
     pub failed_service_action_associations:
         std::option::Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+}
+impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
+    /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
+    pub fn failed_service_action_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedServiceActionAssociation]> {
+        self.failed_service_action_associations.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateServiceActionWithProvisioningArtifactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

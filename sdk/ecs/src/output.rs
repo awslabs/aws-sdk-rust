@@ -6,6 +6,12 @@ pub struct UpdateTaskSetOutput {
     /// <p>Details about the task set.</p>
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
+impl UpdateTaskSetOutput {
+    /// <p>Details about the task set.</p>
+    pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
+        self.task_set.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTaskSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTaskSetOutput");
@@ -54,6 +60,12 @@ pub struct UpdateServicePrimaryTaskSetOutput {
     /// <p>Details about the task set.</p>
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
+impl UpdateServicePrimaryTaskSetOutput {
+    /// <p>Details about the task set.</p>
+    pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
+        self.task_set.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServicePrimaryTaskSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServicePrimaryTaskSetOutput");
@@ -101,6 +113,12 @@ impl UpdateServicePrimaryTaskSetOutput {
 pub struct UpdateServiceOutput {
     /// <p>The full description of your service following the update call.</p>
     pub service: std::option::Option<crate::model::Service>,
+}
+impl UpdateServiceOutput {
+    /// <p>The full description of your service following the update call.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -151,6 +169,16 @@ pub struct UpdateContainerInstancesStateOutput {
     pub container_instances: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl UpdateContainerInstancesStateOutput {
+    /// <p>The list of container instances.</p>
+    pub fn container_instances(&self) -> std::option::Option<&[crate::model::ContainerInstance]> {
+        self.container_instances.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateContainerInstancesStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -235,6 +263,12 @@ pub struct UpdateContainerAgentOutput {
     /// <p>The container instance for which the container agent was updated.</p>
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
 }
+impl UpdateContainerAgentOutput {
+    /// <p>The container instance for which the container agent was updated.</p>
+    pub fn container_instance(&self) -> std::option::Option<&crate::model::ContainerInstance> {
+        self.container_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateContainerAgentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContainerAgentOutput");
@@ -286,6 +320,12 @@ pub struct UpdateClusterSettingsOutput {
     /// <p>Details about the cluster</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl UpdateClusterSettingsOutput {
+    /// <p>Details about the cluster</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterSettingsOutput");
@@ -334,6 +374,12 @@ pub struct UpdateClusterOutput {
     /// <p>Details about the cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl UpdateClusterOutput {
+    /// <p>Details about the cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterOutput");
@@ -381,6 +427,12 @@ impl UpdateClusterOutput {
 pub struct UpdateCapacityProviderOutput {
     /// <p>Details about the capacity provider.</p>
     pub capacity_provider: std::option::Option<crate::model::CapacityProvider>,
+}
+impl UpdateCapacityProviderOutput {
+    /// <p>Details about the capacity provider.</p>
+    pub fn capacity_provider(&self) -> std::option::Option<&crate::model::CapacityProvider> {
+        self.capacity_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCapacityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -493,6 +545,12 @@ pub struct SubmitTaskStateChangeOutput {
     /// <p>Acknowledgement of the state change.</p>
     pub acknowledgment: std::option::Option<std::string::String>,
 }
+impl SubmitTaskStateChangeOutput {
+    /// <p>Acknowledgement of the state change.</p>
+    pub fn acknowledgment(&self) -> std::option::Option<&str> {
+        self.acknowledgment.as_deref()
+    }
+}
 impl std::fmt::Debug for SubmitTaskStateChangeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubmitTaskStateChangeOutput");
@@ -543,6 +601,12 @@ impl SubmitTaskStateChangeOutput {
 pub struct SubmitContainerStateChangeOutput {
     /// <p>Acknowledgement of the state change.</p>
     pub acknowledgment: std::option::Option<std::string::String>,
+}
+impl SubmitContainerStateChangeOutput {
+    /// <p>Acknowledgement of the state change.</p>
+    pub fn acknowledgment(&self) -> std::option::Option<&str> {
+        self.acknowledgment.as_deref()
+    }
 }
 impl std::fmt::Debug for SubmitContainerStateChangeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -595,6 +659,12 @@ pub struct SubmitAttachmentStateChangesOutput {
     /// <p>Acknowledgement of the state change.</p>
     pub acknowledgment: std::option::Option<std::string::String>,
 }
+impl SubmitAttachmentStateChangesOutput {
+    /// <p>Acknowledgement of the state change.</p>
+    pub fn acknowledgment(&self) -> std::option::Option<&str> {
+        self.acknowledgment.as_deref()
+    }
+}
 impl std::fmt::Debug for SubmitAttachmentStateChangesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubmitAttachmentStateChangesOutput");
@@ -646,6 +716,12 @@ pub struct StopTaskOutput {
     /// <p>The task that was stopped.</p>
     pub task: std::option::Option<crate::model::Task>,
 }
+impl StopTaskOutput {
+    /// <p>The task that was stopped.</p>
+    pub fn task(&self) -> std::option::Option<&crate::model::Task> {
+        self.task.as_ref()
+    }
+}
 impl std::fmt::Debug for StopTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTaskOutput");
@@ -694,6 +770,17 @@ pub struct StartTaskOutput {
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl StartTaskOutput {
+    /// <p>A full description of the tasks that were started. Each task that was successfully
+    /// placed on your container instances is described.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for StartTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -779,6 +866,17 @@ pub struct RunTaskOutput {
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
+impl RunTaskOutput {
+    /// <p>A full description of the tasks that were run. The tasks that were successfully placed
+    /// on your cluster are described here.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
+}
 impl std::fmt::Debug for RunTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RunTaskOutput");
@@ -862,6 +960,16 @@ pub struct RegisterTaskDefinitionOutput {
     /// <p>The list of tags associated with the task definition.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RegisterTaskDefinitionOutput {
+    /// <p>The full description of the registered task definition.</p>
+    pub fn task_definition(&self) -> std::option::Option<&crate::model::TaskDefinition> {
+        self.task_definition.as_ref()
+    }
+    /// <p>The list of tags associated with the task definition.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterTaskDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTaskDefinitionOutput");
@@ -935,6 +1043,12 @@ pub struct RegisterContainerInstanceOutput {
     /// <p>The container instance that was registered.</p>
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
 }
+impl RegisterContainerInstanceOutput {
+    /// <p>The container instance that was registered.</p>
+    pub fn container_instance(&self) -> std::option::Option<&crate::model::ContainerInstance> {
+        self.container_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterContainerInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterContainerInstanceOutput");
@@ -986,6 +1100,12 @@ pub struct PutClusterCapacityProvidersOutput {
     /// <p>Details about the cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl PutClusterCapacityProvidersOutput {
+    /// <p>Details about the cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for PutClusterCapacityProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutClusterCapacityProvidersOutput");
@@ -1033,6 +1153,12 @@ impl PutClusterCapacityProvidersOutput {
 pub struct PutAttributesOutput {
     /// <p>The attributes applied to your resource.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+}
+impl PutAttributesOutput {
+    /// <p>The attributes applied to your resource.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1091,6 +1217,12 @@ pub struct PutAccountSettingDefaultOutput {
     /// <p>The current setting for a resource.</p>
     pub setting: std::option::Option<crate::model::Setting>,
 }
+impl PutAccountSettingDefaultOutput {
+    /// <p>The current setting for a resource.</p>
+    pub fn setting(&self) -> std::option::Option<&crate::model::Setting> {
+        self.setting.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAccountSettingDefaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountSettingDefaultOutput");
@@ -1138,6 +1270,12 @@ impl PutAccountSettingDefaultOutput {
 pub struct PutAccountSettingOutput {
     /// <p>The current account setting for a resource.</p>
     pub setting: std::option::Option<crate::model::Setting>,
+}
+impl PutAccountSettingOutput {
+    /// <p>The current account setting for a resource.</p>
+    pub fn setting(&self) -> std::option::Option<&crate::model::Setting> {
+        self.setting.as_ref()
+    }
 }
 impl std::fmt::Debug for PutAccountSettingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1192,6 +1330,20 @@ pub struct ListTasksOutput {
     /// results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTasksOutput {
+    /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
+    pub fn task_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.task_arns.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code>
+    /// request. When the results of a <code>ListTasks</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1277,6 +1429,21 @@ pub struct ListTaskDefinitionsOutput {
     /// can be used to retrieve the next page of results. This value is <code>null</code> when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTaskDefinitionsOutput {
+    /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code>
+    /// request.</p>
+    pub fn task_definition_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.task_definition_arns.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>ListTaskDefinitions</code> request. When the results of a
+    /// <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value
+    /// can be used to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTaskDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1365,6 +1532,21 @@ pub struct ListTaskDefinitionFamiliesOutput {
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTaskDefinitionFamiliesOutput {
+    /// <p>The list of task definition family names that match the
+    /// <code>ListTaskDefinitionFamilies</code> request.</p>
+    pub fn families(&self) -> std::option::Option<&[std::string::String]> {
+        self.families.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>ListTaskDefinitionFamilies</code> request. When the results of a
+    /// <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this
+    /// value can be used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTaskDefinitionFamiliesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTaskDefinitionFamiliesOutput");
@@ -1445,6 +1627,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1506,6 +1694,21 @@ pub struct ListServicesOutput {
     /// results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListServicesOutput {
+    /// <p>The list of full ARN entries for each service associated with the specified
+    /// cluster.</p>
+    pub fn service_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_arns.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
+    /// request. When the results of a <code>ListServices</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1594,6 +1797,21 @@ pub struct ListContainerInstancesOutput {
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListContainerInstancesOutput {
+    /// <p>The list of container instances with full ARN entries for each container instance
+    /// associated with the specified cluster.</p>
+    pub fn container_instance_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.container_instance_arns.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>ListContainerInstances</code> request. When the results of a
+    /// <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+    /// value can be used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContainerInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContainerInstancesOutput");
@@ -1681,6 +1899,21 @@ pub struct ListClustersOutput {
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClustersOutput {
+    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster associated with your
+    /// account.</p>
+    pub fn cluster_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.cluster_arns.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
+    /// request. When the results of a <code>ListClusters</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClustersOutput");
@@ -1767,6 +2000,20 @@ pub struct ListAttributesOutput {
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAttributesOutput {
+    /// <p>A list of attribute objects that meet the criteria of the request.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
+    /// request. When the results of a <code>ListAttributes</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttributesOutput");
@@ -1850,6 +2097,20 @@ pub struct ListAccountSettingsOutput {
     /// can be used to retrieve the next page of results. This value is <code>null</code> when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountSettingsOutput {
+    /// <p>The account settings for the resource.</p>
+    pub fn settings(&self) -> std::option::Option<&[crate::model::Setting]> {
+        self.settings.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>ListAccountSettings</code> request. When the results of a
+    /// <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value
+    /// can be used to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,6 +2202,35 @@ pub struct ExecuteCommandOutput {
     pub session: std::option::Option<crate::model::Session>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub task_arn: std::option::Option<std::string::String>,
+}
+impl ExecuteCommandOutput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container.</p>
+    pub fn container_arn(&self) -> std::option::Option<&str> {
+        self.container_arn.as_deref()
+    }
+    /// <p>The name of the container.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>Whether or not the execute command session is running in interactive mode. Amazon ECS only
+    /// supports initiating interactive sessions, so you must specify <code>true</code> for this
+    /// value.</p>
+    pub fn interactive(&self) -> bool {
+        self.interactive
+    }
+    /// <p>The details of the SSM session that was created for this instance of
+    /// execute-command.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::Session> {
+        self.session.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteCommandOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2069,6 +2359,16 @@ pub struct DiscoverPollEndpointOutput {
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
     pub telemetry_endpoint: std::option::Option<std::string::String>,
 }
+impl DiscoverPollEndpointOutput {
+    /// <p>The endpoint for the Amazon ECS agent to poll.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
+    pub fn telemetry_endpoint(&self) -> std::option::Option<&str> {
+        self.telemetry_endpoint.as_deref()
+    }
+}
 impl std::fmt::Debug for DiscoverPollEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DiscoverPollEndpointOutput");
@@ -2134,6 +2434,16 @@ pub struct DescribeTaskSetsOutput {
     pub task_sets: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl DescribeTaskSetsOutput {
+    /// <p>The list of task sets described.</p>
+    pub fn task_sets(&self) -> std::option::Option<&[crate::model::TaskSet]> {
+        self.task_sets.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2215,6 +2525,16 @@ pub struct DescribeTasksOutput {
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl DescribeTasksOutput {
+    /// <p>The list of tasks.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2329,6 +2649,49 @@ pub struct DescribeTaskDefinitionOutput {
     /// </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DescribeTaskDefinitionOutput {
+    /// <p>The full task definition description.</p>
+    pub fn task_definition(&self) -> std::option::Option<&crate::model::TaskDefinition> {
+        self.task_definition.as_ref()
+    }
+    /// <p>The metadata that is applied to the task definition to help you categorize and
+    /// organize them. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p>
+    /// </li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only
+    /// one value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+    /// </li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources,
+    /// remember that other services may have restrictions on allowed characters.
+    /// Generally allowed characters are: letters, numbers, and spaces representable in
+    /// UTF-8, and the following characters: + - = . _ : / @.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p>
+    /// </li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+    /// combination of such as a prefix for either keys or values as it is reserved for
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// this prefix do not count against your tags per resource limit.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2471,6 +2834,16 @@ pub struct DescribeServicesOutput {
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
+impl DescribeServicesOutput {
+    /// <p>The list of services described.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+        self.services.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServicesOutput");
@@ -2551,6 +2924,16 @@ pub struct DescribeContainerInstancesOutput {
     pub container_instances: std::option::Option<std::vec::Vec<crate::model::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl DescribeContainerInstancesOutput {
+    /// <p>The list of container instances.</p>
+    pub fn container_instances(&self) -> std::option::Option<&[crate::model::ContainerInstance]> {
+        self.container_instances.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeContainerInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2636,6 +3019,16 @@ pub struct DescribeClustersOutput {
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
+}
+impl DescribeClustersOutput {
+    /// <p>The list of clusters.</p>
+    pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.clusters.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2723,6 +3116,24 @@ pub struct DescribeCapacityProvidersOutput {
     /// value can be used to retrieve the next page of results. This value is <code>null</code>
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCapacityProvidersOutput {
+    /// <p>The list of capacity providers.</p>
+    pub fn capacity_providers(&self) -> std::option::Option<&[crate::model::CapacityProvider]> {
+        self.capacity_providers.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
+        self.failures.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>DescribeCapacityProviders</code> request. When the results of a
+    /// <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this
+    /// value can be used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCapacityProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2828,6 +3239,12 @@ pub struct DeregisterTaskDefinitionOutput {
     /// <p>The full description of the deregistered task.</p>
     pub task_definition: std::option::Option<crate::model::TaskDefinition>,
 }
+impl DeregisterTaskDefinitionOutput {
+    /// <p>The full description of the deregistered task.</p>
+    pub fn task_definition(&self) -> std::option::Option<&crate::model::TaskDefinition> {
+        self.task_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for DeregisterTaskDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTaskDefinitionOutput");
@@ -2878,6 +3295,12 @@ impl DeregisterTaskDefinitionOutput {
 pub struct DeregisterContainerInstanceOutput {
     /// <p>The container instance that was deregistered.</p>
     pub container_instance: std::option::Option<crate::model::ContainerInstance>,
+}
+impl DeregisterContainerInstanceOutput {
+    /// <p>The container instance that was deregistered.</p>
+    pub fn container_instance(&self) -> std::option::Option<&crate::model::ContainerInstance> {
+        self.container_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for DeregisterContainerInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2930,6 +3353,12 @@ pub struct DeleteTaskSetOutput {
     /// <p>Details about the task set.</p>
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
+impl DeleteTaskSetOutput {
+    /// <p>Details about the task set.</p>
+    pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
+        self.task_set.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTaskSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTaskSetOutput");
@@ -2977,6 +3406,12 @@ impl DeleteTaskSetOutput {
 pub struct DeleteServiceOutput {
     /// <p>The full description of the deleted service.</p>
     pub service: std::option::Option<crate::model::Service>,
+}
+impl DeleteServiceOutput {
+    /// <p>The full description of the deleted service.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3026,6 +3461,12 @@ pub struct DeleteClusterOutput {
     /// <p>The full description of the deleted cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl DeleteClusterOutput {
+    /// <p>The full description of the deleted cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterOutput");
@@ -3073,6 +3514,12 @@ impl DeleteClusterOutput {
 pub struct DeleteCapacityProviderOutput {
     /// <p>The details of the capacity provider.</p>
     pub capacity_provider: std::option::Option<crate::model::CapacityProvider>,
+}
+impl DeleteCapacityProviderOutput {
+    /// <p>The details of the capacity provider.</p>
+    pub fn capacity_provider(&self) -> std::option::Option<&crate::model::CapacityProvider> {
+        self.capacity_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteCapacityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3124,6 +3571,12 @@ impl DeleteCapacityProviderOutput {
 pub struct DeleteAttributesOutput {
     /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+}
+impl DeleteAttributesOutput {
+    /// <p>A list of attribute objects that were successfully deleted from your resource.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3182,6 +3635,12 @@ pub struct DeleteAccountSettingOutput {
     /// <p>The account setting for the specified principal ARN.</p>
     pub setting: std::option::Option<crate::model::Setting>,
 }
+impl DeleteAccountSettingOutput {
+    /// <p>The account setting for the specified principal ARN.</p>
+    pub fn setting(&self) -> std::option::Option<&crate::model::Setting> {
+        self.setting.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAccountSettingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccountSettingOutput");
@@ -3232,6 +3691,15 @@ pub struct CreateTaskSetOutput {
     /// number of tasks, how many tasks are running, and whether the task set serves production
     /// traffic.</p>
     pub task_set: std::option::Option<crate::model::TaskSet>,
+}
+impl CreateTaskSetOutput {
+    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
+    /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
+    /// number of tasks, how many tasks are running, and whether the task set serves production
+    /// traffic.</p>
+    pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
+        self.task_set.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTaskSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3296,6 +3764,22 @@ pub struct CreateServiceOutput {
     /// <code>deployments</code> parameters will be returned, however the
     /// <code>deployments</code> parameter will be an empty list.</p>
     pub service: std::option::Option<crate::model::Service>,
+}
+impl CreateServiceOutput {
+    /// <p>The full description of your service following the create call.</p>
+    /// <p>A service will return either a <code>capacityProviderStrategy</code> or
+    /// <code>launchType</code> parameter, but not both, depending on which one was
+    /// specified during creation.</p>
+    /// <p>If a service is using the <code>ECS</code> deployment controller, the
+    /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
+    /// returned.</p>
+    /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+    /// <code>deploymentController</code>, <code>taskSets</code> and
+    /// <code>deployments</code> parameters will be returned, however the
+    /// <code>deployments</code> parameter will be an empty list.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3365,6 +3849,12 @@ pub struct CreateClusterOutput {
     /// <p>The full description of your new cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl CreateClusterOutput {
+    /// <p>The full description of your new cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterOutput");
@@ -3412,6 +3902,12 @@ impl CreateClusterOutput {
 pub struct CreateCapacityProviderOutput {
     /// <p>The full description of the new capacity provider.</p>
     pub capacity_provider: std::option::Option<crate::model::CapacityProvider>,
+}
+impl CreateCapacityProviderOutput {
+    /// <p>The full description of the new capacity provider.</p>
+    pub fn capacity_provider(&self) -> std::option::Option<&crate::model::CapacityProvider> {
+        self.capacity_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCapacityProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

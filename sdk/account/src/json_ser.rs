@@ -2,31 +2,33 @@
 pub fn serialize_structure_crate_input_delete_alternate_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteAlternateContactInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("AccountId").string(var_1);
     }
     if let Some(var_2) = &input.alternate_contact_type {
         object.key("AlternateContactType").string(var_2.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_alternate_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAlternateContactInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.account_id {
         object.key("AccountId").string(var_3);
     }
     if let Some(var_4) = &input.alternate_contact_type {
         object.key("AlternateContactType").string(var_4.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_alternate_contact_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutAlternateContactInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.account_id {
         object.key("AccountId").string(var_5);
     }
@@ -45,4 +47,5 @@ pub fn serialize_structure_crate_input_put_alternate_contact_input(
     if let Some(var_10) = &input.title {
         object.key("Title").string(var_10);
     }
+    Ok(())
 }

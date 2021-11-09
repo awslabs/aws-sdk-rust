@@ -6,6 +6,12 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl UpdateEnvironmentOutput {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentOutput");
@@ -143,6 +149,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -207,6 +222,16 @@ pub struct ListEnvironmentsOutput {
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Retrieves the next page of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEnvironmentsOutput {
+    /// <p>Returns the list of Amazon MWAA environments.</p>
+    pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
+        self.environments.as_deref()
+    }
+    /// <p>Retrieves the next page of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -277,6 +302,12 @@ impl ListEnvironmentsOutput {
 pub struct GetEnvironmentOutput {
     /// <p>An object containing all available details about the environment.</p>
     pub environment: std::option::Option<crate::model::Environment>,
+}
+impl GetEnvironmentOutput {
+    /// <p>An object containing all available details about the environment.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -361,6 +392,16 @@ pub struct CreateWebLoginTokenOutput {
     /// <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
     pub web_server_hostname: std::option::Option<std::string::String>,
 }
+impl CreateWebLoginTokenOutput {
+    /// <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+    pub fn web_token(&self) -> std::option::Option<&str> {
+        self.web_token.as_deref()
+    }
+    /// <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+    pub fn web_server_hostname(&self) -> std::option::Option<&str> {
+        self.web_server_hostname.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWebLoginTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebLoginTokenOutput");
@@ -425,6 +466,12 @@ pub struct CreateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl CreateEnvironmentOutput {
+    /// <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentOutput");
@@ -472,6 +519,16 @@ pub struct CreateCliTokenOutput {
     pub cli_token: std::option::Option<std::string::String>,
     /// <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
     pub web_server_hostname: std::option::Option<std::string::String>,
+}
+impl CreateCliTokenOutput {
+    /// <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+    pub fn cli_token(&self) -> std::option::Option<&str> {
+        self.cli_token.as_deref()
+    }
+    /// <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+    pub fn web_server_hostname(&self) -> std::option::Option<&str> {
+        self.web_server_hostname.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCliTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

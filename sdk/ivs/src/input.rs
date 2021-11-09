@@ -90,10 +90,7 @@ impl BatchGetChannelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_channel(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -245,10 +242,7 @@ impl BatchGetStreamKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_stream_key(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_stream_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -520,10 +514,7 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -719,7 +710,7 @@ impl CreateRecordingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_recording_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_recording_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -894,10 +885,7 @@ impl CreateStreamKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_stream_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_stream_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1039,10 +1027,7 @@ impl DeleteChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1187,10 +1172,7 @@ impl DeletePlaybackKeyPairInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_playback_key_pair(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1334,7 +1316,7 @@ impl DeleteRecordingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_recording_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_recording_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1478,10 +1460,7 @@ impl DeleteStreamKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_stream_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_stream_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1623,10 +1602,7 @@ impl GetChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1769,10 +1745,7 @@ impl GetPlaybackKeyPairInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_playback_key_pair(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_playback_key_pair(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1918,10 +1891,7 @@ impl GetRecordingConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_recording_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2063,10 +2033,7 @@ impl GetStreamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_stream(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2206,10 +2173,7 @@ impl GetStreamKeyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_stream_key(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_stream_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2400,10 +2364,7 @@ impl ImportPlaybackKeyPairInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_playback_key_pair(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2594,10 +2555,7 @@ impl ListChannelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_channels(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_channels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2758,10 +2716,7 @@ impl ListPlaybackKeyPairsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_playback_key_pairs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2921,7 +2876,7 @@ impl ListRecordingConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_recording_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_recording_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3093,10 +3048,7 @@ impl ListStreamKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stream_keys(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_stream_keys(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3254,10 +3206,7 @@ impl ListStreamsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3562,10 +3511,7 @@ impl PutMetadataInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_metadata(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3709,10 +3655,7 @@ impl StopStreamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_stream(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3901,10 +3844,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4336,10 +4276,7 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4439,6 +4376,53 @@ pub struct UpdateChannelInput {
     /// value other than an empty string indicates that recording is enabled</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
 }
+impl UpdateChannelInput {
+    /// <p>ARN of the channel to be updated.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Channel name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+    /// <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
+    /// <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+    /// respectively.)</p>
+    pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
+        self.latency_mode.as_ref()
+    }
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
+    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
+    /// immediately</i>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
+    /// automatically give viewers the best experience for their devices and network conditions.
+    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
+    /// for renditions 360p and below; above that, audio is passed through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
+    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
+    /// bitrate can be up to 1.5 Mbps.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Whether the channel is private (enabled for playback authorization).</p>
+    pub fn authorized(&self) -> bool {
+        self.authorized
+    }
+    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
+    /// value other than an empty string indicates that recording is enabled</p>
+    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+        self.recording_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -4464,6 +4448,16 @@ pub struct UntagResourceInput {
     /// <p>Array of tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>ARN of the resource for which tags are to be removed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Array of tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4483,6 +4477,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>ARN of the resource for which tags are to be added or updated.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Array of tags to be added or updated.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4498,6 +4505,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopStreamInput {
     /// <p>ARN of the channel for which the stream is to be stopped.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+}
+impl StopStreamInput {
+    /// <p>ARN of the channel for which the stream is to be stopped.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4517,6 +4530,17 @@ pub struct PutMetadataInput {
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl PutMetadataInput {
+    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
+    /// stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for PutMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMetadataInput");
@@ -4532,6 +4556,12 @@ impl std::fmt::Debug for PutMetadataInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to be retrieved.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource to be retrieved.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4550,6 +4580,17 @@ pub struct ListStreamsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
     pub max_results: i32,
+}
+impl ListStreamsInput {
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
+    /// response field.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of streams to return. Default: 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4572,6 +4613,21 @@ pub struct ListStreamKeysInput {
     /// <p>Maximum number of streamKeys to return. Default: 50.</p>
     pub max_results: i32,
 }
+impl ListStreamKeysInput {
+    /// <p>Channel ARN used to filter the list.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The first stream key to retrieve. This is used for pagination; see the
+    /// <code>nextToken</code> response field.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of streamKeys to return. Default: 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListStreamKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamKeysInput");
@@ -4592,6 +4648,17 @@ pub struct ListRecordingConfigurationsInput {
     /// <p>Maximum number of recording configurations to return. Default: 50. </p>
     pub max_results: i32,
 }
+impl ListRecordingConfigurationsInput {
+    /// <p>The first recording configuration to retrieve. This is used for pagination; see the
+    /// <code>nextToken</code> response field.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of recording configurations to return. Default: 50. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListRecordingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecordingConfigurationsInput");
@@ -4610,6 +4677,17 @@ pub struct ListPlaybackKeyPairsInput {
     /// <p>The first key pair to retrieve. This is used for pagination; see the
     /// <code>nextToken</code> response field. Default: 50.</p>
     pub max_results: i32,
+}
+impl ListPlaybackKeyPairsInput {
+    /// <p>Maximum number of key pairs to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The first key pair to retrieve. This is used for pagination; see the
+    /// <code>nextToken</code> response field. Default: 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPlaybackKeyPairsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4633,6 +4711,25 @@ pub struct ListChannelsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of channels to return. Default: 50.</p>
     pub max_results: i32,
+}
+impl ListChannelsInput {
+    /// <p>Filters the channel list to match the specified name.</p>
+    pub fn filter_by_name(&self) -> std::option::Option<&str> {
+        self.filter_by_name.as_deref()
+    }
+    /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
+    pub fn filter_by_recording_configuration_arn(&self) -> std::option::Option<&str> {
+        self.filter_by_recording_configuration_arn.as_deref()
+    }
+    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
+    /// response field.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of channels to return. Default: 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4660,6 +4757,23 @@ pub struct ImportPlaybackKeyPairInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ImportPlaybackKeyPairInput {
+    /// <p>The public portion of a customer-generated key pair.</p>
+    pub fn public_key_material(&self) -> std::option::Option<&str> {
+        self.public_key_material.as_deref()
+    }
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportPlaybackKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportPlaybackKeyPairInput");
@@ -4677,6 +4791,12 @@ pub struct GetStreamKeyInput {
     /// <p>ARN for the stream key to be retrieved.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetStreamKeyInput {
+    /// <p>ARN for the stream key to be retrieved.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStreamKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamKeyInput");
@@ -4691,6 +4811,12 @@ impl std::fmt::Debug for GetStreamKeyInput {
 pub struct GetStreamInput {
     /// <p>Channel ARN for stream to be accessed.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+}
+impl GetStreamInput {
+    /// <p>Channel ARN for stream to be accessed.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4707,6 +4833,12 @@ pub struct GetRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be retrieved.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetRecordingConfigurationInput {
+    /// <p>ARN of the recording configuration to be retrieved.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecordingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecordingConfigurationInput");
@@ -4721,6 +4853,12 @@ impl std::fmt::Debug for GetRecordingConfigurationInput {
 pub struct GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetPlaybackKeyPairInput {
+    /// <p>ARN of the key pair to be returned.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPlaybackKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4737,6 +4875,12 @@ pub struct GetChannelInput {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetChannelInput {
+    /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelInput");
@@ -4751,6 +4895,12 @@ impl std::fmt::Debug for GetChannelInput {
 pub struct DeleteStreamKeyInput {
     /// <p>ARN of the stream key to be deleted.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteStreamKeyInput {
+    /// <p>ARN of the stream key to be deleted.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStreamKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4767,6 +4917,12 @@ pub struct DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteRecordingConfigurationInput {
+    /// <p>ARN of the recording configuration to be deleted.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRecordingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRecordingConfigurationInput");
@@ -4782,6 +4938,12 @@ pub struct DeletePlaybackKeyPairInput {
     /// <p>ARN of the key pair to be deleted.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeletePlaybackKeyPairInput {
+    /// <p>ARN of the key pair to be deleted.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePlaybackKeyPairInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePlaybackKeyPairInput");
@@ -4796,6 +4958,12 @@ impl std::fmt::Debug for DeletePlaybackKeyPairInput {
 pub struct DeleteChannelInput {
     /// <p>ARN of the channel to be deleted.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteChannelInput {
+    /// <p>ARN of the channel to be deleted.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4814,6 +4982,19 @@ pub struct CreateStreamKeyInput {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateStreamKeyInput {
+    /// <p>ARN of the channel for which to create the stream key.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStreamKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4836,6 +5017,26 @@ pub struct CreateRecordingConfigurationInput {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateRecordingConfigurationInput {
+    /// <p>Recording-configuration name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A complex type that contains a destination configuration for where recorded video will be
+    /// stored.</p>
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+        self.destination_configuration.as_ref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRecordingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4886,6 +5087,56 @@ pub struct CreateChannelInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateChannelInput {
+    /// <p>Channel name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
+    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+    /// respectively.) Default: <code>LOW</code>.</p>
+    pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
+        self.latency_mode.as_ref()
+    }
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
+    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
+    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
+    /// automatically give viewers the best experience for their devices and network conditions.
+    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
+    /// for renditions 360p and below; above that, audio is passed through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
+    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
+    /// bitrate can be up to 1.5 Mbps.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Whether the channel is private (enabled for playback authorization). Default:
+    /// <code>false</code>.</p>
+    pub fn authorized(&self) -> bool {
+        self.authorized
+    }
+    /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
+    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+        self.recording_configuration_arn.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -4909,6 +5160,12 @@ pub struct BatchGetStreamKeyInput {
     /// <p>Array of ARNs, one per channel.</p>
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetStreamKeyInput {
+    /// <p>Array of ARNs, one per channel.</p>
+    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.arns.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetStreamKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetStreamKeyInput");
@@ -4923,6 +5180,12 @@ impl std::fmt::Debug for BatchGetStreamKeyInput {
 pub struct BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetChannelInput {
+    /// <p>Array of ARNs, one per channel.</p>
+    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.arns.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

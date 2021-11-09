@@ -18103,6 +18103,12 @@ pub struct TooManyRequestsException {
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl TooManyRequestsException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -18181,6 +18187,12 @@ pub struct PayloadTooLargeException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl PayloadTooLargeException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PayloadTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18261,6 +18273,12 @@ pub struct NotFoundException {
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl NotFoundException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotFoundException");
@@ -18339,6 +18357,12 @@ pub struct MethodNotAllowedException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl MethodNotAllowedException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MethodNotAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18419,6 +18443,12 @@ pub struct InternalServerErrorException {
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl InternalServerErrorException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerErrorException");
@@ -18497,6 +18527,12 @@ pub struct ForbiddenException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ForbiddenException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18577,6 +18613,12 @@ pub struct BadRequestException {
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl BadRequestException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BadRequestException");
@@ -18655,6 +18697,12 @@ pub struct ConflictException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

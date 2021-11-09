@@ -10,6 +10,20 @@ pub struct Rule {
     /// <p>The rule version.</p>
     pub rule_version: std::option::Option<std::string::String>,
 }
+impl Rule {
+    /// <p>The detector for which the rule is associated.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The rule ID.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The rule version.</p>
+    pub fn rule_version(&self) -> std::option::Option<&str> {
+        self.rule_version.as_deref()
+    }
+}
 impl std::fmt::Debug for Rule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Rule");
@@ -85,6 +99,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>A value assigned to a tag key.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>A tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value assigned to a tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -312,6 +336,14 @@ pub struct IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
     pub ingested_events_time_window: std::option::Option<crate::model::IngestedEventsTimeWindow>,
 }
+impl IngestedEventsDetail {
+    /// <p>The start and stop time of the ingested events.</p>
+    pub fn ingested_events_time_window(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestedEventsTimeWindow> {
+        self.ingested_events_time_window.as_ref()
+    }
+}
 impl std::fmt::Debug for IngestedEventsDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IngestedEventsDetail");
@@ -371,6 +403,16 @@ pub struct IngestedEventsTimeWindow {
     pub start_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of the final ingested event.</p>
     pub end_time: std::option::Option<std::string::String>,
+}
+impl IngestedEventsTimeWindow {
+    /// <p>Timestamp of the first ingensted event.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>Timestamp of the final ingested event.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
 }
 impl std::fmt::Debug for IngestedEventsTimeWindow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -434,6 +476,16 @@ pub struct ExternalEventsDetail {
     pub data_location: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
+}
+impl ExternalEventsDetail {
+    /// <p>The Amazon S3 bucket location for the data.</p>
+    pub fn data_location(&self) -> std::option::Option<&str> {
+        self.data_location.as_deref()
+    }
+    /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ExternalEventsDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -622,6 +674,24 @@ pub struct ModelVersion {
     /// <p>The model version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ModelVersion {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The model version ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ModelVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModelVersion");
@@ -716,6 +786,16 @@ pub struct Entity {
     pub entity_type: std::option::Option<std::string::String>,
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub entity_id: std::option::Option<std::string::String>,
+}
+impl Entity {
+    /// <p>The entity type.</p>
+    pub fn entity_type(&self) -> std::option::Option<&str> {
+        self.entity_type.as_deref()
+    }
+    /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Entity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -838,6 +918,26 @@ pub struct ModelOutputConfiguration {
     /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
     pub csv_index_to_variable_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ModelOutputConfiguration {
+    /// <p>The format of the model output configuration.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ModelOutputDataFormat> {
+        self.format.as_ref()
+    }
+    /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
+    pub fn json_key_to_variable_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.json_key_to_variable_map.as_ref()
+    }
+    /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
+    pub fn csv_index_to_variable_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.csv_index_to_variable_map.as_ref()
+    }
 }
 impl std::fmt::Debug for ModelOutputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1017,6 +1117,33 @@ pub struct ModelInputConfiguration {
     /// the placeholders for variable-names in the template will be replaced with the variable
     /// values before being sent to SageMaker. </p>
     pub csv_input_template: std::option::Option<std::string::String>,
+}
+impl ModelInputConfiguration {
+    /// <p>The event type name.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p> The format of the model input configuration. The format differs depending on if it is
+    /// passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ModelInputDataFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The event variables.</p>
+    pub fn use_event_variables(&self) -> std::option::Option<bool> {
+        self.use_event_variables
+    }
+    /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation,
+    /// the placeholders for variable names in the template will be replaced with the variable
+    /// values before being sent to SageMaker. </p>
+    pub fn json_input_template(&self) -> std::option::Option<&str> {
+        self.json_input_template.as_deref()
+    }
+    /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation,
+    /// the placeholders for variable-names in the template will be replaced with the variable
+    /// values before being sent to SageMaker. </p>
+    pub fn csv_input_template(&self) -> std::option::Option<&str> {
+        self.csv_input_template.as_deref()
+    }
 }
 impl std::fmt::Debug for ModelInputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1318,6 +1445,46 @@ pub struct Variable {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The ARN of the variable.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl Variable {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::DataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data source of the variable.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The default value of the variable.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The description of the variable. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The variable type of the variable.</p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code>
+    /// </p>
+    pub fn variable_type(&self) -> std::option::Option<&str> {
+        self.variable_type.as_deref()
+    }
+    /// <p>The time when variable was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>The time when the variable was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The ARN of the variable.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Variable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1627,6 +1794,48 @@ pub struct RuleDetail {
     /// <p>The rule ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl RuleDetail {
+    /// <p>The rule ID.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The detector for which the rule is associated.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The rule version.</p>
+    pub fn rule_version(&self) -> std::option::Option<&str> {
+        self.rule_version.as_deref()
+    }
+    /// <p>The rule expression.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The rule language.</p>
+    pub fn language(&self) -> std::option::Option<&crate::model::Language> {
+        self.language.as_ref()
+    }
+    /// <p>The rule outcomes.</p>
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+        self.outcomes.as_deref()
+    }
+    /// <p>Timestamp of the last time the rule was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>The timestamp of when the rule was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The rule ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RuleDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleDetail");
@@ -1812,6 +2021,28 @@ pub struct Outcome {
     /// <p>The outcome ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl Outcome {
+    /// <p>The outcome name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The outcome description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp when the outcome was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>The timestamp when the outcome was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The outcome ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Outcome {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Outcome");
@@ -1917,6 +2148,16 @@ pub struct TrainingDataSchema {
     /// <p>The label schema.</p>
     pub label_schema: std::option::Option<crate::model::LabelSchema>,
 }
+impl TrainingDataSchema {
+    /// <p>The training data schema variables.</p>
+    pub fn model_variables(&self) -> std::option::Option<&[std::string::String]> {
+        self.model_variables.as_deref()
+    }
+    /// <p>The label schema.</p>
+    pub fn label_schema(&self) -> std::option::Option<&crate::model::LabelSchema> {
+        self.label_schema.as_ref()
+    }
+}
 impl std::fmt::Debug for TrainingDataSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrainingDataSchema");
@@ -1994,6 +2235,23 @@ pub struct LabelSchema {
     >,
     /// <p>The action to take for unlabeled events.</p>
     pub unlabeled_events_treatment: std::option::Option<crate::model::UnlabeledEventsTreatment>,
+}
+impl LabelSchema {
+    /// <p>The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be: <code>{"FRAUD" => ["0"]</code>, <code>"LEGIT" => ["1"]}</code> or <code>{"FRAUD" => ["false"]</code>, <code>"LEGIT" => ["true"]}</code> or <code>{"FRAUD" => ["fraud", "abuse"]</code>, <code>"LEGIT" => ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have multiple label variants from your event type for a single Amazon Fraud Detector label.
+    /// </p>
+    pub fn label_mapper(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.label_mapper.as_ref()
+    }
+    /// <p>The action to take for unlabeled events.</p>
+    pub fn unlabeled_events_treatment(
+        &self,
+    ) -> std::option::Option<&crate::model::UnlabeledEventsTreatment> {
+        self.unlabeled_events_treatment.as_ref()
+    }
 }
 impl std::fmt::Debug for LabelSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2211,6 +2469,36 @@ pub struct Model {
     /// <p>The ARN of the model.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl Model {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>Timestamp of when the model was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>Timestamp of last time the model was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>The ARN of the model.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Model {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Model");
@@ -2354,6 +2642,28 @@ pub struct Label {
     /// <p>The label ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl Label {
+    /// <p>The label name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The label description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Timestamp of when the label was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>Timestamp of when the event type was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The label ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Label {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Label");
@@ -2457,6 +2767,12 @@ pub struct KmsKey {
     /// <p>The encryption key ARN.</p>
     pub kms_encryption_key_arn: std::option::Option<std::string::String>,
 }
+impl KmsKey {
+    /// <p>The encryption key ARN.</p>
+    pub fn kms_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_encryption_key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KmsKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KmsKey");
@@ -2523,6 +2839,48 @@ pub struct ExternalModel {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The model ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ExternalModel {
+    /// <p>The Amazon SageMaker model endpoints.</p>
+    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+        self.model_endpoint.as_deref()
+    }
+    /// <p>The source of the model.</p>
+    pub fn model_source(&self) -> std::option::Option<&crate::model::ModelSource> {
+        self.model_source.as_ref()
+    }
+    /// <p>The role used to invoke the model. </p>
+    pub fn invoke_model_endpoint_role_arn(&self) -> std::option::Option<&str> {
+        self.invoke_model_endpoint_role_arn.as_deref()
+    }
+    /// <p>The input configuration.</p>
+    pub fn input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelInputConfiguration> {
+        self.input_configuration.as_ref()
+    }
+    /// <p>The output configuration.</p>
+    pub fn output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelOutputConfiguration> {
+        self.output_configuration.as_ref()
+    }
+    /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
+    pub fn model_endpoint_status(&self) -> std::option::Option<&crate::model::ModelEndpointStatus> {
+        self.model_endpoint_status.as_ref()
+    }
+    /// <p>Timestamp of when the model was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>Timestamp of when the model was last created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The model ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ExternalModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2724,6 +3082,50 @@ pub struct EventType {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The entity type ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl EventType {
+    /// <p>The event type name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The event type description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The event type event variables.</p>
+    pub fn event_variables(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_variables.as_deref()
+    }
+    /// <p>The event type labels.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>The event type entity types.</p>
+    pub fn entity_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_types.as_deref()
+    }
+    /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and  improve fraud predictions.</p>
+    pub fn event_ingestion(&self) -> std::option::Option<&crate::model::EventIngestion> {
+        self.event_ingestion.as_ref()
+    }
+    /// <p>Data about the stored events.</p>
+    pub fn ingested_event_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestedEventStatistics> {
+        self.ingested_event_statistics.as_ref()
+    }
+    /// <p>Timestamp of when the event type was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>Timestamp of when the event type was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The entity type ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EventType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2939,6 +3341,29 @@ pub struct IngestedEventStatistics {
     /// </p>
     pub last_updated_time: std::option::Option<std::string::String>,
 }
+impl IngestedEventStatistics {
+    /// <p>The number of stored events.</p>
+    pub fn number_of_events(&self) -> std::option::Option<i64> {
+        self.number_of_events
+    }
+    /// <p>The total size of the stored events.</p>
+    pub fn event_data_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.event_data_size_in_bytes
+    }
+    /// <p>The oldest stored event.</p>
+    pub fn least_recent_event(&self) -> std::option::Option<&str> {
+        self.least_recent_event.as_deref()
+    }
+    /// <p>The newest stored event.</p>
+    pub fn most_recent_event(&self) -> std::option::Option<&str> {
+        self.most_recent_event.as_deref()
+    }
+    /// <p>Timestamp of when the stored event was last updated.    
+    /// </p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+}
 impl std::fmt::Debug for IngestedEventStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IngestedEventStatistics");
@@ -3053,6 +3478,19 @@ pub struct ExternalModelOutputs {
     pub outputs:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ExternalModelOutputs {
+    /// <p>The Amazon SageMaker model.</p>
+    pub fn external_model(&self) -> std::option::Option<&crate::model::ExternalModelSummary> {
+        self.external_model.as_ref()
+    }
+    /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
+    pub fn outputs(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.outputs.as_ref()
+    }
+}
 impl std::fmt::Debug for ExternalModelOutputs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExternalModelOutputs");
@@ -3136,6 +3574,16 @@ pub struct ExternalModelSummary {
     /// <p>The source of the model.</p>
     pub model_source: std::option::Option<crate::model::ModelSource>,
 }
+impl ExternalModelSummary {
+    /// <p>The endpoint of the Amazon SageMaker model.</p>
+    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+        self.model_endpoint.as_deref()
+    }
+    /// <p>The source of the model.</p>
+    pub fn model_source(&self) -> std::option::Option<&crate::model::ModelSource> {
+        self.model_source.as_ref()
+    }
+}
 impl std::fmt::Debug for ExternalModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExternalModelSummary");
@@ -3204,6 +3652,16 @@ pub struct RuleResult {
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RuleResult {
+    /// <p>The rule ID that was matched, based on the rule execution mode.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+        self.outcomes.as_deref()
+    }
 }
 impl std::fmt::Debug for RuleResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3276,6 +3734,18 @@ pub struct ModelScores {
     pub model_version: std::option::Option<crate::model::ModelVersion>,
     /// <p>The model's fraud prediction scores.</p>
     pub scores: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
+}
+impl ModelScores {
+    /// <p>The model version.</p>
+    pub fn model_version(&self) -> std::option::Option<&crate::model::ModelVersion> {
+        self.model_version.as_ref()
+    }
+    /// <p>The model's fraud prediction scores.</p>
+    pub fn scores(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f32>> {
+        self.scores.as_ref()
+    }
 }
 impl std::fmt::Debug for ModelScores {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3351,6 +3821,16 @@ pub struct ModelEndpointDataBlob {
     pub byte_buffer: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl ModelEndpointDataBlob {
+    /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
+    pub fn byte_buffer(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.byte_buffer.as_ref()
+    }
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ModelEndpointDataBlob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3428,6 +3908,39 @@ pub struct Event {
     pub label_timestamp: std::option::Option<std::string::String>,
     /// <p>The event entities.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+}
+impl Event {
+    /// <p>The event ID.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+        self.event_timestamp.as_deref()
+    }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub fn event_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.event_variables.as_ref()
+    }
+    /// <p>The label associated with the event.</p>
+    pub fn current_label(&self) -> std::option::Option<&str> {
+        self.current_label.as_deref()
+    }
+    /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn label_timestamp(&self) -> std::option::Option<&str> {
+        self.label_timestamp.as_deref()
+    }
+    /// <p>The event entities.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3601,6 +4114,28 @@ pub struct EntityType {
     /// <p>The entity type ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl EntityType {
+    /// <p>The entity type name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The entity type description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Timestamp of when the entity type was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>Timestamp of when the entity type was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The entity type ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for EntityType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityType");
@@ -3713,6 +4248,32 @@ pub struct Detector {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The detector ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl Detector {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>Timestamp of when the detector was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>Timestamp of when the detector was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The detector ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Detector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3938,6 +4499,68 @@ pub struct BatchPrediction {
     pub processed_records_count: std::option::Option<i32>,
     /// <p>The total number of records in the batch prediction job.</p>
     pub total_records_count: std::option::Option<i32>,
+}
+impl BatchPrediction {
+    /// <p>The job ID for the batch prediction.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The batch prediction status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AsyncJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason a batch prediction job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Timestamp of when the batch prediction job started.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>Timestamp of when the batch prediction job completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&str> {
+        self.completion_time.as_deref()
+    }
+    /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
+    pub fn last_heartbeat_time(&self) -> std::option::Option<&str> {
+        self.last_heartbeat_time.as_deref()
+    }
+    /// <p>The Amazon S3 location of your training file.</p>
+    pub fn input_path(&self) -> std::option::Option<&str> {
+        self.input_path.as_deref()
+    }
+    /// <p>The Amazon S3 location of your output file.</p>
+    pub fn output_path(&self) -> std::option::Option<&str> {
+        self.output_path.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The name of the detector.</p>
+    pub fn detector_name(&self) -> std::option::Option<&str> {
+        self.detector_name.as_deref()
+    }
+    /// <p>The detector version. </p>
+    pub fn detector_version(&self) -> std::option::Option<&str> {
+        self.detector_version.as_deref()
+    }
+    /// <p>The ARN of the IAM role to use for this job request.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The ARN of batch prediction job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The number of records processed by the batch prediction job.</p>
+    pub fn processed_records_count(&self) -> std::option::Option<i32> {
+        self.processed_records_count
+    }
+    /// <p>The total number of records in the batch prediction job.</p>
+    pub fn total_records_count(&self) -> std::option::Option<i32> {
+        self.total_records_count
+    }
 }
 impl std::fmt::Debug for BatchPrediction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4214,6 +4837,60 @@ pub struct BatchImport {
     /// <p>The total number of records in the batch import job.</p>
     pub total_records_count: std::option::Option<i32>,
 }
+impl BatchImport {
+    /// <p>The ID of the batch import job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the batch import job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AsyncJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason batch import job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>Timestamp of when the batch import job started.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>Timestamp of when batch import job completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&str> {
+        self.completion_time.as_deref()
+    }
+    /// <p>The Amazon S3 location of your data file for batch import.</p>
+    pub fn input_path(&self) -> std::option::Option<&str> {
+        self.input_path.as_deref()
+    }
+    /// <p>The Amazon S3 location of your output file.</p>
+    pub fn output_path(&self) -> std::option::Option<&str> {
+        self.output_path.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The ARN of the IAM role to use for this job request.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The ARN of the batch import job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The number of records processed by batch import job.</p>
+    pub fn processed_records_count(&self) -> std::option::Option<i32> {
+        self.processed_records_count
+    }
+    /// <p>The number of records that failed to import. </p>
+    pub fn failed_records_count(&self) -> std::option::Option<i32> {
+        self.failed_records_count
+    }
+    /// <p>The total number of records in the batch import job.</p>
+    pub fn total_records_count(&self) -> std::option::Option<i32> {
+        self.total_records_count
+    }
+}
 impl std::fmt::Debug for BatchImport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchImport");
@@ -4452,6 +5129,62 @@ pub struct ModelVersionDetail {
     /// <p>The model version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ModelVersionDetail {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The status of the model version.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The model version training data source.</p>
+    pub fn training_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingDataSourceEnum> {
+        self.training_data_source.as_ref()
+    }
+    /// <p>The training data schema.</p>
+    pub fn training_data_schema(&self) -> std::option::Option<&crate::model::TrainingDataSchema> {
+        self.training_data_schema.as_ref()
+    }
+    /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>EXTERNAL_EVENTS</code>.</p>
+    pub fn external_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
+        self.external_events_detail.as_ref()
+    }
+    /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>INGESTED_EVENTS</code>.</p>
+    pub fn ingested_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
+        self.ingested_events_detail.as_ref()
+    }
+    /// <p>The training results.</p>
+    pub fn training_result(&self) -> std::option::Option<&crate::model::TrainingResult> {
+        self.training_result.as_ref()
+    }
+    /// <p>The timestamp when the model was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
+    /// <p>The timestamp when the model was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&str> {
+        self.created_time.as_deref()
+    }
+    /// <p>The model version ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ModelVersionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModelVersionDetail");
@@ -4671,6 +5404,24 @@ pub struct TrainingResult {
     /// <p>The variable importance metrics.</p>
     pub variable_importance_metrics: std::option::Option<crate::model::VariableImportanceMetrics>,
 }
+impl TrainingResult {
+    /// <p>The validation metrics.</p>
+    pub fn data_validation_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::DataValidationMetrics> {
+        self.data_validation_metrics.as_ref()
+    }
+    /// <p>The training metric details.</p>
+    pub fn training_metrics(&self) -> std::option::Option<&crate::model::TrainingMetrics> {
+        self.training_metrics.as_ref()
+    }
+    /// <p>The variable importance metrics.</p>
+    pub fn variable_importance_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::VariableImportanceMetrics> {
+        self.variable_importance_metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for TrainingResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrainingResult");
@@ -4765,6 +5516,12 @@ pub struct VariableImportanceMetrics {
     /// <p>List of variable metrics.</p>
     pub log_odds_metrics: std::option::Option<std::vec::Vec<crate::model::LogOddsMetric>>,
 }
+impl VariableImportanceMetrics {
+    /// <p>List of variable metrics.</p>
+    pub fn log_odds_metrics(&self) -> std::option::Option<&[crate::model::LogOddsMetric]> {
+        self.log_odds_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for VariableImportanceMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VariableImportanceMetrics");
@@ -4826,6 +5583,20 @@ pub struct LogOddsMetric {
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
     pub variable_importance: std::option::Option<f32>,
+}
+impl LogOddsMetric {
+    /// <p>The name of the variable.</p>
+    pub fn variable_name(&self) -> std::option::Option<&str> {
+        self.variable_name.as_deref()
+    }
+    /// <p>The type of variable.</p>
+    pub fn variable_type(&self) -> std::option::Option<&str> {
+        self.variable_type.as_deref()
+    }
+    /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
+    pub fn variable_importance(&self) -> std::option::Option<f32> {
+        self.variable_importance
+    }
 }
 impl std::fmt::Debug for LogOddsMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4909,6 +5680,16 @@ pub struct TrainingMetrics {
     /// <p>The data points details.</p>
     pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
 }
+impl TrainingMetrics {
+    /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+    pub fn auc(&self) -> std::option::Option<f32> {
+        self.auc
+    }
+    /// <p>The data points details.</p>
+    pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::MetricDataPoint]> {
+        self.metric_data_points.as_deref()
+    }
+}
 impl std::fmt::Debug for TrainingMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrainingMetrics");
@@ -4988,6 +5769,24 @@ pub struct MetricDataPoint {
     pub tpr: std::option::Option<f32>,
     /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
     pub threshold: std::option::Option<f32>,
+}
+impl MetricDataPoint {
+    /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+    pub fn fpr(&self) -> std::option::Option<f32> {
+        self.fpr
+    }
+    /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+    pub fn precision(&self) -> std::option::Option<f32> {
+        self.precision
+    }
+    /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+    pub fn tpr(&self) -> std::option::Option<f32> {
+        self.tpr
+    }
+    /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+    pub fn threshold(&self) -> std::option::Option<f32> {
+        self.threshold
+    }
 }
 impl std::fmt::Debug for MetricDataPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5079,6 +5878,20 @@ pub struct DataValidationMetrics {
     /// <p>The field-specific model training validation messages.</p>
     pub field_level_messages:
         std::option::Option<std::vec::Vec<crate::model::FieldValidationMessage>>,
+}
+impl DataValidationMetrics {
+    /// <p>The file-specific model training validation messages.</p>
+    pub fn file_level_messages(
+        &self,
+    ) -> std::option::Option<&[crate::model::FileValidationMessage]> {
+        self.file_level_messages.as_deref()
+    }
+    /// <p>The field-specific model training validation messages.</p>
+    pub fn field_level_messages(
+        &self,
+    ) -> std::option::Option<&[crate::model::FieldValidationMessage]> {
+        self.field_level_messages.as_deref()
+    }
 }
 impl std::fmt::Debug for DataValidationMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5174,6 +5987,28 @@ pub struct FieldValidationMessage {
     pub content: std::option::Option<std::string::String>,
     /// <p>The message type.</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl FieldValidationMessage {
+    /// <p>The field name.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>The message ID.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The message title.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The message content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The message type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for FieldValidationMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5279,6 +6114,20 @@ pub struct FileValidationMessage {
     /// <p>The message type.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl FileValidationMessage {
+    /// <p>The message title.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The message content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The message type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for FileValidationMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileValidationMessage");
@@ -5358,6 +6207,24 @@ pub struct DetectorVersionSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the detector version was last updated.</p>
     pub last_updated_time: std::option::Option<std::string::String>,
+}
+impl DetectorVersionSummary {
+    /// <p>The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The detector version status. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The detector version description. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Timestamp of when the detector version was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+        self.last_updated_time.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectorVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5459,6 +6326,20 @@ pub struct BatchGetVariableError {
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl BatchGetVariableError {
+    /// <p>The error name. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The error code. </p>
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetVariableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetVariableError");
@@ -5536,6 +6417,20 @@ pub struct BatchCreateVariableError {
     pub code: i32,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BatchCreateVariableError {
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The error code. </p>
+    pub fn code(&self) -> i32 {
+        self.code
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateVariableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5622,6 +6517,34 @@ pub struct VariableEntry {
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code>
     /// </p>
     pub variable_type: std::option::Option<std::string::String>,
+}
+impl VariableEntry {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the variable.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>The data source of the variable.</p>
+    pub fn data_source(&self) -> std::option::Option<&str> {
+        self.data_source.as_deref()
+    }
+    /// <p>The default value of the variable.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The description of the variable.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code>
+    /// </p>
+    pub fn variable_type(&self) -> std::option::Option<&str> {
+        self.variable_type.as_deref()
+    }
 }
 impl std::fmt::Debug for VariableEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

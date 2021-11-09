@@ -148,10 +148,7 @@ impl AssociateCustomerGatewayInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_customer_gateway(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -342,10 +339,7 @@ impl AssociateLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_associate_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_associate_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -556,7 +550,7 @@ impl AssociateTransitGatewayConnectPeerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_transit_gateway_connect_peer(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_transit_gateway_connect_peer(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -814,10 +808,7 @@ impl CreateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1115,10 +1106,7 @@ impl CreateDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_device(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1286,10 +1274,7 @@ impl CreateGlobalNetworkInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_global_network(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_global_network(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1546,10 +1531,7 @@ impl CreateLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1791,10 +1773,7 @@ impl CreateSiteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_site(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_site(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6364,10 +6343,7 @@ impl GetNetworkRoutesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_network_routes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_network_routes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7987,10 +7963,7 @@ impl RegisterTransitGatewayInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_transit_gateway(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8222,10 +8195,7 @@ impl StartRouteAnalysisInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_route_analysis(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_route_analysis(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8406,10 +8376,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8826,10 +8793,7 @@ impl UpdateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9134,10 +9098,7 @@ impl UpdateDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_device(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9319,10 +9280,7 @@ impl UpdateGlobalNetworkInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_global_network(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_global_network(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9574,10 +9532,7 @@ impl UpdateLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9803,7 +9758,7 @@ impl UpdateNetworkResourceMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_network_resource_metadata(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_network_resource_metadata(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10053,10 +10008,7 @@ impl UpdateSiteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_site(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_site(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10146,6 +10098,39 @@ pub struct UpdateSiteInput {
     /// </ul>
     pub location: std::option::Option<crate::model::Location>,
 }
+impl UpdateSiteInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of your site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>A description of your site.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The site location:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Address</code>: The physical address of the site.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Latitude</code>: The latitude of the site. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Longitude</code>: The longitude of the site.</p>
+    /// </li>
+    /// </ul>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSiteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSiteInput");
@@ -10168,6 +10153,23 @@ pub struct UpdateNetworkResourceMetadataInput {
     /// <p>The resource metadata.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateNetworkResourceMetadataInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The resource metadata.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNetworkResourceMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10199,6 +10201,35 @@ pub struct UpdateLinkInput {
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub provider: std::option::Option<std::string::String>,
 }
+impl UpdateLinkInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>A description of the link.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The upload and download speed in Mbps. </p>
+    pub fn bandwidth(&self) -> std::option::Option<&crate::model::Bandwidth> {
+        self.bandwidth.as_ref()
+    }
+    /// <p>The provider of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLinkInput");
@@ -10221,6 +10252,17 @@ pub struct UpdateGlobalNetworkInput {
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateGlobalNetworkInput {
+    /// <p>The ID of your global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>A description of the global network.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGlobalNetworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10260,6 +10302,52 @@ pub struct UpdateDeviceInput {
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
 }
+impl UpdateDeviceInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    pub fn aws_location(&self) -> std::option::Option<&crate::model::AwsLocation> {
+        self.aws_location.as_ref()
+    }
+    /// <p>A description of the device.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the device.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The vendor of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn vendor(&self) -> std::option::Option<&str> {
+        self.vendor.as_deref()
+    }
+    /// <p>The model of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The serial number of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>Describes a location.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceInput");
@@ -10293,6 +10381,29 @@ pub struct UpdateConnectionInput {
     /// <p>Length Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateConnectionInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The ID of the link for the first device in the connection.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The ID of the link for the second device in the connection.</p>
+    pub fn connected_link_id(&self) -> std::option::Option<&str> {
+        self.connected_link_id.as_deref()
+    }
+    /// <p>A description of the connection.</p>
+    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionInput");
@@ -10314,6 +10425,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys to remove from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10331,6 +10452,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to apply to the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10357,6 +10488,33 @@ pub struct StartRouteAnalysisInput {
     /// The default is <code>false</code>.</p>
     pub use_middleboxes: bool,
 }
+impl StartRouteAnalysisInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The source from which traffic originates.</p>
+    pub fn source(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteAnalysisEndpointOptionsSpecification> {
+        self.source.as_ref()
+    }
+    /// <p>The destination.</p>
+    pub fn destination(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteAnalysisEndpointOptionsSpecification> {
+        self.destination.as_ref()
+    }
+    /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+    pub fn include_return_path(&self) -> bool {
+        self.include_return_path
+    }
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
+    /// The default is <code>false</code>.</p>
+    pub fn use_middleboxes(&self) -> bool {
+        self.use_middleboxes
+    }
+}
 impl std::fmt::Debug for StartRouteAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartRouteAnalysisInput");
@@ -10378,6 +10536,16 @@ pub struct RegisterTransitGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub transit_gateway_arn: std::option::Option<std::string::String>,
 }
+impl RegisterTransitGatewayInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterTransitGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTransitGatewayInput");
@@ -10393,6 +10561,12 @@ impl std::fmt::Debug for RegisterTransitGatewayInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10415,6 +10589,25 @@ pub struct GetTransitGatewayRegistrationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayRegistrationsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
+    /// 10.</p>
+    pub fn transit_gateway_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.transit_gateway_arns.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayRegistrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10439,6 +10632,24 @@ pub struct GetTransitGatewayConnectPeerAssociationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTransitGatewayConnectPeerAssociationsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
+    pub fn transit_gateway_connect_peer_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.transit_gateway_connect_peer_arns.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTransitGatewayConnectPeerAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10467,6 +10678,24 @@ pub struct GetSitesInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetSitesInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>One or more site IDs. The maximum is 10.</p>
+    pub fn site_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.site_ids.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSitesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSitesInput");
@@ -10486,6 +10715,16 @@ pub struct GetRouteAnalysisInput {
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the route analysis.</p>
     pub route_analysis_id: std::option::Option<std::string::String>,
+}
+impl GetRouteAnalysisInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the route analysis.</p>
+    pub fn route_analysis_id(&self) -> std::option::Option<&str> {
+        self.route_analysis_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRouteAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10593,6 +10832,116 @@ pub struct GetNetworkTelemetryInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetNetworkTelemetryInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ARN of the gateway.</p>
+    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+        self.registered_gateway_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkTelemetryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkTelemetryInput");
@@ -10634,6 +10983,54 @@ pub struct GetNetworkRoutesInput {
     pub destination_filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+}
+impl GetNetworkRoutesInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn route_table_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteTableIdentifier> {
+        self.route_table_identifier.as_ref()
+    }
+    /// <p>An exact CIDR block.</p>
+    pub fn exact_cidr_matches(&self) -> std::option::Option<&[std::string::String]> {
+        self.exact_cidr_matches.as_deref()
+    }
+    /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+    pub fn longest_prefix_matches(&self) -> std::option::Option<&[std::string::String]> {
+        self.longest_prefix_matches.as_deref()
+    }
+    /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+    pub fn subnet_of_matches(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_of_matches.as_deref()
+    }
+    /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+    pub fn supernet_of_matches(&self) -> std::option::Option<&[std::string::String]> {
+        self.supernet_of_matches.as_deref()
+    }
+    /// <p>The IDs of the prefix lists.</p>
+    pub fn prefix_list_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.prefix_list_ids.as_deref()
+    }
+    /// <p>The route states.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::RouteState]> {
+        self.states.as_deref()
+    }
+    /// <p>The route types.</p>
+    pub fn types(&self) -> std::option::Option<&[crate::model::RouteType]> {
+        self.types.as_deref()
+    }
+    /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+    pub fn destination_filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.destination_filters.as_ref()
+    }
 }
 impl std::fmt::Debug for GetNetworkRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10749,6 +11146,116 @@ pub struct GetNetworkResourcesInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetNetworkResourcesInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ARN of the gateway.</p>
+    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+        self.registered_gateway_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourcesInput");
@@ -10861,6 +11368,116 @@ pub struct GetNetworkResourceRelationshipsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetNetworkResourceRelationshipsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ARN of the registered gateway.</p>
+    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+        self.registered_gateway_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ARN of the gateway.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkResourceRelationshipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourceRelationshipsInput");
@@ -10965,6 +11582,100 @@ pub struct GetNetworkResourceCountsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetNetworkResourceCountsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetNetworkResourceCountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourceCountsInput");
@@ -10995,6 +11706,36 @@ pub struct GetLinksInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetLinksInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>One or more link IDs. The maximum is 10.</p>
+    pub fn link_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.link_ids.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The link type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The link provider.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLinksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLinksInput");
@@ -11024,6 +11765,28 @@ pub struct GetLinkAssociationsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetLinkAssociationsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLinkAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLinkAssociationsInput");
@@ -11051,6 +11814,28 @@ pub struct GetDevicesInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDevicesInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>One or more device IDs. The maximum is 10.</p>
+    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_ids.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicesInput");
@@ -11075,6 +11860,24 @@ pub struct GetCustomerGatewayAssociationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCustomerGatewayAssociationsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
+    pub fn customer_gateway_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.customer_gateway_arns.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCustomerGatewayAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11102,6 +11905,28 @@ pub struct GetConnectionsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetConnectionsInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>One or more connection IDs.</p>
+    pub fn connection_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.connection_ids.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionsInput");
@@ -11122,6 +11947,16 @@ pub struct DisassociateTransitGatewayConnectPeerInput {
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub transit_gateway_connect_peer_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateTransitGatewayConnectPeerInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    pub fn transit_gateway_connect_peer_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_connect_peer_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateTransitGatewayConnectPeerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11146,6 +11981,20 @@ pub struct DisassociateLinkInput {
     /// <p>The ID of the link.</p>
     pub link_id: std::option::Option<std::string::String>,
 }
+impl DisassociateLinkInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateLinkInput");
@@ -11164,6 +12013,16 @@ pub struct DisassociateCustomerGatewayInput {
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub customer_gateway_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateCustomerGatewayInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    pub fn customer_gateway_arn(&self) -> std::option::Option<&str> {
+        self.customer_gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateCustomerGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11185,6 +12044,20 @@ pub struct DescribeGlobalNetworksInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeGlobalNetworksInput {
+    /// <p>The IDs of one or more global networks. The maximum is 10.</p>
+    pub fn global_network_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.global_network_ids.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGlobalNetworksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGlobalNetworksInput");
@@ -11204,6 +12077,16 @@ pub struct DeregisterTransitGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub transit_gateway_arn: std::option::Option<std::string::String>,
 }
+impl DeregisterTransitGatewayInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterTransitGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTransitGatewayInput");
@@ -11221,6 +12104,16 @@ pub struct DeleteSiteInput {
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
+}
+impl DeleteSiteInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSiteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11240,6 +12133,16 @@ pub struct DeleteLinkInput {
     /// <p>The ID of the link.</p>
     pub link_id: std::option::Option<std::string::String>,
 }
+impl DeleteLinkInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLinkInput");
@@ -11255,6 +12158,12 @@ impl std::fmt::Debug for DeleteLinkInput {
 pub struct DeleteGlobalNetworkInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
+}
+impl DeleteGlobalNetworkInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGlobalNetworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11273,6 +12182,16 @@ pub struct DeleteDeviceInput {
     /// <p>The ID of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl DeleteDeviceInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceInput");
@@ -11290,6 +12209,16 @@ pub struct DeleteConnectionInput {
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11328,6 +12257,39 @@ pub struct CreateSiteInput {
     /// <p>The tags to apply to the resource during creation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateSiteInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>A description of your site.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Address</code>: The physical address of the site.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Latitude</code>: The latitude of the site. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Longitude</code>: The longitude of the site.</p>
+    /// </li>
+    /// </ul>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSiteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSiteInput");
@@ -11361,6 +12323,39 @@ pub struct CreateLinkInput {
     /// <p>The tags to apply to the resource during creation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateLinkInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>A description of the link.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p> The upload speed and download speed in Mbps. </p>
+    pub fn bandwidth(&self) -> std::option::Option<&crate::model::Bandwidth> {
+        self.bandwidth.as_ref()
+    }
+    /// <p>The provider of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLinkInput");
@@ -11384,6 +12379,17 @@ pub struct CreateGlobalNetworkInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateGlobalNetworkInput {
+    /// <p>A description of the global network.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGlobalNetworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11423,6 +12429,52 @@ pub struct CreateDeviceInput {
     /// <p>The tags to apply to the resource during creation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDeviceInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    pub fn aws_location(&self) -> std::option::Option<&crate::model::AwsLocation> {
+        self.aws_location.as_ref()
+    }
+    /// <p>A description of the device.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the device.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The vendor of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn vendor(&self) -> std::option::Option<&str> {
+        self.vendor.as_deref()
+    }
+    /// <p>The model of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The serial number of the device.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The location of the device.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeviceInput");
@@ -11460,6 +12512,37 @@ pub struct CreateConnectionInput {
     /// <p>The tags to apply to the resource during creation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateConnectionInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the first device in the connection.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the second device in the connection.</p>
+    pub fn connected_device_id(&self) -> std::option::Option<&str> {
+        self.connected_device_id.as_deref()
+    }
+    /// <p>The ID of the link for the first device.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The ID of the link for the second device.</p>
+    pub fn connected_link_id(&self) -> std::option::Option<&str> {
+        self.connected_link_id.as_deref()
+    }
+    /// <p>A description of the connection.</p>
+    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionInput");
@@ -11487,6 +12570,24 @@ pub struct AssociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the link.</p>
     pub link_id: std::option::Option<std::string::String>,
 }
+impl AssociateTransitGatewayConnectPeerInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
+    pub fn transit_gateway_connect_peer_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_connect_peer_arn.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateTransitGatewayConnectPeerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateTransitGatewayConnectPeerInput");
@@ -11512,6 +12613,20 @@ pub struct AssociateLinkInput {
     /// <p>The ID of the link.</p>
     pub link_id: std::option::Option<std::string::String>,
 }
+impl AssociateLinkInput {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateLinkInput");
@@ -11534,6 +12649,24 @@ pub struct AssociateCustomerGatewayInput {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
     pub link_id: std::option::Option<std::string::String>,
+}
+impl AssociateCustomerGatewayInput {
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    pub fn customer_gateway_arn(&self) -> std::option::Option<&str> {
+        self.customer_gateway_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateCustomerGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

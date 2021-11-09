@@ -6,6 +6,12 @@ pub struct UpdateChannelOutput {
     /// <p>Object specifying a channel.</p>
     pub channel: std::option::Option<crate::model::Channel>,
 }
+impl UpdateChannelOutput {
+    /// <p>Object specifying a channel.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelOutput");
@@ -175,6 +181,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p/>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -240,6 +255,17 @@ pub struct ListStreamsOutput {
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
     /// request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStreamsOutput {
+    /// <p>List of streams.</p>
+    pub fn streams(&self) -> std::option::Option<&[crate::model::StreamSummary]> {
+        self.streams.as_deref()
+    }
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
+    /// request to get the next set.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -316,6 +342,17 @@ pub struct ListStreamKeysOutput {
     /// the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListStreamKeysOutput {
+    /// <p>List of stream keys.</p>
+    pub fn stream_keys(&self) -> std::option::Option<&[crate::model::StreamKeySummary]> {
+        self.stream_keys.as_deref()
+    }
+    /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in
+    /// the request to get the next set.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStreamKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamKeysOutput");
@@ -391,6 +428,19 @@ pub struct ListRecordingConfigurationsOutput {
     /// <p>If there are more recording configurations than <code>maxResults</code>, use
     /// <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecordingConfigurationsOutput {
+    /// <p>List of the matching recording configurations.</p>
+    pub fn recording_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecordingConfigurationSummary]> {
+        self.recording_configurations.as_deref()
+    }
+    /// <p>If there are more recording configurations than <code>maxResults</code>, use
+    /// <code>nextToken</code> in the request to get the next set.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecordingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -471,6 +521,17 @@ pub struct ListPlaybackKeyPairsOutput {
     /// the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPlaybackKeyPairsOutput {
+    /// <p>List of key pairs.</p>
+    pub fn key_pairs(&self) -> std::option::Option<&[crate::model::PlaybackKeyPairSummary]> {
+        self.key_pairs.as_deref()
+    }
+    /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in
+    /// the request to get the next set.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPlaybackKeyPairsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPlaybackKeyPairsOutput");
@@ -547,6 +608,17 @@ pub struct ListChannelsOutput {
     /// request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsOutput {
+    /// <p>List of the matching channels.</p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the
+    /// request to get the next set.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsOutput");
@@ -619,6 +691,12 @@ pub struct ImportPlaybackKeyPairOutput {
     /// <p/>
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
+impl ImportPlaybackKeyPairOutput {
+    /// <p/>
+    pub fn key_pair(&self) -> std::option::Option<&crate::model::PlaybackKeyPair> {
+        self.key_pair.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportPlaybackKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportPlaybackKeyPairOutput");
@@ -669,6 +747,12 @@ impl ImportPlaybackKeyPairOutput {
 pub struct GetStreamKeyOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub stream_key: std::option::Option<crate::model::StreamKey>,
+}
+impl GetStreamKeyOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
+        self.stream_key.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStreamKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -721,6 +805,12 @@ pub struct GetStreamOutput {
     /// <p/>
     pub stream: std::option::Option<crate::model::Stream>,
 }
+impl GetStreamOutput {
+    /// <p/>
+    pub fn stream(&self) -> std::option::Option<&crate::model::Stream> {
+        self.stream.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamOutput");
@@ -768,6 +858,14 @@ impl GetStreamOutput {
 pub struct GetRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
+}
+impl GetRecordingConfigurationOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn recording_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RecordingConfiguration> {
+        self.recording_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRecordingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -824,6 +922,12 @@ pub struct GetPlaybackKeyPairOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
+impl GetPlaybackKeyPairOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn key_pair(&self) -> std::option::Option<&crate::model::PlaybackKeyPair> {
+        self.key_pair.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPlaybackKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlaybackKeyPairOutput");
@@ -874,6 +978,12 @@ impl GetPlaybackKeyPairOutput {
 pub struct GetChannelOutput {
     /// <p/>
     pub channel: std::option::Option<crate::model::Channel>,
+}
+impl GetChannelOutput {
+    /// <p/>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for GetChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1043,6 +1153,12 @@ pub struct CreateStreamKeyOutput {
     /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
+impl CreateStreamKeyOutput {
+    /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
+    pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
+        self.stream_key.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStreamKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamKeyOutput");
@@ -1093,6 +1209,14 @@ impl CreateStreamKeyOutput {
 pub struct CreateRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
+}
+impl CreateRecordingConfigurationOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn recording_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RecordingConfiguration> {
+        self.recording_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRecordingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1150,6 +1274,16 @@ pub struct CreateChannelOutput {
     pub channel: std::option::Option<crate::model::Channel>,
     /// <p/>
     pub stream_key: std::option::Option<crate::model::StreamKey>,
+}
+impl CreateChannelOutput {
+    /// <p/>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+    /// <p/>
+    pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
+        self.stream_key.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1216,6 +1350,16 @@ pub struct BatchGetStreamKeyOutput {
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
     /// <p/>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
+}
+impl BatchGetStreamKeyOutput {
+    /// <p/>
+    pub fn stream_keys(&self) -> std::option::Option<&[crate::model::StreamKey]> {
+        self.stream_keys.as_deref()
+    }
+    /// <p/>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetStreamKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1297,6 +1441,16 @@ pub struct BatchGetChannelOutput {
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// <p>Each error object is related to a specific ARN in the request.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
+}
+impl BatchGetChannelOutput {
+    /// <p/>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.channels.as_deref()
+    }
+    /// <p>Each error object is related to a specific ARN in the request.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

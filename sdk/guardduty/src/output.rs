@@ -97,6 +97,13 @@ pub struct UpdateMemberDetectorsOutput {
     /// for why they were not processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl UpdateMemberDetectorsOutput {
+    /// <p>A list of member account IDs that were unable to be processed along with an explanation
+    /// for why they were not processed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMemberDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMemberDetectorsOutput");
@@ -219,6 +226,12 @@ impl UpdateFindingsFeedbackOutput {
 pub struct UpdateFilterOutput {
     /// <p>The name of the filter.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateFilterOutput {
+    /// <p>The name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -387,6 +400,13 @@ pub struct StopMonitoringMembersOutput {
     /// and a result string that indicates why the account was not processed. </p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl StopMonitoringMembersOutput {
+    /// <p>A list of objects that contain an accountId for each account that could not be processed,
+    /// and a result string that indicates why the account was not processed. </p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for StopMonitoringMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopMonitoringMembersOutput");
@@ -450,6 +470,13 @@ pub struct StartMonitoringMembersOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains
     /// why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl StartMonitoringMembersOutput {
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains
+    /// why it was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for StartMonitoringMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,6 +543,17 @@ pub struct ListThreatIntelSetsOutput {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListThreatIntelSetsOutput {
+    /// <p>The IDs of the ThreatIntelSet resources.</p>
+    pub fn threat_intel_set_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.threat_intel_set_ids.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListThreatIntelSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -590,6 +628,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -658,6 +705,20 @@ pub struct ListPublishingDestinationsOutput {
     /// <code>NextToken</code> value returned from the previous request to continue listing results
     /// after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPublishingDestinationsOutput {
+    /// <p>A <code>Destinations</code> object that includes information about each publishing
+    /// destination returned.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+        self.destinations.as_deref()
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of
+    /// this parameter to null for the first request to a list action. For subsequent calls, use the
+    /// <code>NextToken</code> value returned from the previous request to continue listing results
+    /// after the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPublishingDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -741,6 +802,18 @@ pub struct ListOrganizationAdminAccountsOutput {
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOrganizationAdminAccountsOutput {
+    /// <p>A list of accounts configured as GuardDuty delegated
+    /// administrators.</p>
+    pub fn admin_accounts(&self) -> std::option::Option<&[crate::model::AdminAccount]> {
+        self.admin_accounts.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOrganizationAdminAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOrganizationAdminAccountsOutput");
@@ -818,6 +891,17 @@ pub struct ListMembersOutput {
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMembersOutput {
+    /// <p>A list of members.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+        self.members.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersOutput");
@@ -892,6 +976,17 @@ pub struct ListIpSetsOutput {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIpSetsOutput {
+    /// <p>The IDs of the IPSet resources.</p>
+    pub fn ip_set_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_set_ids.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIpSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -968,6 +1063,17 @@ pub struct ListInvitationsOutput {
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsOutput {
+    /// <p>A list of invitation descriptions.</p>
+    pub fn invitations(&self) -> std::option::Option<&[crate::model::Invitation]> {
+        self.invitations.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsOutput");
@@ -1042,6 +1148,17 @@ pub struct ListFindingsOutput {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFindingsOutput {
+    /// <p>The IDs of the findings that you're listing.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1118,6 +1235,17 @@ pub struct ListFiltersOutput {
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFiltersOutput {
+    /// <p>A list of filter names.</p>
+    pub fn filter_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.filter_names.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFiltersOutput");
@@ -1193,6 +1321,17 @@ pub struct ListDetectorsOutput {
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDetectorsOutput {
+    /// <p>A list of detector IDs.</p>
+    pub fn detector_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.detector_ids.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorsOutput");
@@ -1266,6 +1405,13 @@ pub struct InviteMembersOutput {
     /// why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl InviteMembersOutput {
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains
+    /// why it was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for InviteMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteMembersOutput");
@@ -1332,6 +1478,18 @@ pub struct GetUsageStatisticsOutput {
     /// <p>The pagination parameter to be used on the next list operation to retrieve more
     /// items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetUsageStatisticsOutput {
+    /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects
+    /// representing other types will be null.</p>
+    pub fn usage_statistics(&self) -> std::option::Option<&crate::model::UsageStatistics> {
+        self.usage_statistics.as_ref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more
+    /// items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUsageStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1411,6 +1569,33 @@ pub struct GetThreatIntelSetOutput {
     /// <p>The tags of the threat list resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetThreatIntelSetOutput {
+    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
+    /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The format of the threatIntelSet.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ThreatIntelSetFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The URI of the file that contains the ThreatIntelSet. For example:
+    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The status of threatIntelSet file uploaded.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ThreatIntelSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The tags of the threat list resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetThreatIntelSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1542,6 +1727,17 @@ pub struct GetMembersOutput {
     /// why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl GetMembersOutput {
+    /// <p>A list of members.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+        self.members.as_deref()
+    }
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains
+    /// why it was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMembersOutput");
@@ -1630,6 +1826,19 @@ pub struct GetMemberDetectorsOutput {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation
     /// for why they were not processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl GetMemberDetectorsOutput {
+    /// <p>An object that describes which data sources are enabled for a member account.</p>
+    pub fn member_data_source_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MemberDataSourceConfiguration]> {
+        self.member_data_source_configurations.as_deref()
+    }
+    /// <p>A list of member account IDs that were unable to be processed along with an explanation
+    /// for why they were not processed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMemberDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1723,6 +1932,12 @@ pub struct GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
     pub master: std::option::Option<crate::model::Master>,
 }
+impl GetMasterAccountOutput {
+    /// <p>The administrator account details.</p>
+    pub fn master(&self) -> std::option::Option<&crate::model::Master> {
+        self.master.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMasterAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMasterAccountOutput");
@@ -1780,6 +1995,32 @@ pub struct GetIpSetOutput {
     /// <p>The tags of the IPSet resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetIpSetOutput {
+    /// <p>The user-friendly name for the IPSet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The format of the file that contains the IPSet.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::IpSetFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The URI of the file that contains the IPSet. For example:
+    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The status of IPSet file that was uploaded.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IpSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The tags of the IPSet resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIpSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1900,6 +2141,12 @@ pub struct GetInvitationsCountOutput {
     /// <p>The number of received invitations.</p>
     pub invitations_count: i32,
 }
+impl GetInvitationsCountOutput {
+    /// <p>The number of received invitations.</p>
+    pub fn invitations_count(&self) -> i32 {
+        self.invitations_count
+    }
+}
 impl std::fmt::Debug for GetInvitationsCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInvitationsCountOutput");
@@ -1947,6 +2194,12 @@ impl GetInvitationsCountOutput {
 pub struct GetFindingsStatisticsOutput {
     /// <p>The finding statistics object.</p>
     pub finding_statistics: std::option::Option<crate::model::FindingStatistics>,
+}
+impl GetFindingsStatisticsOutput {
+    /// <p>The finding statistics object.</p>
+    pub fn finding_statistics(&self) -> std::option::Option<&crate::model::FindingStatistics> {
+        self.finding_statistics.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFindingsStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1998,6 +2251,12 @@ impl GetFindingsStatisticsOutput {
 pub struct GetFindingsOutput {
     /// <p>A list of findings.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
+}
+impl GetFindingsOutput {
+    /// <p>A list of findings.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
+        self.findings.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2067,6 +2326,36 @@ pub struct GetFilterOutput {
     /// <p>The tags of the filter resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetFilterOutput {
+    /// <p>The name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the filter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
+        self.action.as_ref()
+    }
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
+    /// order in which this filter is applied to the findings.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>The tags of the filter resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2218,6 +2507,43 @@ pub struct GetDetectorOutput {
     /// <p>The tags of the detector resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDetectorOutput {
+    /// <p>The timestamp of when the detector was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>The publishing frequency of the finding.</p>
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+        self.finding_publishing_frequency.as_ref()
+    }
+    /// <p>The GuardDuty service role.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The detector status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The last-updated timestamp for the detector.</p>
+    pub fn updated_at(&self) -> std::option::Option<&str> {
+        self.updated_at.as_deref()
+    }
+    /// <p>Describes which data sources are enabled for the detector.</p>
+    pub fn data_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceConfigurationsResult> {
+        self.data_sources.as_ref()
+    }
+    /// <p>The tags of the detector resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2409,6 +2735,13 @@ pub struct DisassociateMembersOutput {
     /// why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl DisassociateMembersOutput {
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains
+    /// why it was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateMembersOutput");
@@ -2542,6 +2875,33 @@ pub struct DescribePublishingDestinationOutput {
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
     /// and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
+}
+impl DescribePublishingDestinationOutput {
+    /// <p>The ID of the publishing destination.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+    /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are
+    /// supported.</p>
+    pub fn destination_type(&self) -> std::option::Option<&crate::model::DestinationType> {
+        self.destination_type.as_ref()
+    }
+    /// <p>The status of the publishing destination.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PublishingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish
+    /// findings to the destination.</p>
+    pub fn publishing_failure_start_timestamp(&self) -> i64 {
+        self.publishing_failure_start_timestamp
+    }
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
+    /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+    pub fn destination_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationProperties> {
+        self.destination_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePublishingDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2678,6 +3038,25 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Describes which data sources are enabled automatically for member
     /// accounts.</p>
     pub data_sources: std::option::Option<crate::model::OrganizationDataSourceConfigurationsResult>,
+}
+impl DescribeOrganizationConfigurationOutput {
+    /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the
+    /// organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+    /// <p>Indicates whether the maximum number of allowed member accounts are already associated
+    /// with the delegated administrator account for your organization.</p>
+    pub fn member_account_limit_reached(&self) -> bool {
+        self.member_account_limit_reached
+    }
+    /// <p>Describes which data sources are enabled automatically for member
+    /// accounts.</p>
+    pub fn data_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationDataSourceConfigurationsResult> {
+        self.data_sources.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2832,6 +3211,12 @@ pub struct DeleteMembersOutput {
     /// <p>The accounts that could not be processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl DeleteMembersOutput {
+    /// <p>The accounts that could not be processed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMembersOutput");
@@ -2923,6 +3308,13 @@ pub struct DeleteInvitationsOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains
     /// why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl DeleteInvitationsOutput {
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains
+    /// why it was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3048,6 +3440,13 @@ pub struct DeclineInvitationsOutput {
     /// why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl DeclineInvitationsOutput {
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains
+    /// why it was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for DeclineInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeclineInvitationsOutput");
@@ -3110,6 +3509,12 @@ impl DeclineInvitationsOutput {
 pub struct CreateThreatIntelSetOutput {
     /// <p>The ID of the ThreatIntelSet resource.</p>
     pub threat_intel_set_id: std::option::Option<std::string::String>,
+}
+impl CreateThreatIntelSetOutput {
+    /// <p>The ID of the ThreatIntelSet resource.</p>
+    pub fn threat_intel_set_id(&self) -> std::option::Option<&str> {
+        self.threat_intel_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateThreatIntelSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3192,6 +3597,12 @@ pub struct CreatePublishingDestinationOutput {
     /// <p>The ID of the publishing destination that is created.</p>
     pub destination_id: std::option::Option<std::string::String>,
 }
+impl CreatePublishingDestinationOutput {
+    /// <p>The ID of the publishing destination that is created.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePublishingDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePublishingDestinationOutput");
@@ -3243,6 +3654,13 @@ pub struct CreateMembersOutput {
     /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
     /// a result string that explains why each was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl CreateMembersOutput {
+    /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
+    /// a result string that explains why each was unprocessed.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3307,6 +3725,12 @@ pub struct CreateIpSetOutput {
     /// <p>The ID of the IPSet resource.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
 }
+impl CreateIpSetOutput {
+    /// <p>The ID of the IPSet resource.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateIpSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIpSetOutput");
@@ -3355,6 +3779,12 @@ pub struct CreateFilterOutput {
     /// <p>The name of the successfully created filter.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateFilterOutput {
+    /// <p>The name of the successfully created filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFilterOutput");
@@ -3400,6 +3830,12 @@ impl CreateFilterOutput {
 pub struct CreateDetectorOutput {
     /// <p>The unique ID of the created detector.</p>
     pub detector_id: std::option::Option<std::string::String>,
+}
+impl CreateDetectorOutput {
+    /// <p>The unique ID of the created detector.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -63,6 +63,85 @@ pub struct ProgressEvent {
     /// <p>When to next request the status of this resource operation request.</p>
     pub retry_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ProgressEvent {
+    /// <p>The name of the resource type used in the operation.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The primary identifier for the resource.</p>
+    /// <note>
+    /// <p>In some cases, the resource identifier may be available before the resource operation
+    /// has reached a status of <code>SUCCESS</code>.</p>
+    /// </note>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The unique token representing this resource operation request.</p>
+    /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
+    /// request.</p>
+    pub fn request_token(&self) -> std::option::Option<&str> {
+        self.request_token.as_deref()
+    }
+    /// <p>The resource operation type.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+    /// <p>The current status of the resource operation request.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: The resource operation has not yet started.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code>: The resource operation has successfully completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The resource operation has failed. Refer to the error code and
+    /// status message for more information.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being
+    /// canceled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p>
+    /// </li>
+    /// </ul>
+    pub fn operation_status(&self) -> std::option::Option<&crate::model::OperationStatus> {
+        self.operation_status.as_ref()
+    }
+    /// <p>When the resource operation request was initiated.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>A JSON string containing the resource model, consisting of each resource property and its
+    /// current value.</p>
+    pub fn resource_model(&self) -> std::option::Option<&str> {
+        self.resource_model.as_deref()
+    }
+    /// <p>Any message explaining the current status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>For requests with a status of <code>FAILED</code>, the associated error code.</p>
+    /// <p>For error code definitions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-test-contract-errors.html">Handler error codes</a> in the <i>CloudFormation Command
+    /// Line Interface User Guide for Extension Development</i>.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::HandlerErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>When to next request the status of this resource operation request.</p>
+    pub fn retry_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retry_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ProgressEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProgressEvent");
@@ -590,6 +669,18 @@ pub struct ResourceDescription {
     /// <p>A list of the resource properties and their current values.</p>
     pub properties: std::option::Option<std::string::String>,
 }
+impl ResourceDescription {
+    /// <p>The primary identifier for the resource.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
+    /// resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>A list of the resource properties and their current values.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDescription");
@@ -683,6 +774,43 @@ pub struct ResourceRequestStatusFilter {
     /// </li>
     /// </ul>
     pub operation_statuses: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
+}
+impl ResourceRequestStatusFilter {
+    /// <p>The operation types to include in the filter.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+    /// <p>The operation statuses to include in the filter.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: The operation has been requested, but not yet initiated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code>: The operation is currently in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code>: The operation has successfully completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The operation has failed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being
+    /// canceled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p>
+    /// </li>
+    /// </ul>
+    pub fn operation_statuses(&self) -> std::option::Option<&[crate::model::OperationStatus]> {
+        self.operation_statuses.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceRequestStatusFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -122,7 +122,7 @@ impl SendSerialConsoleSshPublicKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_serial_console_ssh_public_key(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_send_serial_console_ssh_public_key(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -318,10 +318,7 @@ impl SendSshPublicKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_ssh_public_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_ssh_public_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -396,6 +393,24 @@ pub struct SendSshPublicKeyInput {
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
     pub availability_zone: std::option::Option<std::string::String>,
 }
+impl SendSshPublicKeyInput {
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
+    pub fn instance_os_user(&self) -> std::option::Option<&str> {
+        self.instance_os_user.as_deref()
+    }
+    /// <p>The public key material. To use the public key, you must have the matching private key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>The Availability Zone in which the EC2 instance was launched.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+}
 impl std::fmt::Debug for SendSshPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendSshPublicKeyInput");
@@ -420,6 +435,23 @@ pub struct SendSerialConsoleSshPublicKeyInput {
     /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
     /// Guide</i>.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
+}
+impl SendSerialConsoleSshPublicKeyInput {
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>Default: 0</p>
+    pub fn serial_port(&self) -> i32 {
+        self.serial_port
+    }
+    /// <p>The public key material. To use the public key, you must have the matching private
+    /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
+    /// Guide</i>.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
 }
 impl std::fmt::Debug for SendSerialConsoleSshPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

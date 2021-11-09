@@ -126,6 +126,12 @@ pub struct StartAssessmentRunOutput {
     /// <p>The ARN of the assessment run that has been started.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
+impl StartAssessmentRunOutput {
+    /// <p>The ARN of the assessment run that has been started.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartAssessmentRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAssessmentRunOutput");
@@ -209,6 +215,17 @@ pub struct RemoveAttributesFromFindingsOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl RemoveAttributesFromFindingsOutput {
+    /// <p>Attributes details that cannot be described. An error code is provided for each
+    /// failed item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for RemoveAttributesFromFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -311,6 +328,18 @@ pub struct PreviewAgentsOutput {
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl PreviewAgentsOutput {
+    /// <p>The resulting list of agents.</p>
+    pub fn agent_previews(&self) -> std::option::Option<&[crate::model::AgentPreview]> {
+        self.agent_previews.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PreviewAgentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreviewAgentsOutput");
@@ -385,6 +414,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -443,6 +478,18 @@ pub struct ListRulesPackagesOutput {
     /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRulesPackagesOutput {
+    /// <p>The list of ARNs that specifies the rules packages returned by the action.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRulesPackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -522,6 +569,18 @@ pub struct ListFindingsOutput {
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFindingsOutput {
+    /// <p>A list of ARNs that specifies the findings returned by the action.</p>
+    pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_arns.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsOutput");
@@ -600,6 +659,19 @@ pub struct ListExclusionsOutput {
     /// subsequent pagination request. If there is no more data to be listed, this parameter is set
     /// to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExclusionsOutput {
+    /// <p>A list of exclusions' ARNs returned by the action.</p>
+    pub fn exclusion_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclusion_arns.as_deref()
+    }
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is
+    /// present in the response and contains the value to use for the nextToken parameter in a
+    /// subsequent pagination request. If there is no more data to be listed, this parameter is set
+    /// to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExclusionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,6 +753,18 @@ pub struct ListEventSubscriptionsOutput {
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEventSubscriptionsOutput {
+    /// <p>Details of the returned event subscriptions.</p>
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEventSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventSubscriptionsOutput");
@@ -759,6 +843,19 @@ pub struct ListAssessmentTemplatesOutput {
     /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssessmentTemplatesOutput {
+    /// <p>A list of ARNs that specifies the assessment templates returned by the
+    /// action.</p>
+    pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_template_arns.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssessmentTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -842,6 +939,19 @@ pub struct ListAssessmentTargetsOutput {
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssessmentTargetsOutput {
+    /// <p>A list of ARNs that specifies the assessment targets that are returned by the
+    /// action.</p>
+    pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_target_arns.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssessmentTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentTargetsOutput");
@@ -923,6 +1033,19 @@ pub struct ListAssessmentRunsOutput {
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssessmentRunsOutput {
+    /// <p>A list of ARNs that specifies the assessment runs that are returned by the
+    /// action.</p>
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.assessment_run_arns.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssessmentRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentRunsOutput");
@@ -1003,6 +1126,20 @@ pub struct ListAssessmentRunAgentsOutput {
     /// data to be listed, this parameter is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssessmentRunAgentsOutput {
+    /// <p>A list of ARNs that specifies the agents returned by the action.</p>
+    pub fn assessment_run_agents(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentRunAgent]> {
+        self.assessment_run_agents.as_deref()
+    }
+    /// <p> When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more
+    /// data to be listed, this parameter is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssessmentRunAgentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentRunAgentsOutput");
@@ -1081,6 +1218,12 @@ pub struct GetTelemetryMetadataOutput {
     /// <p>Telemetry details.</p>
     pub telemetry_metadata: std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
 }
+impl GetTelemetryMetadataOutput {
+    /// <p>Telemetry details.</p>
+    pub fn telemetry_metadata(&self) -> std::option::Option<&[crate::model::TelemetryMetadata]> {
+        self.telemetry_metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTelemetryMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTelemetryMetadataOutput");
@@ -1148,6 +1291,23 @@ pub struct GetExclusionsPreviewOutput {
     /// subsequent pagination request. If there is no more data to be listed, this parameter is set
     /// to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetExclusionsPreviewOutput {
+    /// <p>Specifies the status of the request to generate an exclusions preview.</p>
+    pub fn preview_status(&self) -> std::option::Option<&crate::model::PreviewStatus> {
+        self.preview_status.as_ref()
+    }
+    /// <p>Information about the exclusions included in the preview.</p>
+    pub fn exclusion_previews(&self) -> std::option::Option<&[crate::model::ExclusionPreview]> {
+        self.exclusion_previews.as_deref()
+    }
+    /// <p>When a response is generated, if there is more data to be listed, this parameters is
+    /// present in the response and contains the value to use for the nextToken parameter in a
+    /// subsequent pagination request. If there is no more data to be listed, this parameter is set
+    /// to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExclusionsPreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1248,6 +1408,17 @@ pub struct GetAssessmentReportOutput {
     /// is only returned if the report is successfully generated.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl GetAssessmentReportOutput {
+    /// <p>Specifies the status of the request to generate an assessment report. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReportStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies the URL where you can find the generated assessment report. This parameter
+    /// is only returned if the report is successfully generated.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssessmentReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssessmentReportOutput");
@@ -1318,6 +1489,21 @@ pub struct DescribeRulesPackagesOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl DescribeRulesPackagesOutput {
+    /// <p>Information about the rules package.</p>
+    pub fn rules_packages(&self) -> std::option::Option<&[crate::model::RulesPackage]> {
+        self.rules_packages.as_deref()
+    }
+    /// <p>Rules package details that cannot be described. An error code is provided for each
+    /// failed item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeRulesPackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1413,6 +1599,21 @@ pub struct DescribeResourceGroupsOutput {
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
 }
+impl DescribeResourceGroupsOutput {
+    /// <p>Information about a resource group.</p>
+    pub fn resource_groups(&self) -> std::option::Option<&[crate::model::ResourceGroup]> {
+        self.resource_groups.as_deref()
+    }
+    /// <p>Resource group details that cannot be described. An error code is provided for each
+    /// failed item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeResourceGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceGroupsOutput");
@@ -1506,6 +1707,21 @@ pub struct DescribeFindingsOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl DescribeFindingsOutput {
+    /// <p>Information about the finding.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
+        self.findings.as_deref()
+    }
+    /// <p>Finding details that cannot be described. An error code is provided for each failed
+    /// item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1602,6 +1818,24 @@ pub struct DescribeExclusionsOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl DescribeExclusionsOutput {
+    /// <p>Information about the exclusions.</p>
+    pub fn exclusions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Exclusion>>
+    {
+        self.exclusions.as_ref()
+    }
+    /// <p>Exclusion details that cannot be described. An error code is provided for each failed
+    /// item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeExclusionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1706,6 +1940,22 @@ pub struct DescribeCrossAccountAccessRoleOutput {
     /// <p>The date when the cross-account access role was registered.</p>
     pub registered_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeCrossAccountAccessRoleOutput {
+    /// <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
+    /// account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A Boolean value that specifies whether the IAM role has the necessary policies
+    /// attached to enable Amazon Inspector to access your AWS account.</p>
+    pub fn valid(&self) -> std::option::Option<bool> {
+        self.valid
+    }
+    /// <p>The date when the cross-account access role was registered.</p>
+    pub fn registered_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registered_at.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCrossAccountAccessRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCrossAccountAccessRoleOutput");
@@ -1791,6 +2041,21 @@ pub struct DescribeAssessmentTemplatesOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl DescribeAssessmentTemplatesOutput {
+    /// <p>Information about the assessment templates.</p>
+    pub fn assessment_templates(&self) -> std::option::Option<&[crate::model::AssessmentTemplate]> {
+        self.assessment_templates.as_deref()
+    }
+    /// <p>Assessment template details that cannot be described. An error code is provided for
+    /// each failed item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAssessmentTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1890,6 +2155,21 @@ pub struct DescribeAssessmentTargetsOutput {
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
 }
+impl DescribeAssessmentTargetsOutput {
+    /// <p>Information about the assessment targets.</p>
+    pub fn assessment_targets(&self) -> std::option::Option<&[crate::model::AssessmentTarget]> {
+        self.assessment_targets.as_deref()
+    }
+    /// <p>Assessment target details that cannot be described. An error code is provided for
+    /// each failed item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAssessmentTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssessmentTargetsOutput");
@@ -1987,6 +2267,21 @@ pub struct DescribeAssessmentRunsOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl DescribeAssessmentRunsOutput {
+    /// <p>Information about the assessment run.</p>
+    pub fn assessment_runs(&self) -> std::option::Option<&[crate::model::AssessmentRun]> {
+        self.assessment_runs.as_deref()
+    }
+    /// <p>Assessment run details that cannot be described. An error code is provided for each
+    /// failed item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAssessmentRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2167,6 +2462,12 @@ pub struct CreateResourceGroupOutput {
     /// <p>The ARN that specifies the resource group that is created.</p>
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
+impl CreateResourceGroupOutput {
+    /// <p>The ARN that specifies the resource group that is created.</p>
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+        self.resource_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceGroupOutput");
@@ -2219,6 +2520,14 @@ pub struct CreateExclusionsPreviewOutput {
     /// unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview
     /// API.</p>
     pub preview_token: std::option::Option<std::string::String>,
+}
+impl CreateExclusionsPreviewOutput {
+    /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the
+    /// unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview
+    /// API.</p>
+    pub fn preview_token(&self) -> std::option::Option<&str> {
+        self.preview_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExclusionsPreviewOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,6 +2584,12 @@ pub struct CreateAssessmentTemplateOutput {
     /// <p>The ARN that specifies the assessment template that is created.</p>
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
+impl CreateAssessmentTemplateOutput {
+    /// <p>The ARN that specifies the assessment template that is created.</p>
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+        self.assessment_template_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAssessmentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentTemplateOutput");
@@ -2325,6 +2640,12 @@ impl CreateAssessmentTemplateOutput {
 pub struct CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
     pub assessment_target_arn: std::option::Option<std::string::String>,
+}
+impl CreateAssessmentTargetOutput {
+    /// <p>The ARN that specifies the assessment target that is created.</p>
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+        self.assessment_target_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssessmentTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2379,6 +2700,17 @@ pub struct AddAttributesToFindingsOutput {
     pub failed_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
     >,
+}
+impl AddAttributesToFindingsOutput {
+    /// <p>Attribute details that cannot be described. An error code is provided for each failed
+    /// item.</p>
+    pub fn failed_items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
+    > {
+        self.failed_items.as_ref()
+    }
 }
 impl std::fmt::Debug for AddAttributesToFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

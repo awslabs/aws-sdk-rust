@@ -8,6 +8,16 @@ pub struct UpdateLogPatternOutput {
     /// <p>The successfully created log pattern.</p>
     pub log_pattern: std::option::Option<crate::model::LogPattern>,
 }
+impl UpdateLogPatternOutput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The successfully created log pattern.</p>
+    pub fn log_pattern(&self) -> std::option::Option<&crate::model::LogPattern> {
+        self.log_pattern.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLogPatternOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLogPatternOutput");
@@ -135,6 +145,12 @@ pub struct UpdateApplicationOutput {
     /// <p>Information about the application. </p>
     pub application_info: std::option::Option<crate::model::ApplicationInfo>,
 }
+impl UpdateApplicationOutput {
+    /// <p>Information about the application. </p>
+    pub fn application_info(&self) -> std::option::Option<&crate::model::ApplicationInfo> {
+        self.application_info.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationOutput");
@@ -248,6 +264,14 @@ pub struct ListTagsForResourceOutput {
     /// (<code>Value</code>).</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>An array that lists all the tags that are associated with the application. Each tag
+    /// consists of a required tag key (<code>Key</code>) and an associated tag value
+    /// (<code>Value</code>).</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -311,6 +335,21 @@ pub struct ListProblemsOutput {
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub resource_group_name: std::option::Option<std::string::String>,
+}
+impl ListProblemsOutput {
+    /// <p>The list of problems. </p>
+    pub fn problem_list(&self) -> std::option::Option<&[crate::model::Problem]> {
+        self.problem_list.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProblemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -405,6 +444,21 @@ pub struct ListLogPatternSetsOutput {
     /// when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLogPatternSetsOutput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The list of log pattern sets.</p>
+    pub fn log_pattern_sets(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_pattern_sets.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLogPatternSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLogPatternSetsOutput");
@@ -497,6 +551,21 @@ pub struct ListLogPatternsOutput {
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
     /// when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLogPatternsOutput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The list of log patterns.</p>
+    pub fn log_patterns(&self) -> std::option::Option<&[crate::model::LogPattern]> {
+        self.log_patterns.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLogPatternsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -592,6 +661,20 @@ pub struct ListConfigurationHistoryOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationHistoryOutput {
+    /// <p> The list of configuration events and their corresponding details. </p>
+    pub fn event_list(&self) -> std::option::Option<&[crate::model::ConfigurationEvent]> {
+        self.event_list.as_deref()
+    }
+    /// <p>The <code>NextToken</code> value to include in a future
+    /// <code>ListConfigurationHistory</code> request. When the results of a
+    /// <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value
+    /// can be used to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationHistoryOutput");
@@ -673,6 +756,18 @@ pub struct ListComponentsOutput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComponentsOutput {
+    /// <p>The list of application components.</p>
+    pub fn application_component_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationComponent]> {
+        self.application_component_list.as_deref()
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComponentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComponentsOutput");
@@ -753,6 +848,17 @@ pub struct ListApplicationsOutput {
     /// when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationsOutput {
+    /// <p>The list of applications.</p>
+    pub fn application_info_list(&self) -> std::option::Option<&[crate::model::ApplicationInfo]> {
+        self.application_info_list.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
+    /// when there are no more results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationsOutput");
@@ -829,6 +935,12 @@ pub struct DescribeProblemObservationsOutput {
     /// <p>Observations related to the problem.</p>
     pub related_observations: std::option::Option<crate::model::RelatedObservations>,
 }
+impl DescribeProblemObservationsOutput {
+    /// <p>Observations related to the problem.</p>
+    pub fn related_observations(&self) -> std::option::Option<&crate::model::RelatedObservations> {
+        self.related_observations.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeProblemObservationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProblemObservationsOutput");
@@ -880,6 +992,12 @@ pub struct DescribeProblemOutput {
     /// <p>Information about the problem. </p>
     pub problem: std::option::Option<crate::model::Problem>,
 }
+impl DescribeProblemOutput {
+    /// <p>Information about the problem. </p>
+    pub fn problem(&self) -> std::option::Option<&crate::model::Problem> {
+        self.problem.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeProblemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProblemOutput");
@@ -927,6 +1045,12 @@ impl DescribeProblemOutput {
 pub struct DescribeObservationOutput {
     /// <p>Information about the observation.</p>
     pub observation: std::option::Option<crate::model::Observation>,
+}
+impl DescribeObservationOutput {
+    /// <p>Information about the observation.</p>
+    pub fn observation(&self) -> std::option::Option<&crate::model::Observation> {
+        self.observation.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeObservationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -980,6 +1104,16 @@ pub struct DescribeLogPatternOutput {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The successfully created log pattern.</p>
     pub log_pattern: std::option::Option<crate::model::LogPattern>,
+}
+impl DescribeLogPatternOutput {
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The successfully created log pattern.</p>
+    pub fn log_pattern(&self) -> std::option::Option<&crate::model::LogPattern> {
+        self.log_pattern.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLogPatternOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1048,6 +1182,12 @@ pub struct DescribeComponentConfigurationRecommendationOutput {
     /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     pub component_configuration: std::option::Option<std::string::String>,
 }
+impl DescribeComponentConfigurationRecommendationOutput {
+    /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
+    pub fn component_configuration(&self) -> std::option::Option<&str> {
+        self.component_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComponentConfigurationRecommendationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentConfigurationRecommendationOutput");
@@ -1106,6 +1246,23 @@ pub struct DescribeComponentConfigurationOutput {
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     pub component_configuration: std::option::Option<std::string::String>,
+}
+impl DescribeComponentConfigurationOutput {
+    /// <p>Indicates whether the application component is monitored.</p>
+    pub fn monitor(&self) -> std::option::Option<bool> {
+        self.monitor
+    }
+    /// <p>The tier of the application component. Supported tiers include
+    /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+    /// <code>SQL_SERVER</code>, and <code>DEFAULT</code>
+    /// </p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
+    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
+    pub fn component_configuration(&self) -> std::option::Option<&str> {
+        self.component_configuration.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeComponentConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1193,6 +1350,19 @@ pub struct DescribeComponentOutput {
     /// <p>The list of resource ARNs that belong to the component.</p>
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeComponentOutput {
+    /// <p>Describes a standalone resource or similarly grouped resources that the application is made
+    /// up of.</p>
+    pub fn application_component(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationComponent> {
+        self.application_component.as_ref()
+    }
+    /// <p>The list of resource ARNs that belong to the component.</p>
+    pub fn resource_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentOutput");
@@ -1267,6 +1437,12 @@ impl DescribeComponentOutput {
 pub struct DescribeApplicationOutput {
     /// <p>Information about the application.</p>
     pub application_info: std::option::Option<crate::model::ApplicationInfo>,
+}
+impl DescribeApplicationOutput {
+    /// <p>Information about the application.</p>
+    pub fn application_info(&self) -> std::option::Option<&crate::model::ApplicationInfo> {
+        self.application_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1411,6 +1587,16 @@ pub struct CreateLogPatternOutput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
 }
+impl CreateLogPatternOutput {
+    /// <p>The successfully created log pattern.</p>
+    pub fn log_pattern(&self) -> std::option::Option<&crate::model::LogPattern> {
+        self.log_pattern.as_ref()
+    }
+    /// <p>The name of the resource group.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLogPatternOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLogPatternOutput");
@@ -1507,6 +1693,12 @@ impl CreateComponentOutput {
 pub struct CreateApplicationOutput {
     /// <p>Information about the application.</p>
     pub application_info: std::option::Option<crate::model::ApplicationInfo>,
+}
+impl CreateApplicationOutput {
+    /// <p>Information about the application.</p>
+    pub fn application_info(&self) -> std::option::Option<&crate::model::ApplicationInfo> {
+        self.application_info.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

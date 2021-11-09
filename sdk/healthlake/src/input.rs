@@ -182,10 +182,7 @@ impl CreateFhirDatastoreInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_fhir_datastore(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_fhir_datastore(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -335,10 +332,7 @@ impl DeleteFhirDatastoreInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_fhir_datastore(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_fhir_datastore(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -490,10 +484,7 @@ impl DescribeFhirDatastoreInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fhir_datastore(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -657,10 +648,7 @@ impl DescribeFhirExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fhir_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -824,10 +812,7 @@ impl DescribeFhirImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fhir_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1006,10 +991,7 @@ impl ListFhirDatastoresInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_fhir_datastores(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_fhir_datastores(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1268,10 +1250,7 @@ impl ListFhirExportJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_fhir_export_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_fhir_export_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1530,10 +1509,7 @@ impl ListFhirImportJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_fhir_import_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_fhir_import_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1687,10 +1663,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1897,10 +1872,7 @@ impl StartFhirExportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_fhir_export_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_fhir_export_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2122,10 +2094,7 @@ impl StartFhirImportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_fhir_import_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_fhir_import_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2303,10 +2272,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2484,10 +2450,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2562,6 +2525,20 @@ pub struct UntagResourceInput {
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>
+    /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// The keys for the tags to be removed from the Healthlake Data Store.
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2583,6 +2560,20 @@ pub struct TagResourceInput {
     /// The user specified key and value pair tags being added to a Data Store.
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>
+    /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// The user specified key and value pair tags being added to a Data Store.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2609,6 +2600,32 @@ pub struct StartFhirImportJobInput {
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl StartFhirImportJobInput {
+    /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn job_output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.job_output_data_config.as_ref()
+    }
+    /// <p>The AWS-generated Data Store ID.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>Optional user provided token used for ensuring idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartFhirImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2638,6 +2655,28 @@ pub struct StartFhirExportJobInput {
     /// <p>An optional user provided token used for ensuring idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartFhirExportJobInput {
+    /// <p>The user generated name for an export job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>An optional user provided token used for ensuring idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartFhirExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFhirExportJobInput");
@@ -2658,6 +2697,14 @@ pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>
+    /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2699,6 +2746,50 @@ pub struct ListFhirImportJobsInput {
     /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
     /// </p>
     pub submitted_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListFhirImportJobsInput {
+    /// <p>
+    /// This parameter limits the response to the import job with the specified Data Store ID.
+    /// </p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>
+    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// This parameter limits the response to the import job with the specified job name.
+    /// </p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>
+    /// This parameter limits the response to the import job with the specified job status.
+    /// </p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>
+    /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
+    /// </p>
+    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_before.as_ref()
+    }
+    /// <p>
+    /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
+    /// </p>
+    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ListFhirImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2747,6 +2838,50 @@ pub struct ListFhirExportJobsInput {
     /// </p>
     pub submitted_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListFhirExportJobsInput {
+    /// <p>
+    /// This parameter limits the response to the export job with the specified Data Store ID.
+    /// </p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>
+    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// This parameter limits the response to the export job with the specified job name.
+    /// </p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>
+    /// This parameter limits the response to the export jobs with the specified job status.
+    /// </p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>
+    /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
+    /// </p>
+    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_before.as_ref()
+    }
+    /// <p>
+    /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
+    /// </p>
+    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ListFhirExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFhirExportJobsInput");
@@ -2773,6 +2908,21 @@ pub struct ListFhirDatastoresInput {
     /// ListFHIRDatastoresRequest call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFhirDatastoresInput {
+    /// <p>Lists all filters associated with a FHIR Data Store request.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::DatastoreFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>Fetches the next page of Data Stores when results are paginated.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of Data Stores returned in a single page of a
+    /// ListFHIRDatastoresRequest call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFhirDatastoresInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFhirDatastoresInput");
@@ -2792,6 +2942,16 @@ pub struct DescribeFhirImportJobInput {
     /// <p>The AWS-generated job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeFhirImportJobInput {
+    /// <p>The AWS-generated ID of the Data Store.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The AWS-generated job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFhirImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFhirImportJobInput");
@@ -2810,6 +2970,16 @@ pub struct DescribeFhirExportJobInput {
     /// <p>The AWS generated ID for an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeFhirExportJobInput {
+    /// <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+    /// <p>The AWS generated ID for an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFhirExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFhirExportJobInput");
@@ -2826,6 +2996,12 @@ pub struct DescribeFhirDatastoreInput {
     /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
     pub datastore_id: std::option::Option<std::string::String>,
 }
+impl DescribeFhirDatastoreInput {
+    /// <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFhirDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFhirDatastoreInput");
@@ -2840,6 +3016,12 @@ impl std::fmt::Debug for DescribeFhirDatastoreInput {
 pub struct DeleteFhirDatastoreInput {
     /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
     pub datastore_id: std::option::Option<std::string::String>,
+}
+impl DeleteFhirDatastoreInput {
+    /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
+        self.datastore_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFhirDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2870,6 +3052,37 @@ pub struct CreateFhirDatastoreInput {
     /// Resource tags that are applied to a Data Store when it is created.
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateFhirDatastoreInput {
+    /// <p>The user generated name for the Data Store.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+    pub fn datastore_type_version(&self) -> std::option::Option<&crate::model::FhirVersion> {
+        self.datastore_type_version.as_ref()
+    }
+    /// <p>
+    /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
+    /// </p>
+    pub fn sse_configuration(&self) -> std::option::Option<&crate::model::SseConfiguration> {
+        self.sse_configuration.as_ref()
+    }
+    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
+    /// supported preloaded data is synthetic data generated from Synthea.</p>
+    pub fn preload_data_config(&self) -> std::option::Option<&crate::model::PreloadDataConfig> {
+        self.preload_data_config.as_ref()
+    }
+    /// <p>Optional user provided token used for ensuring idempotency.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>
+    /// Resource tags that are applied to a Data Store when it is created.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFhirDatastoreInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

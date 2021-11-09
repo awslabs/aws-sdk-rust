@@ -116,6 +116,201 @@ pub struct DbCluster {
     /// <p>Time at which the DB cluster will be automatically restarted.</p>
     pub automatic_restart_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DbCluster {
+    /// <p>
+    /// <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is
+    /// not fixed, but instead automatically adjusts as needed.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be
+    /// created in.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn character_set_name(&self) -> std::option::Option<&str> {
+        self.character_set_name.as_deref()
+    }
+    /// <p>Contains the name of the initial database of this DB cluster that was provided at create
+    /// time, if one was specified when the DB cluster was created. This same name is returned for the
+    /// life of the DB cluster.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that
+    /// identifies a DB cluster.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
+    pub fn db_cluster_parameter_group(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group.as_deref()
+    }
+    /// <p>Specifies information on the subnet group associated with the DB cluster, including the
+    /// name, description, and subnets in the subnet group.</p>
+    pub fn db_subnet_group(&self) -> std::option::Option<&str> {
+        self.db_subnet_group.as_deref()
+    }
+    /// <p>Specifies the current state of this DB cluster.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Specifies the progress of the operation as a percentage.</p>
+    pub fn percent_progress(&self) -> std::option::Option<&str> {
+        self.percent_progress.as_deref()
+    }
+    /// <p>Specifies the earliest time to which a database can be restored with point-in-time
+    /// restore.</p>
+    pub fn earliest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.earliest_restorable_time.as_ref()
+    }
+    /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances
+    /// connections across the Read Replicas that are available in a DB cluster. As clients request
+    /// new connections to the reader endpoint, Neptune distributes the connection requests among the
+    /// Read Replicas in the DB cluster. This functionality can help balance your read workload across
+    /// multiple Read Replicas in your DB cluster.</p>
+    /// <p>If a failover occurs, and the Read Replica that you are connected to is promoted to be the
+    /// primary instance, your connection is dropped. To continue sending your read workload to other
+    /// Read Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
+    pub fn reader_endpoint(&self) -> std::option::Option<&str> {
+        self.reader_endpoint.as_deref()
+    }
+    /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
+    pub fn multi_az(&self) -> bool {
+        self.multi_az
+    }
+    /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Indicates the database engine version.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time
+    /// restore.</p>
+    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_restorable_time.as_ref()
+    }
+    /// <p>Specifies the port that the database engine is listening on.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn db_cluster_option_group_memberships(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbClusterOptionGroupStatus]> {
+        self.db_cluster_option_group_memberships.as_deref()
+    }
+    /// <p>Specifies the daily time range during which automated backups are created if automated
+    /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal
+    /// Coordinated Time (UTC).</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn replication_source_identifier(&self) -> std::option::Option<&str> {
+        self.replication_source_identifier.as_deref()
+    }
+    /// <p>Contains one or more identifiers of the Read Replicas associated with this DB
+    /// cluster.</p>
+    pub fn read_replica_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.read_replica_identifiers.as_deref()
+    }
+    /// <p>Provides the list of instances that make up the DB cluster.</p>
+    pub fn db_cluster_members(&self) -> std::option::Option<&[crate::model::DbClusterMember]> {
+        self.db_cluster_members.as_deref()
+    }
+    /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id.as_deref()
+    }
+    /// <p>Specifies whether the DB cluster is encrypted.</p>
+    pub fn storage_encrypted(&self) -> bool {
+        self.storage_encrypted
+    }
+    /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the
+    /// encrypted DB cluster.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found
+    /// in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.</p>
+    pub fn db_cluster_resource_id(&self) -> std::option::Option<&str> {
+        self.db_cluster_resource_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+    pub fn db_cluster_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_arn.as_deref()
+    }
+    /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated
+    /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the
+    /// DB cluster to access other Amazon services on your behalf.</p>
+    pub fn associated_roles(&self) -> std::option::Option<&[crate::model::DbClusterRole]> {
+        self.associated_roles.as_deref()
+    }
+    /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts
+    /// is enabled, and otherwise false.</p>
+    pub fn iam_database_authentication_enabled(&self) -> bool {
+        self.iam_database_authentication_enabled
+    }
+    /// <p>Identifies the clone group to which the DB cluster is associated.</p>
+    pub fn clone_group_id(&self) -> std::option::Option<&str> {
+        self.clone_group_id.as_deref()
+    }
+    /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time
+    /// (UTC).</p>
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cluster_create_time.as_ref()
+    }
+    /// <p>
+    /// <i>If set to <code>true</code>, tags are copied to any snapshot of
+    /// the DB cluster that is created.</i>
+    /// </p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+    /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+    pub fn enabled_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.enabled_cloudwatch_logs_exports.as_deref()
+    }
+    /// <p>Indicates whether or not the DB cluster has deletion protection enabled.
+    /// The database can't be deleted when deletion protection is enabled.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>If set to <code>true</code>, the DB cluster can be cloned across accounts.</p>
+    pub fn cross_account_clone(&self) -> std::option::Option<bool> {
+        self.cross_account_clone
+    }
+    /// <p>Time at which the DB cluster will be automatically restarted.</p>
+    pub fn automatic_restart_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.automatic_restart_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DbCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbCluster");
@@ -926,6 +1121,42 @@ pub struct DbClusterRole {
     /// </p>
     pub feature_name: std::option::Option<std::string::String>,
 }
+impl DbClusterRole {
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
+    /// cluster.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Describes the state of association between the IAM role and the DB cluster. The Status
+    /// property returns one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be
+    /// used to access other Amazon services on your behalf.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - the IAM role ARN is being associated with the DB
+    /// cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB
+    /// cluster is unable to assume the IAM role in order to access other Amazon services on your
+    /// behalf.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role.
+    /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
+    /// </p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DbClusterRole {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbClusterRole");
@@ -1047,6 +1278,16 @@ pub struct VpcSecurityGroupMembership {
     /// <p>The status of the VPC security group.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl VpcSecurityGroupMembership {
+    /// <p>The name of the VPC security group.</p>
+    pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
+        self.vpc_security_group_id.as_deref()
+    }
+    /// <p>The status of the VPC security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcSecurityGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcSecurityGroupMembership");
@@ -1119,6 +1360,27 @@ pub struct DbClusterMember {
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary
     /// instance after a failure of the existing primary instance.</p>
     pub promotion_tier: std::option::Option<i32>,
+}
+impl DbClusterMember {
+    /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB
+    /// cluster and <code>false</code> otherwise.</p>
+    pub fn is_cluster_writer(&self) -> bool {
+        self.is_cluster_writer
+    }
+    /// <p>Specifies the status of the DB cluster parameter group for this member of the DB
+    /// cluster.</p>
+    pub fn db_cluster_parameter_group_status(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_status.as_deref()
+    }
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary
+    /// instance after a failure of the existing primary instance.</p>
+    pub fn promotion_tier(&self) -> std::option::Option<i32> {
+        self.promotion_tier
+    }
 }
 impl std::fmt::Debug for DbClusterMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1227,6 +1489,16 @@ pub struct DbClusterOptionGroupStatus {
     /// <p>Not supported by Neptune.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl DbClusterOptionGroupStatus {
+    /// <p>Not supported by Neptune.</p>
+    pub fn db_cluster_option_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_option_group_name.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for DbClusterOptionGroupStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbClusterOptionGroupStatus");
@@ -1304,6 +1576,22 @@ pub struct Tag {
     /// The string can only contain the set of Unicode letters, digits, white-space,
     /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode
+    /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+    /// The string can only contain the set of Unicode letters, digits, white-space,
+    /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
+    /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+    /// The string can only contain the set of Unicode letters, digits, white-space,
+    /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1397,6 +1685,50 @@ pub struct Parameter {
     pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Indicates when to apply parameter updates.</p>
     pub apply_method: std::option::Option<crate::model::ApplyMethod>,
+}
+impl Parameter {
+    /// <p>Specifies the name of the parameter.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>Specifies the value of the parameter.</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
+    /// <p>Provides a description of the parameter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates the source of the parameter value.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>Specifies the engine specific parameters type.</p>
+    pub fn apply_type(&self) -> std::option::Option<&str> {
+        self.apply_type.as_deref()
+    }
+    /// <p>Specifies the valid data type for the parameter.</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>Specifies the valid range of values for the parameter.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&str> {
+        self.allowed_values.as_deref()
+    }
+    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be
+    /// modified. Some parameters have security or operational implications that prevent them from
+    /// being changed.</p>
+    pub fn is_modifiable(&self) -> bool {
+        self.is_modifiable
+    }
+    /// <p>The earliest engine version to which the parameter can apply.</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
+    /// <p>Indicates when to apply parameter updates.</p>
+    pub fn apply_method(&self) -> std::option::Option<&crate::model::ApplyMethod> {
+        self.apply_method.as_ref()
+    }
 }
 impl std::fmt::Debug for Parameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1661,6 +1993,55 @@ pub struct EventSubscription {
     pub enabled: bool,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub event_subscription_arn: std::option::Option<std::string::String>,
+}
+impl EventSubscription {
+    /// <p>The Amazon customer account associated with the event notification subscription.</p>
+    pub fn customer_aws_id(&self) -> std::option::Option<&str> {
+        self.customer_aws_id.as_deref()
+    }
+    /// <p>The event notification subscription Id.</p>
+    pub fn cust_subscription_id(&self) -> std::option::Option<&str> {
+        self.cust_subscription_id.as_deref()
+    }
+    /// <p>The topic ARN of the event notification subscription.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The status of the event notification subscription.</p>
+    /// <p>Constraints:</p>
+    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission |
+    /// topic-not-exist</p>
+    /// <p>The status "no-permission" indicates that Neptune no longer has permission to post to the
+    /// SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the
+    /// subscription was created.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The time the event notification subscription was created.</p>
+    pub fn subscription_creation_time(&self) -> std::option::Option<&str> {
+        self.subscription_creation_time.as_deref()
+    }
+    /// <p>The source type for the event notification subscription.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>A list of source IDs for the event notification subscription.</p>
+    pub fn source_ids_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_ids_list.as_deref()
+    }
+    /// <p>A list of event categories for the event notification subscription.</p>
+    pub fn event_categories_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories_list.as_deref()
+    }
+    /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription
+    /// is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+    pub fn event_subscription_arn(&self) -> std::option::Option<&str> {
+        self.event_subscription_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EventSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2020,6 +2401,267 @@ pub struct DbInstance {
     /// The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
     /// a DB Instance</a>.</p>
     pub deletion_protection: std::option::Option<bool>,
+}
+impl DbInstance {
+    /// <p>Contains a user-supplied database identifier. This identifier is the unique key that
+    /// identifies a DB instance.</p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+        self.db_instance_class.as_deref()
+    }
+    /// <p>Provides the name of the database engine to be used for this DB instance.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Specifies the current state of this database.</p>
+    pub fn db_instance_status(&self) -> std::option::Option<&str> {
+        self.db_instance_status.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>The database name.</p>
+    pub fn db_name(&self) -> std::option::Option<&str> {
+        self.db_name.as_deref()
+    }
+    /// <p>Specifies the connection endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn allocated_storage(&self) -> i32 {
+        self.allocated_storage
+    }
+    /// <p>Provides the date and time the DB instance was created.</p>
+    pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.instance_create_time.as_ref()
+    }
+    /// <p> Specifies the daily time range during which automated backups are created if automated
+    /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
+    pub fn backup_retention_period(&self) -> i32 {
+        self.backup_retention_period
+    }
+    /// <p> Provides List of DB security group elements containing only
+    /// <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    pub fn db_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbSecurityGroupMembership]> {
+        self.db_security_groups.as_deref()
+    }
+    /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
+    pub fn vpc_security_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+        self.vpc_security_groups.as_deref()
+    }
+    /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
+    pub fn db_parameter_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbParameterGroupStatus]> {
+        self.db_parameter_groups.as_deref()
+    }
+    /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>Specifies information on the subnet group associated with the DB instance, including the
+    /// name, description, and subnets in the subnet group.</p>
+    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+        self.db_subnet_group.as_ref()
+    }
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal
+    /// Coordinated Time (UTC).</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>Specifies that changes to the DB instance are pending. This element is only included when
+    /// changes are pending. Specific changes are identified by subelements.</p>
+    pub fn pending_modified_values(
+        &self,
+    ) -> std::option::Option<&crate::model::PendingModifiedValues> {
+        self.pending_modified_values.as_ref()
+    }
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time
+    /// restore.</p>
+    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_restorable_time.as_ref()
+    }
+    /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+    pub fn multi_az(&self) -> bool {
+        self.multi_az
+    }
+    /// <p>Indicates the database engine version.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Indicates that minor version patches are applied automatically.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>Contains the identifier of the source DB instance if this DB instance is a Read
+    /// Replica.</p>
+    pub fn read_replica_source_db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.read_replica_source_db_instance_identifier.as_deref()
+    }
+    /// <p>Contains one or more identifiers of the Read Replicas associated with this DB
+    /// instance.</p>
+    pub fn read_replica_db_instance_identifiers(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.read_replica_db_instance_identifiers.as_deref()
+    }
+    /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB
+    /// instance.</p>
+    pub fn read_replica_db_cluster_identifiers(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.read_replica_db_cluster_identifiers.as_deref()
+    }
+    /// <p>License model information for this DB instance.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn option_group_memberships(
+        &self,
+    ) -> std::option::Option<&[crate::model::OptionGroupMembership]> {
+        self.option_group_memberships.as_deref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn character_set_name(&self) -> std::option::Option<&str> {
+        self.character_set_name.as_deref()
+    }
+    /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with
+    /// multi-AZ support.</p>
+    pub fn secondary_availability_zone(&self) -> std::option::Option<&str> {
+        self.secondary_availability_zone.as_deref()
+    }
+    /// <p>This flag should no longer be used.</p>
+    pub fn publicly_accessible(&self) -> bool {
+        self.publicly_accessible
+    }
+    /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
+    pub fn status_infos(&self) -> std::option::Option<&[crate::model::DbInstanceStatusInfo]> {
+        self.status_infos.as_deref()
+    }
+    /// <p>Specifies the storage type associated with DB instance.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The ARN from the key store with which the instance is associated for TDE
+    /// encryption.</p>
+    pub fn tde_credential_arn(&self) -> std::option::Option<&str> {
+        self.tde_credential_arn.as_deref()
+    }
+    /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB
+    /// cluster, this can be a different port than the DB cluster port.</p>
+    pub fn db_instance_port(&self) -> i32 {
+        self.db_instance_port
+    }
+    /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that
+    /// the DB instance is a member of.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    pub fn storage_encrypted(&self) -> bool {
+        self.storage_encrypted
+    }
+    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found
+    /// in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
+    pub fn dbi_resource_id(&self) -> std::option::Option<&str> {
+        self.dbi_resource_id.as_deref()
+    }
+    /// <p>The identifier of the CA certificate for this DB instance.</p>
+    pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
+    /// <p>Not supported</p>
+    pub fn domain_memberships(&self) -> std::option::Option<&[crate::model::DomainMembership]> {
+        self.domain_memberships.as_deref()
+    }
+    /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB
+    /// instance.</p>
+    pub fn copy_tags_to_snapshot(&self) -> bool {
+        self.copy_tags_to_snapshot
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+    /// for the DB instance.</p>
+    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+        self.monitoring_interval
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the
+    /// Enhanced Monitoring metrics data for the DB instance.</p>
+    pub fn enhanced_monitoring_resource_arn(&self) -> std::option::Option<&str> {
+        self.enhanced_monitoring_resource_arn.as_deref()
+    }
+    /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to
+    /// Amazon CloudWatch Logs.</p>
+    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_role_arn.as_deref()
+    }
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary
+    /// instance after a failure of the existing primary instance.
+    /// </p>
+    pub fn promotion_tier(&self) -> std::option::Option<i32> {
+        self.promotion_tier
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+    pub fn db_instance_arn(&self) -> std::option::Option<&str> {
+        self.db_instance_arn.as_deref()
+    }
+    /// <p>Not supported.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise
+    /// false.</p>
+    pub fn iam_database_authentication_enabled(&self) -> bool {
+        self.iam_database_authentication_enabled
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn performance_insights_enabled(&self) -> std::option::Option<bool> {
+        self.performance_insights_enabled
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
+    /// <p>A list of log types that this DB instance is configured to export to CloudWatch
+    /// Logs.</p>
+    pub fn enabled_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+        self.enabled_cloudwatch_logs_exports.as_deref()
+    }
+    /// <p>Indicates whether or not the DB instance has deletion protection enabled.
+    /// The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+    /// a DB Instance</a>.</p>
+    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+        self.deletion_protection
+    }
 }
 impl std::fmt::Debug for DbInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3071,6 +3713,25 @@ pub struct DomainMembership {
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub iam_role_name: std::option::Option<std::string::String>,
 }
+impl DomainMembership {
+    /// <p>The identifier of the Active Directory Domain.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The status of the DB instance's Active Directory Domain membership, such as joined,
+    /// pending-join, failed etc).</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The fully qualified domain name of the Active Directory Domain.</p>
+    pub fn fqdn(&self) -> std::option::Option<&str> {
+        self.fqdn.as_deref()
+    }
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
+    pub fn iam_role_name(&self) -> std::option::Option<&str> {
+        self.iam_role_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DomainMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainMembership");
@@ -3172,6 +3833,27 @@ pub struct DbInstanceStatusInfo {
     /// error state, this value is blank.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DbInstanceStatusInfo {
+    /// <p>This value is currently "read replication."</p>
+    pub fn status_type(&self) -> std::option::Option<&str> {
+        self.status_type.as_deref()
+    }
+    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance
+    /// is in an error state.</p>
+    pub fn normal(&self) -> bool {
+        self.normal
+    }
+    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be
+    /// replicating, error, stopped, or terminated.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Details of the error if there is an error for the instance. If the instance is not in an
+    /// error state, this value is blank.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DbInstanceStatusInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbInstanceStatusInfo");
@@ -3266,6 +3948,16 @@ pub struct OptionGroupMembership {
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>Not supported by Neptune.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl OptionGroupMembership {
+    /// <p>Not supported by Neptune.</p>
+    pub fn option_group_name(&self) -> std::option::Option<&str> {
+        self.option_group_name.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for OptionGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3363,6 +4055,71 @@ pub struct PendingModifiedValues {
     /// pending changes to which CloudWatch logs are enabled and which are disabled.</p>
     pub pending_cloudwatch_logs_exports:
         std::option::Option<crate::model::PendingCloudwatchLogsExports>,
+}
+impl PendingModifiedValues {
+    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or
+    /// is currently being applied.</p>
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+        self.db_instance_class.as_deref()
+    }
+    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be
+    /// applied or is currently being applied.</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>Specifies the pending port for the DB instance.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>Specifies the pending number of days for which automated backups are retained.</p>
+    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.</p>
+    pub fn multi_az(&self) -> std::option::Option<bool> {
+        self.multi_az
+    }
+    /// <p>Indicates the database engine version.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>Specifies the new Provisioned IOPS value for the DB instance that will be applied or is
+    /// currently being applied.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be
+    /// applied or is currently being applied.</p>
+    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+        self.db_instance_identifier.as_deref()
+    }
+    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
+    pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
+    /// <p>The new DB subnet group for the DB instance.</p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies
+    /// pending changes to which CloudWatch logs are enabled and which are disabled.</p>
+    pub fn pending_cloudwatch_logs_exports(
+        &self,
+    ) -> std::option::Option<&crate::model::PendingCloudwatchLogsExports> {
+        self.pending_cloudwatch_logs_exports.as_ref()
+    }
 }
 impl std::fmt::Debug for PendingModifiedValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3627,6 +4384,18 @@ pub struct PendingCloudwatchLogsExports {
     /// enabled, these log types are exported to CloudWatch Logs.</p>
     pub log_types_to_disable: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PendingCloudwatchLogsExports {
+    /// <p>Log types that are in the process of being deactivated. After they are
+    /// deactivated, these log types aren't exported to CloudWatch Logs.</p>
+    pub fn log_types_to_enable(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_types_to_enable.as_deref()
+    }
+    /// <p>Log types that are in the process of being enabled. After they are
+    /// enabled, these log types are exported to CloudWatch Logs.</p>
+    pub fn log_types_to_disable(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_types_to_disable.as_deref()
+    }
+}
 impl std::fmt::Debug for PendingCloudwatchLogsExports {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PendingCloudwatchLogsExports");
@@ -3720,6 +4489,32 @@ pub struct DbSubnetGroup {
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub db_subnet_group_arn: std::option::Option<std::string::String>,
+}
+impl DbSubnetGroup {
+    /// <p>The name of the DB subnet group.</p>
+    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_name.as_deref()
+    }
+    /// <p>Provides the description of the DB subnet group.</p>
+    pub fn db_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_description.as_deref()
+    }
+    /// <p>Provides the VpcId of the DB subnet group.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Provides the status of the DB subnet group.</p>
+    pub fn subnet_group_status(&self) -> std::option::Option<&str> {
+        self.subnet_group_status.as_deref()
+    }
+    /// <p> Contains a list of <a>Subnet</a> elements.</p>
+    pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+    pub fn db_subnet_group_arn(&self) -> std::option::Option<&str> {
+        self.db_subnet_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DbSubnetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3866,6 +4661,20 @@ pub struct Subnet {
     /// <p>Specifies the status of the subnet.</p>
     pub subnet_status: std::option::Option<std::string::String>,
 }
+impl Subnet {
+    /// <p>Specifies the identifier of the subnet.</p>
+    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
+        self.subnet_identifier.as_deref()
+    }
+    /// <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+    pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::model::AvailabilityZone> {
+        self.subnet_availability_zone.as_ref()
+    }
+    /// <p>Specifies the status of the subnet.</p>
+    pub fn subnet_status(&self) -> std::option::Option<&str> {
+        self.subnet_status.as_deref()
+    }
+}
 impl std::fmt::Debug for Subnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subnet");
@@ -3949,6 +4758,12 @@ pub struct AvailabilityZone {
     /// <p>The name of the availability zone.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl AvailabilityZone {
+    /// <p>The name of the availability zone.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZone");
@@ -4020,6 +4835,16 @@ pub struct DbParameterGroupStatus {
     /// <p>The status of parameter updates.</p>
     pub parameter_apply_status: std::option::Option<std::string::String>,
 }
+impl DbParameterGroupStatus {
+    /// <p>The name of the DP parameter group.</p>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>The status of parameter updates.</p>
+    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+        self.parameter_apply_status.as_deref()
+    }
+}
 impl std::fmt::Debug for DbParameterGroupStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbParameterGroupStatus");
@@ -4088,6 +4913,16 @@ pub struct DbSecurityGroupMembership {
     pub db_security_group_name: std::option::Option<std::string::String>,
     /// <p>The status of the DB security group.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl DbSecurityGroupMembership {
+    /// <p>The name of the DB security group.</p>
+    pub fn db_security_group_name(&self) -> std::option::Option<&str> {
+        self.db_security_group_name.as_deref()
+    }
+    /// <p>The status of the DB security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for DbSecurityGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4159,6 +4994,20 @@ pub struct Endpoint {
     pub port: i32,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
+}
+impl Endpoint {
+    /// <p>Specifies the DNS address of the DB instance.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>Specifies the port that the database engine is listening on.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.hosted_zone_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4243,6 +5092,16 @@ pub struct CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to disable.</p>
     pub disable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CloudwatchLogsExportConfiguration {
+    /// <p>The list of log types to enable.</p>
+    pub fn enable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.enable_log_types.as_deref()
+    }
+    /// <p>The list of log types to disable.</p>
+    pub fn disable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.disable_log_types.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudwatchLogsExportConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudwatchLogsExportConfiguration");
@@ -4326,6 +5185,18 @@ pub struct DbClusterSnapshotAttributesResult {
     /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
     pub db_cluster_snapshot_attributes:
         std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshotAttribute>>,
+}
+impl DbClusterSnapshotAttributesResult {
+    /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
+    pub fn db_cluster_snapshot_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbClusterSnapshotAttribute]> {
+        self.db_cluster_snapshot_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for DbClusterSnapshotAttributesResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4424,6 +5295,23 @@ pub struct DbClusterSnapshotAttribute {
     /// snapshot is public and available for any Amazon account to copy or restore.</p>
     pub attribute_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DbClusterSnapshotAttribute {
+    /// <p>The name of the manual DB cluster snapshot attribute.</p>
+    /// <p>The attribute named <code>restore</code> refers to the list of Amazon accounts that have
+    /// permission to copy or restore the manual DB cluster snapshot. For more information, see the
+    /// <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The value(s) for the manual DB cluster snapshot attribute.</p>
+    /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element
+    /// returns a list of IDs of the Amazon accounts that are authorized to copy or restore the manual DB
+    /// cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster
+    /// snapshot is public and available for any Amazon account to copy or restore.</p>
+    pub fn attribute_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_values.as_deref()
+    }
+}
 impl std::fmt::Debug for DbClusterSnapshotAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbClusterSnapshotAttribute");
@@ -4513,6 +5401,16 @@ pub struct Filter {
     /// <p>This parameter is not currently supported.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Filter {
+    /// <p>This parameter is not currently supported.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -4586,6 +5484,12 @@ pub struct ValidDbInstanceModificationsMessage {
     /// <p>Valid storage options for your DB instance.</p>
     pub storage: std::option::Option<std::vec::Vec<crate::model::ValidStorageOptions>>,
 }
+impl ValidDbInstanceModificationsMessage {
+    /// <p>Valid storage options for your DB instance.</p>
+    pub fn storage(&self) -> std::option::Option<&[crate::model::ValidStorageOptions]> {
+        self.storage.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidDbInstanceModificationsMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidDbInstanceModificationsMessage");
@@ -4651,6 +5555,25 @@ pub struct ValidStorageOptions {
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10,
     /// which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub iops_to_storage_ratio: std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
+}
+impl ValidStorageOptions {
+    /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
+    pub fn storage_size(&self) -> std::option::Option<&[crate::model::Range]> {
+        self.storage_size.as_deref()
+    }
+    /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
+    pub fn provisioned_iops(&self) -> std::option::Option<&[crate::model::Range]> {
+        self.provisioned_iops.as_deref()
+    }
+    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10,
+    /// which means that provisioned IOPS can be between 3 and 10 times storage.</p>
+    pub fn iops_to_storage_ratio(&self) -> std::option::Option<&[crate::model::DoubleRange]> {
+        self.iops_to_storage_ratio.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidStorageOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4774,6 +5697,16 @@ pub struct DoubleRange {
     /// <p>The maximum value in the range.</p>
     pub to: f64,
 }
+impl DoubleRange {
+    /// <p>The minimum value in the range.</p>
+    pub fn from(&self) -> f64 {
+        self.from
+    }
+    /// <p>The maximum value in the range.</p>
+    pub fn to(&self) -> f64 {
+        self.to
+    }
+}
 impl std::fmt::Debug for DoubleRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DoubleRange");
@@ -4841,6 +5774,23 @@ pub struct Range {
     /// is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000,
     /// 7,000, 8,000...</p>
     pub step: std::option::Option<i32>,
+}
+impl Range {
+    /// <p>The minimum value in the range.</p>
+    pub fn from(&self) -> i32 {
+        self.from
+    }
+    /// <p>The maximum value in the range.</p>
+    pub fn to(&self) -> i32 {
+        self.to
+    }
+    /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a
+    /// step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500
+    /// is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000,
+    /// 7,000, 8,000...</p>
+    pub fn step(&self) -> std::option::Option<i32> {
+        self.step
+    }
 }
 impl std::fmt::Debug for Range {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4925,6 +5875,19 @@ pub struct ResourcePendingMaintenanceActions {
     /// resource.</p>
     pub pending_maintenance_action_details:
         std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
+}
+impl ResourcePendingMaintenanceActions {
+    /// <p>The ARN of the resource that has pending maintenance actions.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>A list that provides details about the pending maintenance actions for the
+    /// resource.</p>
+    pub fn pending_maintenance_action_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::PendingMaintenanceAction]> {
+        self.pending_maintenance_action_details.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourcePendingMaintenanceActions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5025,6 +5988,40 @@ pub struct PendingMaintenanceAction {
     pub current_apply_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A description providing more detail about the maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl PendingMaintenanceAction {
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The date of the maintenance window when the action is applied. The maintenance action is
+    /// applied to the resource during its first maintenance window after this date. If this date is
+    /// specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+    pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.auto_applied_after_date.as_ref()
+    }
+    /// <p>The date when the maintenance action is automatically applied. The maintenance action is
+    /// applied to the resource on this date regardless of the maintenance window for the resource. If
+    /// this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
+    pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.forced_apply_date.as_ref()
+    }
+    /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
+    pub fn opt_in_status(&self) -> std::option::Option<&str> {
+        self.opt_in_status.as_deref()
+    }
+    /// <p>The effective date when the pending maintenance action is applied to the resource. This
+    /// date takes into account opt-in requests received from the <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>, and the
+    /// <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received
+    /// and nothing has been specified as <code>AutoAppliedAfterDate</code> or
+    /// <code>ForcedApplyDate</code>.</p>
+    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.current_apply_date.as_ref()
+    }
+    /// <p>A description providing more detail about the maintenance action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for PendingMaintenanceAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5208,6 +6205,91 @@ pub struct OrderableDbInstanceOption {
     pub min_iops_per_gib: std::option::Option<f64>,
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub max_iops_per_gib: std::option::Option<f64>,
+}
+impl OrderableDbInstanceOption {
+    /// <p>The engine type of a DB instance.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The engine version of a DB instance.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The DB instance class for a DB instance.</p>
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+        self.db_instance_class.as_deref()
+    }
+    /// <p>The license model for a DB instance.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>A list of Availability Zones for a DB instance.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
+    pub fn multi_az_capable(&self) -> bool {
+        self.multi_az_capable
+    }
+    /// <p>Indicates whether a DB instance can have a Read Replica.</p>
+    pub fn read_replica_capable(&self) -> bool {
+        self.read_replica_capable
+    }
+    /// <p>Indicates whether a DB instance is in a VPC.</p>
+    pub fn vpc(&self) -> bool {
+        self.vpc
+    }
+    /// <p>Indicates whether a DB instance supports encrypted storage.</p>
+    pub fn supports_storage_encryption(&self) -> bool {
+        self.supports_storage_encryption
+    }
+    /// <p>Indicates the storage type for a DB instance.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
+    pub fn supports_iops(&self) -> bool {
+        self.supports_iops
+    }
+    /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60
+    /// seconds.</p>
+    pub fn supports_enhanced_monitoring(&self) -> bool {
+        self.supports_enhanced_monitoring
+    }
+    /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
+    pub fn supports_iam_database_authentication(&self) -> bool {
+        self.supports_iam_database_authentication
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn supports_performance_insights(&self) -> bool {
+        self.supports_performance_insights
+    }
+    /// <p>Minimum storage size for a DB instance.</p>
+    pub fn min_storage_size(&self) -> std::option::Option<i32> {
+        self.min_storage_size
+    }
+    /// <p>Maximum storage size for a DB instance.</p>
+    pub fn max_storage_size(&self) -> std::option::Option<i32> {
+        self.max_storage_size
+    }
+    /// <p>Minimum total provisioned IOPS for a DB instance.</p>
+    pub fn min_iops_per_db_instance(&self) -> std::option::Option<i32> {
+        self.min_iops_per_db_instance
+    }
+    /// <p>Maximum total provisioned IOPS for a DB instance.</p>
+    pub fn max_iops_per_db_instance(&self) -> std::option::Option<i32> {
+        self.max_iops_per_db_instance
+    }
+    /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
+    pub fn min_iops_per_gib(&self) -> std::option::Option<f64> {
+        self.min_iops_per_gib
+    }
+    /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
+    pub fn max_iops_per_gib(&self) -> std::option::Option<f64> {
+        self.max_iops_per_gib
+    }
 }
 impl std::fmt::Debug for OrderableDbInstanceOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5568,6 +6650,32 @@ pub struct Event {
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
     pub source_arn: std::option::Option<std::string::String>,
 }
+impl Event {
+    /// <p>Provides the identifier for the source of the event.</p>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>Specifies the source type for this event.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>Provides the text of this event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Specifies the category for the event.</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+    /// <p>Specifies the date and time of the event.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the event.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Event");
@@ -5776,6 +6884,16 @@ pub struct EventCategoriesMap {
     /// <p>The event categories for the specified source type</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EventCategoriesMap {
+    /// <p>The source type that the returned categories belong to</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>The event categories for the specified source type</p>
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_categories.as_deref()
+    }
+}
 impl std::fmt::Debug for EventCategoriesMap {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventCategoriesMap");
@@ -5852,6 +6970,23 @@ pub struct EngineDefaults {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of engine default parameters.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+}
+impl EngineDefaults {
+    /// <p>Specifies the name of the DB parameter group family that the engine default parameters
+    /// apply to.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p> An optional pagination token provided by a previous EngineDefaults request. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the value
+    /// specified by <code>MaxRecords</code> .</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Contains a list of engine default parameters.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for EngineDefaults {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5952,6 +7087,25 @@ pub struct DbParameterGroup {
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
     pub db_parameter_group_arn: std::option::Option<std::string::String>,
+}
+impl DbParameterGroup {
+    /// <p>Provides the name of the DB parameter group.</p>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
+    /// <p>Provides the name of the DB parameter group family that this DB parameter group is
+    /// compatible with.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>Provides the customer-specified description for this DB parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+    pub fn db_parameter_group_arn(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DbParameterGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6079,6 +7233,63 @@ pub struct DbEngineVersion {
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub supports_read_replica: bool,
+}
+impl DbEngineVersion {
+    /// <p>The name of the database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the DB parameter group family for the database engine.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>The description of the database engine.</p>
+    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+        self.db_engine_description.as_deref()
+    }
+    /// <p>The description of the database engine version.</p>
+    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+        self.db_engine_version_description.as_deref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+        self.default_character_set.as_ref()
+    }
+    /// <p>
+    /// <i>(Not supported by Neptune)</i>
+    /// </p>
+    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_character_sets.as_deref()
+    }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+        self.valid_upgrade_target.as_deref()
+    }
+    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter
+    /// of the <code>CreateDBInstance</code> action.</p>
+    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+        self.supported_timezones.as_deref()
+    }
+    /// <p>The types of logs that the database engine has available for export to CloudWatch
+    /// Logs.</p>
+    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.exportable_log_types.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports exporting the log types
+    /// specified by ExportableLogTypes to CloudWatch Logs.</p>
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+        self.supports_log_exports_to_cloudwatch_logs
+    }
+    /// <p>Indicates whether the database engine version supports read replicas.</p>
+    pub fn supports_read_replica(&self) -> bool {
+        self.supports_read_replica
+    }
 }
 impl std::fmt::Debug for DbEngineVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6358,6 +7569,12 @@ pub struct Timezone {
     /// <p>The name of the time zone.</p>
     pub timezone_name: std::option::Option<std::string::String>,
 }
+impl Timezone {
+    /// <p>The name of the time zone.</p>
+    pub fn timezone_name(&self) -> std::option::Option<&str> {
+        self.timezone_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Timezone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Timezone");
@@ -6417,6 +7634,29 @@ pub struct UpgradeTarget {
     pub auto_upgrade: bool,
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub is_major_version_upgrade: bool,
+}
+impl UpgradeTarget {
+    /// <p>The name of the upgrade target database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the upgrade target database engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A value that indicates whether the target version is applied to any source DB instances
+    /// that have AutoMinorVersionUpgrade set to true.</p>
+    pub fn auto_upgrade(&self) -> bool {
+        self.auto_upgrade
+    }
+    /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
+    pub fn is_major_version_upgrade(&self) -> bool {
+        self.is_major_version_upgrade
+    }
 }
 impl std::fmt::Debug for UpgradeTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6524,6 +7764,16 @@ pub struct CharacterSet {
     pub character_set_name: std::option::Option<std::string::String>,
     /// <p>The description of the character set.</p>
     pub character_set_description: std::option::Option<std::string::String>,
+}
+impl CharacterSet {
+    /// <p>The name of the character set.</p>
+    pub fn character_set_name(&self) -> std::option::Option<&str> {
+        self.character_set_name.as_deref()
+    }
+    /// <p>The description of the character set.</p>
+    pub fn character_set_description(&self) -> std::option::Option<&str> {
+        self.character_set_description.as_deref()
+    }
 }
 impl std::fmt::Debug for CharacterSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6650,6 +7900,108 @@ pub struct DbClusterSnapshot {
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts
     /// is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: bool,
+}
+impl DbClusterSnapshot {
+    /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can
+    /// be restored in.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+    /// of an existing snapshot.</p>
+    ///
+    /// <p>After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>,
+    /// you must specify the same <code>DBClusterSnapshotIdentifier</code> for any future
+    /// updates to the DB cluster. When you specify this property for an update, the DB
+    /// cluster is not restored from the snapshot again, and the data in the database is not
+    /// changed.</p>
+    ///
+    /// <p>However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty
+    /// DB cluster is created, and the original DB cluster is deleted. If you specify a
+    /// property that is different from the previous snapshot restore property, the DB
+    /// cluster is restored from the snapshot specified by the <code>DBClusterSnapshotIdentifier</code>,
+    /// and the original DB cluster is deleted.</p>
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_identifier.as_deref()
+    }
+    /// <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was
+    /// created from.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</p>
+    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_create_time.as_ref()
+    }
+    /// <p>Specifies the name of the database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+    pub fn allocated_storage(&self) -> i32 {
+        self.allocated_storage
+    }
+    /// <p>Specifies the status of this DB cluster snapshot.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Specifies the port that the DB cluster was listening on at the time of the
+    /// snapshot.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time
+    /// (UTC).</p>
+    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.cluster_create_time.as_ref()
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn master_username(&self) -> std::option::Option<&str> {
+        self.master_username.as_deref()
+    }
+    /// <p>Provides the version of the database engine for this DB cluster snapshot.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Provides the license model information for this DB cluster snapshot.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>Provides the type of the DB cluster snapshot.</p>
+    pub fn snapshot_type(&self) -> std::option::Option<&str> {
+        self.snapshot_type.as_deref()
+    }
+    /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
+    pub fn percent_progress(&self) -> i32 {
+        self.percent_progress
+    }
+    /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
+    pub fn storage_encrypted(&self) -> bool {
+        self.storage_encrypted
+    }
+    /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB
+    /// cluster snapshot.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    pub fn db_cluster_snapshot_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_snapshot_arn.as_deref()
+    }
+    /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon
+    /// Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
+    pub fn source_db_cluster_snapshot_arn(&self) -> std::option::Option<&str> {
+        self.source_db_cluster_snapshot_arn.as_deref()
+    }
+    /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts
+    /// is enabled, and otherwise false.</p>
+    pub fn iam_database_authentication_enabled(&self) -> bool {
+        self.iam_database_authentication_enabled
+    }
 }
 impl std::fmt::Debug for DbClusterSnapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7053,6 +8405,25 @@ pub struct DbClusterParameterGroup {
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
     pub db_cluster_parameter_group_arn: std::option::Option<std::string::String>,
 }
+impl DbClusterParameterGroup {
+    /// <p>Provides the name of the DB cluster parameter group.</p>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
+    /// <p>Provides the name of the DB parameter group family that this DB cluster parameter group is
+    /// compatible with.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>Provides the customer-specified description for this DB cluster parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+    pub fn db_cluster_parameter_group_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DbClusterParameterGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DbClusterParameterGroup");
@@ -7210,6 +8581,53 @@ pub struct DbClusterEndpoint {
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+}
+impl DbClusterEndpoint {
+    /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
+    /// stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_resource_identifier.as_deref()
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster,
+    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
+    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+        self.custom_endpoint_type.as_deref()
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.static_members.as_deref()
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
+    /// All other eligible instances are reachable through the custom endpoint.
+    /// Only relevant if the list of static members is empty.</p>
+    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_members.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DbClusterEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

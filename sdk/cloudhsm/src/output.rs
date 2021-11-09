@@ -6,6 +6,12 @@ pub struct RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl RemoveTagsFromResourceOutput {
+    /// <p>The status of the operation.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromResourceOutput");
@@ -53,6 +59,12 @@ impl RemoveTagsFromResourceOutput {
 pub struct ModifyLunaClientOutput {
     /// <p>The ARN of the client.</p>
     pub client_arn: std::option::Option<std::string::String>,
+}
+impl ModifyLunaClientOutput {
+    /// <p>The ARN of the client.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyLunaClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -102,6 +114,12 @@ pub struct ModifyHsmOutput {
     /// <p>The ARN of the HSM.</p>
     pub hsm_arn: std::option::Option<std::string::String>,
 }
+impl ModifyHsmOutput {
+    /// <p>The ARN of the HSM.</p>
+    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+        self.hsm_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyHsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyHsmOutput");
@@ -150,6 +168,12 @@ pub struct ModifyHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     pub hapg_arn: std::option::Option<std::string::String>,
 }
+impl ModifyHapgOutput {
+    /// <p>The ARN of the high-availability partition group.</p>
+    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+        self.hapg_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyHapgOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyHapgOutput");
@@ -197,6 +221,12 @@ impl ModifyHapgOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>One or more tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -257,6 +287,17 @@ pub struct ListLunaClientsOutput {
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to
     /// retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLunaClientsOutput {
+    /// <p>The list of clients.</p>
+    pub fn client_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.client_list.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to
+    /// retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLunaClientsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -333,6 +374,17 @@ pub struct ListHsmsOutput {
     /// retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHsmsOutput {
+    /// <p>The list of ARNs that identify the HSMs.</p>
+    pub fn hsm_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.hsm_list.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to
+    /// retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHsmsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHsmsOutput");
@@ -408,6 +460,17 @@ pub struct ListHapgsOutput {
     /// retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHapgsOutput {
+    /// <p>The list of high-availability partition groups.</p>
+    pub fn hapg_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.hapg_list.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to
+    /// retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHapgsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHapgsOutput");
@@ -480,6 +543,12 @@ pub struct ListAvailableZonesOutput {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
     pub az_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListAvailableZonesOutput {
+    /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
+    pub fn az_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.az_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAvailableZonesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAvailableZonesOutput");
@@ -540,6 +609,20 @@ pub struct GetConfigOutput {
     pub config_file: std::option::Option<std::string::String>,
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
     pub config_cred: std::option::Option<std::string::String>,
+}
+impl GetConfigOutput {
+    /// <p>The type of credentials.</p>
+    pub fn config_type(&self) -> std::option::Option<&str> {
+        self.config_type.as_deref()
+    }
+    /// <p>The chrystoki.conf configuration file.</p>
+    pub fn config_file(&self) -> std::option::Option<&str> {
+        self.config_file.as_deref()
+    }
+    /// <p>The certificate file containing the server.pem files of the HSMs.</p>
+    pub fn config_cred(&self) -> std::option::Option<&str> {
+        self.config_cred.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -622,6 +705,28 @@ pub struct DescribeLunaClientOutput {
     pub last_modified_timestamp: std::option::Option<std::string::String>,
     /// <p>The label of the client.</p>
     pub label: std::option::Option<std::string::String>,
+}
+impl DescribeLunaClientOutput {
+    /// <p>The ARN of the client.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
+    /// <p>The certificate installed on the HSMs used by this client.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The certificate fingerprint.</p>
+    pub fn certificate_fingerprint(&self) -> std::option::Option<&str> {
+        self.certificate_fingerprint.as_deref()
+    }
+    /// <p>The date and time the client was last modified.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&str> {
+        self.last_modified_timestamp.as_deref()
+    }
+    /// <p>The label of the client.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLunaClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -780,6 +885,104 @@ pub struct DescribeHsmOutput {
     pub server_cert_last_updated: std::option::Option<std::string::String>,
     /// <p>The list of partitions on the HSM.</p>
     pub partitions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeHsmOutput {
+    /// <p>The ARN of the HSM.</p>
+    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+        self.hsm_arn.as_deref()
+    }
+    /// <p>The status of the HSM.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::HsmStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Contains additional information about the status of the HSM.</p>
+    pub fn status_details(&self) -> std::option::Option<&str> {
+        self.status_details.as_deref()
+    }
+    /// <p>The Availability Zone that the HSM is in.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
+    pub fn eni_id(&self) -> std::option::Option<&str> {
+        self.eni_id.as_deref()
+    }
+    /// <p>The IP address assigned to the HSM's ENI.</p>
+    pub fn eni_ip(&self) -> std::option::Option<&str> {
+        self.eni_ip.as_deref()
+    }
+    /// <p>Specifies the type of subscription for the HSM.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>PRODUCTION</b> - The HSM is being used in a production
+    /// environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TRIAL</b> - The HSM is being used in a product
+    /// trial.</p>
+    /// </li>
+    /// </ul>
+    pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
+        self.subscription_type.as_ref()
+    }
+    /// <p>The subscription start date.</p>
+    pub fn subscription_start_date(&self) -> std::option::Option<&str> {
+        self.subscription_start_date.as_deref()
+    }
+    /// <p>The subscription end date.</p>
+    pub fn subscription_end_date(&self) -> std::option::Option<&str> {
+        self.subscription_end_date.as_deref()
+    }
+    /// <p>The identifier of the VPC that the HSM is in.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The identifier of the subnet that the HSM is in.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The ARN of the IAM role assigned to the HSM.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The serial number of the HSM.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The name of the HSM vendor.</p>
+    pub fn vendor_name(&self) -> std::option::Option<&str> {
+        self.vendor_name.as_deref()
+    }
+    /// <p>The HSM model type.</p>
+    pub fn hsm_type(&self) -> std::option::Option<&str> {
+        self.hsm_type.as_deref()
+    }
+    /// <p>The HSM software version.</p>
+    pub fn software_version(&self) -> std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
+    /// <p>The public SSH key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>The date and time that the SSH key was last updated.</p>
+    pub fn ssh_key_last_updated(&self) -> std::option::Option<&str> {
+        self.ssh_key_last_updated.as_deref()
+    }
+    /// <p>The URI of the certificate server.</p>
+    pub fn server_cert_uri(&self) -> std::option::Option<&str> {
+        self.server_cert_uri.as_deref()
+    }
+    /// <p>The date and time that the server certificate was last updated.</p>
+    pub fn server_cert_last_updated(&self) -> std::option::Option<&str> {
+        self.server_cert_last_updated.as_deref()
+    }
+    /// <p>The list of partitions on the HSM.</p>
+    pub fn partitions(&self) -> std::option::Option<&[std::string::String]> {
+        self.partitions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1172,6 +1375,45 @@ pub struct DescribeHapgOutput {
     /// <p>The state of the high-availability partition group.</p>
     pub state: std::option::Option<crate::model::CloudHsmObjectState>,
 }
+impl DescribeHapgOutput {
+    /// <p>The ARN of the high-availability partition group.</p>
+    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+        self.hapg_arn.as_deref()
+    }
+    /// <p>The serial number of the high-availability partition group.</p>
+    pub fn hapg_serial(&self) -> std::option::Option<&str> {
+        self.hapg_serial.as_deref()
+    }
+    /// <p></p>
+    pub fn hsms_last_action_failed(&self) -> std::option::Option<&[std::string::String]> {
+        self.hsms_last_action_failed.as_deref()
+    }
+    /// <p></p>
+    pub fn hsms_pending_deletion(&self) -> std::option::Option<&[std::string::String]> {
+        self.hsms_pending_deletion.as_deref()
+    }
+    /// <p></p>
+    pub fn hsms_pending_registration(&self) -> std::option::Option<&[std::string::String]> {
+        self.hsms_pending_registration.as_deref()
+    }
+    /// <p>The label for the high-availability partition group.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The date and time the high-availability partition group was last modified.</p>
+    pub fn last_modified_timestamp(&self) -> std::option::Option<&str> {
+        self.last_modified_timestamp.as_deref()
+    }
+    /// <p>The list of partition serial numbers that belong to the high-availability partition
+    /// group.</p>
+    pub fn partition_serial_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_serial_list.as_deref()
+    }
+    /// <p>The state of the high-availability partition group.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CloudHsmObjectState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeHapgOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHapgOutput");
@@ -1369,6 +1611,12 @@ pub struct DeleteLunaClientOutput {
     /// <p>The status of the action.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl DeleteLunaClientOutput {
+    /// <p>The status of the action.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLunaClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLunaClientOutput");
@@ -1416,6 +1664,12 @@ impl DeleteLunaClientOutput {
 pub struct DeleteHsmOutput {
     /// <p>The status of the operation.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl DeleteHsmOutput {
+    /// <p>The status of the operation.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteHsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1465,6 +1719,12 @@ pub struct DeleteHapgOutput {
     /// <p>The status of the action.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl DeleteHapgOutput {
+    /// <p>The status of the action.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteHapgOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteHapgOutput");
@@ -1512,6 +1772,12 @@ impl DeleteHapgOutput {
 pub struct CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
     pub client_arn: std::option::Option<std::string::String>,
+}
+impl CreateLunaClientOutput {
+    /// <p>The ARN of the client.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLunaClientOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1561,6 +1827,12 @@ pub struct CreateHsmOutput {
     /// <p>The ARN of the HSM.</p>
     pub hsm_arn: std::option::Option<std::string::String>,
 }
+impl CreateHsmOutput {
+    /// <p>The ARN of the HSM.</p>
+    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+        self.hsm_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHsmOutput");
@@ -1609,6 +1881,12 @@ pub struct CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     pub hapg_arn: std::option::Option<std::string::String>,
 }
+impl CreateHapgOutput {
+    /// <p>The ARN of the high-availability partition group.</p>
+    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+        self.hapg_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHapgOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHapgOutput");
@@ -1656,6 +1934,12 @@ impl CreateHapgOutput {
 pub struct AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl AddTagsToResourceOutput {
+    /// <p>The status of the operation.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

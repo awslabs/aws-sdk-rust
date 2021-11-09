@@ -201,10 +201,7 @@ impl CreateBatchInferenceJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_batch_inference_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -397,10 +394,8 @@ impl CreateCampaignInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_campaign(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_campaign(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -614,10 +609,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -831,10 +823,7 @@ impl CreateDatasetExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dataset_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1010,10 +999,7 @@ impl CreateDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dataset_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dataset_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1204,10 +1190,7 @@ impl CreateDatasetImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dataset_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1372,10 +1355,7 @@ impl CreateEventTrackerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_event_tracker(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_event_tracker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1558,10 +1538,7 @@ impl CreateFilterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_filter(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1722,10 +1699,7 @@ impl CreateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1992,10 +1966,8 @@ impl CreateSolutionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_solution(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_solution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2188,10 +2160,7 @@ impl CreateSolutionVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_solution_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2340,10 +2309,8 @@ impl DeleteCampaignInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_campaign(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_campaign(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2492,10 +2459,7 @@ impl DeleteDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2648,10 +2612,7 @@ impl DeleteDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_dataset_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_dataset_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2804,10 +2765,7 @@ impl DeleteEventTrackerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_event_tracker(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_event_tracker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2956,10 +2914,7 @@ impl DeleteFilterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_filter(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3108,10 +3063,7 @@ impl DeleteSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3260,10 +3212,8 @@ impl DeleteSolutionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_solution(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_solution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3416,10 +3366,7 @@ impl DescribeAlgorithmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_algorithm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_algorithm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3575,10 +3522,7 @@ impl DescribeBatchInferenceJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_batch_inference_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3728,10 +3672,7 @@ impl DescribeCampaignInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_campaign(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_campaign(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3881,10 +3822,7 @@ impl DescribeDatasetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4040,10 +3978,7 @@ impl DescribeDatasetExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dataset_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4196,10 +4131,9 @@ impl DescribeDatasetGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4355,10 +4289,7 @@ impl DescribeDatasetImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dataset_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4511,10 +4442,9 @@ impl DescribeEventTrackerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_event_tracker(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_event_tracker(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4668,7 +4598,7 @@ impl DescribeFeatureTransformationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_feature_transformation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_feature_transformation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4818,10 +4748,8 @@ impl DescribeFilterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_filter(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4970,10 +4898,8 @@ impl DescribeRecipeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_recipe(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_recipe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5122,10 +5048,8 @@ impl DescribeSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_schema(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5275,10 +5199,7 @@ impl DescribeSolutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_solution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_solution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5434,10 +5355,7 @@ impl DescribeSolutionVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_solution_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5590,10 +5508,7 @@ impl GetSolutionMetricsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_solution_metrics(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_solution_metrics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5776,10 +5691,7 @@ impl ListBatchInferenceJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_batch_inference_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5956,10 +5868,7 @@ impl ListCampaignsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_campaigns(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_campaigns(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6137,10 +6046,7 @@ impl ListDatasetExportJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_dataset_export_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6304,10 +6210,7 @@ impl ListDatasetGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dataset_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_dataset_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6485,10 +6388,7 @@ impl ListDatasetImportJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_dataset_import_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6668,10 +6568,7 @@ impl ListDatasetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6850,10 +6747,7 @@ impl ListEventTrackersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_event_trackers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_event_trackers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7031,10 +6925,7 @@ impl ListFiltersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_filters(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_filters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7212,10 +7103,7 @@ impl ListRecipesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_recipes(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_recipes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7378,10 +7266,7 @@ impl ListSchemasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7559,10 +7444,7 @@ impl ListSolutionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_solutions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_solutions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7738,10 +7620,9 @@ impl ListSolutionVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_solution_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_solution_versions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7895,7 +7776,7 @@ impl StopSolutionVersionCreationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_solution_version_creation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_solution_version_creation(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8089,10 +7970,8 @@ impl UpdateCampaignInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_campaign(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_campaign(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8168,6 +8047,25 @@ pub struct UpdateCampaignInput {
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
 }
+impl UpdateCampaignInput {
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
+    /// <p>The ARN of a new solution version to deploy.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
+    /// Amazon Personalize will support.</p>
+    pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
+        self.min_provisioned_tps
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn campaign_config(&self) -> std::option::Option<&crate::model::CampaignConfig> {
+        self.campaign_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCampaignInput");
@@ -8185,6 +8083,12 @@ impl std::fmt::Debug for UpdateCampaignInput {
 pub struct StopSolutionVersionCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
+}
+impl StopSolutionVersionCreationInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopSolutionVersionCreationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8205,6 +8109,21 @@ pub struct ListSolutionVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solution versions to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSolutionVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
+    /// the next set of solution versions (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of solution versions to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSolutionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8228,6 +8147,21 @@ pub struct ListSolutionsInput {
     /// <p>The maximum number of solutions to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListSolutionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
+    /// the next set of solutions (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of solutions to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSolutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSolutionsInput");
@@ -8247,6 +8181,17 @@ pub struct ListSchemasInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schemas to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSchemasInput {
+    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
+    /// the next set of schemas (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of schemas to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8268,6 +8213,21 @@ pub struct ListRecipesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recipes to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRecipesInput {
+    /// <p>The default is <code>SERVICE</code>.</p>
+    pub fn recipe_provider(&self) -> std::option::Option<&crate::model::RecipeProvider> {
+        self.recipe_provider.as_ref()
+    }
+    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
+    /// the next set of recipes (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of recipes to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRecipesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8291,6 +8251,21 @@ pub struct ListFiltersInput {
     /// <p>The maximum number of filters to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFiltersInput {
+    /// <p>The ARN of the dataset group that contains the filters.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
+    /// next set of filters (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of filters to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFiltersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFiltersInput");
@@ -8312,6 +8287,21 @@ pub struct ListEventTrackersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of event trackers to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListEventTrackersInput {
+    /// <p>The ARN of a dataset group used to filter the response.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
+    /// the next set of event trackers (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of event trackers to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListEventTrackersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8336,6 +8326,22 @@ pub struct ListDatasetsInput {
     /// <p>The maximum number of datasets to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDatasetsInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
+    /// list.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
+    /// the next set of dataset import jobs (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of datasets to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsInput");
@@ -8358,6 +8364,21 @@ pub struct ListDatasetImportJobsInput {
     /// <p>The maximum number of dataset import jobs to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDatasetImportJobsInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
+    /// the next set of dataset import jobs (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of dataset import jobs to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatasetImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetImportJobsInput");
@@ -8377,6 +8398,17 @@ pub struct ListDatasetGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset groups to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDatasetGroupsInput {
+    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
+    /// next set of dataset groups (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of dataset groups to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDatasetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8398,6 +8430,21 @@ pub struct ListDatasetExportJobsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset export jobs to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDatasetExportJobsInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
+    /// the next set of dataset export jobs (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of dataset export jobs to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDatasetExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8422,6 +8469,22 @@ pub struct ListCampaignsInput {
     /// <p>The maximum number of campaigns to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListCampaignsInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
+    /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
+    /// the next set of campaigns (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of campaigns to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListCampaignsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCampaignsInput");
@@ -8445,6 +8508,22 @@ pub struct ListBatchInferenceJobsInput {
     /// value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListBatchInferenceJobsInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
+    /// were created.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of batch inference job results to return in each page. The default
+    /// value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListBatchInferenceJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBatchInferenceJobsInput");
@@ -8462,6 +8541,12 @@ pub struct GetSolutionMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
+impl GetSolutionMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSolutionMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSolutionMetricsInput");
@@ -8476,6 +8561,12 @@ impl std::fmt::Debug for GetSolutionMetricsInput {
 pub struct DescribeSolutionVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
+}
+impl DescribeSolutionVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSolutionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8492,6 +8583,12 @@ pub struct DescribeSolutionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
     pub solution_arn: std::option::Option<std::string::String>,
 }
+impl DescribeSolutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSolutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSolutionInput");
@@ -8506,6 +8603,12 @@ impl std::fmt::Debug for DescribeSolutionInput {
 pub struct DescribeSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
     pub schema_arn: std::option::Option<std::string::String>,
+}
+impl DescribeSchemaInput {
+    /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8522,6 +8625,12 @@ pub struct DescribeRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
     pub recipe_arn: std::option::Option<std::string::String>,
 }
+impl DescribeRecipeInput {
+    /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRecipeInput");
@@ -8537,6 +8646,12 @@ pub struct DescribeFilterInput {
     /// <p>The ARN of the filter to describe.</p>
     pub filter_arn: std::option::Option<std::string::String>,
 }
+impl DescribeFilterInput {
+    /// <p>The ARN of the filter to describe.</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFilterInput");
@@ -8551,6 +8666,12 @@ impl std::fmt::Debug for DescribeFilterInput {
 pub struct DescribeFeatureTransformationInput {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
     pub feature_transformation_arn: std::option::Option<std::string::String>,
+}
+impl DescribeFeatureTransformationInput {
+    /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
+        self.feature_transformation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFeatureTransformationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8570,6 +8691,12 @@ pub struct DescribeEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
     pub event_tracker_arn: std::option::Option<std::string::String>,
 }
+impl DescribeEventTrackerInput {
+    /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
+    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+        self.event_tracker_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventTrackerInput");
@@ -8584,6 +8711,12 @@ impl std::fmt::Debug for DescribeEventTrackerInput {
 pub struct DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetImportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8600,6 +8733,12 @@ pub struct DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetGroupInput");
@@ -8614,6 +8753,12 @@ impl std::fmt::Debug for DescribeDatasetGroupInput {
 pub struct DescribeDatasetExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetExportJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_export_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8630,6 +8775,12 @@ pub struct DescribeDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetInput");
@@ -8644,6 +8795,12 @@ impl std::fmt::Debug for DescribeDatasetInput {
 pub struct DescribeCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub campaign_arn: std::option::Option<std::string::String>,
+}
+impl DescribeCampaignInput {
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8660,6 +8817,12 @@ pub struct DescribeBatchInferenceJobInput {
     /// <p>The ARN of the batch inference job to describe.</p>
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
 }
+impl DescribeBatchInferenceJobInput {
+    /// <p>The ARN of the batch inference job to describe.</p>
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
+        self.batch_inference_job_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBatchInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBatchInferenceJobInput");
@@ -8674,6 +8837,12 @@ impl std::fmt::Debug for DescribeBatchInferenceJobInput {
 pub struct DescribeAlgorithmInput {
     /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
     pub algorithm_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAlgorithmInput {
+    /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAlgorithmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8690,6 +8859,12 @@ pub struct DeleteSolutionInput {
     /// <p>The ARN of the solution to delete.</p>
     pub solution_arn: std::option::Option<std::string::String>,
 }
+impl DeleteSolutionInput {
+    /// <p>The ARN of the solution to delete.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSolutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSolutionInput");
@@ -8704,6 +8879,12 @@ impl std::fmt::Debug for DeleteSolutionInput {
 pub struct DeleteSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
     pub schema_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSchemaInput {
+    /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8720,6 +8901,12 @@ pub struct DeleteFilterInput {
     /// <p>The ARN of the filter to delete.</p>
     pub filter_arn: std::option::Option<std::string::String>,
 }
+impl DeleteFilterInput {
+    /// <p>The ARN of the filter to delete.</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFilterInput");
@@ -8734,6 +8921,12 @@ impl std::fmt::Debug for DeleteFilterInput {
 pub struct DeleteEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     pub event_tracker_arn: std::option::Option<std::string::String>,
+}
+impl DeleteEventTrackerInput {
+    /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
+    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+        self.event_tracker_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEventTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8750,6 +8943,12 @@ pub struct DeleteDatasetGroupInput {
     /// <p>The ARN of the dataset group to delete.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetGroupInput {
+    /// <p>The ARN of the dataset group to delete.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetGroupInput");
@@ -8765,6 +8964,12 @@ pub struct DeleteDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetInput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
@@ -8779,6 +8984,12 @@ impl std::fmt::Debug for DeleteDatasetInput {
 pub struct DeleteCampaignInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
     pub campaign_arn: std::option::Option<std::string::String>,
+}
+impl DeleteCampaignInput {
+    /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8809,6 +9020,29 @@ pub struct CreateSolutionVersionInput {
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub training_mode: std::option::Option<crate::model::TrainingMode>,
+}
+impl CreateSolutionVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
+    /// information.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+    /// <p>The scope of training to be performed when creating the solution version. The
+    /// <code>FULL</code> option trains the solution version based on the entirety of the input
+    /// solution's training data, while the <code>UPDATE</code> option processes only the data that
+    /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
+    /// incrementally update your solution version instead of creating an entirely new one.</p>
+    /// <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
+    /// version created from the input solution using the <code>FULL</code> option and the input
+    /// solution was trained with the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+    /// recipe or the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// </important>
+    pub fn training_mode(&self) -> std::option::Option<&crate::model::TrainingMode> {
+        self.training_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSolutionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8858,6 +9092,56 @@ pub struct CreateSolutionInput {
     /// </note>
     pub solution_config: std::option::Option<crate::model::SolutionConfig>,
 }
+impl CreateSolutionInput {
+    /// <p>The name for the solution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
+    /// The default is <code>false</code>.</p>
+    /// <p>When performing AutoML, this parameter is always <code>true</code> and you
+    /// should not set it to <code>false</code>.</p>
+    pub fn perform_hpo(&self) -> std::option::Option<bool> {
+        self.perform_hpo
+    }
+    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
+    /// For this case, you must specify <code>recipeArn</code>.</p>
+    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
+    /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
+    /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
+    /// different values for the hyperparameters.
+    /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    pub fn perform_auto_ml(&self) -> bool {
+        self.perform_auto_ml
+    }
+    /// <p>The ARN of the recipe to use for model training. Only specified when
+    /// <code>performAutoML</code> is false.</p>
+    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+        self.recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
+    /// this parameter specifies which event type (for example, 'click' or 'like') is used for
+    /// training the model.</p>
+    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
+    /// equal weight regardless of type.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
+    /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
+    /// of the solution configuration.</p>
+    /// <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
+    /// at this time.</p>
+    /// </note>
+    pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
+        self.solution_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSolutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSolutionInput");
@@ -8881,6 +9165,16 @@ pub struct CreateSchemaInput {
     /// <p>A schema in Avro JSON format.</p>
     pub schema: std::option::Option<std::string::String>,
 }
+impl CreateSchemaInput {
+    /// <p>The name for the schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A schema in Avro JSON format.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSchemaInput");
@@ -8903,6 +9197,22 @@ pub struct CreateFilterInput {
     /// <a>filter-expressions</a>.</p>
     pub filter_expression: std::option::Option<std::string::String>,
 }
+impl CreateFilterInput {
+    /// <p>The name of the filter to create.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the dataset group that the filter will belong to.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
+    /// For information about filter expression structure and syntax, see
+    /// <a>filter-expressions</a>.</p>
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
+        self.filter_expression.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFilterInput");
@@ -8921,6 +9231,16 @@ pub struct CreateEventTrackerInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
+}
+impl CreateEventTrackerInput {
+    /// <p>The name for the event tracker.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEventTrackerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8944,6 +9264,24 @@ pub struct CreateDatasetImportJobInput {
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl CreateDatasetImportJobInput {
+    /// <p>The name for the dataset import job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The ARN of the dataset that receives the imported data.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The Amazon S3 bucket that contains the training data to import.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetImportJobInput");
@@ -8966,6 +9304,21 @@ pub struct CreateDatasetGroupInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl CreateDatasetGroupInput {
+    /// <p>The name for the new dataset group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
+    /// role is only valid when also specifying a KMS key.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8995,6 +9348,32 @@ pub struct CreateDatasetExportJobInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
+}
+impl CreateDatasetExportJobInput {
+    /// <p>The name for the dataset export job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
+    /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
+    /// for both types. The default value is <code>PUT</code>.
+    /// </p>
+    pub fn ingestion_mode(&self) -> std::option::Option<&crate::model::IngestionMode> {
+        self.ingestion_mode.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
+    /// output Amazon S3 bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
+    pub fn job_output(&self) -> std::option::Option<&crate::model::DatasetExportJobOutput> {
+        self.job_output.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9034,6 +9413,37 @@ pub struct CreateDatasetInput {
     /// </ul>
     pub dataset_type: std::option::Option<std::string::String>,
 }
+impl CreateDatasetInput {
+    /// <p>The name for the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
+    /// fields.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The type of dataset.</p>
+    /// <p>One of the following (case insensitive) values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Interactions</p>
+    /// </li>
+    /// <li>
+    /// <p>Items</p>
+    /// </li>
+    /// <li>
+    /// <p>Users</p>
+    /// </li>
+    /// </ul>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetInput");
@@ -9058,6 +9468,25 @@ pub struct CreateCampaignInput {
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
+}
+impl CreateCampaignInput {
+    /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
+    /// Amazon Personalize will support.</p>
+    pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
+        self.min_provisioned_tps
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn campaign_config(&self) -> std::option::Option<&crate::model::CampaignConfig> {
+        self.campaign_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9095,6 +9524,47 @@ pub struct CreateBatchInferenceJobInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of a batch inference job.</p>
     pub batch_inference_job_config: std::option::Option<crate::model::BatchInferenceJobConfig>,
+}
+impl CreateBatchInferenceJobInput {
+    /// <p>The name of the batch inference job to create.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
+    /// batch inference recommendations.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
+    /// filters, see
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
+    /// <p>The number of recommendations to retreive.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
+    /// material must be in JSON format.</p>
+    pub fn job_input(&self) -> std::option::Option<&crate::model::BatchInferenceJobInput> {
+        self.job_input.as_ref()
+    }
+    /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
+    pub fn job_output(&self) -> std::option::Option<&crate::model::BatchInferenceJobOutput> {
+        self.job_output.as_ref()
+    }
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
+    /// Amazon S3 buckets respectively.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The configuration details of a batch inference job.</p>
+    pub fn batch_inference_job_config(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchInferenceJobConfig> {
+        self.batch_inference_job_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBatchInferenceJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

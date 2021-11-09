@@ -22,6 +22,39 @@ pub struct UpdateVpcLinkOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateVpcLinkOutput {
+    /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name used to label and identify the VPC link.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the VPC link.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    pub fn target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_arns.as_deref()
+    }
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcLinkStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description about the VPC link status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVpcLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVpcLinkOutput");
@@ -200,6 +233,43 @@ pub struct UpdateUsagePlanOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateUsagePlanOutput {
+    /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a usage plan.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of a usage plan.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The associated API stages of a usage plan.</p>
+    pub fn api_stages(&self) -> std::option::Option<&[crate::model::ApiStage]> {
+        self.api_stages.as_deref()
+    }
+    /// <p>The request throttle limits of a usage plan.</p>
+    pub fn throttle(&self) -> std::option::Option<&crate::model::ThrottleSettings> {
+        self.throttle.as_ref()
+    }
+    /// <p>The maximum number of permitted requests per a given unit time interval.</p>
+    pub fn quota(&self) -> std::option::Option<&crate::model::QuotaSettings> {
+        self.quota.as_ref()
+    }
+    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUsagePlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -387,6 +457,32 @@ pub struct UpdateUsageOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl UpdateUsageOutput {
+    /// <p>The plan Id associated with this usage data.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>The starting date of the usage data.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The ending date of the usage data.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    pub fn items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
+    > {
+        self.items.as_ref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUsageOutput");
@@ -546,6 +642,87 @@ pub struct UpdateStageOutput {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
     pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateStageOutput {
+    /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The identifier of a client certificate for an API stage.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The stage's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    pub fn cache_cluster_enabled(&self) -> bool {
+        self.cache_cluster_enabled
+    }
+    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
+        self.cache_cluster_size.as_ref()
+    }
+    /// <p>The status of the cache cluster for the stage, if enabled.</p>
+    pub fn cache_cluster_status(&self) -> std::option::Option<&crate::model::CacheClusterStatus> {
+        self.cache_cluster_status.as_ref()
+    }
+    /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+    pub fn method_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
+    > {
+        self.method_settings.as_ref()
+    }
+    /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+    /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.variables.as_ref()
+    }
+    /// <p>The version of the associated API documentation.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn access_log_settings(&self) -> std::option::Option<&crate::model::AccessLogSettings> {
+        self.access_log_settings.as_ref()
+    }
+    /// <p>Settings for the canary deployment in this stage.</p>
+    pub fn canary_settings(&self) -> std::option::Option<&crate::model::CanarySettings> {
+        self.canary_settings.as_ref()
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    pub fn tracing_enabled(&self) -> bool {
+        self.tracing_enabled
+    }
+    /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+    pub fn web_acl_arn(&self) -> std::option::Option<&str> {
+        self.web_acl_arn.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The timestamp when the stage was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the stage last updated.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -910,6 +1087,65 @@ pub struct UpdateRestApiOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
+}
+impl UpdateRestApiOutput {
+    /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The API's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.binary_media_types.as_deref()
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
+        self.minimum_compression_size
+    }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
+        self.api_key_source.as_ref()
+    }
+    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
 }
 impl std::fmt::Debug for UpdateRestApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1331,6 +1567,183 @@ pub struct UpdateResourceOutput {
     /// </div>
     pub resource_methods:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Method>>,
+}
+impl UpdateResourceOutput {
+    /// <p>The resource's identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The parent resource's identifier.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The last path segment for this resource.</p>
+    pub fn path_part(&self) -> std::option::Option<&str> {
+        self.path_part.as_deref()
+    }
+    /// <p>The full path for this resource.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Gets an API resource's method of a given HTTP verb.</p>
+    /// <div class="remarks">
+    /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+    /// <h4>Example: Get the GET method of an API resource</h4>
+    /// <h5>Request</h5>
+    /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// X-Amz-Date: 20170223T031827Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": [
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+    /// "name": "method",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    /// "name": "methodresponse",
+    /// "templated": true
+    /// }
+    /// ],
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+    /// "name": "GET",
+    /// "title": "GET"
+    /// },
+    /// "integration:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "method:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+    /// },
+    /// "method:integration": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "method:responses": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "method:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+    /// },
+    /// "methodresponse:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "apiKeyRequired": false,
+    /// "authorizationType": "NONE",
+    /// "httpMethod": "GET",
+    /// "_embedded": {
+    /// "method:integration": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integration:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integration:responses": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integration:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integrationresponse:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "cacheKeyParameters": [],
+    /// "cacheNamespace": "3kzxbg5sa2",
+    /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+    /// "httpMethod": "POST",
+    /// "passthroughBehavior": "WHEN_NO_MATCH",
+    /// "requestParameters": {
+    /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+    /// },
+    /// "requestTemplates": {
+    /// "application/json": "{\n}"
+    /// },
+    /// "type": "AWS",
+    /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+    /// "_embedded": {
+    /// "integration:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": "'application/xml'"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+    /// },
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// },
+    /// "method:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "methodresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+    /// },
+    /// "methodresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+    /// }
+    /// },
+    /// "responseModels": {
+    /// "application/json": "Empty"
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": false
+    /// },
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// }</code></pre>
+    /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// </div>
+    pub fn resource_methods(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Method>>
+    {
+        self.resource_methods.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1763,6 +2176,24 @@ pub struct UpdateRequestValidatorOutput {
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub validate_request_parameters: bool,
 }
+impl UpdateRequestValidatorOutput {
+    /// <p>The identifier of this <a>RequestValidator</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of this <a>RequestValidator</a></p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+    pub fn validate_request_body(&self) -> bool {
+        self.validate_request_body
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn validate_request_parameters(&self) -> bool {
+        self.validate_request_parameters
+    }
+}
 impl std::fmt::Debug for UpdateRequestValidatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRequestValidatorOutput");
@@ -1867,6 +2298,28 @@ pub struct UpdateModelOutput {
     pub schema: std::option::Option<std::string::String>,
     /// <p>The content-type for the model.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl UpdateModelOutput {
+    /// <p>The identifier for the model resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the model. Must be an alphanumeric string.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The content-type for the model.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2017,6 +2470,25 @@ pub struct UpdateMethodResponseOutput {
     /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateMethodResponseOutput {
+    /// <p>The method response's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+    pub fn response_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_models.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMethodResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2444,6 +2916,196 @@ pub struct UpdateMethodOutput {
     pub method_integration: std::option::Option<crate::model::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateMethodOutput {
+    /// <p>The method's HTTP verb.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    pub fn authorization_type(&self) -> std::option::Option<&str> {
+        self.authorization_type.as_deref()
+    }
+    /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+    pub fn api_key_required(&self) -> std::option::Option<bool> {
+        self.api_key_required
+    }
+    /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+    /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.request_parameters.as_ref()
+    }
+    /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+    pub fn request_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_models.as_ref()
+    }
+    /// <p>Gets a method response associated with a given HTTP status code. </p>
+    /// <div class="remarks">
+    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+    /// <h4>Example: Get a 200 OK response of a GET method</h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// Content-Length: 117
+    /// X-Amz-Date: 20160613T215008Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    /// "name": "methodresponse",
+    /// "templated": true
+    /// },
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+    /// "title": "200"
+    /// },
+    /// "methodresponse:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+    /// },
+    /// "methodresponse:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+    /// }
+    /// },
+    /// "responseModels": {
+    /// "application/json": "Empty"
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.operator": false,
+    /// "method.response.header.operand_2": false,
+    /// "method.response.header.operand_1": false
+    /// },
+    /// "statusCode": "200"
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+    /// </div>
+    pub fn method_responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
+    > {
+        self.method_responses.as_ref()
+    }
+    /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+    /// <div class="remarks">
+    /// <p></p>
+    /// <h4>Example: </h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// Content-Length: 117
+    /// X-Amz-Date: 20160613T213210Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": [
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// }
+    /// ],
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integration:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integration:responses": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integration:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integrationresponse:put": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "cacheKeyParameters": [],
+    /// "cacheNamespace": "0cjtch",
+    /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+    /// "httpMethod": "POST",
+    /// "passthroughBehavior": "WHEN_NO_MATCH",
+    /// "requestTemplates": {
+    /// "application/json": "{\n    \"a\":  \"$input.params('operand1')\",\n    \"b\":  \"$input.params('operand2')\", \n    \"op\": \"$input.params('operator')\"   \n}"
+    /// },
+    /// "type": "AWS",
+    /// "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations",
+    /// "_embedded": {
+    /// "integration:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.operator": "integration.response.body.op",
+    /// "method.response.header.operand_2": "integration.response.body.b",
+    /// "method.response.header.operand_1": "integration.response.body.a"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+    /// },
+    /// "selectionPattern": "",
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+    /// </div>
+    pub fn method_integration(&self) -> std::option::Option<&crate::model::Integration> {
+        self.method_integration.as_ref()
+    }
+    /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorization_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2984,6 +3646,40 @@ pub struct UpdateIntegrationResponseOutput {
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
+impl UpdateIntegrationResponseOutput {
+    /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
+    pub fn selection_pattern(&self) -> std::option::Option<&str> {
+        self.selection_pattern.as_deref()
+    }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+    /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateIntegrationResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIntegrationResponseOutput");
@@ -3256,6 +3952,163 @@ pub struct UpdateIntegrationOutput {
     >,
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
+}
+impl UpdateIntegrationOutput {
+    /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+    /// <ul>
+    /// <li><code>AWS</code>: for integrating the API method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.</li>
+    /// <li><code>AWS_PROXY</code>: for integrating the API method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as the Lambda proxy integration.</li>
+    /// <li><code>HTTP</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC. This integration is also referred to as the HTTP custom integration.</li>
+    /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
+    /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
+    /// </ul>
+    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the integration's HTTP method type.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+    /// <ul>
+    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+    /// </li>
+    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+    /// </li></ul>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
+    pub fn credentials(&self) -> std::option::Option<&str> {
+        self.credentials.as_deref()
+    }
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    pub fn request_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_templates.as_ref()
+    }
+    /// <div>
+    /// <p>
+    /// Specifies how the method request body of an unmapped content type will be passed through the integration request
+    /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
+    /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
+    /// The valid value is one of the following:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
+    /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
+    /// </li>
+    /// <li>
+    /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
+    /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
+    /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
+    /// </li>
+    /// <li>
+    /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
+    /// request content type does not match any content type associated with the mapping templates defined in the integration request or
+    /// no mapping template is defined in the integration request.
+    /// </li>
+    /// </ul>
+    /// </div>
+    pub fn passthrough_behavior(&self) -> std::option::Option<&str> {
+        self.passthrough_behavior.as_deref()
+    }
+    /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    pub fn timeout_in_millis(&self) -> i32 {
+        self.timeout_in_millis
+    }
+    /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    pub fn cache_namespace(&self) -> std::option::Option<&str> {
+        self.cache_namespace.as_deref()
+    }
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+    pub fn cache_key_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_key_parameters.as_deref()
+    }
+    /// <p>Specifies the integration's responses.</p>
+    /// <div class="remarks">
+    /// <p></p>
+    /// <h4>Example: Get integration responses of a method</h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// X-Amz-Date: 20160607T191449Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+    /// </code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// },
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": "'application/xml'"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+    /// },
+    /// "statusCode": "200"
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+    /// </div>
+    pub fn integration_responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
+    > {
+        self.integration_responses.as_ref()
+    }
+    /// <p>Specifies the TLS configuration for an integration.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
+        self.tls_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3805,6 +4658,34 @@ pub struct UpdateGatewayResponseOutput {
     /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub default_response: bool,
 }
+impl UpdateGatewayResponseOutput {
+    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
+    /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+    pub fn default_response(&self) -> bool {
+        self.default_response
+    }
+}
 impl std::fmt::Debug for UpdateGatewayResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayResponseOutput");
@@ -3981,6 +4862,83 @@ pub struct UpdateDomainNameOutput {
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
+}
+impl UpdateDomainNameOutput {
+    /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    pub fn certificate_upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.certificate_upload_date.as_ref()
+    }
+    /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
+    pub fn regional_domain_name(&self) -> std::option::Option<&str> {
+        self.regional_domain_name.as_deref()
+    }
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    pub fn regional_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.regional_hosted_zone_id.as_deref()
+    }
+    /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
+    pub fn regional_certificate_name(&self) -> std::option::Option<&str> {
+        self.regional_certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn regional_certificate_arn(&self) -> std::option::Option<&str> {
+        self.regional_certificate_arn.as_deref()
+    }
+    /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
+    pub fn distribution_domain_name(&self) -> std::option::Option<&str> {
+        self.distribution_domain_name.as_deref()
+    }
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    pub fn distribution_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.distribution_hosted_zone_id.as_deref()
+    }
+    /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    pub fn domain_name_status(&self) -> std::option::Option<&crate::model::DomainNameStatus> {
+        self.domain_name_status.as_ref()
+    }
+    /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+    pub fn domain_name_status_message(&self) -> std::option::Option<&str> {
+        self.domain_name_status_message.as_deref()
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    pub fn security_policy(&self) -> std::option::Option<&crate::model::SecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    pub fn mutual_tls_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::MutualTlsAuthentication> {
+        self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
+        self.ownership_verification_certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4330,6 +5288,20 @@ pub struct UpdateDocumentationVersionOutput {
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateDocumentationVersionOutput {
+    /// <p>The version identifier of the API documentation snapshot.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The date when the API documentation snapshot is created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The description of the API documentation snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentationVersionOutput");
@@ -4416,6 +5388,20 @@ pub struct UpdateDocumentationPartOutput {
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub properties: std::option::Option<std::string::String>,
+}
+impl UpdateDocumentationPartOutput {
+    /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::DocumentationPartLocation> {
+        self.location.as_ref()
+    }
+    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDocumentationPartOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4510,6 +5496,31 @@ pub struct UpdateDeploymentOutput {
             std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
         >,
     >,
+}
+impl UpdateDeploymentOutput {
+    /// <p>The identifier for the deployment resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description for the deployment resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that the deployment resource was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+    pub fn api_summary(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
+        >,
+    > {
+        self.api_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4638,6 +5649,35 @@ pub struct UpdateClientCertificateOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateClientCertificateOutput {
+    /// <p>The identifier of the client certificate.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The description of the client certificate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
+    pub fn pem_encoded_certificate(&self) -> std::option::Option<&str> {
+        self.pem_encoded_certificate.as_deref()
+    }
+    /// <p>The timestamp when the client certificate was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the client certificate will expire.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateClientCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4789,6 +5829,20 @@ pub struct UpdateBasePathMappingOutput {
     /// <p>The name of the associated stage.</p>
     pub stage: std::option::Option<std::string::String>,
 }
+impl UpdateBasePathMappingOutput {
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
+    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the associated stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBasePathMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBasePathMappingOutput");
@@ -4884,6 +5938,48 @@ pub struct UpdateAuthorizerOutput {
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+}
+impl UpdateAuthorizerOutput {
+    /// <p>The identifier for the authorizer resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>[Required] The name of the authorizer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+    pub fn provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.provider_ar_ns.as_deref()
+    }
+    /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    pub fn auth_type(&self) -> std::option::Option<&str> {
+        self.auth_type.as_deref()
+    }
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    pub fn authorizer_credentials(&self) -> std::option::Option<&str> {
+        self.authorizer_credentials.as_deref()
+    }
+    /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+    pub fn identity_source(&self) -> std::option::Option<&str> {
+        self.identity_source.as_deref()
+    }
+    /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+    /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.authorizer_result_ttl_in_seconds
+    }
 }
 impl std::fmt::Debug for UpdateAuthorizerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5107,6 +6203,51 @@ pub struct UpdateApiKeyOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateApiKeyOutput {
+    /// <p>The identifier of the API Key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the API Key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The name of the API Key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn customer_id(&self) -> std::option::Option<&str> {
+        self.customer_id.as_deref()
+    }
+    /// <p>The description of the API Key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether the API Key can be used by callers.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The timestamp when the API Key was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the API Key was last updated.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+    pub fn stage_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.stage_keys.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApiKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5359,6 +6500,24 @@ pub struct UpdateAccountOutput {
     /// <p>The version of the API keys used for the account.</p>
     pub api_key_version: std::option::Option<std::string::String>,
 }
+impl UpdateAccountOutput {
+    /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
+    pub fn cloudwatch_role_arn(&self) -> std::option::Option<&str> {
+        self.cloudwatch_role_arn.as_deref()
+    }
+    /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
+    pub fn throttle_settings(&self) -> std::option::Option<&crate::model::ThrottleSettings> {
+        self.throttle_settings.as_ref()
+    }
+    /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
+    pub fn features(&self) -> std::option::Option<&[std::string::String]> {
+        self.features.as_deref()
+    }
+    /// <p>The version of the API keys used for the account.</p>
+    pub fn api_key_version(&self) -> std::option::Option<&str> {
+        self.api_key_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountOutput");
@@ -5509,6 +6668,39 @@ pub struct TestInvokeMethodOutput {
     pub log: std::option::Option<std::string::String>,
     /// <p>The execution latency of the test invoke request.</p>
     pub latency: i64,
+}
+impl TestInvokeMethodOutput {
+    /// <p>The HTTP status code.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The body of the HTTP response.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The headers of the HTTP response.</p>
+    pub fn headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.headers.as_ref()
+    }
+    /// <p>The headers of the HTTP response as a map from string to list of values.</p>
+    pub fn multi_value_headers(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.multi_value_headers.as_ref()
+    }
+    /// <p>The API Gateway execution log for the test invoke request.</p>
+    pub fn log(&self) -> std::option::Option<&str> {
+        self.log.as_deref()
+    }
+    /// <p>The execution latency of the test invoke request.</p>
+    pub fn latency(&self) -> i64 {
+        self.latency
+    }
 }
 impl std::fmt::Debug for TestInvokeMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5671,6 +6863,43 @@ pub struct TestInvokeAuthorizerOutput {
     /// <p>The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
     pub claims:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TestInvokeAuthorizerOutput {
+    /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
+    pub fn client_status(&self) -> i32 {
+        self.client_status
+    }
+    /// <p>The API Gateway execution log for the test authorizer request.</p>
+    pub fn log(&self) -> std::option::Option<&str> {
+        self.log.as_deref()
+    }
+    /// <p>The execution latency of the test authorizer request.</p>
+    pub fn latency(&self) -> i64 {
+        self.latency
+    }
+    /// <p>The principal identity returned by the <a>Authorizer</a></p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The JSON policy document returned by the <a>Authorizer</a></p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn authorization(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.authorization.as_ref()
+    }
+    /// <p>The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
+    pub fn claims(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.claims.as_ref()
+    }
 }
 impl std::fmt::Debug for TestInvokeAuthorizerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5888,6 +7117,65 @@ pub struct PutRestApiOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
+}
+impl PutRestApiOutput {
+    /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The API's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.binary_media_types.as_deref()
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
+        self.minimum_compression_size
+    }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
+        self.api_key_source.as_ref()
+    }
+    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
 }
 impl std::fmt::Debug for PutRestApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6195,6 +7483,25 @@ pub struct PutMethodResponseOutput {
     /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PutMethodResponseOutput {
+    /// <p>The method response's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+    pub fn response_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_models.as_ref()
+    }
 }
 impl std::fmt::Debug for PutMethodResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6622,6 +7929,196 @@ pub struct PutMethodOutput {
     pub method_integration: std::option::Option<crate::model::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PutMethodOutput {
+    /// <p>The method's HTTP verb.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    pub fn authorization_type(&self) -> std::option::Option<&str> {
+        self.authorization_type.as_deref()
+    }
+    /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+    pub fn api_key_required(&self) -> std::option::Option<bool> {
+        self.api_key_required
+    }
+    /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+    /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.request_parameters.as_ref()
+    }
+    /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+    pub fn request_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_models.as_ref()
+    }
+    /// <p>Gets a method response associated with a given HTTP status code. </p>
+    /// <div class="remarks">
+    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+    /// <h4>Example: Get a 200 OK response of a GET method</h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// Content-Length: 117
+    /// X-Amz-Date: 20160613T215008Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    /// "name": "methodresponse",
+    /// "templated": true
+    /// },
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+    /// "title": "200"
+    /// },
+    /// "methodresponse:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+    /// },
+    /// "methodresponse:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+    /// }
+    /// },
+    /// "responseModels": {
+    /// "application/json": "Empty"
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.operator": false,
+    /// "method.response.header.operand_2": false,
+    /// "method.response.header.operand_1": false
+    /// },
+    /// "statusCode": "200"
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+    /// </div>
+    pub fn method_responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
+    > {
+        self.method_responses.as_ref()
+    }
+    /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+    /// <div class="remarks">
+    /// <p></p>
+    /// <h4>Example: </h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// Content-Length: 117
+    /// X-Amz-Date: 20160613T213210Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": [
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// }
+    /// ],
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integration:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integration:responses": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integration:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integrationresponse:put": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "cacheKeyParameters": [],
+    /// "cacheNamespace": "0cjtch",
+    /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+    /// "httpMethod": "POST",
+    /// "passthroughBehavior": "WHEN_NO_MATCH",
+    /// "requestTemplates": {
+    /// "application/json": "{\n    \"a\":  \"$input.params('operand1')\",\n    \"b\":  \"$input.params('operand2')\", \n    \"op\": \"$input.params('operator')\"   \n}"
+    /// },
+    /// "type": "AWS",
+    /// "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations",
+    /// "_embedded": {
+    /// "integration:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.operator": "integration.response.body.op",
+    /// "method.response.header.operand_2": "integration.response.body.b",
+    /// "method.response.header.operand_1": "integration.response.body.a"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+    /// },
+    /// "selectionPattern": "",
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+    /// </div>
+    pub fn method_integration(&self) -> std::option::Option<&crate::model::Integration> {
+        self.method_integration.as_ref()
+    }
+    /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorization_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for PutMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7162,6 +8659,40 @@ pub struct PutIntegrationResponseOutput {
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
+impl PutIntegrationResponseOutput {
+    /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
+    pub fn selection_pattern(&self) -> std::option::Option<&str> {
+        self.selection_pattern.as_deref()
+    }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+    /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+}
 impl std::fmt::Debug for PutIntegrationResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutIntegrationResponseOutput");
@@ -7434,6 +8965,163 @@ pub struct PutIntegrationOutput {
     >,
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
+}
+impl PutIntegrationOutput {
+    /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+    /// <ul>
+    /// <li><code>AWS</code>: for integrating the API method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.</li>
+    /// <li><code>AWS_PROXY</code>: for integrating the API method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as the Lambda proxy integration.</li>
+    /// <li><code>HTTP</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC. This integration is also referred to as the HTTP custom integration.</li>
+    /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
+    /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
+    /// </ul>
+    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the integration's HTTP method type.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+    /// <ul>
+    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+    /// </li>
+    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+    /// </li></ul>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
+    pub fn credentials(&self) -> std::option::Option<&str> {
+        self.credentials.as_deref()
+    }
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    pub fn request_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_templates.as_ref()
+    }
+    /// <div>
+    /// <p>
+    /// Specifies how the method request body of an unmapped content type will be passed through the integration request
+    /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
+    /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
+    /// The valid value is one of the following:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
+    /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
+    /// </li>
+    /// <li>
+    /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
+    /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
+    /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
+    /// </li>
+    /// <li>
+    /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
+    /// request content type does not match any content type associated with the mapping templates defined in the integration request or
+    /// no mapping template is defined in the integration request.
+    /// </li>
+    /// </ul>
+    /// </div>
+    pub fn passthrough_behavior(&self) -> std::option::Option<&str> {
+        self.passthrough_behavior.as_deref()
+    }
+    /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    pub fn timeout_in_millis(&self) -> i32 {
+        self.timeout_in_millis
+    }
+    /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    pub fn cache_namespace(&self) -> std::option::Option<&str> {
+        self.cache_namespace.as_deref()
+    }
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+    pub fn cache_key_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_key_parameters.as_deref()
+    }
+    /// <p>Specifies the integration's responses.</p>
+    /// <div class="remarks">
+    /// <p></p>
+    /// <h4>Example: Get integration responses of a method</h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// X-Amz-Date: 20160607T191449Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+    /// </code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// },
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": "'application/xml'"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+    /// },
+    /// "statusCode": "200"
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+    /// </div>
+    pub fn integration_responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
+    > {
+        self.integration_responses.as_ref()
+    }
+    /// <p>Specifies the TLS configuration for an integration.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
+        self.tls_config.as_ref()
+    }
 }
 impl std::fmt::Debug for PutIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7983,6 +9671,34 @@ pub struct PutGatewayResponseOutput {
     /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub default_response: bool,
 }
+impl PutGatewayResponseOutput {
+    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
+    /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+    pub fn default_response(&self) -> bool {
+        self.default_response
+    }
+}
 impl std::fmt::Debug for PutGatewayResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutGatewayResponseOutput");
@@ -8147,6 +9863,65 @@ pub struct ImportRestApiOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
+}
+impl ImportRestApiOutput {
+    /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The API's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.binary_media_types.as_deref()
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
+        self.minimum_compression_size
+    }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
+        self.api_key_source.as_ref()
+    }
+    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
 }
 impl std::fmt::Debug for ImportRestApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8411,6 +10186,16 @@ pub struct ImportDocumentationPartsOutput {
     /// <p>A list of warning messages reported during import of documentation parts.</p>
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ImportDocumentationPartsOutput {
+    /// <p>A list of the returned documentation part identifiers.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>A list of warning messages reported during import of documentation parts.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportDocumentationPartsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportDocumentationPartsOutput");
@@ -8491,6 +10276,16 @@ pub struct ImportApiKeysOutput {
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of warning messages.</p>
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ImportApiKeysOutput {
+    /// <p>A list of all the <a>ApiKey</a> identifiers.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>A list of warning messages.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportApiKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8577,6 +10372,16 @@ pub struct GetVpcLinksOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetVpcLinksOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::VpcLink]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVpcLinksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpcLinksOutput");
@@ -8662,6 +10467,39 @@ pub struct GetVpcLinkOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetVpcLinkOutput {
+    /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name used to label and identify the VPC link.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the VPC link.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    pub fn target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_arns.as_deref()
+    }
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcLinkStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description about the VPC link status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVpcLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8826,6 +10664,16 @@ pub struct GetUsagePlansOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetUsagePlansOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::UsagePlan]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUsagePlansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsagePlansOutput");
@@ -8900,6 +10748,16 @@ pub struct GetUsagePlanKeysOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
+}
+impl GetUsagePlanKeysOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::UsagePlanKey]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUsagePlanKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8982,6 +10840,24 @@ pub struct GetUsagePlanKeyOutput {
     pub value: std::option::Option<std::string::String>,
     /// <p>The name of a usage plan key.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetUsagePlanKeyOutput {
+    /// <p>The Id of a usage plan key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The value of a usage plan key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The name of a usage plan key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUsagePlanKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9090,6 +10966,43 @@ pub struct GetUsagePlanOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetUsagePlanOutput {
+    /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a usage plan.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of a usage plan.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The associated API stages of a usage plan.</p>
+    pub fn api_stages(&self) -> std::option::Option<&[crate::model::ApiStage]> {
+        self.api_stages.as_deref()
+    }
+    /// <p>The request throttle limits of a usage plan.</p>
+    pub fn throttle(&self) -> std::option::Option<&crate::model::ThrottleSettings> {
+        self.throttle.as_ref()
+    }
+    /// <p>The maximum number of permitted requests per a given unit time interval.</p>
+    pub fn quota(&self) -> std::option::Option<&crate::model::QuotaSettings> {
+        self.quota.as_ref()
+    }
+    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetUsagePlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9277,6 +11190,32 @@ pub struct GetUsageOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetUsageOutput {
+    /// <p>The plan Id associated with this usage data.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>The starting date of the usage data.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The ending date of the usage data.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    pub fn items(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
+    > {
+        self.items.as_ref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUsageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsageOutput");
@@ -9398,6 +11337,15 @@ pub struct GetTagsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetTagsOutput {
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTagsOutput");
@@ -9461,6 +11409,12 @@ impl GetTagsOutput {
 pub struct GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
     pub item: std::option::Option<std::vec::Vec<crate::model::Stage>>,
+}
+impl GetStagesOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::Stage]> {
+        self.item.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9556,6 +11510,87 @@ pub struct GetStageOutput {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
     pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetStageOutput {
+    /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The identifier of a client certificate for an API stage.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The stage's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    pub fn cache_cluster_enabled(&self) -> bool {
+        self.cache_cluster_enabled
+    }
+    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
+        self.cache_cluster_size.as_ref()
+    }
+    /// <p>The status of the cache cluster for the stage, if enabled.</p>
+    pub fn cache_cluster_status(&self) -> std::option::Option<&crate::model::CacheClusterStatus> {
+        self.cache_cluster_status.as_ref()
+    }
+    /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+    pub fn method_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
+    > {
+        self.method_settings.as_ref()
+    }
+    /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+    /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.variables.as_ref()
+    }
+    /// <p>The version of the associated API documentation.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn access_log_settings(&self) -> std::option::Option<&crate::model::AccessLogSettings> {
+        self.access_log_settings.as_ref()
+    }
+    /// <p>Settings for the canary deployment in this stage.</p>
+    pub fn canary_settings(&self) -> std::option::Option<&crate::model::CanarySettings> {
+        self.canary_settings.as_ref()
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    pub fn tracing_enabled(&self) -> bool {
+        self.tracing_enabled
+    }
+    /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+    pub fn web_acl_arn(&self) -> std::option::Option<&str> {
+        self.web_acl_arn.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The timestamp when the stage was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the stage last updated.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9893,6 +11928,12 @@ pub struct GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
 }
+impl GetSdkTypesOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::SdkType]> {
+        self.items.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSdkTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSdkTypesOutput");
@@ -9954,6 +11995,26 @@ pub struct GetSdkTypeOutput {
     /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
     pub configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
+}
+impl GetSdkTypeOutput {
+    /// <p>The identifier of an <a>SdkType</a> instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
+    pub fn friendly_name(&self) -> std::option::Option<&str> {
+        self.friendly_name.as_deref()
+    }
+    /// <p>The description of an <a>SdkType</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
+    pub fn configuration_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::SdkConfigurationProperty]> {
+        self.configuration_properties.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSdkTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10062,6 +12123,20 @@ pub struct GetSdkOutput {
     /// <p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
+impl GetSdkOutput {
+    /// <p>The content-type header value in the HTTP response.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The content-disposition header value in the HTTP response.</p>
+    pub fn content_disposition(&self) -> std::option::Option<&str> {
+        self.content_disposition.as_deref()
+    }
+    /// <p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSdkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSdkOutput");
@@ -10143,6 +12218,16 @@ pub struct GetRestApisOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
+}
+impl GetRestApisOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::RestApi]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRestApisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10241,6 +12326,65 @@ pub struct GetRestApiOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
+}
+impl GetRestApiOutput {
+    /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The API's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.binary_media_types.as_deref()
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
+        self.minimum_compression_size
+    }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
+        self.api_key_source.as_ref()
+    }
+    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
 }
 impl std::fmt::Debug for GetRestApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10504,6 +12648,16 @@ pub struct GetResourcesOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetResourcesOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcesOutput");
@@ -10737,6 +12891,183 @@ pub struct GetResourceOutput {
     /// </div>
     pub resource_methods:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Method>>,
+}
+impl GetResourceOutput {
+    /// <p>The resource's identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The parent resource's identifier.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The last path segment for this resource.</p>
+    pub fn path_part(&self) -> std::option::Option<&str> {
+        self.path_part.as_deref()
+    }
+    /// <p>The full path for this resource.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Gets an API resource's method of a given HTTP verb.</p>
+    /// <div class="remarks">
+    /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+    /// <h4>Example: Get the GET method of an API resource</h4>
+    /// <h5>Request</h5>
+    /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// X-Amz-Date: 20170223T031827Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": [
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+    /// "name": "method",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    /// "name": "methodresponse",
+    /// "templated": true
+    /// }
+    /// ],
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+    /// "name": "GET",
+    /// "title": "GET"
+    /// },
+    /// "integration:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "method:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+    /// },
+    /// "method:integration": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "method:responses": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "method:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+    /// },
+    /// "methodresponse:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "apiKeyRequired": false,
+    /// "authorizationType": "NONE",
+    /// "httpMethod": "GET",
+    /// "_embedded": {
+    /// "method:integration": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integration:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integration:responses": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integration:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integrationresponse:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "cacheKeyParameters": [],
+    /// "cacheNamespace": "3kzxbg5sa2",
+    /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+    /// "httpMethod": "POST",
+    /// "passthroughBehavior": "WHEN_NO_MATCH",
+    /// "requestParameters": {
+    /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+    /// },
+    /// "requestTemplates": {
+    /// "application/json": "{\n}"
+    /// },
+    /// "type": "AWS",
+    /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+    /// "_embedded": {
+    /// "integration:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": "'application/xml'"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+    /// },
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// },
+    /// "method:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "methodresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+    /// },
+    /// "methodresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+    /// }
+    /// },
+    /// "responseModels": {
+    /// "application/json": "Empty"
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": false
+    /// },
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// }</code></pre>
+    /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// </div>
+    pub fn resource_methods(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Method>>
+    {
+        self.resource_methods.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11165,6 +13496,16 @@ pub struct GetRequestValidatorsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetRequestValidatorsOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::RequestValidator]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRequestValidatorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRequestValidatorsOutput");
@@ -11244,6 +13585,24 @@ pub struct GetRequestValidatorOutput {
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub validate_request_parameters: bool,
+}
+impl GetRequestValidatorOutput {
+    /// <p>The identifier of this <a>RequestValidator</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of this <a>RequestValidator</a></p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+    pub fn validate_request_body(&self) -> bool {
+        self.validate_request_body
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn validate_request_parameters(&self) -> bool {
+        self.validate_request_parameters
+    }
 }
 impl std::fmt::Debug for GetRequestValidatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11338,6 +13697,12 @@ pub struct GetModelTemplateOutput {
     /// <p>The Apache <a target="_blank" href="https://velocity.apache.org/engine/devel/vtl-reference.html">Velocity Template Language (VTL)</a> template content used for the template resource.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl GetModelTemplateOutput {
+    /// <p>The Apache <a target="_blank" href="https://velocity.apache.org/engine/devel/vtl-reference.html">Velocity Template Language (VTL)</a> template content used for the template resource.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for GetModelTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetModelTemplateOutput");
@@ -11388,6 +13753,16 @@ pub struct GetModelsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::Model>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
+}
+impl GetModelsOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Model]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11473,6 +13848,28 @@ pub struct GetModelOutput {
     pub schema: std::option::Option<std::string::String>,
     /// <p>The content-type for the model.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl GetModelOutput {
+    /// <p>The identifier for the model resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the model. Must be an alphanumeric string.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The content-type for the model.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11623,6 +14020,25 @@ pub struct GetMethodResponseOutput {
     /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetMethodResponseOutput {
+    /// <p>The method response's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+    pub fn response_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_models.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMethodResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12050,6 +14466,196 @@ pub struct GetMethodOutput {
     pub method_integration: std::option::Option<crate::model::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetMethodOutput {
+    /// <p>The method's HTTP verb.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    pub fn authorization_type(&self) -> std::option::Option<&str> {
+        self.authorization_type.as_deref()
+    }
+    /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+    pub fn api_key_required(&self) -> std::option::Option<bool> {
+        self.api_key_required
+    }
+    /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+    /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.request_parameters.as_ref()
+    }
+    /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+    pub fn request_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_models.as_ref()
+    }
+    /// <p>Gets a method response associated with a given HTTP status code. </p>
+    /// <div class="remarks">
+    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+    /// <h4>Example: Get a 200 OK response of a GET method</h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// Content-Length: 117
+    /// X-Amz-Date: 20160613T215008Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    /// "name": "methodresponse",
+    /// "templated": true
+    /// },
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+    /// "title": "200"
+    /// },
+    /// "methodresponse:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+    /// },
+    /// "methodresponse:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+    /// }
+    /// },
+    /// "responseModels": {
+    /// "application/json": "Empty"
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.operator": false,
+    /// "method.response.header.operand_2": false,
+    /// "method.response.header.operand_1": false
+    /// },
+    /// "statusCode": "200"
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+    /// </div>
+    pub fn method_responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
+    > {
+        self.method_responses.as_ref()
+    }
+    /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+    /// <div class="remarks">
+    /// <p></p>
+    /// <h4>Example: </h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// Content-Length: 117
+    /// X-Amz-Date: 20160613T213210Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": [
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// }
+    /// ],
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integration:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integration:responses": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integration:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+    /// },
+    /// "integrationresponse:put": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "cacheKeyParameters": [],
+    /// "cacheNamespace": "0cjtch",
+    /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+    /// "httpMethod": "POST",
+    /// "passthroughBehavior": "WHEN_NO_MATCH",
+    /// "requestTemplates": {
+    /// "application/json": "{\n    \"a\":  \"$input.params('operand1')\",\n    \"b\":  \"$input.params('operand2')\", \n    \"op\": \"$input.params('operator')\"   \n}"
+    /// },
+    /// "type": "AWS",
+    /// "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations",
+    /// "_embedded": {
+    /// "integration:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.operator": "integration.response.body.op",
+    /// "method.response.header.operand_2": "integration.response.body.b",
+    /// "method.response.header.operand_1": "integration.response.body.a"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+    /// },
+    /// "selectionPattern": "",
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+    /// </div>
+    pub fn method_integration(&self) -> std::option::Option<&crate::model::Integration> {
+        self.method_integration.as_ref()
+    }
+    /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorization_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12590,6 +15196,40 @@ pub struct GetIntegrationResponseOutput {
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
+impl GetIntegrationResponseOutput {
+    /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
+    pub fn selection_pattern(&self) -> std::option::Option<&str> {
+        self.selection_pattern.as_deref()
+    }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+    /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationResponseOutput");
@@ -12862,6 +15502,163 @@ pub struct GetIntegrationOutput {
     >,
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
+}
+impl GetIntegrationOutput {
+    /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+    /// <ul>
+    /// <li><code>AWS</code>: for integrating the API method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.</li>
+    /// <li><code>AWS_PROXY</code>: for integrating the API method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as the Lambda proxy integration.</li>
+    /// <li><code>HTTP</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC. This integration is also referred to as the HTTP custom integration.</li>
+    /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
+    /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
+    /// </ul>
+    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the integration's HTTP method type.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+    /// <ul>
+    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+    /// </li>
+    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+    /// </li></ul>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
+    pub fn credentials(&self) -> std::option::Option<&str> {
+        self.credentials.as_deref()
+    }
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    pub fn request_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_templates.as_ref()
+    }
+    /// <div>
+    /// <p>
+    /// Specifies how the method request body of an unmapped content type will be passed through the integration request
+    /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
+    /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
+    /// The valid value is one of the following:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
+    /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
+    /// </li>
+    /// <li>
+    /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
+    /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
+    /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
+    /// </li>
+    /// <li>
+    /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
+    /// request content type does not match any content type associated with the mapping templates defined in the integration request or
+    /// no mapping template is defined in the integration request.
+    /// </li>
+    /// </ul>
+    /// </div>
+    pub fn passthrough_behavior(&self) -> std::option::Option<&str> {
+        self.passthrough_behavior.as_deref()
+    }
+    /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    pub fn timeout_in_millis(&self) -> i32 {
+        self.timeout_in_millis
+    }
+    /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    pub fn cache_namespace(&self) -> std::option::Option<&str> {
+        self.cache_namespace.as_deref()
+    }
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+    pub fn cache_key_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_key_parameters.as_deref()
+    }
+    /// <p>Specifies the integration's responses.</p>
+    /// <div class="remarks">
+    /// <p></p>
+    /// <h4>Example: Get integration responses of a method</h4>
+    /// <h5>Request</h5>
+    /// <p></p>
+    /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// X-Amz-Date: 20160607T191449Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+    /// </code></pre>
+    /// <h5>Response</h5>
+    /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// },
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": "'application/xml'"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+    /// },
+    /// "statusCode": "200"
+    /// }</code></pre>
+    /// <p></p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+    /// </div>
+    pub fn integration_responses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
+    > {
+        self.integration_responses.as_ref()
+    }
+    /// <p>Specifies the TLS configuration for an integration.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
+        self.tls_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13872,6 +16669,16 @@ pub struct GetGatewayResponsesOutput {
     /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetGatewayResponsesOutput {
+    /// <p>Returns the entire collection, because of no pagination support.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::GatewayResponse]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGatewayResponsesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGatewayResponsesOutput");
@@ -14008,6 +16815,34 @@ pub struct GetGatewayResponseOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub default_response: bool,
+}
+impl GetGatewayResponseOutput {
+    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
+    /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+    pub fn default_response(&self) -> bool {
+        self.default_response
+    }
 }
 impl std::fmt::Debug for GetGatewayResponseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14150,6 +16985,20 @@ pub struct GetExportOutput {
     /// <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
+impl GetExportOutput {
+    /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The content-disposition header value in the HTTP response.</p>
+    pub fn content_disposition(&self) -> std::option::Option<&str> {
+        self.content_disposition.as_deref()
+    }
+    /// <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
+}
 impl std::fmt::Debug for GetExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExportOutput");
@@ -14231,6 +17080,16 @@ pub struct GetDomainNamesOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
+}
+impl GetDomainNamesOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::DomainName]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14341,6 +17200,83 @@ pub struct GetDomainNameOutput {
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
+}
+impl GetDomainNameOutput {
+    /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    pub fn certificate_upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.certificate_upload_date.as_ref()
+    }
+    /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
+    pub fn regional_domain_name(&self) -> std::option::Option<&str> {
+        self.regional_domain_name.as_deref()
+    }
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    pub fn regional_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.regional_hosted_zone_id.as_deref()
+    }
+    /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
+    pub fn regional_certificate_name(&self) -> std::option::Option<&str> {
+        self.regional_certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn regional_certificate_arn(&self) -> std::option::Option<&str> {
+        self.regional_certificate_arn.as_deref()
+    }
+    /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
+    pub fn distribution_domain_name(&self) -> std::option::Option<&str> {
+        self.distribution_domain_name.as_deref()
+    }
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    pub fn distribution_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.distribution_hosted_zone_id.as_deref()
+    }
+    /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    pub fn domain_name_status(&self) -> std::option::Option<&crate::model::DomainNameStatus> {
+        self.domain_name_status.as_ref()
+    }
+    /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+    pub fn domain_name_status_message(&self) -> std::option::Option<&str> {
+        self.domain_name_status_message.as_deref()
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    pub fn security_policy(&self) -> std::option::Option<&crate::model::SecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    pub fn mutual_tls_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::MutualTlsAuthentication> {
+        self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
+        self.ownership_verification_certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14688,6 +17624,16 @@ pub struct GetDocumentationVersionsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetDocumentationVersionsOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::DocumentationVersion]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDocumentationVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentationVersionsOutput");
@@ -14765,6 +17711,20 @@ pub struct GetDocumentationVersionOutput {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl GetDocumentationVersionOutput {
+    /// <p>The version identifier of the API documentation snapshot.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The date when the API documentation snapshot is created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The description of the API documentation snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDocumentationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14849,6 +17809,16 @@ pub struct GetDocumentationPartsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetDocumentationPartsOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::DocumentationPart]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDocumentationPartsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentationPartsOutput");
@@ -14928,6 +17898,20 @@ pub struct GetDocumentationPartOutput {
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub properties: std::option::Option<std::string::String>,
+}
+impl GetDocumentationPartOutput {
+    /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::DocumentationPartLocation> {
+        self.location.as_ref()
+    }
+    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDocumentationPartOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15015,6 +17999,16 @@ pub struct GetDeploymentsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetDeploymentsOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Deployment]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentsOutput");
@@ -15101,6 +18095,31 @@ pub struct GetDeploymentOutput {
             std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
         >,
     >,
+}
+impl GetDeploymentOutput {
+    /// <p>The identifier for the deployment resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description for the deployment resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that the deployment resource was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+    pub fn api_summary(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
+        >,
+    > {
+        self.api_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15220,6 +18239,16 @@ pub struct GetClientCertificatesOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetClientCertificatesOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ClientCertificate]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetClientCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClientCertificatesOutput");
@@ -15304,6 +18333,35 @@ pub struct GetClientCertificateOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetClientCertificateOutput {
+    /// <p>The identifier of the client certificate.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The description of the client certificate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
+    pub fn pem_encoded_certificate(&self) -> std::option::Option<&str> {
+        self.pem_encoded_certificate.as_deref()
+    }
+    /// <p>The timestamp when the client certificate was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the client certificate will expire.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetClientCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15452,6 +18510,16 @@ pub struct GetBasePathMappingsOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetBasePathMappingsOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::BasePathMapping]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBasePathMappingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBasePathMappingsOutput");
@@ -15529,6 +18597,20 @@ pub struct GetBasePathMappingOutput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the associated stage.</p>
     pub stage: std::option::Option<std::string::String>,
+}
+impl GetBasePathMappingOutput {
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
+    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the associated stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBasePathMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15609,6 +18691,16 @@ pub struct GetAuthorizersOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
+}
+impl GetAuthorizersOutput {
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Authorizer]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAuthorizersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15701,6 +18793,48 @@ pub struct GetAuthorizerOutput {
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+}
+impl GetAuthorizerOutput {
+    /// <p>The identifier for the authorizer resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>[Required] The name of the authorizer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+    pub fn provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.provider_ar_ns.as_deref()
+    }
+    /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    pub fn auth_type(&self) -> std::option::Option<&str> {
+        self.auth_type.as_deref()
+    }
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    pub fn authorizer_credentials(&self) -> std::option::Option<&str> {
+        self.authorizer_credentials.as_deref()
+    }
+    /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+    pub fn identity_source(&self) -> std::option::Option<&str> {
+        self.identity_source.as_deref()
+    }
+    /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+    /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.authorizer_result_ttl_in_seconds
+    }
 }
 impl std::fmt::Debug for GetAuthorizerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15910,6 +19044,20 @@ pub struct GetApiKeysOutput {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: std::option::Option<std::string::String>,
 }
+impl GetApiKeysOutput {
+    /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+    /// <p>The current page of elements from this collection.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ApiKey]> {
+        self.items.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApiKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApiKeysOutput");
@@ -16023,6 +19171,51 @@ pub struct GetApiKeyOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetApiKeyOutput {
+    /// <p>The identifier of the API Key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the API Key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The name of the API Key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn customer_id(&self) -> std::option::Option<&str> {
+        self.customer_id.as_deref()
+    }
+    /// <p>The description of the API Key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether the API Key can be used by callers.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The timestamp when the API Key was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the API Key was last updated.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+    pub fn stage_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.stage_keys.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApiKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16275,6 +19468,24 @@ pub struct GetAccountOutput {
     /// <p>The version of the API keys used for the account.</p>
     pub api_key_version: std::option::Option<std::string::String>,
 }
+impl GetAccountOutput {
+    /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
+    pub fn cloudwatch_role_arn(&self) -> std::option::Option<&str> {
+        self.cloudwatch_role_arn.as_deref()
+    }
+    /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
+    pub fn throttle_settings(&self) -> std::option::Option<&crate::model::ThrottleSettings> {
+        self.throttle_settings.as_ref()
+    }
+    /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
+    pub fn features(&self) -> std::option::Option<&[std::string::String]> {
+        self.features.as_deref()
+    }
+    /// <p>The version of the API keys used for the account.</p>
+    pub fn api_key_version(&self) -> std::option::Option<&str> {
+        self.api_key_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountOutput");
@@ -16394,6 +19605,35 @@ pub struct GenerateClientCertificateOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GenerateClientCertificateOutput {
+    /// <p>The identifier of the client certificate.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The description of the client certificate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
+    pub fn pem_encoded_certificate(&self) -> std::option::Option<&str> {
+        self.pem_encoded_certificate.as_deref()
+    }
+    /// <p>The timestamp when the client certificate was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the client certificate will expire.</p>
+    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_date.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateClientCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17243,6 +20483,39 @@ pub struct CreateVpcLinkOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateVpcLinkOutput {
+    /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name used to label and identify the VPC link.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the VPC link.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    pub fn target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_arns.as_deref()
+    }
+    /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VpcLinkStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description about the VPC link status.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVpcLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVpcLinkOutput");
@@ -17413,6 +20686,24 @@ pub struct CreateUsagePlanKeyOutput {
     /// <p>The name of a usage plan key.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateUsagePlanKeyOutput {
+    /// <p>The Id of a usage plan key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The value of a usage plan key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The name of a usage plan key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUsagePlanKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUsagePlanKeyOutput");
@@ -17520,6 +20811,43 @@ pub struct CreateUsagePlanOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateUsagePlanOutput {
+    /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of a usage plan.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of a usage plan.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The associated API stages of a usage plan.</p>
+    pub fn api_stages(&self) -> std::option::Option<&[crate::model::ApiStage]> {
+        self.api_stages.as_deref()
+    }
+    /// <p>The request throttle limits of a usage plan.</p>
+    pub fn throttle(&self) -> std::option::Option<&crate::model::ThrottleSettings> {
+        self.throttle.as_ref()
+    }
+    /// <p>The maximum number of permitted requests per a given unit time interval.</p>
+    pub fn quota(&self) -> std::option::Option<&crate::model::QuotaSettings> {
+        self.quota.as_ref()
+    }
+    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUsagePlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17731,6 +21059,87 @@ pub struct CreateStageOutput {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
     pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateStageOutput {
+    /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The identifier of a client certificate for an API stage.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The stage's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    pub fn cache_cluster_enabled(&self) -> bool {
+        self.cache_cluster_enabled
+    }
+    /// <p>The size of the cache cluster for the stage, if enabled.</p>
+    pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
+        self.cache_cluster_size.as_ref()
+    }
+    /// <p>The status of the cache cluster for the stage, if enabled.</p>
+    pub fn cache_cluster_status(&self) -> std::option::Option<&crate::model::CacheClusterStatus> {
+        self.cache_cluster_status.as_ref()
+    }
+    /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+    pub fn method_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
+    > {
+        self.method_settings.as_ref()
+    }
+    /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+    /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.variables.as_ref()
+    }
+    /// <p>The version of the associated API documentation.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn access_log_settings(&self) -> std::option::Option<&crate::model::AccessLogSettings> {
+        self.access_log_settings.as_ref()
+    }
+    /// <p>Settings for the canary deployment in this stage.</p>
+    pub fn canary_settings(&self) -> std::option::Option<&crate::model::CanarySettings> {
+        self.canary_settings.as_ref()
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    pub fn tracing_enabled(&self) -> bool {
+        self.tracing_enabled
+    }
+    /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+    pub fn web_acl_arn(&self) -> std::option::Option<&str> {
+        self.web_acl_arn.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The timestamp when the stage was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the stage last updated.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18095,6 +21504,65 @@ pub struct CreateRestApiOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
+}
+impl CreateRestApiOutput {
+    /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The API's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+        self.warnings.as_deref()
+    }
+    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.binary_media_types.as_deref()
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
+        self.minimum_compression_size
+    }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
+        self.api_key_source.as_ref()
+    }
+    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
 }
 impl std::fmt::Debug for CreateRestApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18516,6 +21984,183 @@ pub struct CreateResourceOutput {
     /// </div>
     pub resource_methods:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Method>>,
+}
+impl CreateResourceOutput {
+    /// <p>The resource's identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The parent resource's identifier.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The last path segment for this resource.</p>
+    pub fn path_part(&self) -> std::option::Option<&str> {
+        self.path_part.as_deref()
+    }
+    /// <p>The full path for this resource.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Gets an API resource's method of a given HTTP verb.</p>
+    /// <div class="remarks">
+    /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+    /// <h4>Example: Get the GET method of an API resource</h4>
+    /// <h5>Request</h5>
+    /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+    /// Content-Type: application/json
+    /// Host: apigateway.us-east-1.amazonaws.com
+    /// X-Amz-Date: 20170223T031827Z
+    /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+    /// <h5>Response</h5>
+    /// <pre><code>{
+    /// "_links": {
+    /// "curies": [
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+    /// "name": "method",
+    /// "templated": true
+    /// },
+    /// {
+    /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    /// "name": "methodresponse",
+    /// "templated": true
+    /// }
+    /// ],
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+    /// "name": "GET",
+    /// "title": "GET"
+    /// },
+    /// "integration:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "method:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+    /// },
+    /// "method:integration": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "method:responses": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "method:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+    /// },
+    /// "methodresponse:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "apiKeyRequired": false,
+    /// "authorizationType": "NONE",
+    /// "httpMethod": "GET",
+    /// "_embedded": {
+    /// "method:integration": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integration:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integration:responses": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integration:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+    /// },
+    /// "integrationresponse:put": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+    /// "templated": true
+    /// }
+    /// },
+    /// "cacheKeyParameters": [],
+    /// "cacheNamespace": "3kzxbg5sa2",
+    /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+    /// "httpMethod": "POST",
+    /// "passthroughBehavior": "WHEN_NO_MATCH",
+    /// "requestParameters": {
+    /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+    /// },
+    /// "requestTemplates": {
+    /// "application/json": "{\n}"
+    /// },
+    /// "type": "AWS",
+    /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+    /// "_embedded": {
+    /// "integration:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "integrationresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// },
+    /// "integrationresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+    /// }
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": "'application/xml'"
+    /// },
+    /// "responseTemplates": {
+    /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+    /// },
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// },
+    /// "method:responses": {
+    /// "_links": {
+    /// "self": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+    /// "name": "200",
+    /// "title": "200"
+    /// },
+    /// "methodresponse:delete": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+    /// },
+    /// "methodresponse:update": {
+    /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+    /// }
+    /// },
+    /// "responseModels": {
+    /// "application/json": "Empty"
+    /// },
+    /// "responseParameters": {
+    /// "method.response.header.Content-Type": false
+    /// },
+    /// "statusCode": "200"
+    /// }
+    /// }
+    /// }</code></pre>
+    /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+    /// </div>
+    /// <div class="seeAlso">
+    /// </div>
+    pub fn resource_methods(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Method>>
+    {
+        self.resource_methods.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18948,6 +22593,24 @@ pub struct CreateRequestValidatorOutput {
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub validate_request_parameters: bool,
 }
+impl CreateRequestValidatorOutput {
+    /// <p>The identifier of this <a>RequestValidator</a>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of this <a>RequestValidator</a></p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+    pub fn validate_request_body(&self) -> bool {
+        self.validate_request_body
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn validate_request_parameters(&self) -> bool {
+        self.validate_request_parameters
+    }
+}
 impl std::fmt::Debug for CreateRequestValidatorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRequestValidatorOutput");
@@ -19052,6 +22715,28 @@ pub struct CreateModelOutput {
     pub schema: std::option::Option<std::string::String>,
     /// <p>The content-type for the model.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl CreateModelOutput {
+    /// <p>The identifier for the model resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the model. Must be an alphanumeric string.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The content-type for the model.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19192,6 +22877,83 @@ pub struct CreateDomainNameOutput {
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
+}
+impl CreateDomainNameOutput {
+    /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
+    pub fn certificate_upload_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.certificate_upload_date.as_ref()
+    }
+    /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
+    pub fn regional_domain_name(&self) -> std::option::Option<&str> {
+        self.regional_domain_name.as_deref()
+    }
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    pub fn regional_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.regional_hosted_zone_id.as_deref()
+    }
+    /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
+    pub fn regional_certificate_name(&self) -> std::option::Option<&str> {
+        self.regional_certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn regional_certificate_arn(&self) -> std::option::Option<&str> {
+        self.regional_certificate_arn.as_deref()
+    }
+    /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
+    pub fn distribution_domain_name(&self) -> std::option::Option<&str> {
+        self.distribution_domain_name.as_deref()
+    }
+    /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    pub fn distribution_hosted_zone_id(&self) -> std::option::Option<&str> {
+        self.distribution_hosted_zone_id.as_deref()
+    }
+    /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    pub fn domain_name_status(&self) -> std::option::Option<&crate::model::DomainNameStatus> {
+        self.domain_name_status.as_ref()
+    }
+    /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+    pub fn domain_name_status_message(&self) -> std::option::Option<&str> {
+        self.domain_name_status_message.as_deref()
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    pub fn security_policy(&self) -> std::option::Option<&crate::model::SecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
+    pub fn mutual_tls_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::MutualTlsAuthentication> {
+        self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
+        self.ownership_verification_certificate_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDomainNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19541,6 +23303,20 @@ pub struct CreateDocumentationVersionOutput {
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl CreateDocumentationVersionOutput {
+    /// <p>The version identifier of the API documentation snapshot.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The date when the API documentation snapshot is created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The description of the API documentation snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDocumentationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDocumentationVersionOutput");
@@ -19627,6 +23403,20 @@ pub struct CreateDocumentationPartOutput {
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub properties: std::option::Option<std::string::String>,
+}
+impl CreateDocumentationPartOutput {
+    /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::DocumentationPartLocation> {
+        self.location.as_ref()
+    }
+    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDocumentationPartOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19721,6 +23511,31 @@ pub struct CreateDeploymentOutput {
             std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
         >,
     >,
+}
+impl CreateDeploymentOutput {
+    /// <p>The identifier for the deployment resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The description for the deployment resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that the deployment resource was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+    pub fn api_summary(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
+        >,
+    > {
+        self.api_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19843,6 +23658,20 @@ pub struct CreateBasePathMappingOutput {
     /// <p>The name of the associated stage.</p>
     pub stage: std::option::Option<std::string::String>,
 }
+impl CreateBasePathMappingOutput {
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
+    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the associated stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBasePathMappingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBasePathMappingOutput");
@@ -19938,6 +23767,48 @@ pub struct CreateAuthorizerOutput {
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+}
+impl CreateAuthorizerOutput {
+    /// <p>The identifier for the authorizer resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>[Required] The name of the authorizer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+    pub fn provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.provider_ar_ns.as_deref()
+    }
+    /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    pub fn auth_type(&self) -> std::option::Option<&str> {
+        self.auth_type.as_deref()
+    }
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    pub fn authorizer_credentials(&self) -> std::option::Option<&str> {
+        self.authorizer_credentials.as_deref()
+    }
+    /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+    pub fn identity_source(&self) -> std::option::Option<&str> {
+        self.identity_source.as_deref()
+    }
+    /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+    /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.authorizer_result_ttl_in_seconds
+    }
 }
 impl std::fmt::Debug for CreateAuthorizerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20161,6 +24032,51 @@ pub struct CreateApiKeyOutput {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateApiKeyOutput {
+    /// <p>The identifier of the API Key.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the API Key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The name of the API Key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn customer_id(&self) -> std::option::Option<&str> {
+        self.customer_id.as_deref()
+    }
+    /// <p>The description of the API Key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether the API Key can be used by callers.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The timestamp when the API Key was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The timestamp when the API Key was last updated.</p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+    pub fn stage_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.stage_keys.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApiKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

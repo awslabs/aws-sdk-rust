@@ -391,10 +391,7 @@ impl CreateAccountCustomizationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_account_customization(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -708,10 +705,8 @@ impl CreateAnalysisInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_analysis(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_analysis(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1124,10 +1119,7 @@ impl CreateDashboardInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1570,10 +1562,8 @@ impl CreateDataSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_data_set(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_data_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1898,10 +1888,7 @@ impl CreateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2187,10 +2174,7 @@ impl CreateFolderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_folder(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_folder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2652,10 +2636,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3193,10 +3174,7 @@ impl CreateIamPolicyAssignmentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_iam_policy_assignment(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3435,10 +3413,7 @@ impl CreateIngestionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_ingestion(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_ingestion(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3656,10 +3631,7 @@ impl CreateNamespaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_namespace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_namespace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3965,10 +3937,8 @@ impl CreateTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4208,10 +4178,7 @@ impl CreateTemplateAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_template_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_template_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4524,10 +4491,7 @@ impl CreateThemeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_theme(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_theme(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4767,10 +4731,7 @@ impl CreateThemeAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_theme_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_theme_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13408,7 +13369,7 @@ impl GenerateEmbedUrlForAnonymousUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_anonymous_user(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_anonymous_user(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13623,7 +13584,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_registered_user(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_registered_user(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16486,10 +16447,7 @@ impl ListIamPolicyAssignmentsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_iam_policy_assignments(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19608,10 +19566,7 @@ impl RegisterUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_user(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_register_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20007,10 +19962,8 @@ impl SearchAnalysesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_analyses(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_analyses(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20231,10 +20184,7 @@ impl SearchDashboardsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_dashboards(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_dashboards(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20446,10 +20396,7 @@ impl SearchFoldersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_folders(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_folders(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20634,10 +20581,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21028,10 +20972,7 @@ impl UpdateAccountCustomizationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_account_customization(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21241,10 +21182,7 @@ impl UpdateAccountSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_account_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21505,10 +21443,8 @@ impl UpdateAnalysisInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_analysis(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_analysis(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21765,10 +21701,7 @@ impl UpdateAnalysisPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_analysis_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22130,10 +22063,7 @@ impl UpdateDashboardInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22384,10 +22314,7 @@ impl UpdateDashboardPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_dashboard_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23019,10 +22946,8 @@ impl UpdateDataSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_data_set(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_data_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23273,10 +23198,7 @@ impl UpdateDataSetPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_data_set_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23557,10 +23479,7 @@ impl UpdateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23810,7 +23729,7 @@ impl UpdateDataSourcePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_data_source_permissions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source_permissions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24018,10 +23937,7 @@ impl UpdateFolderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_folder(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_folder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24270,10 +24186,7 @@ impl UpdateFolderPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_folder_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24510,10 +24423,7 @@ impl UpdateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24826,10 +24736,7 @@ impl UpdateIamPolicyAssignmentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_iam_policy_assignment(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25038,10 +24945,7 @@ impl UpdateIpRestrictionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_ip_restriction(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_ip_restriction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25302,10 +25206,8 @@ impl UpdateTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25547,10 +25449,7 @@ impl UpdateTemplateAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_template_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_template_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25799,10 +25698,7 @@ impl UpdateTemplatePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_template_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26060,10 +25956,7 @@ impl UpdateThemeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_theme(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_theme(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26299,10 +26192,7 @@ impl UpdateThemeAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_theme_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_theme_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26550,10 +26440,7 @@ impl UpdateThemePermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_theme_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27010,10 +26897,7 @@ impl UpdateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27165,6 +27049,113 @@ pub struct UpdateUserInput {
     /// <p>The identity ID for a user in the external login provider.</p>
     pub external_login_id: std::option::Option<std::string::String>,
 }
+impl UpdateUserInput {
+    /// <p>The Amazon QuickSight user name that you want to update.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The email address of the user that you want to update.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The Amazon QuickSight role of the user. The role can be one of the
+    /// following default security cohorts:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
+    /// dashboards.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
+    /// settings.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
+    /// screens dealing with permissions.</p>
+    pub fn role(&self) -> std::option::Option<&crate::model::UserRole> {
+        self.role.as_ref()
+    }
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
+    /// assign to this user. Customized permissions allows you to control a user's access by
+    /// restricting access the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Create and update data sources</p>
+    /// </li>
+    /// <li>
+    /// <p>Create and update datasets</p>
+    /// </li>
+    /// <li>
+    /// <p>Create and update email reports</p>
+    /// </li>
+    /// <li>
+    /// <p>Subscribe to email reports</p>
+    /// </li>
+    /// </ul>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
+    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
+    /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
+    /// permissions to a Amazon QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    pub fn custom_permissions_name(&self) -> std::option::Option<&str> {
+        self.custom_permissions_name.as_deref()
+    }
+    /// <p>A flag that you use to indicate that you want to remove all custom permissions
+    /// from this user. Using this parameter resets the user to the state
+    /// it was in before a custom permissions profile was applied. This parameter defaults to
+    /// NULL and it doesn't accept any other value.</p>
+    pub fn unapply_custom_permissions(&self) -> bool {
+        self.unapply_custom_permissions
+    }
+    /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use <code>
+    /// <a>DescribeUser</a>
+    /// </code> API to check the external login information.</p>
+    /// </li>
+    /// </ul>
+    pub fn external_login_federation_provider_type(&self) -> std::option::Option<&str> {
+        self.external_login_federation_provider_type.as_deref()
+    }
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
+    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
+    /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    pub fn custom_federation_provider_url(&self) -> std::option::Option<&str> {
+        self.custom_federation_provider_url.as_deref()
+    }
+    /// <p>The identity ID for a user in the external login provider.</p>
+    pub fn external_login_id(&self) -> std::option::Option<&str> {
+        self.external_login_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
@@ -27204,6 +27195,24 @@ pub struct UpdateThemePermissionsInput {
     /// <p>A list of resource permissions to be revoked from the theme.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
 }
+impl UpdateThemePermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>A list of resource permissions to be granted for the theme.</p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>A list of resource permissions to be revoked from the theme.</p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateThemePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThemePermissionsInput");
@@ -27227,6 +27236,24 @@ pub struct UpdateThemeAliasInput {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the theme that the alias should reference.</p>
     pub theme_version_number: std::option::Option<i64>,
+}
+impl UpdateThemeAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The name of the theme alias that you want to update.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The version number of the theme that the alias should reference.</p>
+    pub fn theme_version_number(&self) -> std::option::Option<i64> {
+        self.theme_version_number
+    }
 }
 impl std::fmt::Debug for UpdateThemeAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27259,6 +27286,35 @@ pub struct UpdateThemeInput {
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub configuration: std::option::Option<crate::model::ThemeConfiguration>,
 }
+impl UpdateThemeInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The name for the theme.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
+    /// All themes initially inherit from a default Amazon QuickSight theme.</p>
+    pub fn base_theme_id(&self) -> std::option::Option<&str> {
+        self.base_theme_id.as_deref()
+    }
+    /// <p>A description of the theme version that you're updating Every time that you call
+    /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
+    /// theme maintains a description of the version in <code>VersionDescription</code>.</p>
+    pub fn version_description(&self) -> std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+    /// <p>The theme configuration, which contains the theme display properties.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ThemeConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateThemeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThemeInput");
@@ -27284,6 +27340,24 @@ pub struct UpdateTemplatePermissionsInput {
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>A list of resource permissions to be revoked from the template. </p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+}
+impl UpdateTemplatePermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>A list of resource permissions to be granted on the template. </p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>A list of resource permissions to be revoked from the template. </p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTemplatePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27311,6 +27385,27 @@ pub struct UpdateTemplateAliasInput {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the template.</p>
     pub template_version_number: std::option::Option<i64>,
+}
+impl UpdateTemplateAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The alias of the template that you want to update. If you name a specific alias, you update
+    /// the version that the alias points to. You can specify the latest version of the template
+    /// by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
+    /// The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The version number of the template.</p>
+    pub fn template_version_number(&self) -> std::option::Option<i64> {
+        self.template_version_number
+    }
 }
 impl std::fmt::Debug for UpdateTemplateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27350,6 +27445,40 @@ pub struct UpdateTemplateInput {
     /// <p>The name for the template.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateTemplateInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The entity that you are using as a source when you update the template. In
+    /// <code>SourceEntity</code>, you specify the type of object you're using as source:
+    /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
+    /// analysis. Both of these require an Amazon Resource Name (ARN). For
+    /// <code>SourceTemplate</code>, specify the ARN of the source template. For
+    /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
+    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+    /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
+    /// in the original. The schema in each dataset must match its placeholder. </p>
+    pub fn source_entity(&self) -> std::option::Option<&crate::model::TemplateSourceEntity> {
+        self.source_entity.as_ref()
+    }
+    /// <p>A description of the current template version that is being updated. Every time you call
+    /// <code>UpdateTemplate</code>, you create a new version of the template. Each version
+    /// of the template maintains a description of the version in the
+    /// <code>VersionDescription</code> field.</p>
+    pub fn version_description(&self) -> std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+    /// <p>The name for the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTemplateInput");
@@ -27373,6 +27502,23 @@ pub struct UpdateIpRestrictionInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Whether or not IP rules are enabled.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl UpdateIpRestrictionInput {
+    /// <p>Your AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>Describes updated IP rules.</p>
+    pub fn ip_restriction_rule_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.ip_restriction_rule_map.as_ref()
+    }
+    /// <p>Whether or not IP rules are enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateIpRestrictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27420,6 +27566,53 @@ pub struct UpdateIamPolicyAssignmentInput {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl UpdateIamPolicyAssignmentInput {
+    /// <p>The ID of the Amazon Web Services account that contains the IAMpolicy assignment. </p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The namespace of the assignment.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The status of the assignment. Possible values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
+    /// source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
+    /// data source.</p>
+    /// </li>
+    /// </ul>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
+    /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+    /// specified in this assignment.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    pub fn identities(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.identities.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateIamPolicyAssignmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIamPolicyAssignmentInput");
@@ -27447,6 +27640,25 @@ pub struct UpdateGroupInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl UpdateGroupInput {
+    /// <p>The name of the group that you want to update.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The description for the group that you want to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupInput");
@@ -27471,6 +27683,24 @@ pub struct UpdateFolderPermissionsInput {
     /// <p>The permissions that you want to revoke from a resource.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
 }
+impl UpdateFolderPermissionsInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The permissions that you want to grant on a resource.</p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>The permissions that you want to revoke from a resource.</p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFolderPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFolderPermissionsInput");
@@ -27492,6 +27722,20 @@ pub struct UpdateFolderInput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The name of the folder.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateFolderInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The name of the folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27515,6 +27759,24 @@ pub struct UpdateDataSourcePermissionsInput {
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+}
+impl UpdateDataSourcePermissionsInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A list of resource permissions that you want to grant on the data source.</p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>A list of resource permissions that you want to revoke on the data source.</p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDataSourcePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27549,6 +27811,43 @@ pub struct UpdateDataSourceInput {
     /// source.</p>
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
 }
+impl UpdateDataSourceInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A display name for the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
+    pub fn data_source_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceParameters> {
+        self.data_source_parameters.as_ref()
+    }
+    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
+    /// only credentials based on user name and password are supported.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::DataSourceCredentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
+    /// your underlying source.</p>
+    pub fn vpc_connection_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcConnectionProperties> {
+        self.vpc_connection_properties.as_ref()
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
+    /// source.</p>
+    pub fn ssl_properties(&self) -> std::option::Option<&crate::model::SslProperties> {
+        self.ssl_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceInput");
@@ -27576,6 +27875,25 @@ pub struct UpdateDataSetPermissionsInput {
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The resource permissions that you want to revoke from the dataset.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+}
+impl UpdateDataSetPermissionsInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
+    /// Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The resource permissions that you want to grant to the dataset.</p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>The resource permissions that you want to revoke from the dataset.</p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDataSetPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27628,6 +27946,79 @@ pub struct UpdateDataSetInput {
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
 }
+impl UpdateDataSetInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
+    /// Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The display name for the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Declares the physical tables that are available in the underlying data sources.</p>
+    pub fn physical_table_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PhysicalTable>,
+    > {
+        self.physical_table_map.as_ref()
+    }
+    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    pub fn logical_table_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::LogicalTable>,
+    > {
+        self.logical_table_map.as_ref()
+    }
+    /// <p>Indicates whether you want to import the data into SPICE.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::DataSetImportMode> {
+        self.import_mode.as_ref()
+    }
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    pub fn column_groups(&self) -> std::option::Option<&[crate::model::ColumnGroup]> {
+        self.column_groups.as_deref()
+    }
+    /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    pub fn field_folders(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldFolder>,
+    > {
+        self.field_folders.as_ref()
+    }
+    /// <p>The row-level security configuration for the data you want to create.</p>
+    pub fn row_level_permission_data_set(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionDataSet> {
+        self.row_level_permission_data_set.as_ref()
+    }
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    pub fn row_level_permission_tag_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionTagConfiguration> {
+        self.row_level_permission_tag_configuration.as_ref()
+    }
+    /// <p>A set of one or more definitions of a <code>
+    /// <a>ColumnLevelPermissionRule</a>
+    /// </code>.</p>
+    pub fn column_level_permission_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::ColumnLevelPermissionRule]> {
+        self.column_level_permission_rules.as_deref()
+    }
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub fn data_set_usage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSetUsageConfiguration> {
+        self.data_set_usage_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSetInput");
@@ -27671,6 +28062,21 @@ pub struct UpdateDashboardPublishedVersionInput {
     /// <p>The version number of the dashboard.</p>
     pub version_number: std::option::Option<i64>,
 }
+impl UpdateDashboardPublishedVersionInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
+    /// updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The version number of the dashboard.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for UpdateDashboardPublishedVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDashboardPublishedVersionInput");
@@ -27694,6 +28100,25 @@ pub struct UpdateDashboardPermissionsInput {
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The permissions that you want to revoke from this resource.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+}
+impl UpdateDashboardPermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
+    /// updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The permissions that you want to grant on this resource.</p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>The permissions that you want to revoke from this resource.</p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDashboardPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27766,6 +28191,81 @@ pub struct UpdateDashboardInput {
     /// dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
+impl UpdateDashboardInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
+    /// updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The display name of the dashboard.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The entity that you are using as a source when you update the dashboard. In
+    /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
+    /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
+    /// entity. If you need to update a dashboard from an analysis, first convert the analysis
+    /// to a template by using the <a>CreateTemplate</a> API operation. For
+    /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
+    /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
+    /// Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
+    /// list the replacement datasets for the placeholders listed in the original. The schema in
+    /// each dataset must match its placeholder. </p>
+    pub fn source_entity(&self) -> std::option::Option<&crate::model::DashboardSourceEntity> {
+        self.source_entity.as_ref()
+    }
+    /// <p>A structure that contains the parameters of the dashboard. These are parameter
+    /// overrides for a dashboard. A dashboard can have any type of parameters, and some
+    /// parameters might accept multiple values.</p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>A description for the first version of the dashboard being created.</p>
+    pub fn version_description(&self) -> std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+    /// <p>Options for publishing the dashboard when you create it:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
+    /// published dashboard, which can be used for ad hoc (one-time) filtering. This
+    /// option is <code>ENABLED</code> by default. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
+    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
+    /// option to export data to .CSV format isn't enabled when this is set to
+    /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
+    /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
+    /// This option is <code>COLLAPSED</code> by default. </p>
+    /// </li>
+    /// </ul>
+    pub fn dashboard_publish_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DashboardPublishOptions> {
+        self.dashboard_publish_options.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
+    /// you add a value for this field, it overrides the value that was originally associated
+    /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
+    /// dashboard.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDashboardInput");
@@ -27797,6 +28297,28 @@ pub struct UpdateAnalysisPermissionsInput {
     /// <p>A structure that describes the permissions to remove and the principal to remove them
     /// from.</p>
     pub revoke_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+}
+impl UpdateAnalysisPermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+    /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
+    /// analysis URL.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>A structure that describes the permissions to add and the principal to add them
+    /// to.</p>
+    pub fn grant_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.grant_permissions.as_deref()
+    }
+    /// <p>A structure that describes the permissions to remove and the principal to remove them
+    /// from.</p>
+    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.revoke_permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAnalysisPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27832,6 +28354,38 @@ pub struct UpdateAnalysisInput {
     /// it.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
+impl UpdateAnalysisInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
+    /// analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the
+    /// analysis in the Amazon QuickSight console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The parameter names and override values that you want to use. An analysis can have
+    /// any parameter type, and some parameters might accept multiple values. </p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure
+    /// contains details that describe a source template and one or more datasets.</p>
+    pub fn source_entity(&self) -> std::option::Option<&crate::model::AnalysisSourceEntity> {
+        self.source_entity.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
+    /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
+    /// it.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnalysisInput");
@@ -27861,6 +28415,25 @@ pub struct UpdateAccountSettingsInput {
     /// Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub notification_email: std::option::Option<std::string::String>,
 }
+impl UpdateAccountSettingsInput {
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
+    /// list.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
+    /// <code>default</code>. Identity and Access Management (IAM) users that register
+    /// for the first time with Amazon QuickSight provide an email that becomes associated with the
+    /// default namespace.</p>
+    pub fn default_namespace(&self) -> std::option::Option<&str> {
+        self.default_namespace.as_deref()
+    }
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
+    /// Amazon Web Services account or Amazon QuickSight subscription.</p>
+    pub fn notification_email(&self) -> std::option::Option<&str> {
+        self.notification_email.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAccountSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountSettingsInput");
@@ -27883,6 +28456,23 @@ pub struct UpdateAccountCustomizationInput {
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
 }
+impl UpdateAccountCustomizationInput {
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
+    /// for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    pub fn account_customization(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountCustomization> {
+        self.account_customization.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAccountCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountCustomizationInput");
@@ -27902,6 +28492,16 @@ pub struct UntagResourceInput {
     /// <p>The keys of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -27919,6 +28519,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27941,6 +28551,24 @@ pub struct SearchFoldersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl SearchFoldersInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::FolderSearchFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for SearchFoldersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27970,6 +28598,28 @@ pub struct SearchDashboardsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl SearchDashboardsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
+    /// for. </p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for
+    /// example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals",
+    /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DashboardSearchFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchDashboardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchDashboardsInput");
@@ -27995,6 +28645,25 @@ pub struct SearchAnalysesInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl SearchAnalysesInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
+    /// for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The structure for the search filters that you want to apply to your search. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::AnalysisSearchFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchAnalysesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchAnalysesInput");
@@ -28014,6 +28683,16 @@ pub struct RestoreAnalysisInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you're restoring.</p>
     pub analysis_id: std::option::Option<std::string::String>,
+}
+impl RestoreAnalysisInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the analysis that you're restoring.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28141,6 +28820,144 @@ pub struct RegisterUserInput {
     /// <p>The identity ID for a user in the external login provider.</p>
     pub external_login_id: std::option::Option<std::string::String>,
 }
+impl RegisterUserInput {
+    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This
+    /// parameter accepts two values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by
+    /// Amazon QuickSight. </p>
+    /// </li>
+    /// </ul>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The email address of the user that you want to register.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>READER</code>: A user who has read-only access to dashboards.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
+    /// dashboards.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
+    /// settings.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESTRICTED_READER</code>: This role isn't currently available for
+    /// use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for
+    /// use.</p>
+    /// </li>
+    /// </ul>
+    pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
+        self.user_role.as_ref()
+    }
+    /// <p>The ARN of the IAMuser or role that you are registering with Amazon QuickSight. </p>
+    pub fn iam_arn(&self) -> std::option::Option<&str> {
+        self.iam_arn.as_deref()
+    }
+    /// <p>You need to use this parameter only when you register one or more users using an assumed
+    /// IAMrole. You don't need to provide the session name for other scenarios, for example when
+    /// you are registering an IAMuser or an Amazon QuickSight user. You can register multiple
+    /// users using the same IAMrole if each user has a different session name. For more
+    /// information on assuming IAMroles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+    /// <code>assume-role</code>
+    /// </a> in the <i>AWS CLI Reference.</i>
+    /// </p>
+    pub fn session_name(&self) -> std::option::Option<&str> {
+        self.session_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon QuickSight user name that you want to create for the user you are
+    /// registering.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
+    /// assign to this user. Customized permissions allows you to control a user's access by
+    /// restricting access the following operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Create and update data sources</p>
+    /// </li>
+    /// <li>
+    /// <p>Create and update datasets</p>
+    /// </li>
+    /// <li>
+    /// <p>Create and update email reports</p>
+    /// </li>
+    /// <li>
+    /// <p>Subscribe to email reports</p>
+    /// </li>
+    /// </ul>
+    /// <p>To add custom permissions to an existing user, use <code>
+    /// <a>UpdateUser</a>
+    /// </code> instead.</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
+    /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
+    /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
+    /// permissions to a Amazon QuickSight user. </p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+    /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
+    /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    pub fn custom_permissions_name(&self) -> std::option::Option<&str> {
+        self.custom_permissions_name.as_deref()
+    }
+    /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p>
+    /// </li>
+    /// </ul>
+    pub fn external_login_federation_provider_type(&self) -> std::option::Option<&str> {
+        self.external_login_federation_provider_type.as_deref()
+    }
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
+    /// into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should
+    /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    pub fn custom_federation_provider_url(&self) -> std::option::Option<&str> {
+        self.custom_federation_provider_url.as_deref()
+    }
+    /// <p>The identity ID for a user in the external login provider.</p>
+    pub fn external_login_id(&self) -> std::option::Option<&str> {
+        self.external_login_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterUserInput");
@@ -28180,6 +28997,25 @@ pub struct ListUsersInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl ListUsersInput {
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return from this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -28207,6 +29043,29 @@ pub struct ListUserGroupsInput {
     /// <p>The maximum number of results to return from this request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListUserGroupsInput {
+    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
+    /// that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return from this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListUserGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserGroupsInput");
@@ -28231,6 +29090,24 @@ pub struct ListThemeVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListThemeVersionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListThemeVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28270,6 +29147,38 @@ pub struct ListThemesInput {
     /// </ul>
     pub r#type: std::option::Option<crate::model::ThemeType>,
 }
+impl ListThemesInput {
+    /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The type of themes that you want to list. Valid options include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALL (default)</code>- Display all existing themes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ThemeType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListThemesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThemesInput");
@@ -28293,6 +29202,24 @@ pub struct ListThemeAliasesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListThemeAliasesInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListThemeAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28318,6 +29245,24 @@ pub struct ListTemplateVersionsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTemplateVersionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTemplateVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplateVersionsInput");
@@ -28339,6 +29284,20 @@ pub struct ListTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTemplatesInput {
+    /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28363,6 +29322,24 @@ pub struct ListTemplateAliasesInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTemplateAliasesInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTemplateAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplateAliasesInput");
@@ -28380,6 +29357,12 @@ impl std::fmt::Debug for ListTemplateAliasesInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28399,6 +29382,20 @@ pub struct ListNamespacesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListNamespacesInput {
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListNamespacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28422,6 +29419,24 @@ pub struct ListIngestionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListIngestionsInput {
+    /// <p>The ID of the dataset used in the ingestion.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListIngestionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28448,6 +29463,28 @@ pub struct ListIamPolicyAssignmentsForUserInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The namespace of the assignment.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl ListIamPolicyAssignmentsForUserInput {
+    /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The name of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The namespace of the assignment.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIamPolicyAssignmentsForUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28476,6 +29513,28 @@ pub struct ListIamPolicyAssignmentsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListIamPolicyAssignmentsInput {
+    /// <p>The ID of the Amazon Web Services account that contains these IAMpolicy assignments.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The status of the assignments.</p>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
+    /// <p>The namespace for the assignments.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListIamPolicyAssignmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIamPolicyAssignmentsInput");
@@ -28501,6 +29560,25 @@ pub struct ListGroupsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl ListGroupsInput {
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28529,6 +29607,29 @@ pub struct ListGroupMembershipsInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl ListGroupMembershipsInput {
+    /// <p>The name of the group that you want to see a membership list of.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return from this request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupMembershipsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupMembershipsInput");
@@ -28551,6 +29652,20 @@ pub struct ListFoldersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFoldersInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFoldersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28575,6 +29690,24 @@ pub struct ListFolderMembersInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFolderMembersInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFolderMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFolderMembersInput");
@@ -28597,6 +29730,20 @@ pub struct ListDataSourcesInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDataSourcesInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDataSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourcesInput");
@@ -28617,6 +29764,20 @@ pub struct ListDataSetsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDataSetsInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDataSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28642,6 +29803,25 @@ pub struct ListDashboardVersionsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDashboardVersionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
+    /// for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDashboardVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDashboardVersionsInput");
@@ -28665,6 +29845,21 @@ pub struct ListDashboardsInput {
     /// <p>The maximum number of results to be returned per request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDashboardsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
+    /// listing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDashboardsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDashboardsInput");
@@ -28685,6 +29880,20 @@ pub struct ListAnalysesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAnalysesInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAnalysesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28759,6 +29968,74 @@ pub struct GetSessionEmbedUrlInput {
     /// sessions.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
+impl GetSessionEmbedUrlInput {
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
+    /// the following paths:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>/start</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/analyses</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/dashboards</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/start/favorites</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/dashboards/<i>DashboardId</i>
+    /// </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>/analyses/<i>AnalysisId</i>
+    /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
+    /// </li>
+    /// </ul>
+    pub fn entry_point(&self) -> std::option::Option<&str> {
+        self.entry_point.as_deref()
+    }
+    /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
+    pub fn session_lifetime_in_minutes(&self) -> std::option::Option<i64> {
+        self.session_lifetime_in_minutes
+    }
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
+    /// You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
+    /// admins). They need to be authenticated as one of the following:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Active Directory (AD) users or group members</p>
+    /// </li>
+    /// <li>
+    /// <p>Invited nonfederated users</p>
+    /// </li>
+    /// <li>
+    /// <p>Identity and Access Management (IAM) users and IAM role-based sessions authenticated
+    /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM
+    /// federation</p>
+    /// </li>
+    /// </ol>
+    /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based
+    /// sessions.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSessionEmbedUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionEmbedUrlInput");
@@ -28829,6 +30106,79 @@ pub struct GetDashboardEmbedUrlInput {
     /// can access all three dashboards. </p>
     pub additional_dashboard_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetDashboardEmbedUrlInput {
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
+    /// policy.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The authentication method that the user uses to sign in.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::EmbeddingIdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
+    pub fn session_lifetime_in_minutes(&self) -> std::option::Option<i64> {
+        self.session_lifetime_in_minutes
+    }
+    /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
+    /// the undo/redo button.</p>
+    pub fn undo_redo_disabled(&self) -> bool {
+        self.undo_redo_disabled
+    }
+    /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
+    /// reset button.</p>
+    pub fn reset_disabled(&self) -> bool {
+        self.reset_disabled
+    }
+    /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
+    /// applies to the sheet and the parameter settings. These are control settings that the
+    /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is
+    /// set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same
+    /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
+    /// set to FALSE, the state of the user session is not persisted. The default is
+    /// <code>FALSE</code>.</p>
+    pub fn state_persistence_enabled(&self) -> bool {
+        self.state_persistence_enabled
+    }
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
+    /// You can use this for any Amazon QuickSight users in your account (readers, authors, or
+    /// admins) authenticated as one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Active Directory (AD) users or group members</p>
+    /// </li>
+    /// <li>
+    /// <p>Invited nonfederated users</p>
+    /// </li>
+    /// <li>
+    /// <p>IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On using
+    /// SAML, OpenID Connect, or IAMfederation.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Omit this parameter for users in the third group – IAMusers and IAM
+    /// role-based sessions.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
+    /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
+    /// anonymous users. The <code>IdentityType</code> parameter must be set to
+    /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
+    /// as Amazon QuickSight or IAMusers. For example, if you set "<code>--dashboard-id dash_id1
+    /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
+    /// can access all three dashboards. </p>
+    pub fn additional_dashboard_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_dashboard_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDashboardEmbedUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDashboardEmbedUrlInput");
@@ -28862,6 +30212,26 @@ pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, the entire Amazon QuickSight console, or the Amazon QuickSight Q search bar.</p>
     pub experience_configuration:
         std::option::Option<crate::model::RegisteredUserEmbeddingExperienceConfiguration>,
+}
+impl GenerateEmbedUrlForRegisteredUserInput {
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    pub fn session_lifetime_in_minutes(&self) -> std::option::Option<i64> {
+        self.session_lifetime_in_minutes
+    }
+    /// <p>The Amazon Resource Name for the registered user.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, the entire Amazon QuickSight console, or the Amazon QuickSight Q search bar.</p>
+    pub fn experience_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RegisteredUserEmbeddingExperienceConfiguration> {
+        self.experience_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28897,6 +30267,36 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     pub experience_configuration:
         std::option::Option<crate::model::AnonymousUserEmbeddingExperienceConfiguration>,
 }
+impl GenerateEmbedUrlForAnonymousUserInput {
+    /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
+    pub fn session_lifetime_in_minutes(&self) -> std::option::Option<i64> {
+        self.session_lifetime_in_minutes
+    }
+    /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that
+    /// you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>.</p>
+    pub fn session_tags(&self) -> std::option::Option<&[crate::model::SessionTag]> {
+        self.session_tags.as_deref()
+    }
+    /// <p>The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    pub fn authorized_resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorized_resource_arns.as_deref()
+    }
+    /// <p>The configuration of the experience you are embedding.</p>
+    pub fn experience_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AnonymousUserEmbeddingExperienceConfiguration> {
+        self.experience_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserInput");
@@ -28925,6 +30325,21 @@ pub struct DescribeUserInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl DescribeUserInput {
+    /// <p>The name of the user that you want to describe.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserInput");
@@ -28943,6 +30358,16 @@ pub struct DescribeThemePermissionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the theme that you want to describe permissions for.</p>
     pub theme_id: std::option::Option<std::string::String>,
+}
+impl DescribeThemePermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme that you want to describe permissions for.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeThemePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28964,6 +30389,21 @@ pub struct DescribeThemeAliasInput {
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The name of the theme alias that you want to describe.</p>
     pub alias_name: std::option::Option<std::string::String>,
+}
+impl DescribeThemeAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
+    /// describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The name of the theme alias that you want to describe.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeThemeAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28992,6 +30432,28 @@ pub struct DescribeThemeInput {
     /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
+impl DescribeThemeInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
+    /// value isn't provided, the latest version of the theme is described.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The alias of the theme that you want to describe. If you name a specific alias, you
+    /// describe the version that the alias points to. You can specify the latest version of the
+    /// theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeThemeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeThemeInput");
@@ -29011,6 +30473,16 @@ pub struct DescribeTemplatePermissionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the template.</p>
     pub template_id: std::option::Option<std::string::String>,
+}
+impl DescribeTemplatePermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTemplatePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29035,6 +30507,24 @@ pub struct DescribeTemplateAliasInput {
     /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
     /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub alias_name: std::option::Option<std::string::String>,
+}
+impl DescribeTemplateAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
+    /// describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The name of the template alias that you want to describe. If you name a specific alias, you
+    /// describe the version that the alias points to. You can specify the latest version of the
+    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTemplateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29063,6 +30553,28 @@ pub struct DescribeTemplateInput {
     /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
+impl DescribeTemplateInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
+    /// value isn't provided, the latest version of the template is described.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The alias of the template that you want to describe. If you name a specific alias, you
+    /// describe the version that the alias points to. You can specify the latest version of the
+    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+    /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTemplateInput");
@@ -29083,6 +30595,16 @@ pub struct DescribeNamespaceInput {
     /// <p>The namespace that you want to describe.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl DescribeNamespaceInput {
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace that you want to describe.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNamespaceInput");
@@ -29098,6 +30620,12 @@ impl std::fmt::Debug for DescribeNamespaceInput {
 pub struct DescribeIpRestrictionInput {
     /// <p>Your AWS account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
+}
+impl DescribeIpRestrictionInput {
+    /// <p>Your AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIpRestrictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29117,6 +30645,20 @@ pub struct DescribeIngestionInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
+}
+impl DescribeIngestionInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the dataset used in the ingestion.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>An ID for the ingestion.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIngestionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29138,6 +30680,20 @@ pub struct DescribeIamPolicyAssignmentInput {
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The namespace that contains the assignment.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl DescribeIamPolicyAssignmentInput {
+    /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The name of the assignment, also called a rule.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The namespace that contains the assignment.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIamPolicyAssignmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29161,6 +30717,21 @@ pub struct DescribeGroupInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl DescribeGroupInput {
+    /// <p>The name of the group that you want to describe.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGroupInput");
@@ -29180,6 +30751,16 @@ pub struct DescribeFolderResolvedPermissionsInput {
     /// <p>The folder ID.</p>
     pub folder_id: std::option::Option<std::string::String>,
 }
+impl DescribeFolderResolvedPermissionsInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFolderResolvedPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFolderResolvedPermissionsInput");
@@ -29197,6 +30778,16 @@ pub struct DescribeFolderPermissionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The folder ID.</p>
     pub folder_id: std::option::Option<std::string::String>,
+}
+impl DescribeFolderPermissionsInput {
+    /// <p>The AWS Account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFolderPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29216,6 +30807,16 @@ pub struct DescribeFolderInput {
     /// <p>The folder ID.</p>
     pub folder_id: std::option::Option<std::string::String>,
 }
+impl DescribeFolderInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFolderInput");
@@ -29233,6 +30834,16 @@ pub struct DescribeDataSourcePermissionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
+}
+impl DescribeDataSourcePermissionsInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29252,6 +30863,16 @@ pub struct DescribeDataSourceInput {
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
+impl DescribeDataSourceInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSourceInput");
@@ -29269,6 +30890,16 @@ pub struct DescribeDataSetPermissionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
+}
+impl DescribeDataSetPermissionsInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataSetPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29288,6 +30919,16 @@ pub struct DescribeDataSetInput {
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
+impl DescribeDataSetInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSetInput");
@@ -29306,6 +30947,17 @@ pub struct DescribeDashboardPermissionsInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
+}
+impl DescribeDashboardPermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
+    /// permissions for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDashboardPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29331,6 +30983,26 @@ pub struct DescribeDashboardInput {
     /// <p>The alias name.</p>
     pub alias_name: std::option::Option<std::string::String>,
 }
+impl DescribeDashboardInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
+    /// describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The version number for the dashboard. If a version number isn't passed, the
+    /// latest published dashboard version is described. </p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+    /// <p>The alias name.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDashboardInput");
@@ -29353,6 +31025,18 @@ pub struct DescribeAnalysisPermissionsInput {
     /// analysis URL.</p>
     pub analysis_id: std::option::Option<std::string::String>,
 }
+impl DescribeAnalysisPermissionsInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
+    /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
+    /// analysis URL.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAnalysisPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnalysisPermissionsInput");
@@ -29373,6 +31057,18 @@ pub struct DescribeAnalysisInput {
     /// analysis.</p>
     pub analysis_id: std::option::Option<std::string::String>,
 }
+impl DescribeAnalysisInput {
+    /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
+    /// Amazon Web Services account that the analysis is in.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
+    /// analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnalysisInput");
@@ -29388,6 +31084,12 @@ impl std::fmt::Debug for DescribeAnalysisInput {
 pub struct DescribeAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
+}
+impl DescribeAccountSettingsInput {
+    /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29414,6 +31116,26 @@ pub struct DescribeAccountCustomizationInput {
     /// that are configured at different levels. </p>
     pub resolved: bool,
 }
+impl DescribeAccountCustomizationInput {
+    /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
+    /// for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
+    /// for.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
+    /// of Amazon QuickSight customizations is returned. You can add this flag to your command to use
+    /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
+    /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
+    /// that are configured at different levels. </p>
+    pub fn resolved(&self) -> bool {
+        self.resolved
+    }
+}
 impl std::fmt::Debug for DescribeAccountCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountCustomizationInput");
@@ -29435,6 +31157,21 @@ pub struct DeleteUserByPrincipalIdInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl DeleteUserByPrincipalIdInput {
+    /// <p>The principal ID of the user.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserByPrincipalIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29458,6 +31195,21 @@ pub struct DeleteUserInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl DeleteUserInput {
+    /// <p>The name of the user that you want to delete.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
@@ -29478,6 +31230,20 @@ pub struct DeleteThemeAliasInput {
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The unique name for the theme alias to delete.</p>
     pub alias_name: std::option::Option<std::string::String>,
+}
+impl DeleteThemeAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the theme that the specified alias is for.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The unique name for the theme alias to delete.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteThemeAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29503,6 +31269,23 @@ pub struct DeleteThemeInput {
     /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
     pub version_number: std::option::Option<i64>,
 }
+impl DeleteThemeInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the theme that you want to delete.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p>
+    /// <b>Note:</b> If you don't provide a version number, you're
+    /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for DeleteThemeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteThemeInput");
@@ -29527,6 +31310,23 @@ pub struct DeleteTemplateAliasInput {
     /// parameter. </p>
     pub alias_name: std::option::Option<std::string::String>,
 }
+impl DeleteTemplateAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the template that the specified alias is for.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The name for the template alias. To delete a specific alias, you delete the version that the
+    /// alias points to. You can specify the alias name, or specify the latest version of the
+    /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
+    /// parameter. </p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTemplateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTemplateAliasInput");
@@ -29550,6 +31350,22 @@ pub struct DeleteTemplateInput {
     /// </p>
     pub version_number: std::option::Option<i64>,
 }
+impl DeleteTemplateInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the template you want to delete.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>Specifies the version of the template that you want to delete.
+    /// If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.
+    /// </p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for DeleteTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTemplateInput");
@@ -29568,6 +31384,16 @@ pub struct DeleteNamespaceInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to delete.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl DeleteNamespaceInput {
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace that you want to delete.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29588,6 +31414,20 @@ pub struct DeleteIamPolicyAssignmentInput {
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The namespace that contains the assignment.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl DeleteIamPolicyAssignmentInput {
+    /// <p>The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The name of the assignment. </p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The namespace that contains the assignment.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteIamPolicyAssignmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29613,6 +31453,25 @@ pub struct DeleteGroupMembershipInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl DeleteGroupMembershipInput {
+    /// <p>The name of the user that you want to delete from the group membership.</p>
+    pub fn member_name(&self) -> std::option::Option<&str> {
+        self.member_name.as_deref()
+    }
+    /// <p>The name of the group that you want to delete the user from.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGroupMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGroupMembershipInput");
@@ -29635,6 +31494,21 @@ pub struct DeleteGroupInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl DeleteGroupInput {
+    /// <p>The name of the group that you want to delete.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29660,6 +31534,25 @@ pub struct DeleteFolderMembershipInput {
     /// </p>
     pub member_type: std::option::Option<crate::model::MemberType>,
 }
+impl DeleteFolderMembershipInput {
+    /// <p>The AWS Account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The Folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+    /// </p>
+    pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.member_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteFolderMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFolderMembershipInput");
@@ -29680,6 +31573,16 @@ pub struct DeleteFolderInput {
     /// <p>The folder ID.</p>
     pub folder_id: std::option::Option<std::string::String>,
 }
+impl DeleteFolderInput {
+    /// <p>The AWS Account ID for the folder.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFolderInput");
@@ -29698,6 +31601,16 @@ pub struct DeleteDataSourceInput {
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
+impl DeleteDataSourceInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDataSourceInput");
@@ -29715,6 +31628,16 @@ pub struct DeleteDataSetInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataSetInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29737,6 +31660,22 @@ pub struct DeleteDashboardInput {
     /// <p>The version number of the dashboard. If the version number property is provided, only
     /// the specified version of the dashboard is deleted.</p>
     pub version_number: std::option::Option<i64>,
+}
+impl DeleteDashboardInput {
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
+    /// deleting.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The version number of the dashboard. If the version number property is provided, only
+    /// the specified version of the dashboard is deleted.</p>
+    pub fn version_number(&self) -> std::option::Option<i64> {
+        self.version_number
+    }
 }
 impl std::fmt::Debug for DeleteDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29765,6 +31704,28 @@ pub struct DeleteAnalysisInput {
     /// You can't restore an analysis after it's deleted. </p>
     pub force_delete_without_recovery: bool,
 }
+impl DeleteAnalysisInput {
+    /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the analysis that you're deleting.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
+    /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
+    /// option in the same API call. The default value is 30.</p>
+    pub fn recovery_window_in_days(&self) -> std::option::Option<i64> {
+        self.recovery_window_in_days
+    }
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
+    /// immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option.
+    /// You can't restore an analysis after it's deleted. </p>
+    pub fn force_delete_without_recovery(&self) -> bool {
+        self.force_delete_without_recovery
+    }
+}
 impl std::fmt::Debug for DeleteAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAnalysisInput");
@@ -29789,6 +31750,17 @@ pub struct DeleteAccountCustomizationInput {
     /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl DeleteAccountCustomizationInput {
+    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
+    /// this Amazon Web Services Region.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAccountCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccountCustomizationInput");
@@ -29812,6 +31784,26 @@ pub struct CreateThemeAliasInput {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the theme.</p>
     pub theme_version_number: std::option::Option<i64>,
+}
+impl CreateThemeAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the theme alias.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The name that you want to give to the theme alias that you are creating. The
+    /// alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
+    /// are reserved by Amazon QuickSight. </p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The version number of the theme.</p>
+    pub fn theme_version_number(&self) -> std::option::Option<i64> {
+        self.theme_version_number
+    }
 }
 impl std::fmt::Debug for CreateThemeAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29854,6 +31846,49 @@ pub struct CreateThemeInput {
     /// resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateThemeInput {
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
+    /// each Amazon Web Services account.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>A display name for the theme.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
+    /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
+    /// <code>ListThemes</code> or choose <b>Themes</b> from
+    /// within a Amazon QuickSight analysis. </p>
+    pub fn base_theme_id(&self) -> std::option::Option<&str> {
+        self.base_theme_id.as_deref()
+    }
+    /// <p>A description of the first version of the theme that you're creating. Every time
+    /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
+    /// theme has a description of the version in the <code>VersionDescription</code>
+    /// field.</p>
+    pub fn version_description(&self) -> std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+    /// <p>The theme configuration, which contains the theme display properties.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ThemeConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>A valid grouping of resource permissions to apply to the new theme.
+    /// </p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the
+    /// resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateThemeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateThemeInput");
@@ -29883,6 +31918,26 @@ pub struct CreateTemplateAliasInput {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>The version number of the template.</p>
     pub template_version_number: std::option::Option<i64>,
+}
+impl CreateTemplateAliasInput {
+    /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The name that you want to give to the template alias that you're creating. Don't start the
+    /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
+    /// are reserved by Amazon QuickSight. </p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The version number of the template.</p>
+    pub fn template_version_number(&self) -> std::option::Option<i64> {
+        self.template_version_number
+    }
 }
 impl std::fmt::Debug for CreateTemplateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29927,6 +31982,49 @@ pub struct CreateTemplateInput {
     /// in the <code>VersionDescription</code> field.</p>
     pub version_description: std::option::Option<std::string::String>,
 }
+impl CreateTemplateInput {
+    /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
+    /// each Amazon Web Services account.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>A display name for the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of resource permissions to be set on the template. </p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The entity that you are using as a source when you create the template. In
+    /// <code>SourceEntity</code>, you specify the type of object you're using as source:
+    /// <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an
+    /// analysis. Both of these require an Amazon Resource Name (ARN). For
+    /// <code>SourceTemplate</code>, specify the ARN of the source template. For
+    /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
+    /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+    /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
+    /// in the original. The schema in each dataset must match its placeholder. </p>
+    pub fn source_entity(&self) -> std::option::Option<&crate::model::TemplateSourceEntity> {
+        self.source_entity.as_ref()
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A description of the current template version being created. This API operation creates the
+    /// first version of the template. Every time <code>UpdateTemplate</code> is called, a new
+    /// version is created. Each version of the template maintains a description of the version
+    /// in the <code>VersionDescription</code> field.</p>
+    pub fn version_description(&self) -> std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTemplateInput");
@@ -29955,6 +32053,25 @@ pub struct CreateNamespaceInput {
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateNamespaceInput {
+    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The name that you want to use to describe the new namespace.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users
+    /// with an identity type of <code>QUICKSIGHT</code>.</p>
+    pub fn identity_store(&self) -> std::option::Option<&crate::model::IdentityStore> {
+        self.identity_store.as_ref()
+    }
+    /// <p>The tags that you want to associate with the namespace that you're creating.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNamespaceInput");
@@ -29978,6 +32095,24 @@ pub struct CreateIngestionInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The type of ingestion that you want to create.</p>
     pub ingestion_type: std::option::Option<crate::model::IngestionType>,
+}
+impl CreateIngestionInput {
+    /// <p>The ID of the dataset used in the ingestion.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>An ID for the ingestion.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The type of ingestion that you want to create.</p>
+    pub fn ingestion_type(&self) -> std::option::Option<&crate::model::IngestionType> {
+        self.ingestion_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateIngestionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30027,6 +32162,54 @@ pub struct CreateIamPolicyAssignmentInput {
     /// <p>The namespace that contains the assignment.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl CreateIamPolicyAssignmentInput {
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAMpolicy to Amazon QuickSight users or
+    /// groups.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The status of the assignment. Possible values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
+    /// source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
+    /// data source.</p>
+    /// </li>
+    /// </ul>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
+    /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+    /// specified in this assignment.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    pub fn identities(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.identities.as_ref()
+    }
+    /// <p>The namespace that contains the assignment.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateIamPolicyAssignmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIamPolicyAssignmentInput");
@@ -30054,6 +32237,25 @@ pub struct CreateGroupMembershipInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl CreateGroupMembershipInput {
+    /// <p>The name of the user that you want to add to the group membership.</p>
+    pub fn member_name(&self) -> std::option::Option<&str> {
+        self.member_name.as_deref()
+    }
+    /// <p>The name of the group that you want to add the user to.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupMembershipInput");
@@ -30079,6 +32281,25 @@ pub struct CreateGroupInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl CreateGroupInput {
+    /// <p>A name for the group that you want to create.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>A description for the group that you want to create.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
+    /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupInput");
@@ -30102,6 +32323,24 @@ pub struct CreateFolderMembershipInput {
     pub member_id: std::option::Option<std::string::String>,
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
     pub member_type: std::option::Option<crate::model::MemberType>,
+}
+impl CreateFolderMembershipInput {
+    /// <p>The AWS Account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
+    pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
+        self.member_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFolderMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30135,6 +32374,39 @@ pub struct CreateFolderInput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>Tags for the folder.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateFolderInput {
+    /// <p>The AWS Account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The name of the folder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
+    pub fn folder_type(&self) -> std::option::Option<&crate::model::FolderType> {
+        self.folder_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
+    /// <p>
+    /// <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
+    pub fn parent_folder_arn(&self) -> std::option::Option<&str> {
+        self.parent_folder_arn.as_deref()
+    }
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
+    /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>Tags for the folder.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30178,6 +32450,56 @@ pub struct CreateDataSourceInput {
     pub ssl_properties: std::option::Option<crate::model::SslProperties>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDataSourceInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A display name for the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the data source. To return a
+    /// list of all data sources, use <code>ListDataSources</code>.</p>
+    /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
+    pub fn data_source_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceParameters> {
+        self.data_source_parameters.as_ref()
+    }
+    /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
+    /// credentials based on user name and password are supported.</p>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::DataSourceCredentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>A list of resource permissions on the data source.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
+    /// your underlying source.</p>
+    pub fn vpc_connection_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcConnectionProperties> {
+        self.vpc_connection_properties.as_ref()
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    pub fn ssl_properties(&self) -> std::option::Option<&crate::model::SslProperties> {
+        self.ssl_properties.as_ref()
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30238,6 +32560,86 @@ pub struct CreateDataSetInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub data_set_usage_configuration: std::option::Option<crate::model::DataSetUsageConfiguration>,
+}
+impl CreateDataSetInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The display name for the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Declares the physical tables that are available in the underlying data sources.</p>
+    pub fn physical_table_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::PhysicalTable>,
+    > {
+        self.physical_table_map.as_ref()
+    }
+    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    pub fn logical_table_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::LogicalTable>,
+    > {
+        self.logical_table_map.as_ref()
+    }
+    /// <p>Indicates whether you want to import the data into SPICE.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::DataSetImportMode> {
+        self.import_mode.as_ref()
+    }
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    pub fn column_groups(&self) -> std::option::Option<&[crate::model::ColumnGroup]> {
+        self.column_groups.as_deref()
+    }
+    /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    pub fn field_folders(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FieldFolder>,
+    > {
+        self.field_folders.as_ref()
+    }
+    /// <p>A list of resource permissions on the dataset.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The row-level security configuration for the data that you want to create.</p>
+    pub fn row_level_permission_data_set(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionDataSet> {
+        self.row_level_permission_data_set.as_ref()
+    }
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    pub fn row_level_permission_tag_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RowLevelPermissionTagConfiguration> {
+        self.row_level_permission_tag_configuration.as_ref()
+    }
+    /// <p>A set of one or more definitions of a <code>
+    /// <a>ColumnLevelPermissionRule</a>
+    /// </code>.</p>
+    pub fn column_level_permission_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::ColumnLevelPermissionRule]> {
+        self.column_level_permission_rules.as_deref()
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub fn data_set_usage_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSetUsageConfiguration> {
+        self.data_set_usage_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDataSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30340,6 +32742,93 @@ pub struct CreateDashboardInput {
     /// dashboard.</p>
     pub theme_arn: std::option::Option<std::string::String>,
 }
+impl CreateDashboardInput {
+    /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The display name of the dashboard.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The parameters for the creation of the dashboard, which you want to use to override
+    /// the default settings. A dashboard can have any type of parameters, and some parameters
+    /// might accept multiple values. </p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>A structure that contains the permissions of the dashboard. You can use this structure
+    /// for granting permissions by providing a list of IAMaction information for each
+    /// principal ARN. </p>
+    ///
+    /// <p>To specify no permissions, omit the permissions list.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The entity that you are using as a source when you create the dashboard. In
+    /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
+    /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
+    /// entity. If you need to create a dashboard from an analysis, first convert the analysis
+    /// to a template by using the <a>CreateTemplate</a> API operation. For
+    /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
+    /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
+    /// Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
+    /// list the replacement datasets for the placeholders listed in the original. The schema in
+    /// each dataset must match its placeholder. </p>
+    pub fn source_entity(&self) -> std::option::Option<&crate::model::DashboardSourceEntity> {
+        self.source_entity.as_ref()
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
+    /// dashboard.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A description for the first version of the dashboard being created.</p>
+    pub fn version_description(&self) -> std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+    /// <p>Options for publishing the dashboard when you create it:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+    /// set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the
+    /// published dashboard, which can be used for ad hoc (one-time) filtering. This
+    /// option is <code>ENABLED</code> by default. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This
+    /// status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual
+    /// option to export data to .CSV format isn't enabled when this is set to
+    /// <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VisibilityState</code> for <code>SheetControlsOption</code> - This
+    /// visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>.
+    /// This option is <code>COLLAPSED</code> by default. </p>
+    /// </li>
+    /// </ul>
+    pub fn dashboard_publish_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DashboardPublishOptions> {
+        self.dashboard_publish_options.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
+    /// you add a value for this field, it overrides the value that is used in the source
+    /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
+    /// dashboard.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDashboardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDashboardInput");
@@ -30389,6 +32878,51 @@ pub struct CreateAnalysisInput {
     /// analysis.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAnalysisInput {
+    /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
+    /// analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the
+    /// analysis in the Amazon QuickSight console. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The parameter names and override values that you want to use. An analysis can have
+    /// any parameter type, and some parameters might accept multiple values. </p>
+    pub fn parameters(&self) -> std::option::Option<&crate::model::Parameters> {
+        self.parameters.as_ref()
+    }
+    /// <p>A structure that describes the principals and the resource-level permissions on an
+    /// analysis. You can use the <code>Permissions</code> structure to grant permissions by
+    /// providing a list of Identity and Access Management (IAM) action information for each
+    /// principal listed by Amazon Resource Name (ARN). </p>
+    ///
+    /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>A source entity to use for the analysis that you're creating. This metadata structure
+    /// contains details that describe a source template and one or more datasets.</p>
+    pub fn source_entity(&self) -> std::option::Option<&crate::model::AnalysisSourceEntity> {
+        self.source_entity.as_ref()
+    }
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
+    /// in the Amazon QuickSight console, make sure that you have access to it.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
+    /// analysis.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAnalysisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnalysisInput");
@@ -30424,6 +32958,33 @@ pub struct CreateAccountCustomizationInput {
     /// <p>A list of the tags that you want to attach to this resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAccountCustomizationInput {
+    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
+    /// these to an Amazon Web Services account and a Amazon QuickSight namespace. </p>
+    /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
+    /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
+    /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
+    /// specifying <code>"AccountCustomization": { "DefaultTheme":
+    /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+    /// }</code>. </p>
+    pub fn account_customization(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountCustomization> {
+        self.account_customization.as_ref()
+    }
+    /// <p>A list of the tags that you want to attach to this resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAccountCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountCustomizationInput");
@@ -30445,6 +33006,20 @@ pub struct CancelIngestionInput {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>An ID for the ingestion.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
+}
+impl CancelIngestionInput {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the dataset used in the ingestion.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>An ID for the ingestion.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelIngestionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

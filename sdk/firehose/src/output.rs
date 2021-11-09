@@ -165,6 +165,26 @@ pub struct PutRecordBatchOutput {
     pub request_responses:
         std::option::Option<std::vec::Vec<crate::model::PutRecordBatchResponseEntry>>,
 }
+impl PutRecordBatchOutput {
+    /// <p>The number of records that might have failed processing. This number might be greater
+    /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
+    /// <code>FailedPutCount</code> to determine whether there are records that you need to
+    /// resend.</p>
+    pub fn failed_put_count(&self) -> std::option::Option<i32> {
+        self.failed_put_count
+    }
+    /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The results array. For each record, the index of the response element is the same as
+    /// the index used in the request array.</p>
+    pub fn request_responses(
+        &self,
+    ) -> std::option::Option<&[crate::model::PutRecordBatchResponseEntry]> {
+        self.request_responses.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRecordBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordBatchOutput");
@@ -262,6 +282,16 @@ pub struct PutRecordOutput {
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub encrypted: std::option::Option<bool>,
 }
+impl PutRecordOutput {
+    /// <p>The ID of the record.</p>
+    pub fn record_id(&self) -> std::option::Option<&str> {
+        self.record_id.as_deref()
+    }
+    /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+}
 impl std::fmt::Debug for PutRecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordOutput");
@@ -328,6 +358,20 @@ pub struct ListTagsForDeliveryStreamOutput {
     /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
     /// and call <code>ListTagsForDeliveryStream</code> again.</p>
     pub has_more_tags: std::option::Option<bool>,
+}
+impl ListTagsForDeliveryStreamOutput {
+    /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the
+    /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified
+    /// <code>Limit</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If this is <code>true</code> in the response, more tags are available. To list the
+    /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
+    /// and call <code>ListTagsForDeliveryStream</code> again.</p>
+    pub fn has_more_tags(&self) -> std::option::Option<bool> {
+        self.has_more_tags
+    }
 }
 impl std::fmt::Debug for ListTagsForDeliveryStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -409,6 +453,16 @@ pub struct ListDeliveryStreamsOutput {
     /// <p>Indicates whether there are more delivery streams available to list.</p>
     pub has_more_delivery_streams: std::option::Option<bool>,
 }
+impl ListDeliveryStreamsOutput {
+    /// <p>The names of the delivery streams.</p>
+    pub fn delivery_stream_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.delivery_stream_names.as_deref()
+    }
+    /// <p>Indicates whether there are more delivery streams available to list.</p>
+    pub fn has_more_delivery_streams(&self) -> std::option::Option<bool> {
+        self.has_more_delivery_streams
+    }
+}
 impl std::fmt::Debug for ListDeliveryStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliveryStreamsOutput");
@@ -478,6 +532,14 @@ impl ListDeliveryStreamsOutput {
 pub struct DescribeDeliveryStreamOutput {
     /// <p>Information about the delivery stream.</p>
     pub delivery_stream_description: std::option::Option<crate::model::DeliveryStreamDescription>,
+}
+impl DescribeDeliveryStreamOutput {
+    /// <p>Information about the delivery stream.</p>
+    pub fn delivery_stream_description(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliveryStreamDescription> {
+        self.delivery_stream_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDeliveryStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -566,6 +628,12 @@ impl DeleteDeliveryStreamOutput {
 pub struct CreateDeliveryStreamOutput {
     /// <p>The ARN of the delivery stream.</p>
     pub delivery_stream_arn: std::option::Option<std::string::String>,
+}
+impl CreateDeliveryStreamOutput {
+    /// <p>The ARN of the delivery stream.</p>
+    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+        self.delivery_stream_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeliveryStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

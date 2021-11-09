@@ -161,10 +161,7 @@ impl CreateConnectorProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_connector_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -451,10 +448,7 @@ impl CreateFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -620,10 +614,7 @@ impl DeleteConnectorProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_connector_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -783,10 +774,7 @@ impl DeleteFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -969,10 +957,7 @@ impl DescribeConnectorEntityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_connector_entity(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1172,10 +1157,7 @@ impl DescribeConnectorProfilesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_connector_profiles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1341,10 +1323,7 @@ impl DescribeConnectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_connectors(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_connectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1490,10 +1469,7 @@ impl DescribeFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_flow(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1667,7 +1643,7 @@ impl DescribeFlowExecutionRecordsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_flow_execution_records(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_flow_execution_records(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1860,10 +1836,7 @@ impl ListConnectorEntitiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_connector_entities(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2017,10 +1990,7 @@ impl ListFlowsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_flows(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_flows(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2309,10 +2279,7 @@ impl StartFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2454,10 +2421,7 @@ impl StopFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2643,10 +2607,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3009,10 +2970,7 @@ impl UpdateConnectorProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_connector_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3252,10 +3210,7 @@ impl UpdateFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3339,6 +3294,38 @@ pub struct UpdateFlowInput {
     /// </p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
 }
+impl UpdateFlowInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p> A description of the flow. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
+        self.trigger_config.as_ref()
+    }
+    /// <p> Contains information about the configuration of the source connector used in the flow.
+    /// </p>
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
+        self.source_flow_config.as_ref()
+    }
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
+    /// connector. </p>
+    pub fn destination_flow_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
+        self.destination_flow_config_list.as_deref()
+    }
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
+    /// </p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowInput");
@@ -3367,6 +3354,23 @@ pub struct UpdateConnectorProfileInput {
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
     pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
+impl UpdateConnectorProfileInput {
+    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
+    /// the Amazon Web Services account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> Indicates the connection mode and if it is public or private. </p>
+    pub fn connection_mode(&self) -> std::option::Option<&crate::model::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
+    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    pub fn connector_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileConfig> {
+        self.connector_profile_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectorProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectorProfileInput");
@@ -3385,6 +3389,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> The tag keys associated with the tag that you want to remove from your flow. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3405,6 +3419,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3422,6 +3449,13 @@ pub struct StopFlowInput {
     /// (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
 }
+impl StopFlowInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopFlowInput");
@@ -3438,6 +3472,13 @@ pub struct StartFlowInput {
     /// (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
 }
+impl StartFlowInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFlowInput");
@@ -3452,6 +3493,12 @@ impl std::fmt::Debug for StartFlowInput {
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the specified flow. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3469,6 +3516,16 @@ pub struct ListFlowsInput {
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFlowsInput {
+    /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> The pagination token for next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3496,6 +3553,26 @@ pub struct ListConnectorEntitiesInput {
     /// roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub entities_path: std::option::Option<std::string::String>,
 }
+impl ListConnectorEntitiesInput {
+    /// <p> The name of the connector profile. The name is unique for each
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
+    /// connector. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support
+    /// multiple levels or categories of entities. You can find out the list of roots for such
+    /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
+    /// connector supports entities at different roots, this initial request returns the list of
+    /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+    pub fn entities_path(&self) -> std::option::Option<&str> {
+        self.entities_path.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectorEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorEntitiesInput");
@@ -3519,6 +3596,22 @@ pub struct DescribeFlowExecutionRecordsInput {
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFlowExecutionRecordsInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The
+    /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFlowExecutionRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFlowExecutionRecordsInput");
@@ -3537,6 +3630,13 @@ pub struct DescribeFlowInput {
     /// (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
 }
+impl DescribeFlowInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFlowInput");
@@ -3553,6 +3653,16 @@ pub struct DescribeConnectorsInput {
     pub connector_types: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeConnectorsInput {
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_types(&self) -> std::option::Option<&[crate::model::ConnectorType]> {
+        self.connector_types.as_deref()
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3578,6 +3688,26 @@ pub struct DescribeConnectorProfilesInput {
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConnectorProfilesInput {
+    /// <p> The name of the connector profile. The name is unique for each
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn connector_profile_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.connector_profile_names.as_deref()
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The
+    /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectorProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorProfilesInput");
@@ -3601,6 +3731,21 @@ pub struct DescribeConnectorEntityInput {
     /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
 }
+impl DescribeConnectorEntityInput {
+    /// <p> The entity name for that connector. </p>
+    pub fn connector_entity_name(&self) -> std::option::Option<&str> {
+        self.connector_entity_name.as_deref()
+    }
+    /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> The name of the connector profile. The name is unique for each
+    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectorEntityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorEntityInput");
@@ -3622,6 +3767,18 @@ pub struct DeleteFlowInput {
     /// </p>
     pub force_delete: bool,
 }
+impl DeleteFlowInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
+    /// </p>
+    pub fn force_delete(&self) -> bool {
+        self.force_delete
+    }
+}
 impl std::fmt::Debug for DeleteFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFlowInput");
@@ -3641,6 +3798,18 @@ pub struct DeleteConnectorProfileInput {
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
     /// use in one or more flows. </p>
     pub force_delete: bool,
+}
+impl DeleteConnectorProfileInput {
+    /// <p> The name of the connector profile. The name is unique for each
+    /// <code>ConnectorProfile</code> in your account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
+    /// use in one or more flows. </p>
+    pub fn force_delete(&self) -> bool {
+        self.force_delete
+    }
 }
 impl std::fmt::Debug for DeleteConnectorProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3681,6 +3850,52 @@ pub struct CreateFlowInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateFlowInput {
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p> A description of the flow you want to create. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
+    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
+    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
+    /// </p>
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
+        self.kms_arn.as_deref()
+    }
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
+        self.trigger_config.as_ref()
+    }
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
+    /// connector. </p>
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
+        self.source_flow_config.as_ref()
+    }
+    /// <p> The configuration that controls how Amazon AppFlow places data in the destination
+    /// connector. </p>
+    pub fn destination_flow_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
+        self.destination_flow_config_list.as_deref()
+    }
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
+    /// </p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFlowInput");
@@ -3719,6 +3934,36 @@ pub struct CreateConnectorProfileInput {
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific configuration and credentials. </p>
     pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
+}
+impl CreateConnectorProfileInput {
+    /// <p> The name of the connector profile. The name is unique for each
+    /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
+    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
+    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
+    /// </p>
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
+        self.kms_arn.as_deref()
+    }
+    /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private
+    /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
+    /// public internet. </p>
+    pub fn connection_mode(&self) -> std::option::Option<&crate::model::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
+    /// <p> Defines the connector-specific configuration and credentials. </p>
+    pub fn connector_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorProfileConfig> {
+        self.connector_profile_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectorProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

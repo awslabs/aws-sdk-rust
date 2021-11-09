@@ -125,10 +125,7 @@ impl ActivatePipelineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_activate_pipeline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_activate_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -296,10 +293,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -511,10 +505,8 @@ impl CreatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -682,10 +674,7 @@ impl DeactivatePipelineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deactivate_pipeline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deactivate_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -834,10 +823,8 @@ impl DeletePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1036,10 +1023,7 @@ impl DescribeObjectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_objects(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_objects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1200,10 +1184,7 @@ impl DescribePipelinesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pipelines(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_pipelines(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1377,10 +1358,7 @@ impl EvaluateExpressionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_evaluate_expression(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_evaluate_expression(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1548,10 +1526,7 @@ impl GetPipelineDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_pipeline_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1704,10 +1679,7 @@ impl ListPipelinesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1887,10 +1859,7 @@ impl PollForTaskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_poll_for_task(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_poll_for_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2111,10 +2080,7 @@ impl PutPipelineDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_pipeline_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2321,10 +2287,7 @@ impl QueryObjectsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_query_objects(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_query_objects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2494,10 +2457,7 @@ impl RemoveTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2668,10 +2628,7 @@ impl ReportTaskProgressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_report_task_progress(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_report_task_progress(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2859,10 +2816,7 @@ impl ReportTaskRunnerHeartbeatInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_report_task_runner_heartbeat(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3044,10 +2998,7 @@ impl SetStatusInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_set_status(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_set_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3257,10 +3208,8 @@ impl SetTaskStatusInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_set_task_status(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_set_task_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3482,10 +3431,7 @@ impl ValidatePipelineDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_validate_pipeline_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3560,6 +3506,24 @@ pub struct ValidatePipelineDefinitionInput {
     /// <p>The parameter values used with the pipeline.</p>
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
+impl ValidatePipelineDefinitionInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
+    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
+        self.pipeline_objects.as_deref()
+    }
+    /// <p>The parameter objects used with the pipeline.</p>
+    pub fn parameter_objects(&self) -> std::option::Option<&[crate::model::ParameterObject]> {
+        self.parameter_objects.as_deref()
+    }
+    /// <p>The parameter values used with the pipeline.</p>
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
+        self.parameter_values.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidatePipelineDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidatePipelineDefinitionInput");
@@ -3589,6 +3553,31 @@ pub struct SetTaskStatusInput {
     /// It is used to display error information to the user. The web service does not parse this value.</p>
     pub error_stack_trace: std::option::Option<std::string::String>,
 }
+impl SetTaskStatusInput {
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    pub fn task_status(&self) -> std::option::Option<&crate::model::TaskStatus> {
+        self.task_status.as_ref()
+    }
+    /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
+    /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+    pub fn error_id(&self) -> std::option::Option<&str> {
+        self.error_id.as_deref()
+    }
+    /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
+    /// It is used to display error information to the user. The web service does not parse this value.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
+    /// It is used to display error information to the user. The web service does not parse this value.</p>
+    pub fn error_stack_trace(&self) -> std::option::Option<&str> {
+        self.error_stack_trace.as_deref()
+    }
+}
 impl std::fmt::Debug for SetTaskStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTaskStatusInput");
@@ -3612,6 +3601,21 @@ pub struct SetStatusInput {
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
     /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl SetStatusInput {
+    /// <p>The ID of the pipeline that contains the objects.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    pub fn object_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_ids.as_deref()
+    }
+    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
+    /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for SetStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3638,6 +3642,24 @@ pub struct ReportTaskRunnerHeartbeatInput {
     /// <p>The public DNS name of the task runner.</p>
     pub hostname: std::option::Option<std::string::String>,
 }
+impl ReportTaskRunnerHeartbeatInput {
+    /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
+    /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
+    /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+    pub fn taskrunner_id(&self) -> std::option::Option<&str> {
+        self.taskrunner_id.as_deref()
+    }
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
+    /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
+    /// must be an exact, case-sensitive, match.</p>
+    pub fn worker_group(&self) -> std::option::Option<&str> {
+        self.worker_group.as_deref()
+    }
+    /// <p>The public DNS name of the task runner.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+}
 impl std::fmt::Debug for ReportTaskRunnerHeartbeatInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportTaskRunnerHeartbeatInput");
@@ -3657,6 +3679,16 @@ pub struct ReportTaskProgressInput {
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
+impl ReportTaskProgressInput {
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.fields.as_deref()
+    }
+}
 impl std::fmt::Debug for ReportTaskProgressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportTaskProgressInput");
@@ -3674,6 +3706,16 @@ pub struct RemoveTagsInput {
     pub pipeline_id: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RemoveTagsInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The keys of the tags to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3704,6 +3746,33 @@ pub struct QueryObjectsInput {
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub limit: std::option::Option<i32>,
 }
+impl QueryObjectsInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
+    /// The conditions in the query are limited to top-level String fields in the object.
+    /// These filters can be applied to components, instances, and attempts.</p>
+    pub fn query(&self) -> std::option::Option<&crate::model::Query> {
+        self.query.as_ref()
+    }
+    /// <p>Indicates whether the query applies to components or instances. The possible values are:  
+    /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    pub fn sphere(&self) -> std::option::Option<&str> {
+        self.sphere.as_deref()
+    }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
+    /// As long as there are more results, continue to call <code>QueryObjects</code> with
+    /// the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for QueryObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryObjectsInput");
@@ -3729,6 +3798,24 @@ pub struct PutPipelineDefinitionInput {
     /// <p>The parameter values used with the pipeline.</p>
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
 }
+impl PutPipelineDefinitionInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
+    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
+        self.pipeline_objects.as_deref()
+    }
+    /// <p>The parameter objects used with the pipeline.</p>
+    pub fn parameter_objects(&self) -> std::option::Option<&[crate::model::ParameterObject]> {
+        self.parameter_objects.as_deref()
+    }
+    /// <p>The parameter values used with the pipeline.</p>
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
+        self.parameter_values.as_deref()
+    }
+}
 impl std::fmt::Debug for PutPipelineDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPipelineDefinitionInput");
@@ -3753,6 +3840,22 @@ pub struct PollForTaskInput {
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
     pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
 }
+impl PollForTaskInput {
+    /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
+    /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
+    /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+    pub fn worker_group(&self) -> std::option::Option<&str> {
+        self.worker_group.as_deref()
+    }
+    /// <p>The public DNS name of the calling task runner.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
+    pub fn instance_identity(&self) -> std::option::Option<&crate::model::InstanceIdentity> {
+        self.instance_identity.as_ref()
+    }
+}
 impl std::fmt::Debug for PollForTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PollForTaskInput");
@@ -3772,6 +3875,14 @@ pub struct ListPipelinesInput {
     /// the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListPipelinesInput {
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
+    /// As long as there are more results, continue to call <code>ListPipelines</code> with
+    /// the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelinesInput");
@@ -3790,6 +3901,18 @@ pub struct GetPipelineDefinitionInput {
     /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
     /// that was activated.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl GetPipelineDefinitionInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
+    /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
+    /// that was activated.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPipelineDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3811,6 +3934,20 @@ pub struct EvaluateExpressionInput {
     /// <p>The expression to evaluate.</p>
     pub expression: std::option::Option<std::string::String>,
 }
+impl EvaluateExpressionInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The ID of the object.</p>
+    pub fn object_id(&self) -> std::option::Option<&str> {
+        self.object_id.as_deref()
+    }
+    /// <p>The expression to evaluate.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+}
 impl std::fmt::Debug for EvaluateExpressionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluateExpressionInput");
@@ -3828,6 +3965,13 @@ pub struct DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
     /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
     pub pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribePipelinesInput {
+    /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
+    /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+    pub fn pipeline_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.pipeline_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3852,6 +3996,26 @@ pub struct DescribeObjectsInput {
     /// the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeObjectsInput {
+    /// <p>The ID of the pipeline that contains the object definitions.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
+    pub fn object_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_ids.as_deref()
+    }
+    /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
+    pub fn evaluate_expressions(&self) -> bool {
+        self.evaluate_expressions
+    }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
+    /// As long as there are more results, continue to call <code>DescribeObjects</code> with
+    /// the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeObjectsInput");
@@ -3869,6 +4033,12 @@ impl std::fmt::Debug for DescribeObjectsInput {
 pub struct DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
     pub pipeline_id: std::option::Option<std::string::String>,
+}
+impl DeletePipelineInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3889,6 +4059,19 @@ pub struct DeactivatePipelineInput {
     /// If this value is false, the pipeline is deactivated after all
     /// running objects finish.</p>
     pub cancel_active: std::option::Option<bool>,
+}
+impl DeactivatePipelineInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>Indicates whether to cancel any running objects. The default is true,
+    /// which sets the state of any running objects to <code>CANCELED</code>.
+    /// If this value is false, the pipeline is deactivated after all
+    /// running objects finish.</p>
+    pub fn cancel_active(&self) -> std::option::Option<bool> {
+        self.cancel_active
+    }
 }
 impl std::fmt::Debug for DeactivatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3922,6 +4105,34 @@ pub struct CreatePipelineInput {
     /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePipelineInput {
+    /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
+    /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
+    /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
+    /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
+    /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
+    /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
+    /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
+    /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
+    /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+    pub fn unique_id(&self) -> std::option::Option<&str> {
+        self.unique_id.as_deref()
+    }
+    /// <p>The description for the pipeline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
+    /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
+    /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePipelineInput");
@@ -3942,6 +4153,16 @@ pub struct AddTagsInput {
     /// <p>The tags to add, as key/value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl AddTagsInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>The tags to add, as key/value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
@@ -3961,6 +4182,20 @@ pub struct ActivatePipelineInput {
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ActivatePipelineInput {
+    /// <p>The ID of the pipeline.</p>
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+        self.pipeline_id.as_deref()
+    }
+    /// <p>A list of parameter values to pass to the pipeline at activation.</p>
+    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
+        self.parameter_values.as_deref()
+    }
+    /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ActivatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -13,6 +13,18 @@ pub struct GetSessionTokenOutput {
     /// </note>
     pub credentials: std::option::Option<crate::model::Credentials>,
 }
+impl GetSessionTokenOutput {
+    /// <p>The temporary security credentials, which include an access key ID, a secret access
+    /// key, and a security (or session) token.</p>
+    ///
+    /// <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We
+    /// strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSessionTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionTokenOutput");
@@ -90,6 +102,30 @@ pub struct GetFederationTokenOutput {
     /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
     /// which means the policies and tags exceeded the allowed space.</p>
     pub packed_policy_size: std::option::Option<i32>,
+}
+impl GetFederationTokenOutput {
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+    /// and a security (or session) token.</p>
+    /// <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We
+    /// strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>Identifiers for the federated user associated with the credentials (such as
+    /// <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+    /// <code>123456789012:Bob</code>). You can use the federated user's ARN in your
+    /// resource-based policies, such as an Amazon S3 bucket policy. </p>
+    pub fn federated_user(&self) -> std::option::Option<&crate::model::FederatedUser> {
+        self.federated_user.as_ref()
+    }
+    /// <p>A percentage value that indicates the packed size of the session policies and session
+    /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
+    /// which means the policies and tags exceeded the allowed space.</p>
+    pub fn packed_policy_size(&self) -> std::option::Option<i32> {
+        self.packed_policy_size
+    }
 }
 impl std::fmt::Debug for GetFederationTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -200,6 +236,24 @@ pub struct GetCallerIdentityOutput {
     /// <p>The Amazon Web Services ARN associated with the calling entity.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetCallerIdentityOutput {
+    /// <p>The unique identifier of the calling entity. The exact value depends on the type of
+    /// entity that is making the call. The values returned are those listed in the <b>aws:userid</b> column in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+    /// table</a> found on the <b>Policy Variables</b> reference
+    /// page in the <i>IAM User Guide</i>.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID number of the account that owns or contains the calling
+    /// entity.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+    /// <p>The Amazon Web Services ARN associated with the calling entity.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCallerIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCallerIdentityOutput");
@@ -282,6 +336,12 @@ pub struct GetAccessKeyInfoOutput {
     /// <p>The number used to identify the Amazon Web Services account.</p>
     pub account: std::option::Option<std::string::String>,
 }
+impl GetAccessKeyInfoOutput {
+    /// <p>The number used to identify the Amazon Web Services account.</p>
+    pub fn account(&self) -> std::option::Option<&str> {
+        self.account.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessKeyInfoOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessKeyInfoOutput");
@@ -330,6 +390,12 @@ impl GetAccessKeyInfoOutput {
 pub struct DecodeAuthorizationMessageOutput {
     /// <p>An XML document that contains the decoded message.</p>
     pub decoded_message: std::option::Option<std::string::String>,
+}
+impl DecodeAuthorizationMessageOutput {
+    /// <p>An XML document that contains the decoded message.</p>
+    pub fn decoded_message(&self) -> std::option::Option<&str> {
+        self.decoded_message.as_deref()
+    }
 }
 impl std::fmt::Debug for DecodeAuthorizationMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -431,6 +497,73 @@ pub struct AssumeRoleWithWebIdentityOutput {
     /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
     /// also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: std::option::Option<std::string::String>,
+}
+impl AssumeRoleWithWebIdentityOutput {
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+    /// and a security token.</p>
+    /// <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We
+    /// strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>The unique user identifier that is returned by the identity provider. This identifier is
+    /// associated with the <code>WebIdentityToken</code> that was submitted with the
+    /// <code>AssumeRoleWithWebIdentity</code> call. The identifier is typically unique to the
+    /// user and the application that acquired the <code>WebIdentityToken</code> (pairwise
+    /// identifier). For OpenID Connect ID tokens, this field contains the value returned by the
+    /// identity provider as the token's <code>sub</code> (Subject) claim. </p>
+    pub fn subject_from_web_identity_token(&self) -> std::option::Option<&str> {
+        self.subject_from_web_identity_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you
+    /// can use to refer to the resulting temporary security credentials. For example, you can
+    /// reference these credentials as a principal in a resource-based policy by using the ARN or
+    /// assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified
+    /// when you called <code>AssumeRole</code>. </p>
+    pub fn assumed_role_user(&self) -> std::option::Option<&crate::model::AssumedRoleUser> {
+        self.assumed_role_user.as_ref()
+    }
+    /// <p>A percentage value that indicates the packed size of the session policies and session
+    /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
+    /// which means the policies and tags exceeded the allowed space.</p>
+    pub fn packed_policy_size(&self) -> std::option::Option<i32> {
+        self.packed_policy_size
+    }
+    /// <p> The issuing authority of the web identity token presented. For OpenID Connect ID
+    /// tokens, this contains the value of the <code>iss</code> field. For OAuth 2.0 access tokens,
+    /// this contains the value of the <code>ProviderId</code> parameter that was passed in the
+    /// <code>AssumeRoleWithWebIdentity</code> request.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The intended audience (also known as client ID) of the web identity token. This is
+    /// traditionally the client identifier issued to the application that requested the web
+    /// identity token.</p>
+    pub fn audience(&self) -> std::option::Option<&str> {
+        self.audience.as_deref()
+    }
+    /// <p>The value of the source identity that is returned in the JSON web token (JWT) from the
+    /// identity provider.</p>
+    /// <p>You can require users to set a source identity value when they assume a role. You do
+    /// this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy.
+    /// That way, actions that are taken with the role are associated with that user. After the
+    /// source identity is set, the value cannot be changed. It is present in the request for all
+    /// actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+    /// role</a> sessions. You can configure your identity provider to use an attribute
+    /// associated with your users, like user name or email, as the source identity when calling
+    /// <code>AssumeRoleWithWebIdentity</code>. You do this by adding a claim to the JSON web
+    /// token. To learn more about OIDC tokens and claims, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html">Using Tokens with User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+    /// For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control
+    /// actions taken with assumed roles</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <p>The regex used to validate this parameter is a string of characters
+    /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+    /// also include underscores or any of the following characters: =,.@-</p>
+    pub fn source_identity(&self) -> std::option::Option<&str> {
+        self.source_identity.as_deref()
+    }
 }
 impl std::fmt::Debug for AssumeRoleWithWebIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -714,6 +847,92 @@ pub struct AssumeRoleWithSamlOutput {
     /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
     /// also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: std::option::Option<std::string::String>,
+}
+impl AssumeRoleWithSamlOutput {
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+    /// and a security (or session) token.</p>
+    /// <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We
+    /// strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>The identifiers for the temporary security credentials that the operation
+    /// returns.</p>
+    pub fn assumed_role_user(&self) -> std::option::Option<&crate::model::AssumedRoleUser> {
+        self.assumed_role_user.as_ref()
+    }
+    /// <p>A percentage value that indicates the packed size of the session policies and session
+    /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
+    /// which means the policies and tags exceeded the allowed space.</p>
+    pub fn packed_policy_size(&self) -> std::option::Option<i32> {
+        self.packed_policy_size
+    }
+    /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the
+    /// SAML assertion.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p> The format of the name ID, as defined by the <code>Format</code> attribute in the
+    /// <code>NameID</code> element of the SAML assertion. Typical examples of the format are
+    /// <code>transient</code> or <code>persistent</code>. </p>
+    /// <p> If the format includes the prefix
+    /// <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For
+    /// example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as
+    /// <code>transient</code>. If the format includes any other prefix, the format is returned
+    /// with no modifications.</p>
+    pub fn subject_type(&self) -> std::option::Option<&str> {
+        self.subject_type.as_deref()
+    }
+    /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+    pub fn issuer(&self) -> std::option::Option<&str> {
+        self.issuer.as_deref()
+    }
+    /// <p> The value of the <code>Recipient</code> attribute of the
+    /// <code>SubjectConfirmationData</code> element of the SAML assertion. </p>
+    pub fn audience(&self) -> std::option::Option<&str> {
+        self.audience.as_deref()
+    }
+    /// <p>A hash value based on the concatenation of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Issuer</code> response value.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon Web Services account ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to
+    /// uniquely identify a federated user.</p>
+    /// <p>The following pseudocode shows how the hash value is calculated:</p>
+    /// <p>
+    /// <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
+    /// </p>
+    pub fn name_qualifier(&self) -> std::option::Option<&str> {
+        self.name_qualifier.as_deref()
+    }
+    /// <p>The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
+    /// <p>You can require users to set a source identity value when they assume a role. You do
+    /// this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy.
+    /// That way, actions that are taken with the role are associated with that user. After the
+    /// source identity is set, the value cannot be changed. It is present in the request for all
+    /// actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+    /// role</a> sessions. You can configure your SAML identity provider to use an attribute
+    /// associated with your users, like user name or email, as the source identity when calling
+    /// <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML
+    /// assertion. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control
+    /// actions taken with assumed roles</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <p>The regex used to validate this parameter is a string of characters
+    /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+    /// also include underscores or any of the following characters: =,.@-</p>
+    pub fn source_identity(&self) -> std::option::Option<&str> {
+        self.source_identity.as_deref()
+    }
 }
 impl std::fmt::Debug for AssumeRoleWithSamlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1004,6 +1223,47 @@ pub struct AssumeRoleOutput {
     /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
     /// any of the following characters: =,.@-</p>
     pub source_identity: std::option::Option<std::string::String>,
+}
+impl AssumeRoleOutput {
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key,
+    /// and a security (or session) token.</p>
+    /// <note>
+    /// <p>The size of the security token that STS API operations return is not fixed. We
+    /// strongly recommend that you make no assumptions about the maximum size.</p>
+    /// </note>
+    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+        self.credentials.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you
+    /// can use to refer to the resulting temporary security credentials. For example, you can
+    /// reference these credentials as a principal in a resource-based policy by using the ARN or
+    /// assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified
+    /// when you called <code>AssumeRole</code>. </p>
+    pub fn assumed_role_user(&self) -> std::option::Option<&crate::model::AssumedRoleUser> {
+        self.assumed_role_user.as_ref()
+    }
+    /// <p>A percentage value that indicates the packed size of the session policies and session
+    /// tags combined passed in the request. The request fails if the packed size is greater than 100 percent,
+    /// which means the policies and tags exceeded the allowed space.</p>
+    pub fn packed_policy_size(&self) -> std::option::Option<i32> {
+        self.packed_policy_size
+    }
+    /// <p>The source identity specified by the principal that is calling the
+    /// <code>AssumeRole</code> operation.</p>
+    /// <p>You can require users to specify a source identity when they assume a role. You do this
+    /// by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+    /// use source identity information in CloudTrail logs to determine who took actions with a role.
+    /// You can use the <code>aws:SourceIdentity</code> condition key to further control access to
+    /// Amazon Web Services resources based on the value of source identity. For more information about using
+    /// source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control
+    /// actions taken with assumed roles</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
+    /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
+    /// any of the following characters: =,.@-</p>
+    pub fn source_identity(&self) -> std::option::Option<&str> {
+        self.source_identity.as_deref()
+    }
 }
 impl std::fmt::Debug for AssumeRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

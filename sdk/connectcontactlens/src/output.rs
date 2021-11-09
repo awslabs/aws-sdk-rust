@@ -19,6 +19,27 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRealtimeContactAnalysisSegmentsOutput {
+    /// <p>An analyzed transcript or category.</p>
+    pub fn segments(&self) -> std::option::Option<&[crate::model::RealtimeContactAnalysisSegment]> {
+        self.segments.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
+    /// <ul>
+    /// <li>
+    /// <p>There are more segments so another call is required to get them.</p>
+    /// </li>
+    /// <li>
+    /// <p>There are no more segments at this time, but more may be available later (real-time
+    /// analysis is in progress) so the client should call the operation again to get new
+    /// segments.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRealtimeContactAnalysisSegmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRealtimeContactAnalysisSegmentsOutput");

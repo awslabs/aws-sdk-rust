@@ -68,6 +68,16 @@ pub struct SearchTablesByLfTagsOutput {
     /// <p>A list of tables that meet the tag conditions.</p>
     pub table_list: std::option::Option<std::vec::Vec<crate::model::TaggedTable>>,
 }
+impl SearchTablesByLfTagsOutput {
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of tables that meet the tag conditions.</p>
+    pub fn table_list(&self) -> std::option::Option<&[crate::model::TaggedTable]> {
+        self.table_list.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchTablesByLfTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchTablesByLfTagsOutput");
@@ -139,6 +149,16 @@ pub struct SearchDatabasesByLfTagsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of databases that meet the tag conditions.</p>
     pub database_list: std::option::Option<std::vec::Vec<crate::model::TaggedDatabase>>,
+}
+impl SearchDatabasesByLfTagsOutput {
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of databases that meet the tag conditions.</p>
+    pub fn database_list(&self) -> std::option::Option<&[crate::model::TaggedDatabase]> {
+        self.database_list.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchDatabasesByLfTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -239,6 +259,12 @@ impl RevokePermissionsOutput {
 pub struct RemoveLfTagsFromResourceOutput {
     /// <p>A list of failures to untag a resource.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::LfTagError>>,
+}
+impl RemoveLfTagsFromResourceOutput {
+    /// <p>A list of failures to untag a resource.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::LfTagError]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveLfTagsFromResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -359,6 +385,16 @@ pub struct ListResourcesOutput {
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListResourcesOutput {
+    /// <p>A summary of the data lake resources.</p>
+    pub fn resource_info_list(&self) -> std::option::Option<&[crate::model::ResourceInfo]> {
+        self.resource_info_list.as_deref()
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourcesOutput");
@@ -432,6 +468,18 @@ pub struct ListPermissionsOutput {
         std::option::Option<std::vec::Vec<crate::model::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionsOutput {
+    /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
+    pub fn principal_resource_permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrincipalResourcePermissions]> {
+        self.principal_resource_permissions.as_deref()
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -511,6 +559,16 @@ pub struct ListLfTagsOutput {
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLfTagsOutput {
+    /// <p>A list of tags that the requested has permission to view.</p>
+    pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags.as_deref()
+    }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLfTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -615,6 +673,20 @@ pub struct GetResourceLfTagsOutput {
     pub lf_tags_on_table: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     /// <p>A list of tags applied to a column resource.</p>
     pub lf_tags_on_columns: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
+}
+impl GetResourceLfTagsOutput {
+    /// <p>A list of tags applied to a database resource.</p>
+    pub fn lf_tag_on_database(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tag_on_database.as_deref()
+    }
+    /// <p>A list of tags applied to a table resource.</p>
+    pub fn lf_tags_on_table(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
+        self.lf_tags_on_table.as_deref()
+    }
+    /// <p>A list of tags applied to a column resource.</p>
+    pub fn lf_tags_on_columns(&self) -> std::option::Option<&[crate::model::ColumnLfTag]> {
+        self.lf_tags_on_columns.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceLfTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -722,6 +794,20 @@ pub struct GetLfTagOutput {
     /// <p>A list of possible values an attribute can take.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetLfTagOutput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the tag.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLfTagOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLfTagOutput");
@@ -807,6 +893,18 @@ pub struct GetEffectivePermissionsForPathOutput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetEffectivePermissionsForPathOutput {
+    /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
+    pub fn permissions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrincipalResourcePermissions]> {
+        self.permissions.as_deref()
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEffectivePermissionsForPathOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEffectivePermissionsForPathOutput");
@@ -881,6 +979,12 @@ pub struct GetDataLakeSettingsOutput {
     /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
     pub data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
 }
+impl GetDataLakeSettingsOutput {
+    /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+    pub fn data_lake_settings(&self) -> std::option::Option<&crate::model::DataLakeSettings> {
+        self.data_lake_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDataLakeSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataLakeSettingsOutput");
@@ -931,6 +1035,12 @@ impl GetDataLakeSettingsOutput {
 pub struct DescribeResourceOutput {
     /// <p>A structure containing information about an AWS Lake Formation resource.</p>
     pub resource_info: std::option::Option<crate::model::ResourceInfo>,
+}
+impl DescribeResourceOutput {
+    /// <p>A structure containing information about an AWS Lake Formation resource.</p>
+    pub fn resource_info(&self) -> std::option::Option<&crate::model::ResourceInfo> {
+        self.resource_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1073,6 +1183,12 @@ pub struct BatchRevokePermissionsOutput {
     /// <p>A list of failures to revoke permissions to the resources.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
 }
+impl BatchRevokePermissionsOutput {
+    /// <p>A list of failures to revoke permissions to the resources.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::BatchPermissionsFailureEntry]> {
+        self.failures.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchRevokePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchRevokePermissionsOutput");
@@ -1134,6 +1250,12 @@ pub struct BatchGrantPermissionsOutput {
     /// <p>A list of failures to grant permissions to the resources.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
 }
+impl BatchGrantPermissionsOutput {
+    /// <p>A list of failures to grant permissions to the resources.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::BatchPermissionsFailureEntry]> {
+        self.failures.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGrantPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGrantPermissionsOutput");
@@ -1194,6 +1316,12 @@ impl BatchGrantPermissionsOutput {
 pub struct AddLfTagsToResourceOutput {
     /// <p>A list of failures to tag the resource.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::LfTagError>>,
+}
+impl AddLfTagsToResourceOutput {
+    /// <p>A list of failures to tag the resource.</p>
+    pub fn failures(&self) -> std::option::Option<&[crate::model::LfTagError]> {
+        self.failures.as_deref()
+    }
 }
 impl std::fmt::Debug for AddLfTagsToResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

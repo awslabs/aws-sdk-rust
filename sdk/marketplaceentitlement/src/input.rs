@@ -159,10 +159,7 @@ impl GetEntitlementsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_entitlements(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_entitlements(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -248,6 +245,37 @@ pub struct GetEntitlementsInput {
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
     /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetEntitlementsInput {
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
+    /// will be provided by AWS Marketplace when the product listing is created.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>Filter is used to return entitlements for a specific customer or for a specific
+    /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
+    /// <i>unioned</i> for each value in the value list, and then
+    /// <i>intersected</i> for each filter key.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::GetEntitlementFilterName,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
+        self.filter.as_ref()
+    }
+    /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
+    /// GetEntitlementsResult.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
+    /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetEntitlementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

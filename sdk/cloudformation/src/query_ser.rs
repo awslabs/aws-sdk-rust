@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_logging_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LoggingConfig,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogRoleArn");
     if let Some(var_2) = &input.log_role_arn {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_logging_config(
     if let Some(var_4) = &input.log_group_name {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_type_configuration_identifier(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TypeConfigurationIdentifier,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("TypeArn");
     if let Some(var_6) = &input.type_arn {
@@ -46,13 +47,14 @@ pub fn serialize_structure_crate_model_type_configuration_identifier(
     if let Some(var_14) = &input.type_name {
         scope_13.string(var_14);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Parameter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("ParameterKey");
     if let Some(var_16) = &input.parameter_key {
@@ -73,13 +75,14 @@ pub fn serialize_structure_crate_model_parameter(
     if let Some(var_22) = &input.resolved_value {
         scope_21.string(var_22);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_rollback_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RollbackConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("RollbackTriggers");
     if let Some(var_24) = &input.rollback_triggers {
@@ -87,7 +90,7 @@ pub fn serialize_structure_crate_model_rollback_configuration(
         for item_25 in var_24 {
             #[allow(unused_mut)]
             let mut entry_27 = list_26.entry();
-            crate::query_ser::serialize_structure_crate_model_rollback_trigger(entry_27, item_25);
+            crate::query_ser::serialize_structure_crate_model_rollback_trigger(entry_27, item_25)?;
         }
         list_26.finish();
     }
@@ -99,13 +102,14 @@ pub fn serialize_structure_crate_model_rollback_configuration(
             aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_30 = writer.prefix("Key");
     if let Some(var_31) = &input.key {
@@ -116,13 +120,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_33) = &input.value {
         scope_32.string(var_33);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_resource_to_import(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ResourceToImport,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("ResourceType");
     if let Some(var_35) = &input.resource_type {
@@ -146,13 +151,14 @@ pub fn serialize_structure_crate_model_resource_to_import(
         }
         map_40.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_deployment_targets(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DeploymentTargets,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_44 = writer.prefix("Accounts");
     if let Some(var_45) = &input.accounts {
@@ -180,13 +186,14 @@ pub fn serialize_structure_crate_model_deployment_targets(
         }
         list_54.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_stack_set_operation_preferences(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StackSetOperationPreferences,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_56 = writer.prefix("RegionConcurrencyType");
     if let Some(var_57) = &input.region_concurrency_type {
@@ -235,13 +242,14 @@ pub fn serialize_structure_crate_model_stack_set_operation_preferences(
             aws_smithy_types::Number::NegInt((*var_70).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_auto_deployment(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AutoDeployment,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_71 = writer.prefix("Enabled");
     if let Some(var_72) = &input.enabled {
@@ -252,13 +260,14 @@ pub fn serialize_structure_crate_model_auto_deployment(
     if let Some(var_74) = &input.retain_stacks_on_account_removal {
         scope_73.boolean(*var_74);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_stack_instance_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StackInstanceFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_75 = writer.prefix("Name");
     if let Some(var_76) = &input.name {
@@ -269,13 +278,14 @@ pub fn serialize_structure_crate_model_stack_instance_filter(
     if let Some(var_78) = &input.values {
         scope_77.string(var_78);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_type_filters(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TypeFilters,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_79 = writer.prefix("Category");
     if let Some(var_80) = &input.category {
@@ -291,13 +301,14 @@ pub fn serialize_structure_crate_model_type_filters(
     if let Some(var_84) = &input.type_name_prefix {
         scope_83.string(var_84);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_rollback_trigger(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RollbackTrigger,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_85 = writer.prefix("Arn");
     if let Some(var_86) = &input.arn {
@@ -308,4 +319,5 @@ pub fn serialize_structure_crate_model_rollback_trigger(
     if let Some(var_88) = &input.r#type {
         scope_87.string(var_88);
     }
+    Ok(())
 }

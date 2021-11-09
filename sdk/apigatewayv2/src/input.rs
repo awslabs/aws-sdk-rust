@@ -262,10 +262,7 @@ impl CreateApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -467,10 +464,7 @@ impl CreateApiMappingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_api_mapping(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_api_mapping(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -791,10 +785,7 @@ impl CreateAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -979,10 +970,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1200,10 +1188,7 @@ impl CreateDomainNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_domain_name(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_domain_name(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1678,10 +1663,7 @@ impl CreateIntegrationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_integration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1990,10 +1972,7 @@ impl CreateIntegrationResponseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_integration_response(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2201,10 +2180,7 @@ impl CreateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2557,10 +2533,7 @@ impl CreateRouteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_route(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2841,10 +2814,7 @@ impl CreateRouteResponseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_route_response(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_route_response(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3187,10 +3157,7 @@ impl CreateStageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3405,10 +3372,8 @@ impl CreateVpcLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_vpc_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_vpc_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11287,10 +11252,7 @@ impl ImportApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_import_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_import_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11496,10 +11458,7 @@ impl ReimportApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reimport_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reimport_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11867,10 +11826,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12354,10 +12310,7 @@ impl UpdateApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12590,10 +12543,7 @@ impl UpdateApiMappingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_api_mapping(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_api_mapping(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12949,10 +12899,7 @@ impl UpdateAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13160,10 +13107,7 @@ impl UpdateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13372,10 +13316,7 @@ impl UpdateDomainNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_name(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_name(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13885,10 +13826,7 @@ impl UpdateIntegrationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_integration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14235,10 +14173,7 @@ impl UpdateIntegrationResponseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_integration_response(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14478,10 +14413,7 @@ impl UpdateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14866,10 +14798,7 @@ impl UpdateRouteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_route(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_route(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15181,10 +15110,7 @@ impl UpdateRouteResponseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_route_response(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_route_response(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15518,10 +15444,7 @@ impl UpdateStageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15693,10 +15616,8 @@ impl UpdateVpcLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_vpc_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_vpc_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15767,6 +15688,16 @@ pub struct UpdateVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
+impl UpdateVpcLinkInput {
+    /// <p>The name of the VPC link.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the VPC link.</p>
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+        self.vpc_link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVpcLinkInput");
@@ -15803,6 +15734,55 @@ pub struct UpdateStageInput {
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateStageInput {
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn access_log_settings(&self) -> std::option::Option<&crate::model::AccessLogSettings> {
+        self.access_log_settings.as_ref()
+    }
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    pub fn auto_deploy(&self) -> bool {
+        self.auto_deploy
+    }
+    /// <p>The identifier of a client certificate for a Stage.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The default route settings for the stage.</p>
+    pub fn default_route_settings(&self) -> std::option::Option<&crate::model::RouteSettings> {
+        self.default_route_settings.as_ref()
+    }
+    /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The description for the API stage.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Route settings for the stage.</p>
+    pub fn route_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
+    > {
+        self.route_settings.as_ref()
+    }
+    /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    pub fn stage_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.stage_variables.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15842,6 +15822,43 @@ pub struct UpdateRouteResponseInput {
     pub route_response_id: std::option::Option<std::string::String>,
     /// <p>The route response key.</p>
     pub route_response_key: std::option::Option<std::string::String>,
+}
+impl UpdateRouteResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
+    pub fn model_selection_expression(&self) -> std::option::Option<&str> {
+        self.model_selection_expression.as_deref()
+    }
+    /// <p>The response models for the route response.</p>
+    pub fn response_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_models.as_ref()
+    }
+    /// <p>The route response parameters.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
+    > {
+        self.response_parameters.as_ref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+    /// <p>The route response ID.</p>
+    pub fn route_response_id(&self) -> std::option::Option<&str> {
+        self.route_response_id.as_deref()
+    }
+    /// <p>The route response key.</p>
+    pub fn route_response_key(&self) -> std::option::Option<&str> {
+        self.route_response_key.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRouteResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15894,6 +15911,67 @@ pub struct UpdateRouteInput {
     /// <p>The target for the route.</p>
     pub target: std::option::Option<std::string::String>,
 }
+impl UpdateRouteInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
+    pub fn api_key_required(&self) -> bool {
+        self.api_key_required
+    }
+    /// <p>The authorization scopes supported by this route.</p>
+    pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorization_scopes.as_deref()
+    }
+    /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    pub fn authorization_type(&self) -> std::option::Option<&crate::model::AuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    pub fn model_selection_expression(&self) -> std::option::Option<&str> {
+        self.model_selection_expression.as_deref()
+    }
+    /// <p>The operation name for the route.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    pub fn request_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_models.as_ref()
+    }
+    /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
+    > {
+        self.request_parameters.as_ref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+    /// <p>The route key for the route.</p>
+    pub fn route_key(&self) -> std::option::Option<&str> {
+        self.route_key.as_deref()
+    }
+    /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    pub fn route_response_selection_expression(&self) -> std::option::Option<&str> {
+        self.route_response_selection_expression.as_deref()
+    }
+    /// <p>The target for the route.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRouteInput");
@@ -15937,6 +16015,32 @@ pub struct UpdateModelInput {
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub schema: std::option::Option<std::string::String>,
 }
+impl UpdateModelInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The content-type for the model, for example, "application/json".</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The description of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The name of the model.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateModelInput");
@@ -15979,6 +16083,55 @@ pub struct UpdateIntegrationResponseInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
     pub template_selection_expression: std::option::Option<std::string::String>,
+}
+impl UpdateIntegrationResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    pub fn content_handling_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling_strategy.as_ref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+    /// <p>The integration response ID.</p>
+    pub fn integration_response_id(&self) -> std::option::Option<&str> {
+        self.integration_response_id.as_deref()
+    }
+    /// <p>The integration response key.</p>
+    pub fn integration_response_key(&self) -> std::option::Option<&str> {
+        self.integration_response_key.as_deref()
+    }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
+    /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
+    /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
+    /// , where
+    /// <replaceable>{name}</replaceable>
+    /// is a valid and unique response header name and
+    /// <replaceable>{JSON-expression}</replaceable>
+    /// is a valid JSON expression without the $ prefix.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
+    pub fn template_selection_expression(&self) -> std::option::Option<&str> {
+        self.template_selection_expression.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16053,6 +16206,104 @@ pub struct UpdateIntegrationInput {
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     pub tls_config: std::option::Option<crate::model::TlsConfigInput>,
 }
+impl UpdateIntegrationInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    pub fn content_handling_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling_strategy.as_ref()
+    }
+    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    pub fn credentials_arn(&self) -> std::option::Option<&str> {
+        self.credentials_arn.as_deref()
+    }
+    /// <p>The description of the integration</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+    /// <p>Specifies the integration's HTTP method type.</p>
+    pub fn integration_method(&self) -> std::option::Option<&str> {
+        self.integration_method.as_deref()
+    }
+    /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    pub fn integration_subtype(&self) -> std::option::Option<&str> {
+        self.integration_subtype.as_deref()
+    }
+    /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.integration_type.as_ref()
+    }
+    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    pub fn integration_uri(&self) -> std::option::Option<&str> {
+        self.integration_uri.as_deref()
+    }
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    pub fn passthrough_behavior(&self) -> std::option::Option<&crate::model::PassthroughBehavior> {
+        self.passthrough_behavior.as_ref()
+    }
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    pub fn payload_format_version(&self) -> std::option::Option<&str> {
+        self.payload_format_version.as_deref()
+    }
+    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+    /// , where
+    /// <replaceable>{location}</replaceable>
+    /// is querystring, path, or header; and
+    /// <replaceable>{name}</replaceable>
+    /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    pub fn request_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_templates.as_ref()
+    }
+    /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.response_parameters.as_ref()
+    }
+    /// <p>The template selection expression for the integration.</p>
+    pub fn template_selection_expression(&self) -> std::option::Option<&str> {
+        self.template_selection_expression.as_deref()
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    pub fn timeout_in_millis(&self) -> i32 {
+        self.timeout_in_millis
+    }
+    /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfigInput> {
+        self.tls_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIntegrationInput");
@@ -16094,6 +16345,24 @@ pub struct UpdateDomainNameInput {
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
 }
+impl UpdateDomainNameInput {
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The domain name configurations.</p>
+    pub fn domain_name_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainNameConfiguration]> {
+        self.domain_name_configurations.as_deref()
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    pub fn mutual_tls_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::MutualTlsAuthenticationInput> {
+        self.mutual_tls_authentication.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainNameInput");
@@ -16117,6 +16386,20 @@ pub struct UpdateDeploymentInput {
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The description for the deployment resource.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateDeploymentInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The deployment ID.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The description for the deployment resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16157,6 +16440,57 @@ pub struct UpdateAuthorizerInput {
     pub jwt_configuration: std::option::Option<crate::model::JwtConfiguration>,
     /// <p>The name of the authorizer.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateAuthorizerInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
+    pub fn authorizer_credentials_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_credentials_arn.as_deref()
+    }
+    /// <p>The authorizer identifier.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    pub fn authorizer_payload_format_version(&self) -> std::option::Option<&str> {
+        self.authorizer_payload_format_version.as_deref()
+    }
+    /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> i32 {
+        self.authorizer_result_ttl_in_seconds
+    }
+    /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    pub fn authorizer_type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
+        self.authorizer_type.as_ref()
+    }
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
+    /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    pub fn enable_simple_responses(&self) -> bool {
+        self.enable_simple_responses
+    }
+    /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    pub fn identity_source(&self) -> std::option::Option<&[std::string::String]> {
+        self.identity_source.as_deref()
+    }
+    /// <p>This parameter is not used.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+    /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    pub fn jwt_configuration(&self) -> std::option::Option<&crate::model::JwtConfiguration> {
+        self.jwt_configuration.as_ref()
+    }
+    /// <p>The name of the authorizer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16204,6 +16538,28 @@ pub struct UpdateApiMappingInput {
     /// <p>The API stage.</p>
     pub stage: std::option::Option<std::string::String>,
 }
+impl UpdateApiMappingInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The API mapping identifier.</p>
+    pub fn api_mapping_id(&self) -> std::option::Option<&str> {
+        self.api_mapping_id.as_deref()
+    }
+    /// <p>The API mapping key.</p>
+    pub fn api_mapping_key(&self) -> std::option::Option<&str> {
+        self.api_mapping_key.as_deref()
+    }
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The API stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApiMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiMappingInput");
@@ -16245,6 +16601,56 @@ pub struct UpdateApiInput {
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl UpdateApiInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    pub fn api_key_selection_expression(&self) -> std::option::Option<&str> {
+        self.api_key_selection_expression.as_deref()
+    }
+    /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    pub fn cors_configuration(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors_configuration.as_ref()
+    }
+    /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
+    pub fn credentials_arn(&self) -> std::option::Option<&str> {
+        self.credentials_arn.as_deref()
+    }
+    /// <p>The description of the API.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    pub fn disable_schema_validation(&self) -> bool {
+        self.disable_schema_validation
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
+    /// <p>The name of the API.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
+    pub fn route_key(&self) -> std::option::Option<&str> {
+        self.route_key.as_deref()
+    }
+    /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    pub fn route_selection_expression(&self) -> std::option::Option<&str> {
+        self.route_selection_expression.as_deref()
+    }
+    /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiInput");
@@ -16282,6 +16688,16 @@ pub struct UntagResourceInput {
     /// <p>The Tag keys to delete</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource ARN for the tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The Tag keys to delete</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -16301,6 +16717,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The resource ARN for the tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -16318,6 +16747,16 @@ pub struct ResetAuthorizersCacheInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl ResetAuthorizersCacheInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetAuthorizersCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16341,6 +16780,24 @@ pub struct ReimportApiInput {
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     pub fail_on_warnings: bool,
 }
+impl ReimportApiInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
+    pub fn basepath(&self) -> std::option::Option<&str> {
+        self.basepath.as_deref()
+    }
+    /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
+    pub fn fail_on_warnings(&self) -> bool {
+        self.fail_on_warnings
+    }
+}
 impl std::fmt::Debug for ReimportApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReimportApiInput");
@@ -16363,6 +16820,20 @@ pub struct ImportApiInput {
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     pub fail_on_warnings: bool,
 }
+impl ImportApiInput {
+    /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
+    pub fn basepath(&self) -> std::option::Option<&str> {
+        self.basepath.as_deref()
+    }
+    /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
+    pub fn fail_on_warnings(&self) -> bool {
+        self.fail_on_warnings
+    }
+}
 impl std::fmt::Debug for ImportApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportApiInput");
@@ -16382,6 +16853,16 @@ pub struct GetVpcLinksInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetVpcLinksInput {
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVpcLinksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpcLinksInput");
@@ -16398,6 +16879,12 @@ pub struct GetVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
+impl GetVpcLinkInput {
+    /// <p>The ID of the VPC link.</p>
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+        self.vpc_link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpcLinkInput");
@@ -16412,6 +16899,12 @@ impl std::fmt::Debug for GetVpcLinkInput {
 pub struct GetTagsInput {
     /// <p>The resource ARN for the tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl GetTagsInput {
+    /// <p>The resource ARN for the tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16432,6 +16925,20 @@ pub struct GetStagesInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetStagesInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStagesInput");
@@ -16450,6 +16957,16 @@ pub struct GetStageInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl GetStageInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16470,6 +16987,20 @@ pub struct GetRoutesInput {
     pub max_results: std::option::Option<std::string::String>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetRoutesInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRoutesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16494,6 +17025,24 @@ pub struct GetRouteResponsesInput {
     /// <p>The route ID.</p>
     pub route_id: std::option::Option<std::string::String>,
 }
+impl GetRouteResponsesInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRouteResponsesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRouteResponsesInput");
@@ -16516,6 +17065,20 @@ pub struct GetRouteResponseInput {
     /// <p>The route response ID.</p>
     pub route_response_id: std::option::Option<std::string::String>,
 }
+impl GetRouteResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+    /// <p>The route response ID.</p>
+    pub fn route_response_id(&self) -> std::option::Option<&str> {
+        self.route_response_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRouteResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRouteResponseInput");
@@ -16535,6 +17098,16 @@ pub struct GetRouteInput {
     /// <p>The route ID.</p>
     pub route_id: std::option::Option<std::string::String>,
 }
+impl GetRouteInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRouteInput");
@@ -16552,6 +17125,16 @@ pub struct GetModelTemplateInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The model ID.</p>
     pub model_id: std::option::Option<std::string::String>,
+}
+impl GetModelTemplateInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16573,6 +17156,20 @@ pub struct GetModelsInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetModelsInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetModelsInput");
@@ -16591,6 +17188,16 @@ pub struct GetModelInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The model ID.</p>
     pub model_id: std::option::Option<std::string::String>,
+}
+impl GetModelInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16611,6 +17218,20 @@ pub struct GetIntegrationsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetIntegrationsInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16635,6 +17256,24 @@ pub struct GetIntegrationResponsesInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetIntegrationResponsesInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationResponsesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationResponsesInput");
@@ -16657,6 +17296,20 @@ pub struct GetIntegrationResponseInput {
     /// <p>The integration response ID.</p>
     pub integration_response_id: std::option::Option<std::string::String>,
 }
+impl GetIntegrationResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+    /// <p>The integration response ID.</p>
+    pub fn integration_response_id(&self) -> std::option::Option<&str> {
+        self.integration_response_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationResponseInput");
@@ -16676,6 +17329,16 @@ pub struct GetIntegrationInput {
     /// <p>The integration ID.</p>
     pub integration_id: std::option::Option<std::string::String>,
 }
+impl GetIntegrationInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationInput");
@@ -16694,6 +17357,16 @@ pub struct GetDomainNamesInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDomainNamesInput {
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainNamesInput");
@@ -16709,6 +17382,12 @@ impl std::fmt::Debug for GetDomainNamesInput {
 pub struct GetDomainNameInput {
     /// <p>The domain name.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetDomainNameInput {
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16729,6 +17408,20 @@ pub struct GetDeploymentsInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDeploymentsInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentsInput");
@@ -16747,6 +17440,16 @@ pub struct GetDeploymentInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The deployment ID.</p>
     pub deployment_id: std::option::Option<std::string::String>,
+}
+impl GetDeploymentInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The deployment ID.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16768,6 +17471,20 @@ pub struct GetAuthorizersInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAuthorizersInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAuthorizersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAuthorizersInput");
@@ -16787,6 +17504,16 @@ pub struct GetAuthorizerInput {
     /// <p>The authorizer identifier.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
 }
+impl GetAuthorizerInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The authorizer identifier.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAuthorizerInput");
@@ -16804,6 +17531,16 @@ pub struct GetApisInput {
     pub max_results: std::option::Option<std::string::String>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetApisInput {
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16825,6 +17562,20 @@ pub struct GetApiMappingsInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetApiMappingsInput {
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApiMappingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApiMappingsInput");
@@ -16844,6 +17595,16 @@ pub struct GetApiMappingInput {
     /// <p>The domain name.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl GetApiMappingInput {
+    /// <p>The API mapping identifier.</p>
+    pub fn api_mapping_id(&self) -> std::option::Option<&str> {
+        self.api_mapping_id.as_deref()
+    }
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApiMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApiMappingInput");
@@ -16859,6 +17620,12 @@ impl std::fmt::Debug for GetApiMappingInput {
 pub struct GetApiInput {
     /// <p>The API identifier.</p>
     pub api_id: std::option::Option<std::string::String>,
+}
+impl GetApiInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16885,6 +17652,32 @@ pub struct ExportApiInput {
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
+impl ExportApiInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
+    pub fn export_version(&self) -> std::option::Option<&str> {
+        self.export_version.as_deref()
+    }
+    /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
+    pub fn include_extensions(&self) -> bool {
+        self.include_extensions
+    }
+    /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
+    pub fn output_type(&self) -> std::option::Option<&str> {
+        self.output_type.as_deref()
+    }
+    /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
+    pub fn specification(&self) -> std::option::Option<&str> {
+        self.specification.as_deref()
+    }
+    /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportApiInput");
@@ -16905,6 +17698,12 @@ pub struct DeleteVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
+impl DeleteVpcLinkInput {
+    /// <p>The ID of the VPC link.</p>
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+        self.vpc_link_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVpcLinkInput");
@@ -16921,6 +17720,16 @@ pub struct DeleteStageInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl DeleteStageInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16941,6 +17750,20 @@ pub struct DeleteRouteSettingsInput {
     pub route_key: std::option::Option<std::string::String>,
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl DeleteRouteSettingsInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The route key.</p>
+    pub fn route_key(&self) -> std::option::Option<&str> {
+        self.route_key.as_deref()
+    }
+    /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRouteSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16963,6 +17786,20 @@ pub struct DeleteRouteResponseInput {
     /// <p>The route response ID.</p>
     pub route_response_id: std::option::Option<std::string::String>,
 }
+impl DeleteRouteResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+    /// <p>The route response ID.</p>
+    pub fn route_response_id(&self) -> std::option::Option<&str> {
+        self.route_response_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRouteResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRouteResponseInput");
@@ -16984,6 +17821,20 @@ pub struct DeleteRouteRequestParameterInput {
     /// <p>The route ID.</p>
     pub route_id: std::option::Option<std::string::String>,
 }
+impl DeleteRouteRequestParameterInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The route request parameter key.</p>
+    pub fn request_parameter_key(&self) -> std::option::Option<&str> {
+        self.request_parameter_key.as_deref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRouteRequestParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRouteRequestParameterInput");
@@ -17003,6 +17854,16 @@ pub struct DeleteRouteInput {
     /// <p>The route ID.</p>
     pub route_id: std::option::Option<std::string::String>,
 }
+impl DeleteRouteInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRouteInput");
@@ -17020,6 +17881,16 @@ pub struct DeleteModelInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The model ID.</p>
     pub model_id: std::option::Option<std::string::String>,
+}
+impl DeleteModelInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17041,6 +17912,20 @@ pub struct DeleteIntegrationResponseInput {
     /// <p>The integration response ID.</p>
     pub integration_response_id: std::option::Option<std::string::String>,
 }
+impl DeleteIntegrationResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+    /// <p>The integration response ID.</p>
+    pub fn integration_response_id(&self) -> std::option::Option<&str> {
+        self.integration_response_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIntegrationResponseInput");
@@ -17060,6 +17945,16 @@ pub struct DeleteIntegrationInput {
     /// <p>The integration ID.</p>
     pub integration_id: std::option::Option<std::string::String>,
 }
+impl DeleteIntegrationInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIntegrationInput");
@@ -17075,6 +17970,12 @@ impl std::fmt::Debug for DeleteIntegrationInput {
 pub struct DeleteDomainNameInput {
     /// <p>The domain name.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteDomainNameInput {
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17093,6 +17994,16 @@ pub struct DeleteDeploymentInput {
     /// <p>The deployment ID.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl DeleteDeploymentInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The deployment ID.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeploymentInput");
@@ -17108,6 +18019,12 @@ impl std::fmt::Debug for DeleteDeploymentInput {
 pub struct DeleteCorsConfigurationInput {
     /// <p>The API identifier.</p>
     pub api_id: std::option::Option<std::string::String>,
+}
+impl DeleteCorsConfigurationInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCorsConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17125,6 +18042,16 @@ pub struct DeleteAuthorizerInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The authorizer identifier.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
+}
+impl DeleteAuthorizerInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The authorizer identifier.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17144,6 +18071,16 @@ pub struct DeleteApiMappingInput {
     /// <p>The domain name.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DeleteApiMappingInput {
+    /// <p>The API mapping identifier.</p>
+    pub fn api_mapping_id(&self) -> std::option::Option<&str> {
+        self.api_mapping_id.as_deref()
+    }
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteApiMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteApiMappingInput");
@@ -17159,6 +18096,12 @@ impl std::fmt::Debug for DeleteApiMappingInput {
 pub struct DeleteApiInput {
     /// <p>The API identifier.</p>
     pub api_id: std::option::Option<std::string::String>,
+}
+impl DeleteApiInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17176,6 +18119,16 @@ pub struct DeleteAccessLogSettingsInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl DeleteAccessLogSettingsInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessLogSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17199,6 +18152,27 @@ pub struct CreateVpcLinkInput {
     /// <p>A list of tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateVpcLinkInput {
+    /// <p>The name of the VPC link.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of security group IDs for the VPC link.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>A list of subnet IDs to include in the VPC link.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17242,6 +18216,62 @@ pub struct CreateStageInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateStageInput {
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn access_log_settings(&self) -> std::option::Option<&crate::model::AccessLogSettings> {
+        self.access_log_settings.as_ref()
+    }
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    pub fn auto_deploy(&self) -> bool {
+        self.auto_deploy
+    }
+    /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>The default route settings for the stage.</p>
+    pub fn default_route_settings(&self) -> std::option::Option<&crate::model::RouteSettings> {
+        self.default_route_settings.as_ref()
+    }
+    /// <p>The deployment identifier of the API stage.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The description for the API stage.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Route settings for the stage, by routeKey.</p>
+    pub fn route_settings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
+    > {
+        self.route_settings.as_ref()
+    }
+    /// <p>The name of the stage.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    pub fn stage_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.stage_variables.as_ref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStageInput");
@@ -17279,6 +18309,39 @@ pub struct CreateRouteResponseInput {
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The route response key.</p>
     pub route_response_key: std::option::Option<std::string::String>,
+}
+impl CreateRouteResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
+    pub fn model_selection_expression(&self) -> std::option::Option<&str> {
+        self.model_selection_expression.as_deref()
+    }
+    /// <p>The response models for the route response.</p>
+    pub fn response_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_models.as_ref()
+    }
+    /// <p>The route response parameters.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
+    > {
+        self.response_parameters.as_ref()
+    }
+    /// <p>The route ID.</p>
+    pub fn route_id(&self) -> std::option::Option<&str> {
+        self.route_id.as_deref()
+    }
+    /// <p>The route response key.</p>
+    pub fn route_response_key(&self) -> std::option::Option<&str> {
+        self.route_response_key.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRouteResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17328,6 +18391,63 @@ pub struct CreateRouteInput {
     /// <p>The target for the route.</p>
     pub target: std::option::Option<std::string::String>,
 }
+impl CreateRouteInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
+    pub fn api_key_required(&self) -> bool {
+        self.api_key_required
+    }
+    /// <p>The authorization scopes supported by this route.</p>
+    pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorization_scopes.as_deref()
+    }
+    /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
+    pub fn authorization_type(&self) -> std::option::Option<&crate::model::AuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
+    pub fn model_selection_expression(&self) -> std::option::Option<&str> {
+        self.model_selection_expression.as_deref()
+    }
+    /// <p>The operation name for the route.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
+    pub fn request_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_models.as_ref()
+    }
+    /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ParameterConstraints>,
+    > {
+        self.request_parameters.as_ref()
+    }
+    /// <p>The route key for the route.</p>
+    pub fn route_key(&self) -> std::option::Option<&str> {
+        self.route_key.as_deref()
+    }
+    /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
+    pub fn route_response_selection_expression(&self) -> std::option::Option<&str> {
+        self.route_response_selection_expression.as_deref()
+    }
+    /// <p>The target for the route.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRouteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteInput");
@@ -17368,6 +18488,28 @@ pub struct CreateModelInput {
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub schema: std::option::Option<std::string::String>,
 }
+impl CreateModelInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The content-type for the model, for example, "application/json".</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The description of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the model. Must be alphanumeric.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelInput");
@@ -17400,6 +18542,44 @@ pub struct CreateIntegrationResponseInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
     pub template_selection_expression: std::option::Option<std::string::String>,
+}
+impl CreateIntegrationResponseInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    pub fn content_handling_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling_strategy.as_ref()
+    }
+    /// <p>The integration ID.</p>
+    pub fn integration_id(&self) -> std::option::Option<&str> {
+        self.integration_id.as_deref()
+    }
+    /// <p>The integration response key.</p>
+    pub fn integration_response_key(&self) -> std::option::Option<&str> {
+        self.integration_response_key.as_deref()
+    }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
+    pub fn template_selection_expression(&self) -> std::option::Option<&str> {
+        self.template_selection_expression.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17471,6 +18651,100 @@ pub struct CreateIntegrationInput {
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     pub tls_config: std::option::Option<crate::model::TlsConfigInput>,
 }
+impl CreateIntegrationInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    pub fn content_handling_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling_strategy.as_ref()
+    }
+    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
+    pub fn credentials_arn(&self) -> std::option::Option<&str> {
+        self.credentials_arn.as_deref()
+    }
+    /// <p>The description of the integration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the integration's HTTP method type.</p>
+    pub fn integration_method(&self) -> std::option::Option<&str> {
+        self.integration_method.as_deref()
+    }
+    /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
+    pub fn integration_subtype(&self) -> std::option::Option<&str> {
+        self.integration_subtype.as_deref()
+    }
+    /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.integration_type.as_ref()
+    }
+    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    pub fn integration_uri(&self) -> std::option::Option<&str> {
+        self.integration_uri.as_deref()
+    }
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    pub fn passthrough_behavior(&self) -> std::option::Option<&crate::model::PassthroughBehavior> {
+        self.passthrough_behavior.as_ref()
+    }
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    pub fn payload_format_version(&self) -> std::option::Option<&str> {
+        self.payload_format_version.as_deref()
+    }
+    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+    /// , where
+    /// <replaceable>{location}</replaceable>
+    /// is querystring, path, or header; and
+    /// <replaceable>{name}</replaceable>
+    /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
+    pub fn request_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_templates.as_ref()
+    }
+    /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.response_parameters.as_ref()
+    }
+    /// <p>The template selection expression for the integration.</p>
+    pub fn template_selection_expression(&self) -> std::option::Option<&str> {
+        self.template_selection_expression.as_deref()
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
+    pub fn timeout_in_millis(&self) -> i32 {
+        self.timeout_in_millis
+    }
+    /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfigInput> {
+        self.tls_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIntegrationInput");
@@ -17514,6 +18788,31 @@ pub struct CreateDomainNameInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDomainNameInput {
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The domain name configurations.</p>
+    pub fn domain_name_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainNameConfiguration]> {
+        self.domain_name_configurations.as_deref()
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    pub fn mutual_tls_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::MutualTlsAuthenticationInput> {
+        self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The collection of tags associated with a domain name.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainNameInput");
@@ -17538,6 +18837,20 @@ pub struct CreateDeploymentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl CreateDeploymentInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The description for the deployment resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the Stage resource for the Deployment resource to create.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17576,6 +18889,53 @@ pub struct CreateAuthorizerInput {
     pub jwt_configuration: std::option::Option<crate::model::JwtConfiguration>,
     /// <p>The name of the authorizer.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateAuthorizerInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
+    pub fn authorizer_credentials_arn(&self) -> std::option::Option<&str> {
+        self.authorizer_credentials_arn.as_deref()
+    }
+    /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    pub fn authorizer_payload_format_version(&self) -> std::option::Option<&str> {
+        self.authorizer_payload_format_version.as_deref()
+    }
+    /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> i32 {
+        self.authorizer_result_ttl_in_seconds
+    }
+    /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
+    pub fn authorizer_type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
+        self.authorizer_type.as_ref()
+    }
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
+    /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
+    pub fn enable_simple_responses(&self) -> bool {
+        self.enable_simple_responses
+    }
+    /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    pub fn identity_source(&self) -> std::option::Option<&[std::string::String]> {
+        self.identity_source.as_deref()
+    }
+    /// <p>This parameter is not used.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+    /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
+    pub fn jwt_configuration(&self) -> std::option::Option<&crate::model::JwtConfiguration> {
+        self.jwt_configuration.as_ref()
+    }
+    /// <p>The name of the authorizer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17620,6 +18980,24 @@ pub struct CreateApiMappingInput {
     /// <p>The API stage.</p>
     pub stage: std::option::Option<std::string::String>,
 }
+impl CreateApiMappingInput {
+    /// <p>The API identifier.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// The API mapping key.
+    pub fn api_mapping_key(&self) -> std::option::Option<&str> {
+        self.api_mapping_key.as_deref()
+    }
+    /// <p>The domain name.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The API stage.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApiMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApiMappingInput");
@@ -17662,6 +19040,63 @@ pub struct CreateApiInput {
     pub target: std::option::Option<std::string::String>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl CreateApiInput {
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    pub fn api_key_selection_expression(&self) -> std::option::Option<&str> {
+        self.api_key_selection_expression.as_deref()
+    }
+    /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
+    pub fn cors_configuration(&self) -> std::option::Option<&crate::model::Cors> {
+        self.cors_configuration.as_ref()
+    }
+    /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
+    pub fn credentials_arn(&self) -> std::option::Option<&str> {
+        self.credentials_arn.as_deref()
+    }
+    /// <p>The description of the API.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    pub fn disable_schema_validation(&self) -> bool {
+        self.disable_schema_validation
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
+    /// <p>The name of the API.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API protocol.</p>
+    pub fn protocol_type(&self) -> std::option::Option<&crate::model::ProtocolType> {
+        self.protocol_type.as_ref()
+    }
+    /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
+    pub fn route_key(&self) -> std::option::Option<&str> {
+        self.route_key.as_deref()
+    }
+    /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    pub fn route_selection_expression(&self) -> std::option::Option<&str> {
+        self.route_selection_expression.as_deref()
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

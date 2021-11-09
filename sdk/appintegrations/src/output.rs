@@ -127,6 +127,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -191,6 +200,16 @@ pub struct ListEventIntegrationsOutput {
     pub event_integrations: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventIntegrationsOutput {
+    /// <p>The event integrations.</p>
+    pub fn event_integrations(&self) -> std::option::Option<&[crate::model::EventIntegration]> {
+        self.event_integrations.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventIntegrationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -268,6 +287,18 @@ pub struct ListEventIntegrationAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventIntegrationAssociationsOutput {
+    /// <p>The event integration associations.</p>
+    pub fn event_integration_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventIntegrationAssociation]> {
+        self.event_integration_associations.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventIntegrationAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -348,6 +379,18 @@ pub struct ListDataIntegrationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDataIntegrationsOutput {
+    /// <p>The DataIntegrations associated with this account.</p>
+    pub fn data_integrations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataIntegrationSummary]> {
+        self.data_integrations.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDataIntegrationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataIntegrationsOutput");
@@ -424,6 +467,18 @@ pub struct ListDataIntegrationAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDataIntegrationAssociationsOutput {
+    /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
+    pub fn data_integration_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataIntegrationAssociationSummary]> {
+        self.data_integration_associations.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataIntegrationAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -514,6 +569,35 @@ pub struct GetEventIntegrationOutput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetEventIntegrationOutput {
+    /// <p>The name of the event integration. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the event integration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
+    pub fn event_integration_arn(&self) -> std::option::Option<&str> {
+        self.event_integration_arn.as_deref()
+    }
+    /// <p>The EventBridge bus.</p>
+    pub fn event_bridge_bus(&self) -> std::option::Option<&str> {
+        self.event_bridge_bus.as_deref()
+    }
+    /// <p>The event filter.</p>
+    pub fn event_filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+        self.event_filter.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEventIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -668,6 +752,45 @@ pub struct GetDataIntegrationOutput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetDataIntegrationOutput {
+    /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+    /// <p>The name of the data and how often it should be pulled from the source.</p>
+    pub fn schedule_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ScheduleConfiguration> {
+        self.schedule_configuration.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDataIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -891,6 +1014,12 @@ pub struct CreateEventIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub event_integration_arn: std::option::Option<std::string::String>,
 }
+impl CreateEventIntegrationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
+    pub fn event_integration_arn(&self) -> std::option::Option<&str> {
+        self.event_integration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEventIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventIntegrationOutput");
@@ -959,6 +1088,50 @@ pub struct CreateDataIntegrationOutput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateDataIntegrationOutput {
+    /// <p>The Amazon Resource Name (ARN)</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A unique identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the DataIntegration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+    /// <p>The name of the data and how often it should be pulled from the source.</p>
+    pub fn schedule_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ScheduleConfiguration> {
+        self.schedule_configuration.as_ref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataIntegrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

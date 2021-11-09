@@ -65,6 +65,20 @@ pub struct Credentials {
     /// <p>The session token.</p>
     pub session_token: std::option::Option<std::string::String>,
 }
+impl Credentials {
+    /// <p>The access key identifier.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The access key.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The session token.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+}
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Credentials");
@@ -199,6 +213,96 @@ pub struct ChangesetInfo {
     pub updates_changeset_id: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the changeset that is updated a changeset.</p>
     pub updated_by_changeset_id: std::option::Option<std::string::String>,
+}
+impl ChangesetInfo {
+    /// <p>Unique identifier for a changeset.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN identifier of the changeset.</p>
+    pub fn changeset_arn(&self) -> std::option::Option<&str> {
+        self.changeset_arn.as_deref()
+    }
+    /// <p>The unique identifier for the FinSpace dataset in which the changeset is created.</p>
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
+    /// <p>Change type indicates how a changeset is applied to a dataset.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
+    /// changesets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
+    /// loaded changesets.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
+    /// ingested changeset.</p>
+    /// </li>
+    /// </ul>
+    pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
+        self.change_type.as_ref()
+    }
+    /// <p>Type of the data source from which the files to create the changeset are sourced.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>S3</code> - Amazon S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>Source path from which the files to create the changeset are sourced.</p>
+    pub fn source_params(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.source_params.as_ref()
+    }
+    /// <p>Format type of the input files loaded into the changeset.</p>
+    pub fn format_type(&self) -> std::option::Option<&crate::model::FormatType> {
+        self.format_type.as_ref()
+    }
+    /// <p>Structure of the source file(s).</p>
+    pub fn format_params(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.format_params.as_ref()
+    }
+    /// <p>The timestamp at which the changeset was created in FinSpace.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+    /// <p>The status of changeset creation operation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChangesetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The structure with error messages.</p>
+    pub fn error_info(&self) -> std::option::Option<&crate::model::ErrorInfo> {
+        self.error_info.as_ref()
+    }
+    /// <p>Tags associated with the changeset.</p>
+    pub fn changeset_labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.changeset_labels.as_ref()
+    }
+    /// <p>Unique identifier of the changeset that is updated.</p>
+    pub fn updates_changeset_id(&self) -> std::option::Option<&str> {
+        self.updates_changeset_id.as_deref()
+    }
+    /// <p>Unique identifier of the changeset that is updated a changeset.</p>
+    pub fn updated_by_changeset_id(&self) -> std::option::Option<&str> {
+        self.updated_by_changeset_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ChangesetInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -577,6 +681,51 @@ pub struct ErrorInfo {
     /// </li>
     /// </ul>
     pub error_category: std::option::Option<crate::model::ErrorCategory>,
+}
+impl ErrorInfo {
+    /// <p>The text of the error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The category of the error.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
+    /// contact AWS support to increase quotas.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
+    /// request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
+    /// found.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
+    /// the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
+    /// occurred.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCELLED</code> - A user recoverable error has occurred.</p>
+    /// </li>
+    /// </ul>
+    pub fn error_category(&self) -> std::option::Option<&crate::model::ErrorCategory> {
+        self.error_category.as_ref()
+    }
 }
 impl std::fmt::Debug for ErrorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

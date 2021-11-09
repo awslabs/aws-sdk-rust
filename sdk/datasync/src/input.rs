@@ -91,10 +91,7 @@ impl CancelTaskExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_task_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_task_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -388,10 +385,7 @@ impl CreateAgentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_agent(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_agent(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -656,10 +650,7 @@ impl CreateLocationEfsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_location_efs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_location_efs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -923,10 +914,7 @@ impl CreateLocationFsxWindowsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_location_fsx_windows(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1196,10 +1184,7 @@ impl CreateLocationNfsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_location_nfs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_location_nfs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1500,7 +1485,7 @@ impl CreateLocationObjectStorageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_location_object_storage(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_location_object_storage(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1763,10 +1748,7 @@ impl CreateLocationS3Input {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_location_s3(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_location_s3(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2080,10 +2062,7 @@ impl CreateLocationSmbInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_location_smb(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_location_smb(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2401,10 +2380,7 @@ impl CreateTaskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_task(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2555,10 +2531,7 @@ impl DeleteAgentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_agent(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_agent(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2707,10 +2680,8 @@ impl DeleteLocationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_location(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_location(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2859,10 +2830,7 @@ impl DeleteTaskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_task(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3011,10 +2979,7 @@ impl DescribeAgentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_agent(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_agent(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3164,10 +3129,7 @@ impl DescribeLocationEfsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_efs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_efs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3320,7 +3282,7 @@ impl DescribeLocationFsxWindowsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_windows(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_windows(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3471,10 +3433,7 @@ impl DescribeLocationNfsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_nfs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_nfs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3625,7 +3584,7 @@ impl DescribeLocationObjectStorageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_object_storage(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_object_storage(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3776,10 +3735,7 @@ impl DescribeLocationS3Input {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_s3(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_s3(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3929,10 +3885,7 @@ impl DescribeLocationSmbInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_location_smb(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_location_smb(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4081,10 +4034,7 @@ impl DescribeTaskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_task(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4239,10 +4189,7 @@ impl DescribeTaskExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_task_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4405,10 +4352,7 @@ impl ListAgentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_agents(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_agents(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4596,10 +4540,7 @@ impl ListLocationsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_locations(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_locations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4775,10 +4716,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4954,10 +4894,7 @@ impl ListTaskExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_task_executions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_task_executions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5145,10 +5082,7 @@ impl ListTasksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tasks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tasks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5389,10 +5323,7 @@ impl StartTaskExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_task_execution(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_task_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5562,10 +5493,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5735,10 +5663,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5899,10 +5824,7 @@ impl UpdateAgentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_agent(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_agent(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6134,10 +6056,7 @@ impl UpdateLocationNfsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_location_nfs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_location_nfs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6394,7 +6313,7 @@ impl UpdateLocationObjectStorageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_location_object_storage(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_location_object_storage(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6685,10 +6604,7 @@ impl UpdateLocationSmbInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_location_smb(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_location_smb(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6975,10 +6891,7 @@ impl UpdateTaskInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_task(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7161,10 +7074,7 @@ impl UpdateTaskExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_task_execution(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_task_execution(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7244,6 +7154,25 @@ pub struct UpdateTaskExecutionInput {
     /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
     pub options: std::option::Option<crate::model::Options>,
 }
+impl UpdateTaskExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+        self.task_execution_arn.as_deref()
+    }
+    /// <p>Represents the options that are available to control the behavior of a
+    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+    /// operation. Behavior includes preserving metadata such as user
+    /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
+    /// data integrity verification, and so on.</p>
+    /// <p>A task has a set of default options associated with it. If you don't specify an option
+    /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
+    /// the default value is used. You can override the
+    /// defaults options on each task execution by specifying an overriding <code>Options</code> value
+    /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+        self.options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTaskExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTaskExecutionInput");
@@ -7292,6 +7221,57 @@ pub struct UpdateTaskInput {
     /// patterns are delimited by "|" (that is, a pipe). For example:
     /// <code>"/folder1|/folder2</code>"</p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+}
+impl UpdateTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>Represents the options that are available to control the behavior of a
+    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+    /// operation. Behavior includes preserving metadata such as user
+    /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
+    /// data integrity verification, and so on.</p>
+    /// <p>A task has a set of default options associated with it. If you don't specify an option
+    /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
+    /// the default value is used. You can override the
+    /// defaults options on each task execution by specifying an overriding <code>Options</code> value
+    /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+        self.options.as_ref()
+    }
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should
+    /// contain a single filter string that consists of the patterns to exclude. The patterns are
+    /// delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
+    /// </p>
+    /// <p>
+    /// </p>
+    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.excludes.as_deref()
+    }
+    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
+    /// location. You can configure your task to execute hourly, daily, weekly or on specific days of
+    /// the week. You control when in the day or hour you want the task to execute. The time you
+    /// specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The name of the task to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+    /// LogGroup.</p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p>A list of filter rules that determines which files to include when running a task. The
+    /// pattern should contain a single filter string that consists of the patterns to include. The
+    /// patterns are delimited by "|" (that is, a pipe). For example:
+    /// <code>"/folder1|/folder2</code>"</p>
+    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.includes.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7354,6 +7334,64 @@ pub struct UpdateLocationSmbInput {
     /// location.</p>
     pub mount_options: std::option::Option<crate::model::SmbMountOptions>,
 }
+impl UpdateLocationSmbInput {
+    /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
+    /// location or write data to the SMB destination. The SMB path should be a path that's
+    /// exported by the SMB server, or a subdirectory of that path. The path should be such that it
+    /// can be mounted by other SMB clients in your network.</p>
+    /// <note>
+    /// <p>
+    /// <code>Subdirectory</code> must be specified with forward slashes. For example,
+    /// <code>/path/to/folder</code>.</p>
+    /// </note>
+    ///
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have
+    /// permissions to mount the SMB share and to access all the data in that share. To ensure this,
+    /// do either of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure that the user/password specified belongs to the user who can mount the share
+    /// and who has the appropriate permissions for all of the files and directories that you want
+    /// DataSync to access.</p>
+    /// </li>
+    /// <li>
+    /// <p>Use credentials of a member of the Backup Operators group to mount the share. </p>
+    /// </li>
+    /// </ul>
+    /// <p>Doing either of these options enables the agent to access the data. For the agent to
+    /// access directories, you must also enable all execute access.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The user who can mount the share has the permissions to access files and folders in the
+    /// SMB share.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The password of the user who can mount the share has the permissions to access files and
+    /// folders in the SMB share.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB)
+    /// location.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>Represents the mount options that are available for DataSync to access an SMB
+    /// location.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+        self.mount_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLocationSmbInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationSmbInput");
@@ -7397,6 +7435,49 @@ pub struct UpdateLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the agents associated with the
     /// self-managed object storage server location.</p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateLocationObjectStorageInput {
+    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
+    /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
+    /// specify a custom port if your self-managed object storage server requires one.</p>
+    pub fn server_port(&self) -> std::option::Option<i32> {
+        self.server_port
+    }
+    /// <p>The protocol that the object storage server uses to communicate. Valid values are
+    /// <code>HTTP</code> or <code>HTTPS</code>.</p>
+    pub fn server_protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
+        self.server_protocol.as_ref()
+    }
+    /// <p>The subdirectory in the self-managed object storage server that is used
+    /// to read data from.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>Optional. The access key is used if credentials are required to access the self-managed
+    /// object storage server. If your object storage requires a user name and password to
+    /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
+    /// and password, respectively.</p>
+    pub fn access_key(&self) -> std::option::Option<&str> {
+        self.access_key.as_deref()
+    }
+    /// <p>Optional. The secret key is used if credentials are required to access the self-managed
+    /// object storage server. If your object storage requires a user name and password to
+    /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
+    /// and password, respectively.</p>
+    pub fn secret_key(&self) -> std::option::Option<&str> {
+        self.secret_key.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the agents associated with the
+    /// self-managed object storage server location.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLocationObjectStorageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7445,6 +7526,44 @@ pub struct UpdateLocationNfsInput {
     /// location.</p>
     pub mount_options: std::option::Option<crate::model::NfsMountOptions>,
 }
+impl UpdateLocationNfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
+    /// location or write data to the NFS destination. The NFS path should be a path that's
+    /// exported by the NFS server, or a subdirectory of that path. The path should be such that it
+    /// can be mounted by other NFS clients in your network.</p>
+    ///
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e
+    /// nfs-server-name</code>" from an NFS client that has access to your server. You can specify
+    /// any directory that appears in the results, and any subdirectory of that directory. Ensure that
+    /// the NFS export is accessible without Kerberos authentication. </p>
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have
+    /// permissions to read all the data. To ensure this, either configure the NFS export with
+    /// <code>no_root_squash</code>, or ensure that the files you want DataSync to
+    /// access have permissions that allow read access for all users. Doing either option enables the
+    /// agent to read the files. For the agent to access directories, you must additionally enable all
+    /// execute access.</p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    ///
+    /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
+    /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS)
+    /// location.</p>
+    pub fn on_prem_config(&self) -> std::option::Option<&crate::model::OnPremConfig> {
+        self.on_prem_config.as_ref()
+    }
+    /// <p>Represents the mount options that are available for DataSync to access an NFS
+    /// location.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+        self.mount_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLocationNfsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLocationNfsInput");
@@ -7465,6 +7584,16 @@ pub struct UpdateAgentInput {
     /// <p>The name that you want to use to configure the agent.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateAgentInput {
+    /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+    pub fn agent_arn(&self) -> std::option::Option<&str> {
+        self.agent_arn.as_deref()
+    }
+    /// <p>The name that you want to use to configure the agent.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAgentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAgentInput");
@@ -7483,6 +7612,16 @@ pub struct UntagResourceInput {
     /// <p>The keys in the key-value pair in the tag to remove.</p>
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys in the key-value pair in the tag to remove.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7500,6 +7639,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to apply.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7541,6 +7690,42 @@ pub struct StartTaskExecutionInput {
     /// <code>"/folder1|/folder2"</code>. </p>
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
+impl StartTaskExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>Represents the options that are available to control the behavior of a
+    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+    /// operation. Behavior includes preserving metadata such as user
+    /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
+    /// data integrity verification, and so on.</p>
+    /// <p>A task has a set of default options associated with it. If you don't specify an option
+    /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
+    /// the default value is used. You can override the
+    /// defaults options on each task execution by specifying an overriding <code>Options</code> value
+    /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    pub fn override_options(&self) -> std::option::Option<&crate::model::Options> {
+        self.override_options.as_ref()
+    }
+    /// <p>A list of filter rules that determines which files to include when running a task. The
+    /// pattern should contain a single filter string that consists of the patterns to include. The
+    /// patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2"</code>
+    /// </p>
+    ///
+    /// <p>
+    /// </p>
+    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.includes.as_deref()
+    }
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list
+    /// should contain a single filter string that consists of the patterns to exclude. The
+    /// patterns are delimited by "|" (that is, a pipe), for example,
+    /// <code>"/folder1|/folder2"</code>. </p>
+    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.excludes.as_deref()
+    }
+}
 impl std::fmt::Debug for StartTaskExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTaskExecutionInput");
@@ -7567,6 +7752,24 @@ pub struct ListTasksInput {
     /// location.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>,
 }
+impl ListTasksInput {
+    /// <p>The maximum number of tasks to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An opaque string that indicates the position at which to begin the next list of
+    /// tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>.
+    /// For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code>
+    /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+    /// location.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::TaskFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTasksInput");
@@ -7589,6 +7792,21 @@ pub struct ListTaskExecutionsInput {
     /// executed tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTaskExecutionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The maximum number of executed tasks to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An opaque string that indicates the position at which to begin the next list of the
+    /// executed tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTaskExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTaskExecutionsInput");
@@ -7610,6 +7828,21 @@ pub struct ListTagsForResourceInput {
     /// <p>An opaque string that indicates the position at which to begin the next list of
     /// locations.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The maximum number of locations to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An opaque string that indicates the position at which to begin the next list of
+    /// locations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7635,6 +7868,23 @@ pub struct ListLocationsInput {
     /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>,
 }
+impl ListLocationsInput {
+    /// <p>The maximum number of locations to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An opaque string that indicates the position at which to begin the next list of
+    /// locations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
+    /// For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code>
+    /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::LocationFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLocationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLocationsInput");
@@ -7655,6 +7905,17 @@ pub struct ListAgentsInput {
     /// agents.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAgentsInput {
+    /// <p>The maximum number of agents to list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An opaque string that indicates the position at which to begin the next list of
+    /// agents.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAgentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAgentsInput");
@@ -7671,6 +7932,12 @@ pub struct DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
     pub task_execution_arn: std::option::Option<std::string::String>,
 }
+impl DescribeTaskExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+        self.task_execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTaskExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTaskExecutionInput");
@@ -7685,6 +7952,12 @@ impl std::fmt::Debug for DescribeTaskExecutionInput {
 pub struct DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
     pub task_arn: std::option::Option<std::string::String>,
+}
+impl DescribeTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7701,6 +7974,12 @@ pub struct DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl DescribeLocationSmbInput {
+    /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationSmbInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationSmbInput");
@@ -7715,6 +7994,12 @@ impl std::fmt::Debug for DescribeLocationSmbInput {
 pub struct DescribeLocationS3Input {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
     pub location_arn: std::option::Option<std::string::String>,
+}
+impl DescribeLocationS3Input {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocationS3Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7731,6 +8016,12 @@ pub struct DescribeLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location that was described.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl DescribeLocationObjectStorageInput {
+    /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location that was described.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationObjectStorageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationObjectStorageInput");
@@ -7745,6 +8036,12 @@ impl std::fmt::Debug for DescribeLocationObjectStorageInput {
 pub struct DescribeLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
     pub location_arn: std::option::Option<std::string::String>,
+}
+impl DescribeLocationNfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocationNfsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7762,6 +8059,13 @@ pub struct DescribeLocationFsxWindowsInput {
     /// describe.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl DescribeLocationFsxWindowsInput {
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
+    /// describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLocationFsxWindowsInput");
@@ -7776,6 +8080,12 @@ impl std::fmt::Debug for DescribeLocationFsxWindowsInput {
 pub struct DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the EFS location to describe.</p>
     pub location_arn: std::option::Option<std::string::String>,
+}
+impl DescribeLocationEfsInput {
+    /// <p>The Amazon Resource Name (ARN) of the EFS location to describe.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLocationEfsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7792,6 +8102,12 @@ pub struct DescribeAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
     pub agent_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAgentInput {
+    /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+    pub fn agent_arn(&self) -> std::option::Option<&str> {
+        self.agent_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAgentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAgentInput");
@@ -7806,6 +8122,12 @@ impl std::fmt::Debug for DescribeAgentInput {
 pub struct DeleteTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
     pub task_arn: std::option::Option<std::string::String>,
+}
+impl DeleteTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7822,6 +8144,12 @@ pub struct DeleteLocationInput {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     pub location_arn: std::option::Option<std::string::String>,
 }
+impl DeleteLocationInput {
+    /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
+    pub fn location_arn(&self) -> std::option::Option<&str> {
+        self.location_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLocationInput");
@@ -7837,6 +8165,13 @@ pub struct DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
     /// operation to return a list of agents for your account and Amazon Web Services Region.</p>
     pub agent_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAgentInput {
+    /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
+    /// operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    pub fn agent_arn(&self) -> std::option::Option<&str> {
+        self.agent_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAgentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7885,6 +8220,61 @@ pub struct CreateTaskInput {
     /// patterns are delimited by "|" (that is, a pipe). For example:
     /// <code>"/folder1|/folder2</code>"</p>
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+}
+impl CreateTaskInput {
+    /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
+    pub fn source_location_arn(&self) -> std::option::Option<&str> {
+        self.source_location_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    pub fn destination_location_arn(&self) -> std::option::Option<&str> {
+        self.destination_location_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
+    /// monitor and log events in the task. </p>
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_log_group_arn.as_deref()
+    }
+    /// <p>The name of a task. This value is a text reference that is used to identify the task in
+    /// the console. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The set of configuration options that control the behavior of a single execution of the
+    /// task that occurs when you call <code>StartTaskExecution</code>. You can configure these
+    /// options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data
+    /// integrity verification, and so on.</p>
+    /// <p>For each individual task execution, you can override these options by specifying the
+    /// <code>OverrideOptions</code> before starting the task execution. For more information, see
+    /// the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+    pub fn options(&self) -> std::option::Option<&crate::model::Options> {
+        self.options.as_ref()
+    }
+    /// <p>A list of filter rules that determines which files to exclude from a task. The list should
+    /// contain a single filter string that consists of the patterns to exclude. The patterns are
+    /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+    /// <p>
+    /// </p>
+    pub fn excludes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.excludes.as_deref()
+    }
+    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
+    /// location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::TaskSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the resource. The
+    /// value can be an empty string. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+    /// <p>A list of filter rules that determines which files to include when running a task. The
+    /// pattern should contain a single filter string that consists of the patterns to include. The
+    /// patterns are delimited by "|" (that is, a pipe). For example:
+    /// <code>"/folder1|/folder2</code>"</p>
+    pub fn includes(&self) -> std::option::Option<&[crate::model::FilterRule]> {
+        self.includes.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7951,6 +8341,68 @@ pub struct CreateLocationSmbInput {
     /// can be an empty string. We recommend using tags to name your resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
+impl CreateLocationSmbInput {
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
+    /// location or write data to the SMB destination. The SMB path should be a path that's
+    /// exported by the SMB server, or a subdirectory of that path. The path should be such that it
+    /// can be mounted by other SMB clients in your network.</p>
+    /// <note>
+    /// <p>
+    /// <code>Subdirectory</code> must be specified with forward slashes. For example,
+    /// <code>/path/to/folder</code>.</p>
+    /// </note>
+    ///
+    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions
+    /// to mount the SMB share, as well as to access all the data in that share. To ensure this,
+    /// either ensure that the user/password specified belongs to the user who can mount the share,
+    /// and who has the appropriate permissions for all of the files and directories that you want
+    /// DataSync to access, or use credentials of a member of the Backup Operators group to mount
+    /// the share. Doing either enables the agent to access the data. For the agent to access
+    /// directories, you must additionally enable all execute access.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name
+    /// of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB
+    /// server in a network.</p>
+    /// <note>
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+    /// </note>
+    pub fn server_hostname(&self) -> std::option::Option<&str> {
+        self.server_hostname.as_deref()
+    }
+    /// <p>The user who can mount the share, has the permissions to access files and folders in the
+    /// SMB share.</p>
+    ///
+    /// <p>For information about choosing a user name that ensures sufficient permissions to files,
+    /// folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The password of the user who can mount the share, has the permissions to access files and
+    /// folders in the SMB share.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB)
+    /// location. </p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The mount options used by DataSync to access the SMB server.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::SmbMountOptions> {
+        self.mount_options.as_ref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The value
+    /// can be an empty string. We recommend using tags to name your resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLocationSmbInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationSmbInput");
@@ -7996,6 +8448,46 @@ pub struct CreateLocationS3Input {
     /// <p>The key-value pair that represents the tag that you want to add to the location. The
     /// value can be an empty string. We recommend using tags to name your resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+}
+impl CreateLocationS3Input {
+    /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read
+    /// data from the S3 source location or write data to the S3 destination.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
+    /// access point ARN.</p>
+    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+        self.s3_bucket_arn.as_deref()
+    }
+    /// <p>The Amazon S3 storage class that you want to store your files in when this location is
+    /// used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard.
+    /// For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+    ///
+    /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that
+    /// can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+    pub fn s3_storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
+        self.s3_storage_class.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
+    /// that is used to access an Amazon S3 bucket.</p>
+    ///
+    /// <p>For detailed information about using such a role, see Creating a Location for
+    /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
+        self.s3_config.as_ref()
+    }
+    /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
+    /// the DataSync agents deployed on your Outpost. For more information about launching a DataSync
+    /// agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The
+    /// value can be an empty string. We recommend using tags to name your resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLocationS3Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8047,6 +8539,61 @@ pub struct CreateLocationObjectStorageInput {
     /// <p>The key-value pair that represents the tag that you want to add to the location. The
     /// value can be an empty string. We recommend using tags to name your resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
+}
+impl CreateLocationObjectStorageInput {
+    /// <p>The name of the self-managed object storage server. This value is the
+    /// IP address or Domain Name Service (DNS) name of the object storage server.
+    /// An agent uses this host name to mount the object storage server in a network. </p>
+    pub fn server_hostname(&self) -> std::option::Option<&str> {
+        self.server_hostname.as_deref()
+    }
+    /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
+    /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
+    /// specify a custom port if your self-managed object storage server requires one.</p>
+    pub fn server_port(&self) -> std::option::Option<i32> {
+        self.server_port
+    }
+    /// <p>The protocol that the object storage server uses to communicate.
+    /// Valid values are HTTP or HTTPS.</p>
+    pub fn server_protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectStorageServerProtocol> {
+        self.server_protocol.as_ref()
+    }
+    /// <p>The subdirectory in the self-managed object storage server that is used
+    /// to read data from.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The bucket on the self-managed object storage server that is used
+    /// to read data from.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>Optional. The access key is used if credentials are required to access the self-managed
+    /// object storage server. If your object storage requires a user name and password to
+    /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
+    /// and password, respectively.</p>
+    pub fn access_key(&self) -> std::option::Option<&str> {
+        self.access_key.as_deref()
+    }
+    /// <p>Optional. The secret key is used if credentials are required to access the self-managed
+    /// object storage server. If your object storage requires a user name and password to
+    /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
+    /// and password, respectively.</p>
+    pub fn secret_key(&self) -> std::option::Option<&str> {
+        self.secret_key.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the agents associated with the
+    /// self-managed object storage server location.</p>
+    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_arns.as_deref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The
+    /// value can be an empty string. We recommend using tags to name your resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLocationObjectStorageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8106,6 +8653,55 @@ pub struct CreateLocationNfsInput {
     /// value can be an empty string. We recommend using tags to name your resources.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
+impl CreateLocationNfsInput {
+    /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
+    /// location or write data to the NFS destination. The NFS path should be a path that's
+    /// exported by the NFS server, or a subdirectory of that path. The path should be such that it
+    /// can be mounted by other NFS clients in your network. </p>
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e
+    /// nfs-server-name</code>" from an NFS client that has access to your server. You can specify
+    /// any directory that appears in the results, and any subdirectory of that directory. Ensure that
+    /// the NFS export is accessible without Kerberos authentication. </p>
+    /// <p>To transfer all the data in the folder you specified, DataSync needs to have
+    /// permissions to read all the data. To ensure this, either configure the NFS export with
+    /// <code>no_root_squash,</code> or ensure that the permissions for all of the files that you
+    /// want DataSync allow read access for all users. Doing either enables the agent to read the
+    /// files. For the agent to access directories, you must additionally enable all execute
+    /// access.</p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    ///
+    /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
+    /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
+    /// name of the NFS server. An agent that is installed on-premises uses this host name to mount
+    /// the NFS server in a network. </p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <note>
+    /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4)
+    /// address.</p>
+    /// </note>
+    pub fn server_hostname(&self) -> std::option::Option<&str> {
+        self.server_hostname.as_deref()
+    }
+    /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to
+    /// an NFS server. </p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    pub fn on_prem_config(&self) -> std::option::Option<&crate::model::OnPremConfig> {
+        self.on_prem_config.as_ref()
+    }
+    /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
+    pub fn mount_options(&self) -> std::option::Option<&crate::model::NfsMountOptions> {
+        self.mount_options.as_ref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The
+    /// value can be an empty string. We recommend using tags to name your resources.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLocationNfsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationNfsInput");
@@ -8145,6 +8741,45 @@ pub struct CreateLocationFsxWindowsInput {
     /// <p>The password of the user who has the permissions to access files and folders in the FSx
     /// for Windows File Server file system.</p>
     pub password: std::option::Option<std::string::String>,
+}
+impl CreateLocationFsxWindowsInput {
+    /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows
+    /// File Server file system is used to read data from the Amazon FSx for Windows File Server
+    /// source location or write data to the FSx for Windows File Server destination.</p>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+        self.fsx_filesystem_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the security groups that are to use to configure the
+    /// FSx for Windows File Server file system.</p>
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_arns.as_deref()
+    }
+    /// <p>The key-value pair that represents a tag that you want to add to the resource. The
+    /// value can be an empty string. This value helps you manage, filter, and search for your
+    /// resources. We recommend that you create a name tag for your location.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
+    /// Server file system.</p>
+    /// <p>For information about choosing a user name that ensures sufficient permissions to files,
+    /// folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The password of the user who has the permissions to access files and folders in the FSx
+    /// for Windows File Server file system.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLocationFsxWindowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8205,6 +8840,56 @@ pub struct CreateLocationEfsInput {
     /// resources. We recommend that you create a name tag for your location.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
 }
+impl CreateLocationEfsInput {
+    /// <p>A subdirectory in the location’s path. This subdirectory in the EFS file system is used
+    /// to read data from the EFS source location or write data to the EFS destination. By default,
+    /// DataSync uses the root directory.</p>
+    /// <note>
+    /// <p>
+    /// <code>Subdirectory</code> must be specified with forward slashes. For example,
+    /// <code>/path/to/folder</code>.</p>
+    /// </note>
+    pub fn subdirectory(&self) -> std::option::Option<&str> {
+        self.subdirectory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Amazon EFS file system.</p>
+    pub fn efs_filesystem_arn(&self) -> std::option::Option<&str> {
+        self.efs_filesystem_arn.as_deref()
+    }
+    /// <p>The subnet and security group that the Amazon EFS file system uses. The security group
+    /// that you provide needs to be able to communicate with the security group on the mount target
+    /// in the subnet specified.</p>
+    /// <p>The exact relationship between security group M (of the mount target) and security
+    /// group S (which you provide for DataSync to use at this stage) is as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p> Security group M (which you associate with the mount target) must allow inbound
+    /// access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security
+    /// group S. You can enable inbound connections either by IP address (CIDR range) or security
+    /// group. </p>
+    /// </li>
+    /// <li>
+    /// <p>Security group S (provided to DataSync to access EFS) should have a rule that
+    /// enables outbound connections to the NFS port on one of the file system’s mount targets.
+    /// You can enable outbound connections either by IP address (CIDR range) or security
+    /// group.</p>
+    ///
+    /// <p>For information about security groups and mount targets, see Security
+    /// Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS User
+    /// Guide.</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn ec2_config(&self) -> std::option::Option<&crate::model::Ec2Config> {
+        self.ec2_config.as_ref()
+    }
+    /// <p>The key-value pair that represents a tag that you want to add to the resource. The
+    /// value can be an empty string. This value helps you manage, filter, and search for your
+    /// resources. We recommend that you create a name tag for your location.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLocationEfsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationEfsInput");
@@ -8259,6 +8944,58 @@ pub struct CreateAgentInput {
     /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
     pub security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateAgentInput {
+    /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET
+    /// request with redirects that enable you to get the agent IP address (port 80). Alternatively,
+    /// you can get it from the DataSync console.</p>
+    /// <p>The redirect URL returned in the response provides you the activation key for your
+    /// agent in the query string parameter <code>activationKey</code>. It might also include other
+    /// activation-related parameters; however, these are merely defaults. The arguments you pass to
+    /// this API call determine the actual configuration of your agent.</p>
+    ///
+    ///
+    /// <p>For more information, see Activating an Agent in the <i>DataSync
+    /// User Guide.</i>
+    /// </p>
+    pub fn activation_key(&self) -> std::option::Option<&str> {
+        self.activation_key.as_deref()
+    }
+    /// <p>The name you configured for your agent. This value is a text reference that is used to
+    /// identify the agent in the console.</p>
+    pub fn agent_name(&self) -> std::option::Option<&str> {
+        self.agent_name.as_deref()
+    }
+    /// <p>The key-value pair that represents the tag that you want to associate with the agent.
+    /// The value can be an empty string. This value helps you manage, filter, and search for your
+    /// agents.</p>
+    /// <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in
+    /// UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagListEntry]> {
+        self.tags.as_deref()
+    }
+    /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is
+    /// the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC
+    /// endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+    /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic
+    /// network interfaces for each data transfer task. The agent that runs a task must be private.
+    /// When you start a task that is associated with an agent created in a VPC, or one that has
+    /// access to an IP address in a VPC, then the task is also private. In this case, DataSync
+    /// creates four network interfaces for each task in your subnet. For a data transfer to work, the
+    /// agent must be able to route to all these four network interfaces.</p>
+    pub fn subnet_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_arns.as_deref()
+    }
+    /// <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAgentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentInput");
@@ -8278,6 +9015,12 @@ impl std::fmt::Debug for CreateAgentInput {
 pub struct CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
     pub task_execution_arn: std::option::Option<std::string::String>,
+}
+impl CancelTaskExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+        self.task_execution_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelTaskExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

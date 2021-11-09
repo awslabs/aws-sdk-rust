@@ -39,6 +39,16 @@ pub struct StopDataCollectionByAgentIdsOutput {
     pub agents_configuration_status:
         std::option::Option<std::vec::Vec<crate::model::AgentConfigurationStatus>>,
 }
+impl StopDataCollectionByAgentIdsOutput {
+    /// <p>Information about the agents or connector that were instructed to stop collecting data.
+    /// Information includes the agent/connector ID, a description of the operation performed, and
+    /// whether the agent/connector configuration was updated.</p>
+    pub fn agents_configuration_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::AgentConfigurationStatus]> {
+        self.agents_configuration_status.as_deref()
+    }
+}
 impl std::fmt::Debug for StopDataCollectionByAgentIdsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDataCollectionByAgentIdsOutput");
@@ -110,6 +120,17 @@ pub struct StopContinuousExportOutput {
     /// <p>Timestamp that represents when this continuous export was stopped.</p>
     pub stop_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StopContinuousExportOutput {
+    /// <p>Timestamp that represents when this continuous export started collecting
+    /// data.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>Timestamp that represents when this continuous export was stopped.</p>
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_time.as_ref()
+    }
+}
 impl std::fmt::Debug for StopContinuousExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopContinuousExportOutput");
@@ -180,6 +201,13 @@ pub struct StartImportTaskOutput {
     /// times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub task: std::option::Option<crate::model::ImportTask>,
 }
+impl StartImportTaskOutput {
+    /// <p>An array of information related to the import task request including status information,
+    /// times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+    pub fn task(&self) -> std::option::Option<&crate::model::ImportTask> {
+        self.task.as_ref()
+    }
+}
 impl std::fmt::Debug for StartImportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartImportTaskOutput");
@@ -227,6 +255,12 @@ impl StartImportTaskOutput {
 pub struct StartExportTaskOutput {
     /// <p>A unique identifier used to query the status of an export request.</p>
     pub export_id: std::option::Option<std::string::String>,
+}
+impl StartExportTaskOutput {
+    /// <p>A unique identifier used to query the status of an export request.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartExportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -278,6 +312,16 @@ pub struct StartDataCollectionByAgentIdsOutput {
     /// and whether the agent/connector configuration was updated.</p>
     pub agents_configuration_status:
         std::option::Option<std::vec::Vec<crate::model::AgentConfigurationStatus>>,
+}
+impl StartDataCollectionByAgentIdsOutput {
+    /// <p>Information about agents or the connector that were instructed to start collecting
+    /// data. Information includes the agent/connector ID, a description of the operation performed,
+    /// and whether the agent/connector configuration was updated.</p>
+    pub fn agents_configuration_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::AgentConfigurationStatus]> {
+        self.agents_configuration_status.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDataCollectionByAgentIdsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -363,6 +407,39 @@ pub struct StartContinuousExportOutput {
     /// </ul>
     pub schema_storage_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StartContinuousExportOutput {
+    /// <p>The unique ID assigned to this export.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+    /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The timestamp representing when the continuous export was started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The type of data collector used to gather this data (currently only offered for
+    /// AGENT).</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>A dictionary which describes how the data is stored.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>databaseName</code> - the name of the Glue database used to store the
+    /// schema.</p>
+    /// </li>
+    /// </ul>
+    pub fn schema_storage_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.schema_storage_config.as_ref()
+    }
 }
 impl std::fmt::Debug for StartContinuousExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -511,6 +588,24 @@ pub struct ListServerNeighborsOutput {
     /// <p>Count of distinct servers that are one hop away from the given server.</p>
     pub known_dependency_count: i64,
 }
+impl ListServerNeighborsOutput {
+    /// <p>List of distinct servers that are one hop away from the given server.</p>
+    pub fn neighbors(&self) -> std::option::Option<&[crate::model::NeighborConnectionDetail]> {
+        self.neighbors.as_deref()
+    }
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
+    /// <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
+    /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
+    /// along with this token. Use this token in the next query to retrieve the next set of
+    /// 10.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Count of distinct servers that are one hop away from the given server.</p>
+    pub fn known_dependency_count(&self) -> i64 {
+        self.known_dependency_count
+    }
+}
 impl std::fmt::Debug for ListServerNeighborsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServerNeighborsOutput");
@@ -615,6 +710,24 @@ pub struct ListConfigurationsOutput {
     /// 10.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationsOutput {
+    /// <p>Returns configuration details, including the configuration ID, attribute names, and
+    /// attribute values.</p>
+    pub fn configurations(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.configurations.as_deref()
+    }
+    /// <p>Token to retrieve the next set of results. For example, if your call to
+    /// ListConfigurations returned 100 items, but you set
+    /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
+    /// along with this token. Use this token in the next query to retrieve the next set of
+    /// 10.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationsOutput");
@@ -711,6 +824,32 @@ pub struct GetDiscoverySummaryOutput {
     pub agent_summary: std::option::Option<crate::model::CustomerAgentInfo>,
     /// <p>Details about discovered connectors, including connector status and health.</p>
     pub connector_summary: std::option::Option<crate::model::CustomerConnectorInfo>,
+}
+impl GetDiscoverySummaryOutput {
+    /// <p>The number of servers discovered.</p>
+    pub fn servers(&self) -> i64 {
+        self.servers
+    }
+    /// <p>The number of applications discovered.</p>
+    pub fn applications(&self) -> i64 {
+        self.applications
+    }
+    /// <p>The number of servers mapped to applications.</p>
+    pub fn servers_mapped_to_applications(&self) -> i64 {
+        self.servers_mapped_to_applications
+    }
+    /// <p>The number of servers mapped to tags.</p>
+    pub fn servers_mappedto_tags(&self) -> i64 {
+        self.servers_mappedto_tags
+    }
+    /// <p>Details about discovered agents, including agent status and health.</p>
+    pub fn agent_summary(&self) -> std::option::Option<&crate::model::CustomerAgentInfo> {
+        self.agent_summary.as_ref()
+    }
+    /// <p>Details about discovered connectors, including connector status and health.</p>
+    pub fn connector_summary(&self) -> std::option::Option<&crate::model::CustomerConnectorInfo> {
+        self.connector_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDiscoverySummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -839,6 +978,12 @@ pub struct ExportConfigurationsOutput {
     /// <p>A unique identifier that you can use to query the export status.</p>
     pub export_id: std::option::Option<std::string::String>,
 }
+impl ExportConfigurationsOutput {
+    /// <p>A unique identifier that you can use to query the export status.</p>
+    pub fn export_id(&self) -> std::option::Option<&str> {
+        self.export_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportConfigurationsOutput");
@@ -921,6 +1066,17 @@ pub struct DescribeTagsOutput {
     /// <p>The call returns a token. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTagsOutput {
+    /// <p>Depending on the input, this is a list of configuration items tagged with a specific
+    /// tag, or a list of tags for a specific configuration item.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::ConfigurationTag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The call returns a token. Use this token to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTagsOutput");
@@ -995,6 +1151,17 @@ pub struct DescribeImportTasksOutput {
     /// <p>A returned array of import tasks that match any applied filters, up to the specified
     /// number of maximum results.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::ImportTask>>,
+}
+impl DescribeImportTasksOutput {
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A returned array of import tasks that match any applied filters, up to the specified
+    /// number of maximum results.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::ImportTask]> {
+        self.tasks.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeImportTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1075,6 +1242,22 @@ pub struct DescribeExportTasksOutput {
     /// used to retrieve the next page of results. This value is null when there are no more results
     /// to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeExportTasksOutput {
+    /// <p>Contains one or more sets of export request details. When the status of a request is
+    /// <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can
+    /// view the data in a CSV file.</p>
+    pub fn exports_info(&self) -> std::option::Option<&[crate::model::ExportInfo]> {
+        self.exports_info.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>DescribeExportTasks</code> request. When the results of a
+    /// <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be
+    /// used to retrieve the next page of results. This value is null when there are no more results
+    /// to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeExportTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1160,6 +1343,16 @@ pub struct DescribeExportConfigurationsOutput {
     /// <p>The token from the previous call to describe-export-tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeExportConfigurationsOutput {
+    /// <p></p>
+    pub fn exports_info(&self) -> std::option::Option<&[crate::model::ExportInfo]> {
+        self.exports_info.as_deref()
+    }
+    /// <p>The token from the previous call to describe-export-tasks.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExportConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportConfigurationsOutput");
@@ -1231,6 +1424,18 @@ pub struct DescribeContinuousExportsOutput {
     pub descriptions: std::option::Option<std::vec::Vec<crate::model::ContinuousExportDescription>>,
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeContinuousExportsOutput {
+    /// <p>A list of continuous export descriptions.</p>
+    pub fn descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContinuousExportDescription]> {
+        self.descriptions.as_deref()
+    }
+    /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeContinuousExportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1308,6 +1513,15 @@ pub struct DescribeConfigurationsOutput {
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
 }
+impl DescribeConfigurationsOutput {
+    /// <p>A key in the response map. The value is an array of data.</p>
+    pub fn configurations(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationsOutput");
@@ -1379,6 +1593,22 @@ pub struct DescribeAgentsOutput {
     /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
     /// with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAgentsOutput {
+    /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your
+    /// user account if you did not specify an agent/Connector ID. The output includes agent/Connector
+    /// IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name
+    /// where the agent/Connector resides, and the version number of each agent/Connector.</p>
+    pub fn agents_info(&self) -> std::option::Option<&[crate::model::AgentInfo]> {
+        self.agents_info.as_deref()
+    }
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
+    /// <code>DescribeAgentsRequest$agentIds</code> but set
+    /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
+    /// with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAgentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1552,6 +1782,12 @@ pub struct CreateApplicationOutput {
     /// <p>Configuration ID of an application to be created.</p>
     pub configuration_id: std::option::Option<std::string::String>,
 }
+impl CreateApplicationOutput {
+    /// <p>Configuration ID of an application to be created.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationOutput");
@@ -1603,6 +1839,13 @@ pub struct BatchDeleteImportDataOutput {
     /// <p>Error messages returned for each import task that you deleted as a response for this
     /// command.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteImportDataError>>,
+}
+impl BatchDeleteImportDataOutput {
+    /// <p>Error messages returned for each import task that you deleted as a response for this
+    /// command.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchDeleteImportDataError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteImportDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

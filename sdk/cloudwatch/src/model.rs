@@ -9,6 +9,17 @@ pub struct Tag {
     /// <p>The value for the specified tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your
+    /// resources.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for the specified tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -187,6 +198,12 @@ pub struct MetricStreamFilter {
     /// <p>The name of the metric namespace in the filter.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl MetricStreamFilter {
+    /// <p>The name of the metric namespace in the filter.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for MetricStreamFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricStreamFilter");
@@ -272,6 +289,65 @@ pub struct MetricDatum {
     /// </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub storage_resolution: std::option::Option<i32>,
+}
+impl MetricDatum {
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The dimensions associated with the metric.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The value for the metric.</p>
+    /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
+    /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
+    /// are not supported.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p>The statistical values for the metric.</p>
+    pub fn statistic_values(&self) -> std::option::Option<&crate::model::StatisticSet> {
+        self.statistic_values.as_ref()
+    }
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
+    /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
+    /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+    /// <p>Although the <code>Values</code> array accepts numbers of type
+    /// <code>Double</code>, CloudWatch rejects values that are either too small
+    /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+    /// -Infinity) are not supported.</p>
+    pub fn values(&self) -> std::option::Option<&[f64]> {
+        self.values.as_deref()
+    }
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
+    /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+    /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
+    /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
+    pub fn counts(&self) -> std::option::Option<&[f64]> {
+        self.counts.as_deref()
+    }
+    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
+    /// <p>In
+    /// a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with
+    /// sub-minute resolution down to one second.
+    /// Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available
+    /// only for custom metrics. For more information about high-resolution metrics,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the
+    /// <i>Amazon CloudWatch User Guide</i>.
+    /// </p>
+    /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
+    pub fn storage_resolution(&self) -> std::option::Option<i32> {
+        self.storage_resolution
+    }
 }
 impl std::fmt::Debug for MetricDatum {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -683,6 +759,24 @@ pub struct StatisticSet {
     /// <p>The maximum value of the sample set.</p>
     pub maximum: std::option::Option<f64>,
 }
+impl StatisticSet {
+    /// <p>The number of samples used for the statistic set.</p>
+    pub fn sample_count(&self) -> std::option::Option<f64> {
+        self.sample_count
+    }
+    /// <p>The sum of values for the sample set.</p>
+    pub fn sum(&self) -> std::option::Option<f64> {
+        self.sum
+    }
+    /// <p>The minimum value of the sample set.</p>
+    pub fn minimum(&self) -> std::option::Option<f64> {
+        self.minimum
+    }
+    /// <p>The maximum value of the sample set.</p>
+    pub fn maximum(&self) -> std::option::Option<f64> {
+        self.maximum
+    }
+}
 impl std::fmt::Debug for StatisticSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatisticSet");
@@ -776,6 +870,18 @@ pub struct Dimension {
     /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
     /// at least one non-whitespace character.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Dimension {
+    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
+    /// at least one non-whitespace character.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
+    /// at least one non-whitespace character.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Dimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -905,6 +1011,67 @@ pub struct MetricDataQuery {
     /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
     /// <code>GetMetricData</code> operations.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl MetricDataQuery {
+    /// <p>A short name used to tie this object to the results in the response. This name must be
+    /// unique within a single call to <code>GetMetricData</code>. If you are performing math
+    /// expressions on this set of data, this name represents that data and can serve as a
+    /// variable in the mathematical expression. The valid characters are letters, numbers, and
+    /// underscore. The first character must be a lowercase letter.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric
+    /// and not performing a math expression on returned data.</p>
+    /// <p>Within one MetricDataQuery object, you must specify either
+    /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    pub fn metric_stat(&self) -> std::option::Option<&crate::model::MetricStat> {
+        self.metric_stat.as_ref()
+    }
+    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression
+    /// can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other
+    /// expressions to use the result of those expressions. For more information about metric math expressions, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the
+    /// <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>Within each MetricDataQuery object, you must specify either
+    /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>A human-readable label for this metric or expression. This is especially useful
+    /// if this is an expression, so that you know
+    /// what the value represents. If the metric or expression is shown in a
+    /// CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch
+    /// generates a default.</p>
+    /// <p>You can put dynamic expressions into a label, so that it is more descriptive.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the
+    /// timestamps and raw data values of this metric. If you are performing this call just to
+    /// do math expressions and do not also need the raw data returned, you can specify
+    /// <code>False</code>. If you omit this, the default of <code>True</code> is
+    /// used.</p>
+    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all
+    /// other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+    pub fn return_data(&self) -> std::option::Option<bool> {
+        self.return_data
+    }
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
+    /// period can be as short as one minute (60 seconds) and must be a multiple of 60.
+    /// For high-resolution metrics that are collected at intervals of less than one minute,
+    /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
+    /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
+    /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+    /// <code>GetMetricData</code> operations.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricDataQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1122,6 +1289,43 @@ pub struct MetricStat {
     /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
     pub unit: std::option::Option<crate::model::StandardUnit>,
 }
+impl MetricStat {
+    /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
+    pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
+        self.metric.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
+    /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
+    /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
+    /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
+    /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
+    /// </li>
+    /// </ul>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
+    /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>
+    pub fn stat(&self) -> std::option::Option<&str> {
+        self.stat.as_deref()
+    }
+    /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
+    /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified
+    /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
+    /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+        self.unit.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricStat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricStat");
@@ -1250,6 +1454,20 @@ pub struct Metric {
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The dimensions for the metric.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+}
+impl Metric {
+    /// <p>The namespace of the metric.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the metric. This is a required field.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The dimensions for the metric.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+        self.dimensions.as_deref()
+    }
 }
 impl std::fmt::Debug for Metric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1490,6 +1708,16 @@ pub struct DashboardValidationMessage {
     /// <p>A message describing the error or warning.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DashboardValidationMessage {
+    /// <p>The data path related to the message.</p>
+    pub fn data_path(&self) -> std::option::Option<&str> {
+        self.data_path.as_deref()
+    }
+    /// <p>A message describing the error or warning.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DashboardValidationMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashboardValidationMessage");
@@ -1560,6 +1788,22 @@ pub struct AnomalyDetectorConfiguration {
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
     /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
     pub metric_timezone: std::option::Option<std::string::String>,
+}
+impl AnomalyDetectorConfiguration {
+    /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
+    /// this to make sure that events that could cause unusual values for the metric, such as
+    /// deployments, aren't used when CloudWatch creates the model.</p>
+    pub fn excluded_time_ranges(&self) -> std::option::Option<&[crate::model::Range]> {
+        self.excluded_time_ranges.as_deref()
+    }
+    /// <p>The time zone to use for the metric. This is useful to enable the model to automatically
+    /// account for daylight savings time changes if the metric is sensitive to such time
+    /// changes.</p>
+    /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
+    /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+    pub fn metric_timezone(&self) -> std::option::Option<&str> {
+        self.metric_timezone.as_deref()
+    }
 }
 impl std::fmt::Debug for AnomalyDetectorConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1651,6 +1895,18 @@ pub struct Range {
     /// <code>2019-07-01T23:59:59</code>.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Range {
+    /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
+    /// <code>2019-07-01T23:59:59</code>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
+    /// <code>2019-07-01T23:59:59</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Range {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Range");
@@ -1735,6 +1991,38 @@ pub struct MetricStreamEntry {
     /// <code>json</code>
     /// and <code>opentelemetry0.7</code>.</p>
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
+}
+impl MetricStreamEntry {
+    /// <p>The ARN of the metric stream.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date that the metric stream was originally created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date that the configuration of this metric stream was most recently updated.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+    /// <p>The name of the metric stream.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
+    pub fn firehose_arn(&self) -> std::option::Option<&str> {
+        self.firehose_arn.as_deref()
+    }
+    /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The output format of this metric stream. Valid values are
+    /// <code>json</code>
+    /// and <code>opentelemetry0.7</code>.</p>
+    pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
+        self.output_format.as_ref()
+    }
 }
 impl std::fmt::Debug for MetricStreamEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1928,6 +2216,16 @@ pub struct DimensionFilter {
     /// <p>The value of the dimension to be matched.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl DimensionFilter {
+    /// <p>The dimension name to be matched.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the dimension to be matched.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for DimensionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DimensionFilter");
@@ -1995,6 +2293,25 @@ pub struct DashboardEntry {
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The size of the dashboard, in bytes.</p>
     pub size: i64,
+}
+impl DashboardEntry {
+    /// <p>The name of the dashboard.</p>
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+        self.dashboard_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+        self.dashboard_arn.as_deref()
+    }
+    /// <p>The time stamp of when the dashboard was last modified, either by an API call or
+    /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The size of the dashboard, in bytes.</p>
+    pub fn size(&self) -> i64 {
+        self.size
+    }
 }
 impl std::fmt::Debug for DashboardEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2109,6 +2426,43 @@ pub struct Datapoint {
     /// <p>The percentile statistic for the data point.</p>
     pub extended_statistics:
         std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+}
+impl Datapoint {
+    /// <p>The time stamp used for the data point.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The number of metric values that contributed to the aggregate value of this
+    /// data point.</p>
+    pub fn sample_count(&self) -> std::option::Option<f64> {
+        self.sample_count
+    }
+    /// <p>The average of the metric values that correspond to the data point.</p>
+    pub fn average(&self) -> std::option::Option<f64> {
+        self.average
+    }
+    /// <p>The sum of the metric values for the data point.</p>
+    pub fn sum(&self) -> std::option::Option<f64> {
+        self.sum
+    }
+    /// <p>The minimum metric value for the data point.</p>
+    pub fn minimum(&self) -> std::option::Option<f64> {
+        self.minimum
+    }
+    /// <p>The maximum metric value for the data point.</p>
+    pub fn maximum(&self) -> std::option::Option<f64> {
+        self.maximum
+    }
+    /// <p>The standard unit for the data point.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The percentile statistic for the data point.</p>
+    pub fn extended_statistics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.extended_statistics.as_ref()
+    }
 }
 impl std::fmt::Debug for Datapoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2274,6 +2628,16 @@ pub struct MessageData {
     /// <p>The message text.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl MessageData {
+    /// <p>The error code or status code associated with the message.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The message text.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageData");
@@ -2354,6 +2718,40 @@ pub struct MetricDataResult {
     pub status_code: std::option::Option<crate::model::StatusCode>,
     /// <p>A list of messages with additional information about the data returned.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
+}
+impl MetricDataResult {
+    /// <p>The short name you specified to represent this metric.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The human-readable label associated with the data.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
+    /// timestamps always matches the number of values and the value for Timestamps[x] is
+    /// Values[x].</p>
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.timestamps.as_deref()
+    }
+    /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
+    /// values always matches the number of timestamps and the timestamp for Values[x] is
+    /// Timestamps[x].</p>
+    pub fn values(&self) -> std::option::Option<&[f64]> {
+        self.values.as_deref()
+    }
+    /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned.
+    /// <code>PartialData</code> means that an incomplete set of data points were returned.
+    /// You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points.
+    /// <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code>  
+    /// indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>A list of messages with additional information about the data returned.</p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::MessageData]> {
+        self.messages.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricDataResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2580,6 +2978,16 @@ pub struct LabelOptions {
     /// and 30 minutes ahead of UTC. The default is +0000. </p>
     pub timezone: std::option::Option<std::string::String>,
 }
+impl LabelOptions {
+    /// <p>The time zone to use for metric data return in this operation.
+    /// The format is <code>+</code> or <code>-</code> followed by four digits.
+    /// The first two digits indicate the number of hours ahead or behind of UTC, and
+    /// the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour
+    /// and 30 minutes ahead of UTC. The default is +0000. </p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+}
 impl std::fmt::Debug for LabelOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelOptions");
@@ -2714,6 +3122,49 @@ pub struct InsightRuleMetricDatapoint {
     /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub maximum: std::option::Option<f64>,
+}
+impl InsightRuleMetricDatapoint {
+    /// <p>The timestamp of the data point.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The number of unique contributors who published data during this timestamp.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn unique_contributors(&self) -> std::option::Option<f64> {
+        self.unique_contributors
+    }
+    /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately,
+    /// so the identity of the max contributor
+    /// could be different for each timestamp.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn max_contributor_value(&self) -> std::option::Option<f64> {
+        self.max_contributor_value
+    }
+    /// <p>The number of occurrences that matched the rule during this data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn sample_count(&self) -> std::option::Option<f64> {
+        self.sample_count
+    }
+    /// <p>The average value from all contributors during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn average(&self) -> std::option::Option<f64> {
+        self.average
+    }
+    /// <p>The sum of the values from all contributors during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn sum(&self) -> std::option::Option<f64> {
+        self.sum
+    }
+    /// <p>The minimum value from a single contributor during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn minimum(&self) -> std::option::Option<f64> {
+        self.minimum
+    }
+    /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
+    /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
+    pub fn maximum(&self) -> std::option::Option<f64> {
+        self.maximum
+    }
 }
 impl std::fmt::Debug for InsightRuleMetricDatapoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2883,6 +3334,22 @@ pub struct InsightRuleContributor {
     pub datapoints:
         std::option::Option<std::vec::Vec<crate::model::InsightRuleContributorDatapoint>>,
 }
+impl InsightRuleContributor {
+    /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+    /// <p>An approximation of the aggregate value that comes from this contributor.</p>
+    pub fn approximate_aggregate_value(&self) -> std::option::Option<f64> {
+        self.approximate_aggregate_value
+    }
+    /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
+    pub fn datapoints(
+        &self,
+    ) -> std::option::Option<&[crate::model::InsightRuleContributorDatapoint]> {
+        self.datapoints.as_deref()
+    }
+}
 impl std::fmt::Debug for InsightRuleContributor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsightRuleContributor");
@@ -2988,6 +3455,16 @@ pub struct InsightRuleContributorDatapoint {
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub approximate_value: std::option::Option<f64>,
 }
+impl InsightRuleContributorDatapoint {
+    /// <p>The timestamp of the data point.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The approximate value that this contributor added during this timestamp.</p>
+    pub fn approximate_value(&self) -> std::option::Option<f64> {
+        self.approximate_value
+    }
+}
 impl std::fmt::Debug for InsightRuleContributorDatapoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsightRuleContributorDatapoint");
@@ -3058,6 +3535,24 @@ pub struct PartialFailure {
     pub failure_code: std::option::Option<std::string::String>,
     /// <p>A description of the error.</p>
     pub failure_description: std::option::Option<std::string::String>,
+}
+impl PartialFailure {
+    /// <p>The specified rule that could not be deleted.</p>
+    pub fn failure_resource(&self) -> std::option::Option<&str> {
+        self.failure_resource.as_deref()
+    }
+    /// <p>The type of error.</p>
+    pub fn exception_type(&self) -> std::option::Option<&str> {
+        self.exception_type.as_deref()
+    }
+    /// <p>The code of the error.</p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>A description of the error.</p>
+    pub fn failure_description(&self) -> std::option::Option<&str> {
+        self.failure_description.as_deref()
+    }
 }
 impl std::fmt::Debug for PartialFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3165,6 +3660,29 @@ pub struct InsightRule {
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
     /// Rule Syntax</a>.</p>
     pub definition: std::option::Option<std::string::String>,
+}
+impl InsightRule {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates whether the rule is enabled or disabled.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For built-in rules,
+    /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
+    /// </p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors,
+    /// the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
+    /// Rule Syntax</a>.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
 }
 impl std::fmt::Debug for InsightRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3278,6 +3796,38 @@ pub struct AnomalyDetector {
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
     /// </p>
     pub state_value: std::option::Option<crate::model::AnomalyDetectorStateValue>,
+}
+impl AnomalyDetector {
+    /// <p>The namespace of the metric associated with the anomaly detection model.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The name of the metric associated with the anomaly detection model.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The metric dimensions associated with the anomaly detection model.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The statistic associated with the anomaly detection model.</p>
+    pub fn stat(&self) -> std::option::Option<&str> {
+        self.stat.as_deref()
+    }
+    /// <p>The configuration specifies details about how the
+    /// anomaly detection model is to be trained, including time ranges to
+    /// exclude from use for training the model, and the time zone to use for
+    /// the metric.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyDetectorConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+    /// </p>
+    pub fn state_value(&self) -> std::option::Option<&crate::model::AnomalyDetectorStateValue> {
+        self.state_value.as_ref()
+    }
 }
 impl std::fmt::Debug for AnomalyDetector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3543,6 +4093,136 @@ pub struct MetricAlarm {
     /// <code>ANOMALY_DETECTION_BAND</code> function
     /// used as the threshold for the alarm.</p>
     pub threshold_metric_id: std::option::Option<std::string::String>,
+}
+impl MetricAlarm {
+    /// <p>The name of the alarm.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    pub fn alarm_arn(&self) -> std::option::Option<&str> {
+        self.alarm_arn.as_deref()
+    }
+    /// <p>The description of the alarm.</p>
+    pub fn alarm_description(&self) -> std::option::Option<&str> {
+        self.alarm_description.as_deref()
+    }
+    /// <p>The time stamp of the last update to the alarm configuration.</p>
+    pub fn alarm_configuration_updated_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.alarm_configuration_updated_timestamp.as_ref()
+    }
+    /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
+    pub fn actions_enabled(&self) -> std::option::Option<bool> {
+        self.actions_enabled
+    }
+    /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
+    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    pub fn ok_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.ok_actions.as_deref()
+    }
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
+    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    pub fn alarm_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.alarm_actions.as_deref()
+    }
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
+    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    pub fn insufficient_data_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.insufficient_data_actions.as_deref()
+    }
+    /// <p>The state value for the alarm.</p>
+    pub fn state_value(&self) -> std::option::Option<&crate::model::StateValue> {
+        self.state_value.as_ref()
+    }
+    /// <p>An explanation for the alarm state, in text format.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>An explanation for the alarm state, in JSON format.</p>
+    pub fn state_reason_data(&self) -> std::option::Option<&str> {
+        self.state_reason_data.as_deref()
+    }
+    /// <p>The time stamp of the last update to the alarm state.</p>
+    pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.state_updated_timestamp.as_ref()
+    }
+    /// <p>The name of the metric associated with the alarm, if this is an alarm
+    /// based on a single metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The namespace of the metric associated with the alarm.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The statistic for the metric associated with the alarm, other than percentile.
+    /// For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between
+    /// p0.0 and p100.</p>
+    pub fn extended_statistic(&self) -> std::option::Option<&str> {
+        self.extended_statistic.as_deref()
+    }
+    /// <p>The dimensions for the metric associated with the alarm.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The period, in seconds, over which the statistic is applied.</p>
+    pub fn period(&self) -> std::option::Option<i32> {
+        self.period
+    }
+    /// <p>The unit of the metric associated with the alarm.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+        self.unit.as_ref()
+    }
+    /// <p>The number of periods over which data is compared to the specified threshold.</p>
+    pub fn evaluation_periods(&self) -> std::option::Option<i32> {
+        self.evaluation_periods
+    }
+    /// <p>The number of data points that must be breaching to trigger the alarm.</p>
+    pub fn datapoints_to_alarm(&self) -> std::option::Option<i32> {
+        self.datapoints_to_alarm
+    }
+    /// <p>The value to compare with the specified statistic.</p>
+    pub fn threshold(&self) -> std::option::Option<f64> {
+        self.threshold
+    }
+    /// <p>The arithmetic operation to use when comparing the specified
+    /// statistic and threshold. The specified statistic value is used as the first operand.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    pub fn treat_missing_data(&self) -> std::option::Option<&str> {
+        self.treat_missing_data.as_deref()
+    }
+    /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change
+    /// during periods with too few data points to be statistically significant. If <code>evaluate</code> or this
+    /// parameter is not used, the alarm is always evaluated and possibly changes state no matter
+    /// how many data points are available.</p>
+    pub fn evaluate_low_sample_count_percentile(&self) -> std::option::Option<&str> {
+        self.evaluate_low_sample_count_percentile.as_deref()
+    }
+    /// <p>An array of MetricDataQuery structures, used in an alarm based on a
+    /// metric math expression. Each structure either retrieves a
+    /// metric or performs a math expression.
+    ///
+    /// One item in the Metrics array is the math expression that the alarm watches.
+    /// This expression by designated by having <code>ReturnData</code> set to
+    /// true.</p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
+        self.metrics.as_deref()
+    }
+    /// <p>In an alarm based on an anomaly detection model, this is the ID of the
+    /// <code>ANOMALY_DETECTION_BAND</code> function
+    /// used as the threshold for the alarm.</p>
+    pub fn threshold_metric_id(&self) -> std::option::Option<&str> {
+        self.threshold_metric_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricAlarm {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4082,6 +4762,62 @@ pub struct CompositeAlarm {
     /// <p>The state value for the alarm.</p>
     pub state_value: std::option::Option<crate::model::StateValue>,
 }
+impl CompositeAlarm {
+    /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
+    pub fn actions_enabled(&self) -> std::option::Option<bool> {
+        self.actions_enabled
+    }
+    /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    pub fn alarm_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.alarm_actions.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    pub fn alarm_arn(&self) -> std::option::Option<&str> {
+        self.alarm_arn.as_deref()
+    }
+    /// <p>The time stamp of the last update to the alarm configuration.</p>
+    pub fn alarm_configuration_updated_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.alarm_configuration_updated_timestamp.as_ref()
+    }
+    /// <p>The description of the alarm.</p>
+    pub fn alarm_description(&self) -> std::option::Option<&str> {
+        self.alarm_description.as_deref()
+    }
+    /// <p>The name of the alarm.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
+    pub fn alarm_rule(&self) -> std::option::Option<&str> {
+        self.alarm_rule.as_deref()
+    }
+    /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    pub fn insufficient_data_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.insufficient_data_actions.as_deref()
+    }
+    /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    pub fn ok_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.ok_actions.as_deref()
+    }
+    /// <p>An explanation for the alarm state, in text format.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>An explanation for the alarm state, in JSON format.</p>
+    pub fn state_reason_data(&self) -> std::option::Option<&str> {
+        self.state_reason_data.as_deref()
+    }
+    /// <p>The time stamp of the last update to the alarm state.</p>
+    pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.state_updated_timestamp.as_ref()
+    }
+    /// <p>The state value for the alarm.</p>
+    pub fn state_value(&self) -> std::option::Option<&crate::model::StateValue> {
+        self.state_value.as_ref()
+    }
+}
 impl std::fmt::Debug for CompositeAlarm {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompositeAlarm");
@@ -4400,6 +5136,32 @@ pub struct AlarmHistoryItem {
     pub history_summary: std::option::Option<std::string::String>,
     /// <p>Data about the alarm, in JSON format.</p>
     pub history_data: std::option::Option<std::string::String>,
+}
+impl AlarmHistoryItem {
+    /// <p>The descriptive name for the alarm.</p>
+    pub fn alarm_name(&self) -> std::option::Option<&str> {
+        self.alarm_name.as_deref()
+    }
+    /// <p>The type of alarm, either metric alarm or composite alarm.</p>
+    pub fn alarm_type(&self) -> std::option::Option<&crate::model::AlarmType> {
+        self.alarm_type.as_ref()
+    }
+    /// <p>The time stamp for the alarm history item.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The type of alarm history item.</p>
+    pub fn history_item_type(&self) -> std::option::Option<&crate::model::HistoryItemType> {
+        self.history_item_type.as_ref()
+    }
+    /// <p>A summary of the alarm history, in text format.</p>
+    pub fn history_summary(&self) -> std::option::Option<&str> {
+        self.history_summary.as_deref()
+    }
+    /// <p>Data about the alarm, in JSON format.</p>
+    pub fn history_data(&self) -> std::option::Option<&str> {
+        self.history_data.as_deref()
+    }
 }
 impl std::fmt::Debug for AlarmHistoryItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

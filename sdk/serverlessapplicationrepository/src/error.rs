@@ -1951,6 +1951,12 @@ pub struct TooManyRequestsException {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl TooManyRequestsException {
+    /// <p>429</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -2029,6 +2035,12 @@ pub struct NotFoundException {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl NotFoundException {
+    /// <p>404</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2109,6 +2121,12 @@ pub struct InternalServerErrorException {
     /// <p>The AWS Serverless Application Repository service encountered an internal error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalServerErrorException {
+    /// <p>500</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerErrorException");
@@ -2187,6 +2205,12 @@ pub struct ForbiddenException {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The client is not authenticated.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ForbiddenException {
+    /// <p>403</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2267,6 +2291,12 @@ pub struct ConflictException {
     /// <p>The resource already exists.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ConflictException {
+    /// <p>409</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -2345,6 +2375,12 @@ pub struct BadRequestException {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>One of the parameters in the request is invalid.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BadRequestException {
+    /// <p>400</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -3501,6 +3501,12 @@ pub struct TooManyTagsException {
     /// <p>The name of the resource with too many tags.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl TooManyTagsException {
+    /// <p>The name of the resource with too many tags.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyTagsException");

@@ -15,6 +15,29 @@ pub struct ValidateAssessmentReportIntegrityOutput {
     /// <p> Represents any errors that occurred when validating the assessment report. </p>
     pub validation_errors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ValidateAssessmentReportIntegrityOutput {
+    /// <p> Specifies whether the signature key is valid. </p>
+    pub fn signature_valid(&self) -> std::option::Option<bool> {
+        self.signature_valid
+    }
+    /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
+    pub fn signature_algorithm(&self) -> std::option::Option<&str> {
+        self.signature_algorithm.as_deref()
+    }
+    /// <p> The date and time signature that specifies when the assessment report was created.
+    /// </p>
+    pub fn signature_date_time(&self) -> std::option::Option<&str> {
+        self.signature_date_time.as_deref()
+    }
+    /// <p> The unique identifier for the validation signature key. </p>
+    pub fn signature_key_id(&self) -> std::option::Option<&str> {
+        self.signature_key_id.as_deref()
+    }
+    /// <p> Represents any errors that occurred when validating the assessment report. </p>
+    pub fn validation_errors(&self) -> std::option::Option<&[std::string::String]> {
+        self.validation_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateAssessmentReportIntegrityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateAssessmentReportIntegrityOutput");
@@ -135,6 +158,12 @@ pub struct UpdateSettingsOutput {
     /// <p> The current list of settings. </p>
     pub settings: std::option::Option<crate::model::Settings>,
 }
+impl UpdateSettingsOutput {
+    /// <p> The current list of settings. </p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+        self.settings.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSettingsOutput");
@@ -183,6 +212,13 @@ pub struct UpdateControlOutput {
     /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned.
     /// </p>
     pub control: std::option::Option<crate::model::Control>,
+}
+impl UpdateControlOutput {
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned.
+    /// </p>
+    pub fn control(&self) -> std::option::Option<&crate::model::Control> {
+        self.control.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -234,6 +270,13 @@ pub struct UpdateAssessmentStatusOutput {
     /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
     /// returned. </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
+}
+impl UpdateAssessmentStatusOutput {
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
+    /// returned. </p>
+    pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
+        self.assessment.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -289,6 +332,15 @@ pub struct UpdateAssessmentFrameworkShareOutput {
     /// <code>UpdateAssessmentFrameworkShare</code> operation. </p>
     pub assessment_framework_share_request:
         std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
+}
+impl UpdateAssessmentFrameworkShareOutput {
+    /// <p> The updated share request that's returned by the
+    /// <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+    pub fn assessment_framework_share_request(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentFrameworkShareRequest> {
+        self.assessment_framework_share_request.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentFrameworkShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -350,6 +402,12 @@ pub struct UpdateAssessmentFrameworkOutput {
     /// <p> The name of the framework. </p>
     pub framework: std::option::Option<crate::model::Framework>,
 }
+impl UpdateAssessmentFrameworkOutput {
+    /// <p> The name of the framework. </p>
+    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+        self.framework.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentFrameworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentFrameworkOutput");
@@ -401,6 +459,13 @@ pub struct UpdateAssessmentControlSetStatusOutput {
     /// <p> The name of the updated control set that the
     /// <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
     pub control_set: std::option::Option<crate::model::AssessmentControlSet>,
+}
+impl UpdateAssessmentControlSetStatusOutput {
+    /// <p> The name of the updated control set that the
+    /// <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    pub fn control_set(&self) -> std::option::Option<&crate::model::AssessmentControlSet> {
+        self.control_set.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentControlSetStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -456,6 +521,13 @@ pub struct UpdateAssessmentControlOutput {
     /// returned. </p>
     pub control: std::option::Option<crate::model::AssessmentControl>,
 }
+impl UpdateAssessmentControlOutput {
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API
+    /// returned. </p>
+    pub fn control(&self) -> std::option::Option<&crate::model::AssessmentControl> {
+        self.control.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentControlOutput");
@@ -509,6 +581,13 @@ pub struct UpdateAssessmentOutput {
     /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name
     /// of the updated assessment.</p>
     pub assessment: std::option::Option<crate::model::Assessment>,
+}
+impl UpdateAssessmentOutput {
+    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name
+    /// of the updated assessment.</p>
+    pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
+        self.assessment.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -625,6 +704,15 @@ pub struct StartAssessmentFrameworkShareOutput {
     pub assessment_framework_share_request:
         std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
 }
+impl StartAssessmentFrameworkShareOutput {
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.
+    /// </p>
+    pub fn assessment_framework_share_request(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentFrameworkShareRequest> {
+        self.assessment_framework_share_request.as_ref()
+    }
+}
 impl std::fmt::Debug for StartAssessmentFrameworkShareOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAssessmentFrameworkShareOutput");
@@ -686,6 +774,16 @@ pub struct RegisterOrganizationAdminAccountOutput {
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the organization. </p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl RegisterOrganizationAdminAccountOutput {
+    /// <p> The identifier for the delegated administrator account. </p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+    /// <p> The identifier for the organization. </p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterOrganizationAdminAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -754,6 +852,12 @@ pub struct RegisterAccountOutput {
     /// <p> The status of the account registration request. </p>
     pub status: std::option::Option<crate::model::AccountStatus>,
 }
+impl RegisterAccountOutput {
+    /// <p> The status of the account registration request. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterAccountOutput");
@@ -805,6 +909,15 @@ pub struct ListTagsForResourceOutput {
     /// <p> The list of tags that the <code>ListTagsForResource</code> API returned. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p> The list of tags that the <code>ListTagsForResource</code> API returned. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -870,6 +983,16 @@ pub struct ListNotificationsOutput {
     pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNotificationsOutput {
+    /// <p> The returned list of notifications. </p>
+    pub fn notifications(&self) -> std::option::Option<&[crate::model::Notification]> {
+        self.notifications.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -943,6 +1066,16 @@ pub struct ListKeywordsForDataSourceOutput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListKeywordsForDataSourceOutput {
+    /// <p> The list of keywords for the event mapping source. </p>
+    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.keywords.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListKeywordsForDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListKeywordsForDataSourceOutput");
@@ -1015,6 +1148,17 @@ pub struct ListControlsOutput {
     pub control_metadata_list: std::option::Option<std::vec::Vec<crate::model::ControlMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListControlsOutput {
+    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned.
+    /// </p>
+    pub fn control_metadata_list(&self) -> std::option::Option<&[crate::model::ControlMetadata]> {
+        self.control_metadata_list.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListControlsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1095,6 +1239,18 @@ pub struct ListAssessmentsOutput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssessmentsOutput {
+    /// <p> The metadata that's associated with the assessment. </p>
+    pub fn assessment_metadata(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentMetadataItem]> {
+        self.assessment_metadata.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssessmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentsOutput");
@@ -1172,6 +1328,19 @@ pub struct ListAssessmentReportsOutput {
         std::option::Option<std::vec::Vec<crate::model::AssessmentReportMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssessmentReportsOutput {
+    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API
+    /// returned. </p>
+    pub fn assessment_reports(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentReportMetadata]> {
+        self.assessment_reports.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssessmentReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1252,6 +1421,19 @@ pub struct ListAssessmentFrameworkShareRequestsOutput {
         std::option::Option<std::vec::Vec<crate::model::AssessmentFrameworkShareRequest>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssessmentFrameworkShareRequestsOutput {
+    /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code>
+    /// API returned. </p>
+    pub fn assessment_framework_share_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentFrameworkShareRequest]> {
+        self.assessment_framework_share_requests.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssessmentFrameworkShareRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1337,6 +1519,18 @@ pub struct ListAssessmentFrameworksOutput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssessmentFrameworksOutput {
+    /// <p> The list of metadata objects for the framework. </p>
+    pub fn framework_metadata_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentFrameworkMetadata]> {
+        self.framework_metadata_list.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssessmentFrameworksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentFrameworksOutput");
@@ -1411,6 +1605,12 @@ pub struct GetSettingsOutput {
     /// <p> The settings object that holds all supported Audit Manager settings. </p>
     pub settings: std::option::Option<crate::model::Settings>,
 }
+impl GetSettingsOutput {
+    /// <p> The settings object that holds all supported Audit Manager settings. </p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::Settings> {
+        self.settings.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSettingsOutput");
@@ -1458,6 +1658,12 @@ impl GetSettingsOutput {
 pub struct GetServicesInScopeOutput {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
     pub service_metadata: std::option::Option<std::vec::Vec<crate::model::ServiceMetadata>>,
+}
+impl GetServicesInScopeOutput {
+    /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    pub fn service_metadata(&self) -> std::option::Option<&[crate::model::ServiceMetadata]> {
+        self.service_metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServicesInScopeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1518,6 +1724,16 @@ pub struct GetOrganizationAdminAccountOutput {
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the organization. </p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl GetOrganizationAdminAccountOutput {
+    /// <p> The identifier for the administrator account. </p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+    /// <p> The identifier for the organization. </p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOrganizationAdminAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1589,6 +1805,19 @@ pub struct GetEvidenceFoldersByAssessmentControlOutput {
         std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetEvidenceFoldersByAssessmentControlOutput {
+    /// <p> The list of evidence folders that the
+    /// <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+    pub fn evidence_folders(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentEvidenceFolder]> {
+        self.evidence_folders.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEvidenceFoldersByAssessmentControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1670,6 +1899,19 @@ pub struct GetEvidenceFoldersByAssessmentOutput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetEvidenceFoldersByAssessmentOutput {
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API
+    /// returned. </p>
+    pub fn evidence_folders(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssessmentEvidenceFolder]> {
+        self.evidence_folders.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEvidenceFoldersByAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceFoldersByAssessmentOutput");
@@ -1746,6 +1988,12 @@ pub struct GetEvidenceFolderOutput {
     /// <p> The folder that the evidence is stored in. </p>
     pub evidence_folder: std::option::Option<crate::model::AssessmentEvidenceFolder>,
 }
+impl GetEvidenceFolderOutput {
+    /// <p> The folder that the evidence is stored in. </p>
+    pub fn evidence_folder(&self) -> std::option::Option<&crate::model::AssessmentEvidenceFolder> {
+        self.evidence_folder.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEvidenceFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceFolderOutput");
@@ -1799,6 +2047,17 @@ pub struct GetEvidenceByEvidenceFolderOutput {
     pub evidence: std::option::Option<std::vec::Vec<crate::model::Evidence>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetEvidenceByEvidenceFolderOutput {
+    /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
+    /// </p>
+    pub fn evidence(&self) -> std::option::Option<&[crate::model::Evidence]> {
+        self.evidence.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEvidenceByEvidenceFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1872,6 +2131,12 @@ pub struct GetEvidenceOutput {
     /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
     pub evidence: std::option::Option<crate::model::Evidence>,
 }
+impl GetEvidenceOutput {
+    /// <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+    pub fn evidence(&self) -> std::option::Option<&crate::model::Evidence> {
+        self.evidence.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEvidenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceOutput");
@@ -1921,6 +2186,16 @@ pub struct GetDelegationsOutput {
     pub delegations: std::option::Option<std::vec::Vec<crate::model::DelegationMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetDelegationsOutput {
+    /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
+    pub fn delegations(&self) -> std::option::Option<&[crate::model::DelegationMetadata]> {
+        self.delegations.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDelegationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1993,6 +2268,12 @@ pub struct GetControlOutput {
     /// <p> The name of the control that the <code>GetControl</code> API returned. </p>
     pub control: std::option::Option<crate::model::Control>,
 }
+impl GetControlOutput {
+    /// <p> The name of the control that the <code>GetControl</code> API returned. </p>
+    pub fn control(&self) -> std::option::Option<&crate::model::Control> {
+        self.control.as_ref()
+    }
+}
 impl std::fmt::Debug for GetControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetControlOutput");
@@ -2042,6 +2323,16 @@ pub struct GetChangeLogsOutput {
     pub change_logs: std::option::Option<std::vec::Vec<crate::model::ChangeLog>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetChangeLogsOutput {
+    /// <p> The list of user activity for the control. </p>
+    pub fn change_logs(&self) -> std::option::Option<&[crate::model::ChangeLog]> {
+        self.change_logs.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetChangeLogsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2114,6 +2405,13 @@ pub struct GetAssessmentReportUrlOutput {
     /// resource on the internet. </p>
     pub pre_signed_url: std::option::Option<crate::model::Url>,
 }
+impl GetAssessmentReportUrlOutput {
+    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a
+    /// resource on the internet. </p>
+    pub fn pre_signed_url(&self) -> std::option::Option<&crate::model::Url> {
+        self.pre_signed_url.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAssessmentReportUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssessmentReportUrlOutput");
@@ -2163,6 +2461,12 @@ impl GetAssessmentReportUrlOutput {
 pub struct GetAssessmentFrameworkOutput {
     /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
     pub framework: std::option::Option<crate::model::Framework>,
+}
+impl GetAssessmentFrameworkOutput {
+    /// <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+        self.framework.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAssessmentFrameworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2220,6 +2524,20 @@ pub struct GetAssessmentOutput {
     /// user. This includes the role type and IAM Amazon Resource Name (ARN).
     /// </p>
     pub user_role: std::option::Option<crate::model::Role>,
+}
+impl GetAssessmentOutput {
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
+    /// An Audit Manager assessment is an implementation of an Audit Manager
+    /// framework. </p>
+    pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
+        self.assessment.as_ref()
+    }
+    /// <p> The wrapper that contains the Audit Manager role information of the current
+    /// user. This includes the role type and IAM Amazon Resource Name (ARN).
+    /// </p>
+    pub fn user_role(&self) -> std::option::Option<&crate::model::Role> {
+        self.user_role.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2292,6 +2610,12 @@ impl GetAssessmentOutput {
 pub struct GetAccountStatusOutput {
     /// <p> The status of the Amazon Web Services account. </p>
     pub status: std::option::Option<crate::model::AccountStatus>,
+}
+impl GetAccountStatusOutput {
+    /// <p> The status of the Amazon Web Services account. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2404,6 +2728,12 @@ impl DeregisterOrganizationAdminAccountOutput {
 pub struct DeregisterAccountOutput {
     /// <p> The registration status of the account. </p>
     pub status: std::option::Option<crate::model::AccountStatus>,
+}
+impl DeregisterAccountOutput {
+    /// <p> The registration status of the account. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeregisterAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2606,6 +2936,12 @@ pub struct CreateControlOutput {
     /// <p> The new control that the <code>CreateControl</code> API returned. </p>
     pub control: std::option::Option<crate::model::Control>,
 }
+impl CreateControlOutput {
+    /// <p> The new control that the <code>CreateControl</code> API returned. </p>
+    pub fn control(&self) -> std::option::Option<&crate::model::Control> {
+        self.control.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateControlOutput");
@@ -2654,6 +2990,13 @@ pub struct CreateAssessmentReportOutput {
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned.
     /// </p>
     pub assessment_report: std::option::Option<crate::model::AssessmentReport>,
+}
+impl CreateAssessmentReportOutput {
+    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned.
+    /// </p>
+    pub fn assessment_report(&self) -> std::option::Option<&crate::model::AssessmentReport> {
+        self.assessment_report.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssessmentReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2709,6 +3052,13 @@ pub struct CreateAssessmentFrameworkOutput {
     /// returned. </p>
     pub framework: std::option::Option<crate::model::Framework>,
 }
+impl CreateAssessmentFrameworkOutput {
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API
+    /// returned. </p>
+    pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
+        self.framework.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssessmentFrameworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentFrameworkOutput");
@@ -2763,6 +3113,14 @@ pub struct CreateAssessmentOutput {
     /// An Audit Manager assessment is an implementation of an Audit Manager
     /// framework. </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
+}
+impl CreateAssessmentOutput {
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
+    /// An Audit Manager assessment is an implementation of an Audit Manager
+    /// framework. </p>
+    pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
+        self.assessment.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2821,6 +3179,15 @@ pub struct BatchImportEvidenceToAssessmentControlOutput {
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchImportEvidenceToAssessmentControlError>,
     >,
+}
+impl BatchImportEvidenceToAssessmentControlOutput {
+    /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API
+    /// returned. </p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchImportEvidenceToAssessmentControlError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchImportEvidenceToAssessmentControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2890,6 +3257,17 @@ pub struct BatchDisassociateAssessmentReportEvidenceOutput {
     /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
     /// returned. </p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
+}
+impl BatchDisassociateAssessmentReportEvidenceOutput {
+    /// <p> The identifier for the evidence. </p>
+    pub fn evidence_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.evidence_ids.as_deref()
+    }
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
+    /// returned. </p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::AssessmentReportEvidenceError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisassociateAssessmentReportEvidenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2979,6 +3357,15 @@ pub struct BatchDeleteDelegationByAssessmentOutput {
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDelegationByAssessmentError>>,
 }
+impl BatchDeleteDelegationByAssessmentOutput {
+    /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned.
+    /// </p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDeleteDelegationByAssessmentError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteDelegationByAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteDelegationByAssessmentOutput");
@@ -3048,6 +3435,19 @@ pub struct BatchCreateDelegationByAssessmentOutput {
     /// </p>
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchCreateDelegationByAssessmentError>>,
+}
+impl BatchCreateDelegationByAssessmentOutput {
+    /// <p> The delegations that are associated with the assessment. </p>
+    pub fn delegations(&self) -> std::option::Option<&[crate::model::Delegation]> {
+        self.delegations.as_deref()
+    }
+    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
+    /// </p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchCreateDelegationByAssessmentError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateDelegationByAssessmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3139,6 +3539,17 @@ pub struct BatchAssociateAssessmentReportEvidenceOutput {
     /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
     /// returned. </p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
+}
+impl BatchAssociateAssessmentReportEvidenceOutput {
+    /// <p> The list of evidence identifiers. </p>
+    pub fn evidence_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.evidence_ids.as_deref()
+    }
+    /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
+    /// returned. </p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::AssessmentReportEvidenceError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateAssessmentReportEvidenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -130,10 +130,9 @@ impl AddAttachmentsToSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_attachments_to_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_attachments_to_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -346,10 +345,7 @@ impl AddCommunicationToCaseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_communication_to_case(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -653,10 +649,7 @@ impl CreateCaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_case(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_case(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -809,10 +802,7 @@ impl DescribeAttachmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_attachment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_attachment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1080,10 +1070,7 @@ impl DescribeCasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_cases(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_cases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1293,10 +1280,7 @@ impl DescribeCommunicationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_communications(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1471,10 +1455,7 @@ impl DescribeServicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1630,10 +1611,7 @@ impl DescribeSeverityLevelsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_severity_levels(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1804,7 +1782,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_refresh_statuses(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_refresh_statuses(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1973,7 +1951,7 @@ impl DescribeTrustedAdvisorCheckResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_result(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_result(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2129,7 +2107,7 @@ impl DescribeTrustedAdvisorChecksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_checks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_checks(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2291,7 +2269,7 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_summaries(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_summaries(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2451,7 +2429,7 @@ impl RefreshTrustedAdvisorCheckInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_refresh_trusted_advisor_check(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_refresh_trusted_advisor_check(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2607,10 +2585,7 @@ impl ResolveCaseInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_resolve_case(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_resolve_case(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2682,6 +2657,15 @@ pub struct ResolveCaseInput {
     /// </p>
     pub case_id: std::option::Option<std::string::String>,
 }
+impl ResolveCaseInput {
+    /// <p>The support case ID requested or returned in the call. The case ID is an
+    /// alphanumeric string formatted as shown in this example:
+    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+    /// </p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveCaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveCaseInput");
@@ -2701,6 +2685,16 @@ pub struct RefreshTrustedAdvisorCheckInput {
     /// </note>
     pub check_id: std::option::Option<std::string::String>,
 }
+impl RefreshTrustedAdvisorCheckInput {
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p>     
+    /// <note>
+    /// <p>Specifying the check ID of a check that is automatically refreshed
+    /// causes an <code>InvalidParameterValue</code> error.</p>
+    /// </note>
+    pub fn check_id(&self) -> std::option::Option<&str> {
+        self.check_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RefreshTrustedAdvisorCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTrustedAdvisorCheckInput");
@@ -2715,6 +2709,12 @@ impl std::fmt::Debug for RefreshTrustedAdvisorCheckInput {
 pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeTrustedAdvisorCheckSummariesInput {
+    /// <p>The IDs of the Trusted Advisor checks.</p>
+    pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.check_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrustedAdvisorCheckSummariesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2732,6 +2732,14 @@ pub struct DescribeTrustedAdvisorChecksInput {
     /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
     /// passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
+}
+impl DescribeTrustedAdvisorChecksInput {
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+    /// passed explicitly for operations that take them.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrustedAdvisorChecksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2751,6 +2759,18 @@ pub struct DescribeTrustedAdvisorCheckResultInput {
     /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
     /// passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
+}
+impl DescribeTrustedAdvisorCheckResultInput {
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn check_id(&self) -> std::option::Option<&str> {
+        self.check_id.as_deref()
+    }
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+    /// passed explicitly for operations that take them.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrustedAdvisorCheckResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2772,6 +2792,16 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// </note>
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
+    /// <p>The IDs of the Trusted Advisor checks to get the status.</p>
+    /// <note>
+    /// <p>If you specify the check ID of a check that is automatically refreshed, you might
+    /// see an <code>InvalidParameterValue</code> error.</p>
+    /// </note>
+    pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.check_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrustedAdvisorCheckRefreshStatusesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrustedAdvisorCheckRefreshStatusesInput");
@@ -2788,6 +2818,14 @@ pub struct DescribeSeverityLevelsInput {
     /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
     /// passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
+}
+impl DescribeSeverityLevelsInput {
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+    /// passed explicitly for operations that take them.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSeverityLevelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2807,6 +2845,18 @@ pub struct DescribeServicesInput {
     /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
     /// passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
+}
+impl DescribeServicesInput {
+    /// <p>A JSON-formatted list of service codes available for AWS services.</p>
+    pub fn service_code_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_code_list.as_deref()
+    }
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+    /// passed explicitly for operations that take them.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2836,6 +2886,33 @@ pub struct DescribeCommunicationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeCommunicationsInput {
+    /// <p>The support case ID requested or returned in the call. The case ID is an
+    /// alphanumeric string formatted as shown in this example:
+    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+    /// </p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+    /// <p>The end date for a filtered date search on support case communications. Case
+    /// communications are available for 12 months after creation.</p>
+    pub fn before_time(&self) -> std::option::Option<&str> {
+        self.before_time.as_deref()
+    }
+    /// <p>The start date for a filtered date search on support case communications. Case
+    /// communications are available for 12 months after creation.</p>
+    pub fn after_time(&self) -> std::option::Option<&str> {
+        self.after_time.as_deref()
+    }
+    /// <p>A resumption point for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return before paginating.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeCommunicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2879,6 +2956,51 @@ pub struct DescribeCasesInput {
     /// response. By default, communications are included.</p>
     pub include_communications: std::option::Option<bool>,
 }
+impl DescribeCasesInput {
+    /// <p>A list of ID numbers of the support cases you want returned. The maximum number of
+    /// cases is 100.</p>
+    pub fn case_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.case_id_list.as_deref()
+    }
+    /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+    pub fn display_id(&self) -> std::option::Option<&str> {
+        self.display_id.as_deref()
+    }
+    /// <p>The start date for a filtered date search on support case communications. Case
+    /// communications are available for 12 months after creation.</p>
+    pub fn after_time(&self) -> std::option::Option<&str> {
+        self.after_time.as_deref()
+    }
+    /// <p>The end date for a filtered date search on support case communications. Case
+    /// communications are available for 12 months after creation.</p>
+    pub fn before_time(&self) -> std::option::Option<&str> {
+        self.before_time.as_deref()
+    }
+    /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
+    /// response. By default, resolved cases aren't included.</p>
+    pub fn include_resolved_cases(&self) -> bool {
+        self.include_resolved_cases
+    }
+    /// <p>A resumption point for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return before paginating.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+    /// passed explicitly for operations that take them.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+    /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
+    /// response. By default, communications are included.</p>
+    pub fn include_communications(&self) -> std::option::Option<bool> {
+        self.include_communications
+    }
+}
 impl std::fmt::Debug for DescribeCasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCasesInput");
@@ -2901,6 +3023,12 @@ impl std::fmt::Debug for DescribeCasesInput {
 pub struct DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
     pub attachment_id: std::option::Option<std::string::String>,
+}
+impl DescribeAttachmentInput {
+    /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAttachmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2952,6 +3080,63 @@ pub struct CreateCaseInput {
     /// <a>AddAttachmentsToSet</a> operation.</p>
     pub attachment_set_id: std::option::Option<std::string::String>,
 }
+impl CreateCaseInput {
+    /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
+    /// operation to get the possible <code>serviceCode</code> values.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>A value that indicates the urgency of the case. This value determines the response
+    /// time according to your service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
+    /// <code>severityCode</code>. </p>
+    /// <p>For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+    /// Severity</a> in the <i>AWS Support User Guide</i>.</p>
+    /// <note>
+    /// <p>The availability of severity levels depends on the support plan for the AWS
+    /// account.</p>
+    /// </note>
+    pub fn severity_code(&self) -> std::option::Option<&str> {
+        self.severity_code.as_deref()
+    }
+    /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
+    /// AWS service defines its own set of category codes.</p>
+    pub fn category_code(&self) -> std::option::Option<&str> {
+        self.category_code.as_deref()
+    }
+    /// <p>The communication body text that describes the issue. This text appears in the
+    /// <b>Description</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    pub fn communication_body(&self) -> std::option::Option<&str> {
+        self.communication_body.as_deref()
+    }
+    /// <p>A list of email addresses that AWS Support copies on case correspondence. AWS Support
+    /// identifies the account that creates the case when you specify your AWS credentials in an
+    /// HTTP POST method or use the <a href="http://aws.amazon.com/tools/">AWS SDKs</a>.
+    /// </p>
+    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.cc_email_addresses.as_deref()
+    }
+    /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
+    /// code for the <code>language</code> parameter if you want support in that language.
+    /// Currently, English ("en") and Japanese ("ja") are supported.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
+    /// <code>technical</code>. If you don't specify a value, the default is
+    /// <code>technical</code>.</p>
+    pub fn issue_type(&self) -> std::option::Option<&str> {
+        self.issue_type.as_deref()
+    }
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
+    /// <a>AddAttachmentsToSet</a> operation.</p>
+    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+        self.attachment_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCaseInput");
@@ -2986,6 +3171,29 @@ pub struct AddCommunicationToCaseInput {
     /// </p>
     pub attachment_set_id: std::option::Option<std::string::String>,
 }
+impl AddCommunicationToCaseInput {
+    /// <p>The support case ID requested or returned in the call. The case ID is an
+    /// alphanumeric string formatted as shown in this example:
+    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+    /// </p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+    /// <p>The body of an email communication to add to the support case.</p>
+    pub fn communication_body(&self) -> std::option::Option<&str> {
+        self.communication_body.as_deref()
+    }
+    /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
+    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.cc_email_addresses.as_deref()
+    }
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case.
+    /// Create the set by calling <a>AddAttachmentsToSet</a>
+    /// </p>
+    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+        self.attachment_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AddCommunicationToCaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddCommunicationToCaseInput");
@@ -3014,6 +3222,25 @@ pub struct AddAttachmentsToSetInput {
     /// base64-encoded string. The value for <code>fileName</code> is the name of the
     /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+}
+impl AddAttachmentsToSetInput {
+    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a
+    /// new attachment set is created, and the ID of the set is returned in the response. If an
+    /// <code>attachmentSetId</code> is specified, the attachments are added to the
+    /// specified set, if it exists.</p>
+    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+        self.attachment_set_id.as_deref()
+    }
+    /// <p>One or more attachments to add to the set. You can add up to three attachments per
+    /// set. The size limit is 5 MB per attachment.</p>
+    /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify
+    /// the contents of the attachment file. In the previous request syntax, the value for
+    /// <code>data</code> appear as <code>blob</code>, which is represented as a
+    /// base64-encoded string. The value for <code>fileName</code> is the name of the
+    /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
+        self.attachments.as_deref()
+    }
 }
 impl std::fmt::Debug for AddAttachmentsToSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

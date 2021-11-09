@@ -19,6 +19,23 @@ pub struct UpgradeElasticsearchDomainOutput {
     /// </p>
     pub perform_check_only: std::option::Option<bool>,
 }
+impl UpgradeElasticsearchDomainOutput {
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    pub fn target_version(&self) -> std::option::Option<&str> {
+        self.target_version.as_deref()
+    }
+    /// <p>
+    /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
+    /// This will not actually perform the Upgrade.
+    /// </p>
+    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+        self.perform_check_only
+    }
+}
 impl std::fmt::Debug for UpgradeElasticsearchDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeElasticsearchDomainOutput");
@@ -108,6 +125,12 @@ pub struct UpdatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
+impl UpdatePackageOutput {
+    /// <p>Information about the package <code>PackageDetails</code>.</p>
+    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+        self.package_details.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackageOutput");
@@ -159,6 +182,12 @@ pub struct UpdateElasticsearchDomainConfigOutput {
     /// <p>The status of the updated Elasticsearch domain. </p>
     pub domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
 }
+impl UpdateElasticsearchDomainConfigOutput {
+    /// <p>The status of the updated Elasticsearch domain. </p>
+    pub fn domain_config(&self) -> std::option::Option<&crate::model::ElasticsearchDomainConfig> {
+        self.domain_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateElasticsearchDomainConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateElasticsearchDomainConfigOutput");
@@ -209,6 +238,14 @@ impl UpdateElasticsearchDomainConfigOutput {
 pub struct StartElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
+}
+impl StartElasticsearchServiceSoftwareUpdateOutput {
+    /// <p>The current status of the Elasticsearch service software update.</p>
+    pub fn service_software_options(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+        self.service_software_options.as_ref()
+    }
 }
 impl std::fmt::Debug for StartElasticsearchServiceSoftwareUpdateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -296,6 +333,14 @@ pub struct RejectInboundCrossClusterSearchConnectionOutput {
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
 }
+impl RejectInboundCrossClusterSearchConnectionOutput {
+    /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of rejected inbound connection. </p>
+    pub fn cross_cluster_search_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnection> {
+        self.cross_cluster_search_connection.as_ref()
+    }
+}
 impl std::fmt::Debug for RejectInboundCrossClusterSearchConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectInboundCrossClusterSearchConnectionOutput");
@@ -356,6 +401,16 @@ pub struct PurchaseReservedElasticsearchInstanceOfferingOutput {
     pub reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub reservation_name: std::option::Option<std::string::String>,
+}
+impl PurchaseReservedElasticsearchInstanceOfferingOutput {
+    /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
+    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<&str> {
+        self.reserved_elasticsearch_instance_id.as_deref()
+    }
+    /// <p>The customer-specified identifier used to track this reservation.</p>
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -431,6 +486,12 @@ pub struct ListTagsOutput {
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsOutput {
+    /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsOutput");
@@ -496,6 +557,18 @@ pub struct ListPackagesForDomainOutput {
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagesForDomainOutput {
+    /// <p>List of <code>DomainPackageDetails</code> objects.</p>
+    pub fn domain_package_details_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainPackageDetails]> {
+        self.domain_package_details_list.as_deref()
+    }
+    /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagesForDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -585,6 +658,20 @@ pub struct ListElasticsearchVersionsOutput {
     /// a NextToken output in the response which can be used by the client to retrieve more results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListElasticsearchVersionsOutput {
+    /// <p>List of supported elastic search versions.
+    /// </p>
+    pub fn elasticsearch_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.elasticsearch_versions.as_deref()
+    }
+    /// <p>
+    /// Paginated APIs accepts NextToken input to returns next page results and provides
+    /// a NextToken output in the response which can be used by the client to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListElasticsearchVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,6 +768,27 @@ pub struct ListElasticsearchInstanceTypesOutput {
     /// received NextToken to paginate remaining results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListElasticsearchInstanceTypesOutput {
+    /// <p>
+    /// List of instance types supported by Amazon Elasticsearch service for
+    /// given
+    /// <code>
+    /// <a>ElasticsearchVersion</a>
+    /// </code>
+    /// </p>
+    pub fn elasticsearch_instance_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::EsPartitionInstanceType]> {
+        self.elasticsearch_instance_types.as_deref()
+    }
+    /// <p>In case if there are more results available NextToken would be
+    /// present, make further request to the same API with
+    /// received NextToken to paginate remaining results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListElasticsearchInstanceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -786,6 +894,18 @@ pub struct ListDomainsForPackageOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsForPackageOutput {
+    /// <p>List of <code>DomainPackageDetails</code> objects.</p>
+    pub fn domain_package_details_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainPackageDetails]> {
+        self.domain_package_details_list.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsForPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsForPackageOutput");
@@ -862,6 +982,12 @@ impl ListDomainsForPackageOutput {
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
     pub domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
+}
+impl ListDomainNamesOutput {
+    /// <p>List of domain names and respective engine types.</p>
+    pub fn domain_names(&self) -> std::option::Option<&[crate::model::DomainInfo]> {
+        self.domain_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDomainNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -948,6 +1074,39 @@ pub struct GetUpgradeStatusOutput {
     pub step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A string that describes the update briefly</p>
     pub upgrade_name: std::option::Option<std::string::String>,
+}
+impl GetUpgradeStatusOutput {
+    /// <p>
+    /// Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:
+    /// <ul>
+    /// <li>PreUpgradeCheck</li>
+    /// <li>Snapshot</li>
+    /// <li>Upgrade</li>
+    /// </ul>
+    /// </p>
+    pub fn upgrade_step(&self) -> std::option::Option<&crate::model::UpgradeStep> {
+        self.upgrade_step.as_ref()
+    }
+    /// <p>
+    /// One of 4 statuses that a step can go through returned as part of the
+    /// <code>
+    /// <a>GetUpgradeStatusResponse</a>
+    /// </code>
+    /// object. The status can take one of the following values:
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// </p>
+    pub fn step_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
+        self.step_status.as_ref()
+    }
+    /// <p>A string that describes the update briefly</p>
+    pub fn upgrade_name(&self) -> std::option::Option<&str> {
+        self.upgrade_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUpgradeStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1085,6 +1244,26 @@ pub struct GetUpgradeHistoryOutput {
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetUpgradeHistoryOutput {
+    /// <p>
+    /// A list of
+    /// <code>
+    /// <a>UpgradeHistory</a>
+    /// </code>
+    /// objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of
+    /// <code>
+    /// <a>GetUpgradeHistoryResponse</a>
+    /// </code>
+    /// object.
+    /// </p>
+    pub fn upgrade_histories(&self) -> std::option::Option<&[crate::model::UpgradeHistory]> {
+        self.upgrade_histories.as_deref()
+    }
+    /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUpgradeHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUpgradeHistoryOutput");
@@ -1186,6 +1365,22 @@ pub struct GetPackageVersionHistoryOutput {
         std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetPackageVersionHistoryOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>List of <code>PackageVersionHistory</code> objects.</p>
+    pub fn package_version_history_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PackageVersionHistory]> {
+        self.package_version_history_list.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPackageVersionHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1290,6 +1485,20 @@ pub struct GetCompatibleElasticsearchVersionsOutput {
     pub compatible_elasticsearch_versions:
         std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
 }
+impl GetCompatibleElasticsearchVersionsOutput {
+    /// <p>
+    /// A map of compatible Elasticsearch versions returned as part of the
+    /// <code>
+    /// <a>GetCompatibleElasticsearchVersions</a>
+    /// </code>
+    /// operation.
+    /// </p>
+    pub fn compatible_elasticsearch_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompatibleVersionsMap]> {
+        self.compatible_elasticsearch_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCompatibleElasticsearchVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCompatibleElasticsearchVersionsOutput");
@@ -1372,6 +1581,14 @@ pub struct DissociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
 }
+impl DissociatePackageOutput {
+    /// <p><code>DomainPackageDetails</code></p>
+    pub fn domain_package_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainPackageDetails> {
+        self.domain_package_details.as_ref()
+    }
+}
 impl std::fmt::Debug for DissociatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DissociatePackageOutput");
@@ -1425,6 +1642,18 @@ pub struct DescribeReservedElasticsearchInstancesOutput {
     /// <p>List of reserved Elasticsearch instances.</p>
     pub reserved_elasticsearch_instances:
         std::option::Option<std::vec::Vec<crate::model::ReservedElasticsearchInstance>>,
+}
+impl DescribeReservedElasticsearchInstancesOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of reserved Elasticsearch instances.</p>
+    pub fn reserved_elasticsearch_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedElasticsearchInstance]> {
+        self.reserved_elasticsearch_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedElasticsearchInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1505,6 +1734,18 @@ pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// <p>List of reserved Elasticsearch instance offerings</p>
     pub reserved_elasticsearch_instance_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedElasticsearchInstanceOffering>>,
+}
+impl DescribeReservedElasticsearchInstanceOfferingsOutput {
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>List of reserved Elasticsearch instance offerings</p>
+    pub fn reserved_elasticsearch_instance_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedElasticsearchInstanceOffering]> {
+        self.reserved_elasticsearch_instance_offerings.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedElasticsearchInstanceOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1597,6 +1838,16 @@ pub struct DescribePackagesOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePackagesOutput {
+    /// <p>List of <code>PackageDetails</code> objects.</p>
+    pub fn package_details_list(&self) -> std::option::Option<&[crate::model::PackageDetails]> {
+        self.package_details_list.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePackagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePackagesOutput");
@@ -1674,6 +1925,19 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeOutboundCrossClusterSearchConnectionsOutput {
+    /// <p>Consists of list of <code><a>OutboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
+    pub fn cross_cluster_search_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::OutboundCrossClusterSearchConnection]> {
+        self.cross_cluster_search_connections.as_deref()
+    }
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOutboundCrossClusterSearchConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1760,6 +2024,19 @@ pub struct DescribeInboundCrossClusterSearchConnectionsOutput {
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInboundCrossClusterSearchConnectionsOutput {
+    /// <p>Consists of list of <code><a>InboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
+    pub fn cross_cluster_search_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::InboundCrossClusterSearchConnection]> {
+        self.cross_cluster_search_connections.as_deref()
+    }
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInboundCrossClusterSearchConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1859,6 +2136,24 @@ pub struct DescribeElasticsearchInstanceTypeLimitsOutput {
     pub limits_by_role:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
 }
+impl DescribeElasticsearchInstanceTypeLimitsOutput {
+    /// <p>
+    /// Map of Role of the Instance and Limits that are applicable.
+    /// Role performed by given Instance in Elasticsearch
+    /// can be one of the following:
+    /// <ul>
+    /// <li>data: If the given InstanceType is used as data node</li>
+    /// <li>master: If the given InstanceType is used as master node</li>
+    /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
+    /// </ul>
+    /// </p>
+    pub fn limits_by_role(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Limits>>
+    {
+        self.limits_by_role.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticsearchInstanceTypeLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchInstanceTypeLimitsOutput");
@@ -1943,6 +2238,14 @@ pub struct DescribeElasticsearchDomainsOutput {
     pub domain_status_list:
         std::option::Option<std::vec::Vec<crate::model::ElasticsearchDomainStatus>>,
 }
+impl DescribeElasticsearchDomainsOutput {
+    /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
+    pub fn domain_status_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ElasticsearchDomainStatus]> {
+        self.domain_status_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticsearchDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchDomainsOutput");
@@ -2004,6 +2307,12 @@ pub struct DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     pub domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
 }
+impl DescribeElasticsearchDomainConfigOutput {
+    /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
+    pub fn domain_config(&self) -> std::option::Option<&crate::model::ElasticsearchDomainConfig> {
+        self.domain_config.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticsearchDomainConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchDomainConfigOutput");
@@ -2054,6 +2363,12 @@ impl DescribeElasticsearchDomainConfigOutput {
 pub struct DescribeElasticsearchDomainOutput {
     /// <p>The current status of the Elasticsearch domain.</p>
     pub domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
+}
+impl DescribeElasticsearchDomainOutput {
+    /// <p>The current status of the Elasticsearch domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::ElasticsearchDomainStatus> {
+        self.domain_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeElasticsearchDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2107,6 +2422,16 @@ pub struct DescribeDomainAutoTunesOutput {
     pub auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDomainAutoTunesOutput {
+    /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn auto_tunes(&self) -> std::option::Option<&[crate::model::AutoTune]> {
+        self.auto_tunes.as_deref()
+    }
+    /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainAutoTunesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2184,6 +2509,12 @@ pub struct DeletePackageOutput {
     /// <p><code>PackageDetails</code></p>
     pub package_details: std::option::Option<crate::model::PackageDetails>,
 }
+impl DeletePackageOutput {
+    /// <p><code>PackageDetails</code></p>
+    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+        self.package_details.as_ref()
+    }
+}
 impl std::fmt::Debug for DeletePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackageOutput");
@@ -2235,6 +2566,14 @@ pub struct DeleteOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnection</a></code> of deleted outbound connection. </p>
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::OutboundCrossClusterSearchConnection>,
+}
+impl DeleteOutboundCrossClusterSearchConnectionOutput {
+    /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnection</a></code> of deleted outbound connection. </p>
+    pub fn cross_cluster_search_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundCrossClusterSearchConnection> {
+        self.cross_cluster_search_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2295,6 +2634,14 @@ pub struct DeleteInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of deleted inbound connection. </p>
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
+}
+impl DeleteInboundCrossClusterSearchConnectionOutput {
+    /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of deleted inbound connection. </p>
+    pub fn cross_cluster_search_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnection> {
+        self.cross_cluster_search_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteInboundCrossClusterSearchConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2385,6 +2732,12 @@ pub struct DeleteElasticsearchDomainOutput {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
     pub domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
 }
+impl DeleteElasticsearchDomainOutput {
+    /// <p>The status of the Elasticsearch domain being deleted.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::ElasticsearchDomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteElasticsearchDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteElasticsearchDomainOutput");
@@ -2441,6 +2794,12 @@ impl DeleteElasticsearchDomainOutput {
 pub struct CreatePackageOutput {
     /// <p>Information about the package <code>PackageDetails</code>.</p>
     pub package_details: std::option::Option<crate::model::PackageDetails>,
+}
+impl CreatePackageOutput {
+    /// <p>Information about the package <code>PackageDetails</code>.</p>
+    pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
+        self.package_details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2501,6 +2860,30 @@ pub struct CreateOutboundCrossClusterSearchConnectionOutput {
         std::option::Option<crate::model::OutboundCrossClusterSearchConnectionStatus>,
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+}
+impl CreateOutboundCrossClusterSearchConnectionOutput {
+    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    pub fn source_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
+        self.source_domain_info.as_ref()
+    }
+    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    pub fn destination_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
+        self.destination_domain_info.as_ref()
+    }
+    /// <p>Specifies the connection alias provided during the create connection request.</p>
+    pub fn connection_alias(&self) -> std::option::Option<&str> {
+        self.connection_alias.as_deref()
+    }
+    /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the newly created connection.</p>
+    pub fn connection_status(
+        &self,
+    ) -> std::option::Option<&crate::model::OutboundCrossClusterSearchConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+    /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
+    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+        self.cross_cluster_search_connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2628,6 +3011,12 @@ pub struct CreateElasticsearchDomainOutput {
     /// <p>The status of the newly created Elasticsearch domain. </p>
     pub domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
 }
+impl CreateElasticsearchDomainOutput {
+    /// <p>The status of the newly created Elasticsearch domain. </p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::ElasticsearchDomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateElasticsearchDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateElasticsearchDomainOutput");
@@ -2678,6 +3067,14 @@ impl CreateElasticsearchDomainOutput {
 pub struct CancelElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
     pub service_software_options: std::option::Option<crate::model::ServiceSoftwareOptions>,
+}
+impl CancelElasticsearchServiceSoftwareUpdateOutput {
+    /// <p>The current status of the Elasticsearch service software update.</p>
+    pub fn service_software_options(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
+        self.service_software_options.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelElasticsearchServiceSoftwareUpdateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2740,6 +3137,14 @@ impl CancelElasticsearchServiceSoftwareUpdateOutput {
 pub struct AssociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
     pub domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
+}
+impl AssociatePackageOutput {
+    /// <p><code>DomainPackageDetails</code></p>
+    pub fn domain_package_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainPackageDetails> {
+        self.domain_package_details.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociatePackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2822,6 +3227,14 @@ pub struct AcceptInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of accepted inbound connection. </p>
     pub cross_cluster_search_connection:
         std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
+}
+impl AcceptInboundCrossClusterSearchConnectionOutput {
+    /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of accepted inbound connection. </p>
+    pub fn cross_cluster_search_connection(
+        &self,
+    ) -> std::option::Option<&crate::model::InboundCrossClusterSearchConnection> {
+        self.cross_cluster_search_connection.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptInboundCrossClusterSearchConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -165,10 +165,7 @@ impl CreateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -471,10 +468,9 @@ impl CreateReplicationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_replication_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_replication_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -649,10 +645,7 @@ impl DeleteAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -801,7 +794,7 @@ impl DeleteAppLaunchConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_app_launch_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_app_launch_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -953,7 +946,7 @@ impl DeleteAppReplicationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_app_replication_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_app_replication_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1105,7 +1098,7 @@ impl DeleteAppValidationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_app_validation_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_app_validation_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1259,10 +1252,9 @@ impl DeleteReplicationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_replication_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_replication_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1398,10 +1390,7 @@ impl DeleteServerCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_server_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_server_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1543,10 +1532,9 @@ impl DisassociateConnectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_connector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_connector(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1711,10 +1699,7 @@ impl GenerateChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_change_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_generate_change_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1879,10 +1864,7 @@ impl GenerateTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_generate_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2029,10 +2011,7 @@ impl GetAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2180,10 +2159,7 @@ impl GetAppLaunchConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_app_launch_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2334,7 +2310,7 @@ impl GetAppReplicationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_app_replication_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_app_replication_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2486,7 +2462,7 @@ impl GetAppValidationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_app_validation_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_app_validation_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2639,10 +2615,7 @@ impl GetAppValidationOutputInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_app_validation_output(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2807,10 +2780,7 @@ impl GetConnectorsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_connectors(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_connectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2991,10 +2961,7 @@ impl GetReplicationJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_replication_jobs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_replication_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3175,10 +3142,7 @@ impl GetReplicationRunsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_replication_runs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_replication_runs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3368,10 +3332,7 @@ impl GetServersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_servers(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_servers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3525,10 +3486,7 @@ impl ImportAppCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_app_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_app_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3664,10 +3622,7 @@ impl ImportServerCatalogInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_server_catalog(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_server_catalog(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3806,10 +3761,7 @@ impl LaunchAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_launch_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_launch_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3991,10 +3943,7 @@ impl ListAppsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_apps(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_apps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4157,10 +4106,7 @@ impl NotifyAppValidationOutputInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_notify_app_validation_output(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4364,10 +4310,7 @@ impl PutAppLaunchConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_app_launch_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4548,7 +4491,7 @@ impl PutAppReplicationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_app_replication_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_app_replication_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4754,7 +4697,7 @@ impl PutAppValidationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_app_validation_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_app_validation_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4905,10 +4848,7 @@ impl StartAppReplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_app_replication(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_app_replication(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5071,7 +5011,7 @@ impl StartOnDemandAppReplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_on_demand_app_replication(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_on_demand_app_replication(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5238,7 +5178,7 @@ impl StartOnDemandReplicationRunInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_on_demand_replication_run(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_on_demand_replication_run(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5389,10 +5329,7 @@ impl StopAppReplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_app_replication(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_app_replication(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5541,10 +5478,7 @@ impl TerminateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_terminate_app(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_terminate_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5769,10 +5703,7 @@ impl UpdateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6068,10 +5999,9 @@ impl UpdateReplicationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_replication_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_replication_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6176,6 +6106,66 @@ pub struct UpdateReplicationJobInput {
     /// customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl UpdateReplicationJobInput {
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+    /// <p>The time between consecutive replication runs, in hours.</p>
+    pub fn frequency(&self) -> std::option::Option<i32> {
+        self.frequency
+    }
+    /// <p>The start time of the next replication run.</p>
+    pub fn next_replication_run_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.next_replication_run_start_time.as_ref()
+    }
+    /// <p>The license type to be used for the AMI created by a successful replication
+    /// run.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+        self.license_type.as_ref()
+    }
+    /// <p>The name of the IAM role to be used by AWS SMS.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The description of the replication job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
+    /// maximum number is reached and a new AMI is created.</p>
+    pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
+        self.number_of_recent_amis_to_keep
+    }
+    /// <p>When true, the replication job produces encrypted AMIs. For more information,
+    /// <code>KmsKeyId</code>.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
+    /// This value can be any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>KMS key alias</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key alias</p>
+    /// </li>
+    /// </ul>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
+    /// customer's default KMS key for Amazon EBS is used.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateReplicationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationJobInput");
@@ -6215,6 +6205,32 @@ pub struct UpdateAppInput {
     /// <p>The tags to associate with the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UpdateAppInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The new name of the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The server groups in the application to update.</p>
+    pub fn server_groups(&self) -> std::option::Option<&[crate::model::ServerGroup]> {
+        self.server_groups.as_deref()
+    }
+    /// <p>The tags to associate with the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInput");
@@ -6235,6 +6251,12 @@ pub struct TerminateAppInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl TerminateAppInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateAppInput");
@@ -6249,6 +6271,12 @@ impl std::fmt::Debug for TerminateAppInput {
 pub struct StopAppReplicationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl StopAppReplicationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopAppReplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6266,6 +6294,16 @@ pub struct StartOnDemandReplicationRunInput {
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The description of the replication run.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl StartOnDemandReplicationRunInput {
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+    /// <p>The description of the replication run.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for StartOnDemandReplicationRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6285,6 +6323,16 @@ pub struct StartOnDemandAppReplicationInput {
     /// <p>The description of the replication run.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl StartOnDemandAppReplicationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The description of the replication run.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for StartOnDemandAppReplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartOnDemandAppReplicationInput");
@@ -6300,6 +6348,12 @@ impl std::fmt::Debug for StartOnDemandAppReplicationInput {
 pub struct StartAppReplicationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl StartAppReplicationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartAppReplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6321,6 +6375,24 @@ pub struct PutAppValidationConfigurationInput {
     /// <p>The configuration for instance validation.</p>
     pub server_group_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupValidationConfiguration>>,
+}
+impl PutAppValidationConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The configuration for application validation.</p>
+    pub fn app_validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppValidationConfiguration]> {
+        self.app_validation_configurations.as_deref()
+    }
+    /// <p>The configuration for instance validation.</p>
+    pub fn server_group_validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerGroupValidationConfiguration]> {
+        self.server_group_validation_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAppValidationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6347,6 +6419,18 @@ pub struct PutAppReplicationConfigurationInput {
     /// <p>Information about the replication configurations for server groups in the application.</p>
     pub server_group_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupReplicationConfiguration>>,
+}
+impl PutAppReplicationConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>Information about the replication configurations for server groups in the application.</p>
+    pub fn server_group_replication_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerGroupReplicationConfiguration]> {
+        self.server_group_replication_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAppReplicationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6375,6 +6459,27 @@ pub struct PutAppLaunchConfigurationInput {
     pub server_group_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerGroupLaunchConfiguration>>,
 }
+impl PutAppLaunchConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
+    /// application.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    pub fn auto_launch(&self) -> std::option::Option<bool> {
+        self.auto_launch
+    }
+    /// <p>Information about the launch configurations for server groups in the application.</p>
+    pub fn server_group_launch_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerGroupLaunchConfiguration]> {
+        self.server_group_launch_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAppLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAppLaunchConfigurationInput");
@@ -6398,6 +6503,16 @@ pub struct NotifyAppValidationOutputInput {
     /// <p>The notification information.</p>
     pub notification_context: std::option::Option<crate::model::NotificationContext>,
 }
+impl NotifyAppValidationOutputInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The notification information.</p>
+    pub fn notification_context(&self) -> std::option::Option<&crate::model::NotificationContext> {
+        self.notification_context.as_ref()
+    }
+}
 impl std::fmt::Debug for NotifyAppValidationOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyAppValidationOutputInput");
@@ -6420,6 +6535,22 @@ pub struct ListAppsInput {
     /// <code>NextToken</code> value. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAppsInput {
+    /// <p>The unique application IDs.</p>
+    pub fn app_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.app_ids.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. The default value is 100. To
+    /// retrieve the remaining results, make another call with the returned
+    /// <code>NextToken</code> value. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAppsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppsInput");
@@ -6436,6 +6567,12 @@ impl std::fmt::Debug for ListAppsInput {
 pub struct LaunchAppInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl LaunchAppInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6465,6 +6602,14 @@ pub struct ImportAppCatalogInput {
     /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
     pub role_name: std::option::Option<std::string::String>,
 }
+impl ImportAppCatalogInput {
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
+    /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
+    /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportAppCatalogInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportAppCatalogInput");
@@ -6485,6 +6630,22 @@ pub struct GetServersInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The server addresses.</p>
     pub vm_server_address_list: std::option::Option<std::vec::Vec<crate::model::VmServerAddress>>,
+}
+impl GetServersInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. The default value is 50.
+    /// To retrieve the remaining results, make another call with the returned
+    /// <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The server addresses.</p>
+    pub fn vm_server_address_list(&self) -> std::option::Option<&[crate::model::VmServerAddress]> {
+        self.vm_server_address_list.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6509,6 +6670,22 @@ pub struct GetReplicationRunsInput {
     /// <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetReplicationRunsInput {
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. The default value is 50.
+    /// To retrieve the remaining results, make another call with the returned
+    /// <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetReplicationRunsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationRunsInput");
@@ -6532,6 +6709,22 @@ pub struct GetReplicationJobsInput {
     /// <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetReplicationJobsInput {
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. The default value is 50.
+    /// To retrieve the remaining results, make another call with the returned
+    /// <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetReplicationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReplicationJobsInput");
@@ -6553,6 +6746,18 @@ pub struct GetConnectorsInput {
     /// <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetConnectorsInput {
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call. The default value is 50.
+    /// To retrieve the remaining results, make another call with the returned
+    /// <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetConnectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectorsInput");
@@ -6569,6 +6774,12 @@ pub struct GetAppValidationOutputInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl GetAppValidationOutputInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppValidationOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppValidationOutputInput");
@@ -6583,6 +6794,12 @@ impl std::fmt::Debug for GetAppValidationOutputInput {
 pub struct GetAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl GetAppValidationConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppValidationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6599,6 +6816,12 @@ pub struct GetAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl GetAppReplicationConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppReplicationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppReplicationConfigurationInput");
@@ -6614,6 +6837,12 @@ pub struct GetAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl GetAppLaunchConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppLaunchConfigurationInput");
@@ -6628,6 +6857,12 @@ impl std::fmt::Debug for GetAppLaunchConfigurationInput {
 pub struct GetAppInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl GetAppInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6645,6 +6880,16 @@ pub struct GenerateTemplateInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>The format for generating the AWS CloudFormation template.</p>
     pub template_format: std::option::Option<crate::model::OutputFormat>,
+}
+impl GenerateTemplateInput {
+    /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The format for generating the AWS CloudFormation template.</p>
+    pub fn template_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
+        self.template_format.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6664,6 +6909,16 @@ pub struct GenerateChangeSetInput {
     /// <p>The format for the change set.</p>
     pub changeset_format: std::option::Option<crate::model::OutputFormat>,
 }
+impl GenerateChangeSetInput {
+    /// <p>The ID of the application associated with the change set.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The format for the change set.</p>
+    pub fn changeset_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
+        self.changeset_format.as_ref()
+    }
+}
 impl std::fmt::Debug for GenerateChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateChangeSetInput");
@@ -6679,6 +6934,12 @@ impl std::fmt::Debug for GenerateChangeSetInput {
 pub struct DisassociateConnectorInput {
     /// <p>The ID of the connector.</p>
     pub connector_id: std::option::Option<std::string::String>,
+}
+impl DisassociateConnectorInput {
+    /// <p>The ID of the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateConnectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6706,6 +6967,12 @@ pub struct DeleteReplicationJobInput {
     /// <p>The ID of the replication job.</p>
     pub replication_job_id: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationJobInput {
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationJobInput");
@@ -6720,6 +6987,12 @@ impl std::fmt::Debug for DeleteReplicationJobInput {
 pub struct DeleteAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl DeleteAppValidationConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppValidationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6736,6 +7009,12 @@ pub struct DeleteAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
 }
+impl DeleteAppReplicationConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAppReplicationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppReplicationConfigurationInput");
@@ -6750,6 +7029,12 @@ impl std::fmt::Debug for DeleteAppReplicationConfigurationInput {
 pub struct DeleteAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl DeleteAppLaunchConfigurationInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppLaunchConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6771,6 +7056,22 @@ pub struct DeleteAppInput {
     /// <p>Indicates whether to terminate the stack corresponding to the
     /// application while deleting the application.</p>
     pub force_terminate_app: std::option::Option<bool>,
+}
+impl DeleteAppInput {
+    /// <p>The ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers
+    /// in the application while deleting the application.</p>
+    pub fn force_stop_app_replication(&self) -> std::option::Option<bool> {
+        self.force_stop_app_replication
+    }
+    /// <p>Indicates whether to terminate the stack corresponding to the
+    /// application while deleting the application.</p>
+    pub fn force_terminate_app(&self) -> std::option::Option<bool> {
+        self.force_terminate_app
+    }
 }
 impl std::fmt::Debug for DeleteAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6829,6 +7130,67 @@ pub struct CreateReplicationJobInput {
     /// customer's default KMS key for Amazon EBS is used. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl CreateReplicationJobInput {
+    /// <p>The ID of the server.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The seed replication time.</p>
+    pub fn seed_replication_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.seed_replication_time.as_ref()
+    }
+    /// <p>The time between consecutive replication runs, in hours.</p>
+    pub fn frequency(&self) -> std::option::Option<i32> {
+        self.frequency
+    }
+    /// <p>Indicates whether to run the replication job one time.</p>
+    pub fn run_once(&self) -> std::option::Option<bool> {
+        self.run_once
+    }
+    /// <p>The license type to be used for the AMI created by a successful replication
+    /// run.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+        self.license_type.as_ref()
+    }
+    /// <p>The name of the IAM role to be used by the AWS SMS.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The description of the replication job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
+    /// maximum number is reached and a new AMI is created.</p>
+    pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
+        self.number_of_recent_amis_to_keep
+    }
+    /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
+    /// This value can be any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>KMS key alias</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key alias</p>
+    /// </li>
+    /// </ul>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
+    /// customer's default KMS key for Amazon EBS is used. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationJobInput");
@@ -6866,6 +7228,33 @@ pub struct CreateAppInput {
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
     /// <p>The tags to be associated with the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateAppInput {
+    /// <p>The name of the new application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new application</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
+    /// application creation.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The server groups to include in the application.</p>
+    pub fn server_groups(&self) -> std::option::Option<&[crate::model::ServerGroup]> {
+        self.server_groups.as_deref()
+    }
+    /// <p>The tags to be associated with the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

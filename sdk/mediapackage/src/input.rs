@@ -128,10 +128,7 @@ impl ConfigureLogsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_configure_logs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_configure_logs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -318,10 +315,7 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -524,10 +518,7 @@ impl CreateHarvestJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_harvest_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_harvest_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -891,10 +882,9 @@ impl CreateOriginEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_origin_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_origin_endpoint(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2803,10 +2793,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3154,10 +3141,7 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3491,10 +3475,9 @@ impl UpdateOriginEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_origin_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_origin_endpoint(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3589,6 +3572,62 @@ pub struct UpdateOriginEndpointInput {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateOriginEndpointInput {
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn cmaf_package(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafPackageCreateOrUpdateParameters> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the OriginEndpoint to update.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A short string that will be appended to the end of the Endpoint URL.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+    /// Maximum duration (in seconds) of content to retain for startover playback.
+    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn startover_window_seconds(&self) -> i32 {
+        self.startover_window_seconds
+    }
+    /// Amount of delay (in seconds) to enforce on the playback of live content.
+    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn time_delay_seconds(&self) -> i32 {
+        self.time_delay_seconds
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+        self.whitelist.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateOriginEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOriginEndpointInput");
@@ -3617,6 +3656,16 @@ pub struct UpdateChannelInput {
     /// The ID of the Channel to update.
     pub id: std::option::Option<std::string::String>,
 }
+impl UpdateChannelInput {
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The ID of the Channel to update.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -3634,6 +3683,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// The key(s) of tag to be deleted
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// The key(s) of tag to be deleted
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3654,6 +3713,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3672,6 +3744,16 @@ pub struct RotateIngestEndpointCredentialsInput {
     /// The id of the IngestEndpoint whose credentials should be rotated
     pub ingest_endpoint_id: std::option::Option<std::string::String>,
 }
+impl RotateIngestEndpointCredentialsInput {
+    /// The ID of the channel the IngestEndpoint is on.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The id of the IngestEndpoint whose credentials should be rotated
+    pub fn ingest_endpoint_id(&self) -> std::option::Option<&str> {
+        self.ingest_endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RotateIngestEndpointCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateIngestEndpointCredentialsInput");
@@ -3688,6 +3770,12 @@ pub struct RotateChannelCredentialsInput {
     /// The ID of the channel to update.
     pub id: std::option::Option<std::string::String>,
 }
+impl RotateChannelCredentialsInput {
+    /// The ID of the channel to update.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for RotateChannelCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RotateChannelCredentialsInput");
@@ -3702,6 +3790,12 @@ impl std::fmt::Debug for RotateChannelCredentialsInput {
 pub struct ListTagsForResourceInput {
     #[allow(missing_docs)] // documentation missing in model
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3721,6 +3815,20 @@ pub struct ListOriginEndpointsInput {
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOriginEndpointsInput {
+    /// When specified, the request will return only OriginEndpoints associated with the given Channel ID.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// The upper bound on the number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOriginEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3745,6 +3853,24 @@ pub struct ListHarvestJobsInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHarvestJobsInput {
+    /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
+    pub fn include_channel_id(&self) -> std::option::Option<&str> {
+        self.include_channel_id.as_deref()
+    }
+    /// When specified, the request will return only HarvestJobs in the given status.
+    pub fn include_status(&self) -> std::option::Option<&str> {
+        self.include_status.as_deref()
+    }
+    /// The upper bound on the number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHarvestJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHarvestJobsInput");
@@ -3765,6 +3891,16 @@ pub struct ListChannelsInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsInput");
@@ -3781,6 +3917,12 @@ pub struct DescribeOriginEndpointInput {
     /// The ID of the OriginEndpoint.
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeOriginEndpointInput {
+    /// The ID of the OriginEndpoint.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOriginEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOriginEndpointInput");
@@ -3795,6 +3937,12 @@ impl std::fmt::Debug for DescribeOriginEndpointInput {
 pub struct DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
     pub id: std::option::Option<std::string::String>,
+}
+impl DescribeHarvestJobInput {
+    /// The ID of the HarvestJob.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHarvestJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3811,6 +3959,12 @@ pub struct DescribeChannelInput {
     /// The ID of a Channel.
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeChannelInput {
+    /// The ID of a Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelInput");
@@ -3826,6 +3980,12 @@ pub struct DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteOriginEndpointInput {
+    /// The ID of the OriginEndpoint to delete.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteOriginEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOriginEndpointInput");
@@ -3840,6 +4000,12 @@ impl std::fmt::Debug for DeleteOriginEndpointInput {
 pub struct DeleteChannelInput {
     /// The ID of the Channel to delete.
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteChannelInput {
+    /// The ID of the Channel to delete.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3889,6 +4055,75 @@ pub struct CreateOriginEndpointInput {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateOriginEndpointInput {
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The ID of the Channel that the OriginEndpoint will be associated with.
+    /// This cannot be changed after the OriginEndpoint is created.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn cmaf_package(
+        &self,
+    ) -> std::option::Option<&crate::model::CmafPackageCreateOrUpdateParameters> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the OriginEndpoint.  The ID must be unique within the region
+    /// and it cannot be changed after the OriginEndpoint is created.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+    /// Maximum duration (seconds) of content to retain for startover playback.
+    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn startover_window_seconds(&self) -> i32 {
+        self.startover_window_seconds
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Amount of delay (seconds) to enforce on the playback of live content.
+    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn time_delay_seconds(&self) -> i32 {
+        self.time_delay_seconds
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+        self.whitelist.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateOriginEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOriginEndpointInput");
@@ -3927,6 +4162,30 @@ pub struct CreateHarvestJobInput {
     /// The start of the time-window which will be harvested
     pub start_time: std::option::Option<std::string::String>,
 }
+impl CreateHarvestJobInput {
+    /// The end of the time-window which will be harvested
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region
+    /// and it cannot be changed after the HarvestJob is submitted
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
+    /// This cannot be changed after the HarvestJob is submitted.
+    pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
+        self.origin_endpoint_id.as_deref()
+    }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+    /// The start of the time-window which will be harvested
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHarvestJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHarvestJobInput");
@@ -3952,6 +4211,24 @@ pub struct CreateChannelInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateChannelInput {
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The ID of the Channel. The ID must be unique within the region and it
+    /// cannot be changed after a Channel is created.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -3972,6 +4249,20 @@ pub struct ConfigureLogsInput {
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
+}
+impl ConfigureLogsInput {
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the channel to log subscription.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigureLogsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

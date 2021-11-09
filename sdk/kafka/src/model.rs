@@ -8,6 +8,16 @@ pub struct EncryptionInfo {
     /// <p>The details for encryption in transit.</p>
     pub encryption_in_transit: std::option::Option<crate::model::EncryptionInTransit>,
 }
+impl EncryptionInfo {
+    /// <p>The data-volume encryption details.</p>
+    pub fn encryption_at_rest(&self) -> std::option::Option<&crate::model::EncryptionAtRest> {
+        self.encryption_at_rest.as_ref()
+    }
+    /// <p>The details for encryption in transit.</p>
+    pub fn encryption_in_transit(&self) -> std::option::Option<&crate::model::EncryptionInTransit> {
+        self.encryption_in_transit.as_ref()
+    }
+}
 impl std::fmt::Debug for EncryptionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionInfo");
@@ -84,6 +94,24 @@ pub struct EncryptionInTransit {
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
     pub in_cluster: bool,
+}
+impl EncryptionInTransit {
+    /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
+    /// <p>
+    /// TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p>
+    /// TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p>
+    /// PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>The default value is TLS_PLAINTEXT.</p>
+    pub fn client_broker(&self) -> std::option::Option<&crate::model::ClientBroker> {
+        self.client_broker.as_ref()
+    }
+    /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
+    /// <p>The default value is true.</p>
+    pub fn in_cluster(&self) -> bool {
+        self.in_cluster
+    }
 }
 impl std::fmt::Debug for EncryptionInTransit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -224,6 +252,12 @@ pub struct EncryptionAtRest {
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     pub data_volume_kms_key_id: std::option::Option<std::string::String>,
 }
+impl EncryptionAtRest {
+    /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
+    pub fn data_volume_kms_key_id(&self) -> std::option::Option<&str> {
+        self.data_volume_kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EncryptionAtRest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionAtRest");
@@ -278,6 +312,20 @@ pub struct ClientAuthentication {
     pub tls: std::option::Option<crate::model::Tls>,
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
     pub unauthenticated: std::option::Option<crate::model::Unauthenticated>,
+}
+impl ClientAuthentication {
+    /// <p>Details for ClientAuthentication using SASL.</p>
+    pub fn sasl(&self) -> std::option::Option<&crate::model::Sasl> {
+        self.sasl.as_ref()
+    }
+    /// <p>Details for ClientAuthentication using TLS.</p>
+    pub fn tls(&self) -> std::option::Option<&crate::model::Tls> {
+        self.tls.as_ref()
+    }
+    /// <p>Contains information about unauthenticated traffic to the cluster.</p>
+    pub fn unauthenticated(&self) -> std::option::Option<&crate::model::Unauthenticated> {
+        self.unauthenticated.as_ref()
+    }
 }
 impl std::fmt::Debug for ClientAuthentication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -356,6 +404,12 @@ pub struct Unauthenticated {
     /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
     pub enabled: bool,
 }
+impl Unauthenticated {
+    /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for Unauthenticated {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Unauthenticated");
@@ -405,6 +459,16 @@ pub struct Tls {
     pub certificate_authority_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
     pub enabled: bool,
+}
+impl Tls {
+    /// <p>List of ACM Certificate Authority ARNs.</p>
+    pub fn certificate_authority_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_authority_arn_list.as_deref()
+    }
+    /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for Tls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -485,6 +549,16 @@ pub struct Sasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub iam: std::option::Option<crate::model::Iam>,
 }
+impl Sasl {
+    /// <p>Details for SASL/SCRAM client authentication.</p>
+    pub fn scram(&self) -> std::option::Option<&crate::model::Scram> {
+        self.scram.as_ref()
+    }
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn iam(&self) -> std::option::Option<&crate::model::Iam> {
+        self.iam.as_ref()
+    }
+}
 impl std::fmt::Debug for Sasl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Sasl");
@@ -546,6 +620,12 @@ pub struct Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub enabled: bool,
 }
+impl Iam {
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for Iam {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Iam");
@@ -594,6 +674,12 @@ pub struct Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     pub enabled: bool,
 }
+impl Scram {
+    /// <p>SASL/SCRAM authentication is enabled or not.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for Scram {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Scram");
@@ -641,6 +727,12 @@ impl Scram {
 pub struct LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
     pub broker_logs: std::option::Option<crate::model::BrokerLogs>,
+}
+impl LoggingInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn broker_logs(&self) -> std::option::Option<&crate::model::BrokerLogs> {
+        self.broker_logs.as_ref()
+    }
 }
 impl std::fmt::Debug for LoggingInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -696,6 +788,20 @@ pub struct BrokerLogs {
     pub firehose: std::option::Option<crate::model::Firehose>,
     #[allow(missing_docs)] // documentation missing in model
     pub s3: std::option::Option<crate::model::S3>,
+}
+impl BrokerLogs {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn cloud_watch_logs(&self) -> std::option::Option<&crate::model::CloudWatchLogs> {
+        self.cloud_watch_logs.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn firehose(&self) -> std::option::Option<&crate::model::Firehose> {
+        self.firehose.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3> {
+        self.s3.as_ref()
+    }
 }
 impl std::fmt::Debug for BrokerLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -778,6 +884,20 @@ pub struct S3 {
     #[allow(missing_docs)] // documentation missing in model
     pub prefix: std::option::Option<std::string::String>,
 }
+impl S3 {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3");
@@ -854,6 +974,16 @@ pub struct Firehose {
     #[allow(missing_docs)] // documentation missing in model
     pub enabled: bool,
 }
+impl Firehose {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+        self.delivery_stream.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for Firehose {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Firehose");
@@ -920,6 +1050,16 @@ pub struct CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
     pub log_group: std::option::Option<std::string::String>,
 }
+impl CloudWatchLogs {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLogs");
@@ -981,6 +1121,12 @@ pub struct OpenMonitoringInfo {
     /// <p>Prometheus settings.</p>
     pub prometheus: std::option::Option<crate::model::PrometheusInfo>,
 }
+impl OpenMonitoringInfo {
+    /// <p>Prometheus settings.</p>
+    pub fn prometheus(&self) -> std::option::Option<&crate::model::PrometheusInfo> {
+        self.prometheus.as_ref()
+    }
+}
 impl std::fmt::Debug for OpenMonitoringInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenMonitoringInfo");
@@ -1033,6 +1179,16 @@ pub struct PrometheusInfo {
     pub jmx_exporter: std::option::Option<crate::model::JmxExporterInfo>,
     /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
     pub node_exporter: std::option::Option<crate::model::NodeExporterInfo>,
+}
+impl PrometheusInfo {
+    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    pub fn jmx_exporter(&self) -> std::option::Option<&crate::model::JmxExporterInfo> {
+        self.jmx_exporter.as_ref()
+    }
+    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    pub fn node_exporter(&self) -> std::option::Option<&crate::model::NodeExporterInfo> {
+        self.node_exporter.as_ref()
+    }
 }
 impl std::fmt::Debug for PrometheusInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1101,6 +1257,12 @@ pub struct NodeExporterInfo {
     /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
     pub enabled_in_broker: bool,
 }
+impl NodeExporterInfo {
+    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    pub fn enabled_in_broker(&self) -> bool {
+        self.enabled_in_broker
+    }
+}
 impl std::fmt::Debug for NodeExporterInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeExporterInfo");
@@ -1148,6 +1310,12 @@ impl NodeExporterInfo {
 pub struct JmxExporterInfo {
     /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
     pub enabled_in_broker: bool,
+}
+impl JmxExporterInfo {
+    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    pub fn enabled_in_broker(&self) -> bool {
+        self.enabled_in_broker
+    }
 }
 impl std::fmt::Debug for JmxExporterInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1269,6 +1437,20 @@ pub struct ConfigurationRevision {
     /// <p>The revision number.</p>
     pub revision: i64,
 }
+impl ConfigurationRevision {
+    /// <p>The time when the configuration revision was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the configuration revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The revision number.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for ConfigurationRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationRevision");
@@ -1348,6 +1530,16 @@ pub struct ConfigurationInfo {
     /// <p>The revision of the configuration to use.</p>
     pub revision: i64,
 }
+impl ConfigurationInfo {
+    /// <p>ARN of the configuration to use.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The revision of the configuration to use.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for ConfigurationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationInfo");
@@ -1410,6 +1602,16 @@ pub struct BrokerEbsVolumeInfo {
     pub kafka_broker_node_id: std::option::Option<std::string::String>,
     /// <p>Size of the EBS volume to update.</p>
     pub volume_size_gb: i32,
+}
+impl BrokerEbsVolumeInfo {
+    /// <p>The ID of the broker to update.</p>
+    pub fn kafka_broker_node_id(&self) -> std::option::Option<&str> {
+        self.kafka_broker_node_id.as_deref()
+    }
+    /// <p>Size of the EBS volume to update.</p>
+    pub fn volume_size_gb(&self) -> i32 {
+        self.volume_size_gb
+    }
 }
 impl std::fmt::Debug for BrokerEbsVolumeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1484,6 +1686,32 @@ pub struct NodeInfo {
     pub node_type: std::option::Option<crate::model::NodeType>,
     /// <p>The ZookeeperNodeInfo.</p>
     pub zookeeper_node_info: std::option::Option<crate::model::ZookeeperNodeInfo>,
+}
+impl NodeInfo {
+    /// <p>The start time.</p>
+    pub fn added_to_cluster_time(&self) -> std::option::Option<&str> {
+        self.added_to_cluster_time.as_deref()
+    }
+    /// <p>The broker node info.</p>
+    pub fn broker_node_info(&self) -> std::option::Option<&crate::model::BrokerNodeInfo> {
+        self.broker_node_info.as_ref()
+    }
+    /// <p>The instance type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the node.</p>
+    pub fn node_arn(&self) -> std::option::Option<&str> {
+        self.node_arn.as_deref()
+    }
+    /// <p>The node type.</p>
+    pub fn node_type(&self) -> std::option::Option<&crate::model::NodeType> {
+        self.node_type.as_ref()
+    }
+    /// <p>The ZookeeperNodeInfo.</p>
+    pub fn zookeeper_node_info(&self) -> std::option::Option<&crate::model::ZookeeperNodeInfo> {
+        self.zookeeper_node_info.as_ref()
+    }
 }
 impl std::fmt::Debug for NodeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1617,6 +1845,28 @@ pub struct ZookeeperNodeInfo {
     pub zookeeper_id: f64,
     /// <p>The version of Zookeeper.</p>
     pub zookeeper_version: std::option::Option<std::string::String>,
+}
+impl ZookeeperNodeInfo {
+    /// <p>The attached elastic network interface of the broker.</p>
+    pub fn attached_eni_id(&self) -> std::option::Option<&str> {
+        self.attached_eni_id.as_deref()
+    }
+    /// <p>The virtual private cloud (VPC) IP address of the client.</p>
+    pub fn client_vpc_ip_address(&self) -> std::option::Option<&str> {
+        self.client_vpc_ip_address.as_deref()
+    }
+    /// <p>Endpoints for accessing the ZooKeeper.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[std::string::String]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>The role-specific ID for Zookeeper.</p>
+    pub fn zookeeper_id(&self) -> f64 {
+        self.zookeeper_id
+    }
+    /// <p>The version of Zookeeper.</p>
+    pub fn zookeeper_version(&self) -> std::option::Option<&str> {
+        self.zookeeper_version.as_deref()
+    }
 }
 impl std::fmt::Debug for ZookeeperNodeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1797,6 +2047,34 @@ pub struct BrokerNodeInfo {
     /// <p>Endpoints for accessing the broker.</p>
     pub endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BrokerNodeInfo {
+    /// <p>The attached elastic network interface of the broker.</p>
+    pub fn attached_eni_id(&self) -> std::option::Option<&str> {
+        self.attached_eni_id.as_deref()
+    }
+    /// <p>The ID of the broker.</p>
+    pub fn broker_id(&self) -> f64 {
+        self.broker_id
+    }
+    /// <p>The client subnet to which this broker node belongs.</p>
+    pub fn client_subnet(&self) -> std::option::Option<&str> {
+        self.client_subnet.as_deref()
+    }
+    /// <p>The virtual private cloud (VPC) of the client.</p>
+    pub fn client_vpc_ip_address(&self) -> std::option::Option<&str> {
+        self.client_vpc_ip_address.as_deref()
+    }
+    /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+    pub fn current_broker_software_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerSoftwareInfo> {
+        self.current_broker_software_info.as_ref()
+    }
+    /// <p>Endpoints for accessing the broker.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[std::string::String]> {
+        self.endpoints.as_deref()
+    }
+}
 impl std::fmt::Debug for BrokerNodeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BrokerNodeInfo");
@@ -1942,6 +2220,20 @@ pub struct BrokerSoftwareInfo {
     /// <p>The version of Apache Kafka.</p>
     pub kafka_version: std::option::Option<std::string::String>,
 }
+impl BrokerSoftwareInfo {
+    /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
+    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+        self.configuration_arn.as_deref()
+    }
+    /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
+    pub fn configuration_revision(&self) -> i64 {
+        self.configuration_revision
+    }
+    /// <p>The version of Apache Kafka.</p>
+    pub fn kafka_version(&self) -> std::option::Option<&str> {
+        self.kafka_version.as_deref()
+    }
+}
 impl std::fmt::Debug for BrokerSoftwareInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BrokerSoftwareInfo");
@@ -2023,6 +2315,16 @@ pub struct KafkaVersion {
     pub version: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub status: std::option::Option<crate::model::KafkaVersionStatus>,
+}
+impl KafkaVersion {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn status(&self) -> std::option::Option<&crate::model::KafkaVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for KafkaVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2154,6 +2456,36 @@ pub struct Configuration {
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub state: std::option::Option<crate::model::ConfigurationState>,
+}
+impl Configuration {
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
+    pub fn kafka_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.kafka_versions.as_deref()
+    }
+    /// <p>Latest revision of the configuration.</p>
+    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+        self.latest_revision.as_ref()
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2392,6 +2724,89 @@ pub struct ClusterInfo {
     pub zookeeper_connect_string: std::option::Option<std::string::String>,
     /// <p>The connection string to use to connect to zookeeper cluster on Tls port.</p>
     pub zookeeper_connect_string_tls: std::option::Option<std::string::String>,
+}
+impl ClusterInfo {
+    /// <p>Arn of active cluster operation.</p>
+    pub fn active_operation_arn(&self) -> std::option::Option<&str> {
+        self.active_operation_arn.as_deref()
+    }
+    /// <p>Information about the broker nodes.</p>
+    pub fn broker_node_group_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerNodeGroupInfo> {
+        self.broker_node_group_info.as_ref()
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The time when the cluster was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
+    pub fn current_broker_software_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerSoftwareInfo> {
+        self.current_broker_software_info.as_ref()
+    }
+    /// <p>The current version of the MSK cluster.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
+        self.encryption_info.as_ref()
+    }
+    /// <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::model::EnhancedMonitoring> {
+        self.enhanced_monitoring.as_ref()
+    }
+    /// <p>Settings for open monitoring using Prometheus.</p>
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoring> {
+        self.open_monitoring.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn number_of_broker_nodes(&self) -> i32 {
+        self.number_of_broker_nodes
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn state_info(&self) -> std::option::Option<&crate::model::StateInfo> {
+        self.state_info.as_ref()
+    }
+    /// <p>Tags attached to the cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+    pub fn zookeeper_connect_string(&self) -> std::option::Option<&str> {
+        self.zookeeper_connect_string.as_deref()
+    }
+    /// <p>The connection string to use to connect to zookeeper cluster on Tls port.</p>
+    pub fn zookeeper_connect_string_tls(&self) -> std::option::Option<&str> {
+        self.zookeeper_connect_string_tls.as_deref()
+    }
 }
 impl std::fmt::Debug for ClusterInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2733,6 +3148,16 @@ pub struct StateInfo {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl StateInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for StateInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StateInfo");
@@ -2882,6 +3307,12 @@ pub struct OpenMonitoring {
     /// <p>Prometheus settings.</p>
     pub prometheus: std::option::Option<crate::model::Prometheus>,
 }
+impl OpenMonitoring {
+    /// <p>Prometheus settings.</p>
+    pub fn prometheus(&self) -> std::option::Option<&crate::model::Prometheus> {
+        self.prometheus.as_ref()
+    }
+}
 impl std::fmt::Debug for OpenMonitoring {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenMonitoring");
@@ -2934,6 +3365,16 @@ pub struct Prometheus {
     pub jmx_exporter: std::option::Option<crate::model::JmxExporter>,
     /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
     pub node_exporter: std::option::Option<crate::model::NodeExporter>,
+}
+impl Prometheus {
+    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    pub fn jmx_exporter(&self) -> std::option::Option<&crate::model::JmxExporter> {
+        self.jmx_exporter.as_ref()
+    }
+    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    pub fn node_exporter(&self) -> std::option::Option<&crate::model::NodeExporter> {
+        self.node_exporter.as_ref()
+    }
 }
 impl std::fmt::Debug for Prometheus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3002,6 +3443,12 @@ pub struct NodeExporter {
     /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
     pub enabled_in_broker: bool,
 }
+impl NodeExporter {
+    /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+    pub fn enabled_in_broker(&self) -> bool {
+        self.enabled_in_broker
+    }
+}
 impl std::fmt::Debug for NodeExporter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeExporter");
@@ -3049,6 +3496,12 @@ impl NodeExporter {
 pub struct JmxExporter {
     /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
     pub enabled_in_broker: bool,
+}
+impl JmxExporter {
+    /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+    pub fn enabled_in_broker(&self) -> bool {
+        self.enabled_in_broker
+    }
 }
 impl std::fmt::Debug for JmxExporter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3107,6 +3560,32 @@ pub struct BrokerNodeGroupInfo {
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
     pub storage_info: std::option::Option<crate::model::StorageInfo>,
+}
+impl BrokerNodeGroupInfo {
+    /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+    /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+    pub fn broker_az_distribution(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerAzDistribution> {
+        self.broker_az_distribution.as_ref()
+    }
+    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+    pub fn client_subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.client_subnets.as_deref()
+    }
+    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+    pub fn storage_info(&self) -> std::option::Option<&crate::model::StorageInfo> {
+        self.storage_info.as_ref()
+    }
 }
 impl std::fmt::Debug for BrokerNodeGroupInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3239,6 +3718,12 @@ pub struct StorageInfo {
     /// <p>EBS volume information.</p>
     pub ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
 }
+impl StorageInfo {
+    /// <p>EBS volume information.</p>
+    pub fn ebs_storage_info(&self) -> std::option::Option<&crate::model::EbsStorageInfo> {
+        self.ebs_storage_info.as_ref()
+    }
+}
 impl std::fmt::Debug for StorageInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageInfo");
@@ -3289,6 +3774,12 @@ impl StorageInfo {
 pub struct EbsStorageInfo {
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub volume_size: i32,
+}
+impl EbsStorageInfo {
+    /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+    pub fn volume_size(&self) -> i32 {
+        self.volume_size
+    }
 }
 impl std::fmt::Debug for EbsStorageInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3409,6 +3900,52 @@ pub struct ClusterOperationInfo {
     pub source_cluster_info: std::option::Option<crate::model::MutableClusterInfo>,
     /// <p>Information about cluster attributes after a cluster is updated.</p>
     pub target_cluster_info: std::option::Option<crate::model::MutableClusterInfo>,
+}
+impl ClusterOperationInfo {
+    /// <p>The ID of the API request that triggered this operation.</p>
+    pub fn client_request_id(&self) -> std::option::Option<&str> {
+        self.client_request_id.as_deref()
+    }
+    /// <p>ARN of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The time that the operation was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the operation finished.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Describes the error if the operation fails.</p>
+    pub fn error_info(&self) -> std::option::Option<&crate::model::ErrorInfo> {
+        self.error_info.as_ref()
+    }
+    /// <p>ARN of the cluster operation.</p>
+    pub fn operation_arn(&self) -> std::option::Option<&str> {
+        self.operation_arn.as_deref()
+    }
+    /// <p>State of the cluster operation.</p>
+    pub fn operation_state(&self) -> std::option::Option<&str> {
+        self.operation_state.as_deref()
+    }
+    /// <p>Steps completed during the operation.</p>
+    pub fn operation_steps(&self) -> std::option::Option<&[crate::model::ClusterOperationStep]> {
+        self.operation_steps.as_deref()
+    }
+    /// <p>Type of the cluster operation.</p>
+    pub fn operation_type(&self) -> std::option::Option<&str> {
+        self.operation_type.as_deref()
+    }
+    /// <p>Information about cluster attributes before a cluster is updated.</p>
+    pub fn source_cluster_info(&self) -> std::option::Option<&crate::model::MutableClusterInfo> {
+        self.source_cluster_info.as_ref()
+    }
+    /// <p>Information about cluster attributes after a cluster is updated.</p>
+    pub fn target_cluster_info(&self) -> std::option::Option<&crate::model::MutableClusterInfo> {
+        self.target_cluster_info.as_ref()
+    }
 }
 impl std::fmt::Debug for ClusterOperationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3647,6 +4184,52 @@ pub struct MutableClusterInfo {
     /// <p>Includes all encryption-related information.</p>
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
 }
+impl MutableClusterInfo {
+    /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
+    pub fn broker_ebs_volume_info(
+        &self,
+    ) -> std::option::Option<&[crate::model::BrokerEbsVolumeInfo]> {
+        self.broker_ebs_volume_info.as_deref()
+    }
+    /// <p>Information about the changes in the configuration of the brokers.</p>
+    pub fn configuration_info(&self) -> std::option::Option<&crate::model::ConfigurationInfo> {
+        self.configuration_info.as_ref()
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn number_of_broker_nodes(&self) -> i32 {
+        self.number_of_broker_nodes
+    }
+    /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::model::EnhancedMonitoring> {
+        self.enhanced_monitoring.as_ref()
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoring> {
+        self.open_monitoring.as_ref()
+    }
+    /// <p>The Kafka version.</p>
+    pub fn kafka_version(&self) -> std::option::Option<&str> {
+        self.kafka_version.as_deref()
+    }
+    /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>Information about the Amazon MSK broker type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
+        self.encryption_info.as_ref()
+    }
+}
 impl std::fmt::Debug for MutableClusterInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MutableClusterInfo");
@@ -3851,6 +4434,16 @@ pub struct ClusterOperationStep {
     /// <p>The name of the step.</p>
     pub step_name: std::option::Option<std::string::String>,
 }
+impl ClusterOperationStep {
+    /// <p>Information about the step and its status.</p>
+    pub fn step_info(&self) -> std::option::Option<&crate::model::ClusterOperationStepInfo> {
+        self.step_info.as_ref()
+    }
+    /// <p>The name of the step.</p>
+    pub fn step_name(&self) -> std::option::Option<&str> {
+        self.step_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterOperationStep {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterOperationStep");
@@ -3915,6 +4508,12 @@ pub struct ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
     pub step_status: std::option::Option<std::string::String>,
 }
+impl ClusterOperationStepInfo {
+    /// <p>The steps current status.</p>
+    pub fn step_status(&self) -> std::option::Option<&str> {
+        self.step_status.as_deref()
+    }
+}
 impl std::fmt::Debug for ClusterOperationStepInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClusterOperationStepInfo");
@@ -3964,6 +4563,16 @@ pub struct ErrorInfo {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>An optional field to provide more details about the error.</p>
     pub error_string: std::option::Option<std::string::String>,
+}
+impl ErrorInfo {
+    /// <p>A number describing the error programmatically.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>An optional field to provide more details about the error.</p>
+    pub fn error_string(&self) -> std::option::Option<&str> {
+        self.error_string.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4027,6 +4636,16 @@ pub struct CompatibleKafkaVersion {
     pub source_version: std::option::Option<std::string::String>,
     /// <p>A list of Kafka versions.</p>
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CompatibleKafkaVersion {
+    /// <p>A Kafka version.</p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+    /// <p>A list of Kafka versions.</p>
+    pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for CompatibleKafkaVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4104,6 +4723,20 @@ pub struct UnprocessedScramSecret {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>AWS Secrets Manager secret ARN.</p>
     pub secret_arn: std::option::Option<std::string::String>,
+}
+impl UnprocessedScramSecret {
+    /// <p>Error code for associate/disassociate failure.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>Error message for associate/disassociate failure.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>AWS Secrets Manager secret ARN.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UnprocessedScramSecret {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

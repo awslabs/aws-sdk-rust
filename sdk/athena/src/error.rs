@@ -3799,6 +3799,13 @@ pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidRequestException {
+    /// <p>The error code returned when the query execution failed to process, or when the
+    /// processing request for the named query failed.</p>
+    pub fn athena_error_code(&self) -> std::option::Option<&str> {
+        self.athena_error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidRequestException");
@@ -3948,6 +3955,12 @@ pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -4030,6 +4043,13 @@ pub struct TooManyRequestsException {
     /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
     /// limit.</p>
     pub reason: std::option::Option<crate::model::ThrottleReason>,
+}
+impl TooManyRequestsException {
+    /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
+    /// limit.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ThrottleReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

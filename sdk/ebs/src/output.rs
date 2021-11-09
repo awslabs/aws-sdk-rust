@@ -26,6 +26,50 @@ pub struct StartSnapshotOutput {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
+impl StartSnapshotOutput {
+    /// <p>The description of the snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The status of the snapshot.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the snapshot was created.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn volume_size(&self) -> std::option::Option<i64> {
+        self.volume_size
+    }
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    pub fn block_size(&self) -> std::option::Option<i32> {
+        self.block_size
+    }
+    /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2
+    /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The ID of the parent snapshot.</p>
+    pub fn parent_snapshot_id(&self) -> std::option::Option<&str> {
+        self.parent_snapshot_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSnapshotOutput");
@@ -212,6 +256,16 @@ pub struct PutSnapshotBlockOutput {
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
+impl PutSnapshotBlockOutput {
+    /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+}
 impl std::fmt::Debug for PutSnapshotBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSnapshotBlockOutput");
@@ -284,6 +338,29 @@ pub struct ListSnapshotBlocksOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSnapshotBlocksOutput {
+    /// <p>An array of objects containing information about the blocks.</p>
+    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+        self.blocks.as_deref()
+    }
+    /// <p>The time when the <code>BlockToken</code> expires.</p>
+    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiry_time.as_ref()
+    }
+    /// <p>The size of the volume in GB.</p>
+    pub fn volume_size(&self) -> std::option::Option<i64> {
+        self.volume_size
+    }
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    pub fn block_size(&self) -> std::option::Option<i32> {
+        self.block_size
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSnapshotBlocksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -408,6 +485,29 @@ pub struct ListChangedBlocksOutput {
     /// are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChangedBlocksOutput {
+    /// <p>An array of objects containing information about the changed blocks.</p>
+    pub fn changed_blocks(&self) -> std::option::Option<&[crate::model::ChangedBlock]> {
+        self.changed_blocks.as_deref()
+    }
+    /// <p>The time when the <code>BlockToken</code> expires.</p>
+    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiry_time.as_ref()
+    }
+    /// <p>The size of the volume in GB.</p>
+    pub fn volume_size(&self) -> std::option::Option<i64> {
+        self.volume_size
+    }
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    pub fn block_size(&self) -> std::option::Option<i32> {
+        self.block_size
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there
+    /// are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChangedBlocksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChangedBlocksOutput");
@@ -527,6 +627,24 @@ pub struct GetSnapshotBlockOutput {
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
+impl GetSnapshotBlockOutput {
+    /// <p>The size of the data in the block.</p>
+    pub fn data_length(&self) -> std::option::Option<i32> {
+        self.data_length
+    }
+    /// <p>The data content of the block.</p>
+    pub fn block_data(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.block_data
+    }
+    /// <p>The checksum generated for the block, which is Base64 encoded.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSnapshotBlockOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSnapshotBlockOutput");
@@ -619,6 +737,12 @@ impl GetSnapshotBlockOutput {
 pub struct CompleteSnapshotOutput {
     /// <p>The status of the snapshot.</p>
     pub status: std::option::Option<crate::model::Status>,
+}
+impl CompleteSnapshotOutput {
+    /// <p>The status of the snapshot.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CompleteSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

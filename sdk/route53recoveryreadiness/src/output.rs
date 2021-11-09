@@ -15,6 +15,31 @@ pub struct UpdateResourceSetOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateResourceSetOutput {
+    /// The arn for the ResourceSet
+    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+        self.resource_set_arn.as_deref()
+    }
+    /// The name of the ResourceSet
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+    /// AWS Resource Type of the resources in the ResourceSet
+    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+        self.resource_set_type.as_deref()
+    }
+    /// A list of Resource objects
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceSetOutput");
@@ -157,6 +182,27 @@ pub struct UpdateRecoveryGroupOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateRecoveryGroupOutput {
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// The arn for the RecoveryGroup
+    pub fn recovery_group_arn(&self) -> std::option::Option<&str> {
+        self.recovery_group_arn.as_deref()
+    }
+    /// The name of the RecoveryGroup
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRecoveryGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecoveryGroupOutput");
@@ -283,6 +329,27 @@ pub struct UpdateReadinessCheckOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateReadinessCheckOutput {
+    /// Arn associated with ReadinessCheck
+    pub fn readiness_check_arn(&self) -> std::option::Option<&str> {
+        self.readiness_check_arn.as_deref()
+    }
+    /// Name for a ReadinessCheck
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+    /// Name of the ResourceSet to be checked
+    pub fn resource_set(&self) -> std::option::Option<&str> {
+        self.resource_set.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateReadinessCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReadinessCheckOutput");
@@ -401,6 +468,31 @@ pub struct UpdateCellOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateCellOutput {
+    /// The arn for the Cell
+    pub fn cell_arn(&self) -> std::option::Option<&str> {
+        self.cell_arn.as_deref()
+    }
+    /// The name of the Cell
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// A list of Cell ARNs and/or RecoveryGroup ARNs
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.parent_readiness_scopes.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCellOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -598,6 +690,15 @@ pub struct ListTagsForResourcesOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourcesOutput {
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourcesOutput");
@@ -662,6 +763,16 @@ pub struct ListRulesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// A list of rules
     pub rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
+}
+impl ListRulesOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of rules
+    pub fn rules(&self) -> std::option::Option<&[crate::model::ListRulesOutput]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -735,6 +846,16 @@ pub struct ListResourceSetsOutput {
     /// A list of ResourceSets associated with the account
     pub resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
 }
+impl ListResourceSetsOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of ResourceSets associated with the account
+    pub fn resource_sets(&self) -> std::option::Option<&[crate::model::ResourceSetOutput]> {
+        self.resource_sets.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceSetsOutput");
@@ -807,6 +928,16 @@ pub struct ListRecoveryGroupsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// A list of RecoveryGroups
     pub recovery_groups: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
+}
+impl ListRecoveryGroupsOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of RecoveryGroups
+    pub fn recovery_groups(&self) -> std::option::Option<&[crate::model::RecoveryGroupOutput]> {
+        self.recovery_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecoveryGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -884,6 +1015,16 @@ pub struct ListReadinessChecksOutput {
     /// A list of ReadinessCheck associated with the account
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
 }
+impl ListReadinessChecksOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of ReadinessCheck associated with the account
+    pub fn readiness_checks(&self) -> std::option::Option<&[crate::model::ReadinessCheckOutput]> {
+        self.readiness_checks.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReadinessChecksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReadinessChecksOutput");
@@ -959,6 +1100,16 @@ pub struct ListCrossAccountAuthorizationsOutput {
     pub cross_account_authorizations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// A token that can be used to resume pagination from the end of the collection.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCrossAccountAuthorizationsOutput {
+    /// A list of CrossAccountAuthorizations
+    pub fn cross_account_authorizations(&self) -> std::option::Option<&[std::string::String]> {
+        self.cross_account_authorizations.as_deref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCrossAccountAuthorizationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1039,6 +1190,16 @@ pub struct ListCellsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCellsOutput {
+    /// A list of Cells
+    pub fn cells(&self) -> std::option::Option<&[crate::model::CellOutput]> {
+        self.cells.as_deref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCellsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCellsOutput");
@@ -1117,6 +1278,31 @@ pub struct GetResourceSetOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetResourceSetOutput {
+    /// The arn for the ResourceSet
+    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+        self.resource_set_arn.as_deref()
+    }
+    /// The name of the ResourceSet
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+    /// AWS Resource Type of the resources in the ResourceSet
+    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+        self.resource_set_type.as_deref()
+    }
+    /// A list of Resource objects
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResourceSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1257,6 +1443,20 @@ pub struct GetRecoveryGroupReadinessSummaryOutput {
     /// Summaries for the ReadinessChecks making up the RecoveryGroup
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
 }
+impl GetRecoveryGroupReadinessSummaryOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The readiness at RecoveryGroup level.
+    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+        self.readiness.as_ref()
+    }
+    /// Summaries for the ReadinessChecks making up the RecoveryGroup
+    pub fn readiness_checks(&self) -> std::option::Option<&[crate::model::ReadinessCheckSummary]> {
+        self.readiness_checks.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecoveryGroupReadinessSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecoveryGroupReadinessSummaryOutput");
@@ -1353,6 +1553,27 @@ pub struct GetRecoveryGroupOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetRecoveryGroupOutput {
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// The arn for the RecoveryGroup
+    pub fn recovery_group_arn(&self) -> std::option::Option<&str> {
+        self.recovery_group_arn.as_deref()
+    }
+    /// The name of the RecoveryGroup
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRecoveryGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1479,6 +1700,24 @@ pub struct GetReadinessCheckStatusOutput {
     /// Summary of resources's readiness
     pub resources: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>,
 }
+impl GetReadinessCheckStatusOutput {
+    /// Top level messages for readiness check status
+    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.messages.as_deref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The readiness at rule level.
+    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+        self.readiness.as_ref()
+    }
+    /// Summary of resources's readiness
+    pub fn resources(&self) -> std::option::Option<&[crate::model::ResourceResult]> {
+        self.resources.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReadinessCheckStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReadinessCheckStatusOutput");
@@ -1591,6 +1830,20 @@ pub struct GetReadinessCheckResourceStatusOutput {
     /// Details of the rules's results
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
 }
+impl GetReadinessCheckResourceStatusOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The readiness at rule level.
+    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+        self.readiness.as_ref()
+    }
+    /// Details of the rules's results
+    pub fn rules(&self) -> std::option::Option<&[crate::model::RuleResult]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReadinessCheckResourceStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReadinessCheckResourceStatusOutput");
@@ -1683,6 +1936,27 @@ pub struct GetReadinessCheckOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetReadinessCheckOutput {
+    /// Arn associated with ReadinessCheck
+    pub fn readiness_check_arn(&self) -> std::option::Option<&str> {
+        self.readiness_check_arn.as_deref()
+    }
+    /// Name for a ReadinessCheck
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+    /// Name of the ResourceSet to be checked
+    pub fn resource_set(&self) -> std::option::Option<&str> {
+        self.resource_set.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetReadinessCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1798,6 +2072,20 @@ pub struct GetCellReadinessSummaryOutput {
     /// Summaries for the ReadinessChecks making up the Cell
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
 }
+impl GetCellReadinessSummaryOutput {
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The readiness at Cell level.
+    pub fn readiness(&self) -> std::option::Option<&crate::model::Readiness> {
+        self.readiness.as_ref()
+    }
+    /// Summaries for the ReadinessChecks making up the Cell
+    pub fn readiness_checks(&self) -> std::option::Option<&[crate::model::ReadinessCheckSummary]> {
+        self.readiness_checks.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCellReadinessSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCellReadinessSummaryOutput");
@@ -1896,6 +2184,31 @@ pub struct GetCellOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetCellOutput {
+    /// The arn for the Cell
+    pub fn cell_arn(&self) -> std::option::Option<&str> {
+        self.cell_arn.as_deref()
+    }
+    /// The name of the Cell
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// A list of Cell ARNs and/or RecoveryGroup ARNs
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.parent_readiness_scopes.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCellOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2035,6 +2348,20 @@ pub struct GetArchitectureRecommendationsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// A list of recommendations for the customer's application
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+}
+impl GetArchitectureRecommendationsOutput {
+    /// The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
+    pub fn last_audit_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_audit_timestamp.as_ref()
+    }
+    /// A token that can be used to resume pagination from the end of the collection
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// A list of recommendations for the customer's application
+    pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
+        self.recommendations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetArchitectureRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2282,6 +2609,31 @@ pub struct CreateResourceSetOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateResourceSetOutput {
+    /// The arn for the ResourceSet
+    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+        self.resource_set_arn.as_deref()
+    }
+    /// The name of the ResourceSet
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+    /// AWS Resource Type of the resources in the ResourceSet
+    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+        self.resource_set_type.as_deref()
+    }
+    /// A list of Resource objects
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResourceSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceSetOutput");
@@ -2424,6 +2776,27 @@ pub struct CreateRecoveryGroupOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRecoveryGroupOutput {
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// The arn for the RecoveryGroup
+    pub fn recovery_group_arn(&self) -> std::option::Option<&str> {
+        self.recovery_group_arn.as_deref()
+    }
+    /// The name of the RecoveryGroup
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRecoveryGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRecoveryGroupOutput");
@@ -2550,6 +2923,27 @@ pub struct CreateReadinessCheckOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateReadinessCheckOutput {
+    /// Arn associated with ReadinessCheck
+    pub fn readiness_check_arn(&self) -> std::option::Option<&str> {
+        self.readiness_check_arn.as_deref()
+    }
+    /// Name for a ReadinessCheck
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+    /// Name of the ResourceSet to be checked
+    pub fn resource_set(&self) -> std::option::Option<&str> {
+        self.resource_set.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReadinessCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReadinessCheckOutput");
@@ -2660,6 +3054,12 @@ pub struct CreateCrossAccountAuthorizationOutput {
     /// The cross account authorization
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
+impl CreateCrossAccountAuthorizationOutput {
+    /// The cross account authorization
+    pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
+        self.cross_account_authorization.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCrossAccountAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCrossAccountAuthorizationOutput");
@@ -2725,6 +3125,31 @@ pub struct CreateCellOutput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateCellOutput {
+    /// The arn for the Cell
+    pub fn cell_arn(&self) -> std::option::Option<&str> {
+        self.cell_arn.as_deref()
+    }
+    /// The name of the Cell
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// A list of Cell ARNs and/or RecoveryGroup ARNs
+    pub fn parent_readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.parent_readiness_scopes.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCellOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

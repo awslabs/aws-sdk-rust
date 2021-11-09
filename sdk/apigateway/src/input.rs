@@ -192,10 +192,7 @@ impl CreateApiKeyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_api_key(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_api_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -502,10 +499,7 @@ impl CreateAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -712,10 +706,7 @@ impl CreateBasePathMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_base_path_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1010,10 +1001,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1212,10 +1200,7 @@ impl CreateDocumentationPartInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_documentation_part(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1426,10 +1411,7 @@ impl CreateDocumentationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_documentation_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1782,10 +1764,7 @@ impl CreateDomainNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_domain_name(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_domain_name(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2001,10 +1980,7 @@ impl CreateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2211,10 +2187,7 @@ impl CreateRequestValidatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_request_validator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2422,10 +2395,8 @@ impl CreateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2731,10 +2702,8 @@ impl CreateRestApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_rest_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_rest_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3072,10 +3041,7 @@ impl CreateStageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3316,10 +3282,7 @@ impl CreateUsagePlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_usage_plan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_usage_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3515,10 +3478,7 @@ impl CreateUsagePlanKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_usage_plan_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_usage_plan_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3728,10 +3688,8 @@ impl CreateVpcLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_vpc_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_vpc_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8127,10 +8085,7 @@ impl GenerateClientCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_generate_client_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17740,10 +17695,7 @@ impl PutGatewayResponseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_gateway_response(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_gateway_response(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18234,10 +18186,8 @@ impl PutIntegrationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_integration(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18584,10 +18534,7 @@ impl PutIntegrationResponseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_integration_response(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18957,10 +18904,7 @@ impl PutMethodInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_method(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_method(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19258,10 +19202,7 @@ impl PutMethodResponseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_method_response(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_method_response(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19711,10 +19652,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20057,10 +19995,9 @@ impl TestInvokeAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_invoke_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_invoke_authorizer(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20414,10 +20351,7 @@ impl TestInvokeMethodInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_invoke_method(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_invoke_method(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20756,10 +20690,7 @@ impl UpdateAccountInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_account(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20945,10 +20876,7 @@ impl UpdateApiKeyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_api_key(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_api_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21170,10 +21098,7 @@ impl UpdateAuthorizerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21396,10 +21321,7 @@ impl UpdateBasePathMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_base_path_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21596,10 +21518,7 @@ impl UpdateClientCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_client_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21821,10 +21740,7 @@ impl UpdateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22049,10 +21965,7 @@ impl UpdateDocumentationPartInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_documentation_part(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22277,10 +22190,7 @@ impl UpdateDocumentationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_documentation_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22471,10 +22381,7 @@ impl UpdateDomainNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_name(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_name(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22698,10 +22605,7 @@ impl UpdateGatewayResponseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_gateway_response(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22948,10 +22852,7 @@ impl UpdateIntegrationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_integration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23221,10 +23122,7 @@ impl UpdateIntegrationResponseInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_integration_response(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23470,10 +23368,7 @@ impl UpdateMethodInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_method(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_method(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23740,10 +23635,9 @@ impl UpdateMethodResponseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_method_response(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_method_response(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23961,10 +23855,7 @@ impl UpdateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24188,10 +24079,7 @@ impl UpdateRequestValidatorInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_request_validator(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24409,10 +24297,8 @@ impl UpdateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24598,10 +24484,8 @@ impl UpdateRestApiInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_rest_api(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_rest_api(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24819,10 +24703,7 @@ impl UpdateStageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25043,10 +24924,7 @@ impl UpdateUsageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_usage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25240,10 +25118,7 @@ impl UpdateUsagePlanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_usage_plan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_usage_plan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25429,10 +25304,8 @@ impl UpdateVpcLinkInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_vpc_link(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_vpc_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25507,6 +25380,16 @@ pub struct UpdateVpcLinkInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateVpcLinkInput {
+    /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+        self.vpc_link_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVpcLinkInput");
@@ -25524,6 +25407,16 @@ pub struct UpdateUsagePlanInput {
     pub usage_plan_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateUsagePlanInput {
+    /// <p>[Required] The Id of the to-be-updated usage plan.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateUsagePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25544,6 +25437,20 @@ pub struct UpdateUsageInput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateUsageInput {
+    /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25566,6 +25473,20 @@ pub struct UpdateStageInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateStageInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the <a>Stage</a> resource to change information about.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStageInput");
@@ -25584,6 +25505,16 @@ pub struct UpdateRestApiInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateRestApiInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25604,6 +25535,20 @@ pub struct UpdateResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateResourceInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25626,6 +25571,20 @@ pub struct UpdateRequestValidatorInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateRequestValidatorInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of <a>RequestValidator</a> to be updated.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRequestValidatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRequestValidatorInput");
@@ -25646,6 +25605,20 @@ pub struct UpdateModelInput {
     pub model_name: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateModelInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the model to update.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25672,6 +25645,28 @@ pub struct UpdateMethodResponseInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateMethodResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMethodResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMethodResponseInput");
@@ -25696,6 +25691,24 @@ pub struct UpdateMethodInput {
     pub http_method: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateMethodInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25723,6 +25736,28 @@ pub struct UpdateIntegrationResponseInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateIntegrationResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] Specifies an update integration response request's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIntegrationResponseInput");
@@ -25748,6 +25783,24 @@ pub struct UpdateIntegrationInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateIntegrationInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Represents an update integration request's resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Represents an update integration request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIntegrationInput");
@@ -25770,6 +25823,20 @@ pub struct UpdateGatewayResponseInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateGatewayResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGatewayResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayResponseInput");
@@ -25788,6 +25855,16 @@ pub struct UpdateDomainNameInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateDomainNameInput {
+    /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25808,6 +25885,20 @@ pub struct UpdateDocumentationVersionInput {
     pub documentation_version: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateDocumentationVersionInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDocumentationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25830,6 +25921,20 @@ pub struct UpdateDocumentationPartInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateDocumentationPartInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
+    pub fn documentation_part_id(&self) -> std::option::Option<&str> {
+        self.documentation_part_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentationPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentationPartInput");
@@ -25851,6 +25956,20 @@ pub struct UpdateDeploymentInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateDeploymentInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The replacement identifier for the <a>Deployment</a> resource to change information about.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeploymentInput");
@@ -25869,6 +25988,16 @@ pub struct UpdateClientCertificateInput {
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateClientCertificateInput {
+    /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25891,6 +26020,21 @@ pub struct UpdateBasePathMappingInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateBasePathMappingInput {
+    /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>[Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+    /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBasePathMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBasePathMappingInput");
@@ -25912,6 +26056,20 @@ pub struct UpdateAuthorizerInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateAuthorizerInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAuthorizerInput");
@@ -25931,6 +26089,16 @@ pub struct UpdateApiKeyInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
 }
+impl UpdateApiKeyInput {
+    /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiKeyInput");
@@ -25946,6 +26114,12 @@ impl std::fmt::Debug for UpdateApiKeyInput {
 pub struct UpdateAccountInput {
     /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
     pub patch_operations: std::option::Option<std::vec::Vec<crate::model::PatchOperation>>,
+}
+impl UpdateAccountInput {
+    /// <p>A list of update operations to be applied to the specified resource and in the order specified in this list.</p>
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::model::PatchOperation]> {
+        self.patch_operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25963,6 +26137,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>[Required] The Tag keys to delete.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>[Required] The Tag keys to delete.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25999,6 +26183,54 @@ pub struct TestInvokeMethodInput {
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.</p>
     pub stage_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TestInvokeMethodInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    pub fn path_with_query_string(&self) -> std::option::Option<&str> {
+        self.path_with_query_string.as_deref()
+    }
+    /// <p>The simulated request body of an incoming invocation request.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
+    pub fn headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.headers.as_ref()
+    }
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
+    pub fn multi_value_headers(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.multi_value_headers.as_ref()
+    }
+    /// <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.</p>
+    pub fn stage_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.stage_variables.as_ref()
+    }
 }
 impl std::fmt::Debug for TestInvokeMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26042,6 +26274,53 @@ pub struct TestInvokeAuthorizerInput {
     pub additional_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TestInvokeAuthorizerInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>[Required] A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
+    pub fn headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.headers.as_ref()
+    }
+    /// <p>[Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
+    pub fn multi_value_headers(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.multi_value_headers.as_ref()
+    }
+    /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    pub fn path_with_query_string(&self) -> std::option::Option<&str> {
+        self.path_with_query_string.as_deref()
+    }
+    /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.</p>
+    pub fn stage_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.stage_variables.as_ref()
+    }
+    /// <p>[Optional] A key-value map of additional context variables.</p>
+    pub fn additional_context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.additional_context.as_ref()
+    }
+}
 impl std::fmt::Debug for TestInvokeAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestInvokeAuthorizerInput");
@@ -26066,6 +26345,19 @@ pub struct TagResourceInput {
     /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>[Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26093,6 +26385,33 @@ pub struct PutRestApiInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
+}
+impl PutRestApiInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default,
+    /// the update mode is "merge".</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::PutMode> {
+        self.mode.as_ref()
+    }
+    /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>)
+    /// when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn fail_on_warnings(&self) -> bool {
+        self.fail_on_warnings
+    }
+    /// <p>Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26124,6 +26443,37 @@ pub struct PutMethodResponseInput {
     /// <p>Specifies the <a>Model</a> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <a>Model</a> name as the value.</p>
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PutMethodResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] The method response's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies the <a>Model</a> resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a <a>Model</a> name as the value.</p>
+    pub fn response_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_models.as_ref()
+    }
 }
 impl std::fmt::Debug for PutMethodResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26166,6 +26516,57 @@ pub struct PutMethodInput {
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PutMethodInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies the method request's HTTP method type.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
+    pub fn authorization_type(&self) -> std::option::Option<&str> {
+        self.authorization_type.as_deref()
+    }
+    /// <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+    /// <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
+    pub fn api_key_required(&self) -> bool {
+        self.api_key_required
+    }
+    /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
+    pub fn operation_name(&self) -> std::option::Option<&str> {
+        self.operation_name.as_deref()
+    }
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or body-mapping templates.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <a>Model</a> name as the value.</p>
+    pub fn request_models(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_models.as_ref()
+    }
+    /// <p>The identifier of a <a>RequestValidator</a> for validating the method request.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+    /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
+    pub fn authorization_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorization_scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for PutMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26213,6 +26614,52 @@ pub struct PutIntegrationResponseInput {
     /// </ul>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
+}
+impl PutIntegrationResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Specifies the selection pattern of a put integration response.</p>
+    pub fn selection_pattern(&self) -> std::option::Option<&str> {
+        self.selection_pattern.as_deref()
+    }
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+    /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p>Specifies a put integration response's templates.</p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
 }
 impl std::fmt::Debug for PutIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26286,6 +26733,98 @@ pub struct PutIntegrationInput {
     #[allow(missing_docs)] // documentation missing in model
     pub tls_config: std::option::Option<crate::model::TlsConfig>,
 }
+impl PutIntegrationInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a put integration request's resource ID.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a put integration request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] Specifies a put integration input's type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::IntegrationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
+    pub fn integration_http_method(&self) -> std::option::Option<&str> {
+        self.integration_http_method.as_deref()
+    }
+    /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+    /// <ul>
+    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+    /// </li>
+    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+    /// </li></ul>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
+    pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.connection_type.as_ref()
+    }
+    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>Specifies whether credentials are required for a put integration.</p>
+    pub fn credentials(&self) -> std::option::Option<&str> {
+        self.credentials.as_deref()
+    }
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    pub fn request_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_parameters.as_ref()
+    }
+    /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
+    pub fn request_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_templates.as_ref()
+    }
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values:  <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.
+    /// </p>
+    /// <ul>
+    /// <li><p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through to the integration back end without transformation.</p></li>
+    /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
+    /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
+    /// </ul>
+    pub fn passthrough_behavior(&self) -> std::option::Option<&str> {
+        self.passthrough_behavior.as_deref()
+    }
+    /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
+    pub fn cache_namespace(&self) -> std::option::Option<&str> {
+        self.cache_namespace.as_deref()
+    }
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+    pub fn cache_key_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_key_parameters.as_deref()
+    }
+    /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+    /// <ul>
+    /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+    /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+    /// </ul>
+    /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
+    pub fn content_handling(&self) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
+        self.content_handling.as_ref()
+    }
+    /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
+    pub fn timeout_in_millis(&self) -> std::option::Option<i32> {
+        self.timeout_in_millis
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tls_config(&self) -> std::option::Option<&crate::model::TlsConfig> {
+        self.tls_config.as_ref()
+    }
+}
 impl std::fmt::Debug for PutIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutIntegrationInput");
@@ -26327,6 +26866,34 @@ pub struct PutGatewayResponseInput {
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutGatewayResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
+    /// The HTTP status code of the <a>GatewayResponse</a>.
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p><p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p></p>
+    pub fn response_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_parameters.as_ref()
+    }
+    /// <p><p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p></p>
+    pub fn response_templates(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.response_templates.as_ref()
+    }
+}
 impl std::fmt::Debug for PutGatewayResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutGatewayResponseInput");
@@ -26359,6 +26926,31 @@ pub struct ImportRestApiInput {
     /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
+impl ImportRestApiInput {
+    /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>)
+    /// when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn fail_on_warnings(&self) -> bool {
+        self.fail_on_warnings
+    }
+    /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
+    /// <p> To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
+    /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
+    /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
+    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
+    /// <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code></pre>
+    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
+    /// <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code></pre>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportRestApiInput");
@@ -26382,6 +26974,24 @@ pub struct ImportDocumentationPartsInput {
     /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
+impl ImportDocumentationPartsInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::PutMode> {
+        self.mode.as_ref()
+    }
+    /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn fail_on_warnings(&self) -> bool {
+        self.fail_on_warnings
+    }
+    /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportDocumentationPartsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportDocumentationPartsInput");
@@ -26404,6 +27014,20 @@ pub struct ImportApiKeysInput {
     /// <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
     pub fail_on_warnings: bool,
 }
+impl ImportApiKeysInput {
+    /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
+    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.body.as_ref()
+    }
+    /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ApiKeysFormat> {
+        self.format.as_ref()
+    }
+    /// <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+    pub fn fail_on_warnings(&self) -> bool {
+        self.fail_on_warnings
+    }
+}
 impl std::fmt::Debug for ImportApiKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportApiKeysInput");
@@ -26423,6 +27047,16 @@ pub struct GetVpcLinksInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetVpcLinksInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetVpcLinksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpcLinksInput");
@@ -26438,6 +27072,12 @@ impl std::fmt::Debug for GetVpcLinksInput {
 pub struct GetVpcLinkInput {
     /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
+}
+impl GetVpcLinkInput {
+    /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+        self.vpc_link_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26457,6 +27097,20 @@ pub struct GetUsagePlansInput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
+}
+impl GetUsagePlansInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The identifier of the API key associated with the usage plans.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for GetUsagePlansInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26481,6 +27135,24 @@ pub struct GetUsagePlanKeysInput {
     /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
     pub name_query: std::option::Option<std::string::String>,
 }
+impl GetUsagePlanKeysInput {
+    /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
+    pub fn name_query(&self) -> std::option::Option<&str> {
+        self.name_query.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUsagePlanKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsagePlanKeysInput");
@@ -26501,6 +27173,16 @@ pub struct GetUsagePlanKeyInput {
     /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
+impl GetUsagePlanKeyInput {
+    /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUsagePlanKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsagePlanKeyInput");
@@ -26516,6 +27198,12 @@ impl std::fmt::Debug for GetUsagePlanKeyInput {
 pub struct GetUsagePlanInput {
     /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
+}
+impl GetUsagePlanInput {
+    /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUsagePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26542,6 +27230,32 @@ pub struct GetUsageInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetUsageInput {
+    /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>The Id of the API key associated with the resultant usage data.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsageInput");
@@ -26566,6 +27280,20 @@ pub struct GetTagsInput {
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetTagsInput {
+    /// <p>[Required] The ARN of a resource that can be tagged.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTagsInput");
@@ -26585,6 +27313,16 @@ pub struct GetStagesInput {
     /// <p>The stages' deployment identifiers.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl GetStagesInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The stages' deployment identifiers.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStagesInput");
@@ -26602,6 +27340,16 @@ pub struct GetStageInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl GetStageInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26621,6 +27369,16 @@ pub struct GetSdkTypesInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetSdkTypesInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetSdkTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSdkTypesInput");
@@ -26636,6 +27394,12 @@ impl std::fmt::Debug for GetSdkTypesInput {
 pub struct GetSdkTypeInput {
     /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetSdkTypeInput {
+    /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSdkTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26659,6 +27423,27 @@ pub struct GetSdkInput {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetSdkInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code>  are supported.</p>
+    pub fn sdk_type(&self) -> std::option::Option<&str> {
+        self.sdk_type.as_deref()
+    }
+    /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>,  a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSdkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSdkInput");
@@ -26679,6 +27464,16 @@ pub struct GetRestApisInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetRestApisInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetRestApisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRestApisInput");
@@ -26694,6 +27489,12 @@ impl std::fmt::Debug for GetRestApisInput {
 pub struct GetRestApiInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
+}
+impl GetRestApiInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26715,6 +27516,24 @@ pub struct GetResourcesInput {
     pub limit: std::option::Option<i32>,
     /// <p>A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in the response.  This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetResourcesInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in the response.  This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+    pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
+        self.embed.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26738,6 +27557,20 @@ pub struct GetResourceInput {
     /// <p>A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetResourceInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier for the <a>Resource</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+    pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
+        self.embed.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceInput");
@@ -26759,6 +27592,20 @@ pub struct GetRequestValidatorsInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetRequestValidatorsInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetRequestValidatorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRequestValidatorsInput");
@@ -26778,6 +27625,16 @@ pub struct GetRequestValidatorInput {
     /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
 }
+impl GetRequestValidatorInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRequestValidatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRequestValidatorInput");
@@ -26795,6 +27652,16 @@ pub struct GetModelTemplateInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model for which to generate a template.</p>
     pub model_name: std::option::Option<std::string::String>,
+}
+impl GetModelTemplateInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the model for which to generate a template.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26816,6 +27683,20 @@ pub struct GetModelsInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetModelsInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetModelsInput");
@@ -26836,6 +27717,20 @@ pub struct GetModelInput {
     pub model_name: std::option::Option<std::string::String>,
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub flatten: bool,
+}
+impl GetModelInput {
+    /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the model as an identifier.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
+    pub fn flatten(&self) -> bool {
+        self.flatten
+    }
 }
 impl std::fmt::Debug for GetModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26860,6 +27755,24 @@ pub struct GetMethodResponseInput {
     /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
+impl GetMethodResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMethodResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMethodResponseInput");
@@ -26881,6 +27794,20 @@ pub struct GetMethodInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] Specifies the method request's HTTP method type.</p>
     pub http_method: std::option::Option<std::string::String>,
+}
+impl GetMethodInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies the method request's HTTP method type.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26905,6 +27832,24 @@ pub struct GetIntegrationResponseInput {
     /// <p>[Required] Specifies a get integration response request's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
+impl GetIntegrationResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] Specifies a get integration response request's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationResponseInput");
@@ -26927,6 +27872,20 @@ pub struct GetIntegrationInput {
     /// <p>[Required] Specifies a get integration request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
 }
+impl GetIntegrationInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a get integration request's resource identifier</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a get integration request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationInput");
@@ -26948,6 +27907,20 @@ pub struct GetGatewayResponsesInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetGatewayResponsesInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetGatewayResponsesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGatewayResponsesInput");
@@ -26966,6 +27939,16 @@ pub struct GetGatewayResponseInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
+}
+impl GetGatewayResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetGatewayResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26992,6 +27975,31 @@ pub struct GetExportInput {
     /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
     pub accepts: std::option::Option<std::string::String>,
 }
+impl GetExportInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+    pub fn export_type(&self) -> std::option::Option<&str> {
+        self.export_type.as_deref()
+    }
+    /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with  x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
+    pub fn accepts(&self) -> std::option::Option<&str> {
+        self.accepts.as_deref()
+    }
+}
 impl std::fmt::Debug for GetExportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExportInput");
@@ -27013,6 +28021,16 @@ pub struct GetDomainNamesInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetDomainNamesInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetDomainNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainNamesInput");
@@ -27028,6 +28046,12 @@ impl std::fmt::Debug for GetDomainNamesInput {
 pub struct GetDomainNameInput {
     /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetDomainNameInput {
+    /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27048,6 +28072,20 @@ pub struct GetDocumentationVersionsInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetDocumentationVersionsInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetDocumentationVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentationVersionsInput");
@@ -27066,6 +28104,16 @@ pub struct GetDocumentationVersionInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub documentation_version: std::option::Option<std::string::String>,
+}
+impl GetDocumentationVersionInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDocumentationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27095,6 +28143,36 @@ pub struct GetDocumentationPartsInput {
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources without content.</p>
     pub location_status: std::option::Option<crate::model::LocationStatusType>,
 }
+impl GetDocumentationPartsInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DocumentationPartType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
+    pub fn name_query(&self) -> std::option::Option<&str> {
+        self.name_query.as_deref()
+    }
+    /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources without content.</p>
+    pub fn location_status(&self) -> std::option::Option<&crate::model::LocationStatusType> {
+        self.location_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDocumentationPartsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentationPartsInput");
@@ -27118,6 +28196,16 @@ pub struct GetDocumentationPartInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
     pub documentation_part_id: std::option::Option<std::string::String>,
 }
+impl GetDocumentationPartInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn documentation_part_id(&self) -> std::option::Option<&str> {
+        self.documentation_part_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDocumentationPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDocumentationPartInput");
@@ -27137,6 +28225,20 @@ pub struct GetDeploymentsInput {
     pub position: std::option::Option<std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
+}
+impl GetDeploymentsInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for GetDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27159,6 +28261,20 @@ pub struct GetDeploymentInput {
     /// <p>A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in  <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string.  For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
     pub embed: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetDeploymentInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Deployment</a> resource to get information about.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in  <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string.  For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+    pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
+        self.embed.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentInput");
@@ -27178,6 +28294,16 @@ pub struct GetClientCertificatesInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetClientCertificatesInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetClientCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClientCertificatesInput");
@@ -27193,6 +28319,12 @@ impl std::fmt::Debug for GetClientCertificatesInput {
 pub struct GetClientCertificateInput {
     /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
+}
+impl GetClientCertificateInput {
+    /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27213,6 +28345,20 @@ pub struct GetBasePathMappingsInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetBasePathMappingsInput {
+    /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetBasePathMappingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBasePathMappingsInput");
@@ -27231,6 +28377,16 @@ pub struct GetBasePathMappingInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub base_path: std::option::Option<std::string::String>,
+}
+impl GetBasePathMappingInput {
+    /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBasePathMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27252,6 +28408,20 @@ pub struct GetAuthorizersInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: std::option::Option<i32>,
 }
+impl GetAuthorizersInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for GetAuthorizersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAuthorizersInput");
@@ -27270,6 +28440,16 @@ pub struct GetAuthorizerInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
+}
+impl GetAuthorizerInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27295,6 +28475,28 @@ pub struct GetApiKeysInput {
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub include_values: std::option::Option<bool>,
 }
+impl GetApiKeysInput {
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn position(&self) -> std::option::Option<&str> {
+        self.position.as_deref()
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The name of queried API keys.</p>
+    pub fn name_query(&self) -> std::option::Option<&str> {
+        self.name_query.as_deref()
+    }
+    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    pub fn customer_id(&self) -> std::option::Option<&str> {
+        self.customer_id.as_deref()
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
+    pub fn include_values(&self) -> std::option::Option<bool> {
+        self.include_values
+    }
+}
 impl std::fmt::Debug for GetApiKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApiKeysInput");
@@ -27315,6 +28517,16 @@ pub struct GetApiKeyInput {
     pub api_key: std::option::Option<std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
     pub include_value: std::option::Option<bool>,
+}
+impl GetApiKeyInput {
+    /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
+    pub fn include_value(&self) -> std::option::Option<bool> {
+        self.include_value
+    }
 }
 impl std::fmt::Debug for GetApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27346,6 +28558,19 @@ pub struct GenerateClientCertificateInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GenerateClientCertificateInput {
+    /// <p>The description of the <a>ClientCertificate</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for GenerateClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateClientCertificateInput");
@@ -27363,6 +28588,16 @@ pub struct FlushStageCacheInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the stage to flush its cache.</p>
     pub stage_name: std::option::Option<std::string::String>,
+}
+impl FlushStageCacheInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the stage to flush its cache.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
 }
 impl std::fmt::Debug for FlushStageCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27382,6 +28617,16 @@ pub struct FlushStageAuthorizersCacheInput {
     /// <p>The name of the stage to flush.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
+impl FlushStageAuthorizersCacheInput {
+    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the stage to flush.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
 impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FlushStageAuthorizersCacheInput");
@@ -27397,6 +28642,12 @@ impl std::fmt::Debug for FlushStageAuthorizersCacheInput {
 pub struct DeleteVpcLinkInput {
     /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
     pub vpc_link_id: std::option::Option<std::string::String>,
+}
+impl DeleteVpcLinkInput {
+    /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+        self.vpc_link_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27415,6 +28666,16 @@ pub struct DeleteUsagePlanKeyInput {
     /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
+impl DeleteUsagePlanKeyInput {
+    /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUsagePlanKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUsagePlanKeyInput");
@@ -27430,6 +28691,12 @@ impl std::fmt::Debug for DeleteUsagePlanKeyInput {
 pub struct DeleteUsagePlanInput {
     /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
     pub usage_plan_id: std::option::Option<std::string::String>,
+}
+impl DeleteUsagePlanInput {
+    /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUsagePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27448,6 +28715,16 @@ pub struct DeleteStageInput {
     /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
+impl DeleteStageInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStageInput");
@@ -27463,6 +28740,12 @@ impl std::fmt::Debug for DeleteStageInput {
 pub struct DeleteRestApiInput {
     /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
+}
+impl DeleteRestApiInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27480,6 +28763,16 @@ pub struct DeleteResourceInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl DeleteResourceInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27499,6 +28792,16 @@ pub struct DeleteRequestValidatorInput {
     /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
 }
+impl DeleteRequestValidatorInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
+    pub fn request_validator_id(&self) -> std::option::Option<&str> {
+        self.request_validator_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRequestValidatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRequestValidatorInput");
@@ -27516,6 +28819,16 @@ pub struct DeleteModelInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The name of the model to delete.</p>
     pub model_name: std::option::Option<std::string::String>,
+}
+impl DeleteModelInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the model to delete.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27539,6 +28852,24 @@ pub struct DeleteMethodResponseInput {
     /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
+impl DeleteMethodResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMethodResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMethodResponseInput");
@@ -27560,6 +28891,20 @@ pub struct DeleteMethodInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
     pub http_method: std::option::Option<std::string::String>,
+}
+impl DeleteMethodInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMethodInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27584,6 +28929,24 @@ pub struct DeleteIntegrationResponseInput {
     /// <p>[Required] Specifies a delete integration response request's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
 }
+impl DeleteIntegrationResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+    /// <p>[Required] Specifies a delete integration response request's status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIntegrationResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIntegrationResponseInput");
@@ -27606,6 +28969,20 @@ pub struct DeleteIntegrationInput {
     /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
     pub http_method: std::option::Option<std::string::String>,
 }
+impl DeleteIntegrationInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
+    pub fn http_method(&self) -> std::option::Option<&str> {
+        self.http_method.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIntegrationInput");
@@ -27625,6 +29002,16 @@ pub struct DeleteGatewayResponseInput {
     /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
 }
+impl DeleteGatewayResponseInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
+    pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
+        self.response_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteGatewayResponseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGatewayResponseInput");
@@ -27640,6 +29027,12 @@ impl std::fmt::Debug for DeleteGatewayResponseInput {
 pub struct DeleteDomainNameInput {
     /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteDomainNameInput {
+    /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27657,6 +29050,16 @@ pub struct DeleteDocumentationVersionInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
     pub documentation_version: std::option::Option<std::string::String>,
+}
+impl DeleteDocumentationVersionInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDocumentationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27676,6 +29079,16 @@ pub struct DeleteDocumentationPartInput {
     /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
     pub documentation_part_id: std::option::Option<std::string::String>,
 }
+impl DeleteDocumentationPartInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
+    pub fn documentation_part_id(&self) -> std::option::Option<&str> {
+        self.documentation_part_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDocumentationPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDocumentationPartInput");
@@ -27694,6 +29107,16 @@ pub struct DeleteDeploymentInput {
     /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl DeleteDeploymentInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeploymentInput");
@@ -27709,6 +29132,12 @@ impl std::fmt::Debug for DeleteDeploymentInput {
 pub struct DeleteClientCertificateInput {
     /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
+}
+impl DeleteClientCertificateInput {
+    /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+        self.client_certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClientCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27728,6 +29157,17 @@ pub struct DeleteBasePathMappingInput {
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub base_path: std::option::Option<std::string::String>,
 }
+impl DeleteBasePathMappingInput {
+    /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>[Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
+    /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBasePathMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBasePathMappingInput");
@@ -27746,6 +29186,16 @@ pub struct DeleteAuthorizerInput {
     /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
 }
+impl DeleteAuthorizerInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
+        self.authorizer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAuthorizerInput");
@@ -27761,6 +29211,12 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
 pub struct DeleteApiKeyInput {
     /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
     pub api_key: std::option::Option<std::string::String>,
+}
+impl DeleteApiKeyInput {
+    /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27784,6 +29240,27 @@ pub struct CreateVpcLinkInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateVpcLinkInput {
+    /// <p>[Required] The name used to label and identify the VPC link.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the VPC link.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>[Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    pub fn target_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_arns.as_deref()
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVpcLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVpcLinkInput");
@@ -27805,6 +29282,20 @@ pub struct CreateUsagePlanKeyInput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
     pub key_type: std::option::Option<std::string::String>,
+}
+impl CreateUsagePlanKeyInput {
+    /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
+    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+        self.usage_plan_id.as_deref()
+    }
+    /// <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
+    pub fn key_type(&self) -> std::option::Option<&str> {
+        self.key_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUsagePlanKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27833,6 +29324,35 @@ pub struct CreateUsagePlanInput {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateUsagePlanInput {
+    /// <p>[Required] The name of the usage plan.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the usage plan.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The associated API stages of the usage plan.</p>
+    pub fn api_stages(&self) -> std::option::Option<&[crate::model::ApiStage]> {
+        self.api_stages.as_deref()
+    }
+    /// <p>The throttling limits of the usage plan.</p>
+    pub fn throttle(&self) -> std::option::Option<&crate::model::ThrottleSettings> {
+        self.throttle.as_ref()
+    }
+    /// <p>The quota of the usage plan.</p>
+    pub fn quota(&self) -> std::option::Option<&crate::model::QuotaSettings> {
+        self.quota.as_ref()
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUsagePlanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27877,6 +29397,60 @@ pub struct CreateStageInput {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateStageInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>[Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The description of the <a>Stage</a> resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Whether cache clustering is enabled for the stage.</p>
+    pub fn cache_cluster_enabled(&self) -> bool {
+        self.cache_cluster_enabled
+    }
+    /// <p>The stage's cache cluster size.</p>
+    pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
+        self.cache_cluster_size.as_ref()
+    }
+    /// <p>A map that defines the stage variables for the new <a>Stage</a> resource. Variable names
+    /// can have alphanumeric and underscore characters, and the values must match
+    /// <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.variables.as_ref()
+    }
+    /// <p>The version of the associated API documentation.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
+    /// <p>The canary deployment settings of this stage.</p>
+    pub fn canary_settings(&self) -> std::option::Option<&crate::model::CanarySettings> {
+        self.canary_settings.as_ref()
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    pub fn tracing_enabled(&self) -> bool {
+        self.tracing_enabled
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27924,6 +29498,57 @@ pub struct CreateRestApiInput {
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
 }
+impl CreateRestApiInput {
+    /// <p>[Required] The name of the <a>RestApi</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the <a>RestApi</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
+    pub fn clone_from(&self) -> std::option::Option<&str> {
+        self.clone_from.as_deref()
+    }
+    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.binary_media_types.as_deref()
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
+        self.minimum_compression_size
+    }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
+        self.api_key_source.as_ref()
+    }
+    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn disable_execute_api_endpoint(&self) -> bool {
+        self.disable_execute_api_endpoint
+    }
+}
 impl std::fmt::Debug for CreateRestApiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRestApiInput");
@@ -27956,6 +29581,20 @@ pub struct CreateResourceInput {
     /// <p>The last path segment for this resource.</p>
     pub path_part: std::option::Option<std::string::String>,
 }
+impl CreateResourceInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The parent resource's identifier.</p>
+    pub fn parent_id(&self) -> std::option::Option<&str> {
+        self.parent_id.as_deref()
+    }
+    /// <p>The last path segment for this resource.</p>
+    pub fn path_part(&self) -> std::option::Option<&str> {
+        self.path_part.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceInput");
@@ -27978,6 +29617,24 @@ pub struct CreateRequestValidatorInput {
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
     pub validate_request_parameters: bool,
+}
+impl CreateRequestValidatorInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn validate_request_body(&self) -> bool {
+        self.validate_request_body
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
+    pub fn validate_request_parameters(&self) -> bool {
+        self.validate_request_parameters
+    }
 }
 impl std::fmt::Debug for CreateRequestValidatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28007,6 +29664,28 @@ pub struct CreateModelInput {
     pub schema: std::option::Option<std::string::String>,
     /// <p>[Required] The content-type for the model.</p>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl CreateModelInput {
+    /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the model. Must be alphanumeric.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>[Required] The content-type for the model.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28052,6 +29731,67 @@ pub struct CreateDomainNameInput {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
+impl CreateDomainNameInput {
+    /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    pub fn certificate_body(&self) -> std::option::Option<&str> {
+        self.certificate_body.as_deref()
+    }
+    /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
+    pub fn certificate_private_key(&self) -> std::option::Option<&str> {
+        self.certificate_private_key.as_deref()
+    }
+    /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
+    pub fn regional_certificate_name(&self) -> std::option::Option<&str> {
+        self.regional_certificate_name.as_deref()
+    }
+    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    pub fn regional_certificate_arn(&self) -> std::option::Option<&str> {
+        self.regional_certificate_arn.as_deref()
+    }
+    /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    pub fn security_policy(&self) -> std::option::Option<&crate::model::SecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+    /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
+    pub fn mutual_tls_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::MutualTlsAuthenticationInput> {
+        self.mutual_tls_authentication.as_ref()
+    }
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub fn ownership_verification_certificate_arn(&self) -> std::option::Option<&str> {
+        self.ownership_verification_certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainNameInput");
@@ -28088,6 +29828,24 @@ pub struct CreateDocumentationVersionInput {
     /// <p>A description about the new documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl CreateDocumentationVersionInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The version identifier of the new snapshot.</p>
+    pub fn documentation_version(&self) -> std::option::Option<&str> {
+        self.documentation_version.as_deref()
+    }
+    /// <p>The stage name to be associated with the new documentation snapshot.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>A description about the new documentation snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDocumentationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDocumentationVersionInput");
@@ -28109,6 +29867,20 @@ pub struct CreateDocumentationPartInput {
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
     /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     pub properties: std::option::Option<std::string::String>,
+}
+impl CreateDocumentationPartInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::DocumentationPartLocation> {
+        self.location.as_ref()
+    }
+    /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+    pub fn properties(&self) -> std::option::Option<&str> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDocumentationPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28146,6 +29918,49 @@ pub struct CreateDeploymentInput {
     /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
     pub tracing_enabled: std::option::Option<bool>,
 }
+impl CreateDeploymentInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
+    pub fn stage_description(&self) -> std::option::Option<&str> {
+        self.stage_description.as_deref()
+    }
+    /// <p>The description for the <a>Deployment</a> resource to create.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Enables a cache cluster for the <a>Stage</a> resource specified in the input.</p>
+    pub fn cache_cluster_enabled(&self) -> std::option::Option<bool> {
+        self.cache_cluster_enabled
+    }
+    /// <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is enabled.</p>
+    pub fn cache_cluster_size(&self) -> std::option::Option<&crate::model::CacheClusterSize> {
+        self.cache_cluster_size.as_ref()
+    }
+    /// <p>A map that defines the stage variables for the <a>Stage</a> resource that is associated
+    /// with the new deployment. Variable names can have alphanumeric and underscore characters, and the values
+    /// must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    pub fn variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.variables.as_ref()
+    }
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
+    pub fn canary_settings(&self) -> std::option::Option<&crate::model::DeploymentCanarySettings> {
+        self.canary_settings.as_ref()
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    pub fn tracing_enabled(&self) -> std::option::Option<bool> {
+        self.tracing_enabled
+    }
+}
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentInput");
@@ -28174,6 +29989,24 @@ pub struct CreateBasePathMappingInput {
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
     pub stage: std::option::Option<std::string::String>,
+}
+impl CreateBasePathMappingInput {
+    /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBasePathMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28210,6 +30043,48 @@ pub struct CreateAuthorizerInput {
     pub identity_validation_expression: std::option::Option<std::string::String>,
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+}
+impl CreateAuthorizerInput {
+    /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+        self.rest_api_id.as_deref()
+    }
+    /// <p>[Required] The name of the authorizer.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
+    pub fn provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.provider_ar_ns.as_deref()
+    }
+    /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    pub fn auth_type(&self) -> std::option::Option<&str> {
+        self.auth_type.as_deref()
+    }
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    pub fn authorizer_credentials(&self) -> std::option::Option<&str> {
+        self.authorizer_credentials.as_deref()
+    }
+    /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+    pub fn identity_source(&self) -> std::option::Option<&str> {
+        self.identity_source.as_deref()
+    }
+    /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+    /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
+        self.authorizer_result_ttl_in_seconds
+    }
 }
 impl std::fmt::Debug for CreateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28255,6 +30130,43 @@ pub struct CreateApiKeyInput {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateApiKeyInput {
+    /// <p>The name of the <a>ApiKey</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the <a>ApiKey</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
+    pub fn generate_distinct_id(&self) -> bool {
+        self.generate_distinct_id
+    }
+    /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
+    pub fn stage_keys(&self) -> std::option::Option<&[crate::model::StageKey]> {
+        self.stage_keys.as_deref()
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn customer_id(&self) -> std::option::Option<&str> {
+        self.customer_id.as_deref()
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApiKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -263,10 +263,7 @@ impl PutRawMessageContentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_raw_message_content(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -337,6 +334,16 @@ pub struct PutRawMessageContentInput {
     /// <p>Describes the raw message content of the updated email message.</p>
     pub content: std::option::Option<crate::model::RawMessageContent>,
 }
+impl PutRawMessageContentInput {
+    /// <p>The identifier of the email message being updated.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>Describes the raw message content of the updated email message.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::RawMessageContent> {
+        self.content.as_ref()
+    }
+}
 impl std::fmt::Debug for PutRawMessageContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRawMessageContentInput");
@@ -352,6 +359,12 @@ impl std::fmt::Debug for PutRawMessageContentInput {
 pub struct GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl GetRawMessageContentInput {
+    /// <p>The identifier of the email message to retrieve.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRawMessageContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

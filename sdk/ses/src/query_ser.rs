@@ -3,19 +3,20 @@
 pub fn serialize_structure_crate_model_configuration_set(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ConfigurationSet,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     if let Some(var_2) = &input.name {
         scope_1.string(var_2);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_event_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::EventDestination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Name");
     if let Some(var_4) = &input.name {
@@ -42,37 +43,41 @@ pub fn serialize_structure_crate_model_event_destination(
     if let Some(var_12) = &input.kinesis_firehose_destination {
         crate::query_ser::serialize_structure_crate_model_kinesis_firehose_destination(
             scope_11, var_12,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("CloudWatchDestination");
     if let Some(var_14) = &input.cloud_watch_destination {
-        crate::query_ser::serialize_structure_crate_model_cloud_watch_destination(scope_13, var_14);
+        crate::query_ser::serialize_structure_crate_model_cloud_watch_destination(
+            scope_13, var_14,
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("SNSDestination");
     if let Some(var_16) = &input.sns_destination {
-        crate::query_ser::serialize_structure_crate_model_sns_destination(scope_15, var_16);
+        crate::query_ser::serialize_structure_crate_model_sns_destination(scope_15, var_16)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_tracking_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TrackingOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("CustomRedirectDomain");
     if let Some(var_18) = &input.custom_redirect_domain {
         scope_17.string(var_18);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_receipt_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ReceiptFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("Name");
     if let Some(var_20) = &input.name {
@@ -81,15 +86,16 @@ pub fn serialize_structure_crate_model_receipt_filter(
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("IpFilter");
     if let Some(var_22) = &input.ip_filter {
-        crate::query_ser::serialize_structure_crate_model_receipt_ip_filter(scope_21, var_22);
+        crate::query_ser::serialize_structure_crate_model_receipt_ip_filter(scope_21, var_22)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_receipt_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ReceiptRule,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("Name");
     if let Some(var_24) = &input.name {
@@ -123,7 +129,7 @@ pub fn serialize_structure_crate_model_receipt_rule(
         for item_35 in var_34 {
             #[allow(unused_mut)]
             let mut entry_37 = list_36.entry();
-            crate::query_ser::serialize_structure_crate_model_receipt_action(entry_37, item_35);
+            crate::query_ser::serialize_structure_crate_model_receipt_action(entry_37, item_35)?;
         }
         list_36.finish();
     }
@@ -132,13 +138,14 @@ pub fn serialize_structure_crate_model_receipt_rule(
     if input.scan_enabled {
         scope_38.boolean(input.scan_enabled);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_template(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Template,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_39 = writer.prefix("TemplateName");
     if let Some(var_40) = &input.template_name {
@@ -159,25 +166,27 @@ pub fn serialize_structure_crate_model_template(
     if let Some(var_46) = &input.html_part {
         scope_45.string(var_46);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_delivery_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DeliveryOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_47 = writer.prefix("TlsPolicy");
     if let Some(var_48) = &input.tls_policy {
         scope_47.string(var_48.as_str());
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_message_dsn(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MessageDsn,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("ReportingMta");
     if let Some(var_50) = &input.reporting_mta {
@@ -195,17 +204,18 @@ pub fn serialize_structure_crate_model_message_dsn(
         for item_55 in var_54 {
             #[allow(unused_mut)]
             let mut entry_57 = list_56.entry();
-            crate::query_ser::serialize_structure_crate_model_extension_field(entry_57, item_55);
+            crate::query_ser::serialize_structure_crate_model_extension_field(entry_57, item_55)?;
         }
         list_56.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_bounced_recipient_info(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BouncedRecipientInfo,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_58 = writer.prefix("Recipient");
     if let Some(var_59) = &input.recipient {
@@ -224,15 +234,16 @@ pub fn serialize_structure_crate_model_bounced_recipient_info(
     #[allow(unused_mut)]
     let mut scope_64 = writer.prefix("RecipientDsnFields");
     if let Some(var_65) = &input.recipient_dsn_fields {
-        crate::query_ser::serialize_structure_crate_model_recipient_dsn_fields(scope_64, var_65);
+        crate::query_ser::serialize_structure_crate_model_recipient_dsn_fields(scope_64, var_65)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_message_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MessageTag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_66 = writer.prefix("Name");
     if let Some(var_67) = &input.name {
@@ -243,17 +254,18 @@ pub fn serialize_structure_crate_model_message_tag(
     if let Some(var_69) = &input.value {
         scope_68.string(var_69);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_bulk_email_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BulkEmailDestination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_70 = writer.prefix("Destination");
     if let Some(var_71) = &input.destination {
-        crate::query_ser::serialize_structure_crate_model_destination(scope_70, var_71);
+        crate::query_ser::serialize_structure_crate_model_destination(scope_70, var_71)?;
     }
     #[allow(unused_mut)]
     let mut scope_72 = writer.prefix("ReplacementTags");
@@ -262,7 +274,7 @@ pub fn serialize_structure_crate_model_bulk_email_destination(
         for item_74 in var_73 {
             #[allow(unused_mut)]
             let mut entry_76 = list_75.entry();
-            crate::query_ser::serialize_structure_crate_model_message_tag(entry_76, item_74);
+            crate::query_ser::serialize_structure_crate_model_message_tag(entry_76, item_74)?;
         }
         list_75.finish();
     }
@@ -271,13 +283,14 @@ pub fn serialize_structure_crate_model_bulk_email_destination(
     if let Some(var_78) = &input.replacement_template_data {
         scope_77.string(var_78);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Destination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_79 = writer.prefix("ToAddresses");
     if let Some(var_80) = &input.to_addresses {
@@ -311,42 +324,45 @@ pub fn serialize_structure_crate_model_destination(
         }
         list_92.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_message(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Message,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_94 = writer.prefix("Subject");
     if let Some(var_95) = &input.subject {
-        crate::query_ser::serialize_structure_crate_model_content(scope_94, var_95);
+        crate::query_ser::serialize_structure_crate_model_content(scope_94, var_95)?;
     }
     #[allow(unused_mut)]
     let mut scope_96 = writer.prefix("Body");
     if let Some(var_97) = &input.body {
-        crate::query_ser::serialize_structure_crate_model_body(scope_96, var_97);
+        crate::query_ser::serialize_structure_crate_model_body(scope_96, var_97)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_raw_message(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RawMessage,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_98 = writer.prefix("Data");
     if let Some(var_99) = &input.data {
         scope_98.string(&aws_smithy_types::base64::encode(var_99));
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_kinesis_firehose_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::KinesisFirehoseDestination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_100 = writer.prefix("IAMRoleARN");
     if let Some(var_101) = &input.iam_role_arn {
@@ -357,13 +373,14 @@ pub fn serialize_structure_crate_model_kinesis_firehose_destination(
     if let Some(var_103) = &input.delivery_stream_arn {
         scope_102.string(var_103);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_cloud_watch_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CloudWatchDestination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_104 = writer.prefix("DimensionConfigurations");
     if let Some(var_105) = &input.dimension_configurations {
@@ -373,29 +390,31 @@ pub fn serialize_structure_crate_model_cloud_watch_destination(
             let mut entry_108 = list_107.entry();
             crate::query_ser::serialize_structure_crate_model_cloud_watch_dimension_configuration(
                 entry_108, item_106,
-            );
+            )?;
         }
         list_107.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_sns_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SnsDestination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_109 = writer.prefix("TopicARN");
     if let Some(var_110) = &input.topic_arn {
         scope_109.string(var_110);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_receipt_ip_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ReceiptIpFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_111 = writer.prefix("Policy");
     if let Some(var_112) = &input.policy {
@@ -406,55 +425,57 @@ pub fn serialize_structure_crate_model_receipt_ip_filter(
     if let Some(var_114) = &input.cidr {
         scope_113.string(var_114);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_receipt_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ReceiptAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_115 = writer.prefix("S3Action");
     if let Some(var_116) = &input.s3_action {
-        crate::query_ser::serialize_structure_crate_model_s3_action(scope_115, var_116);
+        crate::query_ser::serialize_structure_crate_model_s3_action(scope_115, var_116)?;
     }
     #[allow(unused_mut)]
     let mut scope_117 = writer.prefix("BounceAction");
     if let Some(var_118) = &input.bounce_action {
-        crate::query_ser::serialize_structure_crate_model_bounce_action(scope_117, var_118);
+        crate::query_ser::serialize_structure_crate_model_bounce_action(scope_117, var_118)?;
     }
     #[allow(unused_mut)]
     let mut scope_119 = writer.prefix("WorkmailAction");
     if let Some(var_120) = &input.workmail_action {
-        crate::query_ser::serialize_structure_crate_model_workmail_action(scope_119, var_120);
+        crate::query_ser::serialize_structure_crate_model_workmail_action(scope_119, var_120)?;
     }
     #[allow(unused_mut)]
     let mut scope_121 = writer.prefix("LambdaAction");
     if let Some(var_122) = &input.lambda_action {
-        crate::query_ser::serialize_structure_crate_model_lambda_action(scope_121, var_122);
+        crate::query_ser::serialize_structure_crate_model_lambda_action(scope_121, var_122)?;
     }
     #[allow(unused_mut)]
     let mut scope_123 = writer.prefix("StopAction");
     if let Some(var_124) = &input.stop_action {
-        crate::query_ser::serialize_structure_crate_model_stop_action(scope_123, var_124);
+        crate::query_ser::serialize_structure_crate_model_stop_action(scope_123, var_124)?;
     }
     #[allow(unused_mut)]
     let mut scope_125 = writer.prefix("AddHeaderAction");
     if let Some(var_126) = &input.add_header_action {
-        crate::query_ser::serialize_structure_crate_model_add_header_action(scope_125, var_126);
+        crate::query_ser::serialize_structure_crate_model_add_header_action(scope_125, var_126)?;
     }
     #[allow(unused_mut)]
     let mut scope_127 = writer.prefix("SNSAction");
     if let Some(var_128) = &input.sns_action {
-        crate::query_ser::serialize_structure_crate_model_sns_action(scope_127, var_128);
+        crate::query_ser::serialize_structure_crate_model_sns_action(scope_127, var_128)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_extension_field(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ExtensionField,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_129 = writer.prefix("Name");
     if let Some(var_130) = &input.name {
@@ -465,13 +486,14 @@ pub fn serialize_structure_crate_model_extension_field(
     if let Some(var_132) = &input.value {
         scope_131.string(var_132);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_recipient_dsn_fields(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RecipientDsnFields,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_133 = writer.prefix("FinalRecipient");
     if let Some(var_134) = &input.final_recipient {
@@ -509,17 +531,18 @@ pub fn serialize_structure_crate_model_recipient_dsn_fields(
         for item_147 in var_146 {
             #[allow(unused_mut)]
             let mut entry_149 = list_148.entry();
-            crate::query_ser::serialize_structure_crate_model_extension_field(entry_149, item_147);
+            crate::query_ser::serialize_structure_crate_model_extension_field(entry_149, item_147)?;
         }
         list_148.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_content(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Content,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_150 = writer.prefix("Data");
     if let Some(var_151) = &input.data {
@@ -530,30 +553,32 @@ pub fn serialize_structure_crate_model_content(
     if let Some(var_153) = &input.charset {
         scope_152.string(var_153);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_body(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Body,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_154 = writer.prefix("Text");
     if let Some(var_155) = &input.text {
-        crate::query_ser::serialize_structure_crate_model_content(scope_154, var_155);
+        crate::query_ser::serialize_structure_crate_model_content(scope_154, var_155)?;
     }
     #[allow(unused_mut)]
     let mut scope_156 = writer.prefix("Html");
     if let Some(var_157) = &input.html {
-        crate::query_ser::serialize_structure_crate_model_content(scope_156, var_157);
+        crate::query_ser::serialize_structure_crate_model_content(scope_156, var_157)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_cloud_watch_dimension_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CloudWatchDimensionConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_158 = writer.prefix("DimensionName");
     if let Some(var_159) = &input.dimension_name {
@@ -569,13 +594,14 @@ pub fn serialize_structure_crate_model_cloud_watch_dimension_configuration(
     if let Some(var_163) = &input.default_dimension_value {
         scope_162.string(var_163);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_s3_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::S3Action,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_164 = writer.prefix("TopicArn");
     if let Some(var_165) = &input.topic_arn {
@@ -596,13 +622,14 @@ pub fn serialize_structure_crate_model_s3_action(
     if let Some(var_171) = &input.kms_key_arn {
         scope_170.string(var_171);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_bounce_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BounceAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_172 = writer.prefix("TopicArn");
     if let Some(var_173) = &input.topic_arn {
@@ -628,13 +655,14 @@ pub fn serialize_structure_crate_model_bounce_action(
     if let Some(var_181) = &input.sender {
         scope_180.string(var_181);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_workmail_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::WorkmailAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_182 = writer.prefix("TopicArn");
     if let Some(var_183) = &input.topic_arn {
@@ -645,13 +673,14 @@ pub fn serialize_structure_crate_model_workmail_action(
     if let Some(var_185) = &input.organization_arn {
         scope_184.string(var_185);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_lambda_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LambdaAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_186 = writer.prefix("TopicArn");
     if let Some(var_187) = &input.topic_arn {
@@ -667,13 +696,14 @@ pub fn serialize_structure_crate_model_lambda_action(
     if let Some(var_191) = &input.invocation_type {
         scope_190.string(var_191.as_str());
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_stop_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StopAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_192 = writer.prefix("Scope");
     if let Some(var_193) = &input.scope {
@@ -684,13 +714,14 @@ pub fn serialize_structure_crate_model_stop_action(
     if let Some(var_195) = &input.topic_arn {
         scope_194.string(var_195);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_add_header_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AddHeaderAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_196 = writer.prefix("HeaderName");
     if let Some(var_197) = &input.header_name {
@@ -701,13 +732,14 @@ pub fn serialize_structure_crate_model_add_header_action(
     if let Some(var_199) = &input.header_value {
         scope_198.string(var_199);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_sns_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SnsAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_200 = writer.prefix("TopicArn");
     if let Some(var_201) = &input.topic_arn {
@@ -718,4 +750,5 @@ pub fn serialize_structure_crate_model_sns_action(
     if let Some(var_203) = &input.encoding {
         scope_202.string(var_203.as_str());
     }
+    Ok(())
 }

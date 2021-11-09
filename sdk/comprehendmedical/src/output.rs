@@ -7,6 +7,13 @@ pub struct StopRxNormInferenceJobOutput {
     /// the <code>DescribeRxNormInferenceJob</code> operation.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopRxNormInferenceJobOutput {
+    /// <p>The identifier generated for the job. To get the status of job, use this identifier with
+    /// the <code>DescribeRxNormInferenceJob</code> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopRxNormInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopRxNormInferenceJobOutput");
@@ -57,6 +64,12 @@ pub struct StopPhiDetectionJobOutput {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopPhiDetectionJobOutput {
+    /// <p>The identifier of the PHI detection job that was stopped.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopPhiDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopPhiDetectionJobOutput");
@@ -105,6 +118,13 @@ pub struct StopIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with
     /// the <code>DescribeICD10CMInferenceJob</code> operation.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StopIcd10CmInferenceJobOutput {
+    /// <p>The identifier generated for the job. To get the status of job, use this identifier with
+    /// the <code>DescribeICD10CMInferenceJob</code> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopIcd10CmInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -156,6 +176,12 @@ pub struct StopEntitiesDetectionV2JobOutput {
     /// <p>The identifier of the medical entities detection job that was stopped.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopEntitiesDetectionV2JobOutput {
+    /// <p>The identifier of the medical entities detection job that was stopped.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopEntitiesDetectionV2JobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopEntitiesDetectionV2JobOutput");
@@ -203,6 +229,12 @@ impl StopEntitiesDetectionV2JobOutput {
 pub struct StartRxNormInferenceJobOutput {
     /// <p>The identifier of the job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StartRxNormInferenceJobOutput {
+    /// <p>The identifier of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartRxNormInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -252,6 +284,13 @@ pub struct StartPhiDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
     /// the <code>DescribePHIDetectionJob</code> operation.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StartPhiDetectionJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
+    /// the <code>DescribePHIDetectionJob</code> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartPhiDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -304,6 +343,13 @@ pub struct StartIcd10CmInferenceJobOutput {
     /// the <code>StartICD10CMInferenceJob</code> operation.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StartIcd10CmInferenceJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
+    /// the <code>StartICD10CMInferenceJob</code> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartIcd10CmInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartIcd10CmInferenceJobOutput");
@@ -354,6 +400,13 @@ pub struct StartEntitiesDetectionV2JobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
     /// the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StartEntitiesDetectionV2JobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this identifier with
+    /// the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartEntitiesDetectionV2JobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -407,6 +460,18 @@ pub struct ListRxNormInferenceJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRxNormInferenceJobsOutput {
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn comprehend_medical_async_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+        self.comprehend_medical_async_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRxNormInferenceJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -493,6 +558,18 @@ pub struct ListPhiDetectionJobsOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPhiDetectionJobsOutput {
+    /// <p>A list containing the properties of each job returned.</p>
+    pub fn comprehend_medical_async_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+        self.comprehend_medical_async_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPhiDetectionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhiDetectionJobsOutput");
@@ -578,6 +655,18 @@ pub struct ListIcd10CmInferenceJobsOutput {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIcd10CmInferenceJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn comprehend_medical_async_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+        self.comprehend_medical_async_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIcd10CmInferenceJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIcd10CmInferenceJobsOutput");
@@ -662,6 +751,18 @@ pub struct ListEntitiesDetectionV2JobsOutput {
         std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEntitiesDetectionV2JobsOutput {
+    /// <p>A list containing the properties of each job returned.</p>
+    pub fn comprehend_medical_async_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+        self.comprehend_medical_async_job_properties_list.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEntitiesDetectionV2JobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -753,6 +854,25 @@ pub struct InferRxNormOutput {
     /// <i>n</i>.<i>n</i>.<i>n</i> You can use this
     /// information to track the model used for a particular batch of documents.</p>
     pub model_version: std::option::Option<std::string::String>,
+}
+impl InferRxNormOutput {
+    /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is
+    /// successful, the service sends back an HTTP 200 response, as well as the entities
+    /// detected.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::RxNormEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include
+    /// the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>The version of the model used to analyze the documents, in the format
+    /// <i>n</i>.<i>n</i>.<i>n</i> You can use this
+    /// information to track the model used for a particular batch of documents.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for InferRxNormOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -862,6 +982,25 @@ pub struct InferIcd10CmOutput {
     /// information to track the model used for a particular batch of documents.</p>
     pub model_version: std::option::Option<std::string::String>,
 }
+impl InferIcd10CmOutput {
+    /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is
+    /// successful, the service sends back an HTTP 200 response, as well as the entities
+    /// detected.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Icd10CmEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include
+    /// the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>The version of the model used to analyze the documents, in the format
+    /// <i>n</i>.<i>n</i>.<i>n</i> You can use this
+    /// information to track the model used for a particular batch of documents.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for InferIcd10CmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferIcd10CmOutput");
@@ -970,6 +1109,26 @@ pub struct DetectPhiOutput {
     /// X.X.X. You can use this information to track the model used for a particular batch of
     /// documents.</p>
     pub model_version: std::option::Option<std::string::String>,
+}
+impl DetectPhiOutput {
+    /// <p> The collection of PHI entities extracted from the input text and their associated
+    /// information. For each entity, the response provides the entity text, the entity category,
+    /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in its
+    /// detection. </p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+    /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include
+    /// the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>The version of the model used to analyze the documents. The version number looks like
+    /// X.X.X. You can use this information to track the model used for a particular batch of
+    /// documents.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectPhiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1083,6 +1242,30 @@ pub struct DetectEntitiesV2Output {
     /// X.X.X. You can use this information to track the model used for a particular batch of
     /// documents.</p>
     pub model_version: std::option::Option<std::string::String>,
+}
+impl DetectEntitiesV2Output {
+    /// <p>The collection of medical entities extracted from the input text and their associated
+    /// information. For each entity, the response provides the entity text, the entity category,
+    /// where the entity text begins and ends, and the level of confidence in the detection and
+    /// analysis. Attributes and traits of the entity are also returned.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+    /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
+    pub fn unmapped_attributes(&self) -> std::option::Option<&[crate::model::UnmappedAttribute]> {
+        self.unmapped_attributes.as_deref()
+    }
+    /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the
+    /// <code>PaginationToken</code> to fetch the next page of entities.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>The version of the model used to analyze the documents. The version number looks like
+    /// X.X.X. You can use this information to track the model used for a particular batch of
+    /// documents.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectEntitiesV2Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1224,6 +1407,31 @@ pub struct DetectEntitiesOutput {
     /// documents.</p>
     pub model_version: std::option::Option<std::string::String>,
 }
+impl DetectEntitiesOutput {
+    /// <p> The collection of medical entities extracted from the input text and their associated
+    /// information. For each entity, the response provides the entity text, the entity category,
+    /// where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the
+    /// detection and analysis. Attributes and traits of the entity are also returned.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+    /// <p> Attributes extracted from the input text that we were unable to relate to an
+    /// entity.</p>
+    pub fn unmapped_attributes(&self) -> std::option::Option<&[crate::model::UnmappedAttribute]> {
+        self.unmapped_attributes.as_deref()
+    }
+    /// <p> If the result of the previous request to <code>DetectEntities</code> was truncated,
+    /// include the <code>PaginationToken</code> to fetch the next page of entities.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>The version of the model used to analyze the documents. The version number looks like
+    /// X.X.X. You can use this information to track the model used for a particular batch of
+    /// documents.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectEntitiesOutput");
@@ -1354,6 +1562,14 @@ pub struct DescribeRxNormInferenceJobOutput {
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
+impl DescribeRxNormInferenceJobOutput {
+    /// <p>An object that contains the properties associated with a detection job.</p>
+    pub fn comprehend_medical_async_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+        self.comprehend_medical_async_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRxNormInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRxNormInferenceJobOutput");
@@ -1413,6 +1629,14 @@ pub struct DescribePhiDetectionJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+}
+impl DescribePhiDetectionJobOutput {
+    /// <p>An object that contains the properties associated with a detection job.</p>
+    pub fn comprehend_medical_async_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+        self.comprehend_medical_async_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePhiDetectionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1474,6 +1698,14 @@ pub struct DescribeIcd10CmInferenceJobOutput {
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
+impl DescribeIcd10CmInferenceJobOutput {
+    /// <p>An object that contains the properties associated with a detection job.</p>
+    pub fn comprehend_medical_async_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+        self.comprehend_medical_async_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeIcd10CmInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIcd10CmInferenceJobOutput");
@@ -1533,6 +1765,14 @@ pub struct DescribeEntitiesDetectionV2JobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
     pub comprehend_medical_async_job_properties:
         std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+}
+impl DescribeEntitiesDetectionV2JobOutput {
+    /// <p>An object that contains the properties associated with a detection job.</p>
+    pub fn comprehend_medical_async_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+        self.comprehend_medical_async_job_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEntitiesDetectionV2JobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

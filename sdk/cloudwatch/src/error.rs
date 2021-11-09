@@ -3966,6 +3966,16 @@ pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -4637,6 +4647,14 @@ pub struct DashboardInvalidInputError {
     #[allow(missing_docs)] // documentation missing in model
     pub dashboard_validation_messages:
         std::option::Option<std::vec::Vec<crate::model::DashboardValidationMessage>>,
+}
+impl DashboardInvalidInputError {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn dashboard_validation_messages(
+        &self,
+    ) -> std::option::Option<&[crate::model::DashboardValidationMessage]> {
+        self.dashboard_validation_messages.as_deref()
+    }
 }
 impl std::fmt::Debug for DashboardInvalidInputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

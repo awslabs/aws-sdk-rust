@@ -26,6 +26,58 @@ pub struct PipelineActivity {
     /// <p>Adds information from the IoT Device Shadow service to a message.</p>
     pub device_shadow_enrich: std::option::Option<crate::model::DeviceShadowEnrichActivity>,
 }
+impl PipelineActivity {
+    /// <p>Determines the source of the messages to be processed.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::ChannelActivity> {
+        self.channel.as_ref()
+    }
+    /// <p>Runs a Lambda function to modify the message.</p>
+    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaActivity> {
+        self.lambda.as_ref()
+    }
+    /// <p>Specifies where to store the processed message data.</p>
+    pub fn datastore(&self) -> std::option::Option<&crate::model::DatastoreActivity> {
+        self.datastore.as_ref()
+    }
+    /// <p>Adds other attributes based on existing attributes in the message.</p>
+    pub fn add_attributes(&self) -> std::option::Option<&crate::model::AddAttributesActivity> {
+        self.add_attributes.as_ref()
+    }
+    /// <p>Removes attributes from a message.</p>
+    pub fn remove_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::RemoveAttributesActivity> {
+        self.remove_attributes.as_ref()
+    }
+    /// <p>Used to create a new message using only the specified attributes from the original
+    /// message. </p>
+    pub fn select_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::SelectAttributesActivity> {
+        self.select_attributes.as_ref()
+    }
+    /// <p>Filters a message based on its attributes.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::FilterActivity> {
+        self.filter.as_ref()
+    }
+    /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
+    /// message.</p>
+    pub fn math(&self) -> std::option::Option<&crate::model::MathActivity> {
+        self.math.as_ref()
+    }
+    /// <p>Adds data from the IoT device registry to your message.</p>
+    pub fn device_registry_enrich(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceRegistryEnrichActivity> {
+        self.device_registry_enrich.as_ref()
+    }
+    /// <p>Adds information from the IoT Device Shadow service to a message.</p>
+    pub fn device_shadow_enrich(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceShadowEnrichActivity> {
+        self.device_shadow_enrich.as_ref()
+    }
+}
 impl std::fmt::Debug for PipelineActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipelineActivity");
@@ -239,6 +291,28 @@ pub struct DeviceShadowEnrichActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
 }
+impl DeviceShadowEnrichActivity {
+    /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the attribute that is added to the message.</p>
+    pub fn attribute(&self) -> std::option::Option<&str> {
+        self.attribute.as_deref()
+    }
+    /// <p>The name of the IoT device whose shadow information is added to the message.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the role that allows access to the device's shadow.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
+}
 impl std::fmt::Debug for DeviceShadowEnrichActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceShadowEnrichActivity");
@@ -347,6 +421,28 @@ pub struct DeviceRegistryEnrichActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
 }
+impl DeviceRegistryEnrichActivity {
+    /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the attribute that is added to the message.</p>
+    pub fn attribute(&self) -> std::option::Option<&str> {
+        self.attribute.as_deref()
+    }
+    /// <p>The name of the IoT device whose registry information is added to the message.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ARN of the role that allows access to the device's registry information.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
+}
 impl std::fmt::Debug for DeviceRegistryEnrichActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceRegistryEnrichActivity");
@@ -454,6 +550,25 @@ pub struct MathActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
 }
+impl MathActivity {
+    /// <p>The name of the math activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the attribute that contains the result of the math operation.</p>
+    pub fn attribute(&self) -> std::option::Option<&str> {
+        self.attribute.as_deref()
+    }
+    /// <p>An expression that uses one or more existing attributes and must return an integer
+    /// value.</p>
+    pub fn math(&self) -> std::option::Option<&str> {
+        self.math.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
+}
 impl std::fmt::Debug for MathActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MathActivity");
@@ -548,6 +663,21 @@ pub struct FilterActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
 }
+impl FilterActivity {
+    /// <p>The name of the filter activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value.
+    /// Messages that satisfy the condition are passed to the next activity. </p>
+    pub fn filter(&self) -> std::option::Option<&str> {
+        self.filter.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
+}
 impl std::fmt::Debug for FilterActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FilterActivity");
@@ -628,6 +758,20 @@ pub struct SelectAttributesActivity {
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
+}
+impl SelectAttributesActivity {
+    /// <p>The name of the <code>selectAttributes</code> activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of the attributes to select from the message.</p>
+    pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
 }
 impl std::fmt::Debug for SelectAttributesActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -715,6 +859,20 @@ pub struct RemoveAttributesActivity {
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
+}
+impl RemoveAttributesActivity {
+    /// <p>The name of the <code>removeAttributes</code> activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of 1-50 attributes to remove from the message.</p>
+    pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveAttributesActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -808,6 +966,28 @@ pub struct AddAttributesActivity {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
+}
+impl AddAttributesActivity {
+    /// <p>The name of the addAttributes activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
+    /// a new attribute.</p>
+    /// <note>
+    /// <p>The existing attributes remain in the message, so if you want to remove the originals,
+    /// use <code>RemoveAttributeActivity</code>.</p>
+    /// </note>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
 }
 impl std::fmt::Debug for AddAttributesActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -912,6 +1092,16 @@ pub struct DatastoreActivity {
     /// <p>The name of the data store where processed messages are stored.</p>
     pub datastore_name: std::option::Option<std::string::String>,
 }
+impl DatastoreActivity {
+    /// <p>The name of the datastore activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the data store where processed messages are stored.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DatastoreActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastoreActivity");
@@ -983,6 +1173,26 @@ pub struct LambdaActivity {
     pub batch_size: std::option::Option<i32>,
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
+}
+impl LambdaActivity {
+    /// <p>The name of the lambda activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the Lambda function that is run on the message.</p>
+    pub fn lambda_name(&self) -> std::option::Option<&str> {
+        self.lambda_name.as_deref()
+    }
+    /// <p>The number of messages passed to the Lambda function for processing.</p>
+    /// <p>The Lambda function must be able to process all of these messages within five minutes,
+    /// which is the maximum timeout duration for Lambda functions.</p>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1079,6 +1289,20 @@ pub struct ChannelActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: std::option::Option<std::string::String>,
 }
+impl ChannelActivity {
+    /// <p>The name of the channel activity.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the channel from which the messages are processed.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn next(&self) -> std::option::Option<&str> {
+        self.next.as_deref()
+    }
+}
 impl std::fmt::Debug for ChannelActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelActivity");
@@ -1157,6 +1381,18 @@ pub struct FileFormatConfiguration {
     /// <p>Contains the configuration information of the Parquet format.</p>
     pub parquet_configuration: std::option::Option<crate::model::ParquetConfiguration>,
 }
+impl FileFormatConfiguration {
+    /// <p>Contains the configuration information of the JSON format.</p>
+    pub fn json_configuration(&self) -> std::option::Option<&crate::model::JsonConfiguration> {
+        self.json_configuration.as_ref()
+    }
+    /// <p>Contains the configuration information of the Parquet format.</p>
+    pub fn parquet_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ParquetConfiguration> {
+        self.parquet_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for FileFormatConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileFormatConfiguration");
@@ -1224,6 +1460,12 @@ pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
     pub schema_definition: std::option::Option<crate::model::SchemaDefinition>,
 }
+impl ParquetConfiguration {
+    /// <p>Information needed to define a schema.</p>
+    pub fn schema_definition(&self) -> std::option::Option<&crate::model::SchemaDefinition> {
+        self.schema_definition.as_ref()
+    }
+}
 impl std::fmt::Debug for ParquetConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParquetConfiguration");
@@ -1276,6 +1518,14 @@ pub struct SchemaDefinition {
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
     /// types.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
+}
+impl SchemaDefinition {
+    /// <p>Specifies one or more columns that store your data.</p>
+    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
+    /// types.</p>
+    pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
+        self.columns.as_deref()
+    }
 }
 impl std::fmt::Debug for SchemaDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1340,6 +1590,17 @@ pub struct Column {
     /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
     /// in the <i>Glue Developer Guide</i>.</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl Column {
+    /// <p>The name of the column.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
+    /// in the <i>Glue Developer Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for Column {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1437,6 +1698,15 @@ pub enum DatastoreStorage {
     IotSiteWiseMultiLayerStorage(crate::model::DatastoreIotSiteWiseMultiLayerStorage),
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
     ServiceManagedS3(crate::model::ServiceManagedDatastoreS3Storage),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl DatastoreStorage {
     /// Tries to convert the enum instance into [`CustomerManagedS3`](crate::model::DatastoreStorage::CustomerManagedS3), extracting the inner [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
@@ -1484,6 +1754,10 @@ impl DatastoreStorage {
     pub fn is_service_managed_s3(&self) -> bool {
         self.as_service_managed_s3().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
@@ -1493,6 +1767,14 @@ pub struct DatastoreIotSiteWiseMultiLayerStorage {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
     pub customer_managed_s3_storage:
         std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
+}
+impl DatastoreIotSiteWiseMultiLayerStorage {
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    pub fn customer_managed_s3_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage> {
+        self.customer_managed_s3_storage.as_ref()
+    }
 }
 impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1553,6 +1835,16 @@ pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
     pub bucket: std::option::Option<std::string::String>,
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub key_prefix: std::option::Option<std::string::String>,
+}
+impl IotSiteWiseCustomerManagedDatastoreS3Storage {
+    /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3Storage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1618,6 +1910,20 @@ pub struct CustomerManagedDatastoreS3Storage {
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CustomerManagedDatastoreS3Storage {
+    /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomerManagedDatastoreS3Storage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1726,6 +2032,17 @@ pub struct RetentionPeriod {
     /// false.</p>
     pub number_of_days: std::option::Option<i32>,
 }
+impl RetentionPeriod {
+    /// <p>If true, message data is kept indefinitely.</p>
+    pub fn unlimited(&self) -> bool {
+        self.unlimited
+    }
+    /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be
+    /// false.</p>
+    pub fn number_of_days(&self) -> std::option::Option<i32> {
+        self.number_of_days
+    }
+}
 impl std::fmt::Debug for RetentionPeriod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetentionPeriod");
@@ -1791,6 +2108,18 @@ pub struct LateDataRule {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The information needed to configure the late data rule.</p>
     pub rule_configuration: std::option::Option<crate::model::LateDataRuleConfiguration>,
+}
+impl LateDataRule {
+    /// <p>The name of the late data rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The information needed to configure the late data rule.</p>
+    pub fn rule_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LateDataRuleConfiguration> {
+        self.rule_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for LateDataRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1859,6 +2188,14 @@ pub struct LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
     pub delta_time_session_window_configuration:
         std::option::Option<crate::model::DeltaTimeSessionWindowConfiguration>,
+}
+impl LateDataRuleConfiguration {
+    /// <p>The information needed to configure a delta time session window.</p>
+    pub fn delta_time_session_window_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeltaTimeSessionWindowConfiguration> {
+        self.delta_time_session_window_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for LateDataRuleConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1932,6 +2269,16 @@ pub struct DeltaTimeSessionWindowConfiguration {
     /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
     pub timeout_in_minutes: std::option::Option<i32>,
 }
+impl DeltaTimeSessionWindowConfiguration {
+    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
+    /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
+    /// notifications to Amazon CloudWatch Events at one time.</p>
+    /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
+    /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+    pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.timeout_in_minutes
+    }
+}
 impl std::fmt::Debug for DeltaTimeSessionWindowConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeltaTimeSessionWindowConfiguration");
@@ -1990,6 +2337,17 @@ pub struct VersioningConfiguration {
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
     /// be <code>false</code>.</p>
     pub max_versions: std::option::Option<i32>,
+}
+impl VersioningConfiguration {
+    /// <p>If true, unlimited versions of dataset contents are kept.</p>
+    pub fn unlimited(&self) -> bool {
+        self.unlimited
+    }
+    /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
+    /// be <code>false</code>.</p>
+    pub fn max_versions(&self) -> std::option::Option<i32> {
+        self.max_versions
+    }
 }
 impl std::fmt::Debug for VersioningConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2056,6 +2414,18 @@ pub struct DatasetContentDeliveryRule {
     pub entry_name: std::option::Option<std::string::String>,
     /// <p>The destination to which dataset contents are delivered.</p>
     pub destination: std::option::Option<crate::model::DatasetContentDeliveryDestination>,
+}
+impl DatasetContentDeliveryRule {
+    /// <p>The name of the dataset content delivery rules entry.</p>
+    pub fn entry_name(&self) -> std::option::Option<&str> {
+        self.entry_name.as_deref()
+    }
+    /// <p>The destination to which dataset contents are delivered.</p>
+    pub fn destination(
+        &self,
+    ) -> std::option::Option<&crate::model::DatasetContentDeliveryDestination> {
+        self.destination.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetContentDeliveryRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2127,6 +2497,20 @@ pub struct DatasetContentDeliveryDestination {
         std::option::Option<crate::model::IotEventsDestinationConfiguration>,
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
     pub s3_destination_configuration: std::option::Option<crate::model::S3DestinationConfiguration>,
+}
+impl DatasetContentDeliveryDestination {
+    /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
+    pub fn iot_events_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IotEventsDestinationConfiguration> {
+        self.iot_events_destination_configuration.as_ref()
+    }
+    /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
+    pub fn s3_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
+        self.s3_destination_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetContentDeliveryDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2241,6 +2625,51 @@ pub struct S3DestinationConfiguration {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
     /// resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl S3DestinationConfiguration {
+    /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a
+    /// unique identifier. Each object has exactly one key.</p>
+    /// <p>You can create a unique key with the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
+    /// query run.</p>
+    /// </li>
+    /// <li>
+    /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a
+    /// dataset content.</p>
+    /// </li>
+    /// <li>
+    /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
+    /// content.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The following example creates a unique key for a CSV file:
+    /// <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+    /// </p>
+    /// <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
+    /// get duplicate keys. For example, you might have two dataset contents with the same
+    /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
+    /// dataset content overwrites the other. </p>
+    /// </note>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
+    /// and load (ETL) service.</p>
+    pub fn glue_configuration(&self) -> std::option::Option<&crate::model::GlueConfiguration> {
+        self.glue_configuration.as_ref()
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
+    /// resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3DestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2392,6 +2821,19 @@ pub struct GlueConfiguration {
     /// Glue Data Catalog database contains metadata tables.</p>
     pub database_name: std::option::Option<std::string::String>,
 }
+impl GlueConfiguration {
+    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
+    /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
+    /// sources and targets.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
+    /// Glue Data Catalog database contains metadata tables.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GlueConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlueConfiguration");
@@ -2465,6 +2907,17 @@ pub struct IotEventsDestinationConfiguration {
     /// input.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl IotEventsDestinationConfiguration {
+    /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
+    /// input.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for IotEventsDestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotEventsDestinationConfiguration");
@@ -2531,6 +2984,17 @@ pub struct DatasetTrigger {
     /// <p>The dataset whose content creation triggers the creation of this dataset's
     /// contents.</p>
     pub dataset: std::option::Option<crate::model::TriggeringDataset>,
+}
+impl DatasetTrigger {
+    /// <p>The Schedule when the trigger is initiated.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The dataset whose content creation triggers the creation of this dataset's
+    /// contents.</p>
+    pub fn dataset(&self) -> std::option::Option<&crate::model::TriggeringDataset> {
+        self.dataset.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetTrigger {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2600,6 +3064,13 @@ pub struct TriggeringDataset {
     /// generation.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl TriggeringDataset {
+    /// <p>The name of the dataset whose content generation triggers the new dataset content
+    /// generation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for TriggeringDataset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TriggeringDataset");
@@ -2649,6 +3120,14 @@ pub struct Schedule {
     /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
     /// Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
+}
+impl Schedule {
+    /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+    /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+    /// Guide</i>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
 }
 impl std::fmt::Debug for Schedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2709,6 +3188,23 @@ pub struct DatasetAction {
     /// dataset contents. The application must be in a Docker container along with any required
     /// support libraries.</p>
     pub container_action: std::option::Option<crate::model::ContainerDatasetAction>,
+}
+impl DatasetAction {
+    /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
+    /// create dataset contents.</p>
+    pub fn query_action(&self) -> std::option::Option<&crate::model::SqlQueryDatasetAction> {
+        self.query_action.as_ref()
+    }
+    /// <p>Information that allows the system to run a containerized application to create the
+    /// dataset contents. The application must be in a Docker container along with any required
+    /// support libraries.</p>
+    pub fn container_action(&self) -> std::option::Option<&crate::model::ContainerDatasetAction> {
+        self.container_action.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2808,6 +3304,32 @@ pub struct ContainerDatasetAction {
     /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
     /// or <code>outputFileUriValue</code>.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
+}
+impl ContainerDatasetAction {
+    /// <p>The ARN of the Docker container stored in your account. The Docker container contains an
+    /// application and required support libraries and is used to generate dataset contents.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The ARN of the role that gives permission to the system to access required resources to
+    /// run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the
+    /// dataset contents that are the input to the containerized application.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
+    pub fn resource_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceConfiguration> {
+        self.resource_configuration.as_ref()
+    }
+    /// <p>The values of variables used in the context of the execution of the containerized
+    /// application (basically, parameters passed to the application). Each variable must have a name
+    /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
+    /// or <code>outputFileUriValue</code>.</p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+        self.variables.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainerDatasetAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2937,6 +3459,30 @@ pub struct Variable {
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
     pub output_file_uri_value: std::option::Option<crate::model::OutputFileUriValue>,
 }
+impl Variable {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the variable as a string.</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>The value of the variable as a double (numeric).</p>
+    pub fn double_value(&self) -> std::option::Option<f64> {
+        self.double_value
+    }
+    /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
+    pub fn dataset_content_version_value(
+        &self,
+    ) -> std::option::Option<&crate::model::DatasetContentVersionValue> {
+        self.dataset_content_version_value.as_ref()
+    }
+    /// <p>The value of the variable as a structure that specifies an output file URI.</p>
+    pub fn output_file_uri_value(&self) -> std::option::Option<&crate::model::OutputFileUriValue> {
+        self.output_file_uri_value.as_ref()
+    }
+}
 impl std::fmt::Debug for Variable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Variable");
@@ -3051,6 +3597,13 @@ pub struct OutputFileUriValue {
     /// S3 bucket.</p>
     pub file_name: std::option::Option<std::string::String>,
 }
+impl OutputFileUriValue {
+    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an
+    /// S3 bucket.</p>
+    pub fn file_name(&self) -> std::option::Option<&str> {
+        self.file_name.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputFileUriValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputFileUriValue");
@@ -3101,6 +3654,13 @@ pub struct DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or
     /// application.</p>
     pub dataset_name: std::option::Option<std::string::String>,
+}
+impl DatasetContentVersionValue {
+    /// <p>The name of the dataset whose latest contents are used as input to the notebook or
+    /// application.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetContentVersionValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3156,6 +3716,19 @@ pub struct ResourceConfiguration {
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to
     /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub volume_size_in_gb: i32,
+}
+impl ResourceConfiguration {
+    /// <p>The type of the compute resource used to execute the <code>containerAction</code>.
+    /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8,
+    /// memory=32 GiB).</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
+    /// <p>The size, in GB, of the persistent storage available to the resource instance used to
+    /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
 }
 impl std::fmt::Debug for ResourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3284,6 +3857,16 @@ pub struct SqlQueryDatasetAction {
     /// <p>Prefilters applied to message data.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
 }
+impl SqlQueryDatasetAction {
+    /// <p>A SQL query string.</p>
+    pub fn sql_query(&self) -> std::option::Option<&str> {
+        self.sql_query.as_deref()
+    }
+    /// <p>Prefilters applied to message data.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::QueryFilter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for SqlQueryDatasetAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqlQueryDatasetAction");
@@ -3356,6 +3939,13 @@ pub struct QueryFilter {
     /// action.</p>
     pub delta_time: std::option::Option<crate::model::DeltaTime>,
 }
+impl QueryFilter {
+    /// <p>Used to limit data to that which has arrived since the last execution of the
+    /// action.</p>
+    pub fn delta_time(&self) -> std::option::Option<&crate::model::DeltaTime> {
+        self.delta_time.as_ref()
+    }
+}
 impl std::fmt::Debug for QueryFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryFilter");
@@ -3419,6 +4009,24 @@ pub struct DeltaTime {
     /// name of a timestamp field or a SQL expression that is used to derive the time the message data
     /// was generated.</p>
     pub time_expression: std::option::Option<std::string::String>,
+}
+impl DeltaTime {
+    /// <p>The number of seconds of estimated in-flight lag time of message data. When you create
+    /// dataset contents using message data from a specified timeframe, some message data might still
+    /// be in flight when processing begins, and so do not arrive in time to be processed. Use this
+    /// field to make allowances for the in flight time of your message data, so that data not
+    /// processed from a previous timeframe is included with the next timeframe. Otherwise, missed
+    /// message data would be excluded from processing during the next timeframe too, because its
+    /// timestamp places it within the previous timeframe.</p>
+    pub fn offset_seconds(&self) -> std::option::Option<i32> {
+        self.offset_seconds
+    }
+    /// <p>An expression by which the time of the message data might be determined. This can be the
+    /// name of a timestamp field or a SQL expression that is used to derive the time the message data
+    /// was generated.</p>
+    pub fn time_expression(&self) -> std::option::Option<&str> {
+        self.time_expression.as_deref()
+    }
 }
 impl std::fmt::Debug for DeltaTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3506,6 +4114,23 @@ pub struct ChannelStorage {
     /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
     /// of S3 storage after the data store is created.</p>
     pub customer_managed_s3: std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
+}
+impl ChannelStorage {
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
+    /// of S3 storage after the data store is created.</p>
+    pub fn service_managed_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceManagedChannelS3Storage> {
+        self.service_managed_s3.as_ref()
+    }
+    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
+    /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
+    /// of S3 storage after the data store is created.</p>
+    pub fn customer_managed_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerManagedChannelS3Storage> {
+        self.customer_managed_s3.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelStorage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3596,6 +4221,23 @@ pub struct CustomerManagedChannelS3Storage {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
     /// resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CustomerManagedChannelS3Storage {
+    /// <p>The name of the S3 bucket in which channel data is stored.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
+    /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
+    /// has exactly one key. The prefix must end with a forward slash (/).</p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+    /// resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomerManagedChannelS3Storage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3710,6 +4352,16 @@ pub struct Tag {
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -3775,6 +4427,17 @@ pub struct ChannelMessages {
     /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
     /// </p>
     pub s3_paths: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ChannelMessages {
+    /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
+    /// channel messages.</p>
+    /// <p>You must use the full path for the key.</p>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
+    /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+    /// </p>
+    pub fn s3_paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.s3_paths.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelMessages {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3846,6 +4509,20 @@ pub struct LoggingOptions {
     pub level: std::option::Option<crate::model::LoggingLevel>,
     /// <p>If true, logging is enabled for IoT Analytics.</p>
     pub enabled: bool,
+}
+impl LoggingOptions {
+    /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The logging level. Currently, only ERROR is supported.</p>
+    pub fn level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
+        self.level.as_ref()
+    }
+    /// <p>If true, logging is enabled for IoT Analytics.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for LoggingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3979,6 +4656,26 @@ pub struct PipelineSummary {
     /// <p>When the pipeline was last updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PipelineSummary {
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>A summary of information about the pipeline reprocessing.</p>
+    pub fn reprocessing_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReprocessingSummary]> {
+        self.reprocessing_summaries.as_deref()
+    }
+    /// <p>When the pipeline was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>When the pipeline was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for PipelineSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipelineSummary");
@@ -4091,6 +4788,20 @@ pub struct ReprocessingSummary {
     pub status: std::option::Option<crate::model::ReprocessingStatus>,
     /// <p>The time the pipeline reprocessing was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ReprocessingSummary {
+    /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The status of the pipeline reprocessing.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReprocessingStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time the pipeline reprocessing was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ReprocessingSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4250,6 +4961,42 @@ pub struct DatastoreSummary {
     pub file_format_type: std::option::Option<crate::model::FileFormatType>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
+}
+impl DatastoreSummary {
+    /// <p>The name of the data store.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>Where data in a data store is stored.</p>
+    pub fn datastore_storage(&self) -> std::option::Option<&crate::model::DatastoreStorageSummary> {
+        self.datastore_storage.as_ref()
+    }
+    /// <p>The status of the data store.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the data store was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the data store was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The last time when a new message arrived in the data store.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_arrival_time.as_ref()
+    }
+    /// <p>The file format of the data in the data store.</p>
+    pub fn file_format_type(&self) -> std::option::Option<&crate::model::FileFormatType> {
+        self.file_format_type.as_ref()
+    }
+    /// <p> Contains information about the partition dimensions in a data store. </p>
+    pub fn datastore_partitions(&self) -> std::option::Option<&crate::model::DatastorePartitions> {
+        self.datastore_partitions.as_ref()
+    }
 }
 impl std::fmt::Debug for DatastoreSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4418,6 +5165,12 @@ pub struct DatastorePartitions {
     /// <p> A list of partition dimensions in a data store. </p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::DatastorePartition>>,
 }
+impl DatastorePartitions {
+    /// <p> A list of partition dimensions in a data store. </p>
+    pub fn partitions(&self) -> std::option::Option<&[crate::model::DatastorePartition]> {
+        self.partitions.as_deref()
+    }
+}
 impl std::fmt::Debug for DatastorePartitions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastorePartitions");
@@ -4477,6 +5230,16 @@ pub struct DatastorePartition {
     pub attribute_partition: std::option::Option<crate::model::Partition>,
     /// <p> A partition dimension defined by a timestamp attribute. </p>
     pub timestamp_partition: std::option::Option<crate::model::TimestampPartition>,
+}
+impl DatastorePartition {
+    /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
+    pub fn attribute_partition(&self) -> std::option::Option<&crate::model::Partition> {
+        self.attribute_partition.as_ref()
+    }
+    /// <p> A partition dimension defined by a timestamp attribute. </p>
+    pub fn timestamp_partition(&self) -> std::option::Option<&crate::model::TimestampPartition> {
+        self.timestamp_partition.as_ref()
+    }
 }
 impl std::fmt::Debug for DatastorePartition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4548,6 +5311,17 @@ pub struct TimestampPartition {
     /// since epoch (January 1, 1970 at midnight UTC time). </p>
     pub timestamp_format: std::option::Option<std::string::String>,
 }
+impl TimestampPartition {
+    /// <p> The attribute name of the partition defined by a timestamp. </p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
+    /// since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+        self.timestamp_format.as_deref()
+    }
+}
 impl std::fmt::Debug for TimestampPartition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimestampPartition");
@@ -4616,6 +5390,12 @@ impl TimestampPartition {
 pub struct Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
     pub attribute_name: std::option::Option<std::string::String>,
+}
+impl Partition {
+    /// <p> The name of the attribute that defines a partition dimension. </p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
 }
 impl std::fmt::Debug for Partition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4789,6 +5569,26 @@ pub struct DatastoreStorageSummary {
     pub iot_site_wise_multi_layer_storage:
         std::option::Option<crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary>,
 }
+impl DatastoreStorageSummary {
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
+    pub fn service_managed_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceManagedDatastoreS3StorageSummary> {
+        self.service_managed_s3.as_ref()
+    }
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
+    pub fn customer_managed_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerManagedDatastoreS3StorageSummary> {
+        self.customer_managed_s3.as_ref()
+    }
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    pub fn iot_site_wise_multi_layer_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary> {
+        self.iot_site_wise_multi_layer_storage.as_ref()
+    }
+}
 impl std::fmt::Debug for DatastoreStorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastoreStorageSummary");
@@ -4888,6 +5688,15 @@ pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
     pub customer_managed_s3_storage:
         std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
 }
+impl DatastoreIotSiteWiseMultiLayerStorageSummary {
+    /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
+    pub fn customer_managed_s3_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>
+    {
+        self.customer_managed_s3_storage.as_ref()
+    }
+}
 impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorageSummary");
@@ -4949,6 +5758,16 @@ pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     pub bucket: std::option::Option<std::string::String>,
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
     pub key_prefix: std::option::Option<std::string::String>,
+}
+impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+    /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5016,6 +5835,20 @@ pub struct CustomerManagedDatastoreS3StorageSummary {
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CustomerManagedDatastoreS3StorageSummary {
+    /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomerManagedDatastoreS3StorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5132,6 +5965,34 @@ pub struct DatasetSummary {
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
+}
+impl DatasetSummary {
+    /// <p>The name of the dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The status of the dataset.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time the dataset was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the dataset was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
+    /// interval or when another dataset is populated. The list of triggers can be empty or contain up
+    /// to five <code>DataSetTrigger</code> objects</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
+        self.triggers.as_deref()
+    }
+    /// <p>A list of <code>DataActionSummary</code> objects.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetActionSummary]> {
+        self.actions.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5278,6 +6139,16 @@ pub struct DatasetActionSummary {
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
     pub action_type: std::option::Option<crate::model::DatasetActionType>,
+}
+impl DatasetActionSummary {
+    /// <p>The name of the action that automatically creates the dataset's contents.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The type of action by which the dataset's contents are automatically created.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::DatasetActionType> {
+        self.action_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetActionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5465,6 +6336,28 @@ pub struct DatasetContentSummary {
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
     pub completion_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DatasetContentSummary {
+    /// <p>The version of the dataset contents.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The status of the dataset contents.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetContentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The actual time the creation of the dataset contents was started.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the creation of the dataset contents was scheduled to start.</p>
+    pub fn schedule_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.schedule_time.as_ref()
+    }
+    /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completion_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetContentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetContentSummary");
@@ -5579,6 +6472,17 @@ pub struct DatasetContentStatus {
     pub state: std::option::Option<crate::model::DatasetContentState>,
     /// <p>The reason the dataset contents are in this state.</p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl DatasetContentStatus {
+    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
+    /// FAILED.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DatasetContentState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason the dataset contents are in this state.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetContentStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5716,6 +6620,34 @@ pub struct ChannelSummary {
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ChannelSummary {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Where channel data is stored.</p>
+    pub fn channel_storage(&self) -> std::option::Option<&crate::model::ChannelStorageSummary> {
+        self.channel_storage.as_ref()
+    }
+    /// <p>The status of the channel.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the channel was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The last time when a new message arrived in the channel.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_arrival_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5912,6 +6844,20 @@ pub struct ChannelStorageSummary {
     pub customer_managed_s3:
         std::option::Option<crate::model::CustomerManagedChannelS3StorageSummary>,
 }
+impl ChannelStorageSummary {
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
+    pub fn service_managed_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceManagedChannelS3StorageSummary> {
+        self.service_managed_s3.as_ref()
+    }
+    /// <p>Used to store channel data in an S3 bucket that you manage.</p>
+    pub fn customer_managed_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerManagedChannelS3StorageSummary> {
+        self.customer_managed_s3.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelStorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelStorageSummary");
@@ -5993,6 +6939,23 @@ pub struct CustomerManagedChannelS3StorageSummary {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
     /// resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CustomerManagedChannelS3StorageSummary {
+    /// <p>The name of the S3 bucket in which channel data is stored.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
+    /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
+    /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+    /// resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomerManagedChannelS3StorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6106,6 +7069,16 @@ pub struct DatasetEntry {
     /// <p>The presigned URI of the dataset item.</p>
     pub data_uri: std::option::Option<std::string::String>,
 }
+impl DatasetEntry {
+    /// <p>The name of the dataset item.</p>
+    pub fn entry_name(&self) -> std::option::Option<&str> {
+        self.entry_name.as_deref()
+    }
+    /// <p>The presigned URI of the dataset item.</p>
+    pub fn data_uri(&self) -> std::option::Option<&str> {
+        self.data_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for DatasetEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetEntry");
@@ -6177,6 +7150,34 @@ pub struct Pipeline {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the pipeline was updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Pipeline {
+    /// <p>The name of the pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the pipeline.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The activities that perform transformations on the messages.</p>
+    pub fn activities(&self) -> std::option::Option<&[crate::model::PipelineActivity]> {
+        self.activities.as_deref()
+    }
+    /// <p>A summary of information about the pipeline reprocessing.</p>
+    pub fn reprocessing_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReprocessingSummary]> {
+        self.reprocessing_summaries.as_deref()
+    }
+    /// <p>When the pipeline was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the pipeline was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Pipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6319,6 +7320,12 @@ pub struct DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
     pub size: std::option::Option<crate::model::EstimatedResourceSize>,
 }
+impl DatastoreStatistics {
+    /// <p>The estimated size of the data store.</p>
+    pub fn size(&self) -> std::option::Option<&crate::model::EstimatedResourceSize> {
+        self.size.as_ref()
+    }
+}
 impl std::fmt::Debug for DatastoreStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastoreStatistics");
@@ -6369,6 +7376,16 @@ pub struct EstimatedResourceSize {
     pub estimated_size_in_bytes: std::option::Option<f64>,
     /// <p>The time when the estimate of the size of the resource was made.</p>
     pub estimated_on: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EstimatedResourceSize {
+    /// <p>The estimated size of the resource, in bytes.</p>
+    pub fn estimated_size_in_bytes(&self) -> std::option::Option<f64> {
+        self.estimated_size_in_bytes
+    }
+    /// <p>The time when the estimate of the size of the resource was made.</p>
+    pub fn estimated_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.estimated_on.as_ref()
+    }
 }
 impl std::fmt::Debug for EstimatedResourceSize {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6470,6 +7487,69 @@ pub struct Datastore {
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
+}
+impl Datastore {
+    /// <p>The name of the data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    pub fn storage(&self) -> std::option::Option<&crate::model::DatastoreStorage> {
+        self.storage.as_ref()
+    }
+    /// <p>The ARN of the data store.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of a data store:</p>
+    /// <dl>
+    /// <dt>CREATING</dt>
+    /// <dd>
+    /// <p>The data store is being created.</p>
+    /// </dd>
+    /// <dt>ACTIVE</dt>
+    /// <dd>
+    /// <p>The data store has been created and can be used.</p>
+    /// </dd>
+    /// <dt>DELETING</dt>
+    /// <dd>
+    /// <p>The data store is being deleted.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>How long, in days, message data is kept for the data store. When
+    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>When the data store was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the data store was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The last time when a new message arrived in the data store.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_arrival_time.as_ref()
+    }
+    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>The default file format is JSON. You can specify only one format.</p>
+    /// <p>You can't change the file format after you create the data store.</p>
+    pub fn file_format_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FileFormatConfiguration> {
+        self.file_format_configuration.as_ref()
+    }
+    /// <p> Contains information about the partition dimensions in a data store. </p>
+    pub fn datastore_partitions(&self) -> std::option::Option<&crate::model::DatastorePartitions> {
+        self.datastore_partitions.as_ref()
+    }
 }
 impl std::fmt::Debug for Datastore {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6731,6 +7811,64 @@ pub struct Dataset {
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
+impl Dataset {
+    /// <p>The name of the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the dataset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
+    /// contents.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
+    /// updated.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
+        self.triggers.as_deref()
+    }
+    /// <p>When dataset contents are created they are delivered to destinations specified
+    /// here.</p>
+    pub fn content_delivery_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetContentDeliveryRule]> {
+        self.content_delivery_rules.as_deref()
+    }
+    /// <p>The status of the dataset.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the dataset was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the dataset was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
+    /// only the latest version plus the latest succeeded version (if they are different) are kept for
+    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
+    pub fn versioning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::VersioningConfiguration> {
+        self.versioning_configuration.as_ref()
+    }
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    pub fn late_data_rules(&self) -> std::option::Option<&[crate::model::LateDataRule]> {
+        self.late_data_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for Dataset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Dataset");
@@ -6984,6 +8122,12 @@ pub struct ChannelStatistics {
     /// <p>The estimated size of the channel.</p>
     pub size: std::option::Option<crate::model::EstimatedResourceSize>,
 }
+impl ChannelStatistics {
+    /// <p>The estimated size of the channel.</p>
+    pub fn size(&self) -> std::option::Option<&crate::model::EstimatedResourceSize> {
+        self.size.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelStatistics");
@@ -7052,6 +8196,45 @@ pub struct Channel {
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Channel {
+    /// <p>The name of the channel.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+    /// <code>customerManagedS3</code> storage. If not specified, the default is
+    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
+    /// created.</p>
+    pub fn storage(&self) -> std::option::Option<&crate::model::ChannelStorage> {
+        self.storage.as_ref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the channel.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChannelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>How long, in days, message data is kept for the channel.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
+    /// <p>When the channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>When the channel was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The last time when a new message arrived in the channel.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    pub fn last_message_arrival_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_message_arrival_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7225,6 +8408,21 @@ pub struct BatchPutMessageErrorEntry {
     /// <p>The message associated with the error.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl BatchPutMessageErrorEntry {
+    /// <p>The ID of the message that caused the error. See the value corresponding to the
+    /// <code>messageId</code> key in the message object.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The code associated with the error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The message associated with the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchPutMessageErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchPutMessageErrorEntry");
@@ -7308,6 +8506,19 @@ pub struct Message {
     /// representing binary data, in which case you must decode it by means of a pipeline
     /// activity.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
+}
+impl Message {
+    /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
+    /// within each batch sent.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
+    /// representing binary data, in which case you must decode it by means of a pipeline
+    /// activity.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
 }
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

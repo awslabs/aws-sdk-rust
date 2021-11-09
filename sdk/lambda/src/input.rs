@@ -211,10 +211,7 @@ impl AddLayerVersionPermissionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_layer_version_permission(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -542,10 +539,7 @@ impl AddPermissionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_permission(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -806,10 +800,7 @@ impl CreateAliasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -987,10 +978,7 @@ impl CreateCodeSigningConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_code_signing_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1555,10 +1543,7 @@ impl CreateEventSourceMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_event_source_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2080,10 +2065,8 @@ impl CreateFunctionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_function(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_function(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9603,10 +9586,7 @@ impl PublishLayerVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_publish_layer_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_publish_layer_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9853,10 +9833,8 @@ impl PublishVersionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_publish_version(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_publish_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10078,7 +10056,7 @@ impl PutFunctionCodeSigningConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_function_code_signing_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_function_code_signing_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10302,10 +10280,7 @@ impl PutFunctionConcurrencyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_function_concurrency(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10615,7 +10590,7 @@ impl PutFunctionEventInvokeConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_function_event_invoke_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_function_event_invoke_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10860,7 +10835,7 @@ impl PutProvisionedConcurrencyConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_provisioned_concurrency_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_provisioned_concurrency_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11535,10 +11510,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12006,10 +11978,7 @@ impl UpdateAliasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_alias(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12222,10 +12191,7 @@ impl UpdateCodeSigningConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_code_signing_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12676,10 +12642,7 @@ impl UpdateEventSourceMappingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_event_source_mapping(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13015,10 +12978,7 @@ impl UpdateFunctionCodeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_function_code(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_function_code(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13468,7 +13428,7 @@ impl UpdateFunctionConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_function_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_function_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13779,7 +13739,7 @@ impl UpdateFunctionEventInvokeConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_function_event_invoke_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_function_event_invoke_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13897,6 +13857,68 @@ pub struct UpdateFunctionEventInvokeConfigInput {
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
+impl UpdateFunctionEventInvokeConfigInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>The maximum number of times to retry when the function returns an error.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_event_age_in_seconds
+    }
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title">
+    /// <b>Destinations</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Queue</b> - The ARN of an SQS queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Topic</b> - The ARN of an SNS topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFunctionEventInvokeConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionEventInvokeConfigInput");
@@ -13981,6 +14003,104 @@ pub struct UpdateFunctionConfigurationInput {
     /// values</a> that override the values in the container image Docker file.</p>
     pub image_config: std::option::Option<crate::model::ImageConfig>,
 }
+impl UpdateFunctionConfigurationInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+    /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
+    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>A description of the function.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
+    /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
+    /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
+    /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Environment variables that are accessible from function code during execution.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
+    /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
+    /// variables. If it's not provided, Lambda uses a default service key.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfig> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+    /// function that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
+    /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    pub fn layers(&self) -> std::option::Option<&[std::string::String]> {
+        self.layers.as_deref()
+    }
+    /// <p>Connection settings for an Amazon EFS file system.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+    /// values</a> that override the values in the container image Docker file.</p>
+    pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
+        self.image_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFunctionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionConfigurationInput");
@@ -14052,6 +14172,72 @@ pub struct UpdateFunctionCodeInput {
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
     /// The default value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl UpdateFunctionCodeInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
+    /// you.</p>
+    pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.zip_file.as_ref()
+    }
+    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The Amazon S3 key of the deployment package.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+    /// <p>For versioned objects, the version of the deployment package object to use.</p>
+    pub fn s3_object_version(&self) -> std::option::Option<&str> {
+        self.s3_object_version.as_deref()
+    }
+    /// <p>URI of a container image in the Amazon ECR registry.</p>
+    pub fn image_uri(&self) -> std::option::Option<&str> {
+        self.image_uri.as_deref()
+    }
+    /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
+    /// calling <a>PublishVersion</a> separately.</p>
+    pub fn publish(&self) -> bool {
+        self.publish
+    }
+    /// <p>Set to true to validate the request parameters and access permissions without modifying the function
+    /// code.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+    /// function that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+    /// The default value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14152,6 +14338,113 @@ pub struct UpdateEventSourceMappingInput {
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
+impl UpdateEventSourceMappingInput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+    /// <p>Default: True</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
+    /// (6 MB).</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
+    /// </li>
+    /// </ul>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_batching_window_in_seconds
+    }
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_record_age_in_seconds
+    }
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
+    pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
+        self.bisect_batch_on_function_error
+    }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
+    pub fn parallelization_factor(&self) -> std::option::Option<i32> {
+        self.parallelization_factor
+    }
+    /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
+    pub fn source_access_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+        self.source_access_configurations.as_deref()
+    }
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.tumbling_window_in_seconds
+    }
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    pub fn function_response_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+        self.function_response_types.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEventSourceMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventSourceMappingInput");
@@ -14199,6 +14492,24 @@ pub struct UpdateCodeSigningConfigInput {
     pub allowed_publishers: std::option::Option<crate::model::AllowedPublishers>,
     /// <p>The code signing policy.</p>
     pub code_signing_policies: std::option::Option<crate::model::CodeSigningPolicies>,
+}
+impl UpdateCodeSigningConfigInput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
+    /// <p>Descriptive name for this code signing configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Signing profiles for this code signing configuration.</p>
+    pub fn allowed_publishers(&self) -> std::option::Option<&crate::model::AllowedPublishers> {
+        self.allowed_publishers.as_ref()
+    }
+    /// <p>The code signing policy.</p>
+    pub fn code_signing_policies(&self) -> std::option::Option<&crate::model::CodeSigningPolicies> {
+        self.code_signing_policies.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14249,6 +14560,53 @@ pub struct UpdateAliasInput {
     /// an alias that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl UpdateAliasInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>A description of the alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
+    /// configuration</a> of the alias.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+        self.routing_config.as_ref()
+    }
+    /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
+    /// an alias that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAliasInput");
@@ -14271,6 +14629,16 @@ pub struct UntagResourceInput {
     /// <p>A list of tag keys to remove from the function.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>A list of tag keys to remove from the function.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -14289,6 +14657,19 @@ pub struct TagResourceInput {
     /// <p>A list of tags to apply to the function.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>A list of tags to apply to the function.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14332,6 +14713,44 @@ pub struct RemovePermissionInput {
     /// policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl RemovePermissionInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Statement ID of the permission to remove.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>Specify a version or alias to remove permissions from a published version of the function.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+    /// policy that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemovePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemovePermissionInput");
@@ -14356,6 +14775,25 @@ pub struct RemoveLayerVersionPermissionInput {
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
     /// policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl RemoveLayerVersionPermissionInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>The identifier that was specified when the statement was added.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
+    /// policy that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveLayerVersionPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14397,6 +14835,39 @@ pub struct PutProvisionedConcurrencyConfigInput {
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
     pub provisioned_concurrent_executions: std::option::Option<i32>,
+}
+impl PutProvisionedConcurrencyConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
+    pub fn provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.provisioned_concurrent_executions
+    }
 }
 impl std::fmt::Debug for PutProvisionedConcurrencyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14466,6 +14937,68 @@ pub struct PutFunctionEventInvokeConfigInput {
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
+impl PutFunctionEventInvokeConfigInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>The maximum number of times to retry when the function returns an error.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_event_age_in_seconds
+    }
+    /// <p>A destination for events after they have been sent to a function for processing.</p>
+    /// <p class="title">
+    /// <b>Destinations</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Queue</b> - The ARN of an SQS queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Topic</b> - The ARN of an SNS topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+}
 impl std::fmt::Debug for PutFunctionEventInvokeConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFunctionEventInvokeConfigInput");
@@ -14509,6 +15042,35 @@ pub struct PutFunctionConcurrencyInput {
     /// <p>The number of simultaneous executions to reserve for the function.</p>
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
+impl PutFunctionConcurrencyInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The number of simultaneous executions to reserve for the function.</p>
+    pub fn reserved_concurrent_executions(&self) -> std::option::Option<i32> {
+        self.reserved_concurrent_executions
+    }
+}
 impl std::fmt::Debug for PutFunctionConcurrencyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFunctionConcurrencyInput");
@@ -14548,6 +15110,35 @@ pub struct PutFunctionCodeSigningConfigInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
+}
+impl PutFunctionCodeSigningConfigInput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
 }
 impl std::fmt::Debug for PutFunctionCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14593,6 +15184,46 @@ pub struct PublishVersionInput {
     /// publishing a version if the function configuration has changed since you last updated it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl PublishVersionInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
+    /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
+    /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
+    pub fn code_sha256(&self) -> std::option::Option<&str> {
+        self.code_sha256.as_deref()
+    }
+    /// <p>A description for the version to override the description in the function configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+    /// publishing a version if the function configuration has changed since you last updated it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishVersionInput");
@@ -14635,6 +15266,47 @@ pub struct PublishLayerVersionInput {
     /// <p>A list of compatible  
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl PublishLayerVersionInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>The description of the version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The function layer archive.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentInput> {
+        self.content.as_ref()
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+    /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+        self.compatible_runtimes.as_deref()
+    }
+    /// <p>The layer's software license. It can be any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example,
+    /// <code>MIT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>The URL of a license hosted on the internet. For example,
+    /// <code>https://opensource.org/licenses/MIT</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>The full text of the license.</p>
+    /// </li>
+    /// </ul>
+    pub fn license_info(&self) -> std::option::Option<&str> {
+        self.license_info.as_deref()
+    }
+    /// <p>A list of compatible  
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.compatible_architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for PublishLayerVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14680,6 +15352,40 @@ pub struct ListVersionsByFunctionInput {
     /// even if you set the number higher.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListVersionsByFunctionInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
+    /// even if you set the number higher.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListVersionsByFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVersionsByFunctionInput");
@@ -14697,6 +15403,13 @@ pub struct ListTagsInput {
     /// <p>The function's Amazon Resource Name (ARN).
     /// Note: Lambda does not support adding tags to aliases or versions.</p>
     pub resource: std::option::Option<std::string::String>,
+}
+impl ListTagsInput {
+    /// <p>The function's Amazon Resource Name (ARN).
+    /// Note: Lambda does not support adding tags to aliases or versions.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14736,6 +15449,39 @@ pub struct ListProvisionedConcurrencyConfigsInput {
     /// <p>Specify a number to limit the number of configurations returned.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListProvisionedConcurrencyConfigsInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Specify a number to limit the number of configurations returned.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListProvisionedConcurrencyConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProvisionedConcurrencyConfigsInput");
@@ -14761,6 +15507,29 @@ pub struct ListLayerVersionsInput {
     /// <p>The compatible
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub compatible_architecture: std::option::Option<crate::model::Architecture>,
+}
+impl ListLayerVersionsInput {
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    pub fn compatible_runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.compatible_runtime.as_ref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of versions to return.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The compatible
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn compatible_architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.compatible_architecture.as_ref()
+    }
 }
 impl std::fmt::Debug for ListLayerVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14788,6 +15557,25 @@ pub struct ListLayersInput {
     /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub compatible_architecture: std::option::Option<crate::model::Architecture>,
 }
+impl ListLayersInput {
+    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    pub fn compatible_runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.compatible_runtime.as_ref()
+    }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of layers to return.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The compatible
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    pub fn compatible_architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.compatible_architecture.as_ref()
+    }
+}
 impl std::fmt::Debug for ListLayersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLayersInput");
@@ -14809,6 +15597,20 @@ pub struct ListFunctionsByCodeSigningConfigInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Maximum number of items to return.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListFunctionsByCodeSigningConfigInput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Maximum number of items to return.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListFunctionsByCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14835,6 +15637,27 @@ pub struct ListFunctionsInput {
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
     /// even if you set the number higher.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListFunctionsInput {
+    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
+    /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
+    /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+    pub fn master_region(&self) -> std::option::Option<&str> {
+        self.master_region.as_deref()
+    }
+    /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
+    pub fn function_version(&self) -> std::option::Option<&crate::model::FunctionVersion> {
+        self.function_version.as_ref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
+    /// even if you set the number higher.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListFunctionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14876,6 +15699,39 @@ pub struct ListFunctionEventInvokeConfigsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of configurations to return.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListFunctionEventInvokeConfigsInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of configurations to return.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListFunctionEventInvokeConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14942,6 +15798,66 @@ pub struct ListEventSourceMappingsInput {
     /// 100 items in each response, even if you set the number higher.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListEventSourceMappingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A pagination token returned by a previous call.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
+    /// 100 items in each response, even if you set the number higher.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListEventSourceMappingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventSourceMappingsInput");
@@ -14961,6 +15877,16 @@ pub struct ListCodeSigningConfigsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Maximum number of items to return.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListCodeSigningConfigsInput {
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Maximum number of items to return.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListCodeSigningConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15003,6 +15929,43 @@ pub struct ListAliasesInput {
     /// <p>Limit the number of aliases returned.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListAliasesInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a function version to only list aliases that invoke that version.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Limit the number of aliases returned.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAliasesInput");
@@ -15040,6 +16003,35 @@ pub struct InvokeAsyncInput {
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     pub invoke_args: aws_smithy_http::byte_stream::ByteStream,
+}
+impl InvokeAsyncInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
+    pub fn invoke_args(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.invoke_args
+    }
 }
 impl std::fmt::Debug for InvokeAsyncInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15105,6 +16097,70 @@ pub struct InvokeInput {
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl InvokeInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
+    /// the function returns a response or times out. The API response includes the function response and additional
+    /// data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
+    /// function's dead-letter queue (if it's configured). The API response only includes a status code.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
+    /// the function.</p>
+    /// </li>
+    /// </ul>
+    pub fn invocation_type(&self) -> std::option::Option<&crate::model::InvocationType> {
+        self.invocation_type.as_ref()
+    }
+    /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
+    pub fn log_type(&self) -> std::option::Option<&crate::model::LogType> {
+        self.log_type.as_ref()
+    }
+    /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
+    /// object.</p>
+    pub fn client_context(&self) -> std::option::Option<&str> {
+        self.client_context.as_deref()
+    }
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.payload.as_ref()
+    }
+    /// <p>Specify a version or alias to invoke a published version of the function.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for InvokeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeInput");
@@ -15146,6 +16202,35 @@ pub struct GetProvisionedConcurrencyConfigInput {
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl GetProvisionedConcurrencyConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for GetProvisionedConcurrencyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProvisionedConcurrencyConfigInput");
@@ -15183,6 +16268,35 @@ pub struct GetPolicyInput {
     /// <p>Specify a version or alias to get the policy for that resource.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl GetPolicyInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a version or alias to get the policy for that resource.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyInput");
@@ -15201,6 +16315,16 @@ pub struct GetLayerVersionPolicyInput {
     /// <p>The version number.</p>
     pub version_number: i64,
 }
+impl GetLayerVersionPolicyInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+}
 impl std::fmt::Debug for GetLayerVersionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLayerVersionPolicyInput");
@@ -15216,6 +16340,12 @@ impl std::fmt::Debug for GetLayerVersionPolicyInput {
 pub struct GetLayerVersionByArnInput {
     /// <p>The ARN of the layer version.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetLayerVersionByArnInput {
+    /// <p>The ARN of the layer version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLayerVersionByArnInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15233,6 +16363,16 @@ pub struct GetLayerVersionInput {
     pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
+}
+impl GetLayerVersionInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
 }
 impl std::fmt::Debug for GetLayerVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15271,6 +16411,35 @@ pub struct GetFunctionEventInvokeConfigInput {
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl GetFunctionEventInvokeConfigInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFunctionEventInvokeConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionEventInvokeConfigInput");
@@ -15308,6 +16477,35 @@ pub struct GetFunctionConfigurationInput {
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl GetFunctionConfigurationInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a version or alias to get details about a published version of the function.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFunctionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionConfigurationInput");
@@ -15343,6 +16541,31 @@ pub struct GetFunctionConcurrencyInput {
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
+impl GetFunctionConcurrencyInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFunctionConcurrencyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionConcurrencyInput");
@@ -15376,6 +16599,31 @@ pub struct GetFunctionCodeSigningConfigInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
+}
+impl GetFunctionCodeSigningConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFunctionCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15413,6 +16661,35 @@ pub struct GetFunctionInput {
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl GetFunctionInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a version or alias to get details about a published version of the function.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionInput");
@@ -15429,6 +16706,12 @@ pub struct GetEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
 }
+impl GetEventSourceMappingInput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEventSourceMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventSourceMappingInput");
@@ -15443,6 +16726,12 @@ impl std::fmt::Debug for GetEventSourceMappingInput {
 pub struct GetCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
+}
+impl GetCodeSigningConfigInput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15479,6 +16768,35 @@ pub struct GetAliasInput {
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetAliasInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15528,6 +16846,35 @@ pub struct DeleteProvisionedConcurrencyConfigInput {
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl DeleteProvisionedConcurrencyConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProvisionedConcurrencyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProvisionedConcurrencyConfigInput");
@@ -15545,6 +16892,16 @@ pub struct DeleteLayerVersionInput {
     pub layer_name: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
     pub version_number: i64,
+}
+impl DeleteLayerVersionInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
 }
 impl std::fmt::Debug for DeleteLayerVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15583,6 +16940,35 @@ pub struct DeleteFunctionEventInvokeConfigInput {
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl DeleteFunctionEventInvokeConfigInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A version number or alias name.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFunctionEventInvokeConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFunctionEventInvokeConfigInput");
@@ -15618,6 +17004,31 @@ pub struct DeleteFunctionConcurrencyInput {
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
+impl DeleteFunctionConcurrencyInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFunctionConcurrencyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFunctionConcurrencyInput");
@@ -15651,6 +17062,31 @@ pub struct DeleteFunctionCodeSigningConfigInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
+}
+impl DeleteFunctionCodeSigningConfigInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFunctionCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15688,6 +17124,35 @@ pub struct DeleteFunctionInput {
     /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
+impl DeleteFunctionInput {
+    /// <p>The name of the Lambda function or version.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFunctionInput");
@@ -15704,6 +17169,12 @@ pub struct DeleteEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
 }
+impl DeleteEventSourceMappingInput {
+    /// <p>The identifier of the event source mapping.</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventSourceMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventSourceMappingInput");
@@ -15718,6 +17189,12 @@ impl std::fmt::Debug for DeleteEventSourceMappingInput {
 pub struct DeleteCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
+}
+impl DeleteCodeSigningConfigInput {
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15754,6 +17231,35 @@ pub struct DeleteAliasInput {
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteAliasInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15844,6 +17350,128 @@ pub struct CreateFunctionInput {
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
     /// The default value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+}
+impl CreateFunctionInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+        self.runtime.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+    /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
+    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+    /// <p>The code for the function.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::FunctionCode> {
+        self.code.as_ref()
+    }
+    /// <p>A description of the function.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
+    /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
+    /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
+    /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    pub fn memory_size(&self) -> std::option::Option<i32> {
+        self.memory_size
+    }
+    /// <p>Set to true to publish the first version of the function during creation.</p>
+    pub fn publish(&self) -> bool {
+        self.publish
+    }
+    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
+    /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP archive.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
+    /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+        self.dead_letter_config.as_ref()
+    }
+    /// <p>Environment variables that are accessible from function code during execution.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
+    /// variables. If it's not provided, Lambda uses a default service key.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfig> {
+        self.tracing_config.as_ref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
+    /// function.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
+    /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    pub fn layers(&self) -> std::option::Option<&[std::string::String]> {
+        self.layers.as_deref()
+    }
+    /// <p>Connection settings for an Amazon EFS file system.</p>
+    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+        self.file_system_configs.as_deref()
+    }
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+    /// values</a> that override the values in the container image Dockerfile.</p>
+    pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
+        self.image_config.as_ref()
+    }
+    /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
+    /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+        self.code_signing_config_arn.as_deref()
+    }
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+    /// The default value is <code>x86_64</code>.</p>
+    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+        self.architectures.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15985,6 +17613,155 @@ pub struct CreateEventSourceMappingInput {
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
+impl CreateEventSourceMappingInput {
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+    /// <p>Default: True</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
+    /// (6 MB).</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
+    /// </li>
+    /// </ul>
+    pub fn batch_size(&self) -> std::option::Option<i32> {
+        self.batch_size
+    }
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+    /// <p>Default: 0</p>
+    /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_batching_window_in_seconds
+    }
+    /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
+    pub fn parallelization_factor(&self) -> std::option::Option<i32> {
+        self.parallelization_factor
+    }
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+    /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+        self.starting_position.as_ref()
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+    /// reading.</p>
+    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.starting_position_timestamp.as_ref()
+    }
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
+        self.maximum_record_age_in_seconds
+    }
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
+    pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
+        self.bisect_batch_on_function_error
+    }
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
+        self.maximum_retry_attempts
+    }
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
+        self.tumbling_window_in_seconds
+    }
+    /// <p>The name of the Kafka topic.</p>
+    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+        self.topics.as_deref()
+    }
+    /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+        self.queues.as_deref()
+    }
+    /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
+    pub fn source_access_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+        self.source_access_configurations.as_deref()
+    }
+    /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
+    pub fn self_managed_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+        self.self_managed_event_source.as_ref()
+    }
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    pub fn function_response_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+        self.function_response_types.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEventSourceMappingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventSourceMappingInput");
@@ -16039,6 +17816,20 @@ pub struct CreateCodeSigningConfigInput {
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
     pub code_signing_policies: std::option::Option<crate::model::CodeSigningPolicies>,
 }
+impl CreateCodeSigningConfigInput {
+    /// <p>Descriptive name for this code signing configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Signing profiles for this code signing configuration.</p>
+    pub fn allowed_publishers(&self) -> std::option::Option<&crate::model::AllowedPublishers> {
+        self.allowed_publishers.as_ref()
+    }
+    /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
+    pub fn code_signing_policies(&self) -> std::option::Option<&crate::model::CodeSigningPolicies> {
+        self.code_signing_policies.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCodeSigningConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCodeSigningConfigInput");
@@ -16083,6 +17874,48 @@ pub struct CreateAliasInput {
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
     /// configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
+}
+impl CreateAliasInput {
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+    /// characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>The name of the alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>A description of the alias.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
+    /// configuration</a> of the alias.</p>
+    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+        self.routing_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16145,6 +17978,70 @@ pub struct AddPermissionInput {
     /// policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl AddPermissionInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title">
+    /// <b>Name formats</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
+    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
+    /// <code>lambda:GetFunction</code>.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
+    /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
+    /// Amazon SNS topic.</p>
+    /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
+    /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
+    /// by its owner and recreated by another account.</p>
+    pub fn source_account(&self) -> std::option::Option<&str> {
+        self.source_account.as_deref()
+    }
+    /// <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
+    pub fn event_source_token(&self) -> std::option::Option<&str> {
+        self.event_source_token.as_deref()
+    }
+    /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
+    pub fn qualifier(&self) -> std::option::Option<&str> {
+        self.qualifier.as_deref()
+    }
+    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+    /// policy that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AddPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddPermissionInput");
@@ -16184,6 +18081,41 @@ pub struct AddLayerVersionPermissionInput {
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
     /// policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl AddLayerVersionPermissionInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn layer_name(&self) -> std::option::Option<&str> {
+        self.layer_name.as_deref()
+    }
+    /// <p>The version number.</p>
+    pub fn version_number(&self) -> i64 {
+        self.version_number
+    }
+    /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
+    pub fn statement_id(&self) -> std::option::Option<&str> {
+        self.statement_id.as_deref()
+    }
+    /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
+    /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
+    /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
+    /// </p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
+    /// organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
+    /// policy that has changed since you last read it.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddLayerVersionPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

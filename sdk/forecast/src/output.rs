@@ -126,6 +126,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -183,6 +189,17 @@ pub struct ListPredictorsOutput {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
     /// results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPredictorsOutput {
+    /// <p>An array of objects that summarize each predictor's properties.</p>
+    pub fn predictors(&self) -> std::option::Option<&[crate::model::PredictorSummary]> {
+        self.predictors.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
+    /// results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPredictorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -260,6 +277,20 @@ pub struct ListPredictorBacktestExportJobsOutput {
     /// <p>Returns this token if the response is truncated. To retrieve the next
     /// set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPredictorBacktestExportJobsOutput {
+    /// <p>An array of objects that summarize the properties of each predictor backtest export
+    /// job.</p>
+    pub fn predictor_backtest_export_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::PredictorBacktestExportJobSummary]> {
+        self.predictor_backtest_export_jobs.as_deref()
+    }
+    /// <p>Returns this token if the response is truncated. To retrieve the next
+    /// set of results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPredictorBacktestExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -347,6 +378,17 @@ pub struct ListForecastsOutput {
     /// of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListForecastsOutput {
+    /// <p>An array of objects that summarize each forecast's properties.</p>
+    pub fn forecasts(&self) -> std::option::Option<&[crate::model::ForecastSummary]> {
+        self.forecasts.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set
+    /// of results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListForecastsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListForecastsOutput");
@@ -422,6 +464,19 @@ pub struct ListForecastExportJobsOutput {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
     /// results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListForecastExportJobsOutput {
+    /// <p>An array of objects that summarize each export job's properties.</p>
+    pub fn forecast_export_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ForecastExportJobSummary]> {
+        self.forecast_export_jobs.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
+    /// results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListForecastExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -502,6 +557,17 @@ pub struct ListDatasetsOutput {
     /// results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetsOutput {
+    /// <p>An array of objects that summarize each dataset's properties.</p>
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
+        self.datasets.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
+    /// results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsOutput");
@@ -577,6 +643,19 @@ pub struct ListDatasetImportJobsOutput {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
     /// results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasetImportJobsOutput {
+    /// <p>An array of objects that summarize each dataset import job's properties.</p>
+    pub fn dataset_import_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetImportJobSummary]> {
+        self.dataset_import_jobs.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
+    /// results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatasetImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -656,6 +735,17 @@ pub struct ListDatasetGroupsOutput {
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
     /// results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasetGroupsOutput {
+    /// <p>An array of objects that summarize each dataset group's properties.</p>
+    pub fn dataset_groups(&self) -> std::option::Option<&[crate::model::DatasetGroupSummary]> {
+        self.dataset_groups.as_deref()
+    }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of
+    /// results, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatasetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -744,6 +834,31 @@ pub struct GetAccuracyMetricsOutput {
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
+}
+impl GetAccuracyMetricsOutput {
+    /// <p>An array of results from evaluating the predictor.</p>
+    pub fn predictor_evaluation_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::EvaluationResult]> {
+        self.predictor_evaluation_results.as_deref()
+    }
+    /// <note>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+    /// Contact AWS Support or your account manager to learn more about access privileges.
+    /// </p>
+    /// </note>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
+    /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    pub fn auto_ml_override_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoMlOverrideStrategy> {
+        self.auto_ml_override_strategy.as_ref()
+    }
+    /// <p>The accuracy metric used to optimize the predictor.</p>
+    pub fn optimization_metric(&self) -> std::option::Option<&crate::model::OptimizationMetric> {
+        self.optimization_metric.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccuracyMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -920,6 +1035,88 @@ pub struct DescribePredictorBacktestExportJobOutput {
     /// </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribePredictorBacktestExportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<&str> {
+        self.predictor_backtest_export_job_arn.as_deref()
+    }
+    /// <p>The name of the predictor backtest export job.</p>
+    pub fn predictor_backtest_export_job_name(&self) -> std::option::Option<&str> {
+        self.predictor_backtest_export_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>Information about any errors that may have occurred during the backtest export.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The status of the predictor backtest export job. States include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>When the predictor backtest export job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePredictorBacktestExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1297,6 +1494,176 @@ pub struct DescribePredictorOutput {
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
+}
+impl DescribePredictorOutput {
+    /// <p>The ARN of the predictor.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+    /// <p>The name of the predictor.</p>
+    pub fn predictor_name(&self) -> std::option::Option<&str> {
+        self.predictor_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm used for model training.</p>
+    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+        self.algorithm_arn.as_deref()
+    }
+    /// <p>The number of time-steps of the forecast. The forecast horizon is also called the
+    /// prediction length.</p>
+    pub fn forecast_horizon(&self) -> std::option::Option<i32> {
+        self.forecast_horizon
+    }
+    /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+    /// </p>
+    pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.forecast_types.as_deref()
+    }
+    /// <p>Whether the predictor is set to perform AutoML.</p>
+    pub fn perform_auto_ml(&self) -> std::option::Option<bool> {
+        self.perform_auto_ml
+    }
+    /// <note>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+    /// Contact AWS Support or your account manager to learn more about access privileges.
+    /// </p>
+    /// </note>
+    /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
+    /// is specified, the AutoML strategy optimizes predictor accuracy.</p>
+    /// <p>This parameter is only valid for predictors trained using AutoML.</p>
+    pub fn auto_ml_override_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoMlOverrideStrategy> {
+        self.auto_ml_override_strategy.as_ref()
+    }
+    /// <p>Whether the predictor is set to perform hyperparameter optimization (HPO).</p>
+    pub fn perform_hpo(&self) -> std::option::Option<bool> {
+        self.perform_hpo
+    }
+    /// <p>The default training parameters or overrides selected during model training. When running
+    /// AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen
+    /// hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+    pub fn training_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.training_parameters.as_ref()
+    }
+    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
+    /// evaluates a predictor by splitting a dataset into training data and testing data. The
+    /// evaluation parameters define how to perform the split and the number of iterations.</p>
+    pub fn evaluation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::EvaluationParameters> {
+        self.evaluation_parameters.as_ref()
+    }
+    /// <p>The hyperparameter override values for the algorithm.</p>
+    pub fn hpo_config(&self) -> std::option::Option<&crate::model::HyperParameterTuningJobConfig> {
+        self.hpo_config.as_ref()
+    }
+    /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The featurization configuration.</p>
+    pub fn featurization_config(&self) -> std::option::Option<&crate::model::FeaturizationConfig> {
+        self.featurization_config.as_ref()
+    }
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+    /// the key.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
+    /// <p>Details on the the status and results of the backtests performed to evaluate the accuracy
+    /// of the predictor. You specify the number of backtests to perform when you call the  operation.</p>
+    pub fn predictor_execution_details(
+        &self,
+    ) -> std::option::Option<&crate::model::PredictorExecutionDetails> {
+        self.predictor_execution_details.as_ref()
+    }
+    /// <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
+    pub fn estimated_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
+        self.estimated_time_remaining_in_minutes
+    }
+    /// <p>An array of the ARNs of the dataset import jobs used to import training data for the
+    /// predictor.</p>
+    pub fn dataset_import_job_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.dataset_import_job_arns.as_deref()
+    }
+    /// <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen algorithm.</p>
+    pub fn auto_ml_algorithm_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_ml_algorithm_arns.as_deref()
+    }
+    /// <p>The status of the predictor. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
+    /// the predictor to create a forecast.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the model training task was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+    /// <p>The accuracy metric used to optimize the predictor.</p>
+    pub fn optimization_metric(&self) -> std::option::Option<&crate::model::OptimizationMetric> {
+        self.optimization_metric.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePredictorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1931,6 +2298,91 @@ pub struct DescribeForecastExportJobOutput {
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeForecastExportJobOutput {
+    /// <p>The ARN of the forecast export job.</p>
+    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+        self.forecast_export_job_arn.as_deref()
+    }
+    /// <p>The name of the forecast export job.</p>
+    pub fn forecast_export_job_name(&self) -> std::option::Option<&str> {
+        self.forecast_export_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the exported forecast.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The status of the forecast export job. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
+    /// you can access the forecast in your S3 bucket.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>When the forecast export job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeForecastExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeForecastExportJobOutput");
@@ -2255,6 +2707,99 @@ pub struct DescribeForecastOutput {
     /// </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeForecastOutput {
+    /// <p>The forecast ARN as specified in the request.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+    /// <p>The name of the forecast.</p>
+    pub fn forecast_name(&self) -> std::option::Option<&str> {
+        self.forecast_name.as_deref()
+    }
+    /// <p>The quantiles at which probabilistic forecasts were generated.</p>
+    pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.forecast_types.as_deref()
+    }
+    /// <p>The ARN of the predictor used to generate the forecast.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+    /// <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>The estimated time remaining in minutes for the forecast job to complete.</p>
+    pub fn estimated_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
+        self.estimated_time_remaining_in_minutes
+    }
+    /// <p>The status of the forecast. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
+    /// or export the forecast.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the forecast creation task was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2648,6 +3193,138 @@ pub struct DescribeDatasetImportJobOutput {
     /// </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeDatasetImportJobOutput {
+    /// <p>The name of the dataset import job.</p>
+    pub fn dataset_import_job_name(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_name.as_deref()
+    }
+    /// <p>The ARN of the dataset import job.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported
+    /// to.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the
+    /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
+    /// supported</p>
+    /// <ul>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p>
+    /// </li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
+    /// M, W, and D</p>
+    /// </li>
+    /// </ul>
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+        self.timestamp_format.as_deref()
+    }
+    /// <p>The single time zone applied to every item in the dataset</p>
+    pub fn time_zone(&self) -> std::option::Option<&str> {
+        self.time_zone.as_deref()
+    }
+    /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+    /// attribute.</p>
+    pub fn use_geolocation_for_time_zone(&self) -> bool {
+        self.use_geolocation_for_time_zone
+    }
+    /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+    /// <code>"CC_POSTALCODE"</code>.</p>
+    pub fn geolocation_format(&self) -> std::option::Option<&str> {
+        self.geolocation_format.as_deref()
+    }
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
+    /// can assume to access the data.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
+    pub fn estimated_time_remaining_in_minutes(&self) -> std::option::Option<i64> {
+        self.estimated_time_remaining_in_minutes
+    }
+    /// <p>Statistical information about each field in the input data.</p>
+    pub fn field_statistics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::Statistics>,
+    > {
+        self.field_statistics.as_ref()
+    }
+    /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
+    pub fn data_size(&self) -> std::option::Option<f64> {
+        self.data_size
+    }
+    /// <p>The status of the dataset import job. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>When the dataset import job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the
+    /// job:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+    /// failed.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3108,6 +3785,69 @@ pub struct DescribeDatasetGroupOutput {
     /// <code>DescribeDatasetGroup</code> call.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeDatasetGroupOutput {
+    /// <p>The name of the dataset group.</p>
+    pub fn dataset_group_name(&self) -> std::option::Option<&str> {
+        self.dataset_group_name.as_deref()
+    }
+    /// <p>The ARN of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset
+    /// group.</p>
+    pub fn dataset_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.dataset_arns.as_deref()
+    }
+    /// <p>The domain associated with the dataset group.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+    /// <p>The status of the dataset group. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
+    /// <code>UPDATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.</p>
+    /// <note>
+    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can
+    /// use the dataset group to create a predictor.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>When the dataset group was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
+    /// <code>LastModificationTime</code> is the current time of the
+    /// <code>DescribeDatasetGroup</code> call.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetGroupOutput");
@@ -3380,6 +4120,90 @@ pub struct DescribeDatasetOutput {
     /// call. After a <a>CreateDatasetImportJob</a> operation has finished,
     /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeDatasetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The domain associated with the dataset.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+    /// <p>The dataset type.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
+        self.dataset_type.as_ref()
+    }
+    /// <p>The frequency of data collection.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
+    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
+    /// "M" indicates every month and "30min" indicates every 30 minutes.</p>
+    pub fn data_frequency(&self) -> std::option::Option<&str> {
+        self.data_frequency.as_deref()
+    }
+    /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each
+    /// <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+    pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
+        self.schema.as_ref()
+    }
+    /// <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+    /// the key.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
+    /// <p>The status of the dataset. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
+    /// <code>DELETE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>,
+    /// <code>UPDATE_FAILED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to
+    /// the <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset
+    /// import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the
+    /// status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p>
+    /// <note>
+    /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import
+    /// training data.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>When the dataset was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+    /// <code>CreationTime</code>. While data is being imported to the dataset,
+    /// <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code>
+    /// call. After a <a>CreateDatasetImportJob</a> operation has finished,
+    /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modification_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3886,6 +4710,13 @@ pub struct CreatePredictorBacktestExportJobOutput {
     /// export.</p>
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
 }
+impl CreatePredictorBacktestExportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to
+    /// export.</p>
+    pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<&str> {
+        self.predictor_backtest_export_job_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePredictorBacktestExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePredictorBacktestExportJobOutput");
@@ -3945,6 +4776,12 @@ pub struct CreatePredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
 }
+impl CreatePredictorOutput {
+    /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+        self.predictor_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePredictorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePredictorOutput");
@@ -3995,6 +4832,12 @@ impl CreatePredictorOutput {
 pub struct CreateForecastExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the export job.</p>
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateForecastExportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the export job.</p>
+    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+        self.forecast_export_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateForecastExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4047,6 +4890,12 @@ pub struct CreateForecastOutput {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub forecast_arn: std::option::Option<std::string::String>,
 }
+impl CreateForecastOutput {
+    /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+        self.forecast_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateForecastOutput");
@@ -4094,6 +4943,12 @@ impl CreateForecastOutput {
 pub struct CreateDatasetImportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateDatasetImportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4146,6 +5001,12 @@ pub struct CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
+impl CreateDatasetGroupOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetGroupOutput");
@@ -4196,6 +5057,12 @@ impl CreateDatasetGroupOutput {
 pub struct CreateDatasetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
+}
+impl CreateDatasetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -3095,6 +3095,12 @@ pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationException {
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -3176,6 +3182,12 @@ pub struct ResourceNotFoundException {
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// <p>Request references a resource which does not exist.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3259,6 +3271,12 @@ pub struct PendingVerification {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl PendingVerification {
+    /// <p> Your account is pending verification. </p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
+}
 impl std::fmt::Debug for PendingVerification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PendingVerification");
@@ -3340,6 +3358,12 @@ pub struct ConflictException {
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3423,6 +3447,12 @@ pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl AccessDeniedException {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessDeniedException");
@@ -3504,6 +3534,12 @@ pub struct InternalServerException {
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InternalServerException {
+    /// <p>Unexpected error during processing of request.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3587,6 +3623,12 @@ pub struct StreamUnavailable {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl StreamUnavailable {
+    /// <p>The stream is temporarily unavailable.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
+}
 impl std::fmt::Debug for StreamUnavailable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamUnavailable");
@@ -3668,6 +3710,12 @@ pub struct ChannelNotBroadcasting {
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ChannelNotBroadcasting {
+    /// <p>The stream is offline for the given channel ARN.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelNotBroadcasting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3751,6 +3799,12 @@ pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ThrottlingException {
+    /// <p>Request was denied due to request throttling.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");
@@ -3832,6 +3886,12 @@ pub struct ServiceQuotaExceededException {
     pub exception_message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>Request would cause a service quota to be exceeded.</p>
+    pub fn exception_message(&self) -> std::option::Option<&str> {
+        self.exception_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

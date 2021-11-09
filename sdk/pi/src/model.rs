@@ -9,6 +9,16 @@ pub struct MetricKeyDataPoints {
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
     pub data_points: std::option::Option<std::vec::Vec<crate::model::DataPoint>>,
 }
+impl MetricKeyDataPoints {
+    /// <p>The dimension(s) to which the data points apply.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::ResponseResourceMetricKey> {
+        self.key.as_ref()
+    }
+    /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
+    pub fn data_points(&self) -> std::option::Option<&[crate::model::DataPoint]> {
+        self.data_points.as_deref()
+    }
+}
 impl std::fmt::Debug for MetricKeyDataPoints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricKeyDataPoints");
@@ -83,6 +93,16 @@ pub struct DataPoint {
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
     pub value: std::option::Option<f64>,
+}
+impl DataPoint {
+    /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
 }
 impl std::fmt::Debug for DataPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -168,6 +188,37 @@ pub struct ResponseResourceMetricKey {
     /// <p>The valid dimensions for the metric.</p>
     pub dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ResponseResourceMetricKey {
+    /// <p>The name of a Performance Insights metric to be measured.</p>
+    /// <p>Valid values for <code>Metric</code> are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db.load.avg</code> - a scaled representation of the number of active sessions
+    /// for the database engine.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sampledload.avg</code> - the raw number of active sessions for the
+    /// database engine.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code>
+    /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
+    /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
+    /// For most use cases, you can query <code>db.load.avg</code> only. </p>
+    pub fn metric(&self) -> std::option::Option<&str> {
+        self.metric.as_deref()
+    }
+    /// <p>The valid dimensions for the metric.</p>
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.dimensions.as_ref()
+    }
 }
 impl std::fmt::Debug for ResponseResourceMetricKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -319,6 +370,52 @@ pub struct MetricQuery {
     /// </ul>
     pub filter:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl MetricQuery {
+    /// <p>The name of a Performance Insights metric to be measured.</p>
+    /// <p>Valid values for <code>Metric</code> are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db.load.avg</code> - a scaled representation of the number of active sessions
+    /// for the database engine.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sampledload.avg</code> - the raw number of active sessions for the
+    /// database engine.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code>
+    /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
+    /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
+    /// For most use cases, you can query <code>db.load.avg</code> only. </p>
+    pub fn metric(&self) -> std::option::Option<&str> {
+        self.metric.as_deref()
+    }
+    /// <p>A specification for how to aggregate the data points from a query result. You must
+    /// specify a valid dimension group.  Performance Insights will return all of the dimensions within that group,
+    /// unless you provide the names of specific dimensions within that group. You can also request
+    /// that Performance Insights return a limited number of values for a dimension.</p>
+    pub fn group_by(&self) -> std::option::Option<&crate::model::DimensionGroup> {
+        self.group_by.as_ref()
+    }
+    /// <p>One or more filters to apply in the request.  Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p>
+    /// </li>
+    /// <li>
+    /// <p>A single filter for any other dimension in this dimension group.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for MetricQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -601,6 +698,139 @@ pub struct DimensionGroup {
     pub dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub limit: std::option::Option<i32>,
+}
+impl DimensionGroup {
+    /// <p>The name of the dimension group.  Valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, RDS
+    /// PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.application</code> - The name of the application that is connected to the database (only Aurora
+    /// PostgreSQL and RDS PostgreSQL)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.host</code> - The host name of the connected client (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql</code> - The SQL that is currently executing (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql_tokenized</code> - The SQL digest (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.wait_event</code> - The event for which the database backend is waiting  (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.user</code> - The user logged in to the database (all engines)</p>
+    /// </li>
+    /// </ul>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>A list of specific dimensions from a dimension group. If this parameter is not present,
+    /// then it signifies that all of the dimensions in the group were requested, or are present in
+    /// the response.</p>
+    /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db.application.name</code> - The name of the application that is connected to the database (only
+    /// Aurora PostgreSQL and RDS PostgreSQL)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.host.name</code> - The host name of the connected client (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.name</code> - The name of the database to which the client is connected (only Aurora
+    /// PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql.tokenized_id</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all
+    /// engines)</p>
+    /// </li>
+    /// </ul>
+    pub fn dimensions(&self) -> std::option::Option<&[std::string::String]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The maximum number of items to fetch for this dimension group.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for DimensionGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -996,6 +1226,38 @@ pub struct DimensionKeyDetail {
     /// </ul>
     pub status: std::option::Option<crate::model::DetailStatus>,
 }
+impl DimensionKeyDetail {
+    /// <p>The value of the dimension detail data. For the <code>db.sql.statement</code> dimension, this value is either the
+    /// full or truncated SQL query, depending on the return status.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The full name of the dimension. The full name includes the group name and key name. The only valid value is
+    /// <code>db.sql.statement</code>. </p>
+    pub fn dimension(&self) -> std::option::Option<&str> {
+        self.dimension.as_deref()
+    }
+    /// <p>The status of the dimension detail data. Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is
+    /// required. If the requested detail data for <code>db.sql.statement</code> has the status <code>PROCESSING</code>,
+    /// Performance Insights returns the truncated query.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetailStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DimensionKeyDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DimensionKeyDetail");
@@ -1174,6 +1436,23 @@ pub struct DimensionKeyDescription {
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
     pub partitions: std::option::Option<std::vec::Vec<f64>>,
 }
+impl DimensionKeyDescription {
+    /// <p>A map of name-value pairs for the dimensions in the group.</p>
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.dimensions.as_ref()
+    }
+    /// <p>The aggregated metric value for the dimension(s), over the requested time range.</p>
+    pub fn total(&self) -> std::option::Option<f64> {
+        self.total
+    }
+    /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
+    pub fn partitions(&self) -> std::option::Option<&[f64]> {
+        self.partitions.as_deref()
+    }
+}
 impl std::fmt::Debug for DimensionKeyDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DimensionKeyDescription");
@@ -1273,6 +1552,15 @@ pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimension(s) for this partition.</p>
     pub dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ResponsePartitionKey {
+    /// <p>A dimension map that contains the dimension(s) for this partition.</p>
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.dimensions.as_ref()
+    }
 }
 impl std::fmt::Debug for ResponsePartitionKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

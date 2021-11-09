@@ -69,6 +69,17 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>
+    /// The tags of the Elastic Inference Accelerator.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -137,6 +148,14 @@ pub struct DescribeAcceleratorTypesOutput {
     /// The available accelerator types.
     /// </p>
     pub accelerator_types: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
+}
+impl DescribeAcceleratorTypesOutput {
+    /// <p>
+    /// The available accelerator types.
+    /// </p>
+    pub fn accelerator_types(&self) -> std::option::Option<&[crate::model::AcceleratorType]> {
+        self.accelerator_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAcceleratorTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -209,6 +228,22 @@ pub struct DescribeAcceleratorsOutput {
     /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAcceleratorsOutput {
+    /// <p>
+    /// The details of the Elastic Inference Accelerators.
+    /// </p>
+    pub fn accelerator_set(
+        &self,
+    ) -> std::option::Option<&[crate::model::ElasticInferenceAccelerator]> {
+        self.accelerator_set.as_deref()
+    }
+    /// <p>
+    /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAcceleratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -294,6 +329,16 @@ pub struct DescribeAcceleratorOfferingsOutput {
     /// </p>
     pub accelerator_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,
+}
+impl DescribeAcceleratorOfferingsOutput {
+    /// <p>
+    /// The list of accelerator type offerings for a specific location.
+    /// </p>
+    pub fn accelerator_type_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AcceleratorTypeOffering]> {
+        self.accelerator_type_offerings.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAcceleratorOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

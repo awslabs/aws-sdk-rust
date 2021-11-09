@@ -10,6 +10,14 @@ pub struct UpdateProjectOutput {
     /// </p>
     pub details: std::option::Option<crate::model::ProjectDetails>,
 }
+impl UpdateProjectOutput {
+    /// <p>
+    /// Detailed information about the updated AWS Mobile Hub project.
+    /// </p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ProjectDetails> {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectOutput");
@@ -74,6 +82,22 @@ pub struct ListProjectsOutput {
     /// value in here in another request to list more entries.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectsOutput {
+    /// <p>
+    /// List of projects.
+    /// </p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+        self.projects.as_deref()
+    }
+    /// <p>
+    /// Pagination token. Set to null to start listing records from start.
+    /// If non-null pagination token is returned in a result, then pass its
+    /// value in here in another request to list more entries.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -165,6 +189,21 @@ pub struct ListBundlesOutput {
     /// then pass its value in another request to fetch more entries.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBundlesOutput {
+    /// <p>
+    /// A list of bundles.
+    /// </p>
+    pub fn bundle_list(&self) -> std::option::Option<&[crate::model::BundleDetails]> {
+        self.bundle_list.as_deref()
+    }
+    /// <p>
+    /// Pagination token. If non-null pagination token is returned in a result,
+    /// then pass its value in another request to fetch more entries.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBundlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -263,6 +302,32 @@ pub struct ExportProjectOutput {
     /// snapshot identifier is included in the share URL.
     /// </p>
     pub snapshot_id: std::option::Option<std::string::String>,
+}
+impl ExportProjectOutput {
+    /// <p>
+    /// URL which can be used to download the exported project configuation file(s).
+    /// </p>
+    pub fn download_url(&self) -> std::option::Option<&str> {
+        self.download_url.as_deref()
+    }
+    /// <p>
+    /// URL which can be shared to allow other AWS users to create their own project
+    /// in AWS Mobile Hub with the same configuration as the specified project. This
+    /// URL pertains to a snapshot in time of the project configuration that is created
+    /// when this API is called. If you want to share additional changes to your project
+    /// configuration, then you will need to create and share a new snapshot by calling
+    /// this method again.
+    /// </p>
+    pub fn share_url(&self) -> std::option::Option<&str> {
+        self.share_url.as_deref()
+    }
+    /// <p>
+    /// Unique identifier for the exported snapshot of the project configuration. This
+    /// snapshot identifier is included in the share URL.
+    /// </p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -370,6 +435,16 @@ pub struct ExportBundleOutput {
     /// </p>
     pub download_url: std::option::Option<std::string::String>,
 }
+impl ExportBundleOutput {
+    /// <p>
+    /// URL which contains the custom-generated SDK and tool packages used
+    /// to integrate the client mobile app or web app with the AWS resources
+    /// created by the AWS Mobile Hub project.
+    /// </p>
+    pub fn download_url(&self) -> std::option::Option<&str> {
+        self.download_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportBundleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportBundleOutput");
@@ -430,6 +505,14 @@ pub struct DescribeProjectOutput {
     /// </p>
     pub details: std::option::Option<crate::model::ProjectDetails>,
 }
+impl DescribeProjectOutput {
+    /// <p>
+    /// Detailed information about an AWS Mobile Hub project.
+    /// </p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ProjectDetails> {
+        self.details.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectOutput");
@@ -488,6 +571,14 @@ pub struct DescribeBundleOutput {
     /// The details of the bundle.
     /// </p>
     pub details: std::option::Option<crate::model::BundleDetails>,
+}
+impl DescribeBundleOutput {
+    /// <p>
+    /// The details of the bundle.
+    /// </p>
+    pub fn details(&self) -> std::option::Option<&crate::model::BundleDetails> {
+        self.details.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeBundleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -552,6 +643,21 @@ pub struct DeleteProjectOutput {
     /// important data or files.
     /// </p>
     pub orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+}
+impl DeleteProjectOutput {
+    /// <p>
+    /// Resources which were deleted.
+    /// </p>
+    pub fn deleted_resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.deleted_resources.as_deref()
+    }
+    /// <p>
+    /// Resources which were not deleted, due to a risk of losing potentially
+    /// important data or files.
+    /// </p>
+    pub fn orphaned_resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.orphaned_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -645,6 +751,14 @@ pub struct CreateProjectOutput {
     /// Detailed information about the created AWS Mobile Hub project.
     /// </p>
     pub details: std::option::Option<crate::model::ProjectDetails>,
+}
+impl CreateProjectOutput {
+    /// <p>
+    /// Detailed information about the created AWS Mobile Hub project.
+    /// </p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ProjectDetails> {
+        self.details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

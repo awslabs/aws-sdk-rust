@@ -24,6 +24,36 @@ pub struct CostCategorySplitChargeRule {
     pub parameters:
         std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
 }
+impl CostCategorySplitChargeRule {
+    /// <p>The Cost Category value that you want to split. That value can't be used as a source
+    /// or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The Cost Category values that you want to split costs across. These values can't be
+    /// used as a source in other split charge rules. </p>
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.targets.as_deref()
+    }
+    /// <p>The method that's used to define how to split your source costs across your targets. </p>
+    /// <p>
+    /// <code>Proportional</code> - Allocates charges across your targets based on the
+    /// proportional weighted cost of each target.</p>
+    /// <p>
+    /// <code>Fixed</code> - Allocates charges across your targets based on your defined
+    /// allocation percentage.</p>
+    /// <p>><code>Even</code> - Allocates costs evenly across all targets.</p>
+    pub fn method(&self) -> std::option::Option<&crate::model::CostCategorySplitChargeMethod> {
+        self.method.as_ref()
+    }
+    /// <p>The parameters for a split charge method. This is only required for the
+    /// <code>FIXED</code> method. </p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::CostCategorySplitChargeRuleParameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for CostCategorySplitChargeRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostCategorySplitChargeRule");
@@ -159,6 +189,18 @@ pub struct CostCategorySplitChargeRuleParameter {
     pub r#type: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
     /// <p>The parameter values. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CostCategorySplitChargeRuleParameter {
+    /// <p>The parameter type. </p>
+    pub fn r#type(
+        &self,
+    ) -> std::option::Option<&crate::model::CostCategorySplitChargeRuleParameterType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The parameter values. </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for CostCategorySplitChargeRuleParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -379,6 +421,47 @@ pub struct CostCategoryRule {
     /// use.</p>
     pub r#type: std::option::Option<crate::model::CostCategoryRuleType>,
 }
+impl CostCategoryRule {
+    /// <p>The
+    /// default value for the cost category.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+    /// object used to categorize costs. This supports dimensions, tags, and nested expressions.
+    /// Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>,
+    /// <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
+    /// <code>LINKED_ACCOUNT_NAME</code>.</p>
+    /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate
+    /// rule instead.</p>
+    /// <p>
+    /// <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also
+    /// supported for Cost Category expressions. This dimension uses different terms, depending
+    /// on whether you're using the console or API/JSON editor. For a detailed comparison, see
+    /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User
+    /// Guide</i>.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Expression> {
+        self.rule.as_ref()
+    }
+    /// <p>The value the line item is categorized as if the line item contains the matched
+    /// dimension.</p>
+    pub fn inherited_value(
+        &self,
+    ) -> std::option::Option<&crate::model::CostCategoryInheritedValueDimension> {
+        self.inherited_value.as_ref()
+    }
+    /// <p>You can define the <code>CostCategoryRule</code> rule type as either
+    /// <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
+    /// <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule that
+    /// dynamically inherits the cost category value from the dimension value defined by
+    /// <code>CostCategoryInheritedValueDimension</code>. For example, if you want to
+    /// dynamically group costs based on the value of a specific tag key, first choose an
+    /// inherited value rule type, then choose the tag dimension and specify the tag key to
+    /// use.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CostCategoryRuleType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CostCategoryRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostCategoryRule");
@@ -585,6 +668,21 @@ pub struct CostCategoryInheritedValueDimension {
     /// <p>The key to extract cost category values.</p>
     pub dimension_key: std::option::Option<std::string::String>,
 }
+impl CostCategoryInheritedValueDimension {
+    /// <p>The name of the dimension that's used to group costs.</p>
+    /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on
+    /// account name. If you specify <code>TAG</code>, the cost category value will be based on
+    /// the value of the specified tag key.</p>
+    pub fn dimension_name(
+        &self,
+    ) -> std::option::Option<&crate::model::CostCategoryInheritedValueDimensionName> {
+        self.dimension_name.as_ref()
+    }
+    /// <p>The key to extract cost category values.</p>
+    pub fn dimension_key(&self) -> std::option::Option<&str> {
+        self.dimension_key.as_deref()
+    }
+}
 impl std::fmt::Debug for CostCategoryInheritedValueDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostCategoryInheritedValueDimension");
@@ -781,6 +879,32 @@ pub struct Expression {
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub cost_categories: std::option::Option<crate::model::CostCategoryValues>,
 }
+impl Expression {
+    /// <p>Return results that match either <code>Dimension</code> object.</p>
+    pub fn or(&self) -> std::option::Option<&[crate::model::Expression]> {
+        self.or.as_deref()
+    }
+    /// <p>Return results that match both <code>Dimension</code> objects.</p>
+    pub fn and(&self) -> std::option::Option<&[crate::model::Expression]> {
+        self.and.as_deref()
+    }
+    /// <p>Return results that don't match a <code>Dimension</code> object.</p>
+    pub fn not(&self) -> std::option::Option<&crate::model::Expression> {
+        self.not.as_deref()
+    }
+    /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::DimensionValues> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&crate::model::TagValues> {
+        self.tags.as_ref()
+    }
+    /// <p>The filter that's based on <code>CostCategory</code> values.</p>
+    pub fn cost_categories(&self) -> std::option::Option<&crate::model::CostCategoryValues> {
+        self.cost_categories.as_ref()
+    }
+}
 impl std::fmt::Debug for Expression {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Expression");
@@ -934,6 +1058,23 @@ pub struct CostCategoryValues {
     /// <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
     /// </p>
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
+}
+impl CostCategoryValues {
+    /// <p>The unique name of the Cost Category.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The specific value of the Cost Category.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The match options that you can use to filter your results. MatchOptions is only
+    /// applicable for actions related to cost category. The default values for
+    /// <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+    /// </p>
+    pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
+        self.match_options.as_deref()
+    }
 }
 impl std::fmt::Debug for CostCategoryValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1130,6 +1271,23 @@ pub struct TagValues {
     /// <code>CASE_SENSITIVE</code>.</p>
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
 }
+impl TagValues {
+    /// <p>The key for the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The specific value of the tag.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The match options that you can use to filter your results. <code>MatchOptions</code>
+    /// is only applicable for actions related to Cost Category. The default values for
+    /// <code>MatchOptions</code> are <code>EQUALS</code> and
+    /// <code>CASE_SENSITIVE</code>.</p>
+    pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
+        self.match_options.as_deref()
+    }
+}
 impl std::fmt::Debug for TagValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagValues");
@@ -1237,6 +1395,25 @@ pub struct DimensionValues {
     /// <code>MatchOptions</code> are <code>EQUALS</code> and
     /// <code>CASE_SENSITIVE</code>.</p>
     pub match_options: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
+}
+impl DimensionValues {
+    /// <p>The names of the metadata types that you can use to filter and group your results. For
+    /// example, <code>AZ</code> returns a list of Availability Zones.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::Dimension> {
+        self.key.as_ref()
+    }
+    /// <p>The metadata values that you can use to filter and group your results. You can use
+    /// <code>GetDimensionValues</code> to find specific values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The match options that you can use to filter your results. <code>MatchOptions</code>
+    /// is only applicable for actions related to Cost Category. The default values for
+    /// <code>MatchOptions</code> are <code>EQUALS</code> and
+    /// <code>CASE_SENSITIVE</code>.</p>
+    pub fn match_options(&self) -> std::option::Option<&[crate::model::MatchOption]> {
+        self.match_options.as_deref()
+    }
 }
 impl std::fmt::Debug for DimensionValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1599,6 +1776,21 @@ pub struct Subscriber {
     /// <p>Indicates if the subscriber accepts the notifications. </p>
     pub status: std::option::Option<crate::model::SubscriberStatus>,
 }
+impl Subscriber {
+    /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
+    /// <code>Type</code>. </p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The notification delivery channel. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SubscriberType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Indicates if the subscriber accepts the notifications. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SubscriberStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for Subscriber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subscriber");
@@ -1929,6 +2121,44 @@ pub struct CostCategoryReference {
     /// default value for the cost category.</p>
     pub default_value: std::option::Option<std::string::String>,
 }
+impl CostCategoryReference {
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+        self.cost_category_arn.as_deref()
+    }
+    /// <p>The unique name of the Cost Category.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Cost Category's effective start date.</p>
+    pub fn effective_start(&self) -> std::option::Option<&str> {
+        self.effective_start.as_deref()
+    }
+    /// <p>The Cost Category's effective end date.</p>
+    pub fn effective_end(&self) -> std::option::Option<&str> {
+        self.effective_end.as_deref()
+    }
+    /// <p>The number of rules that are associated with a specific Cost Category. </p>
+    pub fn number_of_rules(&self) -> i32 {
+        self.number_of_rules
+    }
+    /// <p>The list of processing statuses for Cost Management products for a specific cost
+    /// category. </p>
+    pub fn processing_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::CostCategoryProcessingStatus]> {
+        self.processing_status.as_deref()
+    }
+    /// <p>A list of unique cost category values in a specific cost category. </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The
+    /// default value for the cost category.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+}
 impl std::fmt::Debug for CostCategoryReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostCategoryReference");
@@ -2109,6 +2339,16 @@ pub struct CostCategoryProcessingStatus {
     /// <p>The process status for a specific cost category. </p>
     pub status: std::option::Option<crate::model::CostCategoryStatus>,
 }
+impl CostCategoryProcessingStatus {
+    /// <p>The Cost Management product name of the applied status. </p>
+    pub fn component(&self) -> std::option::Option<&crate::model::CostCategoryStatusComponent> {
+        self.component.as_ref()
+    }
+    /// <p>The process status for a specific cost category. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CostCategoryStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for CostCategoryProcessingStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostCategoryProcessingStatus");
@@ -2288,6 +2528,24 @@ pub struct ForecastResult {
     /// <p>The upper limit for the prediction interval. </p>
     pub prediction_interval_upper_bound: std::option::Option<std::string::String>,
 }
+impl ForecastResult {
+    /// <p>The period of time that the forecast covers.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
+    /// <p>The mean value of the forecast.</p>
+    pub fn mean_value(&self) -> std::option::Option<&str> {
+        self.mean_value.as_deref()
+    }
+    /// <p>The lower limit for the prediction interval. </p>
+    pub fn prediction_interval_lower_bound(&self) -> std::option::Option<&str> {
+        self.prediction_interval_lower_bound.as_deref()
+    }
+    /// <p>The upper limit for the prediction interval. </p>
+    pub fn prediction_interval_upper_bound(&self) -> std::option::Option<&str> {
+        self.prediction_interval_upper_bound.as_deref()
+    }
+}
 impl std::fmt::Debug for ForecastResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForecastResult");
@@ -2403,6 +2661,21 @@ pub struct DateInterval {
     /// usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub end: std::option::Option<std::string::String>,
 }
+impl DateInterval {
+    /// <p>The beginning of the time period. The start date is inclusive. For example, if
+    /// <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and
+    /// usage data starting at <code>2017-01-01</code> up to the end date. The start date must
+    /// be equal to or no later than the current date to avoid a validation error.</p>
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// <p>The end of the time period. The end date is exclusive. For example, if
+    /// <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and
+    /// usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+}
 impl std::fmt::Debug for DateInterval {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DateInterval");
@@ -2475,6 +2748,16 @@ pub struct MetricValue {
     pub amount: std::option::Option<std::string::String>,
     /// <p>The unit that the metric is given in.</p>
     pub unit: std::option::Option<std::string::String>,
+}
+impl MetricValue {
+    /// <p>The actual number that represents the metric.</p>
+    pub fn amount(&self) -> std::option::Option<&str> {
+        self.amount.as_deref()
+    }
+    /// <p>The unit that the metric is given in.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2681,6 +2964,16 @@ pub struct SortDefinition {
     /// <p>The order that's used to sort the data.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl SortDefinition {
+    /// <p>The key that's used to sort the data.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The order that's used to sort the data.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for SortDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SortDefinition");
@@ -2808,6 +3101,26 @@ pub struct SavingsPlansUtilizationAggregates {
     /// upfront and recurring Savings Plans fees.</p>
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
 }
+impl SavingsPlansUtilizationAggregates {
+    /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads
+    /// that are Savings Plans eligible.</p>
+    pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
+        self.utilization.as_ref()
+    }
+    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings
+    /// from Savings Plans, as well as the <code>onDemandCostEquivalent</code> of the Savings
+    /// Plans when considering the utilization rate.</p>
+    pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
+        self.savings.as_ref()
+    }
+    /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the
+    /// upfront and recurring Savings Plans fees.</p>
+    pub fn amortized_commitment(
+        &self,
+    ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
+        self.amortized_commitment.as_ref()
+    }
+}
 impl std::fmt::Debug for SavingsPlansUtilizationAggregates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlansUtilizationAggregates");
@@ -2910,6 +3223,23 @@ pub struct SavingsPlansAmortizedCommitment {
     /// <p>The total amortized amount of your Savings Plans commitment, regardless of your
     /// Savings Plans purchase method. </p>
     pub total_amortized_commitment: std::option::Option<std::string::String>,
+}
+impl SavingsPlansAmortizedCommitment {
+    /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a
+    /// <code>Partial</code> or a <code>NoUpfront</code>.</p>
+    pub fn amortized_recurring_commitment(&self) -> std::option::Option<&str> {
+        self.amortized_recurring_commitment.as_deref()
+    }
+    /// <p>The amortized amount of your Savings Plans commitment that was purchased with an
+    /// <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
+    pub fn amortized_upfront_commitment(&self) -> std::option::Option<&str> {
+        self.amortized_upfront_commitment.as_deref()
+    }
+    /// <p>The total amortized amount of your Savings Plans commitment, regardless of your
+    /// Savings Plans purchase method. </p>
+    pub fn total_amortized_commitment(&self) -> std::option::Option<&str> {
+        self.total_amortized_commitment.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansAmortizedCommitment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3020,6 +3350,18 @@ pub struct SavingsPlansSavings {
     /// rate.</p>
     pub on_demand_cost_equivalent: std::option::Option<std::string::String>,
 }
+impl SavingsPlansSavings {
+    /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings
+    /// Plans, when compared to the On-Demand equivalent of the same usage.</p>
+    pub fn net_savings(&self) -> std::option::Option<&str> {
+        self.net_savings.as_deref()
+    }
+    /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand
+    /// rate.</p>
+    pub fn on_demand_cost_equivalent(&self) -> std::option::Option<&str> {
+        self.on_demand_cost_equivalent.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlansSavings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlansSavings");
@@ -3097,6 +3439,28 @@ pub struct SavingsPlansUtilization {
     /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code>
     /// for your Savings Plans.</p>
     pub utilization_percentage: std::option::Option<std::string::String>,
+}
+impl SavingsPlansUtilization {
+    /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or
+    /// set of accounts).</p>
+    pub fn total_commitment(&self) -> std::option::Option<&str> {
+        self.total_commitment.as_deref()
+    }
+    /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans
+    /// eligible usage in a specific period.</p>
+    pub fn used_commitment(&self) -> std::option::Option<&str> {
+        self.used_commitment.as_deref()
+    }
+    /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans
+    /// eligible usage in a specific period.</p>
+    pub fn unused_commitment(&self) -> std::option::Option<&str> {
+        self.unused_commitment.as_deref()
+    }
+    /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code>
+    /// for your Savings Plans.</p>
+    pub fn utilization_percentage(&self) -> std::option::Option<&str> {
+        self.utilization_percentage.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3219,6 +3583,37 @@ pub struct SavingsPlansUtilizationDetail {
     /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront
     /// and recurring Savings Plans fees.</p>
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
+}
+impl SavingsPlansUtilizationDetail {
+    /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
+    pub fn savings_plan_arn(&self) -> std::option::Option<&str> {
+        self.savings_plan_arn.as_deref()
+    }
+    /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads
+    /// that are Savings Plans eligible.</p>
+    pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
+        self.utilization.as_ref()
+    }
+    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings
+    /// from savings plans as well as the <code>onDemandCostEquivalent</code> of the Savings
+    /// Plans when considering the utilization rate.</p>
+    pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
+        self.savings.as_ref()
+    }
+    /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront
+    /// and recurring Savings Plans fees.</p>
+    pub fn amortized_commitment(
+        &self,
+    ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
+        self.amortized_commitment.as_ref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansUtilizationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3439,6 +3834,30 @@ pub struct SavingsPlansUtilizationByTime {
     /// upfront and recurring Savings Plans fees.</p>
     pub amortized_commitment: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
 }
+impl SavingsPlansUtilizationByTime {
+    /// <p>The time period of the request. </p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
+    /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads
+    /// that are Savings Plans eligible.</p>
+    pub fn utilization(&self) -> std::option::Option<&crate::model::SavingsPlansUtilization> {
+        self.utilization.as_ref()
+    }
+    /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings
+    /// from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings
+    /// Plans when considering the utilization rate.</p>
+    pub fn savings(&self) -> std::option::Option<&crate::model::SavingsPlansSavings> {
+        self.savings.as_ref()
+    }
+    /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the
+    /// upfront and recurring Savings Plans fees.</p>
+    pub fn amortized_commitment(
+        &self,
+    ) -> std::option::Option<&crate::model::SavingsPlansAmortizedCommitment> {
+        self.amortized_commitment.as_ref()
+    }
+}
 impl std::fmt::Debug for SavingsPlansUtilizationByTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlansUtilizationByTime");
@@ -3569,6 +3988,50 @@ pub struct SavingsPlansPurchaseRecommendation {
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
     pub savings_plans_purchase_recommendation_summary:
         std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
+}
+impl SavingsPlansPurchaseRecommendation {
+    /// <p>The account scope that you want your recommendations for. Amazon Web Services
+    /// calculates recommendations that include the management account and member accounts if
+    /// the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+    /// recommendations are calculated for individual member accounts only.</p>
+    pub fn account_scope(&self) -> std::option::Option<&crate::model::AccountScope> {
+        self.account_scope.as_ref()
+    }
+    /// <p>The requested Savings Plans recommendation type.</p>
+    pub fn savings_plans_type(
+        &self,
+    ) -> std::option::Option<&crate::model::SupportedSavingsPlansType> {
+        self.savings_plans_type.as_ref()
+    }
+    /// <p>The Savings Plans recommendation term in years. It's used to generate the
+    /// recommendation.</p>
+    pub fn term_in_years(&self) -> std::option::Option<&crate::model::TermInYears> {
+        self.term_in_years.as_ref()
+    }
+    /// <p>The payment option used to generate the recommendation.</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The lookback period in days, used to generate the recommendation.</p>
+    pub fn lookback_period_in_days(
+        &self,
+    ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
+        self.lookback_period_in_days.as_ref()
+    }
+    /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings
+    /// Plans eligible workloads.</p>
+    pub fn savings_plans_purchase_recommendation_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::SavingsPlansPurchaseRecommendationDetail]> {
+        self.savings_plans_purchase_recommendation_details
+            .as_deref()
+    }
+    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    pub fn savings_plans_purchase_recommendation_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::SavingsPlansPurchaseRecommendationSummary> {
+        self.savings_plans_purchase_recommendation_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansPurchaseRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3791,6 +4254,65 @@ pub struct SavingsPlansPurchaseRecommendationSummary {
     /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's
     /// based on your usage of the selected time period and the Savings Plans you own. </p>
     pub estimated_on_demand_cost_with_current_commitment: std::option::Option<std::string::String>,
+}
+impl SavingsPlansPurchaseRecommendationSummary {
+    /// <p>The estimated return on investment that's based on the recommended Savings Plans and
+    /// estimated savings.</p>
+    pub fn estimated_roi(&self) -> std::option::Option<&str> {
+        self.estimated_roi.as_deref()
+    }
+    /// <p>The currency code that Amazon Web Services used to generate the recommendations and
+    /// present potential savings.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans.
+    /// This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand
+    /// usage.</p>
+    pub fn estimated_total_cost(&self) -> std::option::Option<&str> {
+        self.estimated_total_cost.as_deref()
+    }
+    /// <p>The current total on demand spend of the applicable usage types over the lookback
+    /// period.</p>
+    pub fn current_on_demand_spend(&self) -> std::option::Option<&str> {
+        self.current_on_demand_spend.as_deref()
+    }
+    /// <p>The estimated total savings over the lookback period, based on the purchase of the
+    /// recommended Savings Plans.</p>
+    pub fn estimated_savings_amount(&self) -> std::option::Option<&str> {
+        self.estimated_savings_amount.as_deref()
+    }
+    /// <p>The aggregate number of Savings Plans recommendations that exist for your
+    /// account.</p>
+    pub fn total_recommendation_count(&self) -> std::option::Option<&str> {
+        self.total_recommendation_count.as_deref()
+    }
+    /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
+    pub fn daily_commitment_to_purchase(&self) -> std::option::Option<&str> {
+        self.daily_commitment_to_purchase.as_deref()
+    }
+    /// <p>The recommended hourly commitment that's based on the recommendation
+    /// parameters.</p>
+    pub fn hourly_commitment_to_purchase(&self) -> std::option::Option<&str> {
+        self.hourly_commitment_to_purchase.as_deref()
+    }
+    /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback
+    /// period. This is calculated as <code>estimatedSavingsAmount</code>/
+    /// <code>CurrentOnDemandSpend</code>*100.</p>
+    pub fn estimated_savings_percentage(&self) -> std::option::Option<&str> {
+        self.estimated_savings_percentage.as_deref()
+    }
+    /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans
+    /// purchase.</p>
+    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_savings_amount.as_deref()
+    }
+    /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's
+    /// based on your usage of the selected time period and the Savings Plans you own. </p>
+    pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
+        self.estimated_on_demand_cost_with_current_commitment
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansPurchaseRecommendationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4104,6 +4626,86 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable
     /// usage type.</p>
     pub current_average_hourly_on_demand_spend: std::option::Option<std::string::String>,
+}
+impl SavingsPlansPurchaseRecommendationDetail {
+    /// <p>Details for your recommended Savings Plans.</p>
+    pub fn savings_plans_details(&self) -> std::option::Option<&crate::model::SavingsPlansDetails> {
+        self.savings_plans_details.as_ref()
+    }
+    /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment
+    /// option.</p>
+    pub fn upfront_cost(&self) -> std::option::Option<&str> {
+        self.upfront_cost.as_deref()
+    }
+    /// <p>The estimated return on investment that's based on the recommended Savings Plans that
+    /// you purchased. This is calculated as <code>estimatedSavingsAmount</code>/
+    /// <code>estimatedSPCost</code>*100.</p>
+    pub fn estimated_roi(&self) -> std::option::Option<&str> {
+        self.estimated_roi.as_deref()
+    }
+    /// <p>The currency code that Amazon Web Services used to generate the recommendations and
+    /// present potential savings.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>The cost of the recommended Savings Plans over the length of the lookback
+    /// period.</p>
+    pub fn estimated_sp_cost(&self) -> std::option::Option<&str> {
+        self.estimated_sp_cost.as_deref()
+    }
+    /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings
+    /// Plans, over the length of the lookback period.</p>
+    pub fn estimated_on_demand_cost(&self) -> std::option::Option<&str> {
+        self.estimated_on_demand_cost.as_deref()
+    }
+    /// <p> The estimated On-Demand costs you would expect with no additional commitment, based
+    /// on your usage of the selected time period and the Savings Plans you own. </p>
+    pub fn estimated_on_demand_cost_with_current_commitment(&self) -> std::option::Option<&str> {
+        self.estimated_on_demand_cost_with_current_commitment
+            .as_deref()
+    }
+    /// <p>The estimated savings amount that's based on the recommended Savings Plans over the
+    /// length of the lookback period.</p>
+    pub fn estimated_savings_amount(&self) -> std::option::Option<&str> {
+        self.estimated_savings_amount.as_deref()
+    }
+    /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand
+    /// usage over the lookback period.</p>
+    pub fn estimated_savings_percentage(&self) -> std::option::Option<&str> {
+        self.estimated_savings_percentage.as_deref()
+    }
+    /// <p>The recommended hourly commitment level for the Savings Plans type and the
+    /// configuration that's based on the usage during the lookback period.</p>
+    pub fn hourly_commitment_to_purchase(&self) -> std::option::Option<&str> {
+        self.hourly_commitment_to_purchase.as_deref()
+    }
+    /// <p>The estimated utilization of the recommended Savings Plans.</p>
+    pub fn estimated_average_utilization(&self) -> std::option::Option<&str> {
+        self.estimated_average_utilization.as_deref()
+    }
+    /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
+    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_savings_amount.as_deref()
+    }
+    /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable
+    /// usage type.</p>
+    pub fn current_minimum_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
+        self.current_minimum_hourly_on_demand_spend.as_deref()
+    }
+    /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable
+    /// usage type.</p>
+    pub fn current_maximum_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
+        self.current_maximum_hourly_on_demand_spend.as_deref()
+    }
+    /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable
+    /// usage type.</p>
+    pub fn current_average_hourly_on_demand_spend(&self) -> std::option::Option<&str> {
+        self.current_average_hourly_on_demand_spend.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansPurchaseRecommendationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4469,6 +5071,20 @@ pub struct SavingsPlansDetails {
     pub instance_family: std::option::Option<std::string::String>,
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub offering_id: std::option::Option<std::string::String>,
+}
+impl SavingsPlansDetails {
+    /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>A group of instance types that Savings Plans applies to.</p>
+    pub fn instance_family(&self) -> std::option::Option<&str> {
+        self.instance_family.as_deref()
+    }
+    /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
+    pub fn offering_id(&self) -> std::option::Option<&str> {
+        self.offering_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4857,6 +5473,20 @@ pub struct SavingsPlansPurchaseRecommendationMetadata {
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub additional_metadata: std::option::Option<std::string::String>,
 }
+impl SavingsPlansPurchaseRecommendationMetadata {
+    /// <p>The unique identifier for the recommendation set.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>The timestamp showing when the recommendations were generated.</p>
+    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+        self.generation_timestamp.as_deref()
+    }
+    /// <p>Additional metadata that might be applicable to the recommendation.</p>
+    pub fn additional_metadata(&self) -> std::option::Option<&str> {
+        self.additional_metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for SavingsPlansPurchaseRecommendationMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SavingsPlansPurchaseRecommendationMetadata");
@@ -4945,6 +5575,23 @@ pub struct SavingsPlansCoverage {
     pub coverage: std::option::Option<crate::model::SavingsPlansCoverageData>,
     /// <p>The time period of the request. </p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
+}
+impl SavingsPlansCoverage {
+    /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
+    pub fn coverage(&self) -> std::option::Option<&crate::model::SavingsPlansCoverageData> {
+        self.coverage.as_ref()
+    }
+    /// <p>The time period of the request. </p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansCoverage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5051,6 +5698,26 @@ pub struct SavingsPlansCoverageData {
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your
     /// eligible Savings Plans usage in an account (or set of accounts).</p>
     pub coverage_percentage: std::option::Option<std::string::String>,
+}
+impl SavingsPlansCoverageData {
+    /// <p>The amount of your Amazon Web Services usage that is covered by a Savings Plans.</p>
+    pub fn spend_covered_by_savings_plans(&self) -> std::option::Option<&str> {
+        self.spend_covered_by_savings_plans.as_deref()
+    }
+    /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
+    pub fn on_demand_cost(&self) -> std::option::Option<&str> {
+        self.on_demand_cost.as_deref()
+    }
+    /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase
+    /// option.</p>
+    pub fn total_cost(&self) -> std::option::Option<&str> {
+        self.total_cost.as_deref()
+    }
+    /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your
+    /// eligible Savings Plans usage in an account (or set of accounts).</p>
+    pub fn coverage_percentage(&self) -> std::option::Option<&str> {
+        self.coverage_percentage.as_deref()
+    }
 }
 impl std::fmt::Debug for SavingsPlansCoverageData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5160,6 +5827,16 @@ pub struct GroupDefinition {
     pub r#type: std::option::Option<crate::model::GroupDefinitionType>,
     /// <p>The string that represents a key for a specified group.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl GroupDefinition {
+    /// <p>The string that represents the type of group.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::GroupDefinitionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The string that represents a key for a specified group.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5292,6 +5969,21 @@ pub struct RightsizingRecommendationConfiguration {
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings
     /// calculation. The default value is <code>TRUE</code>. </p>
     pub benefits_considered: bool,
+}
+impl RightsizingRecommendationConfiguration {
+    /// <p>The option to see recommendations within the same instance family or recommendations
+    /// for instances across other families. The default value is
+    /// <code>SAME_INSTANCE_FAMILY</code>. </p>
+    pub fn recommendation_target(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationTarget> {
+        self.recommendation_target.as_ref()
+    }
+    /// <p>The option to consider RI or Savings Plans discount benefits in your savings
+    /// calculation. The default value is <code>TRUE</code>. </p>
+    pub fn benefits_considered(&self) -> bool {
+        self.benefits_considered
+    }
 }
 impl std::fmt::Debug for RightsizingRecommendationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5429,6 +6121,37 @@ pub struct RightsizingRecommendation {
     /// <p> The list of possible reasons why the recommendation is generated such as under or
     /// over utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub finding_reason_codes: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
+}
+impl RightsizingRecommendation {
+    /// <p>The account that this recommendation is for.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Context regarding the current instance.</p>
+    pub fn current_instance(&self) -> std::option::Option<&crate::model::CurrentInstance> {
+        self.current_instance.as_ref()
+    }
+    /// <p>A recommendation to either terminate or modify the resource.</p>
+    pub fn rightsizing_type(&self) -> std::option::Option<&crate::model::RightsizingType> {
+        self.rightsizing_type.as_ref()
+    }
+    /// <p>The details for the modification recommendations. </p>
+    pub fn modify_recommendation_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ModifyRecommendationDetail> {
+        self.modify_recommendation_detail.as_ref()
+    }
+    /// <p>The details for termination recommendations.</p>
+    pub fn terminate_recommendation_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::TerminateRecommendationDetail> {
+        self.terminate_recommendation_detail.as_ref()
+    }
+    /// <p> The list of possible reasons why the recommendation is generated such as under or
+    /// over utilization of specific metrics (for example, CPU, Memory, Network). </p>
+    pub fn finding_reason_codes(&self) -> std::option::Option<&[crate::model::FindingReasonCode]> {
+        self.finding_reason_codes.as_deref()
+    }
 }
 impl std::fmt::Debug for RightsizingRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5727,6 +6450,17 @@ pub struct TerminateRecommendationDetail {
     /// instance.</p>
     pub currency_code: std::option::Option<std::string::String>,
 }
+impl TerminateRecommendationDetail {
+    /// <p>The estimated savings that result from modification, on a monthly basis.</p>
+    pub fn estimated_monthly_savings(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_savings.as_deref()
+    }
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this
+    /// instance.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateRecommendationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateRecommendationDetail");
@@ -5796,6 +6530,13 @@ pub struct ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default
     /// recommendation.</p>
     pub target_instances: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
+}
+impl ModifyRecommendationDetail {
+    /// <p>Determines whether this instance type is the Amazon Web Services default
+    /// recommendation.</p>
+    pub fn target_instances(&self) -> std::option::Option<&[crate::model::TargetInstance]> {
+        self.target_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyRecommendationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5871,6 +6612,41 @@ pub struct TargetInstance {
     /// <p> Explains the actions you might need to take in order to successfully migrate your
     /// workloads from the current instance type to the recommended instance type. </p>
     pub platform_differences: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
+}
+impl TargetInstance {
+    /// <p>The expected cost to operate this instance type on a monthly basis.</p>
+    pub fn estimated_monthly_cost(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_cost.as_deref()
+    }
+    /// <p>The estimated savings that result from modification, on a monthly basis.</p>
+    pub fn estimated_monthly_savings(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_savings.as_deref()
+    }
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this
+    /// instance.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>Determines whether this recommendation is the defaulted Amazon Web Services
+    /// recommendation.</p>
+    pub fn default_target_instance(&self) -> bool {
+        self.default_target_instance
+    }
+    /// <p>Details on the target instance type. </p>
+    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+        self.resource_details.as_ref()
+    }
+    /// <p>The expected utilization metrics for target instance type.</p>
+    pub fn expected_resource_utilization(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceUtilization> {
+        self.expected_resource_utilization.as_ref()
+    }
+    /// <p> Explains the actions you might need to take in order to successfully migrate your
+    /// workloads from the current instance type to the recommended instance type. </p>
+    pub fn platform_differences(&self) -> std::option::Option<&[crate::model::PlatformDifference]> {
+        self.platform_differences.as_deref()
+    }
 }
 impl std::fmt::Debug for TargetInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6112,6 +6888,14 @@ pub struct ResourceUtilization {
     /// <p>The utilization of current Amazon EC2 instance. </p>
     pub ec2_resource_utilization: std::option::Option<crate::model::Ec2ResourceUtilization>,
 }
+impl ResourceUtilization {
+    /// <p>The utilization of current Amazon EC2 instance. </p>
+    pub fn ec2_resource_utilization(
+        &self,
+    ) -> std::option::Option<&crate::model::Ec2ResourceUtilization> {
+        self.ec2_resource_utilization.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceUtilization");
@@ -6180,6 +6964,42 @@ pub struct Ec2ResourceUtilization {
     /// <p> The network field that contains a list of network metrics that are associated with
     /// the current instance. </p>
     pub network_resource_utilization: std::option::Option<crate::model::NetworkResourceUtilization>,
+}
+impl Ec2ResourceUtilization {
+    /// <p> The maximum observed or expected CPU utilization of the instance.</p>
+    pub fn max_cpu_utilization_percentage(&self) -> std::option::Option<&str> {
+        self.max_cpu_utilization_percentage.as_deref()
+    }
+    /// <p> The maximum observed or expected memory utilization of the instance.</p>
+    pub fn max_memory_utilization_percentage(&self) -> std::option::Option<&str> {
+        self.max_memory_utilization_percentage.as_deref()
+    }
+    /// <p> The maximum observed or expected storage utilization of the instance. This doesn't
+    /// include EBS storage.</p>
+    pub fn max_storage_utilization_percentage(&self) -> std::option::Option<&str> {
+        self.max_storage_utilization_percentage.as_deref()
+    }
+    /// <p>The EBS field that contains a list of EBS metrics that are associated with the current
+    /// instance. </p>
+    pub fn ebs_resource_utilization(
+        &self,
+    ) -> std::option::Option<&crate::model::EbsResourceUtilization> {
+        self.ebs_resource_utilization.as_ref()
+    }
+    /// <p> The field that contains a list of disk (local storage) metrics that are associated
+    /// with the current instance. </p>
+    pub fn disk_resource_utilization(
+        &self,
+    ) -> std::option::Option<&crate::model::DiskResourceUtilization> {
+        self.disk_resource_utilization.as_ref()
+    }
+    /// <p> The network field that contains a list of network metrics that are associated with
+    /// the current instance. </p>
+    pub fn network_resource_utilization(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkResourceUtilization> {
+        self.network_resource_utilization.as_ref()
+    }
 }
 impl std::fmt::Debug for Ec2ResourceUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6360,6 +7180,24 @@ pub struct NetworkResourceUtilization {
     /// <p> The network outgress packets that are measured in packets per second. </p>
     pub network_packets_out_per_second: std::option::Option<std::string::String>,
 }
+impl NetworkResourceUtilization {
+    /// <p> The network inbound throughput utilization measured in Bytes per second. </p>
+    pub fn network_in_bytes_per_second(&self) -> std::option::Option<&str> {
+        self.network_in_bytes_per_second.as_deref()
+    }
+    /// <p> The network outbound throughput utilization measured in Bytes per second. </p>
+    pub fn network_out_bytes_per_second(&self) -> std::option::Option<&str> {
+        self.network_out_bytes_per_second.as_deref()
+    }
+    /// <p> The network ingress packets that are measured in packets per second. </p>
+    pub fn network_packets_in_per_second(&self) -> std::option::Option<&str> {
+        self.network_packets_in_per_second.as_deref()
+    }
+    /// <p> The network outgress packets that are measured in packets per second. </p>
+    pub fn network_packets_out_per_second(&self) -> std::option::Option<&str> {
+        self.network_packets_out_per_second.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkResourceUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkResourceUtilization");
@@ -6490,6 +7328,24 @@ pub struct DiskResourceUtilization {
     /// <p> The maximum write throughput operations per second. </p>
     pub disk_write_bytes_per_second: std::option::Option<std::string::String>,
 }
+impl DiskResourceUtilization {
+    /// <p> The maximum number of read operations per second. </p>
+    pub fn disk_read_ops_per_second(&self) -> std::option::Option<&str> {
+        self.disk_read_ops_per_second.as_deref()
+    }
+    /// <p> The maximum number of write operations per second. </p>
+    pub fn disk_write_ops_per_second(&self) -> std::option::Option<&str> {
+        self.disk_write_ops_per_second.as_deref()
+    }
+    /// <p> The maximum read throughput operations per second. </p>
+    pub fn disk_read_bytes_per_second(&self) -> std::option::Option<&str> {
+        self.disk_read_bytes_per_second.as_deref()
+    }
+    /// <p> The maximum write throughput operations per second. </p>
+    pub fn disk_write_bytes_per_second(&self) -> std::option::Option<&str> {
+        self.disk_write_bytes_per_second.as_deref()
+    }
+}
 impl std::fmt::Debug for DiskResourceUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DiskResourceUtilization");
@@ -6605,6 +7461,24 @@ pub struct EbsResourceUtilization {
     /// <p>The maximum size of write operations per second. </p>
     pub ebs_write_bytes_per_second: std::option::Option<std::string::String>,
 }
+impl EbsResourceUtilization {
+    /// <p>The maximum number of read operations per second. </p>
+    pub fn ebs_read_ops_per_second(&self) -> std::option::Option<&str> {
+        self.ebs_read_ops_per_second.as_deref()
+    }
+    /// <p>The maximum number of write operations per second. </p>
+    pub fn ebs_write_ops_per_second(&self) -> std::option::Option<&str> {
+        self.ebs_write_ops_per_second.as_deref()
+    }
+    /// <p>The maximum size of read operations per second </p>
+    pub fn ebs_read_bytes_per_second(&self) -> std::option::Option<&str> {
+        self.ebs_read_bytes_per_second.as_deref()
+    }
+    /// <p>The maximum size of write operations per second. </p>
+    pub fn ebs_write_bytes_per_second(&self) -> std::option::Option<&str> {
+        self.ebs_write_bytes_per_second.as_deref()
+    }
+}
 impl std::fmt::Debug for EbsResourceUtilization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EbsResourceUtilization");
@@ -6707,6 +7581,12 @@ pub struct ResourceDetails {
     /// <p>Details on the Amazon EC2 resource.</p>
     pub ec2_resource_details: std::option::Option<crate::model::Ec2ResourceDetails>,
 }
+impl ResourceDetails {
+    /// <p>Details on the Amazon EC2 resource.</p>
+    pub fn ec2_resource_details(&self) -> std::option::Option<&crate::model::Ec2ResourceDetails> {
+        self.ec2_resource_details.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDetails");
@@ -6775,6 +7655,46 @@ pub struct Ec2ResourceDetails {
     pub storage: std::option::Option<std::string::String>,
     /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
     pub vcpu: std::option::Option<std::string::String>,
+}
+impl Ec2ResourceDetails {
+    /// <p>The hourly public On-Demand rate for the instance type.</p>
+    pub fn hourly_on_demand_rate(&self) -> std::option::Option<&str> {
+        self.hourly_on_demand_rate.as_deref()
+    }
+    /// <p>The type of Amazon Web Services instance.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The platform of the Amazon Web Services instance. The platform is the specific
+    /// combination of operating system, license model, and software on an instance.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The Amazon Web Services Region of the instance.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The SKU of the product.</p>
+    pub fn sku(&self) -> std::option::Option<&str> {
+        self.sku.as_deref()
+    }
+    /// <p>The memory capacity of the Amazon Web Services instance.</p>
+    pub fn memory(&self) -> std::option::Option<&str> {
+        self.memory.as_deref()
+    }
+    /// <p>The network performance capacity of the Amazon Web Services instance.</p>
+    pub fn network_performance(&self) -> std::option::Option<&str> {
+        self.network_performance.as_deref()
+    }
+    /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS
+    /// storage.</p>
+    pub fn storage(&self) -> std::option::Option<&str> {
+        self.storage.as_deref()
+    }
+    /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+    pub fn vcpu(&self) -> std::option::Option<&str> {
+        self.vcpu.as_deref()
+    }
 }
 impl std::fmt::Debug for Ec2ResourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7018,6 +7938,56 @@ pub struct CurrentInstance {
     /// <p> The currency code that Amazon Web Services used to calculate the costs for this
     /// instance.</p>
     pub currency_code: std::option::Option<std::string::String>,
+}
+impl CurrentInstance {
+    /// <p>Resource ID of the current instance.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The name that you given an instance. This field shows as blank if you haven't given
+    /// the instance a name.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>Cost allocation resource tags that are applied to the instance.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagValues]> {
+        self.tags.as_deref()
+    }
+    /// <p>Details about the resource and utilization.</p>
+    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+        self.resource_details.as_ref()
+    }
+    /// <p>Utilization information of the current instance during the lookback period.</p>
+    pub fn resource_utilization(&self) -> std::option::Option<&crate::model::ResourceUtilization> {
+        self.resource_utilization.as_ref()
+    }
+    /// <p> The number of hours during the lookback period that's covered by reservations.</p>
+    pub fn reservation_covered_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+        self.reservation_covered_hours_in_lookback_period.as_deref()
+    }
+    /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
+    pub fn savings_plans_covered_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+        self.savings_plans_covered_hours_in_lookback_period
+            .as_deref()
+    }
+    /// <p> The number of hours during the lookback period that's billed at On-Demand
+    /// rates.</p>
+    pub fn on_demand_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+        self.on_demand_hours_in_lookback_period.as_deref()
+    }
+    /// <p>The total number of hours that the instance ran during the lookback period.</p>
+    pub fn total_running_hours_in_lookback_period(&self) -> std::option::Option<&str> {
+        self.total_running_hours_in_lookback_period.as_deref()
+    }
+    /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
+    pub fn monthly_cost(&self) -> std::option::Option<&str> {
+        self.monthly_cost.as_deref()
+    }
+    /// <p> The currency code that Amazon Web Services used to calculate the costs for this
+    /// instance.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
 }
 impl std::fmt::Debug for CurrentInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7271,6 +8241,25 @@ pub struct RightsizingRecommendationSummary {
     /// total On-Demand costs that are associated with these instances.</p>
     pub savings_percentage: std::option::Option<std::string::String>,
 }
+impl RightsizingRecommendationSummary {
+    /// <p>The total number of instance recommendations.</p>
+    pub fn total_recommendation_count(&self) -> std::option::Option<&str> {
+        self.total_recommendation_count.as_deref()
+    }
+    /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
+    pub fn estimated_total_monthly_savings_amount(&self) -> std::option::Option<&str> {
+        self.estimated_total_monthly_savings_amount.as_deref()
+    }
+    /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
+    pub fn savings_currency_code(&self) -> std::option::Option<&str> {
+        self.savings_currency_code.as_deref()
+    }
+    /// <p> The savings percentage based on the recommended modifications. It's relative to the
+    /// total On-Demand costs that are associated with these instances.</p>
+    pub fn savings_percentage(&self) -> std::option::Option<&str> {
+        self.savings_percentage.as_deref()
+    }
+}
 impl std::fmt::Debug for RightsizingRecommendationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RightsizingRecommendationSummary");
@@ -7387,6 +8376,27 @@ pub struct RightsizingRecommendationMetadata {
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
     pub additional_metadata: std::option::Option<std::string::String>,
+}
+impl RightsizingRecommendationMetadata {
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+        self.generation_timestamp.as_deref()
+    }
+    /// <p>The number of days of previous usage that Amazon Web Services considers when making
+    /// this recommendation.</p>
+    pub fn lookback_period_in_days(
+        &self,
+    ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
+        self.lookback_period_in_days.as_ref()
+    }
+    /// <p>Additional metadata that might be applicable to the recommendation.</p>
+    pub fn additional_metadata(&self) -> std::option::Option<&str> {
+        self.additional_metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for RightsizingRecommendationMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7535,6 +8545,88 @@ pub struct ReservationAggregates {
     pub realized_savings: std::option::Option<std::string::String>,
     /// <p>The unrealized savings because of purchasing and using a reservation.</p>
     pub unrealized_savings: std::option::Option<std::string::String>,
+}
+impl ReservationAggregates {
+    /// <p>The percentage of reservation time that you used.</p>
+    pub fn utilization_percentage(&self) -> std::option::Option<&str> {
+        self.utilization_percentage.as_deref()
+    }
+    /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to
+    /// normalized units. Normalized units are available only for Amazon EC2 usage after
+    /// November 11, 2017.</p>
+    pub fn utilization_percentage_in_units(&self) -> std::option::Option<&str> {
+        self.utilization_percentage_in_units.as_deref()
+    }
+    /// <p>How many reservation hours that you purchased.</p>
+    pub fn purchased_hours(&self) -> std::option::Option<&str> {
+        self.purchased_hours.as_deref()
+    }
+    /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to
+    /// normalized units. Normalized units are available only for Amazon EC2 usage after
+    /// November 11, 2017.</p>
+    pub fn purchased_units(&self) -> std::option::Option<&str> {
+        self.purchased_units.as_deref()
+    }
+    /// <p>The total number of reservation hours that you used.</p>
+    pub fn total_actual_hours(&self) -> std::option::Option<&str> {
+        self.total_actual_hours.as_deref()
+    }
+    /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to
+    /// normalized units. Normalized units are available only for Amazon EC2 usage after
+    /// November 11, 2017.</p>
+    pub fn total_actual_units(&self) -> std::option::Option<&str> {
+        self.total_actual_units.as_deref()
+    }
+    /// <p>The number of reservation hours that you didn't use.</p>
+    pub fn unused_hours(&self) -> std::option::Option<&str> {
+        self.unused_hours.as_deref()
+    }
+    /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to
+    /// normalized units. Normalized units are available only for Amazon EC2 usage after
+    /// November 11, 2017.</p>
+    pub fn unused_units(&self) -> std::option::Option<&str> {
+        self.unused_units.as_deref()
+    }
+    /// <p>How much your reservation costs if charged On-Demand rates.</p>
+    pub fn on_demand_cost_of_ri_hours_used(&self) -> std::option::Option<&str> {
+        self.on_demand_cost_of_ri_hours_used.as_deref()
+    }
+    /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services
+    /// calculates this by subtracting <code>TotalAmortizedFee</code> from
+    /// <code>OnDemandCostOfRIHoursUsed</code>.</p>
+    pub fn net_ri_savings(&self) -> std::option::Option<&str> {
+        self.net_ri_savings.as_deref()
+    }
+    /// <p>How much you might save if you use your entire reservation.</p>
+    pub fn total_potential_ri_savings(&self) -> std::option::Option<&str> {
+        self.total_potential_ri_savings.as_deref()
+    }
+    /// <p>The upfront cost of your reservation. It's amortized over the reservation
+    /// period.</p>
+    pub fn amortized_upfront_fee(&self) -> std::option::Option<&str> {
+        self.amortized_upfront_fee.as_deref()
+    }
+    /// <p>The monthly cost of your reservation. It's amortized over the reservation
+    /// period.</p>
+    pub fn amortized_recurring_fee(&self) -> std::option::Option<&str> {
+        self.amortized_recurring_fee.as_deref()
+    }
+    /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
+    pub fn total_amortized_fee(&self) -> std::option::Option<&str> {
+        self.total_amortized_fee.as_deref()
+    }
+    /// <p>The cost of unused hours for your reservation.</p>
+    pub fn ri_cost_for_unused_hours(&self) -> std::option::Option<&str> {
+        self.ri_cost_for_unused_hours.as_deref()
+    }
+    /// <p>The realized savings because of purchasing and using a reservation.</p>
+    pub fn realized_savings(&self) -> std::option::Option<&str> {
+        self.realized_savings.as_deref()
+    }
+    /// <p>The unrealized savings because of purchasing and using a reservation.</p>
+    pub fn unrealized_savings(&self) -> std::option::Option<&str> {
+        self.unrealized_savings.as_deref()
+    }
 }
 impl std::fmt::Debug for ReservationAggregates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7880,6 +8972,20 @@ pub struct UtilizationByTime {
     /// <p>The total number of reservation hours that were used.</p>
     pub total: std::option::Option<crate::model::ReservationAggregates>,
 }
+impl UtilizationByTime {
+    /// <p>The period of time that this utilization was used for.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
+    /// <p>The groups that this utilization result uses.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::ReservationUtilizationGroup]> {
+        self.groups.as_deref()
+    }
+    /// <p>The total number of reservation hours that were used.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
+        self.total.as_ref()
+    }
+}
 impl std::fmt::Debug for UtilizationByTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UtilizationByTime");
@@ -7979,6 +9085,27 @@ pub struct ReservationUtilizationGroup {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>How much you used this group of reservations.</p>
     pub utilization: std::option::Option<crate::model::ReservationAggregates>,
+}
+impl ReservationUtilizationGroup {
+    /// <p>The key for a specific reservation attribute.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of a specific reservation attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The attributes for this group of reservations.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>How much you used this group of reservations.</p>
+    pub fn utilization(&self) -> std::option::Option<&crate::model::ReservationAggregates> {
+        self.utilization.as_ref()
+    }
 }
 impl std::fmt::Debug for ReservationUtilizationGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8104,6 +9231,48 @@ pub struct ReservationPurchaseRecommendation {
     /// <p>A summary about the recommended purchase.</p>
     pub recommendation_summary:
         std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
+}
+impl ReservationPurchaseRecommendation {
+    /// <p>The account scope that Amazon Web Services recommends that you purchase this instance
+    /// for. For example, you can purchase this reservation for an entire organization in
+    /// Amazon Web Services Organizations.</p>
+    pub fn account_scope(&self) -> std::option::Option<&crate::model::AccountScope> {
+        self.account_scope.as_ref()
+    }
+    /// <p>How many days of previous usage that Amazon Web Services considers when making this
+    /// recommendation.</p>
+    pub fn lookback_period_in_days(
+        &self,
+    ) -> std::option::Option<&crate::model::LookbackPeriodInDays> {
+        self.lookback_period_in_days.as_ref()
+    }
+    /// <p>The term of the reservation that you want recommendations for, in years.</p>
+    pub fn term_in_years(&self) -> std::option::Option<&crate::model::TermInYears> {
+        self.term_in_years.as_ref()
+    }
+    /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or
+    /// <code>NoUpfront</code>).</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>Hardware specifications for the service that you want recommendations for.</p>
+    pub fn service_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceSpecification> {
+        self.service_specification.as_ref()
+    }
+    /// <p>Details about the recommended purchases.</p>
+    pub fn recommendation_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservationPurchaseRecommendationDetail]> {
+        self.recommendation_details.as_deref()
+    }
+    /// <p>A summary about the recommended purchase.</p>
+    pub fn recommendation_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservationPurchaseRecommendationSummary> {
+        self.recommendation_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for ReservationPurchaseRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8288,6 +9457,22 @@ pub struct ReservationPurchaseRecommendationSummary {
     /// <p>The currency code used for this recommendation.</p>
     pub currency_code: std::option::Option<std::string::String>,
 }
+impl ReservationPurchaseRecommendationSummary {
+    /// <p>The total amount that Amazon Web Services estimates that this recommendation could save
+    /// you in a month.</p>
+    pub fn total_estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+        self.total_estimated_monthly_savings_amount.as_deref()
+    }
+    /// <p>The total amount that Amazon Web Services estimates that this recommendation could save
+    /// you in a month, as a percentage of your costs.</p>
+    pub fn total_estimated_monthly_savings_percentage(&self) -> std::option::Option<&str> {
+        self.total_estimated_monthly_savings_percentage.as_deref()
+    }
+    /// <p>The currency code used for this recommendation.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ReservationPurchaseRecommendationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReservationPurchaseRecommendationSummary");
@@ -8445,6 +9630,106 @@ pub struct ReservationPurchaseRecommendationDetail {
     pub upfront_cost: std::option::Option<std::string::String>,
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
     pub recurring_standard_monthly_cost: std::option::Option<std::string::String>,
+}
+impl ReservationPurchaseRecommendationDetail {
+    /// <p>The account that this RI recommendation is for.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Details about the instances that Amazon Web Services recommends that you
+    /// purchase.</p>
+    pub fn instance_details(&self) -> std::option::Option<&crate::model::InstanceDetails> {
+        self.instance_details.as_ref()
+    }
+    /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn recommended_number_of_instances_to_purchase(&self) -> std::option::Option<&str> {
+        self.recommended_number_of_instances_to_purchase.as_deref()
+    }
+    /// <p>The number of normalized units that Amazon Web Services recommends that you
+    /// purchase.</p>
+    pub fn recommended_normalized_units_to_purchase(&self) -> std::option::Option<&str> {
+        self.recommended_normalized_units_to_purchase.as_deref()
+    }
+    /// <p>The minimum number of instances that you used in an hour during the historical period.
+    /// Amazon Web Services uses this to calculate your recommended reservation
+    /// purchases.</p>
+    pub fn minimum_number_of_instances_used_per_hour(&self) -> std::option::Option<&str> {
+        self.minimum_number_of_instances_used_per_hour.as_deref()
+    }
+    /// <p>The minimum number of normalized units that you used in an hour during the historical
+    /// period. Amazon Web Services uses this to calculate your recommended reservation
+    /// purchases.</p>
+    pub fn minimum_normalized_units_used_per_hour(&self) -> std::option::Option<&str> {
+        self.minimum_normalized_units_used_per_hour.as_deref()
+    }
+    /// <p>The maximum number of instances that you used in an hour during the historical period.
+    /// Amazon Web Services uses this to calculate your recommended reservation
+    /// purchases.</p>
+    pub fn maximum_number_of_instances_used_per_hour(&self) -> std::option::Option<&str> {
+        self.maximum_number_of_instances_used_per_hour.as_deref()
+    }
+    /// <p>The maximum number of normalized units that you used in an hour during the historical
+    /// period. Amazon Web Services uses this to calculate your recommended reservation
+    /// purchases.</p>
+    pub fn maximum_normalized_units_used_per_hour(&self) -> std::option::Option<&str> {
+        self.maximum_normalized_units_used_per_hour.as_deref()
+    }
+    /// <p>The average number of instances that you used in an hour during the historical period.
+    /// Amazon Web Services uses this to calculate your recommended reservation
+    /// purchases.</p>
+    pub fn average_number_of_instances_used_per_hour(&self) -> std::option::Option<&str> {
+        self.average_number_of_instances_used_per_hour.as_deref()
+    }
+    /// <p>The average number of normalized units that you used in an hour during the historical
+    /// period. Amazon Web Services uses this to calculate your recommended reservation
+    /// purchases.</p>
+    pub fn average_normalized_units_used_per_hour(&self) -> std::option::Option<&str> {
+        self.average_normalized_units_used_per_hour.as_deref()
+    }
+    /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate
+    /// your recommended reservation purchases.</p>
+    pub fn average_utilization(&self) -> std::option::Option<&str> {
+        self.average_utilization.as_deref()
+    }
+    /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving
+    /// you money, in months.</p>
+    pub fn estimated_break_even_in_months(&self) -> std::option::Option<&str> {
+        self.estimated_break_even_in_months.as_deref()
+    }
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this
+    /// instance.</p>
+    pub fn currency_code(&self) -> std::option::Option<&str> {
+        self.currency_code.as_deref()
+    }
+    /// <p>How much Amazon Web Services estimates that this specific recommendation could save you
+    /// in a month.</p>
+    pub fn estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_savings_amount.as_deref()
+    }
+    /// <p>How much Amazon Web Services estimates that this specific recommendation could save you
+    /// in a month, as a percentage of your overall costs.</p>
+    pub fn estimated_monthly_savings_percentage(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_savings_percentage.as_deref()
+    }
+    /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a
+    /// month.</p>
+    pub fn estimated_monthly_on_demand_cost(&self) -> std::option::Option<&str> {
+        self.estimated_monthly_on_demand_cost.as_deref()
+    }
+    /// <p>How much Amazon Web Services estimates that you would have spent for all usage during
+    /// the specified historical period if you had a reservation.</p>
+    pub fn estimated_reservation_cost_for_lookback_period(&self) -> std::option::Option<&str> {
+        self.estimated_reservation_cost_for_lookback_period
+            .as_deref()
+    }
+    /// <p>How much purchasing this instance costs you upfront.</p>
+    pub fn upfront_cost(&self) -> std::option::Option<&str> {
+        self.upfront_cost.as_deref()
+    }
+    /// <p>How much purchasing this instance costs you on a monthly basis.</p>
+    pub fn recurring_standard_monthly_cost(&self) -> std::option::Option<&str> {
+        self.recurring_standard_monthly_cost.as_deref()
+    }
 }
 impl std::fmt::Debug for ReservationPurchaseRecommendationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8928,6 +10213,33 @@ pub struct InstanceDetails {
     /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
     pub es_instance_details: std::option::Option<crate::model::EsInstanceDetails>,
 }
+impl InstanceDetails {
+    /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn ec2_instance_details(&self) -> std::option::Option<&crate::model::Ec2InstanceDetails> {
+        self.ec2_instance_details.as_ref()
+    }
+    /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn rds_instance_details(&self) -> std::option::Option<&crate::model::RdsInstanceDetails> {
+        self.rds_instance_details.as_ref()
+    }
+    /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you
+    /// purchase.</p>
+    pub fn redshift_instance_details(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftInstanceDetails> {
+        self.redshift_instance_details.as_ref()
+    }
+    /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn elasti_cache_instance_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ElastiCacheInstanceDetails> {
+        self.elasti_cache_instance_details.as_ref()
+    }
+    /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
+    pub fn es_instance_details(&self) -> std::option::Option<&crate::model::EsInstanceDetails> {
+        self.es_instance_details.as_ref()
+    }
+}
 impl std::fmt::Debug for InstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceDetails");
@@ -9065,6 +10377,28 @@ pub struct EsInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
 }
+impl EsInstanceDetails {
+    /// <p>The class of instance that Amazon Web Services recommends.</p>
+    pub fn instance_class(&self) -> std::option::Option<&str> {
+        self.instance_class.as_deref()
+    }
+    /// <p>The size of instance that Amazon Web Services recommends.</p>
+    pub fn instance_size(&self) -> std::option::Option<&str> {
+        self.instance_size.as_deref()
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    pub fn current_generation(&self) -> bool {
+        self.current_generation
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn size_flex_eligible(&self) -> bool {
+        self.size_flex_eligible
+    }
+}
 impl std::fmt::Debug for EsInstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EsInstanceDetails");
@@ -9181,6 +10515,32 @@ pub struct ElastiCacheInstanceDetails {
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
+}
+impl ElastiCacheInstanceDetails {
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>The type of node that Amazon Web Services recommends.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The description of the recommended reservation.</p>
+    pub fn product_description(&self) -> std::option::Option<&str> {
+        self.product_description.as_deref()
+    }
+    /// <p>Determines whether the recommendation is for a current generation instance.</p>
+    pub fn current_generation(&self) -> bool {
+        self.current_generation
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn size_flex_eligible(&self) -> bool {
+        self.size_flex_eligible
+    }
 }
 impl std::fmt::Debug for ElastiCacheInstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9307,6 +10667,28 @@ pub struct RedshiftInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
 }
+impl RedshiftInstanceDetails {
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>The type of node that Amazon Web Services recommends.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Determines whether the recommendation is for a current-generation instance.</p>
+    pub fn current_generation(&self) -> bool {
+        self.current_generation
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn size_flex_eligible(&self) -> bool {
+        self.size_flex_eligible
+    }
+}
 impl std::fmt::Debug for RedshiftInstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftInstanceDetails");
@@ -9424,6 +10806,45 @@ pub struct RdsInstanceDetails {
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
+}
+impl RdsInstanceDetails {
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>The type of instance that Amazon Web Services recommends.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The database engine that the recommended reservation supports.</p>
+    pub fn database_engine(&self) -> std::option::Option<&str> {
+        self.database_engine.as_deref()
+    }
+    /// <p>The database edition that the recommended reservation supports.</p>
+    pub fn database_edition(&self) -> std::option::Option<&str> {
+        self.database_edition.as_deref()
+    }
+    /// <p>Determines whether the recommendation is for a reservation in a single Availability
+    /// Zone or a reservation with a backup in a second Availability Zone.</p>
+    pub fn deployment_option(&self) -> std::option::Option<&str> {
+        self.deployment_option.as_deref()
+    }
+    /// <p>The license model that the recommended reservation supports.</p>
+    pub fn license_model(&self) -> std::option::Option<&str> {
+        self.license_model.as_deref()
+    }
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
+    pub fn current_generation(&self) -> bool {
+        self.current_generation
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn size_flex_eligible(&self) -> bool {
+        self.size_flex_eligible
+    }
 }
 impl std::fmt::Debug for RdsInstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9610,6 +11031,41 @@ pub struct Ec2InstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
 }
+impl Ec2InstanceDetails {
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn family(&self) -> std::option::Option<&str> {
+        self.family.as_deref()
+    }
+    /// <p>The type of instance that Amazon Web Services recommends.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The Availability Zone of the recommended reservation.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The platform of the recommended reservation. The platform is the specific combination
+    /// of operating system, license model, and software on an instance.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
+    pub fn tenancy(&self) -> std::option::Option<&str> {
+        self.tenancy.as_deref()
+    }
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
+    pub fn current_generation(&self) -> bool {
+        self.current_generation
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn size_flex_eligible(&self) -> bool {
+        self.size_flex_eligible
+    }
+}
 impl std::fmt::Debug for Ec2InstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ec2InstanceDetails");
@@ -9758,6 +11214,13 @@ pub struct ServiceSpecification {
     /// recommendations for.</p>
     pub ec2_specification: std::option::Option<crate::model::Ec2Specification>,
 }
+impl ServiceSpecification {
+    /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide
+    /// recommendations for.</p>
+    pub fn ec2_specification(&self) -> std::option::Option<&crate::model::Ec2Specification> {
+        self.ec2_specification.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSpecification");
@@ -9812,6 +11275,13 @@ pub struct Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible
     /// reservations.</p>
     pub offering_class: std::option::Option<crate::model::OfferingClass>,
+}
+impl Ec2Specification {
+    /// <p>Indicates whether you want a recommendation for standard or convertible
+    /// reservations.</p>
+    pub fn offering_class(&self) -> std::option::Option<&crate::model::OfferingClass> {
+        self.offering_class.as_ref()
+    }
 }
 impl std::fmt::Debug for Ec2Specification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9923,6 +11393,16 @@ pub struct ReservationPurchaseRecommendationMetadata {
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     pub generation_timestamp: std::option::Option<std::string::String>,
 }
+impl ReservationPurchaseRecommendationMetadata {
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
+    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+        self.generation_timestamp.as_deref()
+    }
+}
 impl std::fmt::Debug for ReservationPurchaseRecommendationMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReservationPurchaseRecommendationMetadata");
@@ -9993,6 +11473,22 @@ pub struct Coverage {
     pub coverage_normalized_units: std::option::Option<crate::model::CoverageNormalizedUnits>,
     /// <p>The amount of cost that the reservation covered.</p>
     pub coverage_cost: std::option::Option<crate::model::CoverageCost>,
+}
+impl Coverage {
+    /// <p>The amount of instance usage that the reservation covered, in hours.</p>
+    pub fn coverage_hours(&self) -> std::option::Option<&crate::model::CoverageHours> {
+        self.coverage_hours.as_ref()
+    }
+    /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
+    pub fn coverage_normalized_units(
+        &self,
+    ) -> std::option::Option<&crate::model::CoverageNormalizedUnits> {
+        self.coverage_normalized_units.as_ref()
+    }
+    /// <p>The amount of cost that the reservation covered.</p>
+    pub fn coverage_cost(&self) -> std::option::Option<&crate::model::CoverageCost> {
+        self.coverage_cost.as_ref()
+    }
 }
 impl std::fmt::Debug for Coverage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10081,6 +11577,12 @@ pub struct CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
     pub on_demand_cost: std::option::Option<std::string::String>,
 }
+impl CoverageCost {
+    /// <p>How much an On-Demand Instance costs.</p>
+    pub fn on_demand_cost(&self) -> std::option::Option<&str> {
+        self.on_demand_cost.as_deref()
+    }
+}
 impl std::fmt::Debug for CoverageCost {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CoverageCost");
@@ -10148,6 +11650,26 @@ pub struct CoverageNormalizedUnits {
     /// <p>The percentage of your used instance normalized units that a reservation
     /// covers.</p>
     pub coverage_normalized_units_percentage: std::option::Option<std::string::String>,
+}
+impl CoverageNormalizedUnits {
+    /// <p>The number of normalized units that are covered by On-Demand Instances instead of a
+    /// reservation.</p>
+    pub fn on_demand_normalized_units(&self) -> std::option::Option<&str> {
+        self.on_demand_normalized_units.as_deref()
+    }
+    /// <p>The number of normalized units that a reservation covers.</p>
+    pub fn reserved_normalized_units(&self) -> std::option::Option<&str> {
+        self.reserved_normalized_units.as_deref()
+    }
+    /// <p>The total number of normalized units that you used.</p>
+    pub fn total_running_normalized_units(&self) -> std::option::Option<&str> {
+        self.total_running_normalized_units.as_deref()
+    }
+    /// <p>The percentage of your used instance normalized units that a reservation
+    /// covers.</p>
+    pub fn coverage_normalized_units_percentage(&self) -> std::option::Option<&str> {
+        self.coverage_normalized_units_percentage.as_deref()
+    }
 }
 impl std::fmt::Debug for CoverageNormalizedUnits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10273,6 +11795,24 @@ pub struct CoverageHours {
     /// <p>The percentage of instance hours that a reservation covered.</p>
     pub coverage_hours_percentage: std::option::Option<std::string::String>,
 }
+impl CoverageHours {
+    /// <p>The number of instance running hours that On-Demand Instances covered.</p>
+    pub fn on_demand_hours(&self) -> std::option::Option<&str> {
+        self.on_demand_hours.as_deref()
+    }
+    /// <p>The number of instance running hours that reservations covered.</p>
+    pub fn reserved_hours(&self) -> std::option::Option<&str> {
+        self.reserved_hours.as_deref()
+    }
+    /// <p>The total instance usage, in hours.</p>
+    pub fn total_running_hours(&self) -> std::option::Option<&str> {
+        self.total_running_hours.as_deref()
+    }
+    /// <p>The percentage of instance hours that a reservation covered.</p>
+    pub fn coverage_hours_percentage(&self) -> std::option::Option<&str> {
+        self.coverage_hours_percentage.as_deref()
+    }
+}
 impl std::fmt::Debug for CoverageHours {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CoverageHours");
@@ -10376,6 +11916,20 @@ pub struct CoverageByTime {
     /// <p>The total reservation coverage, in hours.</p>
     pub total: std::option::Option<crate::model::Coverage>,
 }
+impl CoverageByTime {
+    /// <p>The period that this coverage was used over.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
+    /// <p>The groups of instances that the reservation covered.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::ReservationCoverageGroup]> {
+        self.groups.as_deref()
+    }
+    /// <p>The total reservation coverage, in hours.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::Coverage> {
+        self.total.as_ref()
+    }
+}
 impl std::fmt::Debug for CoverageByTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CoverageByTime");
@@ -10466,6 +12020,19 @@ pub struct ReservationCoverageGroup {
     /// <p>How much instance usage this group of reservations covered.</p>
     pub coverage: std::option::Option<crate::model::Coverage>,
 }
+impl ReservationCoverageGroup {
+    /// <p>The attributes for this group of reservations.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>How much instance usage this group of reservations covered.</p>
+    pub fn coverage(&self) -> std::option::Option<&crate::model::Coverage> {
+        self.coverage.as_ref()
+    }
+}
 impl std::fmt::Debug for ReservationCoverageGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReservationCoverageGroup");
@@ -10547,6 +12114,19 @@ pub struct DimensionValuesWithAttributes {
     /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DimensionValuesWithAttributes {
+    /// <p>The value of a dimension with a specific attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for DimensionValuesWithAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10693,6 +12273,28 @@ pub struct ResultByTime {
     /// <p>Determines whether the result is estimated.</p>
     pub estimated: bool,
 }
+impl ResultByTime {
+    /// <p>The time period that the result covers.</p>
+    pub fn time_period(&self) -> std::option::Option<&crate::model::DateInterval> {
+        self.time_period.as_ref()
+    }
+    /// <p>The total amount of cost or usage accrued during the time period.</p>
+    pub fn total(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetricValue>,
+    > {
+        self.total.as_ref()
+    }
+    /// <p>The groups that this time period includes.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.groups.as_deref()
+    }
+    /// <p>Determines whether the result is estimated.</p>
+    pub fn estimated(&self) -> bool {
+        self.estimated
+    }
+}
 impl std::fmt::Debug for ResultByTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultByTime");
@@ -10813,6 +12415,20 @@ pub struct Group {
         std::collections::HashMap<std::string::String, crate::model::MetricValue>,
     >,
 }
+impl Group {
+    /// <p>The keys that are included in this group.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+    /// <p>The metrics that are included in this group.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetricValue>,
+    > {
+        self.metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
@@ -10914,6 +12530,36 @@ pub struct AnomalySubscription {
     pub frequency: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
     /// <p>The name for the subscription. </p>
     pub subscription_name: std::option::Option<std::string::String>,
+}
+impl AnomalySubscription {
+    /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+        self.subscription_arn.as_deref()
+    }
+    /// <p>Your unique account identifier. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>A list of cost anomaly monitors. </p>
+    pub fn monitor_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.monitor_arn_list.as_deref()
+    }
+    /// <p>A list of subscribers to notify. </p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
+    /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
+    pub fn threshold(&self) -> std::option::Option<f64> {
+        self.threshold
+    }
+    /// <p>The frequency that anomaly reports are sent over email. </p>
+    pub fn frequency(&self) -> std::option::Option<&crate::model::AnomalySubscriptionFrequency> {
+        self.frequency.as_ref()
+    }
+    /// <p>The name for the subscription. </p>
+    pub fn subscription_name(&self) -> std::option::Option<&str> {
+        self.subscription_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AnomalySubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11139,6 +12785,98 @@ pub struct AnomalyMonitor {
     pub monitor_specification: std::option::Option<crate::model::Expression>,
     /// <p>The value for evaluated dimensions. </p>
     pub dimensional_value_count: i32,
+}
+impl AnomalyMonitor {
+    /// <p>The Amazon Resource Name (ARN) value. </p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+    /// <p>The name of the monitor. </p>
+    pub fn monitor_name(&self) -> std::option::Option<&str> {
+        self.monitor_name.as_deref()
+    }
+    /// <p>The date when the monitor was created. </p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The date when the monitor was last updated. </p>
+    pub fn last_updated_date(&self) -> std::option::Option<&str> {
+        self.last_updated_date.as_deref()
+    }
+    /// <p>The date when the monitor last evaluated for anomalies. </p>
+    pub fn last_evaluated_date(&self) -> std::option::Option<&str> {
+        self.last_evaluated_date.as_deref()
+    }
+    /// <p>The possible type values. </p>
+    pub fn monitor_type(&self) -> std::option::Option<&crate::model::MonitorType> {
+        self.monitor_type.as_ref()
+    }
+    /// <p>The dimensions to evaluate. </p>
+    pub fn monitor_dimension(&self) -> std::option::Option<&crate::model::MonitorDimension> {
+        self.monitor_dimension.as_ref()
+    }
+    /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Simple dimension values - You can set the dimension name and values for the
+    /// filters that you plan to use. For example, you can filter for
+    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+    /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+    /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+    /// example is as follows:</p>
+    /// <p>
+    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+    /// } }</code>
+    /// </p>
+    /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+    /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+    /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+    /// lines. </p>
+    /// </li>
+    /// <li>
+    /// <p>Compound dimension values with logical operations - You can use multiple
+    /// <code>Expression</code> types and the logical operators
+    /// <code>AND/OR/NOT</code> to create a list of one or more
+    /// <code>Expression</code> objects. By doing this, you can filter on more
+    /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+    /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+    /// DataTransfer)</code>. The <code>Expression</code> for that is as
+    /// follows:</p>
+    /// <p>
+    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+    /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+    /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+    /// ["DataTransfer"] }}} ] } </code>
+    /// </p>
+    /// <note>
+    /// <p>Because each <code>Expression</code> can have only one operator, the
+    /// service returns an error if more than one is specified. The following
+    /// example shows an <code>Expression</code> object that creates an
+    /// error.</p>
+    /// </note>
+    /// <p>
+    /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+    /// "Values": [ "DataTransfer" ] } } </code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+    /// and tags. NOT operators aren't supported. Dimensions are also limited to
+    /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+    /// <code>RIGHTSIZING_TYPE</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+    /// supported. AND and OR aren't supported. Dimensions are limited to
+    /// <code>LINKED_ACCOUNT</code>.</p>
+    /// </note>
+    pub fn monitor_specification(&self) -> std::option::Option<&crate::model::Expression> {
+        self.monitor_specification.as_ref()
+    }
+    /// <p>The value for evaluated dimensions. </p>
+    pub fn dimensional_value_count(&self) -> i32 {
+        self.dimensional_value_count
+    }
 }
 impl std::fmt::Debug for AnomalyMonitor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11543,6 +13281,46 @@ pub struct Anomaly {
     /// <p>The feedback value. </p>
     pub feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
 }
+impl Anomaly {
+    /// <p>The unique identifier for the anomaly. </p>
+    pub fn anomaly_id(&self) -> std::option::Option<&str> {
+        self.anomaly_id.as_deref()
+    }
+    /// <p>The first day the anomaly is detected. </p>
+    pub fn anomaly_start_date(&self) -> std::option::Option<&str> {
+        self.anomaly_start_date.as_deref()
+    }
+    /// <p>The last day the anomaly is detected. </p>
+    pub fn anomaly_end_date(&self) -> std::option::Option<&str> {
+        self.anomaly_end_date.as_deref()
+    }
+    /// <p>The dimension for the anomaly (for example, an Amazon Web Services service in a service
+    /// monitor). </p>
+    pub fn dimension_value(&self) -> std::option::Option<&str> {
+        self.dimension_value.as_deref()
+    }
+    /// <p>The list of identified root causes for the anomaly. </p>
+    pub fn root_causes(&self) -> std::option::Option<&[crate::model::RootCause]> {
+        self.root_causes.as_deref()
+    }
+    /// <p>The latest and maximum score for the anomaly. </p>
+    pub fn anomaly_score(&self) -> std::option::Option<&crate::model::AnomalyScore> {
+        self.anomaly_score.as_ref()
+    }
+    /// <p>The dollar impact for the anomaly. </p>
+    pub fn impact(&self) -> std::option::Option<&crate::model::Impact> {
+        self.impact.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly.
+    /// </p>
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+        self.monitor_arn.as_deref()
+    }
+    /// <p>The feedback value. </p>
+    pub fn feedback(&self) -> std::option::Option<&crate::model::AnomalyFeedbackType> {
+        self.feedback.as_ref()
+    }
+}
 impl std::fmt::Debug for Anomaly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Anomaly");
@@ -11725,6 +13503,16 @@ pub struct Impact {
     /// <p>The cumulative dollar value that's observed for an anomaly. </p>
     pub total_impact: f64,
 }
+impl Impact {
+    /// <p>The maximum dollar value that's observed for an anomaly. </p>
+    pub fn max_impact(&self) -> f64 {
+        self.max_impact
+    }
+    /// <p>The cumulative dollar value that's observed for an anomaly. </p>
+    pub fn total_impact(&self) -> f64 {
+        self.total_impact
+    }
+}
 impl std::fmt::Debug for Impact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Impact");
@@ -11787,6 +13575,16 @@ pub struct AnomalyScore {
     pub max_score: f64,
     /// <p>The last observed score. </p>
     pub current_score: f64,
+}
+impl AnomalyScore {
+    /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
+    pub fn max_score(&self) -> f64 {
+        self.max_score
+    }
+    /// <p>The last observed score. </p>
+    pub fn current_score(&self) -> f64 {
+        self.current_score
+    }
 }
 impl std::fmt::Debug for AnomalyScore {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11855,6 +13653,24 @@ pub struct RootCause {
     pub linked_account: std::option::Option<std::string::String>,
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
     pub usage_type: std::option::Option<std::string::String>,
+}
+impl RootCause {
+    /// <p>The Amazon Web Services service name that's associated with the cost anomaly. </p>
+    pub fn service(&self) -> std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The member account value that's associated with the cost anomaly. </p>
+    pub fn linked_account(&self) -> std::option::Option<&str> {
+        self.linked_account.as_deref()
+    }
+    /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
+    pub fn usage_type(&self) -> std::option::Option<&str> {
+        self.usage_type.as_deref()
+    }
 }
 impl std::fmt::Debug for RootCause {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11949,6 +13765,20 @@ pub struct TotalImpactFilter {
     pub start_value: f64,
     /// <p>The upper bound dollar value that's used in the filter. </p>
     pub end_value: f64,
+}
+impl TotalImpactFilter {
+    /// <p>The comparing value that's used in the filter. </p>
+    pub fn numeric_operator(&self) -> std::option::Option<&crate::model::NumericOperator> {
+        self.numeric_operator.as_ref()
+    }
+    /// <p>The lower bound dollar value that's used in the filter. </p>
+    pub fn start_value(&self) -> f64 {
+        self.start_value
+    }
+    /// <p>The upper bound dollar value that's used in the filter. </p>
+    pub fn end_value(&self) -> f64 {
+        self.end_value
+    }
 }
 impl std::fmt::Debug for TotalImpactFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12107,6 +13937,16 @@ pub struct AnomalyDateInterval {
     /// <p>The last date an anomaly was observed. </p>
     pub end_date: std::option::Option<std::string::String>,
 }
+impl AnomalyDateInterval {
+    /// <p>The first date an anomaly was observed. </p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The last date an anomaly was observed. </p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+}
 impl std::fmt::Debug for AnomalyDateInterval {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnomalyDateInterval");
@@ -12191,6 +14031,53 @@ pub struct CostCategory {
     /// <p>The
     /// default value for the cost category.</p>
     pub default_value: std::option::Option<std::string::String>,
+}
+impl CostCategory {
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+        self.cost_category_arn.as_deref()
+    }
+    /// <p>The effective state data of your Cost Category.</p>
+    pub fn effective_start(&self) -> std::option::Option<&str> {
+        self.effective_start.as_deref()
+    }
+    /// <p> The effective end data of your Cost Category.</p>
+    pub fn effective_end(&self) -> std::option::Option<&str> {
+        self.effective_end.as_deref()
+    }
+    /// <p>The unique name of the Cost Category.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The rule schema version in this particular Cost Category.</p>
+    pub fn rule_version(&self) -> std::option::Option<&crate::model::CostCategoryRuleVersion> {
+        self.rule_version.as_ref()
+    }
+    /// <p>The rules are processed in order. If there are multiple rules that match the line
+    /// item, then the first rule to match is used to determine that Cost Category value.
+    /// </p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::CostCategoryRule]> {
+        self.rules.as_deref()
+    }
+    /// <p> The split charge rules that are used to allocate your charges between your Cost
+    /// Category values. </p>
+    pub fn split_charge_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::CostCategorySplitChargeRule]> {
+        self.split_charge_rules.as_deref()
+    }
+    /// <p>The list of processing statuses for Cost Management products for a specific cost
+    /// category. </p>
+    pub fn processing_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::CostCategoryProcessingStatus]> {
+        self.processing_status.as_deref()
+    }
+    /// <p>The
+    /// default value for the cost category.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
 }
 impl std::fmt::Debug for CostCategory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

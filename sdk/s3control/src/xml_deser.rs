@@ -5727,7 +5727,7 @@ pub fn deser_union_crate_model_object_lambda_content_transformation(
                 base = Some(crate::model::ObjectLambdaContentTransformation::AwsLambda(tmp));
             }
             ,
-            _ => {}
+            _unknown => base = Some(crate::model::ObjectLambdaContentTransformation::Unknown),
         }
     }
     base.ok_or_else(|| aws_smithy_xml::decode::XmlError::custom("expected union, got nothing"))

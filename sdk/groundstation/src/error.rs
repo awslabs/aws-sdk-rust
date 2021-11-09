@@ -2968,6 +2968,12 @@ pub struct InvalidParameterException {
     /// <p/>
     pub parameter_name: std::option::Option<std::string::String>,
 }
+impl InvalidParameterException {
+    /// <p/>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterException");
@@ -3050,6 +3056,12 @@ pub struct DependencyException {
     /// <p/>
     pub parameter_name: std::option::Option<std::string::String>,
 }
+impl DependencyException {
+    /// <p/>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DependencyException");
@@ -3131,6 +3143,12 @@ pub struct ResourceLimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p/>
     pub parameter_name: std::option::Option<std::string::String>,
+}
+impl ResourceLimitExceededException {
+    /// <p/>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

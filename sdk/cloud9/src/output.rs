@@ -6,6 +6,12 @@ pub struct UpdateEnvironmentMembershipOutput {
     /// <p>Information about the environment member whose settings were changed.</p>
     pub membership: std::option::Option<crate::model::EnvironmentMember>,
 }
+impl UpdateEnvironmentMembershipOutput {
+    /// <p>Information about the environment member whose settings were changed.</p>
+    pub fn membership(&self) -> std::option::Option<&crate::model::EnvironmentMember> {
+        self.membership.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentMembershipOutput");
@@ -147,6 +153,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The list of tags associated with the Cloud9 development environment.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The list of tags associated with the Cloud9 development environment.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -205,6 +217,18 @@ pub struct ListEnvironmentsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of environment identifiers.</p>
     pub environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListEnvironmentsOutput {
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
+    /// with a unique string called a <i>next token</i>. To get the next batch of items
+    /// in the list, call this operation again, adding the next token to the call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of environment identifiers.</p>
+    pub fn environment_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.environment_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -311,6 +335,46 @@ pub struct DescribeEnvironmentStatusOutput {
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>Any informational message about the status of the environment.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DescribeEnvironmentStatusOutput {
+    /// <p>The status of the environment. Available values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connecting</code>: The environment is connecting.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>creating</code>: The environment is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deleting</code>: The environment is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>error</code>: The environment is in an error state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ready</code>: The environment is ready.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stopped</code>: The environment is stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>stopping</code>: The environment is stopping.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Any informational message about the status of the environment.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -436,6 +500,12 @@ pub struct DescribeEnvironmentsOutput {
     /// <p>Information about the environments that are returned.</p>
     pub environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
 }
+impl DescribeEnvironmentsOutput {
+    /// <p>Information about the environments that are returned.</p>
+    pub fn environments(&self) -> std::option::Option<&[crate::model::Environment]> {
+        self.environments.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEnvironmentsOutput");
@@ -496,6 +566,18 @@ pub struct DescribeEnvironmentMembershipsOutput {
     /// with a unique string called a <i>next token</i>. To get the next batch of items
     /// in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEnvironmentMembershipsOutput {
+    /// <p>Information about the environment members for the environment.</p>
+    pub fn memberships(&self) -> std::option::Option<&[crate::model::EnvironmentMember]> {
+        self.memberships.as_deref()
+    }
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
+    /// with a unique string called a <i>next token</i>. To get the next batch of items
+    /// in the list, call this operation again, adding the next token to the call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEnvironmentMembershipsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -631,6 +713,12 @@ pub struct CreateEnvironmentMembershipOutput {
     /// <p>Information about the environment member that was added.</p>
     pub membership: std::option::Option<crate::model::EnvironmentMember>,
 }
+impl CreateEnvironmentMembershipOutput {
+    /// <p>Information about the environment member that was added.</p>
+    pub fn membership(&self) -> std::option::Option<&crate::model::EnvironmentMember> {
+        self.membership.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentMembershipOutput");
@@ -681,6 +769,12 @@ impl CreateEnvironmentMembershipOutput {
 pub struct CreateEnvironmentEc2Output {
     /// <p>The ID of the environment that was created.</p>
     pub environment_id: std::option::Option<std::string::String>,
+}
+impl CreateEnvironmentEc2Output {
+    /// <p>The ID of the environment that was created.</p>
+    pub fn environment_id(&self) -> std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEnvironmentEc2Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

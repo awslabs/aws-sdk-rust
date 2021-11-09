@@ -125,6 +125,30 @@ pub struct Consumer {
     /// <p></p>
     pub consumer_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Consumer {
+    /// <p>The name of the consumer is something you choose when you register the
+    /// consumer.</p>
+    pub fn consumer_name(&self) -> std::option::Option<&str> {
+        self.consumer_name.as_deref()
+    }
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need
+    /// this ARN to be able to call <a>SubscribeToShard</a>.</p>
+    /// <p>If you delete a consumer and then create a new one with the same name, it won't have
+    /// the same ARN. That's because consumer ARNs contain the creation timestamp. This is
+    /// important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
+    /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
+    /// states.</p>
+    pub fn consumer_status(&self) -> std::option::Option<&crate::model::ConsumerStatus> {
+        self.consumer_status.as_ref()
+    }
+    /// <p></p>
+    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.consumer_creation_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for Consumer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Consumer");
@@ -311,6 +335,30 @@ pub struct PutRecordsResultEntry {
     /// Failure"</code>.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl PutRecordsResultEntry {
+    /// <p>The sequence number for an individual record result.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
+    /// <p>The shard ID for an individual record result.</p>
+    pub fn shard_id(&self) -> std::option::Option<&str> {
+        self.shard_id.as_deref()
+    }
+    /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
+    /// either <code>ProvisionedThroughputExceededException</code> or
+    /// <code>InternalFailure</code>.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message for an individual record result. An <code>ErrorCode</code> value
+    /// of <code>ProvisionedThroughputExceededException</code> has an error message that
+    /// includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of
+    /// <code>InternalFailure</code> has the error message <code>"Internal Service
+    /// Failure"</code>.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRecordsResultEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordsResultEntry");
@@ -430,6 +478,30 @@ pub struct PutRecordsRequestEntry {
     /// same partition key map to the same shard within the stream.</p>
     pub partition_key: std::option::Option<std::string::String>,
 }
+impl PutRecordsRequestEntry {
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is
+    /// serialized. When the data blob (the payload before base64-encoding) is added to the
+    /// partition key size, the total size must not exceed the maximum record size (1
+    /// MiB).</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// <p>The hash value used to determine explicitly the shard that the data record is
+    /// assigned to by overriding the partition key hash.</p>
+    pub fn explicit_hash_key(&self) -> std::option::Option<&str> {
+        self.explicit_hash_key.as_deref()
+    }
+    /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
+    /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+    /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
+    /// partition key and associated data to a specific shard. Specifically, an MD5 hash
+    /// function is used to map partition keys to 128-bit integer values and to map associated
+    /// data records to shards. As a result of this hashing mechanism, all data records with the
+    /// same partition key map to the same shard within the stream.</p>
+    pub fn partition_key(&self) -> std::option::Option<&str> {
+        self.partition_key.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRecordsRequestEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordsRequestEntry");
@@ -535,6 +607,19 @@ pub struct Tag {
     /// @</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
+    /// Unicode letters, digits, white space, _ . / = + - % @</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>An optional string, typically used to describe or define the tag. Maximum length:
+    /// 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - %
+    /// @</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -610,6 +695,29 @@ pub struct Shard {
     pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
     /// <p>The range of possible sequence numbers for the shard.</p>
     pub sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
+}
+impl Shard {
+    /// <p>The unique identifier of the shard within the stream.</p>
+    pub fn shard_id(&self) -> std::option::Option<&str> {
+        self.shard_id.as_deref()
+    }
+    /// <p>The shard ID of the shard's parent.</p>
+    pub fn parent_shard_id(&self) -> std::option::Option<&str> {
+        self.parent_shard_id.as_deref()
+    }
+    /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
+    pub fn adjacent_parent_shard_id(&self) -> std::option::Option<&str> {
+        self.adjacent_parent_shard_id.as_deref()
+    }
+    /// <p>The range of possible hash key values for the shard, which is a set of ordered
+    /// contiguous positive integers.</p>
+    pub fn hash_key_range(&self) -> std::option::Option<&crate::model::HashKeyRange> {
+        self.hash_key_range.as_ref()
+    }
+    /// <p>The range of possible sequence numbers for the shard.</p>
+    pub fn sequence_number_range(&self) -> std::option::Option<&crate::model::SequenceNumberRange> {
+        self.sequence_number_range.as_ref()
+    }
 }
 impl std::fmt::Debug for Shard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -728,6 +836,17 @@ pub struct SequenceNumberRange {
     /// ending sequence number of <code>null</code>.</p>
     pub ending_sequence_number: std::option::Option<std::string::String>,
 }
+impl SequenceNumberRange {
+    /// <p>The starting sequence number for the range.</p>
+    pub fn starting_sequence_number(&self) -> std::option::Option<&str> {
+        self.starting_sequence_number.as_deref()
+    }
+    /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an
+    /// ending sequence number of <code>null</code>.</p>
+    pub fn ending_sequence_number(&self) -> std::option::Option<&str> {
+        self.ending_sequence_number.as_deref()
+    }
+}
 impl std::fmt::Debug for SequenceNumberRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SequenceNumberRange");
@@ -800,6 +919,16 @@ pub struct HashKeyRange {
     /// <p>The ending hash key of the hash key range.</p>
     pub ending_hash_key: std::option::Option<std::string::String>,
 }
+impl HashKeyRange {
+    /// <p>The starting hash key of the hash key range.</p>
+    pub fn starting_hash_key(&self) -> std::option::Option<&str> {
+        self.starting_hash_key.as_deref()
+    }
+    /// <p>The ending hash key of the hash key range.</p>
+    pub fn ending_hash_key(&self) -> std::option::Option<&str> {
+        self.ending_hash_key.as_deref()
+    }
+}
 impl std::fmt::Debug for HashKeyRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HashKeyRange");
@@ -870,6 +999,20 @@ pub struct ShardFilter {
     pub shard_id: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ShardFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ShardFilterType> {
+        self.r#type.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn shard_id(&self) -> std::option::Option<&str> {
+        self.shard_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ShardFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1107,6 +1250,21 @@ pub struct ChildShard {
     /// contiguous positive integers.</p>
     pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
 }
+impl ChildShard {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn shard_id(&self) -> std::option::Option<&str> {
+        self.shard_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn parent_shards(&self) -> std::option::Option<&[std::string::String]> {
+        self.parent_shards.as_deref()
+    }
+    /// <p>The range of possible hash key values for the shard, which is a set of ordered
+    /// contiguous positive integers.</p>
+    pub fn hash_key_range(&self) -> std::option::Option<&crate::model::HashKeyRange> {
+        self.hash_key_range.as_ref()
+    }
+}
 impl std::fmt::Debug for ChildShard {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChildShard");
@@ -1217,6 +1375,43 @@ pub struct Record {
     /// </li>
     /// </ul>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
+}
+impl Record {
+    /// <p>The unique identifier of the record within its shard.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
+    /// <p>The approximate time that the record was inserted into the stream.</p>
+    pub fn approximate_arrival_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.approximate_arrival_timestamp.as_ref()
+    }
+    /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
+    /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
+    /// When the data blob (the payload before base64-encoding) is added to the partition key
+    /// size, the total size must not exceed the maximum record size (1 MiB).</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+    pub fn partition_key(&self) -> std::option::Option<&str> {
+        self.partition_key.as_deref()
+    }
+    /// <p>The encryption type used on the record. This parameter can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code>: Use server-side encryption on the records in the stream
+    /// using a customer-managed AWS KMS key.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Record {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1537,6 +1732,116 @@ pub struct StreamDescriptionSummary {
     pub open_shard_count: std::option::Option<i32>,
     /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
     pub consumer_count: std::option::Option<i32>,
+}
+impl StreamDescriptionSummary {
+    /// <p>The name of the stream being described.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The current status of the stream being described. The stream status is one of the
+    /// following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The stream is being created. Kinesis Data Streams
+    /// immediately returns and sets <code>StreamStatus</code> to
+    /// <code>CREATING</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The stream is being deleted. The specified stream is in
+    /// the <code>DELETING</code> state until Kinesis Data Streams completes the
+    /// deletion.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The stream exists and is ready for read and write
+    /// operations or deletion. You should perform read and write operations only on an
+    /// <code>ACTIVE</code> stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
+    /// write operations continue to work while the stream is in the
+    /// <code>UPDATING</code> state.</p>
+    /// </li>
+    /// </ul>
+    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+        self.stream_status.as_ref()
+    }
+    /// <p>The current retention period, in hours.</p>
+    pub fn retention_period_hours(&self) -> std::option::Option<i32> {
+        self.retention_period_hours
+    }
+    /// <p>The approximate time that the stream was created.</p>
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stream_creation_timestamp.as_ref()
+    }
+    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&[crate::model::EnhancedMetrics]> {
+        self.enhanced_monitoring.as_deref()
+    }
+    /// <p>The encryption type used. This value is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+    /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
+    /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
+    /// Streams by specifying the alias <code>aws/kinesis</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN example:
+    /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Alias ARN example: <code>
+    /// arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Globally unique key ID example:
+    /// <code>12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams:
+    /// <code>alias/aws/kinesis</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
+    /// <p>The number of open shards in the stream.</p>
+    pub fn open_shard_count(&self) -> std::option::Option<i32> {
+        self.open_shard_count
+    }
+    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    pub fn consumer_count(&self) -> std::option::Option<i32> {
+        self.consumer_count
+    }
 }
 impl std::fmt::Debug for StreamDescriptionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1908,6 +2213,59 @@ pub struct EnhancedMetrics {
     /// Kinesis Data Streams Developer Guide</i>.</p>
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
+impl EnhancedMetrics {
+    /// <p>List of shard-level metrics.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
+    /// enhances every metric.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IncomingBytes</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IncomingRecords</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OutgoingBytes</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OutgoingRecords</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>WriteProvisionedThroughputExceeded</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReadProvisionedThroughputExceeded</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IteratorAgeMilliseconds</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+    /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
+    /// Kinesis Data Streams Developer Guide</i>.</p>
+    pub fn shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
+        self.shard_level_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for EnhancedMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnhancedMetrics");
@@ -2138,6 +2496,34 @@ pub struct ConsumerDescription {
     /// <p>The ARN of the stream with which you registered the consumer.</p>
     pub stream_arn: std::option::Option<std::string::String>,
 }
+impl ConsumerDescription {
+    /// <p>The name of the consumer is something you choose when you register the
+    /// consumer.</p>
+    pub fn consumer_name(&self) -> std::option::Option<&str> {
+        self.consumer_name.as_deref()
+    }
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need
+    /// this ARN to be able to call <a>SubscribeToShard</a>.</p>
+    /// <p>If you delete a consumer and then create a new one with the same name, it won't have
+    /// the same ARN. That's because consumer ARNs contain the creation timestamp. This is
+    /// important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+        self.consumer_arn.as_deref()
+    }
+    /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
+    /// states.</p>
+    pub fn consumer_status(&self) -> std::option::Option<&crate::model::ConsumerStatus> {
+        self.consumer_status.as_ref()
+    }
+    /// <p></p>
+    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.consumer_creation_timestamp.as_ref()
+    }
+    /// <p>The ARN of the stream with which you registered the consumer.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ConsumerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConsumerDescription");
@@ -2349,6 +2735,118 @@ pub struct StreamDescription {
     /// </li>
     /// </ul>
     pub key_id: std::option::Option<std::string::String>,
+}
+impl StreamDescription {
+    /// <p>The name of the stream being described.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The current status of the stream being described. The stream status is one of the
+    /// following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The stream is being created. Kinesis Data Streams
+    /// immediately returns and sets <code>StreamStatus</code> to
+    /// <code>CREATING</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - The stream is being deleted. The specified stream is in
+    /// the <code>DELETING</code> state until Kinesis Data Streams completes the
+    /// deletion.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The stream exists and is ready for read and write
+    /// operations or deletion. You should perform read and write operations only on an
+    /// <code>ACTIVE</code> stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
+    /// write operations continue to work while the stream is in the
+    /// <code>UPDATING</code> state.</p>
+    /// </li>
+    /// </ul>
+    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+        self.stream_status.as_ref()
+    }
+    /// <p>The shards that comprise the stream.</p>
+    pub fn shards(&self) -> std::option::Option<&[crate::model::Shard]> {
+        self.shards.as_deref()
+    }
+    /// <p>If set to <code>true</code>, more shards in the stream are available to
+    /// describe.</p>
+    pub fn has_more_shards(&self) -> std::option::Option<bool> {
+        self.has_more_shards
+    }
+    /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+    /// 168.</p>
+    pub fn retention_period_hours(&self) -> std::option::Option<i32> {
+        self.retention_period_hours
+    }
+    /// <p>The approximate time that the stream was created.</p>
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stream_creation_timestamp.as_ref()
+    }
+    /// <p>Represents the current enhanced monitoring settings of the stream.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&[crate::model::EnhancedMetrics]> {
+        self.enhanced_monitoring.as_deref()
+    }
+    /// <p>The server-side encryption type used on the stream. This parameter can be one of
+    /// the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: Do not encrypt the records in the stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KMS</code>: Use server-side encryption on the records in the stream
+    /// using a customer-managed AWS KMS key.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+        self.encryption_type.as_ref()
+    }
+    /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+    /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
+    /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data
+    /// Streams by specifying the alias <code>aws/kinesis</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN example:
+    /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Alias ARN example:
+    /// <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Globally unique key ID example:
+    /// <code>12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams:
+    /// <code>alias/aws/kinesis</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StreamDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -19,6 +19,35 @@ pub struct Record {
     /// device.
     pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Record {
+    /// The key for the record.
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// The value for the record.
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// The server sync count for this record.
+    pub fn sync_count(&self) -> std::option::Option<i64> {
+        self.sync_count
+    }
+    /// The date on which the record was last
+    /// modified.
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// The user/device that made the last change to this
+    /// record.
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// The last modified date of the client
+    /// device.
+    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.device_last_modified_date.as_ref()
+    }
+}
 impl std::fmt::Debug for Record {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Record");
@@ -157,6 +186,31 @@ pub struct RecordPatch {
     /// The last modified date of the client
     /// device.
     pub device_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RecordPatch {
+    /// An operation, either replace or remove.
+    pub fn op(&self) -> std::option::Option<&crate::model::Operation> {
+        self.op.as_ref()
+    }
+    /// The key associated with the record patch.
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// The value associated with the record
+    /// patch.
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// Last known server sync count for this record. Set
+    /// to 0 if unknown.
+    pub fn sync_count(&self) -> std::option::Option<i64> {
+        self.sync_count
+    }
+    /// The last modified date of the client
+    /// device.
+    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.device_last_modified_date.as_ref()
+    }
 }
 impl std::fmt::Debug for RecordPatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -328,6 +382,22 @@ pub struct CognitoStreams {
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
     pub streaming_status: std::option::Option<crate::model::StreamingStatus>,
 }
+impl CognitoStreams {
+    /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// Status of the Cognito streams. Valid values are:
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
+    pub fn streaming_status(&self) -> std::option::Option<&crate::model::StreamingStatus> {
+        self.streaming_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CognitoStreams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CognitoStreams");
@@ -465,6 +535,16 @@ pub struct PushSync {
     pub application_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl PushSync {
+    /// <p>List of SNS platform application ARNs that could be used by clients.</p>
+    pub fn application_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.application_arns.as_deref()
+    }
+    /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PushSync {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -611,6 +691,29 @@ pub struct IdentityPoolUsage {
     /// last modified.
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl IdentityPoolUsage {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// Number of sync sessions for the
+    /// identity pool.
+    pub fn sync_sessions_count(&self) -> std::option::Option<i64> {
+        self.sync_sessions_count
+    }
+    /// Data storage information for the identity
+    /// pool.
+    pub fn data_storage(&self) -> std::option::Option<i64> {
+        self.data_storage
+    }
+    /// Date on which the identity pool was
+    /// last modified.
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+}
 impl std::fmt::Debug for IdentityPoolUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityPoolUsage");
@@ -736,6 +839,43 @@ pub struct Dataset {
     pub data_storage: std::option::Option<i64>,
     /// Number of records in this dataset.
     pub num_records: std::option::Option<i64>,
+}
+impl Dataset {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A string of up to 128 characters. Allowed characters
+    /// are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// Date on which the dataset was
+    /// created.
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// Date when the dataset was last
+    /// modified.
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// The device that made the last change to this
+    /// dataset.
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// Total size in bytes of the records in this
+    /// dataset.
+    pub fn data_storage(&self) -> std::option::Option<i64> {
+        self.data_storage
+    }
+    /// Number of records in this dataset.
+    pub fn num_records(&self) -> std::option::Option<i64> {
+        self.num_records
+    }
 }
 impl std::fmt::Debug for Dataset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -963,6 +1103,35 @@ pub struct IdentityUsage {
     /// Total data storage for this
     /// identity.
     pub data_storage: std::option::Option<i64>,
+}
+impl IdentityUsage {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// Date on which the identity was last
+    /// modified.
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// Number of datasets for the
+    /// identity.
+    pub fn dataset_count(&self) -> i32 {
+        self.dataset_count
+    }
+    /// Total data storage for this
+    /// identity.
+    pub fn data_storage(&self) -> std::option::Option<i64> {
+        self.data_storage
+    }
 }
 impl std::fmt::Debug for IdentityUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

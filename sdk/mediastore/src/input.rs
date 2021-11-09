@@ -122,10 +122,7 @@ impl CreateContainerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_container(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_container(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -278,10 +275,7 @@ impl DeleteContainerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_container(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_container(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -436,10 +430,7 @@ impl DeleteContainerPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_container_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -592,10 +583,7 @@ impl DeleteCorsPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_cors_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_cors_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -750,10 +738,7 @@ impl DeleteLifecyclePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_lifecycle_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -906,10 +891,7 @@ impl DeleteMetricPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_metric_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_metric_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1062,10 +1044,7 @@ impl DescribeContainerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_container(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_container(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1218,10 +1197,7 @@ impl GetContainerPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_container_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_container_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1373,10 +1349,8 @@ impl GetCorsPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_cors_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_cors_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1529,10 +1503,7 @@ impl GetLifecyclePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_lifecycle_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_lifecycle_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1685,10 +1656,7 @@ impl GetMetricPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_metric_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_metric_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1855,10 +1823,8 @@ impl ListContainersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_containers(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_containers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2008,10 +1974,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2194,10 +2159,7 @@ impl PutContainerPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_container_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_container_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2370,10 +2332,8 @@ impl PutCorsPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_cors_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_cors_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2541,10 +2501,7 @@ impl PutLifecyclePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2728,10 +2685,7 @@ impl PutMetricPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_metric_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_metric_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2884,10 +2838,7 @@ impl StartAccessLoggingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_access_logging(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_access_logging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3040,10 +2991,7 @@ impl StopAccessLoggingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_access_logging(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_access_logging(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3219,10 +3167,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3396,10 +3341,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3472,6 +3414,18 @@ pub struct UntagResourceInput {
     /// (priority).</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
+    /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
+    /// (priority).</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -3493,6 +3447,19 @@ pub struct TagResourceInput {
     /// customer:CompanyA, priority:Medium, and type:Contract.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the container. </p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
+    /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
+    /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
+    /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3509,6 +3476,12 @@ pub struct StopAccessLoggingInput {
     /// <p>The name of the container that you want to stop access logging on.</p>
     pub container_name: std::option::Option<std::string::String>,
 }
+impl StopAccessLoggingInput {
+    /// <p>The name of the container that you want to stop access logging on.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopAccessLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopAccessLoggingInput");
@@ -3523,6 +3496,12 @@ impl std::fmt::Debug for StopAccessLoggingInput {
 pub struct StartAccessLoggingInput {
     /// <p>The name of the container that you want to start access logging on.</p>
     pub container_name: std::option::Option<std::string::String>,
+}
+impl StartAccessLoggingInput {
+    /// <p>The name of the container that you want to start access logging on.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartAccessLoggingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3549,6 +3528,24 @@ pub struct PutMetricPolicyInput {
     /// </ul>
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
+impl PutMetricPolicyInput {
+    /// <p>The name of the container that you want to add the metric policy to.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
+    /// </li>
+    /// <li>
+    /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
+    /// </li>
+    /// </ul>
+    pub fn metric_policy(&self) -> std::option::Option<&crate::model::MetricPolicy> {
+        self.metric_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutMetricPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMetricPolicyInput");
@@ -3567,6 +3564,16 @@ pub struct PutLifecyclePolicyInput {
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub lifecycle_policy: std::option::Option<std::string::String>,
 }
+impl PutLifecyclePolicyInput {
+    /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The object lifecycle policy to apply to the container.</p>
+    pub fn lifecycle_policy(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLifecyclePolicyInput");
@@ -3584,6 +3591,16 @@ pub struct PutCorsPolicyInput {
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The CORS policy to apply to the container.  </p>
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
+}
+impl PutCorsPolicyInput {
+    /// <p>The name of the container that you want to assign the CORS policy to.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The CORS policy to apply to the container.  </p>
+    pub fn cors_policy(&self) -> std::option::Option<&[crate::model::CorsRule]> {
+        self.cors_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutCorsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3612,6 +3629,25 @@ pub struct PutContainerPolicyInput {
     /// </ul>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutContainerPolicyInput {
+    /// <p>The name of the container.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>The contents of the policy, which includes the following: </p>
+    /// <ul>
+    /// <li>
+    /// <p>One <code>Version</code> tag</p>
+    /// </li>
+    /// <li>
+    /// <p>One <code>Statement</code> tag that contains the standard tags for the
+    /// policy.</p>
+    /// </li>
+    /// </ul>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutContainerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutContainerPolicyInput");
@@ -3627,6 +3663,12 @@ impl std::fmt::Debug for PutContainerPolicyInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub resource: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the container.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3648,6 +3690,19 @@ pub struct ListContainersInput {
     /// </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListContainersInput {
+    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
+    /// was included in the previous response) to obtain the next set of containers. This token is
+    /// included in a response only if there actually are more containers to list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListContainersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContainersInput");
@@ -3664,6 +3719,12 @@ pub struct GetMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy.</p>
     pub container_name: std::option::Option<std::string::String>,
 }
+impl GetMetricPolicyInput {
+    /// <p>The name of the container that is associated with the metric policy.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMetricPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMetricPolicyInput");
@@ -3678,6 +3739,12 @@ impl std::fmt::Debug for GetMetricPolicyInput {
 pub struct GetLifecyclePolicyInput {
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
     pub container_name: std::option::Option<std::string::String>,
+}
+impl GetLifecyclePolicyInput {
+    /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3694,6 +3761,12 @@ pub struct GetCorsPolicyInput {
     /// <p>The name of the container that the policy is assigned to.</p>
     pub container_name: std::option::Option<std::string::String>,
 }
+impl GetCorsPolicyInput {
+    /// <p>The name of the container that the policy is assigned to.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCorsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCorsPolicyInput");
@@ -3708,6 +3781,12 @@ impl std::fmt::Debug for GetCorsPolicyInput {
 pub struct GetContainerPolicyInput {
     /// <p>The name of the container. </p>
     pub container_name: std::option::Option<std::string::String>,
+}
+impl GetContainerPolicyInput {
+    /// <p>The name of the container. </p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3724,6 +3803,12 @@ pub struct DescribeContainerInput {
     /// <p>The name of the container to query.</p>
     pub container_name: std::option::Option<std::string::String>,
 }
+impl DescribeContainerInput {
+    /// <p>The name of the container to query.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeContainerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeContainerInput");
@@ -3738,6 +3823,12 @@ impl std::fmt::Debug for DescribeContainerInput {
 pub struct DeleteMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     pub container_name: std::option::Option<std::string::String>,
+}
+impl DeleteMetricPolicyInput {
+    /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMetricPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3754,6 +3845,12 @@ pub struct DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     pub container_name: std::option::Option<std::string::String>,
 }
+impl DeleteLifecyclePolicyInput {
+    /// <p>The name of the container that holds the object lifecycle policy.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLifecyclePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLifecyclePolicyInput");
@@ -3768,6 +3865,12 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 pub struct DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
     pub container_name: std::option::Option<std::string::String>,
+}
+impl DeleteCorsPolicyInput {
+    /// <p>The name of the container to remove the policy from.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCorsPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3784,6 +3887,12 @@ pub struct DeleteContainerPolicyInput {
     /// <p>The name of the container that holds the policy.</p>
     pub container_name: std::option::Option<std::string::String>,
 }
+impl DeleteContainerPolicyInput {
+    /// <p>The name of the container that holds the policy.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContainerPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContainerPolicyInput");
@@ -3798,6 +3907,12 @@ impl std::fmt::Debug for DeleteContainerPolicyInput {
 pub struct DeleteContainerInput {
     /// <p>The name of the container to delete. </p>
     pub container_name: std::option::Option<std::string::String>,
+}
+impl DeleteContainerInput {
+    /// <p>The name of the container to delete. </p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteContainerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3820,6 +3935,21 @@ pub struct CreateContainerInput {
     /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
     /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateContainerInput {
+    /// <p>The name for the container. The name must be from 1 to 255 characters. Container
+    /// names must be unique to your AWS account within a specific region. As an example, you could
+    /// create a container named <code>movies</code> in every region, as long as you don’t have an
+    /// existing container with that name.</p>
+    pub fn container_name(&self) -> std::option::Option<&str> {
+        self.container_name.as_deref()
+    }
+    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
+    /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
+    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateContainerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

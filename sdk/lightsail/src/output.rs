@@ -7,6 +7,13 @@ pub struct UpdateRelationalDatabaseParametersOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl UpdateRelationalDatabaseParametersOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRelationalDatabaseParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRelationalDatabaseParametersOutput");
@@ -66,6 +73,13 @@ pub struct UpdateRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl UpdateRelationalDatabaseOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -127,6 +141,13 @@ pub struct UpdateLoadBalancerAttributeOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl UpdateLoadBalancerAttributeOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLoadBalancerAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoadBalancerAttributeOutput");
@@ -187,6 +208,13 @@ pub struct UpdateDomainEntryOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl UpdateDomainEntryOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainEntryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainEntryOutput");
@@ -246,6 +274,12 @@ pub struct UpdateDistributionBundleOutput {
     /// <p>Describes the API operation.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl UpdateDistributionBundleOutput {
+    /// <p>Describes the API operation.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDistributionBundleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDistributionBundleOutput");
@@ -297,6 +331,13 @@ pub struct UpdateDistributionOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl UpdateDistributionOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -351,6 +392,12 @@ pub struct UpdateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
+impl UpdateContainerServiceOutput {
+    /// <p>An object that describes a container service.</p>
+    pub fn container_service(&self) -> std::option::Option<&crate::model::ContainerService> {
+        self.container_service.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateContainerServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContainerServiceOutput");
@@ -402,6 +449,13 @@ pub struct UpdateBucketBundleOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl UpdateBucketBundleOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBucketBundleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -464,6 +518,17 @@ pub struct UpdateBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl UpdateBucketOutput {
+    /// <p>An object that describes the bucket that is updated.</p>
+    pub fn bucket(&self) -> std::option::Option<&crate::model::Bucket> {
+        self.bucket.as_ref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBucketOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -538,6 +603,13 @@ pub struct UntagResourceOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl UntagResourceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceOutput");
@@ -598,6 +670,13 @@ pub struct UnpeerVpcOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl UnpeerVpcOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for UnpeerVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnpeerVpcOutput");
@@ -651,6 +730,13 @@ pub struct TestAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl TestAlarmOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for TestAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -712,6 +798,13 @@ pub struct TagResourceOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl TagResourceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceOutput");
@@ -771,6 +864,13 @@ pub struct StopRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl StopRelationalDatabaseOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for StopRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -832,6 +932,13 @@ pub struct StopInstanceOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl StopInstanceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for StopInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInstanceOutput");
@@ -891,6 +998,13 @@ pub struct StartRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl StartRelationalDatabaseOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for StartRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -952,6 +1066,13 @@ pub struct StartInstanceOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl StartInstanceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for StartInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartInstanceOutput");
@@ -1011,6 +1132,13 @@ pub struct SetResourceAccessForBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl SetResourceAccessForBucketOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for SetResourceAccessForBucketOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1072,6 +1200,13 @@ pub struct SetIpAddressTypeOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl SetIpAddressTypeOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for SetIpAddressTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIpAddressTypeOutput");
@@ -1131,6 +1266,13 @@ pub struct SendContactMethodVerificationOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl SendContactMethodVerificationOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for SendContactMethodVerificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1196,6 +1338,22 @@ pub struct ResetDistributionCacheOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl ResetDistributionCacheOutput {
+    /// <p>The status of the reset cache request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time
+    /// format.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for ResetDistributionCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1282,6 +1440,13 @@ pub struct ReleaseStaticIpOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl ReleaseStaticIpOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for ReleaseStaticIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReleaseStaticIpOutput");
@@ -1342,6 +1507,13 @@ pub struct RegisterContainerImageOutput {
     /// service.</p>
     pub container_image: std::option::Option<crate::model::ContainerImage>,
 }
+impl RegisterContainerImageOutput {
+    /// <p>Describes a container image that is registered to an Amazon Lightsail container
+    /// service.</p>
+    pub fn container_image(&self) -> std::option::Option<&crate::model::ContainerImage> {
+        self.container_image.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterContainerImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterContainerImageOutput");
@@ -1395,6 +1567,13 @@ pub struct RebootRelationalDatabaseOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl RebootRelationalDatabaseOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1456,6 +1635,13 @@ pub struct RebootInstanceOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl RebootInstanceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootInstanceOutput");
@@ -1516,6 +1702,13 @@ pub struct PutInstancePublicPortsOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl PutInstancePublicPortsOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for PutInstancePublicPortsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutInstancePublicPortsOutput");
@@ -1569,6 +1762,13 @@ pub struct PutAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl PutAlarmOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1630,6 +1830,13 @@ pub struct PeerVpcOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl PeerVpcOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for PeerVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PeerVpcOutput");
@@ -1683,6 +1890,13 @@ pub struct OpenInstancePublicPortsOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl OpenInstancePublicPortsOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for OpenInstancePublicPortsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1738,6 +1952,13 @@ pub struct IsVpcPeeredOutput {
     /// <code>false</code>.</p>
     pub is_peered: std::option::Option<bool>,
 }
+impl IsVpcPeeredOutput {
+    /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
+    /// <code>false</code>.</p>
+    pub fn is_peered(&self) -> std::option::Option<bool> {
+        self.is_peered
+    }
+}
 impl std::fmt::Debug for IsVpcPeeredOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IsVpcPeeredOutput");
@@ -1788,6 +2009,13 @@ pub struct ImportKeyPairOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl ImportKeyPairOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1847,6 +2075,20 @@ pub struct GetStaticIpsOutput {
     /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetStaticIpsOutput {
+    /// <p>An array of key-value pairs containing information about your get static IPs
+    /// request.</p>
+    pub fn static_ips(&self) -> std::option::Option<&[crate::model::StaticIp]> {
+        self.static_ips.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStaticIpsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1929,6 +2171,12 @@ pub struct GetStaticIpOutput {
     /// <p>An array of key-value pairs containing information about the requested static IP.</p>
     pub static_ip: std::option::Option<crate::model::StaticIp>,
 }
+impl GetStaticIpOutput {
+    /// <p>An array of key-value pairs containing information about the requested static IP.</p>
+    pub fn static_ip(&self) -> std::option::Option<&crate::model::StaticIp> {
+        self.static_ip.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStaticIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStaticIpOutput");
@@ -1983,6 +2231,22 @@ pub struct GetRelationalDatabaseSnapshotsOutput {
     /// <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using
     /// the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabaseSnapshotsOutput {
+    /// <p>An object describing the result of your get relational database snapshots request.</p>
+    pub fn relational_database_snapshots(
+        &self,
+    ) -> std::option::Option<&[crate::model::RelationalDatabaseSnapshot]> {
+        self.relational_database_snapshots.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another
+    /// <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using
+    /// the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2072,6 +2336,14 @@ pub struct GetRelationalDatabaseSnapshotOutput {
     /// <p>An object describing the specified database snapshot.</p>
     pub relational_database_snapshot: std::option::Option<crate::model::RelationalDatabaseSnapshot>,
 }
+impl GetRelationalDatabaseSnapshotOutput {
+    /// <p>An object describing the specified database snapshot.</p>
+    pub fn relational_database_snapshot(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalDatabaseSnapshot> {
+        self.relational_database_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseSnapshotOutput");
@@ -2134,6 +2406,19 @@ pub struct GetRelationalDatabasesOutput {
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code>
     /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabasesOutput {
+    /// <p>An object describing the result of your get relational databases request.</p>
+    pub fn relational_databases(&self) -> std::option::Option<&[crate::model::RelationalDatabase]> {
+        self.relational_databases.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code>
+    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2224,6 +2509,20 @@ pub struct GetRelationalDatabaseParametersOutput {
     /// the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseParametersOutput {
+    /// <p>An object describing the result of your get relational database parameters request.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::RelationalDatabaseParameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another
+    /// <code>GetRelationalDatabaseParameters</code> request and specify the next page token using
+    /// the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseParametersOutput");
@@ -2311,6 +2610,16 @@ pub struct GetRelationalDatabaseMetricDataOutput {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
+impl GetRelationalDatabaseMetricDataOutput {
+    /// <p>The name of the metric returned.</p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::RelationalDatabaseMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+        self.metric_data.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseMetricDataOutput");
@@ -2386,6 +2695,16 @@ pub struct GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The timestamp when the specified version of the master user password was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetRelationalDatabaseMasterUserPasswordOutput {
+    /// <p>The master user password for the <code>password version</code> specified.</p>
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
+        self.master_user_password.as_deref()
+    }
+    /// <p>The timestamp when the specified version of the master user password was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseMasterUserPasswordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseMasterUserPasswordOutput");
@@ -2455,6 +2774,13 @@ pub struct GetRelationalDatabaseLogStreamsOutput {
     /// request.</p>
     pub log_streams: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetRelationalDatabaseLogStreamsOutput {
+    /// <p>An object describing the result of your get relational database log streams
+    /// request.</p>
+    pub fn log_streams(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_streams.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseLogStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseLogStreamsOutput");
@@ -2519,6 +2845,22 @@ pub struct GetRelationalDatabaseLogEventsOutput {
     /// <p>A token used for advancing to the next page of results from your get relational database
     /// log events request.</p>
     pub next_forward_token: std::option::Option<std::string::String>,
+}
+impl GetRelationalDatabaseLogEventsOutput {
+    /// <p>An object describing the result of your get relational database log events request.</p>
+    pub fn resource_log_events(&self) -> std::option::Option<&[crate::model::LogEvent]> {
+        self.resource_log_events.as_deref()
+    }
+    /// <p>A token used for advancing to the previous page of results from your get relational
+    /// database log events request.</p>
+    pub fn next_backward_token(&self) -> std::option::Option<&str> {
+        self.next_backward_token.as_deref()
+    }
+    /// <p>A token used for advancing to the next page of results from your get relational database
+    /// log events request.</p>
+    pub fn next_forward_token(&self) -> std::option::Option<&str> {
+        self.next_forward_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRelationalDatabaseLogEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2619,6 +2961,21 @@ pub struct GetRelationalDatabaseEventsOutput {
     /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseEventsOutput {
+    /// <p>An object describing the result of your get relational database events request.</p>
+    pub fn relational_database_events(
+        &self,
+    ) -> std::option::Option<&[crate::model::RelationalDatabaseEvent]> {
+        self.relational_database_events.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code>
+    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseEventsOutput");
@@ -2710,6 +3067,19 @@ pub struct GetRelationalDatabaseBundlesOutput {
     /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseBundlesOutput {
+    /// <p>An object describing the result of your get relational database bundles request.</p>
+    pub fn bundles(&self) -> std::option::Option<&[crate::model::RelationalDatabaseBundle]> {
+        self.bundles.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code>
+    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseBundlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseBundlesOutput");
@@ -2796,6 +3166,20 @@ pub struct GetRelationalDatabaseBlueprintsOutput {
     /// the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetRelationalDatabaseBlueprintsOutput {
+    /// <p>An object describing the result of your get relational database blueprints request.</p>
+    pub fn blueprints(&self) -> std::option::Option<&[crate::model::RelationalDatabaseBlueprint]> {
+        self.blueprints.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another
+    /// <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using
+    /// the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseBlueprintsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseBlueprintsOutput");
@@ -2881,6 +3265,12 @@ pub struct GetRelationalDatabaseOutput {
     /// <p>An object describing the specified database.</p>
     pub relational_database: std::option::Option<crate::model::RelationalDatabase>,
 }
+impl GetRelationalDatabaseOutput {
+    /// <p>An object describing the specified database.</p>
+    pub fn relational_database(&self) -> std::option::Option<&crate::model::RelationalDatabase> {
+        self.relational_database.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRelationalDatabaseOutput");
@@ -2931,6 +3321,12 @@ impl GetRelationalDatabaseOutput {
 pub struct GetRegionsOutput {
     /// <p>An array of key-value pairs containing information about your get regions request.</p>
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
+}
+impl GetRegionsOutput {
+    /// <p>An array of key-value pairs containing information about your get regions request.</p>
+    pub fn regions(&self) -> std::option::Option<&[crate::model::Region]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRegionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3001,6 +3397,29 @@ pub struct GetOperationsForResourceOutput {
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code>
     /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetOperationsForResourceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p>
+    /// <note>
+    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
+    /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
+    /// instead.</p>
+    /// </note>
+    pub fn next_page_count(&self) -> std::option::Option<&str> {
+        self.next_page_count.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code>
+    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOperationsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3115,6 +3534,20 @@ pub struct GetOperationsOutput {
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetOperationsOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperations</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOperationsOutput");
@@ -3197,6 +3630,13 @@ pub struct GetOperationOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl GetOperationOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for GetOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOperationOutput");
@@ -3251,6 +3691,15 @@ pub struct GetLoadBalancerTlsCertificatesOutput {
     /// certificates.</p>
     pub tls_certificates:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificate>>,
+}
+impl GetLoadBalancerTlsCertificatesOutput {
+    /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
+    /// certificates.</p>
+    pub fn tls_certificates(
+        &self,
+    ) -> std::option::Option<&[crate::model::LoadBalancerTlsCertificate]> {
+        self.tls_certificates.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLoadBalancerTlsCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3319,6 +3768,19 @@ pub struct GetLoadBalancersOutput {
     /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetLoadBalancersOutput {
+    /// <p>An array of LoadBalancer objects describing your load balancers.</p>
+    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+        self.load_balancers.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLoadBalancersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3401,6 +3863,16 @@ pub struct GetLoadBalancerMetricDataOutput {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
+impl GetLoadBalancerMetricDataOutput {
+    /// <p>The name of the metric returned.</p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::LoadBalancerMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+        self.metric_data.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLoadBalancerMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoadBalancerMetricDataOutput");
@@ -3474,6 +3946,12 @@ pub struct GetLoadBalancerOutput {
     /// <p>An object containing information about your load balancer.</p>
     pub load_balancer: std::option::Option<crate::model::LoadBalancer>,
 }
+impl GetLoadBalancerOutput {
+    /// <p>An object containing information about your load balancer.</p>
+    pub fn load_balancer(&self) -> std::option::Option<&crate::model::LoadBalancer> {
+        self.load_balancer.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoadBalancerOutput");
@@ -3529,6 +4007,19 @@ pub struct GetKeyPairsOutput {
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetKeyPairsOutput {
+    /// <p>An array of key-value pairs containing information about the key pairs.</p>
+    pub fn key_pairs(&self) -> std::option::Option<&[crate::model::KeyPair]> {
+        self.key_pairs.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetKeyPairsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3609,6 +4100,12 @@ pub struct GetKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
     pub key_pair: std::option::Option<crate::model::KeyPair>,
 }
+impl GetKeyPairOutput {
+    /// <p>An array of key-value pairs containing information about the key pair.</p>
+    pub fn key_pair(&self) -> std::option::Option<&crate::model::KeyPair> {
+        self.key_pair.as_ref()
+    }
+}
 impl std::fmt::Debug for GetKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyPairOutput");
@@ -3656,6 +4153,12 @@ impl GetKeyPairOutput {
 pub struct GetInstanceStateOutput {
     /// <p>The state of the instance.</p>
     pub state: std::option::Option<crate::model::InstanceState>,
+}
+impl GetInstanceStateOutput {
+    /// <p>The state of the instance.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::InstanceState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for GetInstanceStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3711,6 +4214,20 @@ pub struct GetInstanceSnapshotsOutput {
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request
     /// and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetInstanceSnapshotsOutput {
+    /// <p>An array of key-value pairs containing information about the results of your get instance
+    /// snapshots request.</p>
+    pub fn instance_snapshots(&self) -> std::option::Option<&[crate::model::InstanceSnapshot]> {
+        self.instance_snapshots.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request
+    /// and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3798,6 +4315,13 @@ pub struct GetInstanceSnapshotOutput {
     /// snapshot request.</p>
     pub instance_snapshot: std::option::Option<crate::model::InstanceSnapshot>,
 }
+impl GetInstanceSnapshotOutput {
+    /// <p>An array of key-value pairs containing information about the results of your get instance
+    /// snapshot request.</p>
+    pub fn instance_snapshot(&self) -> std::option::Option<&crate::model::InstanceSnapshot> {
+        self.instance_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInstanceSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceSnapshotOutput");
@@ -3855,6 +4379,19 @@ pub struct GetInstancesOutput {
     /// <p>To get the next page of results, perform another <code>GetInstances</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetInstancesOutput {
+    /// <p>An array of key-value pairs containing information about your instances.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetInstances</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3936,6 +4473,13 @@ pub struct GetInstancePortStatesOutput {
     /// instance.</p>
     pub port_states: std::option::Option<std::vec::Vec<crate::model::InstancePortState>>,
 }
+impl GetInstancePortStatesOutput {
+    /// <p>An array of objects that describe the firewall port states for the specified
+    /// instance.</p>
+    pub fn port_states(&self) -> std::option::Option<&[crate::model::InstancePortState]> {
+        self.port_states.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInstancePortStatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstancePortStatesOutput");
@@ -3996,6 +4540,16 @@ pub struct GetInstanceMetricDataOutput {
     pub metric_name: std::option::Option<crate::model::InstanceMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
+}
+impl GetInstanceMetricDataOutput {
+    /// <p>The name of the metric returned.</p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::InstanceMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+        self.metric_data.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4071,6 +4625,13 @@ pub struct GetInstanceAccessDetailsOutput {
     /// request.</p>
     pub access_details: std::option::Option<crate::model::InstanceAccessDetails>,
 }
+impl GetInstanceAccessDetailsOutput {
+    /// <p>An array of key-value pairs containing information about a get instance access
+    /// request.</p>
+    pub fn access_details(&self) -> std::option::Option<&crate::model::InstanceAccessDetails> {
+        self.access_details.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInstanceAccessDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceAccessDetailsOutput");
@@ -4123,6 +4684,12 @@ impl GetInstanceAccessDetailsOutput {
 pub struct GetInstanceOutput {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
     pub instance: std::option::Option<crate::model::Instance>,
+}
+impl GetInstanceOutput {
+    /// <p>An array of key-value pairs containing information about the specified instance.</p>
+    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+        self.instance.as_ref()
+    }
 }
 impl std::fmt::Debug for GetInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4177,6 +4744,21 @@ pub struct GetExportSnapshotRecordsOutput {
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code>
     /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetExportSnapshotRecordsOutput {
+    /// <p>A list of objects describing the export snapshot records.</p>
+    pub fn export_snapshot_records(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExportSnapshotRecord]> {
+        self.export_snapshot_records.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code>
+    /// request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetExportSnapshotRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4267,6 +4849,20 @@ pub struct GetDomainsOutput {
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetDomainsOutput {
+    /// <p>An array of key-value pairs containing information about each of the domain entries in the
+    /// user's account.</p>
+    pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
+        self.domains.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetDomains</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainsOutput");
@@ -4348,6 +4944,12 @@ pub struct GetDomainOutput {
     /// <p>An array of key-value pairs containing information about your get domain request.</p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
+impl GetDomainOutput {
+    /// <p>An array of key-value pairs containing information about your get domain request.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainOutput");
@@ -4400,6 +5002,19 @@ pub struct GetDistributionsOutput {
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetDistributionsOutput {
+    /// <p>An array of objects that describe your distributions.</p>
+    pub fn distributions(&self) -> std::option::Option<&[crate::model::LightsailDistribution]> {
+        self.distributions.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDistributionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4486,6 +5101,16 @@ pub struct GetDistributionMetricDataOutput {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
+impl GetDistributionMetricDataOutput {
+    /// <p>The name of the metric returned.</p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::DistributionMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+        self.metric_data.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDistributionMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDistributionMetricDataOutput");
@@ -4562,6 +5187,17 @@ pub struct GetDistributionLatestCacheResetOutput {
     /// format.</p>
     pub create_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetDistributionLatestCacheResetOutput {
+    /// <p>The status of the last cache reset.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time
+    /// format.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDistributionLatestCacheResetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDistributionLatestCacheResetOutput");
@@ -4628,6 +5264,12 @@ pub struct GetDistributionBundlesOutput {
     /// <p>An object that describes a distribution bundle.</p>
     pub bundles: std::option::Option<std::vec::Vec<crate::model::DistributionBundle>>,
 }
+impl GetDistributionBundlesOutput {
+    /// <p>An object that describes a distribution bundle.</p>
+    pub fn bundles(&self) -> std::option::Option<&[crate::model::DistributionBundle]> {
+        self.bundles.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDistributionBundlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDistributionBundlesOutput");
@@ -4689,6 +5331,19 @@ pub struct GetDiskSnapshotsOutput {
     /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetDiskSnapshotsOutput {
+    /// <p>An array of objects containing information about all block storage disk snapshots.</p>
+    pub fn disk_snapshots(&self) -> std::option::Option<&[crate::model::DiskSnapshot]> {
+        self.disk_snapshots.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDiskSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4769,6 +5424,12 @@ pub struct GetDiskSnapshotOutput {
     /// <p>An object containing information about the disk snapshot.</p>
     pub disk_snapshot: std::option::Option<crate::model::DiskSnapshot>,
 }
+impl GetDiskSnapshotOutput {
+    /// <p>An object containing information about the disk snapshot.</p>
+    pub fn disk_snapshot(&self) -> std::option::Option<&crate::model::DiskSnapshot> {
+        self.disk_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDiskSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDiskSnapshotOutput");
@@ -4824,6 +5485,19 @@ pub struct GetDisksOutput {
     /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify
     /// the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetDisksOutput {
+    /// <p>An array of objects containing information about all block storage disks.</p>
+    pub fn disks(&self) -> std::option::Option<&[crate::model::Disk]> {
+        self.disks.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify
+    /// the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDisksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4904,6 +5578,12 @@ pub struct GetDiskOutput {
     /// <p>An object containing information about the disk.</p>
     pub disk: std::option::Option<crate::model::Disk>,
 }
+impl GetDiskOutput {
+    /// <p>An object containing information about the disk.</p>
+    pub fn disk(&self) -> std::option::Option<&crate::model::Disk> {
+        self.disk.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDiskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDiskOutput");
@@ -4949,6 +5629,12 @@ impl GetDiskOutput {
 pub struct GetContainerServicesOutput {
     /// <p>An array of objects that describe one or more container services.</p>
     pub container_services: std::option::Option<std::vec::Vec<crate::model::ContainerService>>,
+}
+impl GetContainerServicesOutput {
+    /// <p>An array of objects that describe one or more container services.</p>
+    pub fn container_services(&self) -> std::option::Option<&[crate::model::ContainerService]> {
+        self.container_services.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5012,6 +5698,13 @@ pub struct GetContainerServicePowersOutput {
     /// service.</p>
     pub powers: std::option::Option<std::vec::Vec<crate::model::ContainerServicePower>>,
 }
+impl GetContainerServicePowersOutput {
+    /// <p>An array of objects that describe the powers that can be specified for a container
+    /// service.</p>
+    pub fn powers(&self) -> std::option::Option<&[crate::model::ContainerServicePower]> {
+        self.powers.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerServicePowersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerServicePowersOutput");
@@ -5072,6 +5765,16 @@ pub struct GetContainerServiceMetricDataOutput {
     pub metric_name: std::option::Option<crate::model::ContainerServiceMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
+}
+impl GetContainerServiceMetricDataOutput {
+    /// <p>The name of the metric returned. </p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::ContainerServiceMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+        self.metric_data.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerServiceMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5146,6 +5849,12 @@ pub struct GetContainerServiceDeploymentsOutput {
     /// <p>An array of objects that describe deployments for a container service.</p>
     pub deployments: std::option::Option<std::vec::Vec<crate::model::ContainerServiceDeployment>>,
 }
+impl GetContainerServiceDeploymentsOutput {
+    /// <p>An array of objects that describe deployments for a container service.</p>
+    pub fn deployments(&self) -> std::option::Option<&[crate::model::ContainerServiceDeployment]> {
+        self.deployments.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerServiceDeploymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerServiceDeploymentsOutput");
@@ -5213,6 +5922,21 @@ pub struct GetContainerLogOutput {
     /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetContainerLogOutput {
+    /// <p>An array of objects that describe the log events of a container.</p>
+    pub fn log_events(&self) -> std::option::Option<&[crate::model::ContainerServiceLogEvent]> {
+        self.log_events.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    ///
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    ///
+    /// <p>To get the next page of results, perform another <code>GetContainerLog</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerLogOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5302,6 +6026,13 @@ pub struct GetContainerImagesOutput {
     /// service.</p>
     pub container_images: std::option::Option<std::vec::Vec<crate::model::ContainerImage>>,
 }
+impl GetContainerImagesOutput {
+    /// <p>An array of objects that describe container images that are registered to the container
+    /// service.</p>
+    pub fn container_images(&self) -> std::option::Option<&[crate::model::ContainerImage]> {
+        self.container_images.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerImagesOutput");
@@ -5364,6 +6095,16 @@ pub struct GetContainerApiMetadataOutput {
     pub metadata: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
+}
+impl GetContainerApiMetadataOutput {
+    /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail
+    /// Control (lightsailctl) plugin.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerApiMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5431,6 +6172,12 @@ pub struct GetContactMethodsOutput {
     /// <p>An array of objects that describe the contact methods.</p>
     pub contact_methods: std::option::Option<std::vec::Vec<crate::model::ContactMethod>>,
 }
+impl GetContactMethodsOutput {
+    /// <p>An array of objects that describe the contact methods.</p>
+    pub fn contact_methods(&self) -> std::option::Option<&[crate::model::ContactMethod]> {
+        self.contact_methods.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactMethodsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactMethodsOutput");
@@ -5494,6 +6241,22 @@ pub struct GetCloudFormationStackRecordsOutput {
     /// <code>GetCloudFormationStackRecords</code> request and specify the next page token using the
     /// <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetCloudFormationStackRecordsOutput {
+    /// <p>A list of objects describing the CloudFormation stack records.</p>
+    pub fn cloud_formation_stack_records(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudFormationStackRecord]> {
+        self.cloud_formation_stack_records.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another
+    /// <code>GetCloudFormationStackRecords</code> request and specify the next page token using the
+    /// <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCloudFormationStackRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5583,6 +6346,12 @@ pub struct GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
 }
+impl GetCertificatesOutput {
+    /// <p>An object that describes certificates.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::CertificateSummary]> {
+        self.certificates.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCertificatesOutput");
@@ -5645,6 +6414,19 @@ pub struct GetBundlesOutput {
     /// <p>To get the next page of results, perform another <code>GetBundles</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetBundlesOutput {
+    /// <p>An array of key-value pairs that contains information about the available bundles.</p>
+    pub fn bundles(&self) -> std::option::Option<&[crate::model::Bundle]> {
+        self.bundles.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetBundles</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBundlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5732,6 +6514,21 @@ pub struct GetBucketsOutput {
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetBucketsOutput {
+    /// <p>An array of objects that describe buckets.</p>
+    pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
+        self.buckets.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    ///
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    ///
+    /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketsOutput");
@@ -5817,6 +6614,16 @@ pub struct GetBucketMetricDataOutput {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
 }
+impl GetBucketMetricDataOutput {
+    /// <p>The name of the metric returned.</p>
+    pub fn metric_name(&self) -> std::option::Option<&crate::model::BucketMetricName> {
+        self.metric_name.as_ref()
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatapoint]> {
+        self.metric_data.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketMetricDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketMetricDataOutput");
@@ -5890,6 +6697,12 @@ pub struct GetBucketBundlesOutput {
     /// <p>An object that describes bucket bundles.</p>
     pub bundles: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
 }
+impl GetBucketBundlesOutput {
+    /// <p>An object that describes bucket bundles.</p>
+    pub fn bundles(&self) -> std::option::Option<&[crate::model::BucketBundle]> {
+        self.bundles.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBucketBundlesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBucketBundlesOutput");
@@ -5946,6 +6759,12 @@ impl GetBucketBundlesOutput {
 pub struct GetBucketAccessKeysOutput {
     /// <p>An object that describes the access keys for the specified bucket.</p>
     pub access_keys: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
+}
+impl GetBucketAccessKeysOutput {
+    /// <p>An object that describes the access keys for the specified bucket.</p>
+    pub fn access_keys(&self) -> std::option::Option<&[crate::model::AccessKey]> {
+        self.access_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBucketAccessKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6009,6 +6828,20 @@ pub struct GetBlueprintsOutput {
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl GetBlueprintsOutput {
+    /// <p>An array of key-value pairs that contains information about the available
+    /// blueprints.</p>
+    pub fn blueprints(&self) -> std::option::Option<&[crate::model::Blueprint]> {
+        self.blueprints.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBlueprintsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6095,6 +6928,21 @@ pub struct GetAutoSnapshotsOutput {
     /// <p>An array of objects that describe the automatic snapshots that are available for the
     /// specified source instance or disk.</p>
     pub auto_snapshots: std::option::Option<std::vec::Vec<crate::model::AutoSnapshotDetails>>,
+}
+impl GetAutoSnapshotsOutput {
+    /// <p>The name of the source instance or disk for the automatic snapshots.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>An array of objects that describe the automatic snapshots that are available for the
+    /// specified source instance or disk.</p>
+    pub fn auto_snapshots(&self) -> std::option::Option<&[crate::model::AutoSnapshotDetails]> {
+        self.auto_snapshots.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAutoSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6196,6 +7044,19 @@ pub struct GetAlarmsOutput {
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetAlarmsOutput {
+    /// <p>An array of objects that describe the alarms.</p>
+    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+        self.alarms.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAlarmsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAlarmsOutput");
@@ -6280,6 +7141,19 @@ pub struct GetActiveNamesOutput {
     /// specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl GetActiveNamesOutput {
+    /// <p>The list of active names returned by the get active names request.</p>
+    pub fn active_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.active_names.as_deref()
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetActiveNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActiveNamesOutput");
@@ -6360,6 +7234,13 @@ pub struct ExportSnapshotOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl ExportSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportSnapshotOutput");
@@ -6419,6 +7300,13 @@ pub struct EnableAddOnOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl EnableAddOnOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableAddOnOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6480,6 +7368,16 @@ pub struct DownloadDefaultKeyPairOutput {
     pub public_key_base64: std::option::Option<std::string::String>,
     /// <p>A base64-encoded RSA private key.</p>
     pub private_key_base64: std::option::Option<std::string::String>,
+}
+impl DownloadDefaultKeyPairOutput {
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn public_key_base64(&self) -> std::option::Option<&str> {
+        self.public_key_base64.as_deref()
+    }
+    /// <p>A base64-encoded RSA private key.</p>
+    pub fn private_key_base64(&self) -> std::option::Option<&str> {
+        self.private_key_base64.as_deref()
+    }
 }
 impl std::fmt::Debug for DownloadDefaultKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6549,6 +7447,13 @@ pub struct DisableAddOnOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DisableAddOnOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableAddOnOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableAddOnOutput");
@@ -6608,6 +7513,13 @@ pub struct DetachStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DetachStaticIpOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachStaticIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6669,6 +7581,13 @@ pub struct DetachInstancesFromLoadBalancerOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DetachInstancesFromLoadBalancerOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachInstancesFromLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachInstancesFromLoadBalancerOutput");
@@ -6728,6 +7647,13 @@ pub struct DetachDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DetachDiskOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachDiskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6789,6 +7715,13 @@ pub struct DetachCertificateFromDistributionOutput {
     /// timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl DetachCertificateFromDistributionOutput {
+    /// <p>An object that describes the result of the action, such as the status of the request, the
+    /// timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for DetachCertificateFromDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachCertificateFromDistributionOutput");
@@ -6842,6 +7775,13 @@ pub struct DeleteRelationalDatabaseSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteRelationalDatabaseSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRelationalDatabaseSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6903,6 +7843,13 @@ pub struct DeleteRelationalDatabaseOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DeleteRelationalDatabaseOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRelationalDatabaseOutput");
@@ -6962,6 +7909,13 @@ pub struct DeleteLoadBalancerTlsCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteLoadBalancerTlsCertificateOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLoadBalancerTlsCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7023,6 +7977,13 @@ pub struct DeleteLoadBalancerOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DeleteLoadBalancerOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoadBalancerOutput");
@@ -7082,6 +8043,13 @@ pub struct DeleteKnownHostKeysOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteKnownHostKeysOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteKnownHostKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7143,6 +8111,13 @@ pub struct DeleteKeyPairOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl DeleteKeyPairOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKeyPairOutput");
@@ -7196,6 +8171,13 @@ pub struct DeleteInstanceSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteInstanceSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInstanceSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7257,6 +8239,13 @@ pub struct DeleteInstanceOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DeleteInstanceOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInstanceOutput");
@@ -7317,6 +8306,13 @@ pub struct DeleteDomainEntryOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl DeleteDomainEntryOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainEntryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainEntryOutput");
@@ -7370,6 +8366,13 @@ pub struct DeleteDomainOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl DeleteDomainOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7425,6 +8428,13 @@ pub struct DeleteDistributionOutput {
     /// timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl DeleteDistributionOutput {
+    /// <p>An object that describes the result of the action, such as the status of the request, the
+    /// timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDistributionOutput");
@@ -7478,6 +8488,13 @@ pub struct DeleteDiskSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteDiskSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDiskSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7538,6 +8555,13 @@ pub struct DeleteDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteDiskOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDiskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7659,6 +8683,13 @@ pub struct DeleteContactMethodOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DeleteContactMethodOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContactMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContactMethodOutput");
@@ -7718,6 +8749,13 @@ pub struct DeleteCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteCertificateOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7779,6 +8817,13 @@ pub struct DeleteBucketAccessKeyOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DeleteBucketAccessKeyOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBucketAccessKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBucketAccessKeyOutput");
@@ -7838,6 +8883,13 @@ pub struct DeleteBucketOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteBucketOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBucketOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7899,6 +8951,13 @@ pub struct DeleteAutoSnapshotOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl DeleteAutoSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAutoSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAutoSnapshotOutput");
@@ -7958,6 +9017,13 @@ pub struct DeleteAlarmOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl DeleteAlarmOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8019,6 +9085,13 @@ pub struct CreateRelationalDatabaseSnapshotOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateRelationalDatabaseSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRelationalDatabaseSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRelationalDatabaseSnapshotOutput");
@@ -8078,6 +9151,13 @@ pub struct CreateRelationalDatabaseFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateRelationalDatabaseFromSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRelationalDatabaseFromSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8139,6 +9219,13 @@ pub struct CreateRelationalDatabaseOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateRelationalDatabaseOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRelationalDatabaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRelationalDatabaseOutput");
@@ -8199,6 +9286,13 @@ pub struct CreateLoadBalancerTlsCertificateOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateLoadBalancerTlsCertificateOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLoadBalancerTlsCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerTlsCertificateOutput");
@@ -8258,6 +9352,13 @@ pub struct CreateLoadBalancerOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateLoadBalancerOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8325,6 +9426,26 @@ pub struct CreateKeyPairOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl CreateKeyPairOutput {
+    /// <p>An array of key-value pairs containing information about the new key pair you just
+    /// created.</p>
+    pub fn key_pair(&self) -> std::option::Option<&crate::model::KeyPair> {
+        self.key_pair.as_ref()
+    }
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn public_key_base64(&self) -> std::option::Option<&str> {
+        self.public_key_base64.as_deref()
+    }
+    /// <p>A base64-encoded RSA private key.</p>
+    pub fn private_key_base64(&self) -> std::option::Option<&str> {
+        self.private_key_base64.as_deref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateKeyPairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8427,6 +9548,13 @@ pub struct CreateInstanceSnapshotOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateInstanceSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceSnapshotOutput");
@@ -8486,6 +9614,13 @@ pub struct CreateInstancesFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateInstancesFromSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInstancesFromSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8547,6 +9682,13 @@ pub struct CreateInstancesOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateInstancesOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstancesOutput");
@@ -8607,6 +9749,13 @@ pub struct CreateDomainEntryOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl CreateDomainEntryOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainEntryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainEntryOutput");
@@ -8660,6 +9809,13 @@ pub struct CreateDomainOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl CreateDomainOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8716,6 +9872,17 @@ pub struct CreateDistributionOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl CreateDistributionOutput {
+    /// <p>An object that describes the distribution created.</p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::LightsailDistribution> {
+        self.distribution.as_ref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8787,6 +9954,13 @@ pub struct CreateDiskSnapshotOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateDiskSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDiskSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDiskSnapshotOutput");
@@ -8846,6 +10020,13 @@ pub struct CreateDiskFromSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateDiskFromSnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDiskFromSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8907,6 +10088,13 @@ pub struct CreateDiskOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateDiskOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDiskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDiskOutput");
@@ -8967,6 +10155,15 @@ pub struct CreateContainerServiceRegistryLoginOutput {
     /// Lightsail account.</p>
     pub registry_login: std::option::Option<crate::model::ContainerServiceRegistryLogin>,
 }
+impl CreateContainerServiceRegistryLoginOutput {
+    /// <p>An object that describes the log in information for the container service registry of your
+    /// Lightsail account.</p>
+    pub fn registry_login(
+        &self,
+    ) -> std::option::Option<&crate::model::ContainerServiceRegistryLogin> {
+        self.registry_login.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateContainerServiceRegistryLoginOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContainerServiceRegistryLoginOutput");
@@ -9023,6 +10220,12 @@ pub struct CreateContainerServiceDeploymentOutput {
     /// <p>An object that describes a container service.</p>
     pub container_service: std::option::Option<crate::model::ContainerService>,
 }
+impl CreateContainerServiceDeploymentOutput {
+    /// <p>An object that describes a container service.</p>
+    pub fn container_service(&self) -> std::option::Option<&crate::model::ContainerService> {
+        self.container_service.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateContainerServiceDeploymentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContainerServiceDeploymentOutput");
@@ -9073,6 +10276,12 @@ impl CreateContainerServiceDeploymentOutput {
 pub struct CreateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
     pub container_service: std::option::Option<crate::model::ContainerService>,
+}
+impl CreateContainerServiceOutput {
+    /// <p>An object that describes a container service.</p>
+    pub fn container_service(&self) -> std::option::Option<&crate::model::ContainerService> {
+        self.container_service.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateContainerServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9125,6 +10334,13 @@ pub struct CreateContactMethodOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateContactMethodOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateContactMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9185,6 +10401,13 @@ pub struct CreateCloudFormationStackOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateCloudFormationStackOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCloudFormationStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9247,6 +10470,17 @@ pub struct CreateCertificateOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl CreateCertificateOutput {
+    /// <p>An object that describes the certificate created.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::CertificateSummary> {
+        self.certificate.as_ref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9326,6 +10560,17 @@ pub struct CreateBucketAccessKeyOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateBucketAccessKeyOutput {
+    /// <p>An object that describes the access key that is created.</p>
+    pub fn access_key(&self) -> std::option::Option<&crate::model::AccessKey> {
+        self.access_key.as_ref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBucketAccessKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBucketAccessKeyOutput");
@@ -9404,6 +10649,17 @@ pub struct CreateBucketOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CreateBucketOutput {
+    /// <p>An object that describes the bucket that is created.</p>
+    pub fn bucket(&self) -> std::option::Option<&crate::model::Bucket> {
+        self.bucket.as_ref()
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBucketOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBucketOutput");
@@ -9477,6 +10733,13 @@ pub struct CopySnapshotOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl CopySnapshotOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for CopySnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopySnapshotOutput");
@@ -9537,6 +10800,13 @@ pub struct CloseInstancePublicPortsOutput {
     /// timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl CloseInstancePublicPortsOutput {
+    /// <p>An object that describes the result of the action, such as the status of the request, the
+    /// timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for CloseInstancePublicPortsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloseInstancePublicPortsOutput");
@@ -9590,6 +10860,13 @@ pub struct AttachStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl AttachStaticIpOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachStaticIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9652,6 +10929,15 @@ pub struct AttachLoadBalancerTlsCertificateOutput {
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
     /// the certificate and use it for another purpose.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl AttachLoadBalancerTlsCertificateOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get
+    /// the certificate and use it for another purpose.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachLoadBalancerTlsCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9717,6 +11003,13 @@ pub struct AttachInstancesToLoadBalancerOutput {
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
 }
+impl AttachInstancesToLoadBalancerOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachInstancesToLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachInstancesToLoadBalancerOutput");
@@ -9776,6 +11069,13 @@ pub struct AttachDiskOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl AttachDiskOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachDiskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9837,6 +11137,13 @@ pub struct AttachCertificateToDistributionOutput {
     /// timestamp of the request, and the resources affected by the request.</p>
     pub operation: std::option::Option<crate::model::Operation>,
 }
+impl AttachCertificateToDistributionOutput {
+    /// <p>An object that describes the result of the action, such as the status of the request, the
+    /// timestamp of the request, and the resources affected by the request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
+}
 impl std::fmt::Debug for AttachCertificateToDistributionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachCertificateToDistributionOutput");
@@ -9890,6 +11197,13 @@ pub struct AllocateStaticIpOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl AllocateStaticIpOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for AllocateStaticIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

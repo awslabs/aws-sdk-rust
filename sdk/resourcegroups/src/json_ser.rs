@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.configuration {
         let mut array_2 = object.key("Configuration").start_array();
         for item_3 in var_1 {
@@ -11,7 +11,7 @@ pub fn serialize_structure_crate_input_create_group_input(
                 crate::json_ser::serialize_structure_crate_model_group_configuration_item(
                     &mut object_4,
                     item_3,
-                );
+                )?;
                 object_4.finish();
             }
         }
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_create_group_input(
     }
     if let Some(var_7) = &input.resource_query {
         let mut object_8 = object.key("ResourceQuery").start_object();
-        crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_8, var_7);
+        crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.tags {
@@ -37,57 +37,62 @@ pub fn serialize_structure_crate_input_create_group_input(
         }
         object_10.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.group {
         object.key("Group").string(var_13);
     }
     if let Some(var_14) = &input.group_name {
         object.key("GroupName").string(var_14);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.group {
         object.key("Group").string(var_15);
     }
     if let Some(var_16) = &input.group_name {
         object.key("GroupName").string(var_16);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_group_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGroupConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.group {
         object.key("Group").string(var_17);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_group_query_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGroupQueryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.group {
         object.key("Group").string(var_18);
     }
     if let Some(var_19) = &input.group_name {
         object.key("GroupName").string(var_19);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_group_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GroupResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.group {
         object.key("Group").string(var_20);
     }
@@ -100,12 +105,13 @@ pub fn serialize_structure_crate_input_group_resources_input(
         }
         array_22.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_group_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGroupResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.filters {
         let mut array_25 = object.key("Filters").start_array();
         for item_26 in var_24 {
@@ -114,7 +120,7 @@ pub fn serialize_structure_crate_input_list_group_resources_input(
                 crate::json_ser::serialize_structure_crate_model_resource_filter(
                     &mut object_27,
                     item_26,
-                );
+                )?;
                 object_27.finish();
             }
         }
@@ -135,12 +141,13 @@ pub fn serialize_structure_crate_input_list_group_resources_input(
     if let Some(var_31) = &input.next_token {
         object.key("NextToken").string(var_31);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_groups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGroupsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.filters {
         let mut array_33 = object.key("Filters").start_array();
         for item_34 in var_32 {
@@ -149,18 +156,19 @@ pub fn serialize_structure_crate_input_list_groups_input(
                 crate::json_ser::serialize_structure_crate_model_group_filter(
                     &mut object_35,
                     item_34,
-                );
+                )?;
                 object_35.finish();
             }
         }
         array_33.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_group_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutGroupConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.configuration {
         let mut array_37 = object.key("Configuration").start_array();
         for item_38 in var_36 {
@@ -169,7 +177,7 @@ pub fn serialize_structure_crate_input_put_group_configuration_input(
                 crate::json_ser::serialize_structure_crate_model_group_configuration_item(
                     &mut object_39,
                     item_38,
-                );
+                )?;
                 object_39.finish();
             }
         }
@@ -178,12 +186,13 @@ pub fn serialize_structure_crate_input_put_group_configuration_input(
     if let Some(var_40) = &input.group {
         object.key("Group").string(var_40);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_search_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -195,15 +204,16 @@ pub fn serialize_structure_crate_input_search_resources_input(
     }
     if let Some(var_43) = &input.resource_query {
         let mut object_44 = object.key("ResourceQuery").start_object();
-        crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_44, var_43);
+        crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_44, var_43)?;
         object_44.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.tags {
         let mut object_46 = object.key("Tags").start_object();
         for (key_47, value_48) in var_45 {
@@ -213,12 +223,13 @@ pub fn serialize_structure_crate_input_tag_input(
         }
         object_46.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_ungroup_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UngroupResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.group {
         object.key("Group").string(var_49);
     }
@@ -231,12 +242,13 @@ pub fn serialize_structure_crate_input_ungroup_resources_input(
         }
         array_51.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.keys {
         let mut array_54 = object.key("Keys").start_array();
         for item_55 in var_53 {
@@ -246,12 +258,13 @@ pub fn serialize_structure_crate_input_untag_input(
         }
         array_54.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGroupInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.description {
         object.key("Description").string(var_56);
     }
@@ -261,12 +274,13 @@ pub fn serialize_structure_crate_input_update_group_input(
     if let Some(var_58) = &input.group_name {
         object.key("GroupName").string(var_58);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_group_query_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGroupQueryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.group {
         object.key("Group").string(var_59);
     }
@@ -275,15 +289,16 @@ pub fn serialize_structure_crate_input_update_group_query_input(
     }
     if let Some(var_61) = &input.resource_query {
         let mut object_62 = object.key("ResourceQuery").start_object();
-        crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_62, var_61);
+        crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_62, var_61)?;
         object_62.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_group_configuration_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GroupConfigurationItem,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.r#type {
         object.key("Type").string(var_63);
     }
@@ -295,30 +310,32 @@ pub fn serialize_structure_crate_model_group_configuration_item(
                 crate::json_ser::serialize_structure_crate_model_group_configuration_parameter(
                     &mut object_67,
                     item_66,
-                );
+                )?;
                 object_67.finish();
             }
         }
         array_65.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource_query(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceQuery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.r#type {
         object.key("Type").string(var_68.as_str());
     }
     if let Some(var_69) = &input.query {
         object.key("Query").string(var_69);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.name {
         object.key("Name").string(var_70.as_str());
     }
@@ -331,12 +348,13 @@ pub fn serialize_structure_crate_model_resource_filter(
         }
         array_72.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_group_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GroupFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_74) = &input.name {
         object.key("Name").string(var_74.as_str());
     }
@@ -349,12 +367,13 @@ pub fn serialize_structure_crate_model_group_filter(
         }
         array_76.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_group_configuration_parameter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GroupConfigurationParameter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.name {
         object.key("Name").string(var_78);
     }
@@ -367,4 +386,5 @@ pub fn serialize_structure_crate_model_group_configuration_parameter(
         }
         array_80.finish();
     }
+    Ok(())
 }

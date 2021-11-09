@@ -97,17 +97,8 @@ impl CreateCliTokenInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("env.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("env.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -571,27 +562,15 @@ impl CreateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -744,17 +723,8 @@ impl CreateWebLoginTokenInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("env.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("env.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -899,17 +869,8 @@ impl DeleteEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1054,17 +1015,8 @@ impl GetEnvironmentInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1221,17 +1173,8 @@ impl ListEnvironmentsInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1379,17 +1322,8 @@ impl ListTagsForResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1563,27 +1497,16 @@ impl PublishMetricsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_publish_metrics(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_publish_metrics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("ops.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("ops.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1766,27 +1689,15 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -1972,17 +1883,8 @@ impl UntagResourceInput {
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2409,27 +2311,15 @@ impl UpdateEnvironmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
             request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.");
-        match endpoint_prefix {
-            Ok(prefix) => {
-                request.properties_mut().insert(prefix);
-            }
-            Err(err) => {
-                return Err(aws_smithy_http::operation::BuildError::SerializationError(
-                    err.into(),
-                ))
-            }
-        }
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api.")?;
+        request.properties_mut().insert(endpoint_prefix);
         request
             .properties_mut()
             .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
@@ -2532,6 +2422,92 @@ pub struct UpdateEnvironmentInput {
     /// <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>
     pub schedulers: std::option::Option<i32>,
 }
+impl UpdateEnvironmentInput {
+    /// <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
+    pub fn airflow_version(&self) -> std::option::Option<&str> {
+        self.airflow_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    pub fn source_bucket_arn(&self) -> std::option::Option<&str> {
+        self.source_bucket_arn.as_deref()
+    }
+    /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    pub fn dag_s3_path(&self) -> std::option::Option<&str> {
+        self.dag_s3_path.as_deref()
+    }
+    /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    pub fn plugins_s3_path(&self) -> std::option::Option<&str> {
+        self.plugins_s3_path.as_deref()
+    }
+    /// <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    pub fn plugins_s3_object_version(&self) -> std::option::Option<&str> {
+        self.plugins_s3_object_version.as_deref()
+    }
+    /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    pub fn requirements_s3_path(&self) -> std::option::Option<&str> {
+        self.requirements_s3_path.as_deref()
+    }
+    /// <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    pub fn requirements_s3_object_version(&self) -> std::option::Option<&str> {
+        self.requirements_s3_object_version.as_deref()
+    }
+    /// <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    pub fn airflow_configuration_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.airflow_configuration_options.as_ref()
+    }
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    pub fn environment_class(&self) -> std::option::Option<&str> {
+        self.environment_class.as_deref()
+    }
+    /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
+    pub fn max_workers(&self) -> std::option::Option<i32> {
+        self.max_workers
+    }
+    /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateNetworkConfigurationInput> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfigurationInput> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
+    /// </li>
+    /// </ul>
+    pub fn weekly_maintenance_window_start(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_window_start.as_deref()
+    }
+    /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    pub fn webserver_access_mode(&self) -> std::option::Option<&crate::model::WebserverAccessMode> {
+        self.webserver_access_mode.as_ref()
+    }
+    /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
+    pub fn min_workers(&self) -> std::option::Option<i32> {
+        self.min_workers
+    }
+    /// <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>
+    pub fn schedulers(&self) -> std::option::Option<i32> {
+        self.schedulers
+    }
+}
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentInput");
@@ -2575,6 +2551,16 @@ pub struct UntagResourceInput {
     /// <p>The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2594,6 +2580,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2612,6 +2611,16 @@ pub struct PublishMetricsInput {
     /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.</p>
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
 }
+impl PublishMetricsInput {
+    /// <p>Publishes environment metric data to Amazon CloudWatch.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.</p>
+    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatum]> {
+        self.metric_data.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishMetricsInput");
@@ -2627,6 +2636,12 @@ impl std::fmt::Debug for PublishMetricsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2645,6 +2660,16 @@ pub struct ListEnvironmentsInput {
     /// <p>The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEnvironmentsInput {
+    /// <p>Retrieves the next page of the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEnvironmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnvironmentsInput");
@@ -2661,6 +2686,12 @@ pub struct GetEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetEnvironmentInput {
+    /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentInput");
@@ -2676,6 +2707,12 @@ pub struct DeleteEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteEnvironmentInput {
+    /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEnvironmentInput");
@@ -2690,6 +2727,12 @@ impl std::fmt::Debug for DeleteEnvironmentInput {
 pub struct CreateWebLoginTokenInput {
     /// <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateWebLoginTokenInput {
+    /// <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWebLoginTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2751,6 +2794,103 @@ pub struct CreateEnvironmentInput {
     /// <p>The number of Apache Airflow schedulers to run in your environment.</p>
     pub schedulers: std::option::Option<i32>,
 }
+impl CreateEnvironmentInput {
+    /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an AWS Identity and Access Management (IAM) role that grants MWAA permission to access AWS services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    pub fn source_bucket_arn(&self) -> std::option::Option<&str> {
+        self.source_bucket_arn.as_deref()
+    }
+    /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    pub fn dag_s3_path(&self) -> std::option::Option<&str> {
+        self.dag_s3_path.as_deref()
+    }
+    /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    pub fn plugins_s3_path(&self) -> std::option::Option<&str> {
+        self.plugins_s3_path.as_deref()
+    }
+    /// <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    pub fn plugins_s3_object_version(&self) -> std::option::Option<&str> {
+        self.plugins_s3_object_version.as_deref()
+    }
+    /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    pub fn requirements_s3_path(&self) -> std::option::Option<&str> {
+        self.requirements_s3_path.as_deref()
+    }
+    /// <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    pub fn requirements_s3_object_version(&self) -> std::option::Option<&str> {
+        self.requirements_s3_object_version.as_deref()
+    }
+    /// <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    pub fn airflow_configuration_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.airflow_configuration_options.as_ref()
+    }
+    /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    pub fn environment_class(&self) -> std::option::Option<&str> {
+        self.environment_class.as_deref()
+    }
+    /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
+    pub fn max_workers(&self) -> std::option::Option<i32> {
+        self.max_workers
+    }
+    /// <p>The AWS Key Management Service (KMS) key to encrypt the data in your environment. You can use an AWS owned CMK, or a Customer managed CMK (advanced). To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/get-started.html">Get started with Amazon Managed Workflows for Apache Airflow</a>.</p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
+    pub fn airflow_version(&self) -> std::option::Option<&str> {
+        self.airflow_version.as_deref()
+    }
+    /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfigurationInput> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
+    /// </li>
+    /// </ul>
+    pub fn weekly_maintenance_window_start(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_window_start.as_deref()
+    }
+    /// <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    pub fn webserver_access_mode(&self) -> std::option::Option<&crate::model::WebserverAccessMode> {
+        self.webserver_access_mode.as_ref()
+    }
+    /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
+    pub fn min_workers(&self) -> std::option::Option<i32> {
+        self.min_workers
+    }
+    /// <p>The number of Apache Airflow schedulers to run in your environment.</p>
+    pub fn schedulers(&self) -> std::option::Option<i32> {
+        self.schedulers
+    }
+}
 impl std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentInput");
@@ -2793,6 +2933,12 @@ impl std::fmt::Debug for CreateEnvironmentInput {
 pub struct CreateCliTokenInput {
     /// <p>Create a CLI token request for a MWAA environment.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateCliTokenInput {
+    /// <p>Create a CLI token request for a MWAA environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCliTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

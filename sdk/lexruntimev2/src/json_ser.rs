@@ -2,13 +2,13 @@
 pub fn serialize_structure_crate_input_put_session_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutSessionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.messages {
         let mut array_2 = object.key("messages").start_array();
         for item_3 in var_1 {
             {
                 let mut object_4 = array_2.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_message(&mut object_4, item_3);
+                crate::json_ser::serialize_structure_crate_model_message(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -25,15 +25,16 @@ pub fn serialize_structure_crate_input_put_session_input(
     }
     if let Some(var_9) = &input.session_state {
         let mut object_10 = object.key("sessionState").start_object();
-        crate::json_ser::serialize_structure_crate_model_session_state(&mut object_10, var_9);
+        crate::json_ser::serialize_structure_crate_model_session_state(&mut object_10, var_9)?;
         object_10.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_recognize_text_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RecognizeTextInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.request_attributes {
         let mut object_12 = object.key("requestAttributes").start_object();
         for (key_13, value_14) in var_11 {
@@ -45,18 +46,19 @@ pub fn serialize_structure_crate_input_recognize_text_input(
     }
     if let Some(var_15) = &input.session_state {
         let mut object_16 = object.key("sessionState").start_object();
-        crate::json_ser::serialize_structure_crate_model_session_state(&mut object_16, var_15);
+        crate::json_ser::serialize_structure_crate_model_session_state(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.text {
         object.key("text").string(var_17);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_message(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Message,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.content {
         object.key("content").string(var_18);
     }
@@ -68,23 +70,24 @@ pub fn serialize_structure_crate_model_message(
         crate::json_ser::serialize_structure_crate_model_image_response_card(
             &mut object_21,
             var_20,
-        );
+        )?;
         object_21.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_session_state(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SessionState,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.dialog_action {
         let mut object_23 = object.key("dialogAction").start_object();
-        crate::json_ser::serialize_structure_crate_model_dialog_action(&mut object_23, var_22);
+        crate::json_ser::serialize_structure_crate_model_dialog_action(&mut object_23, var_22)?;
         object_23.finish();
     }
     if let Some(var_24) = &input.intent {
         let mut object_25 = object.key("intent").start_object();
-        crate::json_ser::serialize_structure_crate_model_intent(&mut object_25, var_24);
+        crate::json_ser::serialize_structure_crate_model_intent(&mut object_25, var_24)?;
         object_25.finish();
     }
     if let Some(var_26) = &input.active_contexts {
@@ -95,7 +98,7 @@ pub fn serialize_structure_crate_model_session_state(
                 crate::json_ser::serialize_structure_crate_model_active_context(
                     &mut object_29,
                     item_28,
-                );
+                )?;
                 object_29.finish();
             }
         }
@@ -113,12 +116,13 @@ pub fn serialize_structure_crate_model_session_state(
     if let Some(var_34) = &input.originating_request_id {
         object.key("originatingRequestId").string(var_34);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_image_response_card(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImageResponseCard,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.title {
         object.key("title").string(var_35);
     }
@@ -133,30 +137,32 @@ pub fn serialize_structure_crate_model_image_response_card(
         for item_40 in var_38 {
             {
                 let mut object_41 = array_39.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_button(&mut object_41, item_40);
+                crate::json_ser::serialize_structure_crate_model_button(&mut object_41, item_40)?;
                 object_41.finish();
             }
         }
         array_39.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_dialog_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DialogAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.r#type {
         object.key("type").string(var_42.as_str());
     }
     if let Some(var_43) = &input.slot_to_elicit {
         object.key("slotToElicit").string(var_43);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_intent(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Intent,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.name {
         object.key("name").string(var_44);
     }
@@ -165,7 +171,7 @@ pub fn serialize_structure_crate_model_intent(
         for (key_47, value_48) in var_45 {
             {
                 let mut object_49 = object_46.key(key_47).start_object();
-                crate::json_ser::serialize_structure_crate_model_slot(&mut object_49, value_48);
+                crate::json_ser::serialize_structure_crate_model_slot(&mut object_49, value_48)?;
                 object_49.finish();
             }
         }
@@ -177,12 +183,13 @@ pub fn serialize_structure_crate_model_intent(
     if let Some(var_51) = &input.confirmation_state {
         object.key("confirmationState").string(var_51.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_active_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActiveContext,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.name {
         object.key("name").string(var_52);
     }
@@ -191,7 +198,7 @@ pub fn serialize_structure_crate_model_active_context(
         crate::json_ser::serialize_structure_crate_model_active_context_time_to_live(
             &mut object_54,
             var_53,
-        );
+        )?;
         object_54.finish();
     }
     if let Some(var_55) = &input.context_attributes {
@@ -203,27 +210,29 @@ pub fn serialize_structure_crate_model_active_context(
         }
         object_56.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_button(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Button,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.text {
         object.key("text").string(var_59);
     }
     if let Some(var_60) = &input.value {
         object.key("value").string(var_60);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_slot(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Slot,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.value {
         let mut object_62 = object.key("value").start_object();
-        crate::json_ser::serialize_structure_crate_model_value(&mut object_62, var_61);
+        crate::json_ser::serialize_structure_crate_model_value(&mut object_62, var_61)?;
         object_62.finish();
     }
     if let Some(var_63) = &input.shape {
@@ -234,18 +243,19 @@ pub fn serialize_structure_crate_model_slot(
         for item_66 in var_64 {
             {
                 let mut object_67 = array_65.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_slot(&mut object_67, item_66);
+                crate::json_ser::serialize_structure_crate_model_slot(&mut object_67, item_66)?;
                 object_67.finish();
             }
         }
         array_65.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_active_context_time_to_live(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActiveContextTimeToLive,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.time_to_live_in_seconds {
         object.key("timeToLiveInSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -258,12 +268,13 @@ pub fn serialize_structure_crate_model_active_context_time_to_live(
             aws_smithy_types::Number::NegInt((*var_69).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_value(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Value,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.original_value {
         object.key("originalValue").string(var_70);
     }
@@ -279,4 +290,5 @@ pub fn serialize_structure_crate_model_value(
         }
         array_73.finish();
     }
+    Ok(())
 }

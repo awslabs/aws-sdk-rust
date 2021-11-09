@@ -6,6 +6,12 @@ pub struct UpdateTypeOutput {
     /// <p>The updated <code>Type</code> object.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl UpdateTypeOutput {
+    /// <p>The updated <code>Type</code> object.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTypeOutput");
@@ -54,6 +60,12 @@ pub struct UpdateResolverOutput {
     /// <p>The updated <code>Resolver</code> object.</p>
     pub resolver: std::option::Option<crate::model::Resolver>,
 }
+impl UpdateResolverOutput {
+    /// <p>The updated <code>Resolver</code> object.</p>
+    pub fn resolver(&self) -> std::option::Option<&crate::model::Resolver> {
+        self.resolver.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResolverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResolverOutput");
@@ -101,6 +113,12 @@ impl UpdateResolverOutput {
 pub struct UpdateGraphqlApiOutput {
     /// <p>The updated <code>GraphqlApi</code> object.</p>
     pub graphql_api: std::option::Option<crate::model::GraphqlApi>,
+}
+impl UpdateGraphqlApiOutput {
+    /// <p>The updated <code>GraphqlApi</code> object.</p>
+    pub fn graphql_api(&self) -> std::option::Option<&crate::model::GraphqlApi> {
+        self.graphql_api.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateGraphqlApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -152,6 +170,14 @@ impl UpdateGraphqlApiOutput {
 pub struct UpdateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
+}
+impl UpdateFunctionOutput {
+    /// <p>The <code>Function</code> object.</p>
+    pub fn function_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FunctionConfiguration> {
+        self.function_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -207,6 +233,12 @@ pub struct UpdateDataSourceOutput {
     /// <p>The updated <code>DataSource</code> object.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
+impl UpdateDataSourceOutput {
+    /// <p>The updated <code>DataSource</code> object.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceOutput");
@@ -258,6 +290,12 @@ pub struct UpdateApiKeyOutput {
     /// <p>The API key.</p>
     pub api_key: std::option::Option<crate::model::ApiKey>,
 }
+impl UpdateApiKeyOutput {
+    /// <p>The API key.</p>
+    pub fn api_key(&self) -> std::option::Option<&crate::model::ApiKey> {
+        self.api_key.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateApiKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiKeyOutput");
@@ -305,6 +343,12 @@ impl UpdateApiKeyOutput {
 pub struct UpdateApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
     pub api_cache: std::option::Option<crate::model::ApiCache>,
+}
+impl UpdateApiCacheOutput {
+    /// <p>The <code>ApiCache</code> object.</p>
+    pub fn api_cache(&self) -> std::option::Option<&crate::model::ApiCache> {
+        self.api_cache.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApiCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -415,6 +459,13 @@ pub struct StartSchemaCreationOutput {
     /// the schema is in the ACTIVE state, you can add data.</p>
     pub status: std::option::Option<crate::model::SchemaStatus>,
 }
+impl StartSchemaCreationOutput {
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
+    /// the schema is in the ACTIVE state, you can add data.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSchemaCreationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSchemaCreationOutput");
@@ -470,6 +521,17 @@ pub struct ListTypesOutput {
     /// <p>An identifier to be passed in the next request to this operation to return the next set
     /// of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTypesOutput {
+    /// <p>The <code>Type</code> objects.</p>
+    pub fn types(&self) -> std::option::Option<&[crate::model::Type]> {
+        self.types.as_deref()
+    }
+    /// <p>An identifier to be passed in the next request to this operation to return the next set
+    /// of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -544,6 +606,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A <code>TagMap</code> object.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -608,6 +679,16 @@ pub struct ListResolversByFunctionOutput {
     pub resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
     /// <p>An identifier that can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResolversByFunctionOutput {
+    /// <p>The list of resolvers.</p>
+    pub fn resolvers(&self) -> std::option::Option<&[crate::model::Resolver]> {
+        self.resolvers.as_deref()
+    }
+    /// <p>An identifier that can be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolversByFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,6 +762,17 @@ pub struct ListResolversOutput {
     /// <p>An identifier to be passed in the next request to this operation to return the next set
     /// of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResolversOutput {
+    /// <p>The <code>Resolver</code> objects.</p>
+    pub fn resolvers(&self) -> std::option::Option<&[crate::model::Resolver]> {
+        self.resolvers.as_deref()
+    }
+    /// <p>An identifier to be passed in the next request to this operation to return the next set
+    /// of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResolversOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -757,6 +849,17 @@ pub struct ListGraphqlApisOutput {
     /// of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGraphqlApisOutput {
+    /// <p>The <code>GraphqlApi</code> objects.</p>
+    pub fn graphql_apis(&self) -> std::option::Option<&[crate::model::GraphqlApi]> {
+        self.graphql_apis.as_deref()
+    }
+    /// <p>An identifier to be passed in the next request to this operation to return the next set
+    /// of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGraphqlApisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGraphqlApisOutput");
@@ -831,6 +934,17 @@ pub struct ListFunctionsOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFunctionsOutput {
+    /// <p>A list of <code>Function</code> objects.</p>
+    pub fn functions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
+        self.functions.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFunctionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -908,6 +1022,17 @@ pub struct ListDataSourcesOutput {
     /// of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDataSourcesOutput {
+    /// <p>The <code>DataSource</code> objects.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>An identifier to be passed in the next request to this operation to return the next set
+    /// of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDataSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourcesOutput");
@@ -983,6 +1108,17 @@ pub struct ListApiKeysOutput {
     /// of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApiKeysOutput {
+    /// <p>The <code>ApiKey</code> objects.</p>
+    pub fn api_keys(&self) -> std::option::Option<&[crate::model::ApiKey]> {
+        self.api_keys.as_deref()
+    }
+    /// <p>An identifier to be passed in the next request to this operation to return the next set
+    /// of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApiKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApiKeysOutput");
@@ -1055,6 +1191,12 @@ pub struct GetTypeOutput {
     /// <p>The <code>Type</code> object.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl GetTypeOutput {
+    /// <p>The <code>Type</code> object.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTypeOutput");
@@ -1105,6 +1247,17 @@ pub struct GetSchemaCreationStatusOutput {
     pub status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>Detailed information about the status of the schema creation operation.</p>
     pub details: std::option::Option<std::string::String>,
+}
+impl GetSchemaCreationStatusOutput {
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
+    /// the schema is in the ACTIVE state, you can add data.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Detailed information about the status of the schema creation operation.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSchemaCreationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1172,6 +1325,12 @@ pub struct GetResolverOutput {
     /// <p>The <code>Resolver</code> object.</p>
     pub resolver: std::option::Option<crate::model::Resolver>,
 }
+impl GetResolverOutput {
+    /// <p>The <code>Resolver</code> object.</p>
+    pub fn resolver(&self) -> std::option::Option<&crate::model::Resolver> {
+        self.resolver.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResolverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResolverOutput");
@@ -1221,6 +1380,14 @@ pub struct GetIntrospectionSchemaOutput {
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
     /// documentation</a>.</p>
     pub schema: std::option::Option<aws_smithy_types::Blob>,
+}
+impl GetIntrospectionSchemaOutput {
+    /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
+    /// documentation</a>.</p>
+    pub fn schema(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.schema.as_ref()
+    }
 }
 impl std::fmt::Debug for GetIntrospectionSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1274,6 +1441,12 @@ pub struct GetGraphqlApiOutput {
     /// <p>The <code>GraphqlApi</code> object.</p>
     pub graphql_api: std::option::Option<crate::model::GraphqlApi>,
 }
+impl GetGraphqlApiOutput {
+    /// <p>The <code>GraphqlApi</code> object.</p>
+    pub fn graphql_api(&self) -> std::option::Option<&crate::model::GraphqlApi> {
+        self.graphql_api.as_ref()
+    }
+}
 impl std::fmt::Debug for GetGraphqlApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGraphqlApiOutput");
@@ -1324,6 +1497,14 @@ impl GetGraphqlApiOutput {
 pub struct GetFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
+}
+impl GetFunctionOutput {
+    /// <p>The <code>Function</code> object.</p>
+    pub fn function_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FunctionConfiguration> {
+        self.function_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1379,6 +1560,12 @@ pub struct GetDataSourceOutput {
     /// <p>The <code>DataSource</code> object.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
+impl GetDataSourceOutput {
+    /// <p>The <code>DataSource</code> object.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataSourceOutput");
@@ -1429,6 +1616,12 @@ impl GetDataSourceOutput {
 pub struct GetApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
     pub api_cache: std::option::Option<crate::model::ApiCache>,
+}
+impl GetApiCacheOutput {
+    /// <p>The <code>ApiCache</code> object.</p>
+    pub fn api_cache(&self) -> std::option::Option<&crate::model::ApiCache> {
+        self.api_cache.as_ref()
+    }
 }
 impl std::fmt::Debug for GetApiCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1718,6 +1911,12 @@ pub struct CreateTypeOutput {
     /// <p>The <code>Type</code> object.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl CreateTypeOutput {
+    /// <p>The <code>Type</code> object.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTypeOutput");
@@ -1766,6 +1965,12 @@ pub struct CreateResolverOutput {
     /// <p>The <code>Resolver</code> object.</p>
     pub resolver: std::option::Option<crate::model::Resolver>,
 }
+impl CreateResolverOutput {
+    /// <p>The <code>Resolver</code> object.</p>
+    pub fn resolver(&self) -> std::option::Option<&crate::model::Resolver> {
+        self.resolver.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResolverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResolverOutput");
@@ -1813,6 +2018,12 @@ impl CreateResolverOutput {
 pub struct CreateGraphqlApiOutput {
     /// <p>The <code>GraphqlApi</code>.</p>
     pub graphql_api: std::option::Option<crate::model::GraphqlApi>,
+}
+impl CreateGraphqlApiOutput {
+    /// <p>The <code>GraphqlApi</code>.</p>
+    pub fn graphql_api(&self) -> std::option::Option<&crate::model::GraphqlApi> {
+        self.graphql_api.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGraphqlApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1864,6 +2075,14 @@ impl CreateGraphqlApiOutput {
 pub struct CreateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
     pub function_configuration: std::option::Option<crate::model::FunctionConfiguration>,
+}
+impl CreateFunctionOutput {
+    /// <p>The <code>Function</code> object.</p>
+    pub fn function_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FunctionConfiguration> {
+        self.function_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1919,6 +2138,12 @@ pub struct CreateDataSourceOutput {
     /// <p>The <code>DataSource</code> object.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
 }
+impl CreateDataSourceOutput {
+    /// <p>The <code>DataSource</code> object.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceOutput");
@@ -1970,6 +2195,12 @@ pub struct CreateApiKeyOutput {
     /// <p>The API key.</p>
     pub api_key: std::option::Option<crate::model::ApiKey>,
 }
+impl CreateApiKeyOutput {
+    /// <p>The API key.</p>
+    pub fn api_key(&self) -> std::option::Option<&crate::model::ApiKey> {
+        self.api_key.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateApiKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApiKeyOutput");
@@ -2017,6 +2248,12 @@ impl CreateApiKeyOutput {
 pub struct CreateApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
     pub api_cache: std::option::Option<crate::model::ApiCache>,
+}
+impl CreateApiCacheOutput {
+    /// <p>The <code>ApiCache</code> object.</p>
+    pub fn api_cache(&self) -> std::option::Option<&crate::model::ApiCache> {
+        self.api_cache.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApiCacheOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

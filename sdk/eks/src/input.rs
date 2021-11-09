@@ -149,10 +149,7 @@ impl AssociateEncryptionConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_encryption_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -388,7 +385,7 @@ impl AssociateIdentityProviderConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_identity_provider_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_identity_provider_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -685,10 +682,7 @@ impl CreateAddonInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_addon(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_addon(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1018,10 +1012,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1330,10 +1321,9 @@ impl CreateFargateProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_fargate_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_fargate_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1892,10 +1882,7 @@ impl CreateNodegroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_nodegroup(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_nodegroup(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3657,7 +3644,7 @@ impl DescribeIdentityProviderConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4268,7 +4255,7 @@ impl DisassociateIdentityProviderConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_identity_provider_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_identity_provider_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5898,10 +5885,7 @@ impl RegisterClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6092,10 +6076,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6555,10 +6536,7 @@ impl UpdateAddonInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_addon(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_addon(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6784,10 +6762,7 @@ impl UpdateClusterConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_cluster_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_cluster_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6980,10 +6955,9 @@ impl UpdateClusterVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_cluster_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_cluster_version(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7265,10 +7239,7 @@ impl UpdateNodegroupConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_nodegroup_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7572,10 +7543,7 @@ impl UpdateNodegroupVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_nodegroup_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7673,6 +7641,55 @@ pub struct UpdateNodegroupVersionInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl UpdateNodegroupVersionInput {
+    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to
+    /// update.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the managed node group to update.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes
+    /// version of the node group does not change. You can specify the Kubernetes version of the
+    /// cluster to update the node group to the latest AMI version of the cluster's Kubernetes
+    /// version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+    /// <code>version</code>, or the node group  update will fail.
+    /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the
+    /// latest available AMI version for the node group's Kubernetes version is used. For more
+    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the
+    /// <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+    /// <code>releaseVersion</code>, or the node group  update will fail.
+    /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+    /// <p>An object representing a node group's launch template specification. You can only
+    /// update a node group using a launch template if the node group was originally deployed
+    /// with a launch template.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
+        self.launch_template.as_ref()
+    }
+    /// <p>Force the update if the existing node group's pods are unable to be drained due to a
+    /// pod disruption budget issue. If an update fails because pods could not be drained, you
+    /// can force the update after it fails to terminate the old node whether or not any pods
+    /// are running on the node.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateNodegroupVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNodegroupVersionInput");
@@ -7709,6 +7726,39 @@ pub struct UpdateNodegroupConfigInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl UpdateNodegroupConfigInput {
+    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the managed node group to update.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the
+    /// update.</p>
+    pub fn labels(&self) -> std::option::Option<&crate::model::UpdateLabelsPayload> {
+        self.labels.as_ref()
+    }
+    /// <p>The Kubernetes taints to be applied to the nodes in the node group after the
+    /// update.</p>
+    pub fn taints(&self) -> std::option::Option<&crate::model::UpdateTaintsPayload> {
+        self.taints.as_ref()
+    }
+    /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::NodegroupScalingConfig> {
+        self.scaling_config.as_ref()
+    }
+    /// <p>The node group update configuration.</p>
+    pub fn update_config(&self) -> std::option::Option<&crate::model::NodegroupUpdateConfig> {
+        self.update_config.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateNodegroupConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNodegroupConfigInput");
@@ -7734,6 +7784,21 @@ pub struct UpdateClusterVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl UpdateClusterVersionInput {
+    /// <p>The name of the Amazon EKS cluster to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The desired Kubernetes version following a successful update.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateClusterVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7767,6 +7832,34 @@ pub struct UpdateClusterConfigInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl UpdateClusterConfigInput {
+    /// <p>The name of the Amazon EKS cluster to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    pub fn resources_vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigRequest> {
+        self.resources_vpc_config.as_ref()
+    }
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
+    /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
+    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the
+    /// <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    /// <note>
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
+    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// </note>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateClusterConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7809,6 +7902,45 @@ pub struct UpdateAddonInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl UpdateAddonInput {
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+    /// <code>ListAddons</code>
+    /// </a>.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+    /// <code>DescribeAddonVersions</code>
+    /// </a>.</p>
+    pub fn addon_version(&self) -> std::option::Option<&str> {
+        self.addon_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
+    /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <note>
+    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
+    /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
+    /// IAM roles for service accounts on your cluster</a> in the
+    /// <i>Amazon EKS User Guide</i>.</p>
+    /// </note>
+    pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
+        self.service_account_role_arn.as_deref()
+    }
+    /// <p>How to resolve parameter value conflicts when applying the new version of the add-on
+    /// to the cluster.</p>
+    pub fn resolve_conflicts(&self) -> std::option::Option<&crate::model::ResolveConflicts> {
+        self.resolve_conflicts.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAddonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAddonInput");
@@ -7832,6 +7964,17 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
+    /// resources are Amazon EKS clusters and managed node groups.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7852,6 +7995,20 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
+    /// are Amazon EKS clusters and managed node groups.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -7871,6 +8028,20 @@ pub struct RegisterClusterInput {
     pub connector_config: std::option::Option<crate::model::ConnectorConfigRequest>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl RegisterClusterInput {
+    /// <p>Define a unique name for this cluster within your AWS account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
+    pub fn connector_config(&self) -> std::option::Option<&crate::model::ConnectorConfigRequest> {
+        self.connector_config.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7907,6 +8078,38 @@ pub struct ListUpdatesInput {
     /// <code>nextToken</code> value if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListUpdatesInput {
+    /// <p>The name of the Amazon EKS cluster to list updates for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The names of the installed add-ons that have available updates.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListUpdates</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated
+    /// output. When you use this parameter, <code>ListUpdates</code> returns only
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. You can see the remaining results of the initial request by sending
+    /// another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If you don't use this
+    /// parameter, <code>ListUpdates</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListUpdatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUpdatesInput");
@@ -7926,6 +8129,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
     /// supported resources are Amazon EKS clusters and managed node groups.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+    /// supported resources are Amazon EKS clusters and managed node groups.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7955,6 +8165,30 @@ pub struct ListNodegroupsInput {
     /// results exceeded the value of that parameter. Pagination continues from the end of the
     /// previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNodegroupsInput {
+    /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in
+    /// paginated output. When you use this parameter, <code>ListNodegroups</code> returns only
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. You can see the remaining results of the initial request by sending
+    /// another <code>ListNodegroups</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If you don't
+    /// use this parameter, <code>ListNodegroups</code> returns up to 100
+    /// results and a <code>nextToken</code> value if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListNodegroups</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNodegroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7989,6 +8223,32 @@ pub struct ListIdentityProviderConfigsInput {
     /// of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIdentityProviderConfigsInput {
+    /// <p>The cluster name that you want to list identity provider configurations for.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The maximum number of identity provider configurations returned by
+    /// <code>ListIdentityProviderConfigs</code> in paginated output. When you use this
+    /// parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code>
+    /// results in a single page along with a <code>nextToken</code> response element. You can
+    /// see the remaining results of the initial request by sending another
+    /// <code>ListIdentityProviderConfigs</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and
+    /// 100. If you don't use this parameter,
+    /// <code>ListIdentityProviderConfigs</code> returns up to 100 results
+    /// and a <code>nextToken</code> value, if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used
+    /// and the results exceeded the value of that parameter. Pagination continues from the end
+    /// of the previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIdentityProviderConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentityProviderConfigsInput");
@@ -8020,6 +8280,31 @@ pub struct ListFargateProfilesInput {
     /// the results exceeded the value of that parameter. Pagination continues from the end of
     /// the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFargateProfilesInput {
+    /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The maximum number of Fargate profile results returned by
+    /// <code>ListFargateProfiles</code> in paginated output. When you use this parameter,
+    /// <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a
+    /// single page along with a <code>nextToken</code> response element. You can see the
+    /// remaining results of the initial request by sending another
+    /// <code>ListFargateProfiles</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If you don't
+    /// use this parameter, <code>ListFargateProfiles</code> returns up to 100
+    /// results and a <code>nextToken</code> value if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and
+    /// the results exceeded the value of that parameter. Pagination continues from the end of
+    /// the previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFargateProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8055,6 +8340,34 @@ pub struct ListClustersInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
     pub include: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListClustersInput {
+    /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
+    /// paginated output. When you use this parameter, <code>ListClusters</code> returns only
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. You can see the remaining results of the initial request by sending
+    /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If you don't
+    /// use this parameter, <code>ListClusters</code> returns up to 100
+    /// results and a <code>nextToken</code> value if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListClusters</code> request where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+    pub fn include(&self) -> std::option::Option<&[std::string::String]> {
+        self.include.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8092,6 +8405,35 @@ pub struct ListAddonsInput {
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAddonsInput {
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
+    /// paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns
+    /// only <code>maxResults</code> results in a single page along with a
+    /// <code>nextToken</code> response element. You can see the remaining results of the
+    /// initial request by sending another <code>ListAddonsRequest</code> request with the
+    /// returned <code>nextToken</code> value. This value can be between 1 and
+    /// 100. If you don't use this parameter, <code>ListAddonsRequest</code>
+    /// returns up to 100 results and a <code>nextToken</code> value, if
+    /// applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAddonsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAddonsInput");
@@ -8113,6 +8455,23 @@ pub struct DisassociateIdentityProviderConfigInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl DisassociateIdentityProviderConfigInput {
+    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>An object that represents an identity provider configuration.</p>
+    pub fn identity_provider_config(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderConfig> {
+        self.identity_provider_config.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateIdentityProviderConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8139,6 +8498,26 @@ pub struct DescribeUpdateInput {
     /// </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
 }
+impl DescribeUpdateInput {
+    /// <p>The name of the Amazon EKS cluster associated with the update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the update to describe.</p>
+    pub fn update_id(&self) -> std::option::Option<&str> {
+        self.update_id.as_deref()
+    }
+    /// <p>The name of the Amazon EKS node group associated with the update.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+    /// <code>ListAddons</code>
+    /// </a>.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUpdateInput");
@@ -8159,6 +8538,16 @@ pub struct DescribeNodegroupInput {
     /// <p>The name of the node group to describe.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
 }
+impl DescribeNodegroupInput {
+    /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the node group to describe.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNodegroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNodegroupInput");
@@ -8176,6 +8565,18 @@ pub struct DescribeIdentityProviderConfigInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>An object that represents an identity provider configuration.</p>
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfig>,
+}
+impl DescribeIdentityProviderConfigInput {
+    /// <p>The cluster name that the identity provider configuration is associated to.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>An object that represents an identity provider configuration.</p>
+    pub fn identity_provider_config(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderConfig> {
+        self.identity_provider_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityProviderConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8195,6 +8596,16 @@ pub struct DescribeFargateProfileInput {
     /// <p>The name of the Fargate profile to describe.</p>
     pub fargate_profile_name: std::option::Option<std::string::String>,
 }
+impl DescribeFargateProfileInput {
+    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the Fargate profile to describe.</p>
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+        self.fargate_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFargateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFargateProfileInput");
@@ -8210,6 +8621,12 @@ impl std::fmt::Debug for DescribeFargateProfileInput {
 pub struct DescribeClusterInput {
     /// <p>The name of the cluster to describe.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeClusterInput {
+    /// <p>The name of the cluster to describe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8241,6 +8658,33 @@ pub struct DescribeAddonVersionsInput {
     /// </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
 }
+impl DescribeAddonVersionsInput {
+    /// <p>The Kubernetes versions that the add-on can be used with.</p>
+    pub fn kubernetes_version(&self) -> std::option::Option<&str> {
+        self.kubernetes_version.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and
+    /// the results exceeded the value of that parameter. Pagination continues from the end of
+    /// the previous results that returned the <code>nextToken</code> value.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+    /// <code>ListAddons</code>
+    /// </a>.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAddonVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddonVersionsInput");
@@ -8263,6 +8707,18 @@ pub struct DescribeAddonInput {
     /// </a>.</p>
     pub addon_name: std::option::Option<std::string::String>,
 }
+impl DescribeAddonInput {
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+    /// <code>ListAddons</code>
+    /// </a>.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAddonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddonInput");
@@ -8278,6 +8734,12 @@ impl std::fmt::Debug for DescribeAddonInput {
 pub struct DeregisterClusterInput {
     /// <p>The name of the connected cluster to deregister.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeregisterClusterInput {
+    /// <p>The name of the connected cluster to deregister.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8295,6 +8757,16 @@ pub struct DeleteNodegroupInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The name of the node group to delete.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
+}
+impl DeleteNodegroupInput {
+    /// <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the node group to delete.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNodegroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8314,6 +8786,16 @@ pub struct DeleteFargateProfileInput {
     /// <p>The name of the Fargate profile to delete.</p>
     pub fargate_profile_name: std::option::Option<std::string::String>,
 }
+impl DeleteFargateProfileInput {
+    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the Fargate profile to delete.</p>
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+        self.fargate_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFargateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFargateProfileInput");
@@ -8329,6 +8811,12 @@ impl std::fmt::Debug for DeleteFargateProfileInput {
 pub struct DeleteClusterInput {
     /// <p>The name of the cluster to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteClusterInput {
+    /// <p>The name of the cluster to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8350,6 +8838,22 @@ pub struct DeleteAddonInput {
     pub addon_name: std::option::Option<std::string::String>,
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
     pub preserve: bool,
+}
+impl DeleteAddonInput {
+    /// <p>The name of the cluster to delete the add-on from.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+    /// <code>ListAddons</code>
+    /// </a>.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+    pub fn preserve(&self) -> bool {
+        self.preserve
+    }
 }
 impl std::fmt::Debug for DeleteAddonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8455,6 +8959,139 @@ pub struct CreateNodegroupInput {
     /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
     pub release_version: std::option::Option<std::string::String>,
 }
+impl CreateNodegroupInput {
+    /// <p>The name of the cluster to create the node group in.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The unique name to give your node group.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The scaling configuration details for the Auto Scaling group that is created for your
+    /// node group.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::NodegroupScalingConfig> {
+        self.scaling_config.as_ref()
+    }
+    /// <p>The root device disk size (in GiB) for your node group instances. The default disk
+    /// size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify  <code>diskSize</code>,
+    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn disk_size(&self) -> std::option::Option<i32> {
+        self.disk_size
+    }
+    /// <p>The subnets to use for the Auto Scaling group that is created for your node group.
+    /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
+    /// <code>SubnetId</code>
+    /// </a> in your launch template, or the node group
+    /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>Specify the instance types for a node group. If you specify a GPU instance type, be
+    /// sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If
+    /// you specify <code>launchTemplate</code>, then you can specify zero or one instance type
+    /// in your launch template <i>or</i> you can specify 0-20 instance types for
+    /// <code>instanceTypes</code>. If however, you specify an instance type in your launch
+    /// template <i>and</i> specify any <code>instanceTypes</code>, the node group
+    /// deployment will fail. If you don't specify an instance type in a launch template or for
+    /// <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you
+    /// specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying
+    /// multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in
+    /// the <i>Amazon EKS User Guide</i>.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The AMI type for your node group. GPU instance types should use the
+    /// <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
+    /// <code>AL2_x86_64</code> AMI type. Arm instances should use the
+    /// <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI.
+    /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>,
+    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn ami_type(&self) -> std::option::Option<&crate::model::AmiTypes> {
+        self.ami_type.as_ref()
+    }
+    /// <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>,
+    /// then don't specify  <code>remoteAccess</code>, or the node group  deployment
+    /// will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn remote_access(&self) -> std::option::Option<&crate::model::RemoteAccessConfig> {
+        self.remote_access.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
+    /// node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
+    /// permissions for these API calls through an IAM instance profile and associated
+    /// policies. Before you can launch nodes and register them into a cluster, you must create
+    /// an IAM role for those nodes to use when they are launched. For more information, see
+    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.
+    /// If you specify <code>launchTemplate</code>, then don't specify  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
+    /// <code>IamInstanceProfile</code>
+    /// </a> in your launch template,
+    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn node_role(&self) -> std::option::Option<&str> {
+        self.node_role.as_deref()
+    }
+    /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are
+    /// created.</p>
+    pub fn labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.labels.as_ref()
+    }
+    /// <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+    pub fn taints(&self) -> std::option::Option<&[crate::model::Taint]> {
+        self.taints.as_deref()
+    }
+    /// <p>The metadata to apply to the node group to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Node group tags do not propagate to any other resources associated with the node
+    /// group, such as the Amazon EC2 instances or subnets.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>An object representing a node group's launch template specification. If specified,
+    /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or
+    /// <code>remoteAccess</code> and make sure that the launch template meets the
+    /// requirements in <code>launchTemplateSpecification</code>.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
+        self.launch_template.as_ref()
+    }
+    /// <p>The node group update configuration.</p>
+    pub fn update_config(&self) -> std::option::Option<&crate::model::NodegroupUpdateConfig> {
+        self.update_config.as_ref()
+    }
+    /// <p>The capacity type for your node group.</p>
+    pub fn capacity_type(&self) -> std::option::Option<&crate::model::CapacityTypes> {
+        self.capacity_type.as_ref()
+    }
+    /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes
+    /// version of the cluster is used, and this is the only accepted specified value.
+    /// If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify  <code>version</code>,
+    /// or the node group  deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default,
+    /// the latest available AMI version for the node group's current Kubernetes version is
+    /// used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS
+    /// optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>,
+    /// and your launch template uses a custom AMI, then don't specify  <code>releaseVersion</code>, or the node group
+    /// deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNodegroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNodegroupInput");
@@ -8511,6 +9148,51 @@ pub struct CreateFargateProfileInput {
     /// Fargate profile, such as the pods that are scheduled with it.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateFargateProfileInput {
+    /// <p>The name of the Fargate profile.</p>
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+        self.fargate_profile_name.as_deref()
+    }
+    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
+    /// the Fargate profile. The pod execution role allows Fargate infrastructure to register with
+    /// your cluster as a node, and it provides read access to Amazon ECR image repositories. For
+    /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+    /// <i>Amazon EKS User Guide</i>.</p>
+    pub fn pod_execution_role_arn(&self) -> std::option::Option<&str> {
+        self.pod_execution_role_arn.as_deref()
+    }
+    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are
+    /// not assigned public IP addresses, so only private subnets (with no direct route to an
+    /// Internet Gateway) are accepted for this parameter.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an
+    /// associated namespace. Optionally, you can also specify labels for a namespace. You may
+    /// specify up to five selectors in a Fargate profile.</p>
+    pub fn selectors(&self) -> std::option::Option<&[crate::model::FargateProfileSelector]> {
+        self.selectors.as_deref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The metadata to apply to the Fargate profile to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Fargate profile tags do not propagate to any other resources associated with the
+    /// Fargate profile, such as the pods that are scheduled with it.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFargateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8573,6 +9255,71 @@ pub struct CreateClusterInput {
     /// <p>The encryption configuration for the cluster.</p>
     pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
 }
+impl CreateClusterInput {
+    /// <p>The unique name to give to your cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here,
+    /// the latest version available in Amazon EKS is used.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
+    /// plane to make calls to Amazon Web Services API operations on your behalf. For more information, see
+    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS
+    /// Service IAM Role</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+    /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
+    /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
+    /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
+    /// security groups, but we recommend that you use a dedicated security group for your
+    /// cluster control plane.</p>
+    pub fn resources_vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigRequest> {
+        self.resources_vpc_config.as_ref()
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn kubernetes_network_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KubernetesNetworkConfigRequest> {
+        self.kubernetes_network_config.as_ref()
+    }
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
+    /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
+    /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the
+    /// <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    /// <note>
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
+    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// </note>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The metadata to apply to the cluster to assist with categorization and organization.
+    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The encryption configuration for the cluster.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&[crate::model::EncryptionConfig]> {
+        self.encryption_config.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
@@ -8623,6 +9370,53 @@ pub struct CreateAddonInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAddonInput {
+    /// <p>The name of the cluster to create the add-on for.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+    /// <code>DescribeAddonVersions</code>
+    /// </a>.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+    /// <code>DescribeAddonVersions</code>
+    /// </a>.</p>
+    pub fn addon_version(&self) -> std::option::Option<&str> {
+        self.addon_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the
+    /// permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <note>
+    /// <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for
+    /// your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling
+    /// IAM roles for service accounts on your cluster</a> in the
+    /// <i>Amazon EKS User Guide</i>.</p>
+    /// </note>
+    pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
+        self.service_account_role_arn.as_deref()
+    }
+    /// <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS
+    /// add-on.</p>
+    pub fn resolve_conflicts(&self) -> std::option::Option<&crate::model::ResolveConflicts> {
+        self.resolve_conflicts.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The metadata to apply to the cluster to assist with categorization and organization.
+    /// Each tag consists of a key and an optional value, both of which you define. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAddonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAddonInput");
@@ -8655,6 +9449,31 @@ pub struct AssociateIdentityProviderConfigInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl AssociateIdentityProviderConfigInput {
+    /// <p>The name of the cluster to associate the configuration to.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>An object that represents an OpenID Connect (OIDC) identity provider
+    /// configuration.</p>
+    pub fn oidc(&self) -> std::option::Option<&crate::model::OidcIdentityProviderConfigRequest> {
+        self.oidc.as_ref()
+    }
+    /// <p>The metadata to apply to the configuration to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateIdentityProviderConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateIdentityProviderConfigInput");
@@ -8676,6 +9495,20 @@ pub struct AssociateEncryptionConfigInput {
     pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
     /// <p>The client request token you are using with the encryption configuration.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl AssociateEncryptionConfigInput {
+    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The configuration you are using for encryption.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&[crate::model::EncryptionConfig]> {
+        self.encryption_config.as_deref()
+    }
+    /// <p>The client request token you are using with the encryption configuration.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

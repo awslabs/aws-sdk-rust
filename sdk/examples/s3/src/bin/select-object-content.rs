@@ -96,17 +96,16 @@ async fn main() -> Result<(), Error> {
                 println!(
                     "Record: {}",
                     records
-                        .payload
-                        .as_ref()
+                        .payload()
                         .map(|p| std::str::from_utf8(p.as_ref()).unwrap())
                         .unwrap_or("")
                 );
             }
             SelectObjectContentEventStream::Stats(stats) => {
-                println!("Stats: {:?}", stats.details.unwrap());
+                println!("Stats: {:?}", stats.details().unwrap());
             }
             SelectObjectContentEventStream::Progress(progress) => {
-                println!("Progress: {:?}", progress.details.unwrap());
+                println!("Progress: {:?}", progress.details().unwrap());
             }
             SelectObjectContentEventStream::Cont(_) => {
                 println!("Continuation Event");

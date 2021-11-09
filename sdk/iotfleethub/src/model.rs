@@ -21,6 +21,36 @@ pub struct ApplicationSummary {
     /// <p>The current state of the web application.</p>
     pub application_state: std::option::Option<crate::model::ApplicationState>,
 }
+impl ApplicationSummary {
+    /// <p>The unique Id of the web application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The name of the web application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>An optional description of the web application.</p>
+    pub fn application_description(&self) -> std::option::Option<&str> {
+        self.application_description.as_deref()
+    }
+    /// <p>The URL of the web application.</p>
+    pub fn application_url(&self) -> std::option::Option<&str> {
+        self.application_url.as_deref()
+    }
+    /// <p>The date (in Unix epoch time) when the web application was created.</p>
+    pub fn application_creation_date(&self) -> i64 {
+        self.application_creation_date
+    }
+    /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
+    pub fn application_last_update_date(&self) -> i64 {
+        self.application_last_update_date
+    }
+    /// <p>The current state of the web application.</p>
+    pub fn application_state(&self) -> std::option::Option<&crate::model::ApplicationState> {
+        self.application_state.as_ref()
+    }
+}
 impl std::fmt::Debug for ApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSummary");

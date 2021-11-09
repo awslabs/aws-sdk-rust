@@ -80,6 +80,21 @@ pub struct ByoipCidr {
     /// through bring your own IP address (BYOIP).</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::ByoipCidrEvent>>,
 }
+impl ByoipCidr {
+    /// <p>The address range, in CIDR notation.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
+    /// <p>The state of the address pool.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ByoipCidrState> {
+        self.state.as_ref()
+    }
+    /// <p>A history of status changes for an IP address range that you bring to AWS Global Accelerator
+    /// through bring your own IP address (BYOIP).</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::ByoipCidrEvent]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for ByoipCidr {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ByoipCidr");
@@ -173,6 +188,18 @@ pub struct ByoipCidrEvent {
     /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
     /// bring your own IP address (BYOIP).</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ByoipCidrEvent {
+    /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status
+    /// of an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
+    /// bring your own IP address (BYOIP).</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ByoipCidrEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -361,6 +388,35 @@ pub struct Listener {
     /// source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub client_affinity: std::option::Option<crate::model::ClientAffinity>,
+}
+impl Listener {
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The list of port ranges for the connections from clients to the accelerator.</p>
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.port_ranges.as_deref()
+    }
+    /// <p>The protocol for the connections from clients to the accelerator.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
+    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
+    /// route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
+    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
+    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
+    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
+    /// be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
+    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
+    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>The default value is <code>NONE</code>.</p>
+    pub fn client_affinity(&self) -> std::option::Option<&crate::model::ClientAffinity> {
+        self.client_affinity.as_ref()
+    }
 }
 impl std::fmt::Debug for Listener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -595,6 +651,16 @@ pub struct PortRange {
     /// <p>The last port in the range of ports, inclusive.</p>
     pub to_port: std::option::Option<i32>,
 }
+impl PortRange {
+    /// <p>The first port in the range of ports, inclusive.</p>
+    pub fn from_port(&self) -> std::option::Option<i32> {
+        self.from_port
+    }
+    /// <p>The last port in the range of ports, inclusive.</p>
+    pub fn to_port(&self) -> std::option::Option<i32> {
+        self.to_port
+    }
+}
 impl std::fmt::Debug for PortRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortRange");
@@ -688,6 +754,63 @@ pub struct EndpointGroup {
     /// users send traffic to) to a list of internal destination ports that you want an application
     /// endpoint to receive traffic on. </p>
     pub port_overrides: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
+}
+impl EndpointGroup {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>The AWS Region where the endpoint group is located.</p>
+    pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
+        self.endpoint_group_region.as_deref()
+    }
+    /// <p>The list of endpoint objects.</p>
+    pub fn endpoint_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointDescription]> {
+        self.endpoint_descriptions.as_deref()
+    }
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
+    /// this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
+    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The default value is 100.</p>
+    pub fn traffic_dial_percentage(&self) -> std::option::Option<f32> {
+        self.traffic_dial_percentage
+    }
+    /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p>
+    ///
+    /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a
+    /// list, Global Accelerator uses the first specified port in the list of ports.</p>
+    pub fn health_check_port(&self) -> std::option::Option<i32> {
+        self.health_check_port
+    }
+    /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default
+    /// value is TCP.</p>
+    pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::HealthCheckProtocol> {
+        self.health_check_protocol.as_ref()
+    }
+    /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the
+    /// endpoints for health checks. The default is slash (/).</p>
+    pub fn health_check_path(&self) -> std::option::Option<&str> {
+        self.health_check_path.as_deref()
+    }
+    /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
+    pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
+        self.health_check_interval_seconds
+    }
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
+    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    pub fn threshold_count(&self) -> std::option::Option<i32> {
+        self.threshold_count
+    }
+    /// <p>Allows you to override the destination ports used to route traffic to an endpoint.
+    /// Using a port override lets you to map a list of external destination ports (that your
+    /// users send traffic to) to a list of internal destination ports that you want an application
+    /// endpoint to receive traffic on. </p>
+    pub fn port_overrides(&self) -> std::option::Option<&[crate::model::PortOverride]> {
+        self.port_overrides.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -929,6 +1052,18 @@ pub struct PortOverride {
     /// such as the Application Load Balancer or Amazon EC2 instance.</p>
     pub endpoint_port: std::option::Option<i32>,
 }
+impl PortOverride {
+    /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic
+    /// arrives to the Global Accelerator on.</p>
+    pub fn listener_port(&self) -> std::option::Option<i32> {
+        self.listener_port
+    }
+    /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint,
+    /// such as the Application Load Balancer or Amazon EC2 instance.</p>
+    pub fn endpoint_port(&self) -> std::option::Option<i32> {
+        self.endpoint_port
+    }
+}
 impl std::fmt::Debug for PortOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortOverride");
@@ -1073,6 +1208,40 @@ pub struct EndpointDescription {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
     /// Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub client_ip_preservation_enabled: std::option::Option<bool>,
+}
+impl EndpointDescription {
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon
+    /// Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address
+    /// allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
+    /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic
+    /// based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The
+    /// result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second
+    /// and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint Weights</a> in the
+    /// <i>AWS Global Accelerator Developer Guide</i>. </p>
+    pub fn weight(&self) -> std::option::Option<i32> {
+        self.weight
+    }
+    /// <p>The health status of the endpoint.</p>
+    pub fn health_state(&self) -> std::option::Option<&crate::model::HealthState> {
+        self.health_state.as_ref()
+    }
+    /// <p>Returns a null result.</p>
+    pub fn health_reason(&self) -> std::option::Option<&str> {
+        self.health_reason.as_deref()
+    }
+    /// <p>Indicates whether client IP address preservation is enabled for an Application Load Balancer endpoint.
+    /// The value is true or false. The default value is true for new accelerators. </p>
+    /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as
+    /// traffic travels to applications on the Application Load Balancer endpoint fronted by the accelerator.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+    /// Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn client_ip_preservation_enabled(&self) -> std::option::Option<bool> {
+        self.client_ip_preservation_enabled
+    }
 }
 impl std::fmt::Debug for EndpointDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1286,6 +1455,33 @@ pub struct EndpointConfiguration {
     /// Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub client_ip_preservation_enabled: std::option::Option<bool>,
 }
+impl EndpointConfiguration {
+    /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon
+    /// Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address
+    /// allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active
+    /// when you add it as an endpoint.</p>
+    /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic
+    /// based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The
+    /// result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second
+    /// and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint Weights</a> in the
+    /// <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn weight(&self) -> std::option::Option<i32> {
+        self.weight
+    }
+    /// <p>Indicates whether client IP address preservation is enabled for an Application Load Balancer endpoint.
+    /// The value is true or false. The default value is true for new accelerators. </p>
+    /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as
+    /// traffic travels to applications on the Application Load Balancer endpoint fronted by the accelerator.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+    /// Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn client_ip_preservation_enabled(&self) -> std::option::Option<bool> {
+        self.client_ip_preservation_enabled
+    }
+}
 impl std::fmt::Debug for EndpointConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointConfiguration");
@@ -1396,6 +1592,18 @@ pub struct CustomRoutingListener {
     /// endpoints for custom routing accelerators</a>.</p>
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
 }
+impl CustomRoutingListener {
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+    /// endpoints for custom routing accelerators</a>.</p>
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.port_ranges.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomRoutingListener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomRoutingListener");
@@ -1482,6 +1690,29 @@ pub struct CustomRoutingAcceleratorAttributes {
     /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
+}
+impl CustomRoutingAcceleratorAttributes {
+    /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true,
+    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
+        self.flow_logs_enabled
+    }
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+    /// bucket.</p>
+    pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_bucket.as_deref()
+    }
+    /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+    /// <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the
+    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
+    pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomRoutingAcceleratorAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1603,6 +1834,51 @@ pub struct CustomRoutingAccelerator {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the accelerator was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CustomRoutingAccelerator {
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The name of the accelerator. The name must contain only alphanumeric characters or
+    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the address type must be IPv4.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
+    pub fn ip_sets(&self) -> std::option::Option<&[crate::model::IpSet]> {
+        self.ip_sets.as_deref()
+    }
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP addresses. </p>
+    /// <p>The naming convention for the DNS name is the following: A lowercase letter a,
+    /// followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+    /// a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+    /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Describes the deployment status of the accelerator.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CustomRoutingAcceleratorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time that the accelerator was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The date and time that the accelerator was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CustomRoutingAccelerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1851,6 +2127,16 @@ pub struct IpSet {
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl IpSet {
+    /// <p>The types of IP addresses included in this IP set.</p>
+    pub fn ip_family(&self) -> std::option::Option<&str> {
+        self.ip_family.as_deref()
+    }
+    /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for IpSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpSet");
@@ -1985,6 +2271,29 @@ pub struct AcceleratorAttributes {
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
+impl AcceleratorAttributes {
+    /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true,
+    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
+        self.flow_logs_enabled
+    }
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+    /// bucket.</p>
+    pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_bucket.as_deref()
+    }
+    /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+    /// <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the
+    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
+    pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for AcceleratorAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcceleratorAttributes");
@@ -2107,6 +2416,52 @@ pub struct Accelerator {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the accelerator was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Accelerator {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The name of the accelerator. The name must contain only alphanumeric characters or
+    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the address type must be IPv4.
+    /// </p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
+    pub fn ip_sets(&self) -> std::option::Option<&[crate::model::IpSet]> {
+        self.ip_sets.as_deref()
+    }
+    /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP addresses. </p>
+    /// <p>The naming convention for the DNS name is the following: A lowercase letter a,
+    /// followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+    /// a1234567890abcdef.awsglobalaccelerator.com.</p>
+    /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+    /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Describes the deployment status of the accelerator.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AcceleratorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time that the accelerator was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The date and time that the accelerator was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Accelerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2357,6 +2712,16 @@ pub struct Tag {
     /// <p>A string that contains a <code>Tag</code> value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A string that contains a <code>Tag</code> key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A string that contains a <code>Tag</code> value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -2422,6 +2787,16 @@ pub struct CidrAuthorizationContext {
     pub message: std::option::Option<std::string::String>,
     /// <p>The signed authorization message for the prefix and account.</p>
     pub signature: std::option::Option<std::string::String>,
+}
+impl CidrAuthorizationContext {
+    /// <p>The plain-text authorization message for the prefix and account.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The signed authorization message for the prefix and account.</p>
+    pub fn signature(&self) -> std::option::Option<&str> {
+        self.signature.as_deref()
+    }
 }
 impl std::fmt::Debug for CidrAuthorizationContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2502,6 +2877,47 @@ pub struct DestinationPortMapping {
     /// traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     pub destination_traffic_state:
         std::option::Option<crate::model::CustomRoutingDestinationTrafficState>,
+}
+impl DestinationPortMapping {
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator
+    /// that you have port mappings for.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The IP address/port combinations (sockets) that map to a given destination socket
+    /// address.</p>
+    pub fn accelerator_socket_addresses(
+        &self,
+    ) -> std::option::Option<&[crate::model::SocketAddress]> {
+        self.accelerator_socket_addresses.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The AWS Region for the endpoint group.</p>
+    pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
+        self.endpoint_group_region.as_deref()
+    }
+    /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
+    pub fn destination_socket_address(&self) -> std::option::Option<&crate::model::SocketAddress> {
+        self.destination_socket_address.as_ref()
+    }
+    /// <p>The IP address type, which must be IPv4.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if
+    /// traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
+    pub fn destination_traffic_state(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomRoutingDestinationTrafficState> {
+        self.destination_traffic_state.as_ref()
+    }
 }
 impl std::fmt::Debug for DestinationPortMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2746,6 +3162,16 @@ pub struct SocketAddress {
     /// <p>The port for the socket address.</p>
     pub port: std::option::Option<i32>,
 }
+impl SocketAddress {
+    /// <p>The IP address for the socket address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The port for the socket address.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+}
 impl std::fmt::Debug for SocketAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SocketAddress");
@@ -2821,6 +3247,35 @@ pub struct PortMapping {
     /// traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     pub destination_traffic_state:
         std::option::Option<crate::model::CustomRoutingDestinationTrafficState>,
+}
+impl PortMapping {
+    /// <p>The accelerator port.</p>
+    pub fn accelerator_port(&self) -> std::option::Option<i32> {
+        self.accelerator_port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>The IP address of the VPC subnet (the subnet ID).</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
+    pub fn destination_socket_address(&self) -> std::option::Option<&crate::model::SocketAddress> {
+        self.destination_socket_address.as_ref()
+    }
+    /// <p>The protocols supported by the endpoint group.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::CustomRoutingProtocol]> {
+        self.protocols.as_deref()
+    }
+    /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if
+    /// traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
+    pub fn destination_traffic_state(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomRoutingDestinationTrafficState> {
+        self.destination_traffic_state.as_ref()
+    }
 }
 impl std::fmt::Debug for PortMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3029,6 +3484,30 @@ pub struct CustomRoutingEndpointGroup {
     pub endpoint_descriptions:
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
 }
+impl CustomRoutingEndpointGroup {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>The AWS Region where the endpoint group is located.</p>
+    pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
+        self.endpoint_group_region.as_deref()
+    }
+    /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints
+    /// (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
+    pub fn destination_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomRoutingDestinationDescription]> {
+        self.destination_descriptions.as_deref()
+    }
+    /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an
+    /// endpoint group to accept client traffic on.</p>
+    pub fn endpoint_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomRoutingEndpointDescription]> {
+        self.endpoint_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomRoutingEndpointGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomRoutingEndpointGroup");
@@ -3158,6 +3637,13 @@ pub struct CustomRoutingEndpointDescription {
     /// subnet ID. </p>
     pub endpoint_id: std::option::Option<std::string::String>,
 }
+impl CustomRoutingEndpointDescription {
+    /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC)
+    /// subnet ID. </p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomRoutingEndpointDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomRoutingEndpointDescription");
@@ -3212,6 +3698,20 @@ pub struct CustomRoutingDestinationDescription {
     pub to_port: std::option::Option<i32>,
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
+}
+impl CustomRoutingDestinationDescription {
+    /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    pub fn from_port(&self) -> std::option::Option<i32> {
+        self.from_port
+    }
+    /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    pub fn to_port(&self) -> std::option::Option<i32> {
+        self.to_port
+    }
+    /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
+        self.protocols.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomRoutingDestinationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3301,6 +3801,20 @@ pub struct CustomRoutingDestinationConfiguration {
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::CustomRoutingProtocol>>,
 }
+impl CustomRoutingDestinationConfiguration {
+    /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    pub fn from_port(&self) -> std::option::Option<i32> {
+        self.from_port
+    }
+    /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    pub fn to_port(&self) -> std::option::Option<i32> {
+        self.to_port
+    }
+    /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::CustomRoutingProtocol]> {
+        self.protocols.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomRoutingDestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomRoutingDestinationConfiguration");
@@ -3385,6 +3899,13 @@ pub struct CustomRoutingEndpointConfiguration {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC)
     /// subnet ID. </p>
     pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl CustomRoutingEndpointConfiguration {
+    /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC)
+    /// subnet ID. </p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomRoutingEndpointConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

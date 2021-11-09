@@ -147,10 +147,8 @@ impl AddProfileKeyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_profile_key(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_add_profile_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -412,10 +410,7 @@ impl CreateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -893,10 +888,7 @@ impl CreateProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1220,10 +1212,7 @@ impl DeleteIntegrationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_integration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1399,10 +1388,7 @@ impl DeleteProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1612,10 +1598,7 @@ impl DeleteProfileKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_profile_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_profile_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1822,10 +1805,7 @@ impl DeleteProfileObjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_profile_object(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_profile_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2327,10 +2307,8 @@ impl GetIntegrationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_integration(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3035,10 +3013,7 @@ impl ListAccountIntegrationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_account_integrations(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3628,10 +3603,7 @@ impl ListProfileObjectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_profile_objects(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_profile_objects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4350,10 +4322,7 @@ impl MergeProfilesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_merge_profiles(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_merge_profiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4590,10 +4559,8 @@ impl PutIntegrationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_integration(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_integration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4785,10 +4752,7 @@ impl PutProfileObjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_profile_object(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_profile_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5152,10 +5116,7 @@ impl PutProfileObjectTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_profile_object_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5393,10 +5354,8 @@ impl SearchProfilesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_profiles(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_profiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5585,10 +5544,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6031,10 +5987,7 @@ impl UpdateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6527,10 +6480,7 @@ impl UpdateProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6647,6 +6597,106 @@ pub struct UpdateProfileInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateProfileInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>Any additional information relevant to the customer’s profile.</p>
+    pub fn additional_information(&self) -> std::option::Option<&str> {
+        self.additional_information.as_deref()
+    }
+    /// <p>A unique account number that you have given to the customer.</p>
+    pub fn account_number(&self) -> std::option::Option<&str> {
+        self.account_number.as_deref()
+    }
+    /// <p>The type of profile used to describe the customer.</p>
+    pub fn party_type(&self) -> std::option::Option<&crate::model::PartyType> {
+        self.party_type.as_ref()
+    }
+    /// <p>The name of the customer’s business.</p>
+    pub fn business_name(&self) -> std::option::Option<&str> {
+        self.business_name.as_deref()
+    }
+    /// <p>The customer’s first name.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The customer’s middle name.</p>
+    pub fn middle_name(&self) -> std::option::Option<&str> {
+        self.middle_name.as_deref()
+    }
+    /// <p>The customer’s last name.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The customer’s birth date. </p>
+    pub fn birth_date(&self) -> std::option::Option<&str> {
+        self.birth_date.as_deref()
+    }
+    /// <p>The gender with which the customer identifies. </p>
+    pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
+        self.gender.as_ref()
+    }
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
+    /// number. </p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The customer’s mobile phone number.</p>
+    pub fn mobile_phone_number(&self) -> std::option::Option<&str> {
+        self.mobile_phone_number.as_deref()
+    }
+    /// <p>The customer’s home phone number.</p>
+    pub fn home_phone_number(&self) -> std::option::Option<&str> {
+        self.home_phone_number.as_deref()
+    }
+    /// <p>The customer’s business phone number.</p>
+    pub fn business_phone_number(&self) -> std::option::Option<&str> {
+        self.business_phone_number.as_deref()
+    }
+    /// <p>The customer’s email address, which has not been specified as a personal or business
+    /// address. </p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The customer’s personal email address.</p>
+    pub fn personal_email_address(&self) -> std::option::Option<&str> {
+        self.personal_email_address.as_deref()
+    }
+    /// <p>The customer’s business email address.</p>
+    pub fn business_email_address(&self) -> std::option::Option<&str> {
+        self.business_email_address.as_deref()
+    }
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or
+    /// billing.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::UpdateAddress> {
+        self.address.as_ref()
+    }
+    /// <p>The customer’s shipping address.</p>
+    pub fn shipping_address(&self) -> std::option::Option<&crate::model::UpdateAddress> {
+        self.shipping_address.as_ref()
+    }
+    /// <p>The customer’s mailing address.</p>
+    pub fn mailing_address(&self) -> std::option::Option<&crate::model::UpdateAddress> {
+        self.mailing_address.as_ref()
+    }
+    /// <p>The customer’s billing address.</p>
+    pub fn billing_address(&self) -> std::option::Option<&crate::model::UpdateAddress> {
+        self.billing_address.as_ref()
+    }
+    /// <p>A key value pair of attributes of a customer profile.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProfileInput");
@@ -6705,6 +6755,45 @@ pub struct UpdateDomainInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateDomainInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn default_expiration_days(&self) -> std::option::Option<i32> {
+        self.default_expiration_days
+    }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
+    /// of encryption key is specified. It is used to encrypt all data before it is placed in
+    /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
+    /// existing value.</p>
+    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+        self.default_encryption_key.as_deref()
+    }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
+    /// ingesting data from third party applications. If specified as an empty string, it will
+    /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
+    /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
+    /// DeadLetterQueue.</p>
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+        self.dead_letter_queue_url.as_deref()
+    }
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
+    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
+        self.matching.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainInput");
@@ -6727,6 +6816,16 @@ pub struct UntagResourceInput {
     /// <p>The list of tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource from which you are removing tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6745,6 +6844,19 @@ pub struct TagResourceInput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the resource that you're adding tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6771,6 +6883,30 @@ pub struct SearchProfilesInput {
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SearchProfilesInput {
+    /// <p>The pagination token from the previous SearchProfiles API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
+    /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+    /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6819,6 +6955,64 @@ pub struct PutProfileObjectTypeInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PutProfileObjectTypeInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>Description of the profile object type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The number of days until the data in the object expires.</p>
+    pub fn expiration_days(&self) -> std::option::Option<i32> {
+        self.expiration_days
+    }
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this
+    /// profile object type.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
+    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
+    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
+    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
+    /// is found, then the service creates a new standard profile.</p>
+    pub fn allow_profile_creation(&self) -> bool {
+        self.allow_profile_creation
+    }
+    /// <p>A map of the name and ObjectType field.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    pub fn keys(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
+    > {
+        self.keys.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PutProfileObjectTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutProfileObjectTypeInput");
@@ -6847,6 +7041,20 @@ pub struct PutProfileObjectInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl PutProfileObjectInput {
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>A string that is serialized from a JSON object.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for PutProfileObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutProfileObjectInput");
@@ -6873,6 +7081,32 @@ pub struct PutIntegrationInput {
     /// <p>The configuration that controls how Customer Profiles retrieves data from the
     /// source.</p>
     pub flow_definition: std::option::Option<crate::model::FlowDefinition>,
+}
+impl PutIntegrationInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the
+    /// source.</p>
+    pub fn flow_definition(&self) -> std::option::Option<&crate::model::FlowDefinition> {
+        self.flow_definition.as_ref()
+    }
 }
 impl std::fmt::Debug for PutIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6901,6 +7135,28 @@ pub struct MergeProfilesInput {
     /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub field_source_profile_ids: std::option::Option<crate::model::FieldSourceProfileIds>,
 }
+impl MergeProfilesInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The identifier of the profile to be taken.</p>
+    pub fn main_profile_id(&self) -> std::option::Option<&str> {
+        self.main_profile_id.as_deref()
+    }
+    /// <p>The identifier of the profile to be merged into MainProfileId.</p>
+    pub fn profile_ids_to_be_merged(&self) -> std::option::Option<&[std::string::String]> {
+        self.profile_ids_to_be_merged.as_deref()
+    }
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply
+    /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
+    /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    pub fn field_source_profile_ids(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldSourceProfileIds> {
+        self.field_source_profile_ids.as_ref()
+    }
+}
 impl std::fmt::Debug for MergeProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeProfilesInput");
@@ -6919,6 +7175,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource for which you want to view tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource for which you want to view tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6935,6 +7197,16 @@ pub struct ListProfileObjectTypeTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProfileObjectTypeTemplatesInput {
+    /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProfileObjectTypeTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6955,6 +7227,20 @@ pub struct ListProfileObjectTypesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProfileObjectTypesInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProfileObjectTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6984,6 +7270,33 @@ pub struct ListProfileObjectsInput {
     /// This filter is only supported for ObjectTypeName _asset and _case.</p>
     pub object_filter: std::option::Option<crate::model::ObjectFilter>,
 }
+impl ListProfileObjectsInput {
+    /// <p>The pagination token from the previous call to ListProfileObjects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.
+    /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+    pub fn object_filter(&self) -> std::option::Option<&crate::model::ObjectFilter> {
+        self.object_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListProfileObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProfileObjectsInput");
@@ -7008,6 +7321,20 @@ pub struct ListIntegrationsInput {
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListIntegrationsInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The pagination token from the previous ListIntegrations API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIntegrationsInput");
@@ -7026,6 +7353,16 @@ pub struct ListDomainsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDomainsInput {
+    /// <p>The pagination token from the previous ListDomain API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7047,6 +7384,20 @@ pub struct ListAccountIntegrationsInput {
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAccountIntegrationsInput {
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAccountIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountIntegrationsInput");
@@ -7064,6 +7415,12 @@ pub struct GetProfileObjectTypeTemplateInput {
     /// <p>A unique identifier for the object template.</p>
     pub template_id: std::option::Option<std::string::String>,
 }
+impl GetProfileObjectTypeTemplateInput {
+    /// <p>A unique identifier for the object template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetProfileObjectTypeTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProfileObjectTypeTemplateInput");
@@ -7080,6 +7437,16 @@ pub struct GetProfileObjectTypeInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
     pub object_type_name: std::option::Option<std::string::String>,
+}
+impl GetProfileObjectTypeInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetProfileObjectTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7102,6 +7469,21 @@ pub struct GetMatchesInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl GetMatchesInput {
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMatchesInput");
@@ -7121,6 +7503,16 @@ pub struct GetIntegrationInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub uri: std::option::Option<std::string::String>,
 }
+impl GetIntegrationInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIntegrationInput");
@@ -7136,6 +7528,12 @@ impl std::fmt::Debug for GetIntegrationInput {
 pub struct GetDomainInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetDomainInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7153,6 +7551,16 @@ pub struct DeleteProfileObjectTypeInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The name of the profile object type.</p>
     pub object_type_name: std::option::Option<std::string::String>,
+}
+impl DeleteProfileObjectTypeInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProfileObjectTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7175,6 +7583,24 @@ pub struct DeleteProfileObjectInput {
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteProfileObjectInput {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>The unique identifier of the profile object generated by the service.</p>
+    pub fn profile_object_unique_key(&self) -> std::option::Option<&str> {
+        self.profile_object_unique_key.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProfileObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7200,6 +7626,24 @@ pub struct DeleteProfileKeyInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DeleteProfileKeyInput {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProfileKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProfileKeyInput");
@@ -7220,6 +7664,16 @@ pub struct DeleteProfileInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DeleteProfileInput {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProfileInput");
@@ -7238,6 +7692,16 @@ pub struct DeleteIntegrationInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub uri: std::option::Option<std::string::String>,
 }
+impl DeleteIntegrationInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIntegrationInput");
@@ -7253,6 +7717,12 @@ impl std::fmt::Debug for DeleteIntegrationInput {
 pub struct DeleteDomainInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteDomainInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7315,6 +7785,102 @@ pub struct CreateProfileInput {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateProfileInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A unique account number that you have given to the customer.</p>
+    pub fn account_number(&self) -> std::option::Option<&str> {
+        self.account_number.as_deref()
+    }
+    /// <p>Any additional information relevant to the customer’s profile.</p>
+    pub fn additional_information(&self) -> std::option::Option<&str> {
+        self.additional_information.as_deref()
+    }
+    /// <p>The type of profile used to describe the customer.</p>
+    pub fn party_type(&self) -> std::option::Option<&crate::model::PartyType> {
+        self.party_type.as_ref()
+    }
+    /// <p>The name of the customer’s business.</p>
+    pub fn business_name(&self) -> std::option::Option<&str> {
+        self.business_name.as_deref()
+    }
+    /// <p>The customer’s first name.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The customer’s middle name.</p>
+    pub fn middle_name(&self) -> std::option::Option<&str> {
+        self.middle_name.as_deref()
+    }
+    /// <p>The customer’s last name.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The customer’s birth date. </p>
+    pub fn birth_date(&self) -> std::option::Option<&str> {
+        self.birth_date.as_deref()
+    }
+    /// <p>The gender with which the customer identifies. </p>
+    pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
+        self.gender.as_ref()
+    }
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
+    /// number. </p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The customer’s mobile phone number.</p>
+    pub fn mobile_phone_number(&self) -> std::option::Option<&str> {
+        self.mobile_phone_number.as_deref()
+    }
+    /// <p>The customer’s home phone number.</p>
+    pub fn home_phone_number(&self) -> std::option::Option<&str> {
+        self.home_phone_number.as_deref()
+    }
+    /// <p>The customer’s business phone number.</p>
+    pub fn business_phone_number(&self) -> std::option::Option<&str> {
+        self.business_phone_number.as_deref()
+    }
+    /// <p>The customer’s email address, which has not been specified as a personal or business
+    /// address. </p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The customer’s personal email address.</p>
+    pub fn personal_email_address(&self) -> std::option::Option<&str> {
+        self.personal_email_address.as_deref()
+    }
+    /// <p>The customer’s business email address.</p>
+    pub fn business_email_address(&self) -> std::option::Option<&str> {
+        self.business_email_address.as_deref()
+    }
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or
+    /// billing.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::Address> {
+        self.address.as_ref()
+    }
+    /// <p>The customer’s shipping address.</p>
+    pub fn shipping_address(&self) -> std::option::Option<&crate::model::Address> {
+        self.shipping_address.as_ref()
+    }
+    /// <p>The customer’s mailing address.</p>
+    pub fn mailing_address(&self) -> std::option::Option<&crate::model::Address> {
+        self.mailing_address.as_ref()
+    }
+    /// <p>The customer’s billing address.</p>
+    pub fn billing_address(&self) -> std::option::Option<&crate::model::Address> {
+        self.billing_address.as_ref()
+    }
+    /// <p>A key value pair of attributes of a customer profile.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProfileInput");
@@ -7370,6 +7936,43 @@ pub struct CreateDomainInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDomainInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn default_expiration_days(&self) -> std::option::Option<i32> {
+        self.default_expiration_days
+    }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
+    /// of encryption key is specified. It is used to encrypt all data before it is placed in
+    /// permanent or semi-permanent storage.</p>
+    pub fn default_encryption_key(&self) -> std::option::Option<&str> {
+        self.default_encryption_key.as_deref()
+    }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
+    /// ingesting data from third party applications. You must set up a policy on the
+    /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
+    /// messages to the DeadLetterQueue.</p>
+    pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
+        self.dead_letter_queue_url.as_deref()
+    }
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
+    pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
+        self.matching.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainInput");
@@ -7395,6 +7998,24 @@ pub struct AddProfileKeyInput {
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl AddProfileKeyInput {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AddProfileKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

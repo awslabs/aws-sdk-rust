@@ -67,6 +67,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -132,6 +141,17 @@ pub struct DescribeSavingsPlansOfferingsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
     /// results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSavingsPlansOfferingsOutput {
+    /// <p>Information about the Savings Plans offerings.</p>
+    pub fn search_results(&self) -> std::option::Option<&[crate::model::SavingsPlanOffering]> {
+        self.search_results.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
+    /// results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSavingsPlansOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -212,6 +232,17 @@ pub struct DescribeSavingsPlansOfferingRatesOutput {
     /// results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSavingsPlansOfferingRatesOutput {
+    /// <p>Information about the Savings Plans offering rates.</p>
+    pub fn search_results(&self) -> std::option::Option<&[crate::model::SavingsPlanOfferingRate]> {
+        self.search_results.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
+    /// results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSavingsPlansOfferingRatesOutput");
@@ -291,6 +322,17 @@ pub struct DescribeSavingsPlansOutput {
     /// results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSavingsPlansOutput {
+    /// <p>Information about the Savings Plans.</p>
+    pub fn savings_plans(&self) -> std::option::Option<&[crate::model::SavingsPlan]> {
+        self.savings_plans.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
+    /// results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSavingsPlansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSavingsPlansOutput");
@@ -367,6 +409,21 @@ pub struct DescribeSavingsPlanRatesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
     /// results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSavingsPlanRatesOutput {
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+        self.savings_plan_id.as_deref()
+    }
+    /// <p>Information about the Savings Plans rates.</p>
+    pub fn search_results(&self) -> std::option::Option<&[crate::model::SavingsPlanRate]> {
+        self.search_results.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
+    /// results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSavingsPlanRatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -486,6 +543,12 @@ impl DeleteQueuedSavingsPlanOutput {
 pub struct CreateSavingsPlanOutput {
     /// <p>The ID of the Savings Plan.</p>
     pub savings_plan_id: std::option::Option<std::string::String>,
+}
+impl CreateSavingsPlanOutput {
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+        self.savings_plan_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSavingsPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

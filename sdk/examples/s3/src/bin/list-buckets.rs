@@ -47,11 +47,11 @@ async fn main() -> Result<(), Error> {
     }
 
     let resp = client.list_buckets().send().await?;
-    let buckets = resp.buckets.unwrap_or_default();
+    let buckets = resp.buckets().unwrap_or_default();
     let num_buckets = buckets.len();
 
-    for bucket in &buckets {
-        println!("{}", bucket.name.as_deref().unwrap_or_default());
+    for bucket in buckets {
+        println!("{}", bucket.name().unwrap_or_default());
     }
 
     println!();

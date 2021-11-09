@@ -109,10 +109,7 @@ impl AddTagsToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -259,10 +256,7 @@ impl CreateHapgInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_hapg(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_hapg(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -530,10 +524,7 @@ impl CreateHsmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_hsm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_hsm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -695,10 +686,7 @@ impl CreateLunaClientInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_luna_client(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_luna_client(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -847,10 +835,7 @@ impl DeleteHapgInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_hapg(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_hapg(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -997,10 +982,7 @@ impl DeleteHsmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_hsm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_hsm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1148,10 +1130,7 @@ impl DeleteLunaClientInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_luna_client(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_luna_client(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1300,10 +1279,7 @@ impl DescribeHapgInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_hapg(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_hapg(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1471,10 +1447,7 @@ impl DescribeHsmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_hsm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_hsm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1639,10 +1612,7 @@ impl DescribeLunaClientInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_luna_client(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_luna_client(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1827,10 +1797,7 @@ impl GetConfigInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_config(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1964,10 +1931,7 @@ impl ListAvailableZonesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_available_zones(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_available_zones(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2108,10 +2072,7 @@ impl ListHapgsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_hapgs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_hapgs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2258,10 +2219,7 @@ impl ListHsmsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_hsms(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_hsms(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2410,10 +2368,7 @@ impl ListLunaClientsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_luna_clients(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_luna_clients(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2563,10 +2518,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2750,10 +2704,7 @@ impl ModifyHapgInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_hapg(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_hapg(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2970,10 +2921,7 @@ impl ModifyHsmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_hsm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_hsm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3133,10 +3081,7 @@ impl ModifyLunaClientInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_luna_client(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_luna_client(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3313,10 +3258,7 @@ impl RemoveTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3389,6 +3331,18 @@ pub struct RemoveTagsFromResourceInput {
     /// existing tag, use <a>AddTagsToResource</a>.</p>
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsFromResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key or keys to remove.</p>
+    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
+    /// existing tag, use <a>AddTagsToResource</a>.</p>
+    pub fn tag_key_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_key_list.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
@@ -3406,6 +3360,16 @@ pub struct ModifyLunaClientInput {
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The new certificate for the client.</p>
     pub certificate: std::option::Option<std::string::String>,
+}
+impl ModifyLunaClientInput {
+    /// <p>The ARN of the client.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
+    /// <p>The new certificate for the client.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyLunaClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3438,6 +3402,37 @@ pub struct ModifyHsmInput {
     /// one syslog monitoring server.</p>
     pub syslog_ip: std::option::Option<std::string::String>,
 }
+impl ModifyHsmInput {
+    /// <p>The ARN of the HSM to modify.</p>
+    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+        self.hsm_arn.as_deref()
+    }
+    /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
+    /// Availability Zone as the current subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The new IP address for the elastic network interface (ENI) attached to the
+    /// HSM.</p>
+    /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
+    /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+    pub fn eni_ip(&self) -> std::option::Option<&str> {
+        self.eni_ip.as_deref()
+    }
+    /// <p>The new IAM role ARN.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The new external ID.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
+    /// one syslog monitoring server.</p>
+    pub fn syslog_ip(&self) -> std::option::Option<&str> {
+        self.syslog_ip.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyHsmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyHsmInput");
@@ -3463,6 +3458,21 @@ pub struct ModifyHapgInput {
     /// group.</p>
     pub partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ModifyHapgInput {
+    /// <p>The ARN of the high-availability partition group to modify.</p>
+    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+        self.hapg_arn.as_deref()
+    }
+    /// <p>The new label for the high-availability partition group.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The list of partition serial numbers to make members of the high-availability partition
+    /// group.</p>
+    pub fn partition_serial_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_serial_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyHapgInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyHapgInput");
@@ -3480,6 +3490,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -3495,6 +3511,13 @@ pub struct ListLunaClientsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
     /// Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLunaClientsInput {
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
+    /// Pass null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLunaClientsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3512,6 +3535,13 @@ pub struct ListHsmsInput {
     /// null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListHsmsInput {
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
+    /// null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHsmsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHsmsInput");
@@ -3527,6 +3557,13 @@ pub struct ListHapgsInput {
     /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
     /// null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHapgsInput {
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
+    /// null if this is the first call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHapgsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3559,6 +3596,21 @@ pub struct GetConfigInput {
     /// with the client.</p>
     pub hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetConfigInput {
+    /// <p>The ARN of the client.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
+    /// <p>The client version.</p>
+    pub fn client_version(&self) -> std::option::Option<&crate::model::ClientVersion> {
+        self.client_version.as_ref()
+    }
+    /// <p>A list of ARNs that identify the high-availability partition groups that are associated
+    /// with the client.</p>
+    pub fn hapg_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.hapg_list.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigInput");
@@ -3577,6 +3629,16 @@ pub struct DescribeLunaClientInput {
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The certificate fingerprint.</p>
     pub certificate_fingerprint: std::option::Option<std::string::String>,
+}
+impl DescribeLunaClientInput {
+    /// <p>The ARN of the client.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
+    /// <p>The certificate fingerprint.</p>
+    pub fn certificate_fingerprint(&self) -> std::option::Option<&str> {
+        self.certificate_fingerprint.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLunaClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3598,6 +3660,18 @@ pub struct DescribeHsmInput {
     /// <code>HsmSerialNumber</code> parameter must be specified.</p>
     pub hsm_serial_number: std::option::Option<std::string::String>,
 }
+impl DescribeHsmInput {
+    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
+    /// parameter must be specified.</p>
+    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+        self.hsm_arn.as_deref()
+    }
+    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+    /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+    pub fn hsm_serial_number(&self) -> std::option::Option<&str> {
+        self.hsm_serial_number.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHsmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHsmInput");
@@ -3614,6 +3688,12 @@ pub struct DescribeHapgInput {
     /// <p>The ARN of the high-availability partition group to describe.</p>
     pub hapg_arn: std::option::Option<std::string::String>,
 }
+impl DescribeHapgInput {
+    /// <p>The ARN of the high-availability partition group to describe.</p>
+    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+        self.hapg_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHapgInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHapgInput");
@@ -3628,6 +3708,12 @@ impl std::fmt::Debug for DescribeHapgInput {
 pub struct DeleteLunaClientInput {
     /// <p>The ARN of the client to delete.</p>
     pub client_arn: std::option::Option<std::string::String>,
+}
+impl DeleteLunaClientInput {
+    /// <p>The ARN of the client to delete.</p>
+    pub fn client_arn(&self) -> std::option::Option<&str> {
+        self.client_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLunaClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3644,6 +3730,12 @@ pub struct DeleteHsmInput {
     /// <p>The ARN of the HSM to delete.</p>
     pub hsm_arn: std::option::Option<std::string::String>,
 }
+impl DeleteHsmInput {
+    /// <p>The ARN of the HSM to delete.</p>
+    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+        self.hsm_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteHsmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteHsmInput");
@@ -3658,6 +3750,12 @@ impl std::fmt::Debug for DeleteHsmInput {
 pub struct DeleteHapgInput {
     /// <p>The ARN of the high-availability partition group to delete.</p>
     pub hapg_arn: std::option::Option<std::string::String>,
+}
+impl DeleteHapgInput {
+    /// <p>The ARN of the high-availability partition group to delete.</p>
+    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+        self.hapg_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteHapgInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3676,6 +3774,17 @@ pub struct CreateLunaClientInput {
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
     /// by this client.</p>
     pub certificate: std::option::Option<std::string::String>,
+}
+impl CreateLunaClientInput {
+    /// <p>The label for the client.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
+    /// by this client.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLunaClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3724,6 +3833,57 @@ pub struct CreateHsmInput {
     /// syslog monitoring server.</p>
     pub syslog_ip: std::option::Option<std::string::String>,
 }
+impl CreateHsmInput {
+    /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The SSH public key to install on the HSM.</p>
+    pub fn ssh_key(&self) -> std::option::Option<&str> {
+        self.ssh_key.as_deref()
+    }
+    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
+    /// range of the subnet.</p>
+    pub fn eni_ip(&self) -> std::option::Option<&str> {
+        self.eni_ip.as_deref()
+    }
+    /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
+    /// behalf.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>Specifies the type of subscription for the HSM.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>PRODUCTION</b> - The HSM is being used in a production
+    /// environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>TRIAL</b> - The HSM is being used in a product
+    /// trial.</p>
+    /// </li>
+    /// </ul>
+    pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
+        self.subscription_type.as_ref()
+    }
+    /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
+    /// same token will be ignored.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
+    /// syslog monitoring server.</p>
+    pub fn syslog_ip(&self) -> std::option::Option<&str> {
+        self.syslog_ip.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHsmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHsmInput");
@@ -3746,6 +3906,12 @@ pub struct CreateHapgInput {
     /// <p>The label of the new high-availability partition group.</p>
     pub label: std::option::Option<std::string::String>,
 }
+impl CreateHapgInput {
+    /// <p>The label of the new high-availability partition group.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHapgInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHapgInput");
@@ -3762,6 +3928,16 @@ pub struct AddTagsToResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>One or more tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

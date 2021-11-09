@@ -115,10 +115,7 @@ impl BatchMeterUsageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_meter_usage(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_meter_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -370,10 +367,7 @@ impl MeterUsageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_meter_usage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_meter_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -552,10 +546,7 @@ impl RegisterUsageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_usage(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_register_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -712,10 +703,7 @@ impl ResolveCustomerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_resolve_customer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_resolve_customer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -786,6 +774,14 @@ pub struct ResolveCustomerInput {
     /// CustomerIdentifier and product code.</p>
     pub registration_token: std::option::Option<std::string::String>,
 }
+impl ResolveCustomerInput {
+    /// <p>When a buyer visits your website during the registration process, the buyer submits
+    /// a registration token through the browser. The registration token is resolved to obtain a
+    /// CustomerIdentifier and product code.</p>
+    pub fn registration_token(&self) -> std::option::Option<&str> {
+        self.registration_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveCustomerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveCustomerInput");
@@ -807,6 +803,23 @@ pub struct RegisterUsageInput {
     /// <p>(Optional) To scope down the registration to a specific running software instance
     /// and guard against replay attacks.</p>
     pub nonce: std::option::Option<std::string::String>,
+}
+impl RegisterUsageInput {
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
+    /// code should be the same as the one used during the publishing of a new
+    /// product.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>Public Key Version provided by AWS Marketplace</p>
+    pub fn public_key_version(&self) -> std::option::Option<i32> {
+        self.public_key_version
+    }
+    /// <p>(Optional) To scope down the registration to a specific running software instance
+    /// and guard against replay attacks.</p>
+    pub fn nonce(&self) -> std::option::Option<&str> {
+        self.nonce.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -847,6 +860,44 @@ pub struct MeterUsageInput {
     /// unique set of tags (include no tags).</p>
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
 }
+impl MeterUsageInput {
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
+    /// code should be the same as the one used during the publishing of a new
+    /// product.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
+    /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
+    /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
+    /// the start of the software usage.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>It will be one of the fcp dimension name provided during the publishing of the
+    /// product.</p>
+    pub fn usage_dimension(&self) -> std::option::Option<&str> {
+        self.usage_dimension.as_deref()
+    }
+    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not
+    /// specified.</p>
+    pub fn usage_quantity(&self) -> std::option::Option<i32> {
+        self.usage_quantity
+    }
+    /// <p>Checks whether you have the permissions required for the action, but does not make
+    /// the request. If you have the permissions, the request returns DryRunOperation;
+    /// otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not
+    /// specified.</p>
+    pub fn dry_run(&self) -> std::option::Option<bool> {
+        self.dry_run
+    }
+    /// <p>The set of UsageAllocations to submit.</p>
+    /// <p>The sum of all UsageAllocation quantities must equal the
+    /// UsageQuantity of the MeterUsage request, and each UsageAllocation must have a
+    /// unique set of tags (include no tags).</p>
+    pub fn usage_allocations(&self) -> std::option::Option<&[crate::model::UsageAllocation]> {
+        self.usage_allocations.as_deref()
+    }
+}
 impl std::fmt::Debug for MeterUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeterUsageInput");
@@ -872,6 +923,19 @@ pub struct BatchMeterUsageInput {
     /// code should be the same as the one used during the publishing of a new
     /// product.</p>
     pub product_code: std::option::Option<std::string::String>,
+}
+impl BatchMeterUsageInput {
+    /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
+    /// a time.</p>
+    pub fn usage_records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
+        self.usage_records.as_deref()
+    }
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
+    /// code should be the same as the one used during the publishing of a new
+    /// product.</p>
+    pub fn product_code(&self) -> std::option::Option<&str> {
+        self.product_code.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchMeterUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -67,6 +67,24 @@ pub struct MssPackage {
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
+impl MssPackage {
+    /// A Microsoft Smooth Streaming (MSS) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::MssEncryption> {
+        self.encryption.as_ref()
+    }
+    /// The time window (in seconds) contained in each manifest.
+    pub fn manifest_window_seconds(&self) -> i32 {
+        self.manifest_window_seconds
+    }
+    /// The duration (in seconds) of each segment.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
+}
 impl std::fmt::Debug for MssPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MssPackage");
@@ -163,6 +181,20 @@ pub struct StreamSelection {
     pub min_video_bits_per_second: i32,
     /// A directive that determines the order of streams in the output.
     pub stream_order: std::option::Option<crate::model::StreamOrder>,
+}
+impl StreamSelection {
+    /// The maximum video bitrate (bps) to include in output.
+    pub fn max_video_bits_per_second(&self) -> i32 {
+        self.max_video_bits_per_second
+    }
+    /// The minimum video bitrate (bps) to include in output.
+    pub fn min_video_bits_per_second(&self) -> i32 {
+        self.min_video_bits_per_second
+    }
+    /// A directive that determines the order of streams in the output.
+    pub fn stream_order(&self) -> std::option::Option<&crate::model::StreamOrder> {
+        self.stream_order.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamSelection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -304,6 +336,12 @@ pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl MssEncryption {
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for MssEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MssEncryption");
@@ -373,6 +411,42 @@ pub struct SpekeKeyProvider {
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The URL of the external key provider service.
     pub url: std::option::Option<std::string::String>,
+}
+impl SpekeKeyProvider {
+    /// An Amazon Resource Name (ARN) of a Certificate Manager certificate
+    /// that MediaPackage will use for enforcing secure end-to-end data
+    /// transfer with the key provider service.
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0.
+    /// The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream.
+    /// To configure the encryption contract, specify which audio and video encryption presets to use.
+    /// Note the following considerations when using encryptionContractConfiguration:
+    /// encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.
+    /// You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+    pub fn encryption_contract_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionContractConfiguration> {
+        self.encryption_contract_configuration.as_ref()
+    }
+    /// The resource ID to include in key requests.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
+    /// MediaPackage will assume when accessing the key provider service.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// The system IDs to include in key requests.
+    pub fn system_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.system_ids.as_deref()
+    }
+    /// The URL of the external key provider service.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for SpekeKeyProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -531,6 +605,16 @@ pub struct EncryptionContractConfiguration {
     pub preset_speke20_audio: std::option::Option<crate::model::PresetSpeke20Audio>,
     /// A collection of video encryption presets.
     pub preset_speke20_video: std::option::Option<crate::model::PresetSpeke20Video>,
+}
+impl EncryptionContractConfiguration {
+    /// A collection of audio encryption presets.
+    pub fn preset_speke20_audio(&self) -> std::option::Option<&crate::model::PresetSpeke20Audio> {
+        self.preset_speke20_audio.as_ref()
+    }
+    /// A collection of video encryption presets.
+    pub fn preset_speke20_video(&self) -> std::option::Option<&crate::model::PresetSpeke20Video> {
+        self.preset_speke20_video.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptionContractConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -750,6 +834,86 @@ pub struct HlsPackage {
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub use_audio_rendition_group: bool,
+}
+impl HlsPackage {
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint.
+    /// "NONE" will omit all SCTE-35 ad markers from the output.
+    /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
+    /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
+    /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
+    /// messages in the input source.
+    /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
+    /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
+    /// that is greater than 0.
+    pub fn ad_markers(&self) -> std::option::Option<&crate::model::AdMarkers> {
+        self.ad_markers.as_ref()
+    }
+    /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
+    /// ad markers are output.  Specify multiple items to create ad markers for all of the included
+    /// message types.
+    pub fn ad_triggers(&self) -> std::option::Option<&[crate::model::AdTriggersElement]> {
+        self.ad_triggers.as_deref()
+    }
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
+    /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
+    /// ads.  Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that
+    /// contain delivery restrictions will be treated as ads.  Choosing "UNRESTRICTED" means SCTE-35
+    /// messages of the types specified in AdTriggers that do not contain delivery restrictions will
+    /// be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
+    /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
+    /// and are always treated as ads if specified in AdTriggers.
+    pub fn ads_on_delivery_restrictions(
+        &self,
+    ) -> std::option::Option<&crate::model::AdsOnDeliveryRestrictions> {
+        self.ads_on_delivery_restrictions.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::HlsEncryption> {
+        self.encryption.as_ref()
+    }
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub fn include_dvb_subtitles(&self) -> bool {
+        self.include_dvb_subtitles
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn include_iframe_only_stream(&self) -> bool {
+        self.include_iframe_only_stream
+    }
+    /// The HTTP Live Streaming (HLS) playlist type.
+    /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
+    /// entry will be included in the media playlist.
+    pub fn playlist_type(&self) -> std::option::Option<&crate::model::PlaylistType> {
+        self.playlist_type.as_ref()
+    }
+    /// Time window (in seconds) contained in each parent manifest.
+    pub fn playlist_window_seconds(&self) -> i32 {
+        self.playlist_window_seconds
+    }
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+    /// inserted into manifests. Additionally, when an interval is specified
+    /// ID3Timed Metadata messages will be generated every 5 seconds using the
+    /// ingest time of the content.
+    /// If the interval is not specified, or set to 0, then
+    /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+    /// ID3Timed Metadata messages will be generated. Note that irrespective
+    /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+    /// it will be passed through to HLS output.
+    pub fn program_date_time_interval_seconds(&self) -> i32 {
+        self.program_date_time_interval_seconds
+    }
+    /// Duration (in seconds) of each fragment. Actual fragments will be
+    /// rounded to the nearest multiple of the source fragment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
+    /// When enabled, audio streams will be placed in rendition groups in the output.
+    pub fn use_audio_rendition_group(&self) -> bool {
+        self.use_audio_rendition_group
+    }
 }
 impl std::fmt::Debug for HlsPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1107,6 +1271,29 @@ pub struct HlsEncryption {
     pub repeat_ext_x_key: bool,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
+}
+impl HlsEncryption {
+    /// A constant initialization vector for encryption (optional).
+    /// When not specified the initialization vector will be periodically rotated.
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// The encryption method to use.
+    pub fn encryption_method(&self) -> std::option::Option<&crate::model::EncryptionMethod> {
+        self.encryption_method.as_ref()
+    }
+    /// Interval (in seconds) between each encryption key rotation.
+    pub fn key_rotation_interval_seconds(&self) -> i32 {
+        self.key_rotation_interval_seconds
+    }
+    /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
+    pub fn repeat_ext_x_key(&self) -> bool {
+        self.repeat_ext_x_key
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
 }
 impl std::fmt::Debug for HlsEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1561,6 +1748,85 @@ pub struct DashPackage {
     pub utc_timing: std::option::Option<crate::model::UtcTiming>,
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
     pub utc_timing_uri: std::option::Option<std::string::String>,
+}
+impl DashPackage {
+    /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
+    /// ad markers are output.  Specify multiple items to create ad markers for all of the included
+    /// message types.
+    pub fn ad_triggers(&self) -> std::option::Option<&[crate::model::AdTriggersElement]> {
+        self.ad_triggers.as_deref()
+    }
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
+    /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
+    /// ads.  Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that
+    /// contain delivery restrictions will be treated as ads.  Choosing "UNRESTRICTED" means SCTE-35
+    /// messages of the types specified in AdTriggers that do not contain delivery restrictions will
+    /// be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
+    /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
+    /// and are always treated as ads if specified in AdTriggers.
+    pub fn ads_on_delivery_restrictions(
+        &self,
+    ) -> std::option::Option<&crate::model::AdsOnDeliveryRestrictions> {
+        self.ads_on_delivery_restrictions.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::DashEncryption> {
+        self.encryption.as_ref()
+    }
+    /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    pub fn manifest_layout(&self) -> std::option::Option<&crate::model::ManifestLayout> {
+        self.manifest_layout.as_ref()
+    }
+    /// Time window (in seconds) contained in each manifest.
+    pub fn manifest_window_seconds(&self) -> i32 {
+        self.manifest_window_seconds
+    }
+    /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
+    pub fn min_buffer_time_seconds(&self) -> i32 {
+        self.min_buffer_time_seconds
+    }
+    /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
+    pub fn min_update_period_seconds(&self) -> i32 {
+        self.min_update_period_seconds
+    }
+    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
+    /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+    /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+    /// the Channel source contains SCTE-35 ad markers.
+    pub fn period_triggers(&self) -> std::option::Option<&[crate::model::PeriodTriggersElement]> {
+        self.period_triggers.as_deref()
+    }
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
+        self.profile.as_ref()
+    }
+    /// Duration (in seconds) of each segment. Actual segments will be
+    /// rounded to the nearest multiple of the source segment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+    pub fn segment_template_format(
+        &self,
+    ) -> std::option::Option<&crate::model::SegmentTemplateFormat> {
+        self.segment_template_format.as_ref()
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
+    /// Duration (in seconds) to delay live content before presentation.
+    pub fn suggested_presentation_delay_seconds(&self) -> i32 {
+        self.suggested_presentation_delay_seconds
+    }
+    /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+    pub fn utc_timing(&self) -> std::option::Option<&crate::model::UtcTiming> {
+        self.utc_timing.as_ref()
+    }
+    /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+    pub fn utc_timing_uri(&self) -> std::option::Option<&str> {
+        self.utc_timing_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for DashPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2165,6 +2431,16 @@ pub struct DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl DashEncryption {
+    /// Time (in seconds) between each encryption key rotation.
+    pub fn key_rotation_interval_seconds(&self) -> i32 {
+        self.key_rotation_interval_seconds
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for DashEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashEncryption");
@@ -2245,6 +2521,29 @@ pub struct CmafPackage {
     pub segment_prefix: std::option::Option<std::string::String>,
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
+}
+impl CmafPackage {
+    /// A Common Media Application Format (CMAF) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::CmafEncryption> {
+        self.encryption.as_ref()
+    }
+    /// A list of HLS manifest configurations
+    pub fn hls_manifests(&self) -> std::option::Option<&[crate::model::HlsManifest]> {
+        self.hls_manifests.as_deref()
+    }
+    /// Duration (in seconds) of each segment. Actual segments will be
+    /// rounded to the nearest multiple of the source segment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
+    pub fn segment_prefix(&self) -> std::option::Option<&str> {
+        self.segment_prefix.as_deref()
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
 }
 impl std::fmt::Debug for CmafPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2397,6 +2696,58 @@ pub struct HlsManifest {
     pub program_date_time_interval_seconds: i32,
     /// The URL of the packaged OriginEndpoint for consumption.
     pub url: std::option::Option<std::string::String>,
+}
+impl HlsManifest {
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint.
+    /// "NONE" will omit all SCTE-35 ad markers from the output.
+    /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
+    /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
+    /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
+    /// messages in the input source.
+    /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
+    /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
+    /// that is greater than 0.
+    pub fn ad_markers(&self) -> std::option::Option<&crate::model::AdMarkers> {
+        self.ad_markers.as_ref()
+    }
+    /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn include_iframe_only_stream(&self) -> bool {
+        self.include_iframe_only_stream
+    }
+    /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// The HTTP Live Streaming (HLS) playlist type.
+    /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
+    /// entry will be included in the media playlist.
+    pub fn playlist_type(&self) -> std::option::Option<&crate::model::PlaylistType> {
+        self.playlist_type.as_ref()
+    }
+    /// Time window (in seconds) contained in each parent manifest.
+    pub fn playlist_window_seconds(&self) -> i32 {
+        self.playlist_window_seconds
+    }
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+    /// inserted into manifests. Additionally, when an interval is specified
+    /// ID3Timed Metadata messages will be generated every 5 seconds using the
+    /// ingest time of the content.
+    /// If the interval is not specified, or set to 0, then
+    /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+    /// ID3Timed Metadata messages will be generated. Note that irrespective
+    /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+    /// it will be passed through to HLS output.
+    pub fn program_date_time_interval_seconds(&self) -> i32 {
+        self.program_date_time_interval_seconds
+    }
+    /// The URL of the packaged OriginEndpoint for consumption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for HlsManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2597,6 +2948,20 @@ pub struct CmafEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl CmafEncryption {
+    /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// Time (in seconds) between each encryption key rotation.
+    pub fn key_rotation_interval_seconds(&self) -> i32 {
+        self.key_rotation_interval_seconds
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for CmafEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CmafEncryption");
@@ -2693,6 +3058,16 @@ pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
     pub secrets_role_arn: std::option::Option<std::string::String>,
 }
+impl Authorization {
+    /// The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
+    pub fn cdn_identifier_secret(&self) -> std::option::Option<&str> {
+        self.cdn_identifier_secret.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+    pub fn secrets_role_arn(&self) -> std::option::Option<&str> {
+        self.secrets_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Authorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Authorization");
@@ -2769,6 +3144,31 @@ pub struct CmafPackageCreateOrUpdateParameters {
     pub segment_prefix: std::option::Option<std::string::String>,
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
+}
+impl CmafPackageCreateOrUpdateParameters {
+    /// A Common Media Application Format (CMAF) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::CmafEncryption> {
+        self.encryption.as_ref()
+    }
+    /// A list of HLS manifest configurations
+    pub fn hls_manifests(
+        &self,
+    ) -> std::option::Option<&[crate::model::HlsManifestCreateOrUpdateParameters]> {
+        self.hls_manifests.as_deref()
+    }
+    /// Duration (in seconds) of each segment. Actual segments will be
+    /// rounded to the nearest multiple of the source segment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
+    pub fn segment_prefix(&self) -> std::option::Option<&str> {
+        self.segment_prefix.as_deref()
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
 }
 impl std::fmt::Debug for CmafPackageCreateOrUpdateParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2938,6 +3338,73 @@ pub struct HlsManifestCreateOrUpdateParameters {
     /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
     /// it will be passed through to HLS output.
     pub program_date_time_interval_seconds: i32,
+}
+impl HlsManifestCreateOrUpdateParameters {
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint.
+    /// "NONE" will omit all SCTE-35 ad markers from the output.
+    /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
+    /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
+    /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
+    /// messages in the input source.
+    /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
+    /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
+    /// that is greater than 0.
+    pub fn ad_markers(&self) -> std::option::Option<&crate::model::AdMarkers> {
+        self.ad_markers.as_ref()
+    }
+    /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
+    /// ad markers are output.  Specify multiple items to create ad markers for all of the included
+    /// message types.
+    pub fn ad_triggers(&self) -> std::option::Option<&[crate::model::AdTriggersElement]> {
+        self.ad_triggers.as_deref()
+    }
+    /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
+    /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
+    /// ads.  Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that
+    /// contain delivery restrictions will be treated as ads.  Choosing "UNRESTRICTED" means SCTE-35
+    /// messages of the types specified in AdTriggers that do not contain delivery restrictions will
+    /// be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
+    /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
+    /// and are always treated as ads if specified in AdTriggers.
+    pub fn ads_on_delivery_restrictions(
+        &self,
+    ) -> std::option::Option<&crate::model::AdsOnDeliveryRestrictions> {
+        self.ads_on_delivery_restrictions.as_ref()
+    }
+    /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn include_iframe_only_stream(&self) -> bool {
+        self.include_iframe_only_stream
+    }
+    /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// The HTTP Live Streaming (HLS) playlist type.
+    /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
+    /// entry will be included in the media playlist.
+    pub fn playlist_type(&self) -> std::option::Option<&crate::model::PlaylistType> {
+        self.playlist_type.as_ref()
+    }
+    /// Time window (in seconds) contained in each parent manifest.
+    pub fn playlist_window_seconds(&self) -> i32 {
+        self.playlist_window_seconds
+    }
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+    /// inserted into manifests. Additionally, when an interval is specified
+    /// ID3Timed Metadata messages will be generated every 5 seconds using the
+    /// ingest time of the content.
+    /// If the interval is not specified, or set to 0, then
+    /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+    /// ID3Timed Metadata messages will be generated. Note that irrespective
+    /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+    /// it will be passed through to HLS output.
+    pub fn program_date_time_interval_seconds(&self) -> i32 {
+        self.program_date_time_interval_seconds
+    }
 }
 impl std::fmt::Debug for HlsManifestCreateOrUpdateParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3184,6 +3651,12 @@ pub struct IngressAccessLogs {
     /// Customize the log group name.
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl IngressAccessLogs {
+    /// Customize the log group name.
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for IngressAccessLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IngressAccessLogs");
@@ -3234,6 +3707,12 @@ impl IngressAccessLogs {
 pub struct HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
     pub ingest_endpoints: std::option::Option<std::vec::Vec<crate::model::IngestEndpoint>>,
+}
+impl HlsIngest {
+    /// A list of endpoints to which the source stream should be sent.
+    pub fn ingest_endpoints(&self) -> std::option::Option<&[crate::model::IngestEndpoint]> {
+        self.ingest_endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for HlsIngest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3298,6 +3777,24 @@ pub struct IngestEndpoint {
     pub url: std::option::Option<std::string::String>,
     /// The system generated username for ingest authentication.
     pub username: std::option::Option<std::string::String>,
+}
+impl IngestEndpoint {
+    /// The system generated unique identifier for the IngestEndpoint
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The system generated password for ingest authentication.
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// The ingest URL to which the source stream should be sent.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// The system generated username for ingest authentication.
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for IngestEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3386,6 +3883,12 @@ pub struct EgressAccessLogs {
     /// Customize the log group name.
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl EgressAccessLogs {
+    /// Customize the log group name.
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for EgressAccessLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EgressAccessLogs");
@@ -3471,6 +3974,79 @@ pub struct OriginEndpoint {
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl OriginEndpoint {
+    /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The ID of the Channel the OriginEndpoint is associated with.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// A Common Media Application Format (CMAF) packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// A short text description of the OriginEndpoint.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the OriginEndpoint.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A short string appended to the end of the OriginEndpoint URL.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) packaging configuration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
+    /// Maximum duration (seconds) of content to retain for startover playback.
+    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    pub fn startover_window_seconds(&self) -> i32 {
+        self.startover_window_seconds
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// Amount of delay (seconds) to enforce on the playback of live content.
+    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    pub fn time_delay_seconds(&self) -> i32 {
+        self.time_delay_seconds
+    }
+    /// The URL of the packaged OriginEndpoint for consumption.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+        self.whitelist.as_deref()
+    }
 }
 impl std::fmt::Debug for OriginEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3790,6 +4366,48 @@ pub struct HarvestJob {
     /// include an explanation of why the HarvestJob failed.
     pub status: std::option::Option<crate::model::Status>,
 }
+impl HarvestJob {
+    /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The ID of the Channel that the HarvestJob will harvest from.
+    pub fn channel_id(&self) -> std::option::Option<&str> {
+        self.channel_id.as_deref()
+    }
+    /// The time the HarvestJob was submitted
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The end of the time-window which will be harvested.
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region
+    /// and it cannot be changed after the HarvestJob is submitted.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
+    /// This cannot be changed after the HarvestJob is submitted.
+    pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
+        self.origin_endpoint_id.as_deref()
+    }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+    /// The start of the time-window which will be harvested.
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+    /// HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+    /// include an explanation of why the HarvestJob failed.
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for HarvestJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HarvestJob");
@@ -4019,6 +4637,20 @@ pub struct S3Destination {
     /// The IAM role used to write to the specified S3 bucket
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl S3Destination {
+    /// The name of an S3 bucket within which harvested content will be exported
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
+    pub fn manifest_key(&self) -> std::option::Option<&str> {
+        self.manifest_key.as_deref()
+    }
+    /// The IAM role used to write to the specified S3 bucket
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Destination");
@@ -4105,6 +4737,39 @@ pub struct Channel {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Channel {
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A short text description of the Channel.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+        self.hls_ingest.as_ref()
+    }
+    /// The ID of the Channel.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// Configure ingress access logging.
+    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+        self.ingress_access_logs.as_ref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

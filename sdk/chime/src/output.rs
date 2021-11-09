@@ -6,6 +6,12 @@ pub struct UpdateVoiceConnectorGroupOutput {
     /// <p>The updated Amazon Chime Voice Connector group details.</p>
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
 }
+impl UpdateVoiceConnectorGroupOutput {
+    /// <p>The updated Amazon Chime Voice Connector group details.</p>
+    pub fn voice_connector_group(&self) -> std::option::Option<&crate::model::VoiceConnectorGroup> {
+        self.voice_connector_group.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVoiceConnectorGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVoiceConnectorGroupOutput");
@@ -56,6 +62,12 @@ impl UpdateVoiceConnectorGroupOutput {
 pub struct UpdateVoiceConnectorOutput {
     /// <p>The updated Amazon Chime Voice Connector details.</p>
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
+}
+impl UpdateVoiceConnectorOutput {
+    /// <p>The updated Amazon Chime Voice Connector details.</p>
+    pub fn voice_connector(&self) -> std::option::Option<&crate::model::VoiceConnector> {
+        self.voice_connector.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateVoiceConnectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -138,6 +150,12 @@ pub struct UpdateUserOutput {
     /// <p>The updated user details.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl UpdateUserOutput {
+    /// <p>The updated user details.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserOutput");
@@ -183,6 +201,12 @@ impl UpdateUserOutput {
 pub struct UpdateSipRuleOutput {
     /// <p>Updated SIP rule details.</p>
     pub sip_rule: std::option::Option<crate::model::SipRule>,
+}
+impl UpdateSipRuleOutput {
+    /// <p>Updated SIP rule details.</p>
+    pub fn sip_rule(&self) -> std::option::Option<&crate::model::SipRule> {
+        self.sip_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSipRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -231,6 +255,14 @@ impl UpdateSipRuleOutput {
 pub struct UpdateSipMediaApplicationCallOutput {
     /// <p>A <code>Call</code> instance for a SIP media application.</p>
     pub sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
+}
+impl UpdateSipMediaApplicationCallOutput {
+    /// <p>A <code>Call</code> instance for a SIP media application.</p>
+    pub fn sip_media_application_call(
+        &self,
+    ) -> std::option::Option<&crate::model::SipMediaApplicationCall> {
+        self.sip_media_application_call.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSipMediaApplicationCallOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -290,6 +322,12 @@ pub struct UpdateSipMediaApplicationOutput {
     /// <p>The updated SIP media application details.</p>
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
 }
+impl UpdateSipMediaApplicationOutput {
+    /// <p>The updated SIP media application details.</p>
+    pub fn sip_media_application(&self) -> std::option::Option<&crate::model::SipMediaApplication> {
+        self.sip_media_application.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSipMediaApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSipMediaApplicationOutput");
@@ -340,6 +378,12 @@ impl UpdateSipMediaApplicationOutput {
 pub struct UpdateRoomMembershipOutput {
     /// <p>The room membership details.</p>
     pub room_membership: std::option::Option<crate::model::RoomMembership>,
+}
+impl UpdateRoomMembershipOutput {
+    /// <p>The room membership details.</p>
+    pub fn room_membership(&self) -> std::option::Option<&crate::model::RoomMembership> {
+        self.room_membership.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRoomMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -392,6 +436,12 @@ pub struct UpdateRoomOutput {
     /// <p>The room details.</p>
     pub room: std::option::Option<crate::model::Room>,
 }
+impl UpdateRoomOutput {
+    /// <p>The room details.</p>
+    pub fn room(&self) -> std::option::Option<&crate::model::Room> {
+        self.room.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRoomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoomOutput");
@@ -437,6 +487,12 @@ impl UpdateRoomOutput {
 pub struct UpdateProxySessionOutput {
     /// <p>The proxy session details.</p>
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
+}
+impl UpdateProxySessionOutput {
+    /// <p>The proxy session details.</p>
+    pub fn proxy_session(&self) -> std::option::Option<&crate::model::ProxySession> {
+        self.proxy_session.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateProxySessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -519,6 +575,12 @@ pub struct UpdatePhoneNumberOutput {
     /// <p>The updated phone number details.</p>
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
 }
+impl UpdatePhoneNumberOutput {
+    /// <p>The updated phone number details.</p>
+    pub fn phone_number(&self) -> std::option::Option<&crate::model::PhoneNumber> {
+        self.phone_number.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberOutput");
@@ -600,6 +662,12 @@ pub struct UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
 }
+impl UpdateChannelReadMarkerOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelReadMarkerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelReadMarkerOutput");
@@ -649,6 +717,16 @@ pub struct UpdateChannelMessageOutput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ID string of the message being updated.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl UpdateChannelMessageOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,6 +789,12 @@ pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
 }
+impl UpdateChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelOutput");
@@ -759,6 +843,12 @@ pub struct UpdateBotOutput {
     /// <p>The updated bot details.</p>
     pub bot: std::option::Option<crate::model::Bot>,
 }
+impl UpdateBotOutput {
+    /// <p>The updated bot details.</p>
+    pub fn bot(&self) -> std::option::Option<&crate::model::Bot> {
+        self.bot.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBotOutput");
@@ -804,6 +894,12 @@ impl UpdateBotOutput {
 pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAppInstanceUserOutput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -855,6 +951,12 @@ impl UpdateAppInstanceUserOutput {
 pub struct UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl UpdateAppInstanceOutput {
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAppInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -936,6 +1038,12 @@ impl UpdateAccountSettingsOutput {
 pub struct UpdateAccountOutput {
     /// <p>The updated Amazon Chime account details.</p>
     pub account: std::option::Option<crate::model::Account>,
+}
+impl UpdateAccountOutput {
+    /// <p>The updated Amazon Chime account details.</p>
+    pub fn account(&self) -> std::option::Option<&crate::model::Account> {
+        self.account.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1227,6 +1335,16 @@ pub struct SendChannelMessageOutput {
     /// <p>The ID string assigned to each message.</p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendChannelMessageOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID string assigned to each message.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendChannelMessageOutput");
@@ -1289,6 +1407,16 @@ pub struct SearchAvailablePhoneNumbersOutput {
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token used to retrieve the next page of search results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchAvailablePhoneNumbersOutput {
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+        self.e164_phone_numbers.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of search results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchAvailablePhoneNumbersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1360,6 +1488,12 @@ pub struct RestorePhoneNumberOutput {
     /// <p>The phone number details.</p>
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
 }
+impl RestorePhoneNumberOutput {
+    /// <p>The phone number details.</p>
+    pub fn phone_number(&self) -> std::option::Option<&crate::model::PhoneNumber> {
+        self.phone_number.as_ref()
+    }
+}
 impl std::fmt::Debug for RestorePhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestorePhoneNumberOutput");
@@ -1411,6 +1545,12 @@ pub struct ResetPersonalPinOutput {
     /// <p>The user details and new personal meeting PIN.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl ResetPersonalPinOutput {
+    /// <p>The user details and new personal meeting PIN.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for ResetPersonalPinOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetPersonalPinOutput");
@@ -1456,6 +1596,12 @@ impl ResetPersonalPinOutput {
 pub struct RegenerateSecurityTokenOutput {
     /// <p>A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.</p>
     pub bot: std::option::Option<crate::model::Bot>,
+}
+impl RegenerateSecurityTokenOutput {
+    /// <p>A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.</p>
+    pub fn bot(&self) -> std::option::Option<&crate::model::Bot> {
+        self.bot.as_ref()
+    }
 }
 impl std::fmt::Debug for RegenerateSecurityTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1565,6 +1711,16 @@ pub struct RedactChannelMessageOutput {
     /// <p>The ID of the message being redacted.</p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl RedactChannelMessageOutput {
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RedactChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedactChannelMessageOutput");
@@ -1656,6 +1812,12 @@ pub struct PutVoiceConnectorTerminationOutput {
     /// <p>The updated termination setting details.</p>
     pub termination: std::option::Option<crate::model::Termination>,
 }
+impl PutVoiceConnectorTerminationOutput {
+    /// <p>The updated termination setting details.</p>
+    pub fn termination(&self) -> std::option::Option<&crate::model::Termination> {
+        self.termination.as_ref()
+    }
+}
 impl std::fmt::Debug for PutVoiceConnectorTerminationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorTerminationOutput");
@@ -1706,6 +1868,14 @@ impl PutVoiceConnectorTerminationOutput {
 pub struct PutVoiceConnectorStreamingConfigurationOutput {
     /// <p>The updated streaming configuration details.</p>
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+}
+impl PutVoiceConnectorStreamingConfigurationOutput {
+    /// <p>The updated streaming configuration details.</p>
+    pub fn streaming_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingConfiguration> {
+        self.streaming_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorStreamingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1762,6 +1932,12 @@ pub struct PutVoiceConnectorProxyOutput {
     /// <p>The proxy configuration details.</p>
     pub proxy: std::option::Option<crate::model::Proxy>,
 }
+impl PutVoiceConnectorProxyOutput {
+    /// <p>The proxy configuration details.</p>
+    pub fn proxy(&self) -> std::option::Option<&crate::model::Proxy> {
+        self.proxy.as_ref()
+    }
+}
 impl std::fmt::Debug for PutVoiceConnectorProxyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorProxyOutput");
@@ -1807,6 +1983,12 @@ impl PutVoiceConnectorProxyOutput {
 pub struct PutVoiceConnectorOriginationOutput {
     /// <p>The updated origination setting details.</p>
     pub origination: std::option::Option<crate::model::Origination>,
+}
+impl PutVoiceConnectorOriginationOutput {
+    /// <p>The updated origination setting details.</p>
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorOriginationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1859,6 +2041,14 @@ pub struct PutVoiceConnectorLoggingConfigurationOutput {
     /// <p>The updated logging configuration details.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
+impl PutVoiceConnectorLoggingConfigurationOutput {
+    /// <p>The updated logging configuration details.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutVoiceConnectorLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorLoggingConfigurationOutput");
@@ -1910,6 +2100,14 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The emergency calling configuration details.</p>
     pub emergency_calling_configuration:
         std::option::Option<crate::model::EmergencyCallingConfiguration>,
+}
+impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
+    /// <p>The emergency calling configuration details.</p>
+    pub fn emergency_calling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EmergencyCallingConfiguration> {
+        self.emergency_calling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for PutVoiceConnectorEmergencyCallingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1972,6 +2170,14 @@ pub struct PutSipMediaApplicationLoggingConfigurationOutput {
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
 }
+impl PutSipMediaApplicationLoggingConfigurationOutput {
+    /// <p>Logging configuration of the SIP media application.</p>
+    pub fn sip_media_application_logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SipMediaApplicationLoggingConfiguration> {
+        self.sip_media_application_logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutSipMediaApplicationLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSipMediaApplicationLoggingConfigurationOutput");
@@ -2033,6 +2239,16 @@ pub struct PutRetentionSettingsOutput {
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PutRetentionSettingsOutput {
+    /// <p>The retention settings.</p>
+    pub fn retention_settings(&self) -> std::option::Option<&crate::model::RetentionSettings> {
+        self.retention_settings.as_ref()
+    }
+    /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiate_deletion_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRetentionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2104,6 +2320,12 @@ pub struct PutEventsConfigurationOutput {
     /// <p>The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.</p>
     pub events_configuration: std::option::Option<crate::model::EventsConfiguration>,
 }
+impl PutEventsConfigurationOutput {
+    /// <p>The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.</p>
+    pub fn events_configuration(&self) -> std::option::Option<&crate::model::EventsConfiguration> {
+        self.events_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEventsConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsConfigurationOutput");
@@ -2155,6 +2377,14 @@ pub struct PutAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
     pub app_instance_streaming_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
+}
+impl PutAppInstanceStreamingConfigurationsOutput {
+    /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
+    pub fn app_instance_streaming_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceStreamingConfiguration]> {
+        self.app_instance_streaming_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutAppInstanceStreamingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2226,6 +2456,18 @@ pub struct PutAppInstanceRetentionSettingsOutput {
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The time at which the API deletes data.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PutAppInstanceRetentionSettingsOutput {
+    /// <p>The time in days to retain data. Data type: number.</p>
+    pub fn app_instance_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
+        self.app_instance_retention_settings.as_ref()
+    }
+    /// <p>The time at which the API deletes data.</p>
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiate_deletion_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for PutAppInstanceRetentionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2334,6 +2576,12 @@ pub struct ListVoiceConnectorTerminationCredentialsOutput {
     /// <p>A list of user names.</p>
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListVoiceConnectorTerminationCredentialsOutput {
+    /// <p>A list of user names.</p>
+    pub fn usernames(&self) -> std::option::Option<&[std::string::String]> {
+        self.usernames.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVoiceConnectorTerminationCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVoiceConnectorTerminationCredentialsOutput");
@@ -2393,6 +2641,16 @@ pub struct ListVoiceConnectorsOutput {
     pub voice_connectors: std::option::Option<std::vec::Vec<crate::model::VoiceConnector>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVoiceConnectorsOutput {
+    /// <p>The details of the Amazon Chime Voice Connectors.</p>
+    pub fn voice_connectors(&self) -> std::option::Option<&[crate::model::VoiceConnector]> {
+        self.voice_connectors.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVoiceConnectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2467,6 +2725,18 @@ pub struct ListVoiceConnectorGroupsOutput {
         std::option::Option<std::vec::Vec<crate::model::VoiceConnectorGroup>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVoiceConnectorGroupsOutput {
+    /// <p>The details of the Amazon Chime Voice Connector groups.</p>
+    pub fn voice_connector_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::VoiceConnectorGroup]> {
+        self.voice_connector_groups.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVoiceConnectorGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2544,6 +2814,16 @@ pub struct ListUsersOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListUsersOutput {
+    /// <p>List of users and user details.</p>
+    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+        self.users.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersOutput");
@@ -2614,6 +2894,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tag-key value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag-key value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -2669,6 +2955,14 @@ pub struct ListSupportedPhoneNumberCountriesOutput {
     /// <p>The supported phone number countries.</p>
     pub phone_number_countries:
         std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountry>>,
+}
+impl ListSupportedPhoneNumberCountriesOutput {
+    /// <p>The supported phone number countries.</p>
+    pub fn phone_number_countries(
+        &self,
+    ) -> std::option::Option<&[crate::model::PhoneNumberCountry]> {
+        self.phone_number_countries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSupportedPhoneNumberCountriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2732,6 +3026,16 @@ pub struct ListSipRulesOutput {
     pub sip_rules: std::option::Option<std::vec::Vec<crate::model::SipRule>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSipRulesOutput {
+    /// <p>List of SIP rules and rule details.</p>
+    pub fn sip_rules(&self) -> std::option::Option<&[crate::model::SipRule]> {
+        self.sip_rules.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSipRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2805,6 +3109,18 @@ pub struct ListSipMediaApplicationsOutput {
         std::option::Option<std::vec::Vec<crate::model::SipMediaApplication>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSipMediaApplicationsOutput {
+    /// <p>List of SIP media applications and application details.</p>
+    pub fn sip_media_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SipMediaApplication]> {
+        self.sip_media_applications.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSipMediaApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2882,6 +3198,16 @@ pub struct ListRoomsOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRoomsOutput {
+    /// <p>The room details.</p>
+    pub fn rooms(&self) -> std::option::Option<&[crate::model::Room]> {
+        self.rooms.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRoomsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRoomsOutput");
@@ -2953,6 +3279,16 @@ pub struct ListRoomMembershipsOutput {
     pub room_memberships: std::option::Option<std::vec::Vec<crate::model::RoomMembership>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRoomMembershipsOutput {
+    /// <p>The room membership details.</p>
+    pub fn room_memberships(&self) -> std::option::Option<&[crate::model::RoomMembership]> {
+        self.room_memberships.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRoomMembershipsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3027,6 +3363,16 @@ pub struct ListProxySessionsOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProxySessionsOutput {
+    /// <p>The proxy session details.</p>
+    pub fn proxy_sessions(&self) -> std::option::Option<&[crate::model::ProxySession]> {
+        self.proxy_sessions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProxySessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProxySessionsOutput");
@@ -3099,6 +3445,16 @@ pub struct ListPhoneNumbersOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPhoneNumbersOutput {
+    /// <p>The phone number details.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPhoneNumbersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPhoneNumbersOutput");
@@ -3170,6 +3526,16 @@ pub struct ListPhoneNumberOrdersOutput {
     pub phone_number_orders: std::option::Option<std::vec::Vec<crate::model::PhoneNumberOrder>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPhoneNumberOrdersOutput {
+    /// <p>The phone number order details.</p>
+    pub fn phone_number_orders(&self) -> std::option::Option<&[crate::model::PhoneNumberOrder]> {
+        self.phone_number_orders.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPhoneNumberOrdersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3245,6 +3611,12 @@ pub struct ListMeetingTagsOutput {
     /// <p>A list of tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListMeetingTagsOutput {
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMeetingTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMeetingTagsOutput");
@@ -3301,6 +3673,16 @@ pub struct ListMeetingsOutput {
     pub meetings: std::option::Option<std::vec::Vec<crate::model::Meeting>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMeetingsOutput {
+    /// <p>The Amazon Chime SDK meeting information.</p>
+    pub fn meetings(&self) -> std::option::Option<&[crate::model::Meeting]> {
+        self.meetings.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMeetingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3374,6 +3756,18 @@ pub struct ListMediaCapturePipelinesOutput {
         std::option::Option<std::vec::Vec<crate::model::MediaCapturePipeline>>,
     /// <p>The token used to retrieve the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMediaCapturePipelinesOutput {
+    /// <p>The media capture pipeline objects in the list.</p>
+    pub fn media_capture_pipelines(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaCapturePipeline]> {
+        self.media_capture_pipelines.as_deref()
+    }
+    /// <p>The token used to retrieve the next page of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMediaCapturePipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3452,6 +3846,19 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The token returned from previous API requests until the number of channels moderated by
     /// the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsModeratedByAppInstanceUserOutput {
+    /// <p>The moderated channels in the request.</p>
+    pub fn channels(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelModeratedByAppInstanceUserSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>The token returned from previous API requests until the number of channels moderated by
+    /// the user is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3536,6 +3943,17 @@ pub struct ListChannelsOutput {
     /// reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsOutput {
+    /// <p>The information about each channel.</p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+        self.channels.as_deref()
+    }
+    /// <p>The token returned from previous API requests until the number of channels is
+    /// reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsOutput");
@@ -3613,6 +4031,23 @@ pub struct ListChannelModeratorsOutput {
     /// <p>The information about and names of each moderator.</p>
     pub channel_moderators:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratorSummary>>,
+}
+impl ListChannelModeratorsOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested moderators are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The information about and names of each moderator.</p>
+    pub fn channel_moderators(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelModeratorSummary]> {
+        self.channel_moderators.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelModeratorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3707,6 +4142,20 @@ pub struct ListChannelMessagesOutput {
     /// <p>The information about, and content of, each requested message.</p>
     pub channel_messages: std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
 }
+impl ListChannelMessagesOutput {
+    /// <p>The ARN of the channel containing the requested messages.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The information about, and content of, each requested message.</p>
+    pub fn channel_messages(&self) -> std::option::Option<&[crate::model::ChannelMessageSummary]> {
+        self.channel_messages.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMessagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMessagesOutput");
@@ -3798,6 +4247,18 @@ pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelMembershipsForAppInstanceUserOutput {
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn channel_memberships(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelMembershipForAppInstanceUserSummary]> {
+        self.channel_memberships.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMembershipsForAppInstanceUserOutput");
@@ -3881,6 +4342,23 @@ pub struct ListChannelMembershipsOutput {
     /// <p>The token passed by previous API calls until all requested channel memberships are
     /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelMembershipsOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The information for the requested channel memberships.</p>
+    pub fn channel_memberships(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChannelMembershipSummary]> {
+        self.channel_memberships.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested channel memberships are
+    /// returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelMembershipsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3975,6 +4453,20 @@ pub struct ListChannelBansOutput {
     /// <p>The information for each requested ban.</p>
     pub channel_bans: std::option::Option<std::vec::Vec<crate::model::ChannelBanSummary>>,
 }
+impl ListChannelBansOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested bans are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The information for each requested ban.</p>
+    pub fn channel_bans(&self) -> std::option::Option<&[crate::model::ChannelBanSummary]> {
+        self.channel_bans.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelBansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelBansOutput");
@@ -4061,6 +4553,16 @@ pub struct ListBotsOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBotsOutput {
+    /// <p>List of bots and bot details.</p>
+    pub fn bots(&self) -> std::option::Option<&[crate::model::Bot]> {
+        self.bots.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBotsOutput");
@@ -4131,6 +4633,12 @@ pub struct ListAttendeeTagsOutput {
     /// <p>A list of tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListAttendeeTagsOutput {
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAttendeeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttendeeTagsOutput");
@@ -4187,6 +4695,16 @@ pub struct ListAttendeesOutput {
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAttendeesOutput {
+    /// <p>The Amazon Chime SDK attendee information.</p>
+    pub fn attendees(&self) -> std::option::Option<&[crate::model::Attendee]> {
+        self.attendees.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAttendeesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4262,6 +4780,22 @@ pub struct ListAppInstanceUsersOutput {
         std::option::Option<std::vec::Vec<crate::model::AppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstanceUsersOutput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_users(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceUserSummary]> {
+        self.app_instance_users.as_deref()
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstanceUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4355,6 +4889,16 @@ pub struct ListAppInstancesOutput {
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppInstancesOutput {
+    /// <p>The information for each <code>AppInstance</code>.</p>
+    pub fn app_instances(&self) -> std::option::Option<&[crate::model::AppInstanceSummary]> {
+        self.app_instances.as_deref()
+    }
+    /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstancesOutput");
@@ -4430,6 +4974,22 @@ pub struct ListAppInstanceAdminsOutput {
         std::option::Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstanceAdminsOutput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The information for each administrator.</p>
+    pub fn app_instance_admins(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceAdminSummary]> {
+        self.app_instance_admins.as_deref()
+    }
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstanceAdminsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4523,6 +5083,16 @@ pub struct ListAccountsOutput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccountsOutput {
+    /// <p>List of Amazon Chime accounts and account details.</p>
+    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+        self.accounts.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountsOutput");
@@ -4593,6 +5163,12 @@ pub struct InviteUsersOutput {
     /// <p>The email invitation details.</p>
     pub invites: std::option::Option<std::vec::Vec<crate::model::Invite>>,
 }
+impl InviteUsersOutput {
+    /// <p>The email invitation details.</p>
+    pub fn invites(&self) -> std::option::Option<&[crate::model::Invite]> {
+        self.invites.as_deref()
+    }
+}
 impl std::fmt::Debug for InviteUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InviteUsersOutput");
@@ -4650,6 +5226,12 @@ pub struct GetVoiceConnectorTerminationHealthOutput {
     /// <p>The termination health details.</p>
     pub termination_health: std::option::Option<crate::model::TerminationHealth>,
 }
+impl GetVoiceConnectorTerminationHealthOutput {
+    /// <p>The termination health details.</p>
+    pub fn termination_health(&self) -> std::option::Option<&crate::model::TerminationHealth> {
+        self.termination_health.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorTerminationHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorTerminationHealthOutput");
@@ -4701,6 +5283,12 @@ pub struct GetVoiceConnectorTerminationOutput {
     /// <p>The termination setting details.</p>
     pub termination: std::option::Option<crate::model::Termination>,
 }
+impl GetVoiceConnectorTerminationOutput {
+    /// <p>The termination setting details.</p>
+    pub fn termination(&self) -> std::option::Option<&crate::model::Termination> {
+        self.termination.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorTerminationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorTerminationOutput");
@@ -4751,6 +5339,14 @@ impl GetVoiceConnectorTerminationOutput {
 pub struct GetVoiceConnectorStreamingConfigurationOutput {
     /// <p>The streaming configuration details.</p>
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+}
+impl GetVoiceConnectorStreamingConfigurationOutput {
+    /// <p>The streaming configuration details.</p>
+    pub fn streaming_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingConfiguration> {
+        self.streaming_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorStreamingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4807,6 +5403,12 @@ pub struct GetVoiceConnectorProxyOutput {
     /// <p>The proxy configuration details.</p>
     pub proxy: std::option::Option<crate::model::Proxy>,
 }
+impl GetVoiceConnectorProxyOutput {
+    /// <p>The proxy configuration details.</p>
+    pub fn proxy(&self) -> std::option::Option<&crate::model::Proxy> {
+        self.proxy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorProxyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorProxyOutput");
@@ -4852,6 +5454,12 @@ impl GetVoiceConnectorProxyOutput {
 pub struct GetVoiceConnectorOriginationOutput {
     /// <p>The origination setting details.</p>
     pub origination: std::option::Option<crate::model::Origination>,
+}
+impl GetVoiceConnectorOriginationOutput {
+    /// <p>The origination setting details.</p>
+    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+        self.origination.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorOriginationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4904,6 +5512,14 @@ pub struct GetVoiceConnectorLoggingConfigurationOutput {
     /// <p>The logging configuration details.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
+impl GetVoiceConnectorLoggingConfigurationOutput {
+    /// <p>The logging configuration details.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorLoggingConfigurationOutput");
@@ -4954,6 +5570,12 @@ impl GetVoiceConnectorLoggingConfigurationOutput {
 pub struct GetVoiceConnectorGroupOutput {
     /// <p>The Amazon Chime Voice Connector group details.</p>
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+}
+impl GetVoiceConnectorGroupOutput {
+    /// <p>The Amazon Chime Voice Connector group details.</p>
+    pub fn voice_connector_group(&self) -> std::option::Option<&crate::model::VoiceConnectorGroup> {
+        self.voice_connector_group.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5006,6 +5628,14 @@ pub struct GetVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The emergency calling configuration details.</p>
     pub emergency_calling_configuration:
         std::option::Option<crate::model::EmergencyCallingConfiguration>,
+}
+impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
+    /// <p>The emergency calling configuration details.</p>
+    pub fn emergency_calling_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EmergencyCallingConfiguration> {
+        self.emergency_calling_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVoiceConnectorEmergencyCallingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5067,6 +5697,12 @@ pub struct GetVoiceConnectorOutput {
     /// <p>The Amazon Chime Voice Connector details.</p>
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
 }
+impl GetVoiceConnectorOutput {
+    /// <p>The Amazon Chime Voice Connector details.</p>
+    pub fn voice_connector(&self) -> std::option::Option<&crate::model::VoiceConnector> {
+        self.voice_connector.as_ref()
+    }
+}
 impl std::fmt::Debug for GetVoiceConnectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVoiceConnectorOutput");
@@ -5117,6 +5753,12 @@ impl GetVoiceConnectorOutput {
 pub struct GetUserSettingsOutput {
     /// <p>The user settings.</p>
     pub user_settings: std::option::Option<crate::model::UserSettings>,
+}
+impl GetUserSettingsOutput {
+    /// <p>The user settings.</p>
+    pub fn user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.user_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for GetUserSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5169,6 +5811,12 @@ pub struct GetUserOutput {
     /// <p>The user details.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl GetUserOutput {
+    /// <p>The user details.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserOutput");
@@ -5214,6 +5862,12 @@ impl GetUserOutput {
 pub struct GetSipRuleOutput {
     /// <p>The SIP rule details.</p>
     pub sip_rule: std::option::Option<crate::model::SipRule>,
+}
+impl GetSipRuleOutput {
+    /// <p>The SIP rule details.</p>
+    pub fn sip_rule(&self) -> std::option::Option<&crate::model::SipRule> {
+        self.sip_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSipRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5263,6 +5917,14 @@ pub struct GetSipMediaApplicationLoggingConfigurationOutput {
     /// <p>The actual logging configuration.</p>
     pub sip_media_application_logging_configuration:
         std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
+}
+impl GetSipMediaApplicationLoggingConfigurationOutput {
+    /// <p>The actual logging configuration.</p>
+    pub fn sip_media_application_logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SipMediaApplicationLoggingConfiguration> {
+        self.sip_media_application_logging_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSipMediaApplicationLoggingConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5324,6 +5986,12 @@ pub struct GetSipMediaApplicationOutput {
     /// <p>The SIP media application details.</p>
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
 }
+impl GetSipMediaApplicationOutput {
+    /// <p>The SIP media application details.</p>
+    pub fn sip_media_application(&self) -> std::option::Option<&crate::model::SipMediaApplication> {
+        self.sip_media_application.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSipMediaApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSipMediaApplicationOutput");
@@ -5375,6 +6043,12 @@ pub struct GetRoomOutput {
     /// <p>The room details.</p>
     pub room: std::option::Option<crate::model::Room>,
 }
+impl GetRoomOutput {
+    /// <p>The room details.</p>
+    pub fn room(&self) -> std::option::Option<&crate::model::Room> {
+        self.room.as_ref()
+    }
+}
 impl std::fmt::Debug for GetRoomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoomOutput");
@@ -5422,6 +6096,16 @@ pub struct GetRetentionSettingsOutput {
     pub retention_settings: std::option::Option<crate::model::RetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetRetentionSettingsOutput {
+    /// <p>The retention settings.</p>
+    pub fn retention_settings(&self) -> std::option::Option<&crate::model::RetentionSettings> {
+        self.retention_settings.as_ref()
+    }
+    /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiate_deletion_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRetentionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5493,6 +6177,12 @@ pub struct GetProxySessionOutput {
     /// <p>The proxy session details.</p>
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
 }
+impl GetProxySessionOutput {
+    /// <p>The proxy session details.</p>
+    pub fn proxy_session(&self) -> std::option::Option<&crate::model::ProxySession> {
+        self.proxy_session.as_ref()
+    }
+}
 impl std::fmt::Debug for GetProxySessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProxySessionOutput");
@@ -5545,6 +6235,18 @@ pub struct GetPhoneNumberSettingsOutput {
     pub calling_name: std::option::Option<std::string::String>,
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub calling_name_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetPhoneNumberSettingsOutput {
+    /// <p>The default outbound calling name for the account.</p>
+    pub fn calling_name(&self) -> std::option::Option<&str> {
+        self.calling_name.as_deref()
+    }
+    /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
+    pub fn calling_name_updated_timestamp(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.calling_name_updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPhoneNumberSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5613,6 +6315,12 @@ pub struct GetPhoneNumberOrderOutput {
     /// <p>The phone number order details.</p>
     pub phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
 }
+impl GetPhoneNumberOrderOutput {
+    /// <p>The phone number order details.</p>
+    pub fn phone_number_order(&self) -> std::option::Option<&crate::model::PhoneNumberOrder> {
+        self.phone_number_order.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPhoneNumberOrderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPhoneNumberOrderOutput");
@@ -5663,6 +6371,12 @@ impl GetPhoneNumberOrderOutput {
 pub struct GetPhoneNumberOutput {
     /// <p>The phone number details.</p>
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
+}
+impl GetPhoneNumberOutput {
+    /// <p>The phone number details.</p>
+    pub fn phone_number(&self) -> std::option::Option<&crate::model::PhoneNumber> {
+        self.phone_number.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5715,6 +6429,12 @@ pub struct GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
     pub endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
 }
+impl GetMessagingSessionEndpointOutput {
+    /// <p>The endpoint returned in the response.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::MessagingSessionEndpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMessagingSessionEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMessagingSessionEndpointOutput");
@@ -5766,6 +6486,12 @@ pub struct GetMeetingOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
+impl GetMeetingOutput {
+    /// <p>The Amazon Chime SDK meeting information.</p>
+    pub fn meeting(&self) -> std::option::Option<&crate::model::Meeting> {
+        self.meeting.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMeetingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMeetingOutput");
@@ -5813,6 +6539,14 @@ impl GetMeetingOutput {
 pub struct GetMediaCapturePipelineOutput {
     /// <p>The media capture pipeline object.</p>
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+}
+impl GetMediaCapturePipelineOutput {
+    /// <p>The media capture pipeline object.</p>
+    pub fn media_capture_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::model::MediaCapturePipeline> {
+        self.media_capture_pipeline.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMediaCapturePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5866,6 +6600,16 @@ pub struct GetGlobalSettingsOutput {
     pub business_calling: std::option::Option<crate::model::BusinessCallingSettings>,
     /// <p>The Amazon Chime Voice Connector settings.</p>
     pub voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
+}
+impl GetGlobalSettingsOutput {
+    /// <p>The Amazon Chime Business Calling settings.</p>
+    pub fn business_calling(&self) -> std::option::Option<&crate::model::BusinessCallingSettings> {
+        self.business_calling.as_ref()
+    }
+    /// <p>The Amazon Chime Voice Connector settings.</p>
+    pub fn voice_connector(&self) -> std::option::Option<&crate::model::VoiceConnectorSettings> {
+        self.voice_connector.as_ref()
+    }
 }
 impl std::fmt::Debug for GetGlobalSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5934,6 +6678,12 @@ pub struct GetEventsConfigurationOutput {
     /// <p>The events configuration details.</p>
     pub events_configuration: std::option::Option<crate::model::EventsConfiguration>,
 }
+impl GetEventsConfigurationOutput {
+    /// <p>The events configuration details.</p>
+    pub fn events_configuration(&self) -> std::option::Option<&crate::model::EventsConfiguration> {
+        self.events_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEventsConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventsConfigurationOutput");
@@ -5984,6 +6734,12 @@ impl GetEventsConfigurationOutput {
 pub struct GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
     pub channel_message: std::option::Option<crate::model::ChannelMessage>,
+}
+impl GetChannelMessageOutput {
+    /// <p>The details of and content in the message.</p>
+    pub fn channel_message(&self) -> std::option::Option<&crate::model::ChannelMessage> {
+        self.channel_message.as_ref()
+    }
 }
 impl std::fmt::Debug for GetChannelMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6036,6 +6792,12 @@ pub struct GetBotOutput {
     /// <p>The chat bot details.</p>
     pub bot: std::option::Option<crate::model::Bot>,
 }
+impl GetBotOutput {
+    /// <p>The chat bot details.</p>
+    pub fn bot(&self) -> std::option::Option<&crate::model::Bot> {
+        self.bot.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBotOutput");
@@ -6081,6 +6843,12 @@ impl GetBotOutput {
 pub struct GetAttendeeOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
     pub attendee: std::option::Option<crate::model::Attendee>,
+}
+impl GetAttendeeOutput {
+    /// <p>The Amazon Chime SDK attendee information.</p>
+    pub fn attendee(&self) -> std::option::Option<&crate::model::Attendee> {
+        self.attendee.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAttendeeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6130,6 +6898,14 @@ pub struct GetAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming settings.</p>
     pub app_instance_streaming_configurations:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
+}
+impl GetAppInstanceStreamingConfigurationsOutput {
+    /// <p>The streaming settings.</p>
+    pub fn app_instance_streaming_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppInstanceStreamingConfiguration]> {
+        self.app_instance_streaming_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppInstanceStreamingConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6201,6 +6977,18 @@ pub struct GetAppInstanceRetentionSettingsOutput {
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetAppInstanceRetentionSettingsOutput {
+    /// <p>The retention settings for the <code>AppInstance</code>.</p>
+    pub fn app_instance_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
+        self.app_instance_retention_settings.as_ref()
+    }
+    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.initiate_deletion_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAppInstanceRetentionSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6279,6 +7067,12 @@ pub struct GetAccountSettingsOutput {
     /// <p>The Amazon Chime account settings.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
 }
+impl GetAccountSettingsOutput {
+    /// <p>The Amazon Chime account settings.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountSettingsOutput");
@@ -6329,6 +7123,12 @@ impl GetAccountSettingsOutput {
 pub struct GetAccountOutput {
     /// <p>The Amazon Chime account details.</p>
     pub account: std::option::Option<crate::model::Account>,
+}
+impl GetAccountOutput {
+    /// <p>The Amazon Chime account details.</p>
+    pub fn account(&self) -> std::option::Option<&crate::model::Account> {
+        self.account.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6409,6 +7209,12 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
+impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
+        self.phone_number_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociatePhoneNumbersFromVoiceConnectorGroupOutput");
@@ -6470,6 +7276,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
 pub struct DisassociatePhoneNumbersFromVoiceConnectorOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+}
+impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
+        self.phone_number_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6563,6 +7375,12 @@ pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
     pub channel_moderator: std::option::Option<crate::model::ChannelModerator>,
 }
+impl DescribeChannelModeratorOutput {
+    /// <p>The details of the channel moderator.</p>
+    pub fn channel_moderator(&self) -> std::option::Option<&crate::model::ChannelModerator> {
+        self.channel_moderator.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelModeratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelModeratorOutput");
@@ -6613,6 +7431,14 @@ impl DescribeChannelModeratorOutput {
 pub struct DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
     pub channel: std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
+}
+impl DescribeChannelModeratedByAppInstanceUserOutput {
+    /// <p>The moderated channel.</p>
+    pub fn channel(
+        &self,
+    ) -> std::option::Option<&crate::model::ChannelModeratedByAppInstanceUserSummary> {
+        self.channel.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6671,6 +7497,14 @@ pub struct DescribeChannelMembershipForAppInstanceUserOutput {
     pub channel_membership:
         std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
 }
+impl DescribeChannelMembershipForAppInstanceUserOutput {
+    /// <p>The channel to which a user belongs.</p>
+    pub fn channel_membership(
+        &self,
+    ) -> std::option::Option<&crate::model::ChannelMembershipForAppInstanceUserSummary> {
+        self.channel_membership.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipForAppInstanceUserOutput");
@@ -6727,6 +7561,12 @@ pub struct DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
     pub channel_membership: std::option::Option<crate::model::ChannelMembership>,
 }
+impl DescribeChannelMembershipOutput {
+    /// <p>The details of the membership.</p>
+    pub fn channel_membership(&self) -> std::option::Option<&crate::model::ChannelMembership> {
+        self.channel_membership.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelMembershipOutput");
@@ -6777,6 +7617,12 @@ impl DescribeChannelMembershipOutput {
 pub struct DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
     pub channel_ban: std::option::Option<crate::model::ChannelBan>,
+}
+impl DescribeChannelBanOutput {
+    /// <p>The details of the ban.</p>
+    pub fn channel_ban(&self) -> std::option::Option<&crate::model::ChannelBan> {
+        self.channel_ban.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelBanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6829,6 +7675,12 @@ pub struct DescribeChannelOutput {
     /// <p>The channel details.</p>
     pub channel: std::option::Option<crate::model::Channel>,
 }
+impl DescribeChannelOutput {
+    /// <p>The channel details.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeChannelOutput");
@@ -6876,6 +7728,12 @@ impl DescribeChannelOutput {
 pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
+}
+impl DescribeAppInstanceUserOutput {
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user(&self) -> std::option::Option<&crate::model::AppInstanceUser> {
+        self.app_instance_user.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6928,6 +7786,13 @@ pub struct DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and
     /// last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
+}
+impl DescribeAppInstanceAdminOutput {
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and
+    /// last-updated timestamps. All timestamps use epoch milliseconds.</p>
+    pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::AppInstanceAdmin> {
+        self.app_instance_admin.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceAdminOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6982,6 +7847,13 @@ pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
     /// timestamps use epoch milliseconds.</p>
     pub app_instance: std::option::Option<crate::model::AppInstance>,
+}
+impl DescribeAppInstanceOutput {
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
+    /// timestamps use epoch milliseconds.</p>
+    pub fn app_instance(&self) -> std::option::Option<&crate::model::AppInstance> {
+        self.app_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7883,6 +8755,12 @@ pub struct CreateVoiceConnectorGroupOutput {
     /// <p>The Amazon Chime Voice Connector group details.</p>
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
 }
+impl CreateVoiceConnectorGroupOutput {
+    /// <p>The Amazon Chime Voice Connector group details.</p>
+    pub fn voice_connector_group(&self) -> std::option::Option<&crate::model::VoiceConnectorGroup> {
+        self.voice_connector_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVoiceConnectorGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVoiceConnectorGroupOutput");
@@ -7933,6 +8811,12 @@ impl CreateVoiceConnectorGroupOutput {
 pub struct CreateVoiceConnectorOutput {
     /// <p>The Amazon Chime Voice Connector details.</p>
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
+}
+impl CreateVoiceConnectorOutput {
+    /// <p>The Amazon Chime Voice Connector details.</p>
+    pub fn voice_connector(&self) -> std::option::Option<&crate::model::VoiceConnector> {
+        self.voice_connector.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateVoiceConnectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7985,6 +8869,12 @@ pub struct CreateUserOutput {
     /// <p>The user on the Amazon Chime account.</p>
     pub user: std::option::Option<crate::model::User>,
 }
+impl CreateUserOutput {
+    /// <p>The user on the Amazon Chime account.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserOutput");
@@ -8030,6 +8920,12 @@ impl CreateUserOutput {
 pub struct CreateSipRuleOutput {
     /// <p>Returns the SIP rule information, including the rule ID, triggers, and target applications.</p>
     pub sip_rule: std::option::Option<crate::model::SipRule>,
+}
+impl CreateSipRuleOutput {
+    /// <p>Returns the SIP rule information, including the rule ID, triggers, and target applications.</p>
+    pub fn sip_rule(&self) -> std::option::Option<&crate::model::SipRule> {
+        self.sip_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSipRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8078,6 +8974,14 @@ impl CreateSipRuleOutput {
 pub struct CreateSipMediaApplicationCallOutput {
     /// <p>The actual call.</p>
     pub sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
+}
+impl CreateSipMediaApplicationCallOutput {
+    /// <p>The actual call.</p>
+    pub fn sip_media_application_call(
+        &self,
+    ) -> std::option::Option<&crate::model::SipMediaApplicationCall> {
+        self.sip_media_application_call.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSipMediaApplicationCallOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8137,6 +9041,12 @@ pub struct CreateSipMediaApplicationOutput {
     /// <p>The SIP media application details.</p>
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
 }
+impl CreateSipMediaApplicationOutput {
+    /// <p>The SIP media application details.</p>
+    pub fn sip_media_application(&self) -> std::option::Option<&crate::model::SipMediaApplication> {
+        self.sip_media_application.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSipMediaApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSipMediaApplicationOutput");
@@ -8187,6 +9097,12 @@ impl CreateSipMediaApplicationOutput {
 pub struct CreateRoomMembershipOutput {
     /// <p>The room membership details.</p>
     pub room_membership: std::option::Option<crate::model::RoomMembership>,
+}
+impl CreateRoomMembershipOutput {
+    /// <p>The room membership details.</p>
+    pub fn room_membership(&self) -> std::option::Option<&crate::model::RoomMembership> {
+        self.room_membership.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRoomMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8239,6 +9155,12 @@ pub struct CreateRoomOutput {
     /// <p>The room details.</p>
     pub room: std::option::Option<crate::model::Room>,
 }
+impl CreateRoomOutput {
+    /// <p>The room details.</p>
+    pub fn room(&self) -> std::option::Option<&crate::model::Room> {
+        self.room.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRoomOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoomOutput");
@@ -8284,6 +9206,12 @@ impl CreateRoomOutput {
 pub struct CreateProxySessionOutput {
     /// <p>The proxy session details.</p>
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
+}
+impl CreateProxySessionOutput {
+    /// <p>The proxy session details.</p>
+    pub fn proxy_session(&self) -> std::option::Option<&crate::model::ProxySession> {
+        self.proxy_session.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateProxySessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8335,6 +9263,12 @@ impl CreateProxySessionOutput {
 pub struct CreatePhoneNumberOrderOutput {
     /// <p>The phone number order details.</p>
     pub phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
+}
+impl CreatePhoneNumberOrderOutput {
+    /// <p>The phone number order details.</p>
+    pub fn phone_number_order(&self) -> std::option::Option<&crate::model::PhoneNumberOrder> {
+        self.phone_number_order.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePhoneNumberOrderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8390,6 +9324,20 @@ pub struct CreateMeetingWithAttendeesOutput {
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
+}
+impl CreateMeetingWithAttendeesOutput {
+    /// <p>A meeting created using the Amazon Chime SDK.</p>
+    pub fn meeting(&self) -> std::option::Option<&crate::model::Meeting> {
+        self.meeting.as_ref()
+    }
+    /// <p>The attendee information, including attendees IDs and join tokens.</p>
+    pub fn attendees(&self) -> std::option::Option<&[crate::model::Attendee]> {
+        self.attendees.as_deref()
+    }
+    /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::CreateAttendeeError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingWithAttendeesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8483,6 +9431,12 @@ pub struct CreateMeetingDialOutOutput {
     /// <p>Unique ID that tracks API calls.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
+impl CreateMeetingDialOutOutput {
+    /// <p>Unique ID that tracks API calls.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMeetingDialOutOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingDialOutOutput");
@@ -8537,6 +9491,16 @@ pub struct CreateMeetingOutput {
     /// .
     /// </p>
     pub meeting: std::option::Option<crate::model::Meeting>,
+}
+impl CreateMeetingOutput {
+    /// <p>
+    /// The meeting information, including the meeting ID and
+    /// <code>MediaPlacement</code>
+    /// .
+    /// </p>
+    pub fn meeting(&self) -> std::option::Option<&crate::model::Meeting> {
+        self.meeting.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8594,6 +9558,14 @@ pub struct CreateMediaCapturePipelineOutput {
     /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
+impl CreateMediaCapturePipelineOutput {
+    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+    pub fn media_capture_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::model::MediaCapturePipeline> {
+        self.media_capture_pipeline.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMediaCapturePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaCapturePipelineOutput");
@@ -8646,6 +9618,16 @@ pub struct CreateChannelModeratorOutput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARNs of the channel and the moderator.</p>
     pub channel_moderator: std::option::Option<crate::model::Identity>,
+}
+impl CreateChannelModeratorOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARNs of the channel and the moderator.</p>
+    pub fn channel_moderator(&self) -> std::option::Option<&crate::model::Identity> {
+        self.channel_moderator.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelModeratorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8713,6 +9695,16 @@ pub struct CreateChannelMembershipOutput {
     /// <p>The ARN and metadata of the member being added.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
+impl CreateChannelMembershipOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The ARN and metadata of the member being added.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelMembershipOutput");
@@ -8777,6 +9769,17 @@ pub struct CreateChannelBanOutput {
     /// response.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
+impl CreateChannelBanOutput {
+    /// <p>The ARN of the response to the ban request.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
+    /// response.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelBanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelBanOutput");
@@ -8840,6 +9843,12 @@ pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
 }
+impl CreateChannelOutput {
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelOutput");
@@ -8888,6 +9897,12 @@ pub struct CreateBotOutput {
     /// <p>The bot details.</p>
     pub bot: std::option::Option<crate::model::Bot>,
 }
+impl CreateBotOutput {
+    /// <p>The bot details.</p>
+    pub fn bot(&self) -> std::option::Option<&crate::model::Bot> {
+        self.bot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBotOutput");
@@ -8933,6 +9948,12 @@ impl CreateBotOutput {
 pub struct CreateAttendeeOutput {
     /// <p>The attendee information, including attendee ID and join token.</p>
     pub attendee: std::option::Option<crate::model::Attendee>,
+}
+impl CreateAttendeeOutput {
+    /// <p>The attendee information, including attendee ID and join token.</p>
+    pub fn attendee(&self) -> std::option::Option<&crate::model::Attendee> {
+        self.attendee.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAttendeeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8981,6 +10002,12 @@ impl CreateAttendeeOutput {
 pub struct CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+}
+impl CreateAppInstanceUserOutput {
+    /// <p>The user's ARN.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9034,6 +10061,16 @@ pub struct CreateAppInstanceAdminOutput {
     pub app_instance_admin: std::option::Option<crate::model::Identity>,
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl CreateAppInstanceAdminOutput {
+    /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+    pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::Identity> {
+        self.app_instance_admin.as_ref()
+    }
+    /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInstanceAdminOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9102,6 +10139,12 @@ pub struct CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl CreateAppInstanceOutput {
+    /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceOutput");
@@ -9153,6 +10196,12 @@ pub struct CreateAccountOutput {
     /// <p>The Amazon Chime account details.</p>
     pub account: std::option::Option<crate::model::Account>,
 }
+impl CreateAccountOutput {
+    /// <p>The Amazon Chime account details.</p>
+    pub fn account(&self) -> std::option::Option<&crate::model::Account> {
+        self.account.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountOutput");
@@ -9201,6 +10250,13 @@ pub struct BatchUpdateUserOutput {
     /// <p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the
     /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
+}
+impl BatchUpdateUserOutput {
+    /// <p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the
+    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    pub fn user_errors(&self) -> std::option::Option<&[crate::model::UserError]> {
+        self.user_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9260,6 +10316,12 @@ impl BatchUpdateUserOutput {
 pub struct BatchUpdatePhoneNumberOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+}
+impl BatchUpdatePhoneNumberOutput {
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
+        self.phone_number_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdatePhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9323,6 +10385,13 @@ pub struct BatchUnsuspendUserOutput {
     /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
+impl BatchUnsuspendUserOutput {
+    /// <p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the
+    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    pub fn user_errors(&self) -> std::option::Option<&[crate::model::UserError]> {
+        self.user_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUnsuspendUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUnsuspendUserOutput");
@@ -9383,6 +10452,13 @@ pub struct BatchSuspendUserOutput {
     /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
+impl BatchSuspendUserOutput {
+    /// <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the
+    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    pub fn user_errors(&self) -> std::option::Option<&[crate::model::UserError]> {
+        self.user_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchSuspendUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchSuspendUserOutput");
@@ -9441,6 +10517,12 @@ impl BatchSuspendUserOutput {
 pub struct BatchDeletePhoneNumberOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+}
+impl BatchDeletePhoneNumberOutput {
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
+        self.phone_number_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeletePhoneNumberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9503,6 +10585,12 @@ pub struct BatchCreateRoomMembershipOutput {
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::MemberError>>,
 }
+impl BatchCreateRoomMembershipOutput {
+    /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::MemberError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchCreateRoomMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateRoomMembershipOutput");
@@ -9562,6 +10650,21 @@ pub struct BatchCreateChannelMembershipOutput {
     /// <p>If the action fails for one or more of the memberships in the request, a list of the
     /// memberships is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
+}
+impl BatchCreateChannelMembershipOutput {
+    /// <p>The list of channel memberships in the response.</p>
+    pub fn batch_channel_memberships(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchChannelMemberships> {
+        self.batch_channel_memberships.as_ref()
+    }
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the
+    /// memberships is returned, along with error codes and error messages.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchCreateChannelMembershipError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateChannelMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9649,6 +10752,16 @@ pub struct BatchCreateAttendeeOutput {
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
+}
+impl BatchCreateAttendeeOutput {
+    /// <p>The attendee information, including attendees IDs and join tokens.</p>
+    pub fn attendees(&self) -> std::option::Option<&[crate::model::Attendee]> {
+        self.attendees.as_deref()
+    }
+    /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::CreateAttendeeError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateAttendeeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9790,6 +10903,12 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
+impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
+        self.phone_number_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatePhoneNumbersWithVoiceConnectorGroupOutput");
@@ -9852,6 +10971,13 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorOutput {
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and
     /// error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+}
+impl AssociatePhoneNumbersWithVoiceConnectorOutput {
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and
+    /// error messages.</p>
+    pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
+        self.phone_number_errors.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

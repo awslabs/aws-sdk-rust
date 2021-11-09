@@ -7,6 +7,13 @@ pub struct UpdateServiceOutput {
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl UpdateServiceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceOutput");
@@ -58,6 +65,13 @@ pub struct UpdatePublicDnsNamespaceOutput {
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl UpdatePublicDnsNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePublicDnsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePublicDnsNamespaceOutput");
@@ -108,6 +122,13 @@ pub struct UpdatePrivateDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully.
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl UpdatePrivateDnsNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePrivateDnsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -189,6 +210,13 @@ pub struct UpdateHttpNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully.
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl UpdateHttpNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateHttpNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -301,6 +329,13 @@ pub struct RegisterInstanceOutput {
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl RegisterInstanceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterInstanceOutput");
@@ -350,6 +385,12 @@ impl RegisterInstanceOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags that are assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -415,6 +456,24 @@ pub struct ListServicesOutput {
     /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListServicesOutput {
+    /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter
+    /// criteria.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::ServiceSummary]> {
+        self.services.as_deref()
+    }
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
+    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+    /// request.</p>
+    /// <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
+    /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
+    /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -511,6 +570,23 @@ pub struct ListOperationsOutput {
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOperationsOutput {
+    /// <p>Summary information about the operations that match the specified criteria.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::OperationSummary]> {
+        self.operations.as_deref()
+    }
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
+    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+    /// request.</p>
+    /// <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+    /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
+    /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOperationsOutput");
@@ -605,6 +681,24 @@ pub struct ListNamespacesOutput {
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNamespacesOutput {
+    /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified
+    /// filter criteria.</p>
+    pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceSummary]> {
+        self.namespaces.as_deref()
+    }
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
+    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+    /// request.</p>
+    /// <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
+    /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
+    /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNamespacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNamespacesOutput");
@@ -695,6 +789,18 @@ pub struct ListInstancesOutput {
     /// from the previous response in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInstancesOutput {
+    /// <p>Summary information about the instances that are associated with the specified service.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+        self.instances.as_deref()
+    }
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
+    /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
+    /// from the previous response in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstancesOutput");
@@ -769,6 +875,12 @@ pub struct GetServiceOutput {
     /// <p>A complex type that contains information about the service.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
+impl GetServiceOutput {
+    /// <p>A complex type that contains information about the service.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceOutput");
@@ -816,6 +928,12 @@ impl GetServiceOutput {
 pub struct GetOperationOutput {
     /// <p>A complex type that contains information about the operation.</p>
     pub operation: std::option::Option<crate::model::Operation>,
+}
+impl GetOperationOutput {
+    /// <p>A complex type that contains information about the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+        self.operation.as_ref()
+    }
 }
 impl std::fmt::Debug for GetOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -867,6 +985,12 @@ impl GetOperationOutput {
 pub struct GetNamespaceOutput {
     /// <p>A complex type that contains information about the specified namespace.</p>
     pub namespace: std::option::Option<crate::model::Namespace>,
+}
+impl GetNamespaceOutput {
+    /// <p>A complex type that contains information about the specified namespace.</p>
+    pub fn namespace(&self) -> std::option::Option<&crate::model::Namespace> {
+        self.namespace.as_ref()
+    }
 }
 impl std::fmt::Debug for GetNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -925,6 +1049,23 @@ pub struct GetInstancesHealthStatusOutput {
     /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
     /// <code>NextToken</code> from the previous response in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInstancesHealthStatusOutput {
+    /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the
+    /// <code>GetInstancesHealthStatus</code> request.</p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
+    > {
+        self.status.as_ref()
+    }
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
+    /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
+    /// <code>NextToken</code> from the previous response in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstancesHealthStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1010,6 +1151,12 @@ pub struct GetInstanceOutput {
     /// <p>A complex type that contains information about a specified instance.</p>
     pub instance: std::option::Option<crate::model::Instance>,
 }
+impl GetInstanceOutput {
+    /// <p>A complex type that contains information about a specified instance.</p>
+    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+        self.instance.as_ref()
+    }
+}
 impl std::fmt::Debug for GetInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInstanceOutput");
@@ -1057,6 +1204,12 @@ impl GetInstanceOutput {
 pub struct DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>,
+}
+impl DiscoverInstancesOutput {
+    /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::HttpInstanceSummary]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DiscoverInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1115,6 +1268,13 @@ pub struct DeregisterInstanceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully.
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl DeregisterInstanceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1197,6 +1357,13 @@ pub struct DeleteNamespaceOutput {
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl DeleteNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNamespaceOutput");
@@ -1247,6 +1414,12 @@ pub struct CreateServiceOutput {
     /// <p>A complex type that contains information about the new service.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
+impl CreateServiceOutput {
+    /// <p>A complex type that contains information about the new service.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceOutput");
@@ -1295,6 +1468,13 @@ pub struct CreatePublicDnsNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the
     /// operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl CreatePublicDnsNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the
+    /// operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePublicDnsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1347,6 +1527,13 @@ pub struct CreatePrivateDnsNamespaceOutput {
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl CreatePrivateDnsNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePrivateDnsNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePrivateDnsNamespaceOutput");
@@ -1397,6 +1584,13 @@ pub struct CreateHttpNamespaceOutput {
     /// <p>A value that you can use to determine whether the request completed successfully.
     /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl CreateHttpNamespaceOutput {
+    /// <p>A value that you can use to determine whether the request completed successfully.
+    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHttpNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

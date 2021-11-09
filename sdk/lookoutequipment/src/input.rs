@@ -157,10 +157,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -484,10 +481,7 @@ impl CreateInferenceSchedulerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_inference_scheduler(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -873,10 +867,7 @@ impl CreateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1025,10 +1016,7 @@ impl DeleteDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1184,10 +1172,7 @@ impl DeleteInferenceSchedulerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_inference_scheduler(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1336,10 +1321,7 @@ impl DeleteModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1492,10 +1474,7 @@ impl DescribeDataIngestionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_data_ingestion_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1645,10 +1624,7 @@ impl DescribeDatasetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1804,10 +1780,7 @@ impl DescribeInferenceSchedulerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_inference_scheduler(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1956,10 +1929,7 @@ impl DescribeModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2152,10 +2122,7 @@ impl ListDataIngestionJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_data_ingestion_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2333,10 +2300,7 @@ impl ListDatasetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2567,10 +2531,7 @@ impl ListInferenceExecutionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_inference_executions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2767,10 +2728,7 @@ impl ListInferenceSchedulersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_inference_schedulers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2975,10 +2933,7 @@ impl ListModelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_models(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_models(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3130,10 +3085,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3337,10 +3291,7 @@ impl StartDataIngestionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_data_ingestion_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3496,10 +3447,7 @@ impl StartInferenceSchedulerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_inference_scheduler(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3654,10 +3602,7 @@ impl StopInferenceSchedulerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_inference_scheduler(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3831,10 +3776,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4006,10 +3948,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4264,10 +4203,7 @@ impl UpdateInferenceSchedulerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_inference_scheduler(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4357,6 +4293,47 @@ pub struct UpdateInferenceSchedulerInput {
     /// the inference scheduler. </p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateInferenceSchedulerInput {
+    /// <p>The name of the inference scheduler to be updated. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
+    /// starts. For instance, if you select an offset delay time of five minutes, inference will
+    /// not begin on the data until the first data measurement after the five minute mark. For example, if
+    /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
+    /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
+    /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    pub fn data_delay_offset_in_minutes(&self) -> std::option::Option<i64> {
+        self.data_delay_offset_in_minutes
+    }
+    /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen
+    /// is the length of time between data uploads. For instance, if you select 5 minutes, Amazon
+    /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
+    /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
+    /// example, it starts once every 5 minutes. </p>
+    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
+        self.data_upload_frequency.as_ref()
+    }
+    /// <p> Specifies information for the input data for the inference scheduler, including
+    /// delimiter, format, and dataset location. </p>
+    pub fn data_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
+        self.data_input_configuration.as_ref()
+    }
+    /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
+    pub fn data_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
+        self.data_output_configuration.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
+    /// the inference scheduler. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInferenceSchedulerInput");
@@ -4383,6 +4360,17 @@ pub struct UntagResourceInput {
     /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Specifies the key of the tag to be removed from a specified resource. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4403,6 +4391,18 @@ pub struct TagResourceInput {
     /// are specified. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be
+    /// associated. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value
+    /// are specified. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4419,6 +4419,12 @@ pub struct StopInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be stopped. </p>
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
+impl StopInferenceSchedulerInput {
+    /// <p>The name of the inference scheduler to be stopped. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInferenceSchedulerInput");
@@ -4433,6 +4439,12 @@ impl std::fmt::Debug for StopInferenceSchedulerInput {
 pub struct StartInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be started. </p>
     pub inference_scheduler_name: std::option::Option<std::string::String>,
+}
+impl StartInferenceSchedulerInput {
+    /// <p>The name of the inference scheduler to be started. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4459,6 +4471,29 @@ pub struct StartDataIngestionJobInput {
     /// Lookout for Equipment generates one. </p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartDataIngestionJobInput {
+    /// <p>The name of the dataset being used by the data ingestion job. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p> Specifies information for the input data for the data ingestion job, including dataset
+    /// S3 location. </p>
+    pub fn ingestion_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+        self.ingestion_input_configuration.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
+    /// the data ingestion job. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Lookout for Equipment generates one. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDataIngestionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDataIngestionJobInput");
@@ -4480,6 +4515,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is
     /// the focus of the <code>ListTagsForResource</code> operation. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is
+    /// the focus of the <code>ListTagsForResource</code> operation. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4504,6 +4546,29 @@ pub struct ListModelsInput {
     pub model_name_begins_with: std::option::Option<std::string::String>,
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
     pub dataset_name_begins_with: std::option::Option<std::string::String>,
+}
+impl ListModelsInput {
+    /// <p> An opaque pagination token indicating where to continue the listing of ML models.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Specifies the maximum number of ML models to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The status of the ML model. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The beginning of the name of the ML models being listed. </p>
+    pub fn model_name_begins_with(&self) -> std::option::Option<&str> {
+        self.model_name_begins_with.as_deref()
+    }
+    /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
+    pub fn dataset_name_begins_with(&self) -> std::option::Option<&str> {
+        self.dataset_name_begins_with.as_deref()
+    }
 }
 impl std::fmt::Debug for ListModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4530,6 +4595,25 @@ pub struct ListInferenceSchedulersInput {
     pub inference_scheduler_name_begins_with: std::option::Option<std::string::String>,
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
     pub model_name: std::option::Option<std::string::String>,
+}
+impl ListInferenceSchedulersInput {
+    /// <p> An opaque pagination token indicating where to continue the listing of inference
+    /// schedulers. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Specifies the maximum number of inference schedulers to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The beginning of the name of the inference schedulers to be listed. </p>
+    pub fn inference_scheduler_name_begins_with(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name_begins_with.as_deref()
+    }
+    /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInferenceSchedulersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4565,6 +4649,35 @@ pub struct ListInferenceExecutionsInput {
     /// <p>The status of the inference execution. </p>
     pub status: std::option::Option<crate::model::InferenceExecutionStatus>,
 }
+impl ListInferenceExecutionsInput {
+    /// <p>An opaque pagination token indicating where to continue the listing of inference
+    /// executions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies the maximum number of inference executions to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The name of the inference scheduler for the inference execution listed. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
+    /// inference execution. </p>
+    pub fn data_start_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_start_time_after.as_ref()
+    }
+    /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
+    /// inference execution. </p>
+    pub fn data_end_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_end_time_before.as_ref()
+    }
+    /// <p>The status of the inference execution. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceExecutionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListInferenceExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInferenceExecutionsInput");
@@ -4590,6 +4703,21 @@ pub struct ListDatasetsInput {
     /// <p>The beginning of the name of the datasets to be listed. </p>
     pub dataset_name_begins_with: std::option::Option<std::string::String>,
 }
+impl ListDatasetsInput {
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Specifies the maximum number of datasets to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The beginning of the name of the datasets to be listed. </p>
+    pub fn dataset_name_begins_with(&self) -> std::option::Option<&str> {
+        self.dataset_name_begins_with.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsInput");
@@ -4614,6 +4742,25 @@ pub struct ListDataIngestionJobsInput {
     /// <p>Indicates the status of the data ingestion job. </p>
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
+impl ListDataIngestionJobsInput {
+    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion
+    /// jobs. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Indicates the status of the data ingestion job. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDataIngestionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataIngestionJobsInput");
@@ -4632,6 +4779,12 @@ pub struct DescribeModelInput {
     /// <p>The name of the ML model to be described. </p>
     pub model_name: std::option::Option<std::string::String>,
 }
+impl DescribeModelInput {
+    /// <p>The name of the ML model to be described. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelInput");
@@ -4646,6 +4799,12 @@ impl std::fmt::Debug for DescribeModelInput {
 pub struct DescribeInferenceSchedulerInput {
     /// <p>The name of the inference scheduler being described. </p>
     pub inference_scheduler_name: std::option::Option<std::string::String>,
+}
+impl DescribeInferenceSchedulerInput {
+    /// <p>The name of the inference scheduler being described. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4662,6 +4821,12 @@ pub struct DescribeDatasetInput {
     /// <p>The name of the dataset to be described. </p>
     pub dataset_name: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetInput {
+    /// <p>The name of the dataset to be described. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetInput");
@@ -4676,6 +4841,12 @@ impl std::fmt::Debug for DescribeDatasetInput {
 pub struct DescribeDataIngestionJobInput {
     /// <p>The job ID of the data ingestion job. </p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeDataIngestionJobInput {
+    /// <p>The job ID of the data ingestion job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataIngestionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4692,6 +4863,12 @@ pub struct DeleteModelInput {
     /// <p>The name of the ML model to be deleted. </p>
     pub model_name: std::option::Option<std::string::String>,
 }
+impl DeleteModelInput {
+    /// <p>The name of the ML model to be deleted. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelInput");
@@ -4707,6 +4884,12 @@ pub struct DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
+impl DeleteInferenceSchedulerInput {
+    /// <p>The name of the inference scheduler to be deleted. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInferenceSchedulerInput");
@@ -4721,6 +4904,12 @@ impl std::fmt::Debug for DeleteInferenceSchedulerInput {
 pub struct DeleteDatasetInput {
     /// <p>The name of the dataset to be deleted. </p>
     pub dataset_name: std::option::Option<std::string::String>,
+}
+impl DeleteDatasetInput {
+    /// <p>The name of the dataset to be deleted. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4780,6 +4969,85 @@ pub struct CreateModelInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub off_condition: std::option::Option<std::string::String>,
+}
+impl CreateModelInput {
+    /// <p>The name for the ML model to be created.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The name of the dataset for the ML model being created. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The data schema for the ML model being created. </p>
+    pub fn dataset_schema(&self) -> std::option::Option<&crate::model::DatasetSchema> {
+        self.dataset_schema.as_ref()
+    }
+    /// <p>The input configuration for the labels being used for the ML model that's being created.
+    /// </p>
+    pub fn labels_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelsInputConfiguration> {
+        self.labels_input_configuration.as_ref()
+    }
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Lookout for Equipment generates one. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
+    /// training data for the ML model. </p>
+    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_data_start_time.as_ref()
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of
+    /// training data for the ML model. </p>
+    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_data_end_time.as_ref()
+    }
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
+    /// evaluation data for the ML model. </p>
+    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.evaluation_data_start_time.as_ref()
+    }
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of
+    /// evaluation data for the ML model. </p>
+    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.evaluation_data_end_time.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source
+    /// being used to create the ML model. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of
+    /// the data after post processing by
+    /// Amazon Lookout for Equipment. For example, if you provide data that
+    /// has been collected at a 1 second level and you want the system to resample
+    /// the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must
+    /// attach the prefix "PT" to the rate you want.  The value for a 1 second rate
+    /// is therefore <i>PT1S</i>, the value for a 15 minute rate
+    /// is <i>PT15M</i>, and the value for a 1 hour rate
+    /// is <i>PT1H</i>
+    /// </p>
+    pub fn data_pre_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataPreProcessingConfiguration> {
+        self.data_pre_processing_configuration.as_ref()
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+        self.server_side_kms_key_id.as_deref()
+    }
+    /// <p> Any tags associated with the ML model being created. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    pub fn off_condition(&self) -> std::option::Option<&str> {
+        self.off_condition.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4850,6 +5118,66 @@ pub struct CreateInferenceSchedulerInput {
     /// <p>Any tags associated with the inference scheduler. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateInferenceSchedulerInput {
+    /// <p>The name of the previously trained ML model being used to create the inference
+    /// scheduler. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The name of the inference scheduler being created. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
+    /// starts. For instance, if you select an offset delay time of five minutes, inference will
+    /// not begin on the data until the first data measurement after the five minute mark. For example, if
+    /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
+    /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
+    /// the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+    pub fn data_delay_offset_in_minutes(&self) -> std::option::Option<i64> {
+        self.data_delay_offset_in_minutes
+    }
+    /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen
+    /// is the length of time between data uploads. For instance, if you select 5 minutes, Amazon
+    /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
+    /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
+    /// example, it starts once every 5 minutes. </p>
+    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
+        self.data_upload_frequency.as_ref()
+    }
+    /// <p>Specifies configuration information for the input data for the inference scheduler,
+    /// including delimiter, format, and dataset location. </p>
+    pub fn data_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
+        self.data_input_configuration.as_ref()
+    }
+    /// <p>Specifies configuration information for the output results for the inference scheduler,
+    /// including the S3 location for the output. </p>
+    pub fn data_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
+        self.data_output_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being
+    /// used for the inference. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+        self.server_side_kms_key_id.as_deref()
+    }
+    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Lookout for Equipment generates one. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Any tags associated with the inference scheduler. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInferenceSchedulerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInferenceSchedulerInput");
@@ -4886,6 +5214,30 @@ pub struct CreateDatasetInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDatasetInput {
+    /// <p>The name of the dataset being created. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>A JSON description of the data that is in each time series dataset, including names,
+    /// column names, and data types. </p>
+    pub fn dataset_schema(&self) -> std::option::Option<&crate::model::DatasetSchema> {
+        self.dataset_schema.as_ref()
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+        self.server_side_kms_key_id.as_deref()
+    }
+    /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
+    /// Lookout for Equipment generates one. </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Any tags associated with the ingested data described in the dataset. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

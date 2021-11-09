@@ -6,6 +6,12 @@ pub struct UpdateVolumeOutput {
     /// <p>Returned after a successful <code>UpdateVolume</code> API operation, describing the volume just updated.</p>
     pub volume: std::option::Option<crate::model::Volume>,
 }
+impl UpdateVolumeOutput {
+    /// <p>Returned after a successful <code>UpdateVolume</code> API operation, describing the volume just updated.</p>
+    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+        self.volume.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVolumeOutput");
@@ -53,6 +59,14 @@ impl UpdateVolumeOutput {
 pub struct UpdateStorageVirtualMachineOutput {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
+}
+impl UpdateStorageVirtualMachineOutput {
+    /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+    pub fn storage_virtual_machine(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageVirtualMachine> {
+        self.storage_virtual_machine.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateStorageVirtualMachineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +122,12 @@ impl UpdateStorageVirtualMachineOutput {
 pub struct UpdateFileSystemOutput {
     /// <p>A description of the file system that was updated.</p>
     pub file_system: std::option::Option<crate::model::FileSystem>,
+}
+impl UpdateFileSystemOutput {
+    /// <p>A description of the file system that was updated.</p>
+    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+        self.file_system.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFileSystemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -224,6 +244,18 @@ pub struct ListTagsForResourceOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags on the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>This is present if there are more tags than returned in the response (String). You
+    /// can use the <code>NextToken</code> value in the later request to fetch the tags.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -299,6 +331,12 @@ pub struct DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
 }
+impl DisassociateFileSystemAliasesOutput {
+    /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+        self.aliases.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateFileSystemAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateFileSystemAliasesOutput");
@@ -359,6 +397,18 @@ pub struct DescribeVolumesOutput {
     /// present, this token indicates from what point you can continue processing the request, where
     /// the previous <code>NextToken</code> value left off.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVolumesOutput {
+    /// <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVolumesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -438,6 +488,20 @@ pub struct DescribeStorageVirtualMachinesOutput {
     /// present, this token indicates from what point you can continue processing the request, where
     /// the previous <code>NextToken</code> value left off.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStorageVirtualMachinesOutput {
+    /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
+    pub fn storage_virtual_machines(
+        &self,
+    ) -> std::option::Option<&[crate::model::StorageVirtualMachine]> {
+        self.storage_virtual_machines.as_deref()
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStorageVirtualMachinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -521,6 +585,18 @@ pub struct DescribeFileSystemsOutput {
     /// descriptions. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFileSystemsOutput {
+    /// <p>An array of file system descriptions.</p>
+    pub fn file_systems(&self) -> std::option::Option<&[crate::model::FileSystem]> {
+        self.file_systems.as_deref()
+    }
+    /// <p>Present if there are more file systems than returned in the response (String). You
+    /// can use the <code>NextToken</code> value in the later request to fetch the
+    /// descriptions. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFileSystemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFileSystemsOutput");
@@ -599,6 +675,18 @@ pub struct DescribeFileSystemAliasesOutput {
     /// descriptions. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFileSystemAliasesOutput {
+    /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+        self.aliases.as_deref()
+    }
+    /// <p>Present if there are more DNS aliases than returned in the response (String). You
+    /// can use the <code>NextToken</code> value in a later request to fetch additional
+    /// descriptions. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFileSystemAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFileSystemAliasesOutput");
@@ -676,6 +764,20 @@ pub struct DescribeDataRepositoryTasksOutput {
     /// present, this token indicates from what point you can continue processing the request, where
     /// the previous <code>NextToken</code> value left off.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDataRepositoryTasksOutput {
+    /// <p>The collection of data repository task descriptions returned.</p>
+    pub fn data_repository_tasks(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataRepositoryTask]> {
+        self.data_repository_tasks.as_deref()
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataRepositoryTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -759,6 +861,18 @@ pub struct DescribeBackupsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBackupsOutput {
+    /// <p>An array of backups.</p>
+    pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
+        self.backups.as_deref()
+    }
+    /// <p>This is present if there are more backups than returned in the response (String).
+    /// You can use the <code>NextToken</code> value in the later request to fetch the backups.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBackupsOutput");
@@ -837,6 +951,21 @@ pub struct DeleteVolumeOutput {
     /// <p>Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
     /// </p>
     pub ontap_response: std::option::Option<crate::model::DeleteVolumeOntapResponse>,
+}
+impl DeleteVolumeOutput {
+    /// <p>The ID of the volume being deleted.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>Describes the lifecycle state of the volume being deleted.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::VolumeLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
+    /// </p>
+    pub fn ontap_response(&self) -> std::option::Option<&crate::model::DeleteVolumeOntapResponse> {
+        self.ontap_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -922,6 +1051,16 @@ pub struct DeleteStorageVirtualMachineOutput {
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
     pub lifecycle: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
 }
+impl DeleteStorageVirtualMachineOutput {
+    /// <p>The ID of the SVM Amazon FSx is deleting.</p>
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_id.as_deref()
+    }
+    /// <p>Describes the lifecycle state of the SVM being deleted.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::StorageVirtualMachineLifecycle> {
+        self.lifecycle.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteStorageVirtualMachineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStorageVirtualMachineOutput");
@@ -1000,6 +1139,31 @@ pub struct DeleteFileSystemOutput {
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the
     /// <code>DeleteFileSystem</code> operation.</p>
     pub lustre_response: std::option::Option<crate::model::DeleteFileSystemLustreResponse>,
+}
+impl DeleteFileSystemOutput {
+    /// <p>The ID of the file system being deleted.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The file system lifecycle for the deletion request. Should be
+    /// <code>DELETING</code>.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileSystemLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The response object for the Microsoft Windows file system used in the
+    /// <code>DeleteFileSystem</code> operation.</p>
+    pub fn windows_response(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteFileSystemWindowsResponse> {
+        self.windows_response.as_ref()
+    }
+    /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the
+    /// <code>DeleteFileSystem</code> operation.</p>
+    pub fn lustre_response(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteFileSystemLustreResponse> {
+        self.lustre_response.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteFileSystemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1116,6 +1280,16 @@ pub struct DeleteBackupOutput {
     /// <p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>
     pub lifecycle: std::option::Option<crate::model::BackupLifecycle>,
 }
+impl DeleteBackupOutput {
+    /// <p>The ID of the backup deleted.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>The lifecycle of the backup. Should be <code>DELETED</code>.</p>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::BackupLifecycle> {
+        self.lifecycle.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackupOutput");
@@ -1181,6 +1355,13 @@ pub struct CreateVolumeFromBackupOutput {
     /// describing the volume just created.</p>
     pub volume: std::option::Option<crate::model::Volume>,
 }
+impl CreateVolumeFromBackupOutput {
+    /// <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation,
+    /// describing the volume just created.</p>
+    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+        self.volume.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVolumeFromBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVolumeFromBackupOutput");
@@ -1231,6 +1412,12 @@ pub struct CreateVolumeOutput {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
     pub volume: std::option::Option<crate::model::Volume>,
 }
+impl CreateVolumeOutput {
+    /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
+    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+        self.volume.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVolumeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVolumeOutput");
@@ -1278,6 +1465,14 @@ impl CreateVolumeOutput {
 pub struct CreateStorageVirtualMachineOutput {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
     pub storage_virtual_machine: std::option::Option<crate::model::StorageVirtualMachine>,
+}
+impl CreateStorageVirtualMachineOutput {
+    /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
+    pub fn storage_virtual_machine(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageVirtualMachine> {
+        self.storage_virtual_machine.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStorageVirtualMachineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1335,6 +1530,12 @@ pub struct CreateFileSystemFromBackupOutput {
     /// <p>A description of the file system.</p>
     pub file_system: std::option::Option<crate::model::FileSystem>,
 }
+impl CreateFileSystemFromBackupOutput {
+    /// <p>A description of the file system.</p>
+    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+        self.file_system.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFileSystemFromBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFileSystemFromBackupOutput");
@@ -1385,6 +1586,12 @@ impl CreateFileSystemFromBackupOutput {
 pub struct CreateFileSystemOutput {
     /// <p>The configuration of the file system that was created.</p>
     pub file_system: std::option::Option<crate::model::FileSystem>,
+}
+impl CreateFileSystemOutput {
+    /// <p>The configuration of the file system that was created.</p>
+    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+        self.file_system.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFileSystemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1437,6 +1644,12 @@ pub struct CreateDataRepositoryTaskOutput {
     /// <p>The description of the data repository task that you just created.</p>
     pub data_repository_task: std::option::Option<crate::model::DataRepositoryTask>,
 }
+impl CreateDataRepositoryTaskOutput {
+    /// <p>The description of the data repository task that you just created.</p>
+    pub fn data_repository_task(&self) -> std::option::Option<&crate::model::DataRepositoryTask> {
+        self.data_repository_task.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDataRepositoryTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataRepositoryTaskOutput");
@@ -1488,6 +1701,12 @@ pub struct CreateBackupOutput {
     /// <p>A description of the backup.</p>
     pub backup: std::option::Option<crate::model::Backup>,
 }
+impl CreateBackupOutput {
+    /// <p>A description of the backup.</p>
+    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+        self.backup.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackupOutput");
@@ -1536,6 +1755,13 @@ pub struct CopyBackupOutput {
     /// <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
     /// or of an Amazon FSx for NetApp ONTAP volume.</p>
     pub backup: std::option::Option<crate::model::Backup>,
+}
+impl CopyBackupOutput {
+    /// <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
+    /// or of an Amazon FSx for NetApp ONTAP volume.</p>
+    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+        self.backup.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1615,6 +1841,43 @@ pub struct CancelDataRepositoryTaskOutput {
     pub lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
     /// <p>The ID of the task being canceled.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl CancelDataRepositoryTaskOutput {
+    /// <p>The lifecycle status of the data repository task, as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon FSx has not started the task.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EXECUTING</code> - Amazon FSx is processing the task.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> -  Amazon FSx was not able to complete the task. For example, there may be files the task failed to process.
+    /// The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCEEDED</code> - FSx completed the task successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCELING</code> - FSx is in process of canceling the task.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryTaskLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The ID of the task being canceled.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelDataRepositoryTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1738,6 +2001,12 @@ impl CancelDataRepositoryTaskOutput {
 pub struct AssociateFileSystemAliasesOutput {
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
+}
+impl AssociateFileSystemAliasesOutput {
+    /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+        self.aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateFileSystemAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

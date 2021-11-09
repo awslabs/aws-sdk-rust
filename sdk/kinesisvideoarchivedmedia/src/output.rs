@@ -11,6 +11,19 @@ pub struct ListFragmentsOutput {
     /// to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFragmentsOutput {
+    /// <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+    /// selector criteria. Results are in no specific order, even across pages.</p>
+    pub fn fragments(&self) -> std::option::Option<&[crate::model::Fragment]> {
+        self.fragments.as_deref()
+    }
+    /// <p>If the returned list is truncated, the operation returns this token to use to retrieve
+    /// the next page of results. This value is <code>null</code> when there are no more results
+    /// to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFragmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFragmentsOutput");
@@ -119,6 +132,48 @@ pub struct GetMediaForFragmentListOutput {
     /// </li>
     /// </ul>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
+}
+impl GetMediaForFragmentListOutput {
+    /// <p>The content type of the requested media.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the
+    /// specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the
+    /// <code>GetMediaForFragmentList</code> call also include the following additional
+    /// Matroska (MKV) tags: </p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the
+    /// chunk.</p>
+    /// </li>
+    /// <li>
+    /// <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the
+    /// fragment.</p>
+    /// </li>
+    /// <li>
+    /// <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the
+    /// fragment.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The following tags will be included if an exception occurs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the
+    /// exception</p>
+    /// </li>
+    /// <li>
+    /// <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the
+    /// exception</p>
+    /// </li>
+    /// <li>
+    /// <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the
+    /// exception</p>
+    /// </li>
+    /// </ul>
+    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.payload
+    }
 }
 impl std::fmt::Debug for GetMediaForFragmentListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -249,6 +304,13 @@ pub struct GetHlsStreamingSessionUrlOutput {
     /// master playlist.</p>
     pub hls_streaming_session_url: std::option::Option<std::string::String>,
 }
+impl GetHlsStreamingSessionUrlOutput {
+    /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS
+    /// master playlist.</p>
+    pub fn hls_streaming_session_url(&self) -> std::option::Option<&str> {
+        self.hls_streaming_session_url.as_deref()
+    }
+}
 impl std::fmt::Debug for GetHlsStreamingSessionUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHlsStreamingSessionUrlOutput");
@@ -302,6 +364,13 @@ pub struct GetDashStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the
     /// MPEG-DASH manifest.</p>
     pub dash_streaming_session_url: std::option::Option<std::string::String>,
+}
+impl GetDashStreamingSessionUrlOutput {
+    /// <p>The URL (containing the session token) that a media player can use to retrieve the
+    /// MPEG-DASH manifest.</p>
+    pub fn dash_streaming_session_url(&self) -> std::option::Option<&str> {
+        self.dash_streaming_session_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDashStreamingSessionUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -362,6 +431,19 @@ pub struct GetClipOutput {
     /// timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
     /// Video Streams Limits</a>. </p>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
+}
+impl GetClipOutput {
+    /// <p>The content type of the media in the requested clip.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The
+    /// output will contain the first 100 MB or the first 200 fragments from the specified start
+    /// timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
+    /// Video Streams Limits</a>. </p>
+    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.payload
+    }
 }
 impl std::fmt::Debug for GetClipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

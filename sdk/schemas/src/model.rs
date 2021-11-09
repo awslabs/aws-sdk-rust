@@ -123,6 +123,26 @@ pub struct SearchSchemaSummary {
     pub schema_versions:
         std::option::Option<std::vec::Vec<crate::model::SearchSchemaVersionSummary>>,
 }
+impl SearchSchemaSummary {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The ARN of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>An array of schema version summaries.</p>
+    pub fn schema_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::SearchSchemaVersionSummary]> {
+        self.schema_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchSchemaSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchSchemaSummary");
@@ -229,6 +249,20 @@ pub struct SearchSchemaVersionSummary {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The type of schema.</p>
     pub r#type: std::option::Option<crate::model::Type>,
+}
+impl SearchSchemaVersionSummary {
+    /// <p>The date the schema version was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The version number of the schema</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The type of schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for SearchSchemaVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -375,6 +409,24 @@ pub struct SchemaVersionSummary {
     /// <p>The type of schema.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl SchemaVersionSummary {
+    /// <p>The ARN of the schema version.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The type of schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for SchemaVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SchemaVersionSummary");
@@ -473,6 +525,31 @@ pub struct SchemaSummary {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The number of versions available for the schema.</p>
     pub version_count: i64,
+}
+impl SchemaSummary {
+    /// <p>The date and time that schema was modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The ARN of the schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Tags associated with the schema.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The number of versions available for the schema.</p>
+    pub fn version_count(&self) -> i64 {
+        self.version_count
+    }
 }
 impl std::fmt::Debug for SchemaSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -599,6 +676,23 @@ pub struct RegistrySummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RegistrySummary {
+    /// <p>The ARN of the registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Tags associated with the registry.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RegistrySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegistrySummary");
@@ -703,6 +797,35 @@ pub struct DiscovererSummary {
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DiscovererSummary {
+    /// <p>The ARN of the discoverer.</p>
+    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+        self.discoverer_arn.as_deref()
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>The ARN of the event bus.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+        self.state.as_ref()
+    }
+    /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    pub fn cross_account(&self) -> bool {
+        self.cross_account
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DiscovererSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

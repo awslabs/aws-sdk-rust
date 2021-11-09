@@ -7,6 +7,13 @@ pub struct HumanLoopDataAttributes {
     /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
 }
+impl HumanLoopDataAttributes {
+    /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
+    /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
+    pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
+        self.content_classifiers.as_deref()
+    }
+}
 impl std::fmt::Debug for HumanLoopDataAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HumanLoopDataAttributes");
@@ -132,6 +139,12 @@ pub struct HumanLoopInput {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
     pub input_content: std::option::Option<std::string::String>,
 }
+impl HumanLoopInput {
+    /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
+    pub fn input_content(&self) -> std::option::Option<&str> {
+        self.input_content.as_deref()
+    }
+}
 impl std::fmt::Debug for HumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HumanLoopInput");
@@ -192,6 +205,30 @@ pub struct HumanLoopSummary {
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
     /// loop.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
+}
+impl HumanLoopSummary {
+    /// <p>The name of the human loop.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+    /// <p>The status of the human loop. </p>
+    pub fn human_loop_status(&self) -> std::option::Option<&crate::model::HumanLoopStatus> {
+        self.human_loop_status.as_ref()
+    }
+    /// <p>When Amazon Augmented AI created the human loop.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
+    /// human loop is <code>Failed</code>.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
+    /// loop.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -433,6 +470,12 @@ impl AsRef<str> for SortOrder {
 pub struct HumanLoopOutput {
     /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
     pub output_s3_uri: std::option::Option<std::string::String>,
+}
+impl HumanLoopOutput {
+    /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
+    pub fn output_s3_uri(&self) -> std::option::Option<&str> {
+        self.output_s3_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

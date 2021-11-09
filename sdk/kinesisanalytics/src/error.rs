@@ -3354,6 +3354,16 @@ pub struct UnableToDetectSchemaException {
     #[allow(missing_docs)] // documentation missing in model
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UnableToDetectSchemaException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn raw_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.raw_input_records.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.processed_input_records.as_deref()
+    }
+}
 impl std::fmt::Debug for UnableToDetectSchemaException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnableToDetectSchemaException");

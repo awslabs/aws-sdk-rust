@@ -6,6 +6,12 @@ pub struct TagKeyOnly {
     /// <p>The name of the key.</p>
     pub key: std::option::Option<std::string::String>,
 }
+impl TagKeyOnly {
+    /// <p>The name of the key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for TagKeyOnly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagKeyOnly");
@@ -51,6 +57,12 @@ impl TagKeyOnly {
 pub struct Instance {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl Instance {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -117,6 +129,41 @@ pub struct LoadBalancerAttributes {
     /// <p>Any additional attributes.</p>
     pub additional_attributes:
         std::option::Option<std::vec::Vec<crate::model::AdditionalAttribute>>,
+}
+impl LoadBalancerAttributes {
+    /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn cross_zone_load_balancing(
+        &self,
+    ) -> std::option::Option<&crate::model::CrossZoneLoadBalancing> {
+        self.cross_zone_load_balancing.as_ref()
+    }
+    /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn access_log(&self) -> std::option::Option<&crate::model::AccessLog> {
+        self.access_log.as_ref()
+    }
+    /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn connection_draining(&self) -> std::option::Option<&crate::model::ConnectionDraining> {
+        self.connection_draining.as_ref()
+    }
+    /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
+    /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer.
+    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn connection_settings(&self) -> std::option::Option<&crate::model::ConnectionSettings> {
+        self.connection_settings.as_ref()
+    }
+    /// <p>Any additional attributes.</p>
+    pub fn additional_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalAttribute]> {
+        self.additional_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for LoadBalancerAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -276,6 +323,25 @@ pub struct AdditionalAttribute {
     /// <p>This value of the attribute.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl AdditionalAttribute {
+    /// <p>The name of the attribute.</p>
+    /// <p>The following attribute is supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that  
+    /// might pose a security risk to your application. The possible values are <code>monitor</code>,
+    /// <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>This value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for AdditionalAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdditionalAttribute");
@@ -355,6 +421,12 @@ pub struct ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     pub idle_timeout: std::option::Option<i32>,
 }
+impl ConnectionSettings {
+    /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
+    pub fn idle_timeout(&self) -> std::option::Option<i32> {
+        self.idle_timeout
+    }
+}
 impl std::fmt::Debug for ConnectionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionSettings");
@@ -404,6 +476,16 @@ pub struct ConnectionDraining {
     pub enabled: bool,
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub timeout: std::option::Option<i32>,
+}
+impl ConnectionDraining {
+    /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
+    pub fn timeout(&self) -> std::option::Option<i32> {
+        self.timeout
+    }
 }
 impl std::fmt::Debug for ConnectionDraining {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -473,6 +555,26 @@ pub struct AccessLog {
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.  
     /// If the prefix is not provided, the log is placed at the root level of the bucket.</p>
     pub s3_bucket_prefix: std::option::Option<std::string::String>,
+}
+impl AccessLog {
+    /// <p>Specifies whether access logs are enabled for the load balancer.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
+    /// <p>Default: 60 minutes</p>
+    pub fn emit_interval(&self) -> std::option::Option<i32> {
+        self.emit_interval
+    }
+    /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.  
+    /// If the prefix is not provided, the log is placed at the root level of the bucket.</p>
+    pub fn s3_bucket_prefix(&self) -> std::option::Option<&str> {
+        self.s3_bucket_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -571,6 +673,12 @@ pub struct CrossZoneLoadBalancing {
     /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
     pub enabled: bool,
 }
+impl CrossZoneLoadBalancing {
+    /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for CrossZoneLoadBalancing {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CrossZoneLoadBalancing");
@@ -620,6 +728,16 @@ pub struct TagDescription {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagDescription {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -695,6 +813,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -795,6 +923,83 @@ pub struct LoadBalancerDescription {
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public
     /// DNS name that resolves to a private IP address.</p>
     pub scheme: std::option::Option<std::string::String>,
+}
+impl LoadBalancerDescription {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>The DNS name of the load balancer.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The DNS name of the load balancer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a>
+    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    pub fn canonical_hosted_zone_name(&self) -> std::option::Option<&str> {
+        self.canonical_hosted_zone_name.as_deref()
+    }
+    /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
+    pub fn canonical_hosted_zone_name_id(&self) -> std::option::Option<&str> {
+        self.canonical_hosted_zone_name_id.as_deref()
+    }
+    /// <p>The listeners for the load balancer.</p>
+    pub fn listener_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ListenerDescription]> {
+        self.listener_descriptions.as_deref()
+    }
+    /// <p>The policies defined for the load balancer.</p>
+    pub fn policies(&self) -> std::option::Option<&crate::model::Policies> {
+        self.policies.as_ref()
+    }
+    /// <p>Information about your EC2 instances.</p>
+    pub fn backend_server_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::BackendServerDescription]> {
+        self.backend_server_descriptions.as_deref()
+    }
+    /// <p>The Availability Zones for the load balancer.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The IDs of the subnets for the load balancer.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The ID of the VPC for the load balancer.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The IDs of the instances for the load balancer.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>Information about the health checks conducted on the load balancer.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
+    /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances.
+    /// To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+    pub fn source_security_group(&self) -> std::option::Option<&crate::model::SourceSecurityGroup> {
+        self.source_security_group.as_ref()
+    }
+    /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The date and time the load balancer was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
+    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
+    /// has a public DNS name that resolves to a public IP address.</p>
+    /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public
+    /// DNS name that resolves to a private IP address.</p>
+    pub fn scheme(&self) -> std::option::Option<&str> {
+        self.scheme.as_deref()
+    }
 }
 impl std::fmt::Debug for LoadBalancerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1147,6 +1352,16 @@ pub struct SourceSecurityGroup {
     /// <p>The name of the security group.</p>
     pub group_name: std::option::Option<std::string::String>,
 }
+impl SourceSecurityGroup {
+    /// <p>The owner of the security group.</p>
+    pub fn owner_alias(&self) -> std::option::Option<&str> {
+        self.owner_alias.as_deref()
+    }
+    /// <p>The name of the security group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SourceSecurityGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceSecurityGroup");
@@ -1220,6 +1435,33 @@ pub struct HealthCheck {
     pub unhealthy_threshold: i32,
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
     pub healthy_threshold: i32,
+}
+impl HealthCheck {
+    /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
+    /// <p>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p>
+    /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
+    /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
+    /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
+    pub fn interval(&self) -> i32 {
+        self.interval
+    }
+    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
+    /// <p>This value must be less than the <code>Interval</code> value.</p>
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
+    /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
+    pub fn unhealthy_threshold(&self) -> i32 {
+        self.unhealthy_threshold
+    }
+    /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
+    pub fn healthy_threshold(&self) -> i32 {
+        self.healthy_threshold
+    }
 }
 impl std::fmt::Debug for HealthCheck {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1333,6 +1575,16 @@ pub struct BackendServerDescription {
     /// <p>The names of the policies enabled for the EC2 instance.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BackendServerDescription {
+    /// <p>The port on which the EC2 instance is listening.</p>
+    pub fn instance_port(&self) -> i32 {
+        self.instance_port
+    }
+    /// <p>The names of the policies enabled for the EC2 instance.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BackendServerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackendServerDescription");
@@ -1408,6 +1660,24 @@ pub struct Policies {
         std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
     /// <p>The policies other than the stickiness policies.</p>
     pub other_policies: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Policies {
+    /// <p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>
+    pub fn app_cookie_stickiness_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppCookieStickinessPolicy]> {
+        self.app_cookie_stickiness_policies.as_deref()
+    }
+    /// <p>The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.</p>
+    pub fn lb_cookie_stickiness_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::LbCookieStickinessPolicy]> {
+        self.lb_cookie_stickiness_policies.as_deref()
+    }
+    /// <p>The policies other than the stickiness policies.</p>
+    pub fn other_policies(&self) -> std::option::Option<&[std::string::String]> {
+        self.other_policies.as_deref()
+    }
 }
 impl std::fmt::Debug for Policies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1526,6 +1796,16 @@ pub struct LbCookieStickinessPolicy {
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
     pub cookie_expiration_period: std::option::Option<i64>,
 }
+impl LbCookieStickinessPolicy {
+    /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
+    pub fn cookie_expiration_period(&self) -> std::option::Option<i64> {
+        self.cookie_expiration_period
+    }
+}
 impl std::fmt::Debug for LbCookieStickinessPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LbCookieStickinessPolicy");
@@ -1589,6 +1869,16 @@ pub struct AppCookieStickinessPolicy {
     /// <p>The name of the application cookie used for stickiness.</p>
     pub cookie_name: std::option::Option<std::string::String>,
 }
+impl AppCookieStickinessPolicy {
+    /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The name of the application cookie used for stickiness.</p>
+    pub fn cookie_name(&self) -> std::option::Option<&str> {
+        self.cookie_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AppCookieStickinessPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppCookieStickinessPolicy");
@@ -1651,6 +1941,16 @@ pub struct ListenerDescription {
     pub listener: std::option::Option<crate::model::Listener>,
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListenerDescription {
+    /// <p>The listener.</p>
+    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+        self.listener.as_ref()
+    }
+    /// <p>The policies. If there are no policies enabled, the list is empty.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ListenerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1737,6 +2037,34 @@ pub struct Listener {
     pub instance_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub ssl_certificate_id: std::option::Option<std::string::String>,
+}
+impl Listener {
+    /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
+    /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
+    pub fn load_balancer_port(&self) -> i32 {
+        self.load_balancer_port
+    }
+    /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
+    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL.
+    /// If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure,
+    /// (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP,
+    /// the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    pub fn instance_protocol(&self) -> std::option::Option<&str> {
+        self.instance_protocol.as_deref()
+    }
+    /// <p>The port on which the instance is listening.</p>
+    pub fn instance_port(&self) -> i32 {
+        self.instance_port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
+    pub fn ssl_certificate_id(&self) -> std::option::Option<&str> {
+        self.ssl_certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Listener {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1861,6 +2189,22 @@ pub struct PolicyTypeDescription {
     pub policy_attribute_type_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PolicyAttributeTypeDescription>>,
 }
+impl PolicyTypeDescription {
+    /// <p>The name of the policy type.</p>
+    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+        self.policy_type_name.as_deref()
+    }
+    /// <p>A description of the policy type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
+    pub fn policy_attribute_type_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PolicyAttributeTypeDescription]> {
+        self.policy_attribute_type_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyTypeDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyTypeDescription");
@@ -1976,6 +2320,43 @@ pub struct PolicyAttributeTypeDescription {
     /// </li>
     /// </ul>
     pub cardinality: std::option::Option<std::string::String>,
+}
+impl PolicyAttributeTypeDescription {
+    /// <p>The name of the attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
+    pub fn attribute_type(&self) -> std::option::Option<&str> {
+        self.attribute_type.as_deref()
+    }
+    /// <p>A description of the attribute.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The default value of the attribute, if applicable.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The cardinality of the attribute.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ONE(1) : Single value required</p>
+    /// </li>
+    /// <li>
+    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p>
+    /// </li>
+    /// <li>
+    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p>
+    /// </li>
+    /// <li>
+    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p>
+    /// </li>
+    /// </ul>
+    pub fn cardinality(&self) -> std::option::Option<&str> {
+        self.cardinality.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyAttributeTypeDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2121,6 +2502,22 @@ pub struct PolicyDescription {
     pub policy_attribute_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PolicyAttributeDescription>>,
 }
+impl PolicyDescription {
+    /// <p>The name of the policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The name of the policy type.</p>
+    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+        self.policy_type_name.as_deref()
+    }
+    /// <p>The policy attributes.</p>
+    pub fn policy_attribute_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PolicyAttributeDescription]> {
+        self.policy_attribute_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyDescription");
@@ -2215,6 +2612,16 @@ pub struct PolicyAttributeDescription {
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
     pub attribute_value: std::option::Option<std::string::String>,
+}
+impl PolicyAttributeDescription {
+    /// <p>The name of the attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyAttributeDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2355,6 +2762,91 @@ pub struct InstanceState {
     /// </li>
     /// </ul>
     pub description: std::option::Option<std::string::String>,
+}
+impl InstanceState {
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The current state of the instance.</p>
+    /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>Information about the cause of <code>OutOfService</code> instances.
+    /// Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+    /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
+    /// </p>
+    pub fn reason_code(&self) -> std::option::Option<&str> {
+        self.reason_code.as_deref()
+    }
+    /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>N/A</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>A transient error occurred. Please try again later.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance registration is still in progress.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance is not currently registered with the LoadBalancer.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance deregistration currently in progress.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Disable Availability Zone is currently in progress.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance is in pending state.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance is in stopped state.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Instance is in terminated state.</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for InstanceState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2590,6 +3082,27 @@ pub struct Limit {
     /// <p>The maximum value of the limit.</p>
     pub max: std::option::Option<std::string::String>,
 }
+impl Limit {
+    /// <p>The name of the limit. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>classic-listeners</p>
+    /// </li>
+    /// <li>
+    /// <p>classic-load-balancers</p>
+    /// </li>
+    /// <li>
+    /// <p>classic-registered-instances</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The maximum value of the limit.</p>
+    pub fn max(&self) -> std::option::Option<&str> {
+        self.max.as_deref()
+    }
+}
 impl std::fmt::Debug for Limit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Limit");
@@ -2674,6 +3187,16 @@ pub struct PolicyAttribute {
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
     pub attribute_value: std::option::Option<std::string::String>,
+}
+impl PolicyAttribute {
+    /// <p>The name of the attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -126,10 +126,7 @@ impl AssociateLensesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_lenses(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_lenses(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -347,10 +344,7 @@ impl CreateMilestoneInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_milestone(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_milestone(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1046,10 +1040,8 @@ impl CreateWorkloadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_workload(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_workload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1277,10 +1269,7 @@ impl CreateWorkloadShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_workload_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_workload_share(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1886,10 +1875,7 @@ impl DisassociateLensesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_lenses(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_lenses(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4099,10 +4085,8 @@ impl ListMilestonesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_milestones(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_milestones(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4271,10 +4255,7 @@ impl ListNotificationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_notifications(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_notifications(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4773,10 +4754,7 @@ impl ListWorkloadsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_workloads(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_workloads(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5174,10 +5152,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5671,10 +5646,7 @@ impl UpdateAnswerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_answer(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_answer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5910,10 +5882,7 @@ impl UpdateLensReviewInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_lens_review(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_lens_review(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6102,10 +6071,7 @@ impl UpdateShareInvitationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_share_invitation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6786,10 +6752,8 @@ impl UpdateWorkloadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_workload(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_workload(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6997,10 +6961,7 @@ impl UpdateWorkloadShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workload_share(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_workload_share(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7245,10 +7206,7 @@ impl UpgradeLensReviewInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_upgrade_lens_review(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_upgrade_lens_review(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7334,6 +7292,35 @@ pub struct UpgradeLensReviewInput {
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl UpgradeLensReviewInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The name of the milestone in a workload.</p>
+    /// <p>Milestone names must be unique within a workload.</p>
+    pub fn milestone_name(&self) -> std::option::Option<&str> {
+        self.milestone_name.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+    /// (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with
+    /// the same client request token and the same parameters after it has completed
+    /// successfully, the result of the original request is returned. </p>
+    /// <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+    /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+    /// you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpgradeLensReviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeLensReviewInput");
@@ -7355,6 +7342,20 @@ pub struct UpdateWorkloadShareInput {
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     pub permission_type: std::option::Option<crate::model::PermissionType>,
+}
+impl UpdateWorkloadShareInput {
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>Permission granted on a workload share.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateWorkloadShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7548,6 +7549,217 @@ pub struct UpdateWorkloadInput {
     /// <p>The improvement status for a workload.</p>
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
 }
+impl UpdateWorkloadInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>The description for the workload.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The environment for the workload.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::WorkloadEnvironment> {
+        self.environment.as_ref()
+    }
+    /// <p>The list of AWS account IDs associated with the workload.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The list of AWS Regions associated with the workload, for example,
+    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_regions.as_deref()
+    }
+    /// <p> The list of non-AWS Regions associated with the workload.</p>
+    pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.non_aws_regions.as_deref()
+    }
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
+        self.pillar_priorities.as_deref()
+    }
+    /// <p>The URL of the architectural design for the workload.</p>
+    pub fn architectural_design(&self) -> std::option::Option<&str> {
+        self.architectural_design.as_deref()
+    }
+    /// <p>The review owner of the workload. The name, email address, or identifier for the
+    /// primary group or individual that owns the workload review process.</p>
+    pub fn review_owner(&self) -> std::option::Option<&str> {
+        self.review_owner.as_deref()
+    }
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
+    /// owner</i> field is required.</p>
+    /// <p>If a <b>Review owner</b> is not added to the workload within
+    /// 60 days of acknowledgement, access to the workload is restricted until an owner is
+    /// added.</p>
+    pub fn is_review_owner_update_acknowledged(&self) -> bool {
+        self.is_review_owner_update_acknowledged
+    }
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>  
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Agriculture</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Automobile</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Defense</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Design and Engineering</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Digital Advertising</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Education</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Environmental Protection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Financial Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Gaming</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>General Public Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Healthcare</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Hospitality</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InfoTech</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Justice and Public Safety</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Life Sciences</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Manufacturing</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Media & Entertainment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Mining & Resources</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Oil & Gas</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Power & Utilities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Professional Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Real Estate & Construction</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Retail & Wholesale</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Social Protection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Telecommunications</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Travel, Transportation & Logistics</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Other</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn industry_type(&self) -> std::option::Option<&str> {
+        self.industry_type.as_deref()
+    }
+    /// <p>The industry for the workload.</p>
+    pub fn industry(&self) -> std::option::Option<&str> {
+        self.industry.as_deref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>The improvement status for a workload.</p>
+    pub fn improvement_status(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkloadImprovementStatus> {
+        self.improvement_status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkloadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkloadInput");
@@ -7582,6 +7794,18 @@ pub struct UpdateShareInvitationInput {
     /// <p>Share invitation action taken by contributor.</p>
     pub share_invitation_action: std::option::Option<crate::model::ShareInvitationAction>,
 }
+impl UpdateShareInvitationInput {
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+        self.share_invitation_id.as_deref()
+    }
+    /// <p>Share invitation action taken by contributor.</p>
+    pub fn share_invitation_action(
+        &self,
+    ) -> std::option::Option<&crate::model::ShareInvitationAction> {
+        self.share_invitation_action.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateShareInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateShareInvitationInput");
@@ -7605,6 +7829,28 @@ pub struct UpdateLensReviewInput {
     /// <p>List of pillar notes of a lens review in a workload.</p>
     pub pillar_notes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl UpdateLensReviewInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn lens_notes(&self) -> std::option::Option<&str> {
+        self.lens_notes.as_deref()
+    }
+    /// <p>List of pillar notes of a lens review in a workload.</p>
+    pub fn pillar_notes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.pillar_notes.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLensReviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7643,6 +7889,47 @@ pub struct UpdateAnswerInput {
     /// <p>The reason why a question is not applicable to your workload.</p>
     pub reason: std::option::Option<crate::model::AnswerReason>,
 }
+impl UpdateAnswerInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn selected_choices(&self) -> std::option::Option<&[std::string::String]> {
+        self.selected_choices.as_deref()
+    }
+    /// <p>A list of choices to update on a question in your workload.  The String key
+    /// corresponds to the choice ID to be updated.</p>
+    pub fn choice_updates(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ChoiceUpdate>,
+    > {
+        self.choice_updates.as_ref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn is_applicable(&self) -> bool {
+        self.is_applicable
+    }
+    /// <p>The reason why a question is not applicable to your workload.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::AnswerReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAnswerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnswerInput");
@@ -7668,6 +7955,17 @@ pub struct UntagResourceInput {
     /// whose keys are members of this list are removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN for the workload.</p>
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
+        self.workload_arn.as_deref()
+    }
+    /// <p>A list of tag keys. Existing tags of the resource
+    /// whose keys are members of this list are removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7686,6 +7984,19 @@ pub struct TagResourceInput {
     /// <p>The tags for the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN for the workload.</p>
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
+        self.workload_arn.as_deref()
+    }
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7708,6 +8019,24 @@ pub struct ListWorkloadSharesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
+}
+impl ListWorkloadSharesInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    pub fn shared_with_prefix(&self) -> std::option::Option<&str> {
+        self.shared_with_prefix.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListWorkloadSharesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7732,6 +8061,21 @@ pub struct ListWorkloadsInput {
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
 }
+impl ListWorkloadsInput {
+    /// <p>An optional string added to the beginning of each workload name returned in the
+    /// results.</p>
+    pub fn workload_name_prefix(&self) -> std::option::Option<&str> {
+        self.workload_name_prefix.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListWorkloadsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkloadsInput");
@@ -7748,6 +8092,12 @@ impl std::fmt::Debug for ListWorkloadsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN for the workload.</p>
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
+        self.workload_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7768,6 +8118,21 @@ pub struct ListShareInvitationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
+}
+impl ListShareInvitationsInput {
+    /// <p>An optional string added to the beginning of each workload name returned in the
+    /// results.</p>
+    pub fn workload_name_prefix(&self) -> std::option::Option<&str> {
+        self.workload_name_prefix.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListShareInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7790,6 +8155,20 @@ pub struct ListNotificationsInput {
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
 }
+impl ListNotificationsInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotificationsInput");
@@ -7810,6 +8189,20 @@ pub struct ListMilestonesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
+}
+impl ListMilestonesInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListMilestonesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7834,6 +8227,25 @@ pub struct ListLensReviewsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
+}
+impl ListLensReviewsInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListLensReviewsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7866,6 +8278,35 @@ pub struct ListLensReviewImprovementsInput {
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
 }
+impl ListLensReviewImprovementsInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListLensReviewImprovementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLensReviewImprovementsInput");
@@ -7887,6 +8328,16 @@ pub struct ListLensesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
+}
+impl ListLensesInput {
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListLensesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7917,6 +8368,35 @@ pub struct ListAnswersInput {
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: i32,
 }
+impl ListAnswersInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_id(&self) -> std::option::Option<&str> {
+        self.pillar_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAnswersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnswersInput");
@@ -7937,6 +8417,12 @@ pub struct GetWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
 }
+impl GetWorkloadInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWorkloadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkloadInput");
@@ -7954,6 +8440,17 @@ pub struct GetMilestoneInput {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
+}
+impl GetMilestoneInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
 }
 impl std::fmt::Debug for GetMilestoneInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7973,6 +8470,17 @@ pub struct GetLensVersionDifferenceInput {
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The base version of the lens.</p>
     pub base_lens_version: std::option::Option<std::string::String>,
+}
+impl GetLensVersionDifferenceInput {
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The base version of the lens.</p>
+    pub fn base_lens_version(&self) -> std::option::Option<&str> {
+        self.base_lens_version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLensVersionDifferenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7996,6 +8504,22 @@ pub struct GetLensReviewReportInput {
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
 }
+impl GetLensReviewReportInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+}
 impl std::fmt::Debug for GetLensReviewReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLensReviewReportInput");
@@ -8018,6 +8542,22 @@ pub struct GetLensReviewInput {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
+}
+impl GetLensReviewInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
 }
 impl std::fmt::Debug for GetLensReviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8044,6 +8584,26 @@ pub struct GetAnswerInput {
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
 }
+impl GetAnswerInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The ID of the question.</p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn milestone_number(&self) -> i32 {
+        self.milestone_number
+    }
+}
 impl std::fmt::Debug for GetAnswerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnswerInput");
@@ -8064,6 +8624,17 @@ pub struct DisassociateLensesInput {
     /// <p>List of lens aliases to associate or disassociate with a workload.</p>
     /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
     pub lens_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisassociateLensesInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+    /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.lens_aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateLensesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8094,6 +8665,29 @@ pub struct DeleteWorkloadShareInput {
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl DeleteWorkloadShareInput {
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+    /// (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with
+    /// the same client request token and the same parameters after it has completed
+    /// successfully, the result of the original request is returned. </p>
+    /// <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+    /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+    /// you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWorkloadShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkloadShareInput");
@@ -8121,6 +8715,25 @@ pub struct DeleteWorkloadInput {
     /// you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl DeleteWorkloadInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+    /// (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with
+    /// the same client request token and the same parameters after it has completed
+    /// successfully, the result of the original request is returned. </p>
+    /// <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+    /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+    /// you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkloadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8152,6 +8765,33 @@ pub struct CreateWorkloadShareInput {
     /// you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreateWorkloadShareInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    pub fn shared_with(&self) -> std::option::Option<&str> {
+        self.shared_with.as_deref()
+    }
+    /// <p>Permission granted on a workload share.</p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+    /// (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with
+    /// the same client request token and the same parameters after it has completed
+    /// successfully, the result of the original request is returned. </p>
+    /// <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+    /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+    /// you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkloadShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8352,6 +8992,223 @@ pub struct CreateWorkloadInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateWorkloadInput {
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// are ignored when checking for uniqueness.</p>
+    pub fn workload_name(&self) -> std::option::Option<&str> {
+        self.workload_name.as_deref()
+    }
+    /// <p>The description for the workload.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The environment for the workload.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::WorkloadEnvironment> {
+        self.environment.as_ref()
+    }
+    /// <p>The list of AWS account IDs associated with the workload.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The list of AWS Regions associated with the workload, for example,
+    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_regions.as_deref()
+    }
+    /// <p> The list of non-AWS Regions associated with the workload.</p>
+    pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.non_aws_regions.as_deref()
+    }
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
+        self.pillar_priorities.as_deref()
+    }
+    /// <p>The URL of the architectural design for the workload.</p>
+    pub fn architectural_design(&self) -> std::option::Option<&str> {
+        self.architectural_design.as_deref()
+    }
+    /// <p>The review owner of the workload. The name, email address, or identifier for the
+    /// primary group or individual that owns the workload review process.</p>
+    pub fn review_owner(&self) -> std::option::Option<&str> {
+        self.review_owner.as_deref()
+    }
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>  
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Agriculture</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Automobile</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Defense</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Design and Engineering</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Digital Advertising</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Education</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Environmental Protection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Financial Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Gaming</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>General Public Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Healthcare</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Hospitality</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InfoTech</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Justice and Public Safety</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Life Sciences</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Manufacturing</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Media & Entertainment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Mining & Resources</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Oil & Gas</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Power & Utilities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Professional Services</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Real Estate & Construction</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Retail & Wholesale</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Social Protection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Telecommunications</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Travel, Transportation & Logistics</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Other</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn industry_type(&self) -> std::option::Option<&str> {
+        self.industry_type.as_deref()
+    }
+    /// <p>The industry for the workload.</p>
+    pub fn industry(&self) -> std::option::Option<&str> {
+        self.industry.as_deref()
+    }
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
+        self.lenses.as_deref()
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn notes(&self) -> std::option::Option<&str> {
+        self.notes.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+    /// (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with
+    /// the same client request token and the same parameters after it has completed
+    /// successfully, the result of the original request is returned. </p>
+    /// <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+    /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+    /// you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to be associated with the workload.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWorkloadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkloadInput");
@@ -8395,6 +9252,30 @@ pub struct CreateMilestoneInput {
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl CreateMilestoneInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>The name of the milestone in a workload.</p>
+    /// <p>Milestone names must be unique within a workload.</p>
+    pub fn milestone_name(&self) -> std::option::Option<&str> {
+        self.milestone_name.as_deref()
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+    /// (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with
+    /// the same client request token and the same parameters after it has completed
+    /// successfully, the result of the original request is returned. </p>
+    /// <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+    /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+    /// you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMilestoneInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMilestoneInput");
@@ -8414,6 +9295,17 @@ pub struct AssociateLensesInput {
     /// <p>List of lens aliases to associate or disassociate with a workload.</p>
     /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
     pub lens_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AssociateLensesInput {
+    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    pub fn workload_id(&self) -> std::option::Option<&str> {
+        self.workload_id.as_deref()
+    }
+    /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+    /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.lens_aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateLensesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

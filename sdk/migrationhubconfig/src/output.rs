@@ -6,6 +6,12 @@ pub struct GetHomeRegionOutput {
     /// <p>The name of the home region of the calling account.</p>
     pub home_region: std::option::Option<std::string::String>,
 }
+impl GetHomeRegionOutput {
+    /// <p>The name of the home region of the calling account.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+}
 impl std::fmt::Debug for GetHomeRegionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHomeRegionOutput");
@@ -57,6 +63,18 @@ pub struct DescribeHomeRegionControlsOutput {
     /// To retrieve the next page of results, make the call again using the returned token in
     /// <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeHomeRegionControlsOutput {
+    /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
+    pub fn home_region_controls(&self) -> std::option::Option<&[crate::model::HomeRegionControl]> {
+        self.home_region_controls.as_deref()
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
+    /// To retrieve the next page of results, make the call again using the returned token in
+    /// <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHomeRegionControlsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -136,6 +154,13 @@ pub struct CreateHomeRegionControlOutput {
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful
     /// call to <code>CreateHomeRegionControl</code>.</p>
     pub home_region_control: std::option::Option<crate::model::HomeRegionControl>,
+}
+impl CreateHomeRegionControlOutput {
+    /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful
+    /// call to <code>CreateHomeRegionControl</code>.</p>
+    pub fn home_region_control(&self) -> std::option::Option<&crate::model::HomeRegionControl> {
+        self.home_region_control.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateHomeRegionControlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

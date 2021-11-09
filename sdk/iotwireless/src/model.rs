@@ -8,6 +8,16 @@ pub struct LoRaWanUpdateDevice {
     /// <p>The ID of the service profile.</p>
     pub service_profile_id: std::option::Option<std::string::String>,
 }
+impl LoRaWanUpdateDevice {
+    /// <p>The ID of the device profile for the wireless device.</p>
+    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+        self.device_profile_id.as_deref()
+    }
+    /// <p>The ID of the service profile.</p>
+    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+        self.service_profile_id.as_deref()
+    }
+}
 impl std::fmt::Debug for LoRaWanUpdateDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanUpdateDevice");
@@ -126,6 +136,12 @@ pub struct SidewalkUpdateAccount {
     /// <p>The new Sidewalk application server private key.</p>
     pub app_server_private_key: std::option::Option<std::string::String>,
 }
+impl SidewalkUpdateAccount {
+    /// <p>The new Sidewalk application server private key.</p>
+    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
+        self.app_server_private_key.as_deref()
+    }
+}
 impl std::fmt::Debug for SidewalkUpdateAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkUpdateAccount");
@@ -180,6 +196,20 @@ pub struct WirelessGatewayLogOption {
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>The list of wireless gateway event log options.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
+}
+impl WirelessGatewayLogOption {
+    /// <p>The wireless gateway type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessGatewayType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// <p>The list of wireless gateway event log options.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::WirelessGatewayEventLogOption]> {
+        self.events.as_deref()
+    }
 }
 impl std::fmt::Debug for WirelessGatewayLogOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -273,6 +303,16 @@ pub struct WirelessGatewayEventLogOption {
     pub event: std::option::Option<crate::model::WirelessGatewayEvent>,
     /// <p>The log level for a log message.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl WirelessGatewayEventLogOption {
+    /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::WirelessGatewayEvent> {
+        self.event.as_ref()
+    }
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for WirelessGatewayEventLogOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -507,6 +547,20 @@ pub struct WirelessDeviceLogOption {
     /// <p>The list of wireless device event log options.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
 }
+impl WirelessDeviceLogOption {
+    /// <p>The wireless device type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
+    /// <p>The list of wireless device event log options.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::WirelessDeviceEventLogOption]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for WirelessDeviceLogOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WirelessDeviceLogOption");
@@ -601,6 +655,16 @@ pub struct WirelessDeviceEventLogOption {
     pub event: std::option::Option<crate::model::WirelessDeviceEvent>,
     /// <p>The log level for a log message.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl WirelessDeviceEventLogOption {
+    /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::WirelessDeviceEvent> {
+        self.event.as_ref()
+    }
+    /// <p>The log level for a log message.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for WirelessDeviceEventLogOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -851,6 +915,16 @@ pub struct Tag {
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag's key value.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -913,6 +987,16 @@ pub struct WirelessMetadata {
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkSendDataToDevice>,
+}
+impl WirelessMetadata {
+    /// <p>LoRaWAN device info.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanSendDataToDevice> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkSendDataToDevice> {
+        self.sidewalk.as_ref()
+    }
 }
 impl std::fmt::Debug for WirelessMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -982,6 +1066,16 @@ pub struct SidewalkSendDataToDevice {
     pub seq: std::option::Option<i32>,
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
     pub message_type: std::option::Option<crate::model::MessageType>,
+}
+impl SidewalkSendDataToDevice {
+    /// <p>The sequence number.</p>
+    pub fn seq(&self) -> std::option::Option<i32> {
+        self.seq
+    }
+    /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
+    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+        self.message_type.as_ref()
+    }
 }
 impl std::fmt::Debug for SidewalkSendDataToDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1115,6 +1209,12 @@ pub struct LoRaWanSendDataToDevice {
     /// <p>The Fport value.</p>
     pub f_port: std::option::Option<i32>,
 }
+impl LoRaWanSendDataToDevice {
+    /// <p>The Fport value.</p>
+    pub fn f_port(&self) -> std::option::Option<i32> {
+        self.f_port
+    }
+}
 impl std::fmt::Debug for LoRaWanSendDataToDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanSendDataToDevice");
@@ -1166,6 +1266,20 @@ pub struct UpdateWirelessGatewayTaskEntry {
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskEntry>,
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl UpdateWirelessGatewayTaskEntry {
+    /// <p>The ID of the new wireless gateway task entry.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateGatewayTaskEntry> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateWirelessGatewayTaskEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1246,6 +1360,16 @@ pub struct LoRaWanUpdateGatewayTaskEntry {
     /// <p>The firmware version to update the gateway to.</p>
     pub update_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
 }
+impl LoRaWanUpdateGatewayTaskEntry {
+    /// <p>The version of the gateways that should receive the update.</p>
+    pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+        self.current_version.as_ref()
+    }
+    /// <p>The firmware version to update the gateway to.</p>
+    pub fn update_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+        self.update_version.as_ref()
+    }
+}
 impl std::fmt::Debug for LoRaWanUpdateGatewayTaskEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanUpdateGatewayTaskEntry");
@@ -1316,6 +1440,20 @@ pub struct LoRaWanGatewayVersion {
     pub model: std::option::Option<std::string::String>,
     /// <p>The basic station version of the wireless gateway.</p>
     pub station: std::option::Option<std::string::String>,
+}
+impl LoRaWanGatewayVersion {
+    /// <p>The version of the wireless gateway firmware.</p>
+    pub fn package_version(&self) -> std::option::Option<&str> {
+        self.package_version.as_deref()
+    }
+    /// <p>The model number of the wireless gateway.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The basic station version of the wireless gateway.</p>
+    pub fn station(&self) -> std::option::Option<&str> {
+        self.station.as_deref()
+    }
 }
 impl std::fmt::Debug for LoRaWanGatewayVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1455,6 +1593,32 @@ pub struct WirelessGatewayStatistics {
     /// <p>The date and time when the most recent uplink was received.</p>
     pub last_uplink_received_at: std::option::Option<std::string::String>,
 }
+impl WirelessGatewayStatistics {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the wireless gateway reporting the data.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>LoRaWAN gateway info.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGateway> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The date and time when the most recent uplink was received.</p>
+    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+        self.last_uplink_received_at.as_deref()
+    }
+}
 impl std::fmt::Debug for WirelessGatewayStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WirelessGatewayStatistics");
@@ -1581,6 +1745,28 @@ pub struct LoRaWanGateway {
     pub net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
     pub sub_bands: std::option::Option<std::vec::Vec<i32>>,
+}
+impl LoRaWanGateway {
+    /// <p>The gateway's EUI value.</p>
+    pub fn gateway_eui(&self) -> std::option::Option<&str> {
+        self.gateway_eui.as_deref()
+    }
+    /// <p>The frequency band (RFRegion) value.</p>
+    pub fn rf_region(&self) -> std::option::Option<&str> {
+        self.rf_region.as_deref()
+    }
+    /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
+    pub fn join_eui_filters(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.join_eui_filters.as_deref()
+    }
+    /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
+    pub fn net_id_filters(&self) -> std::option::Option<&[std::string::String]> {
+        self.net_id_filters.as_deref()
+    }
+    /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
+    pub fn sub_bands(&self) -> std::option::Option<&[i32]> {
+        self.sub_bands.as_deref()
+    }
 }
 impl std::fmt::Debug for LoRaWanGateway {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1723,6 +1909,40 @@ pub struct WirelessDeviceStatistics {
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanListDevice>,
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkListDevice>,
+}
+impl WirelessDeviceStatistics {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the wireless device reporting the data.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The wireless device type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the destination to which the device is assigned.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>The date and time when the most recent uplink was received.</p>
+    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+        self.last_uplink_received_at.as_deref()
+    }
+    /// <p>LoRaWAN device info.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanListDevice> {
+        self.lo_ra_wan.as_ref()
+    }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkListDevice> {
+        self.sidewalk.as_ref()
+    }
 }
 impl std::fmt::Debug for WirelessDeviceStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1884,6 +2104,24 @@ pub struct SidewalkListDevice {
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     pub device_certificates: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
 }
+impl SidewalkListDevice {
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
+        self.amazon_id.as_deref()
+    }
+    /// <p>The sidewalk device identification.</p>
+    pub fn sidewalk_id(&self) -> std::option::Option<&str> {
+        self.sidewalk_id.as_deref()
+    }
+    /// <p>The Sidewalk manufacturing series number.</p>
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+        self.sidewalk_manufacturing_sn.as_deref()
+    }
+    /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
+    pub fn device_certificates(&self) -> std::option::Option<&[crate::model::CertificateList]> {
+        self.device_certificates.as_deref()
+    }
+}
 impl std::fmt::Debug for SidewalkListDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkListDevice");
@@ -1988,6 +2226,16 @@ pub struct CertificateList {
     pub signing_alg: std::option::Option<crate::model::SigningAlg>,
     /// <p>The value of the chosen sidewalk certificate.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl CertificateList {
+    /// <p>The certificate chain algorithm provided by sidewalk.</p>
+    pub fn signing_alg(&self) -> std::option::Option<&crate::model::SigningAlg> {
+        self.signing_alg.as_ref()
+    }
+    /// <p>The value of the chosen sidewalk certificate.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for CertificateList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2108,6 +2356,12 @@ pub struct LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
     pub dev_eui: std::option::Option<std::string::String>,
 }
+impl LoRaWanListDevice {
+    /// <p>The DevEUI value.</p>
+    pub fn dev_eui(&self) -> std::option::Option<&str> {
+        self.dev_eui.as_deref()
+    }
+}
 impl std::fmt::Debug for LoRaWanListDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanListDevice");
@@ -2159,6 +2413,20 @@ pub struct ServiceProfile {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the service profile.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl ServiceProfile {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the service profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2238,6 +2506,20 @@ pub struct SidewalkAccountInfoWithFingerprint {
     /// <p>The Amazon Resource Name of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl SidewalkAccountInfoWithFingerprint {
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
+        self.amazon_id.as_deref()
+    }
+    /// <p>The fingerprint of the Sidewalk application server private key.</p>
+    pub fn fingerprint(&self) -> std::option::Option<&str> {
+        self.fingerprint.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfoWithFingerprint");
@@ -2315,6 +2597,20 @@ pub struct DeviceProfile {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the device profile.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeviceProfile {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the device profile.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeviceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2399,6 +2695,32 @@ pub struct Destinations {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl Destinations {
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+        self.expression_type.as_ref()
+    }
+    /// <p>The rule name or topic rule to send messages to.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The description of the resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Destinations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2520,6 +2842,20 @@ pub struct UpdateWirelessGatewayTaskCreate {
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskCreate>,
 }
+impl UpdateWirelessGatewayTaskCreate {
+    /// <p>The link to the S3 bucket.</p>
+    pub fn update_data_source(&self) -> std::option::Option<&str> {
+        self.update_data_source.as_deref()
+    }
+    /// <p>The IAM role used to read data from the S3 bucket.</p>
+    pub fn update_data_role(&self) -> std::option::Option<&str> {
+        self.update_data_role.as_deref()
+    }
+    /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanUpdateGatewayTaskCreate> {
+        self.lo_ra_wan.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWirelessGatewayTaskCreate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWirelessGatewayTaskCreate");
@@ -2608,6 +2944,24 @@ pub struct LoRaWanUpdateGatewayTaskCreate {
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
     /// <p>The firmware version to update the gateway to.</p>
     pub update_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
+}
+impl LoRaWanUpdateGatewayTaskCreate {
+    /// <p>The signature used to verify the update firmware.</p>
+    pub fn update_signature(&self) -> std::option::Option<&str> {
+        self.update_signature.as_deref()
+    }
+    /// <p>The CRC of the signature private key to check.</p>
+    pub fn sig_key_crc(&self) -> std::option::Option<i64> {
+        self.sig_key_crc
+    }
+    /// <p>The version of the gateways that should receive the update.</p>
+    pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+        self.current_version.as_ref()
+    }
+    /// <p>The firmware version to update the gateway to.</p>
+    pub fn update_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+        self.update_version.as_ref()
+    }
 }
 impl std::fmt::Debug for LoRaWanUpdateGatewayTaskCreate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2838,6 +3192,12 @@ pub struct LoRaWanGatewayCurrentVersion {
     /// <p>The version of the gateways that should receive the update.</p>
     pub current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
 }
+impl LoRaWanGatewayCurrentVersion {
+    /// <p>The version of the gateways that should receive the update.</p>
+    pub fn current_version(&self) -> std::option::Option<&crate::model::LoRaWanGatewayVersion> {
+        self.current_version.as_ref()
+    }
+}
 impl std::fmt::Debug for LoRaWanGatewayCurrentVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanGatewayCurrentVersion");
@@ -2953,6 +3313,24 @@ pub struct SidewalkDeviceMetadata {
     pub event: std::option::Option<crate::model::Event>,
     /// <p>Device state defines the device status of sidewalk device.</p>
     pub device_state: std::option::Option<crate::model::DeviceState>,
+}
+impl SidewalkDeviceMetadata {
+    /// <p>The RSSI value.</p>
+    pub fn rssi(&self) -> std::option::Option<i32> {
+        self.rssi
+    }
+    /// <p>Sidewalk device battery level.</p>
+    pub fn battery_level(&self) -> std::option::Option<&crate::model::BatteryLevel> {
+        self.battery_level.as_ref()
+    }
+    /// <p>Sidewalk device status notification.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>Device state defines the device status of sidewalk device.</p>
+    pub fn device_state(&self) -> std::option::Option<&crate::model::DeviceState> {
+        self.device_state.as_ref()
+    }
 }
 impl std::fmt::Debug for SidewalkDeviceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3251,6 +3629,32 @@ pub struct LoRaWanDeviceMetadata {
     /// <p>Information about the gateways accessed by the device.</p>
     pub gateways: std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
 }
+impl LoRaWanDeviceMetadata {
+    /// <p>The DevEUI value.</p>
+    pub fn dev_eui(&self) -> std::option::Option<&str> {
+        self.dev_eui.as_deref()
+    }
+    /// <p>The FPort value.</p>
+    pub fn f_port(&self) -> std::option::Option<i32> {
+        self.f_port
+    }
+    /// <p>The DataRate value.</p>
+    pub fn data_rate(&self) -> std::option::Option<i32> {
+        self.data_rate
+    }
+    /// <p>The device's channel frequency in Hz.</p>
+    pub fn frequency(&self) -> std::option::Option<i32> {
+        self.frequency
+    }
+    /// <p>The date and time of the metadata.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+    /// <p>Information about the gateways accessed by the device.</p>
+    pub fn gateways(&self) -> std::option::Option<&[crate::model::LoRaWanGatewayMetadata]> {
+        self.gateways.as_deref()
+    }
+}
 impl std::fmt::Debug for LoRaWanDeviceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanDeviceMetadata");
@@ -3378,6 +3782,20 @@ pub struct LoRaWanGatewayMetadata {
     /// <p>The RSSI value.</p>
     pub rssi: std::option::Option<f64>,
 }
+impl LoRaWanGatewayMetadata {
+    /// <p>The gateway's EUI value.</p>
+    pub fn gateway_eui(&self) -> std::option::Option<&str> {
+        self.gateway_eui.as_deref()
+    }
+    /// <p>The SNR value.</p>
+    pub fn snr(&self) -> std::option::Option<f64> {
+        self.snr
+    }
+    /// <p>The RSSI value.</p>
+    pub fn rssi(&self) -> std::option::Option<f64> {
+        self.rssi
+    }
+}
 impl std::fmt::Debug for LoRaWanGatewayMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanGatewayMetadata");
@@ -3457,6 +3875,24 @@ pub struct SidewalkDevice {
     pub sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     pub device_certificates: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
+}
+impl SidewalkDevice {
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
+        self.amazon_id.as_deref()
+    }
+    /// <p>The sidewalk device identification.</p>
+    pub fn sidewalk_id(&self) -> std::option::Option<&str> {
+        self.sidewalk_id.as_deref()
+    }
+    /// <p>The Sidewalk manufacturing series number.</p>
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+        self.sidewalk_manufacturing_sn.as_deref()
+    }
+    /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
+    pub fn device_certificates(&self) -> std::option::Option<&[crate::model::CertificateList]> {
+        self.device_certificates.as_deref()
+    }
 }
 impl std::fmt::Debug for SidewalkDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3572,6 +4008,36 @@ pub struct LoRaWanDevice {
     pub abp_v1_1: std::option::Option<crate::model::AbpV11>,
     /// <p>LoRaWAN object for create APIs</p>
     pub abp_v1_0_x: std::option::Option<crate::model::AbpV10X>,
+}
+impl LoRaWanDevice {
+    /// <p>The DevEUI value.</p>
+    pub fn dev_eui(&self) -> std::option::Option<&str> {
+        self.dev_eui.as_deref()
+    }
+    /// <p>The ID of the device profile for the new wireless device.</p>
+    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+        self.device_profile_id.as_deref()
+    }
+    /// <p>The ID of the service profile.</p>
+    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+        self.service_profile_id.as_deref()
+    }
+    /// <p>OTAA device object for v1.1 for create APIs</p>
+    pub fn otaa_v1_1(&self) -> std::option::Option<&crate::model::OtaaV11> {
+        self.otaa_v1_1.as_ref()
+    }
+    /// <p>OTAA device object for create APIs for v1.0.x</p>
+    pub fn otaa_v1_0_x(&self) -> std::option::Option<&crate::model::OtaaV10X> {
+        self.otaa_v1_0_x.as_ref()
+    }
+    /// <p>ABP device object for create APIs for v1.1</p>
+    pub fn abp_v1_1(&self) -> std::option::Option<&crate::model::AbpV11> {
+        self.abp_v1_1.as_ref()
+    }
+    /// <p>LoRaWAN object for create APIs</p>
+    pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::model::AbpV10X> {
+        self.abp_v1_0_x.as_ref()
+    }
 }
 impl std::fmt::Debug for LoRaWanDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3710,6 +4176,16 @@ pub struct AbpV10X {
     /// <p>Session keys for ABP v1.0.x</p>
     pub session_keys: std::option::Option<crate::model::SessionKeysAbpV10X>,
 }
+impl AbpV10X {
+    /// <p>The DevAddr value.</p>
+    pub fn dev_addr(&self) -> std::option::Option<&str> {
+        self.dev_addr.as_deref()
+    }
+    /// <p>Session keys for ABP v1.0.x</p>
+    pub fn session_keys(&self) -> std::option::Option<&crate::model::SessionKeysAbpV10X> {
+        self.session_keys.as_ref()
+    }
+}
 impl std::fmt::Debug for AbpV10X {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbpV10X");
@@ -3776,6 +4252,16 @@ pub struct SessionKeysAbpV10X {
     /// <p>The AppSKey value.</p>
     pub app_s_key: std::option::Option<std::string::String>,
 }
+impl SessionKeysAbpV10X {
+    /// <p>The NwkSKey value.</p>
+    pub fn nwk_s_key(&self) -> std::option::Option<&str> {
+        self.nwk_s_key.as_deref()
+    }
+    /// <p>The AppSKey value.</p>
+    pub fn app_s_key(&self) -> std::option::Option<&str> {
+        self.app_s_key.as_deref()
+    }
+}
 impl std::fmt::Debug for SessionKeysAbpV10X {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SessionKeysAbpV10X");
@@ -3838,6 +4324,16 @@ pub struct AbpV11 {
     pub dev_addr: std::option::Option<std::string::String>,
     /// <p>Session keys for ABP v1.1</p>
     pub session_keys: std::option::Option<crate::model::SessionKeysAbpV11>,
+}
+impl AbpV11 {
+    /// <p>The DevAddr value.</p>
+    pub fn dev_addr(&self) -> std::option::Option<&str> {
+        self.dev_addr.as_deref()
+    }
+    /// <p>Session keys for ABP v1.1</p>
+    pub fn session_keys(&self) -> std::option::Option<&crate::model::SessionKeysAbpV11> {
+        self.session_keys.as_ref()
+    }
 }
 impl std::fmt::Debug for AbpV11 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3908,6 +4404,24 @@ pub struct SessionKeysAbpV11 {
     pub nwk_s_enc_key: std::option::Option<std::string::String>,
     /// <p>The AppSKey value.</p>
     pub app_s_key: std::option::Option<std::string::String>,
+}
+impl SessionKeysAbpV11 {
+    /// <p>The FNwkSIntKey value.</p>
+    pub fn f_nwk_s_int_key(&self) -> std::option::Option<&str> {
+        self.f_nwk_s_int_key.as_deref()
+    }
+    /// <p>The SNwkSIntKey value.</p>
+    pub fn s_nwk_s_int_key(&self) -> std::option::Option<&str> {
+        self.s_nwk_s_int_key.as_deref()
+    }
+    /// <p>The NwkSEncKey value.</p>
+    pub fn nwk_s_enc_key(&self) -> std::option::Option<&str> {
+        self.nwk_s_enc_key.as_deref()
+    }
+    /// <p>The AppSKey value.</p>
+    pub fn app_s_key(&self) -> std::option::Option<&str> {
+        self.app_s_key.as_deref()
+    }
 }
 impl std::fmt::Debug for SessionKeysAbpV11 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4007,6 +4521,16 @@ pub struct OtaaV10X {
     /// <p>The AppEUI value.</p>
     pub app_eui: std::option::Option<std::string::String>,
 }
+impl OtaaV10X {
+    /// <p>The AppKey value.</p>
+    pub fn app_key(&self) -> std::option::Option<&str> {
+        self.app_key.as_deref()
+    }
+    /// <p>The AppEUI value.</p>
+    pub fn app_eui(&self) -> std::option::Option<&str> {
+        self.app_eui.as_deref()
+    }
+}
 impl std::fmt::Debug for OtaaV10X {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OtaaV10X");
@@ -4071,6 +4595,20 @@ pub struct OtaaV11 {
     pub nwk_key: std::option::Option<std::string::String>,
     /// <p>The JoinEUI value.</p>
     pub join_eui: std::option::Option<std::string::String>,
+}
+impl OtaaV11 {
+    /// <p>The AppKey value.</p>
+    pub fn app_key(&self) -> std::option::Option<&str> {
+        self.app_key.as_deref()
+    }
+    /// <p>The NwkKey value.</p>
+    pub fn nwk_key(&self) -> std::option::Option<&str> {
+        self.nwk_key.as_deref()
+    }
+    /// <p>The JoinEUI value.</p>
+    pub fn join_eui(&self) -> std::option::Option<&str> {
+        self.join_eui.as_deref()
+    }
 }
 impl std::fmt::Debug for OtaaV11 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4249,6 +4787,84 @@ pub struct LoRaWanGetServiceProfileInfo {
     pub target_per: i32,
     /// <p>The MinGwDiversity value.</p>
     pub min_gw_diversity: std::option::Option<i32>,
+}
+impl LoRaWanGetServiceProfileInfo {
+    /// <p>The ULRate value.</p>
+    pub fn ul_rate(&self) -> std::option::Option<i32> {
+        self.ul_rate
+    }
+    /// <p>The ULBucketSize value.</p>
+    pub fn ul_bucket_size(&self) -> std::option::Option<i32> {
+        self.ul_bucket_size
+    }
+    /// <p>The ULRatePolicy value.</p>
+    pub fn ul_rate_policy(&self) -> std::option::Option<&str> {
+        self.ul_rate_policy.as_deref()
+    }
+    /// <p>The DLRate value.</p>
+    pub fn dl_rate(&self) -> std::option::Option<i32> {
+        self.dl_rate
+    }
+    /// <p>The DLBucketSize value.</p>
+    pub fn dl_bucket_size(&self) -> std::option::Option<i32> {
+        self.dl_bucket_size
+    }
+    /// <p>The DLRatePolicy value.</p>
+    pub fn dl_rate_policy(&self) -> std::option::Option<&str> {
+        self.dl_rate_policy.as_deref()
+    }
+    /// <p>The AddGWMetaData value.</p>
+    pub fn add_gw_metadata(&self) -> bool {
+        self.add_gw_metadata
+    }
+    /// <p>The DevStatusReqFreq value.</p>
+    pub fn dev_status_req_freq(&self) -> std::option::Option<i32> {
+        self.dev_status_req_freq
+    }
+    /// <p>The ReportDevStatusBattery value.</p>
+    pub fn report_dev_status_battery(&self) -> bool {
+        self.report_dev_status_battery
+    }
+    /// <p>The ReportDevStatusMargin value.</p>
+    pub fn report_dev_status_margin(&self) -> bool {
+        self.report_dev_status_margin
+    }
+    /// <p>The DRMin value.</p>
+    pub fn dr_min(&self) -> i32 {
+        self.dr_min
+    }
+    /// <p>The DRMax value.</p>
+    pub fn dr_max(&self) -> i32 {
+        self.dr_max
+    }
+    /// <p>The ChannelMask value.</p>
+    pub fn channel_mask(&self) -> std::option::Option<&str> {
+        self.channel_mask.as_deref()
+    }
+    /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+    pub fn pr_allowed(&self) -> bool {
+        self.pr_allowed
+    }
+    /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
+    pub fn hr_allowed(&self) -> bool {
+        self.hr_allowed
+    }
+    /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+    pub fn ra_allowed(&self) -> bool {
+        self.ra_allowed
+    }
+    /// <p>The NwkGeoLoc value.</p>
+    pub fn nwk_geo_loc(&self) -> bool {
+        self.nwk_geo_loc
+    }
+    /// <p>The TargetPER value.</p>
+    pub fn target_per(&self) -> i32 {
+        self.target_per
+    }
+    /// <p>The MinGwDiversity value.</p>
+    pub fn min_gw_diversity(&self) -> std::option::Option<i32> {
+        self.min_gw_diversity
+    }
 }
 impl std::fmt::Debug for LoRaWanGetServiceProfileInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4629,6 +5245,84 @@ pub struct LoRaWanDeviceProfile {
     /// <p>The Supports32BitFCnt value.</p>
     pub supports32_bit_f_cnt: bool,
 }
+impl LoRaWanDeviceProfile {
+    /// <p>The SupportsClassB value.</p>
+    pub fn supports_class_b(&self) -> bool {
+        self.supports_class_b
+    }
+    /// <p>The ClassBTimeout value.</p>
+    pub fn class_b_timeout(&self) -> std::option::Option<i32> {
+        self.class_b_timeout
+    }
+    /// <p>The PingSlotPeriod value.</p>
+    pub fn ping_slot_period(&self) -> std::option::Option<i32> {
+        self.ping_slot_period
+    }
+    /// <p>The PingSlotDR value.</p>
+    pub fn ping_slot_dr(&self) -> std::option::Option<i32> {
+        self.ping_slot_dr
+    }
+    /// <p>The PingSlotFreq value.</p>
+    pub fn ping_slot_freq(&self) -> std::option::Option<i32> {
+        self.ping_slot_freq
+    }
+    /// <p>The SupportsClassC value.</p>
+    pub fn supports_class_c(&self) -> bool {
+        self.supports_class_c
+    }
+    /// <p>The ClassCTimeout value.</p>
+    pub fn class_c_timeout(&self) -> std::option::Option<i32> {
+        self.class_c_timeout
+    }
+    /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
+    pub fn mac_version(&self) -> std::option::Option<&str> {
+        self.mac_version.as_deref()
+    }
+    /// <p>The version of regional parameters.</p>
+    pub fn reg_params_revision(&self) -> std::option::Option<&str> {
+        self.reg_params_revision.as_deref()
+    }
+    /// <p>The RXDelay1 value.</p>
+    pub fn rx_delay1(&self) -> std::option::Option<i32> {
+        self.rx_delay1
+    }
+    /// <p>The RXDROffset1 value.</p>
+    pub fn rx_dr_offset1(&self) -> std::option::Option<i32> {
+        self.rx_dr_offset1
+    }
+    /// <p>The RXDataRate2 value.</p>
+    pub fn rx_data_rate2(&self) -> std::option::Option<i32> {
+        self.rx_data_rate2
+    }
+    /// <p>The RXFreq2 value.</p>
+    pub fn rx_freq2(&self) -> std::option::Option<i32> {
+        self.rx_freq2
+    }
+    /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
+    pub fn factory_preset_freqs_list(&self) -> std::option::Option<&[i32]> {
+        self.factory_preset_freqs_list.as_deref()
+    }
+    /// <p>The MaxEIRP value.</p>
+    pub fn max_eirp(&self) -> std::option::Option<i32> {
+        self.max_eirp
+    }
+    /// <p>The MaxDutyCycle value.</p>
+    pub fn max_duty_cycle(&self) -> std::option::Option<i32> {
+        self.max_duty_cycle
+    }
+    /// <p>The frequency band (RFRegion) value.</p>
+    pub fn rf_region(&self) -> std::option::Option<&str> {
+        self.rf_region.as_deref()
+    }
+    /// <p>The SupportsJoin value.</p>
+    pub fn supports_join(&self) -> std::option::Option<bool> {
+        self.supports_join
+    }
+    /// <p>The Supports32BitFCnt value.</p>
+    pub fn supports32_bit_f_cnt(&self) -> bool {
+        self.supports32_bit_f_cnt
+    }
+}
 impl std::fmt::Debug for LoRaWanDeviceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanDeviceProfile");
@@ -4923,6 +5617,12 @@ pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     pub add_gw_metadata: bool,
 }
+impl LoRaWanServiceProfile {
+    /// <p>The AddGWMetaData value.</p>
+    pub fn add_gw_metadata(&self) -> bool {
+        self.add_gw_metadata
+    }
+}
 impl std::fmt::Debug for LoRaWanServiceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanServiceProfile");
@@ -4972,6 +5672,16 @@ pub struct SidewalkAccountInfo {
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The Sidewalk application server private key.</p>
     pub app_server_private_key: std::option::Option<std::string::String>,
+}
+impl SidewalkAccountInfo {
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
+        self.amazon_id.as_deref()
+    }
+    /// <p>The Sidewalk application server private key.</p>
+    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
+        self.app_server_private_key.as_deref()
+    }
 }
 impl std::fmt::Debug for SidewalkAccountInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

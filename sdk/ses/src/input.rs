@@ -125,10 +125,9 @@ impl CloneReceiptRuleSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_clone_receipt_rule_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_clone_receipt_rule_set(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -278,10 +277,7 @@ impl CreateConfigurationSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -450,7 +446,7 @@ impl CreateConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -626,7 +622,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_tracking_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -862,7 +858,7 @@ impl CreateCustomVerificationEmailTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_verification_email_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1013,10 +1009,7 @@ impl CreateReceiptFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_receipt_filter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_receipt_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1194,10 +1187,7 @@ impl CreateReceiptRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_receipt_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_receipt_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1371,10 +1361,7 @@ impl CreateReceiptRuleSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_receipt_rule_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1520,10 +1507,8 @@ impl CreateTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1673,10 +1658,7 @@ impl DeleteConfigurationSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1841,7 +1823,7 @@ impl DeleteConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1994,7 +1976,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_tracking_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2145,7 +2127,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_verification_email_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2290,10 +2272,8 @@ impl DeleteIdentityInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_identity(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_identity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2458,10 +2438,9 @@ impl DeleteIdentityPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_identity_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_identity_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2606,10 +2585,7 @@ impl DeleteReceiptFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_receipt_filter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_receipt_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2769,10 +2745,7 @@ impl DeleteReceiptRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_receipt_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_receipt_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2922,10 +2895,7 @@ impl DeleteReceiptRuleSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_receipt_rule_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3072,10 +3042,8 @@ impl DeleteTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3224,7 +3192,7 @@ impl DeleteVerifiedEmailAddressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_verified_email_address(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_verified_email_address(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3357,7 +3325,7 @@ impl DescribeActiveReceiptRuleSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_active_receipt_rule_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_active_receipt_rule_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3526,10 +3494,7 @@ impl DescribeConfigurationSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_configuration_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3689,10 +3654,7 @@ impl DescribeReceiptRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_receipt_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_receipt_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3842,10 +3804,7 @@ impl DescribeReceiptRuleSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_receipt_rule_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3979,10 +3938,7 @@ impl GetAccountSendingEnabledInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_account_sending_enabled(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4123,7 +4079,7 @@ impl GetCustomVerificationEmailTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_custom_verification_email_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4281,10 +4237,7 @@ impl GetIdentityDkimAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_identity_dkim_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4440,7 +4393,7 @@ impl GetIdentityMailFromDomainAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_mail_from_domain_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_mail_from_domain_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4602,7 +4555,7 @@ impl GetIdentityNotificationAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_notification_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_notification_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4781,10 +4734,7 @@ impl GetIdentityPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4939,7 +4889,7 @@ impl GetIdentityVerificationAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_verification_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_verification_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5070,10 +5020,7 @@ impl GetSendQuotaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_send_quota(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_send_quota(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5196,10 +5143,7 @@ impl GetSendStatisticsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_send_statistics(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_send_statistics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5338,10 +5282,7 @@ impl GetTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5502,10 +5443,7 @@ impl ListConfigurationSetsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_configuration_sets(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5672,7 +5610,7 @@ impl ListCustomVerificationEmailTemplatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_verification_email_templates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_verification_email_templates(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5848,10 +5786,8 @@ impl ListIdentitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6004,10 +5940,9 @@ impl ListIdentityPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_identity_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_identity_policies(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6138,10 +6073,7 @@ impl ListReceiptFiltersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_receipt_filters(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_receipt_filters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6280,10 +6212,9 @@ impl ListReceiptRuleSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_receipt_rule_sets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_receipt_rule_sets(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6445,10 +6376,7 @@ impl ListTemplatesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_templates(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_templates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6580,7 +6508,7 @@ impl ListVerifiedEmailAddressesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_verified_email_addresses(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_verified_email_addresses(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6741,7 +6669,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6927,10 +6855,7 @@ impl PutIdentityPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_identity_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_identity_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7103,10 +7028,7 @@ impl ReorderReceiptRuleSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reorder_receipt_rule_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7351,10 +7273,7 @@ impl SendBounceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_bounce(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_bounce(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7769,10 +7688,7 @@ impl SendBulkTemplatedEmailInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_bulk_templated_email(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7953,7 +7869,7 @@ impl SendCustomVerificationEmailInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_custom_verification_email(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_send_custom_verification_email(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8315,10 +8231,7 @@ impl SendEmailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_email(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_email(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8763,10 +8676,7 @@ impl SendRawEmailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_raw_email(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_raw_email(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9163,10 +9073,7 @@ impl SendTemplatedEmailInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_templated_email(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_templated_email(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9319,10 +9226,7 @@ impl SetActiveReceiptRuleSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_active_receipt_rule_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9483,10 +9387,7 @@ impl SetIdentityDkimEnabledInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_identity_dkim_enabled(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9659,7 +9560,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_feedback_forwarding_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_feedback_forwarding_enabled(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9848,7 +9749,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_headers_in_notifications_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_headers_in_notifications_enabled(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10051,7 +9952,7 @@ impl SetIdentityMailFromDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_mail_from_domain(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_mail_from_domain(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10245,7 +10146,7 @@ impl SetIdentityNotificationTopicInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_notification_topic(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_notification_topic(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10420,10 +10321,7 @@ impl SetReceiptRulePositionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_receipt_rule_position(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10590,10 +10488,7 @@ impl TestRenderTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_render_template(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_render_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10741,7 +10636,7 @@ impl UpdateAccountSendingEnabledInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_account_sending_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_account_sending_enabled(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10911,7 +10806,7 @@ impl UpdateConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11078,7 +10973,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_reputation_metrics_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_reputation_metrics_enabled(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11244,7 +11139,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_sending_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_sending_enabled(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11420,7 +11315,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_tracking_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11656,7 +11551,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_verification_email_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11817,10 +11712,7 @@ impl UpdateReceiptRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_receipt_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_receipt_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11966,10 +11858,8 @@ impl UpdateTemplateInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_template(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12114,10 +12004,7 @@ impl VerifyDomainDkimInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_domain_dkim(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_verify_domain_dkim(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12262,10 +12149,9 @@ impl VerifyDomainIdentityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_domain_identity(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_verify_domain_identity(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12413,10 +12299,7 @@ impl VerifyEmailAddressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_email_address(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_verify_email_address(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12564,10 +12447,7 @@ impl VerifyEmailIdentityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_email_identity(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_verify_email_identity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12638,6 +12518,12 @@ pub struct VerifyEmailIdentityInput {
     /// <p>The email address to be verified.</p>
     pub email_address: std::option::Option<std::string::String>,
 }
+impl VerifyEmailIdentityInput {
+    /// <p>The email address to be verified.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyEmailIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyEmailIdentityInput");
@@ -12654,6 +12540,12 @@ impl std::fmt::Debug for VerifyEmailIdentityInput {
 pub struct VerifyEmailAddressInput {
     /// <p>The email address to be verified.</p>
     pub email_address: std::option::Option<std::string::String>,
+}
+impl VerifyEmailAddressInput {
+    /// <p>The email address to be verified.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
 }
 impl std::fmt::Debug for VerifyEmailAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12673,6 +12565,12 @@ pub struct VerifyDomainIdentityInput {
     /// <p>The domain to be verified.</p>
     pub domain: std::option::Option<std::string::String>,
 }
+impl VerifyDomainIdentityInput {
+    /// <p>The domain to be verified.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyDomainIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyDomainIdentityInput");
@@ -12690,6 +12588,12 @@ pub struct VerifyDomainDkimInput {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
     pub domain: std::option::Option<std::string::String>,
 }
+impl VerifyDomainDkimInput {
+    /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyDomainDkimInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyDomainDkimInput");
@@ -12705,6 +12609,13 @@ pub struct UpdateTemplateInput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
     /// part.</p>
     pub template: std::option::Option<crate::model::Template>,
+}
+impl UpdateTemplateInput {
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
+    /// part.</p>
+    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+        self.template.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12724,6 +12635,16 @@ pub struct UpdateReceiptRuleInput {
     pub rule_set_name: std::option::Option<std::string::String>,
     /// <p>A data structure that contains the updated receipt rule information.</p>
     pub rule: std::option::Option<crate::model::ReceiptRule>,
+}
+impl UpdateReceiptRuleInput {
+    /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>A data structure that contains the updated receipt rule information.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::ReceiptRule> {
+        self.rule.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateReceiptRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12756,6 +12677,37 @@ pub struct UpdateCustomVerificationEmailTemplateInput {
     /// is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
+impl UpdateCustomVerificationEmailTemplateInput {
+    /// <p>The name of the custom verification email template that you want to update.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The email address that the custom verification email is sent from.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The subject line of the custom verification email.</p>
+    pub fn template_subject(&self) -> std::option::Option<&str> {
+        self.template_subject.as_deref()
+    }
+    /// <p>The content of the custom verification email. The total size of the email must be less
+    /// than 10 MB. The message body may contain HTML, with some limitations. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
+    /// Developer Guide</i>.</p>
+    pub fn template_content(&self) -> std::option::Option<&str> {
+        self.template_content.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is successfully verified.</p>
+    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+        self.success_redirection_url.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is not successfully verified.</p>
+    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+        self.failure_redirection_url.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomVerificationEmailTemplateInput");
@@ -12783,6 +12735,21 @@ pub struct UpdateConfigurationSetTrackingOptionsInput {
     /// Developer Guide</i>.</p>
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
 }
+impl UpdateConfigurationSetTrackingOptionsInput {
+    /// <p>The name of the configuration set for which you want to update the custom tracking
+    /// domain.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
+    /// domain captures open and click events generated by Amazon SES emails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+    /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
+    /// Developer Guide</i>.</p>
+    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+        self.tracking_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationSetTrackingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetTrackingOptionsInput");
@@ -12803,6 +12770,17 @@ pub struct UpdateConfigurationSetSendingEnabledInput {
     /// </p>
     pub enabled: bool,
 }
+impl UpdateConfigurationSetSendingEnabledInput {
+    /// <p>The name of the configuration set that you want to update.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set.
+    /// </p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationSetSendingEnabledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetSendingEnabledInput");
@@ -12822,6 +12800,17 @@ pub struct UpdateConfigurationSetReputationMetricsEnabledInput {
     /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
     /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub enabled: bool,
+}
+impl UpdateConfigurationSetReputationMetricsEnabledInput {
+    /// <p>The name of the configuration set that you want to update.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
+    /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateConfigurationSetReputationMetricsEnabledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12846,6 +12835,18 @@ pub struct UpdateConfigurationSetEventDestinationInput {
     /// set.</p>
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
+impl UpdateConfigurationSetEventDestinationInput {
+    /// <p>The name of the configuration set that contains the event destination that you want to
+    /// update.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>The event destination object that you want to apply to the specified configuration
+    /// set.</p>
+    pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
+        self.event_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
@@ -12863,6 +12864,13 @@ pub struct UpdateAccountSendingEnabledInput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
     /// current AWS Region.</p>
     pub enabled: bool,
+}
+impl UpdateAccountSendingEnabledInput {
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
+    /// current AWS Region.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateAccountSendingEnabledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12882,6 +12890,18 @@ pub struct TestRenderTemplateInput {
     /// object, typically consisting of key-value pairs in which the keys correspond to
     /// replacement tags in the email template.</p>
     pub template_data: std::option::Option<std::string::String>,
+}
+impl TestRenderTemplateInput {
+    /// <p>The name of the template that you want to render.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
+    /// object, typically consisting of key-value pairs in which the keys correspond to
+    /// replacement tags in the email template.</p>
+    pub fn template_data(&self) -> std::option::Option<&str> {
+        self.template_data.as_deref()
+    }
 }
 impl std::fmt::Debug for TestRenderTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12903,6 +12923,20 @@ pub struct SetReceiptRulePositionInput {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
     pub after: std::option::Option<std::string::String>,
+}
+impl SetReceiptRulePositionInput {
+    /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The name of the receipt rule to reposition.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
+    pub fn after(&self) -> std::option::Option<&str> {
+        self.after.as_deref()
+    }
 }
 impl std::fmt::Debug for SetReceiptRulePositionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12937,6 +12971,30 @@ pub struct SetIdentityNotificationTopicInput {
     /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
     /// is disabled.</p>
     pub sns_topic: std::option::Option<std::string::String>,
+}
+impl SetIdentityNotificationTopicInput {
+    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
+    /// for.</p>
+    /// <important>
+    /// <p>You can only specify a verified identity for this parameter.</p>
+    /// </important>
+    /// <p>You can specify an identity by using its name or by using its Amazon Resource Name
+    /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
+    /// <code>example.com</code>,
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
+    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.notification_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
+    /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
+    /// is disabled.</p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
 }
 impl std::fmt::Debug for SetIdentityNotificationTopicInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12975,6 +13033,35 @@ pub struct SetIdentityMailFromDomainInput {
     /// <code>TemporaryFailure</code> states.</p>
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
+impl SetIdentityMailFromDomainInput {
+    /// <p>The verified identity for which you want to enable or disable the specified custom
+    /// MAIL FROM domain.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
+    /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
+    /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
+    /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
+    /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
+    /// FROM setting for the identity.</p>
+    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+        self.mail_from_domain.as_deref()
+    }
+    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
+    /// record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will
+    /// use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose
+    /// <code>RejectMessage</code>, Amazon SES will return a
+    /// <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+    /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
+    /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
+    /// <code>TemporaryFailure</code> states.</p>
+    pub fn behavior_on_mx_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
+        self.behavior_on_mx_failure.as_ref()
+    }
+}
 impl std::fmt::Debug for SetIdentityMailFromDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityMailFromDomainInput");
@@ -13005,6 +13092,26 @@ pub struct SetIdentityHeadersInNotificationsEnabledInput {
     /// particular Amazon SNS topic.</p>
     pub enabled: bool,
 }
+impl SetIdentityHeadersInNotificationsEnabledInput {
+    /// <p>The identity for which to enable or disable headers in notifications. Examples:
+    /// <code>user@example.com</code>, <code>example.com</code>.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
+    pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
+        self.notification_type.as_ref()
+    }
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
+    /// specified notification type. A value of <code>true</code> specifies that Amazon SES will
+    /// include headers in notifications, and a value of <code>false</code> specifies that Amazon SES
+    /// will not include headers in notifications.</p>
+    /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
+    /// particular Amazon SNS topic.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for SetIdentityHeadersInNotificationsEnabledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityHeadersInNotificationsEnabledInput");
@@ -13034,6 +13141,23 @@ pub struct SetIdentityFeedbackForwardingEnabledInput {
     /// notification types.</p>
     pub forwarding_enabled: bool,
 }
+impl SetIdentityFeedbackForwardingEnabledInput {
+    /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
+    /// <code>user@example.com</code>, <code>example.com</code>.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
+    /// <code>true</code> specifies that Amazon SES will forward bounce and complaint
+    /// notifications as email, in addition to any Amazon SNS topic publishing otherwise specified.
+    /// <code>false</code> specifies that Amazon SES will publish bounce and complaint
+    /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
+    /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
+    /// notification types.</p>
+    pub fn forwarding_enabled(&self) -> bool {
+        self.forwarding_enabled
+    }
+}
 impl std::fmt::Debug for SetIdentityFeedbackForwardingEnabledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityFeedbackForwardingEnabledInput");
@@ -13054,6 +13178,17 @@ pub struct SetIdentityDkimEnabledInput {
     /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub dkim_enabled: bool,
 }
+impl SetIdentityDkimEnabledInput {
+    /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
+    /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    pub fn dkim_enabled(&self) -> bool {
+        self.dkim_enabled
+    }
+}
 impl std::fmt::Debug for SetIdentityDkimEnabledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityDkimEnabledInput");
@@ -13071,6 +13206,13 @@ pub struct SetActiveReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables
     /// all email receiving.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
+}
+impl SetActiveReceiptRuleSetInput {
+    /// <p>The name of the receipt rule set to make active. Setting this value to null disables
+    /// all email receiving.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SetActiveReceiptRuleSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13159,6 +13301,103 @@ pub struct SendTemplatedEmailInput {
     /// object, typically consisting of key-value pairs in which the keys correspond to
     /// replacement tags in the email template.</p>
     pub template_data: std::option::Option<std::string::String>,
+}
+impl SendTemplatedEmailInput {
+    /// <p>The email address that is sending the email. This email address must be either
+    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
+    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
+    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+    /// <i>local part</i> of a source email address (the part of the email
+    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+    /// characters</a>. If the <i>domain part</i> of an address (the
+    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+    /// name</i>) may contain non-ASCII characters. These characters must be
+    /// encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+    /// syntax uses the following form:
+    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// </note>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
+    /// can include up to 50 recipients across these three fields.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+    /// message, each reply-to address will receive the reply.</p>
+    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.reply_to_addresses.as_deref()
+    }
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback
+    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+    /// error message will be returned from the recipient's ISP; this message will then be
+    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
+    /// either individually verified with Amazon SES, or from a domain that has been verified with
+    /// Amazon SES. </p>
+    pub fn return_path(&self) -> std::option::Option<&str> {
+        self.return_path.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to send for
+    /// the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+    /// would specify the <code>SourceArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to use the
+    /// email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+    /// would specify the <code>ReturnPathArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn return_path_arn(&self) -> std::option::Option<&str> {
+        self.return_path_arn.as_deref()
+    }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+    /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
+    /// that you define, so that you can publish email sending events.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the configuration set to use when you send an email using
+    /// <code>SendTemplatedEmail</code>.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>The template to use when sending this email.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>The ARN of the template to use when sending this email.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
+    /// object, typically consisting of key-value pairs in which the keys correspond to
+    /// replacement tags in the email template.</p>
+    pub fn template_data(&self) -> std::option::Option<&str> {
+        self.template_data.as_deref()
+    }
 }
 impl std::fmt::Debug for SendTemplatedEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13296,6 +13535,136 @@ pub struct SendRawEmailInput {
     /// <code>SendRawEmail</code>.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
+impl SendRawEmailInput {
+    /// <p>The identity's email address. If you do not provide a value for this parameter, you
+    /// must specify a "From" address in the raw text of the message. (You can also specify
+    /// both.)</p>
+    /// <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+    /// <i>local part</i> of a source email address (the part of the email
+    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+    /// characters</a>. If the <i>domain part</i> of an address (the
+    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+    /// name</i>) may contain non-ASCII characters. These characters must be
+    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+    /// syntax uses the following form:
+    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// </note>
+    ///
+    /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
+    /// then bounces and complaints will be sent to this email address. This takes precedence
+    /// over any Return-Path header that you might include in the raw text of the
+    /// message.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
+    /// addresses.</p>
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+        self.destinations.as_deref()
+    }
+    /// <p>The raw email message itself. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The message has to contain a header and a body, separated by a blank
+    /// line.</p>
+    /// </li>
+    /// <li>
+    /// <p>All of the required header fields must be present in the message.</p>
+    /// </li>
+    /// <li>
+    /// <p>Each part of a multipart MIME message must be formatted properly.</p>
+    /// </li>
+    /// <li>
+    /// <p>Attachments must be of a content type that Amazon SES supports. For a list on
+    /// unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
+    /// Types</a> in the <i>Amazon SES Developer Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>The entire message must be base64-encoded.</p>
+    /// </li>
+    /// <li>
+    /// <p>If any of the MIME parts in your message contain content that is outside of
+    /// the 7-bit ASCII character range, we highly recommend that you encode that
+    /// content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer
+    /// Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+    /// 5321</a>, the maximum length of each line of text, including the
+    /// <CRLF>, must not exceed 1,000 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn raw_message(&self) -> std::option::Option<&crate::model::RawMessage> {
+        self.raw_message.as_ref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to specify a
+    /// particular "From" address in the header of the raw email.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
+    /// in the raw message of the email. If you use both the <code>FromArn</code> parameter and
+    /// the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
+    /// parameter.</p>
+    /// <note>
+    /// <p>For information about when to use this parameter, see the description of
+    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// </note>
+    pub fn from_arn(&self) -> std::option::Option<&str> {
+        self.from_arn.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to send for
+    /// the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+    /// would specify the <code>SourceArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>Instead of using this parameter, you can use the X-header
+    /// <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the
+    /// <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the
+    /// value of the <code>SourceArn</code> parameter.</p>
+    /// <note>
+    /// <p>For information about when to use this parameter, see the description of
+    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// </note>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to use the
+    /// email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+    /// would specify the <code>ReturnPathArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>Instead of using this parameter, you can use the X-header
+    /// <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both
+    /// the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the
+    /// value of the <code>ReturnPathArn</code> parameter.</p>
+    /// <note>
+    /// <p>For information about when to use this parameter, see the description of
+    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// </note>
+    pub fn return_path_arn(&self) -> std::option::Option<&str> {
+        self.return_path_arn.as_deref()
+    }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+    /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
+    /// you define, so that you can publish email sending events.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the configuration set to use when you send an email using
+    /// <code>SendRawEmail</code>.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SendRawEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendRawEmailInput");
@@ -13384,6 +13753,92 @@ pub struct SendEmailInput {
     /// <code>SendEmail</code>.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
+impl SendEmailInput {
+    /// <p>The email address that is sending the email. This email address must be either
+    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
+    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
+    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+    /// <i>local part</i> of a source email address (the part of the email
+    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+    /// characters</a>. If the <i>domain part</i> of an address (the
+    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+    /// name</i>) may contain non-ASCII characters. These characters must be
+    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+    /// syntax uses the following form:
+    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// </note>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>The message to be sent.</p>
+    pub fn message(&self) -> std::option::Option<&crate::model::Message> {
+        self.message.as_ref()
+    }
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+    /// message, each reply-to address will receive the reply.</p>
+    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.reply_to_addresses.as_deref()
+    }
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback
+    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+    /// error message will be returned from the recipient's ISP; this message will then be
+    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
+    /// either individually verified with Amazon SES, or from a domain that has been verified with
+    /// Amazon SES. </p>
+    pub fn return_path(&self) -> std::option::Option<&str> {
+        self.return_path.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to send for
+    /// the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+    /// would specify the <code>SourceArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to use the
+    /// email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+    /// would specify the <code>ReturnPathArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn return_path_arn(&self) -> std::option::Option<&str> {
+        self.return_path_arn.as_deref()
+    }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+    /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
+    /// define, so that you can publish email sending events.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of the configuration set to use when you send an email using
+    /// <code>SendEmail</code>.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEmailInput");
@@ -13412,6 +13867,21 @@ pub struct SendCustomVerificationEmailInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Name of a configuration set to use when sending the verification email.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl SendCustomVerificationEmailInput {
+    /// <p>The email address to verify.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The name of the custom verification email template to use when sending the
+    /// verification email.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Name of a configuration set to use when sending the verification email.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SendCustomVerificationEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13506,6 +13976,106 @@ pub struct SendBulkTemplatedEmailInput {
     /// array.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestination>>,
 }
+impl SendBulkTemplatedEmailInput {
+    /// <p>The email address that is sending the email. This email address must be either
+    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
+    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
+    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+    /// <i>local part</i> of a source email address (the part of the email
+    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+    /// characters</a>. If the <i>domain part</i> of an address (the
+    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+    /// name</i>) may contain non-ASCII characters. These characters must be
+    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+    /// syntax uses the following form:
+    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// </note>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to send for
+    /// the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+    /// would specify the <code>SourceArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+    /// message, each reply-to address will receive the reply.</p>
+    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.reply_to_addresses.as_deref()
+    }
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback
+    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+    /// error message will be returned from the recipient's ISP; this message will then be
+    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
+    /// either individually verified with Amazon SES, or from a domain that has been verified with
+    /// Amazon SES. </p>
+    pub fn return_path(&self) -> std::option::Option<&str> {
+        self.return_path.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to use the
+    /// email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+    /// would specify the <code>ReturnPathArn</code> to be
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn return_path_arn(&self) -> std::option::Option<&str> {
+        self.return_path_arn.as_deref()
+    }
+    /// <p>The name of the configuration set to use when you send an email using
+    /// <code>SendBulkTemplatedEmail</code>.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
+    /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
+    pub fn default_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+        self.default_tags.as_deref()
+    }
+    /// <p>The template to use when sending this email.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>The ARN of the template to use when sending this email.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>A list of replacement values to apply to the template when replacement data is not
+    /// specified in a Destination object. These values act as a default or fallback option when
+    /// no other data is available.</p>
+    /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
+    /// the keys correspond to replacement tags in the email template.</p>
+    pub fn default_template_data(&self) -> std::option::Option<&str> {
+        self.default_template_data.as_deref()
+    }
+    /// <p>One or more <code>Destination</code> objects. All of the recipients in a
+    /// <code>Destination</code> will receive the same version of the email. You can specify
+    /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+    /// array.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::BulkEmailDestination]> {
+        self.destinations.as_deref()
+    }
+}
 impl std::fmt::Debug for SendBulkTemplatedEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendBulkTemplatedEmailInput");
@@ -13551,6 +14121,42 @@ pub struct SendBounceInput {
     /// Guide</a>.</p>
     pub bounce_sender_arn: std::option::Option<std::string::String>,
 }
+impl SendBounceInput {
+    /// <p>The message ID of the message to be bounced.</p>
+    pub fn original_message_id(&self) -> std::option::Option<&str> {
+        self.original_message_id.as_deref()
+    }
+    /// <p>The address to use in the "From" header of the bounce message. This must be an
+    /// identity that you have verified with Amazon SES.</p>
+    pub fn bounce_sender(&self) -> std::option::Option<&str> {
+        self.bounce_sender.as_deref()
+    }
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
+    /// the text will be auto-generated based on the bounced recipient information.</p>
+    pub fn explanation(&self) -> std::option::Option<&str> {
+        self.explanation.as_deref()
+    }
+    /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
+    pub fn message_dsn(&self) -> std::option::Option<&crate::model::MessageDsn> {
+        self.message_dsn.as_ref()
+    }
+    /// <p>A list of recipients of the bounced message, including the information required to
+    /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
+    /// least one <code>BouncedRecipientInfo</code> in the list.</p>
+    pub fn bounced_recipient_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::BouncedRecipientInfo]> {
+        self.bounced_recipient_info_list.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to use the
+    /// address in the "From" header of the bounce. For more information about sending
+    /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn bounce_sender_arn(&self) -> std::option::Option<&str> {
+        self.bounce_sender_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SendBounceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendBounceInput");
@@ -13577,6 +14183,17 @@ pub struct ReorderReceiptRuleSetInput {
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
     /// put them.</p>
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ReorderReceiptRuleSetInput {
+    /// <p>The name of the receipt rule set to reorder.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
+    /// put them.</p>
+    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.rule_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ReorderReceiptRuleSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13609,6 +14226,28 @@ pub struct PutIdentityPolicyInput {
     /// Guide</a>. </p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutIdentityPolicyInput {
+    /// <p>The identity that the policy will apply to. You can specify an identity by using its
+    /// name or by using its Amazon Resource Name (ARN). Examples:
+    /// <code>user@example.com</code>, <code>example.com</code>,
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>The name of the policy.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
+    /// characters, dashes, and underscores.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
+    /// Guide</a>. </p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutIdentityPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutIdentityPolicyInput");
@@ -13629,6 +14268,18 @@ pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>Specifies whether messages that use the configuration set are required to use
     /// Transport Layer Security (TLS).</p>
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
+}
+impl PutConfigurationSetDeliveryOptionsInput {
+    /// <p>The name of the configuration set that you want to specify the delivery options
+    /// for.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use
+    /// Transport Layer Security (TLS).</p>
+    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+        self.delivery_options.as_ref()
+    }
 }
 impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13662,6 +14313,19 @@ pub struct ListTemplatesInput {
     /// greater than 10, the operation will return up to 10 results.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListTemplatesInput {
+    /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
+    /// position in the list of email templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of templates to return. This value must be at least 1 and less than
+    /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
+    /// greater than 10, the operation will return up to 10 results.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplatesInput");
@@ -13681,6 +14345,13 @@ pub struct ListReceiptRuleSetsInput {
     /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
     /// the position in the receipt rule set list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReceiptRuleSetsInput {
+    /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
+    /// the position in the receipt rule set list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReceiptRuleSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13717,6 +14388,16 @@ pub struct ListIdentityPoliciesInput {
     /// <p>To successfully call this API, you must own the identity.</p>
     pub identity: std::option::Option<std::string::String>,
 }
+impl ListIdentityPoliciesInput {
+    /// <p>The identity that is associated with the policy for which the policies will be listed.
+    /// You can specify an identity by using its name or by using its Amazon Resource Name
+    /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIdentityPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentityPoliciesInput");
@@ -13739,6 +14420,22 @@ pub struct ListIdentitiesInput {
     /// <p>The maximum number of identities per page. Possible values are 1-1000
     /// inclusive.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListIdentitiesInput {
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
+    /// If this parameter is omitted, then all identities will be listed.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The token to use for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of identities per page. Possible values are 1-1000
+    /// inclusive.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13767,6 +14464,20 @@ pub struct ListCustomVerificationEmailTemplatesInput {
     /// results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListCustomVerificationEmailTemplatesInput {
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
+    /// account.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of custom verification email templates to return. This value must
+    /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
+    /// specify a value less than 1 or greater than 50, the operation will return up to 50
+    /// results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListCustomVerificationEmailTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomVerificationEmailTemplatesInput");
@@ -13789,6 +14500,17 @@ pub struct ListConfigurationSetsInput {
     /// <p>The number of configuration sets to return.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListConfigurationSetsInput {
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
+    /// indicate the position of the configuration set in the configuration set list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of configuration sets to return.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListConfigurationSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsInput");
@@ -13804,6 +14526,12 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 pub struct GetTemplateInput {
     /// <p>The name of the template you want to retrieve.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl GetTemplateInput {
+    /// <p>The name of the template you want to retrieve.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13845,6 +14573,12 @@ pub struct GetIdentityVerificationAttributesInput {
     /// <p>A list of identities.</p>
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetIdentityVerificationAttributesInput {
+    /// <p>A list of identities.</p>
+    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+        self.identities.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIdentityVerificationAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityVerificationAttributesInput");
@@ -13871,6 +14605,22 @@ pub struct GetIdentityPoliciesInput {
     /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetIdentityPoliciesInput {
+    /// <p>The identity for which the policies will be retrieved. You can specify an identity by
+    /// using its name or by using its Amazon Resource Name (ARN). Examples:
+    /// <code>user@example.com</code>, <code>example.com</code>,
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
+    /// policies at a time. If you do not know the names of the policies that are attached to
+    /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_names.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIdentityPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityPoliciesInput");
@@ -13892,6 +14642,15 @@ pub struct GetIdentityNotificationAttributesInput {
     /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetIdentityNotificationAttributesInput {
+    /// <p>A list of one or more identities. You can specify an identity by using its name or by
+    /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
+    /// <code>example.com</code>,
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+        self.identities.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIdentityNotificationAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityNotificationAttributesInput");
@@ -13908,6 +14667,12 @@ impl std::fmt::Debug for GetIdentityNotificationAttributesInput {
 pub struct GetIdentityMailFromDomainAttributesInput {
     /// <p>A list of one or more identities.</p>
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetIdentityMailFromDomainAttributesInput {
+    /// <p>A list of one or more identities.</p>
+    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+        self.identities.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIdentityMailFromDomainAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13927,6 +14692,12 @@ pub struct GetIdentityDkimAttributesInput {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetIdentityDkimAttributesInput {
+    /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
+    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+        self.identities.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIdentityDkimAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityDkimAttributesInput");
@@ -13942,6 +14713,12 @@ impl std::fmt::Debug for GetIdentityDkimAttributesInput {
 pub struct GetCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl GetCustomVerificationEmailTemplateInput {
+    /// <p>The name of the custom verification email template that you want to retrieve.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCustomVerificationEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13970,6 +14747,12 @@ pub struct DescribeReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to describe.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
 }
+impl DescribeReceiptRuleSetInput {
+    /// <p>The name of the receipt rule set to describe.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReceiptRuleSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReceiptRuleSetInput");
@@ -13988,6 +14771,16 @@ pub struct DescribeReceiptRuleInput {
     pub rule_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the receipt rule.</p>
     pub rule_name: std::option::Option<std::string::String>,
+}
+impl DescribeReceiptRuleInput {
+    /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The name of the receipt rule.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReceiptRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14010,6 +14803,18 @@ pub struct DescribeConfigurationSetInput {
     /// <p>A list of configuration set attributes to return.</p>
     pub configuration_set_attribute_names:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationSetAttribute>>,
+}
+impl DescribeConfigurationSetInput {
+    /// <p>The name of the configuration set to describe.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>A list of configuration set attributes to return.</p>
+    pub fn configuration_set_attribute_names(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConfigurationSetAttribute]> {
+        self.configuration_set_attribute_names.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14045,6 +14850,12 @@ pub struct DeleteVerifiedEmailAddressInput {
     /// <p>An email address to be removed from the list of verified addresses.</p>
     pub email_address: std::option::Option<std::string::String>,
 }
+impl DeleteVerifiedEmailAddressInput {
+    /// <p>An email address to be removed from the list of verified addresses.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVerifiedEmailAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVerifiedEmailAddressInput");
@@ -14060,6 +14871,12 @@ impl std::fmt::Debug for DeleteVerifiedEmailAddressInput {
 pub struct DeleteTemplateInput {
     /// <p>The name of the template to be deleted.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl DeleteTemplateInput {
+    /// <p>The name of the template to be deleted.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14078,6 +14895,12 @@ impl std::fmt::Debug for DeleteTemplateInput {
 pub struct DeleteReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to delete.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
+}
+impl DeleteReceiptRuleSetInput {
+    /// <p>The name of the receipt rule set to delete.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReceiptRuleSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14098,6 +14921,16 @@ pub struct DeleteReceiptRuleInput {
     /// <p>The name of the receipt rule to delete.</p>
     pub rule_name: std::option::Option<std::string::String>,
 }
+impl DeleteReceiptRuleInput {
+    /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The name of the receipt rule to delete.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReceiptRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReceiptRuleInput");
@@ -14115,6 +14948,12 @@ impl std::fmt::Debug for DeleteReceiptRuleInput {
 pub struct DeleteReceiptFilterInput {
     /// <p>The name of the IP address filter to delete.</p>
     pub filter_name: std::option::Option<std::string::String>,
+}
+impl DeleteReceiptFilterInput {
+    /// <p>The name of the IP address filter to delete.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReceiptFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14140,6 +14979,20 @@ pub struct DeleteIdentityPolicyInput {
     /// <p>The name of the policy to be deleted.</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl DeleteIdentityPolicyInput {
+    /// <p>The identity that is associated with the policy that you want to delete. You can
+    /// specify the identity by using its name or by using its Amazon Resource Name (ARN).
+    /// Examples: <code>user@example.com</code>, <code>example.com</code>,
+    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>The name of the policy to be deleted.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIdentityPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIdentityPolicyInput");
@@ -14157,6 +15010,12 @@ pub struct DeleteIdentityInput {
     /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
     pub identity: std::option::Option<std::string::String>,
 }
+impl DeleteIdentityInput {
+    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIdentityInput");
@@ -14171,6 +15030,12 @@ impl std::fmt::Debug for DeleteIdentityInput {
 pub struct DeleteCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to delete.</p>
     pub template_name: std::option::Option<std::string::String>,
+}
+impl DeleteCustomVerificationEmailTemplateInput {
+    /// <p>The name of the custom verification email template that you want to delete.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14188,6 +15053,13 @@ pub struct DeleteConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set from which you want to delete the tracking
     /// options.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl DeleteConfigurationSetTrackingOptionsInput {
+    /// <p>The name of the configuration set from which you want to delete the tracking
+    /// options.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationSetTrackingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14210,6 +15082,16 @@ pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the event destination to delete.</p>
     pub event_destination_name: std::option::Option<std::string::String>,
 }
+impl DeleteConfigurationSetEventDestinationInput {
+    /// <p>The name of the configuration set from which to delete the event destination.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>The name of the event destination to delete.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
@@ -14229,6 +15111,12 @@ pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set to delete.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
+impl DeleteConfigurationSetInput {
+    /// <p>The name of the configuration set to delete.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetInput");
@@ -14245,6 +15133,13 @@ pub struct CreateTemplateInput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
     /// part.</p>
     pub template: std::option::Option<crate::model::Template>,
+}
+impl CreateTemplateInput {
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
+    /// part.</p>
+    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+        self.template.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14275,6 +15170,24 @@ pub struct CreateReceiptRuleSetInput {
     /// </ul>
     pub rule_set_name: std::option::Option<std::string::String>,
 }
+impl CreateReceiptRuleSetInput {
+    /// <p>The name of the rule set to create. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 64 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateReceiptRuleSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReceiptRuleSetInput");
@@ -14299,6 +15212,23 @@ pub struct CreateReceiptRuleInput {
     /// domains, enabled status, scan status, and TLS policy.</p>
     pub rule: std::option::Option<crate::model::ReceiptRule>,
 }
+impl CreateReceiptRuleInput {
+    /// <p>The name of the rule set that the receipt rule will be added to.</p>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The name of an existing rule after which the new rule will be placed. If this
+    /// parameter is null, the new rule will be inserted at the beginning of the rule
+    /// list.</p>
+    pub fn after(&self) -> std::option::Option<&str> {
+        self.after.as_deref()
+    }
+    /// <p>A data structure that contains the specified rule's name, actions, recipients,
+    /// domains, enabled status, scan status, and TLS policy.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::ReceiptRule> {
+        self.rule.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReceiptRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReceiptRuleInput");
@@ -14317,6 +15247,13 @@ pub struct CreateReceiptFilterInput {
     /// <p>A data structure that describes the IP address filter to create, which consists of a
     /// name, an IP address range, and whether to allow or block mail from it.</p>
     pub filter: std::option::Option<crate::model::ReceiptFilter>,
+}
+impl CreateReceiptFilterInput {
+    /// <p>A data structure that describes the IP address filter to create, which consists of a
+    /// name, an IP address range, and whether to allow or block mail from it.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ReceiptFilter> {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReceiptFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14348,6 +15285,37 @@ pub struct CreateCustomVerificationEmailTemplateInput {
     /// is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
+impl CreateCustomVerificationEmailTemplateInput {
+    /// <p>The name of the custom verification email template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The email address that the custom verification email is sent from.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The subject line of the custom verification email.</p>
+    pub fn template_subject(&self) -> std::option::Option<&str> {
+        self.template_subject.as_deref()
+    }
+    /// <p>The content of the custom verification email. The total size of the email must be less
+    /// than 10 MB. The message body may contain HTML, with some limitations. For more
+    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
+    /// Developer Guide</i>.</p>
+    pub fn template_content(&self) -> std::option::Option<&str> {
+        self.template_content.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is successfully verified.</p>
+    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+        self.success_redirection_url.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is not successfully verified.</p>
+    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+        self.failure_redirection_url.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomVerificationEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomVerificationEmailTemplateInput");
@@ -14376,6 +15344,21 @@ pub struct CreateConfigurationSetTrackingOptionsInput {
     /// Developer Guide</i>.</p>
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
 }
+impl CreateConfigurationSetTrackingOptionsInput {
+    /// <p>The name of the configuration set that the tracking options should be associated
+    /// with.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
+    /// domain captures open and click events generated by Amazon SES emails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+    /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
+    /// Developer Guide</i>.</p>
+    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+        self.tracking_options.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationSetTrackingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetTrackingOptionsInput");
@@ -14400,6 +15383,18 @@ pub struct CreateConfigurationSetEventDestinationInput {
     /// be published to.</p>
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
+impl CreateConfigurationSetEventDestinationInput {
+    /// <p>The name of the configuration set that the event destination should be associated
+    /// with.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>An object that describes the AWS service that email sending event information will
+    /// be published to.</p>
+    pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
+        self.event_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConfigurationSetEventDestinationInput");
@@ -14418,6 +15413,12 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
 pub struct CreateConfigurationSetInput {
     /// <p>A data structure that contains the name of the configuration set.</p>
     pub configuration_set: std::option::Option<crate::model::ConfigurationSet>,
+}
+impl CreateConfigurationSetInput {
+    /// <p>A data structure that contains the name of the configuration set.</p>
+    pub fn configuration_set(&self) -> std::option::Option<&crate::model::ConfigurationSet> {
+        self.configuration_set.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14448,6 +15449,28 @@ pub struct CloneReceiptRuleSetInput {
     pub rule_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule set to clone.</p>
     pub original_rule_set_name: std::option::Option<std::string::String>,
+}
+impl CloneReceiptRuleSetInput {
+    /// <p>The name of the rule set to create. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 64 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+        self.rule_set_name.as_deref()
+    }
+    /// <p>The name of the rule set to clone.</p>
+    pub fn original_rule_set_name(&self) -> std::option::Option<&str> {
+        self.original_rule_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CloneReceiptRuleSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

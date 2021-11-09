@@ -14,6 +14,28 @@ pub struct Type {
     /// <p>The type format: SDL or JSON.</p>
     pub format: std::option::Option<crate::model::TypeDefinitionFormat>,
 }
+impl Type {
+    /// <p>The type name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type definition.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
+        self.format.as_ref()
+    }
+}
 impl std::fmt::Debug for Type {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Type");
@@ -204,6 +226,63 @@ pub struct Resolver {
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
     pub caching_config: std::option::Option<crate::model::CachingConfig>,
+}
+impl Resolver {
+    /// <p>The resolver type name.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The resolver field name.</p>
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+    /// <p>The resolver data source name.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The resolver ARN.</p>
+    pub fn resolver_arn(&self) -> std::option::Option<&str> {
+        self.resolver_arn.as_deref()
+    }
+    /// <p>The request mapping template.</p>
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+        self.request_mapping_template.as_deref()
+    }
+    /// <p>The response mapping template.</p>
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+        self.response_mapping_template.as_deref()
+    }
+    /// <p>The resolver type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
+    /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
+    /// against a single data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
+    /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
+    /// You can use a pipeline resolver to execute a GraphQL query against multiple data
+    /// sources.</p>
+    /// </li>
+    /// </ul>
+    pub fn kind(&self) -> std::option::Option<&crate::model::ResolverKind> {
+        self.kind.as_ref()
+    }
+    /// <p>The <code>PipelineConfig</code>.</p>
+    pub fn pipeline_config(&self) -> std::option::Option<&crate::model::PipelineConfig> {
+        self.pipeline_config.as_ref()
+    }
+    /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
+    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+        self.sync_config.as_ref()
+    }
+    /// <p>The caching configuration for the resolver.</p>
+    pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
+        self.caching_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Resolver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -423,6 +502,19 @@ pub struct CachingConfig {
     /// <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
     pub caching_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CachingConfig {
+    /// <p>The TTL in seconds for a resolver that has caching enabled.</p>
+    /// <p>Valid values are between 1 and 3600 seconds.</p>
+    pub fn ttl(&self) -> i64 {
+        self.ttl
+    }
+    /// <p>The caching keys for a resolver that has caching enabled.</p>
+    /// <p>Valid values are entries from the <code>$context.arguments</code>,
+    /// <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
+    pub fn caching_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.caching_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for CachingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CachingConfig");
@@ -536,6 +628,53 @@ pub struct SyncConfig {
     /// Handler.</p>
     pub lambda_conflict_handler_config:
         std::option::Option<crate::model::LambdaConflictHandlerConfig>,
+}
+impl SyncConfig {
+    /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by
+    /// rejecting mutations when versions do not match the latest version at the
+    /// server.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AUTOMERGE</b>: Resolve conflicts with the
+    /// Automerge conflict resolution strategy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>LAMBDA</b>: Resolve conflicts with a Lambda
+    /// function supplied in the LambdaConflictHandlerConfig.</p>
+    /// </li>
+    /// </ul>
+    pub fn conflict_handler(&self) -> std::option::Option<&crate::model::ConflictHandlerType> {
+        self.conflict_handler.as_ref()
+    }
+    /// <p>The Conflict Detection strategy to use.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>VERSION</b>: Detect conflicts based on object
+    /// versions for this resolver.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>NONE</b>: Do not detect conflicts when executing
+    /// this resolver.</p>
+    /// </li>
+    /// </ul>
+    pub fn conflict_detection(&self) -> std::option::Option<&crate::model::ConflictDetectionType> {
+        self.conflict_detection.as_ref()
+    }
+    /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring LAMBDA as the Conflict
+    /// Handler.</p>
+    pub fn lambda_conflict_handler_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaConflictHandlerConfig> {
+        self.lambda_conflict_handler_config.as_ref()
+    }
 }
 impl std::fmt::Debug for SyncConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -689,6 +828,12 @@ impl SyncConfig {
 pub struct LambdaConflictHandlerConfig {
     /// <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
     pub lambda_conflict_handler_arn: std::option::Option<std::string::String>,
+}
+impl LambdaConflictHandlerConfig {
+    /// <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
+    pub fn lambda_conflict_handler_arn(&self) -> std::option::Option<&str> {
+        self.lambda_conflict_handler_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaConflictHandlerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -865,6 +1010,12 @@ pub struct PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
     pub functions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PipelineConfig {
+    /// <p>A list of <code>Function</code> objects.</p>
+    pub fn functions(&self) -> std::option::Option<&[std::string::String]> {
+        self.functions.as_deref()
+    }
+}
 impl std::fmt::Debug for PipelineConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipelineConfig");
@@ -1006,6 +1157,75 @@ pub struct GraphqlApi {
     pub waf_web_acl_arn: std::option::Option<std::string::String>,
     /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
+}
+impl GraphqlApi {
+    /// <p>The API name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The API ID.</p>
+    pub fn api_id(&self) -> std::option::Option<&str> {
+        self.api_id.as_deref()
+    }
+    /// <p>The authentication type.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The Amazon CloudWatch Logs configuration.</p>
+    pub fn log_config(&self) -> std::option::Option<&crate::model::LogConfig> {
+        self.log_config.as_ref()
+    }
+    /// <p>The Amazon Cognito user pool configuration.</p>
+    pub fn user_pool_config(&self) -> std::option::Option<&crate::model::UserPoolConfig> {
+        self.user_pool_config.as_ref()
+    }
+    /// <p>The OpenID Connect configuration.</p>
+    pub fn open_id_connect_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
+        self.open_id_connect_config.as_ref()
+    }
+    /// <p>The ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The URIs.</p>
+    pub fn uris(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.uris.as_ref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+    /// API.</p>
+    pub fn additional_authentication_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalAuthenticationProvider]> {
+        self.additional_authentication_providers.as_deref()
+    }
+    /// <p>A flag representing whether X-Ray tracing is enabled for this
+    /// <code>GraphqlApi</code>.</p>
+    pub fn xray_enabled(&self) -> bool {
+        self.xray_enabled
+    }
+    /// <p>The ARN of the WAF ACL associated with this <code>GraphqlApi</code>,
+    /// if one exists.</p>
+    pub fn waf_web_acl_arn(&self) -> std::option::Option<&str> {
+        self.waf_web_acl_arn.as_deref()
+    }
+    /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+    pub fn lambda_authorizer_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
+        self.lambda_authorizer_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GraphqlApi {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1310,6 +1530,33 @@ pub struct LambdaAuthorizerConfig {
     /// called.</p>
     pub identity_validation_expression: std::option::Option<std::string::String>,
 }
+impl LambdaAuthorizerConfig {
+    /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300
+    /// seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key
+    /// in its response. A value of 0 disables caching of responses.</p>
+    pub fn authorizer_result_ttl_in_seconds(&self) -> i32 {
+        self.authorizer_result_ttl_in_seconds
+    }
+    /// <p>The ARN of the Lambda function to be called for authorization. This may be a standard
+    /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p>
+    /// <p>
+    /// <i>Note</i>: This Lambda function must have the following resource-based
+    /// policy assigned to it. When configuring Lambda authorizers in the Console, this is done for
+    /// you. To do so with the Amazon Web Services CLI, run the following:</p>
+    /// <p>
+    /// <code>aws lambda add-permission --function-name
+    /// "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync"
+    /// --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+    /// </p>
+    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+        self.authorizer_uri.as_deref()
+    }
+    /// <p>A regular expression for validation of tokens before the Lambda function is
+    /// called.</p>
+    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+        self.identity_validation_expression.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaAuthorizerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaAuthorizerConfig");
@@ -1437,6 +1684,29 @@ pub struct AdditionalAuthenticationProvider {
     /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
     pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
+impl AdditionalAuthenticationProvider {
+    /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
+    /// pools, or Amazon Web Services Lambda.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The OpenID Connect configuration.</p>
+    pub fn open_id_connect_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
+        self.open_id_connect_config.as_ref()
+    }
+    /// <p>The Amazon Cognito user pool configuration.</p>
+    pub fn user_pool_config(&self) -> std::option::Option<&crate::model::CognitoUserPoolConfig> {
+        self.user_pool_config.as_ref()
+    }
+    /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+    pub fn lambda_authorizer_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
+        self.lambda_authorizer_config.as_ref()
+    }
+}
 impl std::fmt::Debug for AdditionalAuthenticationProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdditionalAuthenticationProvider");
@@ -1547,6 +1817,21 @@ pub struct CognitoUserPoolConfig {
     /// ID.</p>
     pub app_id_client_regex: std::option::Option<std::string::String>,
 }
+impl CognitoUserPoolConfig {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region in which the user pool was created.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client
+    /// ID.</p>
+    pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
+        self.app_id_client_regex.as_deref()
+    }
+}
 impl std::fmt::Debug for CognitoUserPoolConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CognitoUserPoolConfig");
@@ -1635,6 +1920,28 @@ pub struct OpenIdConnectConfig {
     pub iat_ttl: i64,
     /// <p>The number of milliseconds a token is valid after being authenticated.</p>
     pub auth_ttl: i64,
+}
+impl OpenIdConnectConfig {
+    /// <p>The issuer for the OpenID Connect configuration. The issuer returned by discovery must
+    /// exactly match the value of <code>iss</code> in the ID token.</p>
+    pub fn issuer(&self) -> std::option::Option<&str> {
+        self.issuer.as_deref()
+    }
+    /// <p>The client identifier of the Relying party at the OpenID identity provider. This
+    /// identifier is typically obtained when the Relying party is registered with the OpenID
+    /// identity provider. You can specify a regular expression so the AppSync can
+    /// validate against multiple client identifiers at a time.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The number of milliseconds a token is valid after being issued to a user.</p>
+    pub fn iat_ttl(&self) -> i64 {
+        self.iat_ttl
+    }
+    /// <p>The number of milliseconds a token is valid after being authenticated.</p>
+    pub fn auth_ttl(&self) -> i64 {
+        self.auth_ttl
+    }
 }
 impl std::fmt::Debug for OpenIdConnectConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1812,6 +2119,27 @@ pub struct UserPoolConfig {
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client
     /// ID.</p>
     pub app_id_client_regex: std::option::Option<std::string::String>,
+}
+impl UserPoolConfig {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region in which the user pool was created.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The action that you want your GraphQL API to take when a request that uses Amazon
+    /// Cognito user pool authentication doesn't match the Amazon Cognito user pool
+    /// configuration.</p>
+    pub fn default_action(&self) -> std::option::Option<&crate::model::DefaultAction> {
+        self.default_action.as_ref()
+    }
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client
+    /// ID.</p>
+    pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
+        self.app_id_client_regex.as_deref()
+    }
 }
 impl std::fmt::Debug for UserPoolConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2010,6 +2338,60 @@ pub struct LogConfig {
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and
     /// evaluated mapping templates, regardless of logging level.</p>
     pub exclude_verbose_content: bool,
+}
+impl LogConfig {
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>NONE</b>: No field-level logs are
+    /// captured.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ERROR</b>: Logs the following information only for
+    /// the fields that are in error:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The error section in the server response.</p>
+    /// </li>
+    /// <li>
+    /// <p>Field-level errors.</p>
+    /// </li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for error
+    /// fields.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ALL</b>: The following information is logged for
+    /// all fields in the query:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Field-level tracing information.</p>
+    /// </li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for each
+    /// field.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn field_log_level(&self) -> std::option::Option<&crate::model::FieldLogLevel> {
+        self.field_log_level.as_ref()
+    }
+    /// <p>The service role that AppSync will assume to publish to Amazon
+    /// CloudWatch logs in your account. </p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and
+    /// evaluated mapping templates, regardless of logging level.</p>
+    pub fn exclude_verbose_content(&self) -> bool {
+        self.exclude_verbose_content
+    }
 }
 impl std::fmt::Debug for LogConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2251,6 +2633,48 @@ pub struct FunctionConfiguration {
     /// be performed when the resolver is invoked.</p>
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
 }
+impl FunctionConfiguration {
+    /// <p>A unique ID representing the <code>Function</code> object.</p>
+    pub fn function_id(&self) -> std::option::Option<&str> {
+        self.function_id.as_deref()
+    }
+    /// <p>The ARN of the <code>Function</code> object.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The name of the <code>Function</code> object.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The <code>Function</code> description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the <code>DataSource</code>.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The <code>Function</code> request mapping template. Functions support only the
+    /// 2018-05-29 version of the request mapping template.</p>
+    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+        self.request_mapping_template.as_deref()
+    }
+    /// <p>The <code>Function</code> response mapping template.</p>
+    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+        self.response_mapping_template.as_deref()
+    }
+    /// <p>The version of the request mapping template. Currently only the 2018-05-29 version of
+    /// the template is supported.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
+    /// be performed when the resolver is invoked.</p>
+    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+        self.sync_config.as_ref()
+    }
+}
 impl std::fmt::Debug for FunctionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FunctionConfiguration");
@@ -2486,6 +2910,97 @@ pub struct DataSource {
     /// <p>Relational database settings.</p>
     pub relational_database_config:
         std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
+}
+impl DataSource {
+    /// <p>The data source ARN.</p>
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+        self.data_source_arn.as_deref()
+    }
+    /// <p>The name of the data source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the data source.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the data source.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AMAZON_DYNAMODB</b>: The data source is an Amazon
+    /// DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AMAZON_ELASTICSEARCH</b>: The data source is an
+    /// Amazon OpenSearch Service domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
+    /// an Amazon OpenSearch Service domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>NONE</b>: There is no data source. This type is
+    /// used when you wish to invoke a GraphQL operation without connecting to a data source,
+    /// such as performing data transformation with resolvers or triggering a subscription to
+    /// be invoked from a mutation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>HTTP</b>: The data source is an HTTP
+    /// endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>RELATIONAL_DATABASE</b>: The data source is a
+    /// relational database.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
+    /// role when accessing the data source.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>Amazon DynamoDB settings.</p>
+    pub fn dynamodb_config(&self) -> std::option::Option<&crate::model::DynamodbDataSourceConfig> {
+        self.dynamodb_config.as_ref()
+    }
+    /// <p>Amazon Web Services Lambda settings.</p>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaDataSourceConfig> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>Amazon OpenSearch Service settings.</p>
+    pub fn elasticsearch_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchDataSourceConfig> {
+        self.elasticsearch_config.as_ref()
+    }
+    /// <p>Amazon OpenSearch Service settings.</p>
+    pub fn open_search_service_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchServiceDataSourceConfig> {
+        self.open_search_service_config.as_ref()
+    }
+    /// <p>HTTP endpoint settings.</p>
+    pub fn http_config(&self) -> std::option::Option<&crate::model::HttpDataSourceConfig> {
+        self.http_config.as_ref()
+    }
+    /// <p>Relational database settings.</p>
+    pub fn relational_database_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalDatabaseDataSourceConfig> {
+        self.relational_database_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2798,6 +3313,27 @@ pub struct RelationalDatabaseDataSourceConfig {
     /// <p>Amazon RDS HTTP endpoint settings.</p>
     pub rds_http_endpoint_config: std::option::Option<crate::model::RdsHttpEndpointConfig>,
 }
+impl RelationalDatabaseDataSourceConfig {
+    /// <p>Source type for the relational database.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>RDS_HTTP_ENDPOINT</b>: The relational database
+    /// source type is an Amazon RDS HTTP endpoint.</p>
+    /// </li>
+    /// </ul>
+    pub fn relational_database_source_type(
+        &self,
+    ) -> std::option::Option<&crate::model::RelationalDatabaseSourceType> {
+        self.relational_database_source_type.as_ref()
+    }
+    /// <p>Amazon RDS HTTP endpoint settings.</p>
+    pub fn rds_http_endpoint_config(
+        &self,
+    ) -> std::option::Option<&crate::model::RdsHttpEndpointConfig> {
+        self.rds_http_endpoint_config.as_ref()
+    }
+}
 impl std::fmt::Debug for RelationalDatabaseDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RelationalDatabaseDataSourceConfig");
@@ -2897,6 +3433,28 @@ pub struct RdsHttpEndpointConfig {
     pub schema: std::option::Option<std::string::String>,
     /// <p>Amazon Web Services secret store ARN for database credentials.</p>
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
+}
+impl RdsHttpEndpointConfig {
+    /// <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>Amazon RDS cluster ARN.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>Logical database name.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Logical schema name.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>Amazon Web Services secret store ARN for database credentials.</p>
+    pub fn aws_secret_store_arn(&self) -> std::option::Option<&str> {
+        self.aws_secret_store_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RdsHttpEndpointConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3063,6 +3621,19 @@ pub struct HttpDataSourceConfig {
     /// <p>The authorization config in case the HTTP endpoint requires authorization.</p>
     pub authorization_config: std::option::Option<crate::model::AuthorizationConfig>,
 }
+impl HttpDataSourceConfig {
+    /// <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
+    /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified,
+    /// AppSync uses the default port 80 for the HTTP endpoint and port 443 for
+    /// HTTPS endpoints.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The authorization config in case the HTTP endpoint requires authorization.</p>
+    pub fn authorization_config(&self) -> std::option::Option<&crate::model::AuthorizationConfig> {
+        self.authorization_config.as_ref()
+    }
+}
 impl std::fmt::Debug for HttpDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpDataSourceConfig");
@@ -3141,6 +3712,23 @@ pub struct AuthorizationConfig {
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
     /// <p>The Identity and Access Management settings.</p>
     pub aws_iam_config: std::option::Option<crate::model::AwsIamConfig>,
+}
+impl AuthorizationConfig {
+    /// <p>The authorization type required by the HTTP endpoint.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>AWS_IAM</b>: The authorization type is
+    /// Sigv4.</p>
+    /// </li>
+    /// </ul>
+    pub fn authorization_type(&self) -> std::option::Option<&crate::model::AuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>The Identity and Access Management settings.</p>
+    pub fn aws_iam_config(&self) -> std::option::Option<&crate::model::AwsIamConfig> {
+        self.aws_iam_config.as_ref()
+    }
 }
 impl std::fmt::Debug for AuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3224,6 +3812,16 @@ pub struct AwsIamConfig {
     pub signing_region: std::option::Option<std::string::String>,
     /// <p>The signing service name for Identity and Access Management authorization.</p>
     pub signing_service_name: std::option::Option<std::string::String>,
+}
+impl AwsIamConfig {
+    /// <p>The signing region for Identity and Access Management authorization.</p>
+    pub fn signing_region(&self) -> std::option::Option<&str> {
+        self.signing_region.as_deref()
+    }
+    /// <p>The signing service name for Identity and Access Management authorization.</p>
+    pub fn signing_service_name(&self) -> std::option::Option<&str> {
+        self.signing_service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsIamConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3345,6 +3943,16 @@ pub struct OpenSearchServiceDataSourceConfig {
     /// <p>The Amazon Web Services Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl OpenSearchServiceDataSourceConfig {
+    /// <p>The endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for OpenSearchServiceDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpenSearchServiceDataSourceConfig");
@@ -3411,6 +4019,16 @@ pub struct ElasticsearchDataSourceConfig {
     /// <p>The Amazon Web Services Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl ElasticsearchDataSourceConfig {
+    /// <p>The endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for ElasticsearchDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ElasticsearchDataSourceConfig");
@@ -3472,6 +4090,12 @@ pub struct LambdaDataSourceConfig {
     /// <p>The ARN for the Lambda function.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
+impl LambdaDataSourceConfig {
+    /// <p>The ARN for the Lambda function.</p>
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+        self.lambda_function_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaDataSourceConfig");
@@ -3530,6 +4154,28 @@ pub struct DynamodbDataSourceConfig {
     pub delta_sync_config: std::option::Option<crate::model::DeltaSyncConfig>,
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
     pub versioned: bool,
+}
+impl DynamodbDataSourceConfig {
+    /// <p>The table name.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
+    pub fn use_caller_credentials(&self) -> bool {
+        self.use_caller_credentials
+    }
+    /// <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+    pub fn delta_sync_config(&self) -> std::option::Option<&crate::model::DeltaSyncConfig> {
+        self.delta_sync_config.as_ref()
+    }
+    /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
+    pub fn versioned(&self) -> bool {
+        self.versioned
+    }
 }
 impl std::fmt::Debug for DynamodbDataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3637,6 +4283,20 @@ pub struct DeltaSyncConfig {
     pub delta_sync_table_name: std::option::Option<std::string::String>,
     /// <p>The number of minutes a Delta Sync log entry is stored in the Delta Sync table.</p>
     pub delta_sync_table_ttl: i64,
+}
+impl DeltaSyncConfig {
+    /// <p>The number of minutes an Item is stored in the datasource.</p>
+    pub fn base_table_ttl(&self) -> i64 {
+        self.base_table_ttl
+    }
+    /// <p>The Delta Sync table name.</p>
+    pub fn delta_sync_table_name(&self) -> std::option::Option<&str> {
+        self.delta_sync_table_name.as_deref()
+    }
+    /// <p>The number of minutes a Delta Sync log entry is stored in the Delta Sync table.</p>
+    pub fn delta_sync_table_ttl(&self) -> i64 {
+        self.delta_sync_table_ttl
+    }
 }
 impl std::fmt::Debug for DeltaSyncConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3873,6 +4533,26 @@ pub struct ApiKey {
     /// the epoch, rounded down to the nearest hour.</p>
     pub deletes: i64,
 }
+impl ApiKey {
+    /// <p>The API key ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time after which the API key expires. The date is represented as seconds since the
+    /// epoch, rounded down to the nearest hour.</p>
+    pub fn expires(&self) -> i64 {
+        self.expires
+    }
+    /// <p>The time after which the API key is deleted. The date is represented as seconds since
+    /// the epoch, rounded down to the nearest hour.</p>
+    pub fn deletes(&self) -> i64 {
+        self.deletes
+    }
+}
 impl std::fmt::Debug for ApiKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApiKey");
@@ -4087,6 +4767,146 @@ pub struct ApiCache {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ApiCacheStatus>,
+}
+impl ApiCache {
+    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>Valid values are between 1 and 3600 seconds.</p>
+    pub fn ttl(&self) -> i64 {
+        self.ttl
+    }
+    /// <p>Caching behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
+    /// cached.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
+    /// that you specify are cached.</p>
+    /// </li>
+    /// </ul>
+    pub fn api_caching_behavior(&self) -> std::option::Option<&crate::model::ApiCachingBehavior> {
+        self.api_caching_behavior.as_ref()
+    }
+    /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
+    /// creation.</p>
+    pub fn transit_encryption_enabled(&self) -> bool {
+        self.transit_encryption_enabled
+    }
+    /// <p>At rest encryption flag for cache. This setting cannot be updated after creation.</p>
+    pub fn at_rest_encryption_enabled(&self) -> bool {
+        self.at_rest_encryption_enabled
+    }
+    /// <p>The cache instance type. Valid values are </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMALL</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MEDIUM</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>XLARGE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_2X</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_4X</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_8X</code> (not available in all regions)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LARGE_12X</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>T2_SMALL</b>: A t2.small instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_LARGE</b>: A r4.large instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ApiCacheType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The cache instance status.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>AVAILABLE</b>: The instance is available for
+    /// use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CREATING</b>: The instance is currently
+    /// creating.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DELETING</b>: The instance is currently
+    /// deleting.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>MODIFYING</b>: The instance is currently
+    /// modifying.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>FAILED</b>: The instance has failed
+    /// creation.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ApiCacheStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for ApiCache {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

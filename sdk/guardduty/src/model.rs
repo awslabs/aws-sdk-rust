@@ -9,6 +9,16 @@ pub struct DestinationProperties {
     /// <p>The ARN of the KMS key to use for encryption.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
+impl DestinationProperties {
+    /// <p>The ARN of the resource to publish to.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>The ARN of the KMS key to use for encryption.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DestinationProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationProperties");
@@ -75,6 +85,13 @@ pub struct OrganizationDataSourceConfigurations {
     /// organization.</p>
     pub s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfiguration>,
 }
+impl OrganizationDataSourceConfigurations {
+    /// <p>Describes whether S3 data event logs are enabled for new members of the
+    /// organization.</p>
+    pub fn s3_logs(&self) -> std::option::Option<&crate::model::OrganizationS3LogsConfiguration> {
+        self.s3_logs.as_ref()
+    }
+}
 impl std::fmt::Debug for OrganizationDataSourceConfigurations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationDataSourceConfigurations");
@@ -130,6 +147,13 @@ pub struct OrganizationS3LogsConfiguration {
     /// automatically as a data source for the organization.</p>
     pub auto_enable: bool,
 }
+impl OrganizationS3LogsConfiguration {
+    /// <p>A value that contains information on whether S3 data event logs will be enabled
+    /// automatically as a data source for the organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+}
 impl std::fmt::Debug for OrganizationS3LogsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationS3LogsConfiguration");
@@ -181,6 +205,16 @@ pub struct UnprocessedAccount {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>A reason why the account hasn't been processed.</p>
     pub result: std::option::Option<std::string::String>,
+}
+impl UnprocessedAccount {
+    /// <p>The AWS account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>A reason why the account hasn't been processed.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
 }
 impl std::fmt::Debug for UnprocessedAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -243,6 +277,12 @@ pub struct DataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
     pub s3_logs: std::option::Option<crate::model::S3LogsConfiguration>,
 }
+impl DataSourceConfigurations {
+    /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3LogsConfiguration> {
+        self.s3_logs.as_ref()
+    }
+}
 impl std::fmt::Debug for DataSourceConfigurations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceConfigurations");
@@ -293,6 +333,12 @@ impl DataSourceConfigurations {
 pub struct S3LogsConfiguration {
     /// <p> The status of S3 data event logs as a data source.</p>
     pub enable: bool,
+}
+impl S3LogsConfiguration {
+    /// <p> The status of S3 data event logs as a data source.</p>
+    pub fn enable(&self) -> bool {
+        self.enable
+    }
 }
 impl std::fmt::Debug for S3LogsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -400,6 +446,16 @@ pub struct FindingCriteria {
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
 }
+impl FindingCriteria {
+    /// <p>Represents a map of finding properties that match specified conditions and values when
+    /// querying findings.</p>
+    pub fn criterion(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Condition>>
+    {
+        self.criterion.as_ref()
+    }
+}
 impl std::fmt::Debug for FindingCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FindingCriteria");
@@ -502,6 +558,70 @@ pub struct Condition {
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single
     /// field when querying for findings.</p>
     pub less_than_or_equal: i64,
+}
+impl Condition {
+    /// <p>Represents the <i>equal</i> condition to be applied to a single field when
+    /// querying for findings.</p>
+    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
+        self.eq.as_deref()
+    }
+    /// <p>Represents the <i>not equal</i> condition to be applied to a single field
+    /// when querying for findings.</p>
+    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
+        self.neq.as_deref()
+    }
+    /// <p>Represents a <i>greater than</i> condition to be applied to a single field
+    /// when querying for findings.</p>
+    pub fn gt(&self) -> i32 {
+        self.gt
+    }
+    /// <p>Represents a <i>greater than or equal</i> condition to be applied to a
+    /// single field when querying for findings.</p>
+    pub fn gte(&self) -> i32 {
+        self.gte
+    }
+    /// <p>Represents a <i>less than</i> condition to be applied to a single field when
+    /// querying for findings.</p>
+    pub fn lt(&self) -> i32 {
+        self.lt
+    }
+    /// <p>Represents a <i>less than or equal</i> condition to be applied to a single
+    /// field when querying for findings.</p>
+    pub fn lte(&self) -> i32 {
+        self.lte
+    }
+    /// <p>Represents an <i>equal</i>
+    /// <b></b> condition to be applied to
+    /// a single field when querying for findings.</p>
+    pub fn equals(&self) -> std::option::Option<&[std::string::String]> {
+        self.equals.as_deref()
+    }
+    /// <p>Represents a <i>not equal</i>
+    /// <b></b> condition to be applied
+    /// to a single field when querying for findings.</p>
+    pub fn not_equals(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_equals.as_deref()
+    }
+    /// <p>Represents a <i>greater than</i> condition to be applied to a single field
+    /// when querying for findings.</p>
+    pub fn greater_than(&self) -> i64 {
+        self.greater_than
+    }
+    /// <p>Represents a <i>greater than or equal</i> condition to be applied to a
+    /// single field when querying for findings.</p>
+    pub fn greater_than_or_equal(&self) -> i64 {
+        self.greater_than_or_equal
+    }
+    /// <p>Represents a <i>less than</i> condition to be applied to a single field when
+    /// querying for findings.</p>
+    pub fn less_than(&self) -> i64 {
+        self.less_than
+    }
+    /// <p>Represents a <i>less than or equal</i> condition to be applied to a single
+    /// field when querying for findings.</p>
+    pub fn less_than_or_equal(&self) -> i64 {
+        self.less_than_or_equal
+    }
 }
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -878,6 +998,21 @@ pub struct Destination {
     /// <p>The status of the publishing destination.</p>
     pub status: std::option::Option<crate::model::PublishingStatus>,
 }
+impl Destination {
+    /// <p>The unique ID of the publishing destination.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+    /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3
+    /// buckets are supported.</p>
+    pub fn destination_type(&self) -> std::option::Option<&crate::model::DestinationType> {
+        self.destination_type.as_ref()
+    }
+    /// <p>The status of the publishing destination.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PublishingStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Destination");
@@ -1089,6 +1224,16 @@ pub struct AdminAccount {
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
     pub admin_status: std::option::Option<crate::model::AdminStatus>,
 }
+impl AdminAccount {
+    /// <p>The AWS account ID for the account.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+    /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
+    pub fn admin_status(&self) -> std::option::Option<&crate::model::AdminStatus> {
+        self.admin_status.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminAccount");
@@ -1222,6 +1367,36 @@ pub struct Member {
     pub invited_at: std::option::Option<std::string::String>,
     /// <p>The last-updated timestamp of the member.</p>
     pub updated_at: std::option::Option<std::string::String>,
+}
+impl Member {
+    /// <p>The ID of the member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The detector ID of the member account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The administrator account ID.</p>
+    pub fn master_id(&self) -> std::option::Option<&str> {
+        self.master_id.as_deref()
+    }
+    /// <p>The email address of the member account.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The status of the relationship between the member and the administrator.</p>
+    pub fn relationship_status(&self) -> std::option::Option<&str> {
+        self.relationship_status.as_deref()
+    }
+    /// <p>The timestamp when the invitation was sent.</p>
+    pub fn invited_at(&self) -> std::option::Option<&str> {
+        self.invited_at.as_deref()
+    }
+    /// <p>The last-updated timestamp of the member.</p>
+    pub fn updated_at(&self) -> std::option::Option<&str> {
+        self.updated_at.as_deref()
+    }
 }
 impl std::fmt::Debug for Member {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1359,6 +1534,25 @@ pub struct Invitation {
     /// <p>The timestamp when the invitation was sent.</p>
     pub invited_at: std::option::Option<std::string::String>,
 }
+impl Invitation {
+    /// <p>The ID of the account that the invitation was sent from.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ID of the invitation. This value is used to validate the inviter account to the member
+    /// account.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+    /// <p>The status of the relationship between the inviter and invitee accounts.</p>
+    pub fn relationship_status(&self) -> std::option::Option<&str> {
+        self.relationship_status.as_deref()
+    }
+    /// <p>The timestamp when the invitation was sent.</p>
+    pub fn invited_at(&self) -> std::option::Option<&str> {
+        self.invited_at.as_deref()
+    }
+}
 impl std::fmt::Debug for Invitation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Invitation");
@@ -1455,6 +1649,16 @@ pub struct SortCriteria {
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The order by which the sorted findings are to be displayed.</p>
     pub order_by: std::option::Option<crate::model::OrderBy>,
+}
+impl SortCriteria {
+    /// <p>Represents the finding attribute (for example, accountId) to sort findings by.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The order by which the sorted findings are to be displayed.</p>
+    pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
+        self.order_by.as_ref()
+    }
 }
 impl std::fmt::Debug for SortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1582,6 +1786,27 @@ pub struct UsageStatistics {
     /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from
     /// most to least expensive.</p>
     pub top_resources: std::option::Option<std::vec::Vec<crate::model::UsageResourceResult>>,
+}
+impl UsageStatistics {
+    /// <p>The usage statistic sum organized by account ID.</p>
+    pub fn sum_by_account(&self) -> std::option::Option<&[crate::model::UsageAccountResult]> {
+        self.sum_by_account.as_deref()
+    }
+    /// <p>The usage statistic sum organized by on data source.</p>
+    pub fn sum_by_data_source(
+        &self,
+    ) -> std::option::Option<&[crate::model::UsageDataSourceResult]> {
+        self.sum_by_data_source.as_deref()
+    }
+    /// <p>The usage statistic sum organized by resource.</p>
+    pub fn sum_by_resource(&self) -> std::option::Option<&[crate::model::UsageResourceResult]> {
+        self.sum_by_resource.as_deref()
+    }
+    /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from
+    /// most to least expensive.</p>
+    pub fn top_resources(&self) -> std::option::Option<&[crate::model::UsageResourceResult]> {
+        self.top_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for UsageStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1726,6 +1951,16 @@ pub struct UsageResourceResult {
     /// <p>Represents the sum total of usage for the specified resource type.</p>
     pub total: std::option::Option<crate::model::Total>,
 }
+impl UsageResourceResult {
+    /// <p>The AWS resource that generated usage.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>Represents the sum total of usage for the specified resource type.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::Total> {
+        self.total.as_ref()
+    }
+}
 impl std::fmt::Debug for UsageResourceResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsageResourceResult");
@@ -1789,6 +2024,16 @@ pub struct Total {
     /// <p>The currency unit that the amount is given in.</p>
     pub unit: std::option::Option<std::string::String>,
 }
+impl Total {
+    /// <p>The total usage.</p>
+    pub fn amount(&self) -> std::option::Option<&str> {
+        self.amount.as_deref()
+    }
+    /// <p>The currency unit that the amount is given in.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
 impl std::fmt::Debug for Total {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Total");
@@ -1851,6 +2096,16 @@ pub struct UsageDataSourceResult {
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>Represents the total of usage for the specified data source.</p>
     pub total: std::option::Option<crate::model::Total>,
+}
+impl UsageDataSourceResult {
+    /// <p>The data source type that generated usage.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>Represents the total of usage for the specified data source.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::Total> {
+        self.total.as_ref()
+    }
 }
 impl std::fmt::Debug for UsageDataSourceResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1981,6 +2236,16 @@ pub struct UsageAccountResult {
     /// <p>Represents the total of usage for the Account ID.</p>
     pub total: std::option::Option<crate::model::Total>,
 }
+impl UsageAccountResult {
+    /// <p>The Account ID that generated usage.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Represents the total of usage for the Account ID.</p>
+    pub fn total(&self) -> std::option::Option<&crate::model::Total> {
+        self.total.as_ref()
+    }
+}
 impl std::fmt::Debug for UsageAccountResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsageAccountResult");
@@ -2046,6 +2311,21 @@ pub struct UsageCriteria {
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource
     /// names.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UsageCriteria {
+    /// <p>The account IDs to aggregate usage statistics from.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The data sources to aggregate usage statistics from.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>The resources to aggregate usage statistics from. Only accepts exact resource
+    /// names.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for UsageCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2381,6 +2661,18 @@ pub struct MemberDataSourceConfiguration {
     /// <p>Contains information on the status of data sources for the account.</p>
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurationsResult>,
 }
+impl MemberDataSourceConfiguration {
+    /// <p>The account ID for the member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Contains information on the status of data sources for the account.</p>
+    pub fn data_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceConfigurationsResult> {
+        self.data_sources.as_ref()
+    }
+}
 impl std::fmt::Debug for MemberDataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MemberDataSourceConfiguration");
@@ -2452,6 +2744,26 @@ pub struct DataSourceConfigurationsResult {
     /// <p>An object that contains information on the status of S3 Data event logs as a data
     /// source.</p>
     pub s3_logs: std::option::Option<crate::model::S3LogsConfigurationResult>,
+}
+impl DataSourceConfigurationsResult {
+    /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
+    pub fn cloud_trail(&self) -> std::option::Option<&crate::model::CloudTrailConfigurationResult> {
+        self.cloud_trail.as_ref()
+    }
+    /// <p>An object that contains information on the status of DNS logs as a data source.</p>
+    pub fn dns_logs(&self) -> std::option::Option<&crate::model::DnsLogsConfigurationResult> {
+        self.dns_logs.as_ref()
+    }
+    /// <p>An object that contains information on the status of VPC flow logs as a data
+    /// source.</p>
+    pub fn flow_logs(&self) -> std::option::Option<&crate::model::FlowLogsConfigurationResult> {
+        self.flow_logs.as_ref()
+    }
+    /// <p>An object that contains information on the status of S3 Data event logs as a data
+    /// source.</p>
+    pub fn s3_logs(&self) -> std::option::Option<&crate::model::S3LogsConfigurationResult> {
+        self.s3_logs.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfigurationsResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2556,6 +2868,13 @@ pub struct S3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new
     /// members of the organization.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
+}
+impl S3LogsConfigurationResult {
+    /// <p>A value that describes whether S3 data event logs are automatically enabled for new
+    /// members of the organization.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for S3LogsConfigurationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2665,6 +2984,12 @@ pub struct FlowLogsConfigurationResult {
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
+impl FlowLogsConfigurationResult {
+    /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for FlowLogsConfigurationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FlowLogsConfigurationResult");
@@ -2716,6 +3041,12 @@ pub struct DnsLogsConfigurationResult {
     /// <p>Denotes whether DNS logs is enabled as a data source.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
 }
+impl DnsLogsConfigurationResult {
+    /// <p>Denotes whether DNS logs is enabled as a data source.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DnsLogsConfigurationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DnsLogsConfigurationResult");
@@ -2766,6 +3097,12 @@ impl DnsLogsConfigurationResult {
 pub struct CloudTrailConfigurationResult {
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
+}
+impl CloudTrailConfigurationResult {
+    /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CloudTrailConfigurationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2823,6 +3160,24 @@ pub struct Master {
     pub relationship_status: std::option::Option<std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
     pub invited_at: std::option::Option<std::string::String>,
+}
+impl Master {
+    /// <p>The ID of the account used as the administrator account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The value used to validate the administrator account to the member account.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+    /// <p>The status of the relationship between the administrator and member accounts.</p>
+    pub fn relationship_status(&self) -> std::option::Option<&str> {
+        self.relationship_status.as_deref()
+    }
+    /// <p>The timestamp when the invitation was sent.</p>
+    pub fn invited_at(&self) -> std::option::Option<&str> {
+        self.invited_at.as_deref()
+    }
 }
 impl std::fmt::Debug for Master {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3078,6 +3433,14 @@ pub struct FindingStatistics {
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
     pub count_by_severity: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
+impl FindingStatistics {
+    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    pub fn count_by_severity(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+        self.count_by_severity.as_ref()
+    }
+}
 impl std::fmt::Debug for FindingStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FindingStatistics");
@@ -3220,6 +3583,69 @@ pub struct Finding {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The time and date when the finding was last updated.</p>
     pub updated_at: std::option::Option<std::string::String>,
+}
+impl Finding {
+    /// <p>The ID of the account in which the finding was generated.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ARN of the finding.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The confidence score for the finding.</p>
+    pub fn confidence(&self) -> f64 {
+        self.confidence
+    }
+    /// <p>The time and date when the finding was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// <p>The description of the finding.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the finding.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The partition associated with the finding.</p>
+    pub fn partition(&self) -> std::option::Option<&str> {
+        self.partition.as_deref()
+    }
+    /// <p>The Region where the finding was generated.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Contains information about the AWS resource associated with the activity that prompted
+    /// GuardDuty to generate a finding.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The version of the schema used for the finding.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>Contains additional information about the generated finding.</p>
+    pub fn service(&self) -> std::option::Option<&crate::model::Service> {
+        self.service.as_ref()
+    }
+    /// <p>The severity of the finding.</p>
+    pub fn severity(&self) -> f64 {
+        self.severity
+    }
+    /// <p>The title of the finding.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The type of finding.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The time and date when the finding was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&str> {
+        self.updated_at.as_deref()
+    }
 }
 impl std::fmt::Debug for Finding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3476,6 +3902,50 @@ pub struct Service {
     /// <p>Feedback that was submitted about the finding.</p>
     pub user_feedback: std::option::Option<std::string::String>,
 }
+impl Service {
+    /// <p>Information about the activity that is described in a finding.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>An evidence object associated with the service.</p>
+    pub fn evidence(&self) -> std::option::Option<&crate::model::Evidence> {
+        self.evidence.as_ref()
+    }
+    /// <p>Indicates whether this finding is archived.</p>
+    pub fn archived(&self) -> bool {
+        self.archived
+    }
+    /// <p>The total count of the occurrences of this finding type.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// <p>The detector ID for the GuardDuty service.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this
+    /// finding.</p>
+    pub fn event_first_seen(&self) -> std::option::Option<&str> {
+        self.event_first_seen.as_deref()
+    }
+    /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this
+    /// finding.</p>
+    pub fn event_last_seen(&self) -> std::option::Option<&str> {
+        self.event_last_seen.as_deref()
+    }
+    /// <p>The resource role information for this finding.</p>
+    pub fn resource_role(&self) -> std::option::Option<&str> {
+        self.resource_role.as_deref()
+    }
+    /// <p>The name of the AWS service (GuardDuty) that generated a finding.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>Feedback that was submitted about the finding.</p>
+    pub fn user_feedback(&self) -> std::option::Option<&str> {
+        self.user_feedback.as_deref()
+    }
+}
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
@@ -3658,6 +4128,14 @@ pub struct Evidence {
     pub threat_intelligence_details:
         std::option::Option<std::vec::Vec<crate::model::ThreatIntelligenceDetail>>,
 }
+impl Evidence {
+    /// <p>A list of threat intelligence details related to the evidence.</p>
+    pub fn threat_intelligence_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ThreatIntelligenceDetail]> {
+        self.threat_intelligence_details.as_deref()
+    }
+}
 impl std::fmt::Debug for Evidence {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Evidence");
@@ -3725,6 +4203,17 @@ pub struct ThreatIntelligenceDetail {
     /// <p>A list of names of the threats in the threat intelligence list that triggered the
     /// finding.</p>
     pub threat_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ThreatIntelligenceDetail {
+    /// <p>The name of the threat intelligence list that triggered the finding.</p>
+    pub fn threat_list_name(&self) -> std::option::Option<&str> {
+        self.threat_list_name.as_deref()
+    }
+    /// <p>A list of names of the threats in the threat intelligence list that triggered the
+    /// finding.</p>
+    pub fn threat_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.threat_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ThreatIntelligenceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3808,6 +4297,30 @@ pub struct Action {
     pub network_connection_action: std::option::Option<crate::model::NetworkConnectionAction>,
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
     pub port_probe_action: std::option::Option<crate::model::PortProbeAction>,
+}
+impl Action {
+    /// <p>The GuardDuty finding activity type.</p>
+    pub fn action_type(&self) -> std::option::Option<&str> {
+        self.action_type.as_deref()
+    }
+    /// <p>Information about the AWS_API_CALL action described in this finding.</p>
+    pub fn aws_api_call_action(&self) -> std::option::Option<&crate::model::AwsApiCallAction> {
+        self.aws_api_call_action.as_ref()
+    }
+    /// <p>Information about the DNS_REQUEST action described in this finding.</p>
+    pub fn dns_request_action(&self) -> std::option::Option<&crate::model::DnsRequestAction> {
+        self.dns_request_action.as_ref()
+    }
+    /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
+    pub fn network_connection_action(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConnectionAction> {
+        self.network_connection_action.as_ref()
+    }
+    /// <p>Information about the PORT_PROBE action described in this finding.</p>
+    pub fn port_probe_action(&self) -> std::option::Option<&crate::model::PortProbeAction> {
+        self.port_probe_action.as_ref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3927,6 +4440,16 @@ pub struct PortProbeAction {
     /// <p>A list of objects related to port probe details.</p>
     pub port_probe_details: std::option::Option<std::vec::Vec<crate::model::PortProbeDetail>>,
 }
+impl PortProbeAction {
+    /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
+    pub fn blocked(&self) -> bool {
+        self.blocked
+    }
+    /// <p>A list of objects related to port probe details.</p>
+    pub fn port_probe_details(&self) -> std::option::Option<&[crate::model::PortProbeDetail]> {
+        self.port_probe_details.as_deref()
+    }
+}
 impl std::fmt::Debug for PortProbeAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortProbeAction");
@@ -4004,6 +4527,20 @@ pub struct PortProbeDetail {
     pub local_ip_details: std::option::Option<crate::model::LocalIpDetails>,
     /// <p>The remote IP information of the connection.</p>
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
+}
+impl PortProbeDetail {
+    /// <p>The local port information of the connection.</p>
+    pub fn local_port_details(&self) -> std::option::Option<&crate::model::LocalPortDetails> {
+        self.local_port_details.as_ref()
+    }
+    /// <p>The local IP information of the connection.</p>
+    pub fn local_ip_details(&self) -> std::option::Option<&crate::model::LocalIpDetails> {
+        self.local_ip_details.as_ref()
+    }
+    /// <p>The remote IP information of the connection.</p>
+    pub fn remote_ip_details(&self) -> std::option::Option<&crate::model::RemoteIpDetails> {
+        self.remote_ip_details.as_ref()
+    }
 }
 impl std::fmt::Debug for PortProbeDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4095,6 +4632,28 @@ pub struct RemoteIpDetails {
     pub ip_address_v4: std::option::Option<std::string::String>,
     /// <p>The ISP organization information of the remote IP address.</p>
     pub organization: std::option::Option<crate::model::Organization>,
+}
+impl RemoteIpDetails {
+    /// <p>The city information of the remote IP address.</p>
+    pub fn city(&self) -> std::option::Option<&crate::model::City> {
+        self.city.as_ref()
+    }
+    /// <p>The country code of the remote IP address.</p>
+    pub fn country(&self) -> std::option::Option<&crate::model::Country> {
+        self.country.as_ref()
+    }
+    /// <p>The location information of the remote IP address.</p>
+    pub fn geo_location(&self) -> std::option::Option<&crate::model::GeoLocation> {
+        self.geo_location.as_ref()
+    }
+    /// <p>The IPv4 remote address of the connection.</p>
+    pub fn ip_address_v4(&self) -> std::option::Option<&str> {
+        self.ip_address_v4.as_deref()
+    }
+    /// <p>The ISP organization information of the remote IP address.</p>
+    pub fn organization(&self) -> std::option::Option<&crate::model::Organization> {
+        self.organization.as_ref()
+    }
 }
 impl std::fmt::Debug for RemoteIpDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4212,6 +4771,25 @@ pub struct Organization {
     /// <p>The name of the internet provider.</p>
     pub org: std::option::Option<std::string::String>,
 }
+impl Organization {
+    /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP
+    /// address.</p>
+    pub fn asn(&self) -> std::option::Option<&str> {
+        self.asn.as_deref()
+    }
+    /// <p>The organization that registered this ASN.</p>
+    pub fn asn_org(&self) -> std::option::Option<&str> {
+        self.asn_org.as_deref()
+    }
+    /// <p>The ISP information for the internet provider.</p>
+    pub fn isp(&self) -> std::option::Option<&str> {
+        self.isp.as_deref()
+    }
+    /// <p>The name of the internet provider.</p>
+    pub fn org(&self) -> std::option::Option<&str> {
+        self.org.as_deref()
+    }
+}
 impl std::fmt::Debug for Organization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Organization");
@@ -4303,6 +4881,16 @@ pub struct GeoLocation {
     /// <p>The longitude information of the remote IP address.</p>
     pub lon: f64,
 }
+impl GeoLocation {
+    /// <p>The latitude information of the remote IP address.</p>
+    pub fn lat(&self) -> f64 {
+        self.lat
+    }
+    /// <p>The longitude information of the remote IP address.</p>
+    pub fn lon(&self) -> f64 {
+        self.lon
+    }
+}
 impl std::fmt::Debug for GeoLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeoLocation");
@@ -4366,6 +4954,16 @@ pub struct Country {
     /// <p>The country name of the remote IP address.</p>
     pub country_name: std::option::Option<std::string::String>,
 }
+impl Country {
+    /// <p>The country code of the remote IP address.</p>
+    pub fn country_code(&self) -> std::option::Option<&str> {
+        self.country_code.as_deref()
+    }
+    /// <p>The country name of the remote IP address.</p>
+    pub fn country_name(&self) -> std::option::Option<&str> {
+        self.country_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Country {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Country");
@@ -4427,6 +5025,12 @@ pub struct City {
     /// <p>The city name of the remote IP address.</p>
     pub city_name: std::option::Option<std::string::String>,
 }
+impl City {
+    /// <p>The city name of the remote IP address.</p>
+    pub fn city_name(&self) -> std::option::Option<&str> {
+        self.city_name.as_deref()
+    }
+}
 impl std::fmt::Debug for City {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("City");
@@ -4474,6 +5078,12 @@ impl City {
 pub struct LocalIpDetails {
     /// <p>The IPv4 local address of the connection.</p>
     pub ip_address_v4: std::option::Option<std::string::String>,
+}
+impl LocalIpDetails {
+    /// <p>The IPv4 local address of the connection.</p>
+    pub fn ip_address_v4(&self) -> std::option::Option<&str> {
+        self.ip_address_v4.as_deref()
+    }
 }
 impl std::fmt::Debug for LocalIpDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4527,6 +5137,16 @@ pub struct LocalPortDetails {
     pub port: i32,
     /// <p>The port name of the local connection.</p>
     pub port_name: std::option::Option<std::string::String>,
+}
+impl LocalPortDetails {
+    /// <p>The port number of the local connection.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The port name of the local connection.</p>
+    pub fn port_name(&self) -> std::option::Option<&str> {
+        self.port_name.as_deref()
+    }
 }
 impl std::fmt::Debug for LocalPortDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4600,6 +5220,36 @@ pub struct NetworkConnectionAction {
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
     /// <p>The remote port information of the connection.</p>
     pub remote_port_details: std::option::Option<crate::model::RemotePortDetails>,
+}
+impl NetworkConnectionAction {
+    /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
+    pub fn blocked(&self) -> bool {
+        self.blocked
+    }
+    /// <p>The network connection direction.</p>
+    pub fn connection_direction(&self) -> std::option::Option<&str> {
+        self.connection_direction.as_deref()
+    }
+    /// <p>The local port information of the connection.</p>
+    pub fn local_port_details(&self) -> std::option::Option<&crate::model::LocalPortDetails> {
+        self.local_port_details.as_ref()
+    }
+    /// <p>The network connection protocol.</p>
+    pub fn protocol(&self) -> std::option::Option<&str> {
+        self.protocol.as_deref()
+    }
+    /// <p>The local IP information of the connection.</p>
+    pub fn local_ip_details(&self) -> std::option::Option<&crate::model::LocalIpDetails> {
+        self.local_ip_details.as_ref()
+    }
+    /// <p>The remote IP information of the connection.</p>
+    pub fn remote_ip_details(&self) -> std::option::Option<&crate::model::RemoteIpDetails> {
+        self.remote_ip_details.as_ref()
+    }
+    /// <p>The remote port information of the connection.</p>
+    pub fn remote_port_details(&self) -> std::option::Option<&crate::model::RemotePortDetails> {
+        self.remote_port_details.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkConnectionAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4744,6 +5394,16 @@ pub struct RemotePortDetails {
     /// <p>The port name of the remote connection.</p>
     pub port_name: std::option::Option<std::string::String>,
 }
+impl RemotePortDetails {
+    /// <p>The port number of the remote connection.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The port name of the remote connection.</p>
+    pub fn port_name(&self) -> std::option::Option<&str> {
+        self.port_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RemotePortDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemotePortDetails");
@@ -4805,6 +5465,12 @@ pub struct DnsRequestAction {
     /// <p>The domain information for the API request.</p>
     pub domain: std::option::Option<std::string::String>,
 }
+impl DnsRequestAction {
+    /// <p>The domain information for the API request.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+}
 impl std::fmt::Debug for DnsRequestAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DnsRequestAction");
@@ -4862,6 +5528,32 @@ pub struct AwsApiCallAction {
     pub remote_ip_details: std::option::Option<crate::model::RemoteIpDetails>,
     /// <p>The AWS service name whose API was invoked.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl AwsApiCallAction {
+    /// <p>The AWS API name.</p>
+    pub fn api(&self) -> std::option::Option<&str> {
+        self.api.as_deref()
+    }
+    /// <p>The AWS API caller type.</p>
+    pub fn caller_type(&self) -> std::option::Option<&str> {
+        self.caller_type.as_deref()
+    }
+    /// <p>The domain information for the AWS API call.</p>
+    pub fn domain_details(&self) -> std::option::Option<&crate::model::DomainDetails> {
+        self.domain_details.as_ref()
+    }
+    /// <p>The error code of the failed AWS API action.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The remote IP information of the connection that initiated the AWS API call.</p>
+    pub fn remote_ip_details(&self) -> std::option::Option<&crate::model::RemoteIpDetails> {
+        self.remote_ip_details.as_ref()
+    }
+    /// <p>The AWS service name whose API was invoked.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsApiCallAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4982,6 +5674,12 @@ pub struct DomainDetails {
     /// <p>The domain information for the AWS API call.</p>
     pub domain: std::option::Option<std::string::String>,
 }
+impl DomainDetails {
+    /// <p>The domain information for the AWS API call.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+}
 impl std::fmt::Debug for DomainDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainDetails");
@@ -5038,6 +5736,26 @@ pub struct Resource {
     pub instance_details: std::option::Option<crate::model::InstanceDetails>,
     /// <p>The type of AWS resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl Resource {
+    /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity
+    /// that prompted GuardDuty to generate a finding.</p>
+    pub fn access_key_details(&self) -> std::option::Option<&crate::model::AccessKeyDetails> {
+        self.access_key_details.as_ref()
+    }
+    /// <p>Contains information on the S3 bucket.</p>
+    pub fn s3_bucket_details(&self) -> std::option::Option<&[crate::model::S3BucketDetail]> {
+        self.s3_bucket_details.as_deref()
+    }
+    /// <p>The information about the EC2 instance associated with the activity that prompted
+    /// GuardDuty to generate a finding.</p>
+    pub fn instance_details(&self) -> std::option::Option<&crate::model::InstanceDetails> {
+        self.instance_details.as_ref()
+    }
+    /// <p>The type of AWS resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5173,6 +5891,61 @@ pub struct InstanceDetails {
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The tags of the EC2 instance.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl InstanceDetails {
+    /// <p>The Availability Zone of the EC2 instance.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The profile information of the EC2 instance.</p>
+    pub fn iam_instance_profile(&self) -> std::option::Option<&crate::model::IamInstanceProfile> {
+        self.iam_instance_profile.as_ref()
+    }
+    /// <p>The image description of the EC2 instance.</p>
+    pub fn image_description(&self) -> std::option::Option<&str> {
+        self.image_description.as_deref()
+    }
+    /// <p>The image ID of the EC2 instance.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The state of the EC2 instance.</p>
+    pub fn instance_state(&self) -> std::option::Option<&str> {
+        self.instance_state.as_deref()
+    }
+    /// <p>The type of the EC2 instance.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts
+    /// instances.</p>
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p>The launch time of the EC2 instance.</p>
+    pub fn launch_time(&self) -> std::option::Option<&str> {
+        self.launch_time.as_deref()
+    }
+    /// <p>The elastic network interface information of the EC2 instance.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+    /// <p>The platform of the EC2 instance.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The product code of the EC2 instance.</p>
+    pub fn product_codes(&self) -> std::option::Option<&[crate::model::ProductCode]> {
+        self.product_codes.as_deref()
+    }
+    /// <p>The tags of the EC2 instance.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for InstanceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5428,6 +6201,16 @@ pub struct Tag {
     /// <p>The EC2 instance tag value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The EC2 instance tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The EC2 instance tag value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -5490,6 +6273,16 @@ pub struct ProductCode {
     pub code: std::option::Option<std::string::String>,
     /// <p>The product code type.</p>
     pub product_type: std::option::Option<std::string::String>,
+}
+impl ProductCode {
+    /// <p>The product code information.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The product code type.</p>
+    pub fn product_type(&self) -> std::option::Option<&str> {
+        self.product_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ProductCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5570,6 +6363,50 @@ pub struct NetworkInterface {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The VPC ID of the EC2 instance.</p>
     pub vpc_id: std::option::Option<std::string::String>,
+}
+impl NetworkInterface {
+    /// <p>A list of IPv6 addresses for the EC2 instance.</p>
+    pub fn ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ipv6_addresses.as_deref()
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The private DNS name of the EC2 instance.</p>
+    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+        self.private_dns_name.as_deref()
+    }
+    /// <p>The private IP address of the EC2 instance.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>Other private IP address information of the EC2 instance.</p>
+    pub fn private_ip_addresses(
+        &self,
+    ) -> std::option::Option<&[crate::model::PrivateIpAddressDetails]> {
+        self.private_ip_addresses.as_deref()
+    }
+    /// <p>The public DNS name of the EC2 instance.</p>
+    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+        self.public_dns_name.as_deref()
+    }
+    /// <p>The public IP address of the EC2 instance.</p>
+    pub fn public_ip(&self) -> std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
+    /// <p>The security groups associated with the EC2 instance.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroup]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The subnet ID of the EC2 instance.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The VPC ID of the EC2 instance.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5781,6 +6618,16 @@ pub struct SecurityGroup {
     /// <p>The security group name of the EC2 instance.</p>
     pub group_name: std::option::Option<std::string::String>,
 }
+impl SecurityGroup {
+    /// <p>The security group ID of the EC2 instance.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The security group name of the EC2 instance.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityGroup");
@@ -5843,6 +6690,16 @@ pub struct PrivateIpAddressDetails {
     pub private_dns_name: std::option::Option<std::string::String>,
     /// <p>The private IP address of the EC2 instance.</p>
     pub private_ip_address: std::option::Option<std::string::String>,
+}
+impl PrivateIpAddressDetails {
+    /// <p>The private DNS name of the EC2 instance.</p>
+    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+        self.private_dns_name.as_deref()
+    }
+    /// <p>The private IP address of the EC2 instance.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
 }
 impl std::fmt::Debug for PrivateIpAddressDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5912,6 +6769,16 @@ pub struct IamInstanceProfile {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The profile ID of the EC2 instance.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl IamInstanceProfile {
+    /// <p>The profile ARN of the EC2 instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The profile ID of the EC2 instance.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for IamInstanceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5988,6 +6855,42 @@ pub struct S3BucketDetail {
         std::option::Option<crate::model::DefaultServerSideEncryption>,
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
     pub public_access: std::option::Option<crate::model::PublicAccess>,
+}
+impl S3BucketDetail {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Describes whether the bucket is a source or destination bucket.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The date and time the bucket was created at.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The owner of the S3 bucket.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+        self.owner.as_ref()
+    }
+    /// <p>All tags attached to the S3 bucket</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Describes the server side encryption method used in the S3 bucket.</p>
+    pub fn default_server_side_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultServerSideEncryption> {
+        self.default_server_side_encryption.as_ref()
+    }
+    /// <p>Describes the public access policies that apply to the S3 bucket.</p>
+    pub fn public_access(&self) -> std::option::Option<&crate::model::PublicAccess> {
+        self.public_access.as_ref()
+    }
 }
 impl std::fmt::Debug for S3BucketDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6156,6 +7059,19 @@ pub struct PublicAccess {
     /// policies.</p>
     pub effective_permission: std::option::Option<std::string::String>,
 }
+impl PublicAccess {
+    /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
+    pub fn permission_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionConfiguration> {
+        self.permission_configuration.as_ref()
+    }
+    /// <p>Describes the effective permission on this bucket after factoring all attached
+    /// policies.</p>
+    pub fn effective_permission(&self) -> std::option::Option<&str> {
+        self.effective_permission.as_deref()
+    }
+}
 impl std::fmt::Debug for PublicAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublicAccess");
@@ -6230,6 +7146,20 @@ pub struct PermissionConfiguration {
     pub bucket_level_permissions: std::option::Option<crate::model::BucketLevelPermissions>,
     /// <p>Contains information about the account level permissions on the S3 bucket.</p>
     pub account_level_permissions: std::option::Option<crate::model::AccountLevelPermissions>,
+}
+impl PermissionConfiguration {
+    /// <p>Contains information about the bucket level permissions for the S3 bucket.</p>
+    pub fn bucket_level_permissions(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketLevelPermissions> {
+        self.bucket_level_permissions.as_ref()
+    }
+    /// <p>Contains information about the account level permissions on the S3 bucket.</p>
+    pub fn account_level_permissions(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountLevelPermissions> {
+        self.account_level_permissions.as_ref()
+    }
 }
 impl std::fmt::Debug for PermissionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6306,6 +7236,12 @@ pub struct AccountLevelPermissions {
     /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
 }
+impl AccountLevelPermissions {
+    /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
+    pub fn block_public_access(&self) -> std::option::Option<&crate::model::BlockPublicAccess> {
+        self.block_public_access.as_ref()
+    }
+}
 impl std::fmt::Debug for AccountLevelPermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountLevelPermissions");
@@ -6364,6 +7300,24 @@ pub struct BlockPublicAccess {
     pub block_public_acls: bool,
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
     pub block_public_policy: bool,
+}
+impl BlockPublicAccess {
+    /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
+    pub fn ignore_public_acls(&self) -> bool {
+        self.ignore_public_acls
+    }
+    /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
+    pub fn restrict_public_buckets(&self) -> bool {
+        self.restrict_public_buckets
+    }
+    /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
+    pub fn block_public_acls(&self) -> bool {
+        self.block_public_acls
+    }
+    /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
+    pub fn block_public_policy(&self) -> bool {
+        self.block_public_policy
+    }
 }
 impl std::fmt::Debug for BlockPublicAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6457,6 +7411,21 @@ pub struct BucketLevelPermissions {
     /// the S3 bucket.</p>
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
 }
+impl BucketLevelPermissions {
+    /// <p>Contains information on how Access Control Policies are applied to the bucket.</p>
+    pub fn access_control_list(&self) -> std::option::Option<&crate::model::AccessControlList> {
+        self.access_control_list.as_ref()
+    }
+    /// <p>Contains information on the bucket policies for the S3 bucket.</p>
+    pub fn bucket_policy(&self) -> std::option::Option<&crate::model::BucketPolicy> {
+        self.bucket_policy.as_ref()
+    }
+    /// <p>Contains information on which account level S3 Block Public Access settings are applied to
+    /// the S3 bucket.</p>
+    pub fn block_public_access(&self) -> std::option::Option<&crate::model::BlockPublicAccess> {
+        self.block_public_access.as_ref()
+    }
+}
 impl std::fmt::Debug for BucketLevelPermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketLevelPermissions");
@@ -6546,6 +7515,18 @@ pub struct BucketPolicy {
     /// bucket policy.</p>
     pub allows_public_write_access: bool,
 }
+impl BucketPolicy {
+    /// <p>A value that indicates whether public read access for the bucket is enabled through a
+    /// bucket policy.</p>
+    pub fn allows_public_read_access(&self) -> bool {
+        self.allows_public_read_access
+    }
+    /// <p>A value that indicates whether public write access for the bucket is enabled through a
+    /// bucket policy.</p>
+    pub fn allows_public_write_access(&self) -> bool {
+        self.allows_public_write_access
+    }
+}
 impl std::fmt::Debug for BucketPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketPolicy");
@@ -6617,6 +7598,18 @@ pub struct AccessControlList {
     /// <p>A value that indicates whether public write access for the bucket is enabled through an
     /// Access Control List (ACL).</p>
     pub allows_public_write_access: bool,
+}
+impl AccessControlList {
+    /// <p>A value that indicates whether public read access for the bucket is enabled through an
+    /// Access Control List (ACL).</p>
+    pub fn allows_public_read_access(&self) -> bool {
+        self.allows_public_read_access
+    }
+    /// <p>A value that indicates whether public write access for the bucket is enabled through an
+    /// Access Control List (ACL).</p>
+    pub fn allows_public_write_access(&self) -> bool {
+        self.allows_public_write_access
+    }
 }
 impl std::fmt::Debug for AccessControlList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6691,6 +7684,17 @@ pub struct DefaultServerSideEncryption {
     /// <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     pub kms_master_key_arn: std::option::Option<std::string::String>,
 }
+impl DefaultServerSideEncryption {
+    /// <p>The type of encryption used for objects within the S3 bucket.</p>
+    pub fn encryption_type(&self) -> std::option::Option<&str> {
+        self.encryption_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket
+    /// <code>EncryptionType</code> is <code>aws:kms</code>.</p>
+    pub fn kms_master_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_master_key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DefaultServerSideEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultServerSideEncryption");
@@ -6763,6 +7767,15 @@ pub struct Owner {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl Owner {
+    /// <p>The canonical user ID of the bucket owner. For information about locating your canonical
+    /// user ID see <a href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding Your Account
+    /// Canonical User ID.</a>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for Owner {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Owner");
@@ -6820,6 +7833,24 @@ pub struct AccessKeyDetails {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The type of the user.</p>
     pub user_type: std::option::Option<std::string::String>,
+}
+impl AccessKeyDetails {
+    /// <p>The access key ID of the user.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The principal ID of the user.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The name of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The type of the user.</p>
+    pub fn user_type(&self) -> std::option::Option<&str> {
+        self.user_type.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessKeyDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6967,6 +7998,14 @@ pub struct OrganizationDataSourceConfigurationsResult {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
     pub s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfigurationResult>,
 }
+impl OrganizationDataSourceConfigurationsResult {
+    /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
+    pub fn s3_logs(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationS3LogsConfigurationResult> {
+        self.s3_logs.as_ref()
+    }
+}
 impl std::fmt::Debug for OrganizationDataSourceConfigurationsResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationDataSourceConfigurationsResult");
@@ -7024,6 +8063,13 @@ pub struct OrganizationS3LogsConfigurationResult {
     /// members of the organization.</p>
     pub auto_enable: bool,
 }
+impl OrganizationS3LogsConfigurationResult {
+    /// <p>A value that describes whether S3 data event logs are automatically enabled for new
+    /// members of the organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+}
 impl std::fmt::Debug for OrganizationS3LogsConfigurationResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationS3LogsConfigurationResult");
@@ -7075,6 +8121,16 @@ pub struct AccountDetail {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The email address of the member account.</p>
     pub email: std::option::Option<std::string::String>,
+}
+impl AccountDetail {
+    /// <p>The member account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The email address of the member account.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
 }
 impl std::fmt::Debug for AccountDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

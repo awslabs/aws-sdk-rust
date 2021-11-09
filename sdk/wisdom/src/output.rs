@@ -6,6 +6,12 @@ pub struct UpdateKnowledgeBaseTemplateUriOutput {
     /// <p>The knowledge base to update.</p>
     pub knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
 }
+impl UpdateKnowledgeBaseTemplateUriOutput {
+    /// <p>The knowledge base to update.</p>
+    pub fn knowledge_base(&self) -> std::option::Option<&crate::model::KnowledgeBaseData> {
+        self.knowledge_base.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateKnowledgeBaseTemplateUriOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateKnowledgeBaseTemplateUriOutput");
@@ -63,6 +69,27 @@ pub struct StartContentUploadOutput {
     /// <p>The headers to include in the upload.</p>
     pub headers_to_include:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StartContentUploadOutput {
+    /// <p>The identifier of the upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The URL of the upload.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.url_expiry.as_ref()
+    }
+    /// <p>The headers to include in the upload.</p>
+    pub fn headers_to_include(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.headers_to_include.as_ref()
+    }
 }
 impl std::fmt::Debug for StartContentUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -173,6 +200,16 @@ pub struct SearchContentOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchContentOutput {
+    /// <p>Summary information about the content.</p>
+    pub fn content_summaries(&self) -> std::option::Option<&[crate::model::ContentSummary]> {
+        self.content_summaries.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchContentOutput");
@@ -277,6 +314,18 @@ pub struct ListKnowledgeBasesOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListKnowledgeBasesOutput {
+    /// <p>Information about the knowledge bases.</p>
+    pub fn knowledge_base_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::KnowledgeBaseSummary]> {
+        self.knowledge_base_summaries.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListKnowledgeBasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListKnowledgeBasesOutput");
@@ -350,6 +399,12 @@ impl ListKnowledgeBasesOutput {
 pub struct CreateKnowledgeBaseOutput {
     /// <p>The knowledge base.</p>
     pub knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
+}
+impl CreateKnowledgeBaseOutput {
+    /// <p>The knowledge base.</p>
+    pub fn knowledge_base(&self) -> std::option::Option<&crate::model::KnowledgeBaseData> {
+        self.knowledge_base.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateKnowledgeBaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -432,6 +487,12 @@ pub struct GetKnowledgeBaseOutput {
     /// <p>The knowledge base.</p>
     pub knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
 }
+impl GetKnowledgeBaseOutput {
+    /// <p>The knowledge base.</p>
+    pub fn knowledge_base(&self) -> std::option::Option<&crate::model::KnowledgeBaseData> {
+        self.knowledge_base.as_ref()
+    }
+}
 impl std::fmt::Debug for GetKnowledgeBaseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKnowledgeBaseOutput");
@@ -482,6 +543,12 @@ impl GetKnowledgeBaseOutput {
 pub struct GetContentSummaryOutput {
     /// <p>The content summary.</p>
     pub content_summary: std::option::Option<crate::model::ContentSummary>,
+}
+impl GetContentSummaryOutput {
+    /// <p>The content summary.</p>
+    pub fn content_summary(&self) -> std::option::Option<&crate::model::ContentSummary> {
+        self.content_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for GetContentSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,6 +602,16 @@ pub struct ListContentsOutput {
     pub content_summaries: std::option::Option<std::vec::Vec<crate::model::ContentSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContentsOutput {
+    /// <p>Information about the content.</p>
+    pub fn content_summaries(&self) -> std::option::Option<&[crate::model::ContentSummary]> {
+        self.content_summaries.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -606,6 +683,12 @@ impl ListContentsOutput {
 pub struct CreateContentOutput {
     /// <p>The content.</p>
     pub content: std::option::Option<crate::model::ContentData>,
+}
+impl CreateContentOutput {
+    /// <p>The content.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::ContentData> {
+        self.content.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -688,6 +771,12 @@ pub struct UpdateContentOutput {
     /// <p>The content.</p>
     pub content: std::option::Option<crate::model::ContentData>,
 }
+impl UpdateContentOutput {
+    /// <p>The content.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::ContentData> {
+        self.content.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContentOutput");
@@ -738,6 +827,12 @@ impl UpdateContentOutput {
 pub struct GetContentOutput {
     /// <p>The content.</p>
     pub content: std::option::Option<crate::model::ContentData>,
+}
+impl GetContentOutput {
+    /// <p>The content.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::ContentData> {
+        self.content.as_ref()
+    }
 }
 impl std::fmt::Debug for GetContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -791,6 +886,16 @@ pub struct SearchSessionsOutput {
     pub session_summaries: std::option::Option<std::vec::Vec<crate::model::SessionSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchSessionsOutput {
+    /// <p>Summary information about the sessions.</p>
+    pub fn session_summaries(&self) -> std::option::Option<&[crate::model::SessionSummary]> {
+        self.session_summaries.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -865,6 +970,16 @@ pub struct QueryAssistantOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl QueryAssistantOutput {
+    /// <p>The results of the query.</p>
+    pub fn results(&self) -> std::option::Option<&[crate::model::ResultData]> {
+        self.results.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for QueryAssistantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueryAssistantOutput");
@@ -937,6 +1052,18 @@ pub struct NotifyRecommendationsReceivedOutput {
     /// <p>The identifiers of recommendations that are causing errors.</p>
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::NotifyRecommendationsReceivedError>>,
+}
+impl NotifyRecommendationsReceivedOutput {
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.recommendation_ids.as_deref()
+    }
+    /// <p>The identifiers of recommendations that are causing errors.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotifyRecommendationsReceivedError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for NotifyRecommendationsReceivedOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1023,6 +1150,12 @@ pub struct GetRecommendationsOutput {
     /// <p>The recommendations.</p>
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::RecommendationData>>,
 }
+impl GetRecommendationsOutput {
+    /// <p>The recommendations.</p>
+    pub fn recommendations(&self) -> std::option::Option<&[crate::model::RecommendationData]> {
+        self.recommendations.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecommendationsOutput");
@@ -1085,6 +1218,16 @@ pub struct ListAssistantsOutput {
     pub assistant_summaries: std::option::Option<std::vec::Vec<crate::model::AssistantSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssistantsOutput {
+    /// <p>Information about the assistants.</p>
+    pub fn assistant_summaries(&self) -> std::option::Option<&[crate::model::AssistantSummary]> {
+        self.assistant_summaries.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssistantsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1159,6 +1302,12 @@ impl ListAssistantsOutput {
 pub struct CreateAssistantOutput {
     /// <p>Information about the assistant.</p>
     pub assistant: std::option::Option<crate::model::AssistantData>,
+}
+impl CreateAssistantOutput {
+    /// <p>Information about the assistant.</p>
+    pub fn assistant(&self) -> std::option::Option<&crate::model::AssistantData> {
+        self.assistant.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssistantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1241,6 +1390,12 @@ pub struct GetAssistantOutput {
     /// <p>Information about the assistant.</p>
     pub assistant: std::option::Option<crate::model::AssistantData>,
 }
+impl GetAssistantOutput {
+    /// <p>Information about the assistant.</p>
+    pub fn assistant(&self) -> std::option::Option<&crate::model::AssistantData> {
+        self.assistant.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAssistantOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssistantOutput");
@@ -1292,6 +1447,12 @@ pub struct CreateSessionOutput {
     /// <p>The session.</p>
     pub session: std::option::Option<crate::model::SessionData>,
 }
+impl CreateSessionOutput {
+    /// <p>The session.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::SessionData> {
+        self.session.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSessionOutput");
@@ -1342,6 +1503,12 @@ impl CreateSessionOutput {
 pub struct GetSessionOutput {
     /// <p>The session.</p>
     pub session: std::option::Option<crate::model::SessionData>,
+}
+impl GetSessionOutput {
+    /// <p>The session.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::SessionData> {
+        self.session.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1396,6 +1563,18 @@ pub struct ListAssistantAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::AssistantAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAssistantAssociationsOutput {
+    /// <p>Summary information about assistant associations.</p>
+    pub fn assistant_association_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssistantAssociationSummary]> {
+        self.assistant_association_summaries.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAssistantAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,6 +1652,14 @@ impl ListAssistantAssociationsOutput {
 pub struct CreateAssistantAssociationOutput {
     /// <p>The assistant association.</p>
     pub assistant_association: std::option::Option<crate::model::AssistantAssociationData>,
+}
+impl CreateAssistantAssociationOutput {
+    /// <p>The assistant association.</p>
+    pub fn assistant_association(
+        &self,
+    ) -> std::option::Option<&crate::model::AssistantAssociationData> {
+        self.assistant_association.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssistantAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1558,6 +1745,14 @@ impl DeleteAssistantAssociationOutput {
 pub struct GetAssistantAssociationOutput {
     /// <p>The assistant association.</p>
     pub assistant_association: std::option::Option<crate::model::AssistantAssociationData>,
+}
+impl GetAssistantAssociationOutput {
+    /// <p>The assistant association.</p>
+    pub fn assistant_association(
+        &self,
+    ) -> std::option::Option<&crate::model::AssistantAssociationData> {
+        self.assistant_association.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAssistantAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1674,6 +1869,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

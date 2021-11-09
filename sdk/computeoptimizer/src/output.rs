@@ -10,6 +10,18 @@ pub struct UpdateEnrollmentStatusOutput {
     /// more time to be enrolled in the service.</p>
     pub status_reason: std::option::Option<std::string::String>,
 }
+impl UpdateEnrollmentStatusOutput {
+    /// <p>The enrollment status of the account.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the enrollment status of the account. For example, an account might
+    /// show a status of <code>Pending</code> because member accounts of an organization require
+    /// more time to be enrolled in the service.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEnrollmentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnrollmentStatusOutput");
@@ -83,6 +95,21 @@ pub struct GetRecommendationSummariesOutput {
     /// <p>An array of objects that summarize a recommendation.</p>
     pub recommendation_summaries:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
+}
+impl GetRecommendationSummariesOutput {
+    /// <p>The token to use to advance to the next page of recommendation summaries.</p>
+    ///
+    /// <p>This value is null when there are no more pages of recommendation summaries to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that summarize a recommendation.</p>
+    pub fn recommendation_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationSummary]> {
+        self.recommendation_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecommendationSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -169,6 +196,21 @@ pub struct GetLambdaFunctionRecommendationsOutput {
     /// <p>An array of objects that describe function recommendations.</p>
     pub lambda_function_recommendations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendation>>,
+}
+impl GetLambdaFunctionRecommendationsOutput {
+    /// <p>The token to use to advance to the next page of function recommendations.</p>
+    ///
+    /// <p>This value is null when there are no more pages of function recommendations to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that describe function recommendations.</p>
+    pub fn lambda_function_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LambdaFunctionRecommendation]> {
+        self.lambda_function_recommendations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLambdaFunctionRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -259,6 +301,22 @@ pub struct GetEnrollmentStatusesForOrganizationOutput {
     /// <p>This value is null when there are no more pages of account enrollment statuses to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetEnrollmentStatusesForOrganizationOutput {
+    /// <p>An array of objects that describe the enrollment statuses of organization member
+    /// accounts.</p>
+    pub fn account_enrollment_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountEnrollmentStatus]> {
+        self.account_enrollment_statuses.as_deref()
+    }
+    /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
+    ///
+    /// <p>This value is null when there are no more pages of account enrollment statuses to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -358,6 +416,34 @@ pub struct GetEnrollmentStatusOutput {
     /// <p>The count of organization member accounts that are opted in to the service, if your
     /// account is an organization management account.</p>
     pub number_of_member_accounts_opted_in: std::option::Option<i32>,
+}
+impl GetEnrollmentStatusOutput {
+    /// <p>The enrollment status of the account.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the enrollment status of the account.</p>
+    ///
+    /// <p>For example, an account might show a status of <code>Pending</code> because member
+    /// accounts of an organization require more time to be enrolled in the service.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Confirms the enrollment status of member accounts of the organization, if the account
+    /// is a management account of an organization.</p>
+    pub fn member_accounts_enrolled(&self) -> bool {
+        self.member_accounts_enrolled
+    }
+    /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
+    /// updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The count of organization member accounts that are opted in to the service, if your
+    /// account is an organization management account.</p>
+    pub fn number_of_member_accounts_opted_in(&self) -> std::option::Option<i32> {
+        self.number_of_member_accounts_opted_in
+    }
 }
 impl std::fmt::Debug for GetEnrollmentStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -484,6 +570,14 @@ pub struct GetEc2RecommendationProjectedMetricsOutput {
     pub recommended_option_projected_metrics:
         std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
 }
+impl GetEc2RecommendationProjectedMetricsOutput {
+    /// <p>An array of objects that describes projected metrics.</p>
+    pub fn recommended_option_projected_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendedOptionProjectedMetric]> {
+        self.recommended_option_projected_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEc2RecommendationProjectedMetricsOutput");
@@ -562,6 +656,28 @@ pub struct GetEc2InstanceRecommendationsOutput {
     /// <p>For example, an error is returned if you request recommendations for an instance of an
     /// unsupported instance family.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+}
+impl GetEc2InstanceRecommendationsOutput {
+    /// <p>The token to use to advance to the next page of instance recommendations.</p>
+    ///
+    /// <p>This value is null when there are no more pages of instance recommendations to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that describe instance recommendations.</p>
+    pub fn instance_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceRecommendation]> {
+        self.instance_recommendations.as_deref()
+    }
+    /// <p>An array of objects that describe errors of the request.</p>
+    ///
+    /// <p>For example, an error is returned if you request recommendations for an instance of an
+    /// unsupported instance family.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEc2InstanceRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,6 +797,28 @@ pub struct GetEbsVolumeRecommendationsOutput {
     /// <p>For example, an error is returned if you request recommendations for an unsupported
     /// volume.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+}
+impl GetEbsVolumeRecommendationsOutput {
+    /// <p>The token to use to advance to the next page of volume recommendations.</p>
+    ///
+    /// <p>This value is null when there are no more pages of volume recommendations to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that describe volume recommendations.</p>
+    pub fn volume_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeRecommendation]> {
+        self.volume_recommendations.as_deref()
+    }
+    /// <p>An array of objects that describe errors of the request.</p>
+    ///
+    /// <p>For example, an error is returned if you request recommendations for an unsupported
+    /// volume.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEbsVolumeRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -802,6 +940,29 @@ pub struct GetAutoScalingGroupRecommendationsOutput {
     /// Auto Scaling group.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
 }
+impl GetAutoScalingGroupRecommendationsOutput {
+    /// <p>The token to use to advance to the next page of Auto Scaling group
+    /// recommendations.</p>
+    ///
+    /// <p>This value is null when there are no more pages of Auto Scaling group
+    /// recommendations to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
+    pub fn auto_scaling_group_recommendations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoScalingGroupRecommendation]> {
+        self.auto_scaling_group_recommendations.as_deref()
+    }
+    /// <p>An array of objects that describe errors of the request.</p>
+    ///
+    /// <p>For example, an error is returned if you request recommendations for an unsupported
+    /// Auto Scaling group.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAutoScalingGroupRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAutoScalingGroupRecommendationsOutput");
@@ -921,6 +1082,20 @@ pub struct ExportLambdaFunctionRecommendationsOutput {
     /// object keys of a recommendations export file, and its associated metadata file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
+impl ExportLambdaFunctionRecommendationsOutput {
+    /// <p>The identification number of the export job.</p>
+    ///
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+    /// object keys of a recommendations export file, and its associated metadata file.</p>
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportLambdaFunctionRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportLambdaFunctionRecommendationsOutput");
@@ -998,6 +1173,20 @@ pub struct ExportEc2InstanceRecommendationsOutput {
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
     /// export file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
+}
+impl ExportEc2InstanceRecommendationsOutput {
+    /// <p>The identification number of the export job.</p>
+    ///
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
+    /// export file.</p>
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportEc2InstanceRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1077,6 +1266,20 @@ pub struct ExportEbsVolumeRecommendationsOutput {
     /// object keys of a recommendations export file, and its associated metadata file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
+impl ExportEbsVolumeRecommendationsOutput {
+    /// <p>The identification number of the export job.</p>
+    ///
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
+    /// object keys of a recommendations export file, and its associated metadata file.</p>
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportEbsVolumeRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportEbsVolumeRecommendationsOutput");
@@ -1155,6 +1358,20 @@ pub struct ExportAutoScalingGroupRecommendationsOutput {
     /// export file.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
 }
+impl ExportAutoScalingGroupRecommendationsOutput {
+    /// <p>The identification number of the export job.</p>
+    ///
+    /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
+    /// ID to view the status of an export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>An object that describes the destination Amazon S3 bucket of a recommendations
+    /// export file.</p>
+    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportAutoScalingGroupRecommendationsOutput");
@@ -1231,6 +1448,20 @@ pub struct DescribeRecommendationExportJobsOutput {
     ///
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeRecommendationExportJobsOutput {
+    /// <p>An array of objects that describe recommendation export jobs.</p>
+    pub fn recommendation_export_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationExportJob]> {
+        self.recommendation_export_jobs.as_deref()
+    }
+    /// <p>The token to use to advance to the next page of export jobs.</p>
+    ///
+    /// <p>This value is null when there are no more pages of export jobs to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRecommendationExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

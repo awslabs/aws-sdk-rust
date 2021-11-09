@@ -30,6 +30,62 @@ pub struct Stack {
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
     pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Stack {
+    /// <p>The ARN of the stack.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the stack.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The stack name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The time the stack was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The storage connectors to enable.</p>
+    pub fn storage_connectors(&self) -> std::option::Option<&[crate::model::StorageConnector]> {
+        self.storage_connectors.as_deref()
+    }
+    /// <p>The URL that users are redirected to after their streaming session ends.</p>
+    pub fn redirect_url(&self) -> std::option::Option<&str> {
+        self.redirect_url.as_deref()
+    }
+    /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
+    pub fn feedback_url(&self) -> std::option::Option<&str> {
+        self.feedback_url.as_deref()
+    }
+    /// <p>The errors for the stack.</p>
+    pub fn stack_errors(&self) -> std::option::Option<&[crate::model::StackError]> {
+        self.stack_errors.as_deref()
+    }
+    /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
+    pub fn user_settings(&self) -> std::option::Option<&[crate::model::UserSetting]> {
+        self.user_settings.as_deref()
+    }
+    /// <p>The persistent application settings for users of the stack.</p>
+    pub fn application_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationSettingsResponse> {
+        self.application_settings.as_ref()
+    }
+    /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
+    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+        self.access_endpoints.as_deref()
+    }
+    /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
+    pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.embed_host_domains.as_deref()
+    }
+}
 impl std::fmt::Debug for Stack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Stack");
@@ -296,6 +352,16 @@ pub struct AccessEndpoint {
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
     pub vpce_id: std::option::Option<std::string::String>,
 }
+impl AccessEndpoint {
+    /// <p>The type of interface endpoint.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::AccessEndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
+    pub fn vpce_id(&self) -> std::option::Option<&str> {
+        self.vpce_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessEndpoint");
@@ -416,6 +482,21 @@ pub struct ApplicationSettingsResponse {
     /// </p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
 }
+impl ApplicationSettingsResponse {
+    /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
+    pub fn settings_group(&self) -> std::option::Option<&str> {
+        self.settings_group.as_deref()
+    }
+    /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.
+    /// </p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplicationSettingsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSettingsResponse");
@@ -499,6 +580,16 @@ pub struct UserSetting {
     pub action: std::option::Option<crate::model::Action>,
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub permission: std::option::Option<crate::model::Permission>,
+}
+impl UserSetting {
+    /// <p>The action that is enabled or disabled.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>Indicates whether the action is enabled or disabled.</p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.permission.as_ref()
+    }
 }
 impl std::fmt::Debug for UserSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -704,6 +795,16 @@ pub struct StackError {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl StackError {
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::StackErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for StackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StackError");
@@ -829,6 +930,20 @@ pub struct StorageConnector {
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The names of the domains for the account.</p>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StorageConnector {
+    /// <p>The type of storage connector.</p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::StorageConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p>The ARN of the storage connector.</p>
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// <p>The names of the domains for the account.</p>
+    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.domains.as_deref()
+    }
 }
 impl std::fmt::Debug for StorageConnector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -979,6 +1094,16 @@ pub struct ApplicationSettings {
     pub enabled: bool,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
     pub settings_group: std::option::Option<std::string::String>,
+}
+impl ApplicationSettings {
+    /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
+    pub fn settings_group(&self) -> std::option::Option<&str> {
+        self.settings_group.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplicationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1148,6 +1273,16 @@ pub struct ImagePermissions {
     pub allow_fleet: std::option::Option<bool>,
     /// <p>Indicates whether the image can be used for an image builder.</p>
     pub allow_image_builder: std::option::Option<bool>,
+}
+impl ImagePermissions {
+    /// <p>Indicates whether the image can be used for a fleet.</p>
+    pub fn allow_fleet(&self) -> std::option::Option<bool> {
+        self.allow_fleet
+    }
+    /// <p>Indicates whether the image can be used for an image builder.</p>
+    pub fn allow_image_builder(&self) -> std::option::Option<bool> {
+        self.allow_image_builder
+    }
 }
 impl std::fmt::Debug for ImagePermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1381,6 +1516,224 @@ pub struct Fleet {
     ///
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
+}
+impl Fleet {
+    /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The fleet name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the image used to create the fleet.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The ARN for the public, private, or shared image.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+    /// <ul>
+    /// <li>
+    /// <p>stream.standard.small</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.medium</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.3xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.6xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-desktop.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.16xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.16xlarge</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The fleet type.</p>
+    /// <dl>
+    /// <dt>ALWAYS_ON</dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps.
+    /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
+    /// <dt>ON_DEMAND</dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
+    /// You are charged for instance streaming when users are connected and a
+    /// small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
+    /// </dl>
+    pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
+        self.fleet_type.as_ref()
+    }
+    /// <p>The capacity status for the fleet.</p>
+    pub fn compute_capacity_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ComputeCapacityStatus> {
+        self.compute_capacity_status.as_ref()
+    }
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>Specify a value between 600 and 360000.</p>
+    pub fn max_user_duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.max_user_duration_in_seconds
+    }
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+    /// <p>Specify a value between 60 and 360000.</p>
+    pub fn disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.disconnect_timeout_in_seconds
+    }
+    /// <p>The current state for the fleet.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::FleetState> {
+        self.state.as_ref()
+    }
+    /// <p>The VPC configuration for the fleet.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The time the fleet was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The fleet errors.</p>
+    pub fn fleet_errors(&self) -> std::option::Option<&[crate::model::FleetError]> {
+        self.fleet_errors.as_deref()
+    }
+    /// <p>Indicates whether default internet access is enabled for the fleet.</p>
+    pub fn enable_default_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_default_internet_access
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+        self.domain_join_info.as_ref()
+    }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
+    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
+    /// interval begins. Users are notified before they are disconnected due to inactivity. If
+    /// users try to reconnect to the streaming session before the time interval specified in
+    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+    /// previous session. Users are considered idle when they stop providing keyboard or mouse
+    /// input during their streaming session. File uploads and downloads, audio in, audio out,
+    /// and pixels changing do not qualify as user activity. If users continue to be idle after
+    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
+    /// disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
+    ///
+    /// <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// </note>
+    pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.idle_disconnect_timeout_in_seconds
+    }
+    /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    ///
+    /// <p>The default value is <code>APP</code>.</p>
+    pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
+        self.stream_view.as_ref()
+    }
 }
 impl std::fmt::Debug for Fleet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2057,6 +2410,16 @@ pub struct DomainJoinInfo {
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
     pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
 }
+impl DomainJoinInfo {
+    /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
+    /// <p>The distinguished name of the organizational unit for computer accounts.</p>
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+        self.organizational_unit_distinguished_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DomainJoinInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainJoinInfo");
@@ -2131,6 +2494,16 @@ pub struct FleetError {
     pub error_code: std::option::Option<crate::model::FleetErrorCode>,
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl FleetError {
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::FleetErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for FleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2443,6 +2816,16 @@ pub struct VpcConfig {
     /// <p>The identifiers of the security groups for the fleet or image builder.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl VpcConfig {
+    /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The identifiers of the security groups for the fleet or image builder.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcConfig");
@@ -2591,6 +2974,25 @@ pub struct ComputeCapacityStatus {
     /// <p>The number of currently available instances that can be used to stream
     /// sessions.</p>
     pub available: std::option::Option<i32>,
+}
+impl ComputeCapacityStatus {
+    /// <p>The desired number of streaming instances.</p>
+    pub fn desired(&self) -> std::option::Option<i32> {
+        self.desired
+    }
+    /// <p>The total number of simultaneous streaming instances that are running.</p>
+    pub fn running(&self) -> std::option::Option<i32> {
+        self.running
+    }
+    /// <p>The number of instances in use for streaming.</p>
+    pub fn in_use(&self) -> std::option::Option<i32> {
+        self.in_use
+    }
+    /// <p>The number of currently available instances that can be used to stream
+    /// sessions.</p>
+    pub fn available(&self) -> std::option::Option<i32> {
+        self.available
+    }
 }
 impl std::fmt::Debug for ComputeCapacityStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2808,6 +3210,12 @@ pub struct ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
     pub desired_instances: std::option::Option<i32>,
 }
+impl ComputeCapacity {
+    /// <p>The desired number of streaming instances.</p>
+    pub fn desired_instances(&self) -> std::option::Option<i32> {
+        self.desired_instances
+    }
+}
 impl std::fmt::Debug for ComputeCapacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComputeCapacity");
@@ -2862,6 +3270,28 @@ pub struct DirectoryConfig {
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
     /// <p>The time the directory configuration was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DirectoryConfig {
+    /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
+    /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    pub fn organizational_unit_distinguished_names(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_distinguished_names.as_deref()
+    }
+    /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    pub fn service_account_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceAccountCredentials> {
+        self.service_account_credentials.as_ref()
+    }
+    /// <p>The time the directory configuration was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DirectoryConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2988,6 +3418,18 @@ pub struct ServiceAccountCredentials {
     pub account_name: std::option::Option<std::string::String>,
     /// <p>The password for the account.</p>
     pub account_password: std::option::Option<std::string::String>,
+}
+impl ServiceAccountCredentials {
+    /// <p>The user name of the account. This account must have the following privileges: create computer objects,
+    /// join computers to the domain, and change/reset the password on descendant computer objects for the
+    /// organizational units specified.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The password for the account.</p>
+    pub fn account_password(&self) -> std::option::Option<&str> {
+        self.account_password.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceAccountCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3193,6 +3635,187 @@ pub struct ImageBuilder {
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub access_endpoints: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
+}
+impl ImageBuilder {
+    /// <p>The name of the image builder.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN for the image builder.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the image from which this builder was created.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The image builder name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The VPC configuration of the image builder.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>The instance type for the image builder. The following instance types are available:</p>   
+    /// <ul>
+    /// <li>
+    /// <p>stream.standard.small</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.medium</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.standard.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.compute.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.3xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.6xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.memory.z1d.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.large</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-design.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-desktop.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.2xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.12xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics.g4dn.16xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.4xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.8xlarge</p>
+    /// </li>
+    /// <li>
+    /// <p>stream.graphics-pro.16xlarge</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The operating system platform of the image builder.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
+        self.platform.as_ref()
+    }
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The state of the image builder.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ImageBuilderState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason why the last state change occurred.</p>
+    pub fn state_change_reason(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageBuilderStateChangeReason> {
+        self.state_change_reason.as_ref()
+    }
+    /// <p>The time stamp when the image builder was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Enables or disables default internet access for the image builder.</p>
+    pub fn enable_default_internet_access(&self) -> std::option::Option<bool> {
+        self.enable_default_internet_access
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
+    pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
+        self.domain_join_info.as_ref()
+    }
+    /// <p>Describes the network details of the fleet or image builder instance.</p>
+    pub fn network_access_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkAccessConfiguration> {
+        self.network_access_configuration.as_ref()
+    }
+    /// <p>The image builder errors.</p>
+    pub fn image_builder_errors(&self) -> std::option::Option<&[crate::model::ResourceError]> {
+        self.image_builder_errors.as_deref()
+    }
+    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
+    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+        self.appstream_agent_version.as_deref()
+    }
+    /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
+    pub fn access_endpoints(&self) -> std::option::Option<&[crate::model::AccessEndpoint]> {
+        self.access_endpoints.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,6 +4363,20 @@ pub struct ResourceError {
     /// <p>The time the error occurred.</p>
     pub error_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ResourceError {
+    /// <p>The error code.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::FleetErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The time the error occurred.</p>
+    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.error_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceError");
@@ -3825,6 +4462,16 @@ pub struct NetworkAccessConfiguration {
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
     pub eni_id: std::option::Option<std::string::String>,
 }
+impl NetworkAccessConfiguration {
+    /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
+    pub fn eni_private_ip_address(&self) -> std::option::Option<&str> {
+        self.eni_private_ip_address.as_deref()
+    }
+    /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
+    pub fn eni_id(&self) -> std::option::Option<&str> {
+        self.eni_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkAccessConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkAccessConfiguration");
@@ -3890,6 +4537,16 @@ pub struct ImageBuilderStateChangeReason {
     pub code: std::option::Option<crate::model::ImageBuilderStateChangeReasonCode>,
     /// <p>The state change reason message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ImageBuilderStateChangeReason {
+    /// <p>The state change reason code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ImageBuilderStateChangeReasonCode> {
+        self.code.as_ref()
+    }
+    /// <p>The state change reason message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageBuilderStateChangeReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4241,6 +4898,28 @@ pub struct UserStackAssociation {
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
     pub send_email_notification: bool,
 }
+impl UserStackAssociation {
+    /// <p>The name of the stack that is associated with the user.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The email address of the user who is associated with the stack.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The authentication type for the user.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
+    pub fn send_email_notification(&self) -> bool {
+        self.send_email_notification
+    }
+}
 impl std::fmt::Debug for UserStackAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserStackAssociation");
@@ -4373,6 +5052,61 @@ pub struct User {
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The authentication type for the user.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
+}
+impl User {
+    /// <p>The ARN of the user.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The email address of the user.</p>
+    ///
+    /// <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Specifies whether the user in the user pool is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The status of the user in the user pool. The status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>UNCONFIRMED – The user is created but not confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>CONFIRMED – The user is confirmed.</p>
+    /// </li>
+    /// <li>
+    /// <p>ARCHIVED – The user is no longer active.</p>
+    /// </li>
+    /// <li>
+    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p>
+    /// </li>
+    /// <li>
+    /// <p>UNKNOWN – The user status is not known.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The first name, or given name, of the user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name, or surname, of the user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The date and time the user was created in the user pool.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The authentication type for the user.</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4574,6 +5308,32 @@ pub struct UsageReportSubscription {
     pub subscription_errors:
         std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
 }
+impl UsageReportSubscription {
+    /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+    ///
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
+    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
+    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
+    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
+    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The schedule for generating usage reports.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::UsageReportSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The time when the last usage report was generated.</p>
+    pub fn last_generated_report_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_generated_report_date.as_ref()
+    }
+    /// <p>The errors that were returned if usage reports couldn't be generated.</p>
+    pub fn subscription_errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::LastReportGenerationExecutionError]> {
+        self.subscription_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for UsageReportSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsageReportSubscription");
@@ -4701,6 +5461,16 @@ pub struct LastReportGenerationExecutionError {
     pub error_code: std::option::Option<crate::model::UsageReportExecutionErrorCode>,
     /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl LastReportGenerationExecutionError {
+    /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::UsageReportExecutionErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for LastReportGenerationExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4901,6 +5671,51 @@ pub struct Session {
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The network details for the streaming session.</p>
     pub network_access_configuration: std::option::Option<crate::model::NetworkAccessConfiguration>,
+}
+impl Session {
+    /// <p>The identifier of the streaming session.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identifier of the user for whom the session was created.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The name of the stack for the streaming session.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name of the fleet for the streaming session.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The current state of the streaming session.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SessionState> {
+        self.state.as_ref()
+    }
+    /// <p>Specifies whether a user is connected to the streaming session.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::SessionConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>The time when a streaming instance is dedicated for the user.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
+    pub fn max_expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.max_expiration_time.as_ref()
+    }
+    /// <p>The authentication method. The user is authenticated using a streaming URL
+    /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
+    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>The network details for the streaming session.</p>
+    pub fn network_access_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkAccessConfiguration> {
+        self.network_access_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Session {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5239,6 +6054,82 @@ pub struct Image {
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
     pub image_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
 }
+impl Image {
+    /// <p>The name of the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the image.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the image from which this image was created.</p>
+    pub fn base_image_arn(&self) -> std::option::Option<&str> {
+        self.base_image_arn.as_deref()
+    }
+    /// <p>The image name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the
+    /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ImageState> {
+        self.state.as_ref()
+    }
+    /// <p>Indicates whether the image is public or private.</p>
+    pub fn visibility(&self) -> std::option::Option<&crate::model::VisibilityType> {
+        self.visibility.as_ref()
+    }
+    /// <p>Indicates whether an image builder can be launched from this image.</p>
+    pub fn image_builder_supported(&self) -> bool {
+        self.image_builder_supported
+    }
+    /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    pub fn image_builder_name(&self) -> std::option::Option<&str> {
+        self.image_builder_name.as_deref()
+    }
+    /// <p>The operating system platform of the image.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
+        self.platform.as_ref()
+    }
+    /// <p>The description to display.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The reason why the last state change occurred.</p>
+    pub fn state_change_reason(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageStateChangeReason> {
+        self.state_change_reason.as_ref()
+    }
+    /// <p>The applications associated with the image.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
+        self.applications.as_deref()
+    }
+    /// <p>The time the image was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The release date of the public base image.
+    /// For private images, this date is the release date of the base image from which the image was created.</p>
+    pub fn public_base_image_released_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.public_base_image_released_date.as_ref()
+    }
+    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+        self.appstream_agent_version.as_deref()
+    }
+    /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
+    pub fn image_permissions(&self) -> std::option::Option<&crate::model::ImagePermissions> {
+        self.image_permissions.as_ref()
+    }
+    /// <p>Describes the errors that are returned when a new image can't be created.</p>
+    pub fn image_errors(&self) -> std::option::Option<&[crate::model::ResourceError]> {
+        self.image_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for Image {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Image");
@@ -5560,6 +6451,39 @@ pub struct Application {
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl Application {
+    /// <p>The name of the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The application name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The URL for the application icon. This URL might be time-limited.</p>
+    pub fn icon_url(&self) -> std::option::Option<&str> {
+        self.icon_url.as_deref()
+    }
+    /// <p>The path to the application executable in the instance.</p>
+    pub fn launch_path(&self) -> std::option::Option<&str> {
+        self.launch_path.as_deref()
+    }
+    /// <p>The arguments that are passed to the application at launch.</p>
+    pub fn launch_parameters(&self) -> std::option::Option<&str> {
+        self.launch_parameters.as_deref()
+    }
+    /// <p>If there is a problem, the application can be disabled after image creation.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Additional attributes that describe the application.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for Application {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Application");
@@ -5707,6 +6631,16 @@ pub struct ImageStateChangeReason {
     pub code: std::option::Option<crate::model::ImageStateChangeReasonCode>,
     /// <p>The state change reason message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ImageStateChangeReason {
+    /// <p>The state change reason code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ImageStateChangeReasonCode> {
+        self.code.as_ref()
+    }
+    /// <p>The state change reason message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageStateChangeReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5979,6 +6913,16 @@ pub struct SharedImagePermissions {
     /// <p>Describes the permissions for a shared image.</p>
     pub image_permissions: std::option::Option<crate::model::ImagePermissions>,
 }
+impl SharedImagePermissions {
+    /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+    /// <p>Describes the permissions for a shared image.</p>
+    pub fn image_permissions(&self) -> std::option::Option<&crate::model::ImagePermissions> {
+        self.image_permissions.as_ref()
+    }
+}
 impl std::fmt::Debug for SharedImagePermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SharedImagePermissions");
@@ -6104,6 +7048,22 @@ pub struct UserStackAssociationError {
     pub error_code: std::option::Option<crate::model::UserStackAssociationErrorCode>,
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl UserStackAssociationError {
+    /// <p>Information about the user and associated stack.</p>
+    pub fn user_stack_association(
+        &self,
+    ) -> std::option::Option<&crate::model::UserStackAssociation> {
+        self.user_stack_association.as_ref()
+    }
+    /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::UserStackAssociationErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UserStackAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

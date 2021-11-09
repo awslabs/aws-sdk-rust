@@ -105,10 +105,7 @@ impl AssociateKmsKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_kms_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_kms_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -258,10 +255,7 @@ impl CancelExportTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_export_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_export_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -504,10 +498,7 @@ impl CreateExportTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_export_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_export_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -713,10 +704,7 @@ impl CreateLogGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_log_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_log_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -884,10 +872,7 @@ impl CreateLogStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_log_stream(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_log_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1040,10 +1025,7 @@ impl DeleteDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_destination(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1196,10 +1178,7 @@ impl DeleteLogGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_log_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_log_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1367,10 +1346,7 @@ impl DeleteLogStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_log_stream(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_log_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1535,10 +1511,7 @@ impl DeleteMetricFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_metric_filter(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_metric_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1695,10 +1668,7 @@ impl DeleteQueryDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_query_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1848,10 +1818,9 @@ impl DeleteResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2006,10 +1975,7 @@ impl DeleteRetentionPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_retention_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2177,10 +2143,7 @@ impl DeleteSubscriptionFilterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_subscription_filter(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2357,10 +2320,7 @@ impl DescribeDestinationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_destinations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_destinations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2549,10 +2509,7 @@ impl DescribeExportTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_export_tasks(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_export_tasks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2729,10 +2686,7 @@ impl DescribeLogGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_log_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_log_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2974,10 +2928,7 @@ impl DescribeLogStreamsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_log_streams(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_log_streams(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3204,10 +3155,7 @@ impl DescribeMetricFiltersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_metric_filters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3398,10 +3346,7 @@ impl DescribeQueriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_queries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_queries(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3584,10 +3529,7 @@ impl DescribeQueryDefinitionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_query_definitions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3752,10 +3694,7 @@ impl DescribeResourcePoliciesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_resource_policies(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3948,7 +3887,7 @@ impl DescribeSubscriptionFiltersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_subscription_filters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_subscription_filters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4102,10 +4041,7 @@ impl DisassociateKmsKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_kms_key(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_kms_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4399,10 +4335,7 @@ impl FilterLogEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_filter_log_events(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_filter_log_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4647,10 +4580,7 @@ impl GetLogEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_log_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_log_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4823,10 +4753,7 @@ impl GetLogGroupFieldsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_log_group_fields(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_log_group_fields(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4984,10 +4911,7 @@ impl GetLogRecordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_log_record(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_log_record(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5137,10 +5061,7 @@ impl GetQueryResultsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_query_results(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_query_results(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5293,10 +5214,7 @@ impl ListTagsLogGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_log_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_log_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5474,10 +5392,8 @@ impl PutDestinationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_destination(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_destination(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5647,10 +5563,9 @@ impl PutDestinationPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_destination_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_destination_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5861,10 +5776,7 @@ impl PutLogEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_log_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_log_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6069,10 +5981,7 @@ impl PutMetricFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_metric_filter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_metric_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6290,10 +6199,7 @@ impl PutQueryDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_query_definition(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_query_definition(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6534,10 +6440,7 @@ impl PutResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6710,10 +6613,7 @@ impl PutRetentionPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_retention_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_retention_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6993,10 +6893,7 @@ impl PutSubscriptionFilterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_subscription_filter(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7237,10 +7134,7 @@ impl StartQueryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_query(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7389,10 +7283,7 @@ impl StopQueryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_query(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7571,10 +7462,7 @@ impl TagLogGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_log_group(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_log_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7752,10 +7640,7 @@ impl TestMetricFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_test_metric_filter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_test_metric_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7928,10 +7813,8 @@ impl UntagLogGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_log_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_untag_log_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8002,6 +7885,16 @@ pub struct UntagLogGroupInput {
     /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagLogGroupInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
+    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagLogGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagLogGroupInput");
@@ -8022,6 +7915,18 @@ pub struct TestMetricFilterInput {
     /// <p>The log event messages to test.</p>
     pub log_event_messages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TestMetricFilterInput {
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
+    /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
+    /// use the filter pattern to specify what to look for in the log event message.</p>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>The log event messages to test.</p>
+    pub fn log_event_messages(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_event_messages.as_deref()
+    }
+}
 impl std::fmt::Debug for TestMetricFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestMetricFilterInput");
@@ -8041,6 +7946,19 @@ pub struct TagLogGroupInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagLogGroupInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The key-value pairs to use for the tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagLogGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagLogGroupInput");
@@ -8057,6 +7975,13 @@ pub struct StopQueryInput {
     /// <p>The ID number of the query to stop. To find this ID number, use
     /// <code>DescribeQueries</code>.</p>
     pub query_id: std::option::Option<std::string::String>,
+}
+impl StopQueryInput {
+    /// <p>The ID number of the query to stop. To find this ID number, use
+    /// <code>DescribeQueries</code>.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8092,6 +8017,42 @@ pub struct StartQueryInput {
     /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
     /// only the specified fields and their values are returned. The default is 1000.</p>
     pub limit: std::option::Option<i32>,
+}
+impl StartQueryInput {
+    /// <p>The log group on which to perform the query.</p>
+    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
+    /// not both.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
+    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
+    /// not both.</p>
+    pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_group_names.as_deref()
+    }
+    /// <p>The beginning of the time range to query. The range is inclusive, so the specified
+    /// start time is included in the query. Specified as epoch time, the
+    /// number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    pub fn start_time(&self) -> std::option::Option<i64> {
+        self.start_time
+    }
+    /// <p>The end of the time range to query. The range is inclusive, so the specified
+    /// end time is included in the query. Specified as epoch
+    /// time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    pub fn end_time(&self) -> std::option::Option<i64> {
+        self.end_time
+    }
+    /// <p>The query string to use.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
+    /// only the specified fields and their values are returned. The default is 1000.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for StartQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8151,6 +8112,60 @@ pub struct PutSubscriptionFilterInput {
     /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
     pub distribution: std::option::Option<crate::model::Distribution>,
 }
+impl PutSubscriptionFilterInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>A name for the subscription filter. If you are updating an existing filter, you must
+    /// specify the correct name in <code>filterName</code>. To find the name of the filter currently
+    /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+    /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported
+    /// destinations are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter,
+    /// for same-account delivery.</p>
+    /// </li>
+    /// <li>
+    /// <p>A logical destination (specified using an ARN) belonging to a different account,
+    /// for cross-account delivery.</p>
+    /// <p>If you are setting up a cross-account subscription, the destination must have an
+    /// IAM policy associated with it that allows the sender to send logs to the destination.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the
+    /// subscription filter, for same-account delivery.</p>
+    /// </li>
+    /// <li>
+    /// <p>A Lambda function belonging to the same account as the subscription filter,
+    /// for same-account delivery.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+    /// events to the destination stream. You don't need to provide the ARN when you are working with
+    /// a logical destination for cross-account delivery.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The method used to distribute log data to the destination. By default, log data is
+    /// grouped by log stream, but the grouping can be set to random for a more even distribution.
+    /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+        self.distribution.as_ref()
+    }
+}
 impl std::fmt::Debug for PutSubscriptionFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSubscriptionFilterInput");
@@ -8176,6 +8191,20 @@ pub struct PutRetentionPolicyInput {
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
     /// </p>
     pub retention_in_days: std::option::Option<i32>,
+}
+impl PutRetentionPolicyInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The number of days to retain the log events in the specified log group.
+    /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+    /// <p>To set a log group to never have log events expire, use
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
+    /// </p>
+    pub fn retention_in_days(&self) -> std::option::Option<i32> {
+        self.retention_in_days
+    }
 }
 impl std::fmt::Debug for PutRetentionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8233,6 +8262,54 @@ pub struct PutResourcePolicyInput {
     /// </p>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl PutResourcePolicyInput {
+    /// <p>Name of the new policy. This parameter is required.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string.
+    /// This parameter is required.</p>
+    /// <p>The following example creates a resource policy enabling the Route 53 service to put
+    /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of
+    /// your CloudWatch Logs resource, such as a log group or log stream.</p>
+    /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
+    /// condition context keys.</p>
+    /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the
+    /// call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
+    /// the Amazon Web Services account ID making that call.</p>
+    /// <p></p>
+    /// <p>
+    /// <code>{
+    /// "Version": "2012-10-17",
+    /// "Statement": [
+    /// {
+    /// "Sid": "Route53LogsToCloudWatchLogs",
+    /// "Effect": "Allow",
+    /// "Principal": {
+    /// "Service": [
+    /// "route53.amazonaws.com"
+    /// ]
+    /// },
+    /// "Action": "logs:PutLogEvents",
+    /// "Resource": "logArn",
+    /// "Condition": {
+    /// "ArnLike": {
+    /// "aws:SourceArn": "myRoute53ResourceArn"
+    /// },
+    /// "StringEquals": {
+    /// "aws:SourceAccount": "myAwsAccountId"
+    /// }
+    /// }
+    /// }
+    /// ]
+    /// }</code>
+    ///
+    /// </p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyInput");
@@ -8265,6 +8342,34 @@ pub struct PutQueryDefinitionInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub query_string: std::option::Option<std::string::String>,
 }
+impl PutQueryDefinitionInput {
+    /// <p>A name for the query definition. If you are saving a lot of query definitions, we
+    /// recommend that you name them so that you can easily find the ones you want by using the first
+    /// part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If you are updating a query definition, use this parameter to specify the ID of the query
+    /// definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query
+    /// definitions.</p>
+    /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch
+    /// generates a unique ID for the new query definition and include it in the response to this
+    /// operation.</p>
+    pub fn query_definition_id(&self) -> std::option::Option<&str> {
+        self.query_definition_id.as_deref()
+    }
+    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
+    /// <p>If you are updating a query definition and you omit this parameter, then the updated
+    /// definition will contain no log groups.</p>
+    pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_group_names.as_deref()
+    }
+    /// <p>The query string to use for this definition.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+}
 impl std::fmt::Debug for PutQueryDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutQueryDefinitionInput");
@@ -8289,6 +8394,26 @@ pub struct PutMetricFilterInput {
     /// <p>A collection of information that defines how metric data gets emitted.</p>
     pub metric_transformations:
         std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
+}
+impl PutMetricFilterInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>A name for the metric filter.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+    /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>A collection of information that defines how metric data gets emitted.</p>
+    pub fn metric_transformations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MetricTransformation]> {
+        self.metric_transformations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutMetricFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8318,6 +8443,28 @@ pub struct PutLogEventsInput {
     /// successful or one might be rejected.</p>
     pub sequence_token: std::option::Option<std::string::String>,
 }
+impl PutLogEventsInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The log events.</p>
+    pub fn log_events(&self) -> std::option::Option<&[crate::model::InputLogEvent]> {
+        self.log_events.as_deref()
+    }
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
+    /// call. An upload in a newly created log stream does not require a sequence token. You can also
+    /// get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow
+    /// time period using the same value for <code>sequenceToken</code>, both calls might be
+    /// successful or one might be rejected.</p>
+    pub fn sequence_token(&self) -> std::option::Option<&str> {
+        self.sequence_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PutLogEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLogEventsInput");
@@ -8338,6 +8485,17 @@ pub struct PutDestinationPolicyInput {
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
     /// to the associated destination. This can be up to 5120 bytes.</p>
     pub access_policy: std::option::Option<std::string::String>,
+}
+impl PutDestinationPolicyInput {
+    /// <p>A name for an existing destination.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
+    /// to the associated destination. This can be up to 5120 bytes.</p>
+    pub fn access_policy(&self) -> std::option::Option<&str> {
+        self.access_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutDestinationPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8360,6 +8518,21 @@ pub struct PutDestinationInput {
     /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl PutDestinationInput {
+    /// <p>A name for the destination.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
+    /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
+    /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDestinationInput");
@@ -8377,6 +8550,12 @@ pub struct ListTagsLogGroupInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl ListTagsLogGroupInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsLogGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsLogGroupInput");
@@ -8391,6 +8570,12 @@ impl std::fmt::Debug for ListTagsLogGroupInput {
 pub struct GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
     pub query_id: std::option::Option<std::string::String>,
+}
+impl GetQueryResultsInput {
+    /// <p>The ID number of the query.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetQueryResultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8409,6 +8594,15 @@ pub struct GetLogRecordInput {
     /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
     /// to retrieve that complete log event record.</p>
     pub log_record_pointer: std::option::Option<std::string::String>,
+}
+impl GetLogRecordInput {
+    /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from
+    /// the response of a <code>GetQueryResults</code> operation. In that response, the value of the
+    /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
+    /// to retrieve that complete log event record.</p>
+    pub fn log_record_pointer(&self) -> std::option::Option<&str> {
+        self.log_record_pointer.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLogRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8430,6 +8624,20 @@ pub struct GetLogGroupFieldsInput {
     /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
     /// January 1, 1970, 00:00:00 UTC.</p>
     pub time: std::option::Option<i64>,
+}
+impl GetLogGroupFieldsInput {
+    /// <p>The name of the log group to search.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes
+    /// before this time are queries. If you omit <code>time</code> the 8
+    /// minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
+    /// January 1, 1970, 00:00:00 UTC.</p>
+    pub fn time(&self) -> std::option::Option<i64> {
+        self.time
+    }
 }
 impl std::fmt::Debug for GetLogGroupFieldsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8467,6 +8675,45 @@ pub struct GetLogEventsInput {
     /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
     /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
     pub start_from_head: std::option::Option<bool>,
+}
+impl GetLogEventsInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included.
+    /// Events with a timestamp earlier than this time are not included.</p>
+    pub fn start_time(&self) -> std::option::Option<i64> {
+        self.start_time
+    }
+    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not
+    /// included.</p>
+    pub fn end_time(&self) -> std::option::Option<i64> {
+        self.end_time
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
+    /// as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If the value is true, the earliest log events are returned first.
+    /// If the value is false, the latest log events are returned first.
+    /// The default value is false.</p>
+    /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
+    /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
+    pub fn start_from_head(&self) -> std::option::Option<bool> {
+        self.start_from_head
+    }
 }
 impl std::fmt::Debug for GetLogEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8520,6 +8767,59 @@ pub struct FilterLogEventsInput {
     /// interleaves events from multiple log streams within a log group.</p>
     pub interleaved: std::option::Option<bool>,
 }
+impl FilterLogEventsInput {
+    /// <p>The name of the log group to search.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>Filters the results to only logs from the log streams in this list.</p>
+    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
+    /// returns an <code>InvalidParameterException</code> error.</p>
+    pub fn log_stream_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.log_stream_names.as_deref()
+    }
+    /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
+    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for
+    /// <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action
+    /// returns an <code>InvalidParameterException</code> error.</p>
+    pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
+        self.log_stream_name_prefix.as_deref()
+    }
+    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+    pub fn start_time(&self) -> std::option::Option<i64> {
+        self.start_time
+    }
+    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
+    /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+    pub fn end_time(&self) -> std::option::Option<i64> {
+        self.end_time
+    }
+    /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
+    /// <p>If not provided, all the events are matched.</p>
+    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+        self.filter_pattern.as_deref()
+    }
+    /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of events to return. The default is 10,000 events.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If the value is true, the operation makes a best effort to provide responses that
+    /// contain events from multiple log streams within the log group, interleaved in a single
+    /// response. If the value is false, all the matched log events in the first log stream are
+    /// searched first, then those in the next log stream, and so on. The default is false.</p>
+    /// <p>
+    /// <b>Important:</b> Starting on June 17, 2019, this parameter
+    /// is ignored and the value is assumed to be true. The response from this operation always
+    /// interleaves events from multiple log streams within a log group.</p>
+    pub fn interleaved(&self) -> std::option::Option<bool> {
+        self.interleaved
+    }
+}
 impl std::fmt::Debug for FilterLogEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FilterLogEventsInput");
@@ -8543,6 +8843,12 @@ pub struct DisassociateKmsKeyInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl DisassociateKmsKeyInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateKmsKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateKmsKeyInput");
@@ -8564,6 +8870,24 @@ pub struct DescribeSubscriptionFiltersInput {
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeSubscriptionFiltersInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn filter_name_prefix(&self) -> std::option::Option<&str> {
+        self.filter_name_prefix.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeSubscriptionFiltersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscriptionFiltersInput");
@@ -8584,6 +8908,16 @@ pub struct DescribeResourcePoliciesInput {
     /// <p>The maximum number of resource policies to be displayed with one call of this API.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeResourcePoliciesInput {
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of resource policies to be displayed with one call of this API.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeResourcePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePoliciesInput");
@@ -8603,6 +8937,20 @@ pub struct DescribeQueryDefinitionsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeQueryDefinitionsInput {
+    /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
+    pub fn query_definition_name_prefix(&self) -> std::option::Option<&str> {
+        self.query_definition_name_prefix.as_deref()
+    }
+    /// <p>Limits the number of returned query definitions to the specified number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeQueryDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8630,6 +8978,25 @@ pub struct DescribeQueriesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeQueriesInput {
+    /// <p>Limits the returned queries to only those for the specified log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
+    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Limits the number of returned queries to the specified number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeQueriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8661,6 +9028,35 @@ pub struct DescribeMetricFiltersInput {
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
     /// must also include the <code>metricName</code> parameter.</p>
     pub metric_namespace: std::option::Option<std::string::String>,
+}
+impl DescribeMetricFiltersInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The prefix to match. CloudWatch Logs uses the value you set here
+    /// only if you also include the <code>logGroupName</code> parameter in your request.</p>
+    pub fn filter_name_prefix(&self) -> std::option::Option<&str> {
+        self.filter_name_prefix.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
+    /// must also include the <code>metricNamespace</code> parameter.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
+    /// must also include the <code>metricName</code> parameter.</p>
+    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+        self.metric_namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMetricFiltersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8705,6 +9101,45 @@ pub struct DescribeLogStreamsInput {
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeLogStreamsInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The prefix to match.</p>
+    /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this
+    /// parameter.</p>
+    pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
+        self.log_stream_name_prefix.as_deref()
+    }
+    /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name.
+    /// If the value is <code>LastEventTime</code>, the results are ordered by the event time.
+    /// The default value is <code>LogStreamName</code>.</p>
+    /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
+    /// <p>
+    /// <code>lastEventTimestamp</code> represents the time of the most recent log event in the
+    /// log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after
+    /// Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency
+    /// basis. It typically updates in less than an hour from ingestion, but in rare situations might
+    /// take longer.</p>
+    pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
+        self.order_by.as_ref()
+    }
+    /// <p>If the value is true, results are returned in descending order.
+    /// If the value is to false, results are returned in ascending order.
+    /// The default value is false.</p>
+    pub fn descending(&self) -> std::option::Option<bool> {
+        self.descending
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeLogStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLogStreamsInput");
@@ -8729,6 +9164,20 @@ pub struct DescribeLogGroupsInput {
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeLogGroupsInput {
+    /// <p>The prefix to match.</p>
+    pub fn log_group_name_prefix(&self) -> std::option::Option<&str> {
+        self.log_group_name_prefix.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeLogGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLogGroupsInput");
@@ -8752,6 +9201,24 @@ pub struct DescribeExportTasksInput {
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeExportTasksInput {
+    /// <p>The ID of the export task. Specifying a task ID filters the results to zero or one export tasks.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::ExportTaskStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeExportTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportTasksInput");
@@ -8774,6 +9241,20 @@ pub struct DescribeDestinationsInput {
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeDestinationsInput {
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn destination_name_prefix(&self) -> std::option::Option<&str> {
+        self.destination_name_prefix.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDestinationsInput");
@@ -8793,6 +9274,16 @@ pub struct DeleteSubscriptionFilterInput {
     /// <p>The name of the subscription filter.</p>
     pub filter_name: std::option::Option<std::string::String>,
 }
+impl DeleteSubscriptionFilterInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The name of the subscription filter.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSubscriptionFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSubscriptionFilterInput");
@@ -8809,6 +9300,12 @@ pub struct DeleteRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteRetentionPolicyInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRetentionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRetentionPolicyInput");
@@ -8823,6 +9320,12 @@ impl std::fmt::Debug for DeleteRetentionPolicyInput {
 pub struct DeleteResourcePolicyInput {
     /// <p>The name of the policy to be revoked. This parameter is required.</p>
     pub policy_name: std::option::Option<std::string::String>,
+}
+impl DeleteResourcePolicyInput {
+    /// <p>The name of the policy to be revoked. This parameter is required.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8840,6 +9343,13 @@ pub struct DeleteQueryDefinitionInput {
     /// IDs of your saved query definitions.</p>
     pub query_definition_id: std::option::Option<std::string::String>,
 }
+impl DeleteQueryDefinitionInput {
+    /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
+    /// IDs of your saved query definitions.</p>
+    pub fn query_definition_id(&self) -> std::option::Option<&str> {
+        self.query_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteQueryDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteQueryDefinitionInput");
@@ -8856,6 +9366,16 @@ pub struct DeleteMetricFilterInput {
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the metric filter.</p>
     pub filter_name: std::option::Option<std::string::String>,
+}
+impl DeleteMetricFilterInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The name of the metric filter.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMetricFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8875,6 +9395,16 @@ pub struct DeleteLogStreamInput {
     /// <p>The name of the log stream.</p>
     pub log_stream_name: std::option::Option<std::string::String>,
 }
+impl DeleteLogStreamInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLogStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLogStreamInput");
@@ -8891,6 +9421,12 @@ pub struct DeleteLogGroupInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteLogGroupInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLogGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLogGroupInput");
@@ -8905,6 +9441,12 @@ impl std::fmt::Debug for DeleteLogGroupInput {
 pub struct DeleteDestinationInput {
     /// <p>The name of the destination.</p>
     pub destination_name: std::option::Option<std::string::String>,
+}
+impl DeleteDestinationInput {
+    /// <p>The name of the destination.</p>
+    pub fn destination_name(&self) -> std::option::Option<&str> {
+        self.destination_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8922,6 +9464,16 @@ pub struct CreateLogStreamInput {
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log stream.</p>
     pub log_stream_name: std::option::Option<std::string::String>,
+}
+impl CreateLogStreamInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLogStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8949,6 +9501,29 @@ pub struct CreateLogGroupInput {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLogGroupInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The key-value pairs to use for the tags.</p>
+    /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to
+    /// log groups using the <code>aws:Resource/<i>key-name</i>
+    /// </code> or <code>aws:TagKeys</code> condition keys.
+    /// For more information about using tags to control access, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLogGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8985,6 +9560,42 @@ pub struct CreateExportTaskInput {
     /// specify a value, the default is <code>exportedlogs</code>.</p>
     pub destination_prefix: std::option::Option<std::string::String>,
 }
+impl CreateExportTaskInput {
+    /// <p>The name of the export task.</p>
+    pub fn task_name(&self) -> std::option::Option<&str> {
+        self.task_name.as_deref()
+    }
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>Export only log streams that match the provided prefix. If you don't
+    /// specify a value, no prefix filter is applied.</p>
+    pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
+        self.log_stream_name_prefix.as_deref()
+    }
+    /// <p>The start time of the range for the request, expressed as the number of milliseconds
+    /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
+    /// exported.</p>
+    pub fn from(&self) -> std::option::Option<i64> {
+        self.from
+    }
+    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
+    /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+    /// exported.</p>
+    pub fn to(&self) -> std::option::Option<i64> {
+        self.to
+    }
+    /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// <p>The prefix used as the start of the key for every object exported. If you don't
+    /// specify a value, the default is <code>exportedlogs</code>.</p>
+    pub fn destination_prefix(&self) -> std::option::Option<&str> {
+        self.destination_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateExportTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExportTaskInput");
@@ -9006,6 +9617,12 @@ pub struct CancelExportTaskInput {
     /// <p>The ID of the export task.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
+impl CancelExportTaskInput {
+    /// <p>The ID of the export task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelExportTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelExportTaskInput");
@@ -9023,6 +9640,17 @@ pub struct AssociateKmsKeyInput {
     /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
     /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl AssociateKmsKeyInput {
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateKmsKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

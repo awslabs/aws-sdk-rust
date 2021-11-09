@@ -284,10 +284,7 @@ impl CreateIdentityPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_identity_pool(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_identity_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -446,10 +443,7 @@ impl DeleteIdentitiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_identities(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_identities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -602,10 +596,7 @@ impl DeleteIdentityPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_identity_pool(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_identity_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -755,10 +746,7 @@ impl DescribeIdentityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_identity(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_identity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -911,10 +899,9 @@ impl DescribeIdentityPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_identity_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_identity_pool(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1133,10 +1120,7 @@ impl GetCredentialsForIdentityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_credentials_for_identity(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1386,10 +1370,7 @@ impl GetIdInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_id(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_id(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1543,10 +1524,7 @@ impl GetIdentityPoolRolesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_identity_pool_roles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1731,10 +1709,7 @@ impl GetOpenIdTokenInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2003,7 +1978,7 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token_for_developer_identity(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token_for_developer_identity(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2173,7 +2148,7 @@ impl GetPrincipalTagAttributeMapInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_principal_tag_attribute_map(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_principal_tag_attribute_map(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2364,10 +2339,8 @@ impl ListIdentitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2529,10 +2502,7 @@ impl ListIdentityPoolsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_identity_pools(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_identity_pools(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2684,10 +2654,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2908,10 +2877,7 @@ impl LookupDeveloperIdentityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_lookup_developer_identity(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3127,10 +3093,7 @@ impl MergeDeveloperIdentitiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_merge_developer_identities(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3353,10 +3316,7 @@ impl SetIdentityPoolRolesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_roles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3566,7 +3526,7 @@ impl SetPrincipalTagAttributeMapInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_principal_tag_attribute_map(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_principal_tag_attribute_map(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3745,10 +3705,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3946,10 +3903,7 @@ impl UnlinkDeveloperIdentityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_unlink_developer_identity(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4150,10 +4104,8 @@ impl UnlinkIdentityInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_unlink_identity(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_unlink_identity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4324,10 +4276,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4676,10 +4625,7 @@ impl UpdateIdentityPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_identity_pool(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_identity_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4773,6 +4719,60 @@ pub struct UpdateIdentityPoolInput {
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateIdentityPoolInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>A string that you provide.</p>
+    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+        self.identity_pool_name.as_deref()
+    }
+    /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    pub fn allow_unauthenticated_identities(&self) -> bool {
+        self.allow_unauthenticated_identities
+    }
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    pub fn allow_classic_flow(&self) -> std::option::Option<bool> {
+        self.allow_classic_flow
+    }
+    /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    pub fn supported_login_providers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.supported_login_providers.as_ref()
+    }
+    /// <p>The "domain" by which Cognito will refer to your users.</p>
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
+        self.developer_provider_name.as_deref()
+    }
+    /// <p>The ARNs of the OpenID Connect providers.</p>
+    pub fn open_id_connect_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.open_id_connect_provider_ar_ns.as_deref()
+    }
+    /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
+    pub fn cognito_identity_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::CognitoIdentityProvider]> {
+        self.cognito_identity_providers.as_deref()
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+    /// pool.</p>
+    pub fn saml_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.saml_provider_ar_ns.as_deref()
+    }
+    /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+    /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+    /// environment, or other criteria.</p>
+    pub fn identity_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.identity_pool_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIdentityPoolInput");
@@ -4808,6 +4808,16 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags to remove from the user pool.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to remove from the user pool.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4829,6 +4839,24 @@ pub struct UnlinkIdentityInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Provider names to unlink from this identity.</p>
     pub logins_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UnlinkIdentityInput {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider
+    /// tokens.</p>
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.logins.as_ref()
+    }
+    /// <p>Provider names to unlink from this identity.</p>
+    pub fn logins_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.logins_to_remove.as_deref()
+    }
 }
 impl std::fmt::Debug for UnlinkIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4853,6 +4881,24 @@ pub struct UnlinkDeveloperIdentityInput {
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
     pub developer_user_identifier: std::option::Option<std::string::String>,
 }
+impl UnlinkDeveloperIdentityInput {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The "domain" by which Cognito will refer to your users.</p>
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
+        self.developer_provider_name.as_deref()
+    }
+    /// <p>A unique ID used by your backend authentication process to identify a user.</p>
+    pub fn developer_user_identifier(&self) -> std::option::Option<&str> {
+        self.developer_user_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for UnlinkDeveloperIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnlinkDeveloperIdentityInput");
@@ -4873,6 +4919,19 @@ pub struct TagResourceInput {
     /// <p>The tags to assign to the identity pool.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to assign to the identity pool.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4896,6 +4955,27 @@ pub struct SetPrincipalTagAttributeMapInput {
     /// <p>You can use this operation to add principal tags.</p>
     pub principal_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SetPrincipalTagAttributeMapInput {
+    /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The provider name you want to use for attribute mappings.</p>
+    pub fn identity_provider_name(&self) -> std::option::Option<&str> {
+        self.identity_provider_name.as_deref()
+    }
+    /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
+    pub fn use_defaults(&self) -> std::option::Option<bool> {
+        self.use_defaults
+    }
+    /// <p>You can use this operation to add principal tags.</p>
+    pub fn principal_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.principal_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for SetPrincipalTagAttributeMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4927,6 +5007,32 @@ pub struct SetIdentityPoolRolesInput {
         std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
     >,
 }
+impl SetIdentityPoolRolesInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The map of roles associated with this pool. For a given role, the key will be either
+    /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+    pub fn roles(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.roles.as_ref()
+    }
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string
+    /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
+    /// for example, "graph.facebook.com" or
+    /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>Up to 25 rules can be specified per identity provider.</p>
+    pub fn role_mappings(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
+    > {
+        self.role_mappings.as_ref()
+    }
+}
 impl std::fmt::Debug for SetIdentityPoolRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityPoolRolesInput");
@@ -4955,6 +5061,30 @@ pub struct MergeDeveloperIdentitiesInput {
     pub developer_provider_name: std::option::Option<std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl MergeDeveloperIdentitiesInput {
+    /// <p>User identifier for the source user. The value should be a
+    /// <code>DeveloperUserIdentifier</code>.</p>
+    pub fn source_user_identifier(&self) -> std::option::Option<&str> {
+        self.source_user_identifier.as_deref()
+    }
+    /// <p>User identifier for the destination user. The value should be a
+    /// <code>DeveloperUserIdentifier</code>.</p>
+    pub fn destination_user_identifier(&self) -> std::option::Option<&str> {
+        self.destination_user_identifier.as_deref()
+    }
+    /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
+    /// name that you provide while creating an identity pool. This name acts as a placeholder that
+    /// allows your backend and the Cognito service to communicate about the developer provider.
+    /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
+    /// underscore (_), and dash (-).</p>
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
+        self.developer_provider_name.as_deref()
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MergeDeveloperIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4992,6 +5122,35 @@ pub struct LookupDeveloperIdentityInput {
     /// 11th match.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl LookupDeveloperIdentityInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>A unique ID used by your backend authentication process to identify a user.
+    /// Typically, a developer identity provider would issue many developer user identifiers, in
+    /// keeping with the number of users.</p>
+    pub fn developer_user_identifier(&self) -> std::option::Option<&str> {
+        self.developer_user_identifier.as_deref()
+    }
+    /// <p>The maximum number of identities to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
+    /// null. After that the service will return <code>NextToken</code> values as needed. For
+    /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
+    /// 20 matches in the database. The service will return a pagination token as a part of the
+    /// response. This token can be used to call the API again and get results starting from the
+    /// 11th match.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for LookupDeveloperIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LookupDeveloperIdentityInput");
@@ -5012,6 +5171,13 @@ pub struct ListTagsForResourceInput {
     /// to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
+    /// to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -5028,6 +5194,16 @@ pub struct ListIdentityPoolsInput {
     pub max_results: i32,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIdentityPoolsInput {
+    /// <p>The maximum number of identities to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIdentityPoolsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5052,6 +5228,25 @@ pub struct ListIdentitiesInput {
     /// omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub hide_disabled: bool,
 }
+impl ListIdentitiesInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The maximum number of identities to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An optional boolean parameter that allows you to hide disabled identities. If
+    /// omitted, the ListIdentities API will include disabled identities in the response.</p>
+    pub fn hide_disabled(&self) -> bool {
+        self.hide_disabled
+    }
+}
 impl std::fmt::Debug for ListIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIdentitiesInput");
@@ -5071,6 +5266,16 @@ pub struct GetPrincipalTagAttributeMapInput {
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>You can use this operation to get the provider name.</p>
     pub identity_provider_name: std::option::Option<std::string::String>,
+}
+impl GetPrincipalTagAttributeMapInput {
+    /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>You can use this operation to get the provider name.</p>
+    pub fn identity_provider_name(&self) -> std::option::Option<&str> {
+        self.identity_provider_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPrincipalTagAttributeMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5114,6 +5319,50 @@ pub struct GetOpenIdTokenForDeveloperIdentityInput {
     /// </note>
     pub token_duration: std::option::Option<i64>,
 }
+impl GetOpenIdTokenForDeveloperIdentityInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
+    /// name-value pair represents a user from a public provider or developer provider. If the user
+    /// is from a developer provider, the name-value pair will follow the syntax
+    /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+    /// provider is the "domain" by which Cognito will refer to your users; you provided this
+    /// domain while creating/updating the identity pool. The developer user identifier is an
+    /// identifier from your backend that uniquely identifies a user. When you create an identity
+    /// pool, you can specify the supported logins.</p>
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.logins.as_ref()
+    }
+    /// <p>Use this operation to configure attribute mappings for custom providers. </p>
+    pub fn principal_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.principal_tags.as_ref()
+    }
+    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
+    /// time for the token so that you can cache it. If you don't provide an expiration time, the
+    /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
+    /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
+    /// set is 24 hours. You should take care in setting the expiration time for a token, as there
+    /// are significant security implications: an attacker could use a leaked token to access your
+    /// AWS resources for the token's duration.</p>
+    /// <note>
+    /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
+    /// </note>
+    pub fn token_duration(&self) -> std::option::Option<i64> {
+        self.token_duration
+    }
+}
 impl std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityInput");
@@ -5139,6 +5388,22 @@ pub struct GetOpenIdTokenInput {
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetOpenIdTokenInput {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
+    /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
+    /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
+    /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.logins.as_ref()
+    }
+}
 impl std::fmt::Debug for GetOpenIdTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOpenIdTokenInput");
@@ -5154,6 +5419,12 @@ impl std::fmt::Debug for GetOpenIdTokenInput {
 pub struct GetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl GetIdentityPoolRolesInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIdentityPoolRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5204,6 +5475,52 @@ pub struct GetIdInput {
     pub logins:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetIdInput {
+    /// <p>A standard AWS account ID (9+ digits).</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
+    /// available provider names for <code>Logins</code> are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Facebook: <code>graph.facebook.com</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito user pool:
+    /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
+    /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Google: <code>accounts.google.com</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon: <code>www.amazon.com</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Twitter: <code>api.twitter.com</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Digits: <code>www.digits.com</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.logins.as_ref()
+    }
+}
 impl std::fmt::Debug for GetIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdInput");
@@ -5237,6 +5554,34 @@ pub struct GetCredentialsForIdentityInput {
     /// customization.</p>
     pub custom_role_arn: std::option::Option<std::string::String>,
 }
+impl GetCredentialsForIdentityInput {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
+    /// name-value pair will follow the syntax "provider_name":
+    /// "provider_user_identifier".</p>
+    /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
+    /// identity.</p>
+    /// <p>The Logins parameter is required when using identities associated with external
+    /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
+    /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
+    /// Guide.</p>
+    pub fn logins(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.logins.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
+    /// received in the token from the identity provider. For example, a SAML-based identity
+    /// provider. This parameter is optional for identity providers that do not support role
+    /// customization.</p>
+    pub fn custom_role_arn(&self) -> std::option::Option<&str> {
+        self.custom_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCredentialsForIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCredentialsForIdentityInput");
@@ -5254,6 +5599,12 @@ pub struct DescribeIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
+impl DescribeIdentityPoolInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityPoolInput");
@@ -5268,6 +5619,12 @@ impl std::fmt::Debug for DescribeIdentityPoolInput {
 pub struct DescribeIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: std::option::Option<std::string::String>,
+}
+impl DescribeIdentityInput {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5284,6 +5641,12 @@ pub struct DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
+impl DeleteIdentityPoolInput {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIdentityPoolInput");
@@ -5298,6 +5661,12 @@ impl std::fmt::Debug for DeleteIdentityPoolInput {
 pub struct DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
     pub identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteIdentitiesInput {
+    /// <p>A list of 1-60 identities that you want to delete.</p>
+    pub fn identity_ids_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+        self.identity_ids_to_delete.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5342,6 +5711,62 @@ pub struct CreateIdentityPoolInput {
     /// environment, or other criteria.</p>
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateIdentityPoolInput {
+    /// <p>A string that you provide.</p>
+    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+        self.identity_pool_name.as_deref()
+    }
+    /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    pub fn allow_unauthenticated_identities(&self) -> bool {
+        self.allow_unauthenticated_identities
+    }
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    pub fn allow_classic_flow(&self) -> std::option::Option<bool> {
+        self.allow_classic_flow
+    }
+    /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    pub fn supported_login_providers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.supported_login_providers.as_ref()
+    }
+    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
+    /// placeholder that allows your backend and the Cognito service to communicate about the
+    /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
+    /// as period (<code>.</code>), underscore (<code>_</code>), and dash
+    /// (<code>-</code>).</p>
+    /// <p>Once you have set a developer provider name, you cannot change it. Please take care
+    /// in setting this parameter.</p>
+    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
+        self.developer_provider_name.as_deref()
+    }
+    /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
+    pub fn open_id_connect_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.open_id_connect_provider_ar_ns.as_deref()
+    }
+    /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
+    pub fn cognito_identity_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::CognitoIdentityProvider]> {
+        self.cognito_identity_providers.as_deref()
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+    /// pool.</p>
+    pub fn saml_provider_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.saml_provider_ar_ns.as_deref()
+    }
+    /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
+    /// pools to categorize and manage them in different ways, such as by purpose, owner,
+    /// environment, or other criteria.</p>
+    pub fn identity_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.identity_pool_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateIdentityPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

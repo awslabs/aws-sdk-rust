@@ -2,25 +2,29 @@
 pub fn serialize_structure_crate_input_get_device_registration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDeviceRegistrationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.device_fleet_name {
         object.key("DeviceFleetName").string(var_1);
     }
     if let Some(var_2) = &input.device_name {
         object.key("DeviceName").string(var_2);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_send_heartbeat_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendHeartbeatInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.agent_metrics {
         let mut array_4 = object.key("AgentMetrics").start_array();
         for item_5 in var_3 {
             {
                 let mut object_6 = array_4.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_edge_metric(&mut object_6, item_5);
+                crate::json_ser::serialize_structure_crate_model_edge_metric(
+                    &mut object_6,
+                    item_5,
+                )?;
                 object_6.finish();
             }
         }
@@ -40,18 +44,19 @@ pub fn serialize_structure_crate_input_send_heartbeat_input(
         for item_12 in var_10 {
             {
                 let mut object_13 = array_11.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_model(&mut object_13, item_12);
+                crate::json_ser::serialize_structure_crate_model_model(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
         array_11.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_edge_metric(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EdgeMetric,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.dimension {
         object.key("Dimension").string(var_14);
     }
@@ -69,12 +74,13 @@ pub fn serialize_structure_crate_model_edge_metric(
             .key("Timestamp")
             .instant(var_16, aws_smithy_types::instant::Format::EpochSeconds);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_model(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Model,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.model_name {
         object.key("ModelName").string(var_17);
     }
@@ -99,10 +105,11 @@ pub fn serialize_structure_crate_model_model(
                 crate::json_ser::serialize_structure_crate_model_edge_metric(
                     &mut object_24,
                     item_23,
-                );
+                )?;
                 object_24.finish();
             }
         }
         array_22.finish();
     }
+    Ok(())
 }

@@ -124,10 +124,7 @@ impl AssociateCustomDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_custom_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -363,7 +360,7 @@ impl CreateAutoScalingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_auto_scaling_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_auto_scaling_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -553,10 +550,7 @@ impl CreateConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -819,10 +813,7 @@ impl CreateServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -987,7 +978,7 @@ impl DeleteAutoScalingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_auto_scaling_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_auto_scaling_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1141,10 +1132,7 @@ impl DeleteConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1293,10 +1281,7 @@ impl DeleteServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1463,7 +1448,7 @@ impl DescribeAutoScalingConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1646,10 +1631,7 @@ impl DescribeCustomDomainsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_custom_domains(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1799,10 +1781,7 @@ impl DescribeServiceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_service(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1967,10 +1946,7 @@ impl DisassociateCustomDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_custom_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2177,7 +2153,7 @@ impl ListAutoScalingConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_auto_scaling_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_auto_scaling_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2361,10 +2337,7 @@ impl ListConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_connections(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2543,10 +2516,8 @@ impl ListOperationsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_operations(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_operations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2713,10 +2684,7 @@ impl ListServicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2868,10 +2836,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3020,10 +2987,7 @@ impl PauseServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_pause_service(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_pause_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3172,10 +3136,7 @@ impl ResumeServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_resume_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_resume_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3325,10 +3286,7 @@ impl StartDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3502,10 +3460,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3677,10 +3632,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3907,10 +3859,7 @@ impl UpdateServiceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_service(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_service(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3991,6 +3940,36 @@ pub struct UpdateServiceInput {
     /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
 }
+impl UpdateServiceInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>The source configuration to apply to the App Runner service.</p>
+    /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
+    /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
+    /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
+    /// values to members of the structure that you include.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+    pub fn instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+        self.instance_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_arn.as_deref()
+    }
+    /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    pub fn health_check_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
+        self.health_check_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceInput");
@@ -4019,6 +3998,17 @@ pub struct UntagResourceInput {
     /// <p>A list of tag keys that you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
+    /// <p>It must be the ARN of an App Runner resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag keys that you want to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4039,6 +4029,18 @@ pub struct TagResourceInput {
     /// associated with the resource, the value of the tag is updated.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
+    /// <p>It must be the ARN of an App Runner resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
+    /// associated with the resource, the value of the tag is updated.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4055,6 +4057,12 @@ pub struct StartDeploymentInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
     pub service_arn: std::option::Option<std::string::String>,
 }
+impl StartDeploymentInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeploymentInput");
@@ -4069,6 +4077,12 @@ impl std::fmt::Debug for StartDeploymentInput {
 pub struct ResumeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
     pub service_arn: std::option::Option<std::string::String>,
+}
+impl ResumeServiceInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResumeServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4085,6 +4099,12 @@ pub struct PauseServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
     pub service_arn: std::option::Option<std::string::String>,
 }
+impl PauseServiceInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PauseServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PauseServiceInput");
@@ -4100,6 +4120,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
+    /// <p>It must be the ARN of an App Runner resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4120,6 +4147,19 @@ pub struct ListServicesInput {
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServicesInput {
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
+    /// identical to the ones specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4144,6 +4184,23 @@ pub struct ListOperationsInput {
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListOperationsInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
+    /// identical to the ones specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOperationsInput");
@@ -4167,6 +4224,23 @@ pub struct ListConnectionsInput {
     /// identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConnectionsInput {
+    /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
+    /// identical to the ones specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4198,6 +4272,31 @@ pub struct ListAutoScalingConfigurationsInput {
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAutoScalingConfigurationsInput {
+    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
+    /// returns revisions of all configurations.</p>
+    pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_name.as_deref()
+    }
+    /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+    /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn latest_only(&self) -> bool {
+        self.latest_only
+    }
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
+    /// identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAutoScalingConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAutoScalingConfigurationsInput");
@@ -4221,6 +4320,16 @@ pub struct DisassociateCustomDomainInput {
     /// <p>The domain name that you want to disassociate from the App Runner service.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DisassociateCustomDomainInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>The domain name that you want to disassociate from the App Runner service.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateCustomDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateCustomDomainInput");
@@ -4236,6 +4345,12 @@ impl std::fmt::Debug for DisassociateCustomDomainInput {
 pub struct DescribeServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
     pub service_arn: std::option::Option<std::string::String>,
+}
+impl DescribeServiceInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4259,6 +4374,23 @@ pub struct DescribeCustomDomainsInput {
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeCustomDomainsInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
+    /// identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeCustomDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomDomainsInput");
@@ -4281,6 +4413,17 @@ pub struct DescribeAutoScalingConfigurationInput {
     /// described.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAutoScalingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
+    /// </code> or
+    /// <code>.../<i>name</i>/<i>revision</i>
+    /// </code>. If a revision isn't specified, the latest active revision is
+    /// described.</p>
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAutoScalingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAutoScalingConfigurationInput");
@@ -4299,6 +4442,12 @@ pub struct DeleteServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
     pub service_arn: std::option::Option<std::string::String>,
 }
+impl DeleteServiceInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceInput");
@@ -4313,6 +4462,12 @@ impl std::fmt::Debug for DeleteServiceInput {
 pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
     pub connection_arn: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4332,6 +4487,16 @@ pub struct DeleteAutoScalingConfigurationInput {
     /// <code>.../<i>name</i>/<i>revision</i>
     /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAutoScalingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
+    /// </code> or
+    /// <code>.../<i>name</i>/<i>revision</i>
+    /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAutoScalingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4365,6 +4530,44 @@ pub struct CreateServiceInput {
     /// associates the latest revision of a default auto scaling configuration.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
+impl CreateServiceInput {
+    /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+    pub fn instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+        self.instance_configuration.as_ref()
+    }
+    /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
+    /// App Runner uses an Amazon Web Services managed CMK.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    pub fn health_check_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
+        self.health_check_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
+    /// associates the latest revision of a default auto scaling configuration.</p>
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceInput");
@@ -4395,6 +4598,20 @@ pub struct CreateConnectionInput {
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateConnectionInput {
+    /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The source repository provider.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4432,6 +4649,39 @@ pub struct CreateAutoScalingConfigurationInput {
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAutoScalingConfigurationInput {
+    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
+    /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
+        self.auto_scaling_configuration_name.as_deref()
+    }
+    /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
+    /// up your service.</p>
+    /// <p>Default: <code>100</code>
+    /// </p>
+    pub fn max_concurrency(&self) -> std::option::Option<i32> {
+        self.max_concurrency
+    }
+    /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
+    /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
+    /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+    /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
+    /// <p>Default: <code>1</code>
+    /// </p>
+    pub fn min_size(&self) -> std::option::Option<i32> {
+        self.min_size
+    }
+    /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
+    /// <p>Default: <code>25</code>
+    /// </p>
+    pub fn max_size(&self) -> std::option::Option<i32> {
+        self.max_size
+    }
+    /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAutoScalingConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAutoScalingConfigurationInput");
@@ -4462,6 +4712,25 @@ pub struct AssociateCustomDomainInput {
     /// <p>Default: <code>true</code>
     /// </p>
     pub enable_www_subdomain: std::option::Option<bool>,
+}
+impl AssociateCustomDomainInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
+    pub fn service_arn(&self) -> std::option::Option<&str> {
+        self.service_arn.as_deref()
+    }
+    /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
+    /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
+    /// </code> with the App Runner service in addition to the base
+    /// domain.</p>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn enable_www_subdomain(&self) -> std::option::Option<bool> {
+        self.enable_www_subdomain
+    }
 }
 impl std::fmt::Debug for AssociateCustomDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

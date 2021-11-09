@@ -29,6 +29,46 @@ pub struct EventDestinationDefinition {
     /// for your campaigns.</p>
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
+impl EventDestinationDefinition {
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
+    /// enabled, the specified event types are sent to the destinations in this
+    /// <code>EventDestinationDefinition</code>.</p>
+    /// <p>If <code>false</code>, the event destination is disabled. When the event destination
+    /// is disabled, events aren't sent to the specified destinations.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>An array that specifies which events Amazon Pinpoint should send to the destinations in this
+    /// <code>EventDestinationDefinition</code>.</p>
+    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.matching_event_types.as_deref()
+    }
+    /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
+    /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
+    pub fn kinesis_firehose_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+        self.kinesis_firehose_destination.as_ref()
+    }
+    /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
+    /// monitor and gain insights on your email sending metrics.</p>
+    pub fn cloud_watch_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchDestination> {
+        self.cloud_watch_destination.as_ref()
+    }
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
+    /// send notification when certain email events occur.</p>
+    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+        self.sns_destination.as_ref()
+    }
+    /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events
+    /// to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments
+    /// for your campaigns.</p>
+    pub fn pinpoint_destination(&self) -> std::option::Option<&crate::model::PinpointDestination> {
+        self.pinpoint_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for EventDestinationDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventDestinationDefinition");
@@ -198,6 +238,13 @@ pub struct PinpointDestination {
     /// events to.</p>
     pub application_arn: std::option::Option<std::string::String>,
 }
+impl PinpointDestination {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email
+    /// events to.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PinpointDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PinpointDestination");
@@ -254,6 +301,14 @@ pub struct SnsDestination {
     /// Guide</a>.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl SnsDestination {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
+    /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer
+    /// Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SnsDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnsDestination");
@@ -308,6 +363,15 @@ pub struct CloudWatchDestination {
     /// Amazon CloudWatch.</p>
     pub dimension_configurations:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
+}
+impl CloudWatchDestination {
+    /// <p>An array of objects that define the dimensions to use when you send email events to
+    /// Amazon CloudWatch.</p>
+    pub fn dimension_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchDimensionConfiguration]> {
+        self.dimension_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -403,6 +467,47 @@ pub struct CloudWatchDimensionConfiguration {
     /// </li>
     /// </ul>
     pub default_dimension_value: std::option::Option<std::string::String>,
+}
+impl CloudWatchDimensionConfiguration {
+    /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to
+    /// meet the following criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
+    /// or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>It can contain no more than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you
+    /// want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header
+    /// or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you
+    /// want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want
+    /// Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
+    pub fn dimension_value_source(
+        &self,
+    ) -> std::option::Option<&crate::model::DimensionValueSource> {
+        self.dimension_value_source.as_ref()
+    }
+    /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the
+    /// value of the dimension when you send an email. This value has to meet the following
+    /// criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_),
+    /// or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>It can contain no more than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn default_dimension_value(&self) -> std::option::Option<&str> {
+        self.default_dimension_value.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchDimensionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -605,6 +710,18 @@ pub struct KinesisFirehoseDestination {
     /// to.</p>
     pub delivery_stream_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseDestination {
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email
+    /// events to the Amazon Kinesis Data Firehose stream.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events
+    /// to.</p>
+    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+        self.delivery_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseDestination");
@@ -800,6 +917,20 @@ pub struct Tag {
     /// will set the value to an empty string.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
+    /// 128 characters. The minimum length is 1 character.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
+    /// value is 256 characters. The minimum length is 0 characters. If you don’t want a
+    /// resource to have a specific tag value, don’t specify a value for this parameter. Amazon Pinpoint
+    /// will set the value to an empty string.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -892,6 +1023,36 @@ pub struct MessageTag {
     /// </li>
     /// </ul>
     pub value: std::option::Option<std::string::String>,
+}
+impl MessageTag {
+    /// <p>The name of the message tag. The message tag name has to meet the following
+    /// criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>It can contain no more than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the message tag. The message tag value has to meet the following
+    /// criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>It can contain no more than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for MessageTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1030,6 +1191,48 @@ pub struct EmailContent {
     /// <p>The template to use for the email message.</p>
     pub template: std::option::Option<crate::model::Template>,
 }
+impl EmailContent {
+    /// <p>The simple email message. The message consists of a subject and a message body.</p>
+    pub fn simple(&self) -> std::option::Option<&crate::model::Message> {
+        self.simple.as_ref()
+    }
+    /// <p>The raw email message. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The message has to contain a header and a body, separated by one blank
+    /// line.</p>
+    /// </li>
+    /// <li>
+    /// <p>All of the required header fields must be present in the message.</p>
+    /// </li>
+    /// <li>
+    /// <p>Each part of a multipart MIME message must be formatted properly.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>The entire message must be Base64 encoded.</p>
+    /// </li>
+    /// <li>
+    /// <p>If any of the MIME parts in your message contain content that is outside of
+    /// the 7-bit ASCII character range, you should encode that content to ensure that
+    /// recipients' email clients render the message properly.</p>
+    /// </li>
+    /// <li>
+    /// <p>The length of any single line of text in the message can't exceed 1,000
+    /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn raw(&self) -> std::option::Option<&crate::model::RawMessage> {
+        self.raw.as_ref()
+    }
+    /// <p>The template to use for the email message.</p>
+    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+        self.template.as_ref()
+    }
+}
 impl std::fmt::Debug for EmailContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmailContent");
@@ -1162,6 +1365,16 @@ pub struct Template {
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub template_data: std::option::Option<std::string::String>,
 }
+impl Template {
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
+    pub fn template_data(&self) -> std::option::Option<&str> {
+        self.template_data.as_deref()
+    }
+}
 impl std::fmt::Debug for Template {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Template");
@@ -1253,6 +1466,40 @@ pub struct RawMessage {
     /// </li>
     /// </ul>
     pub data: std::option::Option<aws_smithy_types::Blob>,
+}
+impl RawMessage {
+    /// <p>The raw email message. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The message has to contain a header and a body, separated by one blank
+    /// line.</p>
+    /// </li>
+    /// <li>
+    /// <p>All of the required header fields must be present in the message.</p>
+    /// </li>
+    /// <li>
+    /// <p>Each part of a multipart MIME message must be formatted properly.</p>
+    /// </li>
+    /// <li>
+    /// <p>Attachments must be in a file format that Amazon Pinpoint supports.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>The entire message must be Base64 encoded.</p>
+    /// </li>
+    /// <li>
+    /// <p>If any of the MIME parts in your message contain content that is outside of
+    /// the 7-bit ASCII character range, you should encode that content to ensure that
+    /// recipients' email clients render the message properly.</p>
+    /// </li>
+    /// <li>
+    /// <p>The length of any single line of text in the message can't exceed 1,000
+    /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
 }
 impl std::fmt::Debug for RawMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1362,6 +1609,19 @@ pub struct Message {
     /// version of the message, or both.</p>
     pub body: std::option::Option<crate::model::Body>,
 }
+impl Message {
+    /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII
+    /// characters. However, you can specify non-ASCII characters in the subject line by using
+    /// encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
+    pub fn subject(&self) -> std::option::Option<&crate::model::Content> {
+        self.subject.as_ref()
+    }
+    /// <p>The body of the message. You can specify an HTML version of the message, a text-only
+    /// version of the message, or both.</p>
+    pub fn body(&self) -> std::option::Option<&crate::model::Body> {
+        self.body.as_ref()
+    }
+}
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Message");
@@ -1434,6 +1694,20 @@ pub struct Body {
     /// clients that support HTML. HTML messages can include formatted text, hyperlinks, images,
     /// and more. </p>
     pub html: std::option::Option<crate::model::Content>,
+}
+impl Body {
+    /// <p>An object that represents the version of the message that is displayed in email
+    /// clients that don't support HTML, or clients where the recipient has disabled HTML
+    /// rendering.</p>
+    pub fn text(&self) -> std::option::Option<&crate::model::Content> {
+        self.text.as_ref()
+    }
+    /// <p>An object that represents the version of the message that is displayed in email
+    /// clients that support HTML. HTML messages can include formatted text, hyperlinks, images,
+    /// and more. </p>
+    pub fn html(&self) -> std::option::Option<&crate::model::Content> {
+        self.html.as_ref()
+    }
 }
 impl std::fmt::Debug for Body {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1510,6 +1784,19 @@ pub struct Content {
     /// <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
     pub charset: std::option::Option<std::string::String>,
 }
+impl Content {
+    /// <p>The content of the message itself.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The character set for the content. Because of the constraints of the SMTP protocol,
+    /// Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII
+    /// range, you have to specify a character set. For example, you could specify
+    /// <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
+    pub fn charset(&self) -> std::option::Option<&str> {
+        self.charset.as_deref()
+    }
+}
 impl std::fmt::Debug for Content {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Content");
@@ -1583,6 +1870,23 @@ pub struct Destination {
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients
     /// for the email.</p>
     pub bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Destination {
+    /// <p>An array that contains the email addresses of the "To" recipients for the
+    /// email.</p>
+    pub fn to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.to_addresses.as_deref()
+    }
+    /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for
+    /// the email.</p>
+    pub fn cc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.cc_addresses.as_deref()
+    }
+    /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients
+    /// for the email.</p>
+    pub fn bcc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.bcc_addresses.as_deref()
+    }
 }
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1764,6 +2068,25 @@ pub struct DomainDeliverabilityTrackingOption {
     pub inbox_placement_tracking_option:
         std::option::Option<crate::model::InboxPlacementTrackingOption>,
 }
+impl DomainDeliverabilityTrackingOption {
+    /// <p>A verified domain that’s associated with your AWS account and currently has an
+    /// active Deliverability dashboard subscription.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
+    /// domain.</p>
+    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.subscription_start_date.as_ref()
+    }
+    /// <p>An object that contains information about the inbox placement data settings for the
+    /// domain.</p>
+    pub fn inbox_placement_tracking_option(
+        &self,
+    ) -> std::option::Option<&crate::model::InboxPlacementTrackingOption> {
+        self.inbox_placement_tracking_option.as_ref()
+    }
+}
 impl std::fmt::Debug for DomainDeliverabilityTrackingOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainDeliverabilityTrackingOption");
@@ -1862,6 +2185,17 @@ pub struct InboxPlacementTrackingOption {
     /// <p>An array of strings, one for each major email provider that the inbox placement data
     /// applies to.</p>
     pub tracked_isps: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl InboxPlacementTrackingOption {
+    /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
+    pub fn global(&self) -> bool {
+        self.global
+    }
+    /// <p>An array of strings, one for each major email provider that the inbox placement data
+    /// applies to.</p>
+    pub fn tracked_isps(&self) -> std::option::Option<&[std::string::String]> {
+        self.tracked_isps.as_deref()
+    }
 }
 impl std::fmt::Debug for InboxPlacementTrackingOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2014,6 +2348,38 @@ pub struct IdentityInfo {
     /// you can send email from an identity, you have to demostrate that you own the identity,
     /// and that you authorize Amazon Pinpoint to send email from that identity.</p>
     pub sending_enabled: bool,
+}
+impl IdentityInfo {
+    /// <p>The email identity type. The identity type can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DOMAIN</code> – The identity is a domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed
+    /// by AWS.</p>
+    /// </li>
+    /// </ul>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The address or domain of the identity.</p>
+    pub fn identity_name(&self) -> std::option::Option<&str> {
+        self.identity_name.as_deref()
+    }
+    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before
+    /// you can send email from an identity, you have to demostrate that you own the identity,
+    /// and that you authorize Amazon Pinpoint to send email from that identity.</p>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
 }
 impl std::fmt::Debug for IdentityInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2243,6 +2609,79 @@ pub struct DomainDeliverabilityCampaign {
     pub projected_volume: std::option::Option<i64>,
     /// <p>The major email providers who handled the email message.</p>
     pub esps: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DomainDeliverabilityCampaign {
+    /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this
+    /// identifier to a campaign. This value is not the same as the campaign identifier that
+    /// Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the
+    /// Amazon Pinpoint console.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The URL of an image that contains a snapshot of the email message that was
+    /// sent.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The subject line, or title, of the email message.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The verified email address that the email message was sent from.</p>
+    pub fn from_address(&self) -> std::option::Option<&str> {
+        self.from_address.as_deref()
+    }
+    /// <p>The IP addresses that were used to send the email message.</p>
+    pub fn sending_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.sending_ips.as_deref()
+    }
+    /// <p>The first time, in Unix time format, when the email message was delivered to any
+    /// recipient's inbox. This value can help you determine how long it took for a campaign to
+    /// deliver an email message.</p>
+    pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_seen_date_time.as_ref()
+    }
+    /// <p>The last time, in Unix time format, when the email message was delivered to any
+    /// recipient's inbox. This value can help you determine how long it took for a campaign to
+    /// deliver an email message.</p>
+    pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_seen_date_time.as_ref()
+    }
+    /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
+    pub fn inbox_count(&self) -> std::option::Option<i64> {
+        self.inbox_count
+    }
+    /// <p>The number of email messages that were delivered to recipients' spam or junk mail
+    /// folders.</p>
+    pub fn spam_count(&self) -> std::option::Option<i64> {
+        self.spam_count
+    }
+    /// <p>The percentage of email messages that were opened by recipients. Due to technical
+    /// limitations, this value only includes recipients who opened the message by using an
+    /// email client that supports images.</p>
+    pub fn read_rate(&self) -> std::option::Option<f64> {
+        self.read_rate
+    }
+    /// <p>The percentage of email messages that were deleted by recipients, without being opened
+    /// first. Due to technical limitations, this value only includes recipients who opened the
+    /// message by using an email client that supports images.</p>
+    pub fn delete_rate(&self) -> std::option::Option<f64> {
+        self.delete_rate
+    }
+    /// <p>The percentage of email messages that were opened and then deleted by recipients. Due
+    /// to technical limitations, this value only includes recipients who opened the message by
+    /// using an email client that supports images.</p>
+    pub fn read_delete_rate(&self) -> std::option::Option<f64> {
+        self.read_delete_rate
+    }
+    /// <p>The projected number of recipients that the email message was sent to.</p>
+    pub fn projected_volume(&self) -> std::option::Option<i64> {
+        self.projected_volume
+    }
+    /// <p>The major email providers who handled the email message.</p>
+    pub fn esps(&self) -> std::option::Option<&[std::string::String]> {
+        self.esps.as_deref()
+    }
 }
 impl std::fmt::Debug for DomainDeliverabilityCampaign {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2528,6 +2967,37 @@ pub struct DeliverabilityTestReport {
     /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
 }
+impl DeliverabilityTestReport {
+    /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>A name that helps you identify a predictive inbox placement test report.</p>
+    pub fn report_name(&self) -> std::option::Option<&str> {
+        self.report_name.as_deref()
+    }
+    /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The sender address that you specified for the predictive inbox placement test.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
+    /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
+    /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
+    /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    pub fn deliverability_test_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityTestStatus> {
+        self.deliverability_test_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeliverabilityTestReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeliverabilityTestReport");
@@ -2754,6 +3224,53 @@ pub struct MailFromAttributes {
     /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
     /// states.</p>
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
+}
+impl MailFromAttributes {
+    /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
+    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+        self.mail_from_domain.as_deref()
+    }
+    /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record
+    /// yet.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the
+    /// MAIL FROM domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the
+    /// record no longer exists.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which
+    /// prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p>
+    /// </li>
+    /// </ul>
+    pub fn mail_from_domain_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MailFromDomainStatus> {
+        self.mail_from_domain_status.as_ref()
+    }
+    /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom
+    /// MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses
+    /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+    /// to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code>
+    /// error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
+    /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
+    /// states.</p>
+    pub fn behavior_on_mx_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
+        self.behavior_on_mx_failure.as_ref()
+    }
 }
 impl std::fmt::Debug for MailFromAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3025,6 +3542,56 @@ pub struct DkimAttributes {
     /// configuration for your domain.</p>
     pub tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DkimAttributes {
+    /// <p>If the value is <code>true</code>, then the messages that Amazon Pinpoint sends from the
+    /// identity are DKIM-signed. If the value is <code>false</code>, then the messages that
+    /// Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+    pub fn signing_enabled(&self) -> bool {
+        self.signing_enabled
+    }
+    /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS
+    /// records for the domain. The status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the
+    /// DNS configuration for the domain, but will continue to attempt to locate
+    /// them.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS
+    /// configuration for the domain and determined that they're correct. Amazon Pinpoint can now
+    /// send DKIM-signed email from the identity.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the
+    /// DNS settings for the domain, and won't continue to search for them.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which
+    /// prevented Amazon Pinpoint from determining the DKIM status for the domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the
+    /// DKIM records in the DKIM records for the domain.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::DkimStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A set of unique strings that you use to create a set of CNAME records that you add to
+    /// the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS
+    /// configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint
+    /// usually detects these records within about 72 hours of adding them to the DNS
+    /// configuration for your domain.</p>
+    pub fn tokens(&self) -> std::option::Option<&[std::string::String]> {
+        self.tokens.as_deref()
+    }
+}
 impl std::fmt::Debug for DkimAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DkimAttributes");
@@ -3290,6 +3857,24 @@ pub struct DailyVolume {
     /// period, broken out by the recipient's email provider.</p>
     pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
 }
+impl DailyVolume {
+    /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>An object that contains inbox placement metrics for a specific day in the analysis
+    /// period.</p>
+    pub fn volume_statistics(&self) -> std::option::Option<&crate::model::VolumeStatistics> {
+        self.volume_statistics.as_ref()
+    }
+    /// <p>An object that contains inbox placement metrics for a specified day in the analysis
+    /// period, broken out by the recipient's email provider.</p>
+    pub fn domain_isp_placements(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainIspPlacement]> {
+        self.domain_isp_placements.as_deref()
+    }
+}
 impl std::fmt::Debug for DailyVolume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DailyVolume");
@@ -3399,6 +3984,32 @@ pub struct DomainIspPlacement {
     /// <p>The percentage of messages that were sent from the selected domain to the specified
     /// email provider that arrived in recipients' spam or junk mail folders.</p>
     pub spam_percentage: std::option::Option<f64>,
+}
+impl DomainIspPlacement {
+    /// <p>The name of the email provider that the inbox placement data applies to.</p>
+    pub fn isp_name(&self) -> std::option::Option<&str> {
+        self.isp_name.as_deref()
+    }
+    /// <p>The total number of messages that were sent from the selected domain to the specified
+    /// email provider that arrived in recipients' inboxes.</p>
+    pub fn inbox_raw_count(&self) -> std::option::Option<i64> {
+        self.inbox_raw_count
+    }
+    /// <p>The total number of messages that were sent from the selected domain to the specified
+    /// email provider that arrived in recipients' spam or junk mail folders.</p>
+    pub fn spam_raw_count(&self) -> std::option::Option<i64> {
+        self.spam_raw_count
+    }
+    /// <p>The percentage of messages that were sent from the selected domain to the specified
+    /// email provider that arrived in recipients' inboxes.</p>
+    pub fn inbox_percentage(&self) -> std::option::Option<f64> {
+        self.inbox_percentage
+    }
+    /// <p>The percentage of messages that were sent from the selected domain to the specified
+    /// email provider that arrived in recipients' spam or junk mail folders.</p>
+    pub fn spam_percentage(&self) -> std::option::Option<f64> {
+        self.spam_percentage
+    }
 }
 impl std::fmt::Debug for DomainIspPlacement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3518,6 +4129,27 @@ pub struct VolumeStatistics {
     /// in recipients' spam or junk mail folders.</p>
     pub projected_spam: std::option::Option<i64>,
 }
+impl VolumeStatistics {
+    /// <p>The total number of emails that arrived in recipients' inboxes.</p>
+    pub fn inbox_raw_count(&self) -> std::option::Option<i64> {
+        self.inbox_raw_count
+    }
+    /// <p>The total number of emails that arrived in recipients' spam or junk mail
+    /// folders.</p>
+    pub fn spam_raw_count(&self) -> std::option::Option<i64> {
+        self.spam_raw_count
+    }
+    /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
+    /// in recipients' inboxes.</p>
+    pub fn projected_inbox(&self) -> std::option::Option<i64> {
+        self.projected_inbox
+    }
+    /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
+    /// in recipients' spam or junk mail folders.</p>
+    pub fn projected_spam(&self) -> std::option::Option<i64> {
+        self.projected_spam
+    }
+}
 impl std::fmt::Debug for VolumeStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeStatistics");
@@ -3619,6 +4251,25 @@ pub struct OverallVolume {
     /// providers.</p>
     pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
 }
+impl OverallVolume {
+    /// <p>An object that contains information about the numbers of messages that arrived in
+    /// recipients' inboxes and junk mail folders.</p>
+    pub fn volume_statistics(&self) -> std::option::Option<&crate::model::VolumeStatistics> {
+        self.volume_statistics.as_ref()
+    }
+    /// <p>The percentage of emails that were sent from the domain that were read by their
+    /// recipients.</p>
+    pub fn read_rate_percent(&self) -> std::option::Option<f64> {
+        self.read_rate_percent
+    }
+    /// <p>An object that contains inbox and junk mail placement metrics for individual email
+    /// providers.</p>
+    pub fn domain_isp_placements(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainIspPlacement]> {
+        self.domain_isp_placements.as_deref()
+    }
+}
 impl std::fmt::Debug for OverallVolume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OverallVolume");
@@ -3718,6 +4369,16 @@ pub struct IspPlacement {
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
     pub placement_statistics: std::option::Option<crate::model::PlacementStatistics>,
 }
+impl IspPlacement {
+    /// <p>The name of the email provider that the inbox placement data applies to.</p>
+    pub fn isp_name(&self) -> std::option::Option<&str> {
+        self.isp_name.as_deref()
+    }
+    /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
+    pub fn placement_statistics(&self) -> std::option::Option<&crate::model::PlacementStatistics> {
+        self.placement_statistics.as_ref()
+    }
+}
 impl std::fmt::Debug for IspPlacement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IspPlacement");
@@ -3793,6 +4454,32 @@ pub struct PlacementStatistics {
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail
     /// (DKIM) during the predictive inbox placement test.</p>
     pub dkim_percentage: std::option::Option<f64>,
+}
+impl PlacementStatistics {
+    /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
+    pub fn inbox_percentage(&self) -> std::option::Option<f64> {
+        self.inbox_percentage
+    }
+    /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during
+    /// the predictive inbox placement test.</p>
+    pub fn spam_percentage(&self) -> std::option::Option<f64> {
+        self.spam_percentage
+    }
+    /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the
+    /// predictive inbox placement test.</p>
+    pub fn missing_percentage(&self) -> std::option::Option<f64> {
+        self.missing_percentage
+    }
+    /// <p>The percentage of emails that were authenticated by using Sender Policy Framework
+    /// (SPF) during the predictive inbox placement test.</p>
+    pub fn spf_percentage(&self) -> std::option::Option<f64> {
+        self.spf_percentage
+    }
+    /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail
+    /// (DKIM) during the predictive inbox placement test.</p>
+    pub fn dkim_percentage(&self) -> std::option::Option<f64> {
+        self.dkim_percentage
+    }
 }
 impl std::fmt::Debug for PlacementStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3984,6 +4671,38 @@ pub struct DedicatedIp {
     pub warmup_percentage: std::option::Option<i32>,
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
     pub pool_name: std::option::Option<std::string::String>,
+}
+impl DedicatedIp {
+    /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+    /// <p>The warm-up status of a dedicated IP address. The status can have one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code> – The IP address isn't ready to use because the
+    /// dedicated IP warm-up process is ongoing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DONE</code> – The dedicated IP warm-up process is complete, and
+    /// the IP address is ready to use.</p>
+    /// </li>
+    /// </ul>
+    pub fn warmup_status(&self) -> std::option::Option<&crate::model::WarmupStatus> {
+        self.warmup_status.as_ref()
+    }
+    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1,
+    /// the address has completed the warm-up process and is ready for use.</p>
+    pub fn warmup_percentage(&self) -> std::option::Option<i32> {
+        self.warmup_percentage
+    }
+    /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DedicatedIp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4183,6 +4902,49 @@ pub struct EventDestination {
     /// for your campaigns.</p>
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
+impl EventDestination {
+    /// <p>A name that identifies the event destination.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
+    /// enabled, the specified event types are sent to the destinations in this
+    /// <code>EventDestinationDefinition</code>.</p>
+    /// <p>If <code>false</code>, the event destination is disabled. When the event destination
+    /// is disabled, events aren't sent to the specified destinations.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The types of events that Amazon Pinpoint sends to the specified event destinations.</p>
+    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.matching_event_types.as_deref()
+    }
+    /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
+    /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
+    pub fn kinesis_firehose_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+        self.kinesis_firehose_destination.as_ref()
+    }
+    /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
+    /// monitor and gain insights on your email sending metrics.</p>
+    pub fn cloud_watch_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchDestination> {
+        self.cloud_watch_destination.as_ref()
+    }
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
+    /// send notification when certain email events occur.</p>
+    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+        self.sns_destination.as_ref()
+    }
+    /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events
+    /// to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments
+    /// for your campaigns.</p>
+    pub fn pinpoint_destination(&self) -> std::option::Option<&crate::model::PinpointDestination> {
+        self.pinpoint_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for EventDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventDestination");
@@ -4362,6 +5124,13 @@ pub struct SendingOptions {
     /// <code>false</code>, email sending is disabled for the configuration set.</p>
     pub sending_enabled: bool,
 }
+impl SendingOptions {
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
+    /// <code>false</code>, email sending is disabled for the configuration set.</p>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
+}
 impl std::fmt::Debug for SendingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendingOptions");
@@ -4418,6 +5187,20 @@ pub struct ReputationOptions {
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
     pub last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ReputationOptions {
+    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
+    /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
+    /// configuration set.</p>
+    pub fn reputation_metrics_enabled(&self) -> bool {
+        self.reputation_metrics_enabled
+    }
+    /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
+    /// start. When your account is given a fresh start, your reputation metrics are calculated
+    /// starting from the date of the fresh start.</p>
+    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_fresh_start.as_ref()
+    }
 }
 impl std::fmt::Debug for ReputationOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4500,6 +5283,20 @@ pub struct DeliveryOptions {
     /// set.</p>
     pub sending_pool_name: std::option::Option<std::string::String>,
 }
+impl DeliveryOptions {
+    /// <p>Specifies whether messages that use the configuration set are required to use
+    /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
+    /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
+    /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+    pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
+        self.tls_policy.as_ref()
+    }
+    /// <p>The name of the dedicated IP pool that you want to associate with the configuration
+    /// set.</p>
+    pub fn sending_pool_name(&self) -> std::option::Option<&str> {
+        self.sending_pool_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeliveryOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeliveryOptions");
@@ -4581,6 +5378,12 @@ pub struct TrackingOptions {
     /// <p>The domain that you want to use for tracking open and click events.</p>
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
+impl TrackingOptions {
+    /// <p>The domain that you want to use for tracking open and click events.</p>
+    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+        self.custom_redirect_domain.as_deref()
+    }
+}
 impl std::fmt::Debug for TrackingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrackingOptions");
@@ -4637,6 +5440,21 @@ pub struct BlacklistEntry {
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
     /// maintainer.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl BlacklistEntry {
+    /// <p>The name of the blacklist that the IP address appears on.</p>
+    pub fn rbl_name(&self) -> std::option::Option<&str> {
+        self.rbl_name.as_deref()
+    }
+    /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.listing_time.as_ref()
+    }
+    /// <p>Additional information about the blacklisting event, as provided by the blacklist
+    /// maintainer.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for BlacklistEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4726,6 +5544,25 @@ pub struct SendQuota {
     /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the
     /// past 24 hours.</p>
     pub sent_last24_hours: f64,
+}
+impl SendQuota {
+    /// <p>The maximum number of emails that you can send in the current AWS Region over a
+    /// 24-hour period. This value is also called your <i>sending
+    /// quota</i>.</p>
+    pub fn max24_hour_send(&self) -> f64 {
+        self.max24_hour_send
+    }
+    /// <p>The maximum number of emails that you can send per second in the current AWS Region.
+    /// This value is also called your <i>maximum sending rate</i> or your
+    /// <i>maximum TPS (transactions per second) rate</i>.</p>
+    pub fn max_send_rate(&self) -> f64 {
+        self.max_send_rate
+    }
+    /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the
+    /// past 24 hours.</p>
+    pub fn sent_last24_hours(&self) -> f64 {
+        self.sent_last24_hours
+    }
 }
 impl std::fmt::Debug for SendQuota {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

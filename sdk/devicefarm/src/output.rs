@@ -6,6 +6,12 @@ pub struct UpdateVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     pub vpce_configuration: std::option::Option<crate::model::VpceConfiguration>,
 }
+impl UpdateVpceConfigurationOutput {
+    /// <p>An object that contains information about your VPC endpoint configuration.</p>
+    pub fn vpce_configuration(&self) -> std::option::Option<&crate::model::VpceConfiguration> {
+        self.vpce_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVpceConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVpceConfigurationOutput");
@@ -57,6 +63,12 @@ pub struct UpdateUploadOutput {
     /// <p>A test spec uploaded to Device Farm.</p>
     pub upload: std::option::Option<crate::model::Upload>,
 }
+impl UpdateUploadOutput {
+    /// <p>A test spec uploaded to Device Farm.</p>
+    pub fn upload(&self) -> std::option::Option<&crate::model::Upload> {
+        self.upload.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUploadOutput");
@@ -104,6 +116,12 @@ impl UpdateUploadOutput {
 pub struct UpdateTestGridProjectOutput {
     /// <p>The project, including updated information.</p>
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
+}
+impl UpdateTestGridProjectOutput {
+    /// <p>The project, including updated information.</p>
+    pub fn test_grid_project(&self) -> std::option::Option<&crate::model::TestGridProject> {
+        self.test_grid_project.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTestGridProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -156,6 +174,12 @@ pub struct UpdateProjectOutput {
     /// <p>The project to update.</p>
     pub project: std::option::Option<crate::model::Project>,
 }
+impl UpdateProjectOutput {
+    /// <p>The project to update.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::Project> {
+        self.project.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectOutput");
@@ -203,6 +227,12 @@ impl UpdateProjectOutput {
 pub struct UpdateNetworkProfileOutput {
     /// <p>A list of the available network profiles.</p>
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
+}
+impl UpdateNetworkProfileOutput {
+    /// <p>A list of the available network profiles.</p>
+    pub fn network_profile(&self) -> std::option::Option<&crate::model::NetworkProfile> {
+        self.network_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNetworkProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -255,6 +285,12 @@ pub struct UpdateInstanceProfileOutput {
     /// <p>An object that contains information about your instance profile.</p>
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
+impl UpdateInstanceProfileOutput {
+    /// <p>An object that contains information about your instance profile.</p>
+    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+        self.instance_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInstanceProfileOutput");
@@ -306,6 +342,12 @@ pub struct UpdateDevicePoolOutput {
     /// <p>The device pool you just updated.</p>
     pub device_pool: std::option::Option<crate::model::DevicePool>,
 }
+impl UpdateDevicePoolOutput {
+    /// <p>The device pool you just updated.</p>
+    pub fn device_pool(&self) -> std::option::Option<&crate::model::DevicePool> {
+        self.device_pool.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDevicePoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDevicePoolOutput");
@@ -356,6 +398,12 @@ impl UpdateDevicePoolOutput {
 pub struct UpdateDeviceInstanceOutput {
     /// <p>An object that contains information about your device instance.</p>
     pub device_instance: std::option::Option<crate::model::DeviceInstance>,
+}
+impl UpdateDeviceInstanceOutput {
+    /// <p>An object that contains information about your device instance.</p>
+    pub fn device_instance(&self) -> std::option::Option<&crate::model::DeviceInstance> {
+        self.device_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDeviceInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -468,6 +516,12 @@ pub struct StopRunOutput {
     /// <p>The run that was stopped.</p>
     pub run: std::option::Option<crate::model::Run>,
 }
+impl StopRunOutput {
+    /// <p>The run that was stopped.</p>
+    pub fn run(&self) -> std::option::Option<&crate::model::Run> {
+        self.run.as_ref()
+    }
+}
 impl std::fmt::Debug for StopRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopRunOutput");
@@ -515,6 +569,13 @@ pub struct StopRemoteAccessSessionOutput {
     /// <p>A container that represents the metadata from the service about the remote access session you are
     /// stopping.</p>
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
+}
+impl StopRemoteAccessSessionOutput {
+    /// <p>A container that represents the metadata from the service about the remote access session you are
+    /// stopping.</p>
+    pub fn remote_access_session(&self) -> std::option::Option<&crate::model::RemoteAccessSession> {
+        self.remote_access_session.as_ref()
+    }
 }
 impl std::fmt::Debug for StopRemoteAccessSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -569,6 +630,12 @@ pub struct StopJobOutput {
     /// <p>The job that was stopped.</p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl StopJobOutput {
+    /// <p>The job that was stopped.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for StopJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopJobOutput");
@@ -615,6 +682,12 @@ pub struct ScheduleRunOutput {
     /// <p>Information about the scheduled run.</p>
     pub run: std::option::Option<crate::model::Run>,
 }
+impl ScheduleRunOutput {
+    /// <p>Information about the scheduled run.</p>
+    pub fn run(&self) -> std::option::Option<&crate::model::Run> {
+        self.run.as_ref()
+    }
+}
 impl std::fmt::Debug for ScheduleRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduleRunOutput");
@@ -660,6 +733,12 @@ impl ScheduleRunOutput {
 pub struct RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
     pub offering_transaction: std::option::Option<crate::model::OfferingTransaction>,
+}
+impl RenewOfferingOutput {
+    /// <p>Represents the status of the offering transaction for the renewal.</p>
+    pub fn offering_transaction(&self) -> std::option::Option<&crate::model::OfferingTransaction> {
+        self.offering_transaction.as_ref()
+    }
 }
 impl std::fmt::Debug for RenewOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,6 +790,12 @@ impl RenewOfferingOutput {
 pub struct PurchaseOfferingOutput {
     /// <p>Represents the offering transaction for the purchase result.</p>
     pub offering_transaction: std::option::Option<crate::model::OfferingTransaction>,
+}
+impl PurchaseOfferingOutput {
+    /// <p>Represents the offering transaction for the purchase result.</p>
+    pub fn offering_transaction(&self) -> std::option::Option<&crate::model::OfferingTransaction> {
+        self.offering_transaction.as_ref()
+    }
 }
 impl std::fmt::Debug for PurchaseOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -766,6 +851,18 @@ pub struct ListVpceConfigurationsOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListVpceConfigurationsOutput {
+    /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
+    /// configuration.</p>
+    pub fn vpce_configurations(&self) -> std::option::Option<&[crate::model::VpceConfiguration]> {
+        self.vpce_configurations.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVpceConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -848,6 +945,18 @@ pub struct ListUploadsOutput {
     /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUploadsOutput {
+    /// <p>Information about the uploads.</p>
+    pub fn uploads(&self) -> std::option::Option<&[crate::model::Upload]> {
+        self.uploads.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUploadsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -955,6 +1064,49 @@ pub struct ListUniqueProblemsOutput {
     /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUniqueProblemsOutput {
+    /// <p>Information about the unique problems.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>PENDING</p>
+    /// </li>
+    /// <li>
+    /// <p>PASSED</p>
+    /// </li>
+    /// <li>
+    /// <p>WARNED</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>SKIPPED</p>
+    /// </li>
+    /// <li>
+    /// <p>ERRORED</p>
+    /// </li>
+    /// <li>
+    /// <p>STOPPED</p>
+    /// </li>
+    /// </ul>
+    pub fn unique_problems(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::ExecutionResult,
+            std::vec::Vec<crate::model::UniqueProblem>,
+        >,
+    > {
+        self.unique_problems.as_ref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUniqueProblemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1096,6 +1248,18 @@ pub struct ListTestsOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTestsOutput {
+    /// <p>Information about the tests.</p>
+    pub fn tests(&self) -> std::option::Option<&[crate::model::Test]> {
+        self.tests.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTestsOutput");
@@ -1171,6 +1335,16 @@ pub struct ListTestGridSessionsOutput {
     pub test_grid_sessions: std::option::Option<std::vec::Vec<crate::model::TestGridSession>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTestGridSessionsOutput {
+    /// <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>. </p>
+    pub fn test_grid_sessions(&self) -> std::option::Option<&[crate::model::TestGridSession]> {
+        self.test_grid_sessions.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTestGridSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1248,6 +1422,16 @@ pub struct ListTestGridSessionArtifactsOutput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTestGridSessionArtifactsOutput {
+    /// <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
+    pub fn artifacts(&self) -> std::option::Option<&[crate::model::TestGridSessionArtifact]> {
+        self.artifacts.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTestGridSessionArtifactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTestGridSessionArtifactsOutput");
@@ -1324,6 +1508,16 @@ pub struct ListTestGridSessionActionsOutput {
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTestGridSessionActionsOutput {
+    /// <p>The action taken by the session.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::TestGridSessionAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTestGridSessionActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTestGridSessionActionsOutput");
@@ -1396,6 +1590,17 @@ pub struct ListTestGridProjectsOutput {
     /// <p>Used for pagination. Pass into <a>ListTestGridProjects</a> to get more results in a paginated
     /// request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTestGridProjectsOutput {
+    /// <p>The list of TestGridProjects, based on a <a>ListTestGridProjectsRequest</a>.</p>
+    pub fn test_grid_projects(&self) -> std::option::Option<&[crate::model::TestGridProject]> {
+        self.test_grid_projects.as_deref()
+    }
+    /// <p>Used for pagination. Pass into <a>ListTestGridProjects</a> to get more results in a paginated
+    /// request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTestGridProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1474,6 +1679,13 @@ pub struct ListTagsForResourceOutput {
     /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
+    /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1534,6 +1746,18 @@ pub struct ListSuitesOutput {
     /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSuitesOutput {
+    /// <p>Information about the suites.</p>
+    pub fn suites(&self) -> std::option::Option<&[crate::model::Suite]> {
+        self.suites.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSuitesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1613,6 +1837,18 @@ pub struct ListSamplesOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSamplesOutput {
+    /// <p>Information about the samples.</p>
+    pub fn samples(&self) -> std::option::Option<&[crate::model::Sample]> {
+        self.samples.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSamplesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSamplesOutput");
@@ -1690,6 +1926,18 @@ pub struct ListRunsOutput {
     /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRunsOutput {
+    /// <p>Information about the runs.</p>
+    pub fn runs(&self) -> std::option::Option<&[crate::model::Run]> {
+        self.runs.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1770,6 +2018,20 @@ pub struct ListRemoteAccessSessionsOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRemoteAccessSessionsOutput {
+    /// <p>A container that represents the metadata from the service about each remote access session you are
+    /// requesting.</p>
+    pub fn remote_access_sessions(
+        &self,
+    ) -> std::option::Option<&[crate::model::RemoteAccessSession]> {
+        self.remote_access_sessions.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRemoteAccessSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1853,6 +2115,18 @@ pub struct ListProjectsOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProjectsOutput {
+    /// <p>Information about the projects.</p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::Project]> {
+        self.projects.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsOutput");
@@ -1931,6 +2205,20 @@ pub struct ListOfferingTransactionsOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOfferingTransactionsOutput {
+    /// <p>The audit log of subscriptions you have purchased and modified through AWS Device
+    /// Farm.</p>
+    pub fn offering_transactions(
+        &self,
+    ) -> std::option::Option<&[crate::model::OfferingTransaction]> {
+        self.offering_transactions.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOfferingTransactionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2013,6 +2301,17 @@ pub struct ListOfferingsOutput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOfferingsOutput {
+    /// <p>A value that represents the list offering results.</p>
+    pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
+        self.offerings.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsOutput");
@@ -2087,6 +2386,17 @@ pub struct ListOfferingPromotionsOutput {
     /// <p>An identifier to be used in the next call to this operation, to return the next set
     /// of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOfferingPromotionsOutput {
+    /// <p>Information about the offering promotions.</p>
+    pub fn offering_promotions(&self) -> std::option::Option<&[crate::model::OfferingPromotion]> {
+        self.offering_promotions.as_deref()
+    }
+    /// <p>An identifier to be used in the next call to this operation, to return the next set
+    /// of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOfferingPromotionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2167,6 +2477,17 @@ pub struct ListNetworkProfilesOutput {
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNetworkProfilesOutput {
+    /// <p>A list of the available network profiles.</p>
+    pub fn network_profiles(&self) -> std::option::Option<&[crate::model::NetworkProfile]> {
+        self.network_profiles.as_deref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNetworkProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNetworkProfilesOutput");
@@ -2244,6 +2565,18 @@ pub struct ListJobsOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobsOutput {
+    /// <p>Information about the jobs.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -2320,6 +2653,17 @@ pub struct ListInstanceProfilesOutput {
     /// <p>An identifier that can be used in the next call to this operation to return the next
     /// set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInstanceProfilesOutput {
+    /// <p>An object that contains information about your instance profiles.</p>
+    pub fn instance_profiles(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
+        self.instance_profiles.as_deref()
+    }
+    /// <p>An identifier that can be used in the next call to this operation to return the next
+    /// set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstanceProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2401,6 +2745,18 @@ pub struct ListDevicesOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevicesOutput {
+    /// <p>Information about the devices.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesOutput");
@@ -2479,6 +2835,18 @@ pub struct ListDevicePoolsOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevicePoolsOutput {
+    /// <p>Information about the device pools.</p>
+    pub fn device_pools(&self) -> std::option::Option<&[crate::model::DevicePool]> {
+        self.device_pools.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevicePoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicePoolsOutput");
@@ -2555,6 +2923,17 @@ pub struct ListDeviceInstancesOutput {
     /// <p>An identifier that can be used in the next call to this operation to return the next
     /// set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeviceInstancesOutput {
+    /// <p>An object that contains information about your device instances.</p>
+    pub fn device_instances(&self) -> std::option::Option<&[crate::model::DeviceInstance]> {
+        self.device_instances.as_deref()
+    }
+    /// <p>An identifier that can be used in the next call to this operation to return the next
+    /// set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeviceInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2633,6 +3012,18 @@ pub struct ListArtifactsOutput {
     /// list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListArtifactsOutput {
+    /// <p>Information about the artifacts.</p>
+    pub fn artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+        self.artifacts.as_deref()
+    }
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
+    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
+    /// list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListArtifactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListArtifactsOutput");
@@ -2708,6 +3099,12 @@ pub struct InstallToRemoteAccessSessionOutput {
     /// <p>An app to upload or that has been uploaded.</p>
     pub app_upload: std::option::Option<crate::model::Upload>,
 }
+impl InstallToRemoteAccessSessionOutput {
+    /// <p>An app to upload or that has been uploaded.</p>
+    pub fn app_upload(&self) -> std::option::Option<&crate::model::Upload> {
+        self.app_upload.as_ref()
+    }
+}
 impl std::fmt::Debug for InstallToRemoteAccessSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstallToRemoteAccessSessionOutput");
@@ -2755,6 +3152,12 @@ impl InstallToRemoteAccessSessionOutput {
 pub struct GetVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     pub vpce_configuration: std::option::Option<crate::model::VpceConfiguration>,
+}
+impl GetVpceConfigurationOutput {
+    /// <p>An object that contains information about your VPC endpoint configuration.</p>
+    pub fn vpce_configuration(&self) -> std::option::Option<&crate::model::VpceConfiguration> {
+        self.vpce_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetVpceConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2808,6 +3211,13 @@ pub struct GetUploadOutput {
     /// uploaded.</p>
     pub upload: std::option::Option<crate::model::Upload>,
 }
+impl GetUploadOutput {
+    /// <p>An app or a set of one or more tests to upload or that have been
+    /// uploaded.</p>
+    pub fn upload(&self) -> std::option::Option<&crate::model::Upload> {
+        self.upload.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUploadOutput");
@@ -2857,6 +3267,12 @@ impl GetUploadOutput {
 pub struct GetTestGridSessionOutput {
     /// <p>The <a>TestGridSession</a> that was requested.</p>
     pub test_grid_session: std::option::Option<crate::model::TestGridSession>,
+}
+impl GetTestGridSessionOutput {
+    /// <p>The <a>TestGridSession</a> that was requested.</p>
+    pub fn test_grid_session(&self) -> std::option::Option<&crate::model::TestGridSession> {
+        self.test_grid_session.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTestGridSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2909,6 +3325,12 @@ pub struct GetTestGridProjectOutput {
     /// <p>A <a>TestGridProject</a>.</p>
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
 }
+impl GetTestGridProjectOutput {
+    /// <p>A <a>TestGridProject</a>.</p>
+    pub fn test_grid_project(&self) -> std::option::Option<&crate::model::TestGridProject> {
+        self.test_grid_project.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTestGridProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTestGridProjectOutput");
@@ -2960,6 +3382,12 @@ pub struct GetTestOutput {
     /// <p>A test condition that is evaluated.</p>
     pub test: std::option::Option<crate::model::Test>,
 }
+impl GetTestOutput {
+    /// <p>A test condition that is evaluated.</p>
+    pub fn test(&self) -> std::option::Option<&crate::model::Test> {
+        self.test.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTestOutput");
@@ -3006,6 +3434,12 @@ pub struct GetSuiteOutput {
     /// <p>A collection of one or more tests.</p>
     pub suite: std::option::Option<crate::model::Suite>,
 }
+impl GetSuiteOutput {
+    /// <p>A collection of one or more tests.</p>
+    pub fn suite(&self) -> std::option::Option<&crate::model::Suite> {
+        self.suite.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSuiteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSuiteOutput");
@@ -3051,6 +3485,12 @@ impl GetSuiteOutput {
 pub struct GetRunOutput {
     /// <p>The run to get results from.</p>
     pub run: std::option::Option<crate::model::Run>,
+}
+impl GetRunOutput {
+    /// <p>The run to get results from.</p>
+    pub fn run(&self) -> std::option::Option<&crate::model::Run> {
+        self.run.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3099,6 +3539,13 @@ pub struct GetRemoteAccessSessionOutput {
     /// <p>A container that lists detailed information about the remote access
     /// session.</p>
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
+}
+impl GetRemoteAccessSessionOutput {
+    /// <p>A container that lists detailed information about the remote access
+    /// session.</p>
+    pub fn remote_access_session(&self) -> std::option::Option<&crate::model::RemoteAccessSession> {
+        self.remote_access_session.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRemoteAccessSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3152,6 +3599,12 @@ impl GetRemoteAccessSessionOutput {
 pub struct GetProjectOutput {
     /// <p>The project to get information about.</p>
     pub project: std::option::Option<crate::model::Project>,
+}
+impl GetProjectOutput {
+    /// <p>The project to get information about.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::Project> {
+        self.project.as_ref()
+    }
 }
 impl std::fmt::Debug for GetProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3209,6 +3662,29 @@ pub struct GetOfferingStatusOutput {
     /// <p>An identifier that was returned from the previous call to this operation, which can
     /// be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOfferingStatusOutput {
+    /// <p>When specified, gets the offering status for the current period.</p>
+    pub fn current(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::OfferingStatus>,
+    > {
+        self.current.as_ref()
+    }
+    /// <p>When specified, gets the offering status for the next period.</p>
+    pub fn next_period(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::OfferingStatus>,
+    > {
+        self.next_period.as_ref()
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can
+    /// be used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOfferingStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3320,6 +3796,12 @@ pub struct GetNetworkProfileOutput {
     /// <p>The network profile.</p>
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
 }
+impl GetNetworkProfileOutput {
+    /// <p>The network profile.</p>
+    pub fn network_profile(&self) -> std::option::Option<&crate::model::NetworkProfile> {
+        self.network_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for GetNetworkProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkProfileOutput");
@@ -3371,6 +3853,12 @@ pub struct GetJobOutput {
     /// <p>An object that contains information about the requested job.</p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl GetJobOutput {
+    /// <p>An object that contains information about the requested job.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobOutput");
@@ -3416,6 +3904,12 @@ impl GetJobOutput {
 pub struct GetInstanceProfileOutput {
     /// <p>An object that contains information about an instance profile.</p>
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
+}
+impl GetInstanceProfileOutput {
+    /// <p>An object that contains information about an instance profile.</p>
+    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+        self.instance_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for GetInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3471,6 +3965,20 @@ pub struct GetDevicePoolCompatibilityOutput {
     /// <p>Information about incompatible devices.</p>
     pub incompatible_devices:
         std::option::Option<std::vec::Vec<crate::model::DevicePoolCompatibilityResult>>,
+}
+impl GetDevicePoolCompatibilityOutput {
+    /// <p>Information about compatible devices.</p>
+    pub fn compatible_devices(
+        &self,
+    ) -> std::option::Option<&[crate::model::DevicePoolCompatibilityResult]> {
+        self.compatible_devices.as_deref()
+    }
+    /// <p>Information about incompatible devices.</p>
+    pub fn incompatible_devices(
+        &self,
+    ) -> std::option::Option<&[crate::model::DevicePoolCompatibilityResult]> {
+        self.incompatible_devices.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDevicePoolCompatibilityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3559,6 +4067,12 @@ pub struct GetDevicePoolOutput {
     /// <p>An object that contains information about the requested device pool.</p>
     pub device_pool: std::option::Option<crate::model::DevicePool>,
 }
+impl GetDevicePoolOutput {
+    /// <p>An object that contains information about the requested device pool.</p>
+    pub fn device_pool(&self) -> std::option::Option<&crate::model::DevicePool> {
+        self.device_pool.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDevicePoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePoolOutput");
@@ -3609,6 +4123,12 @@ impl GetDevicePoolOutput {
 pub struct GetDeviceInstanceOutput {
     /// <p>An object that contains information about your device instance.</p>
     pub device_instance: std::option::Option<crate::model::DeviceInstance>,
+}
+impl GetDeviceInstanceOutput {
+    /// <p>An object that contains information about your device instance.</p>
+    pub fn device_instance(&self) -> std::option::Option<&crate::model::DeviceInstance> {
+        self.device_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDeviceInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3661,6 +4181,12 @@ pub struct GetDeviceOutput {
     /// <p>An object that contains information about the requested device.</p>
     pub device: std::option::Option<crate::model::Device>,
 }
+impl GetDeviceOutput {
+    /// <p>An object that contains information about the requested device.</p>
+    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+        self.device.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceOutput");
@@ -3709,6 +4235,12 @@ impl GetDeviceOutput {
 pub struct GetAccountSettingsOutput {
     /// <p>The account settings.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
+}
+impl GetAccountSettingsOutput {
+    /// <p>The account settings.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4032,6 +4564,12 @@ pub struct CreateVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     pub vpce_configuration: std::option::Option<crate::model::VpceConfiguration>,
 }
+impl CreateVpceConfigurationOutput {
+    /// <p>An object that contains information about your VPC endpoint configuration.</p>
+    pub fn vpce_configuration(&self) -> std::option::Option<&crate::model::VpceConfiguration> {
+        self.vpce_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVpceConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVpceConfigurationOutput");
@@ -4083,6 +4621,12 @@ pub struct CreateUploadOutput {
     /// <p>The newly created upload.</p>
     pub upload: std::option::Option<crate::model::Upload>,
 }
+impl CreateUploadOutput {
+    /// <p>The newly created upload.</p>
+    pub fn upload(&self) -> std::option::Option<&crate::model::Upload> {
+        self.upload.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUploadOutput");
@@ -4133,6 +4677,17 @@ pub struct CreateTestGridUrlOutput {
     pub url: std::option::Option<std::string::String>,
     /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
     pub expires: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateTestGridUrlOutput {
+    /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
+    /// to a <code>RemoteWebDriver</code>. </p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTestGridUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4200,6 +4755,12 @@ pub struct CreateTestGridProjectOutput {
     /// <p>ARN of the Selenium testing project that was created.</p>
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
 }
+impl CreateTestGridProjectOutput {
+    /// <p>ARN of the Selenium testing project that was created.</p>
+    pub fn test_grid_project(&self) -> std::option::Option<&crate::model::TestGridProject> {
+        self.test_grid_project.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTestGridProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTestGridProjectOutput");
@@ -4252,6 +4813,13 @@ pub struct CreateRemoteAccessSessionOutput {
     /// <p>A container that describes the remote access session when the request to create a
     /// remote access session is sent.</p>
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
+}
+impl CreateRemoteAccessSessionOutput {
+    /// <p>A container that describes the remote access session when the request to create a
+    /// remote access session is sent.</p>
+    pub fn remote_access_session(&self) -> std::option::Option<&crate::model::RemoteAccessSession> {
+        self.remote_access_session.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRemoteAccessSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4306,6 +4874,12 @@ pub struct CreateProjectOutput {
     /// <p>The newly created project.</p>
     pub project: std::option::Option<crate::model::Project>,
 }
+impl CreateProjectOutput {
+    /// <p>The newly created project.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::Project> {
+        self.project.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectOutput");
@@ -4354,6 +4928,13 @@ pub struct CreateNetworkProfileOutput {
     /// <p>The network profile that is returned by the create network profile
     /// request.</p>
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
+}
+impl CreateNetworkProfileOutput {
+    /// <p>The network profile that is returned by the create network profile
+    /// request.</p>
+    pub fn network_profile(&self) -> std::option::Option<&crate::model::NetworkProfile> {
+        self.network_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNetworkProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4408,6 +4989,12 @@ pub struct CreateInstanceProfileOutput {
     /// <p>An object that contains information about your instance profile.</p>
     pub instance_profile: std::option::Option<crate::model::InstanceProfile>,
 }
+impl CreateInstanceProfileOutput {
+    /// <p>An object that contains information about your instance profile.</p>
+    pub fn instance_profile(&self) -> std::option::Option<&crate::model::InstanceProfile> {
+        self.instance_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceProfileOutput");
@@ -4458,6 +5045,12 @@ impl CreateInstanceProfileOutput {
 pub struct CreateDevicePoolOutput {
     /// <p>The newly created device pool.</p>
     pub device_pool: std::option::Option<crate::model::DevicePool>,
+}
+impl CreateDevicePoolOutput {
+    /// <p>The newly created device pool.</p>
+    pub fn device_pool(&self) -> std::option::Option<&crate::model::DevicePool> {
+        self.device_pool.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDevicePoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

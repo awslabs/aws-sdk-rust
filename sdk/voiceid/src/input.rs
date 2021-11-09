@@ -162,10 +162,7 @@ impl CreateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -314,10 +311,7 @@ impl DeleteDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -479,10 +473,7 @@ impl DeleteFraudsterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_fraudster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_fraudster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -643,10 +634,7 @@ impl DeleteSpeakerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_speaker(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_speaker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -795,10 +783,8 @@ impl DescribeDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -960,10 +946,7 @@ impl DescribeFraudsterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_fraudster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_fraudster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1126,7 +1109,7 @@ impl DescribeFraudsterRegistrationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_fraudster_registration_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_fraudster_registration_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1289,10 +1272,7 @@ impl DescribeSpeakerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_speaker(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_speaker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1455,7 +1435,7 @@ impl DescribeSpeakerEnrollmentJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_speaker_enrollment_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_speaker_enrollment_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1630,10 +1610,7 @@ impl EvaluateSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_evaluate_session(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_evaluate_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1817,10 +1794,7 @@ impl ListDomainsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2039,7 +2013,7 @@ impl ListFraudsterRegistrationJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_fraudster_registration_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_fraudster_registration_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2261,10 +2235,7 @@ impl ListSpeakerEnrollmentJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_speaker_enrollment_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2460,10 +2431,7 @@ impl ListSpeakersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_speakers(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_speakers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2613,10 +2581,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2777,10 +2744,8 @@ impl OptOutSpeakerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_opt_out_speaker(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_opt_out_speaker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3034,7 +2999,7 @@ impl StartFraudsterRegistrationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_fraudster_registration_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_fraudster_registration_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3291,10 +3256,7 @@ impl StartSpeakerEnrollmentJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_speaker_enrollment_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3464,10 +3426,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3646,10 +3605,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3845,10 +3801,7 @@ impl UpdateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3926,6 +3879,28 @@ pub struct UpdateDomainInput {
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
+impl UpdateDomainInput {
+    /// <p>The identifier of the domain to be updated.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of the domain.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A brief description about this domain.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+    /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
+    /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainInput");
@@ -3949,6 +3924,16 @@ pub struct UntagResourceInput {
     /// <p>The list of tag keys you want to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tag keys you want to remove from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -3966,6 +3951,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags to assign to the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tags to assign to the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4002,6 +3997,44 @@ pub struct StartSpeakerEnrollmentJobInput {
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
     /// also include a KMS Key ID to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+}
+impl StartSpeakerEnrollmentJobInput {
+    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
+    /// SDK populates this field.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A name for your speaker enrollment job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
+    /// enrolled.
+    /// </p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
+    /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
+    /// calls</a> documentation for the permissions needed in this role.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The enrollment config that contains details such as the action to take when a speaker is already
+    /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+    pub fn enrollment_config(&self) -> std::option::Option<&crate::model::EnrollmentConfig> {
+        self.enrollment_config.as_ref()
+    }
+    /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
+    /// speaker enrollment requests.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
+    /// also include a KMS Key ID to encrypt the file.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
 }
 impl std::fmt::Debug for StartSpeakerEnrollmentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4044,6 +4077,44 @@ pub struct StartFraudsterRegistrationJobInput {
     /// also include a KMS Key ID to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
 }
+impl StartFraudsterRegistrationJobInput {
+    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
+    /// SDK populates this field.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of the new fraudster registration job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
+    /// registered.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
+    /// to read the input manifest file and write the Job output file. Refer to the
+    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
+    /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
+    /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
+        self.registration_config.as_ref()
+    }
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
+    /// of fraudster registration requests.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
+    /// also include a KMS Key ID to encrypt the file.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+}
 impl std::fmt::Debug for StartFraudsterRegistrationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartFraudsterRegistrationJobInput");
@@ -4067,6 +4138,16 @@ pub struct OptOutSpeakerInput {
     /// <p>The identifier of the speaker you want opted-out.</p>
     pub speaker_id: std::option::Option<std::string::String>,
 }
+impl OptOutSpeakerInput {
+    /// <p>The identifier of the domain containing the speaker.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier of the speaker you want opted-out.</p>
+    pub fn speaker_id(&self) -> std::option::Option<&str> {
+        self.speaker_id.as_deref()
+    }
+}
 impl std::fmt::Debug for OptOutSpeakerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OptOutSpeakerInput");
@@ -4082,6 +4163,12 @@ impl std::fmt::Debug for OptOutSpeakerInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4106,6 +4193,25 @@ pub struct ListSpeakersInput {
     /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSpeakersInput {
+    /// <p>The identifier of the domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
+    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSpeakersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4134,6 +4240,29 @@ pub struct ListSpeakerEnrollmentJobsInput {
     /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSpeakerEnrollmentJobsInput {
+    /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>Provides the status of your speaker enrollment Job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
+    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSpeakerEnrollmentJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4164,6 +4293,29 @@ pub struct ListFraudsterRegistrationJobsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFraudsterRegistrationJobsInput {
+    /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>Provides the status of your fraudster registration job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
+    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFraudsterRegistrationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFraudsterRegistrationJobsInput");
@@ -4189,6 +4341,21 @@ pub struct ListDomainsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsInput {
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
+    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsInput");
@@ -4208,6 +4375,17 @@ pub struct EvaluateSessionInput {
     /// integration, this is the Contact-Id.</p>
     pub session_name_or_id: std::option::Option<std::string::String>,
 }
+impl EvaluateSessionInput {
+    /// <p>The identifier of the domain where the session started.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
+    /// integration, this is the Contact-Id.</p>
+    pub fn session_name_or_id(&self) -> std::option::Option<&str> {
+        self.session_name_or_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EvaluateSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluateSessionInput");
@@ -4225,6 +4403,16 @@ pub struct DescribeSpeakerEnrollmentJobInput {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker enrollment job you are describing.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeSpeakerEnrollmentJobInput {
+    /// <p>The identifier of the domain containing the speaker enrollment job.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier of the speaker enrollment job you are describing.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSpeakerEnrollmentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4244,6 +4432,16 @@ pub struct DescribeSpeakerInput {
     /// <p>The identifier of the speaker you are describing.</p>
     pub speaker_id: std::option::Option<std::string::String>,
 }
+impl DescribeSpeakerInput {
+    /// <p>The identifier of the domain that contains the speaker.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier of the speaker you are describing.</p>
+    pub fn speaker_id(&self) -> std::option::Option<&str> {
+        self.speaker_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSpeakerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpeakerInput");
@@ -4261,6 +4459,16 @@ pub struct DescribeFraudsterRegistrationJobInput {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the fraudster registration job you are describing.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeFraudsterRegistrationJobInput {
+    /// <p>The identifier for the domain containing the fraudster registration job.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier for the fraudster registration job you are describing.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFraudsterRegistrationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4280,6 +4488,16 @@ pub struct DescribeFraudsterInput {
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fraudster_id: std::option::Option<std::string::String>,
 }
+impl DescribeFraudsterInput {
+    /// <p>The identifier of the domain containing the fraudster.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier of the fraudster you are describing.</p>
+    pub fn fraudster_id(&self) -> std::option::Option<&str> {
+        self.fraudster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFraudsterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFraudsterInput");
@@ -4295,6 +4513,12 @@ impl std::fmt::Debug for DescribeFraudsterInput {
 pub struct DescribeDomainInput {
     /// <p>The identifier of the domain you are describing.</p>
     pub domain_id: std::option::Option<std::string::String>,
+}
+impl DescribeDomainInput {
+    /// <p>The identifier of the domain you are describing.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4312,6 +4536,16 @@ pub struct DeleteSpeakerInput {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the speaker you want to delete.</p>
     pub speaker_id: std::option::Option<std::string::String>,
+}
+impl DeleteSpeakerInput {
+    /// <p>The identifier of the domain containing the speaker.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier of the speaker you want to delete.</p>
+    pub fn speaker_id(&self) -> std::option::Option<&str> {
+        self.speaker_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSpeakerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4331,6 +4565,16 @@ pub struct DeleteFraudsterInput {
     /// <p>The identifier of the fraudster you want to delete.</p>
     pub fraudster_id: std::option::Option<std::string::String>,
 }
+impl DeleteFraudsterInput {
+    /// <p>The identifier of the domain containing the fraudster.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The identifier of the fraudster you want to delete.</p>
+    pub fn fraudster_id(&self) -> std::option::Option<&str> {
+        self.fraudster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFraudsterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFraudsterInput");
@@ -4346,6 +4590,12 @@ impl std::fmt::Debug for DeleteFraudsterInput {
 pub struct DeleteDomainInput {
     /// <p>The identifier of the domain you want to delete.</p>
     pub domain_id: std::option::Option<std::string::String>,
+}
+impl DeleteDomainInput {
+    /// <p>The identifier of the domain you want to delete.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4374,6 +4624,34 @@ pub struct CreateDomainInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of tags you want added to the domain.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDomainInput {
+    /// <p>The name of the domain.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A brief description of this domain.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
+    /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
+    /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+    /// </p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
+    /// this field.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A list of tags you want added to the domain.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

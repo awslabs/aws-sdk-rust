@@ -340,6 +340,19 @@ pub struct ListWebsiteCertificateAuthoritiesOutput {
     /// there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWebsiteCertificateAuthoritiesOutput {
+    /// <p>Information about the certificates.</p>
+    pub fn website_certificate_authorities(
+        &self,
+    ) -> std::option::Option<&[crate::model::WebsiteCaSummary]> {
+        self.website_certificate_authorities.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWebsiteCertificateAuthoritiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWebsiteCertificateAuthoritiesOutput");
@@ -422,6 +435,18 @@ pub struct ListWebsiteAuthorizationProvidersOutput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWebsiteAuthorizationProvidersOutput {
+    /// <p>The website authorization providers.</p>
+    pub fn website_authorization_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::WebsiteAuthorizationProviderSummary]> {
+        self.website_authorization_providers.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWebsiteAuthorizationProvidersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWebsiteAuthorizationProvidersOutput");
@@ -502,6 +527,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -567,6 +601,17 @@ pub struct ListFleetsOutput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. If
     /// there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFleetsOutput {
+    /// <p>The summary list of the fleets.</p>
+    pub fn fleet_summary_list(&self) -> std::option::Option<&[crate::model::FleetSummary]> {
+        self.fleet_summary_list.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFleetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -644,6 +689,17 @@ pub struct ListDomainsOutput {
     /// there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsOutput {
+    /// <p>Information about the domains.</p>
+    pub fn domains(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+        self.domains.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsOutput");
@@ -718,6 +774,17 @@ pub struct ListDevicesOutput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. If
     /// there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesOutput {
+    /// <p>Information about the devices.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceSummary]> {
+        self.devices.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If
+    /// there are no more pages, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -885,6 +952,20 @@ pub struct DescribeWebsiteCertificateAuthorityOutput {
     /// <p>The certificate name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl DescribeWebsiteCertificateAuthorityOutput {
+    /// <p>The root certificate of the certificate authority.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The time that the certificate authority was added.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The certificate name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWebsiteCertificateAuthorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWebsiteCertificateAuthorityOutput");
@@ -965,6 +1046,22 @@ pub struct DescribeIdentityProviderConfigurationOutput {
     pub service_provider_saml_metadata: std::option::Option<std::string::String>,
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
     pub identity_provider_saml_metadata: std::option::Option<std::string::String>,
+}
+impl DescribeIdentityProviderConfigurationOutput {
+    /// <p>The type of identity provider.</p>
+    pub fn identity_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider_type.as_ref()
+    }
+    /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
+    pub fn service_provider_saml_metadata(&self) -> std::option::Option<&str> {
+        self.service_provider_saml_metadata.as_deref()
+    }
+    /// <p>The SAML metadata document provided by the user’s identity provider.</p>
+    pub fn identity_provider_saml_metadata(&self) -> std::option::Option<&str> {
+        self.identity_provider_saml_metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityProviderConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1076,6 +1173,44 @@ pub struct DescribeFleetMetadataOutput {
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeFleetMetadataOutput {
+    /// <p>The time that the fleet was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time that the fleet was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The option to optimize for better performance by routing traffic through the closest
+    /// AWS Region to users, which may be outside of your home Region.</p>
+    pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
+        self.optimize_for_end_user_location
+    }
+    /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
+    pub fn company_code(&self) -> std::option::Option<&str> {
+        self.company_code.as_deref()
+    }
+    /// <p>The current state of the fleet.</p>
+    pub fn fleet_status(&self) -> std::option::Option<&crate::model::FleetStatus> {
+        self.fleet_status.as_ref()
+    }
+    /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFleetMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1258,6 +1393,28 @@ pub struct DescribeDomainOutput {
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub acm_certificate_arn: std::option::Option<std::string::String>,
 }
+impl DescribeDomainOutput {
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The time that the domain was added.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The current state for the domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+    /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    pub fn acm_certificate_arn(&self) -> std::option::Option<&str> {
+        self.acm_certificate_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainOutput");
@@ -1367,6 +1524,12 @@ pub struct DescribeDevicePolicyConfigurationOutput {
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub device_ca_certificate: std::option::Option<std::string::String>,
 }
+impl DescribeDevicePolicyConfigurationOutput {
+    /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    pub fn device_ca_certificate(&self) -> std::option::Option<&str> {
+        self.device_ca_certificate.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDevicePolicyConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDevicePolicyConfigurationOutput");
@@ -1433,6 +1596,44 @@ pub struct DescribeDeviceOutput {
     pub last_accessed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user name associated with the device.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl DescribeDeviceOutput {
+    /// <p>The current state of the device.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The model of the device.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The manufacturer of the device.</p>
+    pub fn manufacturer(&self) -> std::option::Option<&str> {
+        self.manufacturer.as_deref()
+    }
+    /// <p>The operating system of the device.</p>
+    pub fn operating_system(&self) -> std::option::Option<&str> {
+        self.operating_system.as_deref()
+    }
+    /// <p>The operating system version of the device.</p>
+    pub fn operating_system_version(&self) -> std::option::Option<&str> {
+        self.operating_system_version.as_deref()
+    }
+    /// <p>The operating system patch level of the device.</p>
+    pub fn patch_level(&self) -> std::option::Option<&str> {
+        self.patch_level.as_deref()
+    }
+    /// <p>The date that the device first signed in to Amazon WorkLink.</p>
+    pub fn first_accessed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_accessed_time.as_ref()
+    }
+    /// <p>The date that the device last accessed Amazon WorkLink.</p>
+    pub fn last_accessed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_accessed_time.as_ref()
+    }
+    /// <p>The user name associated with the device.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1605,6 +1806,20 @@ pub struct DescribeCompanyNetworkConfigurationOutput {
     /// <p>The security groups associated with access to the provided subnets.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeCompanyNetworkConfigurationOutput {
+    /// <p>The VPC with connectivity to associated websites.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups associated with access to the provided subnets.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCompanyNetworkConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCompanyNetworkConfigurationOutput");
@@ -1697,6 +1912,12 @@ pub struct DescribeAuditStreamConfigurationOutput {
     /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
     pub audit_stream_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAuditStreamConfigurationOutput {
+    /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
+    pub fn audit_stream_arn(&self) -> std::option::Option<&str> {
+        self.audit_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAuditStreamConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAuditStreamConfigurationOutput");
@@ -1778,6 +1999,12 @@ pub struct CreateFleetOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
 }
+impl CreateFleetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFleetOutput");
@@ -1825,6 +2052,12 @@ impl CreateFleetOutput {
 pub struct AssociateWebsiteCertificateAuthorityOutput {
     /// <p>A unique identifier for the CA.</p>
     pub website_ca_id: std::option::Option<std::string::String>,
+}
+impl AssociateWebsiteCertificateAuthorityOutput {
+    /// <p>A unique identifier for the CA.</p>
+    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+        self.website_ca_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateWebsiteCertificateAuthorityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1876,6 +2109,12 @@ impl AssociateWebsiteCertificateAuthorityOutput {
 pub struct AssociateWebsiteAuthorizationProviderOutput {
     /// <p>A unique identifier for the authorization provider.</p>
     pub authorization_provider_id: std::option::Option<std::string::String>,
+}
+impl AssociateWebsiteAuthorizationProviderOutput {
+    /// <p>A unique identifier for the authorization provider.</p>
+    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+        self.authorization_provider_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateWebsiteAuthorizationProviderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

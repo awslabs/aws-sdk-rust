@@ -101,10 +101,7 @@ impl CancelImageCreationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_image_creation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_image_creation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -442,10 +439,7 @@ impl CreateComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_component(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -859,10 +853,7 @@ impl CreateContainerRecipeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_container_recipe(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1085,7 +1076,7 @@ impl CreateDistributionConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_distribution_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_distribution_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1372,10 +1363,7 @@ impl CreateImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1713,10 +1701,7 @@ impl CreateImagePipelineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_image_pipeline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_image_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2062,10 +2047,7 @@ impl CreateImageRecipeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_image_recipe(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_image_recipe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2451,7 +2433,7 @@ impl CreateInfrastructureConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_infrastructure_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_infrastructure_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5415,10 +5397,7 @@ impl ImportComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_component(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5593,7 +5572,7 @@ impl ListComponentBuildVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_component_build_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_component_build_versions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5867,10 +5846,8 @@ impl ListComponentsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_components(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_components(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6104,10 +6081,9 @@ impl ListContainerRecipesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_container_recipes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_container_recipes(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6288,7 +6264,7 @@ impl ListDistributionConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_distribution_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_distribution_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6540,10 +6516,7 @@ impl ListImageBuildVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_image_build_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6715,10 +6688,7 @@ impl ListImagePackagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_image_packages(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_image_packages(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6940,10 +6910,7 @@ impl ListImagePipelineImagesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_image_pipeline_images(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7187,10 +7154,7 @@ impl ListImagePipelinesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_image_pipelines(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_image_pipelines(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7422,10 +7386,7 @@ impl ListImageRecipesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_image_recipes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_image_recipes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7700,10 +7661,7 @@ impl ListImagesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_images(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_images(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7884,7 +7842,7 @@ impl ListInfrastructureConfigurationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_infrastructure_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_infrastructure_configurations(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8192,10 +8150,7 @@ impl PutComponentPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_component_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_component_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8358,10 +8313,7 @@ impl PutContainerRecipePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_container_recipe_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8518,10 +8470,7 @@ impl PutImagePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_image_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_image_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8683,10 +8632,7 @@ impl PutImageRecipePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_image_recipe_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8850,7 +8796,7 @@ impl StartImagePipelineExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_image_pipeline_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_image_pipeline_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9040,10 +8986,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9420,7 +9363,7 @@ impl UpdateDistributionConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_distribution_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_distribution_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9733,10 +9676,7 @@ impl UpdateImagePipelineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_image_pipeline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_image_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10139,7 +10079,7 @@ impl UpdateInfrastructureConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_infrastructure_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_infrastructure_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10260,6 +10200,91 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// </ul>
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
 }
+impl UpdateInfrastructureConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
+    /// update.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+    /// <p>The description of the infrastructure configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more
+    /// instance types to use for this build. The service will pick one of these instance types based
+    /// on availability.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The logging configuration of the infrastructure configuration.</p>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
+    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
+    /// the instance used to create your image.</p>
+    pub fn key_pair(&self) -> std::option::Option<&str> {
+        self.key_pair.as_deref()
+    }
+    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
+    /// false if you want Image Builder to retain the instance used to configure your AMI if the build
+    /// or test phase of your workflow fails.</p>
+    pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
+        self.terminate_instance_on_failure
+    }
+    /// <p>The SNS topic on which to send image build events.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags attached to the resource created by Image Builder.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
+    /// use to launch EC2 build and test instances. For more information about instance metadata
+    /// options, see one of the following links:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+    /// the instance metadata options</a> in the <i>
+    /// <i>Amazon EC2 User Guide</i>
+    /// </i>
+    /// for Linux instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+    /// the instance metadata options</a> in the <i>
+    /// <i>Amazon EC2 Windows Guide</i>
+    /// </i>
+    /// for Windows instances.</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_metadata_options(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+        self.instance_metadata_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateInfrastructureConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInfrastructureConfigurationInput");
@@ -10318,6 +10343,59 @@ pub struct UpdateImagePipelineInput {
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateImagePipelineInput {
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
+    /// <p>The description of the image pipeline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
+    /// updated by this image pipeline.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
+    /// build images updated by this image pipeline.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
+    /// configure and distribute images updated by this image pipeline.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
+    /// <p>The image test configuration of the image pipeline.</p>
+    pub fn image_tests_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+        self.image_tests_configuration.as_ref()
+    }
+    /// <p> Collects additional information about the image being created, including the operating
+    /// system (OS) version and package list. This information is used to enhance the overall
+    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
+        self.enhanced_image_metadata_enabled
+    }
+    /// <p>The schedule of the image pipeline.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The status of the image pipeline.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateImagePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateImagePipelineInput");
@@ -10358,6 +10436,24 @@ pub struct UpdateDistributionConfigurationInput {
     /// <p>The idempotency token of the distribution configuration.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateDistributionConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The distributions of the distribution configuration.</p>
+    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+        self.distributions.as_deref()
+    }
+    /// <p>The idempotency token of the distribution configuration.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDistributionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDistributionConfigurationInput");
@@ -10381,6 +10477,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10400,6 +10506,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to apply to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -10417,6 +10536,16 @@ pub struct StartImagePipelineExecutionInput {
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl StartImagePipelineExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartImagePipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10436,6 +10565,16 @@ pub struct PutImageRecipePolicyInput {
     /// <p>The policy to apply.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutImageRecipePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+    /// <p>The policy to apply.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutImageRecipePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutImageRecipePolicyInput");
@@ -10453,6 +10592,16 @@ pub struct PutImagePolicyInput {
     pub image_arn: std::option::Option<std::string::String>,
     /// <p>The policy to apply.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl PutImagePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+    /// <p>The policy to apply.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutImagePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10472,6 +10621,16 @@ pub struct PutContainerRecipePolicyInput {
     /// <p>The policy to apply to the container recipe.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutContainerRecipePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+    /// <p>The policy to apply to the container recipe.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutContainerRecipePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutContainerRecipePolicyInput");
@@ -10490,6 +10649,16 @@ pub struct PutComponentPolicyInput {
     /// <p>The policy to apply.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutComponentPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
+    pub fn component_arn(&self) -> std::option::Option<&str> {
+        self.component_arn.as_deref()
+    }
+    /// <p>The policy to apply.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutComponentPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutComponentPolicyInput");
@@ -10505,6 +10674,12 @@ impl std::fmt::Debug for PutComponentPolicyInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10525,6 +10700,21 @@ pub struct ListInfrastructureConfigurationsInput {
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInfrastructureConfigurationsInput {
+    /// <p>You can filter on <code>name</code> to streamline results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInfrastructureConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10584,6 +10774,63 @@ pub struct ListImagesInput {
     /// <p>Includes deprecated images in the response list.</p>
     pub include_deprecated: std::option::Option<bool>,
 }
+impl ListImagesInput {
+    /// <p>The owner defines which images you want to list. By default, this request will only show
+    /// images owned by your account. You can use this field to specify if you want to view images
+    /// owned by yourself, by Amazon, or those images that have been shared with you by other
+    /// customers.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+        self.owner.as_ref()
+    }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>osVersion</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Requests a list of images with a specific recipe name.</p>
+    pub fn by_name(&self) -> bool {
+        self.by_name
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Includes deprecated images in the response list.</p>
+    pub fn include_deprecated(&self) -> std::option::Option<bool> {
+        self.include_deprecated
+    }
+}
 impl std::fmt::Debug for ListImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagesInput");
@@ -10630,6 +10877,45 @@ pub struct ListImageRecipesInput {
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImageRecipesInput {
+    /// <p>The owner defines which image recipes you want to list. By default, this request will only
+    /// show image recipes owned by your account. You can use this field to specify if you want to
+    /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
+    /// with you by other customers.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+        self.owner.as_ref()
+    }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>parentImage</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImageRecipesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10686,6 +10972,53 @@ pub struct ListImagePipelinesInput {
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImagePipelinesInput {
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>description</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>distributionConfigurationArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>imageRecipeArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>infrastructureConfigurationArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>status</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImagePipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagePipelinesInput");
@@ -10722,6 +11055,37 @@ pub struct ListImagePipelineImagesInput {
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImagePipelineImagesInput {
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImagePipelineImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImagePipelineImagesInput");
@@ -10743,6 +11107,20 @@ pub struct ListImagePackagesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListImagePackagesInput {
+    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+    /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImagePackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10795,6 +11173,52 @@ pub struct ListImageBuildVersionsInput {
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImageBuildVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    pub fn image_version_arn(&self) -> std::option::Option<&str> {
+        self.image_version_arn.as_deref()
+    }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>osVersion</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImageBuildVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImageBuildVersionsInput");
@@ -10817,6 +11241,21 @@ pub struct ListDistributionConfigurationsInput {
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDistributionConfigurationsInput {
+    /// <p>You can filter on <code>name</code> to streamline results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDistributionConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10862,6 +11301,46 @@ pub struct ListContainerRecipesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContainerRecipesInput {
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+        self.owner.as_ref()
+    }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>containerType</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>parentImage</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of results to return in the list.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContainerRecipesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10925,6 +11404,64 @@ pub struct ListComponentsInput {
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComponentsInput {
+    /// <p>The owner defines which components you want to list. By default, this request will only
+    /// show components owned by your account. You can use this field to specify if you want to view
+    /// components owned by yourself, by Amazon, or those components that have been shared with you by
+    /// other customers.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
+        self.owner.as_ref()
+    }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>description</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>supportedOsVersion</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Returns the list of component build versions for the specified name.</p>
+    pub fn by_name(&self) -> bool {
+        self.by_name
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComponentsInput");
@@ -10948,6 +11485,21 @@ pub struct ListComponentBuildVersionsInput {
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously
     /// truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListComponentBuildVersionsInput {
+    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    pub fn component_version_arn(&self) -> std::option::Option<&str> {
+        self.component_version_arn.as_deref()
+    }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
+    /// truncated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListComponentBuildVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11004,6 +11556,74 @@ pub struct ImportComponentInput {
     /// <p>The idempotency token of the component.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl ImportComponentInput {
+    /// <p> The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
+    /// </note>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>The description of the component. Describes the contents of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The change description of the component. Describes what change has been made in this
+    /// version, or what makes this version different from other versions of this component.</p>
+    pub fn change_description(&self) -> std::option::Option<&str> {
+        self.change_description.as_deref()
+    }
+    /// <p>The type of the component denotes whether the component is used to build the image, or only
+    /// to test it.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The format of the resource that you want to import as a component.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ComponentFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The platform of the component.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
+    /// <code>uri</code> can be used to specify the data within the component.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
+    /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
+    /// component.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The tags of the component.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The idempotency token of the component.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportComponentInput");
@@ -11031,6 +11651,13 @@ pub struct GetInfrastructureConfigurationInput {
     /// retrieve.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
+impl GetInfrastructureConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
+    /// retrieve.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInfrastructureConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInfrastructureConfigurationInput");
@@ -11049,6 +11676,12 @@ pub struct GetImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
+impl GetImageRecipePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImageRecipePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImageRecipePolicyInput");
@@ -11063,6 +11696,12 @@ impl std::fmt::Debug for GetImageRecipePolicyInput {
 pub struct GetImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
+}
+impl GetImageRecipeInput {
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetImageRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11079,6 +11718,12 @@ pub struct GetImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     pub image_arn: std::option::Option<std::string::String>,
 }
+impl GetImagePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
+    pub fn image_arn(&self) -> std::option::Option<&str> {
+        self.image_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImagePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImagePolicyInput");
@@ -11093,6 +11738,12 @@ impl std::fmt::Debug for GetImagePolicyInput {
 pub struct GetImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+}
+impl GetImagePipelineInput {
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetImagePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11109,6 +11760,12 @@ pub struct GetImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
+impl GetImageInput {
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetImageInput");
@@ -11124,6 +11781,13 @@ pub struct GetDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
     /// retrieve.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+}
+impl GetDistributionConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
+    /// retrieve.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDistributionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11143,6 +11807,12 @@ pub struct GetContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
+impl GetContainerRecipePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerRecipePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerRecipePolicyInput");
@@ -11157,6 +11827,12 @@ impl std::fmt::Debug for GetContainerRecipePolicyInput {
 pub struct GetContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
+}
+impl GetContainerRecipeInput {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContainerRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11173,6 +11849,12 @@ pub struct GetComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
     pub component_arn: std::option::Option<std::string::String>,
 }
+impl GetComponentPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
+    pub fn component_arn(&self) -> std::option::Option<&str> {
+        self.component_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComponentPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComponentPolicyInput");
@@ -11188,6 +11870,13 @@ pub struct GetComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
     /// "/\d+$" suffix.</p>
     pub component_build_version_arn: std::option::Option<std::string::String>,
+}
+impl GetComponentInput {
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
+    /// "/\d+$" suffix.</p>
+    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+        self.component_build_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11207,6 +11896,12 @@ pub struct DeleteInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
+impl DeleteInfrastructureConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInfrastructureConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInfrastructureConfigurationInput");
@@ -11225,6 +11920,12 @@ pub struct DeleteImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
+impl DeleteImageRecipeInput {
+    /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImageRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageRecipeInput");
@@ -11239,6 +11940,12 @@ impl std::fmt::Debug for DeleteImageRecipeInput {
 pub struct DeleteImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+}
+impl DeleteImagePipelineInput {
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
+        self.image_pipeline_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteImagePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11255,6 +11962,12 @@ pub struct DeleteImageInput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
+impl DeleteImageInput {
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageInput");
@@ -11269,6 +11982,12 @@ impl std::fmt::Debug for DeleteImageInput {
 pub struct DeleteDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDistributionConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDistributionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11288,6 +12007,12 @@ pub struct DeleteContainerRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
+impl DeleteContainerRecipeInput {
+    /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContainerRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContainerRecipeInput");
@@ -11302,6 +12027,12 @@ impl std::fmt::Debug for DeleteContainerRecipeInput {
 pub struct DeleteComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     pub component_build_version_arn: std::option::Option<std::string::String>,
+}
+impl DeleteComponentInput {
+    /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
+    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+        self.component_build_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11354,6 +12085,78 @@ pub struct CreateInfrastructureConfigurationInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateInfrastructureConfigurationInput {
+    /// <p>The name of the infrastructure configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the infrastructure configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more
+    /// instance types to use for this build. The service will pick one of these instance types based
+    /// on availability.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The logging configuration of the infrastructure configuration.</p>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
+    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
+    /// the instance used to create your image.</p>
+    pub fn key_pair(&self) -> std::option::Option<&str> {
+        self.key_pair.as_deref()
+    }
+    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
+    /// false if you want Image Builder to retain the instance used to configure your AMI if the build
+    /// or test phase of your workflow fails.</p>
+    pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
+        self.terminate_instance_on_failure
+    }
+    /// <p>The SNS topic on which to send image build events.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The tags attached to the resource created by Image Builder.</p>
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resource_tags.as_ref()
+    }
+    /// <p>The instance metadata options that you can set for the HTTP requests that
+    /// pipeline builds use to launch EC2 build and test instances.</p>
+    pub fn instance_metadata_options(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
+        self.instance_metadata_options.as_ref()
+    }
+    /// <p>The tags of the infrastructure configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInfrastructureConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11424,6 +12227,72 @@ pub struct CreateImageRecipeInput {
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateImageRecipeInput {
+    /// <p> The name of the image recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the image recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>The components of the image recipe.</p>
+    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+        self.components.as_deref()
+    }
+    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
+    /// image or an AMI ID. The format for the ARN follows this example:
+    /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
+    /// You can provide the specific version that you want to use, or you can use a wildcard in
+    /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
+    /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+    pub fn parent_image(&self) -> std::option::Option<&str> {
+        self.parent_image.as_deref()
+    }
+    /// <p>The block device mappings of the image recipe.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p> The tags of the image recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The working directory used during build and test workflows.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>Specify additional settings and launch scripts for your build instances.</p>
+    pub fn additional_instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AdditionalInstanceConfiguration> {
+        self.additional_instance_configuration.as_ref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageRecipeInput");
@@ -11478,6 +12347,66 @@ pub struct CreateImagePipelineInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateImagePipelineInput {
+    /// <p> The name of the image pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the image pipeline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
+    /// created by this image pipeline.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
+    /// build images created by this image pipeline.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
+    /// configure and distribute images created by this image pipeline.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
+    /// <p> The image test configuration of the image pipeline.</p>
+    pub fn image_tests_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+        self.image_tests_configuration.as_ref()
+    }
+    /// <p> Collects additional information about the image being created, including the operating
+    /// system (OS) version and package list. This information is used to enhance the overall
+    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
+        self.enhanced_image_metadata_enabled
+    }
+    /// <p> The schedule of the image pipeline.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p> The status of the image pipeline.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PipelineStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The tags of the image pipeline.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateImagePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11534,6 +12463,50 @@ pub struct CreateImageInput {
     /// <p> The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateImageInput {
+    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
+    /// configured, tested, and assessed.</p>
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+        self.image_recipe_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+        self.container_recipe_arn.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
+    /// configures the outputs of your pipeline.</p>
+    pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
+        self.distribution_configuration_arn.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
+    /// environment in which your image will be built and tested.</p>
+    pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
+        self.infrastructure_configuration_arn.as_deref()
+    }
+    /// <p> The image tests configuration of the image.</p>
+    pub fn image_tests_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
+        self.image_tests_configuration.as_ref()
+    }
+    /// <p> Collects additional information about the image being created, including the operating
+    /// system (OS) version and package list. This information is used to enhance the overall
+    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
+        self.enhanced_image_metadata_enabled
+    }
+    /// <p> The tags of the image.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageInput");
@@ -11573,6 +12546,31 @@ pub struct CreateDistributionConfigurationInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The idempotency token of the distribution configuration.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateDistributionConfigurationInput {
+    /// <p> The name of the distribution configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the distribution configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The distributions of the distribution configuration.</p>
+    pub fn distributions(&self) -> std::option::Option<&[crate::model::Distribution]> {
+        self.distributions.as_deref()
+    }
+    /// <p> The tags of the distribution configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The idempotency token of the distribution configuration.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDistributionConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11635,6 +12633,91 @@ pub struct CreateContainerRecipeInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The client token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateContainerRecipeInput {
+    /// <p>The type of container to create.</p>
+    pub fn container_type(&self) -> std::option::Option<&crate::model::ContainerType> {
+        self.container_type.as_ref()
+    }
+    /// <p>The name of the container recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the container recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>Components for build and test that are included in the container recipe.</p>
+    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
+        self.components.as_deref()
+    }
+    /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
+    pub fn instance_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceConfiguration> {
+        self.instance_configuration.as_ref()
+    }
+    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    pub fn dockerfile_template_data(&self) -> std::option::Option<&str> {
+        self.dockerfile_template_data.as_deref()
+    }
+    /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
+    pub fn dockerfile_template_uri(&self) -> std::option::Option<&str> {
+        self.dockerfile_template_uri.as_deref()
+    }
+    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    pub fn platform_override(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform_override.as_ref()
+    }
+    /// <p>Specifies the operating system version for the base image.</p>
+    pub fn image_os_version_override(&self) -> std::option::Option<&str> {
+        self.image_os_version_override.as_deref()
+    }
+    /// <p>The base image for the container recipe.</p>
+    pub fn parent_image(&self) -> std::option::Option<&str> {
+        self.parent_image.as_deref()
+    }
+    /// <p>Tags that are attached to the container recipe.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The working directory for use during build and test workflows.</p>
+    pub fn working_directory(&self) -> std::option::Option<&str> {
+        self.working_directory.as_deref()
+    }
+    /// <p>The destination repository for the container image.</p>
+    pub fn target_repository(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetContainerRepository> {
+        self.target_repository.as_ref()
+    }
+    /// <p>Identifies which KMS key is used to encrypt the container image.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The client token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateContainerRecipeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11706,6 +12789,74 @@ pub struct CreateComponentInput {
     /// <p>The idempotency token of the component.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateComponentInput {
+    /// <p>The name of the component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number to the fourth node.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>The description of the component. Describes the contents of the component.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The change description of the component. Describes what change has been made in this
+    /// version, or what makes this version different from other versions of this component.</p>
+    pub fn change_description(&self) -> std::option::Option<&str> {
+        self.change_description.as_deref()
+    }
+    /// <p>The platform of the component.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p> The operating system (OS) version supported by the component. If the OS information is
+    /// available, a prefix match is performed against the base image OS version during image recipe
+    /// creation.</p>
+    pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_os_versions.as_deref()
+    }
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
+    /// <code>uri</code> can be used to specify the data within the component.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
+    /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
+    /// component.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The tags of the component.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The idempotency token of the component.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComponentInput");
@@ -11732,6 +12883,16 @@ pub struct CancelImageCreationInput {
     pub image_build_version_arn: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CancelImageCreationInput {
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+        self.image_build_version_arn.as_deref()
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelImageCreationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

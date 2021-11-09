@@ -20,6 +20,40 @@ pub struct UpdateRevisionOutput {
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateRevisionOutput {
+    /// <p>The ARN for the revision.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An optional comment about the revision.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this revision.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    pub fn finalized(&self) -> bool {
+        self.finalized
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRevisionOutput");
@@ -175,6 +209,32 @@ pub struct UpdateEventActionOutput {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateEventActionOutput {
+    /// <p>What occurs after a certain event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The ARN for the event action.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEventActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventActionOutput");
@@ -311,6 +371,48 @@ pub struct UpdateDataSetOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateDataSetOutput {
+    /// <p>The ARN for the data set.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The description for the data set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the data set.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the data set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+        self.origin.as_ref()
+    }
+    /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+        self.origin_details.as_ref()
+    }
+    /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -506,6 +608,48 @@ pub struct UpdateAssetOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateAssetOutput {
+    /// <p>The ARN for the asset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the asset.</p>
+    pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
+        self.asset_details.as_ref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this asset.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the asset.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this asset.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -775,6 +919,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// A label that consists of a customer-defined key and an optional value.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -839,6 +992,16 @@ pub struct ListRevisionAssetsOutput {
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRevisionAssetsOutput {
+    /// <p>The asset objects listed by the request.</p>
+    pub fn assets(&self) -> std::option::Option<&[crate::model::AssetEntry]> {
+        self.assets.as_deref()
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRevisionAssetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -912,6 +1075,16 @@ pub struct ListJobsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobsOutput {
+    /// <p>The jobs listed by the request.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::JobEntry]> {
+        self.jobs.as_deref()
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsOutput");
@@ -983,6 +1156,16 @@ pub struct ListEventActionsOutput {
     pub event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventActionsOutput {
+    /// <p>The event action objects listed by the request.</p>
+    pub fn event_actions(&self) -> std::option::Option<&[crate::model::EventActionEntry]> {
+        self.event_actions.as_deref()
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1057,6 +1240,16 @@ pub struct ListDataSetsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDataSetsOutput {
+    /// <p>The data set objects listed by the request.</p>
+    pub fn data_sets(&self) -> std::option::Option<&[crate::model::DataSetEntry]> {
+        self.data_sets.as_deref()
+    }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDataSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSetsOutput");
@@ -1128,6 +1321,16 @@ pub struct ListDataSetRevisionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The asset objects listed by the request.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>,
+}
+impl ListDataSetRevisionsOutput {
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The asset objects listed by the request.</p>
+    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionEntry]> {
+        self.revisions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataSetRevisionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1215,6 +1418,47 @@ pub struct GetRevisionOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetRevisionOutput {
+    /// <p>The ARN for the revision.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An optional comment about the revision.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this revision.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    pub fn finalized(&self) -> bool {
+        self.finalized
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The tags for the revision.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1405,6 +1649,40 @@ pub struct GetJobOutput {
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetJobOutput {
+    /// <p>The ARN for the job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Details about the job.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ResponseDetails> {
+        self.details.as_ref()
+    }
+    /// <p>The errors associated with jobs.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::JobError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The state of the job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The job type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for GetJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobOutput");
@@ -1572,6 +1850,32 @@ pub struct GetEventActionOutput {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetEventActionOutput {
+    /// <p>What occurs after a certain event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The ARN for the event action.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEventActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventActionOutput");
@@ -1711,6 +2015,55 @@ pub struct GetDataSetOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetDataSetOutput {
+    /// <p>The ARN for the data set.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The description for the data set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the data set.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the data set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+        self.origin.as_ref()
+    }
+    /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+        self.origin_details.as_ref()
+    }
+    /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The tags for the data set.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1936,6 +2289,48 @@ pub struct GetAssetOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetAssetOutput {
+    /// <p>The ARN for the asset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the asset.</p>
+    pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
+        self.asset_details.as_ref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this asset.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the asset.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this asset.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAssetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2251,6 +2646,47 @@ pub struct CreateRevisionOutput {
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateRevisionOutput {
+    /// <p>The ARN for the revision.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An optional comment about the revision.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this revision.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    pub fn finalized(&self) -> bool {
+        self.finalized
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The tags for the revision.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRevisionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRevisionOutput");
@@ -2440,6 +2876,40 @@ pub struct CreateJobOutput {
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateJobOutput {
+    /// <p>The ARN for the job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Details about the job.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ResponseDetails> {
+        self.details.as_ref()
+    }
+    /// <p>The errors associated with jobs.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::JobError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The state of the job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The job type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobOutput");
@@ -2607,6 +3077,32 @@ pub struct CreateEventActionOutput {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateEventActionOutput {
+    /// <p>What occurs after a certain event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The ARN for the event action.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEventActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventActionOutput");
@@ -2746,6 +3242,55 @@ pub struct CreateDataSetOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateDataSetOutput {
+    /// <p>The ARN for the data set.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The description for the data set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the data set.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the data set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+        self.origin.as_ref()
+    }
+    /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+        self.origin_details.as_ref()
+    }
+    /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The tags for the data set.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

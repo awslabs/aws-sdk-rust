@@ -117,10 +117,7 @@ impl AssociateRoleToGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_role_to_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -266,7 +263,7 @@ impl AssociateServiceRoleToAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_service_role_to_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_service_role_to_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -498,10 +495,7 @@ impl CreateConnectorDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_connector_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -730,7 +724,7 @@ impl CreateConnectorDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_connector_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_connector_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -959,10 +953,9 @@ impl CreateCoreDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_core_definition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_core_definition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1191,7 +1184,7 @@ impl CreateCoreDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_core_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_core_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1441,10 +1434,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1674,10 +1664,7 @@ impl CreateDeviceDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_device_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1906,7 +1893,7 @@ impl CreateDeviceDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_device_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_device_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2138,10 +2125,7 @@ impl CreateFunctionDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_function_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2385,7 +2369,7 @@ impl CreateFunctionDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_function_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_function_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2613,10 +2597,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3137,10 +3118,7 @@ impl CreateGroupVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_group_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_group_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3370,10 +3348,7 @@ impl CreateLoggerDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_logger_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3602,7 +3577,7 @@ impl CreateLoggerDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_logger_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_logger_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3834,10 +3809,7 @@ impl CreateResourceDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_resource_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4066,7 +4038,7 @@ impl CreateResourceDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4346,10 +4318,7 @@ impl CreateSoftwareUpdateJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_software_update_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4583,7 +4552,7 @@ impl CreateSubscriptionDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4814,7 +4783,7 @@ impl CreateSubscriptionDefinitionVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14217,10 +14186,7 @@ impl ResetDeploymentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_deployments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reset_deployments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14451,10 +14417,7 @@ impl StartBulkDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_bulk_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_bulk_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14797,10 +14760,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15169,10 +15129,7 @@ impl UpdateConnectivityInfoInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_connectivity_info(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15355,10 +15312,7 @@ impl UpdateConnectorDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_connector_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15538,10 +15492,9 @@ impl UpdateCoreDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_core_definition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_core_definition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15723,10 +15676,7 @@ impl UpdateDeviceDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_device_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15909,10 +15859,7 @@ impl UpdateFunctionDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_function_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16084,10 +16031,7 @@ impl UpdateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16272,7 +16216,7 @@ impl UpdateGroupCertificateConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_group_certificate_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_group_certificate_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16455,10 +16399,7 @@ impl UpdateLoggerDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_logger_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16641,10 +16582,7 @@ impl UpdateResourceDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resource_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16825,7 +16763,7 @@ impl UpdateSubscriptionDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_subscription_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_subscription_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17011,7 +16949,7 @@ impl UpdateThingRuntimeConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_thing_runtime_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_thing_runtime_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17083,6 +17021,18 @@ pub struct UpdateThingRuntimeConfigurationInput {
     /// The thing name.
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl UpdateThingRuntimeConfigurationInput {
+    /// Configuration for telemetry service.
+    pub fn telemetry_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TelemetryConfigurationUpdate> {
+        self.telemetry_configuration.as_ref()
+    }
+    /// The thing name.
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateThingRuntimeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThingRuntimeConfigurationInput");
@@ -17100,6 +17050,16 @@ pub struct UpdateSubscriptionDefinitionInput {
     pub name: std::option::Option<std::string::String>,
     /// The ID of the subscription definition.
     pub subscription_definition_id: std::option::Option<std::string::String>,
+}
+impl UpdateSubscriptionDefinitionInput {
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The ID of the subscription definition.
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSubscriptionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17122,6 +17082,16 @@ pub struct UpdateResourceDefinitionInput {
     /// The ID of the resource definition.
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
+impl UpdateResourceDefinitionInput {
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The ID of the resource definition.
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceDefinitionInput");
@@ -17140,6 +17110,16 @@ pub struct UpdateLoggerDefinitionInput {
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateLoggerDefinitionInput {
+    /// The ID of the logger definition.
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_id.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLoggerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoggerDefinitionInput");
@@ -17157,6 +17137,16 @@ pub struct UpdateGroupCertificateConfigurationInput {
     pub certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
+}
+impl UpdateGroupCertificateConfigurationInput {
+    /// The amount of time remaining before the certificate expires, in milliseconds.
+    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+        self.certificate_expiry_in_milliseconds.as_deref()
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGroupCertificateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17179,6 +17169,16 @@ pub struct UpdateGroupInput {
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateGroupInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupInput");
@@ -17196,6 +17196,16 @@ pub struct UpdateFunctionDefinitionInput {
     pub function_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateFunctionDefinitionInput {
+    /// The ID of the Lambda function definition.
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+        self.function_definition_id.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFunctionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17215,6 +17225,16 @@ pub struct UpdateDeviceDefinitionInput {
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateDeviceDefinitionInput {
+    /// The ID of the device definition.
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
+        self.device_definition_id.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDeviceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceDefinitionInput");
@@ -17232,6 +17252,16 @@ pub struct UpdateCoreDefinitionInput {
     pub core_definition_id: std::option::Option<std::string::String>,
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateCoreDefinitionInput {
+    /// The ID of the core definition.
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
+        self.core_definition_id.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCoreDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17251,6 +17281,16 @@ pub struct UpdateConnectorDefinitionInput {
     /// The name of the definition.
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateConnectorDefinitionInput {
+    /// The ID of the connector definition.
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_id.as_deref()
+    }
+    /// The name of the definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectorDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectorDefinitionInput");
@@ -17269,6 +17309,16 @@ pub struct UpdateConnectivityInfoInput {
     /// The thing name.
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl UpdateConnectivityInfoInput {
+    /// A list of connectivity info.
+    pub fn connectivity_info(&self) -> std::option::Option<&[crate::model::ConnectivityInfo]> {
+        self.connectivity_info.as_deref()
+    }
+    /// The thing name.
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectivityInfoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectivityInfoInput");
@@ -17286,6 +17336,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// An array of tag keys to delete
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// The Amazon Resource Name (ARN) of the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// An array of tag keys to delete
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17306,6 +17366,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// The Amazon Resource Name (ARN) of the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// The key-value pair for the resource tag.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -17321,6 +17394,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopBulkDeploymentInput {
     /// The ID of the bulk deployment.
     pub bulk_deployment_id: std::option::Option<std::string::String>,
+}
+impl StopBulkDeploymentInput {
+    /// The ID of the bulk deployment.
+    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopBulkDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17344,6 +17423,27 @@ pub struct StartBulkDeploymentInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartBulkDeploymentInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
+    pub fn input_file_uri(&self) -> std::option::Option<&str> {
+        self.input_file_uri.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartBulkDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartBulkDeploymentInput");
@@ -17366,6 +17466,20 @@ pub struct ResetDeploymentsInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl ResetDeploymentsInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// If true, performs a best-effort only core reset.
+    pub fn force(&self) -> bool {
+        self.force
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetDeploymentsInput");
@@ -17382,6 +17496,12 @@ impl std::fmt::Debug for ResetDeploymentsInput {
 pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) of the resource.
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// The Amazon Resource Name (ARN) of the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17401,6 +17521,20 @@ pub struct ListSubscriptionDefinitionVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// The ID of the subscription definition.
     pub subscription_definition_id: std::option::Option<std::string::String>,
+}
+impl ListSubscriptionDefinitionVersionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The ID of the subscription definition.
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSubscriptionDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17424,6 +17558,16 @@ pub struct ListSubscriptionDefinitionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSubscriptionDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSubscriptionDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSubscriptionDefinitionsInput");
@@ -17444,6 +17588,20 @@ pub struct ListResourceDefinitionVersionsInput {
     /// The ID of the resource definition.
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
+impl ListResourceDefinitionVersionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The ID of the resource definition.
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceDefinitionVersionsInput");
@@ -17462,6 +17620,16 @@ pub struct ListResourceDefinitionsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17483,6 +17651,20 @@ pub struct ListLoggerDefinitionVersionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLoggerDefinitionVersionsInput {
+    /// The ID of the logger definition.
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLoggerDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLoggerDefinitionVersionsInput");
@@ -17501,6 +17683,16 @@ pub struct ListLoggerDefinitionsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLoggerDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListLoggerDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17522,6 +17714,20 @@ pub struct ListGroupVersionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupVersionsInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupVersionsInput");
@@ -17541,6 +17747,16 @@ pub struct ListGroupsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsInput");
@@ -17556,6 +17772,12 @@ impl std::fmt::Debug for ListGroupsInput {
 pub struct ListGroupCertificateAuthoritiesInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
+}
+impl ListGroupCertificateAuthoritiesInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupCertificateAuthoritiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17576,6 +17798,20 @@ pub struct ListFunctionDefinitionVersionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFunctionDefinitionVersionsInput {
+    /// The ID of the Lambda function definition.
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+        self.function_definition_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFunctionDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFunctionDefinitionVersionsInput");
@@ -17594,6 +17830,16 @@ pub struct ListFunctionDefinitionsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFunctionDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFunctionDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17615,6 +17861,20 @@ pub struct ListDeviceDefinitionVersionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeviceDefinitionVersionsInput {
+    /// The ID of the device definition.
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
+        self.device_definition_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceDefinitionVersionsInput");
@@ -17633,6 +17893,16 @@ pub struct ListDeviceDefinitionsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeviceDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeviceDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17653,6 +17923,20 @@ pub struct ListDeploymentsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeploymentsInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17675,6 +17959,20 @@ pub struct ListCoreDefinitionVersionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCoreDefinitionVersionsInput {
+    /// The ID of the core definition.
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
+        self.core_definition_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCoreDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCoreDefinitionVersionsInput");
@@ -17693,6 +17991,16 @@ pub struct ListCoreDefinitionsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCoreDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCoreDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17714,6 +18022,20 @@ pub struct ListConnectorDefinitionVersionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConnectorDefinitionVersionsInput {
+    /// The ID of the connector definition.
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectorDefinitionVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorDefinitionVersionsInput");
@@ -17733,6 +18055,16 @@ pub struct ListConnectorDefinitionsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConnectorDefinitionsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectorDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorDefinitionsInput");
@@ -17750,6 +18082,16 @@ pub struct ListBulkDeploymentsInput {
     pub max_results: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBulkDeploymentsInput {
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBulkDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17771,6 +18113,20 @@ pub struct ListBulkDeploymentDetailedReportsInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBulkDeploymentDetailedReportsInput {
+    /// The ID of the bulk deployment.
+    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_id.as_deref()
+    }
+    /// The maximum number of results to be returned per request.
+    pub fn max_results(&self) -> std::option::Option<&str> {
+        self.max_results.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBulkDeploymentDetailedReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBulkDeploymentDetailedReportsInput");
@@ -17787,6 +18143,12 @@ impl std::fmt::Debug for ListBulkDeploymentDetailedReportsInput {
 pub struct GetThingRuntimeConfigurationInput {
     /// The thing name.
     pub thing_name: std::option::Option<std::string::String>,
+}
+impl GetThingRuntimeConfigurationInput {
+    /// The thing name.
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetThingRuntimeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17806,6 +18168,20 @@ pub struct GetSubscriptionDefinitionVersionInput {
     pub subscription_definition_id: std::option::Option<std::string::String>,
     /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub subscription_definition_version_id: std::option::Option<std::string::String>,
+}
+impl GetSubscriptionDefinitionVersionInput {
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The ID of the subscription definition.
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_id.as_deref()
+    }
+    /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn subscription_definition_version_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSubscriptionDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17829,6 +18205,12 @@ impl std::fmt::Debug for GetSubscriptionDefinitionVersionInput {
 pub struct GetSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
     pub subscription_definition_id: std::option::Option<std::string::String>,
+}
+impl GetSubscriptionDefinitionInput {
+    /// The ID of the subscription definition.
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSubscriptionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17861,6 +18243,16 @@ pub struct GetResourceDefinitionVersionInput {
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub resource_definition_version_id: std::option::Option<std::string::String>,
 }
+impl GetResourceDefinitionVersionInput {
+    /// The ID of the resource definition.
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_id.as_deref()
+    }
+    /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn resource_definition_version_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceDefinitionVersionInput");
@@ -17880,6 +18272,12 @@ pub struct GetResourceDefinitionInput {
     /// The ID of the resource definition.
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
+impl GetResourceDefinitionInput {
+    /// The ID of the resource definition.
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceDefinitionInput");
@@ -17898,6 +18296,20 @@ pub struct GetLoggerDefinitionVersionInput {
     pub logger_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetLoggerDefinitionVersionInput {
+    /// The ID of the logger definition.
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_id.as_deref()
+    }
+    /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn logger_definition_version_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_version_id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLoggerDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17919,6 +18331,12 @@ pub struct GetLoggerDefinitionInput {
     /// The ID of the logger definition.
     pub logger_definition_id: std::option::Option<std::string::String>,
 }
+impl GetLoggerDefinitionInput {
+    /// The ID of the logger definition.
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLoggerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoggerDefinitionInput");
@@ -17936,6 +18354,16 @@ pub struct GetGroupVersionInput {
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
     pub group_version_id: std::option::Option<std::string::String>,
 }
+impl GetGroupVersionInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
+    pub fn group_version_id(&self) -> std::option::Option<&str> {
+        self.group_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupVersionInput");
@@ -17951,6 +18379,12 @@ impl std::fmt::Debug for GetGroupVersionInput {
 pub struct GetGroupCertificateConfigurationInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
+}
+impl GetGroupCertificateConfigurationInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupCertificateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17969,6 +18403,16 @@ pub struct GetGroupCertificateAuthorityInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl GetGroupCertificateAuthorityInput {
+    /// The ID of the certificate authority.
+    pub fn certificate_authority_id(&self) -> std::option::Option<&str> {
+        self.certificate_authority_id.as_deref()
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupCertificateAuthorityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupCertificateAuthorityInput");
@@ -17984,6 +18428,12 @@ impl std::fmt::Debug for GetGroupCertificateAuthorityInput {
 pub struct GetGroupInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
+}
+impl GetGroupInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18003,6 +18453,20 @@ pub struct GetFunctionDefinitionVersionInput {
     pub function_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetFunctionDefinitionVersionInput {
+    /// The ID of the Lambda function definition.
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+        self.function_definition_id.as_deref()
+    }
+    /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn function_definition_version_id(&self) -> std::option::Option<&str> {
+        self.function_definition_version_id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFunctionDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18024,6 +18488,12 @@ pub struct GetFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     pub function_definition_id: std::option::Option<std::string::String>,
 }
+impl GetFunctionDefinitionInput {
+    /// The ID of the Lambda function definition.
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+        self.function_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFunctionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionDefinitionInput");
@@ -18042,6 +18512,20 @@ pub struct GetDeviceDefinitionVersionInput {
     pub device_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetDeviceDefinitionVersionInput {
+    /// The ID of the device definition.
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
+        self.device_definition_id.as_deref()
+    }
+    /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn device_definition_version_id(&self) -> std::option::Option<&str> {
+        self.device_definition_version_id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18063,6 +18547,12 @@ pub struct GetDeviceDefinitionInput {
     /// The ID of the device definition.
     pub device_definition_id: std::option::Option<std::string::String>,
 }
+impl GetDeviceDefinitionInput {
+    /// The ID of the device definition.
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
+        self.device_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceDefinitionInput");
@@ -18079,6 +18569,16 @@ pub struct GetDeploymentStatusInput {
     pub deployment_id: std::option::Option<std::string::String>,
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
+}
+impl GetDeploymentStatusInput {
+    /// The ID of the deployment.
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeploymentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18097,6 +18597,16 @@ pub struct GetCoreDefinitionVersionInput {
     pub core_definition_id: std::option::Option<std::string::String>,
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub core_definition_version_id: std::option::Option<std::string::String>,
+}
+impl GetCoreDefinitionVersionInput {
+    /// The ID of the core definition.
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
+        self.core_definition_id.as_deref()
+    }
+    /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn core_definition_version_id(&self) -> std::option::Option<&str> {
+        self.core_definition_version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCoreDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18117,6 +18627,12 @@ pub struct GetCoreDefinitionInput {
     /// The ID of the core definition.
     pub core_definition_id: std::option::Option<std::string::String>,
 }
+impl GetCoreDefinitionInput {
+    /// The ID of the core definition.
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
+        self.core_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCoreDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCoreDefinitionInput");
@@ -18135,6 +18651,20 @@ pub struct GetConnectorDefinitionVersionInput {
     pub connector_definition_version_id: std::option::Option<std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetConnectorDefinitionVersionInput {
+    /// The ID of the connector definition.
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_id.as_deref()
+    }
+    /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn connector_definition_version_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_version_id.as_deref()
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConnectorDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18156,6 +18686,12 @@ pub struct GetConnectorDefinitionInput {
     /// The ID of the connector definition.
     pub connector_definition_id: std::option::Option<std::string::String>,
 }
+impl GetConnectorDefinitionInput {
+    /// The ID of the connector definition.
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectorDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectorDefinitionInput");
@@ -18170,6 +18706,12 @@ impl std::fmt::Debug for GetConnectorDefinitionInput {
 pub struct GetConnectivityInfoInput {
     /// The thing name.
     pub thing_name: std::option::Option<std::string::String>,
+}
+impl GetConnectivityInfoInput {
+    /// The thing name.
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConnectivityInfoInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18186,6 +18728,12 @@ pub struct GetBulkDeploymentStatusInput {
     /// The ID of the bulk deployment.
     pub bulk_deployment_id: std::option::Option<std::string::String>,
 }
+impl GetBulkDeploymentStatusInput {
+    /// The ID of the bulk deployment.
+    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+        self.bulk_deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBulkDeploymentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBulkDeploymentStatusInput");
@@ -18200,6 +18748,12 @@ impl std::fmt::Debug for GetBulkDeploymentStatusInput {
 pub struct GetAssociatedRoleInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
+}
+impl GetAssociatedRoleInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAssociatedRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18227,6 +18781,12 @@ pub struct DisassociateRoleFromGroupInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl DisassociateRoleFromGroupInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateRoleFromGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateRoleFromGroupInput");
@@ -18241,6 +18801,12 @@ impl std::fmt::Debug for DisassociateRoleFromGroupInput {
 pub struct DeleteSubscriptionDefinitionInput {
     /// The ID of the subscription definition.
     pub subscription_definition_id: std::option::Option<std::string::String>,
+}
+impl DeleteSubscriptionDefinitionInput {
+    /// The ID of the subscription definition.
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSubscriptionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18260,6 +18826,12 @@ pub struct DeleteResourceDefinitionInput {
     /// The ID of the resource definition.
     pub resource_definition_id: std::option::Option<std::string::String>,
 }
+impl DeleteResourceDefinitionInput {
+    /// The ID of the resource definition.
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceDefinitionInput");
@@ -18274,6 +18846,12 @@ impl std::fmt::Debug for DeleteResourceDefinitionInput {
 pub struct DeleteLoggerDefinitionInput {
     /// The ID of the logger definition.
     pub logger_definition_id: std::option::Option<std::string::String>,
+}
+impl DeleteLoggerDefinitionInput {
+    /// The ID of the logger definition.
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLoggerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18290,6 +18868,12 @@ pub struct DeleteGroupInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl DeleteGroupInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGroupInput");
@@ -18304,6 +18888,12 @@ impl std::fmt::Debug for DeleteGroupInput {
 pub struct DeleteFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     pub function_definition_id: std::option::Option<std::string::String>,
+}
+impl DeleteFunctionDefinitionInput {
+    /// The ID of the Lambda function definition.
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+        self.function_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFunctionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18320,6 +18910,12 @@ pub struct DeleteDeviceDefinitionInput {
     /// The ID of the device definition.
     pub device_definition_id: std::option::Option<std::string::String>,
 }
+impl DeleteDeviceDefinitionInput {
+    /// The ID of the device definition.
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
+        self.device_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceDefinitionInput");
@@ -18335,6 +18931,12 @@ pub struct DeleteCoreDefinitionInput {
     /// The ID of the core definition.
     pub core_definition_id: std::option::Option<std::string::String>,
 }
+impl DeleteCoreDefinitionInput {
+    /// The ID of the core definition.
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
+        self.core_definition_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCoreDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCoreDefinitionInput");
@@ -18349,6 +18951,12 @@ impl std::fmt::Debug for DeleteCoreDefinitionInput {
 pub struct DeleteConnectorDefinitionInput {
     /// The ID of the connector definition.
     pub connector_definition_id: std::option::Option<std::string::String>,
+}
+impl DeleteConnectorDefinitionInput {
+    /// The ID of the connector definition.
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectorDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18368,6 +18976,20 @@ pub struct CreateSubscriptionDefinitionVersionInput {
     pub subscription_definition_id: std::option::Option<std::string::String>,
     /// A list of subscriptions.
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
+}
+impl CreateSubscriptionDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the subscription definition.
+    pub fn subscription_definition_id(&self) -> std::option::Option<&str> {
+        self.subscription_definition_id.as_deref()
+    }
+    /// A list of subscriptions.
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+        self.subscriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSubscriptionDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18395,6 +19017,29 @@ pub struct CreateSubscriptionDefinitionInput {
     /// Tag(s) to add to the new resource.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSubscriptionDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the subscription definition.
+    pub fn initial_version(
+        &self,
+    ) -> std::option::Option<&crate::model::SubscriptionDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the subscription definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSubscriptionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18427,6 +19072,42 @@ pub struct CreateSoftwareUpdateJobInput {
     pub update_targets_operating_system:
         std::option::Option<crate::model::UpdateTargetsOperatingSystem>,
 }
+impl CreateSoftwareUpdateJobInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+    pub fn s3_url_signer_role(&self) -> std::option::Option<&str> {
+        self.s3_url_signer_role.as_deref()
+    }
+    /// The piece of software on the Greengrass core that will be updated.
+    pub fn software_to_update(&self) -> std::option::Option<&crate::model::SoftwareToUpdate> {
+        self.software_to_update.as_ref()
+    }
+    /// The minimum level of log statements that should be logged by the OTA Agent during an update.
+    pub fn update_agent_log_level(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateAgentLogLevel> {
+        self.update_agent_log_level.as_ref()
+    }
+    /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+    pub fn update_targets(&self) -> std::option::Option<&[std::string::String]> {
+        self.update_targets.as_deref()
+    }
+    /// The architecture of the cores which are the targets of an update.
+    pub fn update_targets_architecture(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateTargetsArchitecture> {
+        self.update_targets_architecture.as_ref()
+    }
+    /// The operating system of the cores which are the targets of an update.
+    pub fn update_targets_operating_system(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateTargetsOperatingSystem> {
+        self.update_targets_operating_system.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSoftwareUpdateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSoftwareUpdateJobInput");
@@ -18458,6 +19139,20 @@ pub struct CreateResourceDefinitionVersionInput {
     /// A list of resources.
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
+impl CreateResourceDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the resource definition.
+    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+        self.resource_definition_id.as_deref()
+    }
+    /// A list of resources.
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateResourceDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceDefinitionVersionInput");
@@ -18482,6 +19177,27 @@ pub struct CreateResourceDefinitionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateResourceDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the resource definition.
+    pub fn initial_version(&self) -> std::option::Option<&crate::model::ResourceDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the resource definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResourceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceDefinitionInput");
@@ -18503,6 +19219,20 @@ pub struct CreateLoggerDefinitionVersionInput {
     pub logger_definition_id: std::option::Option<std::string::String>,
     /// A list of loggers.
     pub loggers: std::option::Option<std::vec::Vec<crate::model::Logger>>,
+}
+impl CreateLoggerDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the logger definition.
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
+        self.logger_definition_id.as_deref()
+    }
+    /// A list of loggers.
+    pub fn loggers(&self) -> std::option::Option<&[crate::model::Logger]> {
+        self.loggers.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoggerDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18527,6 +19257,27 @@ pub struct CreateLoggerDefinitionInput {
     /// Tag(s) to add to the new resource.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateLoggerDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the logger definition.
+    pub fn initial_version(&self) -> std::option::Option<&crate::model::LoggerDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the logger definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLoggerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18561,6 +19312,44 @@ pub struct CreateGroupVersionInput {
     pub resource_definition_version_arn: std::option::Option<std::string::String>,
     /// The ARN of the subscription definition version for this group.
     pub subscription_definition_version_arn: std::option::Option<std::string::String>,
+}
+impl CreateGroupVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ARN of the connector definition version for this group.
+    pub fn connector_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.connector_definition_version_arn.as_deref()
+    }
+    /// The ARN of the core definition version for this group.
+    pub fn core_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.core_definition_version_arn.as_deref()
+    }
+    /// The ARN of the device definition version for this group.
+    pub fn device_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.device_definition_version_arn.as_deref()
+    }
+    /// The ARN of the function definition version for this group.
+    pub fn function_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.function_definition_version_arn.as_deref()
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The ARN of the logger definition version for this group.
+    pub fn logger_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.logger_definition_version_arn.as_deref()
+    }
+    /// The ARN of the resource definition version for this group.
+    pub fn resource_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.resource_definition_version_arn.as_deref()
+    }
+    /// The ARN of the subscription definition version for this group.
+    pub fn subscription_definition_version_arn(&self) -> std::option::Option<&str> {
+        self.subscription_definition_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGroupVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18608,6 +19397,16 @@ pub struct CreateGroupCertificateAuthorityInput {
     /// The ID of the Greengrass group.
     pub group_id: std::option::Option<std::string::String>,
 }
+impl CreateGroupCertificateAuthorityInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupCertificateAuthorityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupCertificateAuthorityInput");
@@ -18630,6 +19429,27 @@ pub struct CreateGroupInput {
     /// Tag(s) to add to the new resource.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateGroupInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the group.
+    pub fn initial_version(&self) -> std::option::Option<&crate::model::GroupVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the group.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18654,6 +19474,24 @@ pub struct CreateFunctionDefinitionVersionInput {
     pub function_definition_id: std::option::Option<std::string::String>,
     /// A list of Lambda functions in this function definition version.
     pub functions: std::option::Option<std::vec::Vec<crate::model::Function>>,
+}
+impl CreateFunctionDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    pub fn default_config(&self) -> std::option::Option<&crate::model::FunctionDefaultConfig> {
+        self.default_config.as_ref()
+    }
+    /// The ID of the Lambda function definition.
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+        self.function_definition_id.as_deref()
+    }
+    /// A list of Lambda functions in this function definition version.
+    pub fn functions(&self) -> std::option::Option<&[crate::model::Function]> {
+        self.functions.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFunctionDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18680,6 +19518,27 @@ pub struct CreateFunctionDefinitionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateFunctionDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the function definition.
+    pub fn initial_version(&self) -> std::option::Option<&crate::model::FunctionDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the function definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFunctionDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFunctionDefinitionInput");
@@ -18701,6 +19560,20 @@ pub struct CreateDeviceDefinitionVersionInput {
     pub device_definition_id: std::option::Option<std::string::String>,
     /// A list of devices in the definition version.
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
+}
+impl CreateDeviceDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the device definition.
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
+        self.device_definition_id.as_deref()
+    }
+    /// A list of devices in the definition version.
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeviceDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18725,6 +19598,27 @@ pub struct CreateDeviceDefinitionInput {
     /// Tag(s) to add to the new resource.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDeviceDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the device definition.
+    pub fn initial_version(&self) -> std::option::Option<&crate::model::DeviceDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the device definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeviceDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18752,6 +19646,28 @@ pub struct CreateDeploymentInput {
     /// The ID of the group version to be deployed.
     pub group_version_id: std::option::Option<std::string::String>,
 }
+impl CreateDeploymentInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the deployment if you wish to redeploy a previous deployment.
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The ID of the group version to be deployed.
+    pub fn group_version_id(&self) -> std::option::Option<&str> {
+        self.group_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentInput");
@@ -18774,6 +19690,20 @@ pub struct CreateCoreDefinitionVersionInput {
     pub core_definition_id: std::option::Option<std::string::String>,
     /// A list of cores in the core definition version.
     pub cores: std::option::Option<std::vec::Vec<crate::model::Core>>,
+}
+impl CreateCoreDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the core definition.
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
+        self.core_definition_id.as_deref()
+    }
+    /// A list of cores in the core definition version.
+    pub fn cores(&self) -> std::option::Option<&[crate::model::Core]> {
+        self.cores.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCoreDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18799,6 +19729,27 @@ pub struct CreateCoreDefinitionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateCoreDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the core definition.
+    pub fn initial_version(&self) -> std::option::Option<&crate::model::CoreDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the core definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCoreDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCoreDefinitionInput");
@@ -18820,6 +19771,20 @@ pub struct CreateConnectorDefinitionVersionInput {
     pub connector_definition_id: std::option::Option<std::string::String>,
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub connectors: std::option::Option<std::vec::Vec<crate::model::Connector>>,
+}
+impl CreateConnectorDefinitionVersionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// The ID of the connector definition.
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
+        self.connector_definition_id.as_deref()
+    }
+    /// A list of references to connectors in this version, with their corresponding configuration settings.
+    pub fn connectors(&self) -> std::option::Option<&[crate::model::Connector]> {
+        self.connectors.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectorDefinitionVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18845,6 +19810,29 @@ pub struct CreateConnectorDefinitionInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateConnectorDefinitionInput {
+    /// A client token used to correlate requests and responses.
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+        self.amzn_client_token.as_deref()
+    }
+    /// Information about the initial version of the connector definition.
+    pub fn initial_version(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectorDefinitionVersion> {
+        self.initial_version.as_ref()
+    }
+    /// The name of the connector definition.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateConnectorDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectorDefinitionInput");
@@ -18863,6 +19851,12 @@ pub struct AssociateServiceRoleToAccountInput {
     /// The ARN of the service role you wish to associate with your account.
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl AssociateServiceRoleToAccountInput {
+    /// The ARN of the service role you wish to associate with your account.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateServiceRoleToAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateServiceRoleToAccountInput");
@@ -18879,6 +19873,16 @@ pub struct AssociateRoleToGroupInput {
     pub group_id: std::option::Option<std::string::String>,
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl AssociateRoleToGroupInput {
+    /// The ID of the Greengrass group.
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateRoleToGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

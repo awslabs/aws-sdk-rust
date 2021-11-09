@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_4) = &input.value {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Filter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Name");
     if let Some(var_6) = &input.name {
@@ -37,13 +38,14 @@ pub fn serialize_structure_crate_model_filter(
         }
         list_10.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_cloudwatch_logs_export_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CloudwatchLogsExportConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("EnableLogTypes");
     if let Some(var_13) = &input.enable_log_types {
@@ -66,13 +68,14 @@ pub fn serialize_structure_crate_model_cloudwatch_logs_export_configuration(
         }
         list_20.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Parameter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_22 = writer.prefix("ParameterName");
     if let Some(var_23) = &input.parameter_name {
@@ -123,4 +126,5 @@ pub fn serialize_structure_crate_model_parameter(
     if let Some(var_40) = &input.apply_method {
         scope_39.string(var_40.as_str());
     }
+    Ok(())
 }

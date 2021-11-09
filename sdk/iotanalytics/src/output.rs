@@ -186,6 +186,12 @@ pub struct StartPipelineReprocessingOutput {
     /// <p>The ID of the pipeline reprocessing activity that was started.</p>
     pub reprocessing_id: std::option::Option<std::string::String>,
 }
+impl StartPipelineReprocessingOutput {
+    /// <p>The ID of the pipeline reprocessing activity that was started.</p>
+    pub fn reprocessing_id(&self) -> std::option::Option<&str> {
+        self.reprocessing_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartPipelineReprocessingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPipelineReprocessingOutput");
@@ -237,6 +243,13 @@ pub struct SampleChannelDataOutput {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded
     /// string.</p>
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
+}
+impl SampleChannelDataOutput {
+    /// <p>The list of message samples. Each sample message is returned as a base64-encoded
+    /// string.</p>
+    pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
+        self.payloads.as_deref()
+    }
 }
 impl std::fmt::Debug for SampleChannelDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -300,6 +313,18 @@ pub struct RunPipelineActivityOutput {
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
     pub log_result: std::option::Option<std::string::String>,
+}
+impl RunPipelineActivityOutput {
+    /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The
+    /// results of running the pipeline activity on each input sample message payload, encoded in
+    /// base64.)</p>
+    pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
+        self.payloads.as_deref()
+    }
+    /// <p>In case the pipeline activity fails, the log message that is generated.</p>
+    pub fn log_result(&self) -> std::option::Option<&str> {
+        self.log_result.as_deref()
+    }
 }
 impl std::fmt::Debug for RunPipelineActivityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -405,6 +430,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags (metadata) that you have assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags (metadata) that you have assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -462,6 +493,17 @@ pub struct ListPipelinesOutput {
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPipelinesOutput {
+    /// <p>A list of <code>PipelineSummary</code> objects.</p>
+    pub fn pipeline_summaries(&self) -> std::option::Option<&[crate::model::PipelineSummary]> {
+        self.pipeline_summaries.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -542,6 +584,17 @@ pub struct ListDatastoresOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatastoresOutput {
+    /// <p>A list of <code>DatastoreSummary</code> objects.</p>
+    pub fn datastore_summaries(&self) -> std::option::Option<&[crate::model::DatastoreSummary]> {
+        self.datastore_summaries.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatastoresOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatastoresOutput");
@@ -621,6 +674,17 @@ pub struct ListDatasetsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetsOutput {
+    /// <p>A list of <code>DatasetSummary</code> objects.</p>
+    pub fn dataset_summaries(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
+        self.dataset_summaries.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsOutput");
@@ -697,6 +761,19 @@ pub struct ListDatasetContentsOutput {
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasetContentsOutput {
+    /// <p>Summary information about dataset contents that have been created.</p>
+    pub fn dataset_content_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetContentSummary]> {
+        self.dataset_content_summaries.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatasetContentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -777,6 +854,17 @@ pub struct ListChannelsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChannelsOutput {
+    /// <p>A list of <code>ChannelSummary</code> objects.</p>
+    pub fn channel_summaries(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+        self.channel_summaries.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsOutput");
@@ -853,6 +941,20 @@ pub struct GetDatasetContentOutput {
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the dataset content.</p>
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
+}
+impl GetDatasetContentOutput {
+    /// <p>A list of <code>DatasetEntry</code> objects.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::DatasetEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The time when the request was made.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The status of the dataset content.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetContentStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDatasetContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -943,6 +1045,12 @@ pub struct DescribePipelineOutput {
     /// <p>A <code>Pipeline</code> object that contains information about the pipeline.</p>
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
+impl DescribePipelineOutput {
+    /// <p>A <code>Pipeline</code> object that contains information about the pipeline.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+        self.pipeline.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipelineOutput");
@@ -990,6 +1098,12 @@ impl DescribePipelineOutput {
 pub struct DescribeLoggingOptionsOutput {
     /// <p>The current settings of the IoT Analytics logging options.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
+}
+impl DescribeLoggingOptionsOutput {
+    /// <p>The current settings of the IoT Analytics logging options.</p>
+    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+        self.logging_options.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLoggingOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1044,6 +1158,17 @@ pub struct DescribeDatastoreOutput {
     /// <p>Additional statistical information about the data store. Included if the
     /// <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub statistics: std::option::Option<crate::model::DatastoreStatistics>,
+}
+impl DescribeDatastoreOutput {
+    /// <p>Information about the data store.</p>
+    pub fn datastore(&self) -> std::option::Option<&crate::model::Datastore> {
+        self.datastore.as_ref()
+    }
+    /// <p>Additional statistical information about the data store. Included if the
+    /// <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::DatastoreStatistics> {
+        self.statistics.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatastoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1114,6 +1239,12 @@ pub struct DescribeDatasetOutput {
     /// <p>An object that contains information about the dataset.</p>
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
+impl DescribeDatasetOutput {
+    /// <p>An object that contains information about the dataset.</p>
+    pub fn dataset(&self) -> std::option::Option<&crate::model::Dataset> {
+        self.dataset.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetOutput");
@@ -1164,6 +1295,17 @@ pub struct DescribeChannelOutput {
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is
     /// set to <code>true</code> in the request.</p>
     pub statistics: std::option::Option<crate::model::ChannelStatistics>,
+}
+impl DescribeChannelOutput {
+    /// <p>An object that contains information about the channel.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+        self.channel.as_ref()
+    }
+    /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is
+    /// set to <code>true</code> in the request.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::ChannelStatistics> {
+        self.statistics.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1383,6 +1525,16 @@ pub struct CreatePipelineOutput {
     /// <p>The ARN of the pipeline.</p>
     pub pipeline_arn: std::option::Option<std::string::String>,
 }
+impl CreatePipelineOutput {
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The ARN of the pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePipelineOutput");
@@ -1450,6 +1602,20 @@ pub struct CreateDatastoreOutput {
     pub datastore_arn: std::option::Option<std::string::String>,
     /// <p>How long, in days, message data is kept for the data store.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
+}
+impl CreateDatastoreOutput {
+    /// <p>The name of the data store.</p>
+    pub fn datastore_name(&self) -> std::option::Option<&str> {
+        self.datastore_name.as_deref()
+    }
+    /// <p>The ARN of the data store.</p>
+    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+        self.datastore_arn.as_deref()
+    }
+    /// <p>How long, in days, message data is kept for the data store.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatastoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1534,6 +1700,12 @@ pub struct CreateDatasetContentOutput {
     /// <p>The version ID of the dataset contents that are being created.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl CreateDatasetContentOutput {
+    /// <p>The version ID of the dataset contents that are being created.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetContentOutput");
@@ -1585,6 +1757,20 @@ pub struct CreateDatasetOutput {
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
+}
+impl CreateDatasetOutput {
+    /// <p>The name of the dataset.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The ARN of the dataset.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>How long, in days, dataset contents are kept for the dataset.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1666,6 +1852,20 @@ pub struct CreateChannelOutput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>How long, in days, message data is kept for the channel.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
+}
+impl CreateChannelOutput {
+    /// <p>The name of the channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>How long, in days, message data is kept for the channel.</p>
+    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+        self.retention_period.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1774,6 +1974,14 @@ pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages to the channel.</p>
     pub batch_put_message_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
+}
+impl BatchPutMessageOutput {
+    /// <p>A list of any errors encountered when sending the messages to the channel.</p>
+    pub fn batch_put_message_error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchPutMessageErrorEntry]> {
+        self.batch_put_message_error_entries.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

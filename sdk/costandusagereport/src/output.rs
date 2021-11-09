@@ -68,6 +68,16 @@ pub struct DescribeReportDefinitionsOutput {
     /// <p>A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeReportDefinitionsOutput {
+    /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    pub fn report_definitions(&self) -> std::option::Option<&[crate::model::ReportDefinition]> {
+        self.report_definitions.as_deref()
+    }
+    /// <p>A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReportDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReportDefinitionsOutput");
@@ -141,6 +151,12 @@ impl DescribeReportDefinitionsOutput {
 pub struct DeleteReportDefinitionOutput {
     /// <p>Whether the deletion was successful or not.</p>
     pub response_message: std::option::Option<std::string::String>,
+}
+impl DeleteReportDefinitionOutput {
+    /// <p>Whether the deletion was successful or not.</p>
+    pub fn response_message(&self) -> std::option::Option<&str> {
+        self.response_message.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteReportDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

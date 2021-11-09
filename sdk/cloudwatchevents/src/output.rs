@@ -14,6 +14,28 @@ pub struct UpdateConnectionOutput {
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateConnectionOutput {
+    /// <p>The ARN of the connection that was updated.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The state of the connection that was updated.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last authorized.</p>
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authorized_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionOutput");
@@ -135,6 +157,24 @@ pub struct UpdateArchiveOutput {
     /// <p>The time at which the archive was updated.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateArchiveOutput {
+    /// <p>The ARN of the archive.</p>
+    pub fn archive_arn(&self) -> std::option::Option<&str> {
+        self.archive_arn.as_deref()
+    }
+    /// <p>The state of the archive.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the archive is in the current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The time at which the archive was updated.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateArchiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateArchiveOutput");
@@ -230,6 +270,24 @@ pub struct UpdateApiDestinationOutput {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl UpdateApiDestinationOutput {
+    /// <p>The ARN of the API destination that was updated.</p>
+    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+        self.api_destination_arn.as_deref()
+    }
+    /// <p>The state of the API destination that was updated.</p>
+    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+        self.api_destination_state.as_ref()
+    }
+    /// <p>A time stamp for the time that the API destination was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the API destination was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateApiDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -360,6 +418,12 @@ pub struct TestEventPatternOutput {
     /// <p>Indicates whether the event matches the event pattern.</p>
     pub result: bool,
 }
+impl TestEventPatternOutput {
+    /// <p>Indicates whether the event matches the event pattern.</p>
+    pub fn result(&self) -> bool {
+        self.result
+    }
+}
 impl std::fmt::Debug for TestEventPatternOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestEventPatternOutput");
@@ -443,6 +507,24 @@ pub struct StartReplayOutput {
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The time at which the replay started.</p>
     pub replay_start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl StartReplayOutput {
+    /// <p>The ARN of the replay.</p>
+    pub fn replay_arn(&self) -> std::option::Option<&str> {
+        self.replay_arn.as_deref()
+    }
+    /// <p>The state of the replay.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the replay is in the state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The time at which the replay started.</p>
+    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.replay_start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for StartReplayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,6 +617,16 @@ pub struct RemoveTargetsOutput {
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
     pub failed_entries: std::option::Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>,
+}
+impl RemoveTargetsOutput {
+    /// <p>The number of failed entries.</p>
+    pub fn failed_entry_count(&self) -> i32 {
+        self.failed_entry_count
+    }
+    /// <p>The failed target entries.</p>
+    pub fn failed_entries(&self) -> std::option::Option<&[crate::model::RemoveTargetsResultEntry]> {
+        self.failed_entries.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -642,6 +734,16 @@ pub struct PutTargetsOutput {
     /// <p>The failed target entries.</p>
     pub failed_entries: std::option::Option<std::vec::Vec<crate::model::PutTargetsResultEntry>>,
 }
+impl PutTargetsOutput {
+    /// <p>The number of failed entries.</p>
+    pub fn failed_entry_count(&self) -> i32 {
+        self.failed_entry_count
+    }
+    /// <p>The failed target entries.</p>
+    pub fn failed_entries(&self) -> std::option::Option<&[crate::model::PutTargetsResultEntry]> {
+        self.failed_entries.as_deref()
+    }
+}
 impl std::fmt::Debug for PutTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutTargetsOutput");
@@ -715,6 +817,12 @@ impl PutTargetsOutput {
 pub struct PutRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub rule_arn: std::option::Option<std::string::String>,
+}
+impl PutRuleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn rule_arn(&self) -> std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -798,6 +906,18 @@ pub struct PutPartnerEventsOutput {
     /// bus.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
 }
+impl PutPartnerEventsOutput {
+    /// <p>The number of events from this operation that could not be written to the partner event
+    /// bus.</p>
+    pub fn failed_entry_count(&self) -> i32 {
+        self.failed_entry_count
+    }
+    /// <p>The list of events from this operation that were successfully written to the partner event
+    /// bus.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::PutPartnerEventsResultEntry]> {
+        self.entries.as_deref()
+    }
+}
 impl std::fmt::Debug for PutPartnerEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPartnerEventsOutput");
@@ -880,6 +1000,18 @@ pub struct PutEventsOutput {
     /// message to identify the problem with the entry.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsResultEntry>>,
 }
+impl PutEventsOutput {
+    /// <p>The number of failed entries.</p>
+    pub fn failed_entry_count(&self) -> i32 {
+        self.failed_entry_count
+    }
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was
+    /// successful, the entry has the event ID in it. Otherwise, you can use the error code and error
+    /// message to identify the problem with the entry.</p>
+    pub fn entries(&self) -> std::option::Option<&[crate::model::PutEventsResultEntry]> {
+        self.entries.as_deref()
+    }
+}
 impl std::fmt::Debug for PutEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsOutput");
@@ -957,6 +1089,17 @@ pub struct ListTargetsByRuleOutput {
     /// the value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTargetsByRuleOutput {
+    /// <p>The targets assigned to the rule.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
+    /// the value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTargetsByRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTargetsByRuleOutput");
@@ -1029,6 +1172,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource you specified</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The list of tag keys and values associated with the resource you specified</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1086,6 +1235,17 @@ pub struct ListRulesOutput {
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
     /// the value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRulesOutput {
+    /// <p>The rules that match the specified criteria.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
+    /// the value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1162,6 +1322,17 @@ pub struct ListRuleNamesByTargetOutput {
     /// the value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRuleNamesByTargetOutput {
+    /// <p>The names of the rules that can invoke the given target.</p>
+    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.rule_names.as_deref()
+    }
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
+    /// the value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRuleNamesByTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRuleNamesByTargetOutput");
@@ -1236,6 +1407,16 @@ pub struct ListReplaysOutput {
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListReplaysOutput {
+    /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
+    pub fn replays(&self) -> std::option::Option<&[crate::model::Replay]> {
+        self.replays.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReplaysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReplaysOutput");
@@ -1307,6 +1488,18 @@ pub struct ListPartnerEventSourcesOutput {
     pub partner_event_sources: std::option::Option<std::vec::Vec<crate::model::PartnerEventSource>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPartnerEventSourcesOutput {
+    /// <p>The list of partner event sources returned by the operation.</p>
+    pub fn partner_event_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::PartnerEventSource]> {
+        self.partner_event_sources.as_deref()
+    }
+    /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPartnerEventSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1384,6 +1577,18 @@ pub struct ListPartnerEventSourceAccountsOutput {
         std::option::Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPartnerEventSourceAccountsOutput {
+    /// <p>The list of partner event sources returned by the operation.</p>
+    pub fn partner_event_source_accounts(
+        &self,
+    ) -> std::option::Option<&[crate::model::PartnerEventSourceAccount]> {
+        self.partner_event_source_accounts.as_deref()
+    }
+    /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPartnerEventSourceAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1464,6 +1669,16 @@ pub struct ListEventSourcesOutput {
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEventSourcesOutput {
+    /// <p>The list of event sources.</p>
+    pub fn event_sources(&self) -> std::option::Option<&[crate::model::EventSource]> {
+        self.event_sources.as_deref()
+    }
+    /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEventSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventSourcesOutput");
@@ -1535,6 +1750,16 @@ pub struct ListEventBusesOutput {
     pub event_buses: std::option::Option<std::vec::Vec<crate::model::EventBus>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventBusesOutput {
+    /// <p>This list of event buses.</p>
+    pub fn event_buses(&self) -> std::option::Option<&[crate::model::EventBus]> {
+        self.event_buses.as_deref()
+    }
+    /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventBusesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1608,6 +1833,16 @@ pub struct ListConnectionsOutput {
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConnectionsOutput {
+    /// <p>An array of connections objects that include details about the connections.</p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+        self.connections.as_deref()
+    }
+    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectionsOutput");
@@ -1679,6 +1914,16 @@ pub struct ListArchivesOutput {
     pub archives: std::option::Option<std::vec::Vec<crate::model::Archive>>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListArchivesOutput {
+    /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
+    pub fn archives(&self) -> std::option::Option<&[crate::model::Archive]> {
+        self.archives.as_deref()
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListArchivesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1752,6 +1997,17 @@ pub struct ListApiDestinationsOutput {
     pub api_destinations: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApiDestinationsOutput {
+    /// <p>An array of <code>ApiDestination</code> objects that include information about an API
+    /// destination.</p>
+    pub fn api_destinations(&self) -> std::option::Option<&[crate::model::ApiDestination]> {
+        self.api_destinations.as_deref()
+    }
+    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApiDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1909,6 +2165,54 @@ pub struct DescribeRuleOutput {
     /// <code>CreatedBy</code> is the account ID as the account that created the rule in the other
     /// account.</p>
     pub created_by: std::option::Option<std::string::String>,
+}
+impl DescribeRuleOutput {
+    /// <p>The name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
+    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>Specifies whether the rule is enabled or disabled.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RuleState> {
+        self.state.as_ref()
+    }
+    /// <p>The description of the rule.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
+    /// the principal name of the Amazon Web Services service that created the rule.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
+    }
+    /// <p>The name of the event bus associated with the rule.</p>
+    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+        self.event_bus_name.as_deref()
+    }
+    /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a
+    /// rule on an event bus in another account, the other account is the owner of the rule, and the
+    /// rule ARN includes the account ID for that account. However, the value for
+    /// <code>CreatedBy</code> is the account ID as the account that created the rule in the other
+    /// account.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2117,6 +2421,56 @@ pub struct DescribeReplayOutput {
     pub replay_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the replay stopped.</p>
     pub replay_end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeReplayOutput {
+    /// <p>The name of the replay.</p>
+    pub fn replay_name(&self) -> std::option::Option<&str> {
+        self.replay_name.as_deref()
+    }
+    /// <p>The ARN of the replay.</p>
+    pub fn replay_arn(&self) -> std::option::Option<&str> {
+        self.replay_arn.as_deref()
+    }
+    /// <p>The description of the replay.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current state of the replay.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the replay is in the current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The ARN of the archive events were replayed from.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::ReplayDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>The time stamp of the first event that was last replayed from the archive.</p>
+    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_start_time.as_ref()
+    }
+    /// <p>The time stamp for the last event that was replayed from the archive.</p>
+    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_end_time.as_ref()
+    }
+    /// <p>The time that the event was last replayed.</p>
+    pub fn event_last_replayed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_last_replayed_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the replay started.</p>
+    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.replay_start_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the replay stopped.</p>
+    pub fn replay_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.replay_end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeReplayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2332,6 +2686,16 @@ pub struct DescribePartnerEventSourceOutput {
     /// <p>The name of the event source.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DescribePartnerEventSourceOutput {
+    /// <p>The ARN of the event source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the event source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePartnerEventSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePartnerEventSourceOutput");
@@ -2406,6 +2770,36 @@ pub struct DescribeEventSourceOutput {
     /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
     /// created a matching event bus, but the event source has since been deleted.</p>
     pub state: std::option::Option<crate::model::EventSourceState>,
+}
+impl DescribeEventSourceOutput {
+    /// <p>The ARN of the partner event source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the SaaS partner that created the event source.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The date and time that the event source was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time that the event source will expire if you do not create a matching event
+    /// bus.</p>
+    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_time.as_ref()
+    }
+    /// <p>The name of the partner event source.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
+    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
+    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
+    /// created a matching event bus, but the event source has since been deleted.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2542,6 +2936,21 @@ pub struct DescribeEventBusOutput {
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl DescribeEventBusOutput {
+    /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current
+    /// account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The policy that enables the external account to send events to your account.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventBusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventBusOutput");
@@ -2638,6 +3047,57 @@ pub struct DescribeConnectionOutput {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeConnectionOutput {
+    /// <p>The ARN of the connection retrieved.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The name of the connection retrieved.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for the connection retrieved.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the connection retrieved.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>The reason that the connection is in the current connection state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The type of authorization specified for the connection.</p>
+    pub fn authorization_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
+        self.authorization_type.as_ref()
+    }
+    /// <p>The ARN of the secret created from the authorization parameters specified for the
+    /// connection.</p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The parameters to use for authorization for the connection.</p>
+    pub fn auth_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionAuthResponseParameters> {
+        self.auth_parameters.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last authorized.</p>
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authorized_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2868,6 +3328,52 @@ pub struct DescribeArchiveOutput {
     /// <p>The time at which the archive was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DescribeArchiveOutput {
+    /// <p>The ARN of the archive.</p>
+    pub fn archive_arn(&self) -> std::option::Option<&str> {
+        self.archive_arn.as_deref()
+    }
+    /// <p>The name of the archive.</p>
+    pub fn archive_name(&self) -> std::option::Option<&str> {
+        self.archive_name.as_deref()
+    }
+    /// <p>The ARN of the event source associated with the archive.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+    /// <p>The description of the archive.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The event pattern used to filter events sent to the archive.</p>
+    pub fn event_pattern(&self) -> std::option::Option<&str> {
+        self.event_pattern.as_deref()
+    }
+    /// <p>The state of the archive.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the archive is in the state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The number of days to retain events for in the archive.</p>
+    pub fn retention_days(&self) -> std::option::Option<i32> {
+        self.retention_days
+    }
+    /// <p>The size of the archive in bytes.</p>
+    pub fn size_bytes(&self) -> i64 {
+        self.size_bytes
+    }
+    /// <p>The number of events in the archive.</p>
+    pub fn event_count(&self) -> i64 {
+        self.event_count
+    }
+    /// <p>The time at which the archive was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeArchiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeArchiveOutput");
@@ -3077,6 +3583,53 @@ pub struct DescribeApiDestinationOutput {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeApiDestinationOutput {
+    /// <p>The ARN of the API destination retrieved.</p>
+    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+        self.api_destination_arn.as_deref()
+    }
+    /// <p>The name of the API destination retrieved.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description for the API destination retrieved.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The state of the API destination retrieved.</p>
+    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+        self.api_destination_state.as_ref()
+    }
+    /// <p>The ARN of the connection specified for the API destination retrieved.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The URL to use to connect to the HTTP endpoint.</p>
+    pub fn invocation_endpoint(&self) -> std::option::Option<&str> {
+        self.invocation_endpoint.as_deref()
+    }
+    /// <p>The method to use to connect to the HTTP endpoint.</p>
+    pub fn http_method(&self) -> std::option::Option<&crate::model::ApiDestinationHttpMethod> {
+        self.http_method.as_ref()
+    }
+    /// <p>The maximum number of invocations per second to specified for the API destination. Note
+    /// that if you set the invocation rate maximum to a value lower the rate necessary to send all
+    /// events received on to the destination HTTP endpoint, some events may not be delivered within
+    /// the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver
+    /// all events, consider using a dead-letter queue to catch events that are not delivered within
+    /// 24 hours.</p>
+    pub fn invocation_rate_limit_per_second(&self) -> std::option::Option<i32> {
+        self.invocation_rate_limit_per_second
+    }
+    /// <p>A time stamp for the time that the API destination was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the API destination was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApiDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3380,6 +3933,30 @@ pub struct DeleteConnectionOutput {
     /// deleted.</p>
     pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeleteConnectionOutput {
+    /// <p>The ARN of the connection that was deleted.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The state of the connection before it was deleted.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last modified before it was
+    /// deleted.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last authorized before it wa
+    /// deleted.</p>
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authorized_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConnectionOutput");
@@ -3567,6 +4144,28 @@ pub struct DeauthorizeConnectionOutput {
     /// <p>A time stamp for the time that the connection was last authorized.</p>
     pub last_authorized_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeauthorizeConnectionOutput {
+    /// <p>The ARN of the connection that authorization was removed from.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The state of the connection.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last authorized.</p>
+    pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_authorized_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DeauthorizeConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeauthorizeConnectionOutput");
@@ -3712,6 +4311,12 @@ pub struct CreatePartnerEventSourceOutput {
     /// <p>The ARN of the partner event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
 }
+impl CreatePartnerEventSourceOutput {
+    /// <p>The ARN of the partner event source.</p>
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+        self.event_source_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePartnerEventSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePartnerEventSourceOutput");
@@ -3762,6 +4367,12 @@ impl CreatePartnerEventSourceOutput {
 pub struct CreateEventBusOutput {
     /// <p>The ARN of the new event bus.</p>
     pub event_bus_arn: std::option::Option<std::string::String>,
+}
+impl CreateEventBusOutput {
+    /// <p>The ARN of the new event bus.</p>
+    pub fn event_bus_arn(&self) -> std::option::Option<&str> {
+        self.event_bus_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEventBusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3819,6 +4430,24 @@ pub struct CreateConnectionOutput {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp for the time that the connection was last updated.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateConnectionOutput {
+    /// <p>The ARN of the connection that was created by the request.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The state of the connection that was created by the request.</p>
+    pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.connection_state.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp for the time that the connection was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3925,6 +4554,24 @@ pub struct CreateArchiveOutput {
     /// <p>The time at which the archive was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateArchiveOutput {
+    /// <p>The ARN of the archive that was created.</p>
+    pub fn archive_arn(&self) -> std::option::Option<&str> {
+        self.archive_arn.as_deref()
+    }
+    /// <p>The state of the archive that was created.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ArchiveState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the archive is in the state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The time at which the archive was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateArchiveOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateArchiveOutput");
@@ -4020,6 +4667,24 @@ pub struct CreateApiDestinationOutput {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A time stamp indicating the time that the API destination was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CreateApiDestinationOutput {
+    /// <p>The ARN of the API destination that was created by the request.</p>
+    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+        self.api_destination_arn.as_deref()
+    }
+    /// <p>The state of the API destination that was created by the request.</p>
+    pub fn api_destination_state(&self) -> std::option::Option<&crate::model::ApiDestinationState> {
+        self.api_destination_state.as_ref()
+    }
+    /// <p>A time stamp indicating the time that the API destination was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A time stamp indicating the time that the API destination was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApiDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4123,6 +4788,20 @@ pub struct CancelReplayOutput {
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>The reason that the replay is in the current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
+}
+impl CancelReplayOutput {
+    /// <p>The ARN of the replay to cancel.</p>
+    pub fn replay_arn(&self) -> std::option::Option<&str> {
+        self.replay_arn.as_deref()
+    }
+    /// <p>The current state of the replay.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplayState> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the replay is in the current state.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelReplayOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

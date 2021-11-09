@@ -185,6 +185,55 @@ pub struct RepositoryDescription {
     pub external_connections:
         std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
 }
+impl RepositoryDescription {
+    /// <p>
+    /// The name of the repository.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The 12-digit account number of the AWS account that manages the repository. </p>
+    pub fn administrator_account(&self) -> std::option::Option<&str> {
+        self.administrator_account.as_deref()
+    }
+    /// <p>
+    /// The name of the domain that contains the repository.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include
+    /// dashes or spaces.
+    /// </p>
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
+        self.domain_owner.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the repository. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>
+    /// A text description of the repository.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
+    /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
+    /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    pub fn upstreams(&self) -> std::option::Option<&[crate::model::UpstreamRepositoryInfo]> {
+        self.upstreams.as_deref()
+    }
+    /// <p>
+    /// An array of external connections associated with the repository.
+    /// </p>
+    pub fn external_connections(
+        &self,
+    ) -> std::option::Option<&[crate::model::RepositoryExternalConnectionInfo]> {
+        self.external_connections.as_deref()
+    }
+}
 impl std::fmt::Debug for RepositoryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RepositoryDescription");
@@ -404,6 +453,41 @@ pub struct RepositoryExternalConnectionInfo {
     /// The status of the external connection of a repository. There is one valid value, <code>Available</code>.
     /// </p>
     pub status: std::option::Option<crate::model::ExternalConnectionStatus>,
+}
+impl RepositoryExternalConnectionInfo {
+    /// <p> The name of the external connection associated with a repository. </p>
+    pub fn external_connection_name(&self) -> std::option::Option<&str> {
+        self.external_connection_name.as_deref()
+    }
+    /// <p>
+    /// The package format associated with a repository's external connection. The valid package formats are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>npm</code>: A Node Package Manager (npm) package.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pypi</code>: A Python Package Index (PyPI) package.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn package_format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.package_format.as_ref()
+    }
+    /// <p>
+    /// The status of the external connection of a repository. There is one valid value, <code>Available</code>.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExternalConnectionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for RepositoryExternalConnectionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -646,6 +730,12 @@ pub struct UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
     pub repository_name: std::option::Option<std::string::String>,
 }
+impl UpstreamRepositoryInfo {
+    /// <p> The name of an upstream repository. </p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpstreamRepositoryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpstreamRepositoryInfo");
@@ -700,6 +790,12 @@ impl UpstreamRepositoryInfo {
 pub struct UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl UpstreamRepository {
+    /// <p> The name of an upstream repository. </p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpstreamRepository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -789,6 +885,50 @@ pub struct PackageVersionError {
     /// The error message associated with the error.
     /// </p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl PackageVersionError {
+    /// <p> The error code associated with the error. Valid error codes are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALREADY_EXISTS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_REVISION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISMATCHED_STATUS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_ALLOWED</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_FOUND</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SKIPPED</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::PackageVersionErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>
+    /// The error message associated with the error.
+    /// </p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for PackageVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1038,6 +1178,47 @@ pub struct SuccessfulPackageVersionInfo {
     /// </ul>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
 }
+impl SuccessfulPackageVersionInfo {
+    /// <p>
+    /// The revision of a package version.
+    /// </p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+    /// <p>
+    /// The status of a package version. Valid statuses are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Published</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unfinished</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unlisted</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Archived</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Disposed</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for SuccessfulPackageVersionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuccessfulPackageVersionInfo");
@@ -1244,6 +1425,16 @@ pub struct Tag {
     /// <p>The tag value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -1316,6 +1507,26 @@ pub struct ResourcePolicy {
     /// The resource policy formatted in JSON.
     /// </p>
     pub document: std::option::Option<std::string::String>,
+}
+impl ResourcePolicy {
+    /// <p>
+    /// The ARN of the resource associated with the resource policy
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// The current revision of the resource policy.
+    /// </p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+    /// <p>
+    /// The resource policy formatted in JSON.
+    /// </p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourcePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1425,6 +1636,43 @@ pub struct RepositorySummary {
     /// The description of the repository.
     /// </p>
     pub description: std::option::Option<std::string::String>,
+}
+impl RepositorySummary {
+    /// <p>
+    /// The name of the repository.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The AWS account ID that manages the repository.
+    /// </p>
+    pub fn administrator_account(&self) -> std::option::Option<&str> {
+        self.administrator_account.as_deref()
+    }
+    /// <p>
+    /// The name of the domain that contains the repository.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// The 12-digit account number of the AWS account that owns the domain. It does not include
+    /// dashes or spaces.
+    /// </p>
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
+        self.domain_owner.as_deref()
+    }
+    /// <p> The ARN of the repository. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>
+    /// The description of the repository.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for RepositorySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1604,6 +1852,53 @@ pub struct PackageVersionSummary {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
+}
+impl PackageVersionSummary {
+    /// <p>
+    /// Information about a package version.
+    /// </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>
+    /// The revision associated with a package version.
+    /// </p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+    /// <p>
+    /// A string that contains the status of the package version. It can be one of the following:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Published</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unfinished</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unlisted</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Archived</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Disposed</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for PackageVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1836,6 +2131,53 @@ pub struct PackageDependency {
     /// </p>
     pub version_requirement: std::option::Option<std::string::String>,
 }
+impl PackageDependency {
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the package that this package depends on.
+    /// </p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+    /// <p> The type of a package dependency. The possible values depend on the package type.
+    /// Example types are <code>compile</code>, <code>runtime</code>, and <code>test</code> for Maven
+    /// packages, and <code>dev</code>, <code>prod</code>, and <code>optional</code> for npm packages. </p>
+    pub fn dependency_type(&self) -> std::option::Option<&str> {
+        self.dependency_type.as_deref()
+    }
+    /// <p>
+    /// The required version, or version range, of the package that this package depends on. The version format
+    /// is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>,
+    /// <code>^2.3.4</code>, or <code>4.x</code>.
+    /// </p>
+    pub fn version_requirement(&self) -> std::option::Option<&str> {
+        self.version_requirement.as_deref()
+    }
+}
 impl std::fmt::Debug for PackageDependency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageDependency");
@@ -2000,6 +2342,30 @@ pub struct AssetSummary {
     pub hashes: std::option::Option<
         std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
     >,
+}
+impl AssetSummary {
+    /// <p>
+    /// The name of the asset.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The size of the asset.
+    /// </p>
+    pub fn size(&self) -> std::option::Option<i64> {
+        self.size
+    }
+    /// <p>
+    /// The hashes of the asset.
+    /// </p>
+    pub fn hashes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
+    > {
+        self.hashes.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2217,6 +2583,62 @@ pub struct PackageSummary {
     /// </p>
     pub package: std::option::Option<std::string::String>,
 }
+impl PackageSummary {
+    /// <p>
+    /// The format of the package. Valid values are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>npm</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pypi</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>maven</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the package.
+    /// </p>
+    pub fn package(&self) -> std::option::Option<&str> {
+        self.package.as_deref()
+    }
+}
 impl std::fmt::Debug for PackageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PackageSummary");
@@ -2414,6 +2836,57 @@ pub struct DomainSummary {
     /// The key used to encrypt the domain.
     /// </p>
     pub encryption_key: std::option::Option<std::string::String>,
+}
+impl DomainSummary {
+    /// <p>
+    /// The name of the domain.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The 12-digit account number of the AWS account that owns the domain. It does not include
+    /// dashes or spaces.
+    /// </p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>
+    /// The ARN of the domain.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>
+    /// A string that contains the status of the domain. The valid values are:      
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Active</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Deleted</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// A timestamp that contains the date and time the domain was created.
+    /// </p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>
+    /// The key used to encrypt the domain.
+    /// </p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
 }
 impl std::fmt::Debug for DomainSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2756,6 +3229,147 @@ pub struct PackageVersionDescription {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::PackageVersionStatus>,
+}
+impl PackageVersionDescription {
+    /// <p>
+    /// The format of the package version. The valid package formats are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>npm</code>: A Node Package Manager (npm) package.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pypi</code>: A Python Package Index (PyPI) package.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+        self.format.as_ref()
+    }
+    /// <p>
+    /// The namespace of the package. The package component that specifies its
+    /// namespace depends on its type. For example:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// The namespace of a Maven package is its <code>groupId</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// The namespace of an npm package is its <code>scope</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// A Python package does not contain a corresponding component, so
+    /// Python packages do not have a namespace.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// The name of the requested package.
+    /// </p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>
+    /// The name of the package that is displayed. The <code>displayName</code> varies depending
+    /// on the package version's format. For example, if an npm package is named <code>ui</code>,
+    /// is in the namespace <code>vue</code>, and has the format <code>npm</code>, then
+    /// the <code>displayName</code> is <code>@vue/ui</code>.
+    /// </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>
+    /// The version of the package.
+    /// </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>
+    /// A summary of the package version. The summary is extracted from the package. The information in and
+    /// detail level of the summary depends on the package version's format.
+    /// </p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>
+    /// The homepage associated with the package.
+    /// </p>
+    pub fn home_page(&self) -> std::option::Option<&str> {
+        self.home_page.as_deref()
+    }
+    /// <p>
+    /// The repository for the source code in the package version, or the source code used to build it.
+    /// </p>
+    pub fn source_code_repository(&self) -> std::option::Option<&str> {
+        self.source_code_repository.as_deref()
+    }
+    /// <p>
+    /// A timestamp that contains the date and time the package version was published.
+    /// </p>
+    pub fn published_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.published_time.as_ref()
+    }
+    /// <p>
+    /// Information about licenses associated with the package version.
+    /// </p>
+    pub fn licenses(&self) -> std::option::Option<&[crate::model::LicenseInfo]> {
+        self.licenses.as_deref()
+    }
+    /// <p>
+    /// The revision of the package version.
+    /// </p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+    /// <p>
+    /// A string that contains the status of the package version. It can be one of the following:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Published</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unfinished</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unlisted</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Archived</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Disposed</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for PackageVersionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3159,6 +3773,20 @@ pub struct LicenseInfo {
     /// </p>
     pub url: std::option::Option<std::string::String>,
 }
+impl LicenseInfo {
+    /// <p>
+    /// Name of the license.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The URL for license data.
+    /// </p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for LicenseInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseInfo");
@@ -3266,6 +3894,64 @@ pub struct DomainDescription {
     pub asset_size_bytes: i64,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
     pub s3_bucket_arn: std::option::Option<std::string::String>,
+}
+impl DomainDescription {
+    /// <p>
+    /// The name of the domain.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The AWS account ID that owns the domain. </p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the domain. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The current status of a domain. The valid values are </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Active</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Deleted</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// A timestamp that represents the date and time the domain was created.
+    /// </p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p> The ARN of an AWS Key Management Service (AWS KMS) key associated with a domain. </p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>
+    /// The number of repositories in the domain.
+    /// </p>
+    pub fn repository_count(&self) -> i32 {
+        self.repository_count
+    }
+    /// <p>
+    /// The total size of all assets in the domain.
+    /// </p>
+    pub fn asset_size_bytes(&self) -> i64 {
+        self.asset_size_bytes
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
+    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+        self.s3_bucket_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DomainDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8805,6 +8805,12 @@ pub struct TransactionCanceledException {
     /// <p>A list of cancellation reasons.</p>
     pub cancellation_reasons: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
 }
+impl TransactionCanceledException {
+    /// <p>A list of cancellation reasons.</p>
+    pub fn cancellation_reasons(&self) -> std::option::Option<&[crate::model::CancellationReason]> {
+        self.cancellation_reasons.as_deref()
+    }
+}
 impl std::fmt::Debug for TransactionCanceledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransactionCanceledException");

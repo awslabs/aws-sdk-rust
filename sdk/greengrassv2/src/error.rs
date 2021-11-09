@@ -3255,6 +3255,16 @@ pub struct ValidationException {
     /// <p>The list of fields that failed to validate.</p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
+impl ValidationException {
+    /// <p>The reason for the validation exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// <p>The list of fields that failed to validate.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
+        self.fields.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -3362,6 +3372,16 @@ pub struct ResourceNotFoundException {
     /// <p>The type of the resource that isn't found.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>The ID of the resource that isn't found.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource that isn't found.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -3457,6 +3477,12 @@ pub struct InternalServerException {
     /// <p>The amount of time to wait before you retry the request.</p>
     pub retry_after_seconds: i32,
 }
+impl InternalServerException {
+    /// <p>The amount of time to wait before you retry the request.</p>
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
+}
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerException");
@@ -3540,6 +3566,20 @@ pub struct ThrottlingException {
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The amount of time to wait before you retry the request.</p>
     pub retry_after_seconds: i32,
+}
+impl ThrottlingException {
+    /// <p>The code for the quota in <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a>.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The code for the service in <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a>.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The amount of time to wait before you retry the request.</p>
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
 }
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3648,6 +3688,16 @@ pub struct ConflictException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the resource that conflicts with the request.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// <p>The ID of the resource that conflicts with the request.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource that conflicts with the request.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3880,6 +3930,24 @@ pub struct ServiceQuotaExceededException {
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The code for the service in <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a>.</p>
     pub service_code: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>The ID of the resource that exceeds the service quota.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource that exceeds the service quota.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The code for the quota in <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a>.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The code for the service in <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a>.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

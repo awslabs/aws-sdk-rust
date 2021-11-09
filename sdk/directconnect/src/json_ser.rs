@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_accept_direct_connect_gateway_association_proposal_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AcceptDirectConnectGatewayAssociationProposalInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_1);
     }
@@ -22,18 +22,19 @@ pub fn serialize_structure_crate_input_accept_direct_connect_gateway_association
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_7,
                     item_6,
-                );
+                )?;
                 object_7.finish();
             }
         }
         array_5.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_allocate_connection_on_interconnect_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AllocateConnectionOnInterconnectInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.bandwidth {
         object.key("bandwidth").string(var_8);
     }
@@ -52,12 +53,13 @@ pub fn serialize_structure_crate_input_allocate_connection_on_interconnect_input
             aws_smithy_types::Number::NegInt((input.vlan).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_allocate_hosted_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AllocateHostedConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.connection_id {
         object.key("connectionId").string(var_12);
     }
@@ -81,18 +83,19 @@ pub fn serialize_structure_crate_input_allocate_hosted_connection_input(
         for item_18 in var_16 {
             {
                 let mut object_19 = array_17.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_19, item_18);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }
         array_17.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_allocate_private_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AllocatePrivateVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.connection_id {
         object.key("connectionId").string(var_20);
     }
@@ -106,15 +109,16 @@ pub fn serialize_structure_crate_input_allocate_private_virtual_interface_input(
         crate::json_ser::serialize_structure_crate_model_new_private_virtual_interface_allocation(
             &mut object_23,
             var_22,
-        );
+        )?;
         object_23.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_allocate_public_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AllocatePublicVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.connection_id {
         object.key("connectionId").string(var_24);
     }
@@ -128,15 +132,16 @@ pub fn serialize_structure_crate_input_allocate_public_virtual_interface_input(
         crate::json_ser::serialize_structure_crate_model_new_public_virtual_interface_allocation(
             &mut object_27,
             var_26,
-        );
+        )?;
         object_27.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_allocate_transit_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AllocateTransitVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.connection_id {
         object.key("connectionId").string(var_28);
     }
@@ -150,39 +155,42 @@ pub fn serialize_structure_crate_input_allocate_transit_virtual_interface_input(
         crate::json_ser::serialize_structure_crate_model_new_transit_virtual_interface_allocation(
             &mut object_31,
             var_30,
-        );
+        )?;
         object_31.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_connection_with_lag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateConnectionWithLagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.connection_id {
         object.key("connectionId").string(var_32);
     }
     if let Some(var_33) = &input.lag_id {
         object.key("lagId").string(var_33);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_hosted_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateHostedConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.connection_id {
         object.key("connectionId").string(var_34);
     }
     if let Some(var_35) = &input.parent_connection_id {
         object.key("parentConnectionId").string(var_35);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_mac_sec_key_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateMacSecKeyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.connection_id {
         object.key("connectionId").string(var_36);
     }
@@ -195,42 +203,46 @@ pub fn serialize_structure_crate_input_associate_mac_sec_key_input(
     if let Some(var_39) = &input.cak {
         object.key("cak").string(var_39);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_associate_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_40);
     }
     if let Some(var_41) = &input.connection_id {
         object.key("connectionId").string(var_41);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_confirm_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ConfirmConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.connection_id {
         object.key("connectionId").string(var_42);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_confirm_customer_agreement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ConfirmCustomerAgreementInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.agreement_name {
         object.key("agreementName").string(var_43);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_confirm_private_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ConfirmPrivateVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_44);
     }
@@ -240,47 +252,51 @@ pub fn serialize_structure_crate_input_confirm_private_virtual_interface_input(
     if let Some(var_46) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_46);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_confirm_public_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ConfirmPublicVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_47);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_confirm_transit_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ConfirmTransitVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_48);
     }
     if let Some(var_49) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_49);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_bgp_peer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBgpPeerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_50);
     }
     if let Some(var_51) = &input.new_bgp_peer {
         let mut object_52 = object.key("newBGPPeer").start_object();
-        crate::json_ser::serialize_structure_crate_model_new_bgp_peer(&mut object_52, var_51);
+        crate::json_ser::serialize_structure_crate_model_new_bgp_peer(&mut object_52, var_51)?;
         object_52.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.location {
         object.key("location").string(var_53);
     }
@@ -298,7 +314,7 @@ pub fn serialize_structure_crate_input_create_connection_input(
         for item_59 in var_57 {
             {
                 let mut object_60 = array_58.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59)?;
                 object_60.finish();
             }
         }
@@ -310,12 +326,13 @@ pub fn serialize_structure_crate_input_create_connection_input(
     if let Some(var_62) = &input.request_mac_sec {
         object.key("requestMACSec").boolean(*var_62);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_direct_connect_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDirectConnectGatewayInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.direct_connect_gateway_name {
         object.key("directConnectGatewayName").string(var_63);
     }
@@ -325,12 +342,13 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_input(
             aws_smithy_types::Number::NegInt((*var_64).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_direct_connect_gateway_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDirectConnectGatewayAssociationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_65);
     }
@@ -347,7 +365,7 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_70,
                     item_69,
-                );
+                )?;
                 object_70.finish();
             }
         }
@@ -356,12 +374,13 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
     if let Some(var_71) = &input.virtual_gateway_id {
         object.key("virtualGatewayId").string(var_71);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_direct_connect_gateway_association_proposal_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDirectConnectGatewayAssociationProposalInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_72);
     }
@@ -383,7 +402,7 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_78,
                     item_77,
-                );
+                )?;
                 object_78.finish();
             }
         }
@@ -399,18 +418,19 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_82,
                     item_81,
-                );
+                )?;
                 object_82.finish();
             }
         }
         array_80.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_interconnect_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateInterconnectInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.interconnect_name {
         object.key("interconnectName").string(var_83);
     }
@@ -428,7 +448,7 @@ pub fn serialize_structure_crate_input_create_interconnect_input(
         for item_89 in var_87 {
             {
                 let mut object_90 = array_88.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_90, item_89);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_90, item_89)?;
                 object_90.finish();
             }
         }
@@ -437,12 +457,13 @@ pub fn serialize_structure_crate_input_create_interconnect_input(
     if let Some(var_91) = &input.provider_name {
         object.key("providerName").string(var_91);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_lag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("numberOfConnections").number(
             #[allow(clippy::useless_conversion)]
@@ -466,7 +487,7 @@ pub fn serialize_structure_crate_input_create_lag_input(
         for item_98 in var_96 {
             {
                 let mut object_99 = array_97.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_99, item_98);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_99, item_98)?;
                 object_99.finish();
             }
         }
@@ -477,7 +498,7 @@ pub fn serialize_structure_crate_input_create_lag_input(
         for item_102 in var_100 {
             {
                 let mut object_103 = array_101.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_103, item_102);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_103, item_102)?;
                 object_103.finish();
             }
         }
@@ -489,12 +510,13 @@ pub fn serialize_structure_crate_input_create_lag_input(
     if let Some(var_105) = &input.request_mac_sec {
         object.key("requestMACSec").boolean(*var_105);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_private_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePrivateVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_106) = &input.connection_id {
         object.key("connectionId").string(var_106);
     }
@@ -503,15 +525,16 @@ pub fn serialize_structure_crate_input_create_private_virtual_interface_input(
         crate::json_ser::serialize_structure_crate_model_new_private_virtual_interface(
             &mut object_108,
             var_107,
-        );
+        )?;
         object_108.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_public_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePublicVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.connection_id {
         object.key("connectionId").string(var_109);
     }
@@ -520,15 +543,16 @@ pub fn serialize_structure_crate_input_create_public_virtual_interface_input(
         crate::json_ser::serialize_structure_crate_model_new_public_virtual_interface(
             &mut object_111,
             var_110,
-        );
+        )?;
         object_111.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_transit_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTransitVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.connection_id {
         object.key("connectionId").string(var_112);
     }
@@ -537,15 +561,16 @@ pub fn serialize_structure_crate_input_create_transit_virtual_interface_input(
         crate::json_ser::serialize_structure_crate_model_new_transit_virtual_interface(
             &mut object_114,
             var_113,
-        );
+        )?;
         object_114.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_bgp_peer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBgpPeerInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_115) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_115);
     }
@@ -561,30 +586,33 @@ pub fn serialize_structure_crate_input_delete_bgp_peer_input(
     if let Some(var_117) = &input.bgp_peer_id {
         object.key("bgpPeerId").string(var_117);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.connection_id {
         object.key("connectionId").string(var_118);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_direct_connect_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteDirectConnectGatewayInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_119) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_119);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_direct_connect_gateway_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteDirectConnectGatewayAssociationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_120) = &input.association_id {
         object.key("associationId").string(var_120);
     }
@@ -594,48 +622,53 @@ pub fn serialize_structure_crate_input_delete_direct_connect_gateway_association
     if let Some(var_122) = &input.virtual_gateway_id {
         object.key("virtualGatewayId").string(var_122);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_direct_connect_gateway_association_proposal_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteDirectConnectGatewayAssociationProposalInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_123) = &input.proposal_id {
         object.key("proposalId").string(var_123);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_interconnect_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteInterconnectInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_124) = &input.interconnect_id {
         object.key("interconnectId").string(var_124);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_lag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.lag_id {
         object.key("lagId").string(var_125);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_virtual_interface_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteVirtualInterfaceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_126) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_126);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_connection_loa_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeConnectionLoaInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_127) = &input.connection_id {
         object.key("connectionId").string(var_127);
     }
@@ -645,30 +678,33 @@ pub fn serialize_structure_crate_input_describe_connection_loa_input(
     if let Some(var_129) = &input.loa_content_type {
         object.key("loaContentType").string(var_129.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_connections_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeConnectionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_130) = &input.connection_id {
         object.key("connectionId").string(var_130);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_connections_on_interconnect_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeConnectionsOnInterconnectInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_131) = &input.interconnect_id {
         object.key("interconnectId").string(var_131);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_direct_connect_gateway_association_proposals_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDirectConnectGatewayAssociationProposalsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_132) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_132);
     }
@@ -687,12 +723,13 @@ pub fn serialize_structure_crate_input_describe_direct_connect_gateway_associati
     if let Some(var_136) = &input.next_token {
         object.key("nextToken").string(var_136);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_direct_connect_gateway_associations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDirectConnectGatewayAssociationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_137) = &input.association_id {
         object.key("associationId").string(var_137);
     }
@@ -714,12 +751,13 @@ pub fn serialize_structure_crate_input_describe_direct_connect_gateway_associati
     if let Some(var_142) = &input.virtual_gateway_id {
         object.key("virtualGatewayId").string(var_142);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_direct_connect_gateway_attachments_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDirectConnectGatewayAttachmentsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_143) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_143);
     }
@@ -735,12 +773,13 @@ pub fn serialize_structure_crate_input_describe_direct_connect_gateway_attachmen
     if let Some(var_146) = &input.next_token {
         object.key("nextToken").string(var_146);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_direct_connect_gateways_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDirectConnectGatewaysInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_147) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_147);
     }
@@ -753,21 +792,23 @@ pub fn serialize_structure_crate_input_describe_direct_connect_gateways_input(
     if let Some(var_149) = &input.next_token {
         object.key("nextToken").string(var_149);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_hosted_connections_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeHostedConnectionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_150) = &input.connection_id {
         object.key("connectionId").string(var_150);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_interconnect_loa_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeInterconnectLoaInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_151) = &input.interconnect_id {
         object.key("interconnectId").string(var_151);
     }
@@ -777,30 +818,33 @@ pub fn serialize_structure_crate_input_describe_interconnect_loa_input(
     if let Some(var_153) = &input.loa_content_type {
         object.key("loaContentType").string(var_153.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_interconnects_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeInterconnectsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_154) = &input.interconnect_id {
         object.key("interconnectId").string(var_154);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_lags_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeLagsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_155) = &input.lag_id {
         object.key("lagId").string(var_155);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_loa_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeLoaInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_156) = &input.connection_id {
         object.key("connectionId").string(var_156);
     }
@@ -810,24 +854,26 @@ pub fn serialize_structure_crate_input_describe_loa_input(
     if let Some(var_158) = &input.loa_content_type {
         object.key("loaContentType").string(var_158.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_router_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeRouterConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_159) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_159);
     }
     if let Some(var_160) = &input.router_type_identifier {
         object.key("routerTypeIdentifier").string(var_160);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_tags_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTagsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_161) = &input.resource_arns {
         let mut array_162 = object.key("resourceArns").start_array();
         for item_163 in var_161 {
@@ -837,48 +883,52 @@ pub fn serialize_structure_crate_input_describe_tags_input(
         }
         array_162.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_virtual_interfaces_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeVirtualInterfacesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_164) = &input.connection_id {
         object.key("connectionId").string(var_164);
     }
     if let Some(var_165) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_165);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_connection_from_lag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateConnectionFromLagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_166) = &input.connection_id {
         object.key("connectionId").string(var_166);
     }
     if let Some(var_167) = &input.lag_id {
         object.key("lagId").string(var_167);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_mac_sec_key_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateMacSecKeyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_168) = &input.connection_id {
         object.key("connectionId").string(var_168);
     }
     if let Some(var_169) = &input.secret_arn {
         object.key("secretARN").string(var_169);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_virtual_interface_test_history_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListVirtualInterfaceTestHistoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_170) = &input.test_id {
         object.key("testId").string(var_170);
     }
@@ -906,12 +956,13 @@ pub fn serialize_structure_crate_input_list_virtual_interface_test_history_input
     if let Some(var_177) = &input.next_token {
         object.key("nextToken").string(var_177);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_bgp_failover_test_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartBgpFailoverTestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_178) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_178);
     }
@@ -930,21 +981,23 @@ pub fn serialize_structure_crate_input_start_bgp_failover_test_input(
             aws_smithy_types::Number::NegInt((*var_182).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_stop_bgp_failover_test_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopBgpFailoverTestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_183) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_183);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_184) = &input.resource_arn {
         object.key("resourceArn").string(var_184);
     }
@@ -953,18 +1006,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_187 in var_185 {
             {
                 let mut object_188 = array_186.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_188, item_187);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_188, item_187)?;
                 object_188.finish();
             }
         }
         array_186.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_189) = &input.resource_arn {
         object.key("resourceArn").string(var_189);
     }
@@ -977,12 +1031,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_191.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_193) = &input.connection_id {
         object.key("connectionId").string(var_193);
     }
@@ -992,24 +1047,26 @@ pub fn serialize_structure_crate_input_update_connection_input(
     if let Some(var_195) = &input.encryption_mode {
         object.key("encryptionMode").string(var_195);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_direct_connect_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDirectConnectGatewayInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_196) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_196);
     }
     if let Some(var_197) = &input.new_direct_connect_gateway_name {
         object.key("newDirectConnectGatewayName").string(var_197);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_direct_connect_gateway_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDirectConnectGatewayAssociationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_198) = &input.association_id {
         object.key("associationId").string(var_198);
     }
@@ -1023,7 +1080,7 @@ pub fn serialize_structure_crate_input_update_direct_connect_gateway_association
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_202,
                     item_201,
-                );
+                )?;
                 object_202.finish();
             }
         }
@@ -1039,18 +1096,19 @@ pub fn serialize_structure_crate_input_update_direct_connect_gateway_association
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_206,
                     item_205,
-                );
+                )?;
                 object_206.finish();
             }
         }
         array_204.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_lag_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLagInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_207) = &input.lag_id {
         object.key("lagId").string(var_207);
     }
@@ -1066,12 +1124,13 @@ pub fn serialize_structure_crate_input_update_lag_input(
     if let Some(var_209) = &input.encryption_mode {
         object.key("encryptionMode").string(var_209);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_virtual_interface_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVirtualInterfaceAttributesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_210) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_210);
     }
@@ -1081,33 +1140,36 @@ pub fn serialize_structure_crate_input_update_virtual_interface_attributes_input
             aws_smithy_types::Number::NegInt((*var_211).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_route_filter_prefix(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RouteFilterPrefix,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_212) = &input.cidr {
         object.key("cidr").string(var_212);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_213) = &input.key {
         object.key("key").string(var_213);
     }
     if let Some(var_214) = &input.value {
         object.key("value").string(var_214);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_private_virtual_interface_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPrivateVirtualInterfaceAllocation,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_215) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_215);
     }
@@ -1146,18 +1208,19 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface_allocation(
         for item_223 in var_221 {
             {
                 let mut object_224 = array_222.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_224, item_223);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_224, item_223)?;
                 object_224.finish();
             }
         }
         array_222.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPublicVirtualInterfaceAllocation,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_225) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_225);
     }
@@ -1193,7 +1256,7 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_233,
                     item_232,
-                );
+                )?;
                 object_233.finish();
             }
         }
@@ -1204,18 +1267,19 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
         for item_236 in var_234 {
             {
                 let mut object_237 = array_235.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_237, item_236);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_237, item_236)?;
                 object_237.finish();
             }
         }
         array_235.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_transit_virtual_interface_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewTransitVirtualInterfaceAllocation,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_238) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_238);
     }
@@ -1254,18 +1318,19 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface_allocation(
         for item_246 in var_244 {
             {
                 let mut object_247 = array_245.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_247, item_246);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_247, item_246)?;
                 object_247.finish();
             }
         }
         array_245.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_bgp_peer(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewBgpPeer,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if input.asn != 0 {
         object.key("asn").number(
             #[allow(clippy::useless_conversion)]
@@ -1284,12 +1349,13 @@ pub fn serialize_structure_crate_model_new_bgp_peer(
     if let Some(var_251) = &input.customer_address {
         object.key("customerAddress").string(var_251);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_private_virtual_interface(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPrivateVirtualInterface,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_252) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_252);
     }
@@ -1334,18 +1400,19 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface(
         for item_262 in var_260 {
             {
                 let mut object_263 = array_261.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_263, item_262);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_263, item_262)?;
                 object_263.finish();
             }
         }
         array_261.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_public_virtual_interface(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPublicVirtualInterface,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_264) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_264);
     }
@@ -1381,7 +1448,7 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface(
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_272,
                     item_271,
-                );
+                )?;
                 object_272.finish();
             }
         }
@@ -1392,18 +1459,19 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface(
         for item_275 in var_273 {
             {
                 let mut object_276 = array_274.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_276, item_275);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_276, item_275)?;
                 object_276.finish();
             }
         }
         array_274.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_new_transit_virtual_interface(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewTransitVirtualInterface,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_277) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_277);
     }
@@ -1445,10 +1513,11 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface(
         for item_286 in var_284 {
             {
                 let mut object_287 = array_285.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_287, item_286);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_287, item_286)?;
                 object_287.finish();
             }
         }
         array_285.finish();
     }
+    Ok(())
 }

@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>The message for the field.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The name of the field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The message for the field.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -150,6 +160,40 @@ pub struct Site {
     pub state: std::option::Option<crate::model::SiteState>,
     /// <p>The tags for the site.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Site {
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    pub fn site_arn(&self) -> std::option::Option<&str> {
+        self.site_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The description of the site.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The location of the site.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The date and time that the site was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The state of the site.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SiteState> {
+        self.state.as_ref()
+    }
+    /// <p>The tags for the site.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Site {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -309,6 +353,18 @@ pub struct Tag {
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag key.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag value.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -441,6 +497,20 @@ pub struct Location {
     /// <p>The longitude.</p>
     pub longitude: std::option::Option<std::string::String>,
 }
+impl Location {
+    /// <p>The physical address.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The latitude.</p>
+    pub fn latitude(&self) -> std::option::Option<&str> {
+        self.latitude.as_deref()
+    }
+    /// <p>The longitude.</p>
+    pub fn longitude(&self) -> std::option::Option<&str> {
+        self.longitude.as_deref()
+    }
+}
 impl std::fmt::Debug for Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Location");
@@ -534,6 +604,52 @@ pub struct Link {
     pub state: std::option::Option<crate::model::LinkState>,
     /// <p>The tags for the link.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Link {
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the link.</p>
+    pub fn link_arn(&self) -> std::option::Option<&str> {
+        self.link_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The description of the link.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the link.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The bandwidth for the link.</p>
+    pub fn bandwidth(&self) -> std::option::Option<&crate::model::Bandwidth> {
+        self.bandwidth.as_ref()
+    }
+    /// <p>The provider of the link.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The date and time that the link was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The state of the link.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LinkState> {
+        self.state.as_ref()
+    }
+    /// <p>The tags for the link.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Link {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -796,6 +912,16 @@ pub struct Bandwidth {
     /// <p>Download speed in Mbps.</p>
     pub download_speed: std::option::Option<i32>,
 }
+impl Bandwidth {
+    /// <p>Upload speed in Mbps.</p>
+    pub fn upload_speed(&self) -> std::option::Option<i32> {
+        self.upload_speed
+    }
+    /// <p>Download speed in Mbps.</p>
+    pub fn download_speed(&self) -> std::option::Option<i32> {
+        self.download_speed
+    }
+}
 impl std::fmt::Debug for Bandwidth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Bandwidth");
@@ -866,6 +992,32 @@ pub struct GlobalNetwork {
     pub state: std::option::Option<crate::model::GlobalNetworkState>,
     /// <p>The tags for the global network.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GlobalNetwork {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the global network.</p>
+    pub fn global_network_arn(&self) -> std::option::Option<&str> {
+        self.global_network_arn.as_deref()
+    }
+    /// <p>The description of the global network.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that the global network was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The state of the global network.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::GlobalNetworkState> {
+        self.state.as_ref()
+    }
+    /// <p>The tags for the global network.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GlobalNetwork {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1089,6 +1241,64 @@ pub struct Device {
     pub state: std::option::Option<crate::model::DeviceState>,
     /// <p>The tags for the device.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Device {
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Web Services location of the device.</p>
+    pub fn aws_location(&self) -> std::option::Option<&crate::model::AwsLocation> {
+        self.aws_location.as_ref()
+    }
+    /// <p>The description of the device.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The device type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The device vendor.</p>
+    pub fn vendor(&self) -> std::option::Option<&str> {
+        self.vendor.as_deref()
+    }
+    /// <p>The device model.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The device serial number.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The site location.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The site ID.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The date and time that the site was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The device state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DeviceState> {
+        self.state.as_ref()
+    }
+    /// <p>The tags for the device.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1394,6 +1604,17 @@ pub struct AwsLocation {
     /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
     pub subnet_arn: std::option::Option<std::string::String>,
 }
+impl AwsLocation {
+    /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
+    /// Zone, Wavelength Zone, or an Outpost.</p>
+    pub fn zone(&self) -> std::option::Option<&str> {
+        self.zone.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
+    pub fn subnet_arn(&self) -> std::option::Option<&str> {
+        self.subnet_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AwsLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsLocation");
@@ -1476,6 +1697,52 @@ pub struct Connection {
     pub state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The tags for the connection.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Connection {
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connection.</p>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the first device in the connection.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the second device in the connection.</p>
+    pub fn connected_device_id(&self) -> std::option::Option<&str> {
+        self.connected_device_id.as_deref()
+    }
+    /// <p>The ID of the link for the first device in the connection.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The ID of the link for the second device in the connection.</p>
+    pub fn connected_link_id(&self) -> std::option::Option<&str> {
+        self.connected_link_id.as_deref()
+    }
+    /// <p>The description of the connection.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time that the connection was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The state of the connection.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.state.as_ref()
+    }
+    /// <p>The tags for the connection.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1769,6 +2036,53 @@ pub struct RouteAnalysis {
     /// <p>The return path.</p>
     pub return_path: std::option::Option<crate::model::RouteAnalysisPath>,
 }
+impl RouteAnalysis {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the AWS account that created the route analysis.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The ID of the route analysis.</p>
+    pub fn route_analysis_id(&self) -> std::option::Option<&str> {
+        self.route_analysis_id.as_deref()
+    }
+    /// <p>The time that the analysis started.</p>
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_timestamp.as_ref()
+    }
+    /// <p>The status of the route analysis.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RouteAnalysisStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The source.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::RouteAnalysisEndpointOptions> {
+        self.source.as_ref()
+    }
+    /// <p>The destination.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::RouteAnalysisEndpointOptions> {
+        self.destination.as_ref()
+    }
+    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
+    /// analysis does not succeed.</p>
+    pub fn include_return_path(&self) -> bool {
+        self.include_return_path
+    }
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
+    pub fn use_middleboxes(&self) -> bool {
+        self.use_middleboxes
+    }
+    /// <p>The forward path.</p>
+    pub fn forward_path(&self) -> std::option::Option<&crate::model::RouteAnalysisPath> {
+        self.forward_path.as_ref()
+    }
+    /// <p>The return path.</p>
+    pub fn return_path(&self) -> std::option::Option<&crate::model::RouteAnalysisPath> {
+        self.return_path.as_ref()
+    }
+}
 impl std::fmt::Debug for RouteAnalysis {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteAnalysis");
@@ -1978,6 +2292,16 @@ pub struct RouteAnalysisPath {
     /// <p>The route analysis path.</p>
     pub path: std::option::Option<std::vec::Vec<crate::model::PathComponent>>,
 }
+impl RouteAnalysisPath {
+    /// <p>The status of the analysis at completion.</p>
+    pub fn completion_status(&self) -> std::option::Option<&crate::model::RouteAnalysisCompletion> {
+        self.completion_status.as_ref()
+    }
+    /// <p>The route analysis path.</p>
+    pub fn path(&self) -> std::option::Option<&[crate::model::PathComponent]> {
+        self.path.as_deref()
+    }
+}
 impl std::fmt::Debug for RouteAnalysisPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteAnalysisPath");
@@ -2054,6 +2378,20 @@ pub struct PathComponent {
     pub resource: std::option::Option<crate::model::NetworkResourceSummary>,
     /// <p>The destination CIDR block in the route table.</p>
     pub destination_cidr_block: std::option::Option<std::string::String>,
+}
+impl PathComponent {
+    /// <p>The sequence number in the path. The destination is 0.</p>
+    pub fn sequence(&self) -> std::option::Option<i32> {
+        self.sequence
+    }
+    /// <p>The resource.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::NetworkResourceSummary> {
+        self.resource.as_ref()
+    }
+    /// <p>The destination CIDR block in the route table.</p>
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
+        self.destination_cidr_block.as_deref()
+    }
 }
 impl std::fmt::Debug for PathComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2144,6 +2482,32 @@ pub struct NetworkResourceSummary {
     pub name_tag: std::option::Option<std::string::String>,
     /// <p>Indicates whether this is a middlebox appliance.</p>
     pub is_middlebox: bool,
+}
+impl NetworkResourceSummary {
+    /// <p>The ARN of the gateway.</p>
+    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+        self.registered_gateway_arn.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The value for the Name tag.</p>
+    pub fn name_tag(&self) -> std::option::Option<&str> {
+        self.name_tag.as_deref()
+    }
+    /// <p>Indicates whether this is a middlebox appliance.</p>
+    pub fn is_middlebox(&self) -> bool {
+        self.is_middlebox
+    }
 }
 impl std::fmt::Debug for NetworkResourceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2307,6 +2671,66 @@ pub struct RouteAnalysisCompletion {
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
     pub reason_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl RouteAnalysisCompletion {
+    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
+    /// reason code.</p>
+    pub fn result_code(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteAnalysisCompletionResultCode> {
+        self.result_code.as_ref()
+    }
+    /// <p>The reason code. Available only if a connection is not found.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
+    /// </li>
+    /// </ul>
+    pub fn reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::RouteAnalysisCompletionReasonCode> {
+        self.reason_code.as_ref()
+    }
+    /// <p>Additional information about the path. Available only if a connection is not found.</p>
+    pub fn reason_context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.reason_context.as_ref()
+    }
 }
 impl std::fmt::Debug for RouteAnalysisCompletion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2681,6 +3105,20 @@ pub struct RouteAnalysisEndpointOptions {
     /// <p>The IP address.</p>
     pub ip_address: std::option::Option<std::string::String>,
 }
+impl RouteAnalysisEndpointOptions {
+    /// <p>The ARN of the transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_attachment_arn.as_deref()
+    }
+    /// <p>The ARN of the transit gateway.</p>
+    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_arn.as_deref()
+    }
+    /// <p>The IP address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+}
 impl std::fmt::Debug for RouteAnalysisEndpointOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteAnalysisEndpointOptions");
@@ -2828,6 +3266,16 @@ pub struct RouteAnalysisEndpointOptionsSpecification {
     /// <p>The IP address.</p>
     pub ip_address: std::option::Option<std::string::String>,
 }
+impl RouteAnalysisEndpointOptionsSpecification {
+    /// <p>The ARN of the transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_attachment_arn.as_deref()
+    }
+    /// <p>The IP address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+}
 impl std::fmt::Debug for RouteAnalysisEndpointOptionsSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RouteAnalysisEndpointOptionsSpecification");
@@ -2901,6 +3349,22 @@ pub struct TransitGatewayRegistration {
     pub transit_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The state of the transit gateway registration.</p>
     pub state: std::option::Option<crate::model::TransitGatewayRegistrationStateReason>,
+}
+impl TransitGatewayRegistration {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_arn.as_deref()
+    }
+    /// <p>The state of the transit gateway registration.</p>
+    pub fn state(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayRegistrationStateReason> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for TransitGatewayRegistration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2986,6 +3450,16 @@ pub struct TransitGatewayRegistrationStateReason {
     pub code: std::option::Option<crate::model::TransitGatewayRegistrationState>,
     /// <p>The message for the state reason.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl TransitGatewayRegistrationStateReason {
+    /// <p>The code for the state reason.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::TransitGatewayRegistrationState> {
+        self.code.as_ref()
+    }
+    /// <p>The message for the state reason.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for TransitGatewayRegistrationStateReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3125,6 +3599,30 @@ pub struct TransitGatewayConnectPeerAssociation {
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub state: std::option::Option<crate::model::TransitGatewayConnectPeerAssociationState>,
+}
+impl TransitGatewayConnectPeerAssociation {
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    pub fn transit_gateway_connect_peer_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_connect_peer_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The state of the association.</p>
+    pub fn state(
+        &self,
+    ) -> std::option::Option<&crate::model::TransitGatewayConnectPeerAssociationState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for TransitGatewayConnectPeerAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3322,6 +3820,40 @@ pub struct NetworkTelemetry {
     /// <p>The connection health.</p>
     pub health: std::option::Option<crate::model::ConnectionHealth>,
 }
+impl NetworkTelemetry {
+    /// <p>The ARN of the gateway.</p>
+    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+        self.registered_gateway_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The address.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The connection health.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::ConnectionHealth> {
+        self.health.as_ref()
+    }
+}
 impl std::fmt::Debug for NetworkTelemetry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkTelemetry");
@@ -3473,6 +4005,20 @@ pub struct ConnectionHealth {
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The time the status was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ConnectionHealth {
+    /// <p>The connection type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ConnectionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The connection status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time the status was last updated.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectionHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3674,6 +4220,28 @@ pub struct NetworkRoute {
     pub state: std::option::Option<crate::model::RouteState>,
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
     pub r#type: std::option::Option<crate::model::RouteType>,
+}
+impl NetworkRoute {
+    /// <p>A unique identifier for the route, such as a CIDR block.</p>
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
+        self.destination_cidr_block.as_deref()
+    }
+    /// <p>The destinations.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::NetworkRouteDestination]> {
+        self.destinations.as_deref()
+    }
+    /// <p>The ID of the prefix list.</p>
+    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+        self.prefix_list_id.as_deref()
+    }
+    /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RouteState> {
+        self.state.as_ref()
+    }
+    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RouteType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3908,6 +4476,20 @@ pub struct NetworkRouteDestination {
     /// <p>The ID of the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl NetworkRouteDestination {
+    /// <p>The ID of the transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
+        self.transit_gateway_attachment_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkRouteDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkRouteDestination");
@@ -4044,6 +4626,12 @@ impl AsRef<str> for RouteTableType {
 pub struct RouteTableIdentifier {
     /// <p>The ARN of the transit gateway route table.</p>
     pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+}
+impl RouteTableIdentifier {
+    /// <p>The ARN of the transit gateway route table.</p>
+    pub fn transit_gateway_route_table_arn(&self) -> std::option::Option<&str> {
+        self.transit_gateway_route_table_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RouteTableIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4196,6 +4784,127 @@ pub struct NetworkResource {
     /// <p>The resource metadata.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl NetworkResource {
+    /// <p>The ARN of the gateway.</p>
+    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+        self.registered_gateway_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    pub fn definition(&self) -> std::option::Option<&str> {
+        self.definition.as_deref()
+    }
+    /// <p>The time that the resource definition was retrieved.</p>
+    pub fn definition_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.definition_timestamp.as_ref()
+    }
+    /// <p>The tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The resource metadata.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4551,6 +5260,16 @@ pub struct Relationship {
     /// <p>The ARN of the resource.</p>
     pub to: std::option::Option<std::string::String>,
 }
+impl Relationship {
+    /// <p>The ARN of the resource.</p>
+    pub fn from(&self) -> std::option::Option<&str> {
+        self.from.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn to(&self) -> std::option::Option<&str> {
+        self.to.as_deref()
+    }
+}
 impl std::fmt::Debug for Relationship {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Relationship");
@@ -4613,6 +5332,16 @@ pub struct NetworkResourceCount {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The resource count.</p>
     pub count: std::option::Option<i32>,
+}
+impl NetworkResourceCount {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The resource count.</p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
 }
 impl std::fmt::Debug for NetworkResourceCount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4683,6 +5412,26 @@ pub struct LinkAssociation {
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub link_association_state: std::option::Option<crate::model::LinkAssociationState>,
+}
+impl LinkAssociation {
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The device ID for the link association.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The state of the association.</p>
+    pub fn link_association_state(
+        &self,
+    ) -> std::option::Option<&crate::model::LinkAssociationState> {
+        self.link_association_state.as_ref()
+    }
 }
 impl std::fmt::Debug for LinkAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4847,6 +5596,28 @@ pub struct CustomerGatewayAssociation {
     pub link_id: std::option::Option<std::string::String>,
     /// <p>The association state.</p>
     pub state: std::option::Option<crate::model::CustomerGatewayAssociationState>,
+}
+impl CustomerGatewayAssociation {
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    pub fn customer_gateway_arn(&self) -> std::option::Option<&str> {
+        self.customer_gateway_arn.as_deref()
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
+        self.global_network_id.as_deref()
+    }
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The ID of the link.</p>
+    pub fn link_id(&self) -> std::option::Option<&str> {
+        self.link_id.as_deref()
+    }
+    /// <p>The association state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CustomerGatewayAssociationState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for CustomerGatewayAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

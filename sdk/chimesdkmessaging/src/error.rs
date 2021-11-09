@@ -7205,6 +7205,12 @@ pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl UnauthorizedClientException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+}
 impl std::fmt::Debug for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnauthorizedClientException");
@@ -7283,6 +7289,12 @@ pub struct ThrottledClientException {
     pub code: std::option::Option<crate::model::ErrorCode>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ThrottledClientException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for ThrottledClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7363,6 +7375,12 @@ pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceUnavailableException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceUnavailableException");
@@ -7442,6 +7460,12 @@ pub struct ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceFailureException");
@@ -7520,6 +7544,12 @@ pub struct ForbiddenException {
     pub code: std::option::Option<crate::model::ErrorCode>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ForbiddenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7601,6 +7631,12 @@ pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -7679,6 +7715,12 @@ pub struct BadRequestException {
     pub code: std::option::Option<crate::model::ErrorCode>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl BadRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7759,6 +7801,12 @@ pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceLimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceLimitExceededException");
@@ -7837,6 +7885,12 @@ pub struct NotFoundException {
     pub code: std::option::Option<crate::model::ErrorCode>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl NotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

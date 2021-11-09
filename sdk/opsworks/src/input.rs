@@ -108,10 +108,8 @@ impl AssignInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_assign_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_assign_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -272,10 +270,7 @@ impl AssignVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_assign_volume(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_assign_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -437,10 +432,7 @@ impl AssociateElasticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_elastic_ip(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_elastic_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -608,10 +600,7 @@ impl AttachElasticLoadBalancerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_attach_elastic_load_balancer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1464,10 +1453,7 @@ impl CloneStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_clone_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_clone_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1816,10 +1802,7 @@ impl CreateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2074,10 +2057,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2621,10 +2601,8 @@ impl CreateInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3093,10 +3071,7 @@ impl CreateLayerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_layer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_layer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3925,10 +3900,7 @@ impl CreateStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4127,10 +4099,7 @@ impl CreateUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4277,10 +4246,7 @@ impl DeleteAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4451,10 +4417,8 @@ impl DeleteInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4603,10 +4567,7 @@ impl DeleteLayerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_layer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_layer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4755,10 +4716,7 @@ impl DeleteStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4908,10 +4866,7 @@ impl DeleteUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5064,10 +5019,9 @@ impl DeregisterEcsClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_ecs_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_ecs_cluster(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5217,10 +5171,7 @@ impl DeregisterElasticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_elastic_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_elastic_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5370,10 +5321,7 @@ impl DeregisterInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5529,10 +5477,7 @@ impl DeregisterRdsDbInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_rds_db_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5682,10 +5627,7 @@ impl DeregisterVolumeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_volume(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5856,10 +5798,7 @@ impl DescribeAgentVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_agent_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6035,10 +5974,7 @@ impl DescribeAppsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_apps(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_apps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6232,10 +6168,7 @@ impl DescribeCommandsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_commands(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_commands(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6426,10 +6359,7 @@ impl DescribeDeploymentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_deployments(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_deployments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6642,10 +6572,7 @@ impl DescribeEcsClustersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_ecs_clusters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_ecs_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6836,10 +6763,7 @@ impl DescribeElasticIpsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_elastic_ips(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_elastic_ips(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7011,7 +6935,7 @@ impl DescribeElasticLoadBalancersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_elastic_load_balancers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_elastic_load_balancers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7203,10 +7127,7 @@ impl DescribeInstancesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_instances(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7378,10 +7299,8 @@ impl DescribeLayersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_layers(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_layers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7541,7 +7460,7 @@ impl DescribeLoadBasedAutoScalingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_based_auto_scaling(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_based_auto_scaling(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7680,10 +7599,7 @@ impl DescribeMyUserProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_my_user_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7814,10 +7730,7 @@ impl DescribeOperatingSystemsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_operating_systems(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7973,10 +7886,7 @@ impl DescribePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_permissions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_permissions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8165,10 +8075,7 @@ impl DescribeRaidArraysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_raid_arrays(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_raid_arrays(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8341,10 +8248,7 @@ impl DescribeRdsDbInstancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_rds_db_instances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8537,10 +8441,7 @@ impl DescribeServiceErrorsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_service_errors(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8692,7 +8593,7 @@ impl DescribeStackProvisioningParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_provisioning_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_provisioning_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8853,10 +8754,8 @@ impl DescribeStacksInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9006,10 +8905,9 @@ impl DescribeStackSummaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_summary(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_summary(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9169,7 +9067,7 @@ impl DescribeTimeBasedAutoScalingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_time_based_auto_scaling(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_time_based_auto_scaling(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9329,10 +9227,9 @@ impl DescribeUserProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_user_profiles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_user_profiles(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9538,10 +9435,7 @@ impl DescribeVolumesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_volumes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_volumes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9709,10 +9603,7 @@ impl DetachElasticLoadBalancerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detach_elastic_load_balancer(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9864,10 +9755,7 @@ impl DisassociateElasticIpInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_elastic_ip(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10019,10 +9907,7 @@ impl GetHostnameSuggestionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_hostname_suggestion(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10183,10 +10068,7 @@ impl GrantAccessInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_grant_access(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_grant_access(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10361,10 +10243,7 @@ impl ListTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10510,10 +10389,8 @@ impl RebootInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_reboot_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10678,10 +10555,7 @@ impl RegisterEcsClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_ecs_cluster(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_ecs_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10843,10 +10717,7 @@ impl RegisterElasticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_elastic_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_elastic_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11077,10 +10948,7 @@ impl RegisterInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11271,10 +11139,7 @@ impl RegisterRdsDbInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_rds_db_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11438,10 +11303,8 @@ impl RegisterVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_volume(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11644,10 +11507,7 @@ impl SetLoadBasedAutoScalingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_load_based_auto_scaling(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11900,10 +11760,7 @@ impl SetPermissionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_set_permission(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_set_permission(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12075,10 +11932,7 @@ impl SetTimeBasedAutoScalingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_time_based_auto_scaling(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12227,10 +12081,7 @@ impl StartInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12379,10 +12230,7 @@ impl StartStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12547,10 +12395,7 @@ impl StopInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_instance(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12697,10 +12542,7 @@ impl StopStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12914,10 +12756,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13067,10 +12906,7 @@ impl UnassignInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_unassign_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_unassign_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13219,10 +13055,8 @@ impl UnassignVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_unassign_volume(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_unassign_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13392,10 +13226,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13726,10 +13557,7 @@ impl UpdateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13889,10 +13717,7 @@ impl UpdateElasticIpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_elastic_ip(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_elastic_ip(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14330,10 +14155,8 @@ impl UpdateInstanceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_instance(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14788,10 +14611,7 @@ impl UpdateLayerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_layer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_layer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14944,10 +14764,9 @@ impl UpdateMyUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_my_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_my_user_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15124,10 +14943,9 @@ impl UpdateRdsDbInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rds_db_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_rds_db_instance(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15842,10 +15660,7 @@ impl UpdateStackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16044,10 +15859,7 @@ impl UpdateUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16220,10 +16032,7 @@ impl UpdateVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_volume(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16296,6 +16105,20 @@ pub struct UpdateVolumeInput {
     /// <p>The new mount point.</p>
     pub mount_point: std::option::Option<std::string::String>,
 }
+impl UpdateVolumeInput {
+    /// <p>The volume ID.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The new name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new mount point.</p>
+    pub fn mount_point(&self) -> std::option::Option<&str> {
+        self.mount_point.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVolumeInput");
@@ -16323,6 +16146,29 @@ pub struct UpdateUserProfileInput {
     /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
     /// Permissions</a>.</p>
     pub allow_self_management: std::option::Option<bool>,
+}
+impl UpdateUserProfileInput {
+    /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
+    /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
+    /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
+    /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    pub fn ssh_username(&self) -> std::option::Option<&str> {
+        self.ssh_username.as_deref()
+    }
+    /// <p>The user's new SSH public key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+    /// Permissions</a>.</p>
+    pub fn allow_self_management(&self) -> std::option::Option<bool> {
+        self.allow_self_management
+    }
 }
 impl std::fmt::Debug for UpdateUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16529,6 +16375,237 @@ pub struct UpdateStackInput {
     /// </note>
     pub agent_version: std::option::Option<std::string::String>,
 }
+impl UpdateStackInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The stack's new name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
+    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.default_instance_profile_arn.as_deref()
+    }
+    /// <p>The stack's operating system, which must be set to one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CentOS Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Red Hat Enterprise Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+    /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+    /// Custom AMIs</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default option is the stack's current operating system.
+    /// For more information about supported operating systems,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    pub fn default_os(&self) -> std::option::Option<&str> {
+        self.default_os.as_deref()
+    }
+    /// <p>The stack's new host name theme, with spaces replaced by underscores.
+    /// The theme is used to generate host names for the stack's instances.
+    /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
+    /// layer's short name. The other themes are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Baked_Goods</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Clouds</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Europe_Cities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fruits</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Greek_Deities_and_Titans</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Legendary_creatures_from_Japan</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Planets_and_Moons</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Roman_Deities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Scottish_Islands</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>US_Cities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Wild_Cats</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
+    /// host name based on the current theme.</p>
+    pub fn hostname_theme(&self) -> std::option::Option<&str> {
+        self.hostname_theme.as_deref()
+    }
+    /// <p>The stack's default Availability Zone, which must be in the
+    /// stack's region. For more
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
+    /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
+    pub fn default_availability_zone(&self) -> std::option::Option<&str> {
+        self.default_availability_zone.as_deref()
+    }
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
+    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
+    /// otherwise when you create the instance. If you also specify a value for
+    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
+    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
+    /// description. </p>
+    pub fn default_subnet_id(&self) -> std::option::Option<&str> {
+        self.default_subnet_id.as_deref()
+    }
+    /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
+    /// <p>
+    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+    /// </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+    /// Modify the Stack Configuration Attributes</a>.</p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    pub fn configuration_manager(
+        &self,
+    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+        self.configuration_manager.as_ref()
+    }
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
+        self.chef_configuration.as_ref()
+    }
+    /// <p>Whether the stack uses custom cookbooks.</p>
+    pub fn use_custom_cookbooks(&self) -> std::option::Option<bool> {
+        self.use_custom_cookbooks
+    }
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.custom_cookbooks_source.as_ref()
+    }
+    /// <p>A default Amazon EC2 key-pair name. The default value is
+    /// <code>none</code>. If you specify a key-pair name,
+    /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
+    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+    /// Access</a>. You can override this setting by specifying a different key pair, or no key
+    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+    /// create an instance</a>. </p>
+    pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
+        self.default_ssh_key_name.as_deref()
+    }
+    /// <p>The default root device type. This value is used by default for all instances in the stack,
+    /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+        self.default_root_device_type.as_ref()
+    }
+    /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
+    /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
+    /// provide your own custom security groups
+    /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
+    /// the following settings: </p>
+    /// <ul>
+    /// <li>
+    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
+    /// </li>
+    /// <li>
+    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+    /// Stack</a>.</p>
+    pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
+        self.use_opsworks_security_groups
+    }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
+    /// automatically installs new agent versions on the stack's instances as soon as
+    /// they are available.</p>
+    /// </li>
+    /// <li>
+    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
+    /// you must use the complete version number, not the abbreviated number shown on the console.
+    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
+    /// AgentVersion cannot be set to Chef 12.2.</p>
+    /// <note>
+    /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
+    /// </note>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackInput");
@@ -16571,6 +16648,20 @@ pub struct UpdateRdsDbInstanceInput {
     /// <p>The database password.</p>
     pub db_password: std::option::Option<std::string::String>,
 }
+impl UpdateRdsDbInstanceInput {
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
+        self.rds_db_instance_arn.as_deref()
+    }
+    /// <p>The master user name.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The database password.</p>
+    pub fn db_password(&self) -> std::option::Option<&str> {
+        self.db_password.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRdsDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRdsDbInstanceInput");
@@ -16587,6 +16678,12 @@ impl std::fmt::Debug for UpdateRdsDbInstanceInput {
 pub struct UpdateMyUserProfileInput {
     /// <p>The user's SSH public key.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
+}
+impl UpdateMyUserProfileInput {
+    /// <p>The user's SSH public key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateMyUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16660,6 +16757,107 @@ pub struct UpdateLayerInput {
     /// <p></p>
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
+}
+impl UpdateLayerInput {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>The layer name, which is used by the console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+    /// </p>
+    pub fn shortname(&self) -> std::option::Option<&str> {
+        self.shortname.as_deref()
+    }
+    /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
+    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.custom_instance_profile_arn.as_deref()
+    }
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
+    /// to be installed on the layer's instances. For more information, see
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+    /// Using Custom JSON</a>.
+    /// </p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>An array containing the layer's custom security group IDs.</p>
+    pub fn custom_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_security_group_ids.as_deref()
+    }
+    /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    pub fn packages(&self) -> std::option::Option<&[std::string::String]> {
+        self.packages.as_deref()
+    }
+    /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    pub fn volume_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeConfiguration]> {
+        self.volume_configurations.as_deref()
+    }
+    /// <p>Whether to disable auto healing for the layer.</p>
+    pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
+        self.enable_auto_healing
+    }
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+    /// a Layer</a>.</p>
+    pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
+        self.auto_assign_elastic_ips
+    }
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
+    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+    /// a Layer</a>.</p>
+    pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
+        self.auto_assign_public_ips
+    }
+    /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    pub fn custom_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
+        self.custom_recipes.as_ref()
+    }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default
+    /// value is <code>true</code>. To control when updates are installed, set this value to
+    /// <code>false</code>. You must then update your instances manually by using
+    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+    /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+    /// instances. </p>
+    /// <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
+    /// instances have the latest security updates.</p>
+    /// </note>
+    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+        self.install_updates_on_boot
+    }
+    /// <p>Whether to use Amazon EBS-optimized instances.</p>
+    pub fn use_ebs_optimized_instances(&self) -> std::option::Option<bool> {
+        self.use_ebs_optimized_instances
+    }
+    /// <p></p>
+    pub fn lifecycle_event_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
+        self.lifecycle_event_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLayerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16794,6 +16992,124 @@ pub struct UpdateInstanceInput {
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
     pub agent_version: std::option::Option<std::string::String>,
 }
+impl UpdateInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The instance's layer IDs.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
+    /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
+    /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+    /// Families and Types</a>. The parameter values that you use to specify the various types are
+    /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    pub fn auto_scaling_type(&self) -> std::option::Option<&crate::model::AutoScalingType> {
+        self.auto_scaling_type.as_ref()
+    }
+    /// <p>The instance host name.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
+    /// 2015.03</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CentOS Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Red Hat Enterprise Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about supported operating systems,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to
+    /// <code>Custom</code>, you must use the AmiId parameter to
+    /// specify the custom AMI that you want to use. For more information about supported operating
+    /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+    /// Custom AMIs</a>.</p>
+    /// <note>
+    /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
+    /// </note>
+    pub fn os(&self) -> std::option::Option<&str> {
+        self.os.as_deref()
+    }
+    /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
+    /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
+    /// </p>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The instance's Amazon EC2 key name.</p>
+    pub fn ssh_key_name(&self) -> std::option::Option<&str> {
+        self.ssh_key_name.as_deref()
+    }
+    /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
+    /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+    /// Families and Types</a>.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default
+    /// value is <code>true</code>. To control when updates are installed, set this value to
+    /// <code>false</code>. You must then update your instances manually by using
+    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+    /// instances. </p>
+    /// <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
+    /// instances have the latest security updates.</p>
+    /// </note>
+    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+        self.install_updates_on_boot
+    }
+    /// <p>This property cannot be updated.</p>
+    pub fn ebs_optimized(&self) -> std::option::Option<bool> {
+        self.ebs_optimized
+    }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>version_number</i> - Use the specified agent version.
+    /// This value overrides the stack's default setting.
+    /// To update the agent version, you must edit the instance configuration and specify a
+    /// new version.
+    /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
+    /// you must use the complete version number, not the abbreviated number shown on the console.
+    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+    /// <p>AgentVersion cannot be set to Chef 12.2.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInstanceInput");
@@ -16821,6 +17137,16 @@ pub struct UpdateElasticIpInput {
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The new name.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateElasticIpInput {
+    /// <p>The IP address for which you want to update the name.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>The new name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateElasticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16868,6 +17194,64 @@ pub struct UpdateAppInput {
     /// </note>
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
 }
+impl UpdateAppInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The app name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the app.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The app's data sources.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>The app type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <code>Source</code> object that specifies the app repository.</p>
+    pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.app_source.as_ref()
+    }
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
+    /// <code>'www.example.com, example.com'</code>
+    /// </p>
+    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.domains.as_deref()
+    }
+    /// <p>Whether SSL is enabled for the app.</p>
+    pub fn enable_ssl(&self) -> std::option::Option<bool> {
+        self.enable_ssl
+    }
+    /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    pub fn ssl_configuration(&self) -> std::option::Option<&crate::model::SslConfiguration> {
+        self.ssl_configuration.as_ref()
+    }
+    /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+    /// associated with the app. After you deploy the app, these variables are defined on the
+    /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
+    /// <note>
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    /// </note>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+        self.environment.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInput");
@@ -16895,6 +17279,16 @@ pub struct UntagResourceInput {
     /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -16911,6 +17305,12 @@ pub struct UnassignVolumeInput {
     /// <p>The volume ID.</p>
     pub volume_id: std::option::Option<std::string::String>,
 }
+impl UnassignVolumeInput {
+    /// <p>The volume ID.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UnassignVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnassignVolumeInput");
@@ -16925,6 +17325,12 @@ impl std::fmt::Debug for UnassignVolumeInput {
 pub struct UnassignInstanceInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl UnassignInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UnassignInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16963,6 +17369,38 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The key cannot be empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
+    /// </li>
+    /// <li>
+    /// <p>A maximum of 40 tags is allowed for any resource.</p>
+    /// </li>
+    /// </ul>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -16978,6 +17416,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopStackInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl StopStackInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16998,6 +17442,18 @@ pub struct StopInstanceInput {
     /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
     pub force: std::option::Option<bool>,
 }
+impl StopInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
+    /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
+    /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+    pub fn force(&self) -> std::option::Option<bool> {
+        self.force
+    }
+}
 impl std::fmt::Debug for StopInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInstanceInput");
@@ -17014,6 +17470,12 @@ pub struct StartStackInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl StartStackInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartStackInput");
@@ -17028,6 +17490,12 @@ impl std::fmt::Debug for StartStackInput {
 pub struct StartInstanceInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl StartInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17045,6 +17513,18 @@ pub struct SetTimeBasedAutoScalingInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     pub auto_scaling_schedule: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
+}
+impl SetTimeBasedAutoScalingInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    pub fn auto_scaling_schedule(
+        &self,
+    ) -> std::option::Option<&crate::model::WeeklyAutoScalingSchedule> {
+        self.auto_scaling_schedule.as_ref()
+    }
 }
 impl std::fmt::Debug for SetTimeBasedAutoScalingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17098,6 +17578,56 @@ pub struct SetPermissionInput {
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub level: std::option::Option<std::string::String>,
 }
+impl SetPermissionInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The user is allowed to use SSH to communicate with the instance.</p>
+    pub fn allow_ssh(&self) -> std::option::Option<bool> {
+        self.allow_ssh
+    }
+    /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
+    pub fn allow_sudo(&self) -> std::option::Option<bool> {
+        self.allow_sudo
+    }
+    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>deny</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>show</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>deploy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>manage</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>iam_only</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    pub fn level(&self) -> std::option::Option<&str> {
+        self.level.as_deref()
+    }
+}
 impl std::fmt::Debug for SetPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetPermissionInput");
@@ -17127,6 +17657,28 @@ pub struct SetLoadBasedAutoScalingInput {
     /// number of instances.</p>
     pub down_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
 }
+impl SetLoadBasedAutoScalingInput {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>Enables load-based auto scaling for the layer.</p>
+    pub fn enable(&self) -> std::option::Option<bool> {
+        self.enable
+    }
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
+    /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
+    /// number of instances.</p>
+    pub fn up_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
+        self.up_scaling.as_ref()
+    }
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
+    /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
+    /// number of instances.</p>
+    pub fn down_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
+        self.down_scaling.as_ref()
+    }
+}
 impl std::fmt::Debug for SetLoadBasedAutoScalingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetLoadBasedAutoScalingInput");
@@ -17146,6 +17698,16 @@ pub struct RegisterVolumeInput {
     pub ec2_volume_id: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl RegisterVolumeInput {
+    /// <p>The Amazon EBS volume ID.</p>
+    pub fn ec2_volume_id(&self) -> std::option::Option<&str> {
+        self.ec2_volume_id.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17168,6 +17730,24 @@ pub struct RegisterRdsDbInstanceInput {
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The database password.</p>
     pub db_password: std::option::Option<std::string::String>,
+}
+impl RegisterRdsDbInstanceInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
+        self.rds_db_instance_arn.as_deref()
+    }
+    /// <p>The database's master user name.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The database password.</p>
+    pub fn db_password(&self) -> std::option::Option<&str> {
+        self.db_password.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterRdsDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17199,6 +17779,36 @@ pub struct RegisterInstanceInput {
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
     pub instance_identity: std::option::Option<crate::model::InstanceIdentity>,
 }
+impl RegisterInstanceInput {
+    /// <p>The ID of the stack that the instance is to be registered with.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The instance's hostname.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The instance's public IP address.</p>
+    pub fn public_ip(&self) -> std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
+    /// <p>The instance's private IP address.</p>
+    pub fn private_ip(&self) -> std::option::Option<&str> {
+        self.private_ip.as_deref()
+    }
+    /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
+    pub fn rsa_public_key(&self) -> std::option::Option<&str> {
+        self.rsa_public_key.as_deref()
+    }
+    /// <p>The instances public RSA key fingerprint.</p>
+    pub fn rsa_public_key_fingerprint(&self) -> std::option::Option<&str> {
+        self.rsa_public_key_fingerprint.as_deref()
+    }
+    /// <p>An InstanceIdentity object that contains the instance's identity.</p>
+    pub fn instance_identity(&self) -> std::option::Option<&crate::model::InstanceIdentity> {
+        self.instance_identity.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterInstanceInput");
@@ -17225,6 +17835,16 @@ pub struct RegisterElasticIpInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl RegisterElasticIpInput {
+    /// <p>The Elastic IP address.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterElasticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterElasticIpInput");
@@ -17243,6 +17863,16 @@ pub struct RegisterEcsClusterInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl RegisterEcsClusterInput {
+    /// <p>The cluster's ARN.</p>
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_arn.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterEcsClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterEcsClusterInput");
@@ -17258,6 +17888,12 @@ impl std::fmt::Debug for RegisterEcsClusterInput {
 pub struct RebootInstanceInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
+}
+impl RebootInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RebootInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17280,6 +17916,22 @@ pub struct ListTagsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsInput {
+    /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsInput");
@@ -17299,6 +17951,16 @@ pub struct GrantAccessInput {
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     pub valid_for_in_minutes: std::option::Option<i32>,
 }
+impl GrantAccessInput {
+    /// <p>The instance's AWS OpsWorks Stacks ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    pub fn valid_for_in_minutes(&self) -> std::option::Option<i32> {
+        self.valid_for_in_minutes
+    }
+}
 impl std::fmt::Debug for GrantAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantAccessInput");
@@ -17315,6 +17977,12 @@ pub struct GetHostnameSuggestionInput {
     /// <p>The layer ID.</p>
     pub layer_id: std::option::Option<std::string::String>,
 }
+impl GetHostnameSuggestionInput {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetHostnameSuggestionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHostnameSuggestionInput");
@@ -17329,6 +17997,12 @@ impl std::fmt::Debug for GetHostnameSuggestionInput {
 pub struct DisassociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
     pub elastic_ip: std::option::Option<std::string::String>,
+}
+impl DisassociateElasticIpInput {
+    /// <p>The Elastic IP address.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateElasticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17346,6 +18020,16 @@ pub struct DetachElasticLoadBalancerInput {
     pub elastic_load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
     pub layer_id: std::option::Option<std::string::String>,
+}
+impl DetachElasticLoadBalancerInput {
+    /// <p>The Elastic Load Balancing instance's name.</p>
+    pub fn elastic_load_balancer_name(&self) -> std::option::Option<&str> {
+        self.elastic_load_balancer_name.as_deref()
+    }
+    /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachElasticLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17376,6 +18060,28 @@ pub struct DescribeVolumesInput {
     /// volume.</p>
     pub volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeVolumesInput {
+    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
+    /// of the volumes associated with the specified instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
+    /// descriptions of the volumes associated with the specified RAID array.</p>
+    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+        self.raid_array_id.as_deref()
+    }
+    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
+    /// descriptions of the specified volumes. Otherwise, it returns a description of every
+    /// volume.</p>
+    pub fn volume_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.volume_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVolumesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVolumesInput");
@@ -17394,6 +18100,12 @@ pub struct DescribeUserProfilesInput {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
     pub iam_user_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeUserProfilesInput {
+    /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
+    pub fn iam_user_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.iam_user_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserProfilesInput");
@@ -17409,6 +18121,12 @@ pub struct DescribeTimeBasedAutoScalingInput {
     /// <p>An array of instance IDs.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeTimeBasedAutoScalingInput {
+    /// <p>An array of instance IDs.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTimeBasedAutoScalingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTimeBasedAutoScalingInput");
@@ -17423,6 +18141,12 @@ impl std::fmt::Debug for DescribeTimeBasedAutoScalingInput {
 pub struct DescribeStackSummaryInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl DescribeStackSummaryInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStackSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17440,6 +18164,13 @@ pub struct DescribeStacksInput {
     /// <code>DescribeStacks</code> returns a description of every stack.</p>
     pub stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeStacksInput {
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+    /// <code>DescribeStacks</code> returns a description of every stack.</p>
+    pub fn stack_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStacksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStacksInput");
@@ -17454,6 +18185,12 @@ impl std::fmt::Debug for DescribeStacksInput {
 pub struct DescribeStackProvisioningParametersInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl DescribeStackProvisioningParametersInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStackProvisioningParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17478,6 +18215,24 @@ pub struct DescribeServiceErrorsInput {
     /// error.</p>
     pub service_error_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeServiceErrorsInput {
+    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+    /// descriptions of the errors associated with the specified stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+    /// descriptions of the errors associated with the specified instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
+    /// returns descriptions of the specified errors. Otherwise, it returns a description of every
+    /// error.</p>
+    pub fn service_error_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_error_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceErrorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceErrorsInput");
@@ -17496,6 +18251,16 @@ pub struct DescribeRdsDbInstancesInput {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array containing the ARNs of the instances to be described.</p>
     pub rds_db_instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeRdsDbInstancesInput {
+    /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>An array containing the ARNs of the instances to be described.</p>
+    pub fn rds_db_instance_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rds_db_instance_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRdsDbInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17520,6 +18285,23 @@ pub struct DescribeRaidArraysInput {
     /// array.</p>
     pub raid_array_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeRaidArraysInput {
+    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
+    /// descriptions of the RAID arrays associated with the specified instance. </p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
+    /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
+    /// array.</p>
+    pub fn raid_array_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.raid_array_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRaidArraysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRaidArraysInput");
@@ -17539,6 +18321,17 @@ pub struct DescribePermissionsInput {
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl DescribePermissionsInput {
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17578,6 +18371,12 @@ pub struct DescribeLoadBasedAutoScalingInput {
     /// <p>An array of layer IDs.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeLoadBasedAutoScalingInput {
+    /// <p>An array of layer IDs.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBasedAutoScalingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBasedAutoScalingInput");
@@ -17595,6 +18394,17 @@ pub struct DescribeLayersInput {
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
     /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeLayersInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
+    /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLayersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17620,6 +18430,24 @@ pub struct DescribeInstancesInput {
     /// it returns a description of every instance.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeInstancesInput {
+    /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
+    /// the instances associated with the specified stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
+    /// the instances associated with the specified layer.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+    /// <p>An array of instance IDs to be described. If you use this parameter,
+    /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
+    /// it returns a description of every instance.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstancesInput");
@@ -17638,6 +18466,16 @@ pub struct DescribeElasticLoadBalancersInput {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeElasticLoadBalancersInput {
+    /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeElasticLoadBalancersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17662,6 +18500,24 @@ pub struct DescribeElasticIpsInput {
     /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
     /// Otherwise, it returns a description of every Elastic IP address.</p>
     pub ips: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeElasticIpsInput {
+    /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
+    /// description of the Elastic IP addresses associated with the specified instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
+    /// description of the Elastic IP addresses that are registered with the specified stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
+    /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
+    /// Otherwise, it returns a description of every Elastic IP address.</p>
+    pub fn ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.ips.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeElasticIpsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17695,6 +18551,33 @@ pub struct DescribeEcsClustersInput {
     /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeEcsClustersInput {
+    /// <p>A list of ARNs, one for each cluster to be described.</p>
+    pub fn ecs_cluster_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.ecs_cluster_arns.as_deref()
+    }
+    /// <p>A stack ID.
+    /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>If the previous paginated request did not return all of the remaining results,
+    /// the response object's<code>NextToken</code> parameter value is set to a token.
+    /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
+    /// again and assign that token to the request object's <code>NextToken</code> parameter.
+    /// If there are no remaining results, the previous response
+    /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number
+    /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
+    /// response includes a <code>NextToken</code> value that you can assign
+    /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeEcsClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEcsClustersInput");
@@ -17721,6 +18604,24 @@ pub struct DescribeDeploymentsInput {
     /// Otherwise, it returns a description of every deployment.</p>
     pub deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeDeploymentsInput {
+    /// <p>The stack ID. If you include this parameter, the command returns a
+    /// description of the commands associated with the specified stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The app ID. If you include this parameter, the command returns a
+    /// description of the commands associated with the specified app.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>An array of deployment IDs to be described. If you include this parameter,
+    /// the command returns a description of the specified deployments.
+    /// Otherwise, it returns a description of every deployment.</p>
+    pub fn deployment_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeploymentsInput");
@@ -17746,6 +18647,24 @@ pub struct DescribeCommandsInput {
     /// command.</p>
     pub command_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeCommandsInput {
+    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
+    /// description of the commands associated with the specified deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
+    /// description of the commands associated with the specified instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
+    /// a description of the specified commands. Otherwise, it returns a description of every
+    /// command.</p>
+    pub fn command_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.command_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCommandsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCommandsInput");
@@ -17768,6 +18687,19 @@ pub struct DescribeAppsInput {
     /// a description of every app.</p>
     pub app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeAppsInput {
+    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
+    /// of the apps in the specified stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>An array of app IDs for the apps to be described. If you use this parameter,
+    /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
+    /// a description of every app.</p>
+    pub fn app_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.app_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAppsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppsInput");
@@ -17786,6 +18718,18 @@ pub struct DescribeAgentVersionsInput {
     /// <p>The configuration manager.</p>
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
 }
+impl DescribeAgentVersionsInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The configuration manager.</p>
+    pub fn configuration_manager(
+        &self,
+    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+        self.configuration_manager.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAgentVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAgentVersionsInput");
@@ -17802,6 +18746,12 @@ pub struct DeregisterVolumeInput {
     /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     pub volume_id: std::option::Option<std::string::String>,
 }
+impl DeregisterVolumeInput {
+    /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterVolumeInput");
@@ -17816,6 +18766,12 @@ impl std::fmt::Debug for DeregisterVolumeInput {
 pub struct DeregisterRdsDbInstanceInput {
     /// <p>The Amazon RDS instance's ARN.</p>
     pub rds_db_instance_arn: std::option::Option<std::string::String>,
+}
+impl DeregisterRdsDbInstanceInput {
+    /// <p>The Amazon RDS instance's ARN.</p>
+    pub fn rds_db_instance_arn(&self) -> std::option::Option<&str> {
+        self.rds_db_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterRdsDbInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17832,6 +18788,12 @@ pub struct DeregisterInstanceInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl DeregisterInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterInstanceInput");
@@ -17846,6 +18808,12 @@ impl std::fmt::Debug for DeregisterInstanceInput {
 pub struct DeregisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
     pub elastic_ip: std::option::Option<std::string::String>,
+}
+impl DeregisterElasticIpInput {
+    /// <p>The Elastic IP address.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterElasticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17862,6 +18830,12 @@ pub struct DeregisterEcsClusterInput {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
     pub ecs_cluster_arn: std::option::Option<std::string::String>,
 }
+impl DeregisterEcsClusterInput {
+    /// <p>The cluster's Amazon Resource Number (ARN).</p>
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterEcsClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterEcsClusterInput");
@@ -17876,6 +18850,12 @@ impl std::fmt::Debug for DeregisterEcsClusterInput {
 pub struct DeleteUserProfileInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
+}
+impl DeleteUserProfileInput {
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17892,6 +18872,12 @@ pub struct DeleteStackInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl DeleteStackInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStackInput");
@@ -17906,6 +18892,12 @@ impl std::fmt::Debug for DeleteStackInput {
 pub struct DeleteLayerInput {
     /// <p>The layer ID.</p>
     pub layer_id: std::option::Option<std::string::String>,
+}
+impl DeleteLayerInput {
+    /// <p>The layer ID.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteLayerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17926,6 +18918,20 @@ pub struct DeleteInstanceInput {
     /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
     pub delete_volumes: std::option::Option<bool>,
 }
+impl DeleteInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>Whether to delete the instance Elastic IP address.</p>
+    pub fn delete_elastic_ip(&self) -> std::option::Option<bool> {
+        self.delete_elastic_ip
+    }
+    /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
+    pub fn delete_volumes(&self) -> std::option::Option<bool> {
+        self.delete_volumes
+    }
+}
 impl std::fmt::Debug for DeleteInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInstanceInput");
@@ -17942,6 +18948,12 @@ impl std::fmt::Debug for DeleteInstanceInput {
 pub struct DeleteAppInput {
     /// <p>The app ID.</p>
     pub app_id: std::option::Option<std::string::String>,
+}
+impl DeleteAppInput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17968,6 +18980,29 @@ pub struct CreateUserProfileInput {
     /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
     /// User's Public SSH Key</a>.</p>
     pub allow_self_management: std::option::Option<bool>,
+}
+impl CreateUserProfileInput {
+    /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
+    /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
+    /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
+    /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    pub fn ssh_username(&self) -> std::option::Option<&str> {
+        self.ssh_username.as_deref()
+    }
+    /// <p>The user's public SSH key.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
+    /// User's Public SSH Key</a>.</p>
+    pub fn allow_self_management(&self) -> std::option::Option<bool> {
+        self.allow_self_management
+    }
 }
 impl std::fmt::Debug for CreateUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18227,6 +19262,292 @@ pub struct CreateStackInput {
     /// </note>
     pub agent_version: std::option::Option<std::string::String>,
 }
+impl CreateStackInput {
+    /// <p>The stack name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
+    /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <note>
+    /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
+    /// <code>--stack-region</code> parameter and the AWS CLI common parameter
+    /// <code>--region</code> are set to the same value, the stack uses a
+    /// <i>regional</i> endpoint. If the <code>--stack-region</code>
+    /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
+    /// results in a stack with a <i>regional</i> endpoint. However, if the
+    /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
+    /// <code>--stack-region</code> parameter is set to one of the following, then the
+    /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
+    /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
+    /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
+    /// <code>us-east-1</code>. Only the preceding regions are supported as classic
+    /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
+    /// choose the regional endpoint that is closest to where you manage AWS, we recommend
+    /// that you use regional endpoints for new stacks. The AWS CLI common
+    /// <code>--region</code> parameter always specifies a regional API endpoint; it
+    /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+    /// </note>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
+    /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
+    /// AWS OpsWorks Stacks infers the value of the
+    /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
+    /// these parameters to the first valid Availability Zone for the specified region and the
+    /// corresponding default VPC subnet ID, respectively.</p>
+    /// <p>If you specify a nondefault VPC ID, note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It must belong to a VPC in your account that is in the specified region.</p>
+    /// </li>
+    /// <li>
+    /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+    /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+    /// Platforms</a>. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
+    /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
+    /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
+    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.default_instance_profile_arn.as_deref()
+    }
+    /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CentOS Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Red Hat Enterprise Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+    /// you create instances. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
+    /// Using Custom AMIs</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default option is the current Amazon Linux version.
+    /// For more information about supported operating systems,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    pub fn default_os(&self) -> std::option::Option<&str> {
+        self.default_os.as_deref()
+    }
+    /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
+    /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
+    /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
+    /// short name. The other themes are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Baked_Goods</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Clouds</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Europe_Cities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fruits</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Greek_Deities_and_Titans</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Legendary_creatures_from_Japan</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Planets_and_Moons</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Roman_Deities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Scottish_Islands</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>US_Cities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Wild_Cats</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
+    /// host name based on the current theme.</p>
+    pub fn hostname_theme(&self) -> std::option::Option<&str> {
+        self.hostname_theme.as_deref()
+    }
+    /// <p>The stack's default Availability Zone, which must be in the specified region. For more
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
+    /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
+    /// </p>
+    pub fn default_availability_zone(&self) -> std::option::Option<&str> {
+        self.default_availability_zone.as_deref()
+    }
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
+    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
+    /// otherwise when you create the instance. If you also specify a value for
+    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
+    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
+    /// description. </p>
+    pub fn default_subnet_id(&self) -> std::option::Option<&str> {
+        self.default_subnet_id.as_deref()
+    }
+    /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
+    /// <p>
+    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+    /// </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+    /// Modify the Stack Configuration Attributes</a>.</p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    pub fn configuration_manager(
+        &self,
+    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+        self.configuration_manager.as_ref()
+    }
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
+        self.chef_configuration.as_ref()
+    }
+    /// <p>Whether the stack uses custom cookbooks.</p>
+    pub fn use_custom_cookbooks(&self) -> std::option::Option<bool> {
+        self.use_custom_cookbooks
+    }
+    /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
+    /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
+    /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+    /// following settings: </p>
+    /// <ul>
+    /// <li>
+    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
+    /// </li>
+    /// <li>
+    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+    /// Stack</a>.</p>
+    pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
+        self.use_opsworks_security_groups
+    }
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.custom_cookbooks_source.as_ref()
+    }
+    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
+    /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
+    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+    /// Access</a>. You can override this setting by specifying a different key pair, or no key
+    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+    /// create an instance</a>. </p>
+    pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
+        self.default_ssh_key_name.as_deref()
+    }
+    /// <p>The default root device type. This value is the default for all instances in the stack,
+    /// but you can override it when you create an instance. The default option is
+    /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+        self.default_root_device_type.as_ref()
+    }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
+    /// automatically installs new agent versions on the stack's instances as soon as
+    /// they are available.</p>
+    /// </li>
+    /// <li>
+    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting is the most recent release of the agent. To specify an agent version,
+    /// you must use the complete version number, not the abbreviated number shown on the console.
+    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+    /// <note>
+    /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
+    /// </note>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackInput");
@@ -18326,6 +19647,112 @@ pub struct CreateLayerInput {
     /// draining.</p>
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
+}
+impl CreateLayerInput {
+    /// <p>The layer stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LayerType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The layer name, which is used by the console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
+    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
+    pub fn shortname(&self) -> std::option::Option<&str> {
+        self.shortname.as_deref()
+    }
+    /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+    pub fn cloud_watch_logs_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
+        self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
+    /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.custom_instance_profile_arn.as_deref()
+    }
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
+    /// to be installed on the layer's instances. For more information, see
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+    /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+    /// </p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>An array containing the layer custom security group IDs.</p>
+    pub fn custom_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_security_group_ids.as_deref()
+    }
+    /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
+    pub fn packages(&self) -> std::option::Option<&[std::string::String]> {
+        self.packages.as_deref()
+    }
+    /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    pub fn volume_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeConfiguration]> {
+        self.volume_configurations.as_deref()
+    }
+    /// <p>Whether to disable auto healing for the layer.</p>
+    pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
+        self.enable_auto_healing
+    }
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+    /// a Layer</a>.</p>
+    pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
+        self.auto_assign_elastic_ips
+    }
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
+    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+    /// a Layer</a>.</p>
+    pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
+        self.auto_assign_public_ips
+    }
+    /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
+    pub fn custom_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
+        self.custom_recipes.as_ref()
+    }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default
+    /// value is <code>true</code>. To control when updates are installed, set this value to
+    /// <code>false</code>. You must then update your instances manually by using
+    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+    /// instances. </p>
+    /// <note>
+    /// <p>To ensure that your
+    /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+    /// </note>
+    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+        self.install_updates_on_boot
+    }
+    /// <p>Whether to use Amazon EBS-optimized instances.</p>
+    pub fn use_ebs_optimized_instances(&self) -> std::option::Option<bool> {
+        self.use_ebs_optimized_instances
+    }
+    /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
+    /// specify an execution timeout and enable or disable Elastic Load Balancer connection
+    /// draining.</p>
+    pub fn lifecycle_event_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
+        self.lifecycle_event_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLayerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18479,6 +19906,156 @@ pub struct CreateInstanceInput {
     /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
     pub tenancy: std::option::Option<std::string::String>,
 }
+impl CreateInstanceInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>An array that contains the instance's layer IDs.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
+    /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
+    /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+    /// Families and Types</a>. The parameter values that you use to specify the various types are
+    /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    pub fn auto_scaling_type(&self) -> std::option::Option<&crate::model::AutoScalingType> {
+        self.auto_scaling_type.as_ref()
+    }
+    /// <p>The instance host name.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The instance's operating system, which must be set to one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CentOS Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Red Hat Enterprise Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about the supported operating systems,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to
+    /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
+    /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
+    /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+    /// Custom AMIs</a>.</p>
+    pub fn os(&self) -> std::option::Option<&str> {
+        self.os.as_deref()
+    }
+    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
+    /// supported operating systems.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    /// <note>
+    /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
+    /// </note>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The instance's Amazon EC2 key-pair name.</p>
+    pub fn ssh_key_name(&self) -> std::option::Option<&str> {
+        self.ssh_key_name.as_deref()
+    }
+    /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+    pub fn virtualization_type(&self) -> std::option::Option<&str> {
+        self.virtualization_type.as_deref()
+    }
+    /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
+    /// necessarily support both architectures. For a list of the architectures that are supported by
+    /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+    /// Types</a>.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+        self.root_device_type.as_ref()
+    }
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
+    /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+    /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default
+    /// value is <code>true</code>. To control when updates are installed, set this value to
+    /// <code>false</code>. You must then update your instances manually by using
+    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+    /// instances. </p>
+    /// <note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
+    /// instances have the latest security updates.</p>
+    /// </note>
+    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+        self.install_updates_on_boot
+    }
+    /// <p>Whether to create an Amazon EBS-optimized instance.</p>
+    pub fn ebs_optimized(&self) -> std::option::Option<bool> {
+        self.ebs_optimized
+    }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>version_number</i> - Use the specified agent version.
+    /// This value overrides the stack's default setting.
+    /// To update the agent version, edit the instance configuration and specify a
+    /// new version.
+    /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
+    /// you must use the complete version number, not the abbreviated number shown on the console.
+    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+    /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+    pub fn tenancy(&self) -> std::option::Option<&str> {
+        self.tenancy.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceInput");
@@ -18529,6 +20106,43 @@ pub struct CreateDeploymentInput {
     /// Modify the Stack Configuration Attributes</a> and
     /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub custom_json: std::option::Option<std::string::String>,
+}
+impl CreateDeploymentInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The instance IDs for the deployment targets.</p>
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_ids.as_deref()
+    }
+    /// <p>The layer IDs for the deployment targets.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
+    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
+    /// associated arguments.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::DeploymentCommand> {
+        self.command.as_ref()
+    }
+    /// <p>A user-defined comment.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
+    /// <p>
+    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+    /// </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+    /// Modify the Stack Configuration Attributes</a> and
+    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18585,6 +20199,71 @@ pub struct CreateAppInput {
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
+}
+impl CreateAppInput {
+    /// <p>The stack ID.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The app's short name.</p>
+    pub fn shortname(&self) -> std::option::Option<&str> {
+        self.shortname.as_deref()
+    }
+    /// <p>The app name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the app.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The app's data source.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
+    /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
+    /// that are members of the corresponding layer. If your app isn't one of the standard types, or
+    /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <code>Source</code> object that specifies the app repository.</p>
+    pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.app_source.as_ref()
+    }
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
+    /// <code>'www.example.com, example.com'</code>
+    /// </p>
+    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.domains.as_deref()
+    }
+    /// <p>Whether to enable SSL for the app.</p>
+    pub fn enable_ssl(&self) -> std::option::Option<bool> {
+        self.enable_ssl
+    }
+    /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    pub fn ssl_configuration(&self) -> std::option::Option<&crate::model::SslConfiguration> {
+        self.ssl_configuration.as_ref()
+    }
+    /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+    /// associated with the app. After you deploy the app, these variables are defined on the
+    /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
+    /// <note>
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    /// </note>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+        self.environment.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18846,6 +20525,292 @@ pub struct CloneStackInput {
     /// </note>
     pub agent_version: std::option::Option<std::string::String>,
 }
+impl CloneStackInput {
+    /// <p>The source stack ID.</p>
+    pub fn source_stack_id(&self) -> std::option::Option<&str> {
+        self.source_stack_id.as_deref()
+    }
+    /// <p>The cloned stack name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
+    /// instances are launched into this VPC, and you cannot change the ID later.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
+    /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
+    /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
+    /// these parameters to the first valid Availability Zone for the specified region and the
+    /// corresponding default VPC subnet ID, respectively. </p>
+    /// <p>If you specify a nondefault VPC ID, note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It must belong to a VPC in your account that is in the specified region.</p>
+    /// </li>
+    /// <li>
+    /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+    /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+    /// Platforms</a>. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
+    /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
+    /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+    /// you. You can obtain an existing stack's IAM ARN programmatically by calling
+    /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    /// <note>
+    /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
+    /// </note>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
+    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+    /// Identifiers</a>.</p>
+    pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
+        self.default_instance_profile_arn.as_deref()
+    }
+    /// <p>The stack's operating system, which must be set to one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+    /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CentOS Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Red Hat Enterprise Linux 7</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+    /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+    /// Custom AMIs</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default option is the parent stack's operating system.
+    /// For more information about supported operating systems,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <note>
+    /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
+    /// </note>
+    pub fn default_os(&self) -> std::option::Option<&str> {
+        self.default_os.as_deref()
+    }
+    /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
+    /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
+    /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
+    /// short name. The other themes are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Baked_Goods</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Clouds</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Europe_Cities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Fruits</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Greek_Deities_and_Titans</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Legendary_creatures_from_Japan</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Planets_and_Moons</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Roman_Deities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Scottish_Islands</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>US_Cities</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Wild_Cats</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
+    /// host name based on the current theme.</p>
+    pub fn hostname_theme(&self) -> std::option::Option<&str> {
+        self.hostname_theme.as_deref()
+    }
+    /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
+    /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
+    /// </p>
+    pub fn default_availability_zone(&self) -> std::option::Option<&str> {
+        self.default_availability_zone.as_deref()
+    }
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
+    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
+    /// otherwise when you create the instance. If you also specify a value for
+    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
+    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
+    /// description. </p>
+    pub fn default_subnet_id(&self) -> std::option::Option<&str> {
+        self.default_subnet_id.as_deref()
+    }
+    /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
+    /// <p>
+    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+    /// </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+    /// Modify the Stack Configuration Attributes</a>
+    /// </p>
+    pub fn custom_json(&self) -> std::option::Option<&str> {
+        self.custom_json.as_deref()
+    }
+    /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    pub fn configuration_manager(
+        &self,
+    ) -> std::option::Option<&crate::model::StackConfigurationManager> {
+        self.configuration_manager.as_ref()
+    }
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
+        self.chef_configuration.as_ref()
+    }
+    /// <p>Whether to use custom cookbooks.</p>
+    pub fn use_custom_cookbooks(&self) -> std::option::Option<bool> {
+        self.use_custom_cookbooks
+    }
+    /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
+    /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
+    /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+    /// following settings: </p>
+    /// <ul>
+    /// <li>
+    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
+    /// </li>
+    /// <li>
+    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+    /// Stack</a>.</p>
+    pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
+        self.use_opsworks_security_groups
+    }
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
+        self.custom_cookbooks_source.as_ref()
+    }
+    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
+    /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
+    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+    /// Access</a>. You can override this setting by specifying a different key pair, or no key
+    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+    /// create an instance</a>. </p>
+    pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
+        self.default_ssh_key_name.as_deref()
+    }
+    /// <p>Whether to clone the source stack's permissions.</p>
+    pub fn clone_permissions(&self) -> std::option::Option<bool> {
+        self.clone_permissions
+    }
+    /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
+    pub fn clone_app_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.clone_app_ids.as_deref()
+    }
+    /// <p>The default root device type. This value is used by default for all instances in the cloned
+    /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
+        self.default_root_device_type.as_ref()
+    }
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
+    /// automatically installs new agent versions on the stack's instances as soon as
+    /// they are available.</p>
+    /// </li>
+    /// <li>
+    /// <p>Fixed version - Set this parameter to your preferred agent version. To update
+    /// the agent version, you must edit the stack configuration and specify a new version.
+    /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
+    /// you must use the complete version number, not the abbreviated number shown on the console.
+    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+    /// <note>
+    /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
+    /// </note>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CloneStackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloneStackInput");
@@ -18890,6 +20855,16 @@ pub struct AttachElasticLoadBalancerInput {
     /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
     pub layer_id: std::option::Option<std::string::String>,
 }
+impl AttachElasticLoadBalancerInput {
+    /// <p>The Elastic Load Balancing instance's name.</p>
+    pub fn elastic_load_balancer_name(&self) -> std::option::Option<&str> {
+        self.elastic_load_balancer_name.as_deref()
+    }
+    /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
+    pub fn layer_id(&self) -> std::option::Option<&str> {
+        self.layer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachElasticLoadBalancerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachElasticLoadBalancerInput");
@@ -18911,6 +20886,16 @@ pub struct AssociateElasticIpInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl AssociateElasticIpInput {
+    /// <p>The Elastic IP address.</p>
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+        self.elastic_ip.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateElasticIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateElasticIpInput");
@@ -18929,6 +20914,16 @@ pub struct AssignVolumeInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
 }
+impl AssignVolumeInput {
+    /// <p>The volume ID.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssignVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssignVolumeInput");
@@ -18946,6 +20941,16 @@ pub struct AssignInstanceInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AssignInstanceInput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.layer_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for AssignInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -63,6 +63,16 @@ pub struct Tag {
     /// <p>The tag value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -127,6 +137,20 @@ pub struct ServerGroup {
     pub name: std::option::Option<std::string::String>,
     /// <p>The servers that belong to a server group.</p>
     pub server_list: std::option::Option<std::vec::Vec<crate::model::Server>>,
+}
+impl ServerGroup {
+    /// <p>The ID of a server group.</p>
+    pub fn server_group_id(&self) -> std::option::Option<&str> {
+        self.server_group_id.as_deref()
+    }
+    /// <p>The name of a server group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The servers that belong to a server group.</p>
+    pub fn server_list(&self) -> std::option::Option<&[crate::model::Server]> {
+        self.server_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ServerGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -221,6 +245,28 @@ pub struct Server {
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the replication job is deleted or failed.</p>
     pub replication_job_terminated: std::option::Option<bool>,
+}
+impl Server {
+    /// <p>The ID of the server.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The type of server.</p>
+    pub fn server_type(&self) -> std::option::Option<&crate::model::ServerType> {
+        self.server_type.as_ref()
+    }
+    /// <p>Information about the VM server.</p>
+    pub fn vm_server(&self) -> std::option::Option<&crate::model::VmServer> {
+        self.vm_server.as_ref()
+    }
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+    /// <p>Indicates whether the replication job is deleted or failed.</p>
+    pub fn replication_job_terminated(&self) -> std::option::Option<bool> {
+        self.replication_job_terminated
+    }
 }
 impl std::fmt::Debug for Server {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -338,6 +384,28 @@ pub struct VmServer {
     pub vm_manager_type: std::option::Option<crate::model::VmManagerType>,
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
     pub vm_path: std::option::Option<std::string::String>,
+}
+impl VmServer {
+    /// <p>The VM server location.</p>
+    pub fn vm_server_address(&self) -> std::option::Option<&crate::model::VmServerAddress> {
+        self.vm_server_address.as_ref()
+    }
+    /// <p>The name of the VM.</p>
+    pub fn vm_name(&self) -> std::option::Option<&str> {
+        self.vm_name.as_deref()
+    }
+    /// <p>The name of the VM manager.</p>
+    pub fn vm_manager_name(&self) -> std::option::Option<&str> {
+        self.vm_manager_name.as_deref()
+    }
+    /// <p>The type of VM management product.</p>
+    pub fn vm_manager_type(&self) -> std::option::Option<&crate::model::VmManagerType> {
+        self.vm_manager_type.as_ref()
+    }
+    /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+    pub fn vm_path(&self) -> std::option::Option<&str> {
+        self.vm_path.as_deref()
+    }
 }
 impl std::fmt::Debug for VmServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -509,6 +577,16 @@ pub struct VmServerAddress {
     /// <p>The ID of the VM.</p>
     pub vm_id: std::option::Option<std::string::String>,
 }
+impl VmServerAddress {
+    /// <p>The ID of the VM manager.</p>
+    pub fn vm_manager_id(&self) -> std::option::Option<&str> {
+        self.vm_manager_id.as_deref()
+    }
+    /// <p>The ID of the VM.</p>
+    pub fn vm_id(&self) -> std::option::Option<&str> {
+        self.vm_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VmServerAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VmServerAddress");
@@ -661,6 +739,88 @@ pub struct AppSummary {
     pub total_server_groups: std::option::Option<i32>,
     /// <p>The number of servers present in the application.</p>
     pub total_servers: std::option::Option<i32>,
+}
+impl AppSummary {
+    /// <p>The unique ID of the application.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The ID of the application.</p>
+    pub fn imported_app_id(&self) -> std::option::Option<&str> {
+        self.imported_app_id.as_deref()
+    }
+    /// <p>The name of the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Status of the application.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AppStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message related to the status of the application</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Status of the replication configuration.</p>
+    pub fn replication_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AppReplicationConfigurationStatus> {
+        self.replication_configuration_status.as_ref()
+    }
+    /// <p>The replication status of the application.</p>
+    pub fn replication_status(&self) -> std::option::Option<&crate::model::AppReplicationStatus> {
+        self.replication_status.as_ref()
+    }
+    /// <p>A message related to the replication status of the application.</p>
+    pub fn replication_status_message(&self) -> std::option::Option<&str> {
+        self.replication_status_message.as_deref()
+    }
+    /// <p>The timestamp of the application's most recent successful replication.</p>
+    pub fn latest_replication_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_replication_time.as_ref()
+    }
+    /// <p>Status of the launch configuration.</p>
+    pub fn launch_configuration_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AppLaunchConfigurationStatus> {
+        self.launch_configuration_status.as_ref()
+    }
+    /// <p>The launch status of the application.</p>
+    pub fn launch_status(&self) -> std::option::Option<&crate::model::AppLaunchStatus> {
+        self.launch_status.as_ref()
+    }
+    /// <p>A message related to the launch status of the application.</p>
+    pub fn launch_status_message(&self) -> std::option::Option<&str> {
+        self.launch_status_message.as_deref()
+    }
+    /// <p>Details about the latest launch of the application.</p>
+    pub fn launch_details(&self) -> std::option::Option<&crate::model::LaunchDetails> {
+        self.launch_details.as_ref()
+    }
+    /// <p>The creation time of the application.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last modified time of the application.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The number of server groups present in the application.</p>
+    pub fn total_server_groups(&self) -> std::option::Option<i32> {
+        self.total_server_groups
+    }
+    /// <p>The number of servers present in the application.</p>
+    pub fn total_servers(&self) -> std::option::Option<i32> {
+        self.total_servers
+    }
 }
 impl std::fmt::Debug for AppSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1000,6 +1160,20 @@ pub struct LaunchDetails {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The ID of the latest stack launched for this application.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl LaunchDetails {
+    /// <p>The latest time that this application was launched successfully.</p>
+    pub fn latest_launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_launch_time.as_ref()
+    }
+    /// <p>The name of the latest stack launched for this application.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The ID of the latest stack launched for this application.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1520,6 +1694,18 @@ pub struct ServerGroupValidationConfiguration {
     pub server_validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerValidationConfiguration>>,
 }
+impl ServerGroupValidationConfiguration {
+    /// <p>The ID of the server group.</p>
+    pub fn server_group_id(&self) -> std::option::Option<&str> {
+        self.server_group_id.as_deref()
+    }
+    /// <p>The validation configuration.</p>
+    pub fn server_validation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerValidationConfiguration]> {
+        self.server_validation_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerGroupValidationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerGroupValidationConfiguration");
@@ -1608,6 +1794,32 @@ pub struct ServerValidationConfiguration {
     /// <p>The validation parameters.</p>
     pub user_data_validation_parameters:
         std::option::Option<crate::model::UserDataValidationParameters>,
+}
+impl ServerValidationConfiguration {
+    /// <p>Represents a server.</p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+    /// <p>The ID of the validation.</p>
+    pub fn validation_id(&self) -> std::option::Option<&str> {
+        self.validation_id.as_deref()
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The validation strategy.</p>
+    pub fn server_validation_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerValidationStrategy> {
+        self.server_validation_strategy.as_ref()
+    }
+    /// <p>The validation parameters.</p>
+    pub fn user_data_validation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::UserDataValidationParameters> {
+        self.user_data_validation_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for ServerValidationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1734,6 +1946,16 @@ pub struct UserDataValidationParameters {
     /// <p>The type of validation script.</p>
     pub script_type: std::option::Option<crate::model::ScriptType>,
 }
+impl UserDataValidationParameters {
+    /// <p>The location of the validation script.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>The type of validation script.</p>
+    pub fn script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
+        self.script_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UserDataValidationParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserDataValidationParameters");
@@ -1853,6 +2075,12 @@ pub struct Source {
     /// <p>Location of an Amazon S3 object.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl Source {
+    /// <p>Location of an Amazon S3 object.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Source");
@@ -1905,6 +2133,16 @@ pub struct S3Location {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket key.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The Amazon S3 bucket key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2024,6 +2262,28 @@ pub struct AppValidationConfiguration {
     /// <p>The validation parameters.</p>
     pub ssm_validation_parameters: std::option::Option<crate::model::SsmValidationParameters>,
 }
+impl AppValidationConfiguration {
+    /// <p>The ID of the validation.</p>
+    pub fn validation_id(&self) -> std::option::Option<&str> {
+        self.validation_id.as_deref()
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The validation strategy.</p>
+    pub fn app_validation_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AppValidationStrategy> {
+        self.app_validation_strategy.as_ref()
+    }
+    /// <p>The validation parameters.</p>
+    pub fn ssm_validation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::SsmValidationParameters> {
+        self.ssm_validation_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for AppValidationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppValidationConfiguration");
@@ -2137,6 +2397,32 @@ pub struct SsmValidationParameters {
     pub execution_timeout_seconds: i32,
     /// <p>The name of the S3 bucket for output.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
+}
+impl SsmValidationParameters {
+    /// <p>The location of the validation script.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The type of validation script.</p>
+    pub fn script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
+        self.script_type.as_ref()
+    }
+    /// <p>The command to run the validation script</p>
+    pub fn command(&self) -> std::option::Option<&str> {
+        self.command.as_deref()
+    }
+    /// <p>The timeout interval, in seconds.</p>
+    pub fn execution_timeout_seconds(&self) -> i32 {
+        self.execution_timeout_seconds
+    }
+    /// <p>The name of the S3 bucket for output.</p>
+    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.output_s3_bucket_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SsmValidationParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2312,6 +2598,19 @@ pub struct ServerGroupReplicationConfiguration {
     pub server_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
 }
+impl ServerGroupReplicationConfiguration {
+    /// <p>The ID of the server group with which this replication configuration is
+    /// associated.</p>
+    pub fn server_group_id(&self) -> std::option::Option<&str> {
+        self.server_group_id.as_deref()
+    }
+    /// <p>The replication configuration for servers in the server group.</p>
+    pub fn server_replication_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerReplicationConfiguration]> {
+        self.server_replication_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerGroupReplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerGroupReplicationConfiguration");
@@ -2397,6 +2696,19 @@ pub struct ServerReplicationConfiguration {
     /// <p>The parameters for replicating the server.</p>
     pub server_replication_parameters:
         std::option::Option<crate::model::ServerReplicationParameters>,
+}
+impl ServerReplicationConfiguration {
+    /// <p>The ID of the server with which this replication configuration is
+    /// associated.</p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+    /// <p>The parameters for replicating the server.</p>
+    pub fn server_replication_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerReplicationParameters> {
+        self.server_replication_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for ServerReplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2499,6 +2811,53 @@ pub struct ServerReplicationParameters {
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the
     /// customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl ServerReplicationParameters {
+    /// <p>The seed time for creating a replication job for the server.</p>
+    pub fn seed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.seed_time.as_ref()
+    }
+    /// <p>The frequency of creating replication jobs for the server.</p>
+    pub fn frequency(&self) -> std::option::Option<i32> {
+        self.frequency
+    }
+    /// <p>Indicates whether to run the replication job one time.</p>
+    pub fn run_once(&self) -> std::option::Option<bool> {
+        self.run_once
+    }
+    /// <p>The license type for creating a replication job for the server.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+        self.license_type.as_ref()
+    }
+    /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
+    pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
+        self.number_of_recent_amis_to_keep
+    }
+    /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
+    /// This value can be any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>KMS key alias</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key alias</p>
+    /// </li>
+    /// </ul>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
+    /// customer's default KMS key for Amazon EBS is used.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ServerReplicationParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2678,6 +3037,23 @@ pub struct ServerGroupLaunchConfiguration {
     pub server_launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
 }
+impl ServerGroupLaunchConfiguration {
+    /// <p>The ID of the server group with which the launch configuration is
+    /// associated.</p>
+    pub fn server_group_id(&self) -> std::option::Option<&str> {
+        self.server_group_id.as_deref()
+    }
+    /// <p>The launch order of servers in the server group.</p>
+    pub fn launch_order(&self) -> std::option::Option<i32> {
+        self.launch_order
+    }
+    /// <p>The launch configuration for servers in the server group.</p>
+    pub fn server_launch_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServerLaunchConfiguration]> {
+        self.server_launch_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerGroupLaunchConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerGroupLaunchConfiguration");
@@ -2794,6 +3170,56 @@ pub struct ServerLaunchConfiguration {
     pub configure_script: std::option::Option<crate::model::S3Location>,
     /// <p>The type of configuration script.</p>
     pub configure_script_type: std::option::Option<crate::model::ScriptType>,
+}
+impl ServerLaunchConfiguration {
+    /// <p>The ID of the server with which the launch configuration is associated.</p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+    /// <p>The logical ID of the server in the AWS CloudFormation template.</p>
+    pub fn logical_id(&self) -> std::option::Option<&str> {
+        self.logical_id.as_deref()
+    }
+    /// <p>The ID of the VPC into which the server should be launched.</p>
+    pub fn vpc(&self) -> std::option::Option<&str> {
+        self.vpc.as_deref()
+    }
+    /// <p>The ID of the subnet the server should be launched into.</p>
+    pub fn subnet(&self) -> std::option::Option<&str> {
+        self.subnet.as_deref()
+    }
+    /// <p>The ID of the security group that applies to the launched server.</p>
+    pub fn security_group(&self) -> std::option::Option<&str> {
+        self.security_group.as_deref()
+    }
+    /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
+    pub fn ec2_key_name(&self) -> std::option::Option<&str> {
+        self.ec2_key_name.as_deref()
+    }
+    /// <p>Location of the user-data script to be executed when launching the server.</p>
+    pub fn user_data(&self) -> std::option::Option<&crate::model::UserData> {
+        self.user_data.as_ref()
+    }
+    /// <p>The instance type to use when launching the server.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
+    pub fn associate_public_ip_address(&self) -> std::option::Option<bool> {
+        self.associate_public_ip_address
+    }
+    /// <p>The name of the IAM instance profile.</p>
+    pub fn iam_instance_profile_name(&self) -> std::option::Option<&str> {
+        self.iam_instance_profile_name.as_deref()
+    }
+    /// <p>Location of an Amazon S3 object.</p>
+    pub fn configure_script(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.configure_script.as_ref()
+    }
+    /// <p>The type of configuration script.</p>
+    pub fn configure_script_type(&self) -> std::option::Option<&crate::model::ScriptType> {
+        self.configure_script_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ServerLaunchConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3005,6 +3431,12 @@ pub struct UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl UserData {
+    /// <p>Amazon S3 location of the user-data script.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for UserData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserData");
@@ -3059,6 +3491,20 @@ pub struct NotificationContext {
     pub status: std::option::Option<crate::model::ValidationStatus>,
     /// <p>The status message.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl NotificationContext {
+    /// <p>The ID of the validation.</p>
+    pub fn validation_id(&self) -> std::option::Option<&str> {
+        self.validation_id.as_deref()
+    }
+    /// <p>The status of the validation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ValidationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for NotificationContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3327,6 +3773,70 @@ pub struct ReplicationRun {
     /// customer's default KMS key for Amazon EBS is used. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl ReplicationRun {
+    /// <p>The ID of the replication run.</p>
+    pub fn replication_run_id(&self) -> std::option::Option<&str> {
+        self.replication_run_id.as_deref()
+    }
+    /// <p>The state of the replication run.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplicationRunState> {
+        self.state.as_ref()
+    }
+    /// <p>The type of replication run.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ReplicationRunType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Details about the current stage of the replication run.</p>
+    pub fn stage_details(&self) -> std::option::Option<&crate::model::ReplicationRunStageDetails> {
+        self.stage_details.as_ref()
+    }
+    /// <p>The description of the current status of the replication job.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) from the replication
+    /// run.</p>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The start time of the next replication run.</p>
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_start_time.as_ref()
+    }
+    /// <p>The completion time of the last replication run.</p>
+    pub fn completed_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_time.as_ref()
+    }
+    /// <p>The description of the replication run.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
+    /// This value can be any of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>KMS key alias</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key alias</p>
+    /// </li>
+    /// </ul>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
+    /// customer's default KMS key for Amazon EBS is used. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ReplicationRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationRun");
@@ -3563,6 +4073,16 @@ pub struct ReplicationRunStageDetails {
     pub stage: std::option::Option<std::string::String>,
     /// <p>The progress of the current stage of a replication run.</p>
     pub stage_progress: std::option::Option<std::string::String>,
+}
+impl ReplicationRunStageDetails {
+    /// <p>The current stage of a replication run.</p>
+    pub fn stage(&self) -> std::option::Option<&str> {
+        self.stage.as_deref()
+    }
+    /// <p>The progress of the current stage of a replication run.</p>
+    pub fn stage_progress(&self) -> std::option::Option<&str> {
+        self.stage_progress.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicationRunStageDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3818,6 +4338,101 @@ pub struct ReplicationJob {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Information about the replication runs.</p>
     pub replication_run_list: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
+}
+impl ReplicationJob {
+    /// <p>The ID of the replication job.</p>
+    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+        self.replication_job_id.as_deref()
+    }
+    /// <p>The ID of the server.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The type of server.</p>
+    pub fn server_type(&self) -> std::option::Option<&crate::model::ServerType> {
+        self.server_type.as_ref()
+    }
+    /// <p>Information about the VM server.</p>
+    pub fn vm_server(&self) -> std::option::Option<&crate::model::VmServer> {
+        self.vm_server.as_ref()
+    }
+    /// <p>The seed replication time.</p>
+    pub fn seed_replication_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.seed_replication_time.as_ref()
+    }
+    /// <p>The time between consecutive replication runs, in hours.</p>
+    pub fn frequency(&self) -> std::option::Option<i32> {
+        self.frequency
+    }
+    /// <p>Indicates whether to run the replication job one time.</p>
+    pub fn run_once(&self) -> std::option::Option<bool> {
+        self.run_once
+    }
+    /// <p>The start time of the next replication run.</p>
+    pub fn next_replication_run_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.next_replication_run_start_time.as_ref()
+    }
+    /// <p>The license type to be used for the AMI created by a successful replication
+    /// run.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+        self.license_type.as_ref()
+    }
+    /// <p>The name of the IAM role to be used by AWS SMS.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
+    pub fn latest_ami_id(&self) -> std::option::Option<&str> {
+        self.latest_ami_id.as_deref()
+    }
+    /// <p>The state of the replication job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ReplicationJobState> {
+        self.state.as_ref()
+    }
+    /// <p>The description of the current status of the replication job.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The description of the replication job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By
+    /// default, the value is set to zero, meaning that all AMIs are kept.</p>
+    pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
+        self.number_of_recent_amis_to_keep
+    }
+    /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
+    /// This value can be any of the following: </p>
+    /// <ul>
+    /// <li>
+    /// <p>KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>KMS key alias</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key ID</p>
+    /// </li>
+    /// <li>
+    /// <p>ARN referring to the KMS key alias</p>
+    /// </li>
+    /// </ul>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
+    /// customer's default KMS key for Amazon EBS is used.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Information about the replication runs.</p>
+    pub fn replication_run_list(&self) -> std::option::Option<&[crate::model::ReplicationRun]> {
+        self.replication_run_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicationJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4278,6 +4893,48 @@ pub struct Connector {
     /// <p>The time the connector was associated.</p>
     pub associated_on: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Connector {
+    /// <p>The ID of the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+    /// <p>The connector version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The status of the connector.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConnectorStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The capabilities of the connector.</p>
+    pub fn capability_list(&self) -> std::option::Option<&[crate::model::ConnectorCapability]> {
+        self.capability_list.as_deref()
+    }
+    /// <p>The name of the VM manager.</p>
+    pub fn vm_manager_name(&self) -> std::option::Option<&str> {
+        self.vm_manager_name.as_deref()
+    }
+    /// <p>The VM management product.</p>
+    pub fn vm_manager_type(&self) -> std::option::Option<&crate::model::VmManagerType> {
+        self.vm_manager_type.as_ref()
+    }
+    /// <p>The ID of the VM manager.</p>
+    pub fn vm_manager_id(&self) -> std::option::Option<&str> {
+        self.vm_manager_id.as_deref()
+    }
+    /// <p>The IP address of the connector.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The MAC address of the connector.</p>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
+    /// <p>The time the connector was associated.</p>
+    pub fn associated_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.associated_on.as_ref()
+    }
+}
 impl std::fmt::Debug for Connector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Connector");
@@ -4611,6 +5268,38 @@ pub struct ValidationOutput {
     /// <p>The output from validation an instance.</p>
     pub server_validation_output: std::option::Option<crate::model::ServerValidationOutput>,
 }
+impl ValidationOutput {
+    /// <p>The ID of the validation.</p>
+    pub fn validation_id(&self) -> std::option::Option<&str> {
+        self.validation_id.as_deref()
+    }
+    /// <p>The name of the validation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the validation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ValidationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The latest time that the validation was performed.</p>
+    pub fn latest_validation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_validation_time.as_ref()
+    }
+    /// <p>The output from validating an application.</p>
+    pub fn app_validation_output(&self) -> std::option::Option<&crate::model::AppValidationOutput> {
+        self.app_validation_output.as_ref()
+    }
+    /// <p>The output from validation an instance.</p>
+    pub fn server_validation_output(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerValidationOutput> {
+        self.server_validation_output.as_ref()
+    }
+}
 impl std::fmt::Debug for ValidationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationOutput");
@@ -4759,6 +5448,12 @@ pub struct ServerValidationOutput {
     /// <p>Represents a server.</p>
     pub server: std::option::Option<crate::model::Server>,
 }
+impl ServerValidationOutput {
+    /// <p>Represents a server.</p>
+    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+        self.server.as_ref()
+    }
+}
 impl std::fmt::Debug for ServerValidationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerValidationOutput");
@@ -4806,6 +5501,12 @@ impl ServerValidationOutput {
 pub struct AppValidationOutput {
     /// <p>Output from using SSM to validate the application.</p>
     pub ssm_output: std::option::Option<crate::model::SsmOutput>,
+}
+impl AppValidationOutput {
+    /// <p>Output from using SSM to validate the application.</p>
+    pub fn ssm_output(&self) -> std::option::Option<&crate::model::SsmOutput> {
+        self.ssm_output.as_ref()
+    }
 }
 impl std::fmt::Debug for AppValidationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4857,6 +5558,12 @@ impl AppValidationOutput {
 pub struct SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
+}
+impl SsmOutput {
+    /// <p>Location of an Amazon S3 object.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
 }
 impl std::fmt::Debug for SsmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

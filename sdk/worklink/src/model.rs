@@ -61,6 +61,20 @@ pub struct WebsiteCaSummary {
     /// <p>The name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl WebsiteCaSummary {
+    /// <p>A unique identifier for the CA.</p>
+    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+        self.website_ca_id.as_deref()
+    }
+    /// <p>The time when the CA was added.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for WebsiteCaSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebsiteCaSummary");
@@ -147,6 +161,27 @@ pub struct WebsiteAuthorizationProviderSummary {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The time of creation.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl WebsiteAuthorizationProviderSummary {
+    /// <p>A unique identifier for the authorization provider.</p>
+    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+        self.authorization_provider_id.as_deref()
+    }
+    /// <p>The authorization provider type.</p>
+    pub fn authorization_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthorizationProviderType> {
+        self.authorization_provider_type.as_ref()
+    }
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based
+    /// authorization providers.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The time of creation.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
 }
 impl std::fmt::Debug for WebsiteAuthorizationProviderSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -318,6 +353,43 @@ pub struct FleetSummary {
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl FleetSummary {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+        self.fleet_arn.as_deref()
+    }
+    /// <p>The time when the fleet was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The time when the fleet was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
+        self.fleet_name.as_deref()
+    }
+    /// <p>The name of the fleet to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
+    pub fn company_code(&self) -> std::option::Option<&str> {
+        self.company_code.as_deref()
+    }
+    /// <p>The status of the fleet.</p>
+    pub fn fleet_status(&self) -> std::option::Option<&crate::model::FleetStatus> {
+        self.fleet_status.as_ref()
+    }
+    /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for FleetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,6 +640,24 @@ pub struct DomainSummary {
     /// <p>The status of the domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
+impl DomainSummary {
+    /// <p>The name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The name to display.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The time that the domain was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>The status of the domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DomainSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainSummary");
@@ -750,6 +840,16 @@ pub struct DeviceSummary {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The status of the device.</p>
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
+}
+impl DeviceSummary {
+    /// <p>The ID of the device.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The status of the device.</p>
+    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+        self.device_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeviceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

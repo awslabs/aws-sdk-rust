@@ -264,10 +264,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -594,7 +591,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_elasticsearch_service_software_update(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_elasticsearch_service_software_update(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1026,10 +1023,7 @@ impl CreateElasticsearchDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_elasticsearch_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1212,7 +1206,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_outbound_cross_cluster_search_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_outbound_cross_cluster_search_connection(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1403,10 +1397,7 @@ impl CreatePackageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2345,10 +2336,7 @@ impl DescribeDomainAutoTunesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_domain_auto_tunes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2807,7 +2795,7 @@ impl DescribeElasticsearchDomainsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_elasticsearch_domains(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_elasticsearch_domains(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3260,7 +3248,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_inbound_cross_cluster_search_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_inbound_cross_cluster_search_connections(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3465,7 +3453,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_outbound_cross_cluster_search_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_outbound_cross_cluster_search_connections(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3646,10 +3634,7 @@ impl DescribePackagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_packages(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_packages(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6122,7 +6107,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_elasticsearch_instance_offering(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_elasticsearch_instance_offering(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6452,10 +6437,7 @@ impl RemoveTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6603,7 +6585,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_elasticsearch_service_software_update(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_elasticsearch_service_software_update(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7015,7 +6997,7 @@ impl UpdateElasticsearchDomainConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_elasticsearch_domain_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_elasticsearch_domain_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7205,10 +7187,7 @@ impl UpdatePackageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_package(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7389,10 +7368,7 @@ impl UpgradeElasticsearchDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upgrade_elasticsearch_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7474,6 +7450,23 @@ pub struct UpgradeElasticsearchDomainInput {
     /// </p>
     pub perform_check_only: std::option::Option<bool>,
 }
+impl UpgradeElasticsearchDomainInput {
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    pub fn target_version(&self) -> std::option::Option<&str> {
+        self.target_version.as_deref()
+    }
+    /// <p>
+    /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
+    /// This will not actually perform the Upgrade.
+    /// </p>
+    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+        self.perform_check_only
+    }
+}
 impl std::fmt::Debug for UpgradeElasticsearchDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeElasticsearchDomainInput");
@@ -7502,6 +7495,24 @@ pub struct UpdatePackageInput {
     pub package_description: std::option::Option<std::string::String>,
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
     pub commit_message: std::option::Option<std::string::String>,
+}
+impl UpdatePackageInput {
+    /// <p>Unique identifier for the package.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
+    pub fn package_source(&self) -> std::option::Option<&crate::model::PackageSource> {
+        self.package_source.as_ref()
+    }
+    /// <p>New description of the package.</p>
+    pub fn package_description(&self) -> std::option::Option<&str> {
+        self.package_description.as_deref()
+    }
+    /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7552,6 +7563,82 @@ pub struct UpdateElasticsearchDomainConfigInput {
     /// <p>Specifies Auto-Tune options.</p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptions>,
 }
+impl UpdateElasticsearchDomainConfigInput {
+    /// <p>The name of the Elasticsearch domain that you are updating. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The type and number of instances to instantiate for the domain cluster.</p>
+    pub fn elasticsearch_cluster_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchClusterConfig> {
+        self.elasticsearch_cluster_config.as_ref()
+    }
+    /// <p>Specify the type and size of the EBS volume that you want to use. </p>
+    pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
+        self.ebs_options.as_ref()
+    }
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
+    pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
+        self.snapshot_options.as_ref()
+    }
+    /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcOptions> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+    pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
+        self.cognito_options.as_ref()
+    }
+    /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
+    /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+    /// <p>IAM access policy as a JSON-formatted string.</p>
+    pub fn access_policies(&self) -> std::option::Option<&str> {
+        self.access_policies.as_deref()
+    }
+    /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
+    pub fn log_publishing_options(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
+    > {
+        self.log_publishing_options.as_ref()
+    }
+    /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.domain_endpoint_options.as_ref()
+    }
+    /// <p>Specifies advanced security options.</p>
+    pub fn advanced_security_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityOptionsInput> {
+        self.advanced_security_options.as_ref()
+    }
+    /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
+    pub fn node_to_node_encryption_options(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
+        self.node_to_node_encryption_options.as_ref()
+    }
+    /// <p>Specifies the Encryption At Rest Options.</p>
+    pub fn encryption_at_rest_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>Specifies Auto-Tune options.</p>
+    pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptions> {
+        self.auto_tune_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateElasticsearchDomainConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateElasticsearchDomainConfigInput");
@@ -7589,6 +7676,12 @@ pub struct StartElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl StartElasticsearchServiceSoftwareUpdateInput {
+    /// <p>The name of the domain that you want to update to the latest service software.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartElasticsearchServiceSoftwareUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartElasticsearchServiceSoftwareUpdateInput");
@@ -7606,6 +7699,16 @@ pub struct RemoveTagsInput {
     /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsInput {
+    /// <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
@@ -7621,6 +7724,12 @@ impl std::fmt::Debug for RemoveTagsInput {
 pub struct RejectInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to reject.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+}
+impl RejectInboundCrossClusterSearchConnectionInput {
+    /// <p>The id of the inbound connection that you want to reject.</p>
+    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+        self.cross_cluster_search_connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectInboundCrossClusterSearchConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7644,6 +7753,20 @@ pub struct PurchaseReservedElasticsearchInstanceOfferingInput {
     /// <p>The number of Elasticsearch instances to reserve.</p>
     pub instance_count: i32,
 }
+impl PurchaseReservedElasticsearchInstanceOfferingInput {
+    /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
+    pub fn reserved_elasticsearch_instance_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_elasticsearch_instance_offering_id.as_deref()
+    }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
+    /// <p>The number of Elasticsearch instances to reserve.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
+}
 impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseReservedElasticsearchInstanceOfferingInput");
@@ -7663,6 +7786,12 @@ impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingInput {
 pub struct ListTagsInput {
     /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ListTagsInput {
+    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7688,6 +7817,20 @@ pub struct ListPackagesForDomainInput {
     pub max_results: i32,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagesForDomainInput {
+    /// <p>The name of the domain for which you want to list associated packages.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Limits results to a maximum number of packages.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagesForDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7736,6 +7879,22 @@ pub struct ListElasticsearchVersionsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListElasticsearchVersionsInput {
+    /// <p>
+    /// Set this value to limit the number of results returned.
+    /// Value provided must be greater than 10 else it wont be honored.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Paginated APIs accepts NextToken input to returns next page results and provides
+    /// a NextToken output in the response which can be used by the client to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListElasticsearchVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListElasticsearchVersionsInput");
@@ -7773,6 +7932,33 @@ pub struct ListElasticsearchInstanceTypesInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListElasticsearchInstanceTypesInput {
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch
+    /// instance types are needed.
+    /// </p>
+    pub fn elasticsearch_version(&self) -> std::option::Option<&str> {
+        self.elasticsearch_version.as_deref()
+    }
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
+    /// querying for list of available Elasticsearch instance types when modifying existing domain.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// Set this value to limit the number of results returned.
+    /// Value provided must be greater than 30 else it wont be honored.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>NextToken should be sent in case if earlier API call produced result
+    /// containing NextToken. It is used for pagination.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListElasticsearchInstanceTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListElasticsearchInstanceTypesInput");
@@ -7801,6 +7987,20 @@ pub struct ListDomainsForPackageInput {
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsForPackageInput {
+    /// <p>The package for which to list domains.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Limits results to a maximum number of domains.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsForPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsForPackageInput");
@@ -7817,6 +8017,12 @@ impl std::fmt::Debug for ListDomainsForPackageInput {
 pub struct ListDomainNamesInput {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
+}
+impl ListDomainNamesInput {
+    /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDomainNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7838,6 +8044,12 @@ impl std::fmt::Debug for ListDomainNamesInput {
 pub struct GetUpgradeStatusInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetUpgradeStatusInput {
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUpgradeStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7869,6 +8081,25 @@ pub struct GetUpgradeHistoryInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetUpgradeHistoryInput {
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// Set this value to limit the number of results returned.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Paginated APIs accepts NextToken input to returns next page results and provides
+    /// a NextToken output in the response which can be used by the client to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUpgradeHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUpgradeHistoryInput");
@@ -7896,6 +8127,20 @@ pub struct GetPackageVersionHistoryInput {
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetPackageVersionHistoryInput {
+    /// <p>Returns an audit history of versions of the package.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Limits results to a maximum number of versions.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPackageVersionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageVersionHistoryInput");
@@ -7918,6 +8163,12 @@ impl std::fmt::Debug for GetPackageVersionHistoryInput {
 pub struct GetCompatibleElasticsearchVersionsInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetCompatibleElasticsearchVersionsInput {
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCompatibleElasticsearchVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7942,6 +8193,16 @@ pub struct DissociatePackageInput {
     /// <p>Name of the domain that you want to associate the package with.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DissociatePackageInput {
+    /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Name of the domain that you want to associate the package with.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DissociatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DissociatePackageInput");
@@ -7962,6 +8223,21 @@ pub struct DescribeReservedElasticsearchInstancesInput {
     /// <p>NextToken should be sent in case if earlier API call produced result
     /// containing NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReservedElasticsearchInstancesInput {
+    /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
+    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<&str> {
+        self.reserved_elasticsearch_instance_id.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>NextToken should be sent in case if earlier API call produced result
+    /// containing NextToken. It is used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedElasticsearchInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7987,6 +8263,21 @@ pub struct DescribeReservedElasticsearchInstanceOfferingsInput {
     /// <p>NextToken should be sent in case if earlier API call produced result
     /// containing NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReservedElasticsearchInstanceOfferingsInput {
+    /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+    pub fn reserved_elasticsearch_instance_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_elasticsearch_instance_offering_id.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>NextToken should be sent in case if earlier API call produced result
+    /// containing NextToken. It is used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedElasticsearchInstanceOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8017,6 +8308,20 @@ pub struct DescribePackagesInput {
     pub max_results: i32,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePackagesInput {
+    /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DescribePackagesFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Limits results to a maximum number of packages.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8049,6 +8354,30 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeOutboundCrossClusterSearchConnectionsInput {
+    /// <p>
+    /// A list of filters used to match properties for outbound cross-cluster search connection.
+    /// Available <code><a>Filter</a></code> names for this operation are:
+    /// <ul>
+    /// <li>cross-cluster-search-connection-id</li>
+    /// <li>destination-domain-info.domain-name</li>
+    /// <li>destination-domain-info.owner-id</li>
+    /// <li>destination-domain-info.region</li>
+    /// <li>source-domain-info.domain-name</li>
+    /// </ul>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOutboundCrossClusterSearchConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOutboundCrossClusterSearchConnectionsInput");
@@ -8079,6 +8408,30 @@ pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     pub max_results: i32,
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInboundCrossClusterSearchConnectionsInput {
+    /// <p>
+    /// A list of filters used to match properties for inbound cross-cluster search connection.
+    /// Available <code><a>Filter</a></code> names for this operation are:
+    /// <ul>
+    /// <li>cross-cluster-search-connection-id</li>
+    /// <li>source-domain-info.domain-name</li>
+    /// <li>source-domain-info.owner-id</li>
+    /// <li>source-domain-info.region</li>
+    /// <li>destination-domain-info.domain-name</li>
+    /// </ul>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInboundCrossClusterSearchConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8127,6 +8480,40 @@ pub struct DescribeElasticsearchInstanceTypeLimitsInput {
     /// </p>
     pub elasticsearch_version: std::option::Option<std::string::String>,
 }
+impl DescribeElasticsearchInstanceTypeLimitsInput {
+    /// <p>
+    /// DomainName represents the name of the Domain that we are trying to
+    /// modify. This should be present only if we are
+    /// querying for Elasticsearch
+    /// <code>
+    /// <a>Limits</a>
+    /// </code>
+    /// for existing domain.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// The instance type for an Elasticsearch cluster for which Elasticsearch
+    /// <code>
+    /// <a>Limits</a>
+    /// </code>
+    /// are needed.
+    /// </p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::EsPartitionInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>
+    /// Version of Elasticsearch for which
+    /// <code>
+    /// <a>Limits</a>
+    /// </code>
+    /// are needed.
+    /// </p>
+    pub fn elasticsearch_version(&self) -> std::option::Option<&str> {
+        self.elasticsearch_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticsearchInstanceTypeLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchInstanceTypeLimitsInput");
@@ -8144,6 +8531,12 @@ pub struct DescribeElasticsearchDomainsInput {
     /// <p>The Elasticsearch domains for which you want information.</p>
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeElasticsearchDomainsInput {
+    /// <p>The Elasticsearch domains for which you want information.</p>
+    pub fn domain_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.domain_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticsearchDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchDomainsInput");
@@ -8159,6 +8552,12 @@ pub struct DescribeElasticsearchDomainConfigInput {
     /// <p>The Elasticsearch domain that you want to get information about.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DescribeElasticsearchDomainConfigInput {
+    /// <p>The Elasticsearch domain that you want to get information about.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeElasticsearchDomainConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeElasticsearchDomainConfigInput");
@@ -8173,6 +8572,12 @@ impl std::fmt::Debug for DescribeElasticsearchDomainConfigInput {
 pub struct DescribeElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain for which you want information.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DescribeElasticsearchDomainInput {
+    /// <p>The name of the Elasticsearch domain for which you want information.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeElasticsearchDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8192,6 +8597,20 @@ pub struct DescribeDomainAutoTunesInput {
     pub max_results: i32,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDomainAutoTunesInput {
+    /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainAutoTunesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8216,6 +8635,12 @@ pub struct DeletePackageInput {
     /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     pub package_id: std::option::Option<std::string::String>,
 }
+impl DeletePackageInput {
+    /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackageInput");
@@ -8230,6 +8655,12 @@ impl std::fmt::Debug for DeletePackageInput {
 pub struct DeleteOutboundCrossClusterSearchConnectionInput {
     /// <p>The id of the outbound connection that you want to permanently delete.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+}
+impl DeleteOutboundCrossClusterSearchConnectionInput {
+    /// <p>The id of the outbound connection that you want to permanently delete.</p>
+    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+        self.cross_cluster_search_connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8248,6 +8679,12 @@ impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionInput {
 pub struct DeleteInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+}
+impl DeleteInboundCrossClusterSearchConnectionInput {
+    /// <p>The id of the inbound connection that you want to permanently delete.</p>
+    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+        self.cross_cluster_search_connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInboundCrossClusterSearchConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8278,6 +8715,12 @@ pub struct DeleteElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DeleteElasticsearchDomainInput {
+    /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteElasticsearchDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteElasticsearchDomainInput");
@@ -8305,6 +8748,24 @@ pub struct CreatePackageInput {
     /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
     pub package_source: std::option::Option<crate::model::PackageSource>,
 }
+impl CreatePackageInput {
+    /// <p>Unique identifier for the package.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>Description of the package.</p>
+    pub fn package_description(&self) -> std::option::Option<&str> {
+        self.package_description.as_deref()
+    }
+    /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
+    pub fn package_source(&self) -> std::option::Option<&crate::model::PackageSource> {
+        self.package_source.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackageInput");
@@ -8326,6 +8787,20 @@ pub struct CreateOutboundCrossClusterSearchConnectionInput {
     pub destination_domain_info: std::option::Option<crate::model::DomainInformation>,
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
     pub connection_alias: std::option::Option<std::string::String>,
+}
+impl CreateOutboundCrossClusterSearchConnectionInput {
+    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    pub fn source_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
+        self.source_domain_info.as_ref()
+    }
+    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    pub fn destination_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
+        self.destination_domain_info.as_ref()
+    }
+    /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
+    pub fn connection_alias(&self) -> std::option::Option<&str> {
+        self.connection_alias.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8380,6 +8855,91 @@ pub struct CreateElasticsearchDomainInput {
     /// <p>A list of <code>Tag</code> added during domain creation.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateElasticsearchDomainInput {
+    /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
+    /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+    pub fn elasticsearch_version(&self) -> std::option::Option<&str> {
+        self.elasticsearch_version.as_deref()
+    }
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    pub fn elasticsearch_cluster_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchClusterConfig> {
+        self.elasticsearch_cluster_config.as_ref()
+    }
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
+        self.ebs_options.as_ref()
+    }
+    /// <p> IAM access policy as a JSON-formatted string.</p>
+    pub fn access_policies(&self) -> std::option::Option<&str> {
+        self.access_policies.as_deref()
+    }
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
+        self.snapshot_options.as_ref()
+    }
+    /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcOptions> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+    pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
+        self.cognito_options.as_ref()
+    }
+    /// <p>Specifies the Encryption At Rest Options.</p>
+    pub fn encryption_at_rest_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
+    pub fn node_to_node_encryption_options(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
+        self.node_to_node_encryption_options.as_ref()
+    }
+    /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
+    /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+    /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
+    pub fn log_publishing_options(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
+    > {
+        self.log_publishing_options.as_ref()
+    }
+    /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.domain_endpoint_options.as_ref()
+    }
+    /// <p>Specifies advanced security options.</p>
+    pub fn advanced_security_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityOptionsInput> {
+        self.advanced_security_options.as_ref()
+    }
+    /// <p>Specifies Auto-Tune options.</p>
+    pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptionsInput> {
+        self.auto_tune_options.as_ref()
+    }
+    /// <p>A list of <code>Tag</code> added during domain creation.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateElasticsearchDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateElasticsearchDomainInput");
@@ -8419,6 +8979,12 @@ pub struct CancelElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl CancelElasticsearchServiceSoftwareUpdateInput {
+    /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelElasticsearchServiceSoftwareUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelElasticsearchServiceSoftwareUpdateInput");
@@ -8442,6 +9008,16 @@ pub struct AssociatePackageInput {
     /// <p>Name of the domain that you want to associate the package with.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl AssociatePackageInput {
+    /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Name of the domain that you want to associate the package with.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatePackageInput");
@@ -8460,6 +9036,16 @@ pub struct AddTagsInput {
     /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl AddTagsInput {
+    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
@@ -8475,6 +9061,12 @@ impl std::fmt::Debug for AddTagsInput {
 pub struct AcceptInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to accept.</p>
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+}
+impl AcceptInboundCrossClusterSearchConnectionInput {
+    /// <p>The id of the inbound connection that you want to accept.</p>
+    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+        self.cross_cluster_search_connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptInboundCrossClusterSearchConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

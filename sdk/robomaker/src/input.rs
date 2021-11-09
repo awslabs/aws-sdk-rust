@@ -92,10 +92,7 @@ impl BatchDeleteWorldsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_worlds(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_worlds(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -248,7 +245,7 @@ impl BatchDescribeSimulationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_describe_simulation_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_describe_simulation_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -392,10 +389,7 @@ impl CancelDeploymentJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_deployment_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_deployment_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -538,10 +532,7 @@ impl CancelSimulationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -687,10 +678,7 @@ impl CancelSimulationJobBatchInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_simulation_job_batch(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -835,10 +823,7 @@ impl CancelWorldExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_world_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -984,10 +969,7 @@ impl CancelWorldGenerationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_world_generation_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1223,10 +1205,7 @@ impl CreateDeploymentJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1399,10 +1378,7 @@ impl CreateFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1605,10 +1581,7 @@ impl CreateRobotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_robot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_robot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1839,10 +1812,7 @@ impl CreateRobotApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_robot_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2040,7 +2010,7 @@ impl CreateRobotApplicationVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_robot_application_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_robot_application_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2305,7 +2275,7 @@ impl CreateSimulationApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2507,7 +2477,7 @@ impl CreateSimulationApplicationVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application_version(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_simulation_application_version(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2903,10 +2873,7 @@ impl CreateSimulationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_simulation_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_simulation_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3142,10 +3109,7 @@ impl CreateWorldExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_world_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3392,10 +3356,7 @@ impl CreateWorldGenerationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_world_generation_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3618,10 +3579,7 @@ impl CreateWorldTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_world_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_world_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3763,10 +3721,7 @@ impl DeleteFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3908,10 +3863,7 @@ impl DeleteRobotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_robot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_robot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4073,10 +4025,7 @@ impl DeleteRobotApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_robot_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4237,7 +4186,7 @@ impl DeleteSimulationApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_simulation_application(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4383,10 +4332,7 @@ impl DeleteWorldTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_world_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_world_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4543,10 +4489,7 @@ impl DeregisterRobotInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_robot(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_robot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4691,10 +4634,7 @@ impl DescribeDeploymentJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_deployment_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4836,10 +4776,7 @@ impl DescribeFleetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_fleet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4981,10 +4918,7 @@ impl DescribeRobotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_robot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_robot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5147,10 +5081,7 @@ impl DescribeRobotApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_robot_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5311,7 +5242,7 @@ impl DescribeSimulationApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_application(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5457,10 +5388,7 @@ impl DescribeSimulationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5604,7 +5532,7 @@ impl DescribeSimulationJobBatchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job_batch(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_simulation_job_batch(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5747,10 +5675,7 @@ impl DescribeWorldInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_world(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_world(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5895,10 +5820,7 @@ impl DescribeWorldExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_world_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6042,7 +5964,7 @@ impl DescribeWorldGenerationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_world_generation_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_world_generation_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6190,10 +6112,7 @@ impl DescribeWorldTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_world_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6355,10 +6274,7 @@ impl GetWorldTemplateBodyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_world_template_body(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6564,10 +6480,7 @@ impl ListDeploymentJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_deployment_jobs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_deployment_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6776,10 +6689,7 @@ impl ListFleetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6998,10 +6908,7 @@ impl ListRobotApplicationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_robot_applications(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7206,10 +7113,7 @@ impl ListRobotsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_robots(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_robots(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7429,10 +7333,7 @@ impl ListSimulationApplicationsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_simulation_applications(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7629,10 +7530,7 @@ impl ListSimulationJobBatchesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_simulation_job_batches(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7840,10 +7738,7 @@ impl ListSimulationJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_simulation_jobs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_simulation_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8190,10 +8085,9 @@ impl ListWorldExportJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_world_export_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_world_export_jobs(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8396,10 +8290,7 @@ impl ListWorldGenerationJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_world_generation_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8596,10 +8487,7 @@ impl ListWorldsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_worlds(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_worlds(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8776,10 +8664,7 @@ impl ListWorldTemplatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_world_templates(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_world_templates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8935,10 +8820,7 @@ impl RegisterRobotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_robot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_register_robot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9081,10 +8963,9 @@ impl RestartSimulationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restart_simulation_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_restart_simulation_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9311,10 +9192,7 @@ impl StartSimulationJobBatchInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_simulation_job_batch(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9479,10 +9357,7 @@ impl SyncDeploymentJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_sync_deployment_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_sync_deployment_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9671,10 +9546,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10068,10 +9940,7 @@ impl UpdateRobotApplicationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_robot_application(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10317,7 +10186,7 @@ impl UpdateSimulationApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_simulation_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_simulation_application(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10505,10 +10374,7 @@ impl UpdateWorldTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_world_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_world_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10583,6 +10449,24 @@ pub struct UpdateWorldTemplateInput {
     /// <p>The location of the world template.</p>
     pub template_location: std::option::Option<crate::model::TemplateLocation>,
 }
+impl UpdateWorldTemplateInput {
+    /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>The name of the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The world template body.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The location of the world template.</p>
+    pub fn template_location(&self) -> std::option::Option<&crate::model::TemplateLocation> {
+        self.template_location.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorldTemplateInput");
@@ -10613,6 +10497,38 @@ pub struct UpdateSimulationApplicationInput {
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl UpdateSimulationApplicationInput {
+    /// <p>The application information for the simulation application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The sources of the simulation application.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
+        self.sources.as_deref()
+    }
+    /// <p>The simulation software suite used by the simulation application.</p>
+    pub fn simulation_software_suite(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
+        self.simulation_software_suite.as_ref()
+    }
+    /// <p>Information about the robot software suite (ROS distribution).</p>
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+        self.robot_software_suite.as_ref()
+    }
+    /// <p>The rendering engine for the simulation application.</p>
+    pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
+        self.rendering_engine.as_ref()
+    }
+    /// <p>The revision id for the robot application.</p>
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
+        self.current_revision_id.as_deref()
+    }
+    /// <p>The object that contains the Docker image URI for your simulation application.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSimulationApplicationInput");
@@ -10642,6 +10558,28 @@ pub struct UpdateRobotApplicationInput {
     /// <p>The object that contains the Docker image URI for your robot application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl UpdateRobotApplicationInput {
+    /// <p>The application information for the robot application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The sources of the robot application.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
+        self.sources.as_deref()
+    }
+    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+        self.robot_software_suite.as_ref()
+    }
+    /// <p>The revision id for the robot application.</p>
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
+        self.current_revision_id.as_deref()
+    }
+    /// <p>The object that contains the Docker image URI for your robot application.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRobotApplicationInput");
@@ -10665,6 +10603,18 @@ pub struct UntagResourceInput {
     /// resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
+    /// tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that will be unattached from the
+    /// resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10684,6 +10634,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -10702,6 +10665,17 @@ pub struct SyncDeploymentJobInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The target fleet for the synchronization.</p>
     pub fleet: std::option::Option<std::string::String>,
+}
+impl SyncDeploymentJobInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The target fleet for the synchronization.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
 }
 impl std::fmt::Debug for SyncDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10729,6 +10703,31 @@ pub struct StartSimulationJobBatchInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StartSimulationJobBatchInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The batch policy.</p>
+    pub fn batch_policy(&self) -> std::option::Option<&crate::model::BatchPolicy> {
+        self.batch_policy.as_ref()
+    }
+    /// <p>A list of simulation job requests to create in the batch.</p>
+    pub fn create_simulation_job_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::SimulationJobRequest]> {
+        self.create_simulation_job_requests.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job
+    /// batch.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSimulationJobBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSimulationJobBatchInput");
@@ -10750,6 +10749,12 @@ pub struct RestartSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub job: std::option::Option<std::string::String>,
 }
+impl RestartSimulationJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
+}
 impl std::fmt::Debug for RestartSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestartSimulationJobInput");
@@ -10766,6 +10771,16 @@ pub struct RegisterRobotInput {
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub robot: std::option::Option<std::string::String>,
+}
+impl RegisterRobotInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn robot(&self) -> std::option::Option<&str> {
+        self.robot.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10794,6 +10809,26 @@ pub struct ListWorldTemplatesInput {
     /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
     /// value if applicable. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListWorldTemplatesInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
+    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+    /// the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If this parameter is not used, then
+    /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
+    /// value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListWorldTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10824,6 +10859,30 @@ pub struct ListWorldsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListWorldsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListWorlds</code> again and assign that token to the
+    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
+    /// previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListWorlds</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 100. If this parameter is not used, then
+    /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
+    /// applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWorldsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10857,6 +10916,31 @@ pub struct ListWorldGenerationJobsInput {
     /// <code>templateId</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListWorldGenerationJobsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
+    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
+    /// results, the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListWorldGeneratorJobs</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
+    /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results. You can use <code>status</code> and
+    /// <code>templateId</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorldGenerationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorldGenerationJobsInput");
@@ -10889,6 +10973,31 @@ pub struct ListWorldExportJobsInput {
     /// <code>templateId</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListWorldExportJobsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
+    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+    /// the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If this parameter is not used, then
+    /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
+    /// value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
+    /// <code>templateId</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorldExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorldExportJobsInput");
@@ -10905,6 +11014,12 @@ impl std::fmt::Debug for ListWorldExportJobsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10940,6 +11055,35 @@ pub struct ListSimulationJobsInput {
     /// <code>Preparing</code> or the status <code>Running</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListSimulationJobsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
+    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+    /// the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 1000. If this parameter is not used, then
+    /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
+    /// value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results.</p>
+    /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
+    /// <code>robotApplicationName</code> are supported. When filtering, you must use the
+    /// complete value of the filtered item. You can use up to three filters, but they must be for
+    /// the same named item. For example, if you are looking for items with the status
+    /// <code>Preparing</code> or the status <code>Running</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSimulationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSimulationJobsInput");
@@ -10968,6 +11112,28 @@ pub struct ListSimulationJobBatchesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListSimulationJobBatchesInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
+    /// to the request object's <code>nextToken</code> parameter. If there are no remaining
+    /// results, the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListSimulationJobBatches</code> request with the returned
+    /// <code>nextToken</code> value. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSimulationJobBatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11003,6 +11169,36 @@ pub struct ListSimulationApplicationsInput {
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
     /// complete value of the filtered item. You can use up to three filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListSimulationApplicationsInput {
+    /// <p>The version qualifier of the simulation application.</p>
+    pub fn version_qualifier(&self) -> std::option::Option<&str> {
+        self.version_qualifier.as_deref()
+    }
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListSimulationApplications</code> again and assign that
+    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
+    /// results, the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListSimulationApplications</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
+    /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional list of filters to limit results.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+    /// complete value of the filtered item. You can use up to three filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSimulationApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11040,6 +11236,34 @@ pub struct ListRobotsInput {
     /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListRobotsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListRobots</code> again and assign that token to the
+    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
+    /// previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListRobots</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 200. If this parameter is not used, then
+    /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
+    /// applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results.</p>
+    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+    /// filtering, you must use the complete value of the filtered item. You can use up to three
+    /// filters, but they must be for the same named item. For example, if you are looking for
+    /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRobotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRobotsInput");
@@ -11074,6 +11298,36 @@ pub struct ListRobotApplicationsInput {
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
     /// complete value of the filtered item. You can use up to three filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl ListRobotApplicationsInput {
+    /// <p>The version qualifier of the robot application.</p>
+    pub fn version_qualifier(&self) -> std::option::Option<&str> {
+        self.version_qualifier.as_deref()
+    }
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
+    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+    /// the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 100. If this parameter is not used, then
+    /// <code>ListRobotApplications</code> returns up to 100 results and a
+    /// <code>nextToken</code> value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+    /// complete value of the filtered item. You can use up to three filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRobotApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11113,6 +11367,36 @@ pub struct ListFleetsInput {
     /// complete value of the filtered item. You can use up to three filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl ListFleetsInput {
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListFleets</code> again and assign that token to the
+    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
+    /// previous response object's NextToken parameter is set to null. </p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
+    /// the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListFleets</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
+    /// This value can be between 1 and 200. If this parameter is not used, then
+    /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
+    /// applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Optional filters to limit results.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
+    /// complete value of the filtered item. You can use up to three filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFleetsInput");
@@ -11148,6 +11432,34 @@ pub struct ListDeploymentJobsInput {
     /// value if applicable. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDeploymentJobsInput {
+    /// <p>Optional filters to limit results.</p>
+    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+    /// filtering, you must use the complete value of the filtered item. You can use up to three
+    /// filters, but they must be for the same named item. For example, if you are looking for
+    /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>If the previous paginated request did not return all of the remaining results, the
+    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
+    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
+    /// the previous response object's NextToken parameter is set to null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
+    /// value. This value can be between 1 and 200. If this parameter is not used, then
+    /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
+    /// value if applicable. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDeploymentJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeploymentJobsInput");
@@ -11167,6 +11479,16 @@ pub struct GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub generation_job: std::option::Option<std::string::String>,
 }
+impl GetWorldTemplateBodyInput {
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
+    pub fn generation_job(&self) -> std::option::Option<&str> {
+        self.generation_job.as_deref()
+    }
+}
 impl std::fmt::Debug for GetWorldTemplateBodyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorldTemplateBodyInput");
@@ -11183,6 +11505,12 @@ pub struct DescribeWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
     pub template: std::option::Option<std::string::String>,
 }
+impl DescribeWorldTemplateInput {
+    /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorldTemplateInput");
@@ -11197,6 +11525,12 @@ impl std::fmt::Debug for DescribeWorldTemplateInput {
 pub struct DescribeWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
     pub job: std::option::Option<std::string::String>,
+}
+impl DescribeWorldGenerationJobInput {
+    /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorldGenerationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11213,6 +11547,12 @@ pub struct DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     pub job: std::option::Option<std::string::String>,
 }
+impl DescribeWorldExportJobInput {
+    /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorldExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorldExportJobInput");
@@ -11227,6 +11567,12 @@ impl std::fmt::Debug for DescribeWorldExportJobInput {
 pub struct DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
     pub world: std::option::Option<std::string::String>,
+}
+impl DescribeWorldInput {
+    /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    pub fn world(&self) -> std::option::Option<&str> {
+        self.world.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorldInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11243,6 +11589,12 @@ pub struct DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
     pub batch: std::option::Option<std::string::String>,
 }
+impl DescribeSimulationJobBatchInput {
+    /// <p>The id of the batch to describe.</p>
+    pub fn batch(&self) -> std::option::Option<&str> {
+        self.batch.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSimulationJobBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSimulationJobBatchInput");
@@ -11257,6 +11609,12 @@ impl std::fmt::Debug for DescribeSimulationJobBatchInput {
 pub struct DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     pub job: std::option::Option<std::string::String>,
+}
+impl DescribeSimulationJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11274,6 +11632,16 @@ pub struct DescribeSimulationApplicationInput {
     pub application: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application to describe.</p>
     pub application_version: std::option::Option<std::string::String>,
+}
+impl DescribeSimulationApplicationInput {
+    /// <p>The application information for the simulation application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the simulation application to describe.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11293,6 +11661,16 @@ pub struct DescribeRobotApplicationInput {
     /// <p>The version of the robot application to describe.</p>
     pub application_version: std::option::Option<std::string::String>,
 }
+impl DescribeRobotApplicationInput {
+    /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the robot application to describe.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRobotApplicationInput");
@@ -11309,6 +11687,12 @@ pub struct DescribeRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
     pub robot: std::option::Option<std::string::String>,
 }
+impl DescribeRobotInput {
+    /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    pub fn robot(&self) -> std::option::Option<&str> {
+        self.robot.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRobotInput");
@@ -11324,6 +11708,12 @@ pub struct DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fleet: std::option::Option<std::string::String>,
 }
+impl DescribeFleetInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFleetInput");
@@ -11338,6 +11728,12 @@ impl std::fmt::Debug for DescribeFleetInput {
 pub struct DescribeDeploymentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     pub job: std::option::Option<std::string::String>,
+}
+impl DescribeDeploymentJobInput {
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11356,6 +11752,16 @@ pub struct DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub robot: std::option::Option<std::string::String>,
 }
+impl DeregisterRobotInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn robot(&self) -> std::option::Option<&str> {
+        self.robot.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterRobotInput");
@@ -11371,6 +11777,12 @@ impl std::fmt::Debug for DeregisterRobotInput {
 pub struct DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     pub template: std::option::Option<std::string::String>,
+}
+impl DeleteWorldTemplateInput {
+    /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11388,6 +11800,16 @@ pub struct DeleteSimulationApplicationInput {
     pub application: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application to delete.</p>
     pub application_version: std::option::Option<std::string::String>,
+}
+impl DeleteSimulationApplicationInput {
+    /// <p>The application information for the simulation application to delete.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the simulation application to delete.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11407,6 +11829,16 @@ pub struct DeleteRobotApplicationInput {
     /// <p>The version of the robot application to delete.</p>
     pub application_version: std::option::Option<std::string::String>,
 }
+impl DeleteRobotApplicationInput {
+    /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The version of the robot application to delete.</p>
+    pub fn application_version(&self) -> std::option::Option<&str> {
+        self.application_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRobotApplicationInput");
@@ -11423,6 +11855,12 @@ pub struct DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     pub robot: std::option::Option<std::string::String>,
 }
+impl DeleteRobotInput {
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn robot(&self) -> std::option::Option<&str> {
+        self.robot.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRobotInput");
@@ -11437,6 +11875,12 @@ impl std::fmt::Debug for DeleteRobotInput {
 pub struct DeleteFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fleet: std::option::Option<std::string::String>,
+}
+impl DeleteFleetInput {
+    /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11463,6 +11907,33 @@ pub struct CreateWorldTemplateInput {
     /// template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateWorldTemplateInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The name of the world template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The world template body.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The location of the world template.</p>
+    pub fn template_location(&self) -> std::option::Option<&crate::model::TemplateLocation> {
+        self.template_location.as_ref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world
+    /// template.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWorldTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11497,6 +11968,38 @@ pub struct CreateWorldGenerationJobInput {
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateWorldGenerationJobInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
+    /// create.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>Information about the world count.</p>
+    pub fn world_count(&self) -> std::option::Option<&crate::model::WorldCount> {
+        self.world_count.as_ref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator
+    /// job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the generated
+    /// worlds.</p>
+    pub fn world_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.world_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWorldGenerationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorldGenerationJobInput");
@@ -11527,6 +12030,34 @@ pub struct CreateWorldExportJobInput {
     /// job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateWorldExportJobInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
+    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+        self.worlds.as_deref()
+    }
+    /// <p>The output location.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
+    /// the export.</p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world export
+    /// job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateWorldExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11596,6 +12127,87 @@ pub struct CreateSimulationJobInput {
     /// <p>Compute information for the simulation job.</p>
     pub compute: std::option::Option<crate::model::Compute>,
 }
+impl CreateSimulationJobInput {
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Location for output files generated by the simulation job.</p>
+    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+        self.output_location.as_ref()
+    }
+    /// <p>The logging configuration.</p>
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
+    /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
+    /// transition to <code>Completed</code>.</p>
+    pub fn max_job_duration_in_seconds(&self) -> i64 {
+        self.max_job_duration_in_seconds
+    }
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
+    /// specified in its associated policies on your behalf. This is how credentials are passed in
+    /// to your simulation job. </p>
+    pub fn iam_role(&self) -> std::option::Option<&str> {
+        self.iam_role.as_deref()
+    }
+    /// <p>The failure behavior the simulation job.</p>
+    /// <dl>
+    /// <dt>Continue</dt>
+    /// <dd>
+    /// <p>Leaves the instance running for its maximum timeout duration after a
+    /// <code>4XX</code> error code.</p>
+    /// </dd>
+    /// <dt>Fail</dt>
+    /// <dd>
+    /// <p>Stop the simulation job and terminate the instance.</p>
+    /// </dd>
+    /// </dl>
+    pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
+        self.failure_behavior.as_ref()
+    }
+    /// <p>The robot application to use in the simulation job.</p>
+    pub fn robot_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::RobotApplicationConfig]> {
+        self.robot_applications.as_deref()
+    }
+    /// <p>The simulation application to use in the simulation job.</p>
+    pub fn simulation_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
+        self.simulation_applications.as_deref()
+    }
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
+    /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
+    /// <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all
+    /// <code>DataSourceConfig</code> objects. </p>
+    /// </note>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceConfig]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation
+    /// job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
+    /// identifying the list of security group IDs and subnet IDs. These must belong to the same
+    /// VPC. You must provide at least one security group and one subnet ID. </p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Compute information for the simulation job.</p>
+    pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
+        self.compute.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSimulationJobInput");
@@ -11634,6 +12246,27 @@ pub struct CreateSimulationApplicationVersionInput {
     /// application.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
+impl CreateSimulationApplicationVersionInput {
+    /// <p>The application information for the simulation application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The current revision id for the simulation application. If you provide a value and it
+    /// matches the latest revision ID, a new version will be created.</p>
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
+        self.current_revision_id.as_deref()
+    }
+    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
+    /// simulation application.</p>
+    pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
+        self.s3_etags.as_deref()
+    }
+    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
+    /// application.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSimulationApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSimulationApplicationVersionInput");
@@ -11667,6 +12300,43 @@ pub struct CreateSimulationApplicationInput {
     /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl CreateSimulationApplicationInput {
+    /// <p>The name of the simulation application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The sources of the simulation application.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
+        self.sources.as_deref()
+    }
+    /// <p>The simulation software suite used by the simulation application.</p>
+    pub fn simulation_software_suite(
+        &self,
+    ) -> std::option::Option<&crate::model::SimulationSoftwareSuite> {
+        self.simulation_software_suite.as_ref()
+    }
+    /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+        self.robot_software_suite.as_ref()
+    }
+    /// <p>The rendering engine for the simulation application.</p>
+    pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
+        self.rendering_engine.as_ref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation
+    /// application.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The object that contains the Docker image URI used to create your simulation
+    /// application.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSimulationApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSimulationApplicationInput");
@@ -11695,6 +12365,26 @@ pub struct CreateRobotApplicationVersionInput {
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub image_digest: std::option::Option<std::string::String>,
+}
+impl CreateRobotApplicationVersionInput {
+    /// <p>The application information for the robot application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The current revision id for the robot application. If you provide a value and it matches
+    /// the latest revision ID, a new version will be created.</p>
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
+        self.current_revision_id.as_deref()
+    }
+    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
+    /// application.</p>
+    pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
+        self.s3_etags.as_deref()
+    }
+    /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRobotApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11725,6 +12415,33 @@ pub struct CreateRobotApplicationInput {
     /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
+impl CreateRobotApplicationInput {
+    /// <p>The name of the robot application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The sources of the robot application.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SourceConfig]> {
+        self.sources.as_deref()
+    }
+    /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
+        self.robot_software_suite.as_ref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the robot
+    /// application.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The object that contains that URI of the Docker image that you use for your robot
+    /// application.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
+        self.environment.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRobotApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRobotApplicationInput");
@@ -11751,6 +12468,27 @@ pub struct CreateRobotInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRobotInput {
+    /// <p>The name for the robot.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The target architecture of the robot.</p>
+    pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
+        self.architecture.as_ref()
+    }
+    /// <p>The Greengrass group id.</p>
+    pub fn greengrass_group_id(&self) -> std::option::Option<&str> {
+        self.greengrass_group_id.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRobotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRobotInput");
@@ -11771,6 +12509,19 @@ pub struct CreateFleetInput {
     /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11800,6 +12551,35 @@ pub struct CreateDeploymentJobInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDeploymentJobInput {
+    /// <p>The requested deployment configuration.</p>
+    pub fn deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
+    pub fn fleet(&self) -> std::option::Option<&str> {
+        self.fleet.as_deref()
+    }
+    /// <p>The deployment application configuration.</p>
+    pub fn deployment_application_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeploymentApplicationConfig]> {
+        self.deployment_application_configs.as_deref()
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment
+    /// job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentJobInput");
@@ -11822,6 +12602,12 @@ pub struct CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
     pub job: std::option::Option<std::string::String>,
 }
+impl CancelWorldGenerationJobInput {
+    /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelWorldGenerationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelWorldGenerationJobInput");
@@ -11836,6 +12622,12 @@ impl std::fmt::Debug for CancelWorldGenerationJobInput {
 pub struct CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     pub job: std::option::Option<std::string::String>,
+}
+impl CancelWorldExportJobInput {
+    /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelWorldExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11852,6 +12644,12 @@ pub struct CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
     pub batch: std::option::Option<std::string::String>,
 }
+impl CancelSimulationJobBatchInput {
+    /// <p>The id of the batch to cancel.</p>
+    pub fn batch(&self) -> std::option::Option<&str> {
+        self.batch.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelSimulationJobBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelSimulationJobBatchInput");
@@ -11866,6 +12664,12 @@ impl std::fmt::Debug for CancelSimulationJobBatchInput {
 pub struct CancelSimulationJobInput {
     /// <p>The simulation job ARN to cancel.</p>
     pub job: std::option::Option<std::string::String>,
+}
+impl CancelSimulationJobInput {
+    /// <p>The simulation job ARN to cancel.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11882,6 +12686,12 @@ pub struct CancelDeploymentJobInput {
     /// <p>The deployment job ARN to cancel.</p>
     pub job: std::option::Option<std::string::String>,
 }
+impl CancelDeploymentJobInput {
+    /// <p>The deployment job ARN to cancel.</p>
+    pub fn job(&self) -> std::option::Option<&str> {
+        self.job.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelDeploymentJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelDeploymentJobInput");
@@ -11897,6 +12707,12 @@ pub struct BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
     pub jobs: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchDescribeSimulationJobInput {
+    /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    pub fn jobs(&self) -> std::option::Option<&[std::string::String]> {
+        self.jobs.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDescribeSimulationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDescribeSimulationJobInput");
@@ -11911,6 +12727,12 @@ impl std::fmt::Debug for BatchDescribeSimulationJobInput {
 pub struct BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteWorldsInput {
+    /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
+    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+        self.worlds.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteWorldsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

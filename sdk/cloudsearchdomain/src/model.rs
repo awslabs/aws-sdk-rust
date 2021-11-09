@@ -6,6 +6,12 @@ pub struct DocumentServiceWarning {
     /// <p>The description for a warning returned by the document service.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DocumentServiceWarning {
+    /// <p>The description for a warning returned by the document service.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DocumentServiceWarning {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentServiceWarning");
@@ -113,6 +119,20 @@ pub struct SuggestModel {
     /// <p>The documents that match the query string.</p>
     pub suggestions: std::option::Option<std::vec::Vec<crate::model::SuggestionMatch>>,
 }
+impl SuggestModel {
+    /// <p>The query string specified in the suggest request.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
+    /// <p>The number of documents that were found to match the query string.</p>
+    pub fn found(&self) -> i64 {
+        self.found
+    }
+    /// <p>The documents that match the query string.</p>
+    pub fn suggestions(&self) -> std::option::Option<&[crate::model::SuggestionMatch]> {
+        self.suggestions.as_deref()
+    }
+}
 impl std::fmt::Debug for SuggestModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuggestModel");
@@ -200,6 +220,20 @@ pub struct SuggestionMatch {
     /// <p>The document ID of the suggested document.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl SuggestionMatch {
+    /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
+    pub fn suggestion(&self) -> std::option::Option<&str> {
+        self.suggestion.as_deref()
+    }
+    /// <p>The relevance score of a suggested match.</p>
+    pub fn score(&self) -> i64 {
+        self.score
+    }
+    /// <p>The document ID of the suggested document.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for SuggestionMatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuggestionMatch");
@@ -275,6 +309,16 @@ pub struct SuggestStatus {
     pub timems: i64,
     /// <p>The encrypted resource ID for the request.</p>
     pub rid: std::option::Option<std::string::String>,
+}
+impl SuggestStatus {
+    /// <p>How long it took to process the request, in milliseconds.</p>
+    pub fn timems(&self) -> i64 {
+        self.timems
+    }
+    /// <p>The encrypted resource ID for the request.</p>
+    pub fn rid(&self) -> std::option::Option<&str> {
+        self.rid.as_deref()
+    }
 }
 impl std::fmt::Debug for SuggestStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -353,6 +397,43 @@ pub struct FieldStats {
     pub mean: std::option::Option<std::string::String>,
     /// <p>The standard deviation of the values in the specified field in the result set.</p>
     pub stddev: f64,
+}
+impl FieldStats {
+    /// <p>The minimum value found in the specified field in the result set.</p>
+    /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    pub fn min(&self) -> std::option::Option<&str> {
+        self.min.as_deref()
+    }
+    /// <p>The maximum value found in the specified field in the result set.</p>
+    /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    pub fn max(&self) -> std::option::Option<&str> {
+        self.max.as_deref()
+    }
+    /// <p>The number of documents that contain a value in the specified field in the result set.</p>
+    pub fn count(&self) -> i64 {
+        self.count
+    }
+    /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
+    pub fn missing(&self) -> i64 {
+        self.missing
+    }
+    /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
+    pub fn sum(&self) -> f64 {
+        self.sum
+    }
+    /// <p>The sum of all field values in the result set squared.</p>
+    pub fn sum_of_squares(&self) -> f64 {
+        self.sum_of_squares
+    }
+    /// <p>The average of the values found in the specified field in the result set.</p>
+    /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    pub fn mean(&self) -> std::option::Option<&str> {
+        self.mean.as_deref()
+    }
+    /// <p>The standard deviation of the values in the specified field in the result set.</p>
+    pub fn stddev(&self) -> f64 {
+        self.stddev
+    }
 }
 impl std::fmt::Debug for FieldStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -499,6 +580,12 @@ pub struct BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
 }
+impl BucketInfo {
+    /// <p>A list of the calculated facet values and counts.</p>
+    pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
+        self.buckets.as_deref()
+    }
+}
 impl std::fmt::Debug for BucketInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketInfo");
@@ -557,6 +644,16 @@ pub struct Bucket {
     pub value: std::option::Option<std::string::String>,
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
     pub count: i64,
+}
+impl Bucket {
+    /// <p>The  facet value being counted.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The number of hits that contain the facet value in the specified facet field.</p>
+    pub fn count(&self) -> i64 {
+        self.count
+    }
 }
 impl std::fmt::Debug for Bucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -624,6 +721,24 @@ pub struct Hits {
     pub cursor: std::option::Option<std::string::String>,
     /// <p>A document that matches the search request.</p>
     pub hit: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+}
+impl Hits {
+    /// <p>The total number of documents that match the search request.</p>
+    pub fn found(&self) -> i64 {
+        self.found
+    }
+    /// <p>The index of the first matching document.</p>
+    pub fn start(&self) -> i64 {
+        self.start
+    }
+    /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
+    pub fn cursor(&self) -> std::option::Option<&str> {
+        self.cursor.as_deref()
+    }
+    /// <p>A document that matches the search request.</p>
+    pub fn hit(&self) -> std::option::Option<&[crate::model::Hit]> {
+        self.hit.as_deref()
+    }
 }
 impl std::fmt::Debug for Hits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -730,6 +845,34 @@ pub struct Hit {
     /// <p>The highlights returned from a document that matches the search request.</p>
     pub highlights:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Hit {
+    /// <p>The document ID of a document that matches the search request.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The fields returned from a document that matches the search request.</p>
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.fields.as_ref()
+    }
+    /// <p>The expressions returned from a document that matches the search request.</p>
+    pub fn exprs(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.exprs.as_ref()
+    }
+    /// <p>The highlights returned from a document that matches the search request.</p>
+    pub fn highlights(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.highlights.as_ref()
+    }
 }
 impl std::fmt::Debug for Hit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -870,6 +1013,16 @@ pub struct SearchStatus {
     pub timems: i64,
     /// <p>The encrypted resource ID for the request.</p>
     pub rid: std::option::Option<std::string::String>,
+}
+impl SearchStatus {
+    /// <p>How long it took to process the request, in milliseconds.</p>
+    pub fn timems(&self) -> i64 {
+        self.timems
+    }
+    /// <p>The encrypted resource ID for the request.</p>
+    pub fn rid(&self) -> std::option::Option<&str> {
+        self.rid.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

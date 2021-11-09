@@ -103,10 +103,7 @@ impl AssociateConnectionAliasInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_connection_alias(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -277,10 +274,7 @@ impl AssociateIpGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_ip_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_associate_ip_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -451,10 +445,7 @@ impl AuthorizeIpRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_authorize_ip_rules(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_authorize_ip_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -667,10 +658,7 @@ impl CopyWorkspaceImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_copy_workspace_image(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_copy_workspace_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -858,10 +846,7 @@ impl CreateConnectionAliasInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_connection_alias(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1064,10 +1049,8 @@ impl CreateIpGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_ip_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1239,10 +1222,7 @@ impl CreateTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1451,7 +1431,7 @@ impl CreateUpdatedWorkspaceImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_updated_workspace_image(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_updated_workspace_image(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1707,10 +1687,7 @@ impl CreateWorkspaceBundleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_workspace_bundle(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1869,10 +1846,7 @@ impl CreateWorkspacesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_workspaces(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2024,10 +1998,7 @@ impl DeleteConnectionAliasInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_connection_alias(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2176,10 +2147,8 @@ impl DeleteIpGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_ip_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_ip_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2351,10 +2320,7 @@ impl DeleteTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2506,10 +2472,7 @@ impl DeleteWorkspaceBundleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_workspace_bundle(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2659,10 +2622,9 @@ impl DeleteWorkspaceImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_workspace_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_workspace_image(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2817,7 +2779,7 @@ impl DeregisterWorkspaceDirectoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_workspace_directory(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_workspace_directory(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2954,10 +2916,7 @@ impl DescribeAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_account(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3102,7 +3061,7 @@ impl DescribeAccountModificationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_modifications(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_modifications(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3265,10 +3224,7 @@ impl DescribeClientPropertiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_client_properties(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3468,10 +3424,7 @@ impl DescribeConnectionAliasesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_connection_aliases(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3648,7 +3601,7 @@ impl DescribeConnectionAliasPermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_connection_alias_permissions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_connection_alias_permissions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3834,10 +3787,7 @@ impl DescribeIpGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_ip_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_ip_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3988,10 +3938,7 @@ impl DescribeTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4181,10 +4128,7 @@ impl DescribeWorkspaceBundlesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workspace_bundles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4372,7 +4316,7 @@ impl DescribeWorkspaceDirectoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workspace_directories(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_workspace_directories(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4550,7 +4494,7 @@ impl DescribeWorkspaceImagePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workspace_image_permissions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_workspace_image_permissions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4754,10 +4698,7 @@ impl DescribeWorkspaceImagesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workspace_images(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4992,10 +4933,7 @@ impl DescribeWorkspacesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workspaces(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5169,7 +5107,7 @@ impl DescribeWorkspacesConnectionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workspaces_connection_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_workspaces_connection_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5323,10 +5261,7 @@ impl DescribeWorkspaceSnapshotsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workspace_snapshots(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5477,7 +5412,7 @@ impl DisassociateConnectionAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_connection_alias(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_connection_alias(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5649,10 +5584,9 @@ impl DisassociateIpGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_ip_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_ip_groups(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5916,10 +5850,9 @@ impl ImportWorkspaceImageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_workspace_image(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_workspace_image(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6104,7 +6037,7 @@ impl ListAvailableManagementCidrRangesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_available_management_cidr_ranges(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_available_management_cidr_ranges(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6270,10 +6203,7 @@ impl MigrateWorkspaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_migrate_workspace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_migrate_workspace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6457,10 +6387,7 @@ impl ModifyAccountInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_account(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6627,10 +6554,7 @@ impl ModifyClientPropertiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_client_properties(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6800,7 +6724,7 @@ impl ModifySelfservicePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_selfservice_permissions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_selfservice_permissions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6971,7 +6895,7 @@ impl ModifyWorkspaceAccessPropertiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_workspace_access_properties(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_workspace_access_properties(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7142,7 +7066,7 @@ impl ModifyWorkspaceCreationPropertiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_workspace_creation_properties(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_workspace_creation_properties(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7311,10 +7235,7 @@ impl ModifyWorkspacePropertiesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_workspace_properties(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7479,10 +7400,9 @@ impl ModifyWorkspaceStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_workspace_state(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_workspace_state(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7645,10 +7565,7 @@ impl RebootWorkspacesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reboot_workspaces(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reboot_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7811,10 +7728,7 @@ impl RebuildWorkspacesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rebuild_workspaces(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_rebuild_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8069,10 +7983,7 @@ impl RegisterWorkspaceDirectoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_workspace_directory(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8222,10 +8133,7 @@ impl RestoreWorkspaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_workspace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_restore_workspace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8395,10 +8303,8 @@ impl RevokeIpRulesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_revoke_ip_rules(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_revoke_ip_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8561,10 +8467,7 @@ impl StartWorkspacesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_workspaces(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8726,10 +8629,8 @@ impl StopWorkspacesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_workspaces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8892,10 +8793,7 @@ impl TerminateWorkspacesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_workspaces(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_terminate_workspaces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9065,7 +8963,7 @@ impl UpdateConnectionAliasPermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_connection_alias_permission(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_connection_alias_permission(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9239,10 +9137,7 @@ impl UpdateRulesOfIpGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_rules_of_ip_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9406,10 +9301,7 @@ impl UpdateWorkspaceBundleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_workspace_bundle(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9597,7 +9489,7 @@ impl UpdateWorkspaceImagePermissionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace_image_permission(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_workspace_image_permission(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9676,6 +9568,25 @@ pub struct UpdateWorkspaceImagePermissionInput {
     /// </important>
     pub shared_account_id: std::option::Option<std::string::String>,
 }
+impl UpdateWorkspaceImagePermissionInput {
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The permission to copy the image. This permission can be revoked only after an image
+    /// has been shared.</p>
+    pub fn allow_copy_image(&self) -> std::option::Option<bool> {
+        self.allow_copy_image
+    }
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
+    ///
+    /// <important>
+    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
+    /// </important>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceImagePermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceImagePermissionInput");
@@ -9695,6 +9606,16 @@ pub struct UpdateWorkspaceBundleInput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
 }
+impl UpdateWorkspaceBundleInput {
+    /// <p>The identifier of the bundle.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceBundleInput");
@@ -9713,6 +9634,16 @@ pub struct UpdateRulesOfIpGroupInput {
     /// <p>One or more rules.</p>
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
 }
+impl UpdateRulesOfIpGroupInput {
+    /// <p>The identifier of the group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>One or more rules.</p>
+    pub fn user_rules(&self) -> std::option::Option<&[crate::model::IpRuleItem]> {
+        self.user_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRulesOfIpGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRulesOfIpGroupInput");
@@ -9730,6 +9661,18 @@ pub struct UpdateConnectionAliasPermissionInput {
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     pub connection_alias_permission: std::option::Option<crate::model::ConnectionAliasPermission>,
+}
+impl UpdateConnectionAliasPermissionInput {
+    /// <p>The identifier of the connection alias that you want to update permissions for.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+    /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
+    pub fn connection_alias_permission(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionAliasPermission> {
+        self.connection_alias_permission.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateConnectionAliasPermissionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9751,6 +9694,14 @@ pub struct TerminateWorkspacesInput {
     pub terminate_workspace_requests:
         std::option::Option<std::vec::Vec<crate::model::TerminateRequest>>,
 }
+impl TerminateWorkspacesInput {
+    /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
+    pub fn terminate_workspace_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::TerminateRequest]> {
+        self.terminate_workspace_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminateWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateWorkspacesInput");
@@ -9769,6 +9720,12 @@ pub struct StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
     pub stop_workspace_requests: std::option::Option<std::vec::Vec<crate::model::StopRequest>>,
 }
+impl StopWorkspacesInput {
+    /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
+    pub fn stop_workspace_requests(&self) -> std::option::Option<&[crate::model::StopRequest]> {
+        self.stop_workspace_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for StopWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopWorkspacesInput");
@@ -9783,6 +9740,12 @@ impl std::fmt::Debug for StopWorkspacesInput {
 pub struct StartWorkspacesInput {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
     pub start_workspace_requests: std::option::Option<std::vec::Vec<crate::model::StartRequest>>,
+}
+impl StartWorkspacesInput {
+    /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
+    pub fn start_workspace_requests(&self) -> std::option::Option<&[crate::model::StartRequest]> {
+        self.start_workspace_requests.as_deref()
+    }
 }
 impl std::fmt::Debug for StartWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9801,6 +9764,16 @@ pub struct RevokeIpRulesInput {
     /// <p>The rules to remove from the group.</p>
     pub user_rules: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RevokeIpRulesInput {
+    /// <p>The identifier of the group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The rules to remove from the group.</p>
+    pub fn user_rules(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeIpRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeIpRulesInput");
@@ -9816,6 +9789,12 @@ impl std::fmt::Debug for RevokeIpRulesInput {
 pub struct RestoreWorkspaceInput {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl RestoreWorkspaceInput {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9854,6 +9833,44 @@ pub struct RegisterWorkspaceDirectoryInput {
     /// <p>The tags associated with the directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RegisterWorkspaceDirectoryInput {
+    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
+    /// of Active. If the directory does not have a status of Active, you will receive an
+    /// InvalidResourceStateException error. If you have already registered the maximum number of directories
+    /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
+    /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
+    /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
+    /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
+    /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
+    /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    pub fn enable_work_docs(&self) -> std::option::Option<bool> {
+        self.enable_work_docs
+    }
+    /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
+    pub fn enable_self_service(&self) -> std::option::Option<bool> {
+        self.enable_self_service
+    }
+    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
+    /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
+    /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
+    /// InvalidParameterValuesException error. For more information about BYOL images, see
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    pub fn tenancy(&self) -> std::option::Option<&crate::model::Tenancy> {
+        self.tenancy.as_ref()
+    }
+    /// <p>The tags associated with the directory.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterWorkspaceDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterWorkspaceDirectoryInput");
@@ -9875,6 +9892,14 @@ pub struct RebuildWorkspacesInput {
     pub rebuild_workspace_requests:
         std::option::Option<std::vec::Vec<crate::model::RebuildRequest>>,
 }
+impl RebuildWorkspacesInput {
+    /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
+    pub fn rebuild_workspace_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::RebuildRequest]> {
+        self.rebuild_workspace_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for RebuildWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebuildWorkspacesInput");
@@ -9893,6 +9918,12 @@ pub struct RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
     pub reboot_workspace_requests: std::option::Option<std::vec::Vec<crate::model::RebootRequest>>,
 }
+impl RebootWorkspacesInput {
+    /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+    pub fn reboot_workspace_requests(&self) -> std::option::Option<&[crate::model::RebootRequest]> {
+        self.reboot_workspace_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootWorkspacesInput");
@@ -9909,6 +9940,16 @@ pub struct ModifyWorkspaceStateInput {
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The WorkSpace state.</p>
     pub workspace_state: std::option::Option<crate::model::TargetWorkspaceState>,
+}
+impl ModifyWorkspaceStateInput {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The WorkSpace state.</p>
+    pub fn workspace_state(&self) -> std::option::Option<&crate::model::TargetWorkspaceState> {
+        self.workspace_state.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyWorkspaceStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9928,6 +9969,16 @@ pub struct ModifyWorkspacePropertiesInput {
     /// <p>The properties of the WorkSpace.</p>
     pub workspace_properties: std::option::Option<crate::model::WorkspaceProperties>,
 }
+impl ModifyWorkspacePropertiesInput {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The properties of the WorkSpace.</p>
+    pub fn workspace_properties(&self) -> std::option::Option<&crate::model::WorkspaceProperties> {
+        self.workspace_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyWorkspacePropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyWorkspacePropertiesInput");
@@ -9946,6 +9997,18 @@ pub struct ModifyWorkspaceCreationPropertiesInput {
     /// <p>The default properties for creating WorkSpaces.</p>
     pub workspace_creation_properties:
         std::option::Option<crate::model::WorkspaceCreationProperties>,
+}
+impl ModifyWorkspaceCreationPropertiesInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The default properties for creating WorkSpaces.</p>
+    pub fn workspace_creation_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkspaceCreationProperties> {
+        self.workspace_creation_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyWorkspaceCreationPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9968,6 +10031,18 @@ pub struct ModifyWorkspaceAccessPropertiesInput {
     /// <p>The device types and operating systems to enable or disable for access.</p>
     pub workspace_access_properties: std::option::Option<crate::model::WorkspaceAccessProperties>,
 }
+impl ModifyWorkspaceAccessPropertiesInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The device types and operating systems to enable or disable for access.</p>
+    pub fn workspace_access_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkspaceAccessProperties> {
+        self.workspace_access_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyWorkspaceAccessPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyWorkspaceAccessPropertiesInput");
@@ -9989,6 +10064,18 @@ pub struct ModifySelfservicePermissionsInput {
     /// <p>The permissions to enable or disable self-service capabilities.</p>
     pub selfservice_permissions: std::option::Option<crate::model::SelfservicePermissions>,
 }
+impl ModifySelfservicePermissionsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The permissions to enable or disable self-service capabilities.</p>
+    pub fn selfservice_permissions(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfservicePermissions> {
+        self.selfservice_permissions.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifySelfservicePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifySelfservicePermissionsInput");
@@ -10006,6 +10093,16 @@ pub struct ModifyClientPropertiesInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub client_properties: std::option::Option<crate::model::ClientProperties>,
+}
+impl ModifyClientPropertiesInput {
+    /// <p>The resource identifiers, in the form of directory IDs.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Information about the Amazon WorkSpaces client.</p>
+    pub fn client_properties(&self) -> std::option::Option<&crate::model::ClientProperties> {
+        self.client_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyClientPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10029,6 +10126,22 @@ pub struct ModifyAccountInput {
     /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
 }
+impl ModifyAccountInput {
+    /// <p>The status of BYOL.</p>
+    pub fn dedicated_tenancy_support(
+        &self,
+    ) -> std::option::Option<&crate::model::DedicatedTenancySupportEnum> {
+        self.dedicated_tenancy_support.as_ref()
+    }
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
+    /// interface. Specify an IP address range that is compatible with your network and in CIDR
+    /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
+    /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
+    /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
+        self.dedicated_tenancy_management_cidr_range.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyAccountInput");
@@ -10049,6 +10162,16 @@ pub struct MigrateWorkspaceInput {
     pub source_workspace_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
     pub bundle_id: std::option::Option<std::string::String>,
+}
+impl MigrateWorkspaceInput {
+    /// <p>The identifier of the WorkSpace to migrate from.</p>
+    pub fn source_workspace_id(&self) -> std::option::Option<&str> {
+        self.source_workspace_id.as_deref()
+    }
+    /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MigrateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10071,6 +10194,22 @@ pub struct ListAvailableManagementCidrRangesInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
     /// provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAvailableManagementCidrRangesInput {
+    /// <p>The IP address range to search. Specify an IP address range that is compatible with your
+    /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    pub fn management_cidr_range_constraint(&self) -> std::option::Option<&str> {
+        self.management_cidr_range_constraint.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAvailableManagementCidrRangesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10115,6 +10254,47 @@ pub struct ImportWorkspaceImageInput {
     /// </note>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
 }
+impl ImportWorkspaceImageInput {
+    /// <p>The identifier of the EC2 image.</p>
+    pub fn ec2_image_id(&self) -> std::option::Option<&str> {
+        self.ec2_image_id.as_deref()
+    }
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol
+    /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
+    /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
+    /// that does not end in <code>_WSP</code>. </p>
+    ///
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+    /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    pub fn ingestion_process(
+        &self,
+    ) -> std::option::Option<&crate::model::WorkspaceImageIngestionProcess> {
+        self.ingestion_process.as_ref()
+    }
+    /// <p>The name of the WorkSpace image.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The description of the WorkSpace image.</p>
+    pub fn image_description(&self) -> std::option::Option<&str> {
+        self.image_description.as_deref()
+    }
+    /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
+    /// BYOL images. For more information about subscribing to Office for BYOL images, see
+    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+    /// Bring Your Own Windows Desktop Licenses</a>.</p>
+    ///
+    /// <note>
+    /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+    /// </note>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
+        self.applications.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportWorkspaceImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportWorkspaceImageInput");
@@ -10137,6 +10317,16 @@ pub struct DisassociateIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DisassociateIpGroupsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateIpGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateIpGroupsInput");
@@ -10153,6 +10343,12 @@ pub struct DisassociateConnectionAliasInput {
     /// <p>The identifier of the connection alias to disassociate.</p>
     pub alias_id: std::option::Option<std::string::String>,
 }
+impl DisassociateConnectionAliasInput {
+    /// <p>The identifier of the connection alias to disassociate.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateConnectionAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateConnectionAliasInput");
@@ -10167,6 +10363,12 @@ impl std::fmt::Debug for DisassociateConnectionAliasInput {
 pub struct DescribeWorkspaceSnapshotsInput {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspaceSnapshotsInput {
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkspaceSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10185,6 +10387,17 @@ pub struct DescribeWorkspacesConnectionStatusInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
     /// provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspacesConnectionStatusInput {
+    /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
+    pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.workspace_ids.as_deref()
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkspacesConnectionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10220,6 +10433,40 @@ pub struct DescribeWorkspacesInput {
     /// provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspacesInput {
+    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
+    /// filter.</p>
+    /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
+    /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+    pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.workspace_ids.as_deref()
+    }
+    /// <p>The identifier of the directory. In addition, you can optionally specify a specific
+    /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
+    /// other filter.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the directory user. You must specify this parameter with
+    /// <code>DirectoryId</code>.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
+    /// retrieved. You cannot combine this parameter with any other filter.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspacesInput");
@@ -10247,6 +10494,25 @@ pub struct DescribeWorkspaceImagesInput {
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeWorkspaceImagesInput {
+    /// <p>The identifier of the image.</p>
+    pub fn image_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.image_ids.as_deref()
+    }
+    /// <p>The type (owned or shared) of the image.</p>
+    pub fn image_type(&self) -> std::option::Option<&crate::model::ImageType> {
+        self.image_type.as_ref()
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceImagesInput");
@@ -10269,6 +10535,21 @@ pub struct DescribeWorkspaceImagePermissionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeWorkspaceImagePermissionsInput {
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeWorkspaceImagePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10293,6 +10574,22 @@ pub struct DescribeWorkspaceDirectoriesInput {
     /// provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspaceDirectoriesInput {
+    /// <p>The identifiers of the directories. If the value is null, all directories are
+    /// retrieved.</p>
+    pub fn directory_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.directory_ids.as_deref()
+    }
+    /// <p>The maximum number of directories to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceDirectoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceDirectoriesInput");
@@ -10316,6 +10613,22 @@ pub struct DescribeWorkspaceBundlesInput {
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspaceBundlesInput {
+    /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
+    pub fn bundle_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.bundle_ids.as_deref()
+    }
+    /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
+    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
+    /// To describe the bundles that belong to your account, don't specify a value.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceBundlesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceBundlesInput");
@@ -10333,6 +10646,13 @@ pub struct DescribeTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
     /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl DescribeTagsInput {
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
+    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10353,6 +10673,21 @@ pub struct DescribeIpGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeIpGroupsInput {
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.group_ids.as_deref()
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeIpGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10375,6 +10710,21 @@ pub struct DescribeConnectionAliasPermissionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeConnectionAliasPermissionsInput {
+    /// <p>The identifier of the connection alias.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
+    /// next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeConnectionAliasPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10400,6 +10750,25 @@ pub struct DescribeConnectionAliasesInput {
     /// next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConnectionAliasesInput {
+    /// <p>The identifiers of the connection aliases to describe.</p>
+    pub fn alias_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.alias_ids.as_deref()
+    }
+    /// <p>The identifier of the directory associated with the connection alias.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The maximum number of connection aliases to return.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
+    /// next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectionAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectionAliasesInput");
@@ -10418,6 +10787,12 @@ pub struct DescribeClientPropertiesInput {
     /// <p>The resource identifier, in the form of directory IDs.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeClientPropertiesInput {
+    /// <p>The resource identifier, in the form of directory IDs.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClientPropertiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClientPropertiesInput");
@@ -10433,6 +10808,13 @@ pub struct DescribeAccountModificationsInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
     /// provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAccountModificationsInput {
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
+    /// provide this token to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountModificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10462,6 +10844,14 @@ pub struct DeregisterWorkspaceDirectoryInput {
     /// error.</p>
     pub directory_id: std::option::Option<std::string::String>,
 }
+impl DeregisterWorkspaceDirectoryInput {
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
+    /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
+    /// error.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterWorkspaceDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterWorkspaceDirectoryInput");
@@ -10477,6 +10867,12 @@ pub struct DeleteWorkspaceImageInput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
 }
+impl DeleteWorkspaceImageInput {
+    /// <p>The identifier of the image.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWorkspaceImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkspaceImageInput");
@@ -10491,6 +10887,12 @@ impl std::fmt::Debug for DeleteWorkspaceImageInput {
 pub struct DeleteWorkspaceBundleInput {
     /// <p>The identifier of the bundle.</p>
     pub bundle_id: std::option::Option<std::string::String>,
+}
+impl DeleteWorkspaceBundleInput {
+    /// <p>The identifier of the bundle.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkspaceBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10510,6 +10912,17 @@ pub struct DeleteTagsInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteTagsInput {
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
+    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
@@ -10526,6 +10939,12 @@ pub struct DeleteIpGroupInput {
     /// <p>The identifier of the IP access control group.</p>
     pub group_id: std::option::Option<std::string::String>,
 }
+impl DeleteIpGroupInput {
+    /// <p>The identifier of the IP access control group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIpGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIpGroupInput");
@@ -10541,6 +10960,12 @@ pub struct DeleteConnectionAliasInput {
     /// <p>The identifier of the connection alias to delete.</p>
     pub alias_id: std::option::Option<std::string::String>,
 }
+impl DeleteConnectionAliasInput {
+    /// <p>The identifier of the connection alias to delete.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConnectionAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConnectionAliasInput");
@@ -10555,6 +10980,12 @@ impl std::fmt::Debug for DeleteConnectionAliasInput {
 pub struct CreateWorkspacesInput {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceRequest>>,
+}
+impl CreateWorkspacesInput {
+    /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+    pub fn workspaces(&self) -> std::option::Option<&[crate::model::WorkspaceRequest]> {
+        self.workspaces.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10588,6 +11019,41 @@ pub struct CreateWorkspaceBundleInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWorkspaceBundleInput {
+    /// <p>The name of the bundle.</p>
+    pub fn bundle_name(&self) -> std::option::Option<&str> {
+        self.bundle_name.as_deref()
+    }
+    /// <p>The description of the bundle.</p>
+    pub fn bundle_description(&self) -> std::option::Option<&str> {
+        self.bundle_description.as_deref()
+    }
+    /// <p>The identifier of the image that is used to create the bundle.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>Describes the compute type of the bundle.</p>
+    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type.as_ref()
+    }
+    /// <p>Describes the user volume for a WorkSpace bundle.</p>
+    pub fn user_storage(&self) -> std::option::Option<&crate::model::UserStorage> {
+        self.user_storage.as_ref()
+    }
+    /// <p>Describes the root volume for a WorkSpace bundle.</p>
+    pub fn root_storage(&self) -> std::option::Option<&crate::model::RootStorage> {
+        self.root_storage.as_ref()
+    }
+    /// <p>The tags associated with the bundle.</p>
+    ///
+    /// <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
+    /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkspaceBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceBundleInput");
@@ -10620,6 +11086,29 @@ pub struct CreateUpdatedWorkspaceImageInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateUpdatedWorkspaceImageInput {
+    /// <p>The name of the new updated WorkSpace image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of whether updates for the WorkSpace image are available.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the source WorkSpace image.</p>
+    pub fn source_image_id(&self) -> std::option::Option<&str> {
+        self.source_image_id.as_deref()
+    }
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
+    ///
+    /// <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create
+    /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUpdatedWorkspaceImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUpdatedWorkspaceImageInput");
@@ -10640,6 +11129,17 @@ pub struct CreateTagsInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateTagsInput {
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
+    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10662,6 +11162,24 @@ pub struct CreateIpGroupInput {
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateIpGroupInput {
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The description of the group.</p>
+    pub fn group_desc(&self) -> std::option::Option<&str> {
+        self.group_desc.as_deref()
+    }
+    /// <p>The rules to add to the group.</p>
+    pub fn user_rules(&self) -> std::option::Option<&[crate::model::IpRuleItem]> {
+        self.user_rules.as_deref()
+    }
+    /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateIpGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10689,6 +11207,22 @@ pub struct CreateConnectionAliasInput {
     /// <p>The tags to associate with the connection alias.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateConnectionAliasInput {
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+    ///
+    /// <important>
+    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
+    /// connection string with a different account, even if you delete all instances of it from the original account. The
+    /// connection string is globally reserved for your account.</p>
+    /// </important>
+    pub fn connection_string(&self) -> std::option::Option<&str> {
+        self.connection_string.as_deref()
+    }
+    /// <p>The tags to associate with the connection alias.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateConnectionAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionAliasInput");
@@ -10713,6 +11247,28 @@ pub struct CopyWorkspaceImageInput {
     /// <p>The tags for the image.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CopyWorkspaceImageInput {
+    /// <p>The name of the image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the source image.</p>
+    pub fn source_image_id(&self) -> std::option::Option<&str> {
+        self.source_image_id.as_deref()
+    }
+    /// <p>The identifier of the source Region.</p>
+    pub fn source_region(&self) -> std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
+    /// <p>The tags for the image.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyWorkspaceImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyWorkspaceImageInput");
@@ -10734,6 +11290,16 @@ pub struct AuthorizeIpRulesInput {
     /// <p>The rules to add to the group.</p>
     pub user_rules: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
 }
+impl AuthorizeIpRulesInput {
+    /// <p>The identifier of the group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The rules to add to the group.</p>
+    pub fn user_rules(&self) -> std::option::Option<&[crate::model::IpRuleItem]> {
+        self.user_rules.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthorizeIpRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeIpRulesInput");
@@ -10752,6 +11318,16 @@ pub struct AssociateIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AssociateIpGroupsInput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateIpGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateIpGroupsInput");
@@ -10769,6 +11345,16 @@ pub struct AssociateConnectionAliasInput {
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the directory to associate the connection alias with.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl AssociateConnectionAliasInput {
+    /// <p>The identifier of the connection alias.</p>
+    pub fn alias_id(&self) -> std::option::Option<&str> {
+        self.alias_id.as_deref()
+    }
+    /// <p>The identifier of the directory to associate the connection alias with.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateConnectionAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

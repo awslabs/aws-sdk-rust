@@ -7167,6 +7167,16 @@ pub struct ValidationException {
     /// <p>The field where the invalid entry was detected.</p>
     pub field_list: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
+impl ValidationException {
+    /// <p>A message with the reason for the validation exception error.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// <p>The field where the invalid entry was detected.</p>
+    pub fn field_list(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
+        self.field_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");

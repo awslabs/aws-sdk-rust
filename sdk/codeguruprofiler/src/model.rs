@@ -114,6 +114,13 @@ pub struct NotificationConfiguration {
     /// the application profile.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
+impl NotificationConfiguration {
+    /// <p>List of up to two channels to be used for sending notifications for events detected from
+    /// the application profile.</p>
+    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.channels.as_deref()
+    }
+}
 impl std::fmt::Debug for NotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationConfiguration");
@@ -176,6 +183,22 @@ pub struct Channel {
     pub uri: std::option::Option<std::string::String>,
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
     pub event_publishers: std::option::Option<std::vec::Vec<crate::model::EventPublisher>>,
+}
+impl Channel {
+    /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
+    pub fn event_publishers(
+        &self,
+    ) -> std::option::Option<&std::vec::Vec<crate::model::EventPublisher>> {
+        self.event_publishers.as_ref()
+    }
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -312,6 +335,14 @@ pub struct ProfileTime {
     /// the ISO 8601 format. For example,
     /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub start: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ProfileTime {
+    /// <p>The start time of a profile. It is specified using
+    /// the ISO 8601 format. For example,
+    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start.as_ref()
+    }
 }
 impl std::fmt::Debug for ProfileTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -496,6 +527,36 @@ pub struct FindingsReportSummary {
     /// <p>The total number of different recommendations that were found by the analysis.</p>
     pub total_number_of_findings: std::option::Option<i32>,
 }
+impl FindingsReportSummary {
+    /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+        self.profiling_group_name.as_deref()
+    }
+    /// <p>The start time of the profile the analysis data is about.
+    /// This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn profile_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.profile_start_time.as_ref()
+    }
+    /// <p>
+    /// The end time of the period during which the metric is flagged as anomalous.
+    /// This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn profile_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.profile_end_time.as_ref()
+    }
+    /// <p>The total number of different recommendations that were found by the analysis.</p>
+    pub fn total_number_of_findings(&self) -> std::option::Option<i32> {
+        self.total_number_of_findings
+    }
+}
 impl std::fmt::Debug for FindingsReportSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FindingsReportSummary");
@@ -634,6 +695,26 @@ pub struct Anomaly {
     /// </p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::AnomalyInstance>>,
 }
+impl Anomaly {
+    /// <p>
+    /// Details about the metric that the analysis used when it detected the anomaly.
+    /// The metric includes the name of the frame that was analyzed with the type and
+    /// thread states used to derive the metric value for that frame.
+    /// </p>
+    pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
+        self.metric.as_ref()
+    }
+    /// <p>The reason for which metric was flagged as anomalous.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>
+    /// A list of the instances of the detected anomalies during the requested period.
+    /// </p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::AnomalyInstance]> {
+        self.instances.as_deref()
+    }
+}
 impl std::fmt::Debug for Anomaly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Anomaly");
@@ -746,6 +827,36 @@ pub struct AnomalyInstance {
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
     pub user_feedback: std::option::Option<crate::model::UserFeedback>,
+}
+impl AnomalyInstance {
+    /// <p>
+    /// The universally unique identifier (UUID) of an instance of an anomaly in a metric.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The start time of the period during which the metric is flagged as anomalous.
+    /// This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>
+    /// The end time of the period during which the metric is flagged as anomalous.
+    /// This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
+    pub fn user_feedback(&self) -> std::option::Option<&crate::model::UserFeedback> {
+        self.user_feedback.as_ref()
+    }
 }
 impl std::fmt::Debug for AnomalyInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -869,6 +980,13 @@ pub struct UserFeedback {
     /// the user about whether the recommendation is useful or not.</p>
     pub r#type: std::option::Option<crate::model::FeedbackType>,
 }
+impl UserFeedback {
+    /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by
+    /// the user about whether the recommendation is useful or not.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FeedbackType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for UserFeedback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserFeedback");
@@ -936,6 +1054,29 @@ pub struct Metric {
     /// metric value for the frame.
     /// </p>
     pub thread_states: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Metric {
+    /// <p>
+    /// The name of the method that appears as a frame in any stack in a profile.
+    /// </p>
+    pub fn frame_name(&self) -> std::option::Option<&str> {
+        self.frame_name.as_deref()
+    }
+    /// <p>
+    /// A type that specifies how a metric for a frame is analyzed.
+    /// The supported value <code>AggregatedRelativeTotalTime</code> is an
+    /// aggregation of the metric value for one frame that is calculated across the
+    /// occurences of all frames in a profile.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MetricType> {
+        self.r#type.as_ref()
+    }
+    /// <p>
+    /// The list of application runtime thread states that is used to calculate the
+    /// metric value for the frame.
+    /// </p>
+    pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
+        self.thread_states.as_deref()
+    }
 }
 impl std::fmt::Debug for Metric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1105,6 +1246,38 @@ pub struct Recommendation {
     /// millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Recommendation {
+    /// <p>How many different places in the profile graph triggered a match.</p>
+    pub fn all_matches_count(&self) -> std::option::Option<i32> {
+        self.all_matches_count
+    }
+    /// <p>How much of the total sample count is potentially affected.</p>
+    pub fn all_matches_sum(&self) -> std::option::Option<f64> {
+        self.all_matches_sum
+    }
+    /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
+    pub fn pattern(&self) -> std::option::Option<&crate::model::Pattern> {
+        self.pattern.as_ref()
+    }
+    /// <p>List of the matches with most impact. </p>
+    pub fn top_matches(&self) -> std::option::Option<&[crate::model::Match]> {
+        self.top_matches.as_deref()
+    }
+    /// <p>The start time of the profile that was used by this analysis.
+    /// This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>End time of the profile that was used by this analysis.
+    /// This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Recommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Recommendation");
@@ -1249,6 +1422,20 @@ pub struct Match {
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
     pub threshold_breach_value: std::option::Option<f64>,
 }
+impl Match {
+    /// <p>The target frame that triggered a match.</p>
+    pub fn target_frames_index(&self) -> std::option::Option<i32> {
+        self.target_frames_index
+    }
+    /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
+    pub fn frame_address(&self) -> std::option::Option<&str> {
+        self.frame_address.as_deref()
+    }
+    /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
+    pub fn threshold_breach_value(&self) -> std::option::Option<f64> {
+        self.threshold_breach_value
+    }
+}
 impl std::fmt::Debug for Match {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Match");
@@ -1349,6 +1536,46 @@ pub struct Pattern {
     /// A list of the different counters used to determine if there is a match.
     /// </p>
     pub counters_to_aggregate: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Pattern {
+    /// <p>The universally unique identifier (UUID) of this pattern.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name for this pattern.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the recommendation. This explains a potential
+    /// inefficiency in a profiled application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>
+    /// A string that contains the steps recommended to address the potential inefficiency.
+    /// </p>
+    pub fn resolution_steps(&self) -> std::option::Option<&str> {
+        self.resolution_steps.as_deref()
+    }
+    /// <p>A list of frame names that were searched during the analysis that generated
+    /// a recommendation.</p>
+    pub fn target_frames(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.target_frames.as_deref()
+    }
+    /// <p>
+    /// The percentage of time an application spends in one method that triggers
+    /// a recommendation. The percentage of time is the same as the percentage of
+    /// the total gathered sample counts during analysis.
+    /// </p>
+    pub fn threshold_percent(&self) -> f64 {
+        self.threshold_percent
+    }
+    /// <p>
+    /// A list of the different counters used to determine if there is a match.
+    /// </p>
+    pub fn counters_to_aggregate(&self) -> std::option::Option<&[std::string::String]> {
+        self.counters_to_aggregate.as_deref()
+    }
 }
 impl std::fmt::Debug for Pattern {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1579,6 +1806,72 @@ pub struct AgentConfiguration {
     pub agent_parameters: std::option::Option<
         std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
     >,
+}
+impl AgentConfiguration {
+    /// <p>
+    /// A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code>
+    /// to enable profiling.
+    /// </p>
+    pub fn should_profile(&self) -> std::option::Option<bool> {
+        self.should_profile
+    }
+    /// <p>
+    /// How long a profiling agent should send profiling data using
+    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
+    /// <code>ConfigureAgent</code>
+    /// </a>.
+    /// For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
+    /// <code>ConfigureAgent</code>
+    /// </a>
+    /// every 5 minutes to submit the profiled data collected during that period.
+    /// </p>
+    pub fn period_in_seconds(&self) -> std::option::Option<i32> {
+        self.period_in_seconds
+    }
+    /// <p>
+    /// Parameters used by the profiler. The valid parameters are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in
+    /// the profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
+    /// which calls method <code>B</code>, which calls method <code>C</code>, which
+    /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
+    /// set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the
+    /// profiler.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between
+    /// sending reports.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used
+    /// to report profiles.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to
+    /// profile samples.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn agent_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
+    > {
+        self.agent_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for AgentConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1957,6 +2250,20 @@ pub struct FrameMetricDatum {
     /// </p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
+impl FrameMetricDatum {
+    /// <p>
+    /// The frame name, metric type, and thread states. These are used
+    /// to derive the value of the metric for the frame.</p>
+    pub fn frame_metric(&self) -> std::option::Option<&crate::model::FrameMetric> {
+        self.frame_metric.as_ref()
+    }
+    /// <p>
+    /// A list of values that are associated with a frame metric.
+    /// </p>
+    pub fn values(&self) -> std::option::Option<&[f64]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for FrameMetricDatum {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FrameMetricDatum");
@@ -2043,6 +2350,23 @@ pub struct FrameMetric {
     pub r#type: std::option::Option<crate::model::MetricType>,
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
     pub thread_states: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FrameMetric {
+    /// <p> Name of the method common across the multiple occurrences of a frame in an application
+    /// profile.</p>
+    pub fn frame_name(&self) -> std::option::Option<&str> {
+        self.frame_name.as_deref()
+    }
+    /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The
+    /// supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric
+    /// value for one frame that is calculated across the occurrences of all frames in a profile. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MetricType> {
+        self.r#type.as_ref()
+    }
+    /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
+    pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
+        self.thread_states.as_deref()
+    }
 }
 impl std::fmt::Debug for FrameMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2141,6 +2465,16 @@ pub struct TimestampStructure {
     /// </p>
     pub value: std::option::Option<aws_smithy_types::Instant>,
 }
+impl TimestampStructure {
+    /// <p>
+    /// A <code>Timestamp</code>. This is specified
+    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+    /// millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for TimestampStructure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimestampStructure");
@@ -2237,6 +2571,71 @@ pub struct ProfilingGroupDescription {
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ProfilingGroupDescription {
+    /// <p>The name of the profiling group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html">
+    /// <code>AgentOrchestrationConfig</code>
+    /// </a>
+    /// object that indicates if the profiling group is enabled for profiled or not.
+    /// </p>
+    pub fn agent_orchestration_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AgentOrchestrationConfig> {
+        self.agent_orchestration_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the profiling group was created. Specify using
+    /// the ISO 8601 format. For example,
+    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>
+    /// The date and time when the profiling group was last updated. Specify using
+    /// the ISO 8601 format. For example,
+    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>
+    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html">
+    /// <code>ProfilingStatus</code>
+    /// </a> object
+    /// that includes information about the last time a profile agent pinged back,
+    /// the last time a profile was received, and the aggregation period and start time for the
+    /// most recent aggregated profile.
+    /// </p>
+    pub fn profiling_status(&self) -> std::option::Option<&crate::model::ProfilingStatus> {
+        self.profiling_status.as_ref()
+    }
+    /// <p>
+    /// The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then
+    /// the profiled application runs on AWS Lambda. If it is set to <code>Default</code>, then the
+    /// profiled application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance,
+    /// an on-premises server, or a different platform. The default is <code>Default</code>.         
+    /// </p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
+    /// <p>
+    /// A list of the tags that belong to this profiling group.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ProfilingGroupDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2540,6 +2939,33 @@ pub struct ProfilingStatus {
     /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub latest_agent_orchestrated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ProfilingStatus {
+    /// <p>The date and time when the most recent profile was received. Specify using
+    /// the ISO 8601 format. For example,
+    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn latest_agent_profile_reported_at(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_agent_profile_reported_at.as_ref()
+    }
+    /// <p>
+    /// An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+    /// <code>AggregatedProfileTime</code>
+    /// </a>
+    /// object that contains the aggregation period and start time for an aggregated profile.
+    /// </p>
+    pub fn latest_aggregated_profile(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregatedProfileTime> {
+        self.latest_aggregated_profile.as_ref()
+    }
+    /// <p>The date and time when the profiling agent most recently pinged back. Specify using
+    /// the ISO 8601 format. For example,
+    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn latest_agent_orchestrated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_agent_orchestrated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for ProfilingStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProfilingStatus");
@@ -2691,6 +3117,46 @@ pub struct AggregatedProfileTime {
     /// </ul>
     pub period: std::option::Option<crate::model::AggregationPeriod>,
 }
+impl AggregatedProfileTime {
+    /// <p>
+    /// The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile
+    /// contains profiles posted by the agent starting at this time for an aggregation period  
+    /// specified by the <code>period</code> property of the <code>AggregatedProfileTime</code>
+    /// object.
+    /// </p>
+    /// <p>
+    /// Specify <code>start</code> using the ISO 8601 format. For example,
+    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+    /// </p>
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start.as_ref()
+    }
+    /// <p>
+    /// The aggregation period. This indicates the period during which an aggregation profile
+    /// collects posted agent profiles for a profiling group. Use one of three valid
+    /// durations that are specified using the ISO 8601 format.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>P1D</code> — 1 day
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PT1H</code> — 1 hour
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PT5M</code> — 5 minutes
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn period(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
+        self.period.as_ref()
+    }
+}
 impl std::fmt::Debug for AggregatedProfileTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregatedProfileTime");
@@ -2823,6 +3289,15 @@ pub struct AgentOrchestrationConfig {
     /// to enable profiling.
     /// </p>
     pub profiling_enabled: std::option::Option<bool>,
+}
+impl AgentOrchestrationConfig {
+    /// <p>
+    /// A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code>
+    /// to enable profiling.
+    /// </p>
+    pub fn profiling_enabled(&self) -> std::option::Option<bool> {
+        self.profiling_enabled
+    }
 }
 impl std::fmt::Debug for AgentOrchestrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

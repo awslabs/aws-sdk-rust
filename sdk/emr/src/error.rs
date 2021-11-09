@@ -5290,6 +5290,12 @@ pub struct InvalidRequestException {
     /// <p>The message associated with the exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidRequestException {
+    /// <p>The error code associated with the exception.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidRequestException");

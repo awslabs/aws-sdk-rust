@@ -131,7 +131,7 @@ impl CreateAlertManagerDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_alert_manager_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_alert_manager_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -368,10 +368,7 @@ impl CreateRuleGroupsNamespaceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_rule_groups_namespace(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -560,10 +557,7 @@ impl CreateWorkspaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2321,10 +2315,7 @@ impl PutAlertManagerDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_alert_manager_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2546,10 +2537,7 @@ impl PutRuleGroupsNamespaceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_rule_groups_namespace(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2738,10 +2726,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3110,10 +3095,9 @@ impl UpdateWorkspaceAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace_alias(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_workspace_alias(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3186,6 +3170,20 @@ pub struct ListWorkspacesInput {
     /// Maximum results to return in response (default=100, maximum=1000).
     pub max_results: std::option::Option<i32>,
 }
+impl ListWorkspacesInput {
+    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// Maximum results to return in response (default=100, maximum=1000).
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkspacesInput");
@@ -3208,6 +3206,23 @@ pub struct CreateWorkspaceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateWorkspaceInput {
+    /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// Optional, user-provided tags for this workspace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceInput");
@@ -3226,6 +3241,16 @@ pub struct DeleteWorkspaceInput {
     pub workspace_id: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteWorkspaceInput {
+    /// The ID of the workspace to delete.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3247,6 +3272,20 @@ pub struct UpdateWorkspaceAliasInput {
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateWorkspaceAliasInput {
+    /// The ID of the workspace being updated.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The new alias of the workspace.
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceAliasInput");
@@ -3263,6 +3302,12 @@ impl std::fmt::Debug for UpdateWorkspaceAliasInput {
 pub struct DescribeWorkspaceInput {
     /// The ID of the workspace to describe.
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspaceInput {
+    /// The ID of the workspace to describe.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3284,6 +3329,24 @@ pub struct ListRuleGroupsNamespacesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// Maximum results to return in response (default=100, maximum=1000).
     pub max_results: std::option::Option<i32>,
+}
+impl ListRuleGroupsNamespacesInput {
+    /// The ID of the workspace.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Maximum results to return in response (default=100, maximum=1000).
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRuleGroupsNamespacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3312,6 +3375,31 @@ pub struct CreateRuleGroupsNamespaceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRuleGroupsNamespaceInput {
+    /// The ID of the workspace in which to create the rule group namespace.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The namespace data that define the rule groups.
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// Optional, user-provided tags for this rule groups namespace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRuleGroupsNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleGroupsNamespaceInput");
@@ -3334,6 +3422,20 @@ pub struct DeleteRuleGroupsNamespaceInput {
     pub name: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteRuleGroupsNamespaceInput {
+    /// The ID of the workspace to delete rule group definition.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRuleGroupsNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3358,6 +3460,24 @@ pub struct PutRuleGroupsNamespaceInput {
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
+impl PutRuleGroupsNamespaceInput {
+    /// The ID of the workspace in which to update the rule group namespace.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The namespace data that define the rule groups.
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRuleGroupsNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRuleGroupsNamespaceInput");
@@ -3377,6 +3497,16 @@ pub struct DescribeRuleGroupsNamespaceInput {
     pub workspace_id: std::option::Option<std::string::String>,
     /// The rule groups namespace.
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeRuleGroupsNamespaceInput {
+    /// The ID of the workspace to describe.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The rule groups namespace.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRuleGroupsNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3398,6 +3528,20 @@ pub struct CreateAlertManagerDefinitionInput {
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateAlertManagerDefinitionInput {
+    /// The ID of the workspace in which to create the alert manager definition.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The alert manager definition data.
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAlertManagerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAlertManagerDefinitionInput");
@@ -3416,6 +3560,16 @@ pub struct DeleteAlertManagerDefinitionInput {
     pub workspace_id: std::option::Option<std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteAlertManagerDefinitionInput {
+    /// The ID of the workspace in which to delete the alert manager definition.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAlertManagerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3437,6 +3591,20 @@ pub struct PutAlertManagerDefinitionInput {
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
+impl PutAlertManagerDefinitionInput {
+    /// The ID of the workspace in which to update the alert manager definition.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// The alert manager definition data.
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAlertManagerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAlertManagerDefinitionInput");
@@ -3454,6 +3622,12 @@ pub struct DescribeAlertManagerDefinitionInput {
     /// The ID of the workspace to describe.
     pub workspace_id: std::option::Option<std::string::String>,
 }
+impl DescribeAlertManagerDefinitionInput {
+    /// The ID of the workspace to describe.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAlertManagerDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlertManagerDefinitionInput");
@@ -3470,6 +3644,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// One or more tag keys
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// The ARN of the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// One or more tag keys
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3490,6 +3674,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// The ARN of the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// The list of tags assigned to the resource.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3505,6 +3702,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// The ARN of the resource.
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// The ARN of the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

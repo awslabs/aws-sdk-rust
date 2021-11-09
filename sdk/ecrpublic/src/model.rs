@@ -11,6 +11,18 @@ pub struct Tag {
     /// descriptor within a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
+    /// that acts like a category for more specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
+    /// descriptor within a tag category (key).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -98,6 +110,46 @@ pub struct RepositoryCatalogData {
     pub usage_text: std::option::Option<std::string::String>,
     /// <p>Whether or not the repository is certified by AWS Marketplace.</p>
     pub marketplace_certified: std::option::Option<bool>,
+}
+impl RepositoryCatalogData {
+    /// <p>The short description of the repository.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The architecture tags that are associated with the repository.</p>
+    /// <note>
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For
+    /// more information, see <a>RepositoryCatalogDataInput</a>.</p>
+    /// </note>
+    pub fn architectures(&self) -> std::option::Option<&[std::string::String]> {
+        self.architectures.as_deref()
+    }
+    /// <p>The operating system tags that are associated with the repository.</p>
+    /// <note>
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For
+    /// more information, see <a>RepositoryCatalogDataInput</a>.</p>
+    /// </note>
+    pub fn operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.operating_systems.as_deref()
+    }
+    /// <p>The URL containing the logo associated with the repository.</p>
+    pub fn logo_url(&self) -> std::option::Option<&str> {
+        self.logo_url.as_deref()
+    }
+    /// <p>The longform description of the contents of the repository. This text appears in the
+    /// repository details on the Amazon ECR Public Gallery.</p>
+    pub fn about_text(&self) -> std::option::Option<&str> {
+        self.about_text.as_deref()
+    }
+    /// <p>The longform usage details of the contents of the repository. The usage text provides
+    /// context for users of the repository.</p>
+    pub fn usage_text(&self) -> std::option::Option<&str> {
+        self.usage_text.as_deref()
+    }
+    /// <p>Whether or not the repository is certified by AWS Marketplace.</p>
+    pub fn marketplace_certified(&self) -> std::option::Option<bool> {
+        self.marketplace_certified
+    }
 }
 impl std::fmt::Debug for RepositoryCatalogData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -330,6 +382,89 @@ pub struct RepositoryCatalogDataInput {
     /// and additional usage details for users of the repository. The text must be in markdown
     /// format.</p>
     pub usage_text: std::option::Option<std::string::String>,
+}
+impl RepositoryCatalogDataInput {
+    /// <p>A short description of the contents of the repository. This text appears in both the
+    /// image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The system architecture that the images in the repository are compatible with. On the
+    /// Amazon ECR Public Gallery, the following supported architectures will appear as badges on the
+    /// repository and are used as search filters.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Linux</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Windows</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>If an unsupported tag is added to your repository catalog data, it will be associated
+    /// with the repository and can be retrieved using the API but will not be discoverable in
+    /// the Amazon ECR Public Gallery.</p>
+    /// </note>
+    pub fn architectures(&self) -> std::option::Option<&[std::string::String]> {
+        self.architectures.as_deref()
+    }
+    /// <p>The operating systems that the images in the repository are compatible with. On the
+    /// Amazon ECR Public Gallery, the following supported operating systems will appear as badges on
+    /// the repository and are used as search filters.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ARM</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ARM 64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>x86</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>x86-64</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>If an unsupported tag is added to your repository catalog data, it will be associated
+    /// with the repository and can be retrieved using the API but will not be discoverable in
+    /// the Amazon ECR Public Gallery.</p>
+    /// </note>
+    pub fn operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.operating_systems.as_deref()
+    }
+    /// <p>The base64-encoded repository logo payload.</p>
+    /// <note>
+    /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified
+    /// accounts.</p>
+    /// </note>
+    pub fn logo_image_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.logo_image_blob.as_ref()
+    }
+    /// <p>A detailed description of the contents of the repository. It is publicly visible in the
+    /// Amazon ECR Public Gallery. The text must be in markdown format.</p>
+    pub fn about_text(&self) -> std::option::Option<&str> {
+        self.about_text.as_deref()
+    }
+    /// <p>Detailed information on how to use the contents of the repository. It is publicly
+    /// visible in the Amazon ECR Public Gallery. The usage text provides context, support information,
+    /// and additional usage details for users of the repository. The text must be in markdown
+    /// format.</p>
+    pub fn usage_text(&self) -> std::option::Option<&str> {
+        self.usage_text.as_deref()
+    }
 }
 impl std::fmt::Debug for RepositoryCatalogDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -583,6 +718,16 @@ pub struct RegistryCatalogData {
     /// </important>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl RegistryCatalogData {
+    /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p>
+    /// <important>
+    /// <p>Only accounts that have the verified account badge can have a registry display
+    /// name.</p>
+    /// </important>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RegistryCatalogData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegistryCatalogData");
@@ -646,6 +791,28 @@ pub struct Image {
     pub image_manifest: std::option::Option<std::string::String>,
     /// <p>The manifest media type of the image.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
+}
+impl Image {
+    /// <p>The AWS account ID associated with the registry containing the image.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository associated with the image.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An object containing the image tag and image digest associated with an image.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The image manifest associated with the image.</p>
+    pub fn image_manifest(&self) -> std::option::Option<&str> {
+        self.image_manifest.as_deref()
+    }
+    /// <p>The manifest media type of the image.</p>
+    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+        self.image_manifest_media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for Image {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -761,6 +928,16 @@ pub struct ImageIdentifier {
     /// <p>The tag used for the image.</p>
     pub image_tag: std::option::Option<std::string::String>,
 }
+impl ImageIdentifier {
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The tag used for the image.</p>
+    pub fn image_tag(&self) -> std::option::Option<&str> {
+        self.image_tag.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageIdentifier");
@@ -826,6 +1003,19 @@ pub struct AuthorizationData {
     /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
     /// Authorization tokens are valid for 12 hours.</p>
     pub expires_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AuthorizationData {
+    /// <p>A base64-encoded string that contains authorization data for a public Amazon ECR registry.
+    /// When the string is decoded, it is presented in the format <code>user:password</code> for
+    /// public registry authentication using <code>docker login</code>.</p>
+    pub fn authorization_token(&self) -> std::option::Option<&str> {
+        self.authorization_token.as_deref()
+    }
+    /// <p>The Unix time in seconds and milliseconds when the authorization token expires.
+    /// Authorization tokens are valid for 12 hours.</p>
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires_at.as_ref()
+    }
 }
 impl std::fmt::Debug for AuthorizationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -909,6 +1099,30 @@ pub struct Repository {
     pub repository_uri: std::option::Option<std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Repository {
+    /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+    pub fn repository_arn(&self) -> std::option::Option<&str> {
+        self.repository_arn.as_deref()
+    }
+    /// <p>The AWS account ID associated with the public registry that contains the
+    /// repository.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The URI for the repository. You can use this URI for container image <code>push</code>
+    /// and <code>pull</code> operations.</p>
+    pub fn repository_uri(&self) -> std::option::Option<&str> {
+        self.repository_uri.as_deref()
+    }
+    /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for Repository {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1036,6 +1250,31 @@ pub struct Registry {
     pub verified: std::option::Option<bool>,
     /// <p>An array of objects representing the aliases for a public registry.</p>
     pub aliases: std::option::Option<std::vec::Vec<crate::model::RegistryAlias>>,
+}
+impl Registry {
+    /// <p>The AWS account ID associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
+        self.registry_arn.as_deref()
+    }
+    /// <p>The URI of a public registry. The URI contains a universal prefix and the registry
+    /// alias.</p>
+    pub fn registry_uri(&self) -> std::option::Option<&str> {
+        self.registry_uri.as_deref()
+    }
+    /// <p>Whether the account is verified. This indicates whether the account is an AWS
+    /// Marketplace vendor. If an account is verified, each public repository will received a
+    /// verified account badge on the Amazon ECR Public Gallery.</p>
+    pub fn verified(&self) -> std::option::Option<bool> {
+        self.verified
+    }
+    /// <p>An array of objects representing the aliases for a public registry.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::RegistryAlias]> {
+        self.aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for Registry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1168,6 +1407,32 @@ pub struct RegistryAlias {
     /// public repository is created, your public registry is assigned a default registry
     /// alias.</p>
     pub default_registry_alias: bool,
+}
+impl RegistryAlias {
+    /// <p>The name of the registry alias.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the registry alias.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RegistryAliasStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Whether or not the registry alias is the primary alias for the registry. If true, the
+    /// alias is the primary registry alias and is displayed in both the repository URL and the
+    /// image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p>
+    /// <note>
+    /// <p>A registry alias that is not the primary registry alias can be used in the repository
+    /// URI in a <code>docker pull</code> command.</p>
+    /// </note>
+    pub fn primary_registry_alias(&self) -> bool {
+        self.primary_registry_alias
+    }
+    /// <p>Whether or not the registry alias is the default alias for the registry. When the first
+    /// public repository is created, your public registry is assigned a default registry
+    /// alias.</p>
+    pub fn default_registry_alias(&self) -> bool {
+        self.default_registry_alias
+    }
 }
 impl std::fmt::Debug for RegistryAlias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1338,6 +1603,20 @@ pub struct ImageTagDetail {
     /// <p>An object that describes the details of an image.</p>
     pub image_detail: std::option::Option<crate::model::ReferencedImageDetail>,
 }
+impl ImageTagDetail {
+    /// <p>The tag associated with the image.</p>
+    pub fn image_tag(&self) -> std::option::Option<&str> {
+        self.image_tag.as_deref()
+    }
+    /// <p>The time stamp indicating when the image tag was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>An object that describes the details of an image.</p>
+    pub fn image_detail(&self) -> std::option::Option<&crate::model::ReferencedImageDetail> {
+        self.image_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for ImageTagDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageTagDetail");
@@ -1434,6 +1713,37 @@ pub struct ReferencedImageDetail {
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
     pub artifact_media_type: std::option::Option<std::string::String>,
+}
+impl ReferencedImageDetail {
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The size, in bytes, of the image in the repository.</p>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the
+    /// list.</p>
+    /// <note>
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before
+    /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+    /// command shows the uncompressed image size, so it may return a larger image size than the
+    /// image sizes returned by <a>DescribeImages</a>.</p>
+    /// </note>
+    pub fn image_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.image_size_in_bytes
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current
+    /// image tag was pushed to the repository.</p>
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.image_pushed_at.as_ref()
+    }
+    /// <p>The media type of the image manifest.</p>
+    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+        self.image_manifest_media_type.as_deref()
+    }
+    /// <p>The artifact media type of the image.</p>
+    pub fn artifact_media_type(&self) -> std::option::Option<&str> {
+        self.artifact_media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ReferencedImageDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1586,6 +1896,50 @@ pub struct ImageDetail {
     pub image_manifest_media_type: std::option::Option<std::string::String>,
     /// <p>The artifact media type of the image.</p>
     pub artifact_media_type: std::option::Option<std::string::String>,
+}
+impl ImageDetail {
+    /// <p>The AWS account ID associated with the public registry to which this image
+    /// belongs.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The name of the repository to which this image belongs.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The list of tags associated with this image.</p>
+    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
+        self.image_tags.as_deref()
+    }
+    /// <p>The size, in bytes, of the image in the repository.</p>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the
+    /// list.</p>
+    /// <note>
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before
+    /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+    /// command shows the uncompressed image size, so it may return a larger image size than the
+    /// image sizes returned by <a>DescribeImages</a>.</p>
+    /// </note>
+    pub fn image_size_in_bytes(&self) -> std::option::Option<i64> {
+        self.image_size_in_bytes
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current
+    /// image was pushed to the repository. </p>
+    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.image_pushed_at.as_ref()
+    }
+    /// <p>The media type of the image manifest.</p>
+    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+        self.image_manifest_media_type.as_deref()
+    }
+    /// <p>The artifact media type of the image.</p>
+    pub fn artifact_media_type(&self) -> std::option::Option<&str> {
+        self.artifact_media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ImageDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1771,6 +2125,20 @@ pub struct ImageFailure {
     /// <p>The reason for the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl ImageFailure {
+    /// <p>The image ID associated with the failure.</p>
+    pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
+        self.image_id.as_ref()
+    }
+    /// <p>The code associated with the failure.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::ImageFailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageFailure");
@@ -1941,6 +2309,20 @@ pub struct LayerFailure {
     /// <p>The reason for the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl LayerFailure {
+    /// <p>The layer digest associated with the failure.</p>
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
+        self.layer_digest.as_deref()
+    }
+    /// <p>The failure code associated with the failure.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::LayerFailureCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>The reason for the failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for LayerFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LayerFailure");
@@ -2083,6 +2465,26 @@ pub struct Layer {
     /// <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
     /// <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
     pub media_type: std::option::Option<std::string::String>,
+}
+impl Layer {
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn layer_digest(&self) -> std::option::Option<&str> {
+        self.layer_digest.as_deref()
+    }
+    /// <p>The availability status of the image layer.</p>
+    pub fn layer_availability(&self) -> std::option::Option<&crate::model::LayerAvailability> {
+        self.layer_availability.as_ref()
+    }
+    /// <p>The size, in bytes, of the image layer.</p>
+    pub fn layer_size(&self) -> std::option::Option<i64> {
+        self.layer_size
+    }
+    /// <p>The media type of the layer, such as
+    /// <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+    /// <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+    pub fn media_type(&self) -> std::option::Option<&str> {
+        self.media_type.as_deref()
+    }
 }
 impl std::fmt::Debug for Layer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

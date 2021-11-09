@@ -7,6 +7,13 @@ pub struct UpdateS3ResourcesOutput {
     /// error message are provided for each failed item. </p>
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
+impl UpdateS3ResourcesOutput {
+    /// <p>The S3 resources whose classification types can't be updated. An error code and an
+    /// error message are provided for each failed item. </p>
+    pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::model::FailedS3Resource]> {
+        self.failed_s3_resources.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateS3ResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateS3ResourcesOutput");
@@ -74,6 +81,19 @@ pub struct ListS3ResourcesOutput {
     /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
     /// null. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListS3ResourcesOutput {
+    /// <p>A list of the associated S3 resources returned by the action.</p>
+    pub fn s3_resources(&self) -> std::option::Option<&[crate::model::S3ResourceClassification]> {
+        self.s3_resources.as_deref()
+    }
+    /// <p>When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the nextToken parameter in a
+    /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
+    /// null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListS3ResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -161,6 +181,20 @@ pub struct ListMemberAccountsOutput {
     /// null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMemberAccountsOutput {
+    /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current
+    /// Macie Classic administrator account is also included in this list. </p>
+    pub fn member_accounts(&self) -> std::option::Option<&[crate::model::MemberAccount]> {
+        self.member_accounts.as_deref()
+    }
+    /// <p>When a response is generated, if there is more data to be listed, this parameter is
+    /// present in the response and contains the value to use for the nextToken parameter in a
+    /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
+    /// null. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMemberAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMemberAccountsOutput");
@@ -240,6 +274,14 @@ pub struct DisassociateS3ResourcesOutput {
     /// Macie Classic. An error code and an error message are provided for each failed item.
     /// </p>
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
+}
+impl DisassociateS3ResourcesOutput {
+    /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon
+    /// Macie Classic. An error code and an error message are provided for each failed item.
+    /// </p>
+    pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::model::FailedS3Resource]> {
+        self.failed_s3_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateS3ResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -336,6 +378,13 @@ pub struct AssociateS3ResourcesOutput {
     /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
     /// an error message are provided for each failed item. </p>
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
+}
+impl AssociateS3ResourcesOutput {
+    /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
+    /// an error message are provided for each failed item. </p>
+    pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::model::FailedS3Resource]> {
+        self.failed_s3_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateS3ResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

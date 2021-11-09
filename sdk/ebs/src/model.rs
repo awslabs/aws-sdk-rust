@@ -339,6 +339,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -512,6 +522,16 @@ pub struct Block {
     /// <p>The block token for the block index.</p>
     pub block_token: std::option::Option<std::string::String>,
 }
+impl Block {
+    /// <p>The block index.</p>
+    pub fn block_index(&self) -> std::option::Option<i32> {
+        self.block_index
+    }
+    /// <p>The block token for the block index.</p>
+    pub fn block_token(&self) -> std::option::Option<&str> {
+        self.block_token.as_deref()
+    }
+}
 impl std::fmt::Debug for Block {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Block");
@@ -580,6 +600,23 @@ pub struct ChangedBlock {
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in
     /// the <code>ListChangedBlocks</code> operation.</p>
     pub second_block_token: std::option::Option<std::string::String>,
+}
+impl ChangedBlock {
+    /// <p>The block index.</p>
+    pub fn block_index(&self) -> std::option::Option<i32> {
+        self.block_index
+    }
+    /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in
+    /// the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot
+    /// does not have the changed block that is on the second snapshot.</p>
+    pub fn first_block_token(&self) -> std::option::Option<&str> {
+        self.first_block_token.as_deref()
+    }
+    /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in
+    /// the <code>ListChangedBlocks</code> operation.</p>
+    pub fn second_block_token(&self) -> std::option::Option<&str> {
+        self.second_block_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ChangedBlock {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -2267,10 +2267,8 @@ impl RegisterDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2467,10 +2465,7 @@ impl SetCognitoEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_cognito_events(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_cognito_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2668,7 +2663,7 @@ impl SetIdentityPoolConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3463,10 +3458,7 @@ impl UpdateRecordsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_records(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_records(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3558,6 +3550,46 @@ pub struct UpdateRecordsInput {
     /// ClientContext field is not yet implemented.
     pub client_context: std::option::Option<std::string::String>,
 }
+impl UpdateRecordsInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A string of up to 128 characters.
+    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+    /// (dot).
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// A list of patch
+    /// operations.
+    pub fn record_patches(&self) -> std::option::Option<&[crate::model::RecordPatch]> {
+        self.record_patches.as_deref()
+    }
+    /// The SyncSessionToken returned by a
+    /// previous call to ListRecords for this dataset and identity.
+    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+        self.sync_session_token.as_deref()
+    }
+    /// Intended to supply a device ID that
+    /// will populate the lastModifiedBy field referenced in other methods. The
+    /// ClientContext field is not yet implemented.
+    pub fn client_context(&self) -> std::option::Option<&str> {
+        self.client_context.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecordsInput");
@@ -3586,6 +3618,25 @@ pub struct UnsubscribeFromDatasetInput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl UnsubscribeFromDatasetInput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>Unique ID for this identity.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The name of the dataset from which to unsubcribe.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsubscribeFromDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsubscribeFromDatasetInput");
@@ -3611,6 +3662,25 @@ pub struct SubscribeToDatasetInput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl SubscribeToDatasetInput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>Unique ID for this identity.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The name of the dataset to subcribe to.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SubscribeToDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribeToDatasetInput");
@@ -3634,6 +3704,21 @@ pub struct SetIdentityPoolConfigurationInput {
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
+impl SetIdentityPoolConfigurationInput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito. This is the ID of the pool to modify.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>Options to apply to this identity pool for push synchronization.</p>
+    pub fn push_sync(&self) -> std::option::Option<&crate::model::PushSync> {
+        self.push_sync.as_ref()
+    }
+    /// Options to apply to this identity pool for Amazon Cognito streams.
+    pub fn cognito_streams(&self) -> std::option::Option<&crate::model::CognitoStreams> {
+        self.cognito_streams.as_ref()
+    }
+}
 impl std::fmt::Debug for SetIdentityPoolConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetIdentityPoolConfigurationInput");
@@ -3653,6 +3738,19 @@ pub struct SetCognitoEventsInput {
     /// <p>The events to configure</p>
     pub events:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl SetCognitoEventsInput {
+    /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The events to configure</p>
+    pub fn events(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.events.as_ref()
+    }
 }
 impl std::fmt::Debug for SetCognitoEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3676,6 +3774,25 @@ pub struct RegisterDeviceInput {
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The push token.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl RegisterDeviceInput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>The unique ID for this identity.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The push token.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3716,6 +3833,45 @@ pub struct ListRecordsInput {
     /// identity ID, and expiration.
     pub sync_session_token: std::option::Option<std::string::String>,
 }
+impl ListRecordsInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A string of up to 128 characters. Allowed
+    /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// The last server sync count for this
+    /// record.
+    pub fn last_sync_count(&self) -> std::option::Option<i64> {
+        self.last_sync_count
+    }
+    /// A pagination token for obtaining the next
+    /// page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The maximum number of results to be
+    /// returned.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token containing a session ID,
+    /// identity ID, and expiration.
+    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+        self.sync_session_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecordsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecordsInput");
@@ -3741,6 +3897,18 @@ pub struct ListIdentityPoolUsageInput {
     /// The maximum number of results to
     /// be returned.
     pub max_results: i32,
+}
+impl ListIdentityPoolUsageInput {
+    /// A pagination token for obtaining
+    /// the next page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The maximum number of results to
+    /// be returned.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListIdentityPoolUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3771,6 +3939,30 @@ pub struct ListDatasetsInput {
     /// returned.
     pub max_results: i32,
 }
+impl ListDatasetsInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A pagination token for obtaining the next
+    /// page of results.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The maximum number of results to be
+    /// returned.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatasetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsInput");
@@ -3790,6 +3982,13 @@ pub struct GetIdentityPoolConfigurationInput {
     /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
+impl GetIdentityPoolConfigurationInput {
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+    /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetIdentityPoolConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetIdentityPoolConfigurationInput");
@@ -3804,6 +4003,12 @@ impl std::fmt::Debug for GetIdentityPoolConfigurationInput {
 pub struct GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl GetCognitoEventsInput {
+    /// <p>The Cognito Identity Pool ID for the request</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCognitoEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3821,6 +4026,14 @@ pub struct GetBulkPublishDetailsInput {
     /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
     /// unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl GetBulkPublishDetailsInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBulkPublishDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3844,6 +4057,20 @@ pub struct DescribeIdentityUsageInput {
     /// unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
 }
+impl DescribeIdentityUsageInput {
+    /// A name-spaced GUID (for
+    /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+    /// generation is unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIdentityUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityUsageInput");
@@ -3862,6 +4089,14 @@ pub struct DescribeIdentityPoolUsageInput {
     /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
     /// generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl DescribeIdentityPoolUsageInput {
+    /// A name-spaced GUID (for
+    /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
+    /// generation is unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityPoolUsageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3888,6 +4123,26 @@ pub struct DescribeDatasetInput {
     /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
     /// (dot).
     pub dataset_name: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A string of up to 128 characters.
+    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+    /// (dot).
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3917,6 +4172,26 @@ pub struct DeleteDatasetInput {
     /// (dot).
     pub dataset_name: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// A string of up to 128 characters.
+    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
+    /// (dot).
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
@@ -3935,6 +4210,14 @@ pub struct BulkPublishInput {
     /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
     /// unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
+}
+impl BulkPublishInput {
+    /// A name-spaced GUID (for example,
+    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+    /// unique within a region.
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BulkPublishInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

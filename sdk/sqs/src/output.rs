@@ -106,6 +106,20 @@ pub struct SendMessageBatchOutput {
     /// </code> items with error details about each message that can't be enqueued.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
+impl SendMessageBatchOutput {
+    /// <p>A list of <code>
+    /// <a>SendMessageBatchResultEntry</a>
+    /// </code> items.</p>
+    pub fn successful(&self) -> std::option::Option<&[crate::model::SendMessageBatchResultEntry]> {
+        self.successful.as_deref()
+    }
+    /// <p>A list of <code>
+    /// <a>BatchResultErrorEntry</a>
+    /// </code> items with error details about each message that can't be enqueued.</p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+        self.failed.as_deref()
+    }
+}
 impl std::fmt::Debug for SendMessageBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendMessageBatchOutput");
@@ -209,6 +223,33 @@ pub struct SendMessageOutput {
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub sequence_number: std::option::Option<std::string::String>,
+}
+impl SendMessageOutput {
+    /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    pub fn md5_of_message_body(&self) -> std::option::Option<&str> {
+        self.md5_of_message_body.as_deref()
+    }
+    /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    pub fn md5_of_message_attributes(&self) -> std::option::Option<&str> {
+        self.md5_of_message_attributes.as_deref()
+    }
+    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
+    /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+    pub fn md5_of_message_system_attributes(&self) -> std::option::Option<&str> {
+        self.md5_of_message_system_attributes.as_deref()
+    }
+    /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a>
+    /// in the <i>Amazon SQS Developer Guide</i>.
+    /// </p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+    /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
+    /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
+        self.sequence_number.as_deref()
+    }
 }
 impl std::fmt::Debug for SendMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -368,6 +409,12 @@ pub struct ReceiveMessageOutput {
     /// <p>A list of messages.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
+impl ReceiveMessageOutput {
+    /// <p>A list of messages.</p>
+    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+        self.messages.as_deref()
+    }
+}
 impl std::fmt::Debug for ReceiveMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReceiveMessageOutput");
@@ -456,6 +503,15 @@ pub struct ListQueueTagsOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListQueueTagsOutput {
+    /// <p>The list of all tags added to the specified queue.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListQueueTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQueueTagsOutput");
@@ -521,6 +577,17 @@ pub struct ListQueuesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
     pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListQueuesOutput {
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+    /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
+    pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
+        self.queue_urls.as_deref()
+    }
 }
 impl std::fmt::Debug for ListQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -597,6 +664,17 @@ pub struct ListDeadLetterSourceQueuesOutput {
     /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeadLetterSourceQueuesOutput {
+    /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
+    pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
+        self.queue_urls.as_deref()
+    }
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+    /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeadLetterSourceQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeadLetterSourceQueuesOutput");
@@ -669,6 +747,12 @@ pub struct GetQueueUrlOutput {
     /// <p>The URL of the queue.</p>
     pub queue_url: std::option::Option<std::string::String>,
 }
+impl GetQueueUrlOutput {
+    /// <p>The URL of the queue.</p>
+    pub fn queue_url(&self) -> std::option::Option<&str> {
+        self.queue_url.as_deref()
+    }
+}
 impl std::fmt::Debug for GetQueueUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetQueueUrlOutput");
@@ -718,6 +802,16 @@ pub struct GetQueueAttributesOutput {
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
     >,
+}
+impl GetQueueAttributesOutput {
+    /// <p>A map of attributes to their respective values.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
+    > {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetQueueAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -823,6 +917,22 @@ pub struct DeleteMessageBatchOutput {
     /// <a>BatchResultErrorEntry</a>
     /// </code> items.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+}
+impl DeleteMessageBatchOutput {
+    /// <p>A list of <code>
+    /// <a>DeleteMessageBatchResultEntry</a>
+    /// </code> items.</p>
+    pub fn successful(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeleteMessageBatchResultEntry]> {
+        self.successful.as_deref()
+    }
+    /// <p>A list of <code>
+    /// <a>BatchResultErrorEntry</a>
+    /// </code> items.</p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+        self.failed.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMessageBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -945,6 +1055,12 @@ pub struct CreateQueueOutput {
     /// <p>The URL of the created Amazon SQS queue.</p>
     pub queue_url: std::option::Option<std::string::String>,
 }
+impl CreateQueueOutput {
+    /// <p>The URL of the created Amazon SQS queue.</p>
+    pub fn queue_url(&self) -> std::option::Option<&str> {
+        self.queue_url.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQueueOutput");
@@ -1003,6 +1119,22 @@ pub struct ChangeMessageVisibilityBatchOutput {
     /// <a>BatchResultErrorEntry</a>
     /// </code> items.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
+}
+impl ChangeMessageVisibilityBatchOutput {
+    /// <p>A list of <code>
+    /// <a>ChangeMessageVisibilityBatchResultEntry</a>
+    /// </code> items.</p>
+    pub fn successful(
+        &self,
+    ) -> std::option::Option<&[crate::model::ChangeMessageVisibilityBatchResultEntry]> {
+        self.successful.as_deref()
+    }
+    /// <p>A list of <code>
+    /// <a>BatchResultErrorEntry</a>
+    /// </code> items.</p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+        self.failed.as_deref()
+    }
 }
 impl std::fmt::Debug for ChangeMessageVisibilityBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

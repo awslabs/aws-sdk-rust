@@ -38,6 +38,56 @@ pub struct ProjectDetails {
     /// </p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
+impl ProjectDetails {
+    /// <p>
+    /// Name of the project.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>
+    /// Default region to use for AWS resource creation in the AWS Mobile Hub project.
+    /// </p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>
+    /// Synchronization state for a project.
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ProjectState> {
+        self.state.as_ref()
+    }
+    /// <p>
+    /// Date the project was created.
+    /// </p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>
+    /// Date of the last modification of the project.
+    /// </p>
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date.as_ref()
+    }
+    /// <p>
+    /// Website URL for this project in the AWS Mobile Hub console.
+    /// </p>
+    pub fn console_url(&self) -> std::option::Option<&str> {
+        self.console_url.as_deref()
+    }
+    /// <p>
+    /// List of AWS resources associated with a project.
+    /// </p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+}
 impl std::fmt::Debug for ProjectDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProjectDetails");
@@ -245,6 +295,41 @@ pub struct Resource {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl Resource {
+    /// <p>
+    /// Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket).
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>
+    /// Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket).
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// AWS resource name which uniquely identifies the resource in AWS systems.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>
+    /// Identifies which feature in AWS Mobile Hub is associated with this AWS resource.
+    /// </p>
+    pub fn feature(&self) -> std::option::Option<&str> {
+        self.feature.as_deref()
+    }
+    /// <p>
+    /// Key-value attribute pairs.
+    /// </p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -451,6 +536,20 @@ pub struct ProjectSummary {
     /// </p>
     pub project_id: std::option::Option<std::string::String>,
 }
+impl ProjectSummary {
+    /// <p>
+    /// Name of the project.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ProjectSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProjectSummary");
@@ -543,6 +642,44 @@ pub struct BundleDetails {
     /// Developer desktop or mobile app or website platforms.
     /// </p>
     pub available_platforms: std::option::Option<std::vec::Vec<crate::model::Platform>>,
+}
+impl BundleDetails {
+    /// <p>
+    /// Unique bundle identifier.
+    /// </p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>
+    /// Title of the download bundle.
+    /// </p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>
+    /// Version of the download bundle.
+    /// </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>
+    /// Description of the download bundle.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>
+    /// Icon for the download bundle.
+    /// </p>
+    pub fn icon_url(&self) -> std::option::Option<&str> {
+        self.icon_url.as_deref()
+    }
+    /// <p>
+    /// Developer desktop or mobile app or website platforms.
+    /// </p>
+    pub fn available_platforms(&self) -> std::option::Option<&[crate::model::Platform]> {
+        self.available_platforms.as_deref()
+    }
 }
 impl std::fmt::Debug for BundleDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

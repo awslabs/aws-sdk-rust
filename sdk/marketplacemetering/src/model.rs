@@ -10,6 +10,17 @@ pub struct UsageAllocation {
     /// tags, this parameter can be left out.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UsageAllocation {
+    /// <p>The total quantity allocated to this bucket of usage.</p>
+    pub fn allocated_usage_quantity(&self) -> std::option::Option<i32> {
+        self.allocated_usage_quantity
+    }
+    /// <p>The set of tags that define the bucket of usage. For the bucket of items with no
+    /// tags, this parameter can be left out.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UsageAllocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsageAllocation");
@@ -85,6 +96,18 @@ pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within
     /// a tag category (key). The value can be empty or null.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a
+    /// category for the specific tag values.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within
+    /// a tag category (key). The value can be empty or null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -168,6 +191,35 @@ pub struct UsageRecord {
     /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
     /// must equal the Quantity of the UsageRecord.</p>
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
+}
+impl UsageRecord {
+    /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
+    /// <p>Your application can meter usage for up to one hour in the past. Make sure the
+    /// timestamp value is not before the start of the software usage.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
+    /// represents an individual buyer in your application.</p>
+    pub fn customer_identifier(&self) -> std::option::Option<&str> {
+        self.customer_identifier.as_deref()
+    }
+    /// <p>During the process of registering a product on AWS Marketplace, up to eight
+    /// dimensions are specified. These represent different units of value in your
+    /// application.</p>
+    pub fn dimension(&self) -> std::option::Option<&str> {
+        self.dimension.as_deref()
+    }
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time.
+    /// Defaults to <code>0</code> if not specified.</p>
+    pub fn quantity(&self) -> std::option::Option<i32> {
+        self.quantity
+    }
+    /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
+    /// must equal the Quantity of the UsageRecord.</p>
+    pub fn usage_allocations(&self) -> std::option::Option<&[crate::model::UsageAllocation]> {
+        self.usage_allocations.as_deref()
+    }
 }
 impl std::fmt::Debug for UsageRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -327,6 +379,41 @@ pub struct UsageRecordResult {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::UsageRecordResultStatus>,
+}
+impl UsageRecordResult {
+    /// <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+    pub fn usage_record(&self) -> std::option::Option<&crate::model::UsageRecord> {
+        self.usage_record.as_ref()
+    }
+    /// <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+    pub fn metering_record_id(&self) -> std::option::Option<&str> {
+        self.metering_record_id.as_deref()
+    }
+    /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord
+    /// processed by BatchMeterUsage.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Success</i>- The UsageRecord was accepted and honored by
+    /// BatchMeterUsage.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is
+    /// not subscribed to your product. The UsageRecord was not honored. Future
+    /// UsageRecords for this customer will fail until the customer subscribes to your
+    /// product.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid
+    /// and not honored. A previously metered UsageRecord had the same customer,
+    /// dimension, and time, but a different quantity.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::UsageRecordResultStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UsageRecordResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_environment_ec2_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEnvironmentEc2Input,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1);
     }
@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_create_environment_ec2_input(
         for item_11 in var_9 {
             {
                 let mut object_12 = array_10.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -47,12 +47,13 @@ pub fn serialize_structure_crate_input_create_environment_ec2_input(
     if let Some(var_14) = &input.dry_run {
         object.key("dryRun").boolean(*var_14);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_environment_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEnvironmentMembershipInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.environment_id {
         object.key("environmentId").string(var_15);
     }
@@ -62,33 +63,36 @@ pub fn serialize_structure_crate_input_create_environment_membership_input(
     if let Some(var_17) = &input.permissions {
         object.key("permissions").string(var_17.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteEnvironmentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.environment_id {
         object.key("environmentId").string(var_18);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_environment_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteEnvironmentMembershipInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.environment_id {
         object.key("environmentId").string(var_19);
     }
     if let Some(var_20) = &input.user_arn {
         object.key("userArn").string(var_20);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_environment_memberships_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEnvironmentMembershipsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.user_arn {
         object.key("userArn").string(var_21);
     }
@@ -113,12 +117,13 @@ pub fn serialize_structure_crate_input_describe_environment_memberships_input(
             aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_environments_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEnvironmentsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.environment_ids {
         let mut array_29 = object.key("environmentIds").start_array();
         for item_30 in var_28 {
@@ -128,21 +133,23 @@ pub fn serialize_structure_crate_input_describe_environments_input(
         }
         array_29.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_environment_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEnvironmentStatusInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.environment_id {
         object.key("environmentId").string(var_31);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_environments_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListEnvironmentsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.next_token {
         object.key("nextToken").string(var_32);
     }
@@ -152,21 +159,23 @@ pub fn serialize_structure_crate_input_list_environments_input(
             aws_smithy_types::Number::NegInt((*var_33).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.resource_arn {
         object.key("ResourceARN").string(var_34);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.resource_arn {
         object.key("ResourceARN").string(var_35);
     }
@@ -175,18 +184,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_38 in var_36 {
             {
                 let mut object_39 = array_37.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_39, item_38);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_39, item_38)?;
                 object_39.finish();
             }
         }
         array_37.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.resource_arn {
         object.key("ResourceARN").string(var_40);
     }
@@ -199,12 +209,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_42.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnvironmentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.environment_id {
         object.key("environmentId").string(var_44);
     }
@@ -219,12 +230,13 @@ pub fn serialize_structure_crate_input_update_environment_input(
             .key("managedCredentialsAction")
             .string(var_47.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_environment_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnvironmentMembershipInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.environment_id {
         object.key("environmentId").string(var_48);
     }
@@ -234,16 +246,18 @@ pub fn serialize_structure_crate_input_update_environment_membership_input(
     if let Some(var_50) = &input.permissions {
         object.key("permissions").string(var_50.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.key {
         object.key("Key").string(var_51);
     }
     if let Some(var_52) = &input.value {
         object.key("Value").string(var_52);
     }
+    Ok(())
 }

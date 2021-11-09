@@ -161,6 +161,14 @@ pub struct ProvisionPermissionSetOutput {
     pub permission_set_provisioning_status:
         std::option::Option<crate::model::PermissionSetProvisioningStatus>,
 }
+impl ProvisionPermissionSetOutput {
+    /// <p>The status object for the permission set provisioning operation.</p>
+    pub fn permission_set_provisioning_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionSetProvisioningStatus> {
+        self.permission_set_provisioning_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionPermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionPermissionSetOutput");
@@ -220,6 +228,16 @@ pub struct ListTagsForResourceOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A set of key-value pairs that are used to manage the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -293,6 +311,16 @@ pub struct ListPermissionSetsProvisionedToAccountOutput {
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListPermissionSetsProvisionedToAccountOutput {
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
+    pub fn permission_sets(&self) -> std::option::Option<&[std::string::String]> {
+        self.permission_sets.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPermissionSetsProvisionedToAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPermissionSetsProvisionedToAccountOutput");
@@ -364,6 +392,16 @@ pub struct ListPermissionSetsOutput {
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionSetsOutput {
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    pub fn permission_sets(&self) -> std::option::Option<&[std::string::String]> {
+        self.permission_sets.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -437,6 +475,18 @@ pub struct ListPermissionSetProvisioningStatusOutput {
         std::option::Option<std::vec::Vec<crate::model::PermissionSetProvisioningStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPermissionSetProvisioningStatusOutput {
+    /// <p>The status object for the permission set provisioning operation.</p>
+    pub fn permission_sets_provisioning_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::PermissionSetProvisioningStatusMetadata]> {
+        self.permission_sets_provisioning_status.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionSetProvisioningStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -521,6 +571,18 @@ pub struct ListManagedPoliciesInPermissionSetOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListManagedPoliciesInPermissionSetOutput {
+    /// <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+    pub fn attached_managed_policies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttachedManagedPolicy]> {
+        self.attached_managed_policies.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListManagedPoliciesInPermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListManagedPoliciesInPermissionSetOutput");
@@ -597,6 +659,16 @@ pub struct ListInstancesOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInstancesOutput {
+    /// <p>Lists the SSO instances that the caller has access to.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceMetadata]> {
+        self.instances.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstancesOutput");
@@ -668,6 +740,16 @@ pub struct ListAccountsForProvisionedPermissionSetOutput {
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountsForProvisionedPermissionSetOutput {
+    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountsForProvisionedPermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -741,6 +823,16 @@ pub struct ListAccountAssignmentsOutput {
     pub account_assignments: std::option::Option<std::vec::Vec<crate::model::AccountAssignment>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountAssignmentsOutput {
+    /// <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
+    pub fn account_assignments(&self) -> std::option::Option<&[crate::model::AccountAssignment]> {
+        self.account_assignments.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountAssignmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -818,6 +910,18 @@ pub struct ListAccountAssignmentDeletionStatusOutput {
         std::option::Option<std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountAssignmentDeletionStatusOutput {
+    /// <p>The status object for the account assignment deletion operation.</p>
+    pub fn account_assignments_deletion_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountAssignmentOperationStatusMetadata]> {
+        self.account_assignments_deletion_status.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountAssignmentDeletionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -902,6 +1006,18 @@ pub struct ListAccountAssignmentCreationStatusOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccountAssignmentCreationStatusOutput {
+    /// <p>The status object for the account assignment creation operation.</p>
+    pub fn account_assignments_creation_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountAssignmentOperationStatusMetadata]> {
+        self.account_assignments_creation_status.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountAssignmentCreationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountAssignmentCreationStatusOutput");
@@ -981,6 +1097,12 @@ impl ListAccountAssignmentCreationStatusOutput {
 pub struct GetInlinePolicyForPermissionSetOutput {
     /// <p>The IAM inline policy that is attached to the permission set.</p>
     pub inline_policy: std::option::Option<std::string::String>,
+}
+impl GetInlinePolicyForPermissionSetOutput {
+    /// <p>The IAM inline policy that is attached to the permission set.</p>
+    pub fn inline_policy(&self) -> std::option::Option<&str> {
+        self.inline_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInlinePolicyForPermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1064,6 +1186,14 @@ pub struct DescribePermissionSetProvisioningStatusOutput {
     pub permission_set_provisioning_status:
         std::option::Option<crate::model::PermissionSetProvisioningStatus>,
 }
+impl DescribePermissionSetProvisioningStatusOutput {
+    /// <p>The status object for the permission set provisioning operation.</p>
+    pub fn permission_set_provisioning_status(
+        &self,
+    ) -> std::option::Option<&crate::model::PermissionSetProvisioningStatus> {
+        self.permission_set_provisioning_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePermissionSetProvisioningStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePermissionSetProvisioningStatusOutput");
@@ -1122,6 +1252,12 @@ pub struct DescribePermissionSetOutput {
     /// <p>Describes the level of access on an Amazon Web Services account.</p>
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
 }
+impl DescribePermissionSetOutput {
+    /// <p>Describes the level of access on an Amazon Web Services account.</p>
+    pub fn permission_set(&self) -> std::option::Option<&crate::model::PermissionSet> {
+        self.permission_set.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribePermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePermissionSetOutput");
@@ -1179,6 +1315,26 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationOutput {
     /// configuration.</p>
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+}
+impl DescribeInstanceAccessControlAttributeConfigurationOutput {
+    /// <p>The status of the attribute configuration process.</p>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Provides more details about the current status of the specified attribute.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC
+    /// configuration.</p>
+    pub fn instance_access_control_attribute_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
+        self.instance_access_control_attribute_configuration
+            .as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceAccessControlAttributeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1285,6 +1441,14 @@ pub struct DescribeAccountAssignmentDeletionStatusOutput {
     pub account_assignment_deletion_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
 }
+impl DescribeAccountAssignmentDeletionStatusOutput {
+    /// <p>The status object for the account assignment deletion operation.</p>
+    pub fn account_assignment_deletion_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
+        self.account_assignment_deletion_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAccountAssignmentDeletionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountAssignmentDeletionStatusOutput");
@@ -1343,6 +1507,14 @@ pub struct DescribeAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
     pub account_assignment_creation_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+}
+impl DescribeAccountAssignmentCreationStatusOutput {
+    /// <p>The status object for the account assignment creation operation.</p>
+    pub fn account_assignment_creation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
+        self.account_assignment_creation_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountAssignmentCreationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1497,6 +1669,14 @@ pub struct DeleteAccountAssignmentOutput {
     pub account_assignment_deletion_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
 }
+impl DeleteAccountAssignmentOutput {
+    /// <p>The status object for the account assignment deletion operation.</p>
+    pub fn account_assignment_deletion_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
+        self.account_assignment_deletion_status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAccountAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccountAssignmentOutput");
@@ -1554,6 +1734,12 @@ impl DeleteAccountAssignmentOutput {
 pub struct CreatePermissionSetOutput {
     /// <p>Defines the level of access on an Amazon Web Services account.</p>
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
+}
+impl CreatePermissionSetOutput {
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
+    pub fn permission_set(&self) -> std::option::Option<&crate::model::PermissionSet> {
+        self.permission_set.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePermissionSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1640,6 +1826,14 @@ pub struct CreateAccountAssignmentOutput {
     /// <p>The status object for the account assignment creation operation.</p>
     pub account_assignment_creation_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+}
+impl CreateAccountAssignmentOutput {
+    /// <p>The status object for the account assignment creation operation.</p>
+    pub fn account_assignment_creation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
+        self.account_assignment_creation_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAccountAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

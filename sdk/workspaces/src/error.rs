@@ -6914,6 +6914,12 @@ pub struct ResourceUnavailableException {
     /// <p>The identifier of the resource that is not available.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl ResourceUnavailableException {
+    /// <p>The identifier of the resource that is not available.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceUnavailableException");
@@ -6992,6 +6998,12 @@ pub struct ResourceNotFoundException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that could not be found.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// <p>The ID of the resource that could not be found.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

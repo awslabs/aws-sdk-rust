@@ -95,10 +95,7 @@ impl BatchDeleteBuildsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_builds(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_builds(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -257,10 +254,7 @@ impl BatchGetBuildBatchesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_build_batches(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -417,10 +411,7 @@ impl BatchGetBuildsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_builds(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_builds(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -581,10 +572,7 @@ impl BatchGetProjectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_projects(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -749,10 +737,7 @@ impl BatchGetReportGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_report_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -915,10 +900,7 @@ impl BatchGetReportsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_reports(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_reports(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1499,10 +1481,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1720,10 +1699,7 @@ impl CreateReportGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_report_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_report_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1949,10 +1925,7 @@ impl CreateWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2100,10 +2073,7 @@ impl DeleteBuildBatchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_build_batch(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_build_batch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2250,10 +2220,7 @@ impl DeleteProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2404,10 +2371,7 @@ impl DeleteReportInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_report(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_report(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2577,10 +2541,7 @@ impl DeleteReportGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_report_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_report_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2730,10 +2691,9 @@ impl DeleteResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2884,10 +2844,7 @@ impl DeleteSourceCredentialsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_source_credentials(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3036,10 +2993,7 @@ impl DeleteWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3297,10 +3251,7 @@ impl DescribeCodeCoveragesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_code_coverages(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3515,10 +3466,7 @@ impl DescribeTestCasesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_test_cases(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_test_cases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3820,10 +3768,9 @@ impl GetReportGroupTrendInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_report_group_trend(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_report_group_trend(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3973,10 +3920,7 @@ impl GetResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4192,10 +4136,7 @@ impl ImportSourceCredentialsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_source_credentials(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4347,10 +4288,7 @@ impl InvalidateProjectCacheInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_invalidate_project_cache(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4566,10 +4504,7 @@ impl ListBuildBatchesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_build_batches(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_build_batches(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4802,7 +4737,7 @@ impl ListBuildBatchesForProjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_build_batches_for_project(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_build_batches_for_project(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5001,10 +4936,7 @@ impl ListBuildsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_builds(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_builds(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5221,10 +5153,7 @@ impl ListBuildsForProjectInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_builds_for_project(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5361,7 +5290,7 @@ impl ListCuratedEnvironmentImagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_curated_environment_images(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_curated_environment_images(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5603,10 +5532,7 @@ impl ListProjectsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5856,10 +5782,7 @@ impl ListReportGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_report_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_report_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6100,10 +6023,7 @@ impl ListReportsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_reports(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_reports(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6341,7 +6261,7 @@ impl ListReportsForReportGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_reports_for_report_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_reports_for_report_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6592,10 +6512,7 @@ impl ListSharedProjectsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_shared_projects(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_shared_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6847,10 +6764,7 @@ impl ListSharedReportGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_shared_report_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6988,10 +6902,7 @@ impl ListSourceCredentialsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_source_credentials(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7151,10 +7062,7 @@ impl PutResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7326,10 +7234,7 @@ impl RetryBuildInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_retry_build(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_retry_build(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7517,10 +7422,7 @@ impl RetryBuildBatchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_retry_build_batch(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_retry_build_batch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8358,10 +8260,7 @@ impl StartBuildInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_build(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_build(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9199,10 +9098,7 @@ impl StartBuildBatchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_build_batch(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_build_batch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9347,10 +9243,7 @@ impl StopBuildInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_stop_build(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_stop_build(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9496,10 +9389,7 @@ impl StopBuildBatchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_build_batch(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_build_batch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10086,10 +9976,7 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10296,10 +10183,7 @@ impl UpdateProjectVisibilityInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_project_visibility(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10525,10 +10409,7 @@ impl UpdateReportGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_report_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_report_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10766,10 +10647,7 @@ impl UpdateWebhookInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10858,6 +10736,41 @@ pub struct UpdateWebhookInput {
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
 }
+impl UpdateWebhookInput {
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A regular expression used to determine which repository branches are built when a
+    /// webhook is triggered. If the name of a branch matches the regular expression, then it is
+    /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
+    /// <note>
+    /// <p> It is recommended that you use <code>filterGroups</code> instead of
+    /// <code>branchFilter</code>. </p>
+    /// </note>
+    pub fn branch_filter(&self) -> std::option::Option<&str> {
+        self.branch_filter.as_deref()
+    }
+    /// <p> A boolean value that specifies whether the associated GitHub repository's secret
+    /// token should be updated. If you use Bitbucket for your repository,
+    /// <code>rotateSecret</code> is ignored. </p>
+    pub fn rotate_secret(&self) -> bool {
+        self.rotate_secret
+    }
+    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a
+    /// webhook event can trigger a build. A filter group must contain at least one
+    /// <code>EVENT</code>
+    /// <code>WebhookFilter</code>. </p>
+    pub fn filter_groups(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::WebhookFilter>]> {
+        self.filter_groups.as_deref()
+    }
+    /// <p>Specifies the type of build this webhook will trigger.</p>
+    pub fn build_type(&self) -> std::option::Option<&crate::model::WebhookBuildType> {
+        self.build_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWebhookInput");
@@ -10901,6 +10814,40 @@ pub struct UpdateReportGroupInput {
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UpdateReportGroupInput {
+    /// <p>
+    /// The ARN of the report group to update.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>
+    /// Used to specify an updated export type. Valid values are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>S3</code>: The report results are exported to an S3 bucket.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NO_EXPORT</code>: The report results are not exported.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn export_config(&self) -> std::option::Option<&crate::model::ReportExportConfig> {
+        self.export_config.as_ref()
+    }
+    /// <p>
+    /// An updated list of tag key and value pairs associated with this report group.
+    /// </p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
+    /// tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateReportGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReportGroupInput");
@@ -10933,6 +10880,32 @@ pub struct UpdateProjectVisibilityInput {
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
     /// the project's builds.</p>
     pub resource_access_role: std::option::Option<std::string::String>,
+}
+impl UpdateProjectVisibilityInput {
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    ///
+    /// <dl>
+    /// <dt>PUBLIC_READ</dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>PRIVATE</dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub fn project_visibility(&self) -> std::option::Option<&crate::model::ProjectVisibilityType> {
+        self.project_visibility.as_ref()
+    }
+    /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
+    /// the project's builds.</p>
+    pub fn resource_access_role(&self) -> std::option::Option<&str> {
+        self.resource_access_role.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateProjectVisibilityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11051,6 +11024,156 @@ pub struct UpdateProjectInput {
     /// <p>To remove this limit, set this value to -1.</p>
     pub concurrent_build_limit: std::option::Option<i32>,
 }
+impl UpdateProjectInput {
+    /// <p>The name of the build project.</p>
+    /// <note>
+    /// <p>You cannot change a build project's name.</p>
+    /// </note>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A new or replacement description of the build project.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information to be changed about the build input source code for the build
+    /// project.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ProjectSource> {
+        self.source.as_ref()
+    }
+    /// <p> An array of <code>ProjectSource</code> objects. </p>
+    pub fn secondary_sources(&self) -> std::option::Option<&[crate::model::ProjectSource]> {
+        self.secondary_sources.as_deref()
+    }
+    /// <p> A version of the build input to be built for this project. If not specified, the
+    /// latest version is used. If specified, it must be one of: </p>
+    /// <ul>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+    /// corresponds to the version of the source code you want to build. If a pull
+    /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+    /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
+    /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+    /// used.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+    /// version of the source code you want to build. If a branch name is specified, the
+    /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+    /// commit ID is used.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+    /// file to use.</p>
+    /// </li>
+    /// </ul>
+    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version
+    /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
+    /// </p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+    /// <p> An array of <code>ProjectSourceVersion</code> objects. If
+    /// <code>secondarySourceVersions</code> is specified at the build level, then they take
+    /// over these <code>secondarySourceVersions</code> (at the project level). </p>
+    pub fn secondary_source_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+        self.secondary_source_versions.as_deref()
+    }
+    /// <p>Information to be changed about the build output artifacts for the build
+    /// project.</p>
+    pub fn artifacts(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+        self.artifacts.as_ref()
+    }
+    /// <p> An array of <code>ProjectArtifact</code> objects. </p>
+    pub fn secondary_artifacts(&self) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+        self.secondary_artifacts.as_deref()
+    }
+    /// <p>Stores recently used information so that it can be quickly accessed at a later
+    /// time.</p>
+    pub fn cache(&self) -> std::option::Option<&crate::model::ProjectCache> {
+        self.cache.as_ref()
+    }
+    /// <p>Information to be changed about the build environment for the build project.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::ProjectEnvironment> {
+        self.environment.as_ref()
+    }
+    /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent
+    /// Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+    /// timing out any related build that did not get marked as completed.</p>
+    pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.timeout_in_minutes
+    }
+    /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    pub fn queued_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.queued_timeout_in_minutes
+    }
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
+    /// artifacts.</p>
+    /// <note>
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
+    /// service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+    /// the format <code>alias/<alias-name></code>).
+    /// </p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
+    /// tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Set this to true to generate a publicly accessible URL for your project's build
+    /// badge.</p>
+    pub fn badge_enabled(&self) -> std::option::Option<bool> {
+        self.badge_enabled
+    }
+    /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs,
+    /// logs in an S3 bucket, or both. </p>
+    pub fn logs_config(&self) -> std::option::Option<&crate::model::LogsConfig> {
+        self.logs_config.as_ref()
+    }
+    /// <p>
+    /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
+    /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+    /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
+    /// </p>
+    pub fn file_system_locations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectFileSystemLocation]> {
+        self.file_system_locations.as_deref()
+    }
+    /// <p>Contains configuration information about a batch build project.</p>
+    pub fn build_batch_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProjectBuildBatchConfig> {
+        self.build_batch_config.as_ref()
+    }
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
+    /// If the current build count meets this limit, new builds are throttled and are not run.</p>
+    /// <p>To remove this limit, set this value to -1.</p>
+    pub fn concurrent_build_limit(&self) -> std::option::Option<i32> {
+        self.concurrent_build_limit
+    }
+}
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
@@ -11086,6 +11209,12 @@ pub struct StopBuildBatchInput {
     /// <p>The identifier of the batch build to stop.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl StopBuildBatchInput {
+    /// <p>The identifier of the batch build to stop.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopBuildBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopBuildBatchInput");
@@ -11100,6 +11229,12 @@ impl std::fmt::Debug for StopBuildBatchInput {
 pub struct StopBuildInput {
     /// <p>The ID of the build.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl StopBuildInput {
+    /// <p>The ID of the build.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for StopBuildInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11276,6 +11411,245 @@ pub struct StartBuildBatchInput {
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see
     /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
     pub debug_session_enabled: std::option::Option<bool>,
+}
+impl StartBuildBatchInput {
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources
+    /// defined in the batch build project.</p>
+    pub fn secondary_sources_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectSource]> {
+        self.secondary_sources_override.as_deref()
+    }
+    /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source
+    /// versions in the batch build project.</p>
+    pub fn secondary_sources_version_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+        self.secondary_sources_version_override.as_deref()
+    }
+    /// <p>The version of the batch build input to be built, for this build only. If not specified,
+    /// the latest version is used. If specified, the contents depends on the source
+    /// provider:</p>
+    /// <dl>
+    /// <dt>CodeCommit</dt>
+    /// <dd>
+    /// <p>The commit ID, branch, or Git tag to use.</p>
+    /// </dd>
+    /// <dt>GitHub</dt>
+    /// <dd>
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds
+    /// to the version of the source code you want to build. If a pull request ID is
+    /// specified, it must use the format <code>pr/pull-request-ID</code> (for
+    /// example <code>pr/25</code>). If a branch name is specified, the branch's
+    /// HEAD commit ID is used. If not specified, the default branch's HEAD commit
+    /// ID is used.</p>
+    /// </dd>
+    /// <dt>Bitbucket</dt>
+    /// <dd>
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of
+    /// the source code you want to build. If a branch name is specified, the
+    /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+    /// commit ID is used.</p>
+    /// </dd>
+    /// <dt>Amazon S3</dt>
+    /// <dd>
+    /// <p>The version ID of the object that represents the build input ZIP file to
+    /// use.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this
+    /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+    /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the
+    /// build output artifact overrides for the build project.</p>
+    pub fn artifacts_override(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+        self.artifacts_override.as_ref()
+    }
+    /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts
+    /// defined in the batch build project.</p>
+    pub fn secondary_artifacts_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+        self.secondary_artifacts_override.as_deref()
+    }
+    /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the
+    /// environment variables defined in the batch build project.</p>
+    pub fn environment_variables_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+        self.environment_variables_override.as_deref()
+    }
+    /// <p>The source input type that overrides the source input defined in the batch
+    /// build project.</p>
+    pub fn source_type_override(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type_override.as_ref()
+    }
+    /// <p>A location that overrides, for this batch build, the source location defined in
+    /// the batch build project.</p>
+    pub fn source_location_override(&self) -> std::option::Option<&str> {
+        self.source_location_override.as_deref()
+    }
+    /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build
+    /// project. This override applies only if the build project's source is BitBucket or
+    /// GitHub.</p>
+    pub fn source_auth_override(&self) -> std::option::Option<&crate::model::SourceAuth> {
+        self.source_auth_override.as_ref()
+    }
+    /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
+    /// batch build only, any previous depth of history defined in the batch build project.</p>
+    pub fn git_clone_depth_override(&self) -> std::option::Option<i32> {
+        self.git_clone_depth_override
+    }
+    /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration
+    /// for this batch build.</p>
+    pub fn git_submodules_config_override(
+        &self,
+    ) -> std::option::Option<&crate::model::GitSubmodulesConfig> {
+        self.git_submodules_config_override.as_ref()
+    }
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one
+    /// already defined in the build project.</p>
+    /// <p>If this value is set, it can be either an inline buildspec definition, the path to an
+    /// alternate buildspec file relative to the value of the built-in
+    /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
+    /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
+    /// file using its ARN (for example,
+    /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
+    /// provided or is set to an empty string, the source code must contain a buildspec file in
+    /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    pub fn buildspec_override(&self) -> std::option::Option<&str> {
+        self.buildspec_override.as_deref()
+    }
+    /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build
+    /// project. The insecure SSL setting determines whether to ignore SSL warnings while
+    /// connecting to the project source code. This override applies only if the build's source
+    /// is GitHub Enterprise.</p>
+    pub fn insecure_ssl_override(&self) -> std::option::Option<bool> {
+        self.insecure_ssl_override
+    }
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's
+    /// start and completion. If you use this option with a source provider other than GitHub,
+    /// GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
+    /// <note>
+    /// <p>The status of a build triggered by a webhook is always reported to your source
+    /// provider. </p>
+    /// </note>
+    pub fn report_build_batch_status_override(&self) -> std::option::Option<bool> {
+        self.report_build_batch_status_override
+    }
+    /// <p>A container type for this batch build that overrides the one specified in the batch build
+    /// project.</p>
+    pub fn environment_type_override(&self) -> std::option::Option<&crate::model::EnvironmentType> {
+        self.environment_type_override.as_ref()
+    }
+    /// <p>The name of an image for this batch build that overrides the one specified in the batch
+    /// build project.</p>
+    pub fn image_override(&self) -> std::option::Option<&str> {
+        self.image_override.as_deref()
+    }
+    /// <p>The name of a compute type for this batch build that overrides the one specified in the
+    /// batch build project.</p>
+    pub fn compute_type_override(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type_override.as_ref()
+    }
+    /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build
+    /// project.</p>
+    pub fn certificate_override(&self) -> std::option::Option<&str> {
+        self.certificate_override.as_deref()
+    }
+    /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
+    pub fn cache_override(&self) -> std::option::Option<&crate::model::ProjectCache> {
+        self.cache_override.as_ref()
+    }
+    /// <p>The name of a service role for this batch build that overrides the one specified in the
+    /// batch build project.</p>
+    pub fn service_role_override(&self) -> std::option::Option<&str> {
+        self.service_role_override.as_deref()
+    }
+    /// <p>Enable this flag to override privileged mode in the batch build project.</p>
+    pub fn privileged_mode_override(&self) -> std::option::Option<bool> {
+        self.privileged_mode_override
+    }
+    /// <p>Overrides the build timeout specified in the batch build project.</p>
+    pub fn build_timeout_in_minutes_override(&self) -> std::option::Option<i32> {
+        self.build_timeout_in_minutes_override
+    }
+    /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
+    pub fn queued_timeout_in_minutes_override(&self) -> std::option::Option<i32> {
+        self.queued_timeout_in_minutes_override
+    }
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build
+    /// project. The CMK key encrypts the build output artifacts.</p>
+    /// <note>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
+    /// service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+    /// the format <code>alias/<alias-name></code>).</p>
+    pub fn encryption_key_override(&self) -> std::option::Option<&str> {
+        self.encryption_key_override.as_deref()
+    }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
+    /// <code>StartBuildBatch</code> request. The token is included in the
+    /// <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat
+    /// the <code>StartBuildBatch</code> request with the same token, but change a parameter,
+    /// CodeBuild returns a parameter mismatch error.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build
+    /// project.</p>
+    pub fn logs_config_override(&self) -> std::option::Option<&crate::model::LogsConfig> {
+        self.logs_config_override.as_ref()
+    }
+    /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a
+    /// private registry.</p>
+    pub fn registry_credential_override(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistryCredential> {
+        self.registry_credential_override.as_ref()
+    }
+    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid
+    /// values: </p>
+    /// <dl>
+    /// <dt>CODEBUILD</dt>
+    /// <dd>
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+    /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
+    /// </dd>
+    /// <dt>SERVICE_ROLE</dt>
+    /// <dd>
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
+    /// </dd>
+    /// </dl>
+    /// <p>When using a cross-account or private registry image, you must use
+    /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
+    /// you must use <code>CODEBUILD</code> credentials. </p>
+    pub fn image_pull_credentials_type_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ImagePullCredentialsType> {
+        self.image_pull_credentials_type_override.as_ref()
+    }
+    /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration
+    /// overrides.</p>
+    pub fn build_batch_config_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ProjectBuildBatchConfig> {
+        self.build_batch_config_override.as_ref()
+    }
+    /// <p>Specifies if session debugging is enabled for this batch build. For more information, see
+    /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+    pub fn debug_session_enabled(&self) -> std::option::Option<bool> {
+        self.debug_session_enabled
+    }
 }
 impl std::fmt::Debug for StartBuildBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11518,6 +11892,247 @@ pub struct StartBuildInput {
     /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
     pub debug_session_enabled: std::option::Option<bool>,
 }
+impl StartBuildInput {
+    /// <p>The name of the CodeBuild build project to start running a build.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p> An array of <code>ProjectSource</code> objects. </p>
+    pub fn secondary_sources_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectSource]> {
+        self.secondary_sources_override.as_deref()
+    }
+    /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more
+    /// versions of the project's secondary sources to be used for this build only. </p>
+    pub fn secondary_sources_version_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+        self.secondary_sources_version_override.as_deref()
+    }
+    /// <p>The version of the build input to be built, for this build only. If not specified,
+    /// the latest version is used. If specified, the contents depends on the source
+    /// provider:</p>
+    /// <dl>
+    /// <dt>CodeCommit</dt>
+    /// <dd>
+    /// <p>The commit ID, branch, or Git tag to use.</p>
+    /// </dd>
+    /// <dt>GitHub</dt>
+    /// <dd>
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds
+    /// to the version of the source code you want to build. If a pull request ID is
+    /// specified, it must use the format <code>pr/pull-request-ID</code> (for
+    /// example <code>pr/25</code>). If a branch name is specified, the branch's
+    /// HEAD commit ID is used. If not specified, the default branch's HEAD commit
+    /// ID is used.</p>
+    /// </dd>
+    /// <dt>Bitbucket</dt>
+    /// <dd>
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of
+    /// the source code you want to build. If a branch name is specified, the
+    /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+    /// commit ID is used.</p>
+    /// </dd>
+    /// <dt>Amazon S3</dt>
+    /// <dd>
+    /// <p>The version ID of the object that represents the build input ZIP file to
+    /// use.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this
+    /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+    /// <p>Build output artifact settings that override, for this build only, the latest ones
+    /// already defined in the build project.</p>
+    pub fn artifacts_override(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+        self.artifacts_override.as_ref()
+    }
+    /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
+    pub fn secondary_artifacts_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+        self.secondary_artifacts_override.as_deref()
+    }
+    /// <p>A set of environment variables that overrides, for this build only, the latest ones
+    /// already defined in the build project.</p>
+    pub fn environment_variables_override(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
+        self.environment_variables_override.as_deref()
+    }
+    /// <p>A source input type, for this build, that overrides the source input defined in the
+    /// build project.</p>
+    pub fn source_type_override(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type_override.as_ref()
+    }
+    /// <p>A location that overrides, for this build, the source location for the one defined in
+    /// the build project.</p>
+    pub fn source_location_override(&self) -> std::option::Option<&str> {
+        self.source_location_override.as_deref()
+    }
+    /// <p>An authorization type for this build that overrides the one defined in the build
+    /// project. This override applies only if the build project's source is BitBucket or
+    /// GitHub.</p>
+    pub fn source_auth_override(&self) -> std::option::Option<&crate::model::SourceAuth> {
+        self.source_auth_override.as_ref()
+    }
+    /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
+    /// build only, any previous depth of history defined in the build project.</p>
+    pub fn git_clone_depth_override(&self) -> std::option::Option<i32> {
+        self.git_clone_depth_override
+    }
+    /// <p> Information about the Git submodules configuration for this build of an CodeBuild build
+    /// project. </p>
+    pub fn git_submodules_config_override(
+        &self,
+    ) -> std::option::Option<&crate::model::GitSubmodulesConfig> {
+        self.git_submodules_config_override.as_ref()
+    }
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one
+    /// already defined in the build project.</p>
+    /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
+    /// alternate buildspec file relative to the value of the built-in
+    /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
+    /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
+    /// file using its ARN (for example,
+    /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
+    /// provided or is set to an empty string, the source code must contain a buildspec file in
+    /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    pub fn buildspec_override(&self) -> std::option::Option<&str> {
+        self.buildspec_override.as_deref()
+    }
+    /// <p>Enable this flag to override the insecure SSL setting that is specified in the build
+    /// project. The insecure SSL setting determines whether to ignore SSL warnings while
+    /// connecting to the project source code. This override applies only if the build's source
+    /// is GitHub Enterprise.</p>
+    pub fn insecure_ssl_override(&self) -> std::option::Option<bool> {
+        self.insecure_ssl_override
+    }
+    /// <p> Set to true to report to your source provider the status of a build's start and
+    /// completion. If you use this option with a source provider other than GitHub, GitHub
+    /// Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
+    /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
+    /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
+    /// <note>
+    /// <p> The status of a build triggered by a webhook is always reported to your source
+    /// provider. </p>
+    /// </note>
+    pub fn report_build_status_override(&self) -> std::option::Option<bool> {
+        self.report_build_status_override
+    }
+    /// <p>Contains information that defines how the build project reports the build status to
+    /// the source provider. This option is only used when the source provider is
+    /// <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+    /// <code>BITBUCKET</code>.</p>
+    pub fn build_status_config_override(
+        &self,
+    ) -> std::option::Option<&crate::model::BuildStatusConfig> {
+        self.build_status_config_override.as_ref()
+    }
+    /// <p>A container type for this build that overrides the one specified in the build
+    /// project.</p>
+    pub fn environment_type_override(&self) -> std::option::Option<&crate::model::EnvironmentType> {
+        self.environment_type_override.as_ref()
+    }
+    /// <p>The name of an image for this build that overrides the one specified in the build
+    /// project.</p>
+    pub fn image_override(&self) -> std::option::Option<&str> {
+        self.image_override.as_deref()
+    }
+    /// <p>The name of a compute type for this build that overrides the one specified in the
+    /// build project.</p>
+    pub fn compute_type_override(&self) -> std::option::Option<&crate::model::ComputeType> {
+        self.compute_type_override.as_ref()
+    }
+    /// <p>The name of a certificate for this build that overrides the one specified in the build
+    /// project.</p>
+    pub fn certificate_override(&self) -> std::option::Option<&str> {
+        self.certificate_override.as_deref()
+    }
+    /// <p>A ProjectCache object specified for this build that overrides the one defined in the
+    /// build project.</p>
+    pub fn cache_override(&self) -> std::option::Option<&crate::model::ProjectCache> {
+        self.cache_override.as_ref()
+    }
+    /// <p>The name of a service role for this build that overrides the one specified in the
+    /// build project.</p>
+    pub fn service_role_override(&self) -> std::option::Option<&str> {
+        self.service_role_override.as_deref()
+    }
+    /// <p>Enable this flag to override privileged mode in the build project.</p>
+    pub fn privileged_mode_override(&self) -> std::option::Option<bool> {
+        self.privileged_mode_override
+    }
+    /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this
+    /// build only, the latest setting already defined in the build project.</p>
+    pub fn timeout_in_minutes_override(&self) -> std::option::Option<i32> {
+        self.timeout_in_minutes_override
+    }
+    /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    pub fn queued_timeout_in_minutes_override(&self) -> std::option::Option<i32> {
+        self.queued_timeout_in_minutes_override
+    }
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build
+    /// project. The CMK key encrypts the build output artifacts.</p>
+    /// <note>
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
+    /// service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+    /// the format <code>alias/<alias-name></code>).</p>
+    pub fn encryption_key_override(&self) -> std::option::Option<&str> {
+        self.encryption_key_override.as_deref()
+    }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
+    /// StartBuild request. The token is included in the StartBuild request and is valid for 5
+    /// minutes. If you repeat the StartBuild request with the same token, but change a
+    /// parameter, CodeBuild returns a parameter mismatch error. </p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p> Log settings for this build that override the log settings defined in the build
+    /// project. </p>
+    pub fn logs_config_override(&self) -> std::option::Option<&crate::model::LogsConfig> {
+        self.logs_config_override.as_ref()
+    }
+    /// <p> The credentials for access to a private registry. </p>
+    pub fn registry_credential_override(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistryCredential> {
+        self.registry_credential_override.as_ref()
+    }
+    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid
+    /// values: </p>
+    /// <dl>
+    /// <dt>CODEBUILD</dt>
+    /// <dd>
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+    /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
+    /// </dd>
+    /// <dt>SERVICE_ROLE</dt>
+    /// <dd>
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
+    /// </dd>
+    /// </dl>
+    /// <p>When using a cross-account or private registry image, you must use
+    /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
+    /// you must use <code>CODEBUILD</code> credentials. </p>
+    pub fn image_pull_credentials_type_override(
+        &self,
+    ) -> std::option::Option<&crate::model::ImagePullCredentialsType> {
+        self.image_pull_credentials_type_override.as_ref()
+    }
+    /// <p>Specifies if session debugging is enabled for this build. For more information, see
+    /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
+    pub fn debug_session_enabled(&self) -> std::option::Option<bool> {
+        self.debug_session_enabled
+    }
+}
 impl std::fmt::Debug for StartBuildInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartBuildInput");
@@ -11604,6 +12219,24 @@ pub struct RetryBuildBatchInput {
     /// <p>Specifies the type of retry to perform.</p>
     pub retry_type: std::option::Option<crate::model::RetryBuildBatchType>,
 }
+impl RetryBuildBatchInput {
+    /// <p>Specifies the identifier of the batch build to restart.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
+    /// <code>RetryBuildBatch</code> request. The token is included in the
+    /// <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat
+    /// the <code>RetryBuildBatch</code> request with the same token, but change a parameter,
+    /// CodeBuild returns a parameter mismatch error.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>Specifies the type of retry to perform.</p>
+    pub fn retry_type(&self) -> std::option::Option<&crate::model::RetryBuildBatchType> {
+        self.retry_type.as_ref()
+    }
+}
 impl std::fmt::Debug for RetryBuildBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryBuildBatchInput");
@@ -11627,6 +12260,20 @@ pub struct RetryBuildInput {
     /// CodeBuild returns a parameter mismatch error.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl RetryBuildInput {
+    /// <p>Specifies the identifier of the build to restart.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
+    /// <code>RetryBuild</code> request. The token is included in the
+    /// <code>RetryBuild</code> request and is valid for five minutes. If you repeat
+    /// the <code>RetryBuild</code> request with the same token, but change a parameter,
+    /// CodeBuild returns a parameter mismatch error.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for RetryBuildInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryBuildInput");
@@ -11647,6 +12294,19 @@ pub struct PutResourcePolicyInput {
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to
     /// associate with a resource policy. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyInput {
+    /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
+    /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
+    /// </p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to
+    /// associate with a resource policy. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11710,6 +12370,53 @@ pub struct ListSharedReportGroupsInput {
     /// <code>ReportGroup</code> objects. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListSharedReportGroupsInput {
+    /// <p>The order in which to list shared report groups. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List in ascending order.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List in descending order.</p>
+    /// </li>
+    /// </ul>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or
+    /// user. Valid values include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ARN</code>: List based on the ARN. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODIFIED_TIME</code>: List based on when information about the shared
+    /// report group was last changed. </p>
+    /// </li>
+    /// </ul>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SharedResourceSortByType> {
+        self.sort_by.as_ref()
+    }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value
+    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
+    /// string called a <i>nextToken</i> is returned. To get the next batch of
+    /// items in the list, call this operation again, adding the next token to the call. To get
+    /// all of the items in the list, keep calling this operation with each subsequent next
+    /// token that is returned, until no more next tokens are returned. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of paginated shared report groups per response. Use
+    /// <code>nextToken</code> to iterate pages in the list of returned
+    /// <code>ReportGroup</code> objects. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSharedReportGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSharedReportGroupsInput");
@@ -11763,6 +12470,53 @@ pub struct ListSharedProjectsInput {
     /// token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSharedProjectsInput {
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account
+    /// or user. Valid values include: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ARN</code>: List based on the ARN. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MODIFIED_TIME</code>: List based on when information about the shared
+    /// project was last changed. </p>
+    /// </li>
+    /// </ul>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SharedResourceSortByType> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The order in which to list shared build projects. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List in ascending order.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List in descending order.</p>
+    /// </li>
+    /// </ul>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p> The maximum number of paginated shared build projects returned per response. Use
+    /// <code>nextToken</code> to iterate pages in the list of returned <code>Project</code>
+    /// objects. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value
+    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
+    /// string called a <i>nextToken</i> is returned. To get the next batch of
+    /// items in the list, call this operation again, adding the next token to the call. To get
+    /// all of the items in the list, keep calling this operation with each subsequent next
+    /// token that is returned, until no more next tokens are returned. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSharedProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSharedProjectsInput");
@@ -11803,6 +12557,43 @@ pub struct ListReportsForReportGroupInput {
     /// A <code>ReportFilter</code> object used to filter the returned reports.
     /// </p>
     pub filter: std::option::Option<crate::model::ReportFilter>,
+}
+impl ListReportsForReportGroupInput {
+    /// <p>
+    /// The ARN of the report group for which you want to return report ARNs.
+    /// </p>
+    pub fn report_group_arn(&self) -> std::option::Option<&str> {
+        self.report_group_arn.as_deref()
+    }
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// Use to specify whether the results are returned in ascending or descending order.
+    /// </p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>
+    /// The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in
+    /// the list of returned <code>Report</code> objects. The default value is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// A <code>ReportFilter</code> object used to filter the returned reports.
+    /// </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ReportFilter> {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ListReportsForReportGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11853,6 +12644,49 @@ pub struct ListReportsInput {
     /// A <code>ReportFilter</code> object used to filter the returned reports.
     /// </p>
     pub filter: std::option::Option<crate::model::ReportFilter>,
+}
+impl ListReportsInput {
+    /// <p>
+    /// Specifies the sort order for the list of returned reports. Valid values are:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: return reports in chronological order based on their creation date.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in
+    /// the list of returned <code>Report</code> objects. The default value is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// A <code>ReportFilter</code> object used to filter the returned reports.
+    /// </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ReportFilter> {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ListReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11906,6 +12740,53 @@ pub struct ListReportGroupsInput {
     /// the list of returned <code>ReportGroup</code> objects. The default value is 100.
     /// </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListReportGroupsInput {
+    /// <p>
+    /// Used to specify the order to sort the list of returned report groups. Valid values are
+    /// <code>ASCENDING</code> and <code>DESCENDING</code>.
+    /// </p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>
+    /// The criterion to be used to list build report groups. Valid values include:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED_TIME</code>: List based on when each report group was
+    /// created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LAST_MODIFIED_TIME</code>: List based on when each report group  was last changed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NAME</code>: List based on each report group's name.</p>
+    /// </li>
+    /// </ul>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ReportGroupSortByType> {
+        self.sort_by.as_ref()
+    }
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in
+    /// the list of returned <code>ReportGroup</code> objects. The default value is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListReportGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11964,6 +12845,55 @@ pub struct ListProjectsInput {
     /// until no more next tokens are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProjectsInput {
+    /// <p>The criterion to be used to list build project names. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED_TIME</code>: List based on when each build project was
+    /// created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LAST_MODIFIED_TIME</code>: List based on when information about each
+    /// build project was last changed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NAME</code>: List based on each build project's name.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names
+    /// based on the preceding criteria.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ProjectSortByType> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The order in which to list build projects. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List in ascending order.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List in descending order.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project
+    /// names.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>During a previous call, if there are more than 100 items in the list, only the first
+    /// 100 items are returned, along with a unique string called a
+    /// <i>nextToken</i>. To get the next batch of items in the list, call
+    /// this operation again, adding the next token to the call. To get all of the items in the
+    /// list, keep calling this operation with each subsequent next token that is returned,
+    /// until no more next tokens are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsInput");
@@ -12015,6 +12945,39 @@ pub struct ListBuildsForProjectInput {
     /// until no more next tokens are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBuildsForProjectInput {
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build
+    /// identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the project has more than 100 builds, setting the sort order will result in an
+    /// error. </p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>During a previous call, if there are more than 100 items in the list, only the first
+    /// 100 items are returned, along with a unique string called a
+    /// <i>nextToken</i>. To get the next batch of items in the list, call
+    /// this operation again, adding the next token to the call. To get all of the items in the
+    /// list, keep calling this operation with each subsequent next token that is returned,
+    /// until no more next tokens are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuildsForProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildsForProjectInput");
@@ -12050,6 +13013,33 @@ pub struct ListBuildsInput {
     /// list, keep calling this operation with each subsequent next token that is returned,
     /// until no more next tokens are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBuildsInput {
+    /// <p>The order to list build IDs. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List the build IDs in ascending order by build
+    /// ID.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List the build IDs in descending order by build
+    /// ID.</p>
+    /// </li>
+    /// </ul>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>During a previous call, if there are more than 100 items in the list, only the first
+    /// 100 items are returned, along with a unique string called a
+    /// <i>nextToken</i>. To get the next batch of items in the list, call
+    /// this operation again, adding the next token to the call. To get all of the items in the
+    /// list, keep calling this operation with each subsequent next token that is returned,
+    /// until no more next tokens are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBuildsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12089,6 +13079,42 @@ pub struct ListBuildBatchesForProjectInput {
     /// beginning of the list, exclude this parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBuildBatchesForProjectInput {
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::BuildBatchFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List the batch build identifiers in ascending order by
+    /// identifier.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List the batch build identifiers in descending order
+    /// by identifier.</p>
+    /// </li>
+    /// </ul>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous call to
+    /// <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the
+    /// beginning of the list, exclude this parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuildBatchesForProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildBatchesForProjectInput");
@@ -12126,6 +13152,36 @@ pub struct ListBuildBatchesInput {
     /// beginning of the list, exclude this parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBuildBatchesInput {
+    /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::BuildBatchFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p>
+    /// </li>
+    /// </ul>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous call to
+    /// <code>ListBuildBatches</code>. This specifies the next item to return. To return the
+    /// beginning of the list, exclude this parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBuildBatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBuildBatchesInput");
@@ -12143,6 +13199,12 @@ impl std::fmt::Debug for ListBuildBatchesInput {
 pub struct InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
     pub project_name: std::option::Option<std::string::String>,
+}
+impl InvalidateProjectCacheInput {
+    /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidateProjectCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12173,6 +13235,34 @@ pub struct ImportSourceCredentialsInput {
     /// value is <code>true</code>. </p>
     pub should_overwrite: std::option::Option<bool>,
 }
+impl ImportSourceCredentialsInput {
+    /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter
+    /// is not valid for other types of source providers or connections. </p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket,
+    /// this is the app password. </p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p> The source provider used for this project. </p>
+    pub fn server_type(&self) -> std::option::Option<&crate::model::ServerType> {
+        self.server_type.as_ref()
+    }
+    /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or
+    /// Bitbucket repository. An OAUTH connection is not supported by the API and must be
+    /// created using the CodeBuild console. </p>
+    pub fn auth_type(&self) -> std::option::Option<&crate::model::AuthType> {
+        self.auth_type.as_ref()
+    }
+    /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials.
+    /// Set to <code>true</code> to overwrite the repository source credentials. The default
+    /// value is <code>true</code>. </p>
+    pub fn should_overwrite(&self) -> std::option::Option<bool> {
+        self.should_overwrite
+    }
+}
 impl std::fmt::Debug for ImportSourceCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportSourceCredentialsInput");
@@ -12191,6 +13281,12 @@ impl std::fmt::Debug for ImportSourceCredentialsInput {
 pub struct GetResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl GetResourcePolicyInput {
+    /// <p> The ARN of the resource that is associated with the resource policy. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12272,6 +13368,81 @@ pub struct GetReportGroupTrendInput {
     /// </dl>
     pub trend_field: std::option::Option<crate::model::ReportGroupTrendFieldType>,
 }
+impl GetReportGroupTrendInput {
+    /// <p>The ARN of the report group that contains the reports to analyze.</p>
+    pub fn report_group_arn(&self) -> std::option::Option<&str> {
+        self.report_group_arn.as_deref()
+    }
+    /// <p>The number of reports to analyze. This operation always retrieves the most recent
+    /// reports.</p>
+    /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
+    pub fn num_of_reports(&self) -> std::option::Option<i32> {
+        self.num_of_reports
+    }
+    /// <p>The test report value to accumulate. This must be one of the following values:</p>
+    /// <dl>
+    /// <dt>Test reports:</dt>
+    /// <dd>
+    /// <dl>
+    /// <dt>DURATION</dt>
+    /// <dd>
+    /// <p>Accumulate the test run times for the specified
+    /// reports.</p>
+    /// </dd>
+    /// <dt>PASS_RATE</dt>
+    /// <dd>
+    /// <p>Accumulate the percentage of tests that passed for the
+    /// specified test reports.</p>
+    /// </dd>
+    /// <dt>TOTAL</dt>
+    /// <dd>
+    /// <p>Accumulate the total number of tests for the specified test
+    /// reports.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// </dl>
+    /// <dl>
+    /// <dt>Code coverage reports:</dt>
+    /// <dd>
+    /// <dl>
+    /// <dt>BRANCH_COVERAGE</dt>
+    /// <dd>
+    /// <p>Accumulate the branch coverage percentages for the specified
+    /// test reports.</p>
+    /// </dd>
+    /// <dt>BRANCHES_COVERED</dt>
+    /// <dd>
+    /// <p>Accumulate the branches covered values for the specified test
+    /// reports.</p>
+    /// </dd>
+    /// <dt>BRANCHES_MISSED</dt>
+    /// <dd>
+    /// <p>Accumulate the branches missed values for the specified test
+    /// reports.</p>
+    /// </dd>
+    /// <dt>LINE_COVERAGE</dt>
+    /// <dd>
+    /// <p>Accumulate the line coverage percentages for the specified
+    /// test reports.</p>
+    /// </dd>
+    /// <dt>LINES_COVERED</dt>
+    /// <dd>
+    /// <p>Accumulate the lines covered values for the specified test
+    /// reports.</p>
+    /// </dd>
+    /// <dt>LINES_MISSED</dt>
+    /// <dd>
+    /// <p>Accumulate the lines not covered values for the specified test
+    /// reports.</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// </dl>
+    pub fn trend_field(&self) -> std::option::Option<&crate::model::ReportGroupTrendFieldType> {
+        self.trend_field.as_ref()
+    }
+}
 impl std::fmt::Debug for GetReportGroupTrendInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReportGroupTrendInput");
@@ -12307,6 +13478,37 @@ pub struct DescribeTestCasesInput {
     /// A <code>TestCaseFilter</code> object used to filter the returned reports.
     /// </p>
     pub filter: std::option::Option<crate::model::TestCaseFilter>,
+}
+impl DescribeTestCasesInput {
+    /// <p>
+    /// The ARN of the report for which test cases are returned.
+    /// </p>
+    pub fn report_arn(&self) -> std::option::Option<&str> {
+        self.report_arn.as_deref()
+    }
+    /// <p>
+    /// During a previous call, the maximum number of items that can be returned is the value specified in
+    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
+    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
+    /// to the call. To get all of the items in the list, keep calling this operation with each
+    /// subsequent next token that is returned, until no more next tokens are returned.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in
+    /// the list of returned <code>TestCase</code> objects. The default value is 100.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// A <code>TestCaseFilter</code> object used to filter the returned reports.
+    /// </p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::TestCaseFilter> {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTestCasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12352,6 +13554,50 @@ pub struct DescribeCodeCoveragesInput {
     /// <p>The maximum line coverage percentage to report.</p>
     pub max_line_coverage_percentage: std::option::Option<f64>,
 }
+impl DescribeCodeCoveragesInput {
+    /// <p>
+    /// The ARN of the report for which test cases are returned.
+    /// </p>
+    pub fn report_arn(&self) -> std::option::Option<&str> {
+        self.report_arn.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous call to
+    /// <code>DescribeCodeCoverages</code>. This specifies the next item to return. To
+    /// return the beginning of the list, exclude this parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specifies if the results are sorted in ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrderType> {
+        self.sort_order.as_ref()
+    }
+    /// <p>Specifies how the results are sorted. Possible values are:</p>
+    /// <dl>
+    /// <dt>FILE_PATH</dt>
+    /// <dd>
+    /// <p>The results are sorted by file path.</p>
+    /// </dd>
+    /// <dt>LINE_COVERAGE_PERCENTAGE</dt>
+    /// <dd>
+    /// <p>The results are sorted by the percentage of lines that are covered.</p>
+    /// </dd>
+    /// </dl>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ReportCodeCoverageSortByType> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The minimum line coverage percentage to report.</p>
+    pub fn min_line_coverage_percentage(&self) -> std::option::Option<f64> {
+        self.min_line_coverage_percentage
+    }
+    /// <p>The maximum line coverage percentage to report.</p>
+    pub fn max_line_coverage_percentage(&self) -> std::option::Option<f64> {
+        self.max_line_coverage_percentage
+    }
+}
 impl std::fmt::Debug for DescribeCodeCoveragesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCodeCoveragesInput");
@@ -12379,6 +13625,12 @@ pub struct DeleteWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
+impl DeleteWebhookInput {
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWebhookInput");
@@ -12394,6 +13646,12 @@ pub struct DeleteSourceCredentialsInput {
     /// <p> The Amazon Resource Name (ARN) of the token.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteSourceCredentialsInput {
+    /// <p> The Amazon Resource Name (ARN) of the token.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSourceCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSourceCredentialsInput");
@@ -12408,6 +13666,12 @@ impl std::fmt::Debug for DeleteSourceCredentialsInput {
 pub struct DeleteResourcePolicyInput {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DeleteResourcePolicyInput {
+    /// <p> The ARN of the resource that is associated with the resource policy. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12430,6 +13694,20 @@ pub struct DeleteReportGroupInput {
     /// an exception is thrown. </p>
     pub delete_reports: bool,
 }
+impl DeleteReportGroupInput {
+    /// <p>The ARN of the report group to delete. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting
+    /// the report group. </p>
+    /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call
+    /// <code>DeleteReportGroup</code> for a report group that contains one or more reports,
+    /// an exception is thrown. </p>
+    pub fn delete_reports(&self) -> bool {
+        self.delete_reports
+    }
+}
 impl std::fmt::Debug for DeleteReportGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReportGroupInput");
@@ -12448,6 +13726,14 @@ pub struct DeleteReportInput {
     /// </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DeleteReportInput {
+    /// <p>
+    /// The ARN of the report to delete.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReportInput");
@@ -12463,6 +13749,12 @@ pub struct DeleteProjectInput {
     /// <p>The name of the build project.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteProjectInput {
+    /// <p>The name of the build project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectInput");
@@ -12477,6 +13769,12 @@ impl std::fmt::Debug for DeleteProjectInput {
 pub struct DeleteBuildBatchInput {
     /// <p>The identifier of the batch build to delete.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteBuildBatchInput {
+    /// <p>The identifier of the batch build to delete.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBuildBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12511,6 +13809,37 @@ pub struct CreateWebhookInput {
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
 }
+impl CreateWebhookInput {
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A regular expression used to determine which repository branches are built when a
+    /// webhook is triggered. If the name of a branch matches the regular expression, then it is
+    /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
+    /// <note>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of
+    /// <code>branchFilter</code>. </p>
+    /// </note>
+    pub fn branch_filter(&self) -> std::option::Option<&str> {
+        self.branch_filter.as_deref()
+    }
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which
+    /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
+    /// specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>For a build to be triggered, at least one filter group in the
+    /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
+    /// filters must pass. </p>
+    pub fn filter_groups(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::WebhookFilter>]> {
+        self.filter_groups.as_deref()
+    }
+    /// <p>Specifies the type of build this webhook will trigger.</p>
+    pub fn build_type(&self) -> std::option::Option<&crate::model::WebhookBuildType> {
+        self.build_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWebhookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWebhookInput");
@@ -12544,6 +13873,34 @@ pub struct CreateReportGroupInput {
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateReportGroupInput {
+    /// <p>
+    /// The name of the report group.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The type of report group.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ReportType> {
+        self.r#type.as_ref()
+    }
+    /// <p>
+    /// A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.
+    /// </p>
+    pub fn export_config(&self) -> std::option::Option<&crate::model::ReportExportConfig> {
+        self.export_config.as_ref()
+    }
+    /// <p>
+    /// A list of tag key and value pairs associated with this report group.
+    /// </p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
+    /// tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateReportGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12660,6 +14017,153 @@ pub struct CreateProjectInput {
     /// If the current build count meets this limit, new builds are throttled and are not run.</p>
     pub concurrent_build_limit: std::option::Option<i32>,
 }
+impl CreateProjectInput {
+    /// <p>The name of the build project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description that makes the build project easy to identify.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the build input source code for the build project.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ProjectSource> {
+        self.source.as_ref()
+    }
+    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    pub fn secondary_sources(&self) -> std::option::Option<&[crate::model::ProjectSource]> {
+        self.secondary_sources.as_deref()
+    }
+    /// <p>A version of the build input to be built for this project. If not specified, the latest
+    /// version is used. If specified, it must be one of: </p>
+    /// <ul>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+    /// </li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+    /// corresponds to the version of the source code you want to build. If a pull
+    /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+    /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
+    /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+    /// used.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+    /// version of the source code you want to build. If a branch name is specified, the
+    /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+    /// commit ID is used.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+    /// file to use.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes
+    /// precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
+    /// </p>
+    pub fn source_version(&self) -> std::option::Option<&str> {
+        self.source_version.as_deref()
+    }
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If
+    /// <code>secondarySourceVersions</code> is specified at the build level, then they take
+    /// precedence over these <code>secondarySourceVersions</code> (at the project level).
+    /// </p>
+    pub fn secondary_source_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectSourceVersion]> {
+        self.secondary_source_versions.as_deref()
+    }
+    /// <p>Information about the build output artifacts for the build project.</p>
+    pub fn artifacts(&self) -> std::option::Option<&crate::model::ProjectArtifacts> {
+        self.artifacts.as_ref()
+    }
+    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    pub fn secondary_artifacts(&self) -> std::option::Option<&[crate::model::ProjectArtifacts]> {
+        self.secondary_artifacts.as_deref()
+    }
+    /// <p>Stores recently used information so that it can be quickly accessed at a later
+    /// time.</p>
+    pub fn cache(&self) -> std::option::Option<&crate::model::ProjectCache> {
+        self.cache.as_ref()
+    }
+    /// <p>Information about the build environment for the build project.</p>
+    pub fn environment(&self) -> std::option::Option<&crate::model::ProjectEnvironment> {
+        self.environment.as_ref()
+    }
+    /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
+    /// on behalf of the Amazon Web Services account.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out
+    /// any build that has not been marked as completed. The default is 60 minutes.</p>
+    pub fn timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.timeout_in_minutes
+    }
+    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    pub fn queued_timeout_in_minutes(&self) -> std::option::Option<i32> {
+        self.queued_timeout_in_minutes
+    }
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
+    /// artifacts.</p>
+    /// <note>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
+    /// service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+    /// the format <code>alias/<alias-name></code>).
+    /// </p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>A list of tag key and value pairs associated with this build project.</p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
+    /// tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Set this to true to generate a publicly accessible URL for your project's build
+    /// badge.</p>
+    pub fn badge_enabled(&self) -> std::option::Option<bool> {
+        self.badge_enabled
+    }
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs
+    /// uploaded to a specified S3 bucket, or both. </p>
+    pub fn logs_config(&self) -> std::option::Option<&crate::model::LogsConfig> {
+        self.logs_config.as_ref()
+    }
+    /// <p>
+    /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
+    /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+    /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
+    /// </p>
+    pub fn file_system_locations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProjectFileSystemLocation]> {
+        self.file_system_locations.as_deref()
+    }
+    /// <p>A <a>ProjectBuildBatchConfig</a>
+    /// object that defines the batch build options
+    /// for the project.</p>
+    pub fn build_batch_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProjectBuildBatchConfig> {
+        self.build_batch_config.as_ref()
+    }
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
+    /// If the current build count meets this limit, new builds are throttled and are not run.</p>
+    pub fn concurrent_build_limit(&self) -> std::option::Option<i32> {
+        self.concurrent_build_limit
+    }
+}
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
@@ -12697,6 +14201,14 @@ pub struct BatchGetReportsInput {
     /// </p>
     pub report_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetReportsInput {
+    /// <p>
+    /// An array of ARNs that identify the <code>Report</code> objects to return.
+    /// </p>
+    pub fn report_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.report_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetReportsInput");
@@ -12713,6 +14225,14 @@ pub struct BatchGetReportGroupsInput {
     /// An array of report group ARNs that identify the report groups to return.
     /// </p>
     pub report_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetReportGroupsInput {
+    /// <p>
+    /// An array of report group ARNs that identify the report groups to return.
+    /// </p>
+    pub fn report_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.report_group_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetReportGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12731,6 +14251,14 @@ pub struct BatchGetProjectsInput {
     /// using its name.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetProjectsInput {
+    /// <p>The names or ARNs of the build projects. To get information about a project shared
+    /// with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project
+    /// using its name.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetProjectsInput");
@@ -12745,6 +14273,12 @@ impl std::fmt::Debug for BatchGetProjectsInput {
 pub struct BatchGetBuildsInput {
     /// <p>The IDs of the builds.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetBuildsInput {
+    /// <p>The IDs of the builds.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetBuildsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12761,6 +14295,12 @@ pub struct BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetBuildBatchesInput {
+    /// <p>An array that contains the batch build identifiers to retrieve.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetBuildBatchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetBuildBatchesInput");
@@ -12775,6 +14315,12 @@ impl std::fmt::Debug for BatchGetBuildBatchesInput {
 pub struct BatchDeleteBuildsInput {
     /// <p>The IDs of the builds to delete.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDeleteBuildsInput {
+    /// <p>The IDs of the builds to delete.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteBuildsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

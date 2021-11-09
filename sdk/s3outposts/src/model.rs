@@ -29,6 +29,52 @@ pub struct Endpoint {
     /// <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
+impl Endpoint {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
+    /// <p>The ID of the AWS Outposts.</p>
+    pub fn outposts_id(&self) -> std::option::Option<&str> {
+        self.outposts_id.as_deref()
+    }
+    /// <p>The VPC CIDR committed by this endpoint.</p>
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
+        self.cidr_block.as_deref()
+    }
+    /// <p>The status of the endpoint.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time the endpoint was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The network interface of the endpoint.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+    /// <p>The ID of the VPC used for the endpoint.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The ID of the subnet used for the endpoint.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The ID of the security group used for the endpoint.</p>
+    pub fn security_group_id(&self) -> std::option::Option<&str> {
+        self.security_group_id.as_deref()
+    }
+    /// <p></p>
+    pub fn access_type(&self) -> std::option::Option<&crate::model::EndpointAccessType> {
+        self.access_type.as_ref()
+    }
+    /// <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
+    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
+        self.customer_owned_ipv4_pool.as_deref()
+    }
+}
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Endpoint");
@@ -289,6 +335,12 @@ impl AsRef<str> for EndpointAccessType {
 pub struct NetworkInterface {
     /// <p>The ID for the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
+}
+impl NetworkInterface {
+    /// <p>The ID for the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

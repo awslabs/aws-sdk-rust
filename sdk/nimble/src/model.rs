@@ -55,6 +55,83 @@ pub struct Studio {
     /// portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
+impl Studio {
+    /// <p>The IAM role that studio admins assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub fn admin_role_arn(&self) -> std::option::Option<&str> {
+        self.admin_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely
+    /// identifies it. ARNs are unique across all Regions.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>A friendly name for the studio.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region where the studio resource is located.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO
+    /// to enable Amazon Web Services SSO users to log in to Nimble Studio portal.</p>
+    pub fn sso_client_id(&self) -> std::option::Option<&str> {
+        self.sso_client_id.as_deref()
+    }
+    /// <p>The current state of the studio resource.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StudioState> {
+        self.state.as_ref()
+    }
+    /// <p>Status codes that provide additional detail on the studio state.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StudioStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>Additional detail on the studio state.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Configuration of the encryption method that is used for the studio.</p>
+    pub fn studio_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioEncryptionConfiguration> {
+        self.studio_encryption_configuration.as_ref()
+    }
+    /// <p>The unique identifier for a studio resource. In Nimble Studio, all other
+    /// resources are contained in a studio resource.</p>
+    pub fn studio_id(&self) -> std::option::Option<&str> {
+        self.studio_id.as_deref()
+    }
+    /// <p>The name of the studio, as included in the URL when accessing it in the Nimble Studio portal.</p>
+    pub fn studio_name(&self) -> std::option::Option<&str> {
+        self.studio_name.as_deref()
+    }
+    /// <p>The address of the web page for the studio.</p>
+    pub fn studio_url(&self) -> std::option::Option<&str> {
+        self.studio_url.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The IAM role that studio users assume when logging in to the Nimble Studio
+    /// portal.</p>
+    pub fn user_role_arn(&self) -> std::option::Option<&str> {
+        self.user_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Studio {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Studio");
@@ -359,6 +436,18 @@ pub struct StudioEncryptionConfiguration {
     pub key_arn: std::option::Option<std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub key_type: std::option::Option<crate::model::StudioEncryptionConfigurationKeyType>,
+}
+impl StudioEncryptionConfiguration {
+    /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
+    pub fn key_arn(&self) -> std::option::Option<&str> {
+        self.key_arn.as_deref()
+    }
+    /// <p>The type of KMS key that is used to encrypt studio data.</p>
+    pub fn key_type(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioEncryptionConfigurationKeyType> {
+        self.key_type.as_ref()
+    }
 }
 impl std::fmt::Debug for StudioEncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -727,6 +816,16 @@ pub struct NewStudioMember {
     /// <p>The principal ID.</p>
     pub principal_id: std::option::Option<std::string::String>,
 }
+impl NewStudioMember {
+    /// <p>The persona.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::StudioPersona> {
+        self.persona.as_ref()
+    }
+    /// <p>The principal ID.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NewStudioMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NewStudioMember");
@@ -856,6 +955,24 @@ pub struct StudioMembership {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub sid: std::option::Option<std::string::String>,
+}
+impl StudioMembership {
+    /// <p>The ID of the identity store.</p>
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+        self.identity_store_id.as_deref()
+    }
+    /// <p>The persona.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::StudioPersona> {
+        self.persona.as_ref()
+    }
+    /// <p>The principal ID.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The Active Directory Security Identifier for this user, if available.</p>
+    pub fn sid(&self) -> std::option::Option<&str> {
+        self.sid.as_deref()
+    }
 }
 impl std::fmt::Debug for StudioMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -995,6 +1112,90 @@ pub struct StudioComponent {
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
+}
+impl StudioComponent {
+    /// <p>The ARN of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The configuration of the studio component, based on component type.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioComponentConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The user ID of the user that created the studio component.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>A human-readable description for the studio component resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_security_group_ids.as_deref()
+    }
+    /// <p>Initialization scripts for studio components.</p>
+    pub fn initialization_scripts(
+        &self,
+    ) -> std::option::Option<&[crate::model::StudioComponentInitializationScript]> {
+        self.initialization_scripts.as_deref()
+    }
+    /// <p>A friendly name for the studio component resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Parameters for the studio component scripts.</p>
+    pub fn script_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScriptParameterKeyValue]> {
+        self.script_parameters.as_deref()
+    }
+    /// <p>The current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StudioComponentState> {
+        self.state.as_ref()
+    }
+    /// <p>The status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StudioComponentStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The status message for the studio component.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The specific subtype of a studio component.</p>
+    pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
+        self.subtype.as_ref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of the studio component.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn updated_by(&self) -> std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
 }
 impl std::fmt::Debug for StudioComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1716,6 +1917,16 @@ pub struct ScriptParameterKeyValue {
     /// <p>A script parameter value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ScriptParameterKeyValue {
+    /// <p>A script parameter key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A script parameter value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ScriptParameterKeyValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScriptParameterKeyValue");
@@ -1784,6 +1995,27 @@ pub struct StudioComponentInitializationScript {
         std::option::Option<crate::model::StudioComponentInitializationScriptRunContext>,
     /// <p>The initialization script.</p>
     pub script: std::option::Option<std::string::String>,
+}
+impl StudioComponentInitializationScript {
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub fn launch_profile_protocol_version(&self) -> std::option::Option<&str> {
+        self.launch_profile_protocol_version.as_deref()
+    }
+    /// <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::LaunchProfilePlatform> {
+        self.platform.as_ref()
+    }
+    /// <p>The method to use when running the initialization script.</p>
+    pub fn run_context(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioComponentInitializationScriptRunContext> {
+        self.run_context.as_ref()
+    }
+    /// <p>The initialization script.</p>
+    pub fn script(&self) -> std::option::Option<&str> {
+        self.script.as_deref()
+    }
 }
 impl std::fmt::Debug for StudioComponentInitializationScript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2019,6 +2251,15 @@ pub enum StudioComponentConfiguration {
     /// <p>The configuration for a shared file storage system that is associated with a studio
     /// resource.</p>
     SharedFileSystemConfiguration(crate::model::SharedFileSystemConfiguration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl StudioComponentConfiguration {
     /// Tries to convert the enum instance into [`ActiveDirectoryConfiguration`](crate::model::StudioComponentConfiguration::ActiveDirectoryConfiguration), extracting the inner [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
@@ -2081,6 +2322,10 @@ impl StudioComponentConfiguration {
     pub fn is_shared_file_system_configuration(&self) -> bool {
         self.as_shared_file_system_configuration().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>The configuration for a shared file storage system that is associated with a studio
@@ -2099,6 +2344,29 @@ pub struct SharedFileSystemConfiguration {
     pub share_name: std::option::Option<std::string::String>,
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
     pub windows_mount_drive: std::option::Option<std::string::String>,
+}
+impl SharedFileSystemConfiguration {
+    /// <p>The endpoint of the shared file system that is accessed by the studio component
+    /// resource.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The unique identifier for a file system.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
+    pub fn linux_mount_point(&self) -> std::option::Option<&str> {
+        self.linux_mount_point.as_deref()
+    }
+    /// <p>The name of the file share.</p>
+    pub fn share_name(&self) -> std::option::Option<&str> {
+        self.share_name.as_deref()
+    }
+    /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
+    pub fn windows_mount_drive(&self) -> std::option::Option<&str> {
+        self.windows_mount_drive.as_deref()
+    }
 }
 impl std::fmt::Debug for SharedFileSystemConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2213,6 +2481,13 @@ pub struct LicenseServiceConfiguration {
     /// resource.</p>
     pub endpoint: std::option::Option<std::string::String>,
 }
+impl LicenseServiceConfiguration {
+    /// <p>The endpoint of the license service that is accessed by the studio component
+    /// resource.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+}
 impl std::fmt::Debug for LicenseServiceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseServiceConfiguration");
@@ -2266,6 +2541,18 @@ pub struct ComputeFarmConfiguration {
     /// <p>The endpoint of the ComputeFarm that is accessed by the studio component
     /// resource.</p>
     pub endpoint: std::option::Option<std::string::String>,
+}
+impl ComputeFarmConfiguration {
+    /// <p>The name of an Active Directory user that is used on ComputeFarm worker
+    /// instances.</p>
+    pub fn active_directory_user(&self) -> std::option::Option<&str> {
+        self.active_directory_user.as_deref()
+    }
+    /// <p>The endpoint of the ComputeFarm that is accessed by the studio component
+    /// resource.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for ComputeFarmConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2342,6 +2629,24 @@ pub struct ActiveDirectoryConfiguration {
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory
     /// computer.</p>
     pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
+}
+impl ActiveDirectoryConfiguration {
+    /// <p>A collection of custom attributes for an Active Directory computer.</p>
+    pub fn computer_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ActiveDirectoryComputerAttribute]> {
+        self.computer_attributes.as_deref()
+    }
+    /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access
+    /// using this studio component.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory
+    /// computer.</p>
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+        self.organizational_unit_distinguished_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ActiveDirectoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2448,6 +2753,16 @@ pub struct ActiveDirectoryComputerAttribute {
     /// <p>The value for the LDAP attribute.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ActiveDirectoryComputerAttribute {
+    /// <p>The name for the LDAP attribute.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the LDAP attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ActiveDirectoryComputerAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActiveDirectoryComputerAttribute");
@@ -2551,6 +2866,94 @@ pub struct StreamingSession {
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop
     /// the session themselves. </p>
     pub stop_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl StreamingSession {
+    /// <p>The ARN of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The user ID of the user that created the streaming session.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The EC2 Instance type used for the streaming session.</p>
+    pub fn ec2_instance_type(&self) -> std::option::Option<&str> {
+        self.ec2_instance_type.as_deref()
+    }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The session ID.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamingSessionState> {
+        self.state.as_ref()
+    }
+    /// <p>The status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StreamingSessionStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The status message for the streaming session.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The ID of the streaming image.</p>
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+        self.streaming_image_id.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The time the streaming session will automatically terminate if not terminated by the
+    /// user.</p>
+    pub fn terminate_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.terminate_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn updated_by(&self) -> std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
+    /// <p>The time the session entered STOP_IN_PROGRESS state.</p>
+    pub fn stopped_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stopped_at.as_ref()
+    }
+    /// <p>The user ID of the user that stopped the streaming session.</p>
+    pub fn stopped_by(&self) -> std::option::Option<&str> {
+        self.stopped_by.as_deref()
+    }
+    /// <p>The time the session entered START_IN_PROGRESS state.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The user ID of the user that started the streaming session.</p>
+    pub fn started_by(&self) -> std::option::Option<&str> {
+        self.started_by.as_deref()
+    }
+    /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop
+    /// the session themselves. </p>
+    pub fn stop_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_at.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamingSession {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3173,6 +3576,42 @@ pub struct StreamingSessionStream {
     /// <p>The URL to connect to this stream using the DCV client.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl StreamingSessionStream {
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The user ID of the user that created the streaming session stream.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expires_at.as_ref()
+    }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn owned_by(&self) -> std::option::Option<&str> {
+        self.owned_by.as_deref()
+    }
+    /// <p>The current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamingSessionStreamState> {
+        self.state.as_ref()
+    }
+    /// <p>The streaming session stream status code.</p>
+    pub fn status_code(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingSessionStreamStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The stream ID.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// <p>The URL to connect to this stream using the DCV client.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for StreamingSessionStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingSessionStream");
@@ -3596,6 +4035,68 @@ pub struct StreamingImage {
     /// resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StreamingImage {
+    /// <p>The ARN of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A human-readable description of the streaming image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
+    pub fn ec2_image_id(&self) -> std::option::Option<&str> {
+        self.ec2_image_id.as_deref()
+    }
+    /// <p>The encryption configuration.</p>
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingImageEncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
+    /// <p>The list of EULAs that must be accepted before a Streaming Session can be started
+    /// using this streaming image.</p>
+    pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.eula_ids.as_deref()
+    }
+    /// <p>A friendly name for a streaming image resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The owner of the streaming image, either the studioId that contains the streaming
+    /// image, or 'amazon' for images that are provided by Amazon Nimble Studio.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamingImageState> {
+        self.state.as_ref()
+    }
+    /// <p>The status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::StreamingImageStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The status message for the streaming image.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The ID of the streaming image.</p>
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+        self.streaming_image_id.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamingImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4032,6 +4533,18 @@ pub struct StreamingImageEncryptionConfiguration {
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub key_type: std::option::Option<crate::model::StreamingImageEncryptionConfigurationKeyType>,
 }
+impl StreamingImageEncryptionConfiguration {
+    /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
+    pub fn key_arn(&self) -> std::option::Option<&str> {
+        self.key_arn.as_deref()
+    }
+    /// <p>The type of KMS key that is used to encrypt studio data.</p>
+    pub fn key_type(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingImageEncryptionConfigurationKeyType> {
+        self.key_type.as_ref()
+    }
+}
 impl std::fmt::Debug for StreamingImageEncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingImageEncryptionConfiguration");
@@ -4160,6 +4673,24 @@ pub struct LaunchProfileMembership {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub sid: std::option::Option<std::string::String>,
+}
+impl LaunchProfileMembership {
+    /// <p>The ID of the identity store.</p>
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+        self.identity_store_id.as_deref()
+    }
+    /// <p>The persona.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::LaunchProfilePersona> {
+        self.persona.as_ref()
+    }
+    /// <p>The principal ID.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+    /// <p>The Active Directory Security Identifier for this user, if available.</p>
+    pub fn sid(&self) -> std::option::Option<&str> {
+        self.sid.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchProfileMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4307,6 +4838,16 @@ pub struct NewLaunchProfileMember {
     /// <p>The principal ID.</p>
     pub principal_id: std::option::Option<std::string::String>,
 }
+impl NewLaunchProfileMember {
+    /// <p>The persona.</p>
+    pub fn persona(&self) -> std::option::Option<&crate::model::LaunchProfilePersona> {
+        self.persona.as_ref()
+    }
+    /// <p>The principal ID.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NewLaunchProfileMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NewLaunchProfileMember");
@@ -4393,6 +4934,51 @@ pub struct LaunchProfileInitialization {
     /// <p>The user initializtion scripts.</p>
     pub user_initialization_scripts:
         std::option::Option<std::vec::Vec<crate::model::LaunchProfileInitializationScript>>,
+}
+impl LaunchProfileInitialization {
+    /// <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+    pub fn active_directory(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchProfileInitializationActiveDirectory> {
+        self.active_directory.as_ref()
+    }
+    /// <p>The EC2 security groups that control access to the studio component.</p>
+    pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_security_group_ids.as_deref()
+    }
+    /// <p>The launch profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub fn launch_profile_protocol_version(&self) -> std::option::Option<&str> {
+        self.launch_profile_protocol_version.as_deref()
+    }
+    /// <p>The launch purpose.</p>
+    pub fn launch_purpose(&self) -> std::option::Option<&str> {
+        self.launch_purpose.as_deref()
+    }
+    /// <p>The name for the launch profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::LaunchProfilePlatform> {
+        self.platform.as_ref()
+    }
+    /// <p>The system initializtion scripts.</p>
+    pub fn system_initialization_scripts(
+        &self,
+    ) -> std::option::Option<&[crate::model::LaunchProfileInitializationScript]> {
+        self.system_initialization_scripts.as_deref()
+    }
+    /// <p>The user initializtion scripts.</p>
+    pub fn user_initialization_scripts(
+        &self,
+    ) -> std::option::Option<&[crate::model::LaunchProfileInitializationScript]> {
+        self.user_initialization_scripts.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchProfileInitialization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4622,6 +5208,20 @@ pub struct LaunchProfileInitializationScript {
     /// <p>The name for the studio component.</p>
     pub studio_component_name: std::option::Option<std::string::String>,
 }
+impl LaunchProfileInitializationScript {
+    /// <p>The initialization script.</p>
+    pub fn script(&self) -> std::option::Option<&str> {
+        self.script.as_deref()
+    }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn studio_component_name(&self) -> std::option::Option<&str> {
+        self.studio_component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for LaunchProfileInitializationScript {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchProfileInitializationScript");
@@ -4715,6 +5315,39 @@ pub struct LaunchProfileInitializationActiveDirectory {
     pub studio_component_id: std::option::Option<std::string::String>,
     /// <p>The name for the studio component.</p>
     pub studio_component_name: std::option::Option<std::string::String>,
+}
+impl LaunchProfileInitializationActiveDirectory {
+    /// <p>A collection of custom attributes for an Active Directory computer.</p>
+    pub fn computer_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::ActiveDirectoryComputerAttribute]> {
+        self.computer_attributes.as_deref()
+    }
+    /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access
+    /// using this launch profile.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The directory name.</p>
+    pub fn directory_name(&self) -> std::option::Option<&str> {
+        self.directory_name.as_deref()
+    }
+    /// <p>The DNS IP address.</p>
+    pub fn dns_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addresses.as_deref()
+    }
+    /// <p>The name for the organizational unit distinguished name.</p>
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+        self.organizational_unit_distinguished_name.as_deref()
+    }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn studio_component_name(&self) -> std::option::Option<&str> {
+        self.studio_component_name.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchProfileInitializationActiveDirectory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4901,6 +5534,44 @@ pub struct StudioComponentSummary {
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
+}
+impl StudioComponentSummary {
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The user ID of the user that created the studio component.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+        self.studio_component_id.as_deref()
+    }
+    /// <p>The specific subtype of a studio component.</p>
+    pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
+        self.subtype.as_ref()
+    }
+    /// <p>The type of the studio component.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::StudioComponentType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn updated_by(&self) -> std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
 }
 impl std::fmt::Debug for StudioComponentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5109,6 +5780,78 @@ pub struct LaunchProfile {
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
+}
+impl LaunchProfile {
+    /// <p>The ARN of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The user ID of the user that created the launch profile.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>A human-readable description of the launch profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Unique identifiers for a collection of EC2 subnets.</p>
+    pub fn ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ec2_subnet_ids.as_deref()
+    }
+    /// <p>The launch profile ID.</p>
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
+        self.launch_profile_id.as_deref()
+    }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid
+    /// version is "2021-03-31".</p>
+    pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.launch_profile_protocol_versions.as_deref()
+    }
+    /// <p>A friendly name for the launch profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::LaunchProfileState> {
+        self.state.as_ref()
+    }
+    /// <p>The status code.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::LaunchProfileStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>The status message for the launch profile.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A configuration for a streaming session.</p>
+    pub fn stream_configuration(&self) -> std::option::Option<&crate::model::StreamConfiguration> {
+        self.stream_configuration.as_ref()
+    }
+    /// <p>Unique identifiers for a collection of studio components that can be used with this
+    /// launch profile.</p>
+    pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.studio_component_ids.as_deref()
+    }
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn updated_by(&self) -> std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5453,6 +6196,45 @@ pub struct StreamConfiguration {
     /// stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will
     /// automatically be stopped by AWS (instead of terminated).</p>
     pub max_stopped_session_length_in_minutes: i32,
+}
+impl StreamConfiguration {
+    /// <p>Enable or disable the use of the system clipboard to copy and paste between the
+    /// streaming session and streaming client.</p>
+    pub fn clipboard_mode(&self) -> std::option::Option<&crate::model::StreamingClipboardMode> {
+        self.clipboard_mode.as_ref()
+    }
+    /// <p>The EC2 instance types that users can select from when launching a streaming session
+    /// with this launch profile.</p>
+    pub fn ec2_instance_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::StreamingInstanceType]> {
+        self.ec2_instance_types.as_deref()
+    }
+    /// <p>The length of time, in minutes, that a streaming session can be active before it is
+    /// stopped or terminated. After this point, Nimble Studio automatically terminates
+    /// or stops the session. The default length of time is 690 minutes, and the maximum length
+    /// of time is 30 days.</p>
+    pub fn max_session_length_in_minutes(&self) -> i32 {
+        self.max_session_length_in_minutes
+    }
+    /// <p>The streaming images that users can select from when launching a streaming session
+    /// with this launch profile.</p>
+    pub fn streaming_image_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.streaming_image_ids.as_deref()
+    }
+    /// <p>Integer that determines if you can start and stop your sessions and how long a session
+    /// can stay in the STOPPED state. The default value is 0. The maximum value is 5760.</p>
+    /// <p>If the value is missing or set to 0, your sessions can’t be stopped. If you then call
+    /// StopStreamingSession, the session fails. If the time that a session stays in the READY
+    /// state exceeds the maxSessionLengthInMinutes value, the session will automatically be
+    /// terminated by AWS (instead of stopped).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call
+    /// StopStreamingSession to stop sessions in the READY state. If the time that a session
+    /// stays in the READY state exceeds the maxSessionLengthInMinutes value, the session will
+    /// automatically be stopped by AWS (instead of terminated).</p>
+    pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
+        self.max_stopped_session_length_in_minutes
+    }
 }
 impl std::fmt::Debug for StreamConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5914,6 +6696,39 @@ pub struct StreamConfigurationCreate {
     /// time is 30 days.</p>
     pub max_stopped_session_length_in_minutes: i32,
 }
+impl StreamConfigurationCreate {
+    /// <p>Enable or disable the use of the system clipboard to copy and paste between the
+    /// streaming session and streaming client.</p>
+    pub fn clipboard_mode(&self) -> std::option::Option<&crate::model::StreamingClipboardMode> {
+        self.clipboard_mode.as_ref()
+    }
+    /// <p>The EC2 instance types that users can select from when launching a streaming session
+    /// with this launch profile.</p>
+    pub fn ec2_instance_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::StreamingInstanceType]> {
+        self.ec2_instance_types.as_deref()
+    }
+    /// <p>The length of time, in minutes, that a streaming session can be active before it is
+    /// stopped or terminated. After this point, Nimble Studio automatically terminates
+    /// or stops the session. The default length of time is 690 minutes, and the maximum length
+    /// of time is 30 days.</p>
+    pub fn max_session_length_in_minutes(&self) -> i32 {
+        self.max_session_length_in_minutes
+    }
+    /// <p>The streaming images that users can select from when launching a streaming session
+    /// with this launch profile.</p>
+    pub fn streaming_image_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.streaming_image_ids.as_deref()
+    }
+    /// <p>The length of time, in minutes, that a streaming session can be active before it is
+    /// stopped or terminated. After this point, Nimble Studio automatically terminates or
+    /// stops the session. The default length of time is 690 minutes, and the maximum length of
+    /// time is 30 days.</p>
+    pub fn max_stopped_session_length_in_minutes(&self) -> i32 {
+        self.max_stopped_session_length_in_minutes
+    }
+}
 impl std::fmt::Debug for StreamConfigurationCreate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamConfigurationCreate");
@@ -6081,6 +6896,28 @@ pub struct Eula {
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Eula {
+    /// <p>The EULA content.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The EULA ID.</p>
+    pub fn eula_id(&self) -> std::option::Option<&str> {
+        self.eula_id.as_deref()
+    }
+    /// <p>The name for the EULA.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for Eula {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Eula");
@@ -6194,6 +7031,28 @@ pub struct EulaAcceptance {
     pub eula_acceptance_id: std::option::Option<std::string::String>,
     /// <p>The EULA ID.</p>
     pub eula_id: std::option::Option<std::string::String>,
+}
+impl EulaAcceptance {
+    /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+    pub fn accepted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.accepted_at.as_ref()
+    }
+    /// <p>The ID of the person who accepted the EULA.</p>
+    pub fn accepted_by(&self) -> std::option::Option<&str> {
+        self.accepted_by.as_deref()
+    }
+    /// <p>The ID of the acceptee.</p>
+    pub fn acceptee_id(&self) -> std::option::Option<&str> {
+        self.acceptee_id.as_deref()
+    }
+    /// <p>The EULA acceptance ID.</p>
+    pub fn eula_acceptance_id(&self) -> std::option::Option<&str> {
+        self.eula_acceptance_id.as_deref()
+    }
+    /// <p>The EULA ID.</p>
+    pub fn eula_id(&self) -> std::option::Option<&str> {
+        self.eula_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EulaAcceptance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -4423,6 +4423,12 @@ pub struct UnauthorizedException {
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl UnauthorizedException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnauthorizedException");
@@ -4504,6 +4510,12 @@ pub struct TooManyRequestsException {
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl TooManyRequestsException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
 }
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4587,6 +4599,12 @@ pub struct ServiceUnavailableException {
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceUnavailableException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceUnavailableException");
@@ -4668,6 +4686,12 @@ pub struct NotFoundException {
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl NotFoundException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4751,6 +4775,12 @@ pub struct InternalServerErrorException {
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalServerErrorException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerErrorException");
@@ -4832,6 +4862,12 @@ pub struct ForbiddenException {
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ForbiddenException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
 }
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4915,6 +4951,12 @@ pub struct BadRequestException {
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl BadRequestException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BadRequestException");
@@ -4996,6 +5038,12 @@ pub struct ConflictException {
     pub invalid_parameter: std::option::Option<std::string::String>,
     /// <p>The description of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// <p>The parameter that caused the error.</p>
+    pub fn invalid_parameter(&self) -> std::option::Option<&str> {
+        self.invalid_parameter.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

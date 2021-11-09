@@ -98,6 +98,72 @@ pub struct UpdatePatchBaselineOutput {
     /// systems and source repositories. Applies to Linux instances only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
+impl UpdatePatchBaselineOutput {
+    /// <p>The ID of the deleted patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch baseline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The operating system rule used by the updated patch baseline.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>A set of global filters used to exclude patches from the baseline.</p>
+    pub fn global_filters(&self) -> std::option::Option<&crate::model::PatchFilterGroup> {
+        self.global_filters.as_ref()
+    }
+    /// <p>A set of rules used to include patches in the baseline.</p>
+    pub fn approval_rules(&self) -> std::option::Option<&crate::model::PatchRuleGroup> {
+        self.approval_rules.as_ref()
+    }
+    /// <p>A list of explicitly approved patches for the baseline.</p>
+    pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.approved_patches.as_deref()
+    }
+    /// <p>The compliance severity level assigned to the patch baseline after the update
+    /// completed.</p>
+    pub fn approved_patches_compliance_level(
+        &self,
+    ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
+        self.approved_patches_compliance_level.as_ref()
+    }
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
+    pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
+        self.approved_patches_enable_non_security
+    }
+    /// <p>A list of explicitly rejected patches for the baseline.</p>
+    pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.rejected_patches.as_deref()
+    }
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
+    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
+    /// with packages that include it as a dependency.</p>
+    pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
+        self.rejected_patches_action.as_ref()
+    }
+    /// <p>The date when the patch baseline was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date when the patch baseline was last modified.</p>
+    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_date.as_ref()
+    }
+    /// <p>A description of the patch baseline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the patches to use to update the instances, including target operating
+    /// systems and source repositories. Applies to Linux instances only.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
+        self.sources.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePatchBaselineOutput");
@@ -388,6 +454,12 @@ pub struct UpdateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
+impl UpdateOpsMetadataOutput {
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
+    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+        self.ops_metadata_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateOpsMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOpsMetadataOutput");
@@ -546,6 +618,91 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified
     /// in the maintenance windows is reached. </p>
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+}
+impl UpdateMaintenanceWindowTaskOutput {
+    /// <p>The ID of the maintenance window that was updated.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The task ID of the maintenance window that was updated.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
+    /// <p>The updated target values.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The updated task ARN value.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
+    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The updated parameter values.</p>
+    /// <note>
+    /// <p>
+    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+    /// about how Systems Manager handles these options for the supported maintenance window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn task_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    > {
+        self.task_parameters.as_ref()
+    }
+    /// <p>The updated parameter values.</p>
+    pub fn task_invocation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
+        self.task_invocation_parameters.as_ref()
+    }
+    /// <p>The updated priority value.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The updated <code>MaxConcurrency</code> value.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The updated <code>MaxErrors</code> value.</p>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The updated logging information in Amazon S3.</p>
+    /// <note>
+    /// <p>
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
+    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
+    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The updated task name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated task description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified
+    /// in the maintenance windows is reached. </p>
+    pub fn cutoff_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
+        self.cutoff_behavior.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -867,6 +1024,32 @@ pub struct UpdateMaintenanceWindowTargetOutput {
     /// <p>The updated description.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateMaintenanceWindowTargetOutput {
+    /// <p>The maintenance window ID specified in the update request.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The target ID specified in the update request.</p>
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
+        self.window_target_id.as_deref()
+    }
+    /// <p>The updated targets.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The updated owner.</p>
+    pub fn owner_information(&self) -> std::option::Option<&str> {
+        self.owner_information.as_deref()
+    }
+    /// <p>The updated name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMaintenanceWindowTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowTargetOutput");
@@ -1024,6 +1207,64 @@ pub struct UpdateMaintenanceWindowOutput {
     pub allow_unassociated_targets: bool,
     /// <p>Whether the maintenance window is enabled.</p>
     pub enabled: bool,
+}
+impl UpdateMaintenanceWindowOutput {
+    /// <p>The ID of the created maintenance window.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The name of the maintenance window.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An optional description of the update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
+    /// to become active. The maintenance window won't run before this specified time.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
+    /// to become inactive. The maintenance window won't run after this specified time.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
+    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
+    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
+    /// Zone Database</a> on the IANA website.</p>
+    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+        self.schedule_timezone.as_deref()
+    }
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
+    /// date and time.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
+    /// <p>The duration of the maintenance window in hours.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
+    pub fn cutoff(&self) -> i32 {
+        self.cutoff
+    }
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
+    /// for those targets.</p>
+    pub fn allow_unassociated_targets(&self) -> bool {
+        self.allow_unassociated_targets
+    }
+    /// <p>Whether the maintenance window is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1268,6 +1509,14 @@ pub struct UpdateDocumentDefaultVersionOutput {
     /// <p>The description of a custom document that you want to set as the default version.</p>
     pub description: std::option::Option<crate::model::DocumentDefaultVersionDescription>,
 }
+impl UpdateDocumentDefaultVersionOutput {
+    /// <p>The description of a custom document that you want to set as the default version.</p>
+    pub fn description(
+        &self,
+    ) -> std::option::Option<&crate::model::DocumentDefaultVersionDescription> {
+        self.description.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentDefaultVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentDefaultVersionOutput");
@@ -1323,6 +1572,12 @@ pub struct UpdateDocumentOutput {
     /// <p>A description of the document that was updated.</p>
     pub document_description: std::option::Option<crate::model::DocumentDescription>,
 }
+impl UpdateDocumentOutput {
+    /// <p>A description of the document that was updated.</p>
+    pub fn document_description(&self) -> std::option::Option<&crate::model::DocumentDescription> {
+        self.document_description.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentOutput");
@@ -1373,6 +1628,14 @@ impl UpdateDocumentOutput {
 pub struct UpdateAssociationStatusOutput {
     /// <p>Information about the association.</p>
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
+}
+impl UpdateAssociationStatusOutput {
+    /// <p>Information about the association.</p>
+    pub fn association_description(
+        &self,
+    ) -> std::option::Option<&crate::model::AssociationDescription> {
+        self.association_description.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssociationStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1428,6 +1691,14 @@ impl UpdateAssociationStatusOutput {
 pub struct UpdateAssociationOutput {
     /// <p>The description of the association that was updated.</p>
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
+}
+impl UpdateAssociationOutput {
+    /// <p>The description of the association that was updated.</p>
+    pub fn association_description(
+        &self,
+    ) -> std::option::Option<&crate::model::AssociationDescription> {
+        self.association_description.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1485,6 +1756,16 @@ pub struct UnlabelParameterVersionOutput {
     pub removed_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The labels that aren't attached to the given parameter version.</p>
     pub invalid_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UnlabelParameterVersionOutput {
+    /// <p>A list of all labels deleted from the parameter.</p>
+    pub fn removed_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.removed_labels.as_deref()
+    }
+    /// <p>The labels that aren't attached to the given parameter version.</p>
+    pub fn invalid_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.invalid_labels.as_deref()
+    }
 }
 impl std::fmt::Debug for UnlabelParameterVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1564,6 +1845,12 @@ impl UnlabelParameterVersionOutput {
 pub struct TerminateSessionOutput {
     /// <p>The ID of the session that has been terminated.</p>
     pub session_id: std::option::Option<std::string::String>,
+}
+impl TerminateSessionOutput {
+    /// <p>The ID of the session that has been terminated.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TerminateSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1657,6 +1944,31 @@ pub struct StartSessionOutput {
     /// <b>session-id</b> represents the ID of a Session Manager session, such as
     /// <code>1a2b3c4dEXAMPLE</code>.</p>
     pub stream_url: std::option::Option<std::string::String>,
+}
+impl StartSessionOutput {
+    /// <p>The ID of the session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>An encrypted token value containing session and caller information. Used to authenticate the
+    /// connection to the instance.</p>
+    pub fn token_value(&self) -> std::option::Option<&str> {
+        self.token_value.as_deref()
+    }
+    /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
+    /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+    /// </p>
+    /// <p>
+    /// <b>region</b> represents the Region identifier for an
+    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
+    /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
+    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>
+    /// <b>session-id</b> represents the ID of a Session Manager session, such as
+    /// <code>1a2b3c4dEXAMPLE</code>.</p>
+    pub fn stream_url(&self) -> std::option::Option<&str> {
+        self.stream_url.as_deref()
+    }
 }
 impl std::fmt::Debug for StartSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1755,6 +2067,13 @@ pub struct StartChangeRequestExecutionOutput {
     /// operation.) </p>
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
+impl StartChangeRequestExecutionOutput {
+    /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation
+    /// operation.) </p>
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+        self.automation_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartChangeRequestExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartChangeRequestExecutionOutput");
@@ -1807,6 +2126,12 @@ impl StartChangeRequestExecutionOutput {
 pub struct StartAutomationExecutionOutput {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
     pub automation_execution_id: std::option::Option<std::string::String>,
+}
+impl StartAutomationExecutionOutput {
+    /// <p>The unique ID of a newly scheduled automation execution.</p>
+    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+        self.automation_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartAutomationExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1889,6 +2214,13 @@ pub struct SendCommandOutput {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used
     /// future references to this request.</p>
     pub command: std::option::Option<crate::model::Command>,
+}
+impl SendCommandOutput {
+    /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used
+    /// future references to this request.</p>
+    pub fn command(&self) -> std::option::Option<&crate::model::Command> {
+        self.command.as_ref()
+    }
 }
 impl std::fmt::Debug for SendCommandOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1983,6 +2315,30 @@ pub struct ResumeSessionOutput {
     /// <b>session-id</b> represents the ID of a Session Manager session, such as
     /// <code>1a2b3c4dEXAMPLE</code>.</p>
     pub stream_url: std::option::Option<std::string::String>,
+}
+impl ResumeSessionOutput {
+    /// <p>The ID of the session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>An encrypted token value containing session and caller information. Used to authenticate the
+    /// connection to the instance.</p>
+    pub fn token_value(&self) -> std::option::Option<&str> {
+        self.token_value.as_deref()
+    }
+    /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
+    /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+    /// <p>
+    /// <b>region</b> represents the Region identifier for an
+    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
+    /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
+    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>
+    /// <b>session-id</b> represents the ID of a Session Manager session, such as
+    /// <code>1a2b3c4dEXAMPLE</code>.</p>
+    pub fn stream_url(&self) -> std::option::Option<&str> {
+        self.stream_url.as_deref()
+    }
 }
 impl std::fmt::Debug for ResumeSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2079,6 +2435,13 @@ pub struct ResetServiceSettingOutput {
     /// operation.</p>
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
+impl ResetServiceSettingOutput {
+    /// <p>The current, effective service setting after calling the ResetServiceSetting API
+    /// operation.</p>
+    pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
+        self.service_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for ResetServiceSettingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetServiceSettingOutput");
@@ -2162,6 +2525,12 @@ pub struct RegisterTaskWithMaintenanceWindowOutput {
     /// <p>The ID of the task in the maintenance window.</p>
     pub window_task_id: std::option::Option<std::string::String>,
 }
+impl RegisterTaskWithMaintenanceWindowOutput {
+    /// <p>The ID of the task in the maintenance window.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterTaskWithMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterTaskWithMaintenanceWindowOutput");
@@ -2212,6 +2581,12 @@ impl RegisterTaskWithMaintenanceWindowOutput {
 pub struct RegisterTargetWithMaintenanceWindowOutput {
     /// <p>The ID of the target definition in this maintenance window.</p>
     pub window_target_id: std::option::Option<std::string::String>,
+}
+impl RegisterTargetWithMaintenanceWindowOutput {
+    /// <p>The ID of the target definition in this maintenance window.</p>
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
+        self.window_target_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterTargetWithMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2265,6 +2640,16 @@ pub struct RegisterPatchBaselineForPatchGroupOutput {
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group registered with the patch baseline.</p>
     pub patch_group: std::option::Option<std::string::String>,
+}
+impl RegisterPatchBaselineForPatchGroupOutput {
+    /// <p>The ID of the patch baseline the patch group was registered with.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch group registered with the patch baseline.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterPatchBaselineForPatchGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2327,6 +2712,12 @@ pub struct RegisterDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
     pub baseline_id: std::option::Option<std::string::String>,
 }
+impl RegisterDefaultPatchBaselineOutput {
+    /// <p>The ID of the default patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterDefaultPatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterDefaultPatchBaselineOutput");
@@ -2380,6 +2771,20 @@ pub struct PutParameterOutput {
     pub version: i64,
     /// <p>The tier assigned to the parameter.</p>
     pub tier: std::option::Option<crate::model::ParameterTier>,
+}
+impl PutParameterOutput {
+    /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store
+    /// automatically creates a new version and assigns this new version a unique ID. You can reference a
+    /// parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you
+    /// don't specify a specific version, the system returns the latest parameter value when a parameter
+    /// is called.</p>
+    pub fn version(&self) -> i64 {
+        self.version
+    }
+    /// <p>The tier assigned to the parameter.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::ParameterTier> {
+        self.tier.as_ref()
+    }
 }
 impl std::fmt::Debug for PutParameterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2449,6 +2854,12 @@ impl PutParameterOutput {
 pub struct PutInventoryOutput {
     /// <p>Information about the request.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl PutInventoryOutput {
+    /// <p>Information about the request.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for PutInventoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2558,6 +2969,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -2618,6 +3035,19 @@ pub struct ListResourceDataSyncOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceDataSyncOutput {
+    /// <p>A list of your current resource data sync configurations and their statuses.</p>
+    pub fn resource_data_sync_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceDataSyncItem]> {
+        self.resource_data_sync_items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceDataSyncOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2700,6 +3130,21 @@ pub struct ListResourceComplianceSummariesOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceComplianceSummariesOutput {
+    /// <p>A summary count for specified or targeted managed instances. Summary count includes
+    /// information about compliant and non-compliant State Manager associations, patch status, or custom
+    /// items according to the filter criteria that you specify. </p>
+    pub fn resource_compliance_summary_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceComplianceSummaryItem]> {
+        self.resource_compliance_summary_items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceComplianceSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2787,6 +3232,17 @@ pub struct ListOpsMetadataOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOpsMetadataOutput {
+    /// <p>Returns a list of OpsMetadata objects.</p>
+    pub fn ops_metadata_list(&self) -> std::option::Option<&[crate::model::OpsMetadata]> {
+        self.ops_metadata_list.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOpsMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOpsMetadataOutput");
@@ -2861,6 +3317,17 @@ pub struct ListOpsItemRelatedItemsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of related-item resources for the specified OpsItem.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemRelatedItemSummary>>,
+}
+impl ListOpsItemRelatedItemsOutput {
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of related-item resources for the specified OpsItem.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::OpsItemRelatedItemSummary]> {
+        self.summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOpsItemRelatedItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2940,6 +3407,17 @@ pub struct ListOpsItemEventsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of event information for the specified OpsItems.</p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemEventSummary>>,
+}
+impl ListOpsItemEventsOutput {
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of event information for the specified OpsItems.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::OpsItemEventSummary]> {
+        self.summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOpsItemEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3025,6 +3503,36 @@ pub struct ListInventoryEntriesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInventoryEntriesOutput {
+    /// <p>The type of inventory item returned by the request.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The instance ID targeted by the request to query inventory information.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The inventory schema version used by the instance(s).</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    /// <p>The time that inventory information was collected for the instance(s).</p>
+    pub fn capture_time(&self) -> std::option::Option<&str> {
+        self.capture_time.as_deref()
+    }
+    /// <p>A list of inventory items on the instance(s).</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.entries.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInventoryEntriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3163,6 +3671,17 @@ pub struct ListDocumentVersionsOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDocumentVersionsOutput {
+    /// <p>The document versions.</p>
+    pub fn document_versions(&self) -> std::option::Option<&[crate::model::DocumentVersionInfo]> {
+        self.document_versions.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDocumentVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDocumentVersionsOutput");
@@ -3241,6 +3760,17 @@ pub struct ListDocumentsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDocumentsOutput {
+    /// <p>The names of the SSM documents.</p>
+    pub fn document_identifiers(&self) -> std::option::Option<&[crate::model::DocumentIdentifier]> {
+        self.document_identifiers.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDocumentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3327,6 +3857,30 @@ pub struct ListDocumentMetadataHistoryOutput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDocumentMetadataHistoryOutput {
+    /// <p>The name of the change template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the change template.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The user ID of the person in the organization who requested the review of the
+    /// change template.</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>Information about the response to the change template approval request.</p>
+    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadataResponseInfo> {
+        self.metadata.as_ref()
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you
+    /// can specify in a subsequent call to get the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDocumentMetadataHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3444,6 +3998,21 @@ pub struct ListComplianceSummariesOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComplianceSummariesOutput {
+    /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example,
+    /// this call returns State Manager associations, patches, or custom compliance types according to
+    /// the filter criteria that you specified.</p>
+    pub fn compliance_summary_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComplianceSummaryItem]> {
+        self.compliance_summary_items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComplianceSummariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComplianceSummariesOutput");
@@ -3527,6 +4096,17 @@ pub struct ListComplianceItemsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComplianceItemsOutput {
+    /// <p>A list of compliance information for the specified resource ID. </p>
+    pub fn compliance_items(&self) -> std::option::Option<&[crate::model::ComplianceItem]> {
+        self.compliance_items.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComplianceItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComplianceItemsOutput");
@@ -3603,6 +4183,17 @@ pub struct ListCommandsOutput {
     /// previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCommandsOutput {
+    /// <p>(Optional) The list of commands requested by the user. </p>
+    pub fn commands(&self) -> std::option::Option<&[crate::model::Command]> {
+        self.commands.as_deref()
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
+    /// previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCommandsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCommandsOutput");
@@ -3677,6 +4268,17 @@ pub struct ListCommandInvocationsOutput {
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a
     /// previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCommandInvocationsOutput {
+    /// <p>(Optional) A list of all invocations. </p>
+    pub fn command_invocations(&self) -> std::option::Option<&[crate::model::CommandInvocation]> {
+        self.command_invocations.as_deref()
+    }
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a
+    /// previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCommandInvocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3758,6 +4360,19 @@ pub struct ListAssociationVersionsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociationVersionsOutput {
+    /// <p>Information about all versions of the association for the specified association ID.</p>
+    pub fn association_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociationVersionInfo]> {
+        self.association_versions.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociationVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociationVersionsOutput");
@@ -3837,6 +4452,17 @@ pub struct ListAssociationsOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAssociationsOutput {
+    /// <p>The associations.</p>
+    pub fn associations(&self) -> std::option::Option<&[crate::model::Association]> {
+        self.associations.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociationsOutput");
@@ -3913,6 +4539,18 @@ pub struct LabelParameterVersionOutput {
     /// <p>The version of the parameter that has been labeled.</p>
     pub parameter_version: i64,
 }
+impl LabelParameterVersionOutput {
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn invalid_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.invalid_labels.as_deref()
+    }
+    /// <p>The version of the parameter that has been labeled.</p>
+    pub fn parameter_version(&self) -> i64 {
+        self.parameter_version
+    }
+}
 impl std::fmt::Debug for LabelParameterVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelParameterVersionOutput");
@@ -3987,6 +4625,12 @@ pub struct GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
     pub service_setting: std::option::Option<crate::model::ServiceSetting>,
 }
+impl GetServiceSettingOutput {
+    /// <p>The query result of the current service setting.</p>
+    pub fn service_setting(&self) -> std::option::Option<&crate::model::ServiceSetting> {
+        self.service_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for GetServiceSettingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceSettingOutput");
@@ -4041,6 +4685,20 @@ pub struct GetPatchBaselineForPatchGroupOutput {
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
+}
+impl GetPatchBaselineForPatchGroupOutput {
+    /// <p>The ID of the patch baseline that should be used for the patch group.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch group.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
+    /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPatchBaselineForPatchGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4152,6 +4810,76 @@ pub struct GetPatchBaselineOutput {
     /// <p>Information about the patches to use to update the instances, including target operating
     /// systems and source repositories. Applies to Linux instances only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
+}
+impl GetPatchBaselineOutput {
+    /// <p>The ID of the retrieved patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch baseline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Returns the operating system specified for the patch baseline.</p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+    /// <p>A set of global filters used to exclude patches from the baseline.</p>
+    pub fn global_filters(&self) -> std::option::Option<&crate::model::PatchFilterGroup> {
+        self.global_filters.as_ref()
+    }
+    /// <p>A set of rules used to include patches in the baseline.</p>
+    pub fn approval_rules(&self) -> std::option::Option<&crate::model::PatchRuleGroup> {
+        self.approval_rules.as_ref()
+    }
+    /// <p>A list of explicitly approved patches for the baseline.</p>
+    pub fn approved_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.approved_patches.as_deref()
+    }
+    /// <p>Returns the specified compliance severity level for approved patches in the patch
+    /// baseline.</p>
+    pub fn approved_patches_compliance_level(
+        &self,
+    ) -> std::option::Option<&crate::model::PatchComplianceLevel> {
+        self.approved_patches_compliance_level.as_ref()
+    }
+    /// <p>Indicates whether the list of approved patches includes non-security updates that should be
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
+    pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
+        self.approved_patches_enable_non_security
+    }
+    /// <p>A list of explicitly rejected patches for the baseline.</p>
+    pub fn rejected_patches(&self) -> std::option::Option<&[std::string::String]> {
+        self.rejected_patches.as_deref()
+    }
+    /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A
+    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
+    /// with packages that include it as a dependency.</p>
+    pub fn rejected_patches_action(&self) -> std::option::Option<&crate::model::PatchAction> {
+        self.rejected_patches_action.as_ref()
+    }
+    /// <p>Patch groups included in the patch baseline.</p>
+    pub fn patch_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.patch_groups.as_deref()
+    }
+    /// <p>The date the patch baseline was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date the patch baseline was last modified.</p>
+    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_date.as_ref()
+    }
+    /// <p>A description of the patch baseline.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the patches to use to update the instances, including target operating
+    /// systems and source repositories. Applies to Linux instances only.</p>
+    pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
+        self.sources.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4468,6 +5196,17 @@ pub struct GetParametersByPathOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetParametersByPathOutput {
+    /// <p>A list of parameters found in the specified hierarchy.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetParametersByPathOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersByPathOutput");
@@ -4542,6 +5281,17 @@ pub struct GetParametersOutput {
     /// <p>A list of parameters that aren't formatted correctly or don't run during an
     /// execution.</p>
     pub invalid_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetParametersOutput {
+    /// <p>A list of details for a parameter.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>A list of parameters that aren't formatted correctly or don't run during an
+    /// execution.</p>
+    pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.invalid_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for GetParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4627,6 +5377,17 @@ pub struct GetParameterHistoryOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetParameterHistoryOutput {
+    /// <p>A list of parameters returned by the request.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterHistory]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetParameterHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParameterHistoryOutput");
@@ -4699,6 +5460,12 @@ pub struct GetParameterOutput {
     /// <p>Information about a parameter.</p>
     pub parameter: std::option::Option<crate::model::Parameter>,
 }
+impl GetParameterOutput {
+    /// <p>Information about a parameter.</p>
+    pub fn parameter(&self) -> std::option::Option<&crate::model::Parameter> {
+        self.parameter.as_ref()
+    }
+}
 impl std::fmt::Debug for GetParameterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParameterOutput");
@@ -4752,6 +5519,17 @@ pub struct GetOpsSummaryOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOpsSummaryOutput {
+    /// <p>The list of aggregated details and filtered OpsData.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::OpsEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOpsSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4831,6 +5609,25 @@ pub struct GetOpsMetadataOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetOpsMetadataOutput {
+    /// <p>The resource ID of the Application Manager application.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>OpsMetadata for an Application Manager application.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetadataValue>,
+    > {
+        self.metadata.as_ref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOpsMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4924,6 +5721,12 @@ impl GetOpsMetadataOutput {
 pub struct GetOpsItemOutput {
     /// <p>The OpsItem.</p>
     pub ops_item: std::option::Option<crate::model::OpsItem>,
+}
+impl GetOpsItemOutput {
+    /// <p>The OpsItem.</p>
+    pub fn ops_item(&self) -> std::option::Option<&crate::model::OpsItem> {
+        self.ops_item.as_ref()
+    }
 }
 impl std::fmt::Debug for GetOpsItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5042,6 +5845,115 @@ pub struct GetMaintenanceWindowTaskOutput {
     /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
     /// <code>CancelCommand</code> operation.</p>
     pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+}
+impl GetMaintenanceWindowTaskOutput {
+    /// <p>The retrieved maintenance window ID.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The retrieved maintenance window task ID.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
+    /// <p>The targets where the task should run.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and
+    /// <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document
+    /// name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For
+    /// <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
+    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>The type of task to run.</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+        self.task_type.as_ref()
+    }
+    /// <p>The parameters to pass to the task when it runs.</p>
+    /// <note>
+    /// <p>
+    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+    /// about how Systems Manager handles these options for the supported maintenance window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn task_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    > {
+        self.task_parameters.as_ref()
+    }
+    /// <p>The parameters to pass to the task when it runs.</p>
+    pub fn task_invocation_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskInvocationParameters> {
+        self.task_invocation_parameters.as_ref()
+    }
+    /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks
+    /// that have the same priority are scheduled in parallel.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p>
+    /// <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
+    /// in the response to this command. This value doesn't affect the running of your task and can be
+    /// ignored.</p>
+    /// </note>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p>
+    /// <note>
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
+    /// in the response to this command. This value doesn't affect the running of your task and can be
+    /// ignored.</p>
+    /// </note>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are
+    /// logged.</p>
+    /// <note>
+    /// <p>
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
+    /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
+    /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The retrieved task name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The retrieved task description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
+    /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
+    /// running task invocations continue, but no new task invocations are started. For Run Command
+    /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
+    /// <code>CancelCommand</code> operation.</p>
+    pub fn cutoff_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::MaintenanceWindowTaskCutoffBehavior> {
+        self.cutoff_behavior.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5433,6 +6345,58 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationOutput {
     /// <p>The maintenance window target ID.</p>
     pub window_target_id: std::option::Option<std::string::String>,
 }
+impl GetMaintenanceWindowExecutionTaskInvocationOutput {
+    /// <p>The maintenance window execution ID.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>The task execution ID.</p>
+    pub fn task_execution_id(&self) -> std::option::Option<&str> {
+        self.task_execution_id.as_deref()
+    }
+    /// <p>The invocation ID.</p>
+    pub fn invocation_id(&self) -> std::option::Option<&str> {
+        self.invocation_id.as_deref()
+    }
+    /// <p>The execution ID.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>Retrieves the task type for a maintenance window.</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+        self.task_type.as_ref()
+    }
+    /// <p>The parameters used at the time that the task ran.</p>
+    pub fn parameters(&self) -> std::option::Option<&str> {
+        self.parameters.as_deref()
+    }
+    /// <p>The task status for an invocation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The details explaining the status. Details are only available for certain status
+    /// values.</p>
+    pub fn status_details(&self) -> std::option::Option<&str> {
+        self.status_details.as_deref()
+    }
+    /// <p>The time that the task started running on the target.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time that the task finished running on the target.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge
+    /// events raised while running tasks for these targets in this maintenance window.</p>
+    pub fn owner_information(&self) -> std::option::Option<&str> {
+        self.owner_information.as_deref()
+    }
+    /// <p>The maintenance window target ID.</p>
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
+        self.window_target_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskInvocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionTaskInvocationOutput");
@@ -5709,6 +6673,87 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the task execution completed.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetMaintenanceWindowExecutionTaskOutput {
+    /// <p>The ID of the maintenance window execution that includes the task.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>The ID of the specific task execution in the maintenance window task that was
+    /// retrieved.</p>
+    pub fn task_execution_id(&self) -> std::option::Option<&str> {
+        self.task_execution_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The role that was assumed when running the task.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The type of task that was run.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MaintenanceWindowTaskType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The parameters passed to the task when it was run.</p>
+    /// <note>
+    /// <p>
+    /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+    /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+    /// about how Systems Manager handles these options for the supported maintenance window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Key</code>: string, between 1 and 255 characters</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Value</code>: an array of strings, each between 1 and 255 characters</p>
+    /// </li>
+    /// </ul>
+    pub fn task_parameters(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<
+            std::string::String,
+            crate::model::MaintenanceWindowTaskParameterValueExpression,
+        >],
+    > {
+        self.task_parameters.as_deref()
+    }
+    /// <p>The priority of the task.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The defined maximum number of task executions that could be run in parallel.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
+        self.max_concurrency.as_deref()
+    }
+    /// <p>The defined maximum number of task execution errors allowed before scheduling of the task
+    /// execution would have been stopped.</p>
+    pub fn max_errors(&self) -> std::option::Option<&str> {
+        self.max_errors.as_deref()
+    }
+    /// <p>The status of the task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The details explaining the status. Not available for all status values.</p>
+    pub fn status_details(&self) -> std::option::Option<&str> {
+        self.status_details.as_deref()
+    }
+    /// <p>The time the task execution started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time the task execution completed.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6019,6 +7064,32 @@ pub struct GetMaintenanceWindowExecutionOutput {
     /// <p>The time the maintenance window finished running.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetMaintenanceWindowExecutionOutput {
+    /// <p>The ID of the maintenance window execution.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
+    /// <p>The ID of the task executions from the maintenance window execution.</p>
+    pub fn task_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.task_ids.as_deref()
+    }
+    /// <p>The status of the maintenance window execution.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MaintenanceWindowExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The details explaining the status. Not available for all status values.</p>
+    pub fn status_details(&self) -> std::option::Option<&str> {
+        self.status_details.as_deref()
+    }
+    /// <p>The time the maintenance window started running.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time the maintenance window finished running.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMaintenanceWindowExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionOutput");
@@ -6192,6 +7263,77 @@ pub struct GetMaintenanceWindowOutput {
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the maintenance window was last modified.</p>
     pub modified_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetMaintenanceWindowOutput {
+    /// <p>The ID of the created maintenance window.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The name of the maintenance window.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the maintenance window.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
+    /// to become active. The maintenance window won't run before this specified time.</p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
+    /// to become inactive. The maintenance window won't run after this specified time.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    pub fn schedule(&self) -> std::option::Option<&str> {
+        self.schedule.as_deref()
+    }
+    /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
+    /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
+    /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
+    /// Zone Database</a> on the IANA website.</p>
+    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+        self.schedule_timezone.as_deref()
+    }
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
+    /// date and time.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+        self.schedule_offset
+    }
+    /// <p>The next time the maintenance window will actually run, taking into account any specified
+    /// times for the maintenance window to become active or inactive.</p>
+    pub fn next_execution_time(&self) -> std::option::Option<&str> {
+        self.next_execution_time.as_deref()
+    }
+    /// <p>The duration of the maintenance window in hours.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
+    pub fn cutoff(&self) -> i32 {
+        self.cutoff
+    }
+    /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
+    /// for those targets.</p>
+    pub fn allow_unassociated_targets(&self) -> bool {
+        self.allow_unassociated_targets
+    }
+    /// <p>Indicates whether the maintenance window is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The date the maintenance window was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The date the maintenance window was last modified.</p>
+    pub fn modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6459,6 +7601,17 @@ pub struct GetInventorySchemaOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetInventorySchemaOutput {
+    /// <p>Inventory schemas returned by the request.</p>
+    pub fn schemas(&self) -> std::option::Option<&[crate::model::InventoryItemSchema]> {
+        self.schemas.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInventorySchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInventorySchemaOutput");
@@ -6533,6 +7686,17 @@ pub struct GetInventoryOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetInventoryOutput {
+    /// <p>Collection of inventory entities such as a collection of instance inventory. </p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::InventoryResultEntity]> {
+        self.entities.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInventoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6642,6 +7806,72 @@ pub struct GetDocumentOutput {
     /// version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
+}
+impl GetDocumentOutput {
+    /// <p>The name of the SSM document.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date the SSM document was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the
+    /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
+    /// 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>The document version.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
+    /// <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DocumentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
+    /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+    /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    pub fn status_information(&self) -> std::option::Option<&str> {
+        self.status_information.as_deref()
+    }
+    /// <p>The contents of the SSM document.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The document type.</p>
+    pub fn document_type(&self) -> std::option::Option<&crate::model::DocumentType> {
+        self.document_type.as_ref()
+    }
+    /// <p>The document format, either JSON or YAML.</p>
+    pub fn document_format(&self) -> std::option::Option<&crate::model::DocumentFormat> {
+        self.document_format.as_ref()
+    }
+    /// <p>A list of SSM documents required by a document. For example, an
+    /// <code>ApplicationConfiguration</code> document requires an
+    /// <code>ApplicationConfigurationSchema</code> document.</p>
+    pub fn requires(&self) -> std::option::Option<&[crate::model::DocumentRequires]> {
+        self.requires.as_deref()
+    }
+    /// <p>A description of the document attachments, including names, locations, sizes, and so
+    /// on.</p>
+    pub fn attachments_content(&self) -> std::option::Option<&[crate::model::AttachmentContent]> {
+        self.attachments_content.as_deref()
+    }
+    /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member
+    /// of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new
+    /// version is approved, the status of the previous version changes to REJECTED.</p>
+    /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
+    pub fn review_status(&self) -> std::option::Option<&crate::model::ReviewStatus> {
+        self.review_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6922,6 +8152,26 @@ pub struct GetDeployablePatchSnapshotForInstanceOutput {
     /// 2015.09) on the instance for the specified patch snapshot.</p>
     pub product: std::option::Option<std::string::String>,
 }
+impl GetDeployablePatchSnapshotForInstanceOutput {
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The user-defined snapshot ID.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the
+    /// patch snapshot.</p>
+    pub fn snapshot_download_url(&self) -> std::option::Option<&str> {
+        self.snapshot_download_url.as_deref()
+    }
+    /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
+    /// 2015.09) on the instance for the specified patch snapshot.</p>
+    pub fn product(&self) -> std::option::Option<&str> {
+        self.product.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeployablePatchSnapshotForInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeployablePatchSnapshotForInstanceOutput");
@@ -7018,6 +8268,16 @@ pub struct GetDefaultPatchBaselineOutput {
     /// <p>The operating system for the returned patch baseline. </p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
 }
+impl GetDefaultPatchBaselineOutput {
+    /// <p>The ID of the default patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The operating system for the returned patch baseline. </p>
+    pub fn operating_system(&self) -> std::option::Option<&crate::model::OperatingSystem> {
+        self.operating_system.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDefaultPatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDefaultPatchBaselineOutput");
@@ -7084,6 +8344,17 @@ pub struct GetConnectionStatusOutput {
     /// <p>The status of the connection to the instance. For example, 'Connected' or 'Not
     /// Connected'.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
+}
+impl GetConnectionStatusOutput {
+    /// <p>The ID of the instance to check connection status. </p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The status of the connection to the instance. For example, 'Connected' or 'Not
+    /// Connected'.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConnectionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7257,6 +8528,153 @@ pub struct GetCommandInvocationOutput {
     pub standard_error_url: std::option::Option<std::string::String>,
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
+}
+impl GetCommandInvocationOutput {
+    /// <p>The parent command ID of the invocation plugin.</p>
+    pub fn command_id(&self) -> std::option::Option<&str> {
+        self.command_id.as_deref()
+    }
+    /// <p>The ID of the managed instance targeted by the command. A managed instance can be an EC2
+    /// instance or an instance in your hybrid environment that is configured for Systems Manager.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The comment text for the command.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>The Systems Manager document (SSM document) version used in the request.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+    /// For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    pub fn plugin_name(&self) -> std::option::Option<&str> {
+        self.plugin_name.as_deref()
+    }
+    /// <p>The error level response code for the plugin script. If the response code is
+    /// <code>-1</code>, then the command hasn't started running on the instance, or it wasn't received
+    /// by the instance.</p>
+    pub fn response_code(&self) -> i32 {
+        self.response_code
+    }
+    /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
+    /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
+    /// the <code>InvokedBefore</code> filter.</p>
+    /// <p>
+    /// <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+    /// </p>
+    /// <p>If the plugin hasn't started to run, the string is empty.</p>
+    pub fn execution_start_date_time(&self) -> std::option::Option<&str> {
+        self.execution_start_date_time.as_deref()
+    }
+    /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
+    pub fn execution_elapsed_time(&self) -> std::option::Option<&str> {
+        self.execution_elapsed_time.as_deref()
+    }
+    /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format.
+    /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
+    /// the <code>InvokedAfter</code> filter.</p>
+    /// <p>
+    /// <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+    /// </p>
+    /// <p>If the plugin hasn't started to run, the string is empty.</p>
+    pub fn execution_end_date_time(&self) -> std::option::Option<&str> {
+        self.execution_end_date_time.as_deref()
+    }
+    /// <p>The status of this invocation plugin. This status can be different than
+    /// <code>StatusDetails</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CommandInvocationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code>
+    /// includes more information than <code>Status</code> because it includes states resulting from
+    /// error and concurrency control parameters. <code>StatusDetails</code> can show different results
+    /// than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+    /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// <code>StatusDetails</code> can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
+    /// available. The instance might not be available because of network issues, because the instance
+    /// was stopped, or for similar reasons. The system will try to send the command again.</p>
+    /// </li>
+    /// <li>
+    /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// timeout expired. Delivery timeouts don't count against the parent command's
+    /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
+    /// Success or Incomplete. This is a terminal state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Execution Timed Out: The command started to run on the instance, but the execution wasn't
+    /// complete before the timeout expired. Execution timeouts count against the
+    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
+    /// that the result code wasn't zero. For a command invocation, this indicates that the result code
+    /// for one or more plugins wasn't zero. Invocation failures count against the
+    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Canceled: The command was terminated before it was completed. This is a terminal
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// exist or might not be responding. Undeliverable invocations don't count against the parent
+    /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
+    /// status is Success or Incomplete. This is a terminal state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent
+    /// command invocations were canceled by the system. This is a terminal state.</p>
+    /// </li>
+    /// </ul>
+    pub fn status_details(&self) -> std::option::Option<&str> {
+        self.status_details.as_deref()
+    }
+    /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
+    /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then
+    /// this string is empty.</p>
+    pub fn standard_output_content(&self) -> std::option::Option<&str> {
+        self.standard_output_content.as_deref()
+    }
+    /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is
+    /// empty.</p>
+    pub fn standard_output_url(&self) -> std::option::Option<&str> {
+        self.standard_output_url.as_deref()
+    }
+    /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
+    /// hasn't finished running, then this string is empty.</p>
+    pub fn standard_error_content(&self) -> std::option::Option<&str> {
+        self.standard_error_content.as_deref()
+    }
+    /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command
+    /// hasn't finished running, then this string is empty.</p>
+    pub fn standard_error_url(&self) -> std::option::Option<&str> {
+        self.standard_error_url.as_deref()
+    }
+    /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
+    pub fn cloud_watch_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchOutputConfig> {
+        self.cloud_watch_output_config.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCommandInvocationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7715,6 +9133,27 @@ pub struct GetCalendarStateOutput {
     /// <code>CLOSED</code>, and vice-versa.</p>
     pub next_transition_time: std::option::Option<std::string::String>,
 }
+impl GetCalendarStateOutput {
+    /// <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed
+    /// to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to
+    /// proceed.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CalendarState> {
+        self.state.as_ref()
+    }
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
+    /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
+    /// uses the current time.</p>
+    pub fn at_time(&self) -> std::option::Option<&str> {
+        self.at_time.as_deref()
+    }
+    /// <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
+    /// that the calendar state will change. If the current calendar state is <code>OPEN</code>,
+    /// <code>NextTransitionTime</code> indicates when the calendar state changes to
+    /// <code>CLOSED</code>, and vice-versa.</p>
+    pub fn next_transition_time(&self) -> std::option::Option<&str> {
+        self.next_transition_time.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCalendarStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCalendarStateOutput");
@@ -7809,6 +9248,12 @@ pub struct GetAutomationExecutionOutput {
     /// <p>Detailed information about the current state of an automation execution.</p>
     pub automation_execution: std::option::Option<crate::model::AutomationExecution>,
 }
+impl GetAutomationExecutionOutput {
+    /// <p>Detailed information about the current state of an automation execution.</p>
+    pub fn automation_execution(&self) -> std::option::Option<&crate::model::AutomationExecution> {
+        self.automation_execution.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAutomationExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAutomationExecutionOutput");
@@ -7893,6 +9338,17 @@ pub struct DescribeSessionsOutput {
     /// call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSessionsOutput {
+    /// <p>A list of sessions meeting the request parameters.</p>
+    pub fn sessions(&self) -> std::option::Option<&[crate::model::Session]> {
+        self.sessions.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous
+    /// call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSessionsOutput");
@@ -7968,6 +9424,19 @@ pub struct DescribePatchPropertiesOutput {
     >,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePatchPropertiesOutput {
+    /// <p>A list of the properties for patches matching the filter request parameters.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.properties.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePatchPropertiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8085,6 +9554,74 @@ pub struct DescribePatchGroupStateOutput {
     /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
     /// status of these instances is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_other_non_compliant_patches: std::option::Option<i32>,
+}
+impl DescribePatchGroupStateOutput {
+    /// <p>The number of instances in the patch group.</p>
+    pub fn instances(&self) -> i32 {
+        self.instances
+    }
+    /// <p>The number of instances with installed patches.</p>
+    pub fn instances_with_installed_patches(&self) -> i32 {
+        self.instances_with_installed_patches
+    }
+    /// <p>The number of instances with patches installed that aren't defined in the patch
+    /// baseline.</p>
+    pub fn instances_with_installed_other_patches(&self) -> i32 {
+        self.instances_with_installed_other_patches
+    }
+    /// <p>The number of instances with patches installed by Patch Manager that haven't been rebooted
+    /// after the patch installation. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    pub fn instances_with_installed_pending_reboot_patches(&self) -> std::option::Option<i32> {
+        self.instances_with_installed_pending_reboot_patches
+    }
+    /// <p>The number of instances with patches installed that are specified in a
+    /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
+    /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
+    /// <note>
+    /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+    /// <code>RejectedPatchesAction</code>, the value of
+    /// <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
+    /// </note>
+    pub fn instances_with_installed_rejected_patches(&self) -> std::option::Option<i32> {
+        self.instances_with_installed_rejected_patches
+    }
+    /// <p>The number of instances with missing patches from the patch baseline.</p>
+    pub fn instances_with_missing_patches(&self) -> i32 {
+        self.instances_with_missing_patches
+    }
+    /// <p>The number of instances with patches from the patch baseline that failed to install.</p>
+    pub fn instances_with_failed_patches(&self) -> i32 {
+        self.instances_with_failed_patches
+    }
+    /// <p>The number of instances with patches that aren't applicable.</p>
+    pub fn instances_with_not_applicable_patches(&self) -> i32 {
+        self.instances_with_not_applicable_patches
+    }
+    /// <p>The number of instances with <code>NotApplicable</code> patches beyond the supported limit,
+    /// which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    pub fn instances_with_unreported_not_applicable_patches(&self) -> std::option::Option<i32> {
+        self.instances_with_unreported_not_applicable_patches
+    }
+    /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+    /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
+    /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
+    /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    pub fn instances_with_critical_non_compliant_patches(&self) -> std::option::Option<i32> {
+        self.instances_with_critical_non_compliant_patches
+    }
+    /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
+    /// advisory aren't installed. These patches might be missing, have failed installation, were
+    /// rejected, or were installed but awaiting a required instance reboot. The status of these
+    /// instances is <code>NON_COMPLIANT</code>.</p>
+    pub fn instances_with_security_non_compliant_patches(&self) -> std::option::Option<i32> {
+        self.instances_with_security_non_compliant_patches
+    }
+    /// <p>The number of instances with patches installed that are specified as other than
+    /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
+    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+    pub fn instances_with_other_non_compliant_patches(&self) -> std::option::Option<i32> {
+        self.instances_with_other_non_compliant_patches
+    }
 }
 impl std::fmt::Debug for DescribePatchGroupStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8410,6 +9947,29 @@ pub struct DescribePatchGroupsOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePatchGroupsOutput {
+    /// <p>Each entry in the array contains:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+    /// <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p>
+    /// </li>
+    /// </ul>
+    pub fn mappings(&self) -> std::option::Option<&[crate::model::PatchGroupPatchBaselineMapping]> {
+        self.mappings.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePatchGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePatchGroupsOutput");
@@ -8514,6 +10074,19 @@ pub struct DescribePatchBaselinesOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePatchBaselinesOutput {
+    /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
+    pub fn baseline_identities(
+        &self,
+    ) -> std::option::Option<&[crate::model::PatchBaselineIdentity]> {
+        self.baseline_identities.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePatchBaselinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePatchBaselinesOutput");
@@ -8592,6 +10165,16 @@ pub struct DescribeParametersOutput {
     /// <p>The token to use when requesting the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeParametersOutput {
+    /// <p>Parameters returned by the request.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterMetadata]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeParametersOutput");
@@ -8664,6 +10247,17 @@ pub struct DescribeOpsItemsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of OpsItems.</p>
     pub ops_item_summaries: std::option::Option<std::vec::Vec<crate::model::OpsItemSummary>>,
+}
+impl DescribeOpsItemsOutput {
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of OpsItems.</p>
+    pub fn ops_item_summaries(&self) -> std::option::Option<&[crate::model::OpsItemSummary]> {
+        self.ops_item_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOpsItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8744,6 +10338,17 @@ pub struct DescribeMaintenanceWindowTasksOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowTasksOutput {
+    /// <p>Information about the tasks in the maintenance window.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::MaintenanceWindowTask]> {
+        self.tasks.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowTasksOutput");
@@ -8818,6 +10423,17 @@ pub struct DescribeMaintenanceWindowTargetsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowTargetsOutput {
+    /// <p>Information about the targets in the maintenance window.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::MaintenanceWindowTarget]> {
+        self.targets.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8895,6 +10511,19 @@ pub struct DescribeMaintenanceWindowsForTargetOutput {
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowsForTargetOutput {
+    /// <p>Information about the maintenance window targets and tasks an instance is associated
+    /// with.</p>
+    pub fn window_identities(
+        &self,
+    ) -> std::option::Option<&[crate::model::MaintenanceWindowIdentityForTarget]> {
+        self.window_identities.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowsForTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8977,6 +10606,19 @@ pub struct DescribeMaintenanceWindowScheduleOutput {
         std::option::Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowScheduleOutput {
+    /// <p>Information about maintenance window executions scheduled for the specified time
+    /// range.</p>
+    pub fn scheduled_window_executions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScheduledWindowExecution]> {
+        self.scheduled_window_executions.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9061,6 +10703,19 @@ pub struct DescribeMaintenanceWindowsOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowsOutput {
+    /// <p>Information about the maintenance windows.</p>
+    pub fn window_identities(
+        &self,
+    ) -> std::option::Option<&[crate::model::MaintenanceWindowIdentity]> {
+        self.window_identities.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowsOutput");
@@ -9140,6 +10795,19 @@ pub struct DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowExecutionTasksOutput {
+    /// <p>Information about the task executions.</p>
+    pub fn window_execution_task_identities(
+        &self,
+    ) -> std::option::Option<&[crate::model::MaintenanceWindowExecutionTaskIdentity]> {
+        self.window_execution_task_identities.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9227,6 +10895,20 @@ pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+    /// <p>Information about the task invocation results per invocation.</p>
+    pub fn window_execution_task_invocation_identities(
+        &self,
+    ) -> std::option::Option<&[crate::model::MaintenanceWindowExecutionTaskInvocationIdentity]>
+    {
+        self.window_execution_task_invocation_identities.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9321,6 +11003,19 @@ pub struct DescribeMaintenanceWindowExecutionsOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMaintenanceWindowExecutionsOutput {
+    /// <p>Information about the maintenance window executions.</p>
+    pub fn window_executions(
+        &self,
+    ) -> std::option::Option<&[crate::model::MaintenanceWindowExecution]> {
+        self.window_executions.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMaintenanceWindowExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMaintenanceWindowExecutionsOutput");
@@ -9401,6 +11096,19 @@ pub struct DescribeInventoryDeletionsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInventoryDeletionsOutput {
+    /// <p>A list of status items for deleted inventory.</p>
+    pub fn inventory_deletions(
+        &self,
+    ) -> std::option::Option<&[crate::model::InventoryDeletionStatusItem]> {
+        self.inventory_deletions.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInventoryDeletionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInventoryDeletionsOutput");
@@ -9479,6 +11187,19 @@ pub struct DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstancePatchStatesForPatchGroupOutput {
+    /// <p>The high-level patch state for the requested instances. </p>
+    pub fn instance_patch_states(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstancePatchState]> {
+        self.instance_patch_states.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancePatchStatesForPatchGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9559,6 +11280,19 @@ pub struct DescribeInstancePatchStatesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstancePatchStatesOutput {
+    /// <p>The high-level patch state for the requested instances.</p>
+    pub fn instance_patch_states(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstancePatchState]> {
+        self.instance_patch_states.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancePatchStatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9661,6 +11395,40 @@ pub struct DescribeInstancePatchesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstancePatchesOutput {
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Title (string)</p>
+    /// </li>
+    /// <li>
+    /// <p>KBId (string)</p>
+    /// </li>
+    /// <li>
+    /// <p>Classification (string)</p>
+    /// </li>
+    /// <li>
+    /// <p>Severity (string)</p>
+    /// </li>
+    /// <li>
+    /// <p>State (string, such as "INSTALLED" or "FAILED")</p>
+    /// </li>
+    /// <li>
+    /// <p>InstalledTime (DateTime)</p>
+    /// </li>
+    /// <li>
+    /// <p>InstalledBy (string)</p>
+    /// </li>
+    /// </ul>
+    pub fn patches(&self) -> std::option::Option<&[crate::model::PatchComplianceData]> {
+        self.patches.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstancePatchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9784,6 +11552,19 @@ pub struct DescribeInstanceInformationOutput {
     /// return, the string is empty. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceInformationOutput {
+    /// <p>The instance information list.</p>
+    pub fn instance_information_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceInformation]> {
+        self.instance_information_list.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceInformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceInformationOutput");
@@ -9863,6 +11644,19 @@ pub struct DescribeInstanceAssociationsStatusOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeInstanceAssociationsStatusOutput {
+    /// <p>Status information about the association.</p>
+    pub fn instance_association_status_infos(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceAssociationStatusInfo]> {
+        self.instance_association_status_infos.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceAssociationsStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9946,6 +11740,17 @@ pub struct DescribeEffectivePatchesForPatchBaselineOutput {
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeEffectivePatchesForPatchBaselineOutput {
+    /// <p>An array of patches and patch status.</p>
+    pub fn effective_patches(&self) -> std::option::Option<&[crate::model::EffectivePatch]> {
+        self.effective_patches.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEffectivePatchesForPatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEffectivePatchesForPatchBaselineOutput");
@@ -10022,6 +11827,17 @@ pub struct DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEffectiveInstanceAssociationsOutput {
+    /// <p>The associations for the requested instance.</p>
+    pub fn associations(&self) -> std::option::Option<&[crate::model::InstanceAssociation]> {
+        self.associations.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEffectiveInstanceAssociationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10103,6 +11919,25 @@ pub struct DescribeDocumentPermissionOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDocumentPermissionOutput {
+    /// <p>The account IDs that have permission to use this document. The ID can be either an
+    /// Amazon Web Services account or <i>All</i>.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with
+    /// each account.</p>
+    pub fn account_sharing_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccountSharingInfo]> {
+        self.account_sharing_info_list.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDocumentPermissionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10206,6 +12041,12 @@ pub struct DescribeDocumentOutput {
     /// <p>Information about the SSM document.</p>
     pub document: std::option::Option<crate::model::DocumentDescription>,
 }
+impl DescribeDocumentOutput {
+    /// <p>Information about the SSM document.</p>
+    pub fn document(&self) -> std::option::Option<&crate::model::DocumentDescription> {
+        self.document.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDocumentOutput");
@@ -10259,6 +12100,17 @@ pub struct DescribeAvailablePatchesOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAvailablePatchesOutput {
+    /// <p>An array of patches. Each entry in the array is a patch structure.</p>
+    pub fn patches(&self) -> std::option::Option<&[crate::model::Patch]> {
+        self.patches.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAvailablePatchesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10334,6 +12186,17 @@ pub struct DescribeAutomationStepExecutionsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAutomationStepExecutionsOutput {
+    /// <p>A list of details about the current state of all steps that make up an execution.</p>
+    pub fn step_executions(&self) -> std::option::Option<&[crate::model::StepExecution]> {
+        self.step_executions.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAutomationStepExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10411,6 +12274,20 @@ pub struct DescribeAutomationExecutionsOutput {
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAutomationExecutionsOutput {
+    /// <p>The list of details about each automation execution which has occurred which matches the
+    /// filter specification, if any.</p>
+    pub fn automation_execution_metadata_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutomationExecutionMetadata]> {
+        self.automation_execution_metadata_list.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to
+    /// return, the string is empty.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAutomationExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10497,6 +12374,19 @@ pub struct DescribeAssociationExecutionTargetsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAssociationExecutionTargetsOutput {
+    /// <p>Information about the execution.</p>
+    pub fn association_execution_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociationExecutionTarget]> {
+        self.association_execution_targets.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssociationExecutionTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssociationExecutionTargetsOutput");
@@ -10580,6 +12470,19 @@ pub struct DescribeAssociationExecutionsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAssociationExecutionsOutput {
+    /// <p>A list of the executions for the specified association ID.</p>
+    pub fn association_executions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociationExecution]> {
+        self.association_executions.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAssociationExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssociationExecutionsOutput");
@@ -10656,6 +12559,14 @@ pub struct DescribeAssociationOutput {
     /// <p>Information about the association.</p>
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
+impl DescribeAssociationOutput {
+    /// <p>Information about the association.</p>
+    pub fn association_description(
+        &self,
+    ) -> std::option::Option<&crate::model::AssociationDescription> {
+        self.association_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAssociationOutput");
@@ -10713,6 +12624,17 @@ pub struct DescribeActivationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeActivationsOutput {
+    /// <p>A list of activations for your Amazon Web Services account.</p>
+    pub fn activation_list(&self) -> std::option::Option<&[crate::model::Activation]> {
+        self.activation_list.as_deref()
+    }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of
+    /// results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeActivationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10788,6 +12710,16 @@ pub struct DeregisterTaskFromMaintenanceWindowOutput {
     /// <p>The ID of the task removed from the maintenance window.</p>
     pub window_task_id: std::option::Option<std::string::String>,
 }
+impl DeregisterTaskFromMaintenanceWindowOutput {
+    /// <p>The ID of the maintenance window the task was removed from.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The ID of the task removed from the maintenance window.</p>
+    pub fn window_task_id(&self) -> std::option::Option<&str> {
+        self.window_task_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterTaskFromMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTaskFromMaintenanceWindowOutput");
@@ -10854,6 +12786,16 @@ pub struct DeregisterTargetFromMaintenanceWindowOutput {
     /// <p>The ID of the removed target definition.</p>
     pub window_target_id: std::option::Option<std::string::String>,
 }
+impl DeregisterTargetFromMaintenanceWindowOutput {
+    /// <p>The ID of the maintenance window the target was removed from.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+    /// <p>The ID of the removed target definition.</p>
+    pub fn window_target_id(&self) -> std::option::Option<&str> {
+        self.window_target_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterTargetFromMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterTargetFromMaintenanceWindowOutput");
@@ -10919,6 +12861,16 @@ pub struct DeregisterPatchBaselineForPatchGroupOutput {
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch group deregistered from the patch baseline.</p>
     pub patch_group: std::option::Option<std::string::String>,
+}
+impl DeregisterPatchBaselineForPatchGroupOutput {
+    /// <p>The ID of the patch baseline the patch group was deregistered from.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+    /// <p>The name of the patch group deregistered from the patch baseline.</p>
+    pub fn patch_group(&self) -> std::option::Option<&str> {
+        self.patch_group.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterPatchBaselineForPatchGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11041,6 +12993,12 @@ pub struct DeletePatchBaselineOutput {
     /// <p>The ID of the deleted patch baseline.</p>
     pub baseline_id: std::option::Option<std::string::String>,
 }
+impl DeletePatchBaselineOutput {
+    /// <p>The ID of the deleted patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePatchBaselineOutput");
@@ -11090,6 +13048,16 @@ pub struct DeleteParametersOutput {
     pub deleted_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
     pub invalid_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteParametersOutput {
+    /// <p>The names of the deleted parameters.</p>
+    pub fn deleted_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.deleted_parameters.as_deref()
+    }
+    /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
+    pub fn invalid_parameters(&self) -> std::option::Option<&[std::string::String]> {
+        self.invalid_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11230,6 +13198,12 @@ pub struct DeleteMaintenanceWindowOutput {
     /// <p>The ID of the deleted maintenance window.</p>
     pub window_id: std::option::Option<std::string::String>,
 }
+impl DeleteMaintenanceWindowOutput {
+    /// <p>The ID of the deleted maintenance window.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMaintenanceWindowOutput");
@@ -11283,6 +13257,22 @@ pub struct DeleteInventoryOutput {
     pub type_name: std::option::Option<std::string::String>,
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub deletion_summary: std::option::Option<crate::model::InventoryDeletionSummary>,
+}
+impl DeleteInventoryOutput {
+    /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a
+    /// unique ID. You can use this ID to query the status of a delete operation. This option is useful
+    /// for ensuring that a delete operation has completed before you begin other operations. </p>
+    pub fn deletion_id(&self) -> std::option::Option<&str> {
+        self.deletion_id.as_deref()
+    }
+    /// <p>The name of the inventory data type specified in the request.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn deletion_summary(&self) -> std::option::Option<&crate::model::InventoryDeletionSummary> {
+        self.deletion_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteInventoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11485,6 +13475,12 @@ pub struct CreatePatchBaselineOutput {
     /// <p>The ID of the created patch baseline.</p>
     pub baseline_id: std::option::Option<std::string::String>,
 }
+impl CreatePatchBaselineOutput {
+    /// <p>The ID of the created patch baseline.</p>
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
+        self.baseline_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePatchBaselineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePatchBaselineOutput");
@@ -11532,6 +13528,12 @@ impl CreatePatchBaselineOutput {
 pub struct CreateOpsMetadataOutput {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
     pub ops_metadata_arn: std::option::Option<std::string::String>,
+}
+impl CreateOpsMetadataOutput {
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
+    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
+        self.ops_metadata_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOpsMetadataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11584,6 +13586,12 @@ pub struct CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
     pub ops_item_id: std::option::Option<std::string::String>,
 }
+impl CreateOpsItemOutput {
+    /// <p>The ID of the OpsItem.</p>
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+        self.ops_item_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateOpsItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOpsItemOutput");
@@ -11632,6 +13640,12 @@ pub struct CreateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
     pub window_id: std::option::Option<std::string::String>,
 }
+impl CreateMaintenanceWindowOutput {
+    /// <p>The ID of the created maintenance window.</p>
+    pub fn window_id(&self) -> std::option::Option<&str> {
+        self.window_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMaintenanceWindowOutput");
@@ -11679,6 +13693,12 @@ impl CreateMaintenanceWindowOutput {
 pub struct CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
     pub document_description: std::option::Option<crate::model::DocumentDescription>,
+}
+impl CreateDocumentOutput {
+    /// <p>Information about the SSM document.</p>
+    pub fn document_description(&self) -> std::option::Option<&crate::model::DocumentDescription> {
+        self.document_description.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDocumentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11732,6 +13752,16 @@ pub struct CreateAssociationBatchOutput {
     pub successful: std::option::Option<std::vec::Vec<crate::model::AssociationDescription>>,
     /// <p>Information about the associations that failed.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedCreateAssociation>>,
+}
+impl CreateAssociationBatchOutput {
+    /// <p>Information about the associations that succeeded.</p>
+    pub fn successful(&self) -> std::option::Option<&[crate::model::AssociationDescription]> {
+        self.successful.as_deref()
+    }
+    /// <p>Information about the associations that failed.</p>
+    pub fn failed(&self) -> std::option::Option<&[crate::model::FailedCreateAssociation]> {
+        self.failed.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssociationBatchOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11817,6 +13847,14 @@ pub struct CreateAssociationOutput {
     /// <p>Information about the association.</p>
     pub association_description: std::option::Option<crate::model::AssociationDescription>,
 }
+impl CreateAssociationOutput {
+    /// <p>Information about the association.</p>
+    pub fn association_description(
+        &self,
+    ) -> std::option::Option<&crate::model::AssociationDescription> {
+        self.association_description.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssociationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssociationOutput");
@@ -11875,6 +13913,18 @@ pub struct CreateActivationOutput {
     /// <p>The code the system generates when it processes the activation. The activation code
     /// functions like a password to validate the activation ID. </p>
     pub activation_code: std::option::Option<std::string::String>,
+}
+impl CreateActivationOutput {
+    /// <p>The ID number generated by the system when it processed the activation. The activation ID
+    /// functions like a user name.</p>
+    pub fn activation_id(&self) -> std::option::Option<&str> {
+        self.activation_id.as_deref()
+    }
+    /// <p>The code the system generates when it processes the activation. The activation code
+    /// functions like a password to validate the activation ID. </p>
+    pub fn activation_code(&self) -> std::option::Option<&str> {
+        self.activation_code.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateActivationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11946,6 +13996,12 @@ impl CreateActivationOutput {
 pub struct CancelMaintenanceWindowExecutionOutput {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
     pub window_execution_id: std::option::Option<std::string::String>,
+}
+impl CancelMaintenanceWindowExecutionOutput {
+    /// <p>The ID of the maintenance window execution that has been stopped.</p>
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+        self.window_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelMaintenanceWindowExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12028,6 +14084,12 @@ impl CancelCommandOutput {
 pub struct AssociateOpsItemRelatedItemOutput {
     /// <p>The association ID.</p>
     pub association_id: std::option::Option<std::string::String>,
+}
+impl AssociateOpsItemRelatedItemOutput {
+    /// <p>The association ID.</p>
+    pub fn association_id(&self) -> std::option::Option<&str> {
+        self.association_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateOpsItemRelatedItemOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

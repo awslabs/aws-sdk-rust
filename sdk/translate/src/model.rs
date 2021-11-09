@@ -76,6 +76,17 @@ pub struct ParallelDataConfig {
     /// <p>The format of the parallel data input file.</p>
     pub format: std::option::Option<crate::model::ParallelDataFormat>,
 }
+impl ParallelDataConfig {
+    /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder
+    /// must be in the same Region as the API endpoint you are calling.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>The format of the parallel data input file.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ParallelDataFormat> {
+        self.format.as_ref()
+    }
+}
 impl std::fmt::Debug for ParallelDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParallelDataConfig");
@@ -209,6 +220,19 @@ pub struct AppliedTerminology {
     /// applied will be the first 250 terms in the source text. </p>
     pub terms: std::option::Option<std::vec::Vec<crate::model::Term>>,
 }
+impl AppliedTerminology {
+    /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated
+    /// text response.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the
+    /// translated text response. A maximum of 250 terms will be returned, and the specific terms
+    /// applied will be the first 250 terms in the source text. </p>
+    pub fn terms(&self) -> std::option::Option<&[crate::model::Term]> {
+        self.terms.as_deref()
+    }
+}
 impl std::fmt::Debug for AppliedTerminology {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppliedTerminology");
@@ -286,6 +310,16 @@ pub struct Term {
     pub source_text: std::option::Option<std::string::String>,
     /// <p>The target text of the term being translated by the custom terminology.</p>
     pub target_text: std::option::Option<std::string::String>,
+}
+impl Term {
+    /// <p>The source text of the term being translated by the custom terminology.</p>
+    pub fn source_text(&self) -> std::option::Option<&str> {
+        self.source_text.as_deref()
+    }
+    /// <p>The target text of the term being translated by the custom terminology.</p>
+    pub fn target_text(&self) -> std::option::Option<&str> {
+        self.target_text.as_deref()
+    }
 }
 impl std::fmt::Debug for Term {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -432,6 +466,13 @@ pub struct OutputDataConfig {
     /// be in the same Region as the API endpoint that you are calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
 }
+impl OutputDataConfig {
+    /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must
+    /// be in the same Region as the API endpoint that you are calling.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputDataConfig");
@@ -519,6 +560,52 @@ pub struct InputDataConfig {
     /// to <code>text/plain</code>, your costs will cover the translation of every character.</p>
     /// </important>
     pub content_type: std::option::Option<std::string::String>,
+}
+impl InputDataConfig {
+    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the
+    /// same Region as the API endpoint you are calling.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can
+    /// specify one of the following multipurpose internet mail extension (MIME) types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>text/html</code>: The input data consists of one or more HTML files. Amazon
+    /// Translate translates only the text that resides in the <code>html</code> element in each
+    /// file.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>text/plain</code>: The input data consists of one or more unformatted text
+    /// files. Amazon Translate translates every character in this type of input.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
+    /// The input data consists of one or more Word documents (.docx).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
+    /// The input data consists of one or more PowerPoint Presentation files (.pptx).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
+    /// input data consists of one or more Excel Workbook files (.xlsx).</p>
+    /// </li>
+    /// </ul>
+    /// <important>
+    /// <p>If you structure your input data as HTML, ensure that you set this parameter to
+    /// <code>text/html</code>. By doing so, you cut costs by limiting the translation to the
+    /// contents of the <code>html</code> element in each file. Otherwise, if you set this parameter
+    /// to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+    /// </important>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
 }
 impl std::fmt::Debug for InputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -685,6 +772,71 @@ pub struct TextTranslationJobProperties {
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
     /// that granted Amazon Translate read access to the job's input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
+}
+impl TextTranslationJobProperties {
+    /// <p>The ID of the translation job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The user-defined name of the translation job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of the translation job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The number of documents successfully and unsuccessfully processed during the translation
+    /// job.</p>
+    pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
+        self.job_details.as_ref()
+    }
+    /// <p>The language code of the language of the source text. The language must be a language
+    /// supported by Amazon Translate.</p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language code of the language of the target text. The language must be a language
+    /// supported by Amazon Translate.</p>
+    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_language_codes.as_deref()
+    }
+    /// <p>A list containing the names of the terminologies applied to a translation job. Only one
+    /// terminology can be applied per <a>StartTextTranslationJob</a> request at this
+    /// time.</p>
+    pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.terminology_names.as_deref()
+    }
+    /// <p>A list containing the names of the parallel data resources applied to the translation
+    /// job.</p>
+    pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.parallel_data_names.as_deref()
+    }
+    /// <p>An explanation of any errors that may have occured during the translation job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The time at which the translation job was submitted.</p>
+    pub fn submitted_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_time.as_ref()
+    }
+    /// <p>The time at which the translation job ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The input configuration properties that were specified when the job was requested.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output configuration properties that were specified when the job was requested.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
+    /// that granted Amazon Translate read access to the job's input data.</p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for TextTranslationJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -973,6 +1125,20 @@ pub struct JobDetails {
     /// <p>The number of documents used as input in a translation job.</p>
     pub input_documents_count: std::option::Option<i32>,
 }
+impl JobDetails {
+    /// <p>The number of documents successfully processed during a translation job.</p>
+    pub fn translated_documents_count(&self) -> std::option::Option<i32> {
+        self.translated_documents_count
+    }
+    /// <p>The number of documents that could not be processed during a translation job.</p>
+    pub fn documents_with_errors_count(&self) -> std::option::Option<i32> {
+        self.documents_with_errors_count
+    }
+    /// <p>The number of documents used as input in a translation job.</p>
+    pub fn input_documents_count(&self) -> std::option::Option<i32> {
+        self.input_documents_count
+    }
+}
 impl std::fmt::Debug for JobDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobDetails");
@@ -1063,6 +1229,28 @@ pub struct TextTranslationJobFilter {
     /// returns only the jobs submitted after the specified time. Jobs are returned in descending
     /// order, newest to oldest.</p>
     pub submitted_after_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TextTranslationJobFilter {
+    /// <p>Filters the list of jobs by name.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Filters the list of jobs based by job status.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
+    /// returns only the jobs submitted before the specified time. Jobs are returned in ascending
+    /// order, oldest to newest.</p>
+    pub fn submitted_before_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_before_time.as_ref()
+    }
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
+    /// returns only the jobs submitted after the specified time. Jobs are returned in descending
+    /// order, newest to oldest.</p>
+    pub fn submitted_after_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submitted_after_time.as_ref()
+    }
 }
 impl std::fmt::Debug for TextTranslationJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1187,6 +1375,50 @@ pub struct TerminologyProperties {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TerminologyProperties {
+    /// <p>The name of the custom terminology.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the custom terminology properties.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The language code for the source text of the translation request for which the custom
+    /// terminology is being used.</p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language codes for the target languages available with the custom terminology file.
+    /// All possible target languages are returned in array.</p>
+    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_language_codes.as_deref()
+    }
+    /// <p>The encryption key for the custom terminology.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
+    /// <p>The size of the file used when importing a custom terminology.</p>
+    pub fn size_bytes(&self) -> std::option::Option<i32> {
+        self.size_bytes
+    }
+    /// <p>The number of terms included in the custom terminology.</p>
+    pub fn term_count(&self) -> std::option::Option<i32> {
+        self.term_count
+    }
+    /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for TerminologyProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1381,6 +1613,17 @@ pub struct EncryptionKey {
     /// terminology.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl EncryptionKey {
+    /// <p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionKeyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
+    /// terminology.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for EncryptionKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionKey");
@@ -1536,6 +1779,85 @@ pub struct ParallelDataProperties {
     pub latest_update_attempt_status: std::option::Option<crate::model::ParallelDataStatus>,
     /// <p>The time that the most recent update was attempted.</p>
     pub latest_update_attempt_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ParallelDataProperties {
+    /// <p>The custom name assigned to the parallel data resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The description assigned to the parallel data resource.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the parallel data resource. When the parallel data is ready for you to use,
+    /// the status is <code>ACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The source language of the translations in the parallel data file.</p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language codes for the target languages available in the parallel data file. All
+    /// possible target languages are returned as an array.</p>
+    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.target_language_codes.as_deref()
+    }
+    /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    pub fn parallel_data_config(&self) -> std::option::Option<&crate::model::ParallelDataConfig> {
+        self.parallel_data_config.as_ref()
+    }
+    /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input
+    /// file. This number includes only the characters in your translation examples. It does not
+    /// include characters that are used to format your file. For example, if you provided a
+    /// Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
+    pub fn imported_data_size(&self) -> std::option::Option<i64> {
+        self.imported_data_size
+    }
+    /// <p>The number of records successfully imported from the parallel data input file.</p>
+    pub fn imported_record_count(&self) -> std::option::Option<i64> {
+        self.imported_record_count
+    }
+    /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
+    pub fn failed_record_count(&self) -> std::option::Option<i64> {
+        self.failed_record_count
+    }
+    /// <p>The number of items in the input file that Amazon Translate skipped when you created or
+    /// updated the parallel data resource. For example, Amazon Translate skips empty records, empty
+    /// target texts, and empty lines.</p>
+    pub fn skipped_record_count(&self) -> std::option::Option<i64> {
+        self.skipped_record_count
+    }
+    /// <p>The encryption key used to encrypt this object.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
+    /// <p>The time at which the parallel data resource was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which the parallel data resource was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The status of the most recent update attempt for the parallel data resource.</p>
+    pub fn latest_update_attempt_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelDataStatus> {
+        self.latest_update_attempt_status.as_ref()
+    }
+    /// <p>The time that the most recent update was attempted.</p>
+    pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_update_attempt_at.as_ref()
+    }
 }
 impl std::fmt::Debug for ParallelDataProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1851,6 +2173,18 @@ pub struct TerminologyData {
     /// <p>The data format of the custom terminology. Either CSV or TMX.</p>
     pub format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
+impl TerminologyData {
+    /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a
+    /// Base64-encoding on this field before sending a request to the AWS service. Users of the SDK
+    /// should not perform Base64-encoding themselves.</p>
+    pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.file.as_ref()
+    }
+    /// <p>The data format of the custom terminology. Either CSV or TMX.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::TerminologyDataFormat> {
+        self.format.as_ref()
+    }
+}
 impl std::fmt::Debug for TerminologyData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminologyData");
@@ -2027,6 +2361,16 @@ pub struct TerminologyDataLocation {
     /// <p>The location of the custom terminology data.</p>
     pub location: std::option::Option<std::string::String>,
 }
+impl TerminologyDataLocation {
+    /// <p>The repository type for the custom terminology data.</p>
+    pub fn repository_type(&self) -> std::option::Option<&str> {
+        self.repository_type.as_deref()
+    }
+    /// <p>The location of the custom terminology data.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+}
 impl std::fmt::Debug for TerminologyDataLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminologyDataLocation");
@@ -2094,6 +2438,17 @@ pub struct ParallelDataDataLocation {
     /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a
     /// presigned URL to that has a 30 minute expiration.</p>
     pub location: std::option::Option<std::string::String>,
+}
+impl ParallelDataDataLocation {
+    /// <p>Describes the repository that contains the parallel data input file.</p>
+    pub fn repository_type(&self) -> std::option::Option<&str> {
+        self.repository_type.as_deref()
+    }
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a
+    /// presigned URL to that has a 30 minute expiration.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
 }
 impl std::fmt::Debug for ParallelDataDataLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

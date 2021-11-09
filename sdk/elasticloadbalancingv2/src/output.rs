@@ -8,6 +8,16 @@ pub struct SetSubnetsOutput {
     /// <p>[Network Load Balancers] The IP address type.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
+impl SetSubnetsOutput {
+    /// <p>Information about the subnets.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>[Network Load Balancers] The IP address type.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+}
 impl std::fmt::Debug for SetSubnetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetSubnetsOutput");
@@ -85,6 +95,12 @@ pub struct SetSecurityGroupsOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SetSecurityGroupsOutput {
+    /// <p>The IDs of the security groups associated with the load balancer.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for SetSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetSecurityGroupsOutput");
@@ -142,6 +158,12 @@ pub struct SetRulePrioritiesOutput {
     /// <p>Information about the rules.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
+impl SetRulePrioritiesOutput {
+    /// <p>Information about the rules.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for SetRulePrioritiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetRulePrioritiesOutput");
@@ -196,6 +218,12 @@ impl SetRulePrioritiesOutput {
 pub struct SetIpAddressTypeOutput {
     /// <p>The IP address type.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
+}
+impl SetIpAddressTypeOutput {
+    /// <p>The IP address type.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl std::fmt::Debug for SetIpAddressTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -338,6 +366,12 @@ pub struct ModifyTargetGroupAttributesOutput {
     /// <p>Information about the attributes.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
 }
+impl ModifyTargetGroupAttributesOutput {
+    /// <p>Information about the attributes.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::TargetGroupAttribute]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyTargetGroupAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyTargetGroupAttributesOutput");
@@ -396,6 +430,12 @@ pub struct ModifyTargetGroupOutput {
     /// <p>Information about the modified target group.</p>
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroup>>,
 }
+impl ModifyTargetGroupOutput {
+    /// <p>Information about the modified target group.</p>
+    pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroup]> {
+        self.target_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyTargetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyTargetGroupOutput");
@@ -453,6 +493,12 @@ pub struct ModifyRuleOutput {
     /// <p>Information about the modified rule.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
+impl ModifyRuleOutput {
+    /// <p>Information about the modified rule.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyRuleOutput");
@@ -507,6 +553,12 @@ impl ModifyRuleOutput {
 pub struct ModifyLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
+}
+impl ModifyLoadBalancerAttributesOutput {
+    /// <p>Information about the load balancer attributes.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::LoadBalancerAttribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyLoadBalancerAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -566,6 +618,12 @@ pub struct ModifyListenerOutput {
     /// <p>Information about the modified listener.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
 }
+impl ModifyListenerOutput {
+    /// <p>Information about the modified listener.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyListenerOutput");
@@ -623,6 +681,14 @@ pub struct DescribeTargetHealthOutput {
     /// <p>Information about the health of the targets.</p>
     pub target_health_descriptions:
         std::option::Option<std::vec::Vec<crate::model::TargetHealthDescription>>,
+}
+impl DescribeTargetHealthOutput {
+    /// <p>Information about the health of the targets.</p>
+    pub fn target_health_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetHealthDescription]> {
+        self.target_health_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTargetHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -690,6 +756,17 @@ pub struct DescribeTargetGroupsOutput {
     /// <p>If there are additional results, this is the marker for the next set of results.
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl DescribeTargetGroupsOutput {
+    /// <p>Information about the target groups.</p>
+    pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroup]> {
+        self.target_groups.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTargetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -763,6 +840,12 @@ pub struct DescribeTargetGroupAttributesOutput {
     /// <p>Information about the target group attributes</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TargetGroupAttribute>>,
 }
+impl DescribeTargetGroupAttributesOutput {
+    /// <p>Information about the target group attributes</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::TargetGroupAttribute]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTargetGroupAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTargetGroupAttributesOutput");
@@ -820,6 +903,12 @@ impl DescribeTargetGroupAttributesOutput {
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     pub tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
+}
+impl DescribeTagsOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tag_descriptions(&self) -> std::option::Option<&[crate::model::TagDescription]> {
+        self.tag_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -881,6 +970,17 @@ pub struct DescribeSslPoliciesOutput {
     /// <p>If there are additional results, this is the marker for the next set of results.
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl DescribeSslPoliciesOutput {
+    /// <p>Information about the security policies.</p>
+    pub fn ssl_policies(&self) -> std::option::Option<&[crate::model::SslPolicy]> {
+        self.ssl_policies.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSslPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -957,6 +1057,17 @@ pub struct DescribeRulesOutput {
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
+impl DescribeRulesOutput {
+    /// <p>Information about the rules.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRulesOutput");
@@ -1032,6 +1143,17 @@ pub struct DescribeLoadBalancersOutput {
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
+impl DescribeLoadBalancersOutput {
+    /// <p>Information about the load balancers.</p>
+    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+        self.load_balancers.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancersOutput");
@@ -1104,6 +1226,12 @@ pub struct DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAttribute>>,
 }
+impl DescribeLoadBalancerAttributesOutput {
+    /// <p>Information about the load balancer attributes.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::LoadBalancerAttribute]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancerAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerAttributesOutput");
@@ -1164,6 +1292,17 @@ pub struct DescribeListenersOutput {
     /// <p>If there are additional results, this is the marker for the next set of results.
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl DescribeListenersOutput {
+    /// <p>Information about the listeners.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeListenersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1240,6 +1379,17 @@ pub struct DescribeListenerCertificatesOutput {
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
+impl DescribeListenerCertificatesOutput {
+    /// <p>Information about the certificates.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+        self.certificates.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeListenerCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeListenerCertificatesOutput");
@@ -1314,6 +1464,17 @@ pub struct DescribeAccountLimitsOutput {
     /// <p>If there are additional results, this is the marker for the next set of results.
     /// Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl DescribeAccountLimitsOutput {
+    /// <p>Information about the limits.</p>
+    pub fn limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+        self.limits.as_deref()
+    }
+    /// <p>If there are additional results, this is the marker for the next set of results.
+    /// Otherwise, this is null.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1537,6 +1698,12 @@ pub struct CreateTargetGroupOutput {
     /// <p>Information about the target group.</p>
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroup>>,
 }
+impl CreateTargetGroupOutput {
+    /// <p>Information about the target group.</p>
+    pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroup]> {
+        self.target_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTargetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTargetGroupOutput");
@@ -1594,6 +1761,12 @@ pub struct CreateRuleOutput {
     /// <p>Information about the rule.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
+impl CreateRuleOutput {
+    /// <p>Information about the rule.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleOutput");
@@ -1648,6 +1821,12 @@ impl CreateRuleOutput {
 pub struct CreateLoadBalancerOutput {
     /// <p>Information about the load balancer.</p>
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
+}
+impl CreateLoadBalancerOutput {
+    /// <p>Information about the load balancer.</p>
+    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+        self.load_balancers.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1705,6 +1884,12 @@ impl CreateLoadBalancerOutput {
 pub struct CreateListenerOutput {
     /// <p>Information about the listener.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
+}
+impl CreateListenerOutput {
+    /// <p>Information about the listener.</p>
+    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+        self.listeners.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateListenerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1792,6 +1977,12 @@ impl AddTagsOutput {
 pub struct AddListenerCertificatesOutput {
     /// <p>Information about the certificates in the certificate list.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
+}
+impl AddListenerCertificatesOutput {
+    /// <p>Information about the certificates in the certificate list.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+        self.certificates.as_deref()
+    }
 }
 impl std::fmt::Debug for AddListenerCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

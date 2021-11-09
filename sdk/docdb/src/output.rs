@@ -6,6 +6,12 @@ pub struct StopDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl StopDbClusterOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for StopDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDbClusterOutput");
@@ -56,6 +62,12 @@ impl StopDbClusterOutput {
 pub struct StartDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl StartDbClusterOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for StartDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,6 +120,12 @@ pub struct RestoreDbClusterToPointInTimeOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl RestoreDbClusterToPointInTimeOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbClusterToPointInTimeOutput");
@@ -158,6 +176,12 @@ impl RestoreDbClusterToPointInTimeOutput {
 pub struct RestoreDbClusterFromSnapshotOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl RestoreDbClusterFromSnapshotOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterFromSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -224,6 +248,27 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl ResetDbClusterParameterGroupOutput {
+    /// <p>The name of a cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be from 1 to 255 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -342,6 +387,12 @@ pub struct RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
+impl RemoveSourceIdentifierFromSubscriptionOutput {
+    /// <p>Detailed information about an event to which you have subscribed.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for RemoveSourceIdentifierFromSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveSourceIdentifierFromSubscriptionOutput");
@@ -392,6 +443,12 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
 pub struct RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl RemoveFromGlobalClusterOutput {
+    /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for RemoveFromGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -444,6 +501,12 @@ pub struct RebootDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl RebootDbInstanceOutput {
+    /// <p>Detailed information about an instance. </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for RebootDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootDbInstanceOutput");
@@ -494,6 +557,12 @@ impl RebootDbInstanceOutput {
 pub struct ModifyGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl ModifyGlobalClusterOutput {
+    /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -546,6 +615,12 @@ pub struct ModifyEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
+impl ModifyEventSubscriptionOutput {
+    /// <p>Detailed information about an event to which you have subscribed.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyEventSubscriptionOutput");
@@ -597,6 +672,12 @@ pub struct ModifyDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
+impl ModifyDbSubnetGroupOutput {
+    /// <p>Detailed information about a subnet group. </p>
+    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+        self.db_subnet_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyDbSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbSubnetGroupOutput");
@@ -647,6 +728,12 @@ impl ModifyDbSubnetGroupOutput {
 pub struct ModifyDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+}
+impl ModifyDbInstanceOutput {
+    /// <p>Detailed information about an instance. </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -700,6 +787,15 @@ pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// snapshot.</p>
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+}
+impl ModifyDbClusterSnapshotAttributeOutput {
+    /// <p>Detailed information about the attributes that are associated with a cluster
+    /// snapshot.</p>
+    pub fn db_cluster_snapshot_attributes_result(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+        self.db_cluster_snapshot_attributes_result.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterSnapshotAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -775,6 +871,27 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl ModifyDbClusterParameterGroupOutput {
+    /// <p>The name of a cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be from 1 to 255 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -863,6 +980,12 @@ pub struct ModifyDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl ModifyDbClusterOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbClusterOutput");
@@ -913,6 +1036,12 @@ impl ModifyDbClusterOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A list of one or more tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of one or more tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -971,6 +1100,12 @@ pub struct FailoverDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl FailoverDbClusterOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for FailoverDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailoverDbClusterOutput");
@@ -1026,6 +1161,20 @@ pub struct DescribePendingMaintenanceActionsOutput {
     /// includes only records beyond the marker, up to the value specified by
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribePendingMaintenanceActionsOutput {
+    /// <p>The maintenance actions to be applied.</p>
+    pub fn pending_maintenance_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
+        self.pending_maintenance_actions.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePendingMaintenanceActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1115,6 +1264,20 @@ pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeOrderableDbInstanceOptionsOutput {
+    /// <p>The options that are available for a particular orderable instance.</p>
+    pub fn orderable_db_instance_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrderableDbInstanceOption]> {
+        self.orderable_db_instance_options.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrderableDbInstanceOptionsOutput");
@@ -1198,6 +1361,16 @@ pub struct DescribeGlobalClustersOutput {
     /// <p></p>
     pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
 }
+impl DescribeGlobalClustersOutput {
+    /// <p></p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p></p>
+    pub fn global_clusters(&self) -> std::option::Option<&[crate::model::GlobalCluster]> {
+        self.global_clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGlobalClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGlobalClustersOutput");
@@ -1272,6 +1445,20 @@ pub struct DescribeEventSubscriptionsOutput {
     /// <p>A list of event subscriptions.</p>
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+}
+impl DescribeEventSubscriptionsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of event subscriptions.</p>
+    pub fn event_subscriptions_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+        self.event_subscriptions_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1355,6 +1542,18 @@ pub struct DescribeEventsOutput {
     /// <p>Detailed information about one or more events. </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Detailed information about one or more events. </p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -1430,6 +1629,14 @@ pub struct DescribeEventCategoriesOutput {
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
+impl DescribeEventCategoriesOutput {
+    /// <p>A list of event category maps.</p>
+    pub fn event_categories_map_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventCategoriesMap]> {
+        self.event_categories_map_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventCategoriesOutput");
@@ -1492,6 +1699,13 @@ pub struct DescribeEngineDefaultClusterParametersOutput {
     /// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
+impl DescribeEngineDefaultClusterParametersOutput {
+    /// <p>Contains the result of a successful invocation of the
+    /// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+        self.engine_defaults.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEngineDefaultClusterParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEngineDefaultClusterParametersOutput");
@@ -1548,6 +1762,18 @@ pub struct DescribeDbSubnetGroupsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more subnet groups.</p>
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
+}
+impl DescribeDbSubnetGroupsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Detailed information about one or more subnet groups.</p>
+    pub fn db_subnet_groups(&self) -> std::option::Option<&[crate::model::DbSubnetGroup]> {
+        self.db_subnet_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1628,6 +1854,18 @@ pub struct DescribeDbInstancesOutput {
     /// <p>Detailed information about one or more instances. </p>
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
 }
+impl DescribeDbInstancesOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Detailed information about one or more instances. </p>
+    pub fn db_instances(&self) -> std::option::Option<&[crate::model::DbInstance]> {
+        self.db_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbInstancesOutput");
@@ -1705,6 +1943,18 @@ pub struct DescribeDbEngineVersionsOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Detailed information about one or more engine versions.</p>
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
+}
+impl DescribeDbEngineVersionsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Detailed information about one or more engine versions.</p>
+    pub fn db_engine_versions(&self) -> std::option::Option<&[crate::model::DbEngineVersion]> {
+        self.db_engine_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbEngineVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1788,6 +2038,18 @@ pub struct DescribeDbClusterSnapshotsOutput {
     /// <p>Provides a list of cluster snapshots.</p>
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
+impl DescribeDbClusterSnapshotsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Provides a list of cluster snapshots.</p>
+    pub fn db_cluster_snapshots(&self) -> std::option::Option<&[crate::model::DbClusterSnapshot]> {
+        self.db_cluster_snapshots.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterSnapshotsOutput");
@@ -1868,6 +2130,15 @@ pub struct DescribeDbClusterSnapshotAttributesOutput {
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
+impl DescribeDbClusterSnapshotAttributesOutput {
+    /// <p>Detailed information about the attributes that are associated with a cluster
+    /// snapshot.</p>
+    pub fn db_cluster_snapshot_attributes_result(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+        self.db_cluster_snapshot_attributes_result.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterSnapshotAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterSnapshotAttributesOutput");
@@ -1931,6 +2202,18 @@ pub struct DescribeDbClustersOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of clusters.</p>
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
+}
+impl DescribeDbClustersOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of clusters.</p>
+    pub fn db_clusters(&self) -> std::option::Option<&[crate::model::DbCluster]> {
+        self.db_clusters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2010,6 +2293,18 @@ pub struct DescribeDbClusterParametersOutput {
     /// <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbClusterParametersOutput {
+    /// <p>Provides a list of parameters for the cluster parameter group.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterParametersOutput");
@@ -2088,6 +2383,20 @@ pub struct DescribeDbClusterParameterGroupsOutput {
     /// <p>A list of cluster parameter groups.</p>
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+}
+impl DescribeDbClusterParameterGroupsOutput {
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
+    /// includes only records beyond the marker, up to the value specified by
+    /// <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of cluster parameter groups.</p>
+    pub fn db_cluster_parameter_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbClusterParameterGroup]> {
+        self.db_cluster_parameter_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClusterParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2172,6 +2481,16 @@ pub struct DescribeCertificatesOutput {
     /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeCertificatesOutput {
+    /// <p>A list of certificates for this account.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+        self.certificates.as_deref()
+    }
+    /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCertificatesOutput");
@@ -2242,6 +2561,12 @@ pub struct DeleteGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
+impl DeleteGlobalClusterOutput {
+    /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGlobalClusterOutput");
@@ -2292,6 +2617,12 @@ impl DeleteGlobalClusterOutput {
 pub struct DeleteEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl DeleteEventSubscriptionOutput {
+    /// <p>Detailed information about an event to which you have subscribed.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2374,6 +2705,12 @@ pub struct DeleteDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl DeleteDbInstanceOutput {
+    /// <p>Detailed information about an instance. </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbInstanceOutput");
@@ -2424,6 +2761,12 @@ impl DeleteDbInstanceOutput {
 pub struct DeleteDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+}
+impl DeleteDbClusterSnapshotOutput {
+    /// <p>Detailed information about a cluster snapshot. </p>
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+        self.db_cluster_snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDbClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2506,6 +2849,12 @@ pub struct DeleteDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl DeleteDbClusterOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbClusterOutput");
@@ -2556,6 +2905,12 @@ impl DeleteDbClusterOutput {
 pub struct CreateGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+}
+impl CreateGlobalClusterOutput {
+    /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2608,6 +2963,12 @@ pub struct CreateEventSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
+impl CreateEventSubscriptionOutput {
+    /// <p>Detailed information about an event to which you have subscribed.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEventSubscriptionOutput");
@@ -2658,6 +3019,12 @@ impl CreateEventSubscriptionOutput {
 pub struct CreateDbSubnetGroupOutput {
     /// <p>Detailed information about a subnet group. </p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+}
+impl CreateDbSubnetGroupOutput {
+    /// <p>Detailed information about a subnet group. </p>
+    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+        self.db_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2710,6 +3077,12 @@ pub struct CreateDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl CreateDbInstanceOutput {
+    /// <p>Detailed information about an instance. </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbInstanceOutput");
@@ -2761,6 +3134,12 @@ pub struct CreateDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
+impl CreateDbClusterSnapshotOutput {
+    /// <p>Detailed information about a cluster snapshot. </p>
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+        self.db_cluster_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterSnapshotOutput");
@@ -2811,6 +3190,14 @@ impl CreateDbClusterSnapshotOutput {
 pub struct CreateDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+}
+impl CreateDbClusterParameterGroupOutput {
+    /// <p>Detailed information about a cluster parameter group. </p>
+    pub fn db_cluster_parameter_group(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+        self.db_cluster_parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2870,6 +3257,12 @@ pub struct CreateDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl CreateDbClusterOutput {
+    /// <p>Detailed information about a cluster. </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterOutput");
@@ -2921,6 +3314,12 @@ pub struct CopyDbClusterSnapshotOutput {
     /// <p>Detailed information about a cluster snapshot. </p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
+impl CopyDbClusterSnapshotOutput {
+    /// <p>Detailed information about a cluster snapshot. </p>
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+        self.db_cluster_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CopyDbClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyDbClusterSnapshotOutput");
@@ -2971,6 +3370,14 @@ impl CopyDbClusterSnapshotOutput {
 pub struct CopyDbClusterParameterGroupOutput {
     /// <p>Detailed information about a cluster parameter group. </p>
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+}
+impl CopyDbClusterParameterGroupOutput {
+    /// <p>Detailed information about a cluster parameter group. </p>
+    pub fn db_cluster_parameter_group(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+        self.db_cluster_parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3031,6 +3438,15 @@ pub struct ApplyPendingMaintenanceActionOutput {
     /// </p>
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+}
+impl ApplyPendingMaintenanceActionOutput {
+    /// <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.
+    /// </p>
+    pub fn resource_pending_maintenance_actions(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
+        self.resource_pending_maintenance_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplyPendingMaintenanceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3121,6 +3537,12 @@ impl AddTagsToResourceOutput {
 pub struct AddSourceIdentifierToSubscriptionOutput {
     /// <p>Detailed information about an event to which you have subscribed.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl AddSourceIdentifierToSubscriptionOutput {
+    /// <p>Detailed information about an event to which you have subscribed.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for AddSourceIdentifierToSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -144,10 +144,7 @@ impl AssociateCreatedArtifactInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_created_artifact(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -349,7 +346,7 @@ impl AssociateDiscoveredResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_discovered_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_discovered_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -525,7 +522,7 @@ impl CreateProgressUpdateStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_progress_update_stream(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_progress_update_stream(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -701,7 +698,7 @@ impl DeleteProgressUpdateStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_progress_update_stream(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_progress_update_stream(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -860,10 +857,7 @@ impl DescribeApplicationStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_application_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1037,10 +1031,7 @@ impl DescribeMigrationTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_migration_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1244,7 +1235,7 @@ impl DisassociateCreatedArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_created_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_created_artifact(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1449,7 +1440,7 @@ impl DisassociateDiscoveredResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_discovered_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_discovered_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1636,10 +1627,7 @@ impl ImportMigrationTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_migration_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_import_migration_task(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1830,10 +1818,7 @@ impl ListApplicationStatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_application_states(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2033,10 +2018,9 @@ impl ListCreatedArtifactsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_created_artifacts(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_created_artifacts(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2239,10 +2223,7 @@ impl ListDiscoveredResourcesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_discovered_resources(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2423,10 +2404,7 @@ impl ListMigrationTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_migration_tasks(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_migration_tasks(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2595,10 +2573,7 @@ impl ListProgressUpdateStreamsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_progress_update_streams(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2799,10 +2774,7 @@ impl NotifyApplicationStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_notify_application_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3034,10 +3006,7 @@ impl NotifyMigrationTaskStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_notify_migration_task_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3304,10 +3273,7 @@ impl PutResourceAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_resource_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3413,6 +3379,56 @@ pub struct PutResourceAttributesInput {
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
+impl PutResourceAttributesInput {
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>Information about the resource that is being migrated. This data will be used to map the
+    /// task to a resource in the Application Discovery Service repository.</p>
+    /// <note>
+    /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
+    /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
+    /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
+    /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
+    /// string up to 256 characters.</p>
+    /// </note>
+    /// <important>
+    /// <ul>
+    /// <li>
+    ///
+    /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
+    /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
+    /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
+    /// and "VM" fields will not be used for matching the migration task to a server in
+    /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
+    /// values.</p>
+    /// </li>
+    /// <li>
+    /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
+    /// should provide as many as you know in separate type/value pairs passed to the
+    /// <code>ResourceAttributeList</code> parameter to maximize the chances of
+    /// matching.</p>
+    /// </li>
+    /// </ul>
+    /// </important>
+    pub fn resource_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceAttribute]> {
+        self.resource_attribute_list.as_deref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for PutResourceAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourceAttributesInput");
@@ -3446,6 +3462,37 @@ pub struct NotifyMigrationTaskStateInput {
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
+impl NotifyMigrationTaskStateInput {
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>Information about the task's progress and status.</p>
+    pub fn task(&self) -> std::option::Option<&crate::model::Task> {
+        self.task.as_ref()
+    }
+    /// <p>The timestamp when the task was gathered.</p>
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date_time.as_ref()
+    }
+    /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
+    /// update. If Migration Hub does not receive an update within the specified interval, then the
+    /// migration task will be considered stale.</p>
+    pub fn next_update_seconds(&self) -> i32 {
+        self.next_update_seconds
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for NotifyMigrationTaskStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyMigrationTaskStateInput");
@@ -3474,6 +3521,26 @@ pub struct NotifyApplicationStateInput {
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
+impl NotifyApplicationStateInput {
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
+    /// grouped application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp when the application state changed.</p>
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date_time.as_ref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for NotifyApplicationStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyApplicationStateInput");
@@ -3496,6 +3563,18 @@ pub struct ListProgressUpdateStreamsInput {
     /// <p>Filter to limit the maximum number of results to list per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListProgressUpdateStreamsInput {
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filter to limit the maximum number of results to list per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListProgressUpdateStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProgressUpdateStreamsInput");
@@ -3517,6 +3596,22 @@ pub struct ListMigrationTasksInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Filter migration tasks by discovered resource name.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl ListMigrationTasksInput {
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Value to specify how many results are returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filter migration tasks by discovered resource name.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMigrationTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3544,6 +3639,28 @@ pub struct ListDiscoveredResourcesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned per page.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDiscoveredResourcesInput {
+    /// <p>The name of the ProgressUpdateStream.</p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>The name of the MigrationTask. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDiscoveredResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3573,6 +3690,28 @@ pub struct ListCreatedArtifactsInput {
     /// <p>Maximum number of results to be returned per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListCreatedArtifactsInput {
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to be returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListCreatedArtifactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCreatedArtifactsInput");
@@ -3598,6 +3737,23 @@ pub struct ListApplicationStatesInput {
     /// <p>Maximum number of results to be returned per page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListApplicationStatesInput {
+    /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
+    /// your applications.</p>
+    pub fn application_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.application_ids.as_deref()
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+    /// available. To retrieve the next page of results, make the call again using the returned
+    /// token in <code>NextToken</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to be returned per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListApplicationStatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationStatesInput");
@@ -3621,6 +3777,23 @@ pub struct ImportMigrationTaskInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
+}
+impl ImportMigrationTaskInput {
+    /// <p>The name of the ProgressUpdateStream. ></p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for ImportMigrationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3648,6 +3821,28 @@ pub struct DisassociateDiscoveredResourceInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
+}
+impl DisassociateDiscoveredResourceInput {
+    /// <p>The name of the ProgressUpdateStream.</p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>ConfigurationId of the Application Discovery Service resource to be
+    /// disassociated.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for DisassociateDiscoveredResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3677,6 +3872,28 @@ pub struct DisassociateCreatedArtifactInput {
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
+impl DisassociateCreatedArtifactInput {
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task to be disassociated with the
+    /// artifact. <i>Do not store personal data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
+    /// instance, etc.)</p>
+    pub fn created_artifact_name(&self) -> std::option::Option<&str> {
+        self.created_artifact_name.as_deref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for DisassociateCreatedArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateCreatedArtifactInput");
@@ -3699,6 +3916,18 @@ pub struct DescribeMigrationTaskInput {
     /// </p>
     pub migration_task_name: std::option::Option<std::string::String>,
 }
+impl DescribeMigrationTaskInput {
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMigrationTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMigrationTaskInput");
@@ -3715,6 +3944,13 @@ pub struct DescribeApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the
     /// grouped application.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DescribeApplicationStateInput {
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
+    /// grouped application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3735,6 +3971,19 @@ pub struct DeleteProgressUpdateStreamInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
+}
+impl DeleteProgressUpdateStreamInput {
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
+        self.progress_update_stream_name.as_deref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for DeleteProgressUpdateStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3759,6 +4008,19 @@ pub struct CreateProgressUpdateStreamInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
+}
+impl CreateProgressUpdateStreamInput {
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
+        self.progress_update_stream_name.as_deref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for CreateProgressUpdateStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3788,6 +4050,27 @@ pub struct AssociateDiscoveredResourceInput {
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
+impl AssociateDiscoveredResourceInput {
+    /// <p>The name of the ProgressUpdateStream.</p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>Object representing a Resource.</p>
+    pub fn discovered_resource(&self) -> std::option::Option<&crate::model::DiscoveredResource> {
+        self.discovered_resource.as_ref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for AssociateDiscoveredResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateDiscoveredResourceInput");
@@ -3815,6 +4098,28 @@ pub struct AssociateCreatedArtifactInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
+}
+impl AssociateCreatedArtifactInput {
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
+    /// instance, etc.) </p>
+    pub fn created_artifact(&self) -> std::option::Option<&crate::model::CreatedArtifact> {
+        self.created_artifact.as_ref()
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+    /// the caller has permission to make the call.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for AssociateCreatedArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

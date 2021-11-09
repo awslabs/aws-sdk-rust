@@ -24745,6 +24745,20 @@ pub struct UnauthenticatedException {
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
 }
+impl UnauthenticatedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
+}
 impl std::fmt::Debug for UnauthenticatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnauthenticatedException");
@@ -24853,6 +24867,20 @@ pub struct ServiceException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
+}
+impl ServiceException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24963,6 +24991,20 @@ pub struct OperationFailureException {
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
 }
+impl OperationFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
+}
 impl std::fmt::Debug for OperationFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OperationFailureException");
@@ -25071,6 +25113,20 @@ pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
+}
+impl NotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25187,6 +25243,20 @@ pub struct InvalidInputException {
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
 }
+impl InvalidInputException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidInputException");
@@ -25297,6 +25367,20 @@ pub struct AccountSetupInProgressException {
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
 }
+impl AccountSetupInProgressException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
+}
 impl std::fmt::Debug for AccountSetupInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountSetupInProgressException");
@@ -25406,6 +25490,20 @@ pub struct AccessDeniedException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub tip: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn docs(&self) -> std::option::Option<&str> {
+        self.docs.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tip(&self) -> std::option::Option<&str> {
+        self.tip.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -104,6 +104,19 @@ pub struct SendEmailOutput {
     /// </note>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendEmailOutput {
+    /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the
+    /// message.</p>
+    /// <note>
+    /// <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen
+    /// when the message you're trying to send has an attachment doesn't pass a virus check,
+    /// or when you send a templated email that contains invalid personalization content,
+    /// for example.</p>
+    /// </note>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEmailOutput");
@@ -540,6 +553,14 @@ pub struct ListTagsForResourceOutput {
     /// (<code>Value</code>)</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>An array that lists all the tags that are associated with the resource. Each tag
+    /// consists of a required tag key (<code>Key</code>) and an associated tag value
+    /// (<code>Value</code>)</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -605,6 +626,20 @@ pub struct ListEmailIdentitiesOutput {
     /// <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code>
     /// parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEmailIdentitiesOutput {
+    /// <p>An array that includes all of the identities associated with your Amazon Pinpoint
+    /// account.</p>
+    pub fn email_identities(&self) -> std::option::Option<&[crate::model::IdentityInfo]> {
+        self.email_identities.as_deref()
+    }
+    /// <p>A token that indicates that there are additional configuration sets to list. To view
+    /// additional configuration sets, issue another request to
+    /// <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code>
+    /// parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEmailIdentitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -692,6 +727,21 @@ pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
     /// position of the campaign in the list of campaigns.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainDeliverabilityCampaignsOutput {
+    /// <p>An array of responses, one for each campaign that used the domain to send email during
+    /// the specified time range.</p>
+    pub fn domain_deliverability_campaigns(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityCampaign]> {
+        self.domain_deliverability_campaigns.as_deref()
+    }
+    /// <p>A token that’s returned from a previous call to the
+    /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
+    /// position of the campaign in the list of campaigns.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDomainDeliverabilityCampaignsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -782,6 +832,20 @@ pub struct ListDeliverabilityTestReportsOutput {
     /// this token in the <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeliverabilityTestReportsOutput {
+    /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
+    pub fn deliverability_test_reports(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeliverabilityTestReport]> {
+        self.deliverability_test_reports.as_deref()
+    }
+    /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional
+    /// predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass
+    /// this token in the <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeliverabilityTestReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliverabilityTestReportsOutput");
@@ -868,6 +932,19 @@ pub struct ListDedicatedIpPoolsOutput {
     /// in the <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDedicatedIpPoolsOutput {
+    /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint
+    /// account.</p>
+    pub fn dedicated_ip_pools(&self) -> std::option::Option<&[std::string::String]> {
+        self.dedicated_ip_pools.as_deref()
+    }
+    /// <p>A token that indicates that there are additional IP pools to list. To view additional
+    /// IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token
+    /// in the <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDedicatedIpPoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDedicatedIpPoolsOutput");
@@ -949,6 +1026,20 @@ pub struct ListConfigurationSetsOutput {
     /// <code>ListConfigurationSets</code>, and pass this token in the
     /// <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationSetsOutput {
+    /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the
+    /// current AWS Region.</p>
+    pub fn configuration_sets(&self) -> std::option::Option<&[std::string::String]> {
+        self.configuration_sets.as_deref()
+    }
+    /// <p>A token that indicates that there are additional configuration sets to list. To view
+    /// additional configuration sets, issue another request to
+    /// <code>ListConfigurationSets</code>, and pass this token in the
+    /// <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1051,6 +1142,46 @@ pub struct GetEmailIdentityOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with
     /// the email identity.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GetEmailIdentityOutput {
+    /// <p>The email identity type.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The feedback forwarding configuration for the identity.</p>
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or
+    /// complaint events occur. Amazon Pinpoint sends this notification to the address that you specified
+    /// in the Return-Path header of the original email.</p>
+    /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other
+    /// mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're
+    /// required to have a method of tracking bounces and complaints. If you haven't set up
+    /// another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email
+    /// notification when these events occur (even if this setting is disabled).</p>
+    pub fn feedback_forwarding_status(&self) -> bool {
+        self.feedback_forwarding_status
+    }
+    /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email
+    /// from verified email addresses or domains. For more information about verifying
+    /// identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    pub fn verified_for_sending_status(&self) -> bool {
+        self.verified_for_sending_status
+    }
+    /// <p>An object that contains information about the DKIM attributes for the identity. This
+    /// object includes the tokens that you use to create the CNAME records that are required to
+    /// complete the DKIM verification process.</p>
+    pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
+        self.dkim_attributes.as_ref()
+    }
+    /// <p>An object that contains information about the Mail-From attributes for the email
+    /// identity.</p>
+    pub fn mail_from_attributes(&self) -> std::option::Option<&crate::model::MailFromAttributes> {
+        self.mail_from_attributes.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with
+    /// the email identity.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEmailIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1224,6 +1355,20 @@ pub struct GetDomainStatisticsReportOutput {
     /// the <code>EndDate</code>.</p>
     pub daily_volumes: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
 }
+impl GetDomainStatisticsReportOutput {
+    /// <p>An object that contains deliverability metrics for the domain that you specified. The
+    /// data in this object is a summary of all of the data that was collected from the
+    /// <code>StartDate</code> to the <code>EndDate</code>.</p>
+    pub fn overall_volume(&self) -> std::option::Option<&crate::model::OverallVolume> {
+        self.overall_volume.as_ref()
+    }
+    /// <p>An object that contains deliverability metrics for the domain that you specified. This
+    /// object contains data for each day, starting on the <code>StartDate</code> and ending on
+    /// the <code>EndDate</code>.</p>
+    pub fn daily_volumes(&self) -> std::option::Option<&[crate::model::DailyVolume]> {
+        self.daily_volumes.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainStatisticsReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainStatisticsReportOutput");
@@ -1309,6 +1454,14 @@ pub struct GetDomainDeliverabilityCampaignOutput {
     pub domain_deliverability_campaign:
         std::option::Option<crate::model::DomainDeliverabilityCampaign>,
 }
+impl GetDomainDeliverabilityCampaignOutput {
+    /// <p>An object that contains the deliverability data for the campaign.</p>
+    pub fn domain_deliverability_campaign(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainDeliverabilityCampaign> {
+        self.domain_deliverability_campaign.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDomainDeliverabilityCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainDeliverabilityCampaignOutput");
@@ -1379,6 +1532,35 @@ pub struct GetDeliverabilityTestReportOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with
     /// the predictive inbox placement test.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GetDeliverabilityTestReportOutput {
+    /// <p>An object that contains the results of the predictive inbox placement test.</p>
+    pub fn deliverability_test_report(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityTestReport> {
+        self.deliverability_test_report.as_ref()
+    }
+    /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were
+    /// delivered to recipients' inboxes, how many were sent to recipients' spam folders, and
+    /// how many weren't delivered.</p>
+    pub fn overall_placement(&self) -> std::option::Option<&crate::model::PlacementStatistics> {
+        self.overall_placement.as_ref()
+    }
+    /// <p>An object that describes how the test email was handled by several email providers,
+    /// including Gmail, Hotmail, Yahoo, AOL, and others.</p>
+    pub fn isp_placements(&self) -> std::option::Option<&[crate::model::IspPlacement]> {
+        self.isp_placements.as_deref()
+    }
+    /// <p>An object that contains the message that you sent when you performed this
+    /// predictive inbox placement test.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with
+    /// the predictive inbox placement test.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeliverabilityTestReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,6 +1722,44 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     /// end of the current calendar month.</p>
     pub pending_expiration_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+}
+impl GetDeliverabilityDashboardOptionsOutput {
+    /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value
+    /// is <code>true</code>, the dashboard is enabled.</p>
+    pub fn dashboard_enabled(&self) -> bool {
+        self.dashboard_enabled
+    }
+    /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard
+    /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
+    /// current calendar month. This value is null if you have an active subscription that isn’t
+    /// due to expire at the end of the month.</p>
+    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.subscription_expiry_date.as_ref()
+    }
+    /// <p>The current status of your Deliverability dashboard subscription. If this value is
+    /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
+    /// of the current calendar month.</p>
+    pub fn account_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityDashboardAccountStatus> {
+        self.account_status.as_ref()
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and
+    /// currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at
+    /// the end of the current calendar month.</p>
+    pub fn active_subscribed_domains(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+        self.active_subscribed_domains.as_deref()
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and
+    /// currently has an active Deliverability dashboard subscription that's scheduled to expire at the
+    /// end of the current calendar month.</p>
+    pub fn pending_expiration_subscribed_domains(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+        self.pending_expiration_subscribed_domains.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeliverabilityDashboardOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1712,6 +1932,19 @@ pub struct GetDedicatedIpsOutput {
     /// passing this token in the <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDedicatedIpsOutput {
+    /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint
+    /// account.</p>
+    pub fn dedicated_ips(&self) -> std::option::Option<&[crate::model::DedicatedIp]> {
+        self.dedicated_ips.as_deref()
+    }
+    /// <p>A token that indicates that there are additional dedicated IP addresses to list. To
+    /// view additional addresses, issue another request to <code>GetDedicatedIps</code>,
+    /// passing this token in the <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDedicatedIpsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpsOutput");
@@ -1788,6 +2021,12 @@ pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     pub dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
 }
+impl GetDedicatedIpOutput {
+    /// <p>An object that contains information about a dedicated IP address.</p>
+    pub fn dedicated_ip(&self) -> std::option::Option<&crate::model::DedicatedIp> {
+        self.dedicated_ip.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDedicatedIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpOutput");
@@ -1839,6 +2078,13 @@ pub struct GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for
     /// the configuration set.</p>
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+}
+impl GetConfigurationSetEventDestinationsOutput {
+    /// <p>An array that includes all of the events destinations that have been configured for
+    /// the configuration set.</p>
+    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+        self.event_destinations.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationSetEventDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1917,6 +2163,37 @@ pub struct GetConfigurationSetOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with
     /// the configuration set.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GetConfigurationSetOutput {
+    /// <p>The name of the configuration set.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>An object that defines the open and click tracking options for emails that you send
+    /// using the configuration set.</p>
+    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+        self.tracking_options.as_ref()
+    }
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
+    /// using the configuration set.</p>
+    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+        self.delivery_options.as_ref()
+    }
+    /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails
+    /// that you send that use the configuration set.</p>
+    pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
+        self.reputation_options.as_ref()
+    }
+    /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the
+    /// configuration set.</p>
+    pub fn sending_options(&self) -> std::option::Option<&crate::model::SendingOptions> {
+        self.sending_options.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with
+    /// the configuration set.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2068,6 +2345,20 @@ pub struct GetBlacklistReportsOutput {
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
     >,
 }
+impl GetBlacklistReportsOutput {
+    /// <p>An object that contains information about a blacklist that one of your dedicated IP
+    /// addresses appears on.</p>
+    pub fn blacklist_report(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::BlacklistEntry>,
+        >,
+    > {
+        self.blacklist_report.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBlacklistReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlacklistReportsOutput");
@@ -2182,6 +2473,61 @@ pub struct GetAccountOutput {
     /// account has production access, you can send email to any address. The sending quota and
     /// maximum sending rate for your account vary based on your specific use case.</p>
     pub production_access_enabled: bool,
+}
+impl GetAccountOutput {
+    /// <p>An object that contains information about the per-day and per-second sending limits
+    /// for your Amazon Pinpoint account in the current AWS Region.</p>
+    pub fn send_quota(&self) -> std::option::Option<&crate::model::SendQuota> {
+        self.send_quota.as_ref()
+    }
+    /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the
+    /// current AWS Region.</p>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
+    /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP
+    /// addresses that are associated with your account.</p>
+    pub fn dedicated_ip_auto_warmup_enabled(&self) -> bool {
+        self.dedicated_ip_auto_warmup_enabled
+    }
+    /// <p>The reputation status of your Amazon Pinpoint account. The status can be one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HEALTHY</code> – There are no reputation-related issues that
+    /// currently impact your account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint
+    /// account. We're placing your account under review while you work on correcting
+    /// these issues.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SHUTDOWN</code> – Your account's ability to send email is
+    /// currently paused because of an issue with the email sent from your account. When
+    /// you correct the issue, you can contact us and request that your account's
+    /// ability to send email is resumed.</p>
+    /// </li>
+    /// </ul>
+    pub fn enforcement_status(&self) -> std::option::Option<&str> {
+        self.enforcement_status.as_deref()
+    }
+    /// <p>Indicates whether or not your account has production access in the current AWS
+    /// Region.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the
+    /// <i>sandbox</i>. When your account is in the sandbox, you can only send
+    /// email to verified identities. Additionally, the maximum number of emails you can send in
+    /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
+    /// send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>true</code>, then your account has production access. When your
+    /// account has production access, you can send email to any address. The sending quota and
+    /// maximum sending rate for your account vary based on your specific use case.</p>
+    pub fn production_access_enabled(&self) -> bool {
+        self.production_access_enabled
+    }
 }
 impl std::fmt::Debug for GetAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2498,6 +2844,24 @@ pub struct CreateEmailIdentityOutput {
     /// complete the DKIM verification process.</p>
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
 }
+impl CreateEmailIdentityOutput {
+    /// <p>The email identity type.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email
+    /// from verified email addresses or domains. For more information about verifying
+    /// identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    pub fn verified_for_sending_status(&self) -> bool {
+        self.verified_for_sending_status
+    }
+    /// <p>An object that contains information about the DKIM attributes for the identity. This
+    /// object includes the tokens that you use to create the CNAME records that are required to
+    /// complete the DKIM verification process.</p>
+    pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
+        self.dkim_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEmailIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEmailIdentityOutput");
@@ -2593,6 +2957,21 @@ pub struct CreateDeliverabilityTestReportOutput {
     /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
     /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
+}
+impl CreateDeliverabilityTestReportOutput {
+    /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
+    /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
+    /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
+    /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    pub fn deliverability_test_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityTestStatus> {
+        self.deliverability_test_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeliverabilityTestReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

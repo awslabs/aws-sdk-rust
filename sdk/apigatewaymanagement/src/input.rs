@@ -496,6 +496,16 @@ pub struct PostToConnectionInput {
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub connection_id: std::option::Option<std::string::String>,
 }
+impl PostToConnectionInput {
+    /// <p>The data to be sent to the client specified by its connection id.</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// <p>The identifier of the connection that a specific client is using.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PostToConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PostToConnectionInput");
@@ -512,6 +522,12 @@ pub struct GetConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
     pub connection_id: std::option::Option<std::string::String>,
 }
+impl GetConnectionInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionInput");
@@ -526,6 +542,12 @@ impl std::fmt::Debug for GetConnectionInput {
 pub struct DeleteConnectionInput {
     #[allow(missing_docs)] // documentation missing in model
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl DeleteConnectionInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

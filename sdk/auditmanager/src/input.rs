@@ -123,7 +123,7 @@ impl AssociateAssessmentReportEvidenceFolderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_assessment_report_evidence_folder(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_assessment_report_evidence_folder(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -330,7 +330,7 @@ impl BatchAssociateAssessmentReportEvidenceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_assessment_report_evidence(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_assessment_report_evidence(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -525,7 +525,7 @@ impl BatchCreateDelegationByAssessmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_delegation_by_assessment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_delegation_by_assessment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -716,7 +716,7 @@ impl BatchDeleteDelegationByAssessmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_delegation_by_assessment(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_delegation_by_assessment(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -925,7 +925,7 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_assessment_report_evidence(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_assessment_report_evidence(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1170,7 +1170,7 @@ impl BatchImportEvidenceToAssessmentControlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_import_evidence_to_assessment_control(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_import_evidence_to_assessment_control(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1423,10 +1423,7 @@ impl CreateAssessmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_assessment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_assessment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1659,10 +1656,7 @@ impl CreateAssessmentFrameworkInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_assessment_framework(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1856,10 +1850,7 @@ impl CreateAssessmentReportInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_assessment_report(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2114,10 +2105,7 @@ impl CreateControlInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_control(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_control(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3202,7 +3190,7 @@ impl DeregisterOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3390,7 +3378,7 @@ impl DisassociateAssessmentReportEvidenceFolderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_assessment_report_evidence_folder(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_assessment_report_evidence_folder(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7542,10 +7530,7 @@ impl RegisterAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_account(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_account(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7695,7 +7680,7 @@ impl RegisterOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7904,7 +7889,7 @@ impl StartAssessmentFrameworkShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_assessment_framework_share(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_assessment_framework_share(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8094,10 +8079,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8526,10 +8508,7 @@ impl UpdateAssessmentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_assessment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_assessment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8786,10 +8765,7 @@ impl UpdateAssessmentControlInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_assessment_control(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9016,7 +8992,7 @@ impl UpdateAssessmentControlSetStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_assessment_control_set_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_assessment_control_set_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9253,10 +9229,7 @@ impl UpdateAssessmentFrameworkInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_assessment_framework(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9452,7 +9425,7 @@ impl UpdateAssessmentFrameworkShareInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_assessment_framework_share(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_assessment_framework_share(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9638,10 +9611,7 @@ impl UpdateAssessmentStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_assessment_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9895,10 +9865,7 @@ impl UpdateControlInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_control(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_control(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10096,10 +10063,8 @@ impl UpdateSettingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_settings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_settings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10250,7 +10215,7 @@ impl ValidateAssessmentReportIntegrityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_validate_assessment_report_integrity(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_validate_assessment_report_integrity(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10321,6 +10286,13 @@ pub struct ValidateAssessmentReportIntegrityInput {
     /// in. </p>
     pub s3_relative_path: std::option::Option<std::string::String>,
 }
+impl ValidateAssessmentReportIntegrityInput {
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
+    /// in. </p>
+    pub fn s3_relative_path(&self) -> std::option::Option<&str> {
+        self.s3_relative_path.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateAssessmentReportIntegrityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateAssessmentReportIntegrityInput");
@@ -10343,6 +10315,27 @@ pub struct UpdateSettingsInput {
     pub default_process_owners: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p> The KMS key details. </p>
     pub kms_key: std::option::Option<std::string::String>,
+}
+impl UpdateSettingsInput {
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
+    /// notifications to. </p>
+    pub fn sns_topic(&self) -> std::option::Option<&str> {
+        self.sns_topic.as_deref()
+    }
+    /// <p> The default storage destination for assessment reports. </p>
+    pub fn default_assessment_reports_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
+        self.default_assessment_reports_destination.as_ref()
+    }
+    /// <p> A list of the default audit owners. </p>
+    pub fn default_process_owners(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.default_process_owners.as_deref()
+    }
+    /// <p> The KMS key details. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10378,6 +10371,38 @@ pub struct UpdateControlInput {
     pub control_mapping_sources:
         std::option::Option<std::vec::Vec<crate::model::ControlMappingSource>>,
 }
+impl UpdateControlInput {
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p> The name of the updated control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The optional description of the control. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The steps that you should follow to determine if the control is met. </p>
+    pub fn testing_information(&self) -> std::option::Option<&str> {
+        self.testing_information.as_deref()
+    }
+    /// <p> The title of the action plan for remediating the control. </p>
+    pub fn action_plan_title(&self) -> std::option::Option<&str> {
+        self.action_plan_title.as_deref()
+    }
+    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    pub fn action_plan_instructions(&self) -> std::option::Option<&str> {
+        self.action_plan_instructions.as_deref()
+    }
+    /// <p> The data mapping sources for the control. </p>
+    pub fn control_mapping_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ControlMappingSource]> {
+        self.control_mapping_sources.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateControlInput");
@@ -10401,6 +10426,16 @@ pub struct UpdateAssessmentStatusInput {
     /// <p> The current status of the assessment. </p>
     pub status: std::option::Option<crate::model::AssessmentStatus>,
 }
+impl UpdateAssessmentStatusInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The current status of the assessment. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssessmentStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentStatusInput");
@@ -10420,6 +10455,20 @@ pub struct UpdateAssessmentFrameworkShareInput {
     pub request_type: std::option::Option<crate::model::ShareRequestType>,
     /// <p>Specifies the update action for the share request.</p>
     pub action: std::option::Option<crate::model::ShareRequestAction>,
+}
+impl UpdateAssessmentFrameworkShareInput {
+    /// <p> The unique identifier for the share request. </p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    pub fn request_type(&self) -> std::option::Option<&crate::model::ShareRequestType> {
+        self.request_type.as_ref()
+    }
+    /// <p>Specifies the update action for the share request.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ShareRequestAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentFrameworkShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10448,6 +10497,31 @@ pub struct UpdateAssessmentFrameworkInput {
     pub control_sets:
         std::option::Option<std::vec::Vec<crate::model::UpdateAssessmentFrameworkControlSet>>,
 }
+impl UpdateAssessmentFrameworkInput {
+    /// <p> The identifier for the framework. </p>
+    pub fn framework_id(&self) -> std::option::Option<&str> {
+        self.framework_id.as_deref()
+    }
+    /// <p> The name of the framework to be updated. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the updated framework. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
+    /// </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn control_sets(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateAssessmentFrameworkControlSet]> {
+        self.control_sets.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentFrameworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentFrameworkInput");
@@ -10472,6 +10546,24 @@ pub struct UpdateAssessmentControlSetStatusInput {
     pub status: std::option::Option<crate::model::ControlSetStatus>,
     /// <p> The comment that's related to the status update. </p>
     pub comment: std::option::Option<std::string::String>,
+}
+impl UpdateAssessmentControlSetStatusInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The status of the control set that's being updated. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ControlSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The comment that's related to the status update. </p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentControlSetStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10498,6 +10590,28 @@ pub struct UpdateAssessmentControlInput {
     pub control_status: std::option::Option<crate::model::ControlStatus>,
     /// <p> The comment body text for the control. </p>
     pub comment_body: std::option::Option<std::string::String>,
+}
+impl UpdateAssessmentControlInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p> The status of the control. </p>
+    pub fn control_status(&self) -> std::option::Option<&crate::model::ControlStatus> {
+        self.control_status.as_ref()
+    }
+    /// <p> The comment body text for the control. </p>
+    pub fn comment_body(&self) -> std::option::Option<&str> {
+        self.comment_body.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssessmentControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10530,6 +10644,35 @@ pub struct UpdateAssessmentInput {
     /// <p> The list of roles for the assessment. </p>
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
 }
+impl UpdateAssessmentInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The name of the assessment to be updated. </p>
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
+        self.assessment_name.as_deref()
+    }
+    /// <p> The description of the assessment. </p>
+    pub fn assessment_description(&self) -> std::option::Option<&str> {
+        self.assessment_description.as_deref()
+    }
+    /// <p> The scope of the assessment. </p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
+        self.scope.as_ref()
+    }
+    /// <p> The assessment report storage destination for the assessment that's being updated.
+    /// </p>
+    pub fn assessment_reports_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
+        self.assessment_reports_destination.as_ref()
+    }
+    /// <p> The list of roles for the assessment. </p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentInput");
@@ -10555,6 +10698,16 @@ pub struct UntagResourceInput {
     /// <p> The name or key of the tag. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> The name or key of the tag. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -10573,6 +10726,19 @@ pub struct TagResourceInput {
     /// <p> The tags that are associated with the resource. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> The tags that are associated with the resource. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10596,6 +10762,24 @@ pub struct StartAssessmentFrameworkShareInput {
     /// <p> An optional comment from the sender about the share request. </p>
     pub comment: std::option::Option<std::string::String>,
 }
+impl StartAssessmentFrameworkShareInput {
+    /// <p> The unique identifier for the custom framework to be shared. </p>
+    pub fn framework_id(&self) -> std::option::Option<&str> {
+        self.framework_id.as_deref()
+    }
+    /// <p> The Amazon Web Services account of the recipient. </p>
+    pub fn destination_account(&self) -> std::option::Option<&str> {
+        self.destination_account.as_deref()
+    }
+    /// <p> The Amazon Web Services Region of the recipient. </p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+    /// <p> An optional comment from the sender about the share request. </p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+}
 impl std::fmt::Debug for StartAssessmentFrameworkShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAssessmentFrameworkShareInput");
@@ -10614,6 +10798,12 @@ pub struct RegisterOrganizationAdminAccountInput {
     /// <p> The identifier for the delegated administrator account. </p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
+impl RegisterOrganizationAdminAccountInput {
+    /// <p> The identifier for the delegated administrator account. </p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterOrganizationAdminAccountInput");
@@ -10631,6 +10821,16 @@ pub struct RegisterAccountInput {
     /// <p> The delegated administrator account for Audit Manager. </p>
     pub delegated_admin_account: std::option::Option<std::string::String>,
 }
+impl RegisterAccountInput {
+    /// <p> The KMS key details. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p> The delegated administrator account for Audit Manager. </p>
+    pub fn delegated_admin_account(&self) -> std::option::Option<&str> {
+        self.delegated_admin_account.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterAccountInput");
@@ -10646,6 +10846,12 @@ impl std::fmt::Debug for RegisterAccountInput {
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p> The Amazon Resource Name (ARN) of the resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10663,6 +10869,16 @@ pub struct ListNotificationsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListNotificationsInput {
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10683,6 +10899,20 @@ pub struct ListKeywordsForDataSourceInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListKeywordsForDataSourceInput {
+    /// <p> The control mapping data source that the keywords apply to. </p>
+    pub fn source(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source.as_ref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListKeywordsForDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10705,6 +10935,20 @@ pub struct ListControlsInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListControlsInput {
+    /// <p> The type of control, such as a standard control or a custom control. </p>
+    pub fn control_type(&self) -> std::option::Option<&crate::model::ControlType> {
+        self.control_type.as_ref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListControlsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListControlsInput");
@@ -10724,6 +10968,16 @@ pub struct ListAssessmentsInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssessmentsInput {
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssessmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentsInput");
@@ -10741,6 +10995,16 @@ pub struct ListAssessmentReportsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAssessmentReportsInput {
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAssessmentReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10761,6 +11025,20 @@ pub struct ListAssessmentFrameworkShareRequestsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAssessmentFrameworkShareRequestsInput {
+    /// <p> Specifies whether the share request is a sent request or a received request.</p>
+    pub fn request_type(&self) -> std::option::Option<&crate::model::ShareRequestType> {
+        self.request_type.as_ref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAssessmentFrameworkShareRequestsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10783,6 +11061,20 @@ pub struct ListAssessmentFrameworksInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssessmentFrameworksInput {
+    /// <p> The type of framework, such as a standard framework or a custom framework. </p>
+    pub fn framework_type(&self) -> std::option::Option<&crate::model::FrameworkType> {
+        self.framework_type.as_ref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssessmentFrameworksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssessmentFrameworksInput");
@@ -10799,6 +11091,12 @@ impl std::fmt::Debug for ListAssessmentFrameworksInput {
 pub struct GetSettingsInput {
     /// <p> The list of <code>SettingAttribute</code> enum values. </p>
     pub attribute: std::option::Option<crate::model::SettingAttribute>,
+}
+impl GetSettingsInput {
+    /// <p> The list of <code>SettingAttribute</code> enum values. </p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::SettingAttribute> {
+        self.attribute.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10845,6 +11143,28 @@ pub struct GetEvidenceFoldersByAssessmentControlInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetEvidenceFoldersByAssessmentControlInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetEvidenceFoldersByAssessmentControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceFoldersByAssessmentControlInput");
@@ -10868,6 +11188,20 @@ pub struct GetEvidenceFoldersByAssessmentInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetEvidenceFoldersByAssessmentInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetEvidenceFoldersByAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceFoldersByAssessmentInput");
@@ -10888,6 +11222,20 @@ pub struct GetEvidenceFolderInput {
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub evidence_folder_id: std::option::Option<std::string::String>,
+}
+impl GetEvidenceFolderInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEvidenceFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10914,6 +11262,28 @@ pub struct GetEvidenceByEvidenceFolderInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetEvidenceByEvidenceFolderInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetEvidenceByEvidenceFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceByEvidenceFolderInput");
@@ -10939,6 +11309,24 @@ pub struct GetEvidenceInput {
     /// <p> The identifier for the evidence. </p>
     pub evidence_id: std::option::Option<std::string::String>,
 }
+impl GetEvidenceInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
+    /// <p> The identifier for the evidence. </p>
+    pub fn evidence_id(&self) -> std::option::Option<&str> {
+        self.evidence_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEvidenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceInput");
@@ -10959,6 +11347,16 @@ pub struct GetDelegationsInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetDelegationsInput {
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetDelegationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDelegationsInput");
@@ -10974,6 +11372,12 @@ impl std::fmt::Debug for GetDelegationsInput {
 pub struct GetControlInput {
     /// <p> The identifier for the control. </p>
     pub control_id: std::option::Option<std::string::String>,
+}
+impl GetControlInput {
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10998,6 +11402,28 @@ pub struct GetChangeLogsInput {
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetChangeLogsInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetChangeLogsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChangeLogsInput");
@@ -11019,6 +11445,16 @@ pub struct GetAssessmentReportUrlInput {
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
 }
+impl GetAssessmentReportUrlInput {
+    /// <p> The identifier for the assessment report. </p>
+    pub fn assessment_report_id(&self) -> std::option::Option<&str> {
+        self.assessment_report_id.as_deref()
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssessmentReportUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssessmentReportUrlInput");
@@ -11035,6 +11471,12 @@ pub struct GetAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
     pub framework_id: std::option::Option<std::string::String>,
 }
+impl GetAssessmentFrameworkInput {
+    /// <p> The identifier for the framework. </p>
+    pub fn framework_id(&self) -> std::option::Option<&str> {
+        self.framework_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssessmentFrameworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssessmentFrameworkInput");
@@ -11049,6 +11491,12 @@ impl std::fmt::Debug for GetAssessmentFrameworkInput {
 pub struct GetAssessmentInput {
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
+}
+impl GetAssessmentInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11078,6 +11526,16 @@ pub struct DisassociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the folder in which evidence is stored. </p>
     pub evidence_folder_id: std::option::Option<std::string::String>,
 }
+impl DisassociateAssessmentReportEvidenceFolderInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the folder in which evidence is stored. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateAssessmentReportEvidenceFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateAssessmentReportEvidenceFolderInput");
@@ -11093,6 +11551,12 @@ impl std::fmt::Debug for DisassociateAssessmentReportEvidenceFolderInput {
 pub struct DeregisterOrganizationAdminAccountInput {
     /// <p> The identifier for the administrator account. </p>
     pub admin_account_id: std::option::Option<std::string::String>,
+}
+impl DeregisterOrganizationAdminAccountInput {
+    /// <p> The identifier for the administrator account. </p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11120,6 +11584,12 @@ pub struct DeleteControlInput {
     /// <p> The identifier for the control. </p>
     pub control_id: std::option::Option<std::string::String>,
 }
+impl DeleteControlInput {
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteControlInput");
@@ -11136,6 +11606,16 @@ pub struct DeleteAssessmentReportInput {
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the assessment report. </p>
     pub assessment_report_id: std::option::Option<std::string::String>,
+}
+impl DeleteAssessmentReportInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The unique identifier for the assessment report. </p>
+    pub fn assessment_report_id(&self) -> std::option::Option<&str> {
+        self.assessment_report_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssessmentReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11155,6 +11635,16 @@ pub struct DeleteAssessmentFrameworkShareInput {
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub request_type: std::option::Option<crate::model::ShareRequestType>,
 }
+impl DeleteAssessmentFrameworkShareInput {
+    /// <p>The unique identifier for the share request to be deleted.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    pub fn request_type(&self) -> std::option::Option<&crate::model::ShareRequestType> {
+        self.request_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAssessmentFrameworkShareInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssessmentFrameworkShareInput");
@@ -11171,6 +11661,12 @@ pub struct DeleteAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
     pub framework_id: std::option::Option<std::string::String>,
 }
+impl DeleteAssessmentFrameworkInput {
+    /// <p> The identifier for the framework. </p>
+    pub fn framework_id(&self) -> std::option::Option<&str> {
+        self.framework_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAssessmentFrameworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAssessmentFrameworkInput");
@@ -11185,6 +11681,12 @@ impl std::fmt::Debug for DeleteAssessmentFrameworkInput {
 pub struct DeleteAssessmentInput {
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
+}
+impl DeleteAssessmentInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11215,6 +11717,41 @@ pub struct CreateControlInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateControlInput {
+    /// <p> The name of the control. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the control. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The steps to follow to determine if the control is satisfied. </p>
+    pub fn testing_information(&self) -> std::option::Option<&str> {
+        self.testing_information.as_deref()
+    }
+    /// <p> The title of the action plan for remediating the control. </p>
+    pub fn action_plan_title(&self) -> std::option::Option<&str> {
+        self.action_plan_title.as_deref()
+    }
+    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    pub fn action_plan_instructions(&self) -> std::option::Option<&str> {
+        self.action_plan_instructions.as_deref()
+    }
+    /// <p> The data mapping sources for the control. </p>
+    pub fn control_mapping_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateControlMappingSource]> {
+        self.control_mapping_sources.as_deref()
+    }
+    /// <p> The tags that are associated with the control. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateControlInput");
@@ -11239,6 +11776,20 @@ pub struct CreateAssessmentReportInput {
     pub description: std::option::Option<std::string::String>,
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
+}
+impl CreateAssessmentReportInput {
+    /// <p> The name of the new assessment report. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The description of the assessment report. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAssessmentReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11267,6 +11818,34 @@ pub struct CreateAssessmentFrameworkInput {
     /// <p> The tags that are associated with the framework. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateAssessmentFrameworkInput {
+    /// <p> The name of the new custom framework. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> An optional description for the new custom framework. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
+    /// </p>
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
+        self.compliance_type.as_deref()
+    }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn control_sets(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateAssessmentFrameworkControlSet]> {
+        self.control_sets.as_deref()
+    }
+    /// <p> The tags that are associated with the framework. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAssessmentFrameworkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11302,6 +11881,42 @@ pub struct CreateAssessmentInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateAssessmentInput {
+    /// <p> The name of the assessment to be created. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The optional description of the assessment to be created. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The assessment report storage destination for the assessment that's being created. </p>
+    pub fn assessment_reports_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
+        self.assessment_reports_destination.as_ref()
+    }
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
+    /// scope for the assessment. </p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
+        self.scope.as_ref()
+    }
+    /// <p> The list of roles for the assessment. </p>
+    pub fn roles(&self) -> std::option::Option<&[crate::model::Role]> {
+        self.roles.as_deref()
+    }
+    /// <p> The identifier for the framework that the assessment will be created from. </p>
+    pub fn framework_id(&self) -> std::option::Option<&str> {
+        self.framework_id.as_deref()
+    }
+    /// <p> The tags that are associated with the assessment. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssessmentInput");
@@ -11332,6 +11947,24 @@ pub struct BatchImportEvidenceToAssessmentControlInput {
     /// <p> The list of manual evidence objects. </p>
     pub manual_evidence: std::option::Option<std::vec::Vec<crate::model::ManualEvidence>>,
 }
+impl BatchImportEvidenceToAssessmentControlInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the control set. </p>
+    pub fn control_set_id(&self) -> std::option::Option<&str> {
+        self.control_set_id.as_deref()
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn control_id(&self) -> std::option::Option<&str> {
+        self.control_id.as_deref()
+    }
+    /// <p> The list of manual evidence objects. </p>
+    pub fn manual_evidence(&self) -> std::option::Option<&[crate::model::ManualEvidence]> {
+        self.manual_evidence.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchImportEvidenceToAssessmentControlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchImportEvidenceToAssessmentControlInput");
@@ -11354,6 +11987,20 @@ pub struct BatchDisassociateAssessmentReportEvidenceInput {
     /// <p> The list of evidence identifiers. </p>
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchDisassociateAssessmentReportEvidenceInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
+    /// <p> The list of evidence identifiers. </p>
+    pub fn evidence_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.evidence_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisassociateAssessmentReportEvidenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisassociateAssessmentReportEvidenceInput");
@@ -11373,6 +12020,16 @@ pub struct BatchDeleteDelegationByAssessmentInput {
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
 }
+impl BatchDeleteDelegationByAssessmentInput {
+    /// <p> The identifiers for the delegations. </p>
+    pub fn delegation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.delegation_ids.as_deref()
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteDelegationByAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteDelegationByAssessmentInput");
@@ -11391,6 +12048,18 @@ pub struct BatchCreateDelegationByAssessmentInput {
         std::option::Option<std::vec::Vec<crate::model::CreateDelegationRequest>>,
     /// <p> The identifier for the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
+}
+impl BatchCreateDelegationByAssessmentInput {
+    /// <p> The API request to batch create delegations in Audit Manager. </p>
+    pub fn create_delegation_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::CreateDelegationRequest]> {
+        self.create_delegation_requests.as_deref()
+    }
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateDelegationByAssessmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11415,6 +12084,20 @@ pub struct BatchAssociateAssessmentReportEvidenceInput {
     /// <p> The list of evidence identifiers. </p>
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchAssociateAssessmentReportEvidenceInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
+    /// <p> The list of evidence identifiers. </p>
+    pub fn evidence_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.evidence_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchAssociateAssessmentReportEvidenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchAssociateAssessmentReportEvidenceInput");
@@ -11433,6 +12116,16 @@ pub struct AssociateAssessmentReportEvidenceFolderInput {
     pub assessment_id: std::option::Option<std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub evidence_folder_id: std::option::Option<std::string::String>,
+}
+impl AssociateAssessmentReportEvidenceFolderInput {
+    /// <p> The identifier for the assessment. </p>
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
+        self.assessment_id.as_deref()
+    }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
+        self.evidence_folder_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAssessmentReportEvidenceFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct UpdateJobExecutionOutput {
     /// <p>The contents of the Job Documents.</p>
     pub job_document: std::option::Option<std::string::String>,
 }
+impl UpdateJobExecutionOutput {
+    /// <p>A JobExecutionState object.</p>
+    pub fn execution_state(&self) -> std::option::Option<&crate::model::JobExecutionState> {
+        self.execution_state.as_ref()
+    }
+    /// <p>The contents of the Job Documents.</p>
+    pub fn job_document(&self) -> std::option::Option<&str> {
+        self.job_document.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateJobExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobExecutionOutput");
@@ -72,6 +82,12 @@ pub struct StartNextPendingJobExecutionOutput {
     /// <p>A JobExecution object.</p>
     pub execution: std::option::Option<crate::model::JobExecution>,
 }
+impl StartNextPendingJobExecutionOutput {
+    /// <p>A JobExecution object.</p>
+    pub fn execution(&self) -> std::option::Option<&crate::model::JobExecution> {
+        self.execution.as_ref()
+    }
+}
 impl std::fmt::Debug for StartNextPendingJobExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartNextPendingJobExecutionOutput");
@@ -124,6 +140,16 @@ pub struct GetPendingJobExecutionsOutput {
     pub in_progress_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
     pub queued_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
+}
+impl GetPendingJobExecutionsOutput {
+    /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
+    pub fn in_progress_jobs(&self) -> std::option::Option<&[crate::model::JobExecutionSummary]> {
+        self.in_progress_jobs.as_deref()
+    }
+    /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
+    pub fn queued_jobs(&self) -> std::option::Option<&[crate::model::JobExecutionSummary]> {
+        self.queued_jobs.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPendingJobExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -208,6 +234,12 @@ impl GetPendingJobExecutionsOutput {
 pub struct DescribeJobExecutionOutput {
     /// <p>Contains data about a job execution.</p>
     pub execution: std::option::Option<crate::model::JobExecution>,
+}
+impl DescribeJobExecutionOutput {
+    /// <p>Contains data about a job execution.</p>
+    pub fn execution(&self) -> std::option::Option<&crate::model::JobExecution> {
+        self.execution.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJobExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

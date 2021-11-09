@@ -25,6 +25,39 @@ pub struct GetResourceMetricsOutput {
     /// value specified by <code>MaxRecords</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourceMetricsOutput {
+    /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
+    /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
+    /// equal to the value of the user-specified <code>StartTime</code>.</p>
+    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aligned_start_time.as_ref()
+    }
+    /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
+    /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
+    /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aligned_end_time.as_ref()
+    }
+    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
+    /// this data source.</p>
+    /// <p>To use a DB instance as a data source, you specify its
+    /// <code>DbiResourceId</code> value - for example:  
+    /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
+    /// </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
+    pub fn metric_list(&self) -> std::option::Option<&[crate::model::MetricKeyDataPoints]> {
+        self.metric_list.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request. If
+    /// this parameter is specified, the response includes only records beyond the token, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceMetricsOutput");
@@ -163,6 +196,12 @@ pub struct GetDimensionKeyDetailsOutput {
     /// <p>The details for the requested dimensions.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>,
 }
+impl GetDimensionKeyDetailsOutput {
+    /// <p>The details for the requested dimensions.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::DimensionKeyDetail]> {
+        self.dimensions.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDimensionKeyDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDimensionKeyDetailsOutput");
@@ -233,6 +272,34 @@ pub struct DescribeDimensionKeysOutput {
     /// this parameter is specified, the response includes only records beyond the token, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDimensionKeysOutput {
+    /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
+    /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
+    /// equal to the value of the user-specified <code>StartTime</code>.</p>
+    pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aligned_start_time.as_ref()
+    }
+    /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
+    /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
+    /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+    pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.aligned_end_time.as_ref()
+    }
+    /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions.</p>
+    pub fn partition_keys(&self) -> std::option::Option<&[crate::model::ResponsePartitionKey]> {
+        self.partition_keys.as_deref()
+    }
+    /// <p>The dimension keys that were requested.</p>
+    pub fn keys(&self) -> std::option::Option<&[crate::model::DimensionKeyDescription]> {
+        self.keys.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request. If
+    /// this parameter is specified, the response includes only records beyond the token, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDimensionKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

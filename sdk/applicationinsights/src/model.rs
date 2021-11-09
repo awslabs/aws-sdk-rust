@@ -17,6 +17,29 @@ pub struct LogPattern {
     /// </p>
     pub rank: i32,
 }
+impl LogPattern {
+    /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot
+    /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+        self.pattern_set_name.as_deref()
+    }
+    /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot
+    /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    pub fn pattern_name(&self) -> std::option::Option<&str> {
+        self.pattern_name.as_deref()
+    }
+    /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot
+    /// be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+    /// </p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+}
 impl std::fmt::Debug for LogPattern {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogPattern");
@@ -280,6 +303,57 @@ pub struct ApplicationInfo {
     pub auto_config_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     pub discovery_type: std::option::Option<crate::model::DiscoveryType>,
+}
+impl ApplicationInfo {
+    /// <p>The name of the resource group used for the application.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The lifecycle of the application. </p>
+    pub fn life_cycle(&self) -> std::option::Option<&str> {
+        self.life_cycle.as_deref()
+    }
+    /// <p>
+    /// The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications
+    /// for opsItem updates.
+    /// </p>
+    pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.ops_item_sns_topic_arn.as_deref()
+    }
+    /// <p>
+    /// Indicates whether Application Insights will create opsItems for any problem detected by Application
+    /// Insights for an application.
+    /// </p>
+    pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
+        self.ops_center_enabled
+    }
+    /// <p>
+    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+    /// </p>
+    pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
+        self.cwe_monitor_enabled
+    }
+    /// <p>The issues on the user side that block Application Insights from successfully monitoring
+    /// an application. Example remarks include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p>
+    /// </li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Unconfigured Components”</p>
+    /// </li>
+    /// </ul>
+    pub fn remarks(&self) -> std::option::Option<&str> {
+        self.remarks.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
+        self.auto_config_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn discovery_type(&self) -> std::option::Option<&crate::model::DiscoveryType> {
+        self.discovery_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -547,6 +621,19 @@ pub struct Tag {
     /// application to have a specific tag value, don't specify a value for this parameter.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
+    /// 128 characters. The minimum length is 1 character.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
+    /// value is 256 characters. The minimum length is 0 characters. If you don't want an
+    /// application to have a specific tag value, don't specify a value for this parameter.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -637,6 +724,60 @@ pub struct Problem {
     pub recurring_count: std::option::Option<i64>,
     #[allow(missing_docs)] // documentation missing in model
     pub last_recurrence_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Problem {
+    /// <p>The ID of the problem.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the problem.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>A detailed analysis of the problem using machine learning.</p>
+    pub fn insights(&self) -> std::option::Option<&str> {
+        self.insights.as_deref()
+    }
+    /// <p>The status of the problem.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The resource affected by the problem.</p>
+    pub fn affected_resource(&self) -> std::option::Option<&str> {
+        self.affected_resource.as_deref()
+    }
+    /// <p>The time when the problem started, in epoch seconds.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time when the problem ended, in epoch seconds.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A measure of the level of impact of the problem.</p>
+    pub fn severity_level(&self) -> std::option::Option<&crate::model::SeverityLevel> {
+        self.severity_level.as_ref()
+    }
+    /// <p>The name of the resource group affected by the problem.</p>
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>Feedback provided by the user about the problem.</p>
+    pub fn feedback(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
+    > {
+        self.feedback.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn recurring_count(&self) -> std::option::Option<i64> {
+        self.recurring_count
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_recurrence_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Problem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1120,6 +1261,46 @@ pub struct ConfigurationEvent {
     /// </p>
     pub event_resource_name: std::option::Option<std::string::String>,
 }
+impl ConfigurationEvent {
+    /// <p>
+    /// The resource monitored by Application Insights.
+    /// </p>
+    pub fn monitored_resource_arn(&self) -> std::option::Option<&str> {
+        self.monitored_resource_arn.as_deref()
+    }
+    /// <p>
+    /// The status of the configuration update event. Possible values include INFO, WARN, and ERROR.
+    /// </p>
+    pub fn event_status(&self) -> std::option::Option<&crate::model::ConfigurationEventStatus> {
+        self.event_status.as_ref()
+    }
+    /// <p>
+    /// The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.
+    /// </p>
+    pub fn event_resource_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationEventResourceType> {
+        self.event_resource_type.as_ref()
+    }
+    /// <p>
+    /// The timestamp of the event.
+    /// </p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>
+    /// The details of the event in plain text.
+    /// </p>
+    pub fn event_detail(&self) -> std::option::Option<&str> {
+        self.event_detail.as_deref()
+    }
+    /// <p>
+    /// The name of the resource Application Insights attempted to configure.
+    /// </p>
+    pub fn event_resource_name(&self) -> std::option::Option<&str> {
+        self.event_resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfigurationEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationEvent");
@@ -1427,6 +1608,49 @@ pub struct ApplicationComponent {
         >,
     >,
 }
+impl ApplicationComponent {
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>
+    /// If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.
+    /// </p>
+    pub fn component_remarks(&self) -> std::option::Option<&str> {
+        self.component_remarks.as_deref()
+    }
+    /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>
+    /// The operating system of the component.
+    /// </p>
+    pub fn os_type(&self) -> std::option::Option<&crate::model::OsType> {
+        self.os_type.as_ref()
+    }
+    /// <p>The stack tier of the application component.</p>
+    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+        self.tier.as_ref()
+    }
+    /// <p>Indicates whether the application component is monitored. </p>
+    pub fn monitor(&self) -> std::option::Option<bool> {
+        self.monitor
+    }
+    /// <p>
+    /// Workloads detected in the application component.
+    /// </p>
+    pub fn detected_workload(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::Tier,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.detected_workload.as_ref()
+    }
+}
 impl std::fmt::Debug for ApplicationComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationComponent");
@@ -1652,6 +1876,12 @@ pub struct RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
     pub observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
 }
+impl RelatedObservations {
+    /// <p>The list of observations related to the problem.</p>
+    pub fn observation_list(&self) -> std::option::Option<&[crate::model::Observation]> {
+        self.observation_list.as_deref()
+    }
+}
 impl std::fmt::Debug for RelatedObservations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RelatedObservations");
@@ -1843,6 +2073,237 @@ pub struct Observation {
     /// <p>
     /// The type of the  X-Ray node.      </p>
     pub x_ray_node_type: std::option::Option<std::string::String>,
+}
+impl Observation {
+    /// <p>The ID of the observation type.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The time when the observation was  first detected, in epoch seconds.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time when the observation ended, in epoch seconds.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The source type of the observation.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>The source resource ARN of the observation.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The log group name.</p>
+    pub fn log_group(&self) -> std::option::Option<&str> {
+        self.log_group.as_deref()
+    }
+    /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
+    pub fn line_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.line_time.as_ref()
+    }
+    /// <p>The log text of the observation.</p>
+    pub fn log_text(&self) -> std::option::Option<&str> {
+        self.log_text.as_deref()
+    }
+    /// <p>The log filter of the observation.</p>
+    pub fn log_filter(&self) -> std::option::Option<&crate::model::LogFilter> {
+        self.log_filter.as_ref()
+    }
+    /// <p>The namespace of the observation metric.</p>
+    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+        self.metric_namespace.as_deref()
+    }
+    /// <p>The name of the observation metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The unit of the source observation metric.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>The value of the source observation metric.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
+    pub fn cloud_watch_event_id(&self) -> std::option::Option<&str> {
+        self.cloud_watch_event_id.as_deref()
+    }
+    /// <p> The source of the CloudWatch Event. </p>
+    pub fn cloud_watch_event_source(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchEventSource> {
+        self.cloud_watch_event_source.as_ref()
+    }
+    /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2
+    /// Instance State-change Notification</code>. </p>
+    pub fn cloud_watch_event_detail_type(&self) -> std::option::Option<&str> {
+        self.cloud_watch_event_detail_type.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
+    pub fn health_event_arn(&self) -> std::option::Option<&str> {
+        self.health_event_arn.as_deref()
+    }
+    /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
+    pub fn health_service(&self) -> std::option::Option<&str> {
+        self.health_service.as_deref()
+    }
+    /// <p> The type of the AWS Health event, for example,
+    /// <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
+    pub fn health_event_type_code(&self) -> std::option::Option<&str> {
+        self.health_event_type_code.as_deref()
+    }
+    /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
+    pub fn health_event_type_category(&self) -> std::option::Option<&str> {
+        self.health_event_type_category.as_deref()
+    }
+    /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
+    pub fn health_event_description(&self) -> std::option::Option<&str> {
+        self.health_event_description.as_deref()
+    }
+    /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
+    pub fn code_deploy_deployment_id(&self) -> std::option::Option<&str> {
+        self.code_deploy_deployment_id.as_deref()
+    }
+    /// <p>
+    /// The deployment group to which the CodeDeploy deployment belongs.
+    /// </p>
+    pub fn code_deploy_deployment_group(&self) -> std::option::Option<&str> {
+        self.code_deploy_deployment_group.as_deref()
+    }
+    /// <p>
+    /// The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>.
+    /// </p>
+    pub fn code_deploy_state(&self) -> std::option::Option<&str> {
+        self.code_deploy_state.as_deref()
+    }
+    /// <p>
+    /// The CodeDeploy application to which the deployment belongs.
+    /// </p>
+    pub fn code_deploy_application(&self) -> std::option::Option<&str> {
+        self.code_deploy_application.as_deref()
+    }
+    /// <p>
+    /// The instance group to which the CodeDeploy instance belongs.
+    /// </p>
+    pub fn code_deploy_instance_group_id(&self) -> std::option::Option<&str> {
+        self.code_deploy_instance_group_id.as_deref()
+    }
+    /// <p>
+    /// The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
+    /// </p>
+    pub fn ec2_state(&self) -> std::option::Option<&str> {
+        self.ec2_state.as_deref()
+    }
+    /// <p>
+    /// The category of an RDS event.
+    /// </p>
+    pub fn rds_event_categories(&self) -> std::option::Option<&str> {
+        self.rds_event_categories.as_deref()
+    }
+    /// <p>
+    /// The message of an RDS event.
+    /// </p>
+    pub fn rds_event_message(&self) -> std::option::Option<&str> {
+        self.rds_event_message.as_deref()
+    }
+    /// <p>
+    /// The name of the S3 CloudWatch Event-based observation.
+    /// </p>
+    pub fn s3_event_name(&self) -> std::option::Option<&str> {
+        self.s3_event_name.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the step function execution-based observation.
+    /// </p>
+    pub fn states_execution_arn(&self) -> std::option::Option<&str> {
+        self.states_execution_arn.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (ARN)  of the step function-based observation.
+    /// </p>
+    pub fn states_arn(&self) -> std::option::Option<&str> {
+        self.states_arn.as_deref()
+    }
+    /// <p>
+    /// The status of the step function-related observation.
+    /// </p>
+    pub fn states_status(&self) -> std::option::Option<&str> {
+        self.states_status.as_deref()
+    }
+    /// <p>
+    /// The input to the step function-based observation.
+    /// </p>
+    pub fn states_input(&self) -> std::option::Option<&str> {
+        self.states_input.as_deref()
+    }
+    /// <p>
+    /// The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>.
+    /// </p>
+    pub fn ebs_event(&self) -> std::option::Option<&str> {
+        self.ebs_event.as_deref()
+    }
+    /// <p>
+    /// The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+    /// </p>
+    pub fn ebs_result(&self) -> std::option::Option<&str> {
+        self.ebs_result.as_deref()
+    }
+    /// <p>
+    /// The cause of an EBS CloudWatch event.
+    /// </p>
+    pub fn ebs_cause(&self) -> std::option::Option<&str> {
+        self.ebs_cause.as_deref()
+    }
+    /// <p>
+    /// The request ID of an EBS CloudWatch event.
+    /// </p>
+    pub fn ebs_request_id(&self) -> std::option::Option<&str> {
+        self.ebs_request_id.as_deref()
+    }
+    /// <p>
+    /// The X-Ray request fault percentage for this node.
+    /// </p>
+    pub fn x_ray_fault_percent(&self) -> std::option::Option<i32> {
+        self.x_ray_fault_percent
+    }
+    /// <p>
+    /// The X-Ray request throttle percentage for this node.
+    /// </p>
+    pub fn x_ray_throttle_percent(&self) -> std::option::Option<i32> {
+        self.x_ray_throttle_percent
+    }
+    /// <p>
+    /// The X-Ray request error percentage for this node.
+    /// </p>
+    pub fn x_ray_error_percent(&self) -> std::option::Option<i32> {
+        self.x_ray_error_percent
+    }
+    /// <p>
+    /// The X-Ray request count for this node.
+    /// </p>
+    pub fn x_ray_request_count(&self) -> std::option::Option<i32> {
+        self.x_ray_request_count
+    }
+    /// <p>
+    /// The X-Ray node request average latency for this node.
+    /// </p>
+    pub fn x_ray_request_average_latency(&self) -> std::option::Option<i64> {
+        self.x_ray_request_average_latency
+    }
+    /// <p>
+    /// The name of the X-Ray node.
+    /// </p>
+    pub fn x_ray_node_name(&self) -> std::option::Option<&str> {
+        self.x_ray_node_name.as_deref()
+    }
+    /// <p>
+    /// The type of the  X-Ray node.      </p>
+    pub fn x_ray_node_type(&self) -> std::option::Option<&str> {
+        self.x_ray_node_type.as_deref()
+    }
 }
 impl std::fmt::Debug for Observation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

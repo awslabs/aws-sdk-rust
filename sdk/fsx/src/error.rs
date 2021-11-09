@@ -4059,6 +4059,12 @@ pub struct IncompatibleParameterError {
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl IncompatibleParameterError {
+    /// <p>A parameter that is incompatible with the earlier request.</p>
+    pub fn parameter(&self) -> std::option::Option<&str> {
+        self.parameter.as_deref()
+    }
+}
 impl std::fmt::Debug for IncompatibleParameterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncompatibleParameterError");
@@ -4331,6 +4337,12 @@ pub struct ServiceLimitExceeded {
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceLimitExceeded {
+    /// <p>Enumeration of the service limit that was exceeded. </p>
+    pub fn limit(&self) -> std::option::Option<&crate::model::ServiceLimit> {
+        self.limit.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceLimitExceeded");
@@ -4538,6 +4550,12 @@ pub struct ResourceNotFound {
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceNotFound {
+    /// <p>The resource ARN of the resource that can't be found.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFound");
@@ -4617,6 +4635,13 @@ pub struct ResourceDoesNotSupportTagging {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceDoesNotSupportTagging {
+    /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support
+    /// tagging.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceDoesNotSupportTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4699,6 +4724,12 @@ pub struct NotServiceResourceError {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl NotServiceResourceError {
+    /// <p>The Amazon Resource Name (ARN) of the non-Amazon FSx resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for NotServiceResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4908,6 +4939,12 @@ pub struct BackupRestoring {
     /// <p>The ID of a file system being restored from the backup.</p>
     pub file_system_id: std::option::Option<std::string::String>,
 }
+impl BackupRestoring {
+    /// <p>The ID of a file system being restored from the backup.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupRestoring {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupRestoring");
@@ -5055,6 +5092,12 @@ pub struct BackupBeingCopied {
     /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
     pub backup_id: std::option::Option<std::string::String>,
 }
+impl BackupBeingCopied {
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupBeingCopied {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupBeingCopied");
@@ -5135,6 +5178,16 @@ pub struct ActiveDirectoryError {
     pub r#type: std::option::Option<crate::model::ActiveDirectoryErrorType>,
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ActiveDirectoryError {
+    /// <p>The directory ID of the directory that an error pertains to.</p>
+    pub fn active_directory_id(&self) -> std::option::Option<&str> {
+        self.active_directory_id.as_deref()
+    }
+    /// <p>The type of Active Directory error.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ActiveDirectoryErrorType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ActiveDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5301,6 +5354,20 @@ pub struct InvalidNetworkSettings {
     pub invalid_security_group_id: std::option::Option<std::string::String>,
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
     pub invalid_route_table_id: std::option::Option<std::string::String>,
+}
+impl InvalidNetworkSettings {
+    /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
+    pub fn invalid_subnet_id(&self) -> std::option::Option<&str> {
+        self.invalid_subnet_id.as_deref()
+    }
+    /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
+    pub fn invalid_security_group_id(&self) -> std::option::Option<&str> {
+        self.invalid_security_group_id.as_deref()
+    }
+    /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
+    pub fn invalid_route_table_id(&self) -> std::option::Option<&str> {
+        self.invalid_route_table_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidNetworkSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5609,6 +5676,12 @@ pub struct SourceBackupUnavailable {
     pub message: std::option::Option<std::string::String>,
     /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
     pub backup_id: std::option::Option<std::string::String>,
+}
+impl SourceBackupUnavailable {
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SourceBackupUnavailable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

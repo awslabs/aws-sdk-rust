@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_complete_attachment_upload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CompleteAttachmentUploadInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.attachment_ids {
         let mut array_2 = object.key("AttachmentIds").start_array();
         for item_3 in var_1 {
@@ -15,12 +15,13 @@ pub fn serialize_structure_crate_input_complete_attachment_upload_input(
     if let Some(var_4) = &input.client_token {
         object.key("ClientToken").string(var_4);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_participant_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateParticipantConnectionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.connect_participant {
         object.key("ConnectParticipant").boolean(*var_5);
     }
@@ -33,30 +34,33 @@ pub fn serialize_structure_crate_input_create_participant_connection_input(
         }
         array_7.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disconnect_participant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisconnectParticipantInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.client_token {
         object.key("ClientToken").string(var_9);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_attachment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAttachmentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.attachment_id {
         object.key("AttachmentId").string(var_10);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_transcript_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetTranscriptInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.contact_id {
         object.key("ContactId").string(var_11);
     }
@@ -77,15 +81,16 @@ pub fn serialize_structure_crate_input_get_transcript_input(
     }
     if let Some(var_16) = &input.start_position {
         let mut object_17 = object.key("StartPosition").start_object();
-        crate::json_ser::serialize_structure_crate_model_start_position(&mut object_17, var_16);
+        crate::json_ser::serialize_structure_crate_model_start_position(&mut object_17, var_16)?;
         object_17.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_send_event_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendEventInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.client_token {
         object.key("ClientToken").string(var_18);
     }
@@ -95,12 +100,13 @@ pub fn serialize_structure_crate_input_send_event_input(
     if let Some(var_20) = &input.content_type {
         object.key("ContentType").string(var_20);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_send_message_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendMessageInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.client_token {
         object.key("ClientToken").string(var_21);
     }
@@ -110,12 +116,13 @@ pub fn serialize_structure_crate_input_send_message_input(
     if let Some(var_23) = &input.content_type {
         object.key("ContentType").string(var_23);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_attachment_upload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartAttachmentUploadInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.attachment_name {
         object.key("AttachmentName").string(var_24);
     }
@@ -131,12 +138,13 @@ pub fn serialize_structure_crate_input_start_attachment_upload_input(
     if let Some(var_26) = &input.content_type {
         object.key("ContentType").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_start_position(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartPosition,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.id {
         object.key("Id").string(var_27);
     }
@@ -149,4 +157,5 @@ pub fn serialize_structure_crate_model_start_position(
             aws_smithy_types::Number::NegInt((input.most_recent).into()),
         );
     }
+    Ok(())
 }

@@ -136,10 +136,7 @@ impl CreateDiscovererInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_discoverer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_discoverer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -347,10 +344,8 @@ impl CreateRegistryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_registry(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_registry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -610,10 +605,7 @@ impl CreateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2819,10 +2811,7 @@ impl GetDiscoveredSchemaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_discovered_schema(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_discovered_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4351,10 +4340,7 @@ impl PutResourcePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5057,10 +5043,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5429,10 +5412,7 @@ impl UpdateDiscovererInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_discoverer(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_discoverer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5611,10 +5591,8 @@ impl UpdateRegistryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_registry(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_registry(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5863,10 +5841,7 @@ impl UpdateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5945,6 +5920,32 @@ pub struct UpdateSchemaInput {
     /// <p>The schema type for the events schema.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl UpdateSchemaInput {
+    /// <p>The ID of the client token.</p>
+    pub fn client_token_id(&self) -> std::option::Option<&str> {
+        self.client_token_id.as_deref()
+    }
+    /// <p>The source of the schema definition.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The description of the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The schema type for the events schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSchemaInput");
@@ -5967,6 +5968,16 @@ pub struct UpdateRegistryInput {
     /// <p>The name of the registry.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl UpdateRegistryInput {
+    /// <p>The description of the registry to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRegistryInput");
@@ -5987,6 +5998,20 @@ pub struct UpdateDiscovererInput {
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     pub cross_account: bool,
 }
+impl UpdateDiscovererInput {
+    /// <p>The description of the discoverer to update.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+    /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
+    pub fn cross_account(&self) -> bool {
+        self.cross_account
+    }
+}
 impl std::fmt::Debug for UpdateDiscovererInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDiscovererInput");
@@ -6005,6 +6030,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys of key-value pairs.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys of key-value pairs.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6025,6 +6060,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -6041,6 +6089,12 @@ pub struct StopDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     pub discoverer_id: std::option::Option<std::string::String>,
 }
+impl StopDiscovererInput {
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopDiscovererInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDiscovererInput");
@@ -6055,6 +6109,12 @@ impl std::fmt::Debug for StopDiscovererInput {
 pub struct StartDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     pub discoverer_id: std::option::Option<std::string::String>,
+}
+impl StartDiscovererInput {
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartDiscovererInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6077,6 +6137,24 @@ pub struct SearchSchemasInput {
     /// <p>The name of the registry.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl SearchSchemasInput {
+    /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
+    pub fn keywords(&self) -> std::option::Option<&str> {
+        self.keywords.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchSchemasInput");
@@ -6098,6 +6176,20 @@ pub struct PutResourcePolicyInput {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The revision ID of the policy.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl PutResourcePolicyInput {
+    /// <p>The resource-based policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The revision ID of the policy.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6122,6 +6214,24 @@ pub struct PutCodeBindingInput {
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub schema_version: std::option::Option<std::string::String>,
 }
+impl PutCodeBindingInput {
+    /// <p>The language of the code binding.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+}
 impl std::fmt::Debug for PutCodeBindingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutCodeBindingInput");
@@ -6139,6 +6249,12 @@ impl std::fmt::Debug for PutCodeBindingInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6160,6 +6276,24 @@ pub struct ListSchemaVersionsInput {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
     pub schema_name: std::option::Option<std::string::String>,
+}
+impl ListSchemaVersionsInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchemaVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6185,6 +6319,24 @@ pub struct ListSchemasInput {
     /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
     pub schema_name_prefix: std::option::Option<std::string::String>,
 }
+impl ListSchemasInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
+    pub fn schema_name_prefix(&self) -> std::option::Option<&str> {
+        self.schema_name_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasInput");
@@ -6208,6 +6360,24 @@ pub struct ListRegistriesInput {
     pub registry_name_prefix: std::option::Option<std::string::String>,
     /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
     pub scope: std::option::Option<std::string::String>,
+}
+impl ListRegistriesInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
+    pub fn registry_name_prefix(&self) -> std::option::Option<&str> {
+        self.registry_name_prefix.as_deref()
+    }
+    /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
+    pub fn scope(&self) -> std::option::Option<&str> {
+        self.scope.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRegistriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6233,6 +6403,24 @@ pub struct ListDiscoverersInput {
     /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
     pub source_arn_prefix: std::option::Option<std::string::String>,
 }
+impl ListDiscoverersInput {
+    /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
+    pub fn discoverer_id_prefix(&self) -> std::option::Option<&str> {
+        self.discoverer_id_prefix.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
+    pub fn source_arn_prefix(&self) -> std::option::Option<&str> {
+        self.source_arn_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDiscoverersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDiscoverersInput");
@@ -6251,6 +6439,12 @@ pub struct GetResourcePolicyInput {
     /// <p>The name of the registry.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl GetResourcePolicyInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyInput");
@@ -6267,6 +6461,16 @@ pub struct GetDiscoveredSchemaInput {
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of event.</p>
     pub r#type: std::option::Option<crate::model::Type>,
+}
+impl GetDiscoveredSchemaInput {
+    /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
+    pub fn events(&self) -> std::option::Option<&[std::string::String]> {
+        self.events.as_deref()
+    }
+    /// <p>The type of event.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDiscoveredSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6289,6 +6493,24 @@ pub struct GetCodeBindingSourceInput {
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub schema_version: std::option::Option<std::string::String>,
+}
+impl GetCodeBindingSourceInput {
+    /// <p>The language of the code binding.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCodeBindingSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6314,6 +6536,24 @@ pub struct ExportSchemaInput {
     #[allow(missing_docs)] // documentation missing in model
     pub r#type: std::option::Option<std::string::String>,
 }
+impl ExportSchemaInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportSchemaInput");
@@ -6336,6 +6576,20 @@ pub struct DescribeSchemaInput {
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub schema_version: std::option::Option<std::string::String>,
 }
+impl DescribeSchemaInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSchemaInput");
@@ -6353,6 +6607,12 @@ pub struct DescribeRegistryInput {
     /// <p>The name of the registry.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl DescribeRegistryInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRegistryInput");
@@ -6367,6 +6627,12 @@ impl std::fmt::Debug for DescribeRegistryInput {
 pub struct DescribeDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     pub discoverer_id: std::option::Option<std::string::String>,
+}
+impl DescribeDiscovererInput {
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDiscovererInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6388,6 +6654,24 @@ pub struct DescribeCodeBindingInput {
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub schema_version: std::option::Option<std::string::String>,
+}
+impl DescribeCodeBindingInput {
+    /// <p>The language of the code binding.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Specifying this limits the results to only this schema version.</p>
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCodeBindingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6411,6 +6695,20 @@ pub struct DeleteSchemaVersionInput {
     /// The version number of the schema
     pub schema_version: std::option::Option<std::string::String>,
 }
+impl DeleteSchemaVersionInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// The version number of the schema
+    pub fn schema_version(&self) -> std::option::Option<&str> {
+        self.schema_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSchemaVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSchemaVersionInput");
@@ -6430,6 +6728,16 @@ pub struct DeleteSchemaInput {
     /// <p>The name of the schema.</p>
     pub schema_name: std::option::Option<std::string::String>,
 }
+impl DeleteSchemaInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSchemaInput");
@@ -6446,6 +6754,12 @@ pub struct DeleteResourcePolicyInput {
     /// <p>The name of the registry.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl DeleteResourcePolicyInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourcePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyInput");
@@ -6461,6 +6775,12 @@ pub struct DeleteRegistryInput {
     /// <p>The name of the registry.</p>
     pub registry_name: std::option::Option<std::string::String>,
 }
+impl DeleteRegistryInput {
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRegistryInput");
@@ -6475,6 +6795,12 @@ impl std::fmt::Debug for DeleteRegistryInput {
 pub struct DeleteDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     pub discoverer_id: std::option::Option<std::string::String>,
+}
+impl DeleteDiscovererInput {
+    /// <p>The ID of the discoverer.</p>
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+        self.discoverer_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDiscovererInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6502,6 +6828,35 @@ pub struct CreateSchemaInput {
     /// <p>The type of schema.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl CreateSchemaInput {
+    /// <p>The source of the schema definition.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A description of the schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>Tags associated with the schema.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of schema.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSchemaInput");
@@ -6527,6 +6882,23 @@ pub struct CreateRegistryInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRegistryInput {
+    /// <p>A description of the registry to be created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the registry.</p>
+    pub fn registry_name(&self) -> std::option::Option<&str> {
+        self.registry_name.as_deref()
+    }
+    /// <p>Tags to associate with the registry.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRegistryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRegistryInput");
@@ -6550,6 +6922,27 @@ pub struct CreateDiscovererInput {
     /// <p>Tags associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateDiscovererInput {
+    /// <p>A description for the discoverer.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the event bus.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+    pub fn cross_account(&self) -> bool {
+        self.cross_account
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDiscovererInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

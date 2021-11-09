@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>The message of the exception field.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The name of the exception field.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The message of the exception field.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -144,6 +154,24 @@ pub struct ResolvedComponentVersion {
     /// <p>The recipe of the component version.</p>
     pub recipe: std::option::Option<aws_smithy_types::Blob>,
 }
+impl ResolvedComponentVersion {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The recipe of the component version.</p>
+    pub fn recipe(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.recipe.as_ref()
+    }
+}
 impl std::fmt::Debug for ResolvedComponentVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolvedComponentVersion");
@@ -244,6 +272,25 @@ pub struct ComponentCandidate {
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
     pub version_requirements:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ComponentCandidate {
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
+    /// version requirements from component recipes.</p>
+    /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    pub fn version_requirements(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.version_requirements.as_ref()
+    }
 }
 impl std::fmt::Debug for ComponentCandidate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -355,6 +402,25 @@ pub struct ComponentPlatform {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ComponentPlatform {
+    /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
+    /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
+    /// <code>architecture</code> of the platform.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
+    /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
+    /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
+    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
+    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for ComponentPlatform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentPlatform");
@@ -452,6 +518,30 @@ pub struct InstalledComponent {
     pub lifecycle_state_details: std::option::Option<std::string::String>,
     /// <p>Whether or not the component is a root component.</p>
     pub is_root: bool,
+}
+impl InstalledComponent {
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The lifecycle state of the component.</p>
+    pub fn lifecycle_state(
+        &self,
+    ) -> std::option::Option<&crate::model::InstalledComponentLifecycleState> {
+        self.lifecycle_state.as_ref()
+    }
+    /// <p>The details about the lifecycle state of the component.</p>
+    pub fn lifecycle_state_details(&self) -> std::option::Option<&str> {
+        self.lifecycle_state_details.as_deref()
+    }
+    /// <p>Whether or not the component is a root component.</p>
+    pub fn is_root(&self) -> bool {
+        self.is_root
+    }
 }
 impl std::fmt::Debug for InstalledComponent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -676,6 +766,51 @@ pub struct EffectiveDeployment {
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
     /// format.</p>
     pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EffectiveDeployment {
+    /// <p>The ID of the deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The name of the deployment.</p>
+    pub fn deployment_name(&self) -> std::option::Option<&str> {
+        self.deployment_name.as_deref()
+    }
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    pub fn iot_job_id(&self) -> std::option::Option<&str> {
+        self.iot_job_id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    pub fn iot_job_arn(&self) -> std::option::Option<&str> {
+        self.iot_job_arn.as_deref()
+    }
+    /// <p>The description of the deployment job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The status of the deployment job on the Greengrass core device.</p>
+    pub fn core_device_execution_status(
+        &self,
+    ) -> std::option::Option<&crate::model::EffectiveDeploymentExecutionStatus> {
+        self.core_device_execution_status.as_ref()
+    }
+    /// <p>The reason code for the update, if the job was updated.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
+    /// format.</p>
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for EffectiveDeployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -961,6 +1096,36 @@ pub struct Deployment {
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub is_latest_for_target: bool,
 }
+impl Deployment {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The revision number of the deployment.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The ID of the deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The name of the deployment.</p>
+    pub fn deployment_name(&self) -> std::option::Option<&str> {
+        self.deployment_name.as_deref()
+    }
+    /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The status of the deployment.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>Whether or not the deployment is the latest revision for its target.</p>
+    pub fn is_latest_for_target(&self) -> bool {
+        self.is_latest_for_target
+    }
+}
 impl std::fmt::Debug for Deployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Deployment");
@@ -1238,6 +1403,32 @@ pub struct CoreDevice {
     /// format.</p>
     pub last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CoreDevice {
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+    /// <p>The status of the core device. Core devices can have the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
+    /// on the core device.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::CoreDeviceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time at which the core device's status last updated, expressed in ISO 8601
+    /// format.</p>
+    pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_status_update_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for CoreDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CoreDevice");
@@ -1407,6 +1598,20 @@ pub struct ComponentVersionListItem {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ComponentVersionListItem {
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ComponentVersionListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentVersionListItem");
@@ -1490,6 +1695,20 @@ pub struct Component {
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The latest version of the component and its details.</p>
     pub latest_version: std::option::Option<crate::model::ComponentLatestVersion>,
+}
+impl Component {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The latest version of the component and its details.</p>
+    pub fn latest_version(&self) -> std::option::Option<&crate::model::ComponentLatestVersion> {
+        self.latest_version.as_ref()
+    }
 }
 impl std::fmt::Debug for Component {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1580,6 +1799,32 @@ pub struct ComponentLatestVersion {
     pub publisher: std::option::Option<std::string::String>,
     /// <p>The platforms that the component version supports.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
+}
+impl ComponentLatestVersion {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The description of the component version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The publisher of the component version.</p>
+    pub fn publisher(&self) -> std::option::Option<&str> {
+        self.publisher.as_deref()
+    }
+    /// <p>The platforms that the component version supports.</p>
+    pub fn platforms(&self) -> std::option::Option<&[crate::model::ComponentPlatform]> {
+        self.platforms.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentLatestVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1767,6 +2012,16 @@ pub struct AssociatedClientDevice {
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
     pub association_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AssociatedClientDevice {
+    /// <p>The name of the IoT thing that represents the associated client device.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
+    pub fn association_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.association_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for AssociatedClientDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociatedClientDevice");
@@ -1838,6 +2093,25 @@ pub struct DeploymentIoTJobConfiguration {
     /// <p>The timeout configuration for the job. This configuration defines the amount of time each
     /// device has to complete the job.</p>
     pub timeout_config: std::option::Option<crate::model::IoTJobTimeoutConfig>,
+}
+impl DeploymentIoTJobConfiguration {
+    /// <p>The rollout configuration for the job. This configuration defines the rate at which the
+    /// job rolls out to the fleet of target devices.</p>
+    pub fn job_executions_rollout_config(
+        &self,
+    ) -> std::option::Option<&crate::model::IoTJobExecutionsRolloutConfig> {
+        self.job_executions_rollout_config.as_ref()
+    }
+    /// <p>The stop configuration for the job. This configuration defines when and how to stop a job
+    /// rollout.</p>
+    pub fn abort_config(&self) -> std::option::Option<&crate::model::IoTJobAbortConfig> {
+        self.abort_config.as_ref()
+    }
+    /// <p>The timeout configuration for the job. This configuration defines the amount of time each
+    /// device has to complete the job.</p>
+    pub fn timeout_config(&self) -> std::option::Option<&crate::model::IoTJobTimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentIoTJobConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1939,6 +2213,16 @@ pub struct IoTJobTimeoutConfig {
     /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
+impl IoTJobTimeoutConfig {
+    /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts
+    /// when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a
+    /// terminal state before the time expires, then the job status is set to
+    /// <code>TIMED_OUT</code>.</p>
+    /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
+    pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
+        self.in_progress_timeout_in_minutes
+    }
+}
 impl std::fmt::Debug for IoTJobTimeoutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IoTJobTimeoutConfig");
@@ -2001,6 +2285,12 @@ impl IoTJobTimeoutConfig {
 pub struct IoTJobAbortConfig {
     /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
     pub criteria_list: std::option::Option<std::vec::Vec<crate::model::IoTJobAbortCriteria>>,
+}
+impl IoTJobAbortConfig {
+    /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
+    pub fn criteria_list(&self) -> std::option::Option<&[crate::model::IoTJobAbortCriteria]> {
+        self.criteria_list.as_deref()
+    }
 }
 impl std::fmt::Debug for IoTJobAbortConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2083,6 +2373,28 @@ pub struct IoTJobAbortCriteria {
     /// <p>The minimum number of things that receive the configuration before the job can
     /// cancel.</p>
     pub min_number_of_executed_things: i32,
+}
+impl IoTJobAbortCriteria {
+    /// <p>The type of job deployment failure that can cancel a job.</p>
+    pub fn failure_type(&self) -> std::option::Option<&crate::model::IoTJobExecutionFailureType> {
+        self.failure_type.as_ref()
+    }
+    /// <p>The action to perform when the criteria are met.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::IoTJobAbortAction> {
+        self.action.as_ref()
+    }
+    /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can
+    /// cancel.</p>
+    /// <p>This parameter supports up to two digits after the decimal (for example, you can specify
+    /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+    pub fn threshold_percentage(&self) -> f64 {
+        self.threshold_percentage
+    }
+    /// <p>The minimum number of things that receive the configuration before the job can
+    /// cancel.</p>
+    pub fn min_number_of_executed_things(&self) -> i32 {
+        self.min_number_of_executed_things
+    }
 }
 impl std::fmt::Debug for IoTJobAbortCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2310,6 +2622,18 @@ pub struct IoTJobExecutionsRolloutConfig {
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
     pub maximum_per_minute: std::option::Option<i32>,
 }
+impl IoTJobExecutionsRolloutConfig {
+    /// <p>The exponential rate to increase the job rollout rate.</p>
+    pub fn exponential_rate(
+        &self,
+    ) -> std::option::Option<&crate::model::IoTJobExponentialRolloutRate> {
+        self.exponential_rate.as_ref()
+    }
+    /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
+    pub fn maximum_per_minute(&self) -> std::option::Option<i32> {
+        self.maximum_per_minute
+    }
+}
 impl std::fmt::Debug for IoTJobExecutionsRolloutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IoTJobExecutionsRolloutConfig");
@@ -2385,6 +2709,25 @@ pub struct IoTJobExponentialRolloutRate {
     pub increment_factor: f64,
     /// <p>The criteria to increase the rollout rate for the job.</p>
     pub rate_increase_criteria: std::option::Option<crate::model::IoTJobRateIncreaseCriteria>,
+}
+impl IoTJobExponentialRolloutRate {
+    /// <p>The minimum number of devices that receive a pending job notification, per minute, when
+    /// the job starts. This parameter defines the initial rollout rate of the job.</p>
+    pub fn base_rate_per_minute(&self) -> i32 {
+        self.base_rate_per_minute
+    }
+    /// <p>The exponential factor to increase the rollout rate for the job.</p>
+    /// <p>This parameter supports up to one digit after the decimal (for example, you can specify
+    /// <code>1.5</code>, but not <code>1.55</code>).</p>
+    pub fn increment_factor(&self) -> f64 {
+        self.increment_factor
+    }
+    /// <p>The criteria to increase the rollout rate for the job.</p>
+    pub fn rate_increase_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::IoTJobRateIncreaseCriteria> {
+        self.rate_increase_criteria.as_ref()
+    }
 }
 impl std::fmt::Debug for IoTJobExponentialRolloutRate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2479,6 +2822,18 @@ pub struct IoTJobRateIncreaseCriteria {
     /// increases.</p>
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
+impl IoTJobRateIncreaseCriteria {
+    /// <p>The number of devices to receive the job notification before the rollout rate
+    /// increases.</p>
+    pub fn number_of_notified_things(&self) -> std::option::Option<i32> {
+        self.number_of_notified_things
+    }
+    /// <p>The number of devices to successfully run the configuration job before the rollout rate
+    /// increases.</p>
+    pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
+        self.number_of_succeeded_things
+    }
+}
 impl std::fmt::Debug for IoTJobRateIncreaseCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IoTJobRateIncreaseCriteria");
@@ -2557,6 +2912,31 @@ pub struct DeploymentPolicies {
     /// how long each component has to validate its configure updates.</p>
     pub configuration_validation_policy:
         std::option::Option<crate::model::DeploymentConfigurationValidationPolicy>,
+}
+impl DeploymentPolicies {
+    /// <p>The failure handling policy for the configuration deployment. This policy defines what to
+    /// do if the deployment fails.</p>
+    /// <p>Default: <code>ROLLBACK</code>
+    /// </p>
+    pub fn failure_handling_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentFailureHandlingPolicy> {
+        self.failure_handling_policy.as_ref()
+    }
+    /// <p>The component update policy for the configuration deployment. This policy defines when
+    /// it's safe to deploy the configuration to devices.</p>
+    pub fn component_update_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentComponentUpdatePolicy> {
+        self.component_update_policy.as_ref()
+    }
+    /// <p>The configuration validation policy for the configuration deployment. This policy defines
+    /// how long each component has to validate its configure updates.</p>
+    pub fn configuration_validation_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentConfigurationValidationPolicy> {
+        self.configuration_validation_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2671,6 +3051,15 @@ pub struct DeploymentConfigurationValidationPolicy {
     /// </p>
     pub timeout_in_seconds: std::option::Option<i32>,
 }
+impl DeploymentConfigurationValidationPolicy {
+    /// <p>The amount of time in seconds that a component can validate its configuration updates. If
+    /// the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+    /// <p>Default: <code>30</code>
+    /// </p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+}
 impl std::fmt::Debug for DeploymentConfigurationValidationPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentConfigurationValidationPolicy");
@@ -2752,6 +3141,38 @@ pub struct DeploymentComponentUpdatePolicy {
     /// <p>Default: <code>NOTIFY_COMPONENTS</code>
     /// </p>
     pub action: std::option::Option<crate::model::DeploymentComponentUpdatePolicyAction>,
+}
+impl DeploymentComponentUpdatePolicy {
+    /// <p>The amount of time in seconds that each component on a device has to report that it's safe
+    /// to update. If the component waits for longer than this timeout, then the deployment proceeds
+    /// on the device.</p>
+    /// <p>Default: <code>60</code>
+    /// </p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>Whether or not to notify components and wait for components to become safe to update.
+    /// Choose from the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
+    /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
+    /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components
+    /// or wait for them to be safe to update.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: <code>NOTIFY_COMPONENTS</code>
+    /// </p>
+    pub fn action(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentComponentUpdatePolicyAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentComponentUpdatePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2983,6 +3404,31 @@ pub struct ComponentDeploymentSpecification {
     /// Guide</i>.</p>
     pub run_with: std::option::Option<crate::model::ComponentRunWith>,
 }
+impl ComponentDeploymentSpecification {
+    /// <p>The version of the component.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The configuration updates to deploy for the component. You can define
+    /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
+    /// the keys that you specify to the default configuration for the component. A merge updates the
+    /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
+    /// software applies reset updates before it applies merge updates. For more information, see
+    /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
+    /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ComponentConfigurationUpdate> {
+        self.configuration_update.as_ref()
+    }
+    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
+    /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
+    /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
+    /// Guide</i>.</p>
+    pub fn run_with(&self) -> std::option::Option<&crate::model::ComponentRunWith> {
+        self.run_with.as_ref()
+    }
+}
 impl std::fmt::Debug for ComponentDeploymentSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentDeploymentSpecification");
@@ -3099,6 +3545,25 @@ pub struct ComponentRunWith {
     /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
     pub system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
 }
+impl ComponentRunWith {
+    /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
+    /// and group separated by a colon (<code>:</code>) in the following format:
+    /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
+    /// software uses the primary user for the group.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
+    /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    pub fn posix_user(&self) -> std::option::Option<&str> {
+        self.posix_user.as_deref()
+    }
+    /// <p>The system resource limits to apply to this component's process on the core device.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
+    /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+    pub fn system_resource_limits(
+        &self,
+    ) -> std::option::Option<&crate::model::SystemResourceLimits> {
+        self.system_resource_limits.as_ref()
+    }
+}
 impl std::fmt::Debug for ComponentRunWith {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentRunWith");
@@ -3186,6 +3651,23 @@ pub struct SystemResourceLimits {
     /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
     /// software doesn't limit the component's CPU usage.</p>
     pub cpus: f64,
+}
+impl SystemResourceLimits {
+    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
+    /// the core device.</p>
+    pub fn memory(&self) -> i64 {
+        self.memory
+    }
+    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
+    /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
+    /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
+    /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
+    /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
+    /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
+    /// software doesn't limit the component's CPU usage.</p>
+    pub fn cpus(&self) -> f64 {
+        self.cpus
+    }
 }
 impl std::fmt::Debug for SystemResourceLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3276,6 +3758,27 @@ pub struct ComponentConfigurationUpdate {
     /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
     /// Guide</i>.</p>
     pub reset: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ComponentConfigurationUpdate {
+    /// <p>A serialized JSON string that contains the configuration object to merge to target
+    /// devices. The core device merges this configuration with the component's existing
+    /// configuration. If this is the first time a component deploys on a device, the core device
+    /// merges this configuration with the component's default configuration. This means that the core
+    /// device keeps it's existing configuration for keys and values that you don't specify in this
+    /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
+    /// Guide</i>.</p>
+    pub fn merge(&self) -> std::option::Option<&str> {
+        self.merge.as_deref()
+    }
+    /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
+    /// pointers to specify each node to reset. JSON pointers start with a forward slash
+    /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
+    /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
+    /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
+    /// Guide</i>.</p>
+    pub fn reset(&self) -> std::option::Option<&[std::string::String]> {
+        self.reset.as_deref()
+    }
 }
 impl std::fmt::Debug for ComponentConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3430,6 +3933,25 @@ pub struct CloudComponentStatus {
     /// the artifact's URI as a key, and the error message as the value for that key.</p>
     pub errors:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CloudComponentStatus {
+    /// <p>The state of the component.</p>
+    pub fn component_state(&self) -> std::option::Option<&crate::model::CloudComponentState> {
+        self.component_state.as_ref()
+    }
+    /// <p>A message that communicates details, such as errors, about the status of the component.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>A dictionary of errors that communicate why the component is in an error state. For
+    /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
+    /// the artifact's URI as a key, and the error message as the value for that key.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.errors.as_ref()
+    }
 }
 impl std::fmt::Debug for CloudComponentStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3621,6 +4143,46 @@ pub struct LambdaFunctionRecipeSource {
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
     /// device.</p>
     pub component_lambda_parameters: std::option::Option<crate::model::LambdaExecutionParameters>,
+}
+impl LambdaFunctionRecipeSource {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to
+    /// import. You can't use version aliases like <code>$LATEST</code>.</p>
+    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+        self.lambda_arn.as_deref()
+    }
+    /// <p>The name of the component.</p>
+    /// <p>Defaults to the name of the Lambda function.</p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>The version of the component.</p>
+    /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your
+    /// function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p>The platforms that the component version supports.</p>
+    pub fn component_platforms(&self) -> std::option::Option<&[crate::model::ComponentPlatform]> {
+        self.component_platforms.as_deref()
+    }
+    /// <p>The component versions on which this Lambda function component depends.</p>
+    pub fn component_dependencies(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::ComponentDependencyRequirement,
+        >,
+    > {
+        self.component_dependencies.as_ref()
+    }
+    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
+    /// device.</p>
+    pub fn component_lambda_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaExecutionParameters> {
+        self.component_lambda_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaFunctionRecipeSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3841,6 +4403,82 @@ pub struct LambdaExecutionParameters {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
     pub linux_process_params: std::option::Option<crate::model::LambdaLinuxProcessParams>,
+}
+impl LambdaExecutionParameters {
+    /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
+    /// function runs when it receives a message from an event source. You can subscribe this function
+    /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
+    pub fn event_sources(&self) -> std::option::Option<&[crate::model::LambdaEventSource]> {
+        self.event_sources.as_deref()
+    }
+    /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
+    /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
+    /// consume each message.</p>
+    pub fn max_queue_size(&self) -> std::option::Option<i32> {
+        self.max_queue_size
+    }
+    /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same
+    /// time.</p>
+    pub fn max_instances_count(&self) -> std::option::Option<i32> {
+        self.max_instances_count
+    }
+    /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
+    /// IoT Greengrass Core software stops its process.</p>
+    pub fn max_idle_time_in_seconds(&self) -> std::option::Option<i32> {
+        self.max_idle_time_in_seconds
+    }
+    /// <p>The maximum amount of time in seconds that the Lambda function can process a work
+    /// item.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function
+    /// component sends status updates to the Lambda manager component.</p>
+    pub fn status_timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.status_timeout_in_seconds
+    }
+    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
+    /// <ul>
+    /// <li>
+    /// <p>A pinned Lambda function starts
+    /// when IoT Greengrass starts and keeps running in its own container.</p>
+    /// </li>
+    /// <li>
+    /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
+    /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
+    /// the IoT Greengrass Core software creates multiple instances of the function.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: <code>true</code>
+    /// </p>
+    pub fn pinned(&self) -> std::option::Option<bool> {
+        self.pinned
+    }
+    /// <p>The encoding type that the Lambda function supports.</p>
+    /// <p>Default: <code>json</code>
+    /// </p>
+    pub fn input_payload_encoding_type(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaInputPayloadEncodingType> {
+        self.input_payload_encoding_type.as_ref()
+    }
+    /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
+    pub fn exec_args(&self) -> std::option::Option<&[std::string::String]> {
+        self.exec_args.as_deref()
+    }
+    /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p>The parameters for the Linux process that contains the Lambda function.</p>
+    pub fn linux_process_params(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaLinuxProcessParams> {
+        self.linux_process_params.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaExecutionParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4125,6 +4763,20 @@ pub struct LambdaLinuxProcessParams {
     /// <p>The parameters for the container in which the Lambda function runs.</p>
     pub container_params: std::option::Option<crate::model::LambdaContainerParams>,
 }
+impl LambdaLinuxProcessParams {
+    /// <p>The isolation mode for the process that contains the Lambda function. The process can run
+    /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
+    /// any container.</p>
+    /// <p>Default: <code>GreengrassContainer</code>
+    /// </p>
+    pub fn isolation_mode(&self) -> std::option::Option<&crate::model::LambdaIsolationMode> {
+        self.isolation_mode.as_ref()
+    }
+    /// <p>The parameters for the container in which the Lambda function runs.</p>
+    pub fn container_params(&self) -> std::option::Option<&crate::model::LambdaContainerParams> {
+        self.container_params.as_ref()
+    }
+}
 impl std::fmt::Debug for LambdaLinuxProcessParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaLinuxProcessParams");
@@ -4210,6 +4862,28 @@ pub struct LambdaContainerParams {
     pub volumes: std::option::Option<std::vec::Vec<crate::model::LambdaVolumeMount>>,
     /// <p>The list of system devices that the container can access.</p>
     pub devices: std::option::Option<std::vec::Vec<crate::model::LambdaDeviceMount>>,
+}
+impl LambdaContainerParams {
+    /// <p>The memory size of the container, expressed in kilobytes.</p>
+    /// <p>Default: <code>16384</code> (16 MB)</p>
+    pub fn memory_size_in_kb(&self) -> std::option::Option<i32> {
+        self.memory_size_in_kb
+    }
+    /// <p>Whether or not the container can read information from the device's <code>/sys</code>
+    /// folder.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn mount_ro_sysfs(&self) -> std::option::Option<bool> {
+        self.mount_ro_sysfs
+    }
+    /// <p>The list of volumes that the container can access.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::LambdaVolumeMount]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The list of system devices that the container can access.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::LambdaDeviceMount]> {
+        self.devices.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaContainerParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4332,6 +5006,25 @@ pub struct LambdaDeviceMount {
     /// <p>Default: <code>false</code>
     /// </p>
     pub add_group_owner: std::option::Option<bool>,
+}
+impl LambdaDeviceMount {
+    /// <p>The mount path for the device in the file system.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write
+    /// (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code>
+    /// </p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::LambdaFilesystemPermission> {
+        self.permission.as_ref()
+    }
+    /// <p>Whether or not to add the component's system user as an owner of the device.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn add_group_owner(&self) -> std::option::Option<bool> {
+        self.add_group_owner
+    }
 }
 impl std::fmt::Debug for LambdaDeviceMount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4487,6 +5180,29 @@ pub struct LambdaVolumeMount {
     /// <p>Default: <code>false</code>
     /// </p>
     pub add_group_owner: std::option::Option<bool>,
+}
+impl LambdaVolumeMount {
+    /// <p>The path to the physical volume in the file system.</p>
+    pub fn source_path(&self) -> std::option::Option<&str> {
+        self.source_path.as_deref()
+    }
+    /// <p>The path to the logical volume in the file system.</p>
+    pub fn destination_path(&self) -> std::option::Option<&str> {
+        self.destination_path.as_deref()
+    }
+    /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write
+    /// (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code>
+    /// </p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::LambdaFilesystemPermission> {
+        self.permission.as_ref()
+    }
+    /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn add_group_owner(&self) -> std::option::Option<bool> {
+        self.add_group_owner
+    }
 }
 impl std::fmt::Debug for LambdaVolumeMount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4719,6 +5435,30 @@ pub struct LambdaEventSource {
     /// </ul>
     pub r#type: std::option::Option<crate::model::LambdaEventSourceType>,
 }
+impl LambdaEventSource {
+    /// <p>The topic to which to subscribe to receive event messages.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The type of event source. Choose from the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
+    /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the
+    /// event source topic.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
+    /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
+    /// topic.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::LambdaEventSourceType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for LambdaEventSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaEventSource");
@@ -4883,6 +5623,31 @@ pub struct ComponentDependencyRequirement {
     /// </p>
     pub dependency_type: std::option::Option<crate::model::ComponentDependencyType>,
 }
+impl ComponentDependencyRequirement {
+    /// <p>The component version requirement for the component dependency.</p>
+    /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    pub fn version_requirement(&self) -> std::option::Option<&str> {
+        self.version_requirement.as_deref()
+    }
+    /// <p>The type of this dependency. Choose from the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SOFT</code> – The component doesn't restart if the dependency changes
+    /// state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>HARD</code> – The component restarts if the dependency changes
+    /// state.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: <code>HARD</code>
+    /// </p>
+    pub fn dependency_type(&self) -> std::option::Option<&crate::model::ComponentDependencyType> {
+        self.dependency_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ComponentDependencyRequirement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentDependencyRequirement");
@@ -5041,6 +5806,20 @@ pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry {
     /// <p>A message that provides additional information about the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
+    /// <p>The name of the IoT thing whose disassociate request failed.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The error code for the request.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A message that provides additional information about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateClientDeviceFromCoreDeviceErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateClientDeviceFromCoreDeviceErrorEntry");
@@ -5117,6 +5896,12 @@ pub struct DisassociateClientDeviceFromCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
     pub thing_name: std::option::Option<std::string::String>,
 }
+impl DisassociateClientDeviceFromCoreDeviceEntry {
+    /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateClientDeviceFromCoreDeviceEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateClientDeviceFromCoreDeviceEntry");
@@ -5170,6 +5955,20 @@ pub struct AssociateClientDeviceWithCoreDeviceErrorEntry {
     pub code: std::option::Option<std::string::String>,
     /// <p>A message that provides additional information about the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl AssociateClientDeviceWithCoreDeviceErrorEntry {
+    /// <p>The name of the IoT thing whose associate request failed.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The error code for the request.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A message that provides additional information about the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateClientDeviceWithCoreDeviceErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5246,6 +6045,12 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
 pub struct AssociateClientDeviceWithCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     pub thing_name: std::option::Option<std::string::String>,
+}
+impl AssociateClientDeviceWithCoreDeviceEntry {
+    /// <p>The name of the IoT thing that represents the client device to associate.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateClientDeviceWithCoreDeviceEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

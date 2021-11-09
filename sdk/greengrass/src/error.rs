@@ -8910,6 +8910,12 @@ pub struct InternalServerErrorException {
     /// A message containing information about the error.
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalServerErrorException {
+    /// Details about the error.
+    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.error_details.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerErrorException");
@@ -8997,6 +9003,12 @@ pub struct BadRequestException {
     pub error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     /// A message containing information about the error.
     pub message: std::option::Option<std::string::String>,
+}
+impl BadRequestException {
+    /// Details about the error.
+    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.error_details.as_deref()
+    }
 }
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

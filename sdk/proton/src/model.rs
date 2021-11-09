@@ -24,6 +24,48 @@ pub struct ServiceTemplateVersionSummary {
     /// <p>The time when the version of a service template was last modified.</p>
     pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ServiceTemplateVersionSummary {
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the latest major version that's associated with the version of a service template.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of a service template.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>The ID of the recommended minor version of the service template.</p>
+    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+        self.recommended_minor_version.as_deref()
+    }
+    /// <p>The service template minor version status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A service template minor version status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A description of the version of a service template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the version of a service template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the version of a service template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceTemplateVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateVersionSummary");
@@ -304,6 +346,58 @@ pub struct ServiceTemplateVersion {
     /// <p>The schema of the version of a service template.</p>
     pub schema: std::option::Option<std::string::String>,
 }
+impl ServiceTemplateVersion {
+    /// <p>The name of the version of a service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the latest major version that's associated with the version of a service template.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of a service template.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>The ID of the recommended minor version of the service template.</p>
+    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+        self.recommended_minor_version.as_deref()
+    }
+    /// <p>The service template version status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A service template version status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A description of the version of a service template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the version of a service template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the version of a service template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>An array of compatible environment template names for the major version of a service template.</p>
+    pub fn compatible_environment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CompatibleEnvironmentTemplate]> {
+        self.compatible_environment_templates.as_deref()
+    }
+    /// <p>The schema of the version of a service template.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceTemplateVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateVersion");
@@ -537,6 +631,16 @@ pub struct CompatibleEnvironmentTemplate {
     /// <p>The major version of the compatible environment template.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
+impl CompatibleEnvironmentTemplate {
+    /// <p>The compatible environment template name.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The major version of the compatible environment template.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CompatibleEnvironmentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompatibleEnvironmentTemplate");
@@ -606,6 +710,16 @@ pub struct Tag {
     /// <p>The value of the resource tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the resource tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the resource tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -668,6 +782,16 @@ pub struct CompatibleEnvironmentTemplateInput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The major version of the compatible environment template.</p>
     pub major_version: std::option::Option<std::string::String>,
+}
+impl CompatibleEnvironmentTemplateInput {
+    /// <p>The compatible environment template name.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The major version of the compatible environment template.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CompatibleEnvironmentTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -735,6 +859,15 @@ impl CompatibleEnvironmentTemplateInput {
 pub enum TemplateVersionSourceInput {
     /// <p>An S3 source object that includes the template bundle S3 path and name for a template minor version.</p>
     S3(crate::model::S3ObjectSource),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl TemplateVersionSourceInput {
     #[allow(irrefutable_let_patterns)]
@@ -751,6 +884,10 @@ impl TemplateVersionSourceInput {
     pub fn is_s3(&self) -> bool {
         self.as_s3().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Template bundle S3 bucket data.</p>
@@ -761,6 +898,16 @@ pub struct S3ObjectSource {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl S3ObjectSource {
+    /// <p>The name of the S3 bucket that contains a template bundle.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The path to the S3 bucket that contains a template bundle.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ObjectSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -837,6 +984,41 @@ pub struct ServiceTemplateSummary {
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service
     /// pipeline <i>isn't</i> included in the service template.</p>
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
+}
+impl ServiceTemplateSummary {
+    /// <p>The name of the service template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the service template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the service template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The service template name as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the service template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the recommended version of the service template.</p>
+    pub fn recommended_version(&self) -> std::option::Option<&str> {
+        self.recommended_version.as_deref()
+    }
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service
+    /// pipeline <i>isn't</i> included in the service template.</p>
+    pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.pipeline_provisioning.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1059,6 +1241,45 @@ pub struct ServiceTemplate {
     /// pipeline <i>isn't</i> included in the service template.</p>
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
 }
+impl ServiceTemplate {
+    /// <p>The name of the service template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the service template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the service template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The service template name as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the service template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the recommended version of the service template.</p>
+    pub fn recommended_version(&self) -> std::option::Option<&str> {
+        self.recommended_version.as_deref()
+    }
+    /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service
+    /// pipeline <i>isn't</i> included in the service template.</p>
+    pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.pipeline_provisioning.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplate");
@@ -1241,6 +1462,40 @@ pub struct ServiceSummary {
     pub status: std::option::Option<crate::model::ServiceStatus>,
     /// <p>A service status message.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl ServiceSummary {
+    /// <p>The name of the service.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the service.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The time when the service was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the service was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The status of the service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A service status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,6 +1795,62 @@ pub struct Service {
     /// <p>The name of the code repository branch that holds the code that's deployed in AWS Proton.</p>
     pub branch_name: std::option::Option<std::string::String>,
 }
+impl Service {
+    /// <p>The name of the service.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of a service.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The time when the service was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the service was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The status of the service.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A service status message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The formatted specification that defines the service.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>The service pipeline detail data.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::ServicePipeline> {
+        self.pipeline.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the
+    /// <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with AWS Proton</a> in the <i>AWS Proton
+    /// User Guide</i>.</p>
+    pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
+        self.repository_connection_arn.as_deref()
+    }
+    /// <p>The ID of the code repository.</p>
+    pub fn repository_id(&self) -> std::option::Option<&str> {
+        self.repository_id.as_deref()
+    }
+    /// <p>The name of the code repository branch that holds the code that's deployed in AWS Proton.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
@@ -1789,6 +2100,48 @@ pub struct ServicePipeline {
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub spec: std::option::Option<std::string::String>,
+}
+impl ServicePipeline {
+    /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the service pipeline was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when a deployment of the service pipeline was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the service pipeline was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The name of the service template that was used to create the service pipeline.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of the service template that was used to create the service pipeline.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the service template that was used to create the service pipeline.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>The deployment status of the service pipeline.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>A service pipeline deployment status message.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+    /// <p>The service spec that was used to create the service pipeline.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
 }
 impl std::fmt::Debug for ServicePipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2161,6 +2514,56 @@ pub struct ServiceInstanceSummary {
     /// <p>A service instance deployment status message.</p>
     pub deployment_status_message: std::option::Option<std::string::String>,
 }
+impl ServiceInstanceSummary {
+    /// <p>The name of the service instance.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the service instance was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when a deployment of the service was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the service was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the environment that the service instance was deployed into.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the service template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of a service template.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of a service template.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>The service instance deployment status.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>A service instance deployment status message.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceInstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceInstanceSummary");
@@ -2411,6 +2814,60 @@ pub struct ServiceInstance {
     pub deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The service spec that was used to create the service instance.</p>
     pub spec: std::option::Option<std::string::String>,
+}
+impl ServiceInstance {
+    /// <p>The name of the service instance.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the service instance was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when a deployment of the service instance was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the service instance was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>The name of the environment that the service instance was deployed into.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The name of the service template that was used to create the service instance.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of the service template that was used to create the service instance.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the service template that was used to create the service instance.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>The service instance deployment status.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>A service instance deployment status message.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+    /// <p>The service spec that was used to create the service instance.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2670,6 +3127,48 @@ pub struct EnvironmentTemplateVersionSummary {
     /// <p>The time when the version of an environment template was last modified.</p>
     pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EnvironmentTemplateVersionSummary {
+    /// <p>The name of the version of an environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the latest major version that's associated with the version of an environment template.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>The ID of the version of an environment template.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>The ID of the recommended minor version of the environment template.</p>
+    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+        self.recommended_minor_version.as_deref()
+    }
+    /// <p>The status of the version of an environment template.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message of the version of an environment template.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A description of the version of an environment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the version of an environment template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the version of an environment template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+}
 impl std::fmt::Debug for EnvironmentTemplateVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateVersionSummary");
@@ -2878,6 +3377,52 @@ pub struct EnvironmentTemplateVersion {
     pub last_modified_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The schema of the version of an environment template.</p>
     pub schema: std::option::Option<std::string::String>,
+}
+impl EnvironmentTemplateVersion {
+    /// <p>The name of the version of an environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the latest major version that's associated with the version of an environment template.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of an environment template.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>The ID of the recommended minor version of the environment template.</p>
+    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+        self.recommended_minor_version.as_deref()
+    }
+    /// <p>The status of the version of an environment template.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TemplateVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message of the version of an environment template.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A description of the minor version of an environment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the version of an environment template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the version of an environment template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The schema of the version of an environment template.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
 }
 impl std::fmt::Debug for EnvironmentTemplateVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3095,6 +3640,40 @@ pub struct EnvironmentTemplateSummary {
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
 }
+impl EnvironmentTemplateSummary {
+    /// <p>The name of the environment template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the environment template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the environment template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The name of the environment template as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the environment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the recommended version of the environment template.</p>
+    pub fn recommended_version(&self) -> std::option::Option<&str> {
+        self.recommended_version.as_deref()
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.provisioning.as_ref()
+    }
+}
 impl std::fmt::Debug for EnvironmentTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateSummary");
@@ -3261,6 +3840,44 @@ pub struct EnvironmentTemplate {
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
+}
+impl EnvironmentTemplate {
+    /// <p>The name of the environment template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time when the environment template was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when the environment template was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The name of the environment template as displayed in the developer interface.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>A description of the environment template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the recommended version of the environment template.</p>
+    pub fn recommended_version(&self) -> std::option::Option<&str> {
+        self.recommended_version.as_deref()
+    }
+    /// <p>The customer provided encryption key for the environment template.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
+        self.encryption_key.as_deref()
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.provisioning.as_ref()
+    }
 }
 impl std::fmt::Debug for EnvironmentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3457,6 +4074,69 @@ pub struct EnvironmentSummary {
     pub environment_account_id: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
+}
+impl EnvironmentSummary {
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time when the environment was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when a deployment of the environment was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the environment was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of the environment template.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the environment template.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>The environment deployment status.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>An environment deployment status message.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your
+    /// behalf.</p>
+    pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
+        self.proton_service_role_arn.as_deref()
+    }
+    /// <p>The ID of the environment account connection that the environment is associated with.</p>
+    pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
+        self.environment_account_connection_id.as_deref()
+    }
+    /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
+    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+        self.environment_account_id.as_deref()
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.provisioning.as_ref()
+    }
 }
 impl std::fmt::Debug for EnvironmentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3743,6 +4423,16 @@ pub struct EnvironmentTemplateFilter {
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
+impl EnvironmentTemplateFilter {
+    /// <p>Include <code>templateName</code> to filter search for a template name.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
+    pub fn major_version(&self) -> std::option::Option<&str> {
+        self.major_version.as_deref()
+    }
+}
 impl std::fmt::Debug for EnvironmentTemplateFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateFilter");
@@ -3840,6 +4530,73 @@ pub struct Environment {
     pub spec: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
+}
+impl Environment {
+    /// <p>The name of the environment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the environment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time when the environment was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when a deployment of the environment was last attempted.</p>
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_attempted_at.as_ref()
+    }
+    /// <p>The time when the environment was last deployed successfully.</p>
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deployment_succeeded_at.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The ID of the major version of the environment template.</p>
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
+        self.template_major_version.as_deref()
+    }
+    /// <p>The ID of the minor version of the environment template.</p>
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
+        self.template_minor_version.as_deref()
+    }
+    /// <p>The environment deployment status.</p>
+    pub fn deployment_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.deployment_status.as_ref()
+    }
+    /// <p>An environment deployment status message.</p>
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+        self.deployment_status_message.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton to make calls to other services on your
+    /// behalf.</p>
+    pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
+        self.proton_service_role_arn.as_deref()
+    }
+    /// <p>The ID of the environment account connection that's used to provision infrastructure resources in an environment account.</p>
+    pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
+        self.environment_account_connection_id.as_deref()
+    }
+    /// <p>The ID of the environment account that the environment infrastructure resources are provisioned in.</p>
+    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+        self.environment_account_id.as_deref()
+    }
+    /// <p>The environment spec.</p>
+    pub fn spec(&self) -> std::option::Option<&str> {
+        self.spec.as_deref()
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
+        self.provisioning.as_ref()
+    }
 }
 impl std::fmt::Debug for Environment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4153,6 +4910,44 @@ pub struct EnvironmentAccountConnection {
     /// <p>The status of the environment account connection.</p>
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
 }
+impl EnvironmentAccountConnection {
+    /// <p>The ID of the environment account connection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the management account that's connected to the environment account connection.</p>
+    pub fn management_account_id(&self) -> std::option::Option<&str> {
+        self.management_account_id.as_deref()
+    }
+    /// <p>The environment account that's connected to the environment account connection.</p>
+    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+        self.environment_account_id.as_deref()
+    }
+    /// <p>The IAM service role that's associated with the environment account connection.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the environment that's associated with the environment account connection.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The time when the environment account connection request was made.</p>
+    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_at.as_ref()
+    }
+    /// <p>The time when the environment account connection was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The status of the environment account connection.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentAccountConnectionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for EnvironmentAccountConnection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentAccountConnection");
@@ -4398,6 +5193,44 @@ pub struct EnvironmentAccountConnectionSummary {
     /// <p>The status of the environment account connection.</p>
     pub status: std::option::Option<crate::model::EnvironmentAccountConnectionStatus>,
 }
+impl EnvironmentAccountConnectionSummary {
+    /// <p>The ID of the environment account connection.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the management account that's connected to the environment account connection.</p>
+    pub fn management_account_id(&self) -> std::option::Option<&str> {
+        self.management_account_id.as_deref()
+    }
+    /// <p>The ID of the environment account that's connected to the environment account connection.</p>
+    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+        self.environment_account_id.as_deref()
+    }
+    /// <p>The IAM service role that's associated with the environment account connection.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of the environment that's associated with the environment account connection.</p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p>The time when the environment account connection request was made.</p>
+    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_at.as_ref()
+    }
+    /// <p>The time when the environment account connection was last modified.</p>
+    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_at.as_ref()
+    }
+    /// <p>The status of the environment account connection.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentAccountConnectionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for EnvironmentAccountConnectionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentAccountConnectionSummary");
@@ -4630,6 +5463,12 @@ impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
 pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the AWS Proton pipeline service role.</p>
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
+}
+impl AccountSettings {
+    /// <p>The Amazon Resource Name (ARN) of the AWS Proton pipeline service role.</p>
+    pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_service_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AccountSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

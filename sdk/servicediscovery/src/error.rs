@@ -3151,6 +3151,12 @@ pub struct DuplicateRequest {
     /// <p>The ID of the operation that's already in progress.</p>
     pub duplicate_operation_id: std::option::Option<std::string::String>,
 }
+impl DuplicateRequest {
+    /// <p>The ID of the operation that's already in progress.</p>
+    pub fn duplicate_operation_id(&self) -> std::option::Option<&str> {
+        self.duplicate_operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DuplicateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DuplicateRequest");
@@ -3557,6 +3563,12 @@ pub struct TooManyTagsException {
     /// <p>The name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl TooManyTagsException {
+    /// <p>The name of the resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyTagsException");
@@ -3835,6 +3847,16 @@ pub struct ServiceAlreadyExists {
     /// <p>The ID of the existing service.</p>
     pub service_id: std::option::Option<std::string::String>,
 }
+impl ServiceAlreadyExists {
+    /// <p>The <code>CreatorRequestId</code> that was used to create the service.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The ID of the existing service.</p>
+    pub fn service_id(&self) -> std::option::Option<&str> {
+        self.service_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceAlreadyExists");
@@ -3931,6 +3953,16 @@ pub struct NamespaceAlreadyExists {
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The ID of the existing namespace.</p>
     pub namespace_id: std::option::Option<std::string::String>,
+}
+impl NamespaceAlreadyExists {
+    /// <p>The <code>CreatorRequestId</code> that was used to create the namespace.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The ID of the existing namespace.</p>
+    pub fn namespace_id(&self) -> std::option::Option<&str> {
+        self.namespace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for NamespaceAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

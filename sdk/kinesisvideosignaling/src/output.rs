@@ -6,6 +6,12 @@ pub struct SendAlexaOfferToMasterOutput {
     /// <p>The base64-encoded SDP answer content.</p>
     pub answer: std::option::Option<std::string::String>,
 }
+impl SendAlexaOfferToMasterOutput {
+    /// <p>The base64-encoded SDP answer content.</p>
+    pub fn answer(&self) -> std::option::Option<&str> {
+        self.answer.as_deref()
+    }
+}
 impl std::fmt::Debug for SendAlexaOfferToMasterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendAlexaOfferToMasterOutput");
@@ -53,6 +59,12 @@ impl SendAlexaOfferToMasterOutput {
 pub struct GetIceServerConfigOutput {
     /// <p>The list of ICE server information objects.</p>
     pub ice_server_list: std::option::Option<std::vec::Vec<crate::model::IceServer>>,
+}
+impl GetIceServerConfigOutput {
+    /// <p>The list of ICE server information objects.</p>
+    pub fn ice_server_list(&self) -> std::option::Option<&[crate::model::IceServer]> {
+        self.ice_server_list.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIceServerConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

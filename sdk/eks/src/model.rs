@@ -16,6 +16,32 @@ pub struct Update {
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
 }
+impl Update {
+    /// <p>A UUID that is used to track the update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The current status of the update.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::UpdateStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The type of the update.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UpdateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A key-value map that contains the parameters associated with the update.</p>
+    pub fn params(&self) -> std::option::Option<&[crate::model::UpdateParam]> {
+        self.params.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Any errors associated with a <code>Failed</code> update.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+        self.errors.as_deref()
+    }
+}
 impl std::fmt::Debug for Update {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Update");
@@ -194,6 +220,58 @@ pub struct ErrorDetail {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ErrorDetail {
+    /// <p>A brief description of the error. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>SubnetNotFound</b>: We couldn't find one of the
+    /// subnets associated with the cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>SecurityGroupNotFound</b>: We couldn't find one
+    /// of the security groups associated with the cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EniLimitReached</b>: You have reached the elastic
+    /// network interface limit for your account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>IpNotAvailable</b>: A subnet associated with the
+    /// cluster doesn't have any free IP addresses.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AccessDenied</b>: You don't have permissions to
+    /// perform the specified operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>OperationNotPermitted</b>: The service role
+    /// associated with the cluster doesn't have the required access permissions for
+    /// Amazon EKS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>VpcIdNotFound</b>: We couldn't find the VPC
+    /// associated with the cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A more complete description of the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>An optional field that contains the resource IDs associated with the error.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -494,6 +572,16 @@ pub struct UpdateParam {
     pub r#type: std::option::Option<crate::model::UpdateParamType>,
     /// <p>The value of the keys submitted as part of an update request.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl UpdateParam {
+    /// <p>The keys associated with an update request.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::UpdateParamType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The value of the keys submitted as part of an update request.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateParam {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -894,6 +982,21 @@ pub struct LaunchTemplateSpecification {
     /// <p>The ID of the launch template.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl LaunchTemplateSpecification {
+    /// <p>The name of the launch template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the launch template to use. If no version is specified, then the
+    /// template's default version is used.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The ID of the launch template.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for LaunchTemplateSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchTemplateSpecification");
@@ -975,6 +1078,19 @@ pub struct NodegroupUpdateConfig {
     /// updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub max_unavailable_percentage: std::option::Option<i32>,
 }
+impl NodegroupUpdateConfig {
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel.
+    /// This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number
+    /// is 100.</p>
+    pub fn max_unavailable(&self) -> std::option::Option<i32> {
+        self.max_unavailable
+    }
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+    /// updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    pub fn max_unavailable_percentage(&self) -> std::option::Option<i32> {
+        self.max_unavailable_percentage
+    }
+}
 impl std::fmt::Debug for NodegroupUpdateConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodegroupUpdateConfig");
@@ -1053,6 +1169,22 @@ pub struct NodegroupScalingConfig {
     pub max_size: std::option::Option<i32>,
     /// <p>The current number of nodes that the managed node group should maintain.</p>
     pub desired_size: std::option::Option<i32>,
+}
+impl NodegroupScalingConfig {
+    /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
+    pub fn min_size(&self) -> std::option::Option<i32> {
+        self.min_size
+    }
+    /// <p>The maximum number of nodes that the managed node group can scale out to. For
+    /// information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service
+    /// quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn max_size(&self) -> std::option::Option<i32> {
+        self.max_size
+    }
+    /// <p>The current number of nodes that the managed node group should maintain.</p>
+    pub fn desired_size(&self) -> std::option::Option<i32> {
+        self.desired_size
+    }
 }
 impl std::fmt::Debug for NodegroupScalingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1133,6 +1265,16 @@ pub struct UpdateTaintsPayload {
     pub add_or_update_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
     /// <p>Kubernetes taints to be removed.</p>
     pub remove_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
+}
+impl UpdateTaintsPayload {
+    /// <p>Kubernetes taints to be added or updated.</p>
+    pub fn add_or_update_taints(&self) -> std::option::Option<&[crate::model::Taint]> {
+        self.add_or_update_taints.as_deref()
+    }
+    /// <p>Kubernetes taints to be removed.</p>
+    pub fn remove_taints(&self) -> std::option::Option<&[crate::model::Taint]> {
+        self.remove_taints.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTaintsPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1216,6 +1358,20 @@ pub struct Taint {
     pub value: std::option::Option<std::string::String>,
     /// <p>The effect of the taint.</p>
     pub effect: std::option::Option<crate::model::TaintEffect>,
+}
+impl Taint {
+    /// <p>The key of the taint.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the taint.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The effect of the taint.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::TaintEffect> {
+        self.effect.as_ref()
+    }
 }
 impl std::fmt::Debug for Taint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1353,6 +1509,19 @@ pub struct UpdateLabelsPayload {
     /// <p>Kubernetes labels to be removed.</p>
     pub remove_labels: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateLabelsPayload {
+    /// <p>Kubernetes labels to be added or updated.</p>
+    pub fn add_or_update_labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.add_or_update_labels.as_ref()
+    }
+    /// <p>Kubernetes labels to be removed.</p>
+    pub fn remove_labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.remove_labels.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateLabelsPayload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLabelsPayload");
@@ -1440,6 +1609,12 @@ pub struct Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     pub cluster_logging: std::option::Option<std::vec::Vec<crate::model::LogSetup>>,
 }
+impl Logging {
+    /// <p>The cluster control plane logging configuration for your cluster.</p>
+    pub fn cluster_logging(&self) -> std::option::Option<&[crate::model::LogSetup]> {
+        self.cluster_logging.as_deref()
+    }
+}
 impl std::fmt::Debug for Logging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Logging");
@@ -1501,6 +1676,18 @@ pub struct LogSetup {
     /// log type isn't enabled, that log type doesn't export its control plane logs. Each
     /// individual log type can be enabled or disabled independently.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl LogSetup {
+    /// <p>The available cluster control plane log types.</p>
+    pub fn types(&self) -> std::option::Option<&[crate::model::LogType]> {
+        self.types.as_deref()
+    }
+    /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a
+    /// log type isn't enabled, that log type doesn't export its control plane logs. Each
+    /// individual log type can be enabled or disabled independently.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for LogSetup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1696,6 +1883,68 @@ pub struct VpcConfigRequest {
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfigRequest {
+    /// <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network
+    /// interfaces in these subnets to allow communication between your nodes and the Kubernetes
+    /// control plane.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>Specify one or more security groups for the cross-account elastic network interfaces
+    /// that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes
+    /// control plane. If you don't specify any security groups, then familiarize yourself with
+    /// the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p>
+    /// </li>
+    /// <li>
+    /// <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+    /// considerations</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>Set this value to <code>false</code> to disable public access to your cluster's
+    /// Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes
+    /// API server can only receive requests from within the cluster VPC. The default value for
+    /// this parameter is <code>true</code>, which enables public access for your Kubernetes API
+    /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn endpoint_public_access(&self) -> std::option::Option<bool> {
+        self.endpoint_public_access
+    }
+    /// <p>Set this value to <code>true</code> to enable private access for your cluster's
+    /// Kubernetes API server endpoint. If you enable private access, Kubernetes API requests
+    /// from within your cluster's VPC use the private VPC endpoint. The default value for this
+    /// parameter is <code>false</code>, which disables private access for your Kubernetes API
+    /// server. If you disable private access and you have nodes or Fargate pods in the
+    /// cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR
+    /// blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn endpoint_private_access(&self) -> std::option::Option<bool> {
+        self.endpoint_private_access
+    }
+    /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+    /// endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that
+    /// you specify is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled
+    /// private endpoint access and you have nodes or Fargate pods in the cluster, then ensure
+    /// that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn public_access_cidrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.public_access_cidrs.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfigRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2003,6 +2252,92 @@ pub struct Cluster {
     pub encryption_config: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
     /// <p>The configuration used to connect to a cluster for registration.</p>
     pub connector_config: std::option::Option<crate::model::ConnectorConfigResponse>,
+}
+impl Cluster {
+    /// <p>The name of the cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Kubernetes server version for the cluster.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The endpoint for your Kubernetes API server.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
+    /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+    /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
+    /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
+    /// <i>Amazon EKS User Guide</i>.</p>
+    pub fn resources_vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+        self.resources_vpc_config.as_ref()
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn kubernetes_network_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KubernetesNetworkConfigResponse> {
+        self.kubernetes_network_config.as_ref()
+    }
+    /// <p>The logging configuration for your cluster.</p>
+    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+        self.logging.as_ref()
+    }
+    /// <p>The identity provider information for the cluster.</p>
+    pub fn identity(&self) -> std::option::Option<&crate::model::Identity> {
+        self.identity.as_ref()
+    }
+    /// <p>The current status of the cluster.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClusterStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
+    pub fn certificate_authority(&self) -> std::option::Option<&crate::model::Certificate> {
+        self.certificate_authority.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+    /// Versions</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The metadata that you apply to the cluster to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Cluster tags do not propagate to any other resources associated with the
+    /// cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The encryption configuration for the cluster.</p>
+    pub fn encryption_config(&self) -> std::option::Option<&[crate::model::EncryptionConfig]> {
+        self.encryption_config.as_deref()
+    }
+    /// <p>The configuration used to connect to a cluster for registration.</p>
+    pub fn connector_config(&self) -> std::option::Option<&crate::model::ConnectorConfigResponse> {
+        self.connector_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2349,6 +2684,29 @@ pub struct ConnectorConfigResponse {
     /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl ConnectorConfigResponse {
+    /// <p>A unique ID associated with the cluster for registration purposes.</p>
+    pub fn activation_id(&self) -> std::option::Option<&str> {
+        self.activation_id.as_deref()
+    }
+    /// <p>A unique code associated with the cluster for registration purposes.</p>
+    pub fn activation_code(&self) -> std::option::Option<&str> {
+        self.activation_code.as_deref()
+    }
+    /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
+    /// provider.</p>
+    pub fn activation_expiry(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.activation_expiry.as_ref()
+    }
+    /// <p>The cluster's cloud service provider.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectorConfigResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorConfigResponse");
@@ -2462,6 +2820,16 @@ pub struct EncryptionConfig {
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub provider: std::option::Option<crate::model::Provider>,
 }
+impl EncryptionConfig {
+    /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+    /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::Provider> {
+        self.provider.as_ref()
+    }
+}
 impl std::fmt::Debug for EncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionConfig");
@@ -2536,6 +2904,16 @@ pub struct Provider {
     /// Developer Guide</i>.</p>
     pub key_arn: std::option::Option<std::string::String>,
 }
+impl Provider {
+    /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+    /// region as the cluster, and if the KMS key was created in a different account, the user
+    /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
+    /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
+    /// Developer Guide</i>.</p>
+    pub fn key_arn(&self) -> std::option::Option<&str> {
+        self.key_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Provider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Provider");
@@ -2594,6 +2972,14 @@ pub struct Certificate {
     /// this to the <code>certificate-authority-data</code> section of the
     /// <code>kubeconfig</code> file for your cluster.</p>
     pub data: std::option::Option<std::string::String>,
+}
+impl Certificate {
+    /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add
+    /// this to the <code>certificate-authority-data</code> section of the
+    /// <code>kubeconfig</code> file for your cluster.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
 }
 impl std::fmt::Debug for Certificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2719,6 +3105,13 @@ pub struct Identity {
     /// Connect</a> identity provider information.</p>
     pub oidc: std::option::Option<crate::model::Oidc>,
 }
+impl Identity {
+    /// <p>An object representing the <a href="https://openid.net/connect/">OpenID
+    /// Connect</a> identity provider information.</p>
+    pub fn oidc(&self) -> std::option::Option<&crate::model::Oidc> {
+        self.oidc.as_ref()
+    }
+}
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Identity");
@@ -2767,6 +3160,12 @@ impl Identity {
 pub struct Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
     pub issuer: std::option::Option<std::string::String>,
+}
+impl Oidc {
+    /// <p>The issuer URL for the OIDC identity provider.</p>
+    pub fn issuer(&self) -> std::option::Option<&str> {
+        self.issuer.as_deref()
+    }
 }
 impl std::fmt::Debug for Oidc {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2818,6 +3217,15 @@ pub struct KubernetesNetworkConfigResponse {
     /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
     /// it was specified when the cluster was created and it cannot be changed.</p>
     pub service_ipv4_cidr: std::option::Option<std::string::String>,
+}
+impl KubernetesNetworkConfigResponse {
+    /// <p>The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
+    /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
+    /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
+    /// it was specified when the cluster was created and it cannot be changed.</p>
+    pub fn service_ipv4_cidr(&self) -> std::option::Option<&str> {
+        self.service_ipv4_cidr.as_deref()
+    }
 }
 impl std::fmt::Debug for KubernetesNetworkConfigResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2907,6 +3315,56 @@ pub struct VpcConfigResponse {
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfigResponse {
+    /// <p>The subnets associated with your cluster.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups associated with the cross-account elastic network interfaces that
+    /// are used to allow communication between your nodes and the Kubernetes control
+    /// plane.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node
+    /// groups use this security group for control-plane-to-data-plane communication.</p>
+    pub fn cluster_security_group_id(&self) -> std::option::Option<&str> {
+        self.cluster_security_group_id.as_deref()
+    }
+    /// <p>The VPC associated with your cluster.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If
+    /// the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server
+    /// can only receive requests that originate from within the cluster VPC.</p>
+    pub fn endpoint_public_access(&self) -> bool {
+        self.endpoint_public_access
+    }
+    /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
+    /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
+    /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
+    /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
+    /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+    /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn endpoint_private_access(&self) -> bool {
+        self.endpoint_private_access
+    }
+    /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+    /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks
+    /// is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private
+    /// endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the
+    /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+    /// endpoint access control</a> in the <i>
+    /// <i>Amazon EKS User Guide</i>
+    /// </i>.</p>
+    pub fn public_access_cidrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.public_access_cidrs.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfigResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3106,6 +3564,16 @@ pub struct ConnectorConfigRequest {
     /// <p>The cloud provider for the target cluster to connect.</p>
     pub provider: std::option::Option<crate::model::ConnectorConfigProvider>,
 }
+impl ConnectorConfigRequest {
+    /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The cloud provider for the target cluster to connect.</p>
+    pub fn provider(&self) -> std::option::Option<&crate::model::ConnectorConfigProvider> {
+        self.provider.as_ref()
+    }
+}
 impl std::fmt::Debug for ConnectorConfigRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectorConfigRequest");
@@ -3265,6 +3733,16 @@ pub struct IdentityProviderConfig {
     /// <p>The name of the identity provider configuration.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl IdentityProviderConfig {
+    /// <p>The type of the identity provider configuration.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The name of the identity provider configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for IdentityProviderConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityProviderConfig");
@@ -3401,6 +3879,138 @@ pub struct Nodegroup {
     /// Amazon EC2 instances or subnets. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Nodegroup {
+    /// <p>The name associated with an Amazon EKS managed node group.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
+    pub fn nodegroup_arn(&self) -> std::option::Option<&str> {
+        self.nodegroup_arn.as_deref()
+    }
+    /// <p>The name of the cluster that the managed node group resides in.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Kubernetes version of the managed node group.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>If the node group was deployed using a launch template with a custom AMI, then this is
+    /// the AMI ID that was specified in the launch template. For node groups that weren't
+    /// deployed using a launch template, this is the version of the Amazon EKS optimized AMI that
+    /// the node group was deployed with.</p>
+    pub fn release_version(&self) -> std::option::Option<&str> {
+        self.release_version.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the managed node group was
+    /// created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
+    /// modified.</p>
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_at.as_ref()
+    }
+    /// <p>The current status of the managed node group.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NodegroupStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The capacity type of your managed node group.</p>
+    pub fn capacity_type(&self) -> std::option::Option<&crate::model::CapacityTypes> {
+        self.capacity_type.as_ref()
+    }
+    /// <p>The scaling configuration details for the Auto Scaling group that is associated with
+    /// your node group.</p>
+    pub fn scaling_config(&self) -> std::option::Option<&crate::model::NodegroupScalingConfig> {
+        self.scaling_config.as_ref()
+    }
+    /// <p>If the node group wasn't deployed with a launch template, then this is the instance
+    /// type that is associated with the node group. If the node group was deployed with a
+    /// launch template, then this is <code>null</code>.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The subnets that were specified for the Auto Scaling group that is associated with
+    /// your node group.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>If the node group wasn't deployed with a launch template, then this is the remote
+    /// access configuration that is associated with the node group. If the node group was
+    /// deployed with a launch template, then this is <code>null</code>.</p>
+    pub fn remote_access(&self) -> std::option::Option<&crate::model::RemoteAccessConfig> {
+        self.remote_access.as_ref()
+    }
+    /// <p>If the node group was deployed using a launch template with a custom AMI, then this is
+    /// <code>CUSTOM</code>. For node groups that weren't deployed using a launch template,
+    /// this is the AMI type that was specified in the node group configuration.</p>
+    pub fn ami_type(&self) -> std::option::Option<&crate::model::AmiTypes> {
+        self.ami_type.as_ref()
+    }
+    /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
+    /// daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API
+    /// calls through an IAM instance profile and associated policies.</p>
+    pub fn node_role(&self) -> std::option::Option<&str> {
+        self.node_role.as_deref()
+    }
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p>
+    /// <note>
+    /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other
+    /// Kubernetes labels applied to the nodes in this group.</p>
+    /// </note>
+    pub fn labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.labels.as_ref()
+    }
+    /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are
+    /// created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+    /// can be used together with tolerations to control how workloads are scheduled to your
+    /// nodes.</p>
+    pub fn taints(&self) -> std::option::Option<&[crate::model::Taint]> {
+        self.taints.as_deref()
+    }
+    /// <p>The resources associated with the node group, such as Auto Scaling groups and security
+    /// groups for remote access.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::NodegroupResources> {
+        self.resources.as_ref()
+    }
+    /// <p>If the node group wasn't deployed with a launch template, then this is the disk size
+    /// in the node group configuration. If the node group was deployed with a launch template,
+    /// then this is <code>null</code>.</p>
+    pub fn disk_size(&self) -> std::option::Option<i32> {
+        self.disk_size
+    }
+    /// <p>The health status of the node group. If there are issues with your node group's
+    /// health, they are listed here.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::NodegroupHealth> {
+        self.health.as_ref()
+    }
+    /// <p>The node group update configuration.</p>
+    pub fn update_config(&self) -> std::option::Option<&crate::model::NodegroupUpdateConfig> {
+        self.update_config.as_ref()
+    }
+    /// <p>If a launch template was used to create the node group, then this is the launch
+    /// template that was used.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
+        self.launch_template.as_ref()
+    }
+    /// <p>The metadata applied to the node group to assist with categorization and organization.
+    /// Each tag consists of a key and an optional value, both of which you define. Node group
+    /// tags do not propagate to any other resources associated with the node group, such as the
+    /// Amazon EC2 instances or subnets. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Nodegroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3896,6 +4506,12 @@ pub struct NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
     pub issues: std::option::Option<std::vec::Vec<crate::model::Issue>>,
 }
+impl NodegroupHealth {
+    /// <p>Any issues that are associated with the node group. </p>
+    pub fn issues(&self) -> std::option::Option<&[crate::model::Issue]> {
+        self.issues.as_deref()
+    }
+}
 impl std::fmt::Debug for NodegroupHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodegroupHealth");
@@ -4053,6 +4669,117 @@ pub struct Issue {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Issue {
+    /// <p>A brief description of the error.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>AccessDenied</b>: Amazon EKS or one or more of your
+    /// managed nodes is failing to authenticate or authorize with your Kubernetes
+    /// cluster API server.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is
+    /// experiencing failures while attempting to launch instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>AutoScalingGroupNotFound</b>: We couldn't find
+    /// the Auto Scaling group associated with the managed node group. You may be able to
+    /// recreate an Auto Scaling group with the same settings to recover.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ClusterUnreachable</b>: Amazon EKS or one or more of
+    /// your managed nodes is unable to to communicate with your Kubernetes cluster API
+    /// server. This can happen if there are network disruptions or if API servers are
+    /// timing out processing requests. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Ec2LaunchTemplateNotFound</b>: We couldn't find
+    /// the Amazon EC2 launch template for your managed node group. You may be able to
+    /// recreate a launch template with the same settings to recover.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2
+    /// launch template version for your managed node group does not match the version
+    /// that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+    /// to recover.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Ec2SecurityGroupDeletionFailure</b>: We could not
+    /// delete the remote access security group for your managed node group. Remove any
+    /// dependencies from the security group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Ec2SecurityGroupNotFound</b>: We couldn't find
+    /// the cluster security group for the cluster. You must recreate your
+    /// cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Ec2SubnetInvalidConfiguration</b>: One or more
+    /// Amazon EC2 subnets specified for a node group do not automatically assign public IP
+    /// addresses to instances launched into it. If you want your instances to be
+    /// assigned a public IP address, then you need to enable the <code>auto-assign
+    /// public IP address</code> setting for the subnet. See <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+    /// the public IPv4 addressing attribute for your subnet</a> in the Amazon
+    /// VPC User Guide.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>IamInstanceProfileNotFound</b>: We couldn't find
+    /// the IAM instance profile for your managed node group. You may be able to
+    /// recreate an instance profile with the same settings to recover.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>IamNodeRoleNotFound</b>: We couldn't find the
+    /// IAM role for your managed node group. You may be able to recreate an IAM role
+    /// with the same settings to recover.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is
+    /// unable to launch any more instances of the specified instance type. You may be
+    /// able to request an Amazon EC2 instance limit increase to recover.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>InsufficientFreeAddresses</b>: One or more of the
+    /// subnets associated with your managed node group does not have enough available
+    /// IP addresses for new nodes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>InternalFailure</b>: These errors are usually
+    /// caused by an Amazon EKS server-side issue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>NodeCreationFailure</b>: Your launched instances
+    /// are unable to register with your Amazon EKS cluster. Common causes of this failure
+    /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+    /// permissions or lack of outbound internet access for the nodes. </p>
+    /// </li>
+    /// </ul>
+    pub fn code(&self) -> std::option::Option<&crate::model::NodegroupIssueCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message associated with the issue.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for Issue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4488,6 +5215,17 @@ pub struct NodegroupResources {
     /// controls SSH access to the nodes.</p>
     pub remote_access_security_group: std::option::Option<std::string::String>,
 }
+impl NodegroupResources {
+    /// <p>The Auto Scaling groups associated with the node group.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>The remote access security group associated with the node group. This security group
+    /// controls SSH access to the nodes.</p>
+    pub fn remote_access_security_group(&self) -> std::option::Option<&str> {
+        self.remote_access_security_group.as_deref()
+    }
+}
 impl std::fmt::Debug for NodegroupResources {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodegroupResources");
@@ -4572,6 +5310,12 @@ impl NodegroupResources {
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl AutoScalingGroup {
+    /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for AutoScalingGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4705,6 +5449,22 @@ pub struct RemoteAccessConfig {
     /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub source_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl RemoteAccessConfig {
+    /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the
+    /// managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key
+    /// pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
+    pub fn ec2_ssh_key(&self) -> std::option::Option<&str> {
+        self.ec2_ssh_key.as_deref()
+    }
+    /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify
+    /// an Amazon EC2 SSH key but do not specify a source security group when you create a managed
+    /// node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more
+    /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+    pub fn source_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoteAccessConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4927,6 +5687,13 @@ pub struct IdentityProviderConfigResponse {
     /// configuration.</p>
     pub oidc: std::option::Option<crate::model::OidcIdentityProviderConfig>,
 }
+impl IdentityProviderConfigResponse {
+    /// <p>An object that represents an OpenID Connect (OIDC) identity provider
+    /// configuration.</p>
+    pub fn oidc(&self) -> std::option::Option<&crate::model::OidcIdentityProviderConfig> {
+        self.oidc.as_ref()
+    }
+}
 impl std::fmt::Debug for IdentityProviderConfigResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityProviderConfigResponse");
@@ -5013,6 +5780,73 @@ pub struct OidcIdentityProviderConfig {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the OIDC identity provider.</p>
     pub status: std::option::Option<crate::model::ConfigStatus>,
+}
+impl OidcIdentityProviderConfig {
+    /// <p>The name of the configuration.</p>
+    pub fn identity_provider_config_name(&self) -> std::option::Option<&str> {
+        self.identity_provider_config_name.as_deref()
+    }
+    /// <p>The ARN of the configuration.</p>
+    pub fn identity_provider_config_arn(&self) -> std::option::Option<&str> {
+        self.identity_provider_config_arn.as_deref()
+    }
+    /// <p>The cluster that the configuration is associated to.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The URL of the OIDC identity provider that allows the API server to discover public
+    /// signing keys for verifying tokens.</p>
+    pub fn issuer_url(&self) -> std::option::Option<&str> {
+        self.issuer_url.as_deref()
+    }
+    /// <p>This is also known as <i>audience</i>. The ID of the client application
+    /// that makes authentication requests to the OIDC identity provider.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
+    pub fn username_claim(&self) -> std::option::Option<&str> {
+        self.username_claim.as_deref()
+    }
+    /// <p>The prefix that is prepended to username claims to prevent clashes with existing
+    /// names. The prefix can't contain <code>system:</code>
+    /// </p>
+    pub fn username_prefix(&self) -> std::option::Option<&str> {
+        self.username_prefix.as_deref()
+    }
+    /// <p>The JSON web token (JWT) claim that the provider uses to return your groups.</p>
+    pub fn groups_claim(&self) -> std::option::Option<&str> {
+        self.groups_claim.as_deref()
+    }
+    /// <p>The prefix that is prepended to group claims to prevent clashes with existing names
+    /// (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates
+    /// group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix
+    /// can't contain <code>system:</code>
+    /// </p>
+    pub fn groups_prefix(&self) -> std::option::Option<&str> {
+        self.groups_prefix.as_deref()
+    }
+    /// <p>The key-value pairs that describe required claims in the identity token. If set, each
+    /// claim is verified to be present in the token with a matching value.</p>
+    pub fn required_claims(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.required_claims.as_ref()
+    }
+    /// <p>The metadata to apply to the provider configuration to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// defined.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The status of the OIDC identity provider.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConfigStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for OidcIdentityProviderConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5372,6 +6206,52 @@ pub struct FargateProfile {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl FargateProfile {
+    /// <p>The name of the Fargate profile.</p>
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+        self.fargate_profile_name.as_deref()
+    }
+    /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
+    pub fn fargate_profile_arn(&self) -> std::option::Option<&str> {
+        self.fargate_profile_arn.as_deref()
+    }
+    /// <p>The name of the Amazon EKS cluster that the Fargate profile belongs to.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
+    /// the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+    /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn pod_execution_role_arn(&self) -> std::option::Option<&str> {
+        self.pod_execution_role_arn.as_deref()
+    }
+    /// <p>The IDs of subnets to launch pods into.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The selectors to match for pods to use this Fargate profile.</p>
+    pub fn selectors(&self) -> std::option::Option<&[crate::model::FargateProfileSelector]> {
+        self.selectors.as_deref()
+    }
+    /// <p>The current status of the Fargate profile.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FargateProfileStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The metadata applied to the Fargate profile to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Fargate profile tags do not propagate to any other resources associated with the
+    /// Fargate profile, such as the pods that are scheduled with it.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for FargateProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FargateProfile");
@@ -5662,6 +6542,20 @@ pub struct FargateProfileSelector {
     pub labels:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl FargateProfileSelector {
+    /// <p>The Kubernetes namespace that the selector should match.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the
+    /// labels that are specified in the selector for it to be considered a match.</p>
+    pub fn labels(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.labels.as_ref()
+    }
+}
 impl std::fmt::Debug for FargateProfileSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FargateProfileSelector");
@@ -5746,6 +6640,21 @@ pub struct AddonInfo {
     /// <p>An object that represents information about available add-on versions and compatible
     /// Kubernetes versions.</p>
     pub addon_versions: std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
+}
+impl AddonInfo {
+    /// <p>The name of the add-on.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The type of the add-on.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>An object that represents information about available add-on versions and compatible
+    /// Kubernetes versions.</p>
+    pub fn addon_versions(&self) -> std::option::Option<&[crate::model::AddonVersionInfo]> {
+        self.addon_versions.as_deref()
+    }
 }
 impl std::fmt::Debug for AddonInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5836,6 +6745,20 @@ pub struct AddonVersionInfo {
     pub architecture: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An object that represents the compatibilities of a version.</p>
     pub compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+}
+impl AddonVersionInfo {
+    /// <p>The version of the add-on.</p>
+    pub fn addon_version(&self) -> std::option::Option<&str> {
+        self.addon_version.as_deref()
+    }
+    /// <p>The architectures that the version supports.</p>
+    pub fn architecture(&self) -> std::option::Option<&[std::string::String]> {
+        self.architecture.as_deref()
+    }
+    /// <p>An object that represents the compatibilities of a version.</p>
+    pub fn compatibilities(&self) -> std::option::Option<&[crate::model::Compatibility]> {
+        self.compatibilities.as_deref()
+    }
 }
 impl std::fmt::Debug for AddonVersionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5935,6 +6858,20 @@ pub struct Compatibility {
     pub platform_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The supported default version.</p>
     pub default_version: bool,
+}
+impl Compatibility {
+    /// <p>The supported Kubernetes version of the cluster.</p>
+    pub fn cluster_version(&self) -> std::option::Option<&str> {
+        self.cluster_version.as_deref()
+    }
+    /// <p>The supported compute platform.</p>
+    pub fn platform_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.platform_versions.as_deref()
+    }
+    /// <p>The supported default version.</p>
+    pub fn default_version(&self) -> bool {
+        self.default_version
+    }
 }
 impl std::fmt::Debug for Compatibility {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6044,6 +6981,55 @@ pub struct Addon {
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Addon {
+    /// <p>The name of the add-on.</p>
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The status of the add-on.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AddonStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The version of the add-on.</p>
+    pub fn addon_version(&self) -> std::option::Option<&str> {
+        self.addon_version.as_deref()
+    }
+    /// <p>An object that represents the health of the add-on.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::AddonHealth> {
+        self.health.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
+    pub fn addon_arn(&self) -> std::option::Option<&str> {
+        self.addon_arn.as_deref()
+    }
+    /// <p>The date and time that the add-on was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time that the add-on was last modified.</p>
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_at.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used
+    /// by the add-on.</p>
+    pub fn service_account_role_arn(&self) -> std::option::Option<&str> {
+        self.service_account_role_arn.as_deref()
+    }
+    /// <p>The metadata that you apply to the add-on to assist with categorization and
+    /// organization. Each tag consists of a key and an optional value, both of which you
+    /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Addon {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6247,6 +7233,12 @@ pub struct AddonHealth {
     /// <p>An object that represents the add-on's health issues.</p>
     pub issues: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
 }
+impl AddonHealth {
+    /// <p>An object that represents the add-on's health issues.</p>
+    pub fn issues(&self) -> std::option::Option<&[crate::model::AddonIssue]> {
+        self.issues.as_deref()
+    }
+}
 impl std::fmt::Debug for AddonHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddonHealth");
@@ -6307,6 +7299,20 @@ pub struct AddonIssue {
     pub message: std::option::Option<std::string::String>,
     /// <p>The resource IDs of the issue.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AddonIssue {
+    /// <p>A code that describes the type of issue.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::AddonIssueCode> {
+        self.code.as_ref()
+    }
+    /// <p>A message that provides details about the issue and what might cause it.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The resource IDs of the issue.</p>
+    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for AddonIssue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6586,6 +7592,33 @@ pub struct KubernetesNetworkConfigRequest {
     /// </important>
     pub service_ipv4_cidr: std::option::Option<std::string::String>,
 }
+impl KubernetesNetworkConfigRequest {
+    /// <p>The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a
+    /// block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR
+    /// blocks. We recommend that you specify a block that does not overlap with resources in
+    /// other networks that are peered or connected to your VPC. The block must meet the
+    /// following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Within one of the following private IP address blocks: 10.0.0.0/8,
+    /// 172.16.0.0.0/12, or 192.168.0.0/16.</p>
+    /// </li>
+    /// <li>
+    /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for
+    /// VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>Between /24 and /12.</p>
+    /// </li>
+    /// </ul>
+    /// <important>
+    /// <p>You can only specify a custom CIDR block when you create a cluster and can't
+    /// change this value once the cluster is created.</p>
+    /// </important>
+    pub fn service_ipv4_cidr(&self) -> std::option::Option<&str> {
+        self.service_ipv4_cidr.as_deref()
+    }
+}
 impl std::fmt::Debug for KubernetesNetworkConfigRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KubernetesNetworkConfigRequest");
@@ -6717,6 +7750,64 @@ pub struct OidcIdentityProviderConfigRequest {
     /// <i>Amazon EKS User Guide</i>.</p>
     pub required_claims:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl OidcIdentityProviderConfigRequest {
+    /// <p>The name of the OIDC provider configuration.</p>
+    pub fn identity_provider_config_name(&self) -> std::option::Option<&str> {
+        self.identity_provider_config_name.as_deref()
+    }
+    /// <p>The URL of the OpenID identity provider that allows the API server to discover public
+    /// signing keys for verifying tokens. The URL must begin with <code>https://</code> and
+    /// should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per
+    /// the OIDC standard, path components are allowed but query parameters are not. Typically
+    /// the URL consists of only a hostname, like <code>https://server.example.org</code> or
+    /// <code>https://example.com</code>. This URL should point to the level below
+    /// <code>.well-known/openid-configuration</code> and must be publicly accessible over
+    /// the internet.</p>
+    pub fn issuer_url(&self) -> std::option::Option<&str> {
+        self.issuer_url.as_deref()
+    }
+    /// <p>This is also known as <i>audience</i>. The ID for the client application
+    /// that makes authentication requests to the OpenID identity provider.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The JSON Web Token (JWT) claim to use as the username. The default is
+    /// <code>sub</code>, which is expected to be a unique identifier of the end user. You can
+    /// choose other claims, such as <code>email</code> or <code>name</code>, depending on the
+    /// OpenID identity provider. Claims other than <code>email</code> are prefixed with the
+    /// issuer URL to prevent naming clashes with other plug-ins.</p>
+    pub fn username_claim(&self) -> std::option::Option<&str> {
+        self.username_claim.as_deref()
+    }
+    /// <p>The prefix that is prepended to username claims to prevent clashes with existing
+    /// names. If you do not provide this field, and <code>username</code> is a value other than
+    /// <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the
+    /// value <code>-</code> to disable all prefixing.</p>
+    pub fn username_prefix(&self) -> std::option::Option<&str> {
+        self.username_prefix.as_deref()
+    }
+    /// <p>The JWT claim that the provider uses to return your groups.</p>
+    pub fn groups_claim(&self) -> std::option::Option<&str> {
+        self.groups_claim.as_deref()
+    }
+    /// <p>The prefix that is prepended to group claims to prevent clashes with existing names
+    /// (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will
+    /// create group names like <code>oidc:engineering</code> and
+    /// <code>oidc:infra</code>.</p>
+    pub fn groups_prefix(&self) -> std::option::Option<&str> {
+        self.groups_prefix.as_deref()
+    }
+    /// <p>The key value pairs that describe required claims in the identity token. If set, each
+    /// claim is verified to be present in the token with a matching value. For the maximum
+    /// number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+    /// <i>Amazon EKS User Guide</i>.</p>
+    pub fn required_claims(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.required_claims.as_ref()
+    }
 }
 impl std::fmt::Debug for OidcIdentityProviderConfigRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

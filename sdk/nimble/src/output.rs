@@ -6,6 +6,12 @@ pub struct StartStudioSsoConfigurationRepairOutput {
     /// <p>Information about a studio.</p>
     pub studio: std::option::Option<crate::model::Studio>,
 }
+impl StartStudioSsoConfigurationRepairOutput {
+    /// <p>Information about a studio.</p>
+    pub fn studio(&self) -> std::option::Option<&crate::model::Studio> {
+        self.studio.as_ref()
+    }
+}
 impl std::fmt::Debug for StartStudioSsoConfigurationRepairOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartStudioSsoConfigurationRepairOutput");
@@ -86,6 +92,16 @@ pub struct ListStudioMembersOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListStudioMembersOutput {
+    /// <p>A list of members.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::StudioMembership]> {
+        self.members.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStudioMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStudioMembersOutput");
@@ -155,6 +171,12 @@ impl ListStudioMembersOutput {
 pub struct GetStudioMemberOutput {
     /// <p>The member.</p>
     pub member: std::option::Option<crate::model::StudioMembership>,
+}
+impl GetStudioMemberOutput {
+    /// <p>The member.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::StudioMembership> {
+        self.member.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStudioMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -239,6 +261,16 @@ pub struct ListStudiosOutput {
     /// <p>A collection of studios.</p>
     pub studios: std::option::Option<std::vec::Vec<crate::model::Studio>>,
 }
+impl ListStudiosOutput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A collection of studios.</p>
+    pub fn studios(&self) -> std::option::Option<&[crate::model::Studio]> {
+        self.studios.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStudiosOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStudiosOutput");
@@ -309,6 +341,12 @@ pub struct CreateStudioOutput {
     /// <p>Information about a studio.</p>
     pub studio: std::option::Option<crate::model::Studio>,
 }
+impl CreateStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub fn studio(&self) -> std::option::Option<&crate::model::Studio> {
+        self.studio.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioOutput");
@@ -356,6 +394,12 @@ impl CreateStudioOutput {
 pub struct DeleteStudioOutput {
     /// <p>Information about a studio.</p>
     pub studio: std::option::Option<crate::model::Studio>,
+}
+impl DeleteStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub fn studio(&self) -> std::option::Option<&crate::model::Studio> {
+        self.studio.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -405,6 +449,12 @@ pub struct UpdateStudioOutput {
     /// <p>Information about a studio.</p>
     pub studio: std::option::Option<crate::model::Studio>,
 }
+impl UpdateStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub fn studio(&self) -> std::option::Option<&crate::model::Studio> {
+        self.studio.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioOutput");
@@ -452,6 +502,12 @@ impl UpdateStudioOutput {
 pub struct GetStudioOutput {
     /// <p>Information about a studio.</p>
     pub studio: std::option::Option<crate::model::Studio>,
+}
+impl GetStudioOutput {
+    /// <p>Information about a studio.</p>
+    pub fn studio(&self) -> std::option::Option<&crate::model::Studio> {
+        self.studio.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStudioOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -502,6 +558,16 @@ pub struct ListStudioComponentsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of studio components.</p>
     pub studio_components: std::option::Option<std::vec::Vec<crate::model::StudioComponent>>,
+}
+impl ListStudioComponentsOutput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A collection of studio components.</p>
+    pub fn studio_components(&self) -> std::option::Option<&[crate::model::StudioComponent]> {
+        self.studio_components.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStudioComponentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -577,6 +643,12 @@ pub struct CreateStudioComponentOutput {
     /// <p>Information about the studio component.</p>
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
 }
+impl CreateStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub fn studio_component(&self) -> std::option::Option<&crate::model::StudioComponent> {
+        self.studio_component.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStudioComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioComponentOutput");
@@ -627,6 +699,12 @@ impl CreateStudioComponentOutput {
 pub struct DeleteStudioComponentOutput {
     /// <p>Information about the studio component.</p>
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
+}
+impl DeleteStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub fn studio_component(&self) -> std::option::Option<&crate::model::StudioComponent> {
+        self.studio_component.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteStudioComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -679,6 +757,12 @@ pub struct UpdateStudioComponentOutput {
     /// <p>Information about the studio component.</p>
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
 }
+impl UpdateStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub fn studio_component(&self) -> std::option::Option<&crate::model::StudioComponent> {
+        self.studio_component.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStudioComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStudioComponentOutput");
@@ -729,6 +813,12 @@ impl UpdateStudioComponentOutput {
 pub struct GetStudioComponentOutput {
     /// <p>Information about the studio component.</p>
     pub studio_component: std::option::Option<crate::model::StudioComponent>,
+}
+impl GetStudioComponentOutput {
+    /// <p>Information about the studio component.</p>
+    pub fn studio_component(&self) -> std::option::Option<&crate::model::StudioComponent> {
+        self.studio_component.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStudioComponentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -781,6 +871,13 @@ pub struct StopStreamingSessionOutput {
     /// <p>A streaming session is a virtual workstation created using a particular launch
     /// profile.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl StopStreamingSessionOutput {
+    /// <p>A streaming session is a virtual workstation created using a particular launch
+    /// profile.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
+        self.session.as_ref()
+    }
 }
 impl std::fmt::Debug for StopStreamingSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -836,6 +933,13 @@ pub struct StartStreamingSessionOutput {
     /// profile.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
+impl StartStreamingSessionOutput {
+    /// <p>A streaming session is a virtual workstation created using a particular launch
+    /// profile.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
+        self.session.as_ref()
+    }
+}
 impl std::fmt::Debug for StartStreamingSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartStreamingSessionOutput");
@@ -889,6 +993,12 @@ pub struct GetStreamingSessionStreamOutput {
     /// <p>The stream.</p>
     pub stream: std::option::Option<crate::model::StreamingSessionStream>,
 }
+impl GetStreamingSessionStreamOutput {
+    /// <p>The stream.</p>
+    pub fn stream(&self) -> std::option::Option<&crate::model::StreamingSessionStream> {
+        self.stream.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStreamingSessionStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamingSessionStreamOutput");
@@ -939,6 +1049,12 @@ impl GetStreamingSessionStreamOutput {
 pub struct CreateStreamingSessionStreamOutput {
     /// <p>The stream.</p>
     pub stream: std::option::Option<crate::model::StreamingSessionStream>,
+}
+impl CreateStreamingSessionStreamOutput {
+    /// <p>The stream.</p>
+    pub fn stream(&self) -> std::option::Option<&crate::model::StreamingSessionStream> {
+        self.stream.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStreamingSessionStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -992,6 +1108,16 @@ pub struct ListStreamingSessionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of streaming sessions.</p>
     pub sessions: std::option::Option<std::vec::Vec<crate::model::StreamingSession>>,
+}
+impl ListStreamingSessionsOutput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A collection of streaming sessions.</p>
+    pub fn sessions(&self) -> std::option::Option<&[crate::model::StreamingSession]> {
+        self.sessions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStreamingSessionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1063,6 +1189,12 @@ pub struct CreateStreamingSessionOutput {
     /// <p>The session.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
+impl CreateStreamingSessionOutput {
+    /// <p>The session.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
+        self.session.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingSessionOutput");
@@ -1114,6 +1246,12 @@ pub struct DeleteStreamingSessionOutput {
     /// <p>The session.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
+impl DeleteStreamingSessionOutput {
+    /// <p>The session.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
+        self.session.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteStreamingSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStreamingSessionOutput");
@@ -1164,6 +1302,12 @@ impl DeleteStreamingSessionOutput {
 pub struct GetStreamingSessionOutput {
     /// <p>The session.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
+}
+impl GetStreamingSessionOutput {
+    /// <p>The session.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
+        self.session.as_ref()
+    }
 }
 impl std::fmt::Debug for GetStreamingSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1217,6 +1361,16 @@ pub struct ListStreamingImagesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A collection of streaming images.</p>
     pub streaming_images: std::option::Option<std::vec::Vec<crate::model::StreamingImage>>,
+}
+impl ListStreamingImagesOutput {
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A collection of streaming images.</p>
+    pub fn streaming_images(&self) -> std::option::Option<&[crate::model::StreamingImage]> {
+        self.streaming_images.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStreamingImagesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1289,6 +1443,12 @@ pub struct CreateStreamingImageOutput {
     /// <p>The streaming image.</p>
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
+impl CreateStreamingImageOutput {
+    /// <p>The streaming image.</p>
+    pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
+        self.streaming_image.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingImageOutput");
@@ -1339,6 +1499,12 @@ impl CreateStreamingImageOutput {
 pub struct DeleteStreamingImageOutput {
     /// <p>The streaming image.</p>
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
+}
+impl DeleteStreamingImageOutput {
+    /// <p>The streaming image.</p>
+    pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
+        self.streaming_image.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteStreamingImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1391,6 +1557,12 @@ pub struct UpdateStreamingImageOutput {
     /// <p/>
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
+impl UpdateStreamingImageOutput {
+    /// <p/>
+    pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
+        self.streaming_image.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateStreamingImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStreamingImageOutput");
@@ -1442,6 +1614,12 @@ pub struct GetStreamingImageOutput {
     /// <p>The streaming image.</p>
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
+impl GetStreamingImageOutput {
+    /// <p>The streaming image.</p>
+    pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
+        self.streaming_image.as_ref()
+    }
+}
 impl std::fmt::Debug for GetStreamingImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamingImageOutput");
@@ -1492,6 +1670,12 @@ impl GetStreamingImageOutput {
 pub struct UpdateLaunchProfileMemberOutput {
     /// <p>The updated member. </p>
     pub member: std::option::Option<crate::model::LaunchProfileMembership>,
+}
+impl UpdateLaunchProfileMemberOutput {
+    /// <p>The updated member. </p>
+    pub fn member(&self) -> std::option::Option<&crate::model::LaunchProfileMembership> {
+        self.member.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateLaunchProfileMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1576,6 +1760,16 @@ pub struct ListLaunchProfileMembersOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLaunchProfileMembersOutput {
+    /// <p>A list of members.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::LaunchProfileMembership]> {
+        self.members.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLaunchProfileMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLaunchProfileMembersOutput");
@@ -1647,6 +1841,12 @@ pub struct GetLaunchProfileMemberOutput {
     /// <p>The member.</p>
     pub member: std::option::Option<crate::model::LaunchProfileMembership>,
 }
+impl GetLaunchProfileMemberOutput {
+    /// <p>The member.</p>
+    pub fn member(&self) -> std::option::Option<&crate::model::LaunchProfileMembership> {
+        self.member.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLaunchProfileMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLaunchProfileMemberOutput");
@@ -1698,6 +1898,14 @@ pub struct GetLaunchProfileInitializationOutput {
     /// <p>The launch profile initialization.</p>
     pub launch_profile_initialization:
         std::option::Option<crate::model::LaunchProfileInitialization>,
+}
+impl GetLaunchProfileInitializationOutput {
+    /// <p>The launch profile initialization.</p>
+    pub fn launch_profile_initialization(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchProfileInitialization> {
+        self.launch_profile_initialization.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLaunchProfileInitializationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1761,6 +1969,22 @@ pub struct GetLaunchProfileDetailsOutput {
     /// <p>A collection of studio component summaries.</p>
     pub studio_component_summaries:
         std::option::Option<std::vec::Vec<crate::model::StudioComponentSummary>>,
+}
+impl GetLaunchProfileDetailsOutput {
+    /// <p>The launch profile.</p>
+    pub fn launch_profile(&self) -> std::option::Option<&crate::model::LaunchProfile> {
+        self.launch_profile.as_ref()
+    }
+    /// <p>A collection of streaming images.</p>
+    pub fn streaming_images(&self) -> std::option::Option<&[crate::model::StreamingImage]> {
+        self.streaming_images.as_deref()
+    }
+    /// <p>A collection of studio component summaries.</p>
+    pub fn studio_component_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::StudioComponentSummary]> {
+        self.studio_component_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLaunchProfileDetailsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1897,6 +2121,16 @@ pub struct ListLaunchProfilesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLaunchProfilesOutput {
+    /// <p>A collection of launch profiles.</p>
+    pub fn launch_profiles(&self) -> std::option::Option<&[crate::model::LaunchProfile]> {
+        self.launch_profiles.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLaunchProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLaunchProfilesOutput");
@@ -1967,6 +2201,12 @@ pub struct CreateLaunchProfileOutput {
     /// <p>The launch profile.</p>
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
+impl CreateLaunchProfileOutput {
+    /// <p>The launch profile.</p>
+    pub fn launch_profile(&self) -> std::option::Option<&crate::model::LaunchProfile> {
+        self.launch_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLaunchProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLaunchProfileOutput");
@@ -2017,6 +2257,12 @@ impl CreateLaunchProfileOutput {
 pub struct DeleteLaunchProfileOutput {
     /// <p>The launch profile.</p>
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
+}
+impl DeleteLaunchProfileOutput {
+    /// <p>The launch profile.</p>
+    pub fn launch_profile(&self) -> std::option::Option<&crate::model::LaunchProfile> {
+        self.launch_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteLaunchProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2069,6 +2315,12 @@ pub struct UpdateLaunchProfileOutput {
     /// <p>The launch profile.</p>
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
 }
+impl UpdateLaunchProfileOutput {
+    /// <p>The launch profile.</p>
+    pub fn launch_profile(&self) -> std::option::Option<&crate::model::LaunchProfile> {
+        self.launch_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLaunchProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLaunchProfileOutput");
@@ -2119,6 +2371,12 @@ impl UpdateLaunchProfileOutput {
 pub struct GetLaunchProfileOutput {
     /// <p>The launch profile.</p>
     pub launch_profile: std::option::Option<crate::model::LaunchProfile>,
+}
+impl GetLaunchProfileOutput {
+    /// <p>The launch profile.</p>
+    pub fn launch_profile(&self) -> std::option::Option<&crate::model::LaunchProfile> {
+        self.launch_profile.as_ref()
+    }
 }
 impl std::fmt::Debug for GetLaunchProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2172,6 +2430,16 @@ pub struct ListEulasOutput {
     pub eulas: std::option::Option<std::vec::Vec<crate::model::Eula>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEulasOutput {
+    /// <p>A collection of EULA resources.</p>
+    pub fn eulas(&self) -> std::option::Option<&[crate::model::Eula]> {
+        self.eulas.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEulasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2243,6 +2511,12 @@ pub struct GetEulaOutput {
     /// <p>The EULA.</p>
     pub eula: std::option::Option<crate::model::Eula>,
 }
+impl GetEulaOutput {
+    /// <p>The EULA.</p>
+    pub fn eula(&self) -> std::option::Option<&crate::model::Eula> {
+        self.eula.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEulaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEulaOutput");
@@ -2290,6 +2564,16 @@ pub struct ListEulaAcceptancesOutput {
     pub eula_acceptances: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEulaAcceptancesOutput {
+    /// <p>A collection of EULA acceptances.</p>
+    pub fn eula_acceptances(&self) -> std::option::Option<&[crate::model::EulaAcceptance]> {
+        self.eula_acceptances.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEulaAcceptancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2361,6 +2645,12 @@ impl ListEulaAcceptancesOutput {
 pub struct AcceptEulasOutput {
     /// <p>A collection of EULA acceptances.</p>
     pub eula_acceptances: std::option::Option<std::vec::Vec<crate::model::EulaAcceptance>>,
+}
+impl AcceptEulasOutput {
+    /// <p>A collection of EULA acceptances.</p>
+    pub fn eula_acceptances(&self) -> std::option::Option<&[crate::model::EulaAcceptance]> {
+        self.eula_acceptances.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptEulasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2481,6 +2771,16 @@ pub struct ListTagsForResourceOutput {
     /// resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+    /// resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

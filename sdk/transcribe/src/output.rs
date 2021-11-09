@@ -10,6 +10,20 @@ pub struct UpdateVocabularyFilterOutput {
     /// <p>The date and time that the vocabulary filter was updated.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateVocabularyFilterOutput {
+    /// <p>The name of the updated vocabulary filter.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The language code of the words in the vocabulary filter.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the vocabulary filter was updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVocabularyFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVocabularyFilterOutput");
@@ -100,6 +114,26 @@ pub struct UpdateVocabularyOutput {
     /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
     /// request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
+}
+impl UpdateVocabularyOutput {
+    /// <p>The name of the vocabulary that was updated.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
+    /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+    /// request.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateVocabularyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -213,6 +247,27 @@ pub struct UpdateMedicalVocabularyOutput {
     /// request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
 }
+impl UpdateMedicalVocabularyOutput {
+    /// <p>The name of the updated vocabulary.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The language code for the language of the text file used to update the custom vocabulary. US English (en-US)
+    /// is the only language supported in Amazon Transcribe Medical.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
+    /// <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+    /// request.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMedicalVocabularyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMedicalVocabularyOutput");
@@ -318,6 +373,13 @@ pub struct UpdateCallAnalyticsCategoryOutput {
     /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used
     /// to update the category and when the category was originally created. </p>
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+}
+impl UpdateCallAnalyticsCategoryOutput {
+    /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used
+    /// to update the category and when the category was originally created. </p>
+    pub fn category_properties(&self) -> std::option::Option<&crate::model::CategoryProperties> {
+        self.category_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateCallAnalyticsCategoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -432,6 +494,12 @@ pub struct StartTranscriptionJobOutput {
     /// <p>An object containing details of the asynchronous transcription job.</p>
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
 }
+impl StartTranscriptionJobOutput {
+    /// <p>An object containing details of the asynchronous transcription job.</p>
+    pub fn transcription_job(&self) -> std::option::Option<&crate::model::TranscriptionJob> {
+        self.transcription_job.as_ref()
+    }
+}
 impl std::fmt::Debug for StartTranscriptionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTranscriptionJobOutput");
@@ -482,6 +550,14 @@ impl StartTranscriptionJobOutput {
 pub struct StartMedicalTranscriptionJobOutput {
     /// <p>A batch job submitted to transcribe medical speech to text.</p>
     pub medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
+}
+impl StartMedicalTranscriptionJobOutput {
+    /// <p>A batch job submitted to transcribe medical speech to text.</p>
+    pub fn medical_transcription_job(
+        &self,
+    ) -> std::option::Option<&crate::model::MedicalTranscriptionJob> {
+        self.medical_transcription_job.as_ref()
+    }
 }
 impl std::fmt::Debug for StartMedicalTranscriptionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -537,6 +613,12 @@ impl StartMedicalTranscriptionJobOutput {
 pub struct StartCallAnalyticsJobOutput {
     /// <p>An object containing the details of the asynchronous call analytics job.</p>
     pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+}
+impl StartCallAnalyticsJobOutput {
+    /// <p>An object containing the details of the asynchronous call analytics job.</p>
+    pub fn call_analytics_job(&self) -> std::option::Option<&crate::model::CallAnalyticsJob> {
+        self.call_analytics_job.as_ref()
+    }
 }
 impl std::fmt::Debug for StartCallAnalyticsJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -595,6 +677,21 @@ pub struct ListVocabularyFiltersOutput {
     /// filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter
     /// in the request set to the value of the <code>NextToken</code> field in the response.</p>
     pub vocabulary_filters: std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
+}
+impl ListVocabularyFiltersOutput {
+    /// <p>The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size
+    /// of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
+    /// Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
+    /// <code>ListVocabularyFilters</code> operation to return in the next page of jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+    /// filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter
+    /// in the request set to the value of the <code>NextToken</code> field in the response.</p>
+    pub fn vocabulary_filters(&self) -> std::option::Option<&[crate::model::VocabularyFilterInfo]> {
+        self.vocabulary_filters.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVocabularyFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -686,6 +783,23 @@ pub struct ListVocabulariesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
+}
+impl ListVocabulariesOutput {
+    /// <p>The requested vocabulary state.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of
+    /// the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+    /// page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the token in the
+    /// next request to the <code>ListVocabularies</code> operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>
+    pub fn vocabularies(&self) -> std::option::Option<&[crate::model::VocabularyInfo]> {
+        self.vocabularies.as_deref()
+    }
 }
 impl std::fmt::Debug for ListVocabulariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -786,6 +900,25 @@ pub struct ListTranscriptionJobsOutput {
     /// <p>A list of objects containing summary information for a transcription job.</p>
     pub transcription_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::TranscriptionJobSummary>>,
+}
+impl ListTranscriptionJobsOutput {
+    /// <p>The requested status of the jobs returned.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
+    /// page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
+    /// returns the <code>NextPage</code> token. Include the token in the next request to the
+    /// <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects containing summary information for a transcription job.</p>
+    pub fn transcription_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TranscriptionJobSummary]> {
+        self.transcription_job_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTranscriptionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -888,6 +1021,16 @@ pub struct ListTagsForResourceOutput {
     /// <p>Lists all tags associated with the given transcription job, vocabulary, or resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Lists all tags associated with the given transcription job, vocabulary, or resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -965,6 +1108,24 @@ pub struct ListMedicalVocabulariesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of objects that describe the vocabularies that match your search criteria.</p>
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
+}
+impl ListMedicalVocabulariesOutput {
+    /// <p>The requested vocabulary state.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the
+    /// maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there
+    /// are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the next
+    /// page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
+    /// operation .</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects that describe the vocabularies that match your search criteria.</p>
+    pub fn vocabularies(&self) -> std::option::Option<&[crate::model::VocabularyInfo]> {
+        self.vocabularies.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMedicalVocabulariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1067,6 +1228,25 @@ pub struct ListMedicalTranscriptionJobsOutput {
     /// <p>A list of objects containing summary information for a transcription job.</p>
     pub medical_transcription_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::MedicalTranscriptionJobSummary>>,
+}
+impl ListMedicalTranscriptionJobsOutput {
+    /// <p>The requested status of the medical transcription jobs returned.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TranscriptionJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum
+    /// size of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
+    /// a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
+    /// <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects containing summary information for a transcription job.</p>
+    pub fn medical_transcription_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::MedicalTranscriptionJobSummary]> {
+        self.medical_transcription_job_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMedicalTranscriptionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1171,6 +1351,18 @@ pub struct ListLanguageModelsOutput {
     /// <p>A list of objects containing information about custom language models.</p>
     pub models: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>,
 }
+impl ListLanguageModelsOutput {
+    /// <p>The  operation returns a page of jobs at a time. The maximum size
+    /// of the list is set by the MaxResults parameter. If there are more language models in the list than the page size, Amazon Transcribe
+    /// returns the <code>NextPage</code> token. Include the token in the next request to the  operation to return the next page of language models.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects containing information about custom language models.</p>
+    pub fn models(&self) -> std::option::Option<&[crate::model::LanguageModel]> {
+        self.models.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLanguageModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLanguageModelsOutput");
@@ -1254,6 +1446,27 @@ pub struct ListCallAnalyticsJobsOutput {
     /// <p>A list of objects containing summary information for a transcription job.</p>
     pub call_analytics_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+}
+impl ListCallAnalyticsJobsOutput {
+    /// <p>When specified, returns only call analytics jobs with that status. Jobs are ordered
+    /// by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe
+    /// returns all transcription jobs ordered by creation date.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CallAnalyticsJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The  operation returns a page of jobs at a time. The
+    /// maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more
+    /// jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the
+    /// token in your next request to the  operation to return next page of jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects containing summary information for a transcription job.</p>
+    pub fn call_analytics_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::CallAnalyticsJobSummary]> {
+        self.call_analytics_job_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCallAnalyticsJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1364,6 +1577,20 @@ pub struct ListCallAnalyticsCategoriesOutput {
     /// <p>A list of objects containing information about analytics categories.</p>
     pub categories: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
 }
+impl ListCallAnalyticsCategoriesOutput {
+    /// <p>The  operation returns a page of jobs at a time. The
+    /// maximum size of the list is set by the <code>MaxResults</code> parameter. If there are
+    /// more categories in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
+    /// token. Include the token in the next request to the
+    /// operation to return the next page of analytics categories.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of objects containing information about analytics categories.</p>
+    pub fn categories(&self) -> std::option::Option<&[crate::model::CategoryProperties]> {
+        self.categories.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCallAnalyticsCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCallAnalyticsCategoriesOutput");
@@ -1447,6 +1674,24 @@ pub struct GetVocabularyFilterOutput {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
     pub download_uri: std::option::Option<std::string::String>,
+}
+impl GetVocabularyFilterOutput {
+    /// <p>The name of the vocabulary filter.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The language code of the words in the vocabulary filter.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the contents of the vocabulary filter were updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
+    pub fn download_uri(&self) -> std::option::Option<&str> {
+        self.download_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVocabularyFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1555,6 +1800,34 @@ pub struct GetVocabularyOutput {
     /// <p>The S3 location where the vocabulary is stored. Use this URI to get the contents of
     /// the vocabulary. The URI is available for a limited time.</p>
     pub download_uri: std::option::Option<std::string::String>,
+}
+impl GetVocabularyOutput {
+    /// <p>The name of the vocabulary to return.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The processing state of the vocabulary.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
+    /// information about why the job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The S3 location where the vocabulary is stored. Use this URI to get the contents of
+    /// the vocabulary. The URI is available for a limited time.</p>
+    pub fn download_uri(&self) -> std::option::Option<&str> {
+        self.download_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVocabularyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1688,6 +1961,12 @@ pub struct GetTranscriptionJobOutput {
     /// <p>An object that contains the results of the transcription job.</p>
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
 }
+impl GetTranscriptionJobOutput {
+    /// <p>An object that contains the results of the transcription job.</p>
+    pub fn transcription_job(&self) -> std::option::Option<&crate::model::TranscriptionJob> {
+        self.transcription_job.as_ref()
+    }
+}
 impl std::fmt::Debug for GetTranscriptionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTranscriptionJobOutput");
@@ -1752,6 +2031,36 @@ pub struct GetMedicalVocabularyOutput {
     /// <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
     /// can download your vocabulary from the URI for a limited time.</p>
     pub download_uri: std::option::Option<std::string::String>,
+}
+impl GetMedicalVocabularyOutput {
+    /// <p>The name of the vocabulary returned by Amazon Transcribe Medical.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The valid language code for your vocabulary entries.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code>
+    /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was last modified with a text file different from the one that was
+    /// previously used.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information about why
+    /// the job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+    /// can download your vocabulary from the URI for a limited time.</p>
+    pub fn download_uri(&self) -> std::option::Option<&str> {
+        self.download_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMedicalVocabularyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1889,6 +2198,14 @@ pub struct GetMedicalTranscriptionJobOutput {
     /// <p>An object that contains the results of the medical transcription job.</p>
     pub medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
 }
+impl GetMedicalTranscriptionJobOutput {
+    /// <p>An object that contains the results of the medical transcription job.</p>
+    pub fn medical_transcription_job(
+        &self,
+    ) -> std::option::Option<&crate::model::MedicalTranscriptionJob> {
+        self.medical_transcription_job.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMedicalTranscriptionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMedicalTranscriptionJobOutput");
@@ -1944,6 +2261,12 @@ pub struct GetCallAnalyticsJobOutput {
     /// <p>An object that contains the results of your call analytics job.</p>
     pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
 }
+impl GetCallAnalyticsJobOutput {
+    /// <p>An object that contains the results of your call analytics job.</p>
+    pub fn call_analytics_job(&self) -> std::option::Option<&crate::model::CallAnalyticsJob> {
+        self.call_analytics_job.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCallAnalyticsJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCallAnalyticsJobOutput");
@@ -1995,6 +2318,12 @@ pub struct GetCallAnalyticsCategoryOutput {
     /// <p>The rules you've defined for a category.</p>
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
 }
+impl GetCallAnalyticsCategoryOutput {
+    /// <p>The rules you've defined for a category.</p>
+    pub fn category_properties(&self) -> std::option::Option<&crate::model::CategoryProperties> {
+        self.category_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCallAnalyticsCategoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCallAnalyticsCategoryOutput");
@@ -2045,6 +2374,12 @@ impl GetCallAnalyticsCategoryOutput {
 pub struct DescribeLanguageModelOutput {
     /// <p>The name of the custom language model you requested more information about.</p>
     pub language_model: std::option::Option<crate::model::LanguageModel>,
+}
+impl DescribeLanguageModelOutput {
+    /// <p>The name of the custom language model you requested more information about.</p>
+    pub fn language_model(&self) -> std::option::Option<&crate::model::LanguageModel> {
+        self.language_model.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeLanguageModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2341,6 +2676,20 @@ pub struct CreateVocabularyFilterOutput {
     /// <p>The date and time that the vocabulary filter was modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CreateVocabularyFilterOutput {
+    /// <p>The name of the vocabulary filter.</p>
+    pub fn vocabulary_filter_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_filter_name.as_deref()
+    }
+    /// <p>The language code of the words in the collection.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The date and time that the vocabulary filter was modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateVocabularyFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVocabularyFilterOutput");
@@ -2434,6 +2783,31 @@ pub struct CreateVocabularyOutput {
     /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
     /// why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl CreateVocabularyOutput {
+    /// <p>The name of the vocabulary.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
+    /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+    /// request.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
+    /// <p>The date and time that the vocabulary was created.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
+    /// why the job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVocabularyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2568,6 +2942,32 @@ pub struct CreateMedicalVocabularyOutput {
     /// why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl CreateMedicalVocabularyOutput {
+    /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account and is case
+    /// sensitive.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+    /// <p>The language code for the entries in your custom vocabulary. US English (en-US) is the only valid language
+    /// code for Amazon Transcribe Medical.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The processing state of your custom vocabulary in Amazon Transcribe Medical. If the state is <code>READY</code>, you can
+    /// use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    pub fn vocabulary_state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.vocabulary_state.as_ref()
+    }
+    /// <p>The date and time that you created the vocabulary.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
+    /// why the job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMedicalVocabularyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMedicalVocabularyOutput");
@@ -2700,6 +3100,29 @@ pub struct CreateLanguageModelOutput {
     /// to use.</p>
     pub model_status: std::option::Option<crate::model::ModelStatus>,
 }
+impl CreateLanguageModelOutput {
+    /// <p>The language code of the text you've used to create a custom language model.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::ClmLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The Amazon Transcribe standard language model, or base model you've used to create a custom language model.</p>
+    pub fn base_model_name(&self) -> std::option::Option<&crate::model::BaseModelName> {
+        self.base_model_name.as_ref()
+    }
+    /// <p>The name you've chosen for your custom language model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The data access role and Amazon S3 prefixes you've chosen to create your custom language model.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The status of the custom language model. When the status is <code>COMPLETED</code> the model is ready
+    /// to use.</p>
+    pub fn model_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.model_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateLanguageModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLanguageModelOutput");
@@ -2813,6 +3236,12 @@ impl CreateLanguageModelOutput {
 pub struct CreateCallAnalyticsCategoryOutput {
     /// <p>The rules and associated metadata used to create a category.</p>
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+}
+impl CreateCallAnalyticsCategoryOutput {
+    /// <p>The rules and associated metadata used to create a category.</p>
+    pub fn category_properties(&self) -> std::option::Option<&crate::model::CategoryProperties> {
+        self.category_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCallAnalyticsCategoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -15,6 +15,21 @@ pub struct ValidationExceptionField {
     /// </p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>
+    /// The name of the field.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The message associated with the validation exception with information to help
+    /// determine its cause.
+    /// </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -158,6 +173,14 @@ pub struct UpdateServiceIntegrationConfig {
     /// </p>
     pub ops_center: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
 }
+impl UpdateServiceIntegrationConfig {
+    /// <p>
+    /// Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems Manager OpsCenter for each created insight.
+    /// </p>
+    pub fn ops_center(&self) -> std::option::Option<&crate::model::OpsCenterIntegrationConfig> {
+        self.ops_center.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceIntegrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceIntegrationConfig");
@@ -216,6 +239,14 @@ pub struct OpsCenterIntegrationConfig {
     /// Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
     /// </p>
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
+}
+impl OpsCenterIntegrationConfig {
+    /// <p>
+    /// Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
+    /// </p>
+    pub fn opt_in_status(&self) -> std::option::Option<&crate::model::OptInStatus> {
+        self.opt_in_status.as_ref()
+    }
 }
 impl std::fmt::Debug for OpsCenterIntegrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -333,6 +364,16 @@ pub struct UpdateResourceCollectionFilter {
     /// </p>
     pub cloud_formation: std::option::Option<crate::model::UpdateCloudFormationCollectionFilter>,
 }
+impl UpdateResourceCollectionFilter {
+    /// <p>
+    /// An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn cloud_formation(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateCloudFormationCollectionFilter> {
+        self.cloud_formation.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceCollectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceCollectionFilter");
@@ -393,6 +434,14 @@ pub struct UpdateCloudFormationCollectionFilter {
     /// An array of the names of the AWS CloudFormation stacks to update. You can specify up to 500 AWS CloudFormation stacks.
     /// </p>
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateCloudFormationCollectionFilter {
+    /// <p>
+    /// An array of the names of the AWS CloudFormation stacks to update. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_names.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCloudFormationCollectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -517,6 +566,16 @@ pub struct CostEstimationResourceCollectionFilter {
     pub cloud_formation:
         std::option::Option<crate::model::CloudFormationCostEstimationResourceCollectionFilter>,
 }
+impl CostEstimationResourceCollectionFilter {
+    /// <p>An object that specifies the CloudFormation stack that defines the AWS resources
+    /// used to create a monthly estimate for DevOps Guru.</p>
+    pub fn cloud_formation(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFormationCostEstimationResourceCollectionFilter>
+    {
+        self.cloud_formation.as_ref()
+    }
+}
 impl std::fmt::Debug for CostEstimationResourceCollectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostEstimationResourceCollectionFilter");
@@ -578,6 +637,12 @@ impl CostEstimationResourceCollectionFilter {
 pub struct CloudFormationCostEstimationResourceCollectionFilter {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CloudFormationCostEstimationResourceCollectionFilter {
+    /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
+    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_names.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudFormationCostEstimationResourceCollectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -662,6 +727,48 @@ pub struct ReactiveInsightSummary {
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
     /// <p>A collection of the names of AWS services.</p>
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
+}
+impl ReactiveInsightSummary {
+    /// <p>
+    /// The ID of a reactive summary.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The name of a reactive insight.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The severity of a reactive insight.
+    /// </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::InsightSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>
+    /// The status of a reactive insight.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InsightStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and
+    /// ended. </p>
+    pub fn insight_time_range(&self) -> std::option::Option<&crate::model::InsightTimeRange> {
+        self.insight_time_range.as_ref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>A collection of the names of AWS services.</p>
+    pub fn service_collection(&self) -> std::option::Option<&crate::model::ServiceCollection> {
+        self.service_collection.as_ref()
+    }
 }
 impl std::fmt::Debug for ReactiveInsightSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -827,6 +934,12 @@ impl ReactiveInsightSummary {
 pub struct ServiceCollection {
     /// <p>An array of strings that each specifies the name of an AWS service.</p>
     pub service_names: std::option::Option<std::vec::Vec<crate::model::ServiceName>>,
+}
+impl ServiceCollection {
+    /// <p>An array of strings that each specifies the name of an AWS service.</p>
+    pub fn service_names(&self) -> std::option::Option<&[crate::model::ServiceName]> {
+        self.service_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceCollection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1063,6 +1176,14 @@ pub struct ResourceCollection {
     /// </p>
     pub cloud_formation: std::option::Option<crate::model::CloudFormationCollection>,
 }
+impl ResourceCollection {
+    /// <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS resources
+    /// that DevOps Guru analyzes. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn cloud_formation(&self) -> std::option::Option<&crate::model::CloudFormationCollection> {
+        self.cloud_formation.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceCollection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceCollection");
@@ -1123,6 +1244,14 @@ pub struct CloudFormationCollection {
     /// An array of CloudFormation stack names.
     /// </p>
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CloudFormationCollection {
+    /// <p>
+    /// An array of CloudFormation stack names.
+    /// </p>
+    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_names.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudFormationCollection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1191,6 +1320,20 @@ pub struct InsightTimeRange {
     /// The time when the behavior described in an insight ended.
     /// </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl InsightTimeRange {
+    /// <p>
+    /// The time when the behavior described in an insight started.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>
+    /// The time when the behavior described in an insight ended.
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for InsightTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1403,6 +1546,46 @@ pub struct ProactiveInsightSummary {
     /// <p>A collection of the names of AWS services.</p>
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
 }
+impl ProactiveInsightSummary {
+    /// <p>The ID of the proactive insight. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the proactive insight. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The severity of the proactive insight. </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::InsightSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>The status of the proactive insight. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InsightStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and
+    /// ended. </p>
+    pub fn insight_time_range(&self) -> std::option::Option<&crate::model::InsightTimeRange> {
+        self.insight_time_range.as_ref()
+    }
+    /// <p>
+    /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+    /// </p>
+    pub fn prediction_time_range(&self) -> std::option::Option<&crate::model::PredictionTimeRange> {
+        self.prediction_time_range.as_ref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>A collection of the names of AWS services.</p>
+    pub fn service_collection(&self) -> std::option::Option<&crate::model::ServiceCollection> {
+        self.service_collection.as_ref()
+    }
+}
 impl std::fmt::Debug for ProactiveInsightSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProactiveInsightSummary");
@@ -1580,6 +1763,20 @@ pub struct PredictionTimeRange {
     /// </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PredictionTimeRange {
+    /// <p>
+    /// The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>
+    /// The time when the behavior in a proactive insight is expected to end.
+    /// </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for PredictionTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PredictionTimeRange");
@@ -1726,6 +1923,31 @@ pub struct SearchInsightsFilters {
     /// <p>A collection of the names of AWS services.</p>
     pub service_collection: std::option::Option<crate::model::ServiceCollection>,
 }
+impl SearchInsightsFilters {
+    /// <p>
+    /// An array of severity values used to search for insights.
+    /// </p>
+    pub fn severities(&self) -> std::option::Option<&[crate::model::InsightSeverity]> {
+        self.severities.as_deref()
+    }
+    /// <p>
+    /// An array of status values used to search for insights.
+    /// </p>
+    pub fn statuses(&self) -> std::option::Option<&[crate::model::InsightStatus]> {
+        self.statuses.as_deref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>A collection of the names of AWS services.</p>
+    pub fn service_collection(&self) -> std::option::Option<&crate::model::ServiceCollection> {
+        self.service_collection.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchInsightsFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchInsightsFilters");
@@ -1859,6 +2081,20 @@ pub struct StartTimeRange {
     /// </p>
     pub to_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StartTimeRange {
+    /// <p>
+    /// The start time of the time range.
+    /// </p>
+    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from_time.as_ref()
+    }
+    /// <p>
+    /// The end time of the time range.
+    /// </p>
+    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to_time.as_ref()
+    }
+}
 impl std::fmt::Debug for StartTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTimeRange");
@@ -1941,6 +2177,20 @@ pub struct InsightFeedback {
     /// The feedback provided by the customer.
     /// </p>
     pub feedback: std::option::Option<crate::model::InsightFeedbackOption>,
+}
+impl InsightFeedback {
+    /// <p>
+    /// The insight feedback ID.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The feedback provided by the customer.
+    /// </p>
+    pub fn feedback(&self) -> std::option::Option<&crate::model::InsightFeedbackOption> {
+        self.feedback.as_ref()
+    }
 }
 impl std::fmt::Debug for InsightFeedback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2111,6 +2361,48 @@ pub struct Recommendation {
     /// </p>
     pub related_anomalies:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomaly>>,
+}
+impl Recommendation {
+    /// <p>
+    /// A description of the problem.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>
+    /// A hyperlink to information to help you address the problem.
+    /// </p>
+    pub fn link(&self) -> std::option::Option<&str> {
+        self.link.as_deref()
+    }
+    /// <p>
+    /// The name of the recommendation.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The reason DevOps Guru flagged the anomalous behavior as a problem.
+    /// </p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>
+    /// Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue.
+    /// </p>
+    pub fn related_events(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationRelatedEvent]> {
+        self.related_events.as_deref()
+    }
+    /// <p>
+    /// Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue.
+    /// </p>
+    pub fn related_anomalies(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationRelatedAnomaly]> {
+        self.related_anomalies.as_deref()
+    }
 }
 impl std::fmt::Debug for Recommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2286,6 +2578,25 @@ pub struct RecommendationRelatedAnomaly {
     pub source_details:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomalySourceDetail>>,
 }
+impl RecommendationRelatedAnomaly {
+    /// <p>
+    /// An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name
+    /// and type of the resource.
+    /// </p>
+    pub fn resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationRelatedAnomalyResource]> {
+        self.resources.as_deref()
+    }
+    /// <p>
+    /// Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics.
+    /// </p>
+    pub fn source_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationRelatedAnomalySourceDetail]> {
+        self.source_details.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendationRelatedAnomaly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationRelatedAnomaly");
@@ -2394,6 +2705,16 @@ pub struct RecommendationRelatedAnomalySourceDetail {
         std::vec::Vec<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
     >,
 }
+impl RecommendationRelatedAnomalySourceDetail {
+    /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information
+    /// about the analyzed metrics that displayed anomalous behavior. </p>
+    pub fn cloud_watch_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail]>
+    {
+        self.cloud_watch_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendationRelatedAnomalySourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationRelatedAnomalySourceDetail");
@@ -2465,6 +2786,16 @@ pub struct RecommendationRelatedCloudWatchMetricsSourceDetail {
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
     pub namespace: std::option::Option<std::string::String>,
 }
+impl RecommendationRelatedCloudWatchMetricsSourceDetail {
+    /// <p>The name of the CloudWatch metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendationRelatedCloudWatchMetricsSourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationRelatedCloudWatchMetricsSourceDetail");
@@ -2534,6 +2865,20 @@ pub struct RecommendationRelatedAnomalyResource {
     /// The type of the resource.
     /// </p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl RecommendationRelatedAnomalyResource {
+    /// <p>
+    /// The name of the resource.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The type of the resource.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for RecommendationRelatedAnomalyResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2614,6 +2959,24 @@ pub struct RecommendationRelatedEvent {
     /// </p>
     pub resources:
         std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedEventResource>>,
+}
+impl RecommendationRelatedEvent {
+    /// <p>
+    /// The name of the event. This corresponds to the <code>Name</code> field in an
+    /// <code>Event</code> object.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// A <code>ResourceCollection</code> object that contains arrays of the names of AWS
+    /// CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationRelatedEventResource]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for RecommendationRelatedEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2712,6 +3075,22 @@ pub struct RecommendationRelatedEventResource {
     /// <code>EventResource</code> object.
     /// </p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl RecommendationRelatedEventResource {
+    /// <p>
+    /// The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+    /// <code>EventResource</code> object.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+    /// <code>EventResource</code> object.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for RecommendationRelatedEventResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2898,6 +3277,20 @@ pub struct NotificationChannel {
     /// </p>
     pub config: std::option::Option<crate::model::NotificationChannelConfig>,
 }
+impl NotificationChannel {
+    /// <p>
+    /// The ID of a notification channel.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// A <code>NotificationChannelConfig</code> object that contains information about configured notification channels.
+    /// </p>
+    pub fn config(&self) -> std::option::Option<&crate::model::NotificationChannelConfig> {
+        self.config.as_ref()
+    }
+}
 impl std::fmt::Debug for NotificationChannel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationChannel");
@@ -2982,6 +3375,22 @@ pub struct NotificationChannelConfig {
     /// AWS KMS–encrypted Amazon SNS topics</a>.</p>
     pub sns: std::option::Option<crate::model::SnsChannelConfig>,
 }
+impl NotificationChannelConfig {
+    /// <p>
+    /// Information about a notification channel configured in DevOps Guru to send notifications when insights are created.
+    /// </p>
+    ///
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
+    /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
+    /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+    /// for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service customer-managed key (CMK), then you must add permissions
+    /// to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for
+    /// AWS KMS–encrypted Amazon SNS topics</a>.</p>
+    pub fn sns(&self) -> std::option::Option<&crate::model::SnsChannelConfig> {
+        self.sns.as_ref()
+    }
+}
 impl std::fmt::Debug for NotificationChannelConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationChannelConfig");
@@ -3059,6 +3468,12 @@ pub struct SnsChannelConfig {
     /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl SnsChannelConfig {
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SnsChannelConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnsChannelConfig");
@@ -3121,6 +3536,29 @@ pub struct ListInsightsStatusFilter {
     /// that are either <code>REACTIVE</code> or <code>PROACTIVE</code>.
     /// </p>
     pub any: std::option::Option<crate::model::ListInsightsAnyStatusFilter>,
+}
+impl ListInsightsStatusFilter {
+    /// <p>
+    /// A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+    /// that are either <code>REACTIVE</code> or <code>PROACTIVE</code>.
+    /// </p>
+    pub fn ongoing(&self) -> std::option::Option<&crate::model::ListInsightsOngoingStatusFilter> {
+        self.ongoing.as_ref()
+    }
+    /// <p>
+    /// A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are
+    /// either <code>REACTIVE</code> or <code>PROACTIVE</code>.
+    /// </p>
+    pub fn closed(&self) -> std::option::Option<&crate::model::ListInsightsClosedStatusFilter> {
+        self.closed.as_ref()
+    }
+    /// <p>
+    /// A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status
+    /// that are either <code>REACTIVE</code> or <code>PROACTIVE</code>.
+    /// </p>
+    pub fn any(&self) -> std::option::Option<&crate::model::ListInsightsAnyStatusFilter> {
+        self.any.as_ref()
+    }
 }
 impl std::fmt::Debug for ListInsightsStatusFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3231,6 +3669,20 @@ pub struct ListInsightsAnyStatusFilter {
     /// </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
 }
+impl ListInsightsAnyStatusFilter {
+    /// <p>
+    /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
+        self.r#type.as_ref()
+    }
+    /// <p>
+    /// A time range used to specify when the behavior of the filtered insights started.
+    /// </p>
+    pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
+        self.start_time_range.as_ref()
+    }
+}
 impl std::fmt::Debug for ListInsightsAnyStatusFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInsightsAnyStatusFilter");
@@ -3310,6 +3762,20 @@ pub struct ListInsightsClosedStatusFilter {
     /// A time range used to specify when the behavior of the filtered insights ended.
     /// </p>
     pub end_time_range: std::option::Option<crate::model::EndTimeRange>,
+}
+impl ListInsightsClosedStatusFilter {
+    /// <p>
+    /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
+        self.r#type.as_ref()
+    }
+    /// <p>
+    /// A time range used to specify when the behavior of the filtered insights ended.
+    /// </p>
+    pub fn end_time_range(&self) -> std::option::Option<&crate::model::EndTimeRange> {
+        self.end_time_range.as_ref()
+    }
 }
 impl std::fmt::Debug for ListInsightsClosedStatusFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3391,6 +3857,20 @@ pub struct EndTimeRange {
     /// </p>
     pub to_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EndTimeRange {
+    /// <p>
+    /// The earliest end time in the time range.
+    /// </p>
+    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from_time.as_ref()
+    }
+    /// <p>
+    /// The latest end time in the time range.
+    /// </p>
+    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to_time.as_ref()
+    }
+}
 impl std::fmt::Debug for EndTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndTimeRange");
@@ -3469,6 +3949,14 @@ pub struct ListInsightsOngoingStatusFilter {
     /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
     /// </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
+}
+impl ListInsightsOngoingStatusFilter {
+    /// <p>
+    /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ListInsightsOngoingStatusFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3553,6 +4041,55 @@ pub struct Event {
     /// An <code>EventResource</code> object that contains information about the resource that emitted the event.
     /// </p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::EventResource>>,
+}
+impl Event {
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>
+    /// The ID of the event.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    pub fn time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time.as_ref()
+    }
+    /// <p>
+    /// The AWS source that emitted the event.
+    /// </p>
+    pub fn event_source(&self) -> std::option::Option<&str> {
+        self.event_source.as_deref()
+    }
+    /// <p>
+    /// The name of the event.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event.
+    /// </p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::EventDataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>
+    /// The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change.
+    /// </p>
+    pub fn event_class(&self) -> std::option::Option<&crate::model::EventClass> {
+        self.event_class.as_ref()
+    }
+    /// <p>
+    /// An <code>EventResource</code> object that contains information about the resource that emitted the event.
+    /// </p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::EventResource]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3753,6 +4290,26 @@ pub struct EventResource {
     /// The Amazon Resource Name (ARN) of the resource that emitted an event.
     /// </p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl EventResource {
+    /// <p>
+    /// The type of resource that emitted an event.
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>
+    /// The name of the resource that emitted an event.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the resource that emitted an event.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EventResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3991,6 +4548,43 @@ pub struct ListEventsFilters {
     /// </p>
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
 }
+impl ListEventsFilters {
+    /// <p>
+    /// An ID of an insight that is related to the events you want to filter for.
+    /// </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p> A time range during which you want the filtered events to have occurred. </p>
+    pub fn event_time_range(&self) -> std::option::Option<&crate::model::EventTimeRange> {
+        self.event_time_range.as_ref()
+    }
+    /// <p>
+    /// The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change.        
+    /// </p>
+    pub fn event_class(&self) -> std::option::Option<&crate::model::EventClass> {
+        self.event_class.as_ref()
+    }
+    /// <p>
+    /// The AWS source that emitted the events you want to filter for.
+    /// </p>
+    pub fn event_source(&self) -> std::option::Option<&str> {
+        self.event_source.as_deref()
+    }
+    /// <p>
+    /// The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+    /// </p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::EventDataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+}
 impl std::fmt::Debug for ListEventsFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventsFilters");
@@ -4147,6 +4741,20 @@ pub struct EventTimeRange {
     /// </p>
     pub to_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EventTimeRange {
+    /// <p>
+    /// The time when the event started.
+    /// </p>
+    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from_time.as_ref()
+    }
+    /// <p>
+    /// The time when the event ended.
+    /// </p>
+    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to_time.as_ref()
+    }
+}
 impl std::fmt::Debug for EventTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventTimeRange");
@@ -4256,6 +4864,61 @@ pub struct ReactiveAnomalySummary {
     /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
     /// </p>
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
+}
+impl ReactiveAnomalySummary {
+    /// <p>
+    /// The ID of the reactive anomaly.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The severity of the reactive anomaly.      
+    /// </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::AnomalySeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>
+    /// The status of the reactive anomaly.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
+    /// </p>
+    pub fn anomaly_time_range(&self) -> std::option::Option<&crate::model::AnomalyTimeRange> {
+        self.anomaly_time_range.as_ref()
+    }
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub fn anomaly_reported_time_range(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyReportedTimeRange> {
+        self.anomaly_reported_time_range.as_ref()
+    }
+    /// <p>
+    /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+    /// </p>
+    pub fn source_details(&self) -> std::option::Option<&crate::model::AnomalySourceDetails> {
+        self.source_details.as_ref()
+    }
+    /// <p>
+    /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+    /// </p>
+    pub fn associated_insight_id(&self) -> std::option::Option<&str> {
+        self.associated_insight_id.as_deref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
 }
 impl std::fmt::Debug for ReactiveAnomalySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4465,6 +5128,15 @@ pub struct AnomalySourceDetails {
     pub cloud_watch_metrics:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDetail>>,
 }
+impl AnomalySourceDetails {
+    /// <p> An array of <code>CloudWatchMetricsDetail</code> object that contains information
+    /// about the analyzed metrics that displayed anomalous behavior. </p>
+    pub fn cloud_watch_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchMetricsDetail]> {
+        self.cloud_watch_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for AnomalySourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnomalySourceDetails");
@@ -4554,6 +5226,47 @@ pub struct CloudWatchMetricsDetail {
     /// The length of time associated with the CloudWatch metric in number of seconds.
     /// </p>
     pub period: i32,
+}
+impl CloudWatchMetricsDetail {
+    /// <p>
+    /// The name of the CloudWatch metric.
+    /// </p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>
+    /// The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+    /// </p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>
+    /// An array of CloudWatch dimensions associated with
+    /// </p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::CloudWatchMetricsDimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>
+    /// The type of statistic associated with the CloudWatch metric. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the
+    /// <i>Amazon CloudWatch User Guide</i>.
+    /// </p>
+    pub fn stat(&self) -> std::option::Option<&crate::model::CloudWatchMetricsStat> {
+        self.stat.as_ref()
+    }
+    /// <p>
+    /// The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+    /// <code>Count</code>, and <code>Percent</code>.
+    /// </p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>
+    /// The length of time associated with the CloudWatch metric in number of seconds.
+    /// </p>
+    pub fn period(&self) -> i32 {
+        self.period
+    }
 }
 impl std::fmt::Debug for CloudWatchMetricsDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4811,6 +5524,20 @@ pub struct CloudWatchMetricsDimension {
     /// </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl CloudWatchMetricsDimension {
+    /// <p>
+    /// The name of the CloudWatch dimension.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The value of the CloudWatch dimension.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchMetricsDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchMetricsDimension");
@@ -4889,6 +5616,20 @@ pub struct AnomalyReportedTimeRange {
     /// The time when an anomaly is closed.
     /// </p>
     pub close_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AnomalyReportedTimeRange {
+    /// <p>
+    /// The time when an anomaly is opened.
+    /// </p>
+    pub fn open_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.open_time.as_ref()
+    }
+    /// <p>
+    /// The time when an anomaly is closed.
+    /// </p>
+    pub fn close_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.close_time.as_ref()
+    }
 }
 impl std::fmt::Debug for AnomalyReportedTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4972,6 +5713,18 @@ pub struct AnomalyTimeRange {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The time when the anomalous behavior ended. </p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AnomalyTimeRange {
+    /// <p>
+    /// The time when the anomalous behavior started.
+    /// </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p> The time when the anomalous behavior ended. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for AnomalyTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5199,6 +5952,74 @@ pub struct ProactiveAnomalySummary {
     /// threshold is related to the anomalous behavior that generated this anomaly.
     /// </p>
     pub limit: std::option::Option<f64>,
+}
+impl ProactiveAnomalySummary {
+    /// <p>The ID of the anomaly.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The severity of the anomaly.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::AnomalySeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>The status of the anomaly.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// The time of the anomaly's most recent update.
+    /// </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+    /// <p>
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
+    /// </p>
+    pub fn anomaly_time_range(&self) -> std::option::Option<&crate::model::AnomalyTimeRange> {
+        self.anomaly_time_range.as_ref()
+    }
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub fn anomaly_reported_time_range(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyReportedTimeRange> {
+        self.anomaly_reported_time_range.as_ref()
+    }
+    /// <p>
+    /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+    /// </p>
+    pub fn prediction_time_range(&self) -> std::option::Option<&crate::model::PredictionTimeRange> {
+        self.prediction_time_range.as_ref()
+    }
+    /// <p>
+    /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+    /// </p>
+    pub fn source_details(&self) -> std::option::Option<&crate::model::AnomalySourceDetails> {
+        self.source_details.as_ref()
+    }
+    /// <p>
+    /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+    /// </p>
+    pub fn associated_insight_id(&self) -> std::option::Option<&str> {
+        self.associated_insight_id.as_deref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>
+    /// A threshold that was exceeded by behavior in analyzed resources. Exceeding this
+    /// threshold is related to the anomalous behavior that generated this anomaly.
+    /// </p>
+    pub fn limit(&self) -> std::option::Option<f64> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ProactiveAnomalySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5458,6 +6279,18 @@ pub struct ResourceCollectionFilter {
     /// </p>
     pub cloud_formation: std::option::Option<crate::model::CloudFormationCollectionFilter>,
 }
+impl ResourceCollectionFilter {
+    /// <p>
+    /// Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources in your account to analyze.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
+    /// in the <i>AWS CloudFormation User Guide</i>.
+    /// </p>
+    pub fn cloud_formation(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFormationCollectionFilter> {
+        self.cloud_formation.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceCollectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceCollectionFilter");
@@ -5526,6 +6359,14 @@ pub struct CloudFormationCollectionFilter {
     /// An array of CloudFormation stack names.
     /// </p>
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CloudFormationCollectionFilter {
+    /// <p>
+    /// An array of CloudFormation stack names.
+    /// </p>
+    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.stack_names.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudFormationCollectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5645,6 +6486,16 @@ pub struct CostEstimationTimeRange {
     /// <p>The end time of the cost estimation.</p>
     pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CostEstimationTimeRange {
+    /// <p>The start time of the cost estimation.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end time of the cost estimation.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+}
 impl std::fmt::Debug for CostEstimationTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CostEstimationTimeRange");
@@ -5732,6 +6583,37 @@ pub struct ServiceResourceCost {
     pub unit_cost: f64,
     /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
     pub cost: f64,
+}
+impl ServiceResourceCost {
+    /// <p>The type of the AWS resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics,
+    /// events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for
+    /// the number of active AWS resource hours analyzed for each resource. Inactive resources are
+    /// not charged.
+    /// </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CostEstimationServiceResourceState> {
+        self.state.as_ref()
+    }
+    /// <p>The number of active resources analyzed for this service to create a monthly cost
+    /// estimate.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+    /// <p>The price per hour to analyze the resources in the service.
+    /// For more information,
+    /// see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your
+    /// Amazon DevOps Guru costs</a> and
+    /// <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
+    pub fn unit_cost(&self) -> f64 {
+        self.unit_cost
+    }
+    /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
+    pub fn cost(&self) -> f64 {
+        self.cost
+    }
 }
 impl std::fmt::Debug for ServiceResourceCost {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5968,6 +6850,14 @@ pub struct ServiceIntegrationConfig {
     /// </p>
     pub ops_center: std::option::Option<crate::model::OpsCenterIntegration>,
 }
+impl ServiceIntegrationConfig {
+    /// <p>
+    /// Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems Manager OpsCenter for each created insight.
+    /// </p>
+    pub fn ops_center(&self) -> std::option::Option<&crate::model::OpsCenterIntegration> {
+        self.ops_center.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceIntegrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceIntegrationConfig");
@@ -6027,6 +6917,14 @@ pub struct OpsCenterIntegration {
     /// </p>
     pub opt_in_status: std::option::Option<crate::model::OptInStatus>,
 }
+impl OpsCenterIntegration {
+    /// <p>
+    /// Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
+    /// </p>
+    pub fn opt_in_status(&self) -> std::option::Option<&crate::model::OptInStatus> {
+        self.opt_in_status.as_ref()
+    }
+}
 impl std::fmt::Debug for OpsCenterIntegration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OpsCenterIntegration");
@@ -6084,6 +6982,17 @@ pub struct ServiceHealth {
     /// <p>Represents the health of an AWS service. This is a <code>ServiceInsightHealth</code> that
     /// contains the number of open proactive and reactive insights for this service.</p>
     pub insight: std::option::Option<crate::model::ServiceInsightHealth>,
+}
+impl ServiceHealth {
+    /// <p>The name of the AWS service.</p>
+    pub fn service_name(&self) -> std::option::Option<&crate::model::ServiceName> {
+        self.service_name.as_ref()
+    }
+    /// <p>Represents the health of an AWS service. This is a <code>ServiceInsightHealth</code> that
+    /// contains the number of open proactive and reactive insights for this service.</p>
+    pub fn insight(&self) -> std::option::Option<&crate::model::ServiceInsightHealth> {
+        self.insight.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6156,6 +7065,16 @@ pub struct ServiceInsightHealth {
     /// <p>The number of open reactive insights in the AWS service</p>
     pub open_reactive_insights: i32,
 }
+impl ServiceInsightHealth {
+    /// <p>The number of open proactive insights in the AWS service</p>
+    pub fn open_proactive_insights(&self) -> i32 {
+        self.open_proactive_insights
+    }
+    /// <p>The number of open reactive insights in the AWS service</p>
+    pub fn open_reactive_insights(&self) -> i32 {
+        self.open_reactive_insights
+    }
+}
 impl std::fmt::Debug for ServiceInsightHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceInsightHealth");
@@ -6225,6 +7144,21 @@ pub struct CloudFormationHealth {
     /// the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights.
     /// </p>
     pub insight: std::option::Option<crate::model::InsightHealth>,
+}
+impl CloudFormationHealth {
+    /// <p>
+    /// The name of the CloudFormation stack.
+    /// </p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>
+    /// Information about the health of the AWS resources in your account that are specified by an AWS CloudFormation stack, including
+    /// the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights.
+    /// </p>
+    pub fn insight(&self) -> std::option::Option<&crate::model::InsightHealth> {
+        self.insight.as_ref()
+    }
 }
 impl std::fmt::Debug for CloudFormationHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6312,6 +7246,26 @@ pub struct InsightHealth {
     /// The Meant Time to Recover (MTTR) for the insight.  
     /// </p>
     pub mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
+}
+impl InsightHealth {
+    /// <p>
+    /// The number of open proactive insights.
+    /// </p>
+    pub fn open_proactive_insights(&self) -> i32 {
+        self.open_proactive_insights
+    }
+    /// <p>
+    /// The number of open reactive insights.
+    /// </p>
+    pub fn open_reactive_insights(&self) -> i32 {
+        self.open_reactive_insights
+    }
+    /// <p>
+    /// The Meant Time to Recover (MTTR) for the insight.  
+    /// </p>
+    pub fn mean_time_to_recover_in_milliseconds(&self) -> std::option::Option<i64> {
+        self.mean_time_to_recover_in_milliseconds
+    }
 }
 impl std::fmt::Debug for InsightHealth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6433,6 +7387,51 @@ pub struct ReactiveInsight {
     /// the creation of OpstItems insights before they are created for each insight.
     /// </p>
     pub ssm_ops_item_id: std::option::Option<std::string::String>,
+}
+impl ReactiveInsight {
+    /// <p>
+    /// The ID of a reactive insight.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The name of a reactive insight.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The severity of a reactive insight.
+    /// </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::InsightSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>
+    /// The status of a reactive insight.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InsightStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and
+    /// ended. </p>
+    pub fn insight_time_range(&self) -> std::option::Option<&crate::model::InsightTimeRange> {
+        self.insight_time_range.as_ref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>
+    /// The ID of the AWS System Manager OpsItem created for this insight. You must enable
+    /// the creation of OpstItems insights before they are created for each insight.
+    /// </p>
+    pub fn ssm_ops_item_id(&self) -> std::option::Option<&str> {
+        self.ssm_ops_item_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ReactiveInsight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6627,6 +7626,49 @@ pub struct ProactiveInsight {
     /// the creation of OpstItems insights before they are created for each insight.
     /// </p>
     pub ssm_ops_item_id: std::option::Option<std::string::String>,
+}
+impl ProactiveInsight {
+    /// <p>The ID of the proactive insight. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the proactive insight. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The severity of the proactive insight. </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::InsightSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>The status of the proactive insight. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InsightStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and
+    /// ended. </p>
+    pub fn insight_time_range(&self) -> std::option::Option<&crate::model::InsightTimeRange> {
+        self.insight_time_range.as_ref()
+    }
+    /// <p>
+    /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+    /// </p>
+    pub fn prediction_time_range(&self) -> std::option::Option<&crate::model::PredictionTimeRange> {
+        self.prediction_time_range.as_ref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>
+    /// The ID of the AWS System Manager OpsItem created for this insight. You must enable
+    /// the creation of OpstItems insights before they are created for each insight.
+    /// </p>
+    pub fn ssm_ops_item_id(&self) -> std::option::Option<&str> {
+        self.ssm_ops_item_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ProactiveInsight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6831,6 +7873,57 @@ pub struct ReactiveAnomaly {
     /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
     /// </p>
     pub resource_collection: std::option::Option<crate::model::ResourceCollection>,
+}
+impl ReactiveAnomaly {
+    /// <p>The ID of the reactive anomaly. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The severity of the anomaly. </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::AnomalySeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>
+    /// The status of the anomaly.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
+    /// </p>
+    pub fn anomaly_time_range(&self) -> std::option::Option<&crate::model::AnomalyTimeRange> {
+        self.anomaly_time_range.as_ref()
+    }
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub fn anomaly_reported_time_range(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyReportedTimeRange> {
+        self.anomaly_reported_time_range.as_ref()
+    }
+    /// <p>
+    /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+    /// </p>
+    pub fn source_details(&self) -> std::option::Option<&crate::model::AnomalySourceDetails> {
+        self.source_details.as_ref()
+    }
+    /// <p>
+    /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+    /// </p>
+    pub fn associated_insight_id(&self) -> std::option::Option<&str> {
+        self.associated_insight_id.as_deref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
 }
 impl std::fmt::Debug for ReactiveAnomaly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7074,6 +8167,80 @@ pub struct ProactiveAnomaly {
     /// threshold is related to the anomalous behavior that generated this anomaly.
     /// </p>
     pub limit: std::option::Option<f64>,
+}
+impl ProactiveAnomaly {
+    /// <p>
+    /// The ID of a proactive anomaly.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>
+    /// The severity of a proactive anomaly.
+    /// </p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::AnomalySeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>
+    /// The status of a proactive anomaly.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnomalyStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// The time of the anomaly's most recent update.
+    /// </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+    /// <p>
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
+    /// </p>
+    pub fn anomaly_time_range(&self) -> std::option::Option<&crate::model::AnomalyTimeRange> {
+        self.anomaly_time_range.as_ref()
+    }
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub fn anomaly_reported_time_range(
+        &self,
+    ) -> std::option::Option<&crate::model::AnomalyReportedTimeRange> {
+        self.anomaly_reported_time_range.as_ref()
+    }
+    /// <p>
+    /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+    /// </p>
+    pub fn prediction_time_range(&self) -> std::option::Option<&crate::model::PredictionTimeRange> {
+        self.prediction_time_range.as_ref()
+    }
+    /// <p>
+    /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+    /// </p>
+    pub fn source_details(&self) -> std::option::Option<&crate::model::AnomalySourceDetails> {
+        self.source_details.as_ref()
+    }
+    /// <p>
+    /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+    /// </p>
+    pub fn associated_insight_id(&self) -> std::option::Option<&str> {
+        self.associated_insight_id.as_deref()
+    }
+    /// <p>
+    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection(&self) -> std::option::Option<&crate::model::ResourceCollection> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>
+    /// A threshold that was exceeded by behavior in analyzed resources. Exceeding this
+    /// threshold is related to the anomalous behavior that generated this anomaly.
+    /// </p>
+    pub fn limit(&self) -> std::option::Option<f64> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ProactiveAnomaly {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

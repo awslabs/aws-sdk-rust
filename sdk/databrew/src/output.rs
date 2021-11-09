@@ -6,6 +6,12 @@ pub struct UpdateScheduleOutput {
     /// <p>The name of the schedule that was updated.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateScheduleOutput {
+    /// <p>The name of the schedule that was updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateScheduleOutput");
@@ -52,6 +58,12 @@ pub struct UpdateRecipeJobOutput {
     /// <p>The name of the job that you updated.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateRecipeJobOutput {
+    /// <p>The name of the job that you updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRecipeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecipeJobOutput");
@@ -97,6 +109,12 @@ impl UpdateRecipeJobOutput {
 pub struct UpdateRecipeOutput {
     /// <p>The name of the recipe that was updated.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateRecipeOutput {
+    /// <p>The name of the recipe that was updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -145,6 +163,16 @@ pub struct UpdateProjectOutput {
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the project that you updated.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateProjectOutput {
+    /// <p>The date and time that the project was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The name of the project that you updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -210,6 +238,12 @@ pub struct UpdateProfileJobOutput {
     /// <p>The name of the job that was updated.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateProfileJobOutput {
+    /// <p>The name of the job that was updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProfileJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProfileJobOutput");
@@ -255,6 +289,12 @@ impl UpdateProfileJobOutput {
 pub struct UpdateDatasetOutput {
     /// <p>The name of the dataset that you updated.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateDatasetOutput {
+    /// <p>The name of the dataset that you updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -362,6 +402,12 @@ pub struct StopJobRunOutput {
     /// <p>The ID of the job run that you stopped.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl StopJobRunOutput {
+    /// <p>The ID of the job run that you stopped.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopJobRunOutput");
@@ -411,6 +457,16 @@ pub struct StartProjectSessionOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A system-generated identifier for the session.</p>
     pub client_session_id: std::option::Option<std::string::String>,
+}
+impl StartProjectSessionOutput {
+    /// <p>The name of the project to be acted upon.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A system-generated identifier for the session.</p>
+    pub fn client_session_id(&self) -> std::option::Option<&str> {
+        self.client_session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartProjectSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -476,6 +532,12 @@ pub struct StartJobRunOutput {
     /// <p>A system-generated identifier for this particular job run.</p>
     pub run_id: std::option::Option<std::string::String>,
 }
+impl StartJobRunOutput {
+    /// <p>A system-generated identifier for this particular job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobRunOutput");
@@ -527,6 +589,20 @@ pub struct SendProjectSessionActionOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the action that was performed.</p>
     pub action_id: std::option::Option<i32>,
+}
+impl SendProjectSessionActionOutput {
+    /// <p>A message indicating the result of performing the action.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+    /// <p>The name of the project that was affected by the action.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique identifier for the action that was performed.</p>
+    pub fn action_id(&self) -> std::option::Option<i32> {
+        self.action_id
+    }
 }
 impl std::fmt::Debug for SendProjectSessionActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -602,6 +678,12 @@ pub struct PublishRecipeOutput {
     /// <p>The name of the recipe that you published.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl PublishRecipeOutput {
+    /// <p>The name of the recipe that you published.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishRecipeOutput");
@@ -648,6 +730,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tags associated with the DataBrew resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A list of tags associated with the DataBrew resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -714,6 +805,17 @@ pub struct ListSchedulesOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSchedulesOutput {
+    /// <p>A list of schedules that are defined.</p>
+    pub fn schedules(&self) -> std::option::Option<&[crate::model::Schedule]> {
+        self.schedules.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchedulesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -790,6 +892,17 @@ pub struct ListRecipeVersionsOutput {
     /// <p>A list of versions for the specified recipe.</p>
     pub recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
 }
+impl ListRecipeVersionsOutput {
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of versions for the specified recipe.</p>
+    pub fn recipes(&self) -> std::option::Option<&[crate::model::Recipe]> {
+        self.recipes.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecipeVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecipeVersionsOutput");
@@ -864,6 +977,17 @@ pub struct ListRecipesOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecipesOutput {
+    /// <p>A list of recipes that are defined.</p>
+    pub fn recipes(&self) -> std::option::Option<&[crate::model::Recipe]> {
+        self.recipes.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecipesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -940,6 +1064,17 @@ pub struct ListProjectsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListProjectsOutput {
+    /// <p>A list of projects that are defined .</p>
+    pub fn projects(&self) -> std::option::Option<&[crate::model::Project]> {
+        self.projects.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProjectsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsOutput");
@@ -1014,6 +1149,17 @@ pub struct ListJobsOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobsOutput {
+    /// <p>A list of jobs that are defined.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1090,6 +1236,17 @@ pub struct ListJobRunsOutput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobRunsOutput {
+    /// <p>A list of job runs that have occurred for the specified job.</p>
+    pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
+        self.job_runs.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobRunsOutput");
@@ -1164,6 +1321,17 @@ pub struct ListDatasetsOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasetsOutput {
+    /// <p>A list of datasets that are defined.</p>
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::Dataset]> {
+        self.datasets.as_deref()
+    }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatasetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1255,6 +1423,49 @@ pub struct DescribeScheduleOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the schedule.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeScheduleOutput {
+    /// <p>The date and time that the schedule was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The identifier (user name) of the user who created the schedule. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The name or names of one or more jobs to be run by using the schedule.</p>
+    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.job_names.as_deref()
+    }
+    /// <p>The identifier (user name) of the user who last modified the schedule.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time that the schedule was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For
+    /// more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the
+    /// <i>Glue DataBrew Developer Guide</i>.</p>
+    pub fn cron_expression(&self) -> std::option::Option<&str> {
+        self.cron_expression.as_deref()
+    }
+    /// <p>Metadata tags associated with this schedule.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name of the schedule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1475,6 +1686,64 @@ pub struct DescribeRecipeOutput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The recipe version identifier.</p>
     pub recipe_version: std::option::Option<std::string::String>,
+}
+impl DescribeRecipeOutput {
+    /// <p>The identifier (user name) of the user who created the recipe.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The date and time that the recipe was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The identifier (user name) of the user who last modified the recipe.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time that the recipe was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The name of the project associated with this recipe.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The identifier (user name) of the user who last published the recipe.</p>
+    pub fn published_by(&self) -> std::option::Option<&str> {
+        self.published_by.as_deref()
+    }
+    /// <p>The date and time when the recipe was last published.</p>
+    pub fn published_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.published_date.as_ref()
+    }
+    /// <p>The description of the recipe.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the recipe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
+    /// the conditions under which the action should succeed.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
+        self.steps.as_deref()
+    }
+    /// <p>Metadata tags associated with this project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The ARN of the recipe.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The recipe version identifier.</p>
+    pub fn recipe_version(&self) -> std::option::Option<&str> {
+        self.recipe_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1765,6 +2034,83 @@ pub struct DescribeProjectOutput {
     pub opened_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the project was opened. </p>
     pub open_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeProjectOutput {
+    /// <p>The date and time that the project was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The identifier (user name) of the user who created the project.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The dataset associated with the project.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The date and time that the project was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The identifier (user name) of the user who last modified the project.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The name of the project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The recipe associated with this job.</p>
+    pub fn recipe_name(&self) -> std::option::Option<&str> {
+        self.recipe_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
+    /// analysis.</p>
+    pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
+        self.sample.as_ref()
+    }
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+    /// DataBrew runs the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata tags associated with this project.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Describes the current state of the session:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PROVISIONING</code> - allocating resources for the session.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INITIALIZING</code> - getting the session ready for first use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ASSIGNED</code> - the session is ready for use.</p>
+    /// </li>
+    /// </ul>
+    pub fn session_status(&self) -> std::option::Option<&crate::model::SessionStatus> {
+        self.session_status.as_ref()
+    }
+    /// <p>The identifier (user name) of the user that opened the project for use. </p>
+    pub fn opened_by(&self) -> std::option::Option<&str> {
+        self.opened_by.as_deref()
+    }
+    /// <p>The date and time when the project was opened. </p>
+    pub fn open_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.open_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2087,6 +2433,89 @@ pub struct DescribeJobRunOutput {
     /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
     /// size parameter.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
+}
+impl DescribeJobRunOutput {
+    /// <p>The number of times that DataBrew has attempted to run the job.</p>
+    pub fn attempt(&self) -> i32 {
+        self.attempt
+    }
+    /// <p>The date and time when the job completed processing.</p>
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The name of the dataset for the job to process.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The amount of time, in seconds, during which the job run consumed resources.</p>
+    pub fn execution_time(&self) -> i32 {
+        self.execution_time
+    }
+    /// <p>The name of the job being processed during this run.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+    /// and override default parameters of evaluations. When configuration is null, the
+    /// profile job will run with default settings.</p>
+    pub fn profile_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ProfileConfiguration> {
+        self.profile_configuration.as_ref()
+    }
+    /// <p>The unique identifier of the job run.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The current state of the job run entity itself.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::JobRunState> {
+        self.state.as_ref()
+    }
+    /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
+    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+        self.log_subscription.as_ref()
+    }
+    /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages
+    /// when it runs.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>One or more output artifacts from a job run.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
+        self.data_catalog_outputs.as_deref()
+    }
+    /// <p>Represents a list of JDBC database output objects which defines the output
+    /// destination for a DataBrew recipe job to write into.</p>
+    pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
+        self.database_outputs.as_deref()
+    }
+    /// <p>Represents the name and version of a DataBrew recipe.</p>
+    pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
+        self.recipe_reference.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
+    pub fn started_by(&self) -> std::option::Option<&str> {
+        self.started_by.as_deref()
+    }
+    /// <p>The date and time when the job run began.</p>
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_on.as_ref()
+    }
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
+    /// profile job will be executed. If a JobSample value is not provided, the default value
+    /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
+    /// size parameter.</p>
+    pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
+        self.job_sample.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2502,6 +2931,136 @@ pub struct DescribeJobOutput {
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
     /// profile job will be executed.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
+}
+impl DescribeJobOutput {
+    /// <p>The date and time that the job was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The identifier (user name) of the user associated with the creation of the job.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The dataset that the job acts upon.</p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
+    /// job.</p>
+    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
+    /// S3.</p>
+    /// </li>
+    /// </ul>
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+        self.encryption_mode.as_ref()
+    }
+    /// <p>The name of the job.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The job type, which must be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PROFILE</code> - The job analyzes the dataset to determine its size,
+    /// data types, data distribution, and more.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RECIPE</code> - The job applies one or more transformations to a
+    /// dataset.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The identifier (user name) of the user who last modified the job.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time that the job was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
+    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+        self.log_subscription.as_ref()
+    }
+    /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes
+    /// data.</p>
+    pub fn max_capacity(&self) -> i32 {
+        self.max_capacity
+    }
+    /// <p>The maximum number of times to retry the job after a job run fails.</p>
+    pub fn max_retries(&self) -> i32 {
+        self.max_retries
+    }
+    /// <p>One or more artifacts that represent the output from running the job.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
+        self.data_catalog_outputs.as_deref()
+    }
+    /// <p>Represents a list of JDBC database output objects which defines the output
+    /// destination for a DataBrew recipe job to write into.</p>
+    pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
+        self.database_outputs.as_deref()
+    }
+    /// <p>The DataBrew project associated with this job.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+    /// and override default parameters of evaluations. When configuration is null, the
+    /// profile job will run with default settings.</p>
+    pub fn profile_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ProfileConfiguration> {
+        self.profile_configuration.as_ref()
+    }
+    /// <p>Represents the name and version of a DataBrew recipe.</p>
+    pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
+        self.recipe_reference.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+    /// DataBrew runs the job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Metadata tags associated with this job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
+    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    pub fn timeout(&self) -> i32 {
+        self.timeout
+    }
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
+    /// profile job will be executed.</p>
+    pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
+        self.job_sample.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3000,6 +3559,61 @@ pub struct DescribeDatasetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl DescribeDatasetOutput {
+    /// <p>The identifier (user name) of the user who created the dataset.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The date and time that the dataset was created.</p>
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_date.as_ref()
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
+        self.format.as_ref()
+    }
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
+    /// Excel, or JSON input.</p>
+    pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
+        self.format_options.as_ref()
+    }
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
+    /// Amazon S3.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
+    /// <p>The date and time that the dataset was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
+    /// <p>The identifier (user name) of the user who last modified the dataset.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    pub fn path_options(&self) -> std::option::Option<&crate::model::PathOptions> {
+        self.path_options.as_ref()
+    }
+    /// <p>Metadata tags associated with this dataset.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetOutput");
@@ -3227,6 +3841,12 @@ pub struct DeleteScheduleOutput {
     /// <p>The name of the schedule that was deleted.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteScheduleOutput {
+    /// <p>The name of the schedule that was deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteScheduleOutput");
@@ -3274,6 +3894,16 @@ pub struct DeleteRecipeVersionOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The version of the recipe that was deleted.</p>
     pub recipe_version: std::option::Option<std::string::String>,
+}
+impl DeleteRecipeVersionOutput {
+    /// <p>The name of the recipe that was deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the recipe that was deleted.</p>
+    pub fn recipe_version(&self) -> std::option::Option<&str> {
+        self.recipe_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRecipeVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3339,6 +3969,12 @@ pub struct DeleteProjectOutput {
     /// <p>The name of the project that you deleted.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteProjectOutput {
+    /// <p>The name of the project that you deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectOutput");
@@ -3384,6 +4020,12 @@ impl DeleteProjectOutput {
 pub struct DeleteJobOutput {
     /// <p>The name of the job that you deleted.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteJobOutput {
+    /// <p>The name of the job that you deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3431,6 +4073,12 @@ pub struct DeleteDatasetOutput {
     /// <p>The name of the dataset that you deleted.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetOutput {
+    /// <p>The name of the dataset that you deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetOutput");
@@ -3476,6 +4124,12 @@ impl DeleteDatasetOutput {
 pub struct CreateScheduleOutput {
     /// <p>The name of the schedule that was created.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateScheduleOutput {
+    /// <p>The name of the schedule that was created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3523,6 +4177,12 @@ pub struct CreateRecipeJobOutput {
     /// <p>The name of the job that you created.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateRecipeJobOutput {
+    /// <p>The name of the job that you created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRecipeJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRecipeJobOutput");
@@ -3568,6 +4228,12 @@ impl CreateRecipeJobOutput {
 pub struct CreateRecipeOutput {
     /// <p>The name of the recipe that you created.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateRecipeOutput {
+    /// <p>The name of the recipe that you created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3615,6 +4281,12 @@ pub struct CreateProjectOutput {
     /// <p>The name of the project that you created.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateProjectOutput {
+    /// <p>The name of the project that you created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectOutput");
@@ -3661,6 +4333,12 @@ pub struct CreateProfileJobOutput {
     /// <p>The name of the job that was created.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateProfileJobOutput {
+    /// <p>The name of the job that was created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProfileJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProfileJobOutput");
@@ -3706,6 +4384,12 @@ impl CreateProfileJobOutput {
 pub struct CreateDatasetOutput {
     /// <p>The name of the dataset that you created.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateDatasetOutput {
+    /// <p>The name of the dataset that you created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3754,6 +4438,16 @@ pub struct BatchDeleteRecipeVersionOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::RecipeVersionErrorDetail>>,
+}
+impl BatchDeleteRecipeVersionOutput {
+    /// <p>The name of the recipe that was modified.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::RecipeVersionErrorDetail]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteRecipeVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

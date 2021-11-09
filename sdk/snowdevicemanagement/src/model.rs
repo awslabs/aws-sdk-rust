@@ -14,6 +14,28 @@ pub struct TaskSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TaskSummary {
+    /// <p>The task ID.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The state of the task assigned to one or many devices.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::TaskState> {
+        self.state.as_ref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TaskSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSummary");
@@ -180,6 +202,15 @@ pub enum Command {
     Reboot(crate::model::Reboot),
     /// <p>Unlocks the device.</p>
     Unlock(crate::model::Unlock),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Command {
     /// Tries to convert the enum instance into [`Reboot`](crate::model::Command::Reboot), extracting the inner [`Reboot`](crate::model::Reboot).
@@ -207,6 +238,10 @@ impl Command {
     /// Returns true if this is a [`Unlock`](crate::model::Command::Unlock).
     pub fn is_unlock(&self) -> bool {
         self.as_unlock().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -282,6 +317,24 @@ pub struct ExecutionSummary {
     pub managed_device_id: std::option::Option<std::string::String>,
     /// <p>The state of the execution.</p>
     pub state: std::option::Option<crate::model::ExecutionState>,
+}
+impl ExecutionSummary {
+    /// <p>The ID of the task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The ID of the execution.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>The ID of the managed device that the task is being executed on.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
+    /// <p>The state of the execution.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ExecutionState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -463,6 +516,20 @@ pub struct ResourceSummary {
     /// <p>The ID of the resource.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl ResourceSummary {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceSummary");
@@ -541,6 +608,16 @@ pub struct InstanceSummary {
     pub instance: std::option::Option<crate::model::Instance>,
     /// <p>When the instance summary was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl InstanceSummary {
+    /// <p>A structure containing details about the instance.</p>
+    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+        self.instance.as_ref()
+    }
+    /// <p>When the instance summary was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -633,6 +710,63 @@ pub struct Instance {
     pub cpu_options: std::option::Option<crate::model::CpuOptions>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
     pub root_device_name: std::option::Option<std::string::String>,
+}
+impl Instance {
+    /// <p>The ID of the AMI used to launch the instance.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in
+    /// the launch group. </p>
+    pub fn ami_launch_index(&self) -> std::option::Option<i32> {
+        self.ami_launch_index
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The description of the current state of an instance.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::InstanceState> {
+        self.state.as_ref()
+    }
+    /// <p>The instance type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The private IPv4 address assigned to the instance.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>The public IPv4 address assigned to the instance.</p>
+    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+        self.public_ip_address.as_deref()
+    }
+    /// <p>When the instance was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>When the instance was last updated.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>Any block device mapping entries for the instance.</p>
+    pub fn block_device_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+        self.block_device_mappings.as_deref()
+    }
+    /// <p>The security groups for the instance.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroupIdentifier]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>The CPU options for the instance.</p>
+    pub fn cpu_options(&self) -> std::option::Option<&crate::model::CpuOptions> {
+        self.cpu_options.as_ref()
+    }
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    pub fn root_device_name(&self) -> std::option::Option<&str> {
+        self.root_device_name.as_deref()
+    }
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -892,6 +1026,16 @@ pub struct CpuOptions {
     /// <p>The number of threads per core in the CPU.</p>
     pub threads_per_core: std::option::Option<i32>,
 }
+impl CpuOptions {
+    /// <p>The number of cores that the CPU can use.</p>
+    pub fn core_count(&self) -> std::option::Option<i32> {
+        self.core_count
+    }
+    /// <p>The number of threads per core in the CPU.</p>
+    pub fn threads_per_core(&self) -> std::option::Option<i32> {
+        self.threads_per_core
+    }
+}
 impl std::fmt::Debug for CpuOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CpuOptions");
@@ -954,6 +1098,16 @@ pub struct SecurityGroupIdentifier {
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The security group name.</p>
     pub group_name: std::option::Option<std::string::String>,
+}
+impl SecurityGroupIdentifier {
+    /// <p>The security group ID.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The security group name.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SecurityGroupIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1018,6 +1172,17 @@ pub struct InstanceBlockDeviceMapping {
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
     /// volumes when the instance is launched. </p>
     pub ebs: std::option::Option<crate::model::EbsInstanceBlockDevice>,
+}
+impl InstanceBlockDeviceMapping {
+    /// <p>The block device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
+    /// volumes when the instance is launched. </p>
+    pub fn ebs(&self) -> std::option::Option<&crate::model::EbsInstanceBlockDevice> {
+        self.ebs.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceBlockDeviceMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1091,6 +1256,24 @@ pub struct EbsInstanceBlockDevice {
     pub status: std::option::Option<crate::model::AttachmentStatus>,
     /// <p>The ID of the Amazon EBS volume.</p>
     pub volume_id: std::option::Option<std::string::String>,
+}
+impl EbsInstanceBlockDevice {
+    /// <p>When the attachment was initiated.</p>
+    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.attach_time.as_ref()
+    }
+    /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
+    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+        self.delete_on_termination
+    }
+    /// <p>The attachment state.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AttachmentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ID of the Amazon EBS volume.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EbsInstanceBlockDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1292,6 +1475,59 @@ pub struct InstanceState {
     /// state
     /// of the instance.</p>
     pub name: std::option::Option<crate::model::InstanceStateName>,
+}
+impl InstanceState {
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values
+    /// between 256 and 65,535. These numerical values are used for internal purposes and should be
+    /// ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values
+    /// between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These
+    /// values are: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>0</code> : <code>pending</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>16</code> : <code>running</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>32</code> : <code>shutting-down</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>48</code> : <code>terminated</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>64</code> : <code>stopping</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>80</code> : <code>stopped</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in
+    /// decimal. </p>
+    pub fn code(&self) -> std::option::Option<i32> {
+        self.code
+    }
+    /// <p>The current
+    /// state
+    /// of the instance.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::InstanceStateName> {
+        self.name.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1529,6 +1765,28 @@ pub struct DeviceSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl DeviceSummary {
+    /// <p>The ID of the device.</p>
+    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+        self.managed_device_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn managed_device_arn(&self) -> std::option::Option<&str> {
+        self.managed_device_arn.as_deref()
+    }
+    /// <p>The ID of the job used to order the device.</p>
+    pub fn associated_with_job(&self) -> std::option::Option<&str> {
+        self.associated_with_job.as_deref()
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+    /// in different ways, such as by purpose, owner, or environment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for DeviceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceSummary");
@@ -1649,6 +1907,21 @@ pub struct SoftwareInformation {
     /// device.</p>
     pub install_state: std::option::Option<std::string::String>,
 }
+impl SoftwareInformation {
+    /// <p>The version of the software currently installed on the device.</p>
+    pub fn installed_version(&self) -> std::option::Option<&str> {
+        self.installed_version.as_deref()
+    }
+    /// <p>The version of the software being installed on the device.</p>
+    pub fn installing_version(&self) -> std::option::Option<&str> {
+        self.installing_version.as_deref()
+    }
+    /// <p>The state of the software that is installed or that is being installed on the
+    /// device.</p>
+    pub fn install_state(&self) -> std::option::Option<&str> {
+        self.install_state.as_deref()
+    }
+}
 impl std::fmt::Debug for SoftwareInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SoftwareInformation");
@@ -1741,6 +2014,28 @@ pub struct Capacity {
     pub used: std::option::Option<i64>,
     /// <p>The amount of capacity available for use on the device.</p>
     pub available: std::option::Option<i64>,
+}
+impl Capacity {
+    /// <p>The name of the type of capacity, such as memory.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unit of measure for the type of capacity.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>The total capacity on the device.</p>
+    pub fn total(&self) -> std::option::Option<i64> {
+        self.total
+    }
+    /// <p>The amount of capacity used on the device.</p>
+    pub fn used(&self) -> std::option::Option<i64> {
+        self.used
+    }
+    /// <p>The amount of capacity available for use on the device.</p>
+    pub fn available(&self) -> std::option::Option<i64> {
+        self.available
+    }
 }
 impl std::fmt::Debug for Capacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1855,6 +2150,40 @@ pub struct PhysicalNetworkInterface {
     pub default_gateway: std::option::Option<std::string::String>,
     /// <p>The MAC address of the device.</p>
     pub mac_address: std::option::Option<std::string::String>,
+}
+impl PhysicalNetworkInterface {
+    /// <p>The physical network interface ID.</p>
+    pub fn physical_network_interface_id(&self) -> std::option::Option<&str> {
+        self.physical_network_interface_id.as_deref()
+    }
+    /// <p>The
+    /// physical
+    /// connector type.</p>
+    pub fn physical_connector_type(
+        &self,
+    ) -> std::option::Option<&crate::model::PhysicalConnectorType> {
+        self.physical_connector_type.as_ref()
+    }
+    /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
+    pub fn ip_address_assignment(&self) -> std::option::Option<&crate::model::IpAddressAssignment> {
+        self.ip_address_assignment.as_ref()
+    }
+    /// <p>The IP address of the device.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The netmask used to divide the IP address into subnets.</p>
+    pub fn netmask(&self) -> std::option::Option<&str> {
+        self.netmask.as_deref()
+    }
+    /// <p>The default gateway of the device.</p>
+    pub fn default_gateway(&self) -> std::option::Option<&str> {
+        self.default_gateway.as_deref()
+    }
+    /// <p>The MAC address of the device.</p>
+    pub fn mac_address(&self) -> std::option::Option<&str> {
+        self.mac_address.as_deref()
+    }
 }
 impl std::fmt::Debug for PhysicalNetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

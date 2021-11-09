@@ -169,6 +169,16 @@ pub struct Tag {
     /// <p>The value of the tag that is attached to the specified model.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag that is attached to the specified model.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag that is attached to the specified model.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -307,6 +317,20 @@ pub struct ProjectMetadata {
     /// <p>The unix timestamp for the date and time that the project was created. </p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ProjectMetadata {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for ProjectMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProjectMetadata");
@@ -395,6 +419,36 @@ pub struct ModelMetadata {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
     pub performance: std::option::Option<crate::model::ModelPerformance>,
+}
+impl ModelMetadata {
+    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The version of the model.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The description for the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the model.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message for the model.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
+    pub fn performance(&self) -> std::option::Option<&crate::model::ModelPerformance> {
+        self.performance.as_ref()
+    }
 }
 impl std::fmt::Debug for ModelMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -537,6 +591,20 @@ pub struct ModelPerformance {
     pub recall: std::option::Option<f32>,
     /// <p>The overall precision metric value for the trained model.</p>
     pub precision: std::option::Option<f32>,
+}
+impl ModelPerformance {
+    /// <p>The overall F1 score metric for the trained model.</p>
+    pub fn f1_score(&self) -> std::option::Option<f32> {
+        self.f1_score
+    }
+    /// <p>The overall recall metric value for the trained model. </p>
+    pub fn recall(&self) -> std::option::Option<f32> {
+        self.recall
+    }
+    /// <p>The overall precision metric value for the trained model.</p>
+    pub fn precision(&self) -> std::option::Option<f32> {
+        self.precision
+    }
 }
 impl std::fmt::Debug for ModelPerformance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -710,6 +778,21 @@ pub struct DetectAnomalyResult {
     /// <p>The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.</p>
     pub confidence: std::option::Option<f32>,
 }
+impl DetectAnomalyResult {
+    /// <p>The source of the image that was analyzed. <code>direct</code> means that the
+    /// images was supplied from the local computer. No other values are supported.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ImageSource> {
+        self.source.as_ref()
+    }
+    /// <p>True if the image contains an anomaly, otherwise false.</p>
+    pub fn is_anomalous(&self) -> bool {
+        self.is_anomalous
+    }
+    /// <p>The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for DetectAnomalyResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectAnomalyResult");
@@ -786,6 +869,12 @@ pub struct ImageSource {
     /// <p>The type of the image.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
+impl ImageSource {
+    /// <p>The type of the image.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageSource");
@@ -839,6 +928,24 @@ pub struct ProjectDescription {
     pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of datasets in the project.</p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DatasetMetadata>>,
+}
+impl ProjectDescription {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>A list of datasets in the project.</p>
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetMetadata]> {
+        self.datasets.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -944,6 +1051,24 @@ pub struct DatasetMetadata {
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The status message for the dataset.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl DatasetMetadata {
+    /// <p>The type of the dataset.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The status for the dataset.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message for the dataset.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1064,6 +1189,58 @@ pub struct ModelDescription {
     /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
     /// during training.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+}
+impl ModelDescription {
+    /// <p>The version of the model</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The description for the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the model.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message for the model.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>Performance metrics for the model. Created during training.</p>
+    pub fn performance(&self) -> std::option::Option<&crate::model::ModelPerformance> {
+        self.performance.as_ref()
+    }
+    /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
+    /// that was used to test the trained model and generate the performance scores.</p>
+    pub fn evaluation_manifest(&self) -> std::option::Option<&crate::model::OutputS3Object> {
+        self.evaluation_manifest.as_ref()
+    }
+    /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
+    pub fn evaluation_result(&self) -> std::option::Option<&crate::model::OutputS3Object> {
+        self.evaluation_result.as_ref()
+    }
+    /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
+    pub fn evaluation_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.evaluation_end_timestamp.as_ref()
+    }
+    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
+    /// during training.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ModelDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1286,6 +1463,16 @@ pub struct OutputS3Object {
     /// <p>The location of the training output in the bucket.</p>
     pub key: std::option::Option<std::string::String>,
 }
+impl OutputS3Object {
+    /// <p>The bucket that contains the training output.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The location of the training output in the bucket.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputS3Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputS3Object");
@@ -1347,6 +1534,12 @@ pub struct OutputConfig {
     /// <p>The S3 location for the output.</p>
     pub s3_location: std::option::Option<crate::model::S3Location>,
 }
+impl OutputConfig {
+    /// <p>The S3 location for the output.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for OutputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputConfig");
@@ -1399,6 +1592,16 @@ pub struct S3Location {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The path of the folder, within the S3 bucket, that contains the training output.</p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The S3 bucket that contains the training output.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The path of the folder, within the S3 bucket, that contains the training output.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,6 +1676,37 @@ pub struct DatasetDescription {
     pub status_message: std::option::Option<std::string::String>,
     /// <p></p>
     pub image_stats: std::option::Option<crate::model::DatasetImageStats>,
+}
+impl DatasetDescription {
+    /// <p>The name of the project that contains the dataset.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
+    /// The value <code>test</code> represents a test dataset.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The Unix timestamp for the date and time that the dataset was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The status of the dataset.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message for the dataset. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p></p>
+    pub fn image_stats(&self) -> std::option::Option<&crate::model::DatasetImageStats> {
+        self.image_stats.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1623,6 +1857,24 @@ pub struct DatasetImageStats {
     /// <p>the total number of images labeled as an anomaly.</p>
     pub anomaly: std::option::Option<i32>,
 }
+impl DatasetImageStats {
+    /// <p>The total number of images in the dataset.</p>
+    pub fn total(&self) -> std::option::Option<i32> {
+        self.total
+    }
+    /// <p>The total number of labeled images.</p>
+    pub fn labeled(&self) -> std::option::Option<i32> {
+        self.labeled
+    }
+    /// <p>The total number of images labeled as normal.</p>
+    pub fn normal(&self) -> std::option::Option<i32> {
+        self.normal
+    }
+    /// <p>the total number of images labeled as an anomaly.</p>
+    pub fn anomaly(&self) -> std::option::Option<i32> {
+        self.anomaly
+    }
+}
 impl std::fmt::Debug for DatasetImageStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetImageStats");
@@ -1710,6 +1962,14 @@ pub struct DatasetSource {
     /// <p>Location information for the manifest file.</p>
     pub ground_truth_manifest: std::option::Option<crate::model::DatasetGroundTruthManifest>,
 }
+impl DatasetSource {
+    /// <p>Location information for the manifest file.</p>
+    pub fn ground_truth_manifest(
+        &self,
+    ) -> std::option::Option<&crate::model::DatasetGroundTruthManifest> {
+        self.ground_truth_manifest.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetSource");
@@ -1766,6 +2026,12 @@ pub struct DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
     pub s3_object: std::option::Option<crate::model::InputS3Object>,
 }
+impl DatasetGroundTruthManifest {
+    /// <p>The S3 bucket location for the manifest file.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::InputS3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for DatasetGroundTruthManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetGroundTruthManifest");
@@ -1820,6 +2086,20 @@ pub struct InputS3Object {
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the bucket.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl InputS3Object {
+    /// <p>The Amazon S3 bucket that contains the manifest.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name and location of the manifest file withiin the bucket.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The version ID of the bucket.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InputS3Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

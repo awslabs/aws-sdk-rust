@@ -74,6 +74,30 @@ pub struct AlternateContact {
     /// <p>The type of alternate contact.</p>
     pub alternate_contact_type: std::option::Option<crate::model::AlternateContactType>,
 }
+impl AlternateContact {
+    /// <p>The name associated with this alternate contact.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The title associated with this alternate contact.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The email address associated with this alternate contact.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The phone number associated with this alternate contact.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The type of alternate contact.</p>
+    pub fn alternate_contact_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AlternateContactType> {
+        self.alternate_contact_type.as_ref()
+    }
+}
 impl std::fmt::Debug for AlternateContact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlternateContact");

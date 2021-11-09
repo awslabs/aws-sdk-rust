@@ -127,10 +127,7 @@ impl BatchAssociateScramSecretInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_scram_secret(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -317,7 +314,7 @@ impl BatchDisassociateScramSecretInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_scram_secret(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_scram_secret(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -623,10 +620,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -821,10 +815,7 @@ impl CreateConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3642,10 +3633,7 @@ impl RebootBrokerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_broker(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reboot_broker(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3834,10 +3822,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4249,10 +4234,7 @@ impl UpdateBrokerCountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_broker_count(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_broker_count(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4457,10 +4439,7 @@ impl UpdateBrokerStorageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_broker_storage(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_broker_storage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4655,10 +4634,7 @@ impl UpdateBrokerTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_broker_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_broker_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4856,10 +4832,7 @@ impl UpdateClusterConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_cluster_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5072,10 +5045,7 @@ impl UpdateClusterKafkaVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_cluster_kafka_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5265,10 +5235,7 @@ impl UpdateConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5493,10 +5460,7 @@ impl UpdateMonitoringInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_monitoring(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_monitoring(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5705,10 +5669,8 @@ impl UpdateSecurityInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_security(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_security(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5783,6 +5745,26 @@ pub struct UpdateSecurityInput {
     /// <p>Includes all encryption-related information.</p>
     pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
 }
+impl UpdateSecurityInput {
+    /// <p>Includes all client authentication related information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
+        self.encryption_info.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSecurityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecurityInput");
@@ -5809,6 +5791,28 @@ pub struct UpdateMonitoringInput {
     #[allow(missing_docs)] // documentation missing in model
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
 }
+impl UpdateMonitoringInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::model::EnhancedMonitoring> {
+        self.enhanced_monitoring.as_ref()
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoringInfo> {
+        self.open_monitoring.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMonitoringInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMonitoringInput");
@@ -5833,6 +5837,21 @@ pub struct UpdateConfigurationInput {
     /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
+impl UpdateConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The description of the configuration revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
+    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.server_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationInput");
@@ -5856,6 +5875,24 @@ pub struct UpdateClusterKafkaVersionInput {
     /// <p>Target Kafka version.</p>
     pub target_kafka_version: std::option::Option<std::string::String>,
 }
+impl UpdateClusterKafkaVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The custom configuration that should be applied on the new version of cluster.</p>
+    pub fn configuration_info(&self) -> std::option::Option<&crate::model::ConfigurationInfo> {
+        self.configuration_info.as_ref()
+    }
+    /// <p>Current cluster version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>Target Kafka version.</p>
+    pub fn target_kafka_version(&self) -> std::option::Option<&str> {
+        self.target_kafka_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterKafkaVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterKafkaVersionInput");
@@ -5878,6 +5915,20 @@ pub struct UpdateClusterConfigurationInput {
     /// <p>The version of the cluster that needs to be updated.</p>
     pub current_version: std::option::Option<std::string::String>,
 }
+impl UpdateClusterConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    pub fn configuration_info(&self) -> std::option::Option<&crate::model::ConfigurationInfo> {
+        self.configuration_info.as_ref()
+    }
+    /// <p>The version of the cluster that needs to be updated.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterConfigurationInput");
@@ -5898,6 +5949,20 @@ pub struct UpdateBrokerTypeInput {
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
     pub target_instance_type: std::option::Option<std::string::String>,
+}
+impl UpdateBrokerTypeInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    pub fn target_instance_type(&self) -> std::option::Option<&str> {
+        self.target_instance_type.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBrokerTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5920,6 +5985,22 @@ pub struct UpdateBrokerStorageInput {
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
     pub target_broker_ebs_volume_info:
         std::option::Option<std::vec::Vec<crate::model::BrokerEbsVolumeInfo>>,
+}
+impl UpdateBrokerStorageInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
+    pub fn target_broker_ebs_volume_info(
+        &self,
+    ) -> std::option::Option<&[crate::model::BrokerEbsVolumeInfo]> {
+        self.target_broker_ebs_volume_info.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBrokerStorageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5944,6 +6025,20 @@ pub struct UpdateBrokerCountInput {
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     pub target_number_of_broker_nodes: i32,
+}
+impl UpdateBrokerCountInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+    pub fn target_number_of_broker_nodes(&self) -> i32 {
+        self.target_number_of_broker_nodes
+    }
 }
 impl std::fmt::Debug for UpdateBrokerCountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5986,6 +6081,35 @@ pub struct UntagResourceInput {
     /// </ul>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each tag key must be unique. If you add a tag with a key that's already in
+    /// use, your new tag overwrites the existing key-value pair. </p>
+    /// </li>
+    /// <li>
+    /// <p>You can't start a tag key with aws: because this prefix is reserved for use
+    /// by  AWS.  AWS creates tags that begin with this prefix on your behalf, but
+    /// you can't edit or delete them.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
+    /// </li>
+    /// <li>
+    /// <p>Tag keys must consist of the following characters: Unicode letters, digits,
+    /// white space, and the following special characters: _ . / = + -
+    /// @.</p>
+    /// </li>
+    /// </ul>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6005,6 +6129,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value pair for the resource tag.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -6023,6 +6160,16 @@ pub struct RebootBrokerInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
 }
+impl RebootBrokerInput {
+    /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
+    pub fn broker_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.broker_ids.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootBrokerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootBrokerInput");
@@ -6038,6 +6185,12 @@ impl std::fmt::Debug for RebootBrokerInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6057,6 +6210,20 @@ pub struct ListScramSecretsInput {
     pub max_results: i32,
     /// <p>The nextToken of the query.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListScramSecretsInput {
+    /// <p>The arn of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The maxResults of the query.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken of the query.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListScramSecretsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6080,6 +6247,21 @@ pub struct ListNodesInput {
     /// To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListNodesInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+    /// To get the next batch, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNodesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNodesInput");
@@ -6099,6 +6281,16 @@ pub struct ListKafkaVersionsInput {
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListKafkaVersionsInput {
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListKafkaVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListKafkaVersionsInput");
@@ -6117,6 +6309,17 @@ pub struct ListConfigurationsInput {
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
     /// To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationsInput {
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+    /// To get the next batch, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6138,6 +6341,21 @@ pub struct ListConfigurationRevisionsInput {
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
     /// To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConfigurationRevisionsInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+    /// To get the next batch, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConfigurationRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6161,6 +6379,21 @@ pub struct ListClustersInput {
     /// To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClustersInput {
+    /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
+    pub fn cluster_name_filter(&self) -> std::option::Option<&str> {
+        self.cluster_name_filter.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+    /// To get the next batch, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClustersInput");
@@ -6183,6 +6416,21 @@ pub struct ListClusterOperationsInput {
     /// To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClusterOperationsInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+    /// To get the next batch, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClusterOperationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClusterOperationsInput");
@@ -6200,6 +6448,12 @@ pub struct GetCompatibleKafkaVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
 }
+impl GetCompatibleKafkaVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCompatibleKafkaVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCompatibleKafkaVersionsInput");
@@ -6214,6 +6468,12 @@ impl std::fmt::Debug for GetCompatibleKafkaVersionsInput {
 pub struct GetBootstrapBrokersInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
+}
+impl GetBootstrapBrokersInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBootstrapBrokersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6232,6 +6492,16 @@ pub struct DescribeConfigurationRevisionInput {
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     pub revision: i64,
 }
+impl DescribeConfigurationRevisionInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
+    pub fn revision(&self) -> i64 {
+        self.revision
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationRevisionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationRevisionInput");
@@ -6248,6 +6518,12 @@ pub struct DescribeConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DescribeConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConfigurationInput");
@@ -6262,6 +6538,12 @@ impl std::fmt::Debug for DescribeConfigurationInput {
 pub struct DescribeClusterOperationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
     pub cluster_operation_arn: std::option::Option<std::string::String>,
+}
+impl DescribeClusterOperationInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+        self.cluster_operation_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterOperationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6278,6 +6560,12 @@ pub struct DescribeClusterInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
 }
+impl DescribeClusterInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClusterInput");
@@ -6292,6 +6580,12 @@ impl std::fmt::Debug for DescribeClusterInput {
 pub struct DeleteConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6309,6 +6603,16 @@ pub struct DeleteClusterInput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the MSK cluster.</p>
     pub current_version: std::option::Option<std::string::String>,
+}
+impl DeleteClusterInput {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The current version of the MSK cluster.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6332,6 +6636,25 @@ pub struct CreateConfigurationInput {
     /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
     /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
+}
+impl CreateConfigurationInput {
+    /// <p>The description of the configuration.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    pub fn kafka_versions(&self) -> std::option::Option<&[std::string::String]> {
+        self.kafka_versions.as_deref()
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
+    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.server_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6372,6 +6695,59 @@ pub struct CreateClusterInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateClusterInput {
+    /// <p>Information about the broker nodes in the cluster.</p>
+    pub fn broker_node_group_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerNodeGroupInfo> {
+        self.broker_node_group_info.as_ref()
+    }
+    /// <p>Includes all client authentication related information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    pub fn configuration_info(&self) -> std::option::Option<&crate::model::ConfigurationInfo> {
+        self.configuration_info.as_ref()
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
+        self.encryption_info.as_ref()
+    }
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::model::EnhancedMonitoring> {
+        self.enhanced_monitoring.as_ref()
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoringInfo> {
+        self.open_monitoring.as_ref()
+    }
+    /// <p>The version of Apache Kafka.</p>
+    pub fn kafka_version(&self) -> std::option::Option<&str> {
+        self.kafka_version.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn number_of_broker_nodes(&self) -> i32 {
+        self.number_of_broker_nodes
+    }
+    /// <p>Create tags when creating the cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
@@ -6399,6 +6775,16 @@ pub struct BatchDisassociateScramSecretInput {
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
     pub secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchDisassociateScramSecretInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>List of AWS Secrets Manager secret ARNs.</p>
+    pub fn secret_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.secret_arn_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisassociateScramSecretInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisassociateScramSecretInput");
@@ -6416,6 +6802,16 @@ pub struct BatchAssociateScramSecretInput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
     pub secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchAssociateScramSecretInput {
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>List of AWS Secrets Manager secret ARNs.</p>
+    pub fn secret_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.secret_arn_list.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateScramSecretInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// Message describing why the field failed validation.
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// The field name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// Message describing why the field failed validation.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -148,6 +158,35 @@ pub struct WorkspaceSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl WorkspaceSummary {
+    /// Unique string identifying this workspace.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// Alias of this workspace.
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// The AmazonResourceName of this workspace.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The status of this workspace.
+    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+        self.status.as_ref()
+    }
+    /// The time when the workspace was created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// The tags of this workspace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for WorkspaceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceSummary");
@@ -283,6 +322,12 @@ impl WorkspaceSummary {
 pub struct WorkspaceStatus {
     /// Status code of this workspace.
     pub status_code: std::option::Option<crate::model::WorkspaceStatusCode>,
+}
+impl WorkspaceStatus {
+    /// Status code of this workspace.
+    pub fn status_code(&self) -> std::option::Option<&crate::model::WorkspaceStatusCode> {
+        self.status_code.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -420,6 +465,39 @@ pub struct WorkspaceDescription {
     /// The tags of this workspace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl WorkspaceDescription {
+    /// Unique string identifying this workspace.
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// Alias of this workspace.
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of this workspace.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The status of this workspace.
+    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+        self.status.as_ref()
+    }
+    /// Prometheus endpoint URI.
+    pub fn prometheus_endpoint(&self) -> std::option::Option<&str> {
+        self.prometheus_endpoint.as_deref()
+    }
+    /// The time when the workspace was created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// The tags of this workspace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -584,6 +662,35 @@ pub struct RuleGroupsNamespaceSummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RuleGroupsNamespaceSummary {
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The status of rule groups namespace.
+    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+        self.status.as_ref()
+    }
+    /// The time when the rule groups namespace was created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// The time when the rule groups namespace was modified.
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_at.as_ref()
+    }
+    /// The tags of this rule groups namespace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleGroupsNamespaceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroupsNamespaceSummary");
@@ -724,6 +831,16 @@ pub struct RuleGroupsNamespaceStatus {
     pub status_code: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
     /// The reason for failure if any.
     pub status_reason: std::option::Option<std::string::String>,
+}
+impl RuleGroupsNamespaceStatus {
+    /// Status code of this namespace.
+    pub fn status_code(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// The reason for failure if any.
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for RuleGroupsNamespaceStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -883,6 +1000,39 @@ pub struct RuleGroupsNamespaceDescription {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RuleGroupsNamespaceDescription {
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The rule groups namespace name.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The status of rule groups namespace.
+    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+        self.status.as_ref()
+    }
+    /// The rule groups namespace data.
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// The time when the rule groups namespace was created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// The time when the rule groups namespace was modified.
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_at.as_ref()
+    }
+    /// The tags of this rule groups namespace.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RuleGroupsNamespaceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroupsNamespaceDescription");
@@ -1037,6 +1187,18 @@ pub struct AlertManagerDefinitionStatus {
     /// The reason for failure if any.
     pub status_reason: std::option::Option<std::string::String>,
 }
+impl AlertManagerDefinitionStatus {
+    /// Status code of this definition.
+    pub fn status_code(
+        &self,
+    ) -> std::option::Option<&crate::model::AlertManagerDefinitionStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// The reason for failure if any.
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for AlertManagerDefinitionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlertManagerDefinitionStatus");
@@ -1190,6 +1352,24 @@ pub struct AlertManagerDefinitionDescription {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// The time when the alert manager definition was modified.
     pub modified_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AlertManagerDefinitionDescription {
+    /// The status of alert manager definition.
+    pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
+        self.status.as_ref()
+    }
+    /// The alert manager definition.
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// The time when the alert manager definition was created.
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// The time when the alert manager definition was modified.
+    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_at.as_ref()
+    }
 }
 impl std::fmt::Debug for AlertManagerDefinitionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

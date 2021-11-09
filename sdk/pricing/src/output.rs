@@ -11,6 +11,21 @@ pub struct GetProductsOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetProductsOutput {
+    /// <p>The format version of the response. For example, aws_v1.</p>
+    pub fn format_version(&self) -> std::option::Option<&str> {
+        self.format_version.as_deref()
+    }
+    /// <p>The list of products that match your filters. The list contains both the product metadata and
+    /// the price information.</p>
+    pub fn price_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.price_list.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetProductsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProductsOutput");
@@ -103,6 +118,18 @@ pub struct GetAttributeValuesOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetAttributeValuesOutput {
+    /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and
+    /// <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
+    /// <code>volumeType</code>.</p>
+    pub fn attribute_values(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
+        self.attribute_values.as_deref()
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAttributeValuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAttributeValuesOutput");
@@ -181,6 +208,20 @@ pub struct DescribeServicesOutput {
     pub format_version: std::option::Option<std::string::String>,
     /// <p>The pagination token for the next set of retreivable results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeServicesOutput {
+    /// <p>The service metadata for the service or services in the response.</p>
+    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+        self.services.as_deref()
+    }
+    /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
+    pub fn format_version(&self) -> std::option::Option<&str> {
+        self.format_version.as_deref()
+    }
+    /// <p>The pagination token for the next set of retreivable results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

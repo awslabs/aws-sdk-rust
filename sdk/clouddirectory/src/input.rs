@@ -168,10 +168,7 @@ impl AddFacetToObjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_facet_to_object(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_facet_to_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -362,10 +359,7 @@ impl ApplySchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_apply_schema(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_apply_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -581,10 +575,7 @@ impl AttachObjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_attach_object(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_attach_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -790,10 +781,7 @@ impl AttachPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -997,10 +985,8 @@ impl AttachToIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_attach_to_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_attach_to_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1245,10 +1231,7 @@ impl AttachTypedLinkInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_typed_link(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_attach_typed_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1474,10 +1457,7 @@ impl BatchReadInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_batch_read(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_batch_read(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1671,10 +1651,7 @@ impl BatchWriteInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_batch_write(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_batch_write(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1860,10 +1837,7 @@ impl CreateDirectoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_directory(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_directory(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2141,10 +2115,7 @@ impl CreateFacetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_facet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_facet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2384,10 +2355,7 @@ impl CreateIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2636,10 +2604,7 @@ impl CreateObjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_object(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2784,10 +2749,7 @@ impl CreateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2983,10 +2945,7 @@ impl CreateTypedLinkFacetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_typed_link_facet(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3328,10 +3287,7 @@ impl DeleteFacetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_facet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_facet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3520,10 +3476,7 @@ impl DeleteObjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_object(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3870,10 +3823,7 @@ impl DeleteTypedLinkFacetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_typed_link_facet(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4078,10 +4028,7 @@ impl DetachFromIndexInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_from_index(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detach_from_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4284,10 +4231,7 @@ impl DetachObjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detach_object(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detach_object(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4491,10 +4435,7 @@ impl DetachPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4684,10 +4625,7 @@ impl DetachTypedLinkInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_typed_link(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detach_typed_link(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5157,10 +5095,7 @@ impl GetAppliedSchemaVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_applied_schema_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5500,10 +5435,7 @@ impl GetFacetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_facet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_facet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5728,10 +5660,7 @@ impl GetLinkAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_link_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_link_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5989,10 +5918,7 @@ impl GetObjectAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_object_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_object_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6214,10 +6140,9 @@ impl GetObjectInformationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_object_information(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_object_information(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6561,7 +6486,7 @@ impl GetTypedLinkFacetInformationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_typed_link_facet_information(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_typed_link_facet_information(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6749,10 +6674,7 @@ impl ListAppliedSchemaArnsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_applied_schema_arns(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6995,10 +6917,7 @@ impl ListAttachedIndicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_attached_indices(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_attached_indices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7162,10 +7081,7 @@ impl ListDevelopmentSchemaArnsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_development_schema_arns(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7340,10 +7256,7 @@ impl ListDirectoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_directories(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_directories(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7549,10 +7462,7 @@ impl ListFacetAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_facet_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_facet_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7746,10 +7656,7 @@ impl ListFacetNamesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_facet_names(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_facet_names(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8033,10 +7940,7 @@ impl ListIncomingTypedLinksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_incoming_typed_links(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8301,10 +8205,7 @@ impl ListIndexInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_index(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_index(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8474,10 +8375,7 @@ impl ListManagedSchemaArnsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_managed_schema_arns(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8743,10 +8641,9 @@ impl ListObjectAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_object_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_object_attributes(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8997,10 +8894,7 @@ impl ListObjectChildrenInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_object_children(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_object_children(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9219,10 +9113,7 @@ impl ListObjectParentPathsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_object_parent_paths(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9490,10 +9381,7 @@ impl ListObjectParentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_object_parents(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_object_parents(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9742,10 +9630,7 @@ impl ListObjectPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_object_policies(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_object_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10029,10 +9914,7 @@ impl ListOutgoingTypedLinksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_outgoing_typed_links(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10283,10 +10165,7 @@ impl ListPolicyAttachmentsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_policy_attachments(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10459,10 +10338,7 @@ impl ListPublishedSchemaArnsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_published_schema_arns(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10638,10 +10514,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10853,7 +10728,7 @@ impl ListTypedLinkFacetAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_typed_link_facet_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_typed_link_facet_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11056,10 +10931,7 @@ impl ListTypedLinkFacetNamesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_typed_link_facet_names(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11274,10 +11146,7 @@ impl LookupPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_lookup_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_lookup_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11492,10 +11361,7 @@ impl PublishSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_publish_schema(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_publish_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11677,10 +11543,7 @@ impl PutSchemaFromJsonInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_schema_from_json(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_schema_from_json(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11888,10 +11751,7 @@ impl RemoveFacetFromObjectInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_facet_from_object(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12059,10 +11919,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12230,10 +12087,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12460,10 +12314,7 @@ impl UpdateFacetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_facet(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_facet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12679,10 +12530,9 @@ impl UpdateLinkAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_link_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_link_attributes(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12899,10 +12749,7 @@ impl UpdateObjectAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_object_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13085,10 +12932,7 @@ impl UpdateSchemaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13331,10 +13175,7 @@ impl UpdateTypedLinkFacetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_typed_link_facet(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13513,10 +13354,9 @@ impl UpgradeAppliedSchemaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_upgrade_applied_schema(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_upgrade_applied_schema(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13712,10 +13552,7 @@ impl UpgradePublishedSchemaInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upgrade_published_schema(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13790,6 +13627,24 @@ pub struct UpgradePublishedSchemaInput {
     /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
     pub dry_run: bool,
 }
+impl UpgradePublishedSchemaInput {
+    /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
+    pub fn development_schema_arn(&self) -> std::option::Option<&str> {
+        self.development_schema_arn.as_deref()
+    }
+    /// <p>The ARN of the published schema to be upgraded.</p>
+    pub fn published_schema_arn(&self) -> std::option::Option<&str> {
+        self.published_schema_arn.as_deref()
+    }
+    /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
+}
 impl std::fmt::Debug for UpgradePublishedSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradePublishedSchemaInput");
@@ -13811,6 +13666,20 @@ pub struct UpgradeAppliedSchemaInput {
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     pub dry_run: bool,
+}
+impl UpgradeAppliedSchemaInput {
+    /// <p>The revision of the published schema to upgrade the directory to.</p>
+    pub fn published_schema_arn(&self) -> std::option::Option<&str> {
+        self.published_schema_arn.as_deref()
+    }
+    /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
+    pub fn dry_run(&self) -> bool {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for UpgradeAppliedSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13842,6 +13711,32 @@ pub struct UpdateTypedLinkFacetInput {
     /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateTypedLinkFacetInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Attributes update structure.</p>
+    pub fn attribute_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkFacetAttributeUpdate]> {
+        self.attribute_updates.as_deref()
+    }
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
+    /// links considers the order that the attributes are defined on the typed link facet.  When
+    /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
+    /// Any attributes that do not have a range specified are presumed to match the entire range.
+    /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
+    /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
+        self.identity_attribute_order.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTypedLinkFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTypedLinkFacetInput");
@@ -13862,6 +13757,17 @@ pub struct UpdateSchemaInput {
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UpdateSchemaInput {
+    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
+    /// <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13884,6 +13790,21 @@ pub struct UpdateObjectAttributesInput {
     /// <p>The attributes update structure.</p>
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
 }
+impl UpdateObjectAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where the object resides. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that identifies the object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::ObjectAttributeUpdate]> {
+        self.attribute_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateObjectAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateObjectAttributesInput");
@@ -13904,6 +13825,20 @@ pub struct UpdateLinkAttributesInput {
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     /// <p>The attributes update structure.</p>
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
+}
+impl UpdateLinkAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::LinkAttributeUpdate]> {
+        self.attribute_updates.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateLinkAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13931,6 +13866,27 @@ pub struct UpdateFacetInput {
     /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
     pub object_type: std::option::Option<crate::model::ObjectType>,
 }
+impl UpdateFacetInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
+    /// For more information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the facet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
+    /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
+    /// operation to perform. </p>
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::FacetAttributeUpdate]> {
+        self.attribute_updates.as_deref()
+    }
+    /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+    pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectType> {
+        self.object_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFacetInput");
@@ -13952,6 +13908,17 @@ pub struct UntagResourceInput {
     /// <p>Keys of the tag that need to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
+    /// directories.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys of the tag that need to be removed from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -13970,6 +13937,17 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
+    /// directories.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13991,6 +13969,20 @@ pub struct RemoveFacetFromObjectInput {
     /// <p>A reference to the object to remove the facet from.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl RemoveFacetFromObjectInput {
+    /// <p>The ARN of the directory in which the object resides.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.schema_facet.as_ref()
+    }
+    /// <p>A reference to the object to remove the facet from.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for RemoveFacetFromObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFacetFromObjectInput");
@@ -14009,6 +14001,16 @@ pub struct PutSchemaFromJsonInput {
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The replacement JSON schema.</p>
     pub document: std::option::Option<std::string::String>,
+}
+impl PutSchemaFromJsonInput {
+    /// <p>The ARN of the schema to update.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The replacement JSON schema.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
 }
 impl std::fmt::Debug for PutSchemaFromJsonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14033,6 +14035,26 @@ pub struct PublishSchemaInput {
     /// <p>The new name under which the schema will be published. If this is not provided, the
     /// development schema is considered.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl PublishSchemaInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
+    /// more information, see <a>arns</a>.</p>
+    pub fn development_schema_arn(&self) -> std::option::Option<&str> {
+        self.development_schema_arn.as_deref()
+    }
+    /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
+    pub fn minor_version(&self) -> std::option::Option<&str> {
+        self.minor_version.as_deref()
+    }
+    /// <p>The new name under which the schema will be published. If this is not provided, the
+    /// development schema is considered.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for PublishSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14060,6 +14082,26 @@ pub struct LookupPolicyInput {
     /// number.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl LookupPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
+    /// For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Reference that identifies the object whose policies will be looked up.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for LookupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LookupPolicyInput");
@@ -14082,6 +14124,21 @@ pub struct ListTypedLinkFacetNamesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTypedLinkFacetNamesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTypedLinkFacetNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14106,6 +14163,25 @@ pub struct ListTypedLinkFacetAttributesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTypedLinkFacetAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTypedLinkFacetAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14132,6 +14208,23 @@ pub struct ListTagsForResourceInput {
     /// single page. This is for future use and is not supported currently.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
+    /// directories.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The pagination token. This is for future use. Currently pagination is not supported for
+    /// tagging.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
+    /// single page. This is for future use and is not supported currently.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -14152,6 +14245,20 @@ pub struct ListPublishedSchemaArnsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPublishedSchemaArnsInput {
+    /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPublishedSchemaArnsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14180,6 +14287,31 @@ pub struct ListPolicyAttachmentsInput {
     /// <p>Represents the manner and timing in which the successful write or update of an object
     /// is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl ListPolicyAttachmentsInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where objects reside. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that identifies the policy object.</p>
+    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.policy_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object
+    /// is reflected in a subsequent read operation of that same object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ListPolicyAttachmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14217,6 +14349,44 @@ pub struct ListOutgoingTypedLinksInput {
     /// <p>The consistency level to execute the request at.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
+impl ListOutgoingTypedLinksInput {
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
+    /// links.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
+    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
+    /// range specified are presumed to match the entire range.</p>
+    pub fn filter_attribute_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
+        self.filter_attribute_ranges.as_deref()
+    }
+    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
+    /// not the order they are supplied to any API calls.</p>
+    pub fn filter_typed_link(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.filter_typed_link.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The consistency level to execute the request at.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
+}
 impl std::fmt::Debug for ListOutgoingTypedLinksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOutgoingTypedLinksInput");
@@ -14248,6 +14418,31 @@ pub struct ListObjectPoliciesInput {
     /// <p>Represents the manner and timing in which the successful write or update of an object
     /// is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl ListObjectPoliciesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where objects reside. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Reference that identifies the object for which policies will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object
+    /// is reflected in a subsequent read operation of that same object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ListObjectPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14282,6 +14477,36 @@ pub struct ListObjectParentsInput {
     /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
     pub include_all_links_to_each_parent: bool,
 }
+impl ListObjectParentsInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where the object resides. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that identifies the object for which parent objects are being
+    /// listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object
+    /// is reflected in a subsequent read operation of that same object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
+    /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+    pub fn include_all_links_to_each_parent(&self) -> bool {
+        self.include_all_links_to_each_parent
+    }
+}
 impl std::fmt::Debug for ListObjectParentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListObjectParentsInput");
@@ -14312,6 +14537,25 @@ pub struct ListObjectParentPathsInput {
     /// number.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListObjectParentPathsInput {
+    /// <p>The ARN of the directory to which the parent path applies.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that identifies the object whose parent paths are listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListObjectParentPathsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListObjectParentPathsInput");
@@ -14341,6 +14585,32 @@ pub struct ListObjectChildrenInput {
     /// <p>Represents the manner and timing in which the successful write or update of an object
     /// is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl ListObjectChildrenInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where the object resides. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that identifies the object for which child objects are being
+    /// listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object
+    /// is reflected in a subsequent read operation of that same object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ListObjectChildrenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14375,6 +14645,36 @@ pub struct ListObjectAttributesInput {
     /// facet.</p>
     pub facet_filter: std::option::Option<crate::model::SchemaFacet>,
 }
+impl ListObjectAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where the object resides. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object
+    /// is reflected in a subsequent read operation of that same object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
+    /// <p>Used to filter the list of object attributes that are associated with a certain
+    /// facet.</p>
+    pub fn facet_filter(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.facet_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListObjectAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListObjectAttributesInput");
@@ -14398,6 +14698,20 @@ pub struct ListManagedSchemaArnsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListManagedSchemaArnsInput {
+    /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListManagedSchemaArnsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14426,6 +14740,34 @@ pub struct ListIndexInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The consistency level to execute the request at.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl ListIndexInput {
+    /// <p>The ARN of the directory that the index exists in.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    pub fn ranges_on_indexed_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectAttributeRange]> {
+        self.ranges_on_indexed_values.as_deref()
+    }
+    /// <p>The reference to the index to list.</p>
+    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.index_reference.as_ref()
+    }
+    /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The consistency level to execute the request at.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ListIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14464,6 +14806,44 @@ pub struct ListIncomingTypedLinksInput {
     /// <p>The consistency level to execute the request at.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
+impl ListIncomingTypedLinksInput {
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
+    /// links.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
+    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
+    /// range specified are presumed to match the entire range.</p>
+    pub fn filter_attribute_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
+        self.filter_attribute_ranges.as_deref()
+    }
+    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
+    /// order in which they are supplied to any API calls.</p>
+    pub fn filter_typed_link(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.filter_typed_link.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The consistency level to execute the request at.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
+}
 impl std::fmt::Debug for ListIncomingTypedLinksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIncomingTypedLinksInput");
@@ -14489,6 +14869,20 @@ pub struct ListFacetNamesInput {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFacetNamesInput {
+    /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFacetNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFacetNamesInput");
@@ -14511,6 +14905,24 @@ pub struct ListFacetAttributesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFacetAttributesInput {
+    /// <p>The ARN of the schema where the facet resides.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the facet whose attributes will be retrieved.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFacetAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14535,6 +14947,21 @@ pub struct ListDirectoriesInput {
     /// Deleted.</p>
     pub state: std::option::Option<crate::model::DirectoryState>,
 }
+impl ListDirectoriesInput {
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
+    /// Deleted.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DirectoryState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDirectoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDirectoriesInput");
@@ -14553,6 +14980,16 @@ pub struct ListDevelopmentSchemaArnsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListDevelopmentSchemaArnsInput {
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListDevelopmentSchemaArnsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14577,6 +15014,28 @@ pub struct ListAttachedIndicesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The consistency level to use for this operation.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl ListAttachedIndicesInput {
+    /// <p>The ARN of the directory.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A reference to the object that has indices attached.</p>
+    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The consistency level to use for this operation.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ListAttachedIndicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14603,6 +15062,24 @@ pub struct ListAppliedSchemaArnsInput {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAppliedSchemaArnsInput {
+    /// <p>The ARN of the directory you are listing.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAppliedSchemaArnsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppliedSchemaArnsInput");
@@ -14624,6 +15101,17 @@ pub struct GetTypedLinkFacetInformationInput {
     /// <p>The unique name of the typed link facet.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetTypedLinkFacetInformationInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTypedLinkFacetInformationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTypedLinkFacetInformationInput");
@@ -14639,6 +15127,12 @@ impl std::fmt::Debug for GetTypedLinkFacetInformationInput {
 pub struct GetSchemaAsJsonInput {
     /// <p>The ARN of the schema to retrieve.</p>
     pub schema_arn: std::option::Option<std::string::String>,
+}
+impl GetSchemaAsJsonInput {
+    /// <p>The ARN of the schema to retrieve.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSchemaAsJsonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14658,6 +15152,20 @@ pub struct GetObjectInformationInput {
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl GetObjectInformationInput {
+    /// <p>The ARN of the directory being retrieved.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A reference to the object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The consistency level at which to retrieve the object information.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for GetObjectInformationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14684,6 +15192,28 @@ pub struct GetObjectAttributesInput {
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetObjectAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The consistency level at which to retrieve the attributes on an object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
+    /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.schema_facet.as_ref()
+    }
+    /// <p>List of attribute names whose values will be retrieved.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
+}
 impl std::fmt::Debug for GetObjectAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetObjectAttributesInput");
@@ -14709,6 +15239,24 @@ pub struct GetLinkAttributesInput {
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
+impl GetLinkAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+    /// <p>A list of attribute names whose values will be retrieved.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
+    /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLinkAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLinkAttributesInput");
@@ -14730,6 +15278,17 @@ pub struct GetFacetInput {
     /// <p>The name of the facet to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl GetFacetInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
+    /// For more information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the facet to retrieve.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFacetInput");
@@ -14746,6 +15305,12 @@ pub struct GetDirectoryInput {
     /// <p>The ARN of the directory.</p>
     pub directory_arn: std::option::Option<std::string::String>,
 }
+impl GetDirectoryInput {
+    /// <p>The ARN of the directory.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDirectoryInput");
@@ -14760,6 +15325,12 @@ impl std::fmt::Debug for GetDirectoryInput {
 pub struct GetAppliedSchemaVersionInput {
     /// <p>The ARN of the applied schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
+}
+impl GetAppliedSchemaVersionInput {
+    /// <p>The ARN of the applied schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppliedSchemaVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14776,6 +15347,12 @@ pub struct EnableDirectoryInput {
     /// <p>The ARN of the directory to enable.</p>
     pub directory_arn: std::option::Option<std::string::String>,
 }
+impl EnableDirectoryInput {
+    /// <p>The ARN of the directory to enable.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableDirectoryInput");
@@ -14790,6 +15367,12 @@ impl std::fmt::Debug for EnableDirectoryInput {
 pub struct DisableDirectoryInput {
     /// <p>The ARN of the directory to disable.</p>
     pub directory_arn: std::option::Option<std::string::String>,
+}
+impl DisableDirectoryInput {
+    /// <p>The ARN of the directory to disable.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14808,6 +15391,17 @@ pub struct DetachTypedLinkInput {
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Used to accept a typed link specifier as input.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
+}
+impl DetachTypedLinkInput {
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
+    /// link.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Used to accept a typed link specifier as input.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
 }
 impl std::fmt::Debug for DetachTypedLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14829,6 +15423,21 @@ pub struct DetachPolicyInput {
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl DetachPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Reference that identifies the policy object.</p>
+    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.policy_reference.as_ref()
+    }
+    /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for DetachPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14853,6 +15462,22 @@ pub struct DetachObjectInput {
     /// <p>The link name associated with the object that needs to be detached.</p>
     pub link_name: std::option::Option<std::string::String>,
 }
+impl DetachObjectInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where objects reside. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The parent reference from which the object with the specified link name is
+    /// detached.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The link name associated with the object that needs to be detached.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachObjectInput");
@@ -14875,6 +15500,21 @@ pub struct DetachFromIndexInput {
     /// <p>A reference to the object being detached from the index.</p>
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl DetachFromIndexInput {
+    /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
+    /// in.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A reference to the index object.</p>
+    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.index_reference.as_ref()
+    }
+    /// <p>A reference to the object being detached from the index.</p>
+    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for DetachFromIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachFromIndexInput");
@@ -14895,6 +15535,17 @@ pub struct DeleteTypedLinkFacetInput {
     /// <p>The unique name of the typed link facet.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteTypedLinkFacetInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTypedLinkFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTypedLinkFacetInput");
@@ -14911,6 +15562,13 @@ pub struct DeleteSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
     /// <a>arns</a>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSchemaInput {
+    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
+    /// <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14929,6 +15587,17 @@ pub struct DeleteObjectInput {
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference that identifies the object.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl DeleteObjectInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where the object resides. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A reference that identifies the object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14949,6 +15618,17 @@ pub struct DeleteFacetInput {
     /// <p>The name of the facet to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteFacetInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
+    /// For more information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the facet to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFacetInput");
@@ -14964,6 +15644,12 @@ impl std::fmt::Debug for DeleteFacetInput {
 pub struct DeleteDirectoryInput {
     /// <p>The ARN of the directory to delete.</p>
     pub directory_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDirectoryInput {
+    /// <p>The ARN of the directory to delete.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14985,6 +15671,19 @@ pub struct CreateTypedLinkFacetInput {
     /// facet.</p>
     pub facet: std::option::Option<crate::model::TypedLinkFacet>,
 }
+impl CreateTypedLinkFacetInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>
+    /// <a>Facet</a> structure that is associated with the typed link
+    /// facet.</p>
+    pub fn facet(&self) -> std::option::Option<&crate::model::TypedLinkFacet> {
+        self.facet.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTypedLinkFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTypedLinkFacetInput");
@@ -15001,6 +15700,13 @@ pub struct CreateSchemaInput {
     /// <p>The name that is associated with the schema. This is unique to each account and in each
     /// region.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl CreateSchemaInput {
+    /// <p>The name that is associated with the schema. This is unique to each account and in each
+    /// region.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15027,6 +15733,32 @@ pub struct CreateObjectInput {
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of link that is used to attach this object to a parent.</p>
     pub link_name: std::option::Option<std::string::String>,
+}
+impl CreateObjectInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// in which the object will be created. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+    pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+        self.schema_facets.as_deref()
+    }
+    /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
+    /// value.</p>
+    pub fn object_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.object_attribute_list.as_deref()
+    }
+    /// <p>If specified, the parent reference to which this object will be attached.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The name of link that is used to attach this object to a parent.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15057,6 +15789,32 @@ pub struct CreateIndexInput {
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link between the parent object and the index object.</p>
     pub link_name: std::option::Option<std::string::String>,
+}
+impl CreateIndexInput {
+    /// <p>The ARN of the directory where the index should be created.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
+    /// is supported.</p>
+    pub fn ordered_indexed_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeKey]> {
+        self.ordered_indexed_attribute_list.as_deref()
+    }
+    /// <p>Indicates whether the attribute that is being indexed has unique values or
+    /// not.</p>
+    pub fn is_unique(&self) -> bool {
+        self.is_unique
+    }
+    /// <p>A reference to the parent object that contains the index object.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The name of the link between the parent object and the index object.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15111,6 +15869,51 @@ pub struct CreateFacetInput {
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub facet_style: std::option::Option<crate::model::FacetStyle>,
 }
+impl CreateFacetInput {
+    /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::FacetAttribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
+    /// policy or index.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Node: Can have multiple children but one parent.</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Policy: Allows you to store a policy document and policy type. For more
+    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p>Index: Can be created with the Index API.</p>
+    /// </li>
+    /// </ul>
+    pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectType> {
+        self.object_type.as_ref()
+    }
+    /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    pub fn facet_style(&self) -> std::option::Option<&crate::model::FacetStyle> {
+        self.facet_style.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFacetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFacetInput");
@@ -15134,6 +15937,18 @@ pub struct CreateDirectoryInput {
     /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
+impl CreateDirectoryInput {
+    /// <p>The name of the <a>Directory</a>. Should be unique per account, per
+    /// region.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
+    /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDirectoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDirectoryInput");
@@ -15152,6 +15967,17 @@ pub struct BatchWriteInput {
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperation>>,
+}
+impl BatchWriteInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
+    /// For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A list of operations that are part of the batch.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::BatchWriteOperation]> {
+        self.operations.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchWriteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15174,6 +16000,22 @@ pub struct BatchReadInput {
     /// <p>Represents the manner and timing in which the successful write or update of an object
     /// is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
+}
+impl BatchReadInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
+    /// For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A list of operations that are part of the batch.</p>
+    pub fn operations(&self) -> std::option::Option<&[crate::model::BatchReadOperation]> {
+        self.operations.as_deref()
+    }
+    /// <p>Represents the manner and timing in which the successful write or update of an object
+    /// is reflected in a subsequent read operation of that same object.</p>
+    pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
+        self.consistency_level.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchReadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15201,6 +16043,31 @@ pub struct AttachTypedLinkInput {
     /// <p>A set of attributes that are associated with the typed link.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
 }
+impl AttachTypedLinkInput {
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
+    /// link.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn source_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.source_object_reference.as_ref()
+    }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn target_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_object_reference.as_ref()
+    }
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn typed_link_facet(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.typed_link_facet.as_ref()
+    }
+    /// <p>A set of attributes that are associated with the typed link.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachTypedLinkInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachTypedLinkInput");
@@ -15225,6 +16092,21 @@ pub struct AttachToIndexInput {
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl AttachToIndexInput {
+    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
+    /// exist.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>A reference to the index that you are attaching the object to.</p>
+    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.index_reference.as_ref()
+    }
+    /// <p>A reference to the object that you are attaching to the index.</p>
+    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for AttachToIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachToIndexInput");
@@ -15247,6 +16129,22 @@ pub struct AttachPolicyInput {
     /// <p>The reference that identifies the object to which the policy will be
     /// attached.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl AttachPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The reference that is associated with the policy object.</p>
+    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.policy_reference.as_ref()
+    }
+    /// <p>The reference that identifies the object to which the policy will be
+    /// attached.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for AttachPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15272,6 +16170,25 @@ pub struct AttachObjectInput {
     /// <p>The link name with which the child object is attached to the parent.</p>
     pub link_name: std::option::Option<std::string::String>,
 }
+impl AttachObjectInput {
+    /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The parent object reference.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The child object reference to be attached to the object.</p>
+    pub fn child_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.child_reference.as_ref()
+    }
+    /// <p>The link name with which the child object is attached to the parent.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachObjectInput");
@@ -15293,6 +16210,18 @@ pub struct ApplySchemaInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
     /// into which the schema is copied. For more information, see <a>arns</a>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
+}
+impl ApplySchemaInput {
+    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn published_schema_arn(&self) -> std::option::Option<&str> {
+        self.published_schema_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplySchemaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15317,6 +16246,27 @@ pub struct AddFacetToObjectInput {
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>A reference to the object you are adding the specified facet to.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl AddFacetToObjectInput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+    /// where the object resides. For more information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.schema_facet.as_ref()
+    }
+    /// <p>Attributes on the facet that you are adding to the object.</p>
+    pub fn object_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.object_attribute_list.as_deref()
+    }
+    /// <p>A reference to the object you are adding the specified facet to.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for AddFacetToObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

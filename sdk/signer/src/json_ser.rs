@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_add_profile_permission_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AddProfilePermissionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.action {
         object.key("action").string(var_1);
     }
@@ -18,18 +18,19 @@ pub fn serialize_structure_crate_input_add_profile_permission_input(
     if let Some(var_5) = &input.statement_id {
         object.key("statementId").string(var_5);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_signing_profile_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutSigningProfileInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.overrides {
         let mut object_7 = object.key("overrides").start_object();
         crate::json_ser::serialize_structure_crate_model_signing_platform_overrides(
             &mut object_7,
             var_6,
-        );
+        )?;
         object_7.finish();
     }
     if let Some(var_8) = &input.platform_id {
@@ -40,12 +41,12 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         crate::json_ser::serialize_structure_crate_model_signature_validity_period(
             &mut object_10,
             var_9,
-        );
+        )?;
         object_10.finish();
     }
     if let Some(var_11) = &input.signing_material {
         let mut object_12 = object.key("signingMaterial").start_object();
-        crate::json_ser::serialize_structure_crate_model_signing_material(&mut object_12, var_11);
+        crate::json_ser::serialize_structure_crate_model_signing_material(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.signing_parameters {
@@ -66,24 +67,26 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         }
         object_18.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_revoke_signature_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RevokeSignatureInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.job_owner {
         object.key("jobOwner").string(var_21);
     }
     if let Some(var_22) = &input.reason {
         object.key("reason").string(var_22);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_revoke_signing_profile_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RevokeSigningProfileInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.effective_time {
         object
             .key("effectiveTime")
@@ -95,18 +98,19 @@ pub fn serialize_structure_crate_input_revoke_signing_profile_input(
     if let Some(var_25) = &input.reason {
         object.key("reason").string(var_25);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_signing_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartSigningJobInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.client_request_token {
         object.key("clientRequestToken").string(var_26);
     }
     if let Some(var_27) = &input.destination {
         let mut object_28 = object.key("destination").start_object();
-        crate::json_ser::serialize_structure_crate_model_destination(&mut object_28, var_27);
+        crate::json_ser::serialize_structure_crate_model_destination(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.profile_name {
@@ -117,15 +121,16 @@ pub fn serialize_structure_crate_input_start_signing_job_input(
     }
     if let Some(var_31) = &input.source {
         let mut object_32 = object.key("source").start_object();
-        crate::json_ser::serialize_structure_crate_model_source(&mut object_32, var_31);
+        crate::json_ser::serialize_structure_crate_model_source(&mut object_32, var_31)?;
         object_32.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.tags {
         let mut object_34 = object.key("tags").start_object();
         for (key_35, value_36) in var_33 {
@@ -135,29 +140,31 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_34.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_signing_platform_overrides(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SigningPlatformOverrides,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.signing_configuration {
         let mut object_38 = object.key("signingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_signing_configuration_overrides(
             &mut object_38,
             var_37,
-        );
+        )?;
         object_38.finish();
     }
     if let Some(var_39) = &input.signing_image_format {
         object.key("signingImageFormat").string(var_39.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_signature_validity_period(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SignatureValidityPeriod,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if input.value != 0 {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]
@@ -167,67 +174,73 @@ pub fn serialize_structure_crate_model_signature_validity_period(
     if let Some(var_40) = &input.r#type {
         object.key("type").string(var_40.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_signing_material(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SigningMaterial,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.certificate_arn {
         object.key("certificateArn").string(var_41);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Destination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.s3 {
         let mut object_43 = object.key("s3").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_destination(&mut object_43, var_42);
+        crate::json_ser::serialize_structure_crate_model_s3_destination(&mut object_43, var_42)?;
         object_43.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Source,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.s3 {
         let mut object_45 = object.key("s3").start_object();
-        crate::json_ser::serialize_structure_crate_model_s3_source(&mut object_45, var_44);
+        crate::json_ser::serialize_structure_crate_model_s3_source(&mut object_45, var_44)?;
         object_45.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_signing_configuration_overrides(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SigningConfigurationOverrides,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.encryption_algorithm {
         object.key("encryptionAlgorithm").string(var_46.as_str());
     }
     if let Some(var_47) = &input.hash_algorithm {
         object.key("hashAlgorithm").string(var_47.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Destination,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.bucket_name {
         object.key("bucketName").string(var_48);
     }
     if let Some(var_49) = &input.prefix {
         object.key("prefix").string(var_49);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_s3_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Source,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.bucket_name {
         object.key("bucketName").string(var_50);
     }
@@ -237,4 +250,5 @@ pub fn serialize_structure_crate_model_s3_source(
     if let Some(var_52) = &input.version {
         object.key("version").string(var_52);
     }
+    Ok(())
 }

@@ -121,10 +121,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -338,10 +335,7 @@ impl CreateBatchPredictionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_batch_prediction(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -657,10 +651,7 @@ impl CreateDataSourceFromRdsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_rds(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -972,7 +963,7 @@ impl CreateDataSourceFromRedshiftInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_redshift(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_redshift(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1208,10 +1199,7 @@ impl CreateDataSourceFromS3Input {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_s3(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1410,10 +1398,7 @@ impl CreateEvaluationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_evaluation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_evaluation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1774,10 +1759,8 @@ impl CreateMlModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_ml_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_ml_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1929,10 +1912,7 @@ impl CreateRealtimeEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_realtime_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2087,10 +2067,7 @@ impl DeleteBatchPredictionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_batch_prediction(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2243,10 +2220,7 @@ impl DeleteDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2399,10 +2373,7 @@ impl DeleteEvaluationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_evaluation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_evaluation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2551,10 +2522,8 @@ impl DeleteMlModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_ml_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_ml_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2706,10 +2675,7 @@ impl DeleteRealtimeEndpointInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_realtime_endpoint(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2894,10 +2860,7 @@ impl DeleteTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3308,10 +3271,7 @@ impl DescribeBatchPredictionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_batch_predictions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3697,10 +3657,7 @@ impl DescribeDataSourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_sources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_sources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4104,10 +4061,7 @@ impl DescribeEvaluationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_evaluations(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_evaluations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4527,10 +4481,7 @@ impl DescribeMlModelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_ml_models(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_ml_models(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4694,10 +4645,7 @@ impl DescribeTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4850,10 +4798,7 @@ impl GetBatchPredictionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5021,10 +4966,8 @@ impl GetDataSourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_data_source(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5176,10 +5119,7 @@ impl GetEvaluationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_evaluation(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_evaluation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5344,10 +5284,7 @@ impl GetMlModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_ml_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_ml_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5538,10 +5475,7 @@ impl PredictInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_predict(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_predict(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5709,10 +5643,7 @@ impl UpdateBatchPredictionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_batch_prediction(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5880,10 +5811,7 @@ impl UpdateDataSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6051,10 +5979,7 @@ impl UpdateEvaluationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_evaluation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_evaluation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6232,10 +6157,8 @@ impl UpdateMlModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_ml_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_ml_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6309,6 +6232,21 @@ pub struct UpdateMlModelInput {
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     pub score_threshold: std::option::Option<f32>,
 }
+impl UpdateMlModelInput {
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    pub fn ml_model_name(&self) -> std::option::Option<&str> {
+        self.ml_model_name.as_deref()
+    }
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
+    pub fn score_threshold(&self) -> std::option::Option<f32> {
+        self.score_threshold
+    }
+}
 impl std::fmt::Debug for UpdateMlModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMlModelInput");
@@ -6328,6 +6266,16 @@ pub struct UpdateEvaluationInput {
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
     pub evaluation_name: std::option::Option<std::string::String>,
 }
+impl UpdateEvaluationInput {
+    /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
+    /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    pub fn evaluation_name(&self) -> std::option::Option<&str> {
+        self.evaluation_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEvaluationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEvaluationInput");
@@ -6346,6 +6294,16 @@ pub struct UpdateDataSourceInput {
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
     pub data_source_name: std::option::Option<std::string::String>,
 }
+impl UpdateDataSourceInput {
+    /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceInput");
@@ -6363,6 +6321,16 @@ pub struct UpdateBatchPredictionInput {
     pub batch_prediction_id: std::option::Option<std::string::String>,
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub batch_prediction_name: std::option::Option<std::string::String>,
+}
+impl UpdateBatchPredictionInput {
+    /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
+    /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    pub fn batch_prediction_name(&self) -> std::option::Option<&str> {
+        self.batch_prediction_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBatchPredictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6385,6 +6353,23 @@ pub struct PredictInput {
     #[allow(missing_docs)] // documentation missing in model
     pub predict_endpoint: std::option::Option<std::string::String>,
 }
+impl PredictInput {
+    /// <p>A unique identifier of the <code>MLModel</code>.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>A map of variable name-value pairs that represent an observation.</p>
+    pub fn record(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.record.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn predict_endpoint(&self) -> std::option::Option<&str> {
+        self.predict_endpoint.as_deref()
+    }
+}
 impl std::fmt::Debug for PredictInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PredictInput");
@@ -6406,6 +6391,18 @@ pub struct GetMlModelInput {
     /// <p>If false, <code>Recipe</code> is not returned.</p>
     pub verbose: bool,
 }
+impl GetMlModelInput {
+    /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
+    /// <p>If true, <code>Recipe</code> is returned.</p>
+    /// <p>If false, <code>Recipe</code> is not returned.</p>
+    pub fn verbose(&self) -> bool {
+        self.verbose
+    }
+}
 impl std::fmt::Debug for GetMlModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMlModelInput");
@@ -6421,6 +6418,12 @@ impl std::fmt::Debug for GetMlModelInput {
 pub struct GetEvaluationInput {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
     pub evaluation_id: std::option::Option<std::string::String>,
+}
+impl GetEvaluationInput {
+    /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEvaluationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6441,6 +6444,18 @@ pub struct GetDataSourceInput {
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
     pub verbose: bool,
 }
+impl GetDataSourceInput {
+    /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
+    /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
+    /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
+    pub fn verbose(&self) -> bool {
+        self.verbose
+    }
+}
 impl std::fmt::Debug for GetDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataSourceInput");
@@ -6456,6 +6471,12 @@ impl std::fmt::Debug for GetDataSourceInput {
 pub struct GetBatchPredictionInput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
     pub batch_prediction_id: std::option::Option<std::string::String>,
+}
+impl GetBatchPredictionInput {
+    /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBatchPredictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6473,6 +6494,16 @@ pub struct DescribeTagsInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object.</p>
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
+}
+impl DescribeTagsInput {
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the ML object.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6581,6 +6612,124 @@ pub struct DescribeMlModelsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
     pub limit: std::option::Option<i32>,
+}
+impl DescribeMlModelsInput {
+    /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
+    /// <b> </b>
+    /// <code>Name</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter_variable(&self) -> std::option::Option<&crate::model::MlModelFilterVariable> {
+        self.filter_variable.as_ref()
+    }
+    /// <p>The equal to operator. The <code>MLModel</code> results will have
+    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    pub fn eq(&self) -> std::option::Option<&str> {
+        self.eq.as_deref()
+    }
+    /// <p>The greater than operator. The <code>MLModel</code> results will
+    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    pub fn gt(&self) -> std::option::Option<&str> {
+        self.gt.as_deref()
+    }
+    /// <p>The less than operator. The <code>MLModel</code> results will
+    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    pub fn lt(&self) -> std::option::Option<&str> {
+        self.lt.as_deref()
+    }
+    /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
+    /// </p>
+    pub fn ge(&self) -> std::option::Option<&str> {
+        self.ge.as_deref()
+    }
+    /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    pub fn le(&self) -> std::option::Option<&str> {
+        self.le.as_deref()
+    }
+    /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    pub fn ne(&self) -> std::option::Option<&str> {
+        self.ne.as_deref()
+    }
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
+    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
+    /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
+    /// <code>Prefix</code>:
+    /// </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>2014-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p>
+    /// </li>
+    /// </ul>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
+    /// </li>
+    /// </ul>
+    /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The ID of the page in the paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for DescribeMlModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6691,6 +6840,116 @@ pub struct DescribeEvaluationsInput {
     /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeEvaluationsInput {
+    /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
+    /// <b> </b>
+    /// <code>Name</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter_variable(&self) -> std::option::Option<&crate::model::EvaluationFilterVariable> {
+        self.filter_variable.as_ref()
+    }
+    /// <p>The equal to operator. The <code>Evaluation</code> results will have
+    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    pub fn eq(&self) -> std::option::Option<&str> {
+        self.eq.as_deref()
+    }
+    /// <p>The greater than operator. The <code>Evaluation</code> results will
+    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    pub fn gt(&self) -> std::option::Option<&str> {
+        self.gt.as_deref()
+    }
+    /// <p>The less than operator. The <code>Evaluation</code> results will
+    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    pub fn lt(&self) -> std::option::Option<&str> {
+        self.lt.as_deref()
+    }
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
+    /// </p>
+    pub fn ge(&self) -> std::option::Option<&str> {
+        self.ge.as_deref()
+    }
+    /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    pub fn le(&self) -> std::option::Option<&str> {
+        self.le.as_deref()
+    }
+    /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    pub fn ne(&self) -> std::option::Option<&str> {
+        self.ne.as_deref()
+    }
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
+    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
+    /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
+    /// <code>Prefix</code>:
+    /// </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>2014-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p>
+    /// </li>
+    /// </ul>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
+    /// </li>
+    /// </ul>
+    /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The ID of the page in the paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeEvaluationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEvaluationsInput");
@@ -6790,6 +7049,107 @@ pub struct DescribeDataSourcesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
     pub limit: std::option::Option<i32>,
+}
+impl DescribeDataSourcesInput {
+    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
+    /// <code>Name</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter_variable(&self) -> std::option::Option<&crate::model::DataSourceFilterVariable> {
+        self.filter_variable.as_ref()
+    }
+    /// <p>The equal to operator. The <code>DataSource</code> results will have
+    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    pub fn eq(&self) -> std::option::Option<&str> {
+        self.eq.as_deref()
+    }
+    /// <p>The greater than operator. The <code>DataSource</code> results will
+    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    pub fn gt(&self) -> std::option::Option<&str> {
+        self.gt.as_deref()
+    }
+    /// <p>The less than operator. The <code>DataSource</code> results will
+    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    pub fn lt(&self) -> std::option::Option<&str> {
+        self.lt.as_deref()
+    }
+    /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
+    /// </p>
+    pub fn ge(&self) -> std::option::Option<&str> {
+        self.ge.as_deref()
+    }
+    /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    pub fn le(&self) -> std::option::Option<&str> {
+        self.le.as_deref()
+    }
+    /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    pub fn ne(&self) -> std::option::Option<&str> {
+        self.ne.as_deref()
+    }
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
+    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
+    /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
+    /// <code>Prefix</code>:
+    /// </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>2014-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p>
+    /// </li>
+    /// </ul>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
+    /// </li>
+    /// </ul>
+    /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The ID of the page in the paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for DescribeDataSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6900,6 +7260,118 @@ pub struct DescribeBatchPredictionsInput {
     /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
     pub limit: std::option::Option<i32>,
 }
+impl DescribeBatchPredictionsInput {
+    /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
+    /// <b> </b>
+    /// <code>Name</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter_variable(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchPredictionFilterVariable> {
+        self.filter_variable.as_ref()
+    }
+    /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
+    /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    pub fn eq(&self) -> std::option::Option<&str> {
+        self.eq.as_deref()
+    }
+    /// <p>The greater than operator. The <code>BatchPrediction</code> results will
+    /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    pub fn gt(&self) -> std::option::Option<&str> {
+        self.gt.as_deref()
+    }
+    /// <p>The less than operator. The <code>BatchPrediction</code> results will
+    /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    pub fn lt(&self) -> std::option::Option<&str> {
+        self.lt.as_deref()
+    }
+    /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
+    /// </p>
+    pub fn ge(&self) -> std::option::Option<&str> {
+        self.ge.as_deref()
+    }
+    /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    pub fn le(&self) -> std::option::Option<&str> {
+        self.le.as_deref()
+    }
+    /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    pub fn ne(&self) -> std::option::Option<&str> {
+        self.ne.as_deref()
+    }
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
+    /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
+    /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
+    /// <code>Prefix</code>:
+    /// </p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>2014-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09</p>
+    /// </li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p>
+    /// </li>
+    /// </ul>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
+    /// </li>
+    /// </ul>
+    /// <p>Results are sorted by <code>FilterVariable</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>An ID of the page in the paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for DescribeBatchPredictionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBatchPredictionsInput");
@@ -6929,6 +7401,20 @@ pub struct DeleteTagsInput {
     /// <p>The type of the tagged ML object.</p>
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
 }
+impl DeleteTagsInput {
+    /// <p>One or more tags to delete.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+    /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the tagged ML object.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
@@ -6946,6 +7432,12 @@ pub struct DeleteRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub ml_model_id: std::option::Option<std::string::String>,
 }
+impl DeleteRealtimeEndpointInput {
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRealtimeEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRealtimeEndpointInput");
@@ -6960,6 +7452,12 @@ impl std::fmt::Debug for DeleteRealtimeEndpointInput {
 pub struct DeleteMlModelInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     pub ml_model_id: std::option::Option<std::string::String>,
+}
+impl DeleteMlModelInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMlModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6976,6 +7474,12 @@ pub struct DeleteEvaluationInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
     pub evaluation_id: std::option::Option<std::string::String>,
 }
+impl DeleteEvaluationInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEvaluationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEvaluationInput");
@@ -6990,6 +7494,12 @@ impl std::fmt::Debug for DeleteEvaluationInput {
 pub struct DeleteDataSourceInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub data_source_id: std::option::Option<std::string::String>,
+}
+impl DeleteDataSourceInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7006,6 +7516,12 @@ pub struct DeleteBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     pub batch_prediction_id: std::option::Option<std::string::String>,
 }
+impl DeleteBatchPredictionInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBatchPredictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBatchPredictionInput");
@@ -7020,6 +7536,12 @@ impl std::fmt::Debug for DeleteBatchPredictionInput {
 pub struct CreateRealtimeEndpointInput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub ml_model_id: std::option::Option<std::string::String>,
+}
+impl CreateRealtimeEndpointInput {
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRealtimeEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7106,6 +7628,96 @@ pub struct CreateMlModelInput {
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub recipe_uri: std::option::Option<std::string::String>,
 }
+impl CreateMlModelInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    pub fn ml_model_name(&self) -> std::option::Option<&str> {
+        self.ml_model_name.as_deref()
+    }
+    /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
+    /// </li>
+    /// <li>
+    /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
+    /// </li>
+    /// </ul>
+    /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    pub fn ml_model_type(&self) -> std::option::Option<&crate::model::MlModelType> {
+        self.ml_model_type.as_ref()
+    }
+    /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
+    /// a map of key-value pairs.</p>
+    /// <p>The following is the current set of training parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
+    /// input data, the size of the model might affect its performance.</p>
+    /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
+    /// observations to build the <code>MLModel</code>. The value is an integer that
+    /// ranges from <code>1</code> to <code>10000</code>. The default value is
+    /// <code>10</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
+    /// the data improves a model's ability to find the optimal solution for a variety
+    /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
+    /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
+    /// overfitting the data by penalizing large coefficients. This tends to drive
+    /// coefficients to zero, resulting in a sparse feature set. If you use this
+    /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
+    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+    /// The default is to not use L1 normalization. This parameter can't be used when
+    /// <code>L2</code> is specified. Use this parameter sparingly.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
+    /// overfitting the data by penalizing large coefficients. This tends to drive
+    /// coefficients to small, nonzero values. If you use this parameter, start by
+    /// specifying a small value, such as <code>1.0E-08</code>.</p>
+    /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+    /// The default is to not use L2 normalization. This parameter can't be used when
+    /// <code>L1</code> is specified. Use this parameter sparingly.</p>
+    /// </li>
+    /// </ul>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The <code>DataSource</code> that points to the training data.</p>
+    pub fn training_data_source_id(&self) -> std::option::Option<&str> {
+        self.training_data_source_id.as_deref()
+    }
+    /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
+    /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    pub fn recipe(&self) -> std::option::Option<&str> {
+        self.recipe.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    pub fn recipe_uri(&self) -> std::option::Option<&str> {
+        self.recipe_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMlModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMlModelInput");
@@ -7134,6 +7746,26 @@ pub struct CreateEvaluationInput {
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
     /// must match the schema used to create the <code>MLModel</code>.</p>
     pub evaluation_data_source_id: std::option::Option<std::string::String>,
+}
+impl CreateEvaluationInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+        self.evaluation_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
+    pub fn evaluation_name(&self) -> std::option::Option<&str> {
+        self.evaluation_name.as_deref()
+    }
+    /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+    /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
+    /// must match the schema used to create the <code>MLModel</code>.</p>
+    pub fn evaluation_data_source_id(&self) -> std::option::Option<&str> {
+        self.evaluation_data_source_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEvaluationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7177,6 +7809,43 @@ pub struct CreateDataSourceFromS3Input {
     /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
     /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
     pub compute_statistics: bool,
+}
+impl CreateDataSourceFromS3Input {
+    /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The data specification of a <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
+    /// </li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
+    /// </li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+    /// <p> Sample -
+    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn data_spec(&self) -> std::option::Option<&crate::model::S3DataSpec> {
+        self.data_spec.as_ref()
+    }
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
+    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
+    /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+    pub fn compute_statistics(&self) -> bool {
+        self.compute_statistics
+    }
 }
 impl std::fmt::Debug for CreateDataSourceFromS3Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7255,6 +7924,80 @@ pub struct CreateDataSourceFromRedshiftInput {
     /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
     /// be used for <code>MLModel</code> training.</p>
     pub compute_statistics: bool,
+}
+impl CreateDataSourceFromRedshiftInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>DatabaseInformation -</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
+    /// </li>
+    /// <li>
+    /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
+    /// <code>Datasource</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
+    /// Redshift data. The data retrieved from Amazon Redshift using
+    /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
+    /// </li>
+    /// <li>
+    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
+    /// </li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
+    /// <p> Sample -
+    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn data_spec(&self) -> std::option::Option<&crate::model::RedshiftDataSpec> {
+        self.data_spec.as_ref()
+    }
+    /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
+    /// </li>
+    /// <li>
+    /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
+    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
+    /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
+    /// be used for <code>MLModel</code> training.</p>
+    pub fn compute_statistics(&self) -> bool {
+        self.compute_statistics
+    }
 }
 impl std::fmt::Debug for CreateDataSourceFromRedshiftInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7336,6 +8079,81 @@ pub struct CreateDataSourceFromRdsInput {
     /// </p>
     pub compute_statistics: bool,
 }
+impl CreateDataSourceFromRdsInput {
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
+    /// becomes the ID for a <code>DataSource</code>.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    pub fn data_source_name(&self) -> std::option::Option<&str> {
+        self.data_source_name.as_deref()
+    }
+    /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>DatabaseInformation -</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
+    /// </li>
+    /// <li>
+    /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
+    /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    /// </li>
+    /// <li>
+    /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
+    /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    /// </li>
+    /// <li>
+    /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+    /// </li>
+    /// <li>
+    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
+    /// </li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+    /// <p> Sample -
+    /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn rds_data(&self) -> std::option::Option<&crate::model::RdsDataSpec> {
+        self.rds_data.as_ref()
+    }
+    /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
+    /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+    /// <p></p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
+    /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
+    /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
+    /// </p>
+    pub fn compute_statistics(&self) -> bool {
+        self.compute_statistics
+    }
+}
 impl std::fmt::Debug for CreateDataSourceFromRdsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataSourceFromRdsInput");
@@ -7365,6 +8183,30 @@ pub struct CreateBatchPredictionInput {
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub output_uri: std::option::Option<std::string::String>,
 }
+impl CreateBatchPredictionInput {
+    /// <p>A user-supplied ID that uniquely identifies the
+    /// <code>BatchPrediction</code>.</p>
+    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_id.as_deref()
+    }
+    /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
+    pub fn batch_prediction_name(&self) -> std::option::Option<&str> {
+        self.batch_prediction_name.as_deref()
+    }
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+        self.ml_model_id.as_deref()
+    }
+    /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    pub fn batch_prediction_data_source_id(&self) -> std::option::Option<&str> {
+        self.batch_prediction_data_source_id.as_deref()
+    }
+    /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+    /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    pub fn output_uri(&self) -> std::option::Option<&str> {
+        self.output_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBatchPredictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBatchPredictionInput");
@@ -7390,6 +8232,20 @@ pub struct AddTagsInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of the ML object to tag.</p>
     pub resource_type: std::option::Option<crate::model::TaggableResourceType>,
+}
+impl AddTagsInput {
+    /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the ML object to tag.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::TaggableResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

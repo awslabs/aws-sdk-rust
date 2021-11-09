@@ -6,6 +6,12 @@ pub struct VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
     pub trust_id: std::option::Option<std::string::String>,
 }
+impl VerifyTrustOutput {
+    /// <p>The unique Trust ID of the trust relationship that was verified.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyTrustOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyTrustOutput");
@@ -55,6 +61,16 @@ pub struct UpdateTrustOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the trust relationship.</p>
     pub trust_id: std::option::Option<std::string::String>,
+}
+impl UpdateTrustOutput {
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>Identifier of the trust relationship.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTrustOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -208,6 +224,13 @@ pub struct UnshareDirectoryOutput {
     /// unshared from the specified directory (<code>DirectoryId</code>).</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
+impl UnshareDirectoryOutput {
+    /// <p>Identifier of the directory stored in the directory consumer account that is to be
+    /// unshared from the specified directory (<code>DirectoryId</code>).</p>
+    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+        self.shared_directory_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UnshareDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnshareDirectoryOutput");
@@ -261,6 +284,12 @@ pub struct StartSchemaExtensionOutput {
     /// <p>The identifier of the schema extension that will be applied.</p>
     pub schema_extension_id: std::option::Option<std::string::String>,
 }
+impl StartSchemaExtensionOutput {
+    /// <p>The identifier of the schema extension that will be applied.</p>
+    pub fn schema_extension_id(&self) -> std::option::Option<&str> {
+        self.schema_extension_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartSchemaExtensionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSchemaExtensionOutput");
@@ -312,6 +341,13 @@ pub struct ShareDirectoryOutput {
     /// <p>Identifier of the directory that is stored in the directory consumer account that is
     /// shared from the specified directory (<code>DirectoryId</code>).</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
+}
+impl ShareDirectoryOutput {
+    /// <p>Identifier of the directory that is stored in the directory consumer account that is
+    /// shared from the specified directory (<code>DirectoryId</code>).</p>
+    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+        self.shared_directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ShareDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,6 +552,12 @@ pub struct RejectSharedDirectoryOutput {
     /// <p>Identifier of the shared directory in the directory consumer account.</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
 }
+impl RejectSharedDirectoryOutput {
+    /// <p>Identifier of the shared directory in the directory consumer account.</p>
+    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+        self.shared_directory_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectSharedDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectSharedDirectoryOutput");
@@ -597,6 +639,12 @@ pub struct RegisterCertificateOutput {
     /// <p>The identifier of the certificate.</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
+impl RegisterCertificateOutput {
+    /// <p>The identifier of the certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterCertificateOutput");
@@ -649,6 +697,16 @@ pub struct ListTagsForResourceOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>List of tags returned by the ListTagsForResource operation.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -724,6 +782,20 @@ pub struct ListSchemaExtensionsOutput {
     /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
     /// of items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSchemaExtensionsOutput {
+    /// <p>Information about the schema extensions applied to the directory.</p>
+    pub fn schema_extensions_info(
+        &self,
+    ) -> std::option::Option<&[crate::model::SchemaExtensionInfo]> {
+        self.schema_extensions_info.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+    /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
+    /// of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchemaExtensionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -805,6 +877,16 @@ pub struct ListLogSubscriptionsOutput {
     /// <p>The token for the next set of items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLogSubscriptionsOutput {
+    /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
+    pub fn log_subscriptions(&self) -> std::option::Option<&[crate::model::LogSubscription]> {
+        self.log_subscriptions.as_deref()
+    }
+    /// <p>The token for the next set of items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLogSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLogSubscriptionsOutput");
@@ -882,6 +964,17 @@ pub struct ListIpRoutesOutput {
     /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIpRoutesOutput {
+    /// <p>A list of <a>IpRoute</a>s.</p>
+    pub fn ip_routes_info(&self) -> std::option::Option<&[crate::model::IpRouteInfo]> {
+        self.ip_routes_info.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value for the
+    /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIpRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIpRoutesOutput");
@@ -957,6 +1050,18 @@ pub struct ListCertificatesOutput {
     /// <p>A list of certificates with basic details including certificate ID, certificate common
     /// name, certificate state.</p>
     pub certificates_info: std::option::Option<std::vec::Vec<crate::model::CertificateInfo>>,
+}
+impl ListCertificatesOutput {
+    /// <p>Indicates whether another page of certificates is available when the number of available
+    /// certificates exceeds the page limit.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of certificates with basic details including certificate ID, certificate common
+    /// name, certificate state.</p>
+    pub fn certificates_info(&self) -> std::option::Option<&[crate::model::CertificateInfo]> {
+        self.certificates_info.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1037,6 +1142,13 @@ pub struct GetSnapshotLimitsOutput {
     /// directory.</p>
     pub snapshot_limits: std::option::Option<crate::model::SnapshotLimits>,
 }
+impl GetSnapshotLimitsOutput {
+    /// <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for the specified
+    /// directory.</p>
+    pub fn snapshot_limits(&self) -> std::option::Option<&crate::model::SnapshotLimits> {
+        self.snapshot_limits.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSnapshotLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSnapshotLimitsOutput");
@@ -1090,6 +1202,13 @@ pub struct GetDirectoryLimitsOutput {
     /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
     /// current Region.</p>
     pub directory_limits: std::option::Option<crate::model::DirectoryLimits>,
+}
+impl GetDirectoryLimitsOutput {
+    /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
+    /// current Region.</p>
+    pub fn directory_limits(&self) -> std::option::Option<&crate::model::DirectoryLimits> {
+        self.directory_limits.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDirectoryLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1391,6 +1510,21 @@ pub struct DescribeTrustsOutput {
     /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeTrustsOutput {
+    /// <p>The list of Trust objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the
+    /// <i>Limit</i> member of the request. This occurs if there are less than the
+    /// requested number of items left to retrieve, or if the limitations of the operation have been
+    /// exceeded.</p>
+    pub fn trusts(&self) -> std::option::Option<&[crate::model::Trust]> {
+        self.trusts.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value for the
+    /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrustsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrustsOutput");
@@ -1478,6 +1612,21 @@ pub struct DescribeSnapshotsOutput {
     /// a subsequent call to <a>DescribeSnapshots</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSnapshotsOutput {
+    /// <p>The list of <a>Snapshot</a> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the
+    /// <i>Limit</i> member of the request. This occurs if there are less than the requested
+    /// number of items left to retrieve, or if the limitations of the operation have been
+    /// exceeded.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+        self.snapshots.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of
+    /// a subsequent call to <a>DescribeSnapshots</a>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotsOutput");
@@ -1561,6 +1710,17 @@ pub struct DescribeSharedDirectoriesOutput {
     /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSharedDirectoriesOutput {
+    /// <p>A list of all shared directories in your account.</p>
+    pub fn shared_directories(&self) -> std::option::Option<&[crate::model::SharedDirectory]> {
+        self.shared_directories.as_deref()
+    }
+    /// <p>If not null, token that indicates that more results are available. Pass this value for the
+    /// <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSharedDirectoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSharedDirectoriesOutput");
@@ -1640,6 +1800,18 @@ pub struct DescribeRegionsOutput {
     /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
     /// of items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeRegionsOutput {
+    /// <p>List of Region information related to the directory for each replicated Region.</p>
+    pub fn regions_description(&self) -> std::option::Option<&[crate::model::RegionDescription]> {
+        self.regions_description.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+    /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
+    /// of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRegionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1723,6 +1895,18 @@ pub struct DescribeLdapsSettingsOutput {
     /// page limit and there is another page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLdapsSettingsOutput {
+    /// <p>Information about LDAP security for the specified directory, including status of
+    /// enablement, state last updated date time, and the reason for the state.</p>
+    pub fn ldaps_settings_info(&self) -> std::option::Option<&[crate::model::LdapsSettingInfo]> {
+        self.ldaps_settings_info.as_deref()
+    }
+    /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds
+    /// page limit and there is another page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLdapsSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLdapsSettingsOutput");
@@ -1802,6 +1986,13 @@ pub struct DescribeEventTopicsOutput {
     /// ID.</p>
     pub event_topics: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
 }
+impl DescribeEventTopicsOutput {
+    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
+    /// ID.</p>
+    pub fn event_topics(&self) -> std::option::Option<&[crate::model::EventTopic]> {
+        self.event_topics.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventTopicsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventTopicsOutput");
@@ -1864,6 +2055,18 @@ pub struct DescribeDomainControllersOutput {
     /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
     /// next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDomainControllersOutput {
+    /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
+    pub fn domain_controllers(&self) -> std::option::Option<&[crate::model::DomainController]> {
+        self.domain_controllers.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+    /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
+    /// next set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainControllersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1952,6 +2155,24 @@ pub struct DescribeDirectoriesOutput {
     /// set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeDirectoriesOutput {
+    /// <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
+    /// <p>It is possible that this list contains less than the number of items specified in the
+    /// <code>Limit</code> member of the request. This occurs if there are less than the requested
+    /// number of items left to retrieve, or if the limitations of the operation have been
+    /// exceeded.</p>
+    pub fn directory_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::DirectoryDescription]> {
+        self.directory_descriptions.as_deref()
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+    /// parameter in a subsequent call to <a>DescribeDirectories</a> to retrieve the next
+    /// set of items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDirectoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDirectoriesOutput");
@@ -2039,6 +2260,14 @@ pub struct DescribeConditionalForwardersOutput {
     pub conditional_forwarders:
         std::option::Option<std::vec::Vec<crate::model::ConditionalForwarder>>,
 }
+impl DescribeConditionalForwardersOutput {
+    /// <p>The list of conditional forwarders that have been created.</p>
+    pub fn conditional_forwarders(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConditionalForwarder]> {
+        self.conditional_forwarders.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConditionalForwardersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConditionalForwardersOutput");
@@ -2103,6 +2332,19 @@ pub struct DescribeClientAuthenticationSettingsOutput {
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
     /// page limit and there is another page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeClientAuthenticationSettingsOutput {
+    /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
+    pub fn client_authentication_settings_info(
+        &self,
+    ) -> std::option::Option<&[crate::model::ClientAuthenticationSettingInfo]> {
+        self.client_authentication_settings_info.as_deref()
+    }
+    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
+    /// page limit and there is another page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClientAuthenticationSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2185,6 +2427,13 @@ pub struct DescribeCertificateOutput {
     /// <p>Information about the certificate, including registered date time, certificate state, the
     /// reason for the state, expiration date time, and certificate common name.</p>
     pub certificate: std::option::Option<crate::model::Certificate>,
+}
+impl DescribeCertificateOutput {
+    /// <p>Information about the certificate, including registered date time, certificate state, the
+    /// reason for the state, expiration date time, and certificate common name.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+        self.certificate.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeCertificateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2299,6 +2548,12 @@ pub struct DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
     pub trust_id: std::option::Option<std::string::String>,
 }
+impl DeleteTrustOutput {
+    /// <p>The Trust ID of the trust relationship that was deleted.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTrustOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTrustOutput");
@@ -2346,6 +2601,12 @@ impl DeleteTrustOutput {
 pub struct DeleteSnapshotOutput {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
+}
+impl DeleteSnapshotOutput {
+    /// <p>The identifier of the directory snapshot that was deleted.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,6 +2686,12 @@ pub struct DeleteDirectoryOutput {
     /// <p>The directory identifier.</p>
     pub directory_id: std::option::Option<std::string::String>,
 }
+impl DeleteDirectoryOutput {
+    /// <p>The directory identifier.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDirectoryOutput");
@@ -2503,6 +2770,12 @@ pub struct CreateTrustOutput {
     /// <p>A unique identifier for the trust relationship that was created.</p>
     pub trust_id: std::option::Option<std::string::String>,
 }
+impl CreateTrustOutput {
+    /// <p>A unique identifier for the trust relationship that was created.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrustOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrustOutput");
@@ -2551,6 +2824,12 @@ pub struct CreateSnapshotOutput {
     /// <p>The identifier of the snapshot that was created.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
 }
+impl CreateSnapshotOutput {
+    /// <p>The identifier of the snapshot that was created.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSnapshotOutput");
@@ -2598,6 +2877,12 @@ impl CreateSnapshotOutput {
 pub struct CreateMicrosoftAdOutput {
     /// <p>The identifier of the directory that was created.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl CreateMicrosoftAdOutput {
+    /// <p>The identifier of the directory that was created.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMicrosoftAdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2677,6 +2962,12 @@ pub struct CreateDirectoryOutput {
     /// <p>The identifier of the directory that was created.</p>
     pub directory_id: std::option::Option<std::string::String>,
 }
+impl CreateDirectoryOutput {
+    /// <p>The identifier of the directory that was created.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDirectoryOutput");
@@ -2755,6 +3046,12 @@ pub struct CreateComputerOutput {
     /// <p>A <a>Computer</a> object that represents the computer account.</p>
     pub computer: std::option::Option<crate::model::Computer>,
 }
+impl CreateComputerOutput {
+    /// <p>A <a>Computer</a> object that represents the computer account.</p>
+    pub fn computer(&self) -> std::option::Option<&crate::model::Computer> {
+        self.computer.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateComputerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComputerOutput");
@@ -2804,6 +3101,16 @@ pub struct CreateAliasOutput {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The alias for the directory.</p>
     pub alias: std::option::Option<std::string::String>,
+}
+impl CreateAliasOutput {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The alias for the directory.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2865,6 +3172,12 @@ impl CreateAliasOutput {
 pub struct ConnectDirectoryOutput {
     /// <p>The identifier of the new directory.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl ConnectDirectoryOutput {
+    /// <p>The identifier of the new directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ConnectDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3033,6 +3346,12 @@ impl AddIpRoutesOutput {
 pub struct AcceptSharedDirectoryOutput {
     /// <p>The shared directory in the directory consumer account.</p>
     pub shared_directory: std::option::Option<crate::model::SharedDirectory>,
+}
+impl AcceptSharedDirectoryOutput {
+    /// <p>The shared directory in the directory consumer account.</p>
+    pub fn shared_directory(&self) -> std::option::Option<&crate::model::SharedDirectory> {
+        self.shared_directory.as_ref()
+    }
 }
 impl std::fmt::Debug for AcceptSharedDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -176,6 +176,16 @@ pub struct StorageLensTag {
     /// <p></p>
     pub value: std::option::Option<std::string::String>,
 }
+impl StorageLensTag {
+    /// <p></p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p></p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for StorageLensTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageLensTag");
@@ -258,6 +268,48 @@ pub struct StorageLensConfiguration {
     /// </code>
     /// </p>
     pub storage_lens_arn: std::option::Option<std::string::String>,
+}
+impl StorageLensConfiguration {
+    /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A container for all the account-level configurations of your S3 Storage Lens
+    /// configuration.</p>
+    pub fn account_level(&self) -> std::option::Option<&crate::model::AccountLevel> {
+        self.account_level.as_ref()
+    }
+    /// <p>A container for what is included in this configuration. This container can only be valid
+    /// if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
+    pub fn include(&self) -> std::option::Option<&crate::model::Include> {
+        self.include.as_ref()
+    }
+    /// <p>A container for what is excluded in this configuration. This container can only be valid
+    /// if there is no <code>Include</code> container submitted, and it's not empty. </p>
+    pub fn exclude(&self) -> std::option::Option<&crate::model::Exclude> {
+        self.exclude.as_ref()
+    }
+    /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and
+    /// format.</p>
+    pub fn data_export(&self) -> std::option::Option<&crate::model::StorageLensDataExport> {
+        self.data_export.as_ref()
+    }
+    /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+    /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
+    pub fn aws_org(&self) -> std::option::Option<&crate::model::StorageLensAwsOrg> {
+        self.aws_org.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is
+    /// read-only and follows the following format:
+    /// <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i>
+    /// </code>
+    /// </p>
+    pub fn storage_lens_arn(&self) -> std::option::Option<&str> {
+        self.storage_lens_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StorageLensConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -430,6 +482,16 @@ pub struct StorageLensAwsOrg {
     /// </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl StorageLensAwsOrg {
+    /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization.
+    /// This property is read-only and follows the following format:
+    /// <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
+    /// </code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StorageLensAwsOrg {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageLensAwsOrg");
@@ -487,6 +549,15 @@ pub struct StorageLensDataExport {
     /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
     pub s3_bucket_destination: std::option::Option<crate::model::S3BucketDestination>,
+}
+impl StorageLensDataExport {
+    /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p>
+    /// <note>
+    /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
+    /// </note>
+    pub fn s3_bucket_destination(&self) -> std::option::Option<&crate::model::S3BucketDestination> {
+        self.s3_bucket_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for StorageLensDataExport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -558,6 +629,38 @@ pub struct S3BucketDestination {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
     pub encryption: std::option::Option<crate::model::StorageLensDataExportEncryption>,
+}
+impl S3BucketDestination {
+    /// <p></p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>The schema version of the export file.</p>
+    pub fn output_schema_version(&self) -> std::option::Option<&crate::model::OutputSchemaVersion> {
+        self.output_schema_version.as_ref()
+    }
+    /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.
+    /// This property is read-only and follows the following format:
+    /// <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i>
+    /// </code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
+    pub fn encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageLensDataExportEncryption> {
+        self.encryption.as_ref()
+    }
 }
 impl std::fmt::Debug for S3BucketDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -688,6 +791,16 @@ pub struct StorageLensDataExportEncryption {
     /// <p></p>
     pub ssekms: std::option::Option<crate::model::Ssekms>,
 }
+impl StorageLensDataExportEncryption {
+    /// <p></p>
+    pub fn sses3(&self) -> std::option::Option<&crate::model::Sses3> {
+        self.sses3.as_ref()
+    }
+    /// <p></p>
+    pub fn ssekms(&self) -> std::option::Option<&crate::model::Ssekms> {
+        self.ssekms.as_ref()
+    }
+}
 impl std::fmt::Debug for StorageLensDataExportEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StorageLensDataExportEncryption");
@@ -752,6 +865,16 @@ pub struct Ssekms {
     /// </code>
     /// </p>
     pub key_id: std::option::Option<std::string::String>,
+}
+impl Ssekms {
+    /// <p>A container for the ARN of the SSE-KMS encryption.
+    /// This property is read-only and follows the following format:
+    /// <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i>
+    /// </code>
+    /// </p>
+    pub fn key_id(&self) -> std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Ssekms {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -947,6 +1070,16 @@ pub struct Exclude {
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Exclude {
+    /// <p>A container for the S3 Storage Lens bucket excludes.</p>
+    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+        self.buckets.as_deref()
+    }
+    /// <p>A container for the S3 Storage Lens Region excludes.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+}
 impl std::fmt::Debug for Exclude {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Exclude");
@@ -1027,6 +1160,16 @@ pub struct Include {
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A container for the S3 Storage Lens Region includes.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Include {
+    /// <p>A container for the S3 Storage Lens bucket includes.</p>
+    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+        self.buckets.as_deref()
+    }
+    /// <p>A container for the S3 Storage Lens Region includes.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for Include {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1109,6 +1252,16 @@ pub struct AccountLevel {
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
     pub bucket_level: std::option::Option<crate::model::BucketLevel>,
 }
+impl AccountLevel {
+    /// <p>A container for the S3 Storage Lens activity metrics.</p>
+    pub fn activity_metrics(&self) -> std::option::Option<&crate::model::ActivityMetrics> {
+        self.activity_metrics.as_ref()
+    }
+    /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
+    pub fn bucket_level(&self) -> std::option::Option<&crate::model::BucketLevel> {
+        self.bucket_level.as_ref()
+    }
+}
 impl std::fmt::Debug for AccountLevel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountLevel");
@@ -1178,6 +1331,16 @@ pub struct BucketLevel {
     /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
     pub prefix_level: std::option::Option<crate::model::PrefixLevel>,
 }
+impl BucketLevel {
+    /// <p>A container for the bucket-level activity metrics for Amazon S3 Storage Lens</p>
+    pub fn activity_metrics(&self) -> std::option::Option<&crate::model::ActivityMetrics> {
+        self.activity_metrics.as_ref()
+    }
+    /// <p>A container for the bucket-level prefix-level metrics for S3 Storage Lens</p>
+    pub fn prefix_level(&self) -> std::option::Option<&crate::model::PrefixLevel> {
+        self.prefix_level.as_ref()
+    }
+}
 impl std::fmt::Debug for BucketLevel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketLevel");
@@ -1245,6 +1408,12 @@ pub struct PrefixLevel {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
     pub storage_metrics: std::option::Option<crate::model::PrefixLevelStorageMetrics>,
 }
+impl PrefixLevel {
+    /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
+    pub fn storage_metrics(&self) -> std::option::Option<&crate::model::PrefixLevelStorageMetrics> {
+        self.storage_metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for PrefixLevel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PrefixLevel");
@@ -1297,6 +1466,16 @@ pub struct PrefixLevelStorageMetrics {
     pub is_enabled: bool,
     /// <p></p>
     pub selection_criteria: std::option::Option<crate::model::SelectionCriteria>,
+}
+impl PrefixLevelStorageMetrics {
+    /// <p>A container for whether prefix-level storage metrics are enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+    /// <p></p>
+    pub fn selection_criteria(&self) -> std::option::Option<&crate::model::SelectionCriteria> {
+        self.selection_criteria.as_ref()
+    }
 }
 impl std::fmt::Debug for PrefixLevelStorageMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1368,6 +1547,23 @@ pub struct SelectionCriteria {
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub min_storage_bytes_percentage: f64,
+}
+impl SelectionCriteria {
+    /// <p>A container for the delimiter of the selection criteria being used.</p>
+    pub fn delimiter(&self) -> std::option::Option<&str> {
+        self.delimiter.as_deref()
+    }
+    /// <p>The max depth of the selection criteria</p>
+    pub fn max_depth(&self) -> i32 {
+        self.max_depth
+    }
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p>
+    /// <note>
+    /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
+    /// </note>
+    pub fn min_storage_bytes_percentage(&self) -> f64 {
+        self.min_storage_bytes_percentage
+    }
 }
 impl std::fmt::Debug for SelectionCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1451,6 +1647,12 @@ impl SelectionCriteria {
 pub struct ActivityMetrics {
     /// <p>A container for whether the activity metrics are enabled.</p>
     pub is_enabled: bool,
+}
+impl ActivityMetrics {
+    /// <p>A container for whether the activity metrics are enabled.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
 }
 impl std::fmt::Debug for ActivityMetrics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1537,6 +1739,53 @@ pub struct PublicAccessBlockConfiguration {
     /// specific accounts, is blocked.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
     pub restrict_public_buckets: bool,
+}
+impl PublicAccessBlockConfiguration {
+    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in
+    /// this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
+    /// <ul>
+    /// <li>
+    /// <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p>
+    /// </li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p>
+    /// </li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn block_public_acls(&self) -> bool {
+        self.block_public_acls
+    }
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this
+    /// element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this
+    /// account and any objects that they contain. </p>
+    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
+    /// prevent new public ACLs from being set.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn ignore_public_acls(&self) -> bool {
+        self.ignore_public_acls
+    }
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account.
+    /// Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket
+    /// policy if the specified bucket policy allows public access. </p>
+    /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn block_public_policy(&self) -> bool {
+        self.block_public_policy
+    }
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account.
+    /// Setting this element to <code>TRUE</code> restricts access to buckets with public policies
+    /// to only Amazon Web Service principals and authorized users within this account.</p>
+    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public
+    /// and cross-account access within any public bucket policy, including non-public delegation to
+    /// specific accounts, is blocked.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn restrict_public_buckets(&self) -> bool {
+        self.restrict_public_buckets
+    }
 }
 impl std::fmt::Debug for PublicAccessBlockConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1687,6 +1936,16 @@ pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutMultiRegionAccessPointPolicyInput {
+    /// <p>The name of the Multi-Region Access Point associated with the request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMultiRegionAccessPointPolicyInput");
@@ -1750,6 +2009,16 @@ pub struct S3Tag {
     /// <p></p>
     pub value: std::option::Option<std::string::String>,
 }
+impl S3Tag {
+    /// <p></p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p></p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Tag");
@@ -1811,6 +2080,12 @@ pub struct Tagging {
     /// <p>A collection for a set of tags.</p>
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
+impl Tagging {
+    /// <p>A collection for a set of tags.</p>
+    pub fn tag_set(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tag_set.as_deref()
+    }
+}
 impl std::fmt::Debug for Tagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tagging");
@@ -1867,6 +2142,12 @@ impl Tagging {
 pub struct LifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
+}
+impl LifecycleConfiguration {
+    /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::LifecycleRule]> {
+        self.rules.as_deref()
+    }
 }
 impl std::fmt::Debug for LifecycleConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1956,6 +2237,63 @@ pub struct LifecycleRule {
     /// <i>Amazon S3 User Guide</i>.</p>
     pub abort_incomplete_multipart_upload:
         std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
+}
+impl LifecycleRule {
+    /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object
+    /// has a delete marker.</p>
+    pub fn expiration(&self) -> std::option::Option<&crate::model::LifecycleExpiration> {
+        self.expiration.as_ref()
+    }
+    /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The container for the filter of lifecycle rule.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::LifecycleRuleFilter> {
+        self.filter.as_ref()
+    }
+    /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExpirationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn transitions(&self) -> std::option::Option<&[crate::model::Transition]> {
+        self.transitions.as_deref()
+    }
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent
+    /// objects transition to a specific storage class. If your bucket is versioning-enabled (or
+    /// versioning is suspended), you can set this action to request that Amazon S3 transition
+    /// noncurrent object versions to a specific storage class at a set period in the object's
+    /// lifetime. </p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn noncurrent_version_transitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::NoncurrentVersionTransition]> {
+        self.noncurrent_version_transitions.as_deref()
+    }
+    /// <p>The noncurrent version expiration of the lifecycle rule.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn noncurrent_version_expiration(
+        &self,
+    ) -> std::option::Option<&crate::model::NoncurrentVersionExpiration> {
+        self.noncurrent_version_expiration.as_ref()
+    }
+    /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3
+    /// waits before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+    /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn abort_incomplete_multipart_upload(
+        &self,
+    ) -> std::option::Option<&crate::model::AbortIncompleteMultipartUpload> {
+        self.abort_incomplete_multipart_upload.as_ref()
+    }
 }
 impl std::fmt::Debug for LifecycleRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2185,6 +2523,13 @@ pub struct AbortIncompleteMultipartUpload {
     /// the Outposts bucket.</p>
     pub days_after_initiation: i32,
 }
+impl AbortIncompleteMultipartUpload {
+    /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload to
+    /// the Outposts bucket.</p>
+    pub fn days_after_initiation(&self) -> i32 {
+        self.days_after_initiation
+    }
+}
 impl std::fmt::Debug for AbortIncompleteMultipartUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AbortIncompleteMultipartUpload");
@@ -2236,6 +2581,14 @@ pub struct NoncurrentVersionExpiration {
     /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
     /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub noncurrent_days: i32,
+}
+impl NoncurrentVersionExpiration {
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
+    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
+    /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn noncurrent_days(&self) -> i32 {
+        self.noncurrent_days
+    }
 }
 impl std::fmt::Debug for NoncurrentVersionExpiration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2293,6 +2646,19 @@ pub struct NoncurrentVersionTransition {
     pub noncurrent_days: i32,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
+}
+impl NoncurrentVersionTransition {
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action.  
+    /// For information about the noncurrent days calculations, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">
+    /// How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn noncurrent_days(&self) -> i32 {
+        self.noncurrent_days
+    }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
+        self.storage_class.as_ref()
+    }
 }
 impl std::fmt::Debug for NoncurrentVersionTransition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2446,6 +2812,22 @@ pub struct Transition {
     /// <p>The storage class to which you want the object to transition.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
 }
+impl Transition {
+    /// <p>Indicates when objects are transitioned to the specified storage class.
+    /// The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class.
+    /// The value must be a positive integer.</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>The storage class to which you want the object to transition.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
+        self.storage_class.as_ref()
+    }
+}
 impl std::fmt::Debug for Transition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Transition");
@@ -2591,6 +2973,25 @@ pub struct LifecycleRuleFilter {
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
     pub and: std::option::Option<crate::model::LifecycleRuleAndOperator>,
 }
+impl LifecycleRuleFilter {
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p></p>
+    pub fn tag(&self) -> std::option::Option<&crate::model::S3Tag> {
+        self.tag.as_ref()
+    }
+    /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
+    pub fn and(&self) -> std::option::Option<&crate::model::LifecycleRuleAndOperator> {
+        self.and.as_ref()
+    }
+}
 impl std::fmt::Debug for LifecycleRuleFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecycleRuleFilter");
@@ -2680,6 +3081,16 @@ pub struct LifecycleRuleAndOperator {
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
+impl LifecycleRuleAndOperator {
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for LifecycleRuleAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecycleRuleAndOperator");
@@ -2756,6 +3167,23 @@ pub struct LifecycleExpiration {
     /// to true, the delete marker will be expired. If set to false, the policy takes no action.
     /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub expired_object_delete_marker: bool,
+}
+impl LifecycleExpiration {
+    /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601
+    /// format.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
+    pub fn days(&self) -> i32 {
+        self.days
+    }
+    /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
+    /// to true, the delete marker will be expired. If set to false, the policy takes no action.
+    /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+    pub fn expired_object_delete_marker(&self) -> bool {
+        self.expired_object_delete_marker
+    }
 }
 impl std::fmt::Debug for LifecycleExpiration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2851,6 +3279,29 @@ pub struct ObjectLambdaConfiguration {
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
     pub transformation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ObjectLambdaTransformationConfiguration>>,
+}
+impl ObjectLambdaConfiguration {
+    /// <p>Standard access point associated with the Object Lambda Access Point.</p>
+    pub fn supporting_access_point(&self) -> std::option::Option<&str> {
+        self.supporting_access_point.as_deref()
+    }
+    /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
+    pub fn cloud_watch_metrics_enabled(&self) -> bool {
+        self.cloud_watch_metrics_enabled
+    }
+    /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>
+    /// and <code>GetObject-PartNumber</code>.</p>
+    pub fn allowed_features(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectLambdaAllowedFeature]> {
+        self.allowed_features.as_deref()
+    }
+    /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
+    pub fn transformation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectLambdaTransformationConfiguration]> {
+        self.transformation_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for ObjectLambdaConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2984,6 +3435,20 @@ pub struct ObjectLambdaTransformationConfiguration {
     pub content_transformation:
         std::option::Option<crate::model::ObjectLambdaContentTransformation>,
 }
+impl ObjectLambdaTransformationConfiguration {
+    /// <p>A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.</p>
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectLambdaTransformationConfigurationAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
+    pub fn content_transformation(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectLambdaContentTransformation> {
+        self.content_transformation.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectLambdaTransformationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectLambdaTransformationConfiguration");
@@ -3067,6 +3532,15 @@ impl ObjectLambdaTransformationConfiguration {
 pub enum ObjectLambdaContentTransformation {
     /// <p>A container for an Lambda function.</p>
     AwsLambda(crate::model::AwsLambdaTransformation),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ObjectLambdaContentTransformation {
     #[allow(irrefutable_let_patterns)]
@@ -3085,6 +3559,10 @@ impl ObjectLambdaContentTransformation {
     pub fn is_aws_lambda(&self) -> bool {
         self.as_aws_lambda().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Lambda function used to transform objects through an Object Lambda Access Point.</p>
@@ -3095,6 +3573,16 @@ pub struct AwsLambdaTransformation {
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub function_payload: std::option::Option<std::string::String>,
+}
+impl AwsLambdaTransformation {
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
+    pub fn function_payload(&self) -> std::option::Option<&str> {
+        self.function_payload.as_deref()
+    }
 }
 impl std::fmt::Debug for AwsLambdaTransformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3275,6 +3763,25 @@ pub struct ListStorageLensConfigurationEntry {
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub is_enabled: bool,
 }
+impl ListStorageLensConfigurationEntry {
+    /// <p>A container for the S3 Storage Lens configuration ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
+    pub fn storage_lens_arn(&self) -> std::option::Option<&str> {
+        self.storage_lens_arn.as_deref()
+    }
+    /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in
+    /// your designated S3 Storage Lens home Region.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
+    pub fn is_enabled(&self) -> bool {
+        self.is_enabled
+    }
+}
 impl std::fmt::Debug for ListStorageLensConfigurationEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStorageLensConfigurationEntry");
@@ -3374,6 +3881,28 @@ pub struct RegionalBucket {
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Outposts ID of the regional bucket.</p>
     pub outpost_id: std::option::Option<std::string::String>,
+}
+impl RegionalBucket {
+    /// <p></p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p></p>
+    pub fn public_access_block_enabled(&self) -> bool {
+        self.public_access_block_enabled
+    }
+    /// <p>The creation date of the regional bucket</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The Outposts ID of the regional bucket.</p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegionalBucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3501,6 +4030,45 @@ pub struct MultiRegionAccessPointReport {
     pub status: std::option::Option<crate::model::MultiRegionAccessPointStatus>,
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
     pub regions: std::option::Option<std::vec::Vec<crate::model::RegionReport>>,
+}
+impl MultiRegionAccessPointReport {
+    /// <p>The name of the Multi-Region Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the
+    /// name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
+    /// Multi-Region Access Points</a>.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>When the Multi-Region Access Point create request was received.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+    /// You can enable the configuration options in any combination. For more information about
+    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn public_access_block(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block.as_ref()
+    }
+    /// <p>The current status of the Multi-Region Access Point.</p>
+    /// <p>
+    /// <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while
+    /// the request is propogating and being completed. If a Multi-Region Access Point has a status of
+    /// <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete
+    /// the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a
+    /// delete request to finish the deletion of the Multi-Region Access Point.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MultiRegionAccessPointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
+    pub fn regions(&self) -> std::option::Option<&[crate::model::RegionReport]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for MultiRegionAccessPointReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3661,6 +4229,16 @@ pub struct RegionReport {
     /// <p>The name of the Region.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl RegionReport {
+    /// <p>The name of the bucket.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name of the Region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for RegionReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegionReport");
@@ -3819,6 +4397,41 @@ pub struct JobListDescriptor {
     /// that succeeded, and the number of tasks that failed.</p>
     pub progress_summary: std::option::Option<crate::model::JobProgressSummary>,
 }
+impl JobListDescriptor {
+    /// <p>The ID for the specified job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::OperationName> {
+        self.operation.as_ref()
+    }
+    /// <p>The current priority for the specified job.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The specified job's current status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp indicating when the specified job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
+    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.termination_date.as_ref()
+    }
+    /// <p>Describes the total number of tasks that the specified job has run, the number of tasks
+    /// that succeeded, and the number of tasks that failed.</p>
+    pub fn progress_summary(&self) -> std::option::Option<&crate::model::JobProgressSummary> {
+        self.progress_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for JobListDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobListDescriptor");
@@ -3975,6 +4588,20 @@ pub struct JobProgressSummary {
     pub number_of_tasks_succeeded: std::option::Option<i64>,
     /// <p></p>
     pub number_of_tasks_failed: std::option::Option<i64>,
+}
+impl JobProgressSummary {
+    /// <p></p>
+    pub fn total_number_of_tasks(&self) -> std::option::Option<i64> {
+        self.total_number_of_tasks
+    }
+    /// <p></p>
+    pub fn number_of_tasks_succeeded(&self) -> std::option::Option<i64> {
+        self.number_of_tasks_succeeded
+    }
+    /// <p></p>
+    pub fn number_of_tasks_failed(&self) -> std::option::Option<i64> {
+        self.number_of_tasks_failed
+    }
 }
 impl std::fmt::Debug for JobProgressSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4140,6 +4767,16 @@ pub struct ObjectLambdaAccessPoint {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     pub object_lambda_access_point_arn: std::option::Option<std::string::String>,
 }
+impl ObjectLambdaAccessPoint {
+    /// <p>The name of the Object Lambda Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    pub fn object_lambda_access_point_arn(&self) -> std::option::Option<&str> {
+        self.object_lambda_access_point_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ObjectLambdaAccessPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectLambdaAccessPoint");
@@ -4227,6 +4864,40 @@ pub struct AccessPoint {
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The name or alias of the access point.</p>
     pub alias: std::option::Option<std::string::String>,
+}
+impl AccessPoint {
+    /// <p>The name of this access point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Indicates whether this access point allows access from the public internet. If
+    /// <code>VpcConfiguration</code> is specified for this access point, then
+    /// <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from
+    /// the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and
+    /// the access point allows access from the public internet, subject to the access point and bucket access
+    /// policies.</p>
+    pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOrigin> {
+        self.network_origin.as_ref()
+    }
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p>
+    /// <note>
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+    /// </note>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The name of the bucket associated with this access point.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The ARN for the access point.</p>
+    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+        self.access_point_arn.as_deref()
+    }
+    /// <p>The name or alias of the access point.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4366,6 +5037,12 @@ pub struct VpcConfiguration {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub vpc_id: std::option::Option<std::string::String>,
 }
+impl VpcConfiguration {
+    /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcConfiguration");
@@ -4472,6 +5149,12 @@ pub struct PolicyStatus {
     /// <p></p>
     pub is_public: bool,
 }
+impl PolicyStatus {
+    /// <p></p>
+    pub fn is_public(&self) -> bool {
+        self.is_public
+    }
+}
 impl std::fmt::Debug for PolicyStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyStatus");
@@ -4525,6 +5208,20 @@ pub struct MultiRegionAccessPointPolicyDocument {
     pub established: std::option::Option<crate::model::EstablishedMultiRegionAccessPointPolicy>,
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub proposed: std::option::Option<crate::model::ProposedMultiRegionAccessPointPolicy>,
+}
+impl MultiRegionAccessPointPolicyDocument {
+    /// <p>The last established policy for the Multi-Region Access Point.</p>
+    pub fn established(
+        &self,
+    ) -> std::option::Option<&crate::model::EstablishedMultiRegionAccessPointPolicy> {
+        self.established.as_ref()
+    }
+    /// <p>The proposed policy for the Multi-Region Access Point.</p>
+    pub fn proposed(
+        &self,
+    ) -> std::option::Option<&crate::model::ProposedMultiRegionAccessPointPolicy> {
+        self.proposed.as_ref()
+    }
 }
 impl std::fmt::Debug for MultiRegionAccessPointPolicyDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4605,6 +5302,12 @@ pub struct ProposedMultiRegionAccessPointPolicy {
     /// <p>The details of the proposed policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl ProposedMultiRegionAccessPointPolicy {
+    /// <p>The details of the proposed policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for ProposedMultiRegionAccessPointPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProposedMultiRegionAccessPointPolicy");
@@ -4656,6 +5359,12 @@ impl ProposedMultiRegionAccessPointPolicy {
 pub struct EstablishedMultiRegionAccessPointPolicy {
     /// <p>The details of the last established policy.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl EstablishedMultiRegionAccessPointPolicy {
+    /// <p>The details of the last established policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for EstablishedMultiRegionAccessPointPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4714,6 +5423,32 @@ pub struct AsyncOperation {
     pub request_status: std::option::Option<std::string::String>,
     /// <p>The details of the response.</p>
     pub response_details: std::option::Option<crate::model::AsyncResponseDetails>,
+}
+impl AsyncOperation {
+    /// <p>The time that the request was sent to the service.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The specific operation for the asynchronous request.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::AsyncOperationName> {
+        self.operation.as_ref()
+    }
+    /// <p>The request token associated with the request.</p>
+    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+        self.request_token_arn.as_deref()
+    }
+    /// <p>The parameters associated with the request.</p>
+    pub fn request_parameters(&self) -> std::option::Option<&crate::model::AsyncRequestParameters> {
+        self.request_parameters.as_ref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn request_status(&self) -> std::option::Option<&str> {
+        self.request_status.as_deref()
+    }
+    /// <p>The details of the response.</p>
+    pub fn response_details(&self) -> std::option::Option<&crate::model::AsyncResponseDetails> {
+        self.response_details.as_ref()
+    }
 }
 impl std::fmt::Debug for AsyncOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4850,6 +5585,18 @@ pub struct AsyncResponseDetails {
     /// <p>Error details for an asynchronous request.</p>
     pub error_details: std::option::Option<crate::model::AsyncErrorDetails>,
 }
+impl AsyncResponseDetails {
+    /// <p>The details for the Multi-Region Access Point.</p>
+    pub fn multi_region_access_point_details(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiRegionAccessPointsAsyncResponse> {
+        self.multi_region_access_point_details.as_ref()
+    }
+    /// <p>Error details for an asynchronous request.</p>
+    pub fn error_details(&self) -> std::option::Option<&crate::model::AsyncErrorDetails> {
+        self.error_details.as_ref()
+    }
+}
 impl std::fmt::Debug for AsyncResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AsyncResponseDetails");
@@ -4929,6 +5676,24 @@ pub struct AsyncErrorDetails {
     pub resource: std::option::Option<std::string::String>,
     /// <p>The ID of the request associated with the error.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl AsyncErrorDetails {
+    /// <p>A string that uniquely identifies the error condition.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A generic descritpion of the error condition in English.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The identifier of the resource associated with the error.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>The ID of the request associated with the error.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AsyncErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5019,6 +5784,15 @@ pub struct MultiRegionAccessPointsAsyncResponse {
     pub regions:
         std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>>,
 }
+impl MultiRegionAccessPointsAsyncResponse {
+    /// <p>A collection of status information for the different Regions that a Multi-Region Access Point
+    /// supports.</p>
+    pub fn regions(
+        &self,
+    ) -> std::option::Option<&[crate::model::MultiRegionAccessPointRegionalResponse]> {
+        self.regions.as_deref()
+    }
+}
 impl std::fmt::Debug for MultiRegionAccessPointsAsyncResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MultiRegionAccessPointsAsyncResponse");
@@ -5086,6 +5860,16 @@ pub struct MultiRegionAccessPointRegionalResponse {
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
     pub request_status: std::option::Option<std::string::String>,
+}
+impl MultiRegionAccessPointRegionalResponse {
+    /// <p>The name of the Region in the Multi-Region Access Point.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current status of the Multi-Region Access Point in this Region.</p>
+    pub fn request_status(&self) -> std::option::Option<&str> {
+        self.request_status.as_deref()
+    }
 }
 impl std::fmt::Debug for MultiRegionAccessPointRegionalResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5163,6 +5947,32 @@ pub struct AsyncRequestParameters {
     /// request.</p>
     pub put_multi_region_access_point_policy_request:
         std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
+}
+impl AsyncRequestParameters {
+    /// <p>A container of the parameters for a
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
+    /// request.</p>
+    pub fn create_multi_region_access_point_request(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateMultiRegionAccessPointInput> {
+        self.create_multi_region_access_point_request.as_ref()
+    }
+    /// <p>A container of the parameters for a
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
+    /// request.</p>
+    pub fn delete_multi_region_access_point_request(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteMultiRegionAccessPointInput> {
+        self.delete_multi_region_access_point_request.as_ref()
+    }
+    /// <p>A container of the parameters for a
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a>
+    /// request.</p>
+    pub fn put_multi_region_access_point_policy_request(
+        &self,
+    ) -> std::option::Option<&crate::model::PutMultiRegionAccessPointPolicyInput> {
+        self.put_multi_region_access_point_policy_request.as_ref()
+    }
 }
 impl std::fmt::Debug for AsyncRequestParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5285,6 +6095,12 @@ pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteMultiRegionAccessPointInput {
+    /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMultiRegionAccessPointInput");
@@ -5340,6 +6156,25 @@ pub struct CreateMultiRegionAccessPointInput {
     pub public_access_block: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
     pub regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
+}
+impl CreateMultiRegionAccessPointInput {
+    /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
+    /// You can enable the configuration options in any combination. For more information about
+    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This is not supported for Amazon S3 on Outposts.</p>
+    pub fn public_access_block(
+        &self,
+    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+        self.public_access_block.as_ref()
+    }
+    /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
+    pub fn regions(&self) -> std::option::Option<&[crate::model::Region]> {
+        self.regions.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5436,6 +6271,12 @@ impl CreateMultiRegionAccessPointInput {
 pub struct Region {
     /// <p>The name of the associated bucket for the Region.</p>
     pub bucket: std::option::Option<std::string::String>,
+}
+impl Region {
+    /// <p>The name of the associated bucket for the Region.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
 }
 impl std::fmt::Debug for Region {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5586,6 +6427,79 @@ pub struct JobDescriptor {
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters
     /// the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
     pub suspended_cause: std::option::Option<std::string::String>,
+}
+impl JobDescriptor {
+    /// <p>The ID for the specified job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
+    pub fn confirmation_required(&self) -> std::option::Option<bool> {
+        self.confirmation_required
+    }
+    /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for this job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The current status of the specified job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The configuration information for the specified job's manifest object.</p>
+    pub fn manifest(&self) -> std::option::Option<&crate::model::JobManifest> {
+        self.manifest.as_ref()
+    }
+    /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
+    pub fn operation(&self) -> std::option::Option<&crate::model::JobOperation> {
+        self.operation.as_ref()
+    }
+    /// <p>The priority of the specified job.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>Describes the total number of tasks that the specified job has run, the number of tasks
+    /// that succeeded, and the number of tasks that failed.</p>
+    pub fn progress_summary(&self) -> std::option::Option<&crate::model::JobProgressSummary> {
+        self.progress_summary.as_ref()
+    }
+    /// <p>The reason for updating the job.</p>
+    pub fn status_update_reason(&self) -> std::option::Option<&str> {
+        self.status_update_reason.as_deref()
+    }
+    /// <p>If the specified job failed, this field contains information describing the failure.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[crate::model::JobFailure]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
+    pub fn report(&self) -> std::option::Option<&crate::model::JobReport> {
+        self.report.as_ref()
+    }
+    /// <p>A timestamp indicating when this job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
+    pub fn termination_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.termination_date.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
+    /// assigned to run the tasks for this job.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
+    pub fn suspended_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.suspended_date.as_ref()
+    }
+    /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters
+    /// the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
+    pub fn suspended_cause(&self) -> std::option::Option<&str> {
+        self.suspended_cause.as_deref()
+    }
 }
 impl std::fmt::Debug for JobDescriptor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5892,6 +6806,30 @@ pub struct JobReport {
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
     pub report_scope: std::option::Option<crate::model::JobReportScope>,
 }
+impl JobReport {
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The format of the specified job-completion report.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::JobReportFormat> {
+        self.format.as_ref()
+    }
+    /// <p>Indicates whether the specified job will generate a job-completion report.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report
+    /// will be stored. Amazon S3 stores the job-completion report at
+    /// <code><prefix>/job-<job-id>/report.json</code>.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
+    pub fn report_scope(&self) -> std::option::Option<&crate::model::JobReportScope> {
+        self.report_scope.as_ref()
+    }
+}
 impl std::fmt::Debug for JobReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobReport");
@@ -6110,6 +7048,16 @@ pub struct JobFailure {
     /// <p>The failure reason, if any, for the specified job.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl JobFailure {
+    /// <p>The failure code, if any, for the specified job.</p>
+    pub fn failure_code(&self) -> std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>The failure reason, if any, for the specified job.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for JobFailure {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobFailure");
@@ -6198,6 +7146,58 @@ pub struct JobOperation {
     /// S3 Object Lock retention with S3 Batch Operations</a> in the
     /// <i>Amazon S3 User Guide</i>.</p>
     pub s3_put_object_retention: std::option::Option<crate::model::S3SetObjectRetentionOperation>,
+}
+impl JobOperation {
+    /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
+    pub fn lambda_invoke(&self) -> std::option::Option<&crate::model::LambdaInvokeOperation> {
+        self.lambda_invoke.as_ref()
+    }
+    /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
+    pub fn s3_put_object_copy(&self) -> std::option::Option<&crate::model::S3CopyObjectOperation> {
+        self.s3_put_object_copy.as_ref()
+    }
+    /// <p>Directs the specified job to run a PUT Object acl call on every object in the manifest.</p>
+    pub fn s3_put_object_acl(&self) -> std::option::Option<&crate::model::S3SetObjectAclOperation> {
+        self.s3_put_object_acl.as_ref()
+    }
+    /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
+    pub fn s3_put_object_tagging(
+        &self,
+    ) -> std::option::Option<&crate::model::S3SetObjectTaggingOperation> {
+        self.s3_put_object_tagging.as_ref()
+    }
+    /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
+    pub fn s3_delete_object_tagging(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DeleteObjectTaggingOperation> {
+        self.s3_delete_object_tagging.as_ref()
+    }
+    /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
+    pub fn s3_initiate_restore_object(
+        &self,
+    ) -> std::option::Option<&crate::model::S3InitiateRestoreObjectOperation> {
+        self.s3_initiate_restore_object.as_ref()
+    }
+    /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an
+    /// S3 Batch Operations job passes every object to the underlying
+    /// <code>PutObjectLegalHold</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using
+    /// S3 Object Lock legal hold with S3 Batch Operations</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn s3_put_object_legal_hold(
+        &self,
+    ) -> std::option::Option<&crate::model::S3SetObjectLegalHoldOperation> {
+        self.s3_put_object_legal_hold.as_ref()
+    }
+    /// <p>Contains the configuration parameters for the Object Lock retention action for an
+    /// S3 Batch Operations job. Batch Operations passes every object to the underlying
+    /// <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
+    /// S3 Object Lock retention with S3 Batch Operations</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    pub fn s3_put_object_retention(
+        &self,
+    ) -> std::option::Option<&crate::model::S3SetObjectRetentionOperation> {
+        self.s3_put_object_retention.as_ref()
+    }
 }
 impl std::fmt::Debug for JobOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6410,6 +7410,19 @@ pub struct S3SetObjectRetentionOperation {
     /// with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub retention: std::option::Option<crate::model::S3Retention>,
 }
+impl S3SetObjectRetentionOperation {
+    /// <p>Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock <code>
+    /// GOVERNANCE</code> type in place.</p>
+    pub fn bypass_governance_retention(&self) -> std::option::Option<bool> {
+        self.bypass_governance_retention
+    }
+    /// <p>Contains the Object Lock retention mode to be applied to all objects in the Batch Operations
+    /// job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention
+    /// with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn retention(&self) -> std::option::Option<&crate::model::S3Retention> {
+        self.retention.as_ref()
+    }
+}
 impl std::fmt::Debug for S3SetObjectRetentionOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SetObjectRetentionOperation");
@@ -6488,6 +7501,16 @@ pub struct S3Retention {
     pub retain_until_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
     pub mode: std::option::Option<crate::model::S3ObjectLockRetentionMode>,
+}
+impl S3Retention {
+    /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
+    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retain_until_date.as_ref()
+    }
+    /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::S3ObjectLockRetentionMode> {
+        self.mode.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Retention {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6615,6 +7638,12 @@ pub struct S3SetObjectLegalHoldOperation {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub legal_hold: std::option::Option<crate::model::S3ObjectLockLegalHold>,
 }
+impl S3SetObjectLegalHoldOperation {
+    /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    pub fn legal_hold(&self) -> std::option::Option<&crate::model::S3ObjectLockLegalHold> {
+        self.legal_hold.as_ref()
+    }
+}
 impl std::fmt::Debug for S3SetObjectLegalHoldOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SetObjectLegalHoldOperation");
@@ -6666,6 +7695,12 @@ impl S3SetObjectLegalHoldOperation {
 pub struct S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub status: std::option::Option<crate::model::S3ObjectLockLegalHoldStatus>,
+}
+impl S3ObjectLockLegalHold {
+    /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::S3ObjectLockLegalHoldStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for S3ObjectLockLegalHold {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6789,6 +7824,29 @@ pub struct S3InitiateRestoreObjectOperation {
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers,
     /// but not the <code>EXPEDITED</code> retrieval tier.</p>
     pub glacier_job_tier: std::option::Option<crate::model::S3GlacierJobTier>,
+}
+impl S3InitiateRestoreObjectOperation {
+    /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3.
+    /// S3 Initiate Restore Object jobs that
+    /// target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1
+    /// or greater.</p>
+    /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when
+    /// creating S3 Initiate Restore Object jobs that target
+    /// S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in
+    /// S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so
+    /// specifying <code>ExpirationInDays</code> results in restore request failure.</p>
+    /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class
+    /// objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier
+    /// objects, but not both types in the same job. If you need to restore objects of both types
+    /// you <i>must</i> create separate Batch Operations jobs. </p>
+    pub fn expiration_in_days(&self) -> std::option::Option<i32> {
+        self.expiration_in_days
+    }
+    /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers,
+    /// but not the <code>EXPEDITED</code> retrieval tier.</p>
+    pub fn glacier_job_tier(&self) -> std::option::Option<&crate::model::S3GlacierJobTier> {
+        self.glacier_job_tier.as_ref()
+    }
 }
 impl std::fmt::Debug for S3InitiateRestoreObjectOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6966,6 +8024,12 @@ pub struct S3SetObjectTaggingOperation {
     /// <p></p>
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
+impl S3SetObjectTaggingOperation {
+    /// <p></p>
+    pub fn tag_set(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tag_set.as_deref()
+    }
+}
 impl std::fmt::Debug for S3SetObjectTaggingOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SetObjectTaggingOperation");
@@ -7024,6 +8088,14 @@ pub struct S3SetObjectAclOperation {
     /// <p></p>
     pub access_control_policy: std::option::Option<crate::model::S3AccessControlPolicy>,
 }
+impl S3SetObjectAclOperation {
+    /// <p></p>
+    pub fn access_control_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::S3AccessControlPolicy> {
+        self.access_control_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for S3SetObjectAclOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SetObjectAclOperation");
@@ -7076,6 +8148,18 @@ pub struct S3AccessControlPolicy {
     pub access_control_list: std::option::Option<crate::model::S3AccessControlList>,
     /// <p></p>
     pub canned_access_control_list: std::option::Option<crate::model::S3CannedAccessControlList>,
+}
+impl S3AccessControlPolicy {
+    /// <p></p>
+    pub fn access_control_list(&self) -> std::option::Option<&crate::model::S3AccessControlList> {
+        self.access_control_list.as_ref()
+    }
+    /// <p></p>
+    pub fn canned_access_control_list(
+        &self,
+    ) -> std::option::Option<&crate::model::S3CannedAccessControlList> {
+        self.canned_access_control_list.as_ref()
+    }
 }
 impl std::fmt::Debug for S3AccessControlPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7236,6 +8320,16 @@ pub struct S3AccessControlList {
     /// <p></p>
     pub grants: std::option::Option<std::vec::Vec<crate::model::S3Grant>>,
 }
+impl S3AccessControlList {
+    /// <p></p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::S3ObjectOwner> {
+        self.owner.as_ref()
+    }
+    /// <p></p>
+    pub fn grants(&self) -> std::option::Option<&[crate::model::S3Grant]> {
+        self.grants.as_deref()
+    }
+}
 impl std::fmt::Debug for S3AccessControlList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3AccessControlList");
@@ -7310,6 +8404,16 @@ pub struct S3Grant {
     pub grantee: std::option::Option<crate::model::S3Grantee>,
     /// <p></p>
     pub permission: std::option::Option<crate::model::S3Permission>,
+}
+impl S3Grant {
+    /// <p></p>
+    pub fn grantee(&self) -> std::option::Option<&crate::model::S3Grantee> {
+        self.grantee.as_ref()
+    }
+    /// <p></p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::S3Permission> {
+        self.permission.as_ref()
+    }
 }
 impl std::fmt::Debug for S3Grant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7445,6 +8549,20 @@ pub struct S3Grantee {
     pub identifier: std::option::Option<std::string::String>,
     /// <p></p>
     pub display_name: std::option::Option<std::string::String>,
+}
+impl S3Grantee {
+    /// <p></p>
+    pub fn type_identifier(&self) -> std::option::Option<&crate::model::S3GranteeTypeIdentifier> {
+        self.type_identifier.as_ref()
+    }
+    /// <p></p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p></p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Grantee {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7584,6 +8702,16 @@ pub struct S3ObjectOwner {
     /// <p></p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl S3ObjectOwner {
+    /// <p></p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p></p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ObjectOwner {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ObjectOwner");
@@ -7689,6 +8817,91 @@ pub struct S3CopyObjectOperation {
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect
     /// <i>bucket-level</i> settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
+}
+impl S3CopyObjectOperation {
+    /// <p>Specifies the destination bucket ARN for the batch copy operation.
+    /// For example, to copy objects to a bucket named "destinationBucket",
+    /// set the TargetResource to "arn:aws:s3:::destinationBucket".</p>
+    pub fn target_resource(&self) -> std::option::Option<&str> {
+        self.target_resource.as_deref()
+    }
+    /// <p></p>
+    pub fn canned_access_control_list(
+        &self,
+    ) -> std::option::Option<&crate::model::S3CannedAccessControlList> {
+        self.canned_access_control_list.as_ref()
+    }
+    /// <p></p>
+    pub fn access_control_grants(&self) -> std::option::Option<&[crate::model::S3Grant]> {
+        self.access_control_grants.as_deref()
+    }
+    /// <p></p>
+    pub fn metadata_directive(&self) -> std::option::Option<&crate::model::S3MetadataDirective> {
+        self.metadata_directive.as_ref()
+    }
+    /// <p></p>
+    pub fn modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_since_constraint.as_ref()
+    }
+    /// <p></p>
+    pub fn new_object_metadata(&self) -> std::option::Option<&crate::model::S3ObjectMetadata> {
+        self.new_object_metadata.as_ref()
+    }
+    /// <p></p>
+    pub fn new_object_tagging(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.new_object_tagging.as_deref()
+    }
+    /// <p>Specifies an optional metadata property for website redirects,
+    /// <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is
+    /// accessed through a website endpoint.</p>
+    pub fn redirect_location(&self) -> std::option::Option<&str> {
+        self.redirect_location.as_deref()
+    }
+    /// <p></p>
+    pub fn requester_pays(&self) -> bool {
+        self.requester_pays
+    }
+    /// <p></p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::S3StorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p></p>
+    pub fn un_modified_since_constraint(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.un_modified_since_constraint.as_ref()
+    }
+    /// <p></p>
+    pub fn sse_aws_kms_key_id(&self) -> std::option::Option<&str> {
+        self.sse_aws_kms_key_id.as_deref()
+    }
+    /// <p>Specifies the folder prefix into which you would like the objects to be copied. For
+    /// example, to copy objects into a folder named "Folder1" in the destination bucket, set the
+    /// TargetKeyPrefix to "Folder1/".</p>
+    pub fn target_key_prefix(&self) -> std::option::Option<&str> {
+        self.target_key_prefix.as_deref()
+    }
+    /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
+    pub fn object_lock_legal_hold_status(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ObjectLockLegalHoldStatus> {
+        self.object_lock_legal_hold_status.as_ref()
+    }
+    /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
+    pub fn object_lock_mode(&self) -> std::option::Option<&crate::model::S3ObjectLockMode> {
+        self.object_lock_mode.as_ref()
+    }
+    /// <p>The date when the applied object retention configuration expires on all objects in
+    /// the Batch Operations job.</p>
+    pub fn object_lock_retain_until_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.object_lock_retain_until_date.as_ref()
+    }
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
+    /// server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code>
+    /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+    /// <p>Specifying this header with an <i>object</i> action doesn’t affect
+    /// <i>bucket-level</i> settings for S3 Bucket Key.</p>
+    pub fn bucket_key_enabled(&self) -> bool {
+        self.bucket_key_enabled
+    }
 }
 impl std::fmt::Debug for S3CopyObjectOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8199,6 +9412,55 @@ pub struct S3ObjectMetadata {
     /// <p></p>
     pub sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
 }
+impl S3ObjectMetadata {
+    /// <p></p>
+    pub fn cache_control(&self) -> std::option::Option<&str> {
+        self.cache_control.as_deref()
+    }
+    /// <p></p>
+    pub fn content_disposition(&self) -> std::option::Option<&str> {
+        self.content_disposition.as_deref()
+    }
+    /// <p></p>
+    pub fn content_encoding(&self) -> std::option::Option<&str> {
+        self.content_encoding.as_deref()
+    }
+    /// <p></p>
+    pub fn content_language(&self) -> std::option::Option<&str> {
+        self.content_language.as_deref()
+    }
+    /// <p></p>
+    pub fn user_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_metadata.as_ref()
+    }
+    /// <p></p>
+    pub fn content_length(&self) -> std::option::Option<i64> {
+        self.content_length
+    }
+    /// <p></p>
+    pub fn content_md5(&self) -> std::option::Option<&str> {
+        self.content_md5.as_deref()
+    }
+    /// <p></p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p></p>
+    pub fn http_expires_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.http_expires_date.as_ref()
+    }
+    /// <p></p>
+    pub fn requester_charged(&self) -> bool {
+        self.requester_charged
+    }
+    /// <p></p>
+    pub fn sse_algorithm(&self) -> std::option::Option<&crate::model::S3SseAlgorithm> {
+        self.sse_algorithm.as_ref()
+    }
+}
 impl std::fmt::Debug for S3ObjectMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ObjectMetadata");
@@ -8522,6 +9784,12 @@ pub struct LambdaInvokeOperation {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
     pub function_arn: std::option::Option<std::string::String>,
 }
+impl LambdaInvokeOperation {
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaInvokeOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaInvokeOperation");
@@ -8571,6 +9839,16 @@ pub struct JobManifest {
     pub spec: std::option::Option<crate::model::JobManifestSpec>,
     /// <p>Contains the information required to locate the specified job's manifest.</p>
     pub location: std::option::Option<crate::model::JobManifestLocation>,
+}
+impl JobManifest {
+    /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
+    pub fn spec(&self) -> std::option::Option<&crate::model::JobManifestSpec> {
+        self.spec.as_ref()
+    }
+    /// <p>Contains the information required to locate the specified job's manifest.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::JobManifestLocation> {
+        self.location.as_ref()
+    }
 }
 impl std::fmt::Debug for JobManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8647,6 +9925,25 @@ pub struct JobManifestLocation {
     pub object_version_id: std::option::Option<std::string::String>,
     /// <p>The ETag for the specified manifest object.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl JobManifestLocation {
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p>
+    /// <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
+    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+    /// XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn object_arn(&self) -> std::option::Option<&str> {
+        self.object_arn.as_deref()
+    }
+    /// <p>The optional version ID to identify a specific version of the manifest object.</p>
+    pub fn object_version_id(&self) -> std::option::Option<&str> {
+        self.object_version_id.as_deref()
+    }
+    /// <p>The ETag for the specified manifest object.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for JobManifestLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8736,6 +10033,16 @@ pub struct JobManifestSpec {
     pub format: std::option::Option<crate::model::JobManifestFormat>,
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::JobManifestFieldName>>,
+}
+impl JobManifestSpec {
+    /// <p>Indicates which of the available formats the specified manifest uses.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::JobManifestFormat> {
+        self.format.as_ref()
+    }
+    /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::JobManifestFieldName]> {
+        self.fields.as_deref()
+    }
 }
 impl std::fmt::Debug for JobManifestSpec {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8939,6 +10246,20 @@ pub struct CreateBucketConfiguration {
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
+}
+impl CreateBucketConfiguration {
+    /// <p>Specifies the Region where the bucket will be created.
+    /// If you are creating a bucket on the US East (N. Virginia) Region (us-east-1),
+    /// you do not need to specify the location.
+    /// </p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn location_constraint(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketLocationConstraint> {
+        self.location_constraint.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateBucketConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

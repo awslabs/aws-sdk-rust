@@ -72,6 +72,24 @@ pub struct StartJobRunOutput {
     /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
 }
+impl StartJobRunOutput {
+    /// <p>This output displays the started job run ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>This output displays the name of the started job run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This output lists the ARN of job run.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobRunOutput");
@@ -164,6 +182,16 @@ pub struct ListVirtualClustersOutput {
     /// <p>This output displays the token for the next set of virtual clusters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListVirtualClustersOutput {
+    /// <p>This output lists the specified virtual clusters.</p>
+    pub fn virtual_clusters(&self) -> std::option::Option<&[crate::model::VirtualCluster]> {
+        self.virtual_clusters.as_deref()
+    }
+    /// <p>This output displays the token for the next set of virtual clusters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVirtualClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualClustersOutput");
@@ -236,6 +264,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags assigned to resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -300,6 +337,16 @@ pub struct ListManagedEndpointsOutput {
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     /// <p> The token for the next set of endpoints to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListManagedEndpointsOutput {
+    /// <p>The managed endpoints to be listed.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p> The token for the next set of endpoints to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListManagedEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -373,6 +420,16 @@ pub struct ListJobRunsOutput {
     /// <p>This output displays the token for the next set of job runs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListJobRunsOutput {
+    /// <p>This output lists information about the specified job runs.</p>
+    pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
+        self.job_runs.as_deref()
+    }
+    /// <p>This output displays the token for the next set of job runs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobRunsOutput");
@@ -443,6 +500,12 @@ pub struct DescribeVirtualClusterOutput {
     /// <p>This output displays information about the specified virtual cluster.</p>
     pub virtual_cluster: std::option::Option<crate::model::VirtualCluster>,
 }
+impl DescribeVirtualClusterOutput {
+    /// <p>This output displays information about the specified virtual cluster.</p>
+    pub fn virtual_cluster(&self) -> std::option::Option<&crate::model::VirtualCluster> {
+        self.virtual_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeVirtualClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVirtualClusterOutput");
@@ -494,6 +557,12 @@ pub struct DescribeManagedEndpointOutput {
     /// <p>This output displays information about a managed endpoint.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
+impl DescribeManagedEndpointOutput {
+    /// <p>This output displays information about a managed endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeManagedEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeManagedEndpointOutput");
@@ -541,6 +610,12 @@ impl DescribeManagedEndpointOutput {
 pub struct DescribeJobRunOutput {
     /// <p>The output displays information about a job run.</p>
     pub job_run: std::option::Option<crate::model::JobRun>,
+}
+impl DescribeJobRunOutput {
+    /// <p>The output displays information about a job run.</p>
+    pub fn job_run(&self) -> std::option::Option<&crate::model::JobRun> {
+        self.job_run.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -590,6 +665,12 @@ pub struct DeleteVirtualClusterOutput {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteVirtualClusterOutput {
+    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVirtualClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVirtualClusterOutput");
@@ -637,6 +718,16 @@ pub struct DeleteManagedEndpointOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+}
+impl DeleteManagedEndpointOutput {
+    /// <p>The output displays the ID of the managed endpoint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteManagedEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -705,6 +796,20 @@ pub struct CreateVirtualClusterOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>This output contains the ARN of virtual cluster.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl CreateVirtualClusterOutput {
+    /// <p>This output contains the virtual cluster ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>This output contains the name of the virtual cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This output contains the ARN of virtual cluster.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVirtualClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -785,6 +890,24 @@ pub struct CreateManagedEndpointOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The output contains the ID of the virtual cluster.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+}
+impl CreateManagedEndpointOutput {
+    /// <p>The output contains the ID of the managed endpoint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The output contains the name of the managed endpoint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The output contains the ARN of the managed endpoint.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The output contains the ID of the virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateManagedEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -877,6 +1000,16 @@ pub struct CancelJobRunOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+}
+impl CancelJobRunOutput {
+    /// <p>The output contains the ID of the cancelled job run.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelJobRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

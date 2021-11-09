@@ -594,10 +594,7 @@ impl AddTagsToVaultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_vault(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_vault(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6059,10 +6056,9 @@ impl RemoveTagsFromVaultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_vault(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_vault(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6259,10 +6255,7 @@ impl SetDataRetrievalPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_data_retrieval_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7417,6 +7410,39 @@ pub struct UploadMultipartPartInput {
     /// <p>The data to upload.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
 }
+impl UploadMultipartPartInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The upload ID of the multipart upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The SHA256 tree hash of the data being uploaded.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this
+    /// part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence.
+    /// The format of this header follows RFC 2616. An example header is Content-Range:bytes
+    /// 0-4194303/*.</p>
+    pub fn range(&self) -> std::option::Option<&str> {
+        self.range.as_deref()
+    }
+    /// <p>The data to upload.</p>
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+}
 impl std::fmt::Debug for UploadMultipartPartInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMultipartPartInput");
@@ -7448,6 +7474,32 @@ pub struct UploadArchiveInput {
     /// <p>The data to upload.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
 }
+impl UploadArchiveInput {
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The optional description of the archive you are uploading.</p>
+    pub fn archive_description(&self) -> std::option::Option<&str> {
+        self.archive_description.as_deref()
+    }
+    /// <p>The SHA256 tree hash of the data being uploaded.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+    /// <p>The data to upload.</p>
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+}
 impl std::fmt::Debug for UploadArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadArchiveInput");
@@ -7476,6 +7528,26 @@ pub struct SetVaultNotificationsInput {
     /// <p>Provides options for specifying notification configuration.</p>
     pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
 }
+impl SetVaultNotificationsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>Provides options for specifying notification configuration.</p>
+    pub fn vault_notification_config(
+        &self,
+    ) -> std::option::Option<&crate::model::VaultNotificationConfig> {
+        self.vault_notification_config.as_ref()
+    }
+}
 impl std::fmt::Debug for SetVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetVaultNotificationsInput");
@@ -7501,6 +7573,24 @@ pub struct SetVaultAccessPolicyInput {
     /// <p>The vault access policy as a JSON string.</p>
     pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
 }
+impl SetVaultAccessPolicyInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The vault access policy as a JSON string.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::VaultAccessPolicy> {
+        self.policy.as_ref()
+    }
+}
 impl std::fmt::Debug for SetVaultAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetVaultAccessPolicyInput");
@@ -7523,6 +7613,20 @@ pub struct SetDataRetrievalPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The data retrieval policy in JSON format.</p>
     pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
+}
+impl SetDataRetrievalPolicyInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The data retrieval policy in JSON format.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::DataRetrievalPolicy> {
+        self.policy.as_ref()
+    }
 }
 impl std::fmt::Debug for SetDataRetrievalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7548,6 +7652,24 @@ pub struct RemoveTagsFromVaultInput {
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsFromVaultInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromVaultInput");
@@ -7567,6 +7689,15 @@ pub struct PurchaseProvisionedCapacityInput {
     /// account ID associated with the credentials used to sign the request. If you use an account
     /// ID, don't include any hyphens ('-') in the ID. </p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl PurchaseProvisionedCapacityInput {
+    /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS
+    /// account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS
+    /// account ID associated with the credentials used to sign the request. If you use an account
+    /// ID, don't include any hyphens ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PurchaseProvisionedCapacityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7595,6 +7726,27 @@ pub struct ListVaultsInput {
     /// never exceeds the limit.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListVaultsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>A string used for pagination. The marker specifies the vault ARN after which the
+    /// listing of vaults should begin.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of vaults to be returned. The default limit is 10. The number of
+    /// vaults returned might be fewer than the specified limit, but the number of returned vaults
+    /// never exceeds the limit.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListVaultsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVaultsInput");
@@ -7618,6 +7770,20 @@ pub struct ListTagsForVaultInput {
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
 }
+impl ListTagsForVaultInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForVaultInput");
@@ -7636,6 +7802,15 @@ pub struct ListProvisionedCapacityInput {
     /// account ID associated with the credentials used to sign the request. If you use an account
     /// ID, don't include any hyphens ('-') in the ID. </p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl ListProvisionedCapacityInput {
+    /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS
+    /// account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS
+    /// account ID associated with the credentials used to sign the request. If you use an account
+    /// ID, don't include any hyphens ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProvisionedCapacityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7670,6 +7845,37 @@ pub struct ListPartsInput {
     /// never exceeds the limit.</p>
     pub limit: std::option::Option<i32>,
 }
+impl ListPartsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The upload ID of the multipart upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>An opaque string used for pagination. This value specifies the part at which the
+    /// listing of parts should begin. Get the marker value from the response of a previous List
+    /// Parts response. You need only include the marker if you are continuing the pagination of
+    /// results started in a previous List Parts request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of parts to be returned. The default limit is 50. The number of
+    /// parts returned might be fewer than the specified limit, but the number of returned parts
+    /// never exceeds the limit.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+}
 impl std::fmt::Debug for ListPartsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPartsInput");
@@ -7703,6 +7909,32 @@ pub struct ListMultipartUploadsInput {
     /// response. You need only include the marker if you are continuing the pagination of results
     /// started in a previous List Uploads request.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl ListMultipartUploadsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>Specifies the maximum number of uploads returned in the response body. If this value
+    /// is not specified, the List Uploads operation returns up to 50 uploads.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>An opaque string used for pagination. This value specifies the upload at which the
+    /// listing of uploads should begin. Get the marker value from a previous List Uploads
+    /// response. You need only include the marker if you are continuing the pagination of results
+    /// started in a previous List Uploads request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMultipartUploadsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7743,6 +7975,43 @@ pub struct ListJobsInput {
     /// <code>false</code>.</p>
     pub completed: std::option::Option<std::string::String>,
 }
+impl ListJobsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of
+    /// jobs returned might be fewer than the specified limit, but the number of returned jobs
+    /// never exceeds the limit.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>An opaque string used for pagination. This value specifies the job at which the
+    /// listing of jobs should begin. Get the marker value from a previous List Jobs response. You
+    /// only need to include the marker if you are continuing the pagination of results started in
+    /// a previous List Jobs request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The type of job status to return. You can specify the following values:
+    /// <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
+    pub fn statuscode(&self) -> std::option::Option<&str> {
+        self.statuscode.as_deref()
+    }
+    /// <p>The state of the jobs to return. You can specify <code>true</code> or
+    /// <code>false</code>.</p>
+    pub fn completed(&self) -> std::option::Option<&str> {
+        self.completed.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsInput");
@@ -7771,6 +8040,25 @@ pub struct InitiateVaultLockInput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
     /// character.</p>
     pub policy: std::option::Option<crate::model::VaultLockPolicy>,
+}
+impl InitiateVaultLockInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape
+    /// character.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::VaultLockPolicy> {
+        self.policy.as_ref()
+    }
 }
 impl std::fmt::Debug for InitiateVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7804,6 +8092,32 @@ pub struct InitiateMultipartUploadInput {
     /// this part size.</p>
     pub part_size: std::option::Option<std::string::String>,
 }
+impl InitiateMultipartUploadInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The archive description that you are uploading in parts.</p>
+    /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example
+    /// 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum
+    /// allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
+    pub fn archive_description(&self) -> std::option::Option<&str> {
+        self.archive_description.as_deref()
+    }
+    /// <p>The size of each part except the last, in bytes. The last part can be smaller than
+    /// this part size.</p>
+    pub fn part_size(&self) -> std::option::Option<&str> {
+        self.part_size.as_deref()
+    }
+}
 impl std::fmt::Debug for InitiateMultipartUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateMultipartUploadInput");
@@ -7830,6 +8144,24 @@ pub struct InitiateJobInput {
     /// <p>Provides options for specifying job information.</p>
     pub job_parameters: std::option::Option<crate::model::JobParameters>,
 }
+impl InitiateJobInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>Provides options for specifying job information.</p>
+    pub fn job_parameters(&self) -> std::option::Option<&crate::model::JobParameters> {
+        self.job_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for InitiateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateJobInput");
@@ -7854,6 +8186,20 @@ pub struct GetVaultNotificationsInput {
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
 }
+impl GetVaultNotificationsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultNotificationsInput");
@@ -7876,6 +8222,20 @@ pub struct GetVaultLockInput {
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
 }
+impl GetVaultLockInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetVaultLockInput");
@@ -7897,6 +8257,20 @@ pub struct GetVaultAccessPolicyInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
+}
+impl GetVaultAccessPolicyInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetVaultAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7959,6 +8333,63 @@ pub struct GetJobOutputInput {
     /// </ol>
     pub range: std::option::Option<std::string::String>,
 }
+impl GetJobOutputInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The job ID whose data is downloaded.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The range of bytes to retrieve from the output. For example, if you want to download
+    /// the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation
+    /// downloads the entire output.</p>
+    ///
+    /// <p>If the job output is large, then you can use a range to
+    /// retrieve a portion of the output. This allows you to download the entire output in smaller
+    /// chunks of bytes. For example, suppose you have 1 GB of job output you want to download and
+    /// you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job
+    /// Output requests. You use the following process to download the job output:</p>
+    ///
+    /// <ol>
+    /// <li>
+    /// <p>Download a 128 MB chunk of output by specifying the appropriate byte range.
+    /// Verify that all 128 MB of data was received.</p>
+    /// </li>
+    /// <li>
+    /// <p>Along with the data, the response includes a SHA256 tree hash of the payload.
+    /// You compute the checksum of the payload on the client and compare it with the
+    /// checksum you received in the response to ensure you received all the expected
+    /// data.</p>
+    /// </li>
+    /// <li>
+    /// <p>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time
+    /// specifying the appropriate byte range.</p>
+    /// </li>
+    /// <li>
+    /// <p>After downloading all the parts of the job output, you have a list of eight
+    /// checksum values. Compute the tree hash of these values to find the checksum of the
+    /// entire output. Using the <a>DescribeJob</a> API, obtain job information of
+    /// the job that provided you the output. The response includes the checksum of the
+    /// entire archive stored in Amazon S3 Glacier. You compare this value with the checksum you
+    /// computed to ensure you have downloaded the entire archive content with no
+    /// errors.</p>
+    /// <p></p>
+    /// </li>
+    /// </ol>
+    pub fn range(&self) -> std::option::Option<&str> {
+        self.range.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobOutputInput");
@@ -7981,6 +8412,16 @@ pub struct GetDataRetrievalPolicyInput {
     /// If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl GetDataRetrievalPolicyInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDataRetrievalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataRetrievalPolicyInput");
@@ -8002,6 +8443,20 @@ pub struct DescribeVaultInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
+}
+impl DescribeVaultInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8027,6 +8482,24 @@ pub struct DescribeJobInput {
     /// <p>The ID of the job to describe.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeJobInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The ID of the job to describe.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobInput");
@@ -8051,6 +8524,20 @@ pub struct DeleteVaultNotificationsInput {
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
 }
+impl DeleteVaultNotificationsInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVaultNotificationsInput");
@@ -8073,6 +8560,20 @@ pub struct DeleteVaultAccessPolicyInput {
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
 }
+impl DeleteVaultAccessPolicyInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVaultAccessPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVaultAccessPolicyInput");
@@ -8094,6 +8595,20 @@ pub struct DeleteVaultInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
+}
+impl DeleteVaultInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8119,6 +8634,24 @@ pub struct DeleteArchiveInput {
     /// <p>The ID of the archive to delete.</p>
     pub archive_id: std::option::Option<std::string::String>,
 }
+impl DeleteArchiveInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The ID of the archive to delete.</p>
+    pub fn archive_id(&self) -> std::option::Option<&str> {
+        self.archive_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteArchiveInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteArchiveInput");
@@ -8141,6 +8674,20 @@ pub struct CreateVaultInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
+}
+impl CreateVaultInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8165,6 +8712,24 @@ pub struct CompleteVaultLockInput {
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The <code>lockId</code> value is the lock ID obtained from a <a>InitiateVaultLock</a> request.</p>
     pub lock_id: std::option::Option<std::string::String>,
+}
+impl CompleteVaultLockInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The <code>lockId</code> value is the lock ID obtained from a <a>InitiateVaultLock</a> request.</p>
+    pub fn lock_id(&self) -> std::option::Option<&str> {
+        self.lock_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CompleteVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8202,6 +8767,36 @@ pub struct CompleteMultipartUploadInput {
     /// Glacier returns an error and the request fails.</p>
     pub checksum: std::option::Option<std::string::String>,
 }
+impl CompleteMultipartUploadInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The upload ID of the multipart upload.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
+    /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all
+    /// the sizes of the individual parts that you uploaded.</p>
+    pub fn archive_size(&self) -> std::option::Option<&str> {
+        self.archive_size.as_deref()
+    }
+    /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash
+    /// of the individual parts. If the value you specify in the request does not match the SHA256
+    /// tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier),
+    /// Glacier returns an error and the request fails.</p>
+    pub fn checksum(&self) -> std::option::Option<&str> {
+        self.checksum.as_deref()
+    }
+}
 impl std::fmt::Debug for CompleteMultipartUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompleteMultipartUploadInput");
@@ -8231,6 +8826,28 @@ pub struct AddTagsToVaultInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AddTagsToVaultInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The tags to add to the vault. Each tag is composed of a key and a value. The value
+    /// can be an empty string.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for AddTagsToVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsToVaultInput");
@@ -8253,6 +8870,20 @@ pub struct AbortVaultLockInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: std::option::Option<std::string::String>,
+}
+impl AbortVaultLockInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS
+    /// account ID associated with the credentials used to sign the request. You can either specify
+    /// an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon
+    /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+    /// If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AbortVaultLockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8281,6 +8912,24 @@ pub struct AbortMultipartUploadInput {
     pub vault_name: std::option::Option<std::string::String>,
     /// <p>The upload ID of the multipart upload to delete.</p>
     pub upload_id: std::option::Option<std::string::String>,
+}
+impl AbortMultipartUploadInput {
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+    /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+    /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the
+    /// credentials used to sign the request. If you use an account ID, do not include any hyphens
+    /// ('-') in the ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the vault.</p>
+    pub fn vault_name(&self) -> std::option::Option<&str> {
+        self.vault_name.as_deref()
+    }
+    /// <p>The upload ID of the multipart upload to delete.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AbortMultipartUploadInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

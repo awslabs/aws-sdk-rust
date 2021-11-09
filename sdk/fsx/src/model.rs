@@ -54,6 +54,82 @@ pub struct Volume {
     /// <p>Describes why the volume lifecycle state changed.</p>
     pub lifecycle_transition_reason: std::option::Option<crate::model::LifecycleTransitionReason>,
 }
+impl Volume {
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
+    /// also known as Unix time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The lifecycle status of the volume.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code> - The volume is fully available for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - Amazon FSx is creating the new volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon FSx has not started creating the volume.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::VolumeLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The name of the volume.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OntapVolumeConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+    /// resources. We require an ARN when you need to specify a resource unambiguously across
+    /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The system-generated, unique ID of the volume.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+        self.volume_type.as_ref()
+    }
+    /// <p>Describes why the volume lifecycle state changed.</p>
+    pub fn lifecycle_transition_reason(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleTransitionReason> {
+        self.lifecycle_transition_reason.as_ref()
+    }
+}
 impl std::fmt::Debug for Volume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Volume");
@@ -316,6 +392,12 @@ pub struct LifecycleTransitionReason {
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl LifecycleTransitionReason {
+    /// <p>A detailed error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for LifecycleTransitionReason {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecycleTransitionReason");
@@ -420,6 +502,20 @@ pub struct Tag {
     /// For example, you can have a key-value pair in a tag set of <code>finances : April</code>
     /// and also of <code>payroll : April</code>.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must
+    /// be unique for the resource to which they are attached.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value that specifies the <code>TagValue</code>, the value assigned to the
+    /// corresponding tag key. Tag values can be null and don't have to be unique in a tag set.
+    /// For example, you can have a key-value pair in a tag set of <code>finances : April</code>
+    /// and also of <code>payroll : April</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -552,6 +648,95 @@ pub struct OntapVolumeConfiguration {
     /// </li>
     /// </ul>
     pub ontap_volume_type: std::option::Option<crate::model::OntapVolumeType>,
+}
+impl OntapVolumeConfiguration {
+    /// <p>Specifies the FlexCache endpoint type of the volume.
+    /// Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration.
+    /// <code>NONE</code> is the default.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CACHE</code> specifies that the volume is a FlexCache volume.</p>
+    /// </li>
+    /// </ul>
+    pub fn flex_cache_endpoint_type(
+        &self,
+    ) -> std::option::Option<&crate::model::FlexCacheEndpointType> {
+        self.flex_cache_endpoint_type.as_ref()
+    }
+    /// <p>Specifies the directory that NAS clients use to mount the volume, along with the SVM DNS name or IP address.
+    /// You can create a <code>JunctionPath</code> directly below a parent volume junction or on a
+    /// directory within a volume. A <code>JunctionPath</code> for a volume named vol3 might
+    /// be /vol1/vol2/vol3, or /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+    pub fn junction_path(&self) -> std::option::Option<&str> {
+        self.junction_path.as_deref()
+    }
+    /// <p>The security style for the volume, which can be <code>UNIX</code>,
+    /// <code>NTFS</code>, or <code>MIXED</code>.</p>
+    pub fn security_style(&self) -> std::option::Option<&crate::model::SecurityStyle> {
+        self.security_style.as_ref()
+    }
+    /// <p>The configured size of the volume, in megabytes (MBs).</p>
+    pub fn size_in_megabytes(&self) -> std::option::Option<i32> {
+        self.size_in_megabytes
+    }
+    /// <p>The volume's storage efficiency setting.</p>
+    pub fn storage_efficiency_enabled(&self) -> std::option::Option<bool> {
+        self.storage_efficiency_enabled
+    }
+    /// <p>The ID of the volume's storage virtual machine.</p>
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_id.as_deref()
+    }
+    /// <p>A boolean flag indicating whether this volume is the root volume for
+    /// its storage virtual machine (SVM). Only one volume on an SVM can be the
+    /// root volume. This value defaults to false. If this value is true, then
+    /// this is the SVM root volume.</p>
+    /// <p>This flag is useful when you're deleting an SVM, because you must
+    /// first delete all non-root volumes. This flag, when set to false, helps
+    /// you identify which volumes to delete before you can delete the SVM.</p>
+    pub fn storage_virtual_machine_root(&self) -> std::option::Option<bool> {
+        self.storage_virtual_machine_root
+    }
+    /// <p>The volume's <code>TieringPolicy</code> setting.</p>
+    pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
+        self.tiering_policy.as_ref()
+    }
+    /// <p>The volume's UUID (universally unique identifier).</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>Specifies the type of volume. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RW</code> specifies a read-write volume.
+    /// <code>RW</code> is the default.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DP</code> specifies a data protection volume. You can
+    /// protect data by replicating it to data protection mirror copies and use
+    /// data protection mirror copies to recover data when a disaster occurs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LS</code> specifies a load-sharing mirror volume.
+    /// A load-sharing mirror reduces the network traffic to a FlexVol volume
+    /// by providing additional read-only access to clients.</p>
+    /// </li>
+    /// </ul>
+    pub fn ontap_volume_type(&self) -> std::option::Option<&crate::model::OntapVolumeType> {
+        self.ontap_volume_type.as_ref()
+    }
 }
 impl std::fmt::Debug for OntapVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -928,6 +1113,40 @@ pub struct TieringPolicy {
     /// </li>
     /// </ul>
     pub name: std::option::Option<crate::model::TieringPolicyName>,
+}
+impl TieringPolicy {
+    /// <p>Specifies the number of days that user data in a volume must remain inactive before it is considered "cold"
+    /// and moved to the capacity pool. Used with the <code>AUTO</code> and <code>SNAPSHOT_ONLY</code> tiering policies.
+    /// Enter a whole number between 2 and 183. Default values are 31 days for <code>AUTO</code> and 2 days for
+    /// <code>SNAPSHOT_ONLY</code>.</p>
+    pub fn cooling_period(&self) -> std::option::Option<i32> {
+        self.cooling_period
+    }
+    /// <p>Specifies the tiering policy used to transition data. Default value is <code>SNAPSHOT_ONLY</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SNAPSHOT_ONLY</code> - moves cold snapshots to the capacity pool storage tier.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier
+    /// based on your access patterns.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the
+    /// storage pool tier.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to
+    /// the capacity pool tier.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::TieringPolicyName> {
+        self.name.as_ref()
+    }
 }
 impl std::fmt::Debug for TieringPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1311,6 +1530,31 @@ pub struct UpdateOntapVolumeConfiguration {
     /// <p>Update the volume's data tiering policy.</p>
     pub tiering_policy: std::option::Option<crate::model::TieringPolicy>,
 }
+impl UpdateOntapVolumeConfiguration {
+    /// <p>Specifies the location in the SVM's namespace where the volume is mounted.
+    /// The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
+    pub fn junction_path(&self) -> std::option::Option<&str> {
+        self.junction_path.as_deref()
+    }
+    /// <p>The security style for the volume, which can be <code>UNIX</code>.
+    /// <code>NTFS</code>, or <code>MIXED</code>.</p>
+    pub fn security_style(&self) -> std::option::Option<&crate::model::SecurityStyle> {
+        self.security_style.as_ref()
+    }
+    /// <p>Specifies the size of the volume in megabytes.</p>
+    pub fn size_in_megabytes(&self) -> std::option::Option<i32> {
+        self.size_in_megabytes
+    }
+    /// <p>Default is <code>false</code>. Set to true to enable the deduplication,
+    /// compression, and compaction storage efficiency features on the volume.</p>
+    pub fn storage_efficiency_enabled(&self) -> std::option::Option<bool> {
+        self.storage_efficiency_enabled
+    }
+    /// <p>Update the volume's data tiering policy.</p>
+    pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
+        self.tiering_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateOntapVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOntapVolumeConfiguration");
@@ -1487,6 +1731,99 @@ pub struct StorageVirtualMachine {
     /// <p>The security style of the root volume of the SVM.</p>
     pub root_volume_security_style:
         std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
+}
+impl StorageVirtualMachine {
+    /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
+    pub fn active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SvmActiveDirectoryConfiguration> {
+        self.active_directory_configuration.as_ref()
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
+    /// also known as Unix time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The endpoints  that are used to access data or to manage the SVM
+    /// using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They
+    /// are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>,
+    /// and <code>Smb</code> endpoints.</p>
+    pub fn endpoints(&self) -> std::option::Option<&crate::model::SvmEndpoints> {
+        self.endpoints.as_ref()
+    }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>Describes the SVM's lifecycle status.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code> - The SVM is fully available for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - Amazon FSx is creating the new SVM.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::StorageVirtualMachineLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The name of the SVM, if provisioned.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+    /// resources. We require an ARN when you need to specify a resource unambiguously across
+    /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The SVM's system generated unique ID.</p>
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_id.as_deref()
+    }
+    /// <p>Describes the SVM's subtype.</p>
+    pub fn subtype(&self) -> std::option::Option<&crate::model::StorageVirtualMachineSubtype> {
+        self.subtype.as_ref()
+    }
+    /// <p>The SVM's UUID (universally unique identifier).</p>
+    pub fn uuid(&self) -> std::option::Option<&str> {
+        self.uuid.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Describes why the SVM lifecycle state changed.</p>
+    pub fn lifecycle_transition_reason(
+        &self,
+    ) -> std::option::Option<&crate::model::LifecycleTransitionReason> {
+        self.lifecycle_transition_reason.as_ref()
+    }
+    /// <p>The security style of the root volume of the SVM.</p>
+    pub fn root_volume_security_style(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageVirtualMachineRootVolumeSecurityStyle> {
+        self.root_volume_security_style.as_ref()
+    }
 }
 impl std::fmt::Debug for StorageVirtualMachine {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2031,6 +2368,24 @@ pub struct SvmEndpoints {
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     pub smb: std::option::Option<crate::model::SvmEndpoint>,
 }
+impl SvmEndpoints {
+    /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI)  protocol.</p>
+    pub fn iscsi(&self) -> std::option::Option<&crate::model::SvmEndpoint> {
+        self.iscsi.as_ref()
+    }
+    /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
+    pub fn management(&self) -> std::option::Option<&crate::model::SvmEndpoint> {
+        self.management.as_ref()
+    }
+    /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
+    pub fn nfs(&self) -> std::option::Option<&crate::model::SvmEndpoint> {
+        self.nfs.as_ref()
+    }
+    /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
+    pub fn smb(&self) -> std::option::Option<&crate::model::SvmEndpoint> {
+        self.smb.as_ref()
+    }
+}
 impl std::fmt::Debug for SvmEndpoints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SvmEndpoints");
@@ -2128,6 +2483,17 @@ pub struct SvmEndpoint {
     /// <p>The SVM endpoint's IP addresses.</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SvmEndpoint {
+    /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file
+    /// system using its DNS name.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The SVM endpoint's IP addresses.</p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for SvmEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SvmEndpoint");
@@ -2205,6 +2571,19 @@ pub struct SvmActiveDirectoryConfiguration {
     /// which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub self_managed_active_directory_configuration:
         std::option::Option<crate::model::SelfManagedActiveDirectoryAttributes>,
+}
+impl SvmActiveDirectoryConfiguration {
+    /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
+    pub fn net_bios_name(&self) -> std::option::Option<&str> {
+        self.net_bios_name.as_deref()
+    }
+    /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to
+    /// which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryAttributes> {
+        self.self_managed_active_directory_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for SvmActiveDirectoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2295,6 +2674,32 @@ pub struct SelfManagedActiveDirectoryAttributes {
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
     /// self-managed AD directory.</p>
     pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SelfManagedActiveDirectoryAttributes {
+    /// <p>The fully qualified domain name of the self-managed AD directory.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The fully qualified distinguished name of the organizational unit within the
+    /// self-managed AD directory to which the Windows File Server  or ONTAP storage virtual machine (SVM) instance is joined.</p>
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+        self.organizational_unit_distinguished_name.as_deref()
+    }
+    /// <p>The name of the domain group whose members have administrative privileges for the FSx
+    /// file system.</p>
+    pub fn file_system_administrators_group(&self) -> std::option::Option<&str> {
+        self.file_system_administrators_group.as_deref()
+    }
+    /// <p>The user name for the service account on your self-managed AD domain that FSx uses to
+    /// join to your AD domain.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+    /// self-managed AD directory.</p>
+    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ips.as_deref()
+    }
 }
 impl std::fmt::Debug for SelfManagedActiveDirectoryAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2434,6 +2839,15 @@ pub struct UpdateSvmActiveDirectoryConfiguration {
     pub self_managed_active_directory_configuration:
         std::option::Option<crate::model::SelfManagedActiveDirectoryConfigurationUpdates>,
 }
+impl UpdateSvmActiveDirectoryConfiguration {
+    /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a
+    /// self-managed Microsoft Active Directory (AD) directory.</p>
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryConfigurationUpdates> {
+        self.self_managed_active_directory_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSvmActiveDirectoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSvmActiveDirectoryConfiguration");
@@ -2506,6 +2920,25 @@ pub struct SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
     /// self-managed AD directory.</p>
     pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SelfManagedActiveDirectoryConfigurationUpdates {
+    /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to
+    /// your AD domain. This account must have the permission to join
+    /// computers to the domain in the organizational unit provided in
+    /// <code>OrganizationalUnitDistinguishedName</code>.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to
+    /// your AD domain.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+    /// self-managed AD directory.</p>
+    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ips.as_deref()
+    }
 }
 impl std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2798,6 +3231,156 @@ pub struct FileSystem {
     /// <p>The version of your Amazon FSx for Lustre file system, either
     /// <code>2.10</code> or <code>2.12</code>.</p>
     pub file_system_type_version: std::option::Option<std::string::String>,
+}
+impl FileSystem {
+    /// <p>The Amazon Web Services account that created the file system. If the file system was created by an
+    /// Identity and Access Management (IAM) user, the Amazon Web Services account to which the
+    /// IAM user belongs is the owner.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
+    /// also known as Unix time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The system-generated, unique 17-digit ID of the file system.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>,
+    /// or <code>ONTAP</code>.</p>
+    pub fn file_system_type(&self) -> std::option::Option<&crate::model::FileSystemType> {
+        self.file_system_type.as_ref()
+    }
+    /// <p>The lifecycle status of the file system, following are the possible values and what they mean:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - An existing file system has experienced an unrecoverable failure.
+    /// When creating a new file system, Amazon FSx was unable to create the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::FileSystemLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>A structure providing details of any failures that occur when creating the file system
+    /// has failed.</p>
+    pub fn failure_details(&self) -> std::option::Option<&crate::model::FileSystemFailureDetails> {
+        self.failure_details.as_ref()
+    }
+    /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
+    pub fn storage_capacity(&self) -> std::option::Option<i32> {
+        self.storage_capacity
+    }
+    /// <p>The storage type of the file system.
+    /// Valid values are <code>SSD</code> and <code>HDD</code>.
+    /// If set to <code>SSD</code>, the file system uses solid state drive storage.
+    /// If set to <code>HDD</code>, the file system uses hard disk drive storage.
+    /// </p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The ID of the primary VPC for the file system.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Specifies the IDs of the subnets that the file system is accessible from. For Windows and
+    /// ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for
+    /// the preferred file server and one for the standby file server. The preferred file server subnet
+    /// identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+    /// <p>For Lustre file systems, and Single-AZ Windows file systems, this is the ID of
+    /// the subnet that contains the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows and
+    /// ONTAP file systems, the endpoint for the file system is available in the <code>PreferredSubnetID</code>.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The IDs of the elastic network interface from which a specific file system is
+    /// accessible. The elastic network interface is automatically created in the same VPC that
+    /// the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+    /// Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
+    /// </p>
+    ///
+    /// <p>For an Amazon FSx for Windows File Server file system, you can have one network
+    /// interface ID. For an Amazon FSx for Lustre file system, you can have more than
+    /// one.</p>
+    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.network_interface_ids.as_deref()
+    }
+    /// <p>The DNS name for the file system.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// persistent Amazon FSx for Lustre file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using
+    /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the file system resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your
+    /// Amazon EC2 Resources</a> in the <i>Amazon EC2 User
+    /// Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The configuration for this Microsoft Windows file system.</p>
+    pub fn windows_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsFileSystemConfiguration> {
+        self.windows_configuration.as_ref()
+    }
+    /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LustreFileSystemConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+    /// <p>A list of administrative actions for the file system that are in process or waiting to be processed.
+    /// Administrative actions describe changes to the Amazon FSx file system that you have initiated using
+    /// the <code>UpdateFileSystem</code> action.</p>
+    pub fn administrative_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdministrativeAction]> {
+        self.administrative_actions.as_deref()
+    }
+    /// <p>The configuration for this FSx for NetApp ONTAP file system.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OntapFileSystemConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+    /// <p>The version of your Amazon FSx for Lustre file system, either
+    /// <code>2.10</code> or <code>2.12</code>.</p>
+    pub fn file_system_type_version(&self) -> std::option::Option<&str> {
+        self.file_system_type_version.as_deref()
+    }
 }
 impl std::fmt::Debug for FileSystem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3332,6 +3915,68 @@ pub struct OntapFileSystemConfiguration {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
 }
+impl OntapFileSystemConfiguration {
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+    /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+    /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+    /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The ONTAP file system deployment type.</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>The IP address range in which the endpoints to access your file system
+    /// are created.</p>
+    pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
+        self.endpoint_ip_address_range.as_deref()
+    }
+    /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints
+    /// that are used to access data or to manage the file system using the
+    /// NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
+    pub fn endpoints(&self) -> std::option::Option<&crate::model::FileSystemEndpoints> {
+        self.endpoints.as_ref()
+    }
+    /// <p>The SSD IOPS configuration for the ONTAP file system, specifying
+    /// the number of provisioned IOPS and the provision mode.</p>
+    pub fn disk_iops_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DiskIopsConfiguration> {
+        self.disk_iops_configuration.as_ref()
+    }
+    /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in
+    /// your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the
+    /// <i>Amazon VPC User Guide.</i>
+    /// </p>
+    pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
+        self.preferred_subnet_id.as_deref()
+    }
+    /// <p>The VPC route tables in which your file system's endpoints are
+    /// created.</p>
+    pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.route_table_ids.as_deref()
+    }
+    /// <p>Sustained throughput of an Amazon FSx file system in MBps.</p>
+    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p>
+    /// <code>D</code> is the day of the week, for which 1 represents Monday and 7
+    /// represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p>
+    /// <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is
+    /// the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+}
 impl std::fmt::Debug for OntapFileSystemConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OntapFileSystemConfiguration");
@@ -3594,6 +4239,18 @@ pub struct DiskIopsConfiguration {
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
     pub iops: std::option::Option<i64>,
 }
+impl DiskIopsConfiguration {
+    /// <p>Specifies whether the number of IOPS for the file system is
+    /// using the system default (<code>AUTOMATIC</code>) or was
+    /// provisioned by the customer (<code>USER_PROVISIONED</code>).</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::DiskIopsConfigurationMode> {
+        self.mode.as_ref()
+    }
+    /// <p>The total number of SSD IOPS provisioned for the file system.</p>
+    pub fn iops(&self) -> std::option::Option<i64> {
+        self.iops
+    }
+}
 impl std::fmt::Debug for DiskIopsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DiskIopsConfiguration");
@@ -3723,6 +4380,18 @@ pub struct FileSystemEndpoints {
     /// and NetApp ONTAP API.</p>
     pub management: std::option::Option<crate::model::FileSystemEndpoint>,
 }
+impl FileSystemEndpoints {
+    /// <p>An endpoint for managing your file system by setting up NetApp SnapMirror
+    /// with other ONTAP systems.</p>
+    pub fn intercluster(&self) -> std::option::Option<&crate::model::FileSystemEndpoint> {
+        self.intercluster.as_ref()
+    }
+    /// <p>An endpoint for managing your file system using the NetApp ONTAP CLI
+    /// and NetApp ONTAP API.</p>
+    pub fn management(&self) -> std::option::Option<&crate::model::FileSystemEndpoint> {
+        self.management.as_ref()
+    }
+}
 impl std::fmt::Debug for FileSystemEndpoints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSystemEndpoints");
@@ -3799,6 +4468,17 @@ pub struct FileSystemEndpoint {
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>IP addresses of the file system endpoint.</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl FileSystemEndpoint {
+    /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file
+    /// system using its DNS name.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>IP addresses of the file system endpoint.</p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_addresses.as_deref()
+    }
 }
 impl std::fmt::Debug for FileSystemEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4012,6 +4692,117 @@ pub struct AdministrativeAction {
     pub failure_details: std::option::Option<crate::model::AdministrativeActionFailureDetails>,
     /// <p>Describes an Amazon FSx for NetApp ONTAP volume.</p>
     pub target_volume_values: std::option::Option<crate::model::Volume>,
+}
+impl AdministrativeAction {
+    /// <p>Describes the type of administrative action, as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the
+    /// Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code>
+    /// task to increase a file system's storage capacity completes successfully, a
+    /// <code>STORAGE_OPTIMIZATION</code> task starts.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>For Windows, storage optimization is the process of migrating the file system data
+    /// to the new, larger disks.</p>
+    /// </li>
+    /// <li>
+    /// <p>For Lustre, storage optimization consists of rebalancing the data across the existing and
+    /// newly added file servers.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can track the storage optimization progress using the
+    /// <code>ProgressPercent</code> property. When
+    /// <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent
+    /// <code>FILE_SYSTEM_UPDATE</code> action status changes to
+    /// <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+    /// storage capacity</a> in the <i>Amazon FSx for Windows File Server
+    /// User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+    /// and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+    /// Guide</i>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system.
+    /// For more information, see
+    /// .</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system.
+    /// For more information, see .</p>
+    /// </li>
+    /// </ul>
+    pub fn administrative_action_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AdministrativeActionType> {
+        self.administrative_action_type.as_ref()
+    }
+    /// <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+    /// Does not apply to any other administrative action type.</p>
+    pub fn progress_percent(&self) -> std::option::Option<i32> {
+        self.progress_percent
+    }
+    /// <p>Time that the administrative action request was received.</p>
+    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.request_time.as_ref()
+    }
+    /// <p>Describes the status of the administrative action, as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has
+    /// updated the file system with the new storage capacity, and is now performing the
+    /// storage optimization process. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+    /// storage capacity</a> in the <i>Amazon FSx for Windows File Server
+    /// User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+    /// and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+    /// Guide</i>.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Describes the target value for the administration action,  
+    /// provided in the <code>UpdateFileSystem</code> operation.  
+    /// Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+    /// </p>
+    pub fn target_file_system_values(&self) -> std::option::Option<&crate::model::FileSystem> {
+        self.target_file_system_values.as_ref()
+    }
+    /// <p>Provides information about a failed administrative action.</p>
+    pub fn failure_details(
+        &self,
+    ) -> std::option::Option<&crate::model::AdministrativeActionFailureDetails> {
+        self.failure_details.as_ref()
+    }
+    /// <p>Describes an Amazon FSx for NetApp ONTAP volume.</p>
+    pub fn target_volume_values(&self) -> std::option::Option<&crate::model::Volume> {
+        self.target_volume_values.as_ref()
+    }
 }
 impl std::fmt::Debug for AdministrativeAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4319,6 +5110,12 @@ pub struct AdministrativeActionFailureDetails {
     /// <p>Error message providing details about the failed administrative action.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl AdministrativeActionFailureDetails {
+    /// <p>Error message providing details about the failed administrative action.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for AdministrativeActionFailureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdministrativeActionFailureDetails");
@@ -4622,6 +5419,98 @@ pub struct LustreFileSystemConfiguration {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub data_compression_type: std::option::Option<crate::model::DataCompressionType>,
+}
+impl LustreFileSystemConfiguration {
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+    /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>The data repository configuration object for Lustre file systems returned in the response of
+    /// the <code>CreateFileSystem</code> operation.</p>
+    pub fn data_repository_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataRepositoryConfiguration> {
+        self.data_repository_configuration.as_ref()
+    }
+    /// <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage
+    /// and shorter-term processing of data.</p>
+    /// <p>
+    /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment
+    /// types are best suited for when you need temporary storage and shorter-term processing of data.
+    /// The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst
+    /// throughput capacity than <code>SCRATCH_1</code>.</p>
+    /// <p>The <code>PERSISTENT_1</code> deployment type is used for longer-term storage
+    /// and workloads and encryption of data in transit. To learn more about deployment types, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+    /// FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::LustreDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p> Per unit storage throughput represents the megabytes per second of read or write
+    /// throughput per 1 tebibyte of storage provisioned. File system throughput capacity is
+    /// equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is
+    /// only valid for <code>PERSISTENT_1</code> deployment types. </p>
+    /// <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40. </p>
+    pub fn per_unit_storage_throughput(&self) -> std::option::Option<i32> {
+        self.per_unit_storage_throughput
+    }
+    /// <p>You use the <code>MountName</code> value when mounting the file system.</p>
+    /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>".
+    /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this
+    /// value is a string that is unique within an Amazon Web Services Region.
+    ///
+    /// </p>
+    pub fn mount_name(&self) -> std::option::Option<&str> {
+        self.mount_name.as_deref()
+    }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+    /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+    /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+    /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>A boolean flag indicating whether tags on the file system should be copied to backups.
+    /// If it's set to true, all tags on the file system are
+    /// copied to all automatic backups and any user-initiated backups where the user
+    /// doesn't specify any tags. If this value is true, and you specify one or more tags,
+    /// only the specified tags are copied to backups. If you specify one or more tags when
+    /// creating a user-initiated backup, no tags are copied from the file system,
+    /// regardless of this value. (Default = false)</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
+    /// <p>The type of drive cache used by PERSISTENT_1 file systems that are provisioned with
+    /// HDD storage devices. This parameter is required when storage type is HDD. Set to
+    /// <code>READ</code>, improve the performance for frequently accessed files and allows 20%
+    /// of the total storage capacity of the file system to be cached.  </p>
+    /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
+    pub fn drive_cache_type(&self) -> std::option::Option<&crate::model::DriveCacheType> {
+        self.drive_cache_type.as_ref()
+    }
+    /// <p>The data compression configuration for the file system. <code>DataCompressionType</code>
+    /// can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - Data compression is turned off for
+    /// the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LZ4</code> - Data compression is turned on with the LZ4
+    /// algorithm.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
+    pub fn data_compression_type(&self) -> std::option::Option<&crate::model::DataCompressionType> {
+        self.data_compression_type.as_ref()
+    }
 }
 impl std::fmt::Debug for LustreFileSystemConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5171,6 +6060,95 @@ pub struct DataRepositoryConfiguration {
     /// set to <code>MISCONFIGURED</code>.</p>
     pub failure_details: std::option::Option<crate::model::DataRepositoryFailureDetails>,
 }
+impl DataRepositoryConfiguration {
+    /// <p>Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+    /// The lifecycle can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - The data repository configuration between
+    /// the FSx file system and the linked S3 data repository is being created.
+    /// The data repository is unavailable.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - The data repository is available for use.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket
+    /// until the data repository configuration is corrected. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting a Misconfigured linked S3 bucket</a>.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be impacted.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The import path to the Amazon S3 bucket (and optional prefix) that you're using
+    /// as the data repository for your FSx for Lustre file system, for example
+    /// <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the
+    /// Amazon S3 bucket name, only object keys with that prefix are loaded into the file
+    /// system.</p>
+    pub fn import_path(&self) -> std::option::Option<&str> {
+        self.import_path.as_deref()
+    }
+    /// <p>The export path to the Amazon S3 bucket (and prefix) that you are using to store new and
+    /// changed Lustre file system files in S3.</p>
+    pub fn export_path(&self) -> std::option::Option<&str> {
+        self.export_path.as_deref()
+    }
+    /// <p>For files imported from a data repository, this value determines the stripe count and
+    /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
+    /// number of disks that a single file can be striped across is limited by the total number
+    /// of disks that make up the file system.</p>
+    ///
+    /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
+    /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    pub fn imported_file_chunk_size(&self) -> std::option::Option<i32> {
+        self.imported_file_chunk_size
+    }
+    /// <p>Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>.
+    /// The AutoImportPolicy configures how Amazon FSx keeps your file and directory listings up to date
+    /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates
+    /// file and directory listings from the linked S3 bucket
+    /// when the file system is created. FSx does not update file and directory
+    /// listings for any new or changed objects after choosing this option.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
+    /// directory listings of any new objects added to the linked S3 bucket that
+    /// do not currently exist in the FSx file system. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
+    /// file and directory listings of any new objects added to the S3 bucket and any
+    /// existing objects that are changed in the S3 bucket after you choose this option.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates from your S3 bucket</a>.</p>
+    pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicyType> {
+        self.auto_import_policy.as_ref()
+    }
+    /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is
+    /// set to <code>MISCONFIGURED</code>.</p>
+    pub fn failure_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DataRepositoryFailureDetails> {
+        self.failure_details.as_ref()
+    }
+}
 impl std::fmt::Debug for DataRepositoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataRepositoryConfiguration");
@@ -5418,6 +6396,12 @@ impl DataRepositoryConfiguration {
 pub struct DataRepositoryFailureDetails {
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DataRepositoryFailureDetails {
+    /// <p>A detailed error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DataRepositoryFailureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5679,6 +6663,123 @@ pub struct WindowsFileSystemConfiguration {
     /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
     /// file system.</p>
     pub audit_log_configuration: std::option::Option<crate::model::WindowsAuditLogConfiguration>,
+}
+impl WindowsFileSystemConfiguration {
+    /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
+    pub fn active_directory_id(&self) -> std::option::Option<&str> {
+        self.active_directory_id.as_deref()
+    }
+    /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to
+    /// which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryAttributes> {
+        self.self_managed_active_directory_configuration.as_ref()
+    }
+    /// <p>Specifies the file system deployment type, valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ
+    /// redundancy to tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy,
+    /// only supports SSD storage.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system.
+    /// Specifies a file system that is configured for single AZ redundancy and supports SSD and HDD storage.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ File Systems</a>.</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::WindowsDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative tasks on the file system using
+    /// Amazon FSx Remote PowerShell.</p>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the file system.</p>
+    /// <p>This endpoint is temporarily unavailable when the file system is undergoing maintenance.</p>
+    pub fn remote_administration_endpoint(&self) -> std::option::Option<&str> {
+        self.remote_administration_endpoint.as_deref()
+    }
+    /// <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file server is located.
+    /// Must be one of the two subnet IDs specified in <code>SubnetIds</code> property.
+    /// Amazon FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p>
+    /// <p>For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p>
+    pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
+        self.preferred_subnet_id.as_deref()
+    }
+    /// <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary, or preferred, file server.</p>
+    /// <p>Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that
+    /// are not joined to a Microsoft Active Directory.
+    /// Applicable for all Windows file system deployment types.
+    /// This IP address is temporarily unavailable
+    /// when the file system is undergoing maintenance. For Linux and Windows
+    /// SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For more information
+    /// on mapping and mounting file shares, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File Shares</a>.</p>
+    pub fn preferred_file_server_ip(&self) -> std::option::Option<&str> {
+        self.preferred_file_server_ip.as_deref()
+    }
+    /// <p>The throughput of the Amazon FSx file system, measured in megabytes per
+    /// second.</p>
+    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>The list of maintenance operations in progress for this file system.</p>
+    pub fn maintenance_operations_in_progress(
+        &self,
+    ) -> std::option::Option<&[crate::model::FileSystemMaintenanceOperation]> {
+        self.maintenance_operations_in_progress.as_deref()
+    }
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+    /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables automatic
+    /// backups. You can retain automatic backups for a maximum of 90 days.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>A boolean flag indicating whether tags on the file system should be copied to backups.
+    /// This value defaults to false. If it's set to true, all tags on the file system are
+    /// copied to all automatic backups and any user-initiated backups where the user
+    /// doesn't specify any tags. If this value is true, and you specify one or more tags,
+    /// only the specified tags are copied to backups. If you specify one or more tags when
+    /// creating a user-initiated backup, no tags are copied from the file system,
+    /// regardless of this value.</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
+    /// <p>An array of one or more DNS aliases that are currently associated with the Amazon FSx file system.
+    /// Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system.
+    /// You can associate up to 50 aliases with a file system at any time.
+    /// You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation.
+    /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
+    /// You only need to specify the alias name in the request payload. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a>.</p>
+    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+        self.aliases.as_deref()
+    }
+    /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log
+    /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+    /// file system.</p>
+    pub fn audit_log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAuditLogConfiguration> {
+        self.audit_log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for WindowsFileSystemConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6150,6 +7251,74 @@ pub struct WindowsAuditLogConfiguration {
     /// Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub audit_log_destination: std::option::Option<std::string::String>,
 }
+impl WindowsAuditLogConfiguration {
+    /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_ONLY</code> - only successful attempts to access files
+    /// or folders are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILURE_ONLY</code> - only failed attempts to access files
+    /// or folders are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+    /// failed attempts to access files or folders are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - access auditing of files and folders is turned off.</p>
+    /// </li>
+    /// </ul>
+    pub fn file_access_audit_log_level(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAccessAuditLogLevel> {
+        self.file_access_audit_log_level.as_ref()
+    }
+    /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_ONLY</code> - only successful attempts to access file
+    /// shares are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILURE_ONLY</code> - only failed attempts to access file
+    /// shares are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+    /// failed attempts to access file shares are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - access auditing of file shares is turned off.</p>
+    /// </li>
+    /// </ul>
+    pub fn file_share_access_audit_log_level(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAccessAuditLogLevel> {
+        self.file_share_access_audit_log_level.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs.
+    /// The destination can be any Amazon CloudWatch Logs log group ARN or
+    /// Amazon Kinesis Data Firehose delivery stream ARN.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with
+    /// the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
+    /// Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis
+    /// Data Firehose delivery stream) must be in the same Amazon Web Services partition,
+    /// Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
+    pub fn audit_log_destination(&self) -> std::option::Option<&str> {
+        self.audit_log_destination.as_deref()
+    }
+}
 impl std::fmt::Debug for WindowsAuditLogConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WindowsAuditLogConfiguration");
@@ -6453,6 +7622,49 @@ pub struct Alias {
     /// </li>
     /// </ul>
     pub lifecycle: std::option::Option<crate::model::AliasLifecycle>,
+}
+impl Alias {
+    /// <p>The name of the DNS alias. The alias name has to meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot start or end with a hyphen.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can start with a numeric.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
+    /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Describes the state of the DNS alias.</p>
+    /// <ul>
+    /// <li>
+    /// <p>AVAILABLE - The DNS alias is associated with an Amazon FSx file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATING - Amazon FSx is creating the DNS alias and associating it with the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE_FAILED - Amazon FSx was unable to associate the DNS alias with the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETING - Amazon FSx is disassociating the DNS alias from the file system and deleting it.</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file system.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::AliasLifecycle> {
+        self.lifecycle.as_ref()
+    }
 }
 impl std::fmt::Debug for Alias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6827,6 +8039,12 @@ pub struct FileSystemFailureDetails {
     /// <p>A message describing any failures that occurred during file system creation.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl FileSystemFailureDetails {
+    /// <p>A message describing any failures that occurred during file system creation.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for FileSystemFailureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSystemFailureDetails");
@@ -7028,6 +8246,34 @@ pub struct UpdateFileSystemOntapConfiguration {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
 }
+impl UpdateFileSystemOntapConfiguration {
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+    /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+    /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+    /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
+    pub fn fsx_admin_password(&self) -> std::option::Option<&str> {
+        self.fsx_admin_password.as_deref()
+    }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p>
+    /// <code>D</code> is the day of the week, for which 1 represents Monday and 7
+    /// represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p>
+    /// <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is
+    /// the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemOntapConfiguration");
@@ -7216,6 +8462,74 @@ pub struct UpdateFileSystemLustreConfiguration {
     /// its current data compression configuration.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub data_compression_type: std::option::Option<crate::model::DataCompressionType>,
+}
+impl UpdateFileSystemLustreConfiguration {
+    /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+    /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+    /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+    /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+    /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings.
+    /// Use this property to choose how Amazon FSx keeps your file and directory listing up to date
+    /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can
+    /// have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates
+    /// file and directory listings from the linked S3 bucket
+    /// when the file system is created. FSx does not update the file and directory
+    /// listing for any new or changed objects after choosing this option.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
+    /// directory listings of any new objects added to the linked S3 bucket that
+    /// do not currently exist in the FSx file system. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
+    /// file and directory listings of any new objects added to the S3 bucket and any
+    /// existing objects that are changed in the S3 bucket after you choose this option.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates from your S3 bucket</a>.</p>
+    pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicyType> {
+        self.auto_import_policy.as_ref()
+    }
+    /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code>
+    /// can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - Data compression is turned off for
+    /// the file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LZ4</code> - Data compression is turned on with the LZ4
+    /// algorithm.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't use <code>DataCompressionType</code>, the file system retains
+    /// its current data compression configuration.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
+    pub fn data_compression_type(&self) -> std::option::Option<&crate::model::DataCompressionType> {
+        self.data_compression_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFileSystemLustreConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7461,6 +8775,45 @@ pub struct UpdateFileSystemWindowsConfiguration {
     /// file system..</p>
     pub audit_log_configuration:
         std::option::Option<crate::model::WindowsAuditLogCreateConfiguration>,
+}
+impl UpdateFileSystemWindowsConfiguration {
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+    /// time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code>
+    /// </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
+    /// backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to. Valid values are
+    /// 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request if there is an existing throughput capacity update request in progress. For more information,
+    /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput Capacity</a>.</p>
+    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the
+    /// self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryConfigurationUpdates> {
+        self.self_managed_active_directory_configuration.as_ref()
+    }
+    /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log
+    /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+    /// file system..</p>
+    pub fn audit_log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAuditLogCreateConfiguration> {
+        self.audit_log_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFileSystemWindowsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7713,6 +9066,94 @@ pub struct WindowsAuditLogCreateConfiguration {
     /// </ul>
     pub audit_log_destination: std::option::Option<std::string::String>,
 }
+impl WindowsAuditLogCreateConfiguration {
+    /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_ONLY</code> - only successful attempts to access files
+    /// or folders are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILURE_ONLY</code> - only failed attempts to access files
+    /// or folders are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+    /// failed attempts to access files or folders are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - access auditing of files and folders is turned off.</p>
+    /// </li>
+    /// </ul>
+    pub fn file_access_audit_log_level(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAccessAuditLogLevel> {
+        self.file_access_audit_log_level.as_ref()
+    }
+    /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_ONLY</code> - only successful attempts to access file
+    /// shares are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILURE_ONLY</code> - only failed attempts to access file
+    /// shares are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+    /// failed attempts to access file shares are logged.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - access auditing of file shares is turned off.</p>
+    /// </li>
+    /// </ul>
+    pub fn file_share_access_audit_log_level(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAccessAuditLogLevel> {
+        self.file_share_access_audit_log_level.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that specifies the destination of the audit logs.</p>
+    /// <p>The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis
+    /// Data Firehose delivery stream ARN, with the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The destination ARN that you provide (either CloudWatch Logs log group
+    /// or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition,
+    /// Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with
+    /// the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
+    /// Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+    /// Amazon FSx will create and use a log stream in the CloudWatch Logs
+    /// <code>/aws/fsx/windows</code> log group.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>AuditLogDestination</code> is provided and the resource does not
+    /// exist, the request will fail with a <code>BadRequest</code> error.</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>FileAccessAuditLogLevel</code> and <code>FileShareAccessAuditLogLevel</code>
+    /// are both set to <code>DISABLED</code>, you cannot specify a destination in
+    /// <code>AuditLogDestination</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn audit_log_destination(&self) -> std::option::Option<&str> {
+        self.audit_log_destination.as_deref()
+    }
+}
 impl std::fmt::Debug for WindowsAuditLogCreateConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WindowsAuditLogCreateConfiguration");
@@ -7955,6 +9396,17 @@ pub struct VolumeFilter {
     /// filters.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl VolumeFilter {
+    /// <p>The name for this filter.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::VolumeFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The values of the filter. These are all the values for any of the applied
+    /// filters.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for VolumeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeFilter");
@@ -8089,6 +9541,17 @@ pub struct StorageVirtualMachineFilter {
     /// <p>The values of the filter. These are all the values for any of the applied
     /// filters.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StorageVirtualMachineFilter {
+    /// <p>The name for this filter.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::StorageVirtualMachineFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The values of the filter. These are all the values for any of the applied
+    /// filters.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for StorageVirtualMachineFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8283,6 +9746,104 @@ pub struct DataRepositoryTask {
     /// using the path specified in the report <code>Path</code> parameter.
     /// You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
     pub report: std::option::Option<crate::model::CompletionReport>,
+}
+impl DataRepositoryTask {
+    /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
+    /// <p>The lifecycle status of the data repository task, as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - Amazon FSx has not started the task.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EXECUTING</code> - Amazon FSx is processing the task.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> -  Amazon FSx was not able to complete the task. For example, there may be files the task failed to process.
+    /// The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCEEDED</code> - FSx completed the task successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CANCELING</code> - FSx is in process of canceling the task.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>You cannot delete an FSx for Lustre file system if there are data
+    /// repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states.
+    /// Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>).
+    /// You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
+    /// </note>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::DataRepositoryTaskLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type currently supported.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataRepositoryTaskType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
+    /// also known as Unix time.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time that Amazon FSx began processing the task.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+    /// resources. We require an ARN when you need to specify a resource unambiguously across
+    /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process.
+    /// For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+    /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.paths.as_deref()
+    }
+    /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
+    pub fn failure_details(
+        &self,
+    ) -> std::option::Option<&crate::model::DataRepositoryTaskFailureDetails> {
+        self.failure_details.as_ref()
+    }
+    /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataRepositoryTaskStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter.
+    /// FSx delivers the report to the file system's linked data repository in Amazon S3,
+    /// using the path specified in the report <code>Path</code> parameter.
+    /// You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
+    pub fn report(&self) -> std::option::Option<&crate::model::CompletionReport> {
+        self.report.as_ref()
+    }
 }
 impl std::fmt::Debug for DataRepositoryTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8640,6 +10201,34 @@ pub struct CompletionReport {
     /// When <code>Scope</code> is set to <code>FAILED_FILES_ONLY</code>, the <code>CompletionReport</code> only contains information about files that the data repository task failed to process.</p>
     pub scope: std::option::Option<crate::model::ReportScope>,
 }
+impl CompletionReport {
+    /// <p>Set <code>Enabled</code> to <code>True</code> to generate a <code>CompletionReport</code> when the task completes.
+    /// If set to <code>true</code>, then you need to provide a report <code>Scope</code>, <code>Path</code>, and <code>Format</code>.
+    /// Set <code>Enabled</code> to <code>False</code> if you do not want a <code>CompletionReport</code> generated when the task completes.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the location of the report on the file system's linked S3 data repository. An absolute path that defines where the completion report will be stored in the destination location.
+    /// The <code>Path</code> you provide must be located within the file system’s ExportPath.
+    /// An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the following information for each file in the report:
+    /// FilePath, FileStatus, and ErrorCode. To learn more about a file system's <code>ExportPath</code>, see .
+    /// </p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the format of the <code>CompletionReport</code>. <code>REPORT_CSV_20191124</code> is the only format currently supported.
+    /// When <code>Format</code> is set to <code>REPORT_CSV_20191124</code>, the <code>CompletionReport</code> is provided in CSV format, and is delivered to
+    /// <code>{path}/task-{id}/failures.csv</code>.
+    /// </p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ReportFormat> {
+        self.format.as_ref()
+    }
+    /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the scope of the <code>CompletionReport</code>; <code>FAILED_FILES_ONLY</code> is the only scope currently supported.
+    /// When <code>Scope</code> is set to <code>FAILED_FILES_ONLY</code>, the <code>CompletionReport</code> only contains information about files that the data repository task failed to process.</p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::ReportScope> {
+        self.scope.as_ref()
+    }
+}
 impl std::fmt::Debug for CompletionReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompletionReport");
@@ -8861,6 +10450,26 @@ pub struct DataRepositoryTaskStatus {
     /// <p>The time at which the task status was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DataRepositoryTaskStatus {
+    /// <p>The total number of files that the task will process. While a task is executing, the sum of
+    /// <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete,
+    /// <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
+    pub fn total_count(&self) -> std::option::Option<i64> {
+        self.total_count
+    }
+    /// <p>A running total of the number of files that the task has successfully processed.</p>
+    pub fn succeeded_count(&self) -> std::option::Option<i64> {
+        self.succeeded_count
+    }
+    /// <p>A running total of the number of files that the task failed to process.</p>
+    pub fn failed_count(&self) -> std::option::Option<i64> {
+        self.failed_count
+    }
+    /// <p>The time at which the task status was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DataRepositoryTaskStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataRepositoryTaskStatus");
@@ -8954,6 +10563,12 @@ impl DataRepositoryTaskStatus {
 pub struct DataRepositoryTaskFailureDetails {
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DataRepositoryTaskFailureDetails {
+    /// <p>A detailed error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DataRepositoryTaskFailureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9145,6 +10760,26 @@ pub struct DataRepositoryTaskFilter {
     /// <p>Use Values to include the specific file system IDs and task
     /// lifecycle states for the filters you are using.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DataRepositoryTaskFilter {
+    /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p>
+    /// </li>
+    /// <li>
+    /// <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states,
+    /// as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::DataRepositoryTaskFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>Use Values to include the specific file system IDs and task
+    /// lifecycle states for the filters you are using.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for DataRepositoryTaskFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9359,6 +10994,109 @@ pub struct Backup {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>Describes an Amazon FSx for NetApp ONTAP volume.</p>
     pub volume: std::option::Option<crate::model::Volume>,
+}
+impl Backup {
+    /// <p>The ID of the backup.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>The lifecycle status of the backup.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - The backup is fully available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code> - Amazon FSx is creating the backup.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to S3.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COPYING</code> - Amazon FSx is copying the backup.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - Amazon FSx could not complete the backup.</p>
+    /// </li>
+    /// </ul>
+    pub fn lifecycle(&self) -> std::option::Option<&crate::model::BackupLifecycle> {
+        self.lifecycle.as_ref()
+    }
+    /// <p>Details explaining any failures that occur when creating a backup.</p>
+    pub fn failure_details(&self) -> std::option::Option<&crate::model::BackupFailureDetails> {
+        self.failure_details.as_ref()
+    }
+    /// <p>The type of the file system backup.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::BackupType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The current percent of progress of an asynchronous task.</p>
+    pub fn progress_percent(&self) -> std::option::Option<i32> {
+        self.progress_percent
+    }
+    /// <p>The time when a particular backup was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the
+    /// backup of the Amazon FSx file system's data at rest.
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Tags associated with a particular file system.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Metadata of the file system associated with the backup. This metadata is persisted
+    /// even if the file system is deleted.</p>
+    pub fn file_system(&self) -> std::option::Option<&crate::model::FileSystem> {
+        self.file_system.as_ref()
+    }
+    /// <p>The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance is joined.</p>
+    pub fn directory_information(
+        &self,
+    ) -> std::option::Option<&crate::model::ActiveDirectoryBackupAttributes> {
+        self.directory_information.as_ref()
+    }
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon
+    /// Resource Names (ARNs) for resources.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub fn source_backup_id(&self) -> std::option::Option<&str> {
+        self.source_backup_id.as_deref()
+    }
+    /// <p>The source Region of the backup. Specifies the Region from where this backup
+    /// is copied.</p>
+    pub fn source_backup_region(&self) -> std::option::Option<&str> {
+        self.source_backup_region.as_deref()
+    }
+    /// <p>Specifies the resource type that is backed up.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Describes an Amazon FSx for NetApp ONTAP volume.</p>
+    pub fn volume(&self) -> std::option::Option<&crate::model::Volume> {
+        self.volume.as_ref()
+    }
 }
 impl std::fmt::Debug for Backup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9772,6 +11510,23 @@ pub struct ActiveDirectoryBackupAttributes {
     /// the <i>Amazon Web Services General Reference</i>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ActiveDirectoryBackupAttributes {
+    /// <p>The fully qualified domain name of the self-managed AD directory.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
+    pub fn active_directory_id(&self) -> std::option::Option<&str> {
+        self.active_directory_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+    /// resources. We require an ARN when you need to specify a resource unambiguously across
+    /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+    /// the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ActiveDirectoryBackupAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActiveDirectoryBackupAttributes");
@@ -9914,6 +11669,12 @@ impl AsRef<str> for BackupType {
 pub struct BackupFailureDetails {
     /// <p>A message describing the backup creation failure.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BackupFailureDetails {
+    /// <p>A message describing the backup creation failure.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for BackupFailureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10080,6 +11841,17 @@ pub struct Filter {
     /// filters.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Filter {
+    /// <p>The name for this filter.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The values of the filter. These are all the values for any of the applied
+    /// filters.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -10223,6 +11995,16 @@ pub struct DeleteVolumeOntapResponse {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl DeleteVolumeOntapResponse {
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub fn final_backup_id(&self) -> std::option::Option<&str> {
+        self.final_backup_id.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.final_backup_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVolumeOntapResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVolumeOntapResponse");
@@ -10299,6 +12081,17 @@ pub struct DeleteVolumeOntapConfiguration {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl DeleteVolumeOntapConfiguration {
+    /// <p>Set to true if you want to skip taking a final backup of the volume
+    /// you are deleting.</p>
+    pub fn skip_final_backup(&self) -> std::option::Option<bool> {
+        self.skip_final_backup
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.final_backup_tags.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVolumeOntapConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVolumeOntapConfiguration");
@@ -10373,6 +12166,16 @@ pub struct DeleteFileSystemLustreResponse {
     pub final_backup_id: std::option::Option<std::string::String>,
     /// <p>The set of tags applied to the final backup.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DeleteFileSystemLustreResponse {
+    /// <p>The ID of the final backup for this file system.</p>
+    pub fn final_backup_id(&self) -> std::option::Option<&str> {
+        self.final_backup_id.as_deref()
+    }
+    /// <p>The set of tags applied to the final backup.</p>
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.final_backup_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFileSystemLustreResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10449,6 +12252,16 @@ pub struct DeleteFileSystemWindowsResponse {
     pub final_backup_id: std::option::Option<std::string::String>,
     /// <p>The set of tags applied to the final backup.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DeleteFileSystemWindowsResponse {
+    /// <p>The ID of the final backup for this file system.</p>
+    pub fn final_backup_id(&self) -> std::option::Option<&str> {
+        self.final_backup_id.as_deref()
+    }
+    /// <p>The set of tags applied to the final backup.</p>
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.final_backup_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFileSystemWindowsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10530,6 +12343,21 @@ pub struct DeleteFileSystemLustreConfiguration {
     /// <code>CopyTagsToBackups</code> to true, and
     /// you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DeleteFileSystemLustreConfiguration {
+    /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file
+    /// system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the
+    /// <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p>
+    pub fn skip_final_backup(&self) -> std::option::Option<bool> {
+        self.skip_final_backup
+    }
+    /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>,
+    /// and you want to apply an array of tags to the final backup. If you have set the file system property
+    /// <code>CopyTagsToBackups</code> to true, and
+    /// you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.final_backup_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFileSystemLustreConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10616,6 +12444,19 @@ pub struct DeleteFileSystemWindowsConfiguration {
     pub skip_final_backup: std::option::Option<bool>,
     /// <p>A set of tags for your final backup.</p>
     pub final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DeleteFileSystemWindowsConfiguration {
+    /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the
+    /// <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you
+    /// from data loss, and we highly recommend taking the final backup. If you want to skip
+    /// this backup, use this flag to do so.</p>
+    pub fn skip_final_backup(&self) -> std::option::Option<bool> {
+        self.skip_final_backup
+    }
+    /// <p>A set of tags for your final backup.</p>
+    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.final_backup_tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFileSystemWindowsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10726,6 +12567,56 @@ pub struct CreateOntapVolumeConfiguration {
     /// tiering automatically transitions a volume's data between the file system's primary storage and capacity
     /// pool storage based on your access patterns.</p>
     pub tiering_policy: std::option::Option<crate::model::TieringPolicy>,
+}
+impl CreateOntapVolumeConfiguration {
+    /// <p>Specifies the location in the SVM's namespace where the volume is mounted.
+    /// The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
+    pub fn junction_path(&self) -> std::option::Option<&str> {
+        self.junction_path.as_deref()
+    }
+    /// <p>The security style for the volume. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>UNIX</code> if the file system is managed by a UNIX
+    /// administrator, the majority of users are NFS clients, and an application
+    /// accessing the data uses a UNIX user as the service account.
+    /// <code>UNIX</code> is the default.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NTFS</code> if the file system is managed by a Windows
+    /// administrator, the majority of users are SMB clients, and an application
+    /// accessing the data uses a Windows user as the service account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MIXED</code> if the file system is managed by both UNIX
+    /// and Windows administrators and users consist of both NFS and SMB clients.</p>
+    /// </li>
+    /// </ul>
+    pub fn security_style(&self) -> std::option::Option<&crate::model::SecurityStyle> {
+        self.security_style.as_ref()
+    }
+    /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
+    pub fn size_in_megabytes(&self) -> std::option::Option<i32> {
+        self.size_in_megabytes
+    }
+    /// <p>Set to true to enable deduplication, compression, and
+    /// compaction storage efficiency features on the volume.</p>
+    pub fn storage_efficiency_enabled(&self) -> std::option::Option<bool> {
+        self.storage_efficiency_enabled
+    }
+    /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_id.as_deref()
+    }
+    /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent
+    /// tiering automatically transitions a volume's data between the file system's primary storage and capacity
+    /// pool storage based on your access patterns.</p>
+    pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
+        self.tiering_policy.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOntapVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10987,6 +12878,23 @@ pub struct CreateSvmActiveDirectoryConfiguration {
     pub self_managed_active_directory_configuration:
         std::option::Option<crate::model::SelfManagedActiveDirectoryConfiguration>,
 }
+impl CreateSvmActiveDirectoryConfiguration {
+    /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
+    pub fn net_bios_name(&self) -> std::option::Option<&str> {
+        self.net_bios_name.as_deref()
+    }
+    /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+    /// a self-managed (including on-premises) Microsoft Active Directory (AD)
+    /// directory. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
+    /// Using Amazon FSx with your self-managed Microsoft Active Directory</a> or
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryConfiguration> {
+        self.self_managed_active_directory_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateSvmActiveDirectoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSvmActiveDirectoryConfiguration");
@@ -11106,6 +13014,52 @@ pub struct SelfManagedActiveDirectoryConfiguration {
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
     /// self-managed AD directory. </p>
     pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SelfManagedActiveDirectoryConfiguration {
+    /// <p>The fully qualified domain name of the self-managed AD directory, such as
+    /// <code>corp.example.com</code>.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within
+    /// your self-managed AD directory. Amazon
+    /// FSx only accepts OU as the direct parent of the file system. An example is
+    /// <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the
+    /// FSx file system is created in the default location of your self-managed AD directory. </p>
+    /// <important>
+    /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system
+    /// that you're creating.</p>
+    /// </important>
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+        self.organizational_unit_distinguished_name.as_deref()
+    }
+    /// <p>(Optional) The name of the domain group whose members are granted administrative
+    /// privileges for the file system. Administrative privileges include taking ownership of
+    /// files and folders, setting audit controls (audit ACLs) on files and folders, and             
+    /// administering the file system remotely by using the FSx Remote PowerShell.
+    /// The group that you specify must already exist in your domain. If you don't provide one,
+    /// your AD domain's Domain Admins group is used.</p>
+    pub fn file_system_administrators_group(&self) -> std::option::Option<&str> {
+        self.file_system_administrators_group.as_deref()
+    }
+    /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx
+    /// will use to join to your AD domain. This account must have the permission to join
+    /// computers to the domain in the organizational unit provided in
+    /// <code>OrganizationalUnitDistinguishedName</code>, or in the default location of your
+    /// AD domain.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The password for the service account on your self-managed AD domain that Amazon FSx
+    /// will use to join to your AD domain.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+    /// self-managed AD directory. </p>
+    pub fn dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ips.as_deref()
+    }
 }
 impl std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11416,6 +13370,163 @@ pub struct CreateFileSystemLustreConfiguration {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub data_compression_type: std::option::Option<crate::model::DataCompressionType>,
+}
+impl CreateFileSystemLustreConfiguration {
+    /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+    /// time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix) that
+    /// you're using as the data repository for your Amazon FSx for Lustre file system.
+    /// The root of your FSx for Lustre file system will
+    /// be mapped to the root of the Amazon S3 bucket you select. An
+    /// example is <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix
+    /// after the Amazon S3 bucket name, only object keys with that prefix are loaded into the
+    /// file system.</p>
+    pub fn import_path(&self) -> std::option::Option<&str> {
+        self.import_path.as_deref()
+    }
+    /// <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file system is exported.
+    /// The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which
+    /// new and changed data is to be exported from your Amazon FSx for Lustre file system. If
+    /// an <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+    /// <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in
+    /// UTC format, for example
+    /// <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
+    ///
+    /// <p>The Amazon S3 export bucket must be the same as the import bucket specified by
+    /// <code>ImportPath</code>. If you only specify a bucket name, such as
+    /// <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to S3
+    /// bucket objects. This mapping means that the input data in S3 is overwritten on export.
+    /// If you provide a custom prefix in the export path, such as
+    /// <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the contents of your file
+    /// system to that export prefix in the Amazon S3 bucket.</p>
+    pub fn export_path(&self) -> std::option::Option<&str> {
+        self.export_path.as_deref()
+    }
+    /// <p>(Optional) For files imported from a data repository, this value determines the stripe
+    /// count and maximum amount of data per file (in MiB) stored on a single physical disk. The
+    /// maximum number of disks that a single file can be striped across is limited by the total
+    /// number of disks that make up the file system.</p>
+    ///
+    /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
+    /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    pub fn imported_file_chunk_size(&self) -> std::option::Option<i32> {
+        self.imported_file_chunk_size
+    }
+    /// <p>
+    /// Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment
+    /// types when you need temporary storage and shorter-term processing of data.
+    /// The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst
+    /// throughput capacity than <code>SCRATCH_1</code>.</p>
+    ///
+    /// <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage
+    /// and workloads and encryption of data in transit. To learn more about deployment types, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+    /// FSx for Lustre Deployment Options</a>.</p>
+    /// <p>Encryption of data in-transit is automatically
+    /// enabled when you access a <code>SCRATCH_2</code> or <code>PERSISTENT_1</code>
+    /// file system from Amazon EC2 instances that <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-                 protection.html">support this feature</a>.
+    /// (Default = <code>SCRATCH_1</code>)
+    /// </p>
+    /// <p>Encryption of data in-transit for <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+    /// deployment types is supported when accessed from supported instance types in supported Amazon Web Services Regions. To learn more,
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting Data in Transit</a>.</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::LustreDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings.
+    /// Use this property to choose how Amazon FSx keeps your file and directory listings up to date
+    /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can
+    /// have the following values:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates
+    /// file and directory listings from the linked S3 bucket
+    /// when the file system is created. FSx does not update file and directory
+    /// listings for any new or changed objects after choosing this option.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
+    /// directory listings of any new objects added to the linked S3 bucket that
+    /// do not currently exist in the FSx file system. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
+    /// file and directory listings of any new objects added to the S3 bucket and any
+    /// existing objects that are changed in the S3 bucket after you choose this option.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates from your S3 bucket</a>.</p>
+    pub fn auto_import_policy(&self) -> std::option::Option<&crate::model::AutoImportPolicyType> {
+        self.auto_import_policy.as_ref()
+    }
+    /// <p>
+    /// Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
+    /// throughput for each 1 tebibyte of storage, in MB/s/TiB.
+    /// File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the PerUnitStorageThroughput
+    /// (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput
+    /// yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you
+    /// provision.
+    /// </p>
+    /// <p>Valid values for  SSD storage: 50, 100, 200. Valid values for  HDD storage: 12, 40.</p>
+    pub fn per_unit_storage_throughput(&self) -> std::option::Option<i32> {
+        self.per_unit_storage_throughput
+    }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+    /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+    /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+    /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>(Optional) Not available to use with file systems that are linked to a data repository.
+    /// A boolean flag indicating whether tags for the file system should be copied to
+    /// backups. The default value is false. If it's set to true, all file system
+    /// tags are copied to all automatic and user-initiated backups when the user
+    /// doesn't specify any backup-specific tags. If this value is true, and you specify one or more backup tags, only
+    /// the specified tags are copied to backups. If you specify one or more tags when creating a
+    /// user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
+    /// <p>The type of drive cache used by PERSISTENT_1 file systems that are provisioned with
+    /// HDD storage devices. This parameter is required when storage type is HDD. Set to
+    /// <code>READ</code>, improve the performance for frequently accessed files and allows 20%
+    /// of the total storage capacity of the file system to be cached. </p>
+    /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
+    pub fn drive_cache_type(&self) -> std::option::Option<&crate::model::DriveCacheType> {
+        self.drive_cache_type.as_ref()
+    }
+    /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code>
+    /// can have the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - (Default) Data compression is turned off when
+    /// the file system is created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LZ4</code> - Data compression is turned on with the LZ4
+    /// algorithm.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
+    pub fn data_compression_type(&self) -> std::option::Option<&crate::model::DataCompressionType> {
+        self.data_compression_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFileSystemLustreConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11952,6 +14063,123 @@ pub struct CreateFileSystemWindowsConfiguration {
     pub audit_log_configuration:
         std::option::Option<crate::model::WindowsAuditLogCreateConfiguration>,
 }
+impl CreateFileSystemWindowsConfiguration {
+    /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the
+    /// file system should join when it's created.</p>
+    pub fn active_directory_id(&self) -> std::option::Option<&str> {
+        self.active_directory_id.as_deref()
+    }
+    /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+    /// a self-managed (including on-premises) Microsoft Active Directory (AD)
+    /// directory. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
+    /// Using Amazon FSx with your self-managed Microsoft Active Directory</a> or
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
+    pub fn self_managed_active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SelfManagedActiveDirectoryConfiguration> {
+        self.self_managed_active_directory_configuration.as_ref()
+    }
+    /// <p>Specifies the file system deployment type, valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured
+    /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You
+    /// can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also
+    /// supports HDD storage type</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system.
+    /// Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+    /// Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::WindowsDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet
+    /// in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch
+    /// your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
+    /// data transfer costs and minimize latency. </p>
+    pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
+        self.preferred_subnet_id.as_deref()
+    }
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to
+    /// the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+    /// time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>The preferred time to take daily automatic backups, formatted HH:MM in the UTC time
+    /// zone.</p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>The number of days to retain automatic backups. The default is to retain backups for 7
+    /// days. Setting this value to 0 disables the creation of automatic backups. The maximum
+    /// retention period for backups is 90 days.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>A boolean flag indicating whether tags for the file system should be copied to
+    /// backups. This value defaults to false. If it's set to true, all tags for the file
+    /// system are copied to all automatic and user-initiated backups where the user
+    /// doesn't specify tags. If this value is true, and you specify one or more tags, only
+    /// the specified tags are copied to backups. If you specify one or more tags when creating a
+    /// user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+    pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_backups
+    }
+    /// <p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+    /// Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system.
+    /// You can associate up to 50 aliases with a file system at any time.
+    /// You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation.
+    /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
+    /// You only need to specify the alias name in the request payload.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including
+    /// additional steps you must take to be able to access your file system using a DNS alias.</p>
+    /// <p>An alias name has to meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot start or end with a hyphen.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can start with a numeric.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
+    /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+    pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases.as_deref()
+    }
+    /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log
+    /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+    /// file system.</p>
+    pub fn audit_log_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WindowsAuditLogCreateConfiguration> {
+        self.audit_log_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFileSystemWindowsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFileSystemWindowsConfiguration");
@@ -12360,6 +14588,69 @@ pub struct CreateFileSystemOntapConfiguration {
     /// the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+}
+impl CreateFileSystemOntapConfiguration {
+    /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+    /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
+    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+        self.automatic_backup_retention_days
+    }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+    /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+    /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+        self.daily_automatic_backup_start_time.as_deref()
+    }
+    /// <p>Specifies the ONTAP file system deployment type to use in creating the file system.</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::OntapDeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>Specifies the IP address range in which the endpoints to access your file system
+    /// will be created. By default, Amazon FSx selects an unused IP address range for you
+    /// from the 198.19.* range.</p>
+    pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
+        self.endpoint_ip_address_range.as_deref()
+    }
+    /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you can
+    /// use to administer your file system using the ONTAP CLI and REST API.</p>
+    pub fn fsx_admin_password(&self) -> std::option::Option<&str> {
+        self.fsx_admin_password.as_deref()
+    }
+    /// <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system.</p>
+    pub fn disk_iops_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DiskIopsConfiguration> {
+        self.disk_iops_configuration.as_ref()
+    }
+    /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in
+    /// your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the
+    /// <i>Amazon VPC User Guide.</i>
+    /// </p>
+    pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
+        self.preferred_subnet_id.as_deref()
+    }
+    /// <p>Specifies the VPC route tables in which your file system's endpoints will be
+    /// created. You should specify all VPC route tables associated with the subnets
+    /// in which your clients are located. By default, Amazon FSx selects your VPC's
+    /// default route table.</p>
+    pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.route_table_ids.as_deref()
+    }
+    /// <p>Sustained throughput of an Amazon FSx file system in MBps.</p>
+    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+        self.throughput_capacity
+    }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p>
+    /// <code>D</code> is the day of the week, for which 1 represents Monday and 7
+    /// represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p>
+    /// <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is
+    /// the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+        self.weekly_maintenance_start_time.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFileSystemOntapConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

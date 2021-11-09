@@ -8,6 +8,16 @@ pub struct ListEndpointsOutput {
     /// <p>The next endpoint returned in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEndpointsOutput {
+    /// <p>Returns an array of endpoints associated with AWS Outposts.</p>
+    pub fn endpoints(&self) -> std::option::Option<&[crate::model::Endpoint]> {
+        self.endpoints.as_deref()
+    }
+    /// <p>The next endpoint returned in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsOutput");
@@ -107,6 +117,12 @@ impl DeleteEndpointOutput {
 pub struct CreateEndpointOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
+}
+impl CreateEndpointOutput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

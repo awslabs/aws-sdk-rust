@@ -14,6 +14,26 @@ pub struct IceServer {
     /// valid.</p>
     pub ttl: i32,
 }
+impl IceServer {
+    /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different
+    /// addresses and/or protocols that can be used to reach the TURN server.</p>
+    pub fn uris(&self) -> std::option::Option<&[std::string::String]> {
+        self.uris.as_deref()
+    }
+    /// <p>A username to login to the ICE server.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>A password to login to the ICE server.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The period of time, in seconds, during which the username and password are
+    /// valid.</p>
+    pub fn ttl(&self) -> i32 {
+        self.ttl
+    }
+}
 impl std::fmt::Debug for IceServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IceServer");

@@ -3097,6 +3097,12 @@ pub struct TooManyRequestsException {
     /// <p>An error message to inform that the request has failed.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl TooManyRequestsException {
+    /// <p>The type of limit that was exceeded.</p>
+    pub fn limit_type(&self) -> std::option::Option<&str> {
+        self.limit_type.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -3175,6 +3181,12 @@ pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The type of resource that is not found.</p>
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl NotFoundException {
+    /// <p>The type of resource that is not found.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

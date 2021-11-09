@@ -6,6 +6,12 @@ pub struct UpdateCampaignOutput {
     /// <p>The same campaign ARN as given in the request.</p>
     pub campaign_arn: std::option::Option<std::string::String>,
 }
+impl UpdateCampaignOutput {
+    /// <p>The same campaign ARN as given in the request.</p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCampaignOutput");
@@ -86,6 +92,18 @@ pub struct ListSolutionVersionsOutput {
     /// <p>A token for getting the next set of solution versions (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSolutionVersionsOutput {
+    /// <p>A list of solution versions describing the version properties.</p>
+    pub fn solution_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::SolutionVersionSummary]> {
+        self.solution_versions.as_deref()
+    }
+    /// <p>A token for getting the next set of solution versions (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSolutionVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSolutionVersionsOutput");
@@ -162,6 +180,16 @@ pub struct ListSolutionsOutput {
     /// <p>A token for getting the next set of solutions (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSolutionsOutput {
+    /// <p>A list of the current solutions.</p>
+    pub fn solutions(&self) -> std::option::Option<&[crate::model::SolutionSummary]> {
+        self.solutions.as_deref()
+    }
+    /// <p>A token for getting the next set of solutions (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSolutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSolutionsOutput");
@@ -233,6 +261,16 @@ pub struct ListSchemasOutput {
     pub schemas: std::option::Option<std::vec::Vec<crate::model::DatasetSchemaSummary>>,
     /// <p>A token used to get the next set of schemas (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSchemasOutput {
+    /// <p>A list of schemas.</p>
+    pub fn schemas(&self) -> std::option::Option<&[crate::model::DatasetSchemaSummary]> {
+        self.schemas.as_deref()
+    }
+    /// <p>A token used to get the next set of schemas (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -306,6 +344,16 @@ pub struct ListRecipesOutput {
     /// <p>A token for getting the next set of recipes.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRecipesOutput {
+    /// <p>The list of available recipes.</p>
+    pub fn recipes(&self) -> std::option::Option<&[crate::model::RecipeSummary]> {
+        self.recipes.as_deref()
+    }
+    /// <p>A token for getting the next set of recipes.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecipesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecipesOutput");
@@ -378,6 +426,16 @@ pub struct ListFiltersOutput {
     /// <p>A token for getting the next set of filters (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFiltersOutput {
+    /// <p>A list of returned filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::FilterSummary]> {
+        self.filters.as_deref()
+    }
+    /// <p>A token for getting the next set of filters (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFiltersOutput");
@@ -449,6 +507,16 @@ pub struct ListEventTrackersOutput {
     pub event_trackers: std::option::Option<std::vec::Vec<crate::model::EventTrackerSummary>>,
     /// <p>A token for getting the next set of event trackers (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventTrackersOutput {
+    /// <p>A list of event trackers.</p>
+    pub fn event_trackers(&self) -> std::option::Option<&[crate::model::EventTrackerSummary]> {
+        self.event_trackers.as_deref()
+    }
+    /// <p>A token for getting the next set of event trackers (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventTrackersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -527,6 +595,17 @@ pub struct ListDatasetsOutput {
     /// <p>A token for getting the next set of datasets (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetsOutput {
+    /// <p>An array of <code>Dataset</code> objects. Each object provides metadata
+    /// information.</p>
+    pub fn datasets(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
+        self.datasets.as_deref()
+    }
+    /// <p>A token for getting the next set of datasets (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsOutput");
@@ -601,6 +680,18 @@ pub struct ListDatasetImportJobsOutput {
         std::option::Option<std::vec::Vec<crate::model::DatasetImportJobSummary>>,
     /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasetImportJobsOutput {
+    /// <p>The list of dataset import jobs.</p>
+    pub fn dataset_import_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetImportJobSummary]> {
+        self.dataset_import_jobs.as_deref()
+    }
+    /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatasetImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +768,16 @@ pub struct ListDatasetGroupsOutput {
     pub dataset_groups: std::option::Option<std::vec::Vec<crate::model::DatasetGroupSummary>>,
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasetGroupsOutput {
+    /// <p>The list of your dataset groups.</p>
+    pub fn dataset_groups(&self) -> std::option::Option<&[crate::model::DatasetGroupSummary]> {
+        self.dataset_groups.as_deref()
+    }
+    /// <p>A token for getting the next set of dataset groups (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatasetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -755,6 +856,18 @@ pub struct ListDatasetExportJobsOutput {
     /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDatasetExportJobsOutput {
+    /// <p>The list of dataset export jobs.</p>
+    pub fn dataset_export_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::DatasetExportJobSummary]> {
+        self.dataset_export_jobs.as_deref()
+    }
+    /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetExportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetExportJobsOutput");
@@ -831,6 +944,16 @@ pub struct ListCampaignsOutput {
     /// <p>A token for getting the next set of campaigns (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCampaignsOutput {
+    /// <p>A list of the campaigns.</p>
+    pub fn campaigns(&self) -> std::option::Option<&[crate::model::CampaignSummary]> {
+        self.campaigns.as_deref()
+    }
+    /// <p>A token for getting the next set of campaigns (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCampaignsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCampaignsOutput");
@@ -904,6 +1027,19 @@ pub struct ListBatchInferenceJobsOutput {
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBatchInferenceJobsOutput {
+    /// <p>A list containing information on each job that is returned.</p>
+    pub fn batch_inference_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchInferenceJobSummary]> {
+        self.batch_inference_jobs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBatchInferenceJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -983,6 +1119,18 @@ pub struct GetSolutionMetricsOutput {
     /// <p>The metrics for the solution version.</p>
     pub metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
+impl GetSolutionMetricsOutput {
+    /// <p>The same solution version ARN as specified in the request.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+    /// <p>The metrics for the solution version.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSolutionMetricsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSolutionMetricsOutput");
@@ -1057,6 +1205,12 @@ pub struct DescribeSolutionVersionOutput {
     /// <p>The solution version.</p>
     pub solution_version: std::option::Option<crate::model::SolutionVersion>,
 }
+impl DescribeSolutionVersionOutput {
+    /// <p>The solution version.</p>
+    pub fn solution_version(&self) -> std::option::Option<&crate::model::SolutionVersion> {
+        self.solution_version.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSolutionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSolutionVersionOutput");
@@ -1108,6 +1262,12 @@ pub struct DescribeSolutionOutput {
     /// <p>An object that describes the solution.</p>
     pub solution: std::option::Option<crate::model::Solution>,
 }
+impl DescribeSolutionOutput {
+    /// <p>An object that describes the solution.</p>
+    pub fn solution(&self) -> std::option::Option<&crate::model::Solution> {
+        self.solution.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSolutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSolutionOutput");
@@ -1155,6 +1315,12 @@ impl DescribeSolutionOutput {
 pub struct DescribeSchemaOutput {
     /// <p>The requested schema.</p>
     pub schema: std::option::Option<crate::model::DatasetSchema>,
+}
+impl DescribeSchemaOutput {
+    /// <p>The requested schema.</p>
+    pub fn schema(&self) -> std::option::Option<&crate::model::DatasetSchema> {
+        self.schema.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1207,6 +1373,12 @@ pub struct DescribeRecipeOutput {
     /// <p>An object that describes the recipe.</p>
     pub recipe: std::option::Option<crate::model::Recipe>,
 }
+impl DescribeRecipeOutput {
+    /// <p>An object that describes the recipe.</p>
+    pub fn recipe(&self) -> std::option::Option<&crate::model::Recipe> {
+        self.recipe.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeRecipeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRecipeOutput");
@@ -1255,6 +1427,12 @@ pub struct DescribeFilterOutput {
     /// <p>The filter's details.</p>
     pub filter: std::option::Option<crate::model::Filter>,
 }
+impl DescribeFilterOutput {
+    /// <p>The filter's details.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::Filter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFilterOutput");
@@ -1302,6 +1480,14 @@ impl DescribeFilterOutput {
 pub struct DescribeFeatureTransformationOutput {
     /// <p>A listing of the FeatureTransformation properties.</p>
     pub feature_transformation: std::option::Option<crate::model::FeatureTransformation>,
+}
+impl DescribeFeatureTransformationOutput {
+    /// <p>A listing of the FeatureTransformation properties.</p>
+    pub fn feature_transformation(
+        &self,
+    ) -> std::option::Option<&crate::model::FeatureTransformation> {
+        self.feature_transformation.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFeatureTransformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1356,6 +1542,12 @@ impl DescribeFeatureTransformationOutput {
 pub struct DescribeEventTrackerOutput {
     /// <p>An object that describes the event tracker.</p>
     pub event_tracker: std::option::Option<crate::model::EventTracker>,
+}
+impl DescribeEventTrackerOutput {
+    /// <p>An object that describes the event tracker.</p>
+    pub fn event_tracker(&self) -> std::option::Option<&crate::model::EventTracker> {
+        self.event_tracker.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEventTrackerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1422,6 +1614,27 @@ pub struct DescribeDatasetImportJobOutput {
     /// </li>
     /// </ul>
     pub dataset_import_job: std::option::Option<crate::model::DatasetImportJob>,
+}
+impl DescribeDatasetImportJobOutput {
+    /// <p>Information about the dataset import job, including the status.</p>
+    /// <p>The status is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn dataset_import_job(&self) -> std::option::Option<&crate::model::DatasetImportJob> {
+        self.dataset_import_job.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1504,6 +1717,12 @@ pub struct DescribeDatasetGroupOutput {
     /// <p>A listing of the dataset group's properties.</p>
     pub dataset_group: std::option::Option<crate::model::DatasetGroup>,
 }
+impl DescribeDatasetGroupOutput {
+    /// <p>A listing of the dataset group's properties.</p>
+    pub fn dataset_group(&self) -> std::option::Option<&crate::model::DatasetGroup> {
+        self.dataset_group.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetGroupOutput");
@@ -1569,6 +1788,27 @@ pub struct DescribeDatasetExportJobOutput {
     /// </li>
     /// </ul>
     pub dataset_export_job: std::option::Option<crate::model::DatasetExportJob>,
+}
+impl DescribeDatasetExportJobOutput {
+    /// <p>Information about the dataset export job, including the status.</p>
+    /// <p>The status is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p>
+    /// </li>
+    /// <li>
+    /// <p>ACTIVE</p>
+    /// </li>
+    /// <li>
+    /// <p>CREATE FAILED</p>
+    /// </li>
+    /// </ul>
+    pub fn dataset_export_job(&self) -> std::option::Option<&crate::model::DatasetExportJob> {
+        self.dataset_export_job.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1651,6 +1891,12 @@ pub struct DescribeDatasetOutput {
     /// <p>A listing of the dataset's properties.</p>
     pub dataset: std::option::Option<crate::model::Dataset>,
 }
+impl DescribeDatasetOutput {
+    /// <p>A listing of the dataset's properties.</p>
+    pub fn dataset(&self) -> std::option::Option<&crate::model::Dataset> {
+        self.dataset.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetOutput");
@@ -1699,6 +1945,12 @@ pub struct DescribeCampaignOutput {
     /// <p>The properties of the campaign.</p>
     pub campaign: std::option::Option<crate::model::Campaign>,
 }
+impl DescribeCampaignOutput {
+    /// <p>The properties of the campaign.</p>
+    pub fn campaign(&self) -> std::option::Option<&crate::model::Campaign> {
+        self.campaign.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCampaignOutput");
@@ -1746,6 +1998,12 @@ impl DescribeCampaignOutput {
 pub struct DescribeBatchInferenceJobOutput {
     /// <p>Information on the specified batch inference job.</p>
     pub batch_inference_job: std::option::Option<crate::model::BatchInferenceJob>,
+}
+impl DescribeBatchInferenceJobOutput {
+    /// <p>Information on the specified batch inference job.</p>
+    pub fn batch_inference_job(&self) -> std::option::Option<&crate::model::BatchInferenceJob> {
+        self.batch_inference_job.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeBatchInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1797,6 +2055,12 @@ impl DescribeBatchInferenceJobOutput {
 pub struct DescribeAlgorithmOutput {
     /// <p>A listing of the properties of the algorithm.</p>
     pub algorithm: std::option::Option<crate::model::Algorithm>,
+}
+impl DescribeAlgorithmOutput {
+    /// <p>A listing of the properties of the algorithm.</p>
+    pub fn algorithm(&self) -> std::option::Option<&crate::model::Algorithm> {
+        self.algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAlgorithmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2059,6 +2323,12 @@ pub struct CreateSolutionVersionOutput {
     /// <p>The ARN of the new solution version.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
+impl CreateSolutionVersionOutput {
+    /// <p>The ARN of the new solution version.</p>
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+        self.solution_version_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSolutionVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSolutionVersionOutput");
@@ -2110,6 +2380,12 @@ pub struct CreateSolutionOutput {
     /// <p>The ARN of the solution.</p>
     pub solution_arn: std::option::Option<std::string::String>,
 }
+impl CreateSolutionOutput {
+    /// <p>The ARN of the solution.</p>
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
+        self.solution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSolutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSolutionOutput");
@@ -2158,6 +2434,12 @@ pub struct CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) of the created schema.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
+impl CreateSchemaOutput {
+    /// <p>The Amazon Resource Name (ARN) of the created schema.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSchemaOutput");
@@ -2205,6 +2487,12 @@ impl CreateSchemaOutput {
 pub struct CreateFilterOutput {
     /// <p>The ARN of the new filter.</p>
     pub filter_arn: std::option::Option<std::string::String>,
+}
+impl CreateFilterOutput {
+    /// <p>The ARN of the new filter.</p>
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
+        self.filter_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2256,6 +2544,17 @@ pub struct CreateEventTrackerOutput {
     /// <p>The ID of the event tracker. Include this ID in requests to the
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub tracking_id: std::option::Option<std::string::String>,
+}
+impl CreateEventTrackerOutput {
+    /// <p>The ARN of the event tracker.</p>
+    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+        self.event_tracker_arn.as_deref()
+    }
+    /// <p>The ID of the event tracker. Include this ID in requests to the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    pub fn tracking_id(&self) -> std::option::Option<&str> {
+        self.tracking_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEventTrackerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2323,6 +2622,12 @@ pub struct CreateDatasetImportJobOutput {
     /// <p>The ARN of the dataset import job.</p>
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
+impl CreateDatasetImportJobOutput {
+    /// <p>The ARN of the dataset import job.</p>
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_import_job_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetImportJobOutput");
@@ -2373,6 +2678,12 @@ impl CreateDatasetImportJobOutput {
 pub struct CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
+}
+impl CreateDatasetGroupOutput {
+    /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+        self.dataset_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,6 +2736,12 @@ pub struct CreateDatasetExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
 }
+impl CreateDatasetExportJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+        self.dataset_export_job_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetExportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetExportJobOutput");
@@ -2476,6 +2793,12 @@ pub struct CreateDatasetOutput {
     /// <p>The ARN of the dataset.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
+impl CreateDatasetOutput {
+    /// <p>The ARN of the dataset.</p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetOutput");
@@ -2524,6 +2847,12 @@ pub struct CreateCampaignOutput {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub campaign_arn: std::option::Option<std::string::String>,
 }
+impl CreateCampaignOutput {
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+        self.campaign_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCampaignOutput");
@@ -2571,6 +2900,12 @@ impl CreateCampaignOutput {
 pub struct CreateBatchInferenceJobOutput {
     /// <p>The ARN of the batch inference job.</p>
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateBatchInferenceJobOutput {
+    /// <p>The ARN of the batch inference job.</p>
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
+        self.batch_inference_job_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBatchInferenceJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

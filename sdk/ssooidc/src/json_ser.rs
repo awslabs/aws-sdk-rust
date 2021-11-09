@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTokenInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_id {
         object.key("clientId").string(var_1);
     }
@@ -33,12 +33,13 @@ pub fn serialize_structure_crate_input_create_token_input(
         }
         array_9.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_register_client_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterClientInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.client_name {
         object.key("clientName").string(var_11);
     }
@@ -54,12 +55,13 @@ pub fn serialize_structure_crate_input_register_client_input(
         }
         array_14.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_device_authorization_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartDeviceAuthorizationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.client_id {
         object.key("clientId").string(var_16);
     }
@@ -69,4 +71,5 @@ pub fn serialize_structure_crate_input_start_device_authorization_input(
     if let Some(var_18) = &input.start_url {
         object.key("startUrl").string(var_18);
     }
+    Ok(())
 }

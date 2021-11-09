@@ -468,6 +468,16 @@ pub struct UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl UnauthorizedClientException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+}
 impl std::fmt::Debug for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnauthorizedClientException");
@@ -564,6 +574,16 @@ pub struct SlowDownException {
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl SlowDownException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for SlowDownException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -662,6 +682,16 @@ pub struct InvalidRequestException {
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -762,6 +792,16 @@ pub struct InvalidClientException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidClientException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidClientException");
@@ -858,6 +898,16 @@ pub struct InternalServerException {
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InternalServerException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -956,6 +1006,16 @@ pub struct InvalidScopeException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidScopeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidScopeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidScopeException");
@@ -1052,6 +1112,16 @@ pub struct InvalidClientMetadataException {
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidClientMetadataException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidClientMetadataException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1150,6 +1220,16 @@ pub struct UnsupportedGrantTypeException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl UnsupportedGrantTypeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+}
 impl std::fmt::Debug for UnsupportedGrantTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedGrantTypeException");
@@ -1246,6 +1326,16 @@ pub struct InvalidGrantException {
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidGrantException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidGrantException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1344,6 +1434,16 @@ pub struct ExpiredTokenException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ExpiredTokenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+}
 impl std::fmt::Debug for ExpiredTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExpiredTokenException");
@@ -1441,6 +1541,16 @@ pub struct AuthorizationPendingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl AuthorizationPendingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
+}
 impl std::fmt::Debug for AuthorizationPendingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizationPendingException");
@@ -1537,6 +1647,16 @@ pub struct AccessDeniedException {
     pub error_description: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_description(&self) -> std::option::Option<&str> {
+        self.error_description.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

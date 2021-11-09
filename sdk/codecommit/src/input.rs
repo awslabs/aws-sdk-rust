@@ -113,7 +113,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_approval_rule_template_with_repository(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_approval_rule_template_with_repository(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -302,7 +302,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_approval_rule_template_with_repositories(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_approval_rule_template_with_repositories(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -617,7 +617,7 @@ impl BatchDescribeMergeConflictsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_describe_merge_conflicts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_describe_merge_conflicts(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -807,7 +807,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_approval_rule_template_from_repositories(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_approval_rule_template_from_repositories(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -992,10 +992,7 @@ impl BatchGetCommitsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_commits(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_commits(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1160,10 +1157,9 @@ impl BatchGetRepositoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_repositories(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_repositories(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1450,7 +1446,7 @@ impl CreateApprovalRuleTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_approval_rule_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_approval_rule_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1627,10 +1623,7 @@ impl CreateBranchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_branch(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_branch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1934,10 +1927,7 @@ impl CreateCommitInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_commit(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_commit(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2158,10 +2148,7 @@ impl CreatePullRequestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_pull_request(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_pull_request(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2429,7 +2416,7 @@ impl CreatePullRequestApprovalRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_pull_request_approval_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_pull_request_approval_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2655,10 +2642,7 @@ impl CreateRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_repository(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2986,7 +2970,7 @@ impl CreateUnreferencedMergeCommitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_unreferenced_merge_commit(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_unreferenced_merge_commit(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3144,7 +3128,7 @@ impl DeleteApprovalRuleTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_approval_rule_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_approval_rule_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3309,10 +3293,7 @@ impl DeleteBranchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_branch(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_branch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3464,10 +3445,9 @@ impl DeleteCommentContentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_comment_content(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_comment_content(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3731,10 +3711,7 @@ impl DeleteFileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_file(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_file(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3903,7 +3880,7 @@ impl DeletePullRequestApprovalRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_pull_request_approval_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_pull_request_approval_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4057,10 +4034,7 @@ impl DeleteRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_repository(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4353,10 +4327,7 @@ impl DescribeMergeConflictsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_merge_conflicts(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4574,10 +4545,7 @@ impl DescribePullRequestEventsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_pull_request_events(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4752,7 +4720,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_approval_rule_template_from_repository(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_approval_rule_template_from_repository(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4924,7 +4892,7 @@ impl EvaluatePullRequestApprovalRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_evaluate_pull_request_approval_rules(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_evaluate_pull_request_approval_rules(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5084,10 +5052,7 @@ impl GetApprovalRuleTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_approval_rule_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5249,10 +5214,7 @@ impl GetBlobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_blob(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_blob(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5412,10 +5374,7 @@ impl GetBranchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_branch(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_branch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5564,10 +5523,7 @@ impl GetCommentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_comment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_comment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5756,10 +5712,7 @@ impl GetCommentReactionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_comment_reactions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_comment_reactions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5973,7 +5926,7 @@ impl GetCommentsForComparedCommitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_comments_for_compared_commit(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_comments_for_compared_commit(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6201,7 +6154,7 @@ impl GetCommentsForPullRequestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_comments_for_pull_request(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_comments_for_pull_request(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6364,10 +6317,7 @@ impl GetCommitInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_commit(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_commit(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6615,10 +6565,8 @@ impl GetDifferencesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_differences(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_differences(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6803,10 +6751,7 @@ impl GetFileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_file(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_file(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6991,10 +6936,7 @@ impl GetFolderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_folder(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_folder(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7230,10 +7172,7 @@ impl GetMergeCommitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_merge_commit(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_merge_commit(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7512,10 +7451,7 @@ impl GetMergeConflictsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_merge_conflicts(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_merge_conflicts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7753,10 +7689,7 @@ impl GetMergeOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_merge_options(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_merge_options(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7909,10 +7842,7 @@ impl GetPullRequestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_pull_request(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_pull_request(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8078,7 +8008,7 @@ impl GetPullRequestApprovalStatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_pull_request_approval_states(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_pull_request_approval_states(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8249,7 +8179,7 @@ impl GetPullRequestOverrideStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_pull_request_override_state(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_pull_request_override_state(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8402,10 +8332,7 @@ impl GetRepositoryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_repository(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_repository(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8560,10 +8487,7 @@ impl GetRepositoryTriggersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_repository_triggers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8730,10 +8654,7 @@ impl ListApprovalRuleTemplatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_approval_rule_templates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8916,7 +8837,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associated_approval_rule_templates_for_repository(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_associated_approval_rule_templates_for_repository(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9083,10 +9004,7 @@ impl ListBranchesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_branches(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_branches(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9294,10 +9212,7 @@ impl ListPullRequestsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pull_requests(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_pull_requests(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9475,10 +9390,7 @@ impl ListRepositoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_repositories(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_repositories(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9662,7 +9574,7 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_repositories_for_approval_rule_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_repositories_for_approval_rule_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9829,10 +9741,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10038,7 +9949,7 @@ impl MergeBranchesByFastForwardInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_merge_branches_by_fast_forward(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_merge_branches_by_fast_forward(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10370,10 +10281,7 @@ impl MergeBranchesBySquashInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_merge_branches_by_squash(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10705,10 +10613,7 @@ impl MergeBranchesByThreeWayInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_merge_branches_by_three_way(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10894,7 +10799,7 @@ impl MergePullRequestByFastForwardInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_fast_forward(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_fast_forward(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11207,10 +11112,7 @@ impl MergePullRequestBySquashInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_squash(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11520,7 +11422,7 @@ impl MergePullRequestByThreeWayInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_three_way(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_three_way(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11710,7 +11612,7 @@ impl OverridePullRequestApprovalRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_override_pull_request_approval_rules(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_override_pull_request_approval_rules(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11949,7 +11851,7 @@ impl PostCommentForComparedCommitInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_post_comment_for_compared_commit(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_post_comment_for_compared_commit(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12201,7 +12103,7 @@ impl PostCommentForPullRequestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_post_comment_for_pull_request(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_post_comment_for_pull_request(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12390,10 +12292,7 @@ impl PostCommentReplyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_post_comment_reply(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_post_comment_reply(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12560,10 +12459,7 @@ impl PutCommentReactionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_comment_reaction(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_comment_reaction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12843,10 +12739,7 @@ impl PutFileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_file(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_file(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13020,10 +12913,7 @@ impl PutRepositoryTriggersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_repository_triggers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13201,10 +13091,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13380,10 +13267,7 @@ impl TestRepositoryTriggersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_test_repository_triggers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13553,10 +13437,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13752,7 +13633,7 @@ impl UpdateApprovalRuleTemplateContentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_content(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_content(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13929,7 +13810,7 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_description(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_description(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14105,7 +13986,7 @@ impl UpdateApprovalRuleTemplateNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_name(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_name(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14269,10 +14150,7 @@ impl UpdateCommentInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_comment(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_comment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14440,10 +14318,7 @@ impl UpdateDefaultBranchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_default_branch(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_default_branch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14730,7 +14605,7 @@ impl UpdatePullRequestApprovalRuleContentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_pull_request_approval_rule_content(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_pull_request_approval_rule_content(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14912,7 +14787,7 @@ impl UpdatePullRequestApprovalStateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_pull_request_approval_state(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_pull_request_approval_state(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15081,7 +14956,7 @@ impl UpdatePullRequestDescriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_pull_request_description(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_pull_request_description(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15257,10 +15132,7 @@ impl UpdatePullRequestStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_pull_request_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15427,10 +15299,7 @@ impl UpdatePullRequestTitleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_pull_request_title(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15599,7 +15468,7 @@ impl UpdateRepositoryDescriptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_repository_description(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_repository_description(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15762,10 +15631,9 @@ impl UpdateRepositoryNameInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_repository_name(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_repository_name(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15836,6 +15704,16 @@ pub struct UpdateRepositoryNameInput {
     /// <p>The new name for the repository.</p>
     pub new_name: std::option::Option<std::string::String>,
 }
+impl UpdateRepositoryNameInput {
+    /// <p>The current name of the repository.</p>
+    pub fn old_name(&self) -> std::option::Option<&str> {
+        self.old_name.as_deref()
+    }
+    /// <p>The new name for the repository.</p>
+    pub fn new_name(&self) -> std::option::Option<&str> {
+        self.new_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRepositoryNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRepositoryNameInput");
@@ -15854,6 +15732,16 @@ pub struct UpdateRepositoryDescriptionInput {
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
     pub repository_description: std::option::Option<std::string::String>,
 }
+impl UpdateRepositoryDescriptionInput {
+    /// <p>The name of the repository to set or change the comment or description for.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
+    pub fn repository_description(&self) -> std::option::Option<&str> {
+        self.repository_description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRepositoryDescriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRepositoryDescriptionInput");
@@ -15871,6 +15759,16 @@ pub struct UpdatePullRequestTitleInput {
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub title: std::option::Option<std::string::String>,
+}
+impl UpdatePullRequestTitleInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The updated title of the pull request. This replaces the existing title.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePullRequestTitleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15892,6 +15790,18 @@ pub struct UpdatePullRequestStatusInput {
     /// from <code>CLOSED</code> to <code>CLOSED</code>.</p>
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
 }
+impl UpdatePullRequestStatusInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The status of the pull request. The only valid operations are to update the status
+    /// from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or
+    /// from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+    pub fn pull_request_status(&self) -> std::option::Option<&crate::model::PullRequestStatusEnum> {
+        self.pull_request_status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePullRequestStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePullRequestStatusInput");
@@ -15910,6 +15820,17 @@ pub struct UpdatePullRequestDescriptionInput {
     /// <p>The updated content of the description for the pull request. This content replaces the
     /// existing description.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdatePullRequestDescriptionInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The updated content of the description for the pull request. This content replaces the
+    /// existing description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePullRequestDescriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15930,6 +15851,20 @@ pub struct UpdatePullRequestApprovalStateInput {
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The approval state to associate with the user on the pull request.</p>
     pub approval_state: std::option::Option<crate::model::ApprovalState>,
+}
+impl UpdatePullRequestApprovalStateInput {
+    /// <p>The system-generated ID of the pull request.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The system-generated ID of the revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The approval state to associate with the user on the pull request.</p>
+    pub fn approval_state(&self) -> std::option::Option<&crate::model::ApprovalState> {
+        self.approval_state.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePullRequestApprovalStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15996,6 +15931,66 @@ pub struct UpdatePullRequestApprovalRuleContentInput {
     /// </note>
     pub new_rule_content: std::option::Option<std::string::String>,
 }
+impl UpdatePullRequestApprovalRuleContentInput {
+    /// <p>The system-generated ID of the pull request.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the approval rule you want to update.</p>
+    pub fn approval_rule_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_name.as_deref()
+    }
+    /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
+    /// information by using
+    /// <a>GetPullRequest</a>.</p>
+    pub fn existing_rule_content_sha256(&self) -> std::option::Option<&str> {
+        self.existing_rule_content_sha256.as_deref()
+    }
+    /// <p>The updated content for the approval rule.</p>
+    /// <note>
+    /// <p>When you update the content of the approval rule, you can specify approvers in an
+    /// approval pool in one of two ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>CodeCommitApprovers</b>: This option only
+    /// requires an AWS account and a resource. It can be used for both IAM users
+    /// and federated access users whose name matches the provided resource name.
+    /// This is a very powerful option that offers a great deal of flexibility. For
+    /// example, if you specify the AWS account <i>123456789012</i>
+    /// and <i>Mary_Major</i>, all of the following are counted as
+    /// approvals coming from that user:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An IAM user in the account
+    /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
+    /// </li>
+    /// <li>
+    /// <p>A federated user identified in IAM as Mary_Major
+    /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>This option does not recognize an active session of someone assuming the
+    /// role of CodeCommitReview with a role session name of
+    /// <i>Mary_Major</i>
+    /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
+    /// unless you include a wildcard (*Mary_Major).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Fully qualified ARN</b>: This option allows
+    /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
+    /// user or role. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+    /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    ///
+    /// </note>
+    pub fn new_rule_content(&self) -> std::option::Option<&str> {
+        self.new_rule_content.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePullRequestApprovalRuleContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePullRequestApprovalRuleContentInput");
@@ -16019,6 +16014,16 @@ pub struct UpdateDefaultBranchInput {
     /// <p>The name of the branch to set as the default.</p>
     pub default_branch_name: std::option::Option<std::string::String>,
 }
+impl UpdateDefaultBranchInput {
+    /// <p>The name of the repository to set or change the default branch for.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the branch to set as the default.</p>
+    pub fn default_branch_name(&self) -> std::option::Option<&str> {
+        self.default_branch_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDefaultBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDefaultBranchInput");
@@ -16038,6 +16043,17 @@ pub struct UpdateCommentInput {
     /// <p>The updated content to replace the existing content of the comment.</p>
     pub content: std::option::Option<std::string::String>,
 }
+impl UpdateCommentInput {
+    /// <p>The system-generated ID of the comment you want to update. To get this ID, use <a>GetCommentsForComparedCommit</a>
+    /// or <a>GetCommentsForPullRequest</a>.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+    /// <p>The updated content to replace the existing content of the comment.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCommentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCommentInput");
@@ -16055,6 +16071,16 @@ pub struct UpdateApprovalRuleTemplateNameInput {
     pub old_approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The new name you want to apply to the approval rule template.</p>
     pub new_approval_rule_template_name: std::option::Option<std::string::String>,
+}
+impl UpdateApprovalRuleTemplateNameInput {
+    /// <p>The current name of the approval rule template.</p>
+    pub fn old_approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.old_approval_rule_template_name.as_deref()
+    }
+    /// <p>The new name you want to apply to the approval rule template.</p>
+    pub fn new_approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.new_approval_rule_template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateApprovalRuleTemplateNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16079,6 +16105,16 @@ pub struct UpdateApprovalRuleTemplateDescriptionInput {
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The updated description of the approval rule template.</p>
     pub approval_rule_template_description: std::option::Option<std::string::String>,
+}
+impl UpdateApprovalRuleTemplateDescriptionInput {
+    /// <p>The name of the template for which you want to update the description.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The updated description of the approval rule template.</p>
+    pub fn approval_rule_template_description(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateApprovalRuleTemplateDescriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16109,6 +16145,23 @@ pub struct UpdateApprovalRuleTemplateContentInput {
     /// <a>GetPullRequest</a>.</p>
     pub existing_rule_content_sha256: std::option::Option<std::string::String>,
 }
+impl UpdateApprovalRuleTemplateContentInput {
+    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The content that replaces the existing content of the rule. Content statements must be
+    /// complete. You cannot provide only the changes.</p>
+    pub fn new_rule_content(&self) -> std::option::Option<&str> {
+        self.new_rule_content.as_deref()
+    }
+    /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
+    /// information by using
+    /// <a>GetPullRequest</a>.</p>
+    pub fn existing_rule_content_sha256(&self) -> std::option::Option<&str> {
+        self.existing_rule_content_sha256.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApprovalRuleTemplateContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApprovalRuleTemplateContentInput");
@@ -16134,6 +16187,16 @@ pub struct UntagResourceInput {
     /// <p>The tag key for each tag that you want to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key for each tag that you want to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -16151,6 +16214,16 @@ pub struct TestRepositoryTriggersInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The list of triggers to test.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
+}
+impl TestRepositoryTriggersInput {
+    /// <p>The name of the repository in which to test the triggers.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The list of triggers to test.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::RepositoryTrigger]> {
+        self.triggers.as_deref()
+    }
 }
 impl std::fmt::Debug for TestRepositoryTriggersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16171,6 +16244,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value pair to use when tagging this repository.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -16188,6 +16274,16 @@ pub struct PutRepositoryTriggersInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The JSON block of configuration information for each trigger.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
+}
+impl PutRepositoryTriggersInput {
+    /// <p>The name of the repository where you want to create or update the trigger.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The JSON block of configuration information for each trigger.</p>
+    pub fn triggers(&self) -> std::option::Option<&[crate::model::RepositoryTrigger]> {
+        self.triggers.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRepositoryTriggersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16232,6 +16328,55 @@ pub struct PutFileInput {
     /// <p>An email address for the person adding or updating the file.</p>
     pub email: std::option::Option<std::string::String>,
 }
+impl PutFileInput {
+    /// <p>The name of the repository where you want to add or update the file.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the branch where you want to add or update the file. If this is an empty
+    /// repository, this branch is created.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>The content of the file, in binary object format. </p>
+    pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.file_content.as_ref()
+    }
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p>
+    /// <note>
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding
+    /// the file.</p>
+    /// </note>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>The file mode permissions of the blob. Valid file mode permissions are listed
+    /// here.</p>
+    pub fn file_mode(&self) -> std::option::Option<&crate::model::FileModeTypeEnum> {
+        self.file_mode.as_ref()
+    }
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository,
+    /// no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
+    /// <p>The commit ID must match the ID of the head commit at the time of the operation.
+    /// Otherwise, an error occurs, and the file is not added or updated.</p>
+    pub fn parent_commit_id(&self) -> std::option::Option<&str> {
+        self.parent_commit_id.as_deref()
+    }
+    /// <p>A message about why this file was added or updated. Although it is optional, a message
+    /// makes the commit history for your repository more useful.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>The name of the person adding or updating the file. Although it is optional, a name
+    /// makes the commit history for your repository more useful.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An email address for the person adding or updating the file.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+}
 impl std::fmt::Debug for PutFileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFileInput");
@@ -16258,6 +16403,17 @@ pub struct PutCommentReactionInput {
     /// For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
     pub reaction_value: std::option::Option<std::string::String>,
 }
+impl PutCommentReactionInput {
+    /// <p>The ID of the comment to which you want to add or update a reaction.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+    /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none.
+    /// For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+    pub fn reaction_value(&self) -> std::option::Option<&str> {
+        self.reaction_value.as_deref()
+    }
+}
 impl std::fmt::Debug for PutCommentReactionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutCommentReactionInput");
@@ -16281,6 +16437,24 @@ pub struct PostCommentReplyInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The contents of your reply to a comment.</p>
     pub content: std::option::Option<std::string::String>,
+}
+impl PostCommentReplyInput {
+    /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <a>GetCommentsForComparedCommit</a>
+    /// or <a>GetCommentsForPullRequest</a>.</p>
+    pub fn in_reply_to(&self) -> std::option::Option<&str> {
+        self.in_reply_to.as_deref()
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+    /// the request cannot be repeated with a changed parameter. If a request is received with
+    /// the same parameters and a token is included, the request returns information about the
+    /// initial request that used that token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The contents of your reply to a comment.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
 }
 impl std::fmt::Debug for PostCommentReplyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16315,6 +16489,41 @@ pub struct PostCommentForPullRequestInput {
     /// the same parameters and a token is included, the request returns information about the
     /// initial request that used that token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl PostCommentForPullRequestInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the repository where you want to post a comment on a pull request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+        self.before_commit_id.as_deref()
+    }
+    /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+        self.after_commit_id.as_deref()
+    }
+    /// <p>The location of the change where you want to post your comment. If no location is
+    /// provided, the comment is posted as a general comment on the pull request difference
+    /// between the before commit ID and the after commit ID.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The content of your comment on the change.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+    /// the request cannot be repeated with a changed parameter. If a request is received with
+    /// the same parameters and a token is included, the request returns information about the
+    /// initial request that used that token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for PostCommentForPullRequestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16353,6 +16562,38 @@ pub struct PostCommentForComparedCommitInput {
     /// initial request that used that token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl PostCommentForComparedCommitInput {
+    /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the before
+    /// commit. Required for commenting on any commit unless that commit is the initial
+    /// commit.</p>
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+        self.before_commit_id.as_deref()
+    }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the after
+    /// commit.</p>
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+        self.after_commit_id.as_deref()
+    }
+    /// <p>The location of the comparison where you want to comment.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::Location> {
+        self.location.as_ref()
+    }
+    /// <p>The content of the comment you want to make.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+    /// the request cannot be repeated with a changed parameter. If a request is received with
+    /// the same parameters and a token is included, the request returns information about the
+    /// initial request that used that token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for PostCommentForComparedCommitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PostCommentForComparedCommitInput");
@@ -16380,6 +16621,24 @@ pub struct OverridePullRequestApprovalRulesInput {
     /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply
     /// approval rule requirements (REVOKE). REVOKE status is not stored.</p>
     pub override_status: std::option::Option<crate::model::OverrideStatus>,
+}
+impl OverridePullRequestApprovalRulesInput {
+    /// <p>The system-generated ID of the pull request for which you want to override all
+    /// approval rule requirements. To get this information, use
+    /// <a>GetPullRequest</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request.
+    /// To get the revision ID, use GetPullRequest.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply
+    /// approval rule requirements (REVOKE). REVOKE status is not stored.</p>
+    pub fn override_status(&self) -> std::option::Option<&crate::model::OverrideStatus> {
+        self.override_status.as_ref()
+    }
 }
 impl std::fmt::Debug for OverridePullRequestApprovalRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16427,6 +16686,63 @@ pub struct MergePullRequestByThreeWayInput {
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
     /// resolving conflicts during a merge.</p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+}
+impl MergePullRequestByThreeWayInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
+    /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>The commit message to include in the commit information for the merge.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>The name of the author who created the commit. This information is used as both the
+    /// author and committer for the commit.</p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p>The email address of the person merging the branches. This information is used in the
+    /// commit information for the merge.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
+    /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
+    /// The default is false.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
+    /// resolving conflicts during a merge.</p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
 }
 impl std::fmt::Debug for MergePullRequestByThreeWayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16485,6 +16801,63 @@ pub struct MergePullRequestBySquashInput {
     /// resolving conflicts during a merge.</p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
+impl MergePullRequestBySquashInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
+    /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>The commit message to include in the commit information for the merge.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>The name of the author who created the commit. This information is used as both the
+    /// author and committer for the commit.</p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p>The email address of the person merging the branches. This information is used in the
+    /// commit information for the merge.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
+    /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
+    /// The default is false.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
+    /// resolving conflicts during a merge.</p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
+}
 impl std::fmt::Debug for MergePullRequestBySquashInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergePullRequestBySquashInput");
@@ -16516,6 +16889,21 @@ pub struct MergePullRequestByFastForwardInput {
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
     /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub source_commit_id: std::option::Option<std::string::String>,
+}
+impl MergePullRequestByFastForwardInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
+    /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+        self.source_commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MergePullRequestByFastForwardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16566,6 +16954,68 @@ pub struct MergeBranchesByThreeWayInput {
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
     /// resolving conflicts during a merge.</p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+}
+impl MergeBranchesByThreeWayInput {
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The branch where the merge is applied. </p>
+    pub fn target_branch(&self) -> std::option::Option<&str> {
+        self.target_branch.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>The name of the author who created the commit. This information is used as both the
+    /// author and committer for the commit.</p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p>The email address of the person merging the branches. This information is used in the
+    /// commit information for the merge.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The commit message to include in the commit information for the merge.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
+    /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
+    /// The default is false.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
+    /// resolving conflicts during a merge.</p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
 }
 impl std::fmt::Debug for MergeBranchesByThreeWayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16631,6 +17081,68 @@ pub struct MergeBranchesBySquashInput {
     /// resolving conflicts during a merge.</p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
+impl MergeBranchesBySquashInput {
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The branch where the merge is applied. </p>
+    pub fn target_branch(&self) -> std::option::Option<&str> {
+        self.target_branch.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>The name of the author who created the commit. This information is used as both the
+    /// author and committer for the commit.</p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p>The email address of the person merging the branches. This information is used in the
+    /// commit information for the merge.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The commit message for the merge.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
+    /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
+    /// created for empty folders. The default is false.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
+    /// resolving conflicts during a merge.</p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
+}
 impl std::fmt::Debug for MergeBranchesBySquashInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeBranchesBySquashInput");
@@ -16670,6 +17182,26 @@ pub struct MergeBranchesByFastForwardInput {
     /// <p>The branch where the merge is applied.</p>
     pub target_branch: std::option::Option<std::string::String>,
 }
+impl MergeBranchesByFastForwardInput {
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The branch where the merge is applied.</p>
+    pub fn target_branch(&self) -> std::option::Option<&str> {
+        self.target_branch.as_deref()
+    }
+}
 impl std::fmt::Debug for MergeBranchesByFastForwardInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MergeBranchesByFastForwardInput");
@@ -16695,6 +17227,18 @@ pub struct ListTagsForResourceInput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information
+    /// about tags, if any.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -16715,6 +17259,21 @@ pub struct ListRepositoriesForApprovalRuleTemplateInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListRepositoriesForApprovalRuleTemplateInput {
+    /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListRepositoriesForApprovalRuleTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16741,6 +17300,22 @@ pub struct ListRepositoriesInput {
     pub sort_by: std::option::Option<crate::model::SortByEnum>,
     /// <p>The order in which to sort the results of a list repositories operation.</p>
     pub order: std::option::Option<crate::model::OrderEnum>,
+}
+impl ListRepositoriesInput {
+    /// <p>An enumeration token that allows the operation to batch the results of the operation.
+    /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
+    /// another page of 1,000 records is retrieved.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The criteria used to sort the results of a list repositories operation.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortByEnum> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The order in which to sort the results of a list repositories operation.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::OrderEnum> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16769,6 +17344,30 @@ pub struct ListPullRequestsInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPullRequestsInput {
+    /// <p>The name of the repository for which you want to list pull requests.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results
+    /// to pull requests created by that user.</p>
+    pub fn author_arn(&self) -> std::option::Option<&str> {
+        self.author_arn.as_deref()
+    }
+    /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
+    pub fn pull_request_status(&self) -> std::option::Option<&crate::model::PullRequestStatusEnum> {
+        self.pull_request_status.as_ref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPullRequestsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPullRequestsInput");
@@ -16789,6 +17388,16 @@ pub struct ListBranchesInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An enumeration token that allows the operation to batch the results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBranchesInput {
+    /// <p>The name of the repository that contains the branches.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An enumeration token that allows the operation to batch the results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBranchesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16811,6 +17420,21 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepositoryInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
+    /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssociatedApprovalRuleTemplatesForRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedApprovalRuleTemplatesForRepositoryInput");
@@ -16831,6 +17455,17 @@ pub struct ListApprovalRuleTemplatesInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListApprovalRuleTemplatesInput {
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListApprovalRuleTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApprovalRuleTemplatesInput");
@@ -16847,6 +17482,12 @@ pub struct GetRepositoryTriggersInput {
     /// <p>The name of the repository for which the trigger is configured.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
+impl GetRepositoryTriggersInput {
+    /// <p>The name of the repository for which the trigger is configured.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRepositoryTriggersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRepositoryTriggersInput");
@@ -16861,6 +17502,12 @@ impl std::fmt::Debug for GetRepositoryTriggersInput {
 pub struct GetRepositoryInput {
     /// <p>The name of the repository to get information about.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl GetRepositoryInput {
+    /// <p>The name of the repository to get information about.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16881,6 +17528,18 @@ pub struct GetPullRequestOverrideStateInput {
     /// <a>GetPullRequest</a>.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl GetPullRequestOverrideStateInput {
+    /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The system-generated ID of the revision for the pull request. To retrieve the most
+    /// recent revision ID, use
+    /// <a>GetPullRequest</a>.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPullRequestOverrideStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPullRequestOverrideStateInput");
@@ -16899,6 +17558,16 @@ pub struct GetPullRequestApprovalStatesInput {
     /// <p>The system-generated ID for the pull request revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl GetPullRequestApprovalStatesInput {
+    /// <p>The system-generated ID for the pull request.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The system-generated ID for the pull request revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPullRequestApprovalStatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPullRequestApprovalStatesInput");
@@ -16914,6 +17583,12 @@ impl std::fmt::Debug for GetPullRequestApprovalStatesInput {
 pub struct GetPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
     pub pull_request_id: std::option::Option<std::string::String>,
+}
+impl GetPullRequestInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPullRequestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16945,6 +17620,39 @@ pub struct GetMergeOptionsInput {
     /// conflicts to be resolved manually before the merge operation is successful.</p>
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
+}
+impl GetMergeOptionsInput {
+    /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMergeOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16994,6 +17702,52 @@ pub struct GetMergeConflictsInput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetMergeConflictsInput {
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The merge option or strategy you want to use to merge the code.  </p>
+    pub fn merge_option(&self) -> std::option::Option<&crate::model::MergeOptionTypeEnum> {
+        self.merge_option.as_ref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>The maximum number of files to include in the output.</p>
+    pub fn max_conflict_files(&self) -> std::option::Option<i32> {
+        self.max_conflict_files
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMergeConflictsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMergeConflictsInput");
@@ -17038,6 +17792,39 @@ pub struct GetMergeCommitInput {
     pub conflict_resolution_strategy:
         std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
 }
+impl GetMergeCommitInput {
+    /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMergeCommitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMergeCommitInput");
@@ -17072,6 +17859,25 @@ pub struct GetFolderInput {
     /// that was created off of the root directory (/) of a repository. </p>
     pub folder_path: std::option::Option<std::string::String>,
 }
+impl GetFolderInput {
+    /// <p>The name of the repository.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>A fully qualified reference used to identify a commit that contains the version of the
+    /// folder's content to return. A fully qualified reference can be a commit ID, branch name,
+    /// tag, or reference such as HEAD. If no specifier is provided, the folder content is
+    /// returned as it exists in the HEAD commit.</p>
+    pub fn commit_specifier(&self) -> std::option::Option<&str> {
+        self.commit_specifier.as_deref()
+    }
+    /// <p>The fully qualified path to the folder whose contents are returned, including the
+    /// folder name. For example, /examples is a fully-qualified path to a folder named examples
+    /// that was created off of the root directory (/) of a repository. </p>
+    pub fn folder_path(&self) -> std::option::Option<&str> {
+        self.folder_path.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFolderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFolderInput");
@@ -17096,6 +17902,24 @@ pub struct GetFileInput {
     /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
     /// in a folder named examples.</p>
     pub file_path: std::option::Option<std::string::String>,
+}
+impl GetFileInput {
+    /// <p>The name of the repository that contains the file.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For
+    /// example, you can specify a full commit ID, a tag, a branch name, or a reference such as
+    /// refs/heads/master. If none is provided, the head commit is used.</p>
+    pub fn commit_specifier(&self) -> std::option::Option<&str> {
+        self.commit_specifier.as_deref()
+    }
+    /// <p>The fully qualified path to the file, including the full name and extension of the
+    /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
+    /// in a folder named examples.</p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17136,6 +17960,46 @@ pub struct GetDifferencesInput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDifferencesInput {
+    /// <p>The name of the repository where you want to get differences.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, the full commit ID). Optional. If not specified, all changes before the
+    /// <code>afterCommitSpecifier</code> value are shown. If you do not use
+    /// <code>beforeCommitSpecifier</code> in your request, consider limiting the results
+    /// with <code>maxResults</code>.</p>
+    pub fn before_commit_specifier(&self) -> std::option::Option<&str> {
+        self.before_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
+    pub fn after_commit_specifier(&self) -> std::option::Option<&str> {
+        self.after_commit_specifier.as_deref()
+    }
+    /// <p>The file path in which to check for differences. Limits the results to this path. Can
+    /// also be used to specify the previous name of a directory or folder. If
+    /// <code>beforePath</code> and <code>afterPath</code> are not specified, differences
+    /// are shown for all paths.</p>
+    pub fn before_path(&self) -> std::option::Option<&str> {
+        self.before_path.as_deref()
+    }
+    /// <p>The file path in which to check differences. Limits the results to this path. Can also
+    /// be used to specify the changed name of a directory or folder, if it has changed. If not
+    /// specified, differences are shown for all paths.</p>
+    pub fn after_path(&self) -> std::option::Option<&str> {
+        self.after_path.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDifferencesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDifferencesInput");
@@ -17158,6 +18022,16 @@ pub struct GetCommitInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     pub commit_id: std::option::Option<std::string::String>,
+}
+impl GetCommitInput {
+    /// <p>The name of the repository to which the commit was made.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCommitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17186,6 +18060,34 @@ pub struct GetCommentsForPullRequestInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments.
     /// You can return up to 500 comments with a single request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetCommentsForPullRequestInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the repository that contains the pull request.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+        self.before_commit_id.as_deref()
+    }
+    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+        self.after_commit_id.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments.
+    /// You can return up to 500 comments with a single request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetCommentsForPullRequestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17218,6 +18120,31 @@ pub struct GetCommentsForComparedCommitInput {
     /// default is 100 comments, but you can configure up to 500.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetCommentsForComparedCommitInput {
+    /// <p>The name of the repository where you want to compare commits.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the before
+    /// commit.</p>
+    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+        self.before_commit_id.as_deref()
+    }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the after
+    /// commit.</p>
+    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+        self.after_commit_id.as_deref()
+    }
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The
+    /// default is 100 comments, but you can configure up to 500.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetCommentsForComparedCommitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommentsForComparedCommitInput");
@@ -17243,6 +18170,24 @@ pub struct GetCommentReactionsInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.  The default is the same as the allowed maximum, 1,000.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetCommentReactionsInput {
+    /// <p>The ID of the comment for which you want to get reactions information.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+    /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
+    pub fn reaction_user_arn(&self) -> std::option::Option<&str> {
+        self.reaction_user_arn.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.  The default is the same as the allowed maximum, 1,000.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetCommentReactionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommentReactionsInput");
@@ -17262,6 +18207,13 @@ pub struct GetCommentInput {
     /// or <a>GetCommentsForPullRequest</a>.</p>
     pub comment_id: std::option::Option<std::string::String>,
 }
+impl GetCommentInput {
+    /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
+    /// or <a>GetCommentsForPullRequest</a>.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCommentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCommentInput");
@@ -17278,6 +18230,16 @@ pub struct GetBranchInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub branch_name: std::option::Option<std::string::String>,
+}
+impl GetBranchInput {
+    /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the branch for which you want to retrieve information.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17297,6 +18259,16 @@ pub struct GetBlobInput {
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     pub blob_id: std::option::Option<std::string::String>,
 }
+impl GetBlobInput {
+    /// <p>The name of the repository that contains the blob.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    pub fn blob_id(&self) -> std::option::Option<&str> {
+        self.blob_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBlobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlobInput");
@@ -17312,6 +18284,12 @@ impl std::fmt::Debug for GetBlobInput {
 pub struct GetApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template for which you want to get information.</p>
     pub approval_rule_template_name: std::option::Option<std::string::String>,
+}
+impl GetApprovalRuleTemplateInput {
+    /// <p>The name of the approval rule template for which you want to get information.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApprovalRuleTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17335,6 +18313,18 @@ pub struct EvaluatePullRequestApprovalRulesInput {
     /// <a>GetPullRequest</a>.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl EvaluatePullRequestApprovalRulesInput {
+    /// <p>The system-generated ID of the pull request you want to evaluate.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The system-generated ID for the pull request revision. To retrieve the most recent
+    /// revision ID for a pull request, use
+    /// <a>GetPullRequest</a>.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EvaluatePullRequestApprovalRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluatePullRequestApprovalRulesInput");
@@ -17352,6 +18342,16 @@ pub struct DisassociateApprovalRuleTemplateFromRepositoryInput {
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The name of the repository you want to disassociate from the template.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl DisassociateApprovalRuleTemplateFromRepositoryInput {
+    /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The name of the repository you want to disassociate from the template.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateApprovalRuleTemplateFromRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17383,6 +18383,34 @@ pub struct DescribePullRequestEventsInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.
     /// The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribePullRequestEventsInput {
+    /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>Optional. The pull request event type about which you want to return information.</p>
+    pub fn pull_request_event_type(
+        &self,
+    ) -> std::option::Option<&crate::model::PullRequestEventType> {
+        self.pull_request_event_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
+    /// Examples include updating the pull request with more commits or changing the status of a
+    /// pull request.</p>
+    pub fn actor_arn(&self) -> std::option::Option<&str> {
+        self.actor_arn.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.
+    /// The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribePullRequestEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17428,6 +18456,56 @@ pub struct DescribeMergeConflictsInput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeMergeConflictsInput {
+    /// <p>The name of the repository where you want to get information about a merge conflict.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    pub fn merge_option(&self) -> std::option::Option<&crate::model::MergeOptionTypeEnum> {
+        self.merge_option.as_ref()
+    }
+    /// <p>The maximum number of merge hunks to include in the output.</p>
+    pub fn max_merge_hunks(&self) -> std::option::Option<i32> {
+        self.max_merge_hunks
+    }
+    /// <p>The path of the target files used to describe the conflicts. </p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMergeConflictsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMergeConflictsInput");
@@ -17457,6 +18535,12 @@ pub struct DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
+impl DeleteRepositoryInput {
+    /// <p>The name of the repository to delete.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRepositoryInput");
@@ -17473,6 +18557,16 @@ pub struct DeletePullRequestApprovalRuleInput {
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The name of the approval rule you want to delete.</p>
     pub approval_rule_name: std::option::Option<std::string::String>,
+}
+impl DeletePullRequestApprovalRuleInput {
+    /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name of the approval rule you want to delete.</p>
+    pub fn approval_rule_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePullRequestApprovalRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17515,6 +18609,51 @@ pub struct DeleteFileInput {
     /// specified, the email address is left blank.</p>
     pub email: std::option::Option<std::string::String>,
 }
+impl DeleteFileInput {
+    /// <p>The name of the repository that contains the file to delete.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the branch where the commit that deletes the file is made.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>The fully qualified path to the file that to be deleted, including the full name and
+    /// extension of that file. For example, /examples/file.md is a fully qualified path to a
+    /// file named file.md in a folder named examples.</p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>The ID of the commit that is the tip of the branch where you want to create the commit
+    /// that deletes the file. This must be the HEAD commit for the branch. The commit that
+    /// deletes the file is created from this commit ID.</p>
+    pub fn parent_commit_id(&self) -> std::option::Option<&str> {
+        self.parent_commit_id.as_deref()
+    }
+    /// <p>If a file is the only object in the folder or directory, specifies whether to delete
+    /// the folder or directory that contains the file. By default, empty folders are deleted.
+    /// This includes empty folders that are part of the directory structure. For example, if
+    /// the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the
+    /// last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>The commit message you want to include as part of deleting the file. Commit messages
+    /// are limited to 256 KB. If no message is specified, a default message is used.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>The name of the author of the commit that deletes the file. If no name is specified,
+    /// the user's ARN is used as the author name and committer name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The email address for the commit that deletes the file. If no email address is
+    /// specified, the email address is left blank.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFileInput");
@@ -17538,6 +18677,13 @@ pub struct DeleteCommentContentInput {
     /// or <a>GetCommentsForPullRequest</a>.</p>
     pub comment_id: std::option::Option<std::string::String>,
 }
+impl DeleteCommentContentInput {
+    /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
+    /// or <a>GetCommentsForPullRequest</a>.</p>
+    pub fn comment_id(&self) -> std::option::Option<&str> {
+        self.comment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCommentContentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCommentContentInput");
@@ -17555,6 +18701,16 @@ pub struct DeleteBranchInput {
     /// <p>The name of the branch to delete.</p>
     pub branch_name: std::option::Option<std::string::String>,
 }
+impl DeleteBranchInput {
+    /// <p>The name of the repository that contains the branch to be deleted.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the branch to delete.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBranchInput");
@@ -17570,6 +18726,12 @@ impl std::fmt::Debug for DeleteBranchInput {
 pub struct DeleteApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template to delete.</p>
     pub approval_rule_template_name: std::option::Option<std::string::String>,
+}
+impl DeleteApprovalRuleTemplateInput {
+    /// <p>The name of the approval rule template to delete.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApprovalRuleTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17621,6 +18783,67 @@ pub struct CreateUnreferencedMergeCommitInput {
     /// resolving conflicts during a merge.</p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
+impl CreateUnreferencedMergeCommitInput {
+    /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    pub fn merge_option(&self) -> std::option::Option<&crate::model::MergeOptionTypeEnum> {
+        self.merge_option.as_ref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>The name of the author who created the unreferenced commit. This information is used
+    /// as both the author and committer for the commit.</p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p>The email address for the person who created the unreferenced commit.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The commit message for the unreferenced commit.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
+    /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
+    /// created for empty folders. The default is false.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
+    /// resolving conflicts during a merge.</p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUnreferencedMergeCommitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUnreferencedMergeCommitInput");
@@ -17670,6 +18893,37 @@ pub struct CreateRepositoryInput {
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateRepositoryInput {
+    /// <p>The name of the new repository to be created.</p>
+    /// <note>
+    /// <p>The repository name must be unique across the calling AWS account. Repository names
+    /// are limited to 100 alphanumeric, dash, and underscore characters, and cannot include
+    /// certain characters. For more information about the limits on repository names, see
+    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The
+    /// suffix .git is prohibited.</p>
+    /// </note>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>A comment or description about the new repository.</p>
+    /// <note>
+    /// <p>The description field for a repository accepts all HTML characters and all valid
+    /// Unicode characters. Applications that do not HTML-encode the description and display
+    /// it in a webpage can expose users to potentially malicious code. Make sure that you
+    /// HTML-encode the description field in any application that uses this API to display
+    /// the repository description on a webpage.</p>
+    /// </note>
+    pub fn repository_description(&self) -> std::option::Option<&str> {
+        self.repository_description.as_deref()
+    }
+    /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17734,6 +18988,62 @@ pub struct CreatePullRequestApprovalRuleInput {
     /// </note>
     pub approval_rule_content: std::option::Option<std::string::String>,
 }
+impl CreatePullRequestApprovalRuleInput {
+    /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+        self.pull_request_id.as_deref()
+    }
+    /// <p>The name for the approval rule.</p>
+    pub fn approval_rule_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_name.as_deref()
+    }
+    /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information
+    /// about approval pools, see the AWS CodeCommit User Guide.</p>
+    /// <note>
+    /// <p>When you create the content of the approval rule, you can specify approvers in an
+    /// approval pool in one of two ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>CodeCommitApprovers</b>: This option only
+    /// requires an AWS account and a resource. It can be used for both IAM users
+    /// and federated access users whose name matches the provided resource name.
+    /// This is a very powerful option that offers a great deal of flexibility. For
+    /// example, if you specify the AWS account <i>123456789012</i>
+    /// and <i>Mary_Major</i>, all of the following would be counted
+    /// as approvals coming from that user:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An IAM user in the account
+    /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
+    /// </li>
+    /// <li>
+    /// <p>A federated user identified in IAM as Mary_Major
+    /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>This option does not recognize an active session of someone assuming the
+    /// role of CodeCommitReview with a role session name of
+    /// <i>Mary_Major</i>
+    /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
+    /// unless you include a wildcard (*Mary_Major).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Fully qualified ARN</b>: This option allows
+    /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
+    /// user or role. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about IAM ARNs, wildcards, and formats, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+    /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    ///
+    /// </note>
+    pub fn approval_rule_content(&self) -> std::option::Option<&str> {
+        self.approval_rule_content.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePullRequestApprovalRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePullRequestApprovalRuleInput");
@@ -17766,6 +19076,34 @@ pub struct CreatePullRequestInput {
     /// idempotency token is created for you.</p>
     /// </note>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl CreatePullRequestInput {
+    /// <p>The title of the pull request. This title is used to identify the pull request to
+    /// other users in the repository.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>A description of the pull request.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The targets for the pull request, including the source of the code to be reviewed (the
+    /// source branch) and the destination where the creator of the pull request intends the
+    /// code to be merged after the pull request is closed (the destination branch).</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+    /// the request cannot be repeated with a changed parameter. If a request is received with
+    /// the same parameters and a token is included, the request returns information about the
+    /// initial request that used that token.</p>
+    /// <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
+    /// idempotency token is created for you.</p>
+    /// </note>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePullRequestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17808,6 +19146,53 @@ pub struct CreateCommitInput {
     /// <p>The file modes to update for files in this commit.</p>
     pub set_file_modes: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
 }
+impl CreateCommitInput {
+    /// <p>The name of the repository where you create the commit.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the branch where you create the commit.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>The ID of the commit that is the parent of the commit you create. Not required if this
+    /// is an empty repository.</p>
+    pub fn parent_commit_id(&self) -> std::option::Option<&str> {
+        self.parent_commit_id.as_deref()
+    }
+    /// <p>The name of the author who created the commit. This information is used as both the
+    /// author and committer for the commit.</p>
+    pub fn author_name(&self) -> std::option::Option<&str> {
+        self.author_name.as_deref()
+    }
+    /// <p>The email address of the person who created the commit.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The commit message you want to include in the commit. Commit messages are limited to
+    /// 256 KB. If no message is specified, a default message is used.</p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
+    /// changes leave the folders empty. If true, a ..gitkeep file is created for empty folders.
+    /// The default is false.</p>
+    pub fn keep_empty_folders(&self) -> bool {
+        self.keep_empty_folders
+    }
+    /// <p>The files to add or update in this commit.</p>
+    pub fn put_files(&self) -> std::option::Option<&[crate::model::PutFileEntry]> {
+        self.put_files.as_deref()
+    }
+    /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
+    pub fn delete_files(&self) -> std::option::Option<&[crate::model::DeleteFileEntry]> {
+        self.delete_files.as_deref()
+    }
+    /// <p>The file modes to update for files in this commit.</p>
+    pub fn set_file_modes(&self) -> std::option::Option<&[crate::model::SetFileModeEntry]> {
+        self.set_file_modes.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCommitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCommitInput");
@@ -17835,6 +19220,20 @@ pub struct CreateBranchInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The ID of the commit to point the new branch to.</p>
     pub commit_id: std::option::Option<std::string::String>,
+}
+impl CreateBranchInput {
+    /// <p>The name of the repository in which you want to create the new branch.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The name of the new branch to create.</p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p>The ID of the commit to point the new branch to.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17904,6 +19303,67 @@ pub struct CreateApprovalRuleTemplateInput {
     /// repositories.</p>
     pub approval_rule_template_description: std::option::Option<std::string::String>,
 }
+impl CreateApprovalRuleTemplateInput {
+    /// <p>The name of the approval rule template. Provide descriptive names, because this name
+    /// is applied to the approval rules created automatically in associated
+    /// repositories.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The content of the approval rule that is created on pull requests in associated
+    /// repositories. If you specify one or more destination references (branches), approval
+    /// rules are created in an associated repository only if their destination references
+    /// (branches) match those specified in the template.</p>
+    /// <note>
+    /// <p>When you create the content of the approval rule template, you can specify
+    /// approvers in an approval pool in one of two ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>CodeCommitApprovers</b>: This option only
+    /// requires an AWS account and a resource. It can be used for both IAM users
+    /// and federated access users whose name matches the provided resource name.
+    /// This is a very powerful option that offers a great deal of flexibility. For
+    /// example, if you specify the AWS account <i>123456789012</i>
+    /// and <i>Mary_Major</i>, all of the following are counted as
+    /// approvals coming from that user:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An IAM user in the account
+    /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
+    /// </li>
+    /// <li>
+    /// <p>A federated user identified in IAM as Mary_Major
+    /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>This option does not recognize an active session of someone assuming the
+    /// role of CodeCommitReview with a role session name of
+    /// <i>Mary_Major</i>
+    /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
+    /// unless you include a wildcard (*Mary_Major).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Fully qualified ARN</b>: This option allows
+    /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
+    /// user or role. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+    /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    ///
+    /// </note>
+    pub fn approval_rule_template_content(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_content.as_deref()
+    }
+    /// <p>The description of the approval rule template. Consider providing a description that
+    /// explains what this template does and when it might be appropriate to associate it with
+    /// repositories.</p>
+    pub fn approval_rule_template_description(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_description.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApprovalRuleTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApprovalRuleTemplateInput");
@@ -17933,6 +19393,15 @@ pub struct BatchGetRepositoriesInput {
     /// </note>
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetRepositoriesInput {
+    /// <p>The names of the repositories to get information about.</p>
+    /// <note>
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// </note>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetRepositoriesInput");
@@ -17953,6 +19422,20 @@ pub struct BatchGetCommitsInput {
     pub commit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the repository that contains the commits.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl BatchGetCommitsInput {
+    /// <p>The full commit IDs of the commits to get information about.</p>
+    /// <note>
+    /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+    /// IDs.</p>
+    /// </note>
+    pub fn commit_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.commit_ids.as_deref()
+    }
+    /// <p>The name of the repository that contains the commits.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetCommitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17975,6 +19458,20 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+    /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The repository names that you want to disassociate from the approval rule
+    /// template.</p>
+    /// <note>
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// </note>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18023,6 +19520,60 @@ pub struct BatchDescribeMergeConflictsInput {
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchDescribeMergeConflictsInput {
+    /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+        self.destination_commit_specifier.as_deref()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
+    /// (for example, a branch name or a full commit ID).</p>
+    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+        self.source_commit_specifier.as_deref()
+    }
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
+    pub fn merge_option(&self) -> std::option::Option<&crate::model::MergeOptionTypeEnum> {
+        self.merge_option.as_ref()
+    }
+    /// <p>The maximum number of merge hunks to include in the output.</p>
+    pub fn max_merge_hunks(&self) -> std::option::Option<i32> {
+        self.max_merge_hunks
+    }
+    /// <p>The maximum number of files to include in the output.</p>
+    pub fn max_conflict_files(&self) -> std::option::Option<i32> {
+        self.max_conflict_files
+    }
+    /// <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
+    pub fn file_paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.file_paths.as_deref()
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
+    /// which returns a not-mergeable result if the same file has differences in both branches.
+    /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
+    /// both branches has differences on the same line.</p>
+    pub fn conflict_detail_level(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictDetailLevelTypeEnum> {
+        self.conflict_detail_level.as_ref()
+    }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+    /// automatically merging two versions of a file. The default is NONE, which requires any
+    /// conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn conflict_resolution_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::ConflictResolutionStrategyTypeEnum> {
+        self.conflict_resolution_strategy.as_ref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDescribeMergeConflictsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDescribeMergeConflictsInput");
@@ -18058,6 +19609,19 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     /// </note>
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
+    /// <p>The name of the template you want to associate with one or more repositories.</p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The names of the repositories you want to associate with the template.</p>
+    /// <note>
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// </note>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter =
@@ -18079,6 +19643,16 @@ pub struct AssociateApprovalRuleTemplateWithRepositoryInput {
     pub approval_rule_template_name: std::option::Option<std::string::String>,
     /// <p>The name of the repository that you want to associate with the template.</p>
     pub repository_name: std::option::Option<std::string::String>,
+}
+impl AssociateApprovalRuleTemplateWithRepositoryInput {
+    /// <p>The name for the approval rule template. </p>
+    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+        self.approval_rule_template_name.as_deref()
+    }
+    /// <p>The name of the repository that you want to associate with the template.</p>
+    pub fn repository_name(&self) -> std::option::Option<&str> {
+        self.repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateApprovalRuleTemplateWithRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

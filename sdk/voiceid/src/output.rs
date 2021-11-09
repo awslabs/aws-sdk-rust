@@ -6,6 +6,12 @@ pub struct UpdateDomainOutput {
     /// <p>Details about the updated domain</p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
+impl UpdateDomainOutput {
+    /// <p>Details about the updated domain</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainOutput");
@@ -114,6 +120,12 @@ pub struct StartSpeakerEnrollmentJobOutput {
     /// <p>Details about the started speaker enrollment job.</p>
     pub job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
 }
+impl StartSpeakerEnrollmentJobOutput {
+    /// <p>Details about the started speaker enrollment job.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJob> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for StartSpeakerEnrollmentJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSpeakerEnrollmentJobOutput");
@@ -162,6 +174,12 @@ impl StartSpeakerEnrollmentJobOutput {
 pub struct StartFraudsterRegistrationJobOutput {
     /// <p>Details about the started fraudster registration job.</p>
     pub job: std::option::Option<crate::model::FraudsterRegistrationJob>,
+}
+impl StartFraudsterRegistrationJobOutput {
+    /// <p>Details about the started fraudster registration job.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJob> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for StartFraudsterRegistrationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -212,6 +230,12 @@ pub struct OptOutSpeakerOutput {
     /// <p>Details about the opted-out speaker.</p>
     pub speaker: std::option::Option<crate::model::Speaker>,
 }
+impl OptOutSpeakerOutput {
+    /// <p>Details about the opted-out speaker.</p>
+    pub fn speaker(&self) -> std::option::Option<&crate::model::Speaker> {
+        self.speaker.as_ref()
+    }
+}
 impl std::fmt::Debug for OptOutSpeakerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OptOutSpeakerOutput");
@@ -259,6 +283,12 @@ impl OptOutSpeakerOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags associated with the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The list of tags associated with the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -320,6 +350,20 @@ pub struct ListSpeakersOutput {
     /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSpeakersOutput {
+    /// <p>A list containing details about each speaker in the Amazon Web Services account.
+    /// </p>
+    pub fn speaker_summaries(&self) -> std::option::Option<&[crate::model::SpeakerSummary]> {
+        self.speaker_summaries.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSpeakersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -405,6 +449,21 @@ pub struct ListSpeakerEnrollmentJobsOutput {
     /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSpeakerEnrollmentJobsOutput {
+    /// <p>A list containing details about each specified speaker enrollment job.</p>
+    pub fn job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::SpeakerEnrollmentJobSummary]> {
+        self.job_summaries.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSpeakerEnrollmentJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -492,6 +551,21 @@ pub struct ListFraudsterRegistrationJobsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFraudsterRegistrationJobsOutput {
+    /// <p>A list containing details about each specified fraudster registration job.</p>
+    pub fn job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::FraudsterRegistrationJobSummary]> {
+        self.job_summaries.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFraudsterRegistrationJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFraudsterRegistrationJobsOutput");
@@ -578,6 +652,19 @@ pub struct ListDomainsOutput {
     /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainsOutput {
+    /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
+    pub fn domain_summaries(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+        self.domain_summaries.as_deref()
+    }
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
+    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
+    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -672,6 +759,43 @@ pub struct EvaluateSessionOutput {
     pub authentication_result: std::option::Option<crate::model::AuthenticationResult>,
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
     pub fraud_detection_result: std::option::Option<crate::model::FraudDetectionResult>,
+}
+impl EvaluateSessionOutput {
+    /// <p>The identifier of the domain containing the session.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The service-generated identifier of the session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The client-provided name of the session.</p>
+    pub fn session_name(&self) -> std::option::Option<&str> {
+        self.session_name.as_deref()
+    }
+    /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when
+    /// the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>.
+    /// In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can
+    /// mean that the client should call the API again later, once Voice ID has enough audio to produce a result.
+    /// If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>,
+    /// it means that the previously streamed session did not have enough speech to perform evaluation, and a new
+    /// streaming session is needed to try again.</p>
+    pub fn streaming_status(&self) -> std::option::Option<&crate::model::StreamingStatus> {
+        self.streaming_status.as_ref()
+    }
+    /// <p>Details resulting from the authentication process, such as authentication decision and
+    /// authentication score.</p>
+    pub fn authentication_result(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthenticationResult> {
+        self.authentication_result.as_ref()
+    }
+    /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
+    pub fn fraud_detection_result(
+        &self,
+    ) -> std::option::Option<&crate::model::FraudDetectionResult> {
+        self.fraud_detection_result.as_ref()
+    }
 }
 impl std::fmt::Debug for EvaluateSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -809,6 +933,12 @@ pub struct DescribeSpeakerEnrollmentJobOutput {
     /// <p>Contains details about the specified speaker enrollment job.</p>
     pub job: std::option::Option<crate::model::SpeakerEnrollmentJob>,
 }
+impl DescribeSpeakerEnrollmentJobOutput {
+    /// <p>Contains details about the specified speaker enrollment job.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJob> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSpeakerEnrollmentJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpeakerEnrollmentJobOutput");
@@ -858,6 +988,12 @@ pub struct DescribeSpeakerOutput {
     /// <p>Information about the specified speaker.</p>
     pub speaker: std::option::Option<crate::model::Speaker>,
 }
+impl DescribeSpeakerOutput {
+    /// <p>Information about the specified speaker.</p>
+    pub fn speaker(&self) -> std::option::Option<&crate::model::Speaker> {
+        self.speaker.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeSpeakerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpeakerOutput");
@@ -905,6 +1041,12 @@ impl DescribeSpeakerOutput {
 pub struct DescribeFraudsterRegistrationJobOutput {
     /// <p>Contains details about the specified fraudster registration job.</p>
     pub job: std::option::Option<crate::model::FraudsterRegistrationJob>,
+}
+impl DescribeFraudsterRegistrationJobOutput {
+    /// <p>Contains details about the specified fraudster registration job.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJob> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFraudsterRegistrationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -954,6 +1096,12 @@ impl DescribeFraudsterRegistrationJobOutput {
 pub struct DescribeFraudsterOutput {
     /// <p>Information about the specified fraudster.</p>
     pub fraudster: std::option::Option<crate::model::Fraudster>,
+}
+impl DescribeFraudsterOutput {
+    /// <p>Information about the specified fraudster.</p>
+    pub fn fraudster(&self) -> std::option::Option<&crate::model::Fraudster> {
+        self.fraudster.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFraudsterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1005,6 +1153,12 @@ impl DescribeFraudsterOutput {
 pub struct DescribeDomainOutput {
     /// <p>Information about the specified domain.</p>
     pub domain: std::option::Option<crate::model::Domain>,
+}
+impl DescribeDomainOutput {
+    /// <p>Information about the specified domain.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1143,6 +1297,12 @@ impl DeleteDomainOutput {
 pub struct CreateDomainOutput {
     /// <p>Information about the newly created domain.</p>
     pub domain: std::option::Option<crate::model::Domain>,
+}
+impl CreateDomainOutput {
+    /// <p>Information about the newly created domain.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

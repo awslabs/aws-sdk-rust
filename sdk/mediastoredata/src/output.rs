@@ -11,6 +11,21 @@ pub struct PutObjectOutput {
     /// “Temporal”.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
 }
+impl PutObjectOutput {
+    /// <p>The SHA256 digest of the object that is persisted.</p>
+    pub fn content_sha256(&self) -> std::option::Option<&str> {
+        self.content_sha256.as_deref()
+    }
+    /// <p>Unique identifier of the object in the container.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The storage class where the object was persisted. The class should be
+    /// “Temporal”.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
+}
 impl std::fmt::Debug for PutObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutObjectOutput");
@@ -98,6 +113,20 @@ pub struct ListItemsOutput {
     /// to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of
     /// results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListItemsOutput {
+    /// <p>The metadata entries for the folders and objects at the requested path.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Item]> {
+        self.items.as_deref()
+    }
+    /// <p>The token that can be used in a request to view the next set of results. For example,
+    /// you submit a <code>ListItems</code> request that matches 2,000 items with
+    /// <code>MaxResults</code> set at 500. The service returns the first batch of results (up
+    /// to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -192,6 +221,43 @@ pub struct GetObjectOutput {
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
     /// success. All other status codes indicate the type of error that occurred.</p>
     pub status_code: i32,
+}
+impl GetObjectOutput {
+    /// <p>The bytes of the object. </p>
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
+    /// object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>Headers with a custom user-defined value are also accepted.</p>
+    pub fn cache_control(&self) -> std::option::Option<&str> {
+        self.cache_control.as_deref()
+    }
+    /// <p>The range of bytes to retrieve.</p>
+    pub fn content_range(&self) -> std::option::Option<&str> {
+        self.content_range.as_deref()
+    }
+    /// <p>The length of the object in bytes.</p>
+    pub fn content_length(&self) -> std::option::Option<i64> {
+        self.content_length
+    }
+    /// <p>The content type of the object.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The ETag that represents a unique instance of the object.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The date and time that the object was last modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
+    /// success. All other status codes indicate the type of error that occurred.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
 }
 impl std::fmt::Debug for GetObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -359,6 +425,30 @@ pub struct DescribeObjectOutput {
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeObjectOutput {
+    /// <p>The ETag that represents a unique instance of the object.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The content type of the object.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The length of the object in bytes.</p>
+    pub fn content_length(&self) -> std::option::Option<i64> {
+        self.content_length
+    }
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
+    /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>Headers with a custom user-defined value are also accepted.</p>
+    pub fn cache_control(&self) -> std::option::Option<&str> {
+        self.cache_control.as_deref()
+    }
+    /// <p>The date and time that the object was last modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

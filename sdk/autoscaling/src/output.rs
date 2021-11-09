@@ -36,6 +36,12 @@ pub struct TerminateInstanceInAutoScalingGroupOutput {
     /// <p>A scaling activity.</p>
     pub activity: std::option::Option<crate::model::Activity>,
 }
+impl TerminateInstanceInAutoScalingGroupOutput {
+    /// <p>A scaling activity.</p>
+    pub fn activity(&self) -> std::option::Option<&crate::model::Activity> {
+        self.activity.as_ref()
+    }
+}
 impl std::fmt::Debug for TerminateInstanceInAutoScalingGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateInstanceInAutoScalingGroupOutput");
@@ -113,6 +119,12 @@ impl SuspendProcessesOutput {
 pub struct StartInstanceRefreshOutput {
     /// <p>A unique ID for tracking the progress of the request.</p>
     pub instance_refresh_id: std::option::Option<std::string::String>,
+}
+impl StartInstanceRefreshOutput {
+    /// <p>A unique ID for tracking the progress of the request.</p>
+    pub fn instance_refresh_id(&self) -> std::option::Option<&str> {
+        self.instance_refresh_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartInstanceRefreshOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -377,6 +389,16 @@ pub struct PutScalingPolicyOutput {
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
+impl PutScalingPolicyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
+    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+        self.alarms.as_deref()
+    }
+}
 impl std::fmt::Debug for PutScalingPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutScalingPolicyOutput");
@@ -511,6 +533,20 @@ pub struct GetPredictiveScalingForecastOutput {
     /// <p>The time the forecast was made.</p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GetPredictiveScalingForecastOutput {
+    /// <p>The load forecast.</p>
+    pub fn load_forecast(&self) -> std::option::Option<&[crate::model::LoadForecast]> {
+        self.load_forecast.as_deref()
+    }
+    /// <p>The capacity forecast.</p>
+    pub fn capacity_forecast(&self) -> std::option::Option<&crate::model::CapacityForecast> {
+        self.capacity_forecast.as_ref()
+    }
+    /// <p>The time the forecast was made.</p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GetPredictiveScalingForecastOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPredictiveScalingForecastOutput");
@@ -600,6 +636,12 @@ pub struct ExitStandbyOutput {
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
 }
+impl ExitStandbyOutput {
+    /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
+    pub fn activities(&self) -> std::option::Option<&[crate::model::Activity]> {
+        self.activities.as_deref()
+    }
+}
 impl std::fmt::Debug for ExitStandbyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExitStandbyOutput");
@@ -686,6 +728,12 @@ impl ExecutePolicyOutput {
 pub struct EnterStandbyOutput {
     /// <p>The activities related to moving instances into <code>Standby</code> mode.</p>
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
+}
+impl EnterStandbyOutput {
+    /// <p>The activities related to moving instances into <code>Standby</code> mode.</p>
+    pub fn activities(&self) -> std::option::Option<&[crate::model::Activity]> {
+        self.activities.as_deref()
+    }
 }
 impl std::fmt::Debug for EnterStandbyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -864,6 +912,12 @@ pub struct DetachInstancesOutput {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
 }
+impl DetachInstancesOutput {
+    /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
+    pub fn activities(&self) -> std::option::Option<&[crate::model::Activity]> {
+        self.activities.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachInstancesOutput");
@@ -925,6 +979,23 @@ pub struct DescribeWarmPoolOutput {
     /// <p>The token for the next set of items to return. (You received this token from a
     /// previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeWarmPoolOutput {
+    /// <p>The warm pool configuration details. </p>
+    pub fn warm_pool_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WarmPoolConfiguration> {
+        self.warm_pool_configuration.as_ref()
+    }
+    /// <p>The instances that are currently in the warm pool.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a
+    /// previous call.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWarmPoolOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1021,6 +1092,15 @@ pub struct DescribeTerminationPolicyTypesOutput {
     /// <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
     pub termination_policy_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeTerminationPolicyTypesOutput {
+    /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
+    /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
+    /// <code>ClosestToNextInstanceHour</code>, <code>Default</code>,
+    /// <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
+    pub fn termination_policy_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.termination_policy_types.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTerminationPolicyTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTerminationPolicyTypesOutput");
@@ -1089,6 +1169,19 @@ pub struct DescribeTagsOutput {
     /// <code>NextToken</code> value when requesting the next set of items. This value is
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTagsOutput {
+    /// <p>One or more tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagDescription]> {
+        self.tags.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1171,6 +1264,21 @@ pub struct DescribeScheduledActionsOutput {
     /// <code>NextToken</code> value when requesting the next set of items. This value is
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScheduledActionsOutput {
+    /// <p>The scheduled actions.</p>
+    pub fn scheduled_update_group_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScheduledUpdateGroupAction]> {
+        self.scheduled_update_group_actions.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScheduledActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1255,6 +1363,12 @@ pub struct DescribeScalingProcessTypesOutput {
     /// <p>The names of the process types.</p>
     pub processes: std::option::Option<std::vec::Vec<crate::model::ProcessType>>,
 }
+impl DescribeScalingProcessTypesOutput {
+    /// <p>The names of the process types.</p>
+    pub fn processes(&self) -> std::option::Option<&[crate::model::ProcessType]> {
+        self.processes.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeScalingProcessTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScalingProcessTypesOutput");
@@ -1317,6 +1431,20 @@ pub struct DescribeScalingActivitiesOutput {
     /// <code>NextToken</code> value when requesting the next set of items. This value is
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScalingActivitiesOutput {
+    /// <p>The scaling activities. Activities are sorted by start time. Activities still in
+    /// progress are described first.</p>
+    pub fn activities(&self) -> std::option::Option<&[crate::model::Activity]> {
+        self.activities.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalingActivitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1401,6 +1529,19 @@ pub struct DescribePoliciesOutput {
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribePoliciesOutput {
+    /// <p>The scaling policies.</p>
+    pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
+        self.scaling_policies.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePoliciesOutput");
@@ -1483,6 +1624,21 @@ pub struct DescribeNotificationConfigurationsOutput {
     /// <code>NextToken</code> value when requesting the next set of items. This value is
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNotificationConfigurationsOutput {
+    /// <p>The notification configurations.</p>
+    pub fn notification_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationConfiguration]> {
+        self.notification_configurations.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNotificationConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1568,6 +1724,16 @@ pub struct DescribeMetricCollectionTypesOutput {
     pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricCollectionType>>,
     /// <p>The granularities for the metrics.</p>
     pub granularities: std::option::Option<std::vec::Vec<crate::model::MetricGranularityType>>,
+}
+impl DescribeMetricCollectionTypesOutput {
+    /// <p>One or more metrics.</p>
+    pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricCollectionType]> {
+        self.metrics.as_deref()
+    }
+    /// <p>The granularities for the metrics.</p>
+    pub fn granularities(&self) -> std::option::Option<&[crate::model::MetricGranularityType]> {
+        self.granularities.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMetricCollectionTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1658,6 +1824,21 @@ pub struct DescribeLoadBalancerTargetGroupsOutput {
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLoadBalancerTargetGroupsOutput {
+    /// <p>Information about the target groups.</p>
+    pub fn load_balancer_target_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::LoadBalancerTargetGroupState]> {
+        self.load_balancer_target_groups.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancerTargetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerTargetGroupsOutput");
@@ -1746,6 +1927,19 @@ pub struct DescribeLoadBalancersOutput {
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeLoadBalancersOutput {
+    /// <p>The load balancers.</p>
+    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancerState]> {
+        self.load_balancers.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancersOutput");
@@ -1823,6 +2017,12 @@ pub struct DescribeLifecycleHookTypesOutput {
     /// <p>The lifecycle hook types.</p>
     pub lifecycle_hook_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeLifecycleHookTypesOutput {
+    /// <p>The lifecycle hook types.</p>
+    pub fn lifecycle_hook_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.lifecycle_hook_types.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLifecycleHookTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLifecycleHookTypesOutput");
@@ -1879,6 +2079,12 @@ impl DescribeLifecycleHookTypesOutput {
 pub struct DescribeLifecycleHooksOutput {
     /// <p>The lifecycle hooks for the specified group.</p>
     pub lifecycle_hooks: std::option::Option<std::vec::Vec<crate::model::LifecycleHook>>,
+}
+impl DescribeLifecycleHooksOutput {
+    /// <p>The lifecycle hooks for the specified group.</p>
+    pub fn lifecycle_hooks(&self) -> std::option::Option<&[crate::model::LifecycleHook]> {
+        self.lifecycle_hooks.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLifecycleHooksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1942,6 +2148,21 @@ pub struct DescribeLaunchConfigurationsOutput {
     /// <code>NextToken</code> value when requesting the next set of items. This value is
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeLaunchConfigurationsOutput {
+    /// <p>The launch configurations.</p>
+    pub fn launch_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LaunchConfiguration]> {
+        self.launch_configurations.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLaunchConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2028,6 +2249,19 @@ pub struct DescribeInstanceRefreshesOutput {
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceRefreshesOutput {
+    /// <p>The instance refreshes for the specified group.</p>
+    pub fn instance_refreshes(&self) -> std::option::Option<&[crate::model::InstanceRefresh]> {
+        self.instance_refreshes.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceRefreshesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceRefreshesOutput");
@@ -2108,6 +2342,12 @@ pub struct DescribeAutoScalingNotificationTypesOutput {
     /// <p>The notification types.</p>
     pub auto_scaling_notification_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeAutoScalingNotificationTypesOutput {
+    /// <p>The notification types.</p>
+    pub fn auto_scaling_notification_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_scaling_notification_types.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAutoScalingNotificationTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAutoScalingNotificationTypesOutput");
@@ -2177,6 +2417,21 @@ pub struct DescribeAutoScalingInstancesOutput {
     /// <code>NextToken</code> value when requesting the next set of items. This value is
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAutoScalingInstancesOutput {
+    /// <p>The instances.</p>
+    pub fn auto_scaling_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoScalingInstanceDetails]> {
+        self.auto_scaling_instances.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAutoScalingInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2263,6 +2518,19 @@ pub struct DescribeAutoScalingGroupsOutput {
     /// null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAutoScalingGroupsOutput {
+    /// <p>The groups.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>A string that indicates that the response contains more items than can be returned in
+    /// a single response. To receive additional items, specify this string for the
+    /// <code>NextToken</code> value when requesting the next set of items. This value is
+    /// null when there are no more items to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAutoScalingGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAutoScalingGroupsOutput");
@@ -2343,6 +2611,12 @@ pub struct DescribeAdjustmentTypesOutput {
     /// <p>The policy adjustment types.</p>
     pub adjustment_types: std::option::Option<std::vec::Vec<crate::model::AdjustmentType>>,
 }
+impl DescribeAdjustmentTypesOutput {
+    /// <p>The policy adjustment types.</p>
+    pub fn adjustment_types(&self) -> std::option::Option<&[crate::model::AdjustmentType]> {
+        self.adjustment_types.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAdjustmentTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAdjustmentTypesOutput");
@@ -2408,6 +2682,26 @@ pub struct DescribeAccountLimitsOutput {
     pub number_of_auto_scaling_groups: std::option::Option<i32>,
     /// <p>The current number of launch configurations for your account.</p>
     pub number_of_launch_configurations: std::option::Option<i32>,
+}
+impl DescribeAccountLimitsOutput {
+    /// <p>The maximum number of groups allowed for your account. The default is 200 groups per
+    /// Region.</p>
+    pub fn max_number_of_auto_scaling_groups(&self) -> std::option::Option<i32> {
+        self.max_number_of_auto_scaling_groups
+    }
+    /// <p>The maximum number of launch configurations allowed for your account. The default is
+    /// 200 launch configurations per Region.</p>
+    pub fn max_number_of_launch_configurations(&self) -> std::option::Option<i32> {
+        self.max_number_of_launch_configurations
+    }
+    /// <p>The current number of groups for your account.</p>
+    pub fn number_of_auto_scaling_groups(&self) -> std::option::Option<i32> {
+        self.number_of_auto_scaling_groups
+    }
+    /// <p>The current number of launch configurations for your account.</p>
+    pub fn number_of_launch_configurations(&self) -> std::option::Option<i32> {
+        self.number_of_launch_configurations
+    }
 }
 impl std::fmt::Debug for DescribeAccountLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2884,6 +3178,12 @@ pub struct CancelInstanceRefreshOutput {
     /// <p>The instance refresh ID.</p>
     pub instance_refresh_id: std::option::Option<std::string::String>,
 }
+impl CancelInstanceRefreshOutput {
+    /// <p>The instance refresh ID.</p>
+    pub fn instance_refresh_id(&self) -> std::option::Option<&str> {
+        self.instance_refresh_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelInstanceRefreshOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelInstanceRefreshOutput");
@@ -2936,6 +3236,15 @@ pub struct BatchPutScheduledUpdateGroupActionOutput {
     /// error message.</p>
     pub failed_scheduled_update_group_actions:
         std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
+}
+impl BatchPutScheduledUpdateGroupActionOutput {
+    /// <p>The names of the scheduled actions that could not be created or updated, including an
+    /// error message.</p>
+    pub fn failed_scheduled_update_group_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedScheduledUpdateGroupActionRequest]> {
+        self.failed_scheduled_update_group_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutScheduledUpdateGroupActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3009,6 +3318,15 @@ pub struct BatchDeleteScheduledActionOutput {
     /// message.</p>
     pub failed_scheduled_actions:
         std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
+}
+impl BatchDeleteScheduledActionOutput {
+    /// <p>The names of the scheduled actions that could not be deleted, including an error
+    /// message.</p>
+    pub fn failed_scheduled_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::FailedScheduledUpdateGroupActionRequest]> {
+        self.failed_scheduled_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteScheduledActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

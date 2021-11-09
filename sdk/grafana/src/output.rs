@@ -8,6 +8,16 @@ pub struct ListWorkspacesOutput {
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkspacesOutput {
+    /// <p>An array of structures that contain some information about the workspaces in the account.</p>
+    pub fn workspaces(&self) -> std::option::Option<&[crate::model::WorkspaceSummary]> {
+        self.workspaces.as_deref()
+    }
+    /// <p>The token to use when requesting the next set of workspaces.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkspacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkspacesOutput");
@@ -78,6 +88,12 @@ pub struct CreateWorkspaceOutput {
     /// <p>A structure containing data about the workspace that was created.</p>
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
+impl CreateWorkspaceOutput {
+    /// <p>A structure containing data about the workspace that was created.</p>
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceOutput");
@@ -128,6 +144,12 @@ impl CreateWorkspaceOutput {
 pub struct DeleteWorkspaceOutput {
     /// <p>A structure containing information about the workspace that was deleted.</p>
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
+}
+impl DeleteWorkspaceOutput {
+    /// <p>A structure containing information about the workspace that was deleted.</p>
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -180,6 +202,12 @@ pub struct UpdateWorkspaceOutput {
     /// <p>A structure containing data about the workspace that was created.</p>
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
+impl UpdateWorkspaceOutput {
+    /// <p>A structure containing data about the workspace that was created.</p>
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceOutput");
@@ -231,6 +259,12 @@ pub struct DescribeWorkspaceOutput {
     /// <p>A structure containing information about the workspace.</p>
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
+impl DescribeWorkspaceOutput {
+    /// <p>A structure containing information about the workspace.</p>
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceOutput");
@@ -281,6 +315,12 @@ impl DescribeWorkspaceOutput {
 pub struct UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::UpdateError>>,
+}
+impl UpdatePermissionsOutput {
+    /// <p>An array of structures that contain the errors from the operation, if any.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::UpdateError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -341,6 +381,17 @@ pub struct ListPermissionsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The permissions returned by the operation.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>,
+}
+impl ListPermissionsOutput {
+    /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return
+    /// the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The permissions returned by the operation.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::PermissionEntry]> {
+        self.permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -414,6 +465,12 @@ pub struct DisassociateLicenseOutput {
     /// <p>A structure containing information about the workspace.</p>
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
+impl DisassociateLicenseOutput {
+    /// <p>A structure containing information about the workspace.</p>
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateLicenseOutput");
@@ -464,6 +521,12 @@ impl DisassociateLicenseOutput {
 pub struct AssociateLicenseOutput {
     /// <p>A structure containing data about the workspace.</p>
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
+}
+impl AssociateLicenseOutput {
+    /// <p>A structure containing data about the workspace.</p>
+    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+        self.workspace.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateLicenseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,6 +579,12 @@ pub struct UpdateWorkspaceAuthenticationOutput {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
 }
+impl UpdateWorkspaceAuthenticationOutput {
+    /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationDescription> {
+        self.authentication.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceAuthenticationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceAuthenticationOutput");
@@ -567,6 +636,13 @@ pub struct DescribeWorkspaceAuthenticationOutput {
     /// <p>A structure containing information about the authentication methods used in
     /// the workspace.</p>
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
+}
+impl DescribeWorkspaceAuthenticationOutput {
+    /// <p>A structure containing information about the authentication methods used in
+    /// the workspace.</p>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationDescription> {
+        self.authentication.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkspaceAuthenticationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

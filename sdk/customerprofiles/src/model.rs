@@ -24,6 +24,48 @@ pub struct UpdateAddress {
     /// <p>The postal code of a customer address.</p>
     pub postal_code: std::option::Option<std::string::String>,
 }
+impl UpdateAddress {
+    /// <p>The first line of a customer address.</p>
+    pub fn address1(&self) -> std::option::Option<&str> {
+        self.address1.as_deref()
+    }
+    /// <p>The second line of a customer address.</p>
+    pub fn address2(&self) -> std::option::Option<&str> {
+        self.address2.as_deref()
+    }
+    /// <p>The third line of a customer address.</p>
+    pub fn address3(&self) -> std::option::Option<&str> {
+        self.address3.as_deref()
+    }
+    /// <p>The fourth line of a customer address.</p>
+    pub fn address4(&self) -> std::option::Option<&str> {
+        self.address4.as_deref()
+    }
+    /// <p>The city in which a customer lives.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The county in which a customer lives.</p>
+    pub fn county(&self) -> std::option::Option<&str> {
+        self.county.as_deref()
+    }
+    /// <p>The state in which a customer lives.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The province in which a customer lives.</p>
+    pub fn province(&self) -> std::option::Option<&str> {
+        self.province.as_deref()
+    }
+    /// <p>The country in which a customer lives.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The postal code of a customer address.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAddress");
@@ -307,6 +349,12 @@ pub struct MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl MatchingResponse {
+    /// <p>The flag that enables the matching process of duplicate profiles.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for MatchingResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchingResponse");
@@ -354,6 +402,12 @@ impl MatchingResponse {
 pub struct MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl MatchingRequest {
+    /// <p>The flag that enables the matching process of duplicate profiles.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for MatchingRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,6 +502,102 @@ pub struct Profile {
     /// <p>A key value pair of attributes of a customer profile.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Profile {
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>A unique account number that you have given to the customer.</p>
+    pub fn account_number(&self) -> std::option::Option<&str> {
+        self.account_number.as_deref()
+    }
+    /// <p>Any additional information relevant to the customer’s profile.</p>
+    pub fn additional_information(&self) -> std::option::Option<&str> {
+        self.additional_information.as_deref()
+    }
+    /// <p>The type of profile used to describe the customer.</p>
+    pub fn party_type(&self) -> std::option::Option<&crate::model::PartyType> {
+        self.party_type.as_ref()
+    }
+    /// <p>The name of the customer’s business.</p>
+    pub fn business_name(&self) -> std::option::Option<&str> {
+        self.business_name.as_deref()
+    }
+    /// <p>The customer’s first name.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The customer’s middle name.</p>
+    pub fn middle_name(&self) -> std::option::Option<&str> {
+        self.middle_name.as_deref()
+    }
+    /// <p>The customer’s last name.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The customer’s birth date. </p>
+    pub fn birth_date(&self) -> std::option::Option<&str> {
+        self.birth_date.as_deref()
+    }
+    /// <p>The gender with which the customer identifies. </p>
+    pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
+        self.gender.as_ref()
+    }
+    /// <p>The customer's phone number, which has not been specified as a mobile, home, or business
+    /// number.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The customer’s mobile phone number.</p>
+    pub fn mobile_phone_number(&self) -> std::option::Option<&str> {
+        self.mobile_phone_number.as_deref()
+    }
+    /// <p>The customer’s home phone number.</p>
+    pub fn home_phone_number(&self) -> std::option::Option<&str> {
+        self.home_phone_number.as_deref()
+    }
+    /// <p>The customer’s home phone number.</p>
+    pub fn business_phone_number(&self) -> std::option::Option<&str> {
+        self.business_phone_number.as_deref()
+    }
+    /// <p>The customer’s email address, which has not been specified as a personal or business
+    /// address. </p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The customer’s personal email address.</p>
+    pub fn personal_email_address(&self) -> std::option::Option<&str> {
+        self.personal_email_address.as_deref()
+    }
+    /// <p>The customer’s business email address.</p>
+    pub fn business_email_address(&self) -> std::option::Option<&str> {
+        self.business_email_address.as_deref()
+    }
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or
+    /// billing.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::Address> {
+        self.address.as_ref()
+    }
+    /// <p>The customer’s shipping address.</p>
+    pub fn shipping_address(&self) -> std::option::Option<&crate::model::Address> {
+        self.shipping_address.as_ref()
+    }
+    /// <p>The customer’s mailing address.</p>
+    pub fn mailing_address(&self) -> std::option::Option<&crate::model::Address> {
+        self.mailing_address.as_ref()
+    }
+    /// <p>The customer’s billing address.</p>
+    pub fn billing_address(&self) -> std::option::Option<&crate::model::Address> {
+        self.billing_address.as_ref()
+    }
+    /// <p>A key value pair of attributes of a customer profile.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for Profile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -851,6 +1001,48 @@ pub struct Address {
     /// <p>The postal code of a customer address.</p>
     pub postal_code: std::option::Option<std::string::String>,
 }
+impl Address {
+    /// <p>The first line of a customer address.</p>
+    pub fn address1(&self) -> std::option::Option<&str> {
+        self.address1.as_deref()
+    }
+    /// <p>The second line of a customer address.</p>
+    pub fn address2(&self) -> std::option::Option<&str> {
+        self.address2.as_deref()
+    }
+    /// <p>The third line of a customer address.</p>
+    pub fn address3(&self) -> std::option::Option<&str> {
+        self.address3.as_deref()
+    }
+    /// <p>The fourth line of a customer address.</p>
+    pub fn address4(&self) -> std::option::Option<&str> {
+        self.address4.as_deref()
+    }
+    /// <p>The city in which a customer lives.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The county in which a customer lives.</p>
+    pub fn county(&self) -> std::option::Option<&str> {
+        self.county.as_deref()
+    }
+    /// <p>The state in which a customer lives.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The province in which a customer lives.</p>
+    pub fn province(&self) -> std::option::Option<&str> {
+        self.province.as_deref()
+    }
+    /// <p>The country in which a customer lives.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The postal code of a customer address.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+}
 impl std::fmt::Debug for Address {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
@@ -1025,6 +1217,23 @@ pub struct ObjectTypeKey {
     pub standard_identifiers: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
     /// <p>The reference for the key name of the fields map.</p>
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ObjectTypeKey {
+    /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
+    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
+    /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
+    /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
+    /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
+    /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
+    /// profile does not already exist before the object is ingested, otherwise it is only used for
+    /// matching objects to profiles.</p>
+    pub fn standard_identifiers(&self) -> std::option::Option<&[crate::model::StandardIdentifier]> {
+        self.standard_identifiers.as_deref()
+    }
+    /// <p>The reference for the key name of the fields map.</p>
+    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.field_names.as_deref()
+    }
 }
 impl std::fmt::Debug for ObjectTypeKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1212,6 +1421,22 @@ pub struct ObjectTypeField {
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub content_type: std::option::Option<crate::model::FieldContentType>,
 }
+impl ObjectTypeField {
+    /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a
+    /// ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The location of the data in the standard ProfileObject model. For example:
+    /// _profile.Address.PostalCode.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>The content type of the field. Used for determining equality when searching.</p>
+    pub fn content_type(&self) -> std::option::Option<&crate::model::FieldContentType> {
+        self.content_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectTypeField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectTypeField");
@@ -1375,6 +1600,35 @@ pub struct FlowDefinition {
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
 }
+impl FlowDefinition {
+    /// <p>A description of the flow you want to create.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not
+    /// allowed.</p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
+        self.kms_arn.as_deref()
+    }
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the
+    /// source.</p>
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
+        self.source_flow_config.as_ref()
+    }
+    /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
+    /// run.</p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
+        self.trigger_config.as_ref()
+    }
+}
 impl std::fmt::Debug for FlowDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FlowDefinition");
@@ -1513,6 +1767,17 @@ pub struct TriggerConfig {
     /// Currently, these settings only apply to the Scheduled trigger type.</p>
     pub trigger_properties: std::option::Option<crate::model::TriggerProperties>,
 }
+impl TriggerConfig {
+    /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.trigger_type.as_ref()
+    }
+    /// <p>Specifies the configuration details of a schedule-triggered flow that you define.
+    /// Currently, these settings only apply to the Scheduled trigger type.</p>
+    pub fn trigger_properties(&self) -> std::option::Option<&crate::model::TriggerProperties> {
+        self.trigger_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for TriggerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TriggerConfig");
@@ -1583,6 +1848,12 @@ pub struct TriggerProperties {
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
     pub scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
 }
+impl TriggerProperties {
+    /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
+    pub fn scheduled(&self) -> std::option::Option<&crate::model::ScheduledTriggerProperties> {
+        self.scheduled.as_ref()
+    }
+}
 impl std::fmt::Debug for TriggerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TriggerProperties");
@@ -1651,6 +1922,41 @@ pub struct ScheduledTriggerProperties {
     /// <p>Specifies the date range for the records to import from the connector in the first flow
     /// run.</p>
     pub first_execution_from: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ScheduledTriggerProperties {
+    /// <p>The scheduling expression that determines the rate at which the schedule will run, for
+    /// example rate (5 minutes).</p>
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+        self.schedule_expression.as_deref()
+    }
+    /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data
+    /// transfer for each flow run.</p>
+    pub fn data_pull_mode(&self) -> std::option::Option<&crate::model::DataPullMode> {
+        self.data_pull_mode.as_ref()
+    }
+    /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
+    pub fn schedule_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.schedule_start_time.as_ref()
+    }
+    /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
+    pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.schedule_end_time.as_ref()
+    }
+    /// <p>Specifies the time zone used when referring to the date and time of a
+    /// scheduled-triggered flow, such as America/New_York.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>Specifies the optional offset that is added to the time interval for a
+    /// schedule-triggered flow.</p>
+    pub fn schedule_offset(&self) -> std::option::Option<i64> {
+        self.schedule_offset
+    }
+    /// <p>Specifies the date range for the records to import from the connector in the first flow
+    /// run.</p>
+    pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_execution_from.as_ref()
+    }
 }
 impl std::fmt::Debug for ScheduledTriggerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1929,6 +2235,34 @@ pub struct Task {
     >,
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
     pub task_type: std::option::Option<crate::model::TaskType>,
+}
+impl Task {
+    /// <p>The operation to be performed on the provided source fields.</p>
+    pub fn connector_operator(&self) -> std::option::Option<&crate::model::ConnectorOperator> {
+        self.connector_operator.as_ref()
+    }
+    /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a
+    /// source field.</p>
+    pub fn destination_field(&self) -> std::option::Option<&str> {
+        self.destination_field.as_deref()
+    }
+    /// <p>The source fields to which a particular task is applied.</p>
+    pub fn source_fields(&self) -> std::option::Option<&[std::string::String]> {
+        self.source_fields.as_deref()
+    }
+    /// <p>A map used to store task-related information. The service looks for particular
+    /// information based on the TaskType.</p>
+    pub fn task_properties(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
+    > {
+        self.task_properties.as_ref()
+    }
+    /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
+    pub fn task_type(&self) -> std::option::Option<&crate::model::TaskType> {
+        self.task_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Task {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2277,6 +2611,28 @@ pub struct ConnectorOperator {
     pub service_now: std::option::Option<crate::model::ServiceNowConnectorOperator>,
     /// <p>The operation to be performed on the provided Zendesk source fields.</p>
     pub zendesk: std::option::Option<crate::model::ZendeskConnectorOperator>,
+}
+impl ConnectorOperator {
+    /// <p>The operation to be performed on the provided Marketo source fields.</p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoConnectorOperator> {
+        self.marketo.as_ref()
+    }
+    /// <p>The operation to be performed on the provided Amazon S3 source fields.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3ConnectorOperator> {
+        self.s3.as_ref()
+    }
+    /// <p>The operation to be performed on the provided Salesforce source fields.</p>
+    pub fn salesforce(&self) -> std::option::Option<&crate::model::SalesforceConnectorOperator> {
+        self.salesforce.as_ref()
+    }
+    /// <p>The operation to be performed on the provided ServiceNow source fields.</p>
+    pub fn service_now(&self) -> std::option::Option<&crate::model::ServiceNowConnectorOperator> {
+        self.service_now.as_ref()
+    }
+    /// <p>The operation to be performed on the provided Zendesk source fields.</p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskConnectorOperator> {
+        self.zendesk.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectorOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3104,6 +3460,32 @@ pub struct SourceFlowConfig {
     /// connector.</p>
     pub source_connector_properties: std::option::Option<crate::model::SourceConnectorProperties>,
 }
+impl SourceFlowConfig {
+    /// <p>The name of the AppFlow connector profile. This name must be unique for each connector
+    /// profile in the AWS account.</p>
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+        self.connector_profile_name.as_deref()
+    }
+    /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
+    pub fn connector_type(&self) -> std::option::Option<&crate::model::SourceConnectorType> {
+        self.connector_type.as_ref()
+    }
+    /// <p>Defines the configuration for a scheduled incremental data pull. If a valid
+    /// configuration is provided, the fields specified in the configuration are used when querying
+    /// for the incremental data pull.</p>
+    pub fn incremental_pull_config(
+        &self,
+    ) -> std::option::Option<&crate::model::IncrementalPullConfig> {
+        self.incremental_pull_config.as_ref()
+    }
+    /// <p>Specifies the information that is required to query a particular source
+    /// connector.</p>
+    pub fn source_connector_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceConnectorProperties> {
+        self.source_connector_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for SourceFlowConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceFlowConfig");
@@ -3231,6 +3613,28 @@ pub struct SourceConnectorProperties {
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
     pub zendesk: std::option::Option<crate::model::ZendeskSourceProperties>,
 }
+impl SourceConnectorProperties {
+    /// <p>The properties that are applied when Marketo is being used as a source.</p>
+    pub fn marketo(&self) -> std::option::Option<&crate::model::MarketoSourceProperties> {
+        self.marketo.as_ref()
+    }
+    /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3SourceProperties> {
+        self.s3.as_ref()
+    }
+    /// <p>The properties that are applied when Salesforce is being used as a source.</p>
+    pub fn salesforce(&self) -> std::option::Option<&crate::model::SalesforceSourceProperties> {
+        self.salesforce.as_ref()
+    }
+    /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
+    pub fn service_now(&self) -> std::option::Option<&crate::model::ServiceNowSourceProperties> {
+        self.service_now.as_ref()
+    }
+    /// <p>The properties that are applied when using Zendesk as a flow source.</p>
+    pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskSourceProperties> {
+        self.zendesk.as_ref()
+    }
+}
 impl std::fmt::Debug for SourceConnectorProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceConnectorProperties");
@@ -3346,6 +3750,12 @@ pub struct ZendeskSourceProperties {
     /// <p>The object specified in the Zendesk flow source.</p>
     pub object: std::option::Option<std::string::String>,
 }
+impl ZendeskSourceProperties {
+    /// <p>The object specified in the Zendesk flow source.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for ZendeskSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZendeskSourceProperties");
@@ -3393,6 +3803,12 @@ impl ZendeskSourceProperties {
 pub struct ServiceNowSourceProperties {
     /// <p>The object specified in the ServiceNow flow source.</p>
     pub object: std::option::Option<std::string::String>,
+}
+impl ServiceNowSourceProperties {
+    /// <p>The object specified in the ServiceNow flow source.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceNowSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3446,6 +3862,21 @@ pub struct SalesforceSourceProperties {
     pub enable_dynamic_field_update: bool,
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub include_deleted_records: bool,
+}
+impl SalesforceSourceProperties {
+    /// <p>The object specified in the Salesforce flow source.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+    /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
+    /// objects while running a flow.</p>
+    pub fn enable_dynamic_field_update(&self) -> bool {
+        self.enable_dynamic_field_update
+    }
+    /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
+    pub fn include_deleted_records(&self) -> bool {
+        self.include_deleted_records
+    }
 }
 impl std::fmt::Debug for SalesforceSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3528,6 +3959,16 @@ pub struct S3SourceProperties {
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
     pub bucket_prefix: std::option::Option<std::string::String>,
 }
+impl S3SourceProperties {
+    /// <p>The Amazon S3 bucket name where the source files are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+        self.bucket_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3SourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SourceProperties");
@@ -3592,6 +4033,12 @@ pub struct MarketoSourceProperties {
     /// <p>The object specified in the Marketo flow source.</p>
     pub object: std::option::Option<std::string::String>,
 }
+impl MarketoSourceProperties {
+    /// <p>The object specified in the Marketo flow source.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for MarketoSourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MarketoSourceProperties");
@@ -3641,6 +4088,13 @@ pub struct IncrementalPullConfig {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when
     /// importing incremental records from the source.</p>
     pub datetime_type_field_name: std::option::Option<std::string::String>,
+}
+impl IncrementalPullConfig {
+    /// <p>A field that specifies the date time or timestamp field as the criteria to use when
+    /// importing incremental records from the source.</p>
+    pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
+        self.datetime_type_field_name.as_deref()
+    }
 }
 impl std::fmt::Debug for IncrementalPullConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3802,6 +4256,95 @@ pub struct FieldSourceProfileIds {
     /// <p>A unique identifier for the attributes field to be merged.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl FieldSourceProfileIds {
+    /// <p>A unique identifier for the account number field to be merged. </p>
+    pub fn account_number(&self) -> std::option::Option<&str> {
+        self.account_number.as_deref()
+    }
+    /// <p>A unique identifier for the additional information field to be merged.</p>
+    pub fn additional_information(&self) -> std::option::Option<&str> {
+        self.additional_information.as_deref()
+    }
+    /// <p>A unique identifier for the party type field to be merged.</p>
+    pub fn party_type(&self) -> std::option::Option<&str> {
+        self.party_type.as_deref()
+    }
+    /// <p>A unique identifier for the business name field to be merged.</p>
+    pub fn business_name(&self) -> std::option::Option<&str> {
+        self.business_name.as_deref()
+    }
+    /// <p>A unique identifier for the first name field to be merged.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>A unique identifier for the middle name field to be merged.</p>
+    pub fn middle_name(&self) -> std::option::Option<&str> {
+        self.middle_name.as_deref()
+    }
+    /// <p>A unique identifier for the last name field to be merged.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>A unique identifier for the birthdate field to be merged.</p>
+    pub fn birth_date(&self) -> std::option::Option<&str> {
+        self.birth_date.as_deref()
+    }
+    /// <p>A unique identifier for the gender field to be merged.</p>
+    pub fn gender(&self) -> std::option::Option<&str> {
+        self.gender.as_deref()
+    }
+    /// <p>A unique identifier for the phone number field to be merged.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>A unique identifier for the mobile phone number field to be merged.</p>
+    pub fn mobile_phone_number(&self) -> std::option::Option<&str> {
+        self.mobile_phone_number.as_deref()
+    }
+    /// <p>A unique identifier for the home phone number field to be merged.</p>
+    pub fn home_phone_number(&self) -> std::option::Option<&str> {
+        self.home_phone_number.as_deref()
+    }
+    /// <p>A unique identifier for the business phone number field to be merged.</p>
+    pub fn business_phone_number(&self) -> std::option::Option<&str> {
+        self.business_phone_number.as_deref()
+    }
+    /// <p>A unique identifier for the email address field to be merged.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>A unique identifier for the personal email address field to be merged.</p>
+    pub fn personal_email_address(&self) -> std::option::Option<&str> {
+        self.personal_email_address.as_deref()
+    }
+    /// <p>A unique identifier for the party type field to be merged.</p>
+    pub fn business_email_address(&self) -> std::option::Option<&str> {
+        self.business_email_address.as_deref()
+    }
+    /// <p>A unique identifier for the party type field to be merged.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>A unique identifier for the shipping address field to be merged.</p>
+    pub fn shipping_address(&self) -> std::option::Option<&str> {
+        self.shipping_address.as_deref()
+    }
+    /// <p>A unique identifier for the mailing address field to be merged.</p>
+    pub fn mailing_address(&self) -> std::option::Option<&str> {
+        self.mailing_address.as_deref()
+    }
+    /// <p>A unique identifier for the billing type field to be merged.</p>
+    pub fn billing_address(&self) -> std::option::Option<&str> {
+        self.billing_address.as_deref()
+    }
+    /// <p>A unique identifier for the attributes field to be merged.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for FieldSourceProfileIds {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4168,6 +4711,20 @@ pub struct ListProfileObjectTypeTemplateItem {
     /// <p>The source of the object template.</p>
     pub source_object: std::option::Option<std::string::String>,
 }
+impl ListProfileObjectTypeTemplateItem {
+    /// <p>A unique identifier for the object template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The name of the source of the object template.</p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p>The source of the object template.</p>
+    pub fn source_object(&self) -> std::option::Option<&str> {
+        self.source_object.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProfileObjectTypeTemplateItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProfileObjectTypeTemplateItem");
@@ -4253,6 +4810,31 @@ pub struct ListProfileObjectTypeItem {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListProfileObjectTypeItem {
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>Description of the profile object type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListProfileObjectTypeItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4385,6 +4967,21 @@ pub struct ListProfileObjectsItem {
     /// <p>A JSON representation of a ProfileObject that belongs to a profile.</p>
     pub object: std::option::Option<std::string::String>,
 }
+impl ListProfileObjectsItem {
+    /// <p>Specifies the kind of object being added to a profile, such as
+    /// "Salesforce-Account."</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The unique identifier of the ProfileObject generated by the service.</p>
+    pub fn profile_object_unique_key(&self) -> std::option::Option<&str> {
+        self.profile_object_unique_key.as_deref()
+    }
+    /// <p>A JSON representation of a ProfileObject that belongs to a profile.</p>
+    pub fn object(&self) -> std::option::Option<&str> {
+        self.object.as_deref()
+    }
+}
 impl std::fmt::Debug for ListProfileObjectsItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProfileObjectsItem");
@@ -4471,6 +5068,17 @@ pub struct ObjectFilter {
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ObjectFilter {
+    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
+    /// The predefined keys you can use to search for _case include: _caseId.</p>
+    pub fn key_name(&self) -> std::option::Option<&str> {
+        self.key_name.as_deref()
+    }
+    /// <p>A list of key values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for ObjectFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectFilter");
@@ -4553,6 +5161,35 @@ pub struct ListIntegrationItem {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListIntegrationItem {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+    /// <p>The name of the profile object type.</p>
+    pub fn object_type_name(&self) -> std::option::Option<&str> {
+        self.object_type_name.as_deref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListIntegrationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4700,6 +5337,27 @@ pub struct ListDomainItem {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListDomainItem {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDomainItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainItem");
@@ -4812,6 +5470,16 @@ pub struct MatchItem {
     /// <p>A list of identifiers for profiles that match.</p>
     pub profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl MatchItem {
+    /// <p>The unique identifiers for this group of profiles that match.</p>
+    pub fn match_id(&self) -> std::option::Option<&str> {
+        self.match_id.as_deref()
+    }
+    /// <p>A list of identifiers for profiles that match.</p>
+    pub fn profile_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.profile_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for MatchItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MatchItem");
@@ -4889,6 +5557,26 @@ pub struct DomainStats {
     pub object_count: i64,
     /// <p>The total size, in bytes, of all objects in the domain.</p>
     pub total_size: i64,
+}
+impl DomainStats {
+    /// <p>The total number of profiles currently in the domain.</p>
+    pub fn profile_count(&self) -> i64 {
+        self.profile_count
+    }
+    /// <p>The number of profiles that you are currently paying for in the domain. If you have more
+    /// than 100 objects associated with a single profile, that profile counts as two profiles. If
+    /// you have more than 200 objects, that profile counts as three, and so on.</p>
+    pub fn metering_profile_count(&self) -> i64 {
+        self.metering_profile_count
+    }
+    /// <p>The total number of objects in domain.</p>
+    pub fn object_count(&self) -> i64 {
+        self.object_count
+    }
+    /// <p>The total size, in bytes, of all objects in the domain.</p>
+    pub fn total_size(&self) -> i64 {
+        self.total_size
+    }
 }
 impl std::fmt::Debug for DomainStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

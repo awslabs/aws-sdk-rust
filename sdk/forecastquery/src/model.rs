@@ -21,6 +21,29 @@ pub struct Forecast {
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
     >,
 }
+impl Forecast {
+    /// <p>The forecast.</p>
+    /// <p>The <i>string</i> of the string-to-array map is one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>p10</p>
+    /// </li>
+    /// <li>
+    /// <p>p50</p>
+    /// </li>
+    /// <li>
+    /// <p>p90</p>
+    /// </li>
+    /// </ul>
+    pub fn predictions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
+    > {
+        self.predictions.as_ref()
+    }
+}
 impl std::fmt::Debug for Forecast {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Forecast");
@@ -117,6 +140,16 @@ pub struct DataPoint {
     pub timestamp: std::option::Option<std::string::String>,
     /// <p>The forecast value.</p>
     pub value: std::option::Option<f64>,
+}
+impl DataPoint {
+    /// <p>The timestamp of the specific forecast.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+    /// <p>The forecast value.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
 }
 impl std::fmt::Debug for DataPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

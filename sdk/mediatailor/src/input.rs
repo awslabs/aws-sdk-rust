@@ -104,7 +104,7 @@ impl ConfigureLogsForPlaybackConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_configure_logs_for_playback_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_configure_logs_for_playback_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -345,10 +345,7 @@ impl CreateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -591,10 +588,7 @@ impl CreatePrefetchScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_prefetch_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -855,10 +849,7 @@ impl CreateProgramInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_program(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_program(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1104,10 +1095,9 @@ impl CreateSourceLocationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_source_location(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_source_location(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1360,10 +1350,7 @@ impl CreateVodSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_vod_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_vod_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4565,10 +4552,7 @@ impl ListPrefetchSchedulesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_prefetch_schedules(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5239,10 +5223,7 @@ impl PutChannelPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_channel_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_channel_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5623,10 +5604,7 @@ impl PutPlaybackConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_playback_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6117,10 +6095,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6478,10 +6453,7 @@ impl UpdateChannelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6698,10 +6670,9 @@ impl UpdateSourceLocationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_source_location(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_source_location(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6925,10 +6896,7 @@ impl UpdateVodSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_vod_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_vod_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7002,6 +6970,22 @@ pub struct UpdateVodSourceInput {
     /// <p>The identifier for the VOD source you are working on.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl UpdateVodSourceInput {
+    /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The identifier for the VOD source you are working on.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVodSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVodSourceInput");
@@ -7029,6 +7013,26 @@ pub struct UpdateSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
     pub source_location_name: std::option::Option<std::string::String>,
 }
+impl UpdateSourceLocationInput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The optional configuration for the host server that serves segments.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The HTTP configuration for the source location.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSourceLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSourceLocationInput");
@@ -7052,6 +7056,16 @@ pub struct UpdateChannelInput {
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
 }
+impl UpdateChannelInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
+        self.outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
@@ -7069,6 +7083,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7089,6 +7113,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A comma-separated list of tag key:value pairs.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -7105,6 +7142,12 @@ pub struct StopChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
 }
+impl StopChannelInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopChannelInput");
@@ -7119,6 +7162,12 @@ impl std::fmt::Debug for StopChannelInput {
 pub struct StartChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
+}
+impl StartChannelInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7167,6 +7216,80 @@ pub struct PutPlaybackConfigurationInput {
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub video_content_source_url: std::option::Option<std::string::String>,
 }
+impl PutPlaybackConfigurationInput {
+    /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    pub fn ad_decision_server_url(&self) -> std::option::Option<&str> {
+        self.ad_decision_server_url.as_deref()
+    }
+    /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    pub fn avail_suppression(&self) -> std::option::Option<&crate::model::AvailSuppression> {
+        self.avail_suppression.as_ref()
+    }
+    /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    pub fn bumper(&self) -> std::option::Option<&crate::model::Bumper> {
+        self.bumper.as_ref()
+    }
+    /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    pub fn cdn_configuration(&self) -> std::option::Option<&crate::model::CdnConfiguration> {
+        self.cdn_configuration.as_ref()
+    }
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    pub fn configuration_aliases(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.configuration_aliases.as_ref()
+    }
+    /// <p>The configuration for DASH content.</p>
+    pub fn dash_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DashConfigurationForPut> {
+        self.dash_configuration.as_ref()
+    }
+    /// <p>The configuration for pre-roll ad insertion.</p>
+    pub fn live_pre_roll_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LivePreRollConfiguration> {
+        self.live_pre_roll_configuration.as_ref()
+    }
+    /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    pub fn manifest_processing_rules(
+        &self,
+    ) -> std::option::Option<&crate::model::ManifestProcessingRules> {
+        self.manifest_processing_rules.as_ref()
+    }
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    pub fn personalization_threshold_seconds(&self) -> i32 {
+        self.personalization_threshold_seconds
+    }
+    /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    pub fn slate_ad_url(&self) -> std::option::Option<&str> {
+        self.slate_ad_url.as_deref()
+    }
+    /// <p>The tags to assign to the playback configuration.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    pub fn transcode_profile_name(&self) -> std::option::Option<&str> {
+        self.transcode_profile_name.as_deref()
+    }
+    /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    pub fn video_content_source_url(&self) -> std::option::Option<&str> {
+        self.video_content_source_url.as_deref()
+    }
+}
 impl std::fmt::Debug for PutPlaybackConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPlaybackConfigurationInput");
@@ -7203,6 +7326,16 @@ pub struct PutChannelPolicyInput {
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl PutChannelPolicyInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>Adds an IAM role that determines the permissions of your channel.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for PutChannelPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutChannelPolicyInput");
@@ -7223,6 +7356,20 @@ pub struct ListVodSourcesInput {
     /// <p>The identifier for the source location you are working on.</p>
     pub source_location_name: std::option::Option<std::string::String>,
 }
+impl ListVodSourcesInput {
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVodSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVodSourcesInput");
@@ -7240,6 +7387,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -7256,6 +7409,16 @@ pub struct ListSourceLocationsInput {
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSourceLocationsInput {
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSourceLocationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7278,6 +7441,24 @@ pub struct ListPrefetchSchedulesInput {
     pub playback_configuration_name: std::option::Option<std::string::String>,
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl ListPrefetchSchedulesInput {
+    /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+    /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPrefetchSchedulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7302,6 +7483,16 @@ pub struct ListPlaybackConfigurationsInput {
     /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPlaybackConfigurationsInput {
+    /// <p>Maximum number of records to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPlaybackConfigurationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPlaybackConfigurationsInput");
@@ -7319,6 +7510,16 @@ pub struct ListChannelsInput {
     pub max_results: i32,
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListChannelsInput {
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7340,6 +7541,20 @@ pub struct ListAlertsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListAlertsInput {
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAlertsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlertsInput");
@@ -7359,6 +7574,16 @@ pub struct GetPrefetchScheduleInput {
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
+impl GetPrefetchScheduleInput {
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPrefetchScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPrefetchScheduleInput");
@@ -7377,6 +7602,12 @@ impl std::fmt::Debug for GetPrefetchScheduleInput {
 pub struct GetPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl GetPlaybackConfigurationInput {
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPlaybackConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7399,6 +7630,24 @@ pub struct GetChannelScheduleInput {
     /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetChannelScheduleInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+    pub fn duration_minutes(&self) -> std::option::Option<&str> {
+        self.duration_minutes.as_deref()
+    }
+    /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelScheduleInput");
@@ -7417,6 +7666,12 @@ pub struct GetChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
 }
+impl GetChannelPolicyInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetChannelPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetChannelPolicyInput");
@@ -7434,6 +7689,16 @@ pub struct DescribeVodSourceInput {
     /// <p>The identifier for the VOD source you are working on.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl DescribeVodSourceInput {
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The identifier for the VOD source you are working on.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVodSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVodSourceInput");
@@ -7449,6 +7714,12 @@ impl std::fmt::Debug for DescribeVodSourceInput {
 pub struct DescribeSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
     pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DescribeSourceLocationInput {
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSourceLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7467,6 +7738,16 @@ pub struct DescribeProgramInput {
     /// <p>The identifier for the program you are working on.</p>
     pub program_name: std::option::Option<std::string::String>,
 }
+impl DescribeProgramInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The identifier for the program you are working on.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProgramInput");
@@ -7482,6 +7763,12 @@ impl std::fmt::Debug for DescribeProgramInput {
 pub struct DescribeChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
+}
+impl DescribeChannelInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7500,6 +7787,16 @@ pub struct DeleteVodSourceInput {
     /// <p>The identifier for the VOD source you are working on.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl DeleteVodSourceInput {
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The identifier for the VOD source you are working on.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVodSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVodSourceInput");
@@ -7515,6 +7812,12 @@ impl std::fmt::Debug for DeleteVodSourceInput {
 pub struct DeleteSourceLocationInput {
     /// <p>The identifier for the source location you are working on.</p>
     pub source_location_name: std::option::Option<std::string::String>,
+}
+impl DeleteSourceLocationInput {
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSourceLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7533,6 +7836,16 @@ pub struct DeleteProgramInput {
     /// <p>The identifier for the program you are working on.</p>
     pub program_name: std::option::Option<std::string::String>,
 }
+impl DeleteProgramInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The identifier for the program you are working on.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProgramInput");
@@ -7550,6 +7863,16 @@ pub struct DeletePrefetchScheduleInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: std::option::Option<std::string::String>,
+}
+impl DeletePrefetchScheduleInput {
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePrefetchScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7570,6 +7893,12 @@ pub struct DeletePlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeletePlaybackConfigurationInput {
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePlaybackConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePlaybackConfigurationInput");
@@ -7585,6 +7914,12 @@ pub struct DeleteChannelPolicyInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
 }
+impl DeleteChannelPolicyInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteChannelPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteChannelPolicyInput");
@@ -7599,6 +7934,12 @@ impl std::fmt::Debug for DeleteChannelPolicyInput {
 pub struct DeleteChannelInput {
     /// <p>The identifier for the channel you are working on.</p>
     pub channel_name: std::option::Option<std::string::String>,
+}
+impl DeleteChannelInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7622,6 +7963,29 @@ pub struct CreateVodSourceInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier for the VOD source you are working on.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
+}
+impl CreateVodSourceInput {
+    /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::HttpPackageConfiguration]> {
+        self.http_package_configurations.as_deref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the VOD source.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The identifier for the VOD source you are working on.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVodSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7653,6 +8017,33 @@ pub struct CreateSourceLocationInput {
     /// <p>The tags to assign to the source location.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateSourceLocationInput {
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn access_configuration(&self) -> std::option::Option<&crate::model::AccessConfiguration> {
+        self.access_configuration.as_ref()
+    }
+    /// <p>The optional configuration for the server that serves segments.</p>
+    pub fn default_segment_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultSegmentDeliveryConfiguration> {
+        self.default_segment_delivery_configuration.as_ref()
+    }
+    /// <p>The source's HTTP package configurations.</p>
+    pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
+        self.http_configuration.as_ref()
+    }
+    /// <p>The identifier for the source location you are working on.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The tags to assign to the source location.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSourceLocationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7686,6 +8077,34 @@ pub struct CreateProgramInput {
     /// <p>The name that's used to refer to a VOD source.</p>
     pub vod_source_name: std::option::Option<std::string::String>,
 }
+impl CreateProgramInput {
+    /// <p>The ad break configuration settings.</p>
+    pub fn ad_breaks(&self) -> std::option::Option<&[crate::model::AdBreak]> {
+        self.ad_breaks.as_deref()
+    }
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The identifier for the program you are working on.</p>
+    pub fn program_name(&self) -> std::option::Option<&str> {
+        self.program_name.as_deref()
+    }
+    /// <p>The schedule configuration settings.</p>
+    pub fn schedule_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ScheduleConfiguration> {
+        self.schedule_configuration.as_ref()
+    }
+    /// <p>The name of the source location.</p>
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
+        self.source_location_name.as_deref()
+    }
+    /// <p>The name that's used to refer to a VOD source.</p>
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+        self.vod_source_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateProgramInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProgramInput");
@@ -7713,6 +8132,28 @@ pub struct CreatePrefetchScheduleInput {
     pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
     pub stream_id: std::option::Option<std::string::String>,
+}
+impl CreatePrefetchScheduleInput {
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    pub fn consumption(&self) -> std::option::Option<&crate::model::PrefetchConsumption> {
+        self.consumption.as_ref()
+    }
+    /// <p>The identifier for the playback configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    pub fn retrieval(&self) -> std::option::Option<&crate::model::PrefetchRetrieval> {
+        self.retrieval.as_ref()
+    }
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePrefetchScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7745,6 +8186,31 @@ pub struct CreateChannelInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateChannelInput {
+    /// <p>The identifier for the channel you are working on.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+    pub fn filler_slate(&self) -> std::option::Option<&crate::model::SlateSource> {
+        self.filler_slate.as_ref()
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    pub fn playback_mode(&self) -> std::option::Option<&crate::model::PlaybackMode> {
+        self.playback_mode.as_ref()
+    }
+    /// <p>The tags to assign to the channel.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateChannelInput");
@@ -7765,6 +8231,16 @@ pub struct ConfigureLogsForPlaybackConfigurationInput {
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: std::option::Option<std::string::String>,
+}
+impl ConfigureLogsForPlaybackConfigurationInput {
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+    pub fn percent_enabled(&self) -> i32 {
+        self.percent_enabled
+    }
+    /// <p>The name of the playback configuration.</p>
+    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigureLogsForPlaybackConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -2638,6 +2638,16 @@ pub struct ValidationException {
     /// The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate in the message.
     pub field_list: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
+impl ValidationException {
+    /// Reason the request failed validation.
+    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate in the message.
+    pub fn field_list(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
+        self.field_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -2750,6 +2760,20 @@ pub struct ThrottlingException {
     /// Advice to clients on when the call can be safely retried.
     pub retry_after_seconds: std::option::Option<i32>,
 }
+impl ThrottlingException {
+    /// Service Quotas requirement to identify originating service.
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// Service Quotas requirement to identify originating quota.
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// Advice to clients on when the call can be safely retried.
+    pub fn retry_after_seconds(&self) -> std::option::Option<i32> {
+        self.retry_after_seconds
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");
@@ -2858,6 +2882,12 @@ pub struct InternalServerException {
     pub message: std::option::Option<std::string::String>,
     /// Advice to clients on when the call can be safely retried.
     pub retry_after_seconds: std::option::Option<i32>,
+}
+impl InternalServerException {
+    /// Advice to clients on when the call can be safely retried.
+    pub fn retry_after_seconds(&self) -> std::option::Option<i32> {
+        self.retry_after_seconds
+    }
 }
 impl std::fmt::Debug for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3012,6 +3042,24 @@ pub struct ServiceQuotaExceededException {
     /// Service Quotas requirement to identify originating quota.
     pub quota_code: std::option::Option<std::string::String>,
 }
+impl ServiceQuotaExceededException {
+    /// Identifier of the resource affected.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// Type of the resource affected.
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// Service Quotas requirement to identify originating service.
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// Service Quotas requirement to identify originating quota.
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceQuotaExceededException");
@@ -3135,6 +3183,16 @@ pub struct ConflictException {
     /// Type of the resource affected.
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ConflictException {
+    /// Identifier of the resource affected.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// Type of the resource affected.
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -3231,6 +3289,16 @@ pub struct ResourceNotFoundException {
     pub resource_id: std::option::Option<std::string::String>,
     /// Type of the resource affected.
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// Identifier of the resource affected.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// Type of the resource affected.
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

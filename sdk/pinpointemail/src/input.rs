@@ -179,10 +179,7 @@ impl CreateConfigurationSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -385,7 +382,7 @@ impl CreateConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -556,10 +553,7 @@ impl CreateDedicatedIpPoolInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dedicated_ip_pool(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -761,7 +755,7 @@ impl CreateDeliverabilityTestReportInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deliverability_test_report(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_deliverability_test_report(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -933,10 +927,7 @@ impl CreateEmailIdentityInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_email_identity(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_email_identity(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4516,7 +4507,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_account_dedicated_ip_warmup_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_account_dedicated_ip_warmup_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4673,7 +4664,7 @@ impl PutAccountSendingAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_account_sending_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_account_sending_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4883,7 +4874,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5072,7 +5063,7 @@ impl PutConfigurationSetReputationOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_reputation_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_reputation_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5258,7 +5249,7 @@ impl PutConfigurationSetSendingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_sending_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_sending_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5445,7 +5436,7 @@ impl PutConfigurationSetTrackingOptionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_tracking_options(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5628,10 +5619,7 @@ impl PutDedicatedIpInPoolInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_in_pool(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5807,7 +5795,7 @@ impl PutDedicatedIpWarmupAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_warmup_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_warmup_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5986,7 +5974,7 @@ impl PutDeliverabilityDashboardOptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_deliverability_dashboard_option(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_deliverability_dashboard_option(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6174,7 +6162,7 @@ impl PutEmailIdentityDkimAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_email_identity_dkim_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_email_identity_dkim_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6374,7 +6362,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_email_identity_feedback_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_email_identity_feedback_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6616,7 +6604,7 @@ impl PutEmailIdentityMailFromAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_email_identity_mail_from_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_email_identity_mail_from_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6879,10 +6867,7 @@ impl SendEmailInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_email(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_email(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7053,10 +7038,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7452,7 +7434,7 @@ impl UpdateConfigurationSetEventDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7528,6 +7510,23 @@ pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>An object that defines the event destination.</p>
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
+impl UpdateConfigurationSetEventDestinationInput {
+    /// <p>The name of the configuration set that contains the event destination that you want to
+    /// modify.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>The name of the event destination that you want to modify.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+    /// <p>An object that defines the event destination.</p>
+    pub fn event_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
+        self.event_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConfigurationSetEventDestinationInput");
@@ -7554,6 +7553,23 @@ pub struct UntagResourceInput {
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
+    /// tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
+    /// key, the action removes both that key and its associated tag value.</p>
+    /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
+    /// parameter and argument for each additional tag to remove, separated by an ampersand. For
+    /// example:
+    /// <code>/v1/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -7575,6 +7591,20 @@ pub struct TagResourceInput {
     /// length of a tag key is 128 characters. The maximum length of a tag value is 256
     /// characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
+    /// to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
+    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
+    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
+    /// characters.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7609,6 +7639,42 @@ pub struct SendEmailInput {
     pub email_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl SendEmailInput {
+    /// <p>The email address that you want to use as the "From" address for the email. The
+    /// address that you specify has to be verified.
+    /// </p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>An object that contains the recipients of the email message.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
+    /// message, each Reply-to address receives the reply.</p>
+    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.reply_to_addresses.as_deref()
+    }
+    /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
+    pub fn feedback_forwarding_email_address(&self) -> std::option::Option<&str> {
+        self.feedback_forwarding_email_address.as_deref()
+    }
+    /// <p>An object that contains the body of the message. You can send either a Simple message
+    /// or a Raw message.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
+        self.content.as_ref()
+    }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+    /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
+    /// email that you define, so that you can publish email sending events. </p>
+    pub fn email_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+        self.email_tags.as_deref()
+    }
+    /// <p>The name of the configuration set that you want to use when sending the email.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SendEmailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7659,6 +7725,43 @@ pub struct PutEmailIdentityMailFromAttributesInput {
     /// states.</p>
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
+impl PutEmailIdentityMailFromAttributesInput {
+    /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
+    /// for.</p>
+    pub fn email_identity(&self) -> std::option::Option<&str> {
+        self.email_identity.as_deref()
+    }
+    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
+    /// domain must meet the following criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It has to be a subdomain of the verified identity.</p>
+    /// </li>
+    /// <li>
+    /// <p>It can't be used to receive email.</p>
+    /// </li>
+    /// <li>
+    /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
+    /// for feedback forwarding emails.</p>
+    /// </li>
+    /// </ul>
+    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+        self.mail_from_domain.as_deref()
+    }
+    /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when
+    /// you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses
+    /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+    /// to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code>
+    /// error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
+    /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
+    /// states.</p>
+    pub fn behavior_on_mx_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
+        self.behavior_on_mx_failure.as_ref()
+    }
+}
 impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEmailIdentityMailFromAttributesInput");
@@ -7688,6 +7791,25 @@ pub struct PutEmailIdentityFeedbackAttributesInput {
     /// notification when these events occur (even if this setting is disabled).</p>
     pub email_forwarding_enabled: bool,
 }
+impl PutEmailIdentityFeedbackAttributesInput {
+    /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
+    /// for.</p>
+    pub fn email_identity(&self) -> std::option::Option<&str> {
+        self.email_identity.as_deref()
+    }
+    /// <p>Sets the feedback forwarding configuration for the identity.</p>
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or
+    /// complaint events occur. Amazon Pinpoint sends this notification to the address that you specified
+    /// in the Return-Path header of the original email.</p>
+    /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other
+    /// mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're
+    /// required to have a method of tracking bounces and complaints. If you haven't set up
+    /// another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email
+    /// notification when these events occur (even if this setting is disabled).</p>
+    pub fn email_forwarding_enabled(&self) -> bool {
+        self.email_forwarding_enabled
+    }
+}
 impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEmailIdentityFeedbackAttributesInput");
@@ -7709,6 +7831,19 @@ pub struct PutEmailIdentityDkimAttributesInput {
     /// identity are DKIM-signed. When you set this value to <code>false</code>, then the
     /// messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
     pub signing_enabled: bool,
+}
+impl PutEmailIdentityDkimAttributesInput {
+    /// <p>The email identity that you want to change the DKIM settings for.</p>
+    pub fn email_identity(&self) -> std::option::Option<&str> {
+        self.email_identity.as_deref()
+    }
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
+    /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the
+    /// identity are DKIM-signed. When you set this value to <code>false</code>, then the
+    /// messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
+    pub fn signing_enabled(&self) -> bool {
+        self.signing_enabled
+    }
 }
 impl std::fmt::Debug for PutEmailIdentityDkimAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7737,6 +7872,20 @@ pub struct PutDeliverabilityDashboardOptionInput {
     pub subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
 }
+impl PutDeliverabilityDashboardOptionInput {
+    /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the
+    /// dashboard, set this value to <code>true</code>.</p>
+    pub fn dashboard_enabled(&self) -> bool {
+        self.dashboard_enabled
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and
+    /// enabled the Deliverability dashboard for.</p>
+    pub fn subscribed_domains(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+        self.subscribed_domains.as_deref()
+    }
+}
 impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDeliverabilityDashboardOptionInput");
@@ -7756,6 +7905,17 @@ pub struct PutDedicatedIpWarmupAttributesInput {
     /// <p>The warm-up percentage that you want to associate with the dedicated IP
     /// address.</p>
     pub warmup_percentage: std::option::Option<i32>,
+}
+impl PutDedicatedIpWarmupAttributesInput {
+    /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+    /// <p>The warm-up percentage that you want to associate with the dedicated IP
+    /// address.</p>
+    pub fn warmup_percentage(&self) -> std::option::Option<i32> {
+        self.warmup_percentage
+    }
 }
 impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7777,6 +7937,18 @@ pub struct PutDedicatedIpInPoolInput {
     /// specify an IP pool that already exists.</p>
     pub destination_pool_name: std::option::Option<std::string::String>,
 }
+impl PutDedicatedIpInPoolInput {
+    /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
+    /// has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+    /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
+    /// specify an IP pool that already exists.</p>
+    pub fn destination_pool_name(&self) -> std::option::Option<&str> {
+        self.destination_pool_name.as_deref()
+    }
+}
 impl std::fmt::Debug for PutDedicatedIpInPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDedicatedIpInPoolInput");
@@ -7796,6 +7968,17 @@ pub struct PutConfigurationSetTrackingOptionsInput {
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The domain that you want to use to track open and click events.</p>
     pub custom_redirect_domain: std::option::Option<std::string::String>,
+}
+impl PutConfigurationSetTrackingOptionsInput {
+    /// <p>The name of the configuration set that you want to add a custom tracking domain
+    /// to.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>The domain that you want to use to track open and click events.</p>
+    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+        self.custom_redirect_domain.as_deref()
+    }
 }
 impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7818,6 +8001,18 @@ pub struct PutConfigurationSetSendingOptionsInput {
     /// <code>false</code>, email sending is disabled for the configuration set.</p>
     pub sending_enabled: bool,
 }
+impl PutConfigurationSetSendingOptionsInput {
+    /// <p>The name of the configuration set that you want to enable or disable email sending
+    /// for.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
+    /// <code>false</code>, email sending is disabled for the configuration set.</p>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
+}
 impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationSetSendingOptionsInput");
@@ -7839,6 +8034,19 @@ pub struct PutConfigurationSetReputationOptionsInput {
     /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
     /// configuration set.</p>
     pub reputation_metrics_enabled: bool,
+}
+impl PutConfigurationSetReputationOptionsInput {
+    /// <p>The name of the configuration set that you want to enable or disable reputation metric
+    /// tracking for.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
+    /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
+    /// configuration set.</p>
+    pub fn reputation_metrics_enabled(&self) -> bool {
+        self.reputation_metrics_enabled
+    }
 }
 impl std::fmt::Debug for PutConfigurationSetReputationOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7868,6 +8076,25 @@ pub struct PutConfigurationSetDeliveryOptionsInput {
     /// set.</p>
     pub sending_pool_name: std::option::Option<std::string::String>,
 }
+impl PutConfigurationSetDeliveryOptionsInput {
+    /// <p>The name of the configuration set that you want to associate with a dedicated IP
+    /// pool.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use
+    /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
+    /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
+    /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+    pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
+        self.tls_policy.as_ref()
+    }
+    /// <p>The name of the dedicated IP pool that you want to associate with the configuration
+    /// set.</p>
+    pub fn sending_pool_name(&self) -> std::option::Option<&str> {
+        self.sending_pool_name.as_deref()
+    }
+}
 impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutConfigurationSetDeliveryOptionsInput");
@@ -7890,6 +8117,17 @@ pub struct PutAccountSendingAttributesInput {
     /// </note>
     pub sending_enabled: bool,
 }
+impl PutAccountSendingAttributesInput {
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
+    /// enable email sending, or set to <code>false</code> to disable email sending.</p>
+    /// <note>
+    /// <p>If AWS paused your account's ability to send email, you can't use this operation
+    /// to resume your account's ability to send email.</p>
+    /// </note>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
+}
 impl std::fmt::Debug for PutAccountSendingAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountSendingAttributesInput");
@@ -7908,6 +8146,15 @@ pub struct PutAccountDedicatedIpWarmupAttributesInput {
     /// it.</p>
     pub auto_warmup_enabled: bool,
 }
+impl PutAccountDedicatedIpWarmupAttributesInput {
+    /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
+    /// associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code>
+    /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
+    /// it.</p>
+    pub fn auto_warmup_enabled(&self) -> bool {
+        self.auto_warmup_enabled
+    }
+}
 impl std::fmt::Debug for PutAccountDedicatedIpWarmupAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountDedicatedIpWarmupAttributesInput");
@@ -7923,6 +8170,13 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
     /// information for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
+    /// information for.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7947,6 +8201,21 @@ pub struct ListEmailIdentitiesInput {
     /// additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub page_size: std::option::Option<i32>,
+}
+impl ListEmailIdentitiesInput {
+    /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
+    /// the position in the list of identities.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
+    /// the number of results is larger than the number you specified in this parameter, then
+    /// the response includes a <code>NextToken</code> element, which you can use to obtain
+    /// additional results.</p>
+    /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListEmailIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7984,6 +8253,37 @@ pub struct ListDomainDeliverabilityCampaignsInput {
     /// results.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl ListDomainDeliverabilityCampaignsInput {
+    /// <p>The first day, in Unix time format, that you want to obtain deliverability data
+    /// for.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
+    /// This value has to be less than or equal to 30 days after the value of the
+    /// <code>StartDate</code> parameter.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
+    /// <p>The domain to obtain deliverability data for.</p>
+    pub fn subscribed_domain(&self) -> std::option::Option<&str> {
+        self.subscribed_domain.as_deref()
+    }
+    /// <p>A token that’s returned from a previous call to the
+    /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
+    /// position of a campaign in the list of campaigns.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in response to a single call to the
+    /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
+    /// is larger than the number that you specify in this parameter, the response includes a
+    /// <code>NextToken</code> element, which you can use to obtain additional
+    /// results.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for ListDomainDeliverabilityCampaignsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainDeliverabilityCampaignsInput");
@@ -8011,6 +8311,22 @@ pub struct ListDeliverabilityTestReportsInput {
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl ListDeliverabilityTestReportsInput {
+    /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
+    /// indicate the position in the list of predictive inbox placement tests.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of results to show in a single call to
+    /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
+    /// the number you specified in this parameter, then the response includes a
+    /// <code>NextToken</code> element, which you can use to obtain additional
+    /// results.</p>
+    /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for ListDeliverabilityTestReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliverabilityTestReportsInput");
@@ -8032,6 +8348,20 @@ pub struct ListDedicatedIpPoolsInput {
     /// the response includes a <code>NextToken</code> element, which you can use to obtain
     /// additional results.</p>
     pub page_size: std::option::Option<i32>,
+}
+impl ListDedicatedIpPoolsInput {
+    /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
+    /// the position in the list of dedicated IP pools.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
+    /// If the number of results is larger than the number you specified in this parameter, then
+    /// the response includes a <code>NextToken</code> element, which you can use to obtain
+    /// additional results.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
 }
 impl std::fmt::Debug for ListDedicatedIpPoolsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8056,6 +8386,20 @@ pub struct ListConfigurationSetsInput {
     /// additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl ListConfigurationSetsInput {
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
+    /// indicate the position in the list of configuration sets.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
+    /// If the number of results is larger than the number you specified in this parameter, then
+    /// the response includes a <code>NextToken</code> element, which you can use to obtain
+    /// additional results.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for ListConfigurationSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsInput");
@@ -8071,6 +8415,12 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 pub struct GetEmailIdentityInput {
     /// <p>The email identity that you want to retrieve details for.</p>
     pub email_identity: std::option::Option<std::string::String>,
+}
+impl GetEmailIdentityInput {
+    /// <p>The email identity that you want to retrieve details for.</p>
+    pub fn email_identity(&self) -> std::option::Option<&str> {
+        self.email_identity.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEmailIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8093,6 +8443,23 @@ pub struct GetDomainStatisticsReportInput {
     /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
     /// the <code>StartDate</code>.</p>
     pub end_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetDomainStatisticsReportInput {
+    /// <p>The domain that you want to obtain deliverability metrics for.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
+    /// for.</p>
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date.as_ref()
+    }
+    /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
+    /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
+    /// the <code>StartDate</code>.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDomainStatisticsReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8117,6 +8484,15 @@ pub struct GetDomainDeliverabilityCampaignInput {
     /// Amazon Pinpoint console.</p>
     pub campaign_id: std::option::Option<std::string::String>,
 }
+impl GetDomainDeliverabilityCampaignInput {
+    /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this
+    /// identifier to a campaign. This value is not the same as the campaign identifier that
+    /// Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the
+    /// Amazon Pinpoint console.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainDeliverabilityCampaignInput");
@@ -8131,6 +8507,12 @@ impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
 pub struct GetDeliverabilityTestReportInput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub report_id: std::option::Option<std::string::String>,
+}
+impl GetDeliverabilityTestReportInput {
+    /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeliverabilityTestReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8172,6 +8554,24 @@ pub struct GetDedicatedIpsInput {
     /// additional results.</p>
     pub page_size: std::option::Option<i32>,
 }
+impl GetDedicatedIpsInput {
+    /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
+    /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
+    /// position of the dedicated IP pool in the list of IP pools.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
+    /// If the number of results is larger than the number you specified in this parameter, then
+    /// the response includes a <code>NextToken</code> element, which you can use to obtain
+    /// additional results.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+}
 impl std::fmt::Debug for GetDedicatedIpsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpsInput");
@@ -8190,6 +8590,13 @@ pub struct GetDedicatedIpInput {
     /// has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
     pub ip: std::option::Option<std::string::String>,
 }
+impl GetDedicatedIpInput {
+    /// <p>The IP address that you want to obtain more information about. The value you specify
+    /// has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDedicatedIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpInput");
@@ -8206,6 +8613,12 @@ pub struct GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
+impl GetConfigurationSetEventDestinationsInput {
+    /// <p>The name of the configuration set that contains the event destination.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsInput");
@@ -8221,6 +8634,13 @@ pub struct GetConfigurationSetInput {
     /// <p>The name of the configuration set that you want to obtain more information
     /// about.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl GetConfigurationSetInput {
+    /// <p>The name of the configuration set that you want to obtain more information
+    /// about.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8239,6 +8659,14 @@ pub struct GetBlacklistReportsInput {
     /// only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or
     /// Amazon SES.</p>
     pub blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetBlacklistReportsInput {
+    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
+    /// only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or
+    /// Amazon SES.</p>
+    pub fn blacklist_item_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.blacklist_item_names.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBlacklistReportsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8270,6 +8698,13 @@ pub struct DeleteEmailIdentityInput {
     /// Amazon Pinpoint account.</p>
     pub email_identity: std::option::Option<std::string::String>,
 }
+impl DeleteEmailIdentityInput {
+    /// <p>The identity (that is, the email address or domain) that you want to delete from your
+    /// Amazon Pinpoint account.</p>
+    pub fn email_identity(&self) -> std::option::Option<&str> {
+        self.email_identity.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEmailIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEmailIdentityInput");
@@ -8284,6 +8719,12 @@ impl std::fmt::Debug for DeleteEmailIdentityInput {
 pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     pub pool_name: std::option::Option<std::string::String>,
+}
+impl DeleteDedicatedIpPoolInput {
+    /// <p>The name of the dedicated IP pool that you want to delete.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8303,6 +8744,17 @@ pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the event destination that you want to delete.</p>
     pub event_destination_name: std::option::Option<std::string::String>,
 }
+impl DeleteConfigurationSetEventDestinationInput {
+    /// <p>The name of the configuration set that contains the event destination that you want to
+    /// delete.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>The name of the event destination that you want to delete.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConfigurationSetEventDestinationInput");
@@ -8318,6 +8770,12 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set that you want to delete.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl DeleteConfigurationSetInput {
+    /// <p>The name of the configuration set that you want to delete.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8337,6 +8795,17 @@ pub struct CreateEmailIdentityInput {
     /// <p>An array of objects that define the tags (keys and values) that you want to associate
     /// with the email identity.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateEmailIdentityInput {
+    /// <p>The email address or domain that you want to verify.</p>
+    pub fn email_identity(&self) -> std::option::Option<&str> {
+        self.email_identity.as_deref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate
+    /// with the email identity.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEmailIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8368,6 +8837,26 @@ pub struct CreateDeliverabilityTestReportInput {
     /// with the predictive inbox placement test.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDeliverabilityTestReportInput {
+    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
+    /// results.</p>
+    pub fn report_name(&self) -> std::option::Option<&str> {
+        self.report_name.as_deref()
+    }
+    /// <p>The email address that the predictive inbox placement test email was sent from.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
+        self.content.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate
+    /// with the predictive inbox placement test.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeliverabilityTestReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeliverabilityTestReportInput");
@@ -8389,6 +8878,17 @@ pub struct CreateDedicatedIpPoolInput {
     /// pool.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDedicatedIpPoolInput {
+    /// <p>The name of the dedicated IP pool.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
+    /// <p>An object that defines the tags (keys and values) that you want to associate with the
+    /// pool.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDedicatedIpPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDedicatedIpPoolInput");
@@ -8408,6 +8908,22 @@ pub struct CreateConfigurationSetEventDestinationInput {
     pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
+}
+impl CreateConfigurationSetEventDestinationInput {
+    /// <p>The name of the configuration set that you want to add an event destination to.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>A name that identifies the event destination within the configuration set.</p>
+    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+        self.event_destination_name.as_deref()
+    }
+    /// <p>An object that defines the event destination.</p>
+    pub fn event_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::EventDestinationDefinition> {
+        self.event_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8440,6 +8956,37 @@ pub struct CreateConfigurationSetInput {
     /// <p>An array of objects that define the tags (keys and values) that you want to associate
     /// with the configuration set.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateConfigurationSetInput {
+    /// <p>The name of the configuration set.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>An object that defines the open and click tracking options for emails that you send
+    /// using the configuration set.</p>
+    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+        self.tracking_options.as_ref()
+    }
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
+    /// using the configuration set.</p>
+    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+        self.delivery_options.as_ref()
+    }
+    /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails
+    /// that you send that use the configuration set.</p>
+    pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
+        self.reputation_options.as_ref()
+    }
+    /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the
+    /// configuration set.</p>
+    pub fn sending_options(&self) -> std::option::Option<&crate::model::SendingOptions> {
+        self.sending_options.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate
+    /// with the configuration set.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

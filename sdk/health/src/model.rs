@@ -21,6 +21,22 @@ pub struct EventType {
     /// or <code>accountNotification</code>).</p>
     pub category: std::option::Option<crate::model::EventTypeCategory>,
 }
+impl EventType {
+    /// <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn service(&self) -> std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+    /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+    /// or <code>accountNotification</code>).</p>
+    pub fn category(&self) -> std::option::Option<&crate::model::EventTypeCategory> {
+        self.category.as_ref()
+    }
+}
 impl std::fmt::Debug for EventType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventType");
@@ -176,6 +192,21 @@ pub struct EventTypeFilter {
     /// or <code>accountNotification</code>).</p>
     pub event_type_categories: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
 }
+impl EventTypeFilter {
+    /// <p>A list of event type codes.</p>
+    pub fn event_type_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_type_codes.as_deref()
+    }
+    /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+        self.services.as_deref()
+    }
+    /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+    /// or <code>accountNotification</code>).</p>
+    pub fn event_type_categories(&self) -> std::option::Option<&[crate::model::EventTypeCategory]> {
+        self.event_type_categories.as_deref()
+    }
+}
 impl std::fmt::Debug for EventTypeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventTypeFilter");
@@ -328,6 +359,76 @@ pub struct OrganizationEvent {
     /// <p>The most recent status of the event. Possible values are <code>open</code>,
     /// <code>closed</code>, and <code>upcoming</code>.</p>
     pub status_code: std::option::Option<crate::model::EventStatusCode>,
+}
+impl OrganizationEvent {
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
+    pub fn service(&self) -> std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>The unique identifier for the event type. The format is
+    /// <code>AWS_SERVICE_DESCRIPTION</code>. For example,
+    /// <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    pub fn event_type_code(&self) -> std::option::Option<&str> {
+        self.event_type_code.as_deref()
+    }
+    /// <p>The category of the event type.</p>
+    pub fn event_type_category(&self) -> std::option::Option<&crate::model::EventTypeCategory> {
+        self.event_type_category.as_ref()
+    }
+    /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+    /// <code>affectedAccounts</code> value is always empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
+    /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+    /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
+    /// have AWS accounts that use that service, those account IDs appear in the
+    /// response.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
+    /// <code>eventArn</code> that you specified in the request is invalid or doesn't
+    /// exist.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_scope_code(&self) -> std::option::Option<&crate::model::EventScopeCode> {
+        self.event_scope_code.as_ref()
+    }
+    /// <p>The AWS Region name of the event.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The date and time that the event began.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time that the event ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The most recent date and time that the event was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The most recent status of the event. Possible values are <code>open</code>,
+    /// <code>closed</code>, and <code>upcoming</code>.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::EventStatusCode> {
+        self.status_code.as_ref()
+    }
 }
 impl std::fmt::Debug for OrganizationEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -728,6 +829,71 @@ pub struct OrganizationEventFilter {
     /// <p>A list of event status codes.</p>
     pub event_status_codes: std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
 }
+impl OrganizationEventFilter {
+    /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+    /// </p>
+    pub fn event_type_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_type_codes.as_deref()
+    }
+    /// <p>A list of 12-digit AWS account numbers that contains the affected entities.</p>
+    pub fn aws_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.aws_account_ids.as_deref()
+    }
+    /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+        self.services.as_deref()
+    }
+    /// <p>A list of AWS Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set:
+    /// match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or
+    /// <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code>
+    /// inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where
+    /// the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set
+    /// and <code>to</code> is set: match items where the timestamp value is equal to or before
+    /// <code>to</code>.</p>
+    pub fn start_time(&self) -> std::option::Option<&crate::model::DateTimeRange> {
+        self.start_time.as_ref()
+    }
+    /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set:
+    /// match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or
+    /// <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code>
+    /// inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where
+    /// the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set
+    /// and <code>to</code> is set: match items where the timestamp value is equal to or before
+    /// <code>to</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&crate::model::DateTimeRange> {
+        self.end_time.as_ref()
+    }
+    /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set:
+    /// match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or
+    /// <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code>
+    /// inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where
+    /// the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set
+    /// and <code>to</code> is set: match items where the timestamp value is equal to or before
+    /// <code>to</code>.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&crate::model::DateTimeRange> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>A list of entity ARNs (unique identifiers).</p>
+    pub fn entity_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_arns.as_deref()
+    }
+    /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
+    pub fn entity_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_values.as_deref()
+    }
+    /// <p>A list of event type category codes (issue, scheduledChange, or accountNotification).</p>
+    pub fn event_type_categories(&self) -> std::option::Option<&[crate::model::EventTypeCategory]> {
+        self.event_type_categories.as_deref()
+    }
+    /// <p>A list of event status codes.</p>
+    pub fn event_status_codes(&self) -> std::option::Option<&[crate::model::EventStatusCode]> {
+        self.event_status_codes.as_deref()
+    }
+}
 impl std::fmt::Debug for OrganizationEventFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationEventFilter");
@@ -1041,6 +1207,16 @@ pub struct DateTimeRange {
     /// <p>The ending date and time of a time range.</p>
     pub to: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DateTimeRange {
+    /// <p>The starting date and time of a time range.</p>
+    pub fn from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from.as_ref()
+    }
+    /// <p>The ending date and time of a time range.</p>
+    pub fn to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to.as_ref()
+    }
+}
 impl std::fmt::Debug for DateTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DateTimeRange");
@@ -1168,6 +1344,80 @@ pub struct Event {
     /// </li>
     /// </ul>
     pub event_scope_code: std::option::Option<crate::model::EventScopeCode>,
+}
+impl Event {
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn service(&self) -> std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+    /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    pub fn event_type_code(&self) -> std::option::Option<&str> {
+        self.event_type_code.as_deref()
+    }
+    /// <p>The category of the event. Possible values are <code>issue</code>,
+    /// <code>scheduledChange</code>, and <code>accountNotification</code>.</p>
+    pub fn event_type_category(&self) -> std::option::Option<&crate::model::EventTypeCategory> {
+        self.event_type_category.as_ref()
+    }
+    /// <p>The AWS Region name of the event.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The date and time that the event began.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time that the event ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The most recent date and time that the event was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The most recent status of the event. Possible values are <code>open</code>,
+    /// <code>closed</code>, and <code>upcoming</code>.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::EventStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+    /// <code>affectedAccounts</code> value is always empty.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
+    /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+    /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
+    /// have AWS accounts that use that service, those account IDs appear in the
+    /// response.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
+    /// <code>eventArn</code> that you specified in the request is invalid or doesn't
+    /// exist.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_scope_code(&self) -> std::option::Option<&crate::model::EventScopeCode> {
+        self.event_scope_code.as_ref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1460,6 +1710,70 @@ pub struct EventFilter {
     >,
     /// <p>A list of event status codes.</p>
     pub event_status_codes: std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
+}
+impl EventFilter {
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+    /// </p>
+    pub fn event_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_arns.as_deref()
+    }
+    /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+    /// </p>
+    pub fn event_type_codes(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_type_codes.as_deref()
+    }
+    /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+        self.services.as_deref()
+    }
+    /// <p>A list of AWS Regions.</p>
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.regions.as_deref()
+    }
+    /// <p>A list of AWS Availability Zones.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>A list of dates and times that the event began.</p>
+    pub fn start_times(&self) -> std::option::Option<&[crate::model::DateTimeRange]> {
+        self.start_times.as_deref()
+    }
+    /// <p>A list of dates and times that the event ended.</p>
+    pub fn end_times(&self) -> std::option::Option<&[crate::model::DateTimeRange]> {
+        self.end_times.as_deref()
+    }
+    /// <p>A list of dates and times that the event was last updated.</p>
+    pub fn last_updated_times(&self) -> std::option::Option<&[crate::model::DateTimeRange]> {
+        self.last_updated_times.as_deref()
+    }
+    /// <p>A list of entity ARNs (unique identifiers).</p>
+    pub fn entity_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_arns.as_deref()
+    }
+    /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS
+    /// volumes (<code>vol-426ab23e</code>).</p>
+    pub fn entity_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_values.as_deref()
+    }
+    /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+    /// or <code>accountNotification</code>).</p>
+    pub fn event_type_categories(&self) -> std::option::Option<&[crate::model::EventTypeCategory]> {
+        self.event_type_categories.as_deref()
+    }
+    /// <p>A map of entity tags attached to the affected entity.</p>
+    /// <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+    /// </note>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.tags.as_deref()
+    }
+    /// <p>A list of event status codes.</p>
+    pub fn event_status_codes(&self) -> std::option::Option<&[crate::model::EventStatusCode]> {
+        self.event_status_codes.as_deref()
+    }
 }
 impl std::fmt::Debug for EventFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1840,6 +2154,45 @@ pub struct OrganizationEventDetailsErrorItem {
     /// </ul>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl OrganizationEventDetailsErrorItem {
+    /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified
+    /// event.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>The name of the error.</p>
+    pub fn error_name(&self) -> std::option::Option<&str> {
+        self.error_name.as_deref()
+    }
+    /// <p>A message that describes the error.</p>
+    /// <p>If you call the <code>DescribeEventDetailsForOrganization</code>
+    /// operation and receive one of the following errors, follow the recommendations in the message:</p>
+    /// <ul>
+    /// <li>
+    /// <p>We couldn't find a public event that matches your request. To find an event that is account specific, you must enter an AWS account ID in the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>We couldn't find an account specific event for the specified AWS account. To find an event that is public, you must enter a null value for the AWS account ID in the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have either a Business or Enterprise Support plan.</p>
+    /// </li>
+    /// </ul>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for OrganizationEventDetailsErrorItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationEventDetailsErrorItem");
@@ -2003,6 +2356,47 @@ pub struct OrganizationEventDetails {
     pub event_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl OrganizationEventDetails {
+    /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>Summary information about an AWS Health event.</p>
+    /// <p>AWS Health events can be public or account-specific:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Public events</i> might be service events that are not specific
+    /// to an AWS account. For example, if there is an issue with an AWS Region,
+    /// AWS Health provides information about the event, even if you don't use services or
+    /// resources in that Region.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Account-specific</i> events are specific to either your AWS
+    /// account or an account in your organization. For example, if there's an issue with
+    /// Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event
+    /// and the affected resources in the account.</p>
+    /// </li>
+    /// </ul>
+    /// <p>You can determine if an event is public or account-specific by using the
+    /// <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>The detailed description of the event. Included in the information returned by the
+    /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
+    pub fn event_description(&self) -> std::option::Option<&crate::model::EventDescription> {
+        self.event_description.as_ref()
+    }
+    /// <p>Additional metadata about the event.</p>
+    pub fn event_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.event_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for OrganizationEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationEventDetails");
@@ -2154,6 +2548,12 @@ pub struct EventDescription {
     /// <p>The most recent description of the event.</p>
     pub latest_description: std::option::Option<std::string::String>,
 }
+impl EventDescription {
+    /// <p>The most recent description of the event.</p>
+    pub fn latest_description(&self) -> std::option::Option<&str> {
+        self.latest_description.as_deref()
+    }
+}
 impl std::fmt::Debug for EventDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventDescription");
@@ -2213,6 +2613,23 @@ pub struct EventAccountFilter {
     pub event_arn: std::option::Option<std::string::String>,
     /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
+}
+impl EventAccountFilter {
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EventAccountFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2302,6 +2719,27 @@ pub struct EventDetailsErrorItem {
     pub error_name: std::option::Option<std::string::String>,
     /// <p>A message that describes the error.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl EventDetailsErrorItem {
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>The name of the error.</p>
+    pub fn error_name(&self) -> std::option::Option<&str> {
+        self.error_name.as_deref()
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for EventDetailsErrorItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2400,6 +2838,23 @@ pub struct EventDetails {
     pub event_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl EventDetails {
+    /// <p>Summary information about the event.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>The most recent description of the event.</p>
+    pub fn event_description(&self) -> std::option::Option<&crate::model::EventDescription> {
+        self.event_description.as_ref()
+    }
+    /// <p>Additional metadata about the event.</p>
+    pub fn event_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.event_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for EventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventDetails");
@@ -2495,6 +2950,16 @@ pub struct EventAggregate {
     pub aggregate_value: std::option::Option<std::string::String>,
     /// <p>The number of events of the associated issue type.</p>
     pub count: i32,
+}
+impl EventAggregate {
+    /// <p>The issue type for the associated count.</p>
+    pub fn aggregate_value(&self) -> std::option::Option<&str> {
+        self.aggregate_value.as_deref()
+    }
+    /// <p>The number of events of the associated issue type.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
 }
 impl std::fmt::Debug for EventAggregate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2620,6 +3085,23 @@ pub struct EntityAggregate {
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub count: i32,
 }
+impl EntityAggregate {
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>The number of entities that match the criteria for the specified events.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+}
 impl std::fmt::Debug for EntityAggregate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityAggregate");
@@ -2710,6 +3192,33 @@ pub struct OrganizationAffectedEntitiesErrorItem {
     /// <code>AWS_SERVICE_DESCRIPTION</code>. For example,
     /// <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl OrganizationAffectedEntitiesErrorItem {
+    /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>The name of the error.</p>
+    pub fn error_name(&self) -> std::option::Option<&str> {
+        self.error_name.as_deref()
+    }
+    /// <p>The unique identifier for the event type. The format is
+    /// <code>AWS_SERVICE_DESCRIPTION</code>. For example,
+    /// <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for OrganizationAffectedEntitiesErrorItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2849,6 +3358,56 @@ pub struct AffectedEntity {
     /// </note>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AffectedEntity {
+    /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i>
+    /// </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
+    /// </p>
+    pub fn entity_arn(&self) -> std::option::Option<&str> {
+        self.entity_arn.as_deref()
+    }
+    /// <p>The unique identifier for the event. The event ARN has the
+    /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+    /// </code>
+    /// format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p>
+    /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+    /// </p>
+    pub fn event_arn(&self) -> std::option::Option<&str> {
+        self.event_arn.as_deref()
+    }
+    /// <p>The ID of the affected entity.</p>
+    pub fn entity_value(&self) -> std::option::Option<&str> {
+        self.entity_value.as_deref()
+    }
+    /// <p>The URL of the affected entity.</p>
+    pub fn entity_url(&self) -> std::option::Option<&str> {
+        self.entity_url.as_deref()
+    }
+    /// <p>The 12-digit AWS account number that contains the affected entity.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The most recent time that the entity was updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The most recent status of the entity affected by the event. The possible values are
+    /// <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::EntityStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>A map of entity tags attached to the affected entity.</p>
+    /// <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+    /// </note>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AffectedEntity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3117,6 +3676,40 @@ pub struct EntityFilter {
     /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
     /// <code>UNKNOWN</code>).</p>
     pub status_codes: std::option::Option<std::vec::Vec<crate::model::EntityStatusCode>>,
+}
+impl EntityFilter {
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+    /// </p>
+    pub fn event_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_arns.as_deref()
+    }
+    /// <p>A list of entity ARNs (unique identifiers).</p>
+    pub fn entity_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_arns.as_deref()
+    }
+    /// <p>A list of IDs for affected entities.</p>
+    pub fn entity_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_values.as_deref()
+    }
+    /// <p>A list of the most recent dates and times that the entity was updated.</p>
+    pub fn last_updated_times(&self) -> std::option::Option<&[crate::model::DateTimeRange]> {
+        self.last_updated_times.as_deref()
+    }
+    /// <p>A map of entity tags attached to the affected entity.</p>
+    /// <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+    /// </note>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
+        self.tags.as_deref()
+    }
+    /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
+    /// <code>UNKNOWN</code>).</p>
+    pub fn status_codes(&self) -> std::option::Option<&[crate::model::EntityStatusCode]> {
+        self.status_codes.as_deref()
+    }
 }
 impl std::fmt::Debug for EntityFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

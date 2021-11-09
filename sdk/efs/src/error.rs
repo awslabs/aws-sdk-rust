@@ -3560,6 +3560,12 @@ pub struct TooManyRequests {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl TooManyRequests {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyRequests {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequests");
@@ -3640,6 +3646,12 @@ pub struct ThroughputLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ThroughputLimitExceeded {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ThroughputLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThroughputLimitExceeded");
@@ -3718,6 +3730,12 @@ pub struct InternalServerError {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InternalServerError {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3802,6 +3820,12 @@ pub struct InsufficientThroughputCapacity {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InsufficientThroughputCapacity {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InsufficientThroughputCapacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InsufficientThroughputCapacity");
@@ -3880,6 +3904,12 @@ pub struct IncorrectFileSystemLifeCycleState {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl IncorrectFileSystemLifeCycleState {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for IncorrectFileSystemLifeCycleState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3961,6 +3991,12 @@ pub struct FileSystemNotFound {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl FileSystemNotFound {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for FileSystemNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSystemNotFound");
@@ -4040,6 +4076,12 @@ pub struct BadRequest {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl BadRequest {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for BadRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4121,6 +4163,12 @@ pub struct AccessPointNotFound {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl AccessPointNotFound {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessPointNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessPointNotFound");
@@ -4201,6 +4249,12 @@ pub struct InvalidPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidPolicyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidPolicyException");
@@ -4279,6 +4333,12 @@ pub struct ValidationException {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4360,6 +4420,12 @@ pub struct SecurityGroupNotFound {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl SecurityGroupNotFound {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityGroupNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityGroupNotFound");
@@ -4439,6 +4505,12 @@ pub struct SecurityGroupLimitExceeded {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl SecurityGroupLimitExceeded {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for SecurityGroupLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4520,6 +4592,12 @@ pub struct MountTargetNotFound {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl MountTargetNotFound {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for MountTargetNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MountTargetNotFound");
@@ -4600,6 +4678,12 @@ pub struct IncorrectMountTargetState {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl IncorrectMountTargetState {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for IncorrectMountTargetState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncorrectMountTargetState");
@@ -4678,6 +4762,12 @@ pub struct PolicyNotFound {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl PolicyNotFound {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4759,6 +4849,12 @@ pub struct DependencyTimeout {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl DependencyTimeout {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for DependencyTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DependencyTimeout");
@@ -4838,6 +4934,12 @@ pub struct FileSystemInUse {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl FileSystemInUse {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for FileSystemInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileSystemInUse");
@@ -4916,6 +5018,12 @@ pub struct UnsupportedAvailabilityZone {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl UnsupportedAvailabilityZone {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for UnsupportedAvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4997,6 +5105,12 @@ pub struct SubnetNotFound {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl SubnetNotFound {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for SubnetNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubnetNotFound");
@@ -5076,6 +5190,12 @@ pub struct NoFreeAddressesInSubnet {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl NoFreeAddressesInSubnet {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for NoFreeAddressesInSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5160,6 +5280,12 @@ pub struct NetworkInterfaceLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl NetworkInterfaceLimitExceeded {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkInterfaceLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkInterfaceLimitExceeded");
@@ -5239,6 +5365,12 @@ pub struct MountTargetConflict {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl MountTargetConflict {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for MountTargetConflict {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5320,6 +5452,12 @@ pub struct IpAddressInUse {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl IpAddressInUse {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for IpAddressInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpAddressInUse");
@@ -5400,6 +5538,12 @@ pub struct AvailabilityZonesMismatch {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl AvailabilityZonesMismatch {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for AvailabilityZonesMismatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AvailabilityZonesMismatch");
@@ -5479,6 +5623,12 @@ pub struct FileSystemLimitExceeded {
     pub error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl FileSystemLimitExceeded {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for FileSystemLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5561,6 +5711,16 @@ pub struct FileSystemAlreadyExists {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub file_system_id: std::option::Option<std::string::String>,
+}
+impl FileSystemAlreadyExists {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
 }
 impl std::fmt::Debug for FileSystemAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5658,6 +5818,12 @@ pub struct AccessPointLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl AccessPointLimitExceeded {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for AccessPointLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccessPointLimitExceeded");
@@ -5739,6 +5905,16 @@ pub struct AccessPointAlreadyExists {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub access_point_id: std::option::Option<std::string::String>,
+}
+impl AccessPointAlreadyExists {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn access_point_id(&self) -> std::option::Option<&str> {
+        self.access_point_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessPointAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

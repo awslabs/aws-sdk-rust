@@ -24,6 +24,24 @@ pub struct SubnetGroup {
     /// <p>A list of subnets associated with the subnet group. </p>
     pub subnets: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
 }
+impl SubnetGroup {
+    /// <p>The name of the subnet group.</p>
+    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+        self.subnet_group_name.as_deref()
+    }
+    /// <p>The description of the subnet group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnets associated with the subnet group. </p>
+    pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
+        self.subnets.as_deref()
+    }
+}
 impl std::fmt::Debug for SubnetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubnetGroup");
@@ -127,6 +145,16 @@ pub struct Subnet {
     /// <p>The Availability Zone (AZ) for the subnet.</p>
     pub subnet_availability_zone: std::option::Option<std::string::String>,
 }
+impl Subnet {
+    /// <p>The system-assigned identifier for the subnet.</p>
+    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
+        self.subnet_identifier.as_deref()
+    }
+    /// <p>The Availability Zone (AZ) for the subnet.</p>
+    pub fn subnet_availability_zone(&self) -> std::option::Option<&str> {
+        self.subnet_availability_zone.as_deref()
+    }
+}
 impl std::fmt::Debug for Subnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subnet");
@@ -197,6 +225,16 @@ pub struct ParameterGroup {
     /// <p>A description of the parameter group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl ParameterGroup {
+    /// <p>The name of the parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>A description of the parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for ParameterGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParameterGroup");
@@ -262,6 +300,16 @@ pub struct ParameterNameValue {
     pub parameter_name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
     pub parameter_value: std::option::Option<std::string::String>,
+}
+impl ParameterNameValue {
+    /// <p>The name of the parameter.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>The value of the parameter.</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
 }
 impl std::fmt::Debug for ParameterNameValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -383,6 +431,103 @@ pub struct Cluster {
     /// </ul>
     pub cluster_endpoint_encryption_type:
         std::option::Option<crate::model::ClusterEndpointEncryptionType>,
+}
+impl Cluster {
+    /// <p>The name of the DAX cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The description of the cluster.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+    /// </p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The total number of nodes in the cluster.</p>
+    pub fn total_nodes(&self) -> std::option::Option<i32> {
+        self.total_nodes
+    }
+    /// <p>The number of nodes in the cluster that are active (i.e., capable of serving
+    /// requests).</p>
+    pub fn active_nodes(&self) -> std::option::Option<i32> {
+        self.active_nodes
+    }
+    /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of
+    /// the same type.)</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The current status of the cluster.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+    /// and a URL. Applications should use the URL to configure the DAX client to find
+    /// their cluster.</p>
+    pub fn cluster_discovery_endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.cluster_discovery_endpoint.as_ref()
+    }
+    /// <p>A list of nodes to be removed from the cluster.</p>
+    pub fn node_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_ids_to_remove.as_deref()
+    }
+    /// <p>A list of nodes that are currently in the cluster.</p>
+    pub fn nodes(&self) -> std::option::Option<&[crate::model::Node]> {
+        self.nodes.as_deref()
+    }
+    /// <p>A range of time when maintenance of DAX cluster software will be performed. For
+    /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
+    /// 30 minutes, and is performed automatically within the maintenance window.</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>Describes a notification topic and its status. Notification topics are used for
+    /// publishing DAX events to subscribers using Amazon Simple Notification Service
+    /// (SNS).</p>
+    pub fn notification_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+        self.notification_configuration.as_ref()
+    }
+    /// <p>The subnet group where the DAX cluster is running.</p>
+    pub fn subnet_group(&self) -> std::option::Option<&str> {
+        self.subnet_group.as_deref()
+    }
+    /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroupMembership]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
+    /// will assume this role and use the role's permissions to access DynamoDB on your
+    /// behalf.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The parameter group being used by nodes in the cluster.</p>
+    pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroupStatus> {
+        self.parameter_group.as_ref()
+    }
+    /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
+    pub fn sse_description(&self) -> std::option::Option<&crate::model::SseDescription> {
+        self.sse_description.as_ref()
+    }
+    /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> for no encryption</p>
+    /// <p>
+    /// <code>TLS</code> for Transport Layer Security</p>
+    /// </li>
+    /// </ul>
+    pub fn cluster_endpoint_encryption_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ClusterEndpointEncryptionType> {
+        self.cluster_endpoint_encryption_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -836,6 +981,30 @@ pub struct SseDescription {
     /// </ul>
     pub status: std::option::Option<crate::model::SseStatus>,
 }
+impl SseDescription {
+    /// <p>The current state of server-side encryption:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLING</code> - Server-side encryption is being enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Server-side encryption is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLING</code> - Server-side encryption is being disabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - Server-side encryption is disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::SseStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for SseDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SseDescription");
@@ -987,6 +1156,20 @@ pub struct ParameterGroupStatus {
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
     pub node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ParameterGroupStatus {
+    /// <p>The name of the parameter group.</p>
+    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+        self.parameter_group_name.as_deref()
+    }
+    /// <p>The status of parameter updates. </p>
+    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+        self.parameter_apply_status.as_deref()
+    }
+    /// <p>The node IDs of one or more nodes to be rebooted.</p>
+    pub fn node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_ids_to_reboot.as_deref()
+    }
+}
 impl std::fmt::Debug for ParameterGroupStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParameterGroupStatus");
@@ -1078,6 +1261,16 @@ pub struct SecurityGroupMembership {
     /// <p>The status of this security group.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl SecurityGroupMembership {
+    /// <p>The unique ID for this security group.</p>
+    pub fn security_group_identifier(&self) -> std::option::Option<&str> {
+        self.security_group_identifier.as_deref()
+    }
+    /// <p>The status of this security group.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityGroupMembership {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityGroupMembership");
@@ -1147,6 +1340,18 @@ pub struct NotificationConfiguration {
     /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
     /// topic.</p>
     pub topic_status: std::option::Option<std::string::String>,
+}
+impl NotificationConfiguration {
+    /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The current state of the topic. A value of “active” means that notifications will
+    /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
+    /// topic.</p>
+    pub fn topic_status(&self) -> std::option::Option<&str> {
+        self.topic_status.as_deref()
+    }
 }
 impl std::fmt::Debug for NotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1226,6 +1431,36 @@ pub struct Node {
     /// <p>The status of the parameter group associated with this node. For example,
     /// <code>in-sync</code>.</p>
     pub parameter_group_status: std::option::Option<std::string::String>,
+}
+impl Node {
+    /// <p>A system-generated identifier for the node.</p>
+    pub fn node_id(&self) -> std::option::Option<&str> {
+        self.node_id.as_deref()
+    }
+    /// <p>The endpoint for the node, consisting of a DNS name and a port number. Client
+    /// applications can connect directly to a node endpoint, if desired (as an alternative to
+    /// allowing DAX client software to intelligently route requests and responses to nodes in
+    /// the DAX cluster.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+        self.endpoint.as_ref()
+    }
+    /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
+    pub fn node_create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.node_create_time.as_ref()
+    }
+    /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The current status of the node. For example: <code>available</code>.</p>
+    pub fn node_status(&self) -> std::option::Option<&str> {
+        self.node_status.as_deref()
+    }
+    /// <p>The status of the parameter group associated with this node. For example,
+    /// <code>in-sync</code>.</p>
+    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+        self.parameter_group_status.as_deref()
+    }
 }
 impl std::fmt::Debug for Node {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1363,6 +1598,21 @@ pub struct Endpoint {
     /// ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl Endpoint {
+    /// <p>The DNS hostname of the endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The port number that applications should use to connect to the endpoint.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// <p>The URL that applications should use to connect to the endpoint. The default
+    /// ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Endpoint");
@@ -1447,6 +1697,18 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key for the tag.  Tag keys are case sensitive. Every DAX cluster can only have
+    /// one tag with the same key. If you try to add an existing tag (same key), the
+    /// existing tag value will be updated to the new value.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1536,6 +1798,54 @@ pub struct Parameter {
     /// <code>requires-reboot</code> indicates that a new value for this parameter will only
     /// take effect if a node is rebooted.</p>
     pub change_type: std::option::Option<crate::model::ChangeType>,
+}
+impl Parameter {
+    /// <p>The name of the parameter.</p>
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
+        self.parameter_name.as_deref()
+    }
+    /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a
+    /// particular type.</p>
+    pub fn parameter_type(&self) -> std::option::Option<&crate::model::ParameterType> {
+        self.parameter_type.as_ref()
+    }
+    /// <p>The value for the parameter.</p>
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
+        self.parameter_value.as_deref()
+    }
+    /// <p>A list of node types, and specific parameter values for each node.</p>
+    pub fn node_type_specific_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::NodeTypeSpecificValue]> {
+        self.node_type_specific_values.as_deref()
+    }
+    /// <p>A description of the parameter</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>How the parameter is defined. For example, <code>system</code> denotes a
+    /// system-defined parameter.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The data type of the parameter. For example, <code>integer</code>:</p>
+    pub fn data_type(&self) -> std::option::Option<&str> {
+        self.data_type.as_deref()
+    }
+    /// <p>A range of values within which the parameter can be set.</p>
+    pub fn allowed_values(&self) -> std::option::Option<&str> {
+        self.allowed_values.as_deref()
+    }
+    /// <p>Whether the customer is allowed to modify the parameter.</p>
+    pub fn is_modifiable(&self) -> std::option::Option<&crate::model::IsModifiable> {
+        self.is_modifiable.as_ref()
+    }
+    /// <p>The conditions under which changes to this parameter can be applied. For example,
+    /// <code>requires-reboot</code> indicates that a new value for this parameter will only
+    /// take effect if a node is rebooted.</p>
+    pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
+        self.change_type.as_ref()
+    }
 }
 impl std::fmt::Debug for Parameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1858,6 +2168,16 @@ pub struct NodeTypeSpecificValue {
     /// <p>The parameter value for this node type.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl NodeTypeSpecificValue {
+    /// <p>A node type to which the parameter value applies.</p>
+    pub fn node_type(&self) -> std::option::Option<&str> {
+        self.node_type.as_deref()
+    }
+    /// <p>The parameter value for this node type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for NodeTypeSpecificValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeTypeSpecificValue");
@@ -1983,6 +2303,26 @@ pub struct Event {
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
     pub date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Event {
+    /// <p>The source of the event. For example, if the event occurred at the node level, the
+    /// source would be the node ID.</p>
+    pub fn source_name(&self) -> std::option::Option<&str> {
+        self.source_name.as_deref()
+    }
+    /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
+    /// etc.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>A user-defined message associated with the event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The date and time when the event occurred.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2136,6 +2476,12 @@ impl AsRef<str> for SourceType {
 pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl SseSpecification {
+    /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for SseSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -221,6 +221,21 @@ pub struct ListTagsForStreamOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForStreamOutput {
+    /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is
+    /// truncated, the response includes a token that you can use in the next request to fetch
+    /// the next set of tags.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A map of tag keys and values associated with the specified stream.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForStreamOutput");
@@ -308,6 +323,21 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
+    /// call is truncated, the response includes a token that you can use in the next request to
+    /// fetch the next set of tags. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -393,6 +423,17 @@ pub struct ListStreamsOutput {
     /// the next batch of streams, use this token in your next request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListStreamsOutput {
+    /// <p>An array of <code>StreamInfo</code> objects.</p>
+    pub fn stream_info_list(&self) -> std::option::Option<&[crate::model::StreamInfo]> {
+        self.stream_info_list.as_deref()
+    }
+    /// <p>If the response is truncated, the call returns this element with a token. To get
+    /// the next batch of streams, use this token in your next request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStreamsOutput");
@@ -468,6 +509,17 @@ pub struct ListSignalingChannelsOutput {
     /// next batch of streams, use this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSignalingChannelsOutput {
+    /// <p>An array of <code>ChannelInfo</code> objects.</p>
+    pub fn channel_info_list(&self) -> std::option::Option<&[crate::model::ChannelInfo]> {
+        self.channel_info_list.as_deref()
+    }
+    /// <p>If the response is truncated, the call returns this element with a token. To get the
+    /// next batch of streams, use this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSignalingChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSignalingChannelsOutput");
@@ -541,6 +593,14 @@ pub struct GetSignalingChannelEndpointOutput {
     pub resource_endpoint_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceEndpointListItem>>,
 }
+impl GetSignalingChannelEndpointOutput {
+    /// <p>A list of endpoints for the specified signaling channel.</p>
+    pub fn resource_endpoint_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceEndpointListItem]> {
+        self.resource_endpoint_list.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSignalingChannelEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSignalingChannelEndpointOutput");
@@ -603,6 +663,13 @@ pub struct GetDataEndpointOutput {
     /// this endpoint in your application.</p>
     pub data_endpoint: std::option::Option<std::string::String>,
 }
+impl GetDataEndpointOutput {
+    /// <p>The endpoint value. To read data from the stream or to write data to it, specify
+    /// this endpoint in your application.</p>
+    pub fn data_endpoint(&self) -> std::option::Option<&str> {
+        self.data_endpoint.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDataEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataEndpointOutput");
@@ -656,6 +723,12 @@ pub struct DescribeStreamOutput {
     /// <p>An object that describes the stream.</p>
     pub stream_info: std::option::Option<crate::model::StreamInfo>,
 }
+impl DescribeStreamOutput {
+    /// <p>An object that describes the stream.</p>
+    pub fn stream_info(&self) -> std::option::Option<&crate::model::StreamInfo> {
+        self.stream_info.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStreamOutput");
@@ -707,6 +780,13 @@ pub struct DescribeSignalingChannelOutput {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and
     /// properties.</p>
     pub channel_info: std::option::Option<crate::model::ChannelInfo>,
+}
+impl DescribeSignalingChannelOutput {
+    /// <p>A structure that encapsulates the specified signaling channel's metadata and
+    /// properties.</p>
+    pub fn channel_info(&self) -> std::option::Option<&crate::model::ChannelInfo> {
+        self.channel_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeSignalingChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -821,6 +901,12 @@ pub struct CreateStreamOutput {
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub stream_arn: std::option::Option<std::string::String>,
 }
+impl CreateStreamOutput {
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamOutput");
@@ -868,6 +954,12 @@ impl CreateStreamOutput {
 pub struct CreateSignalingChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the created channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
+}
+impl CreateSignalingChannelOutput {
+    /// <p>The Amazon Resource Name (ARN) of the created channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSignalingChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

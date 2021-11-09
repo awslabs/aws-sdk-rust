@@ -12,6 +12,24 @@ pub struct SatelliteListItem {
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
     pub ground_stations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl SatelliteListItem {
+    /// <p>UUID of a satellite.</p>
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
+        self.satellite_id.as_deref()
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+        self.satellite_arn.as_deref()
+    }
+    /// <p>NORAD satellite ID number.</p>
+    pub fn norad_satellite_id(&self) -> i32 {
+        self.norad_satellite_id
+    }
+    /// <p>A list of ground stations to which the satellite is on-boarded.</p>
+    pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
+        self.ground_stations.as_deref()
+    }
+}
 impl std::fmt::Debug for SatelliteListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SatelliteListItem");
@@ -117,6 +135,24 @@ pub struct MissionProfileListItem {
     /// <p>Name of a mission profile.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl MissionProfileListItem {
+    /// <p>UUID of a mission profile.</p>
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+        self.mission_profile_arn.as_deref()
+    }
+    /// <p>Region of a mission profile.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Name of a mission profile.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for MissionProfileListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MissionProfileListItem");
@@ -214,6 +250,20 @@ pub struct GroundStationData {
     /// <p>Ground station Region.</p>
     pub region: std::option::Option<std::string::String>,
 }
+impl GroundStationData {
+    /// <p>UUID of a ground station.</p>
+    pub fn ground_station_id(&self) -> std::option::Option<&str> {
+        self.ground_station_id.as_deref()
+    }
+    /// <p>Name of a ground station.</p>
+    pub fn ground_station_name(&self) -> std::option::Option<&str> {
+        self.ground_station_name.as_deref()
+    }
+    /// <p>Ground station Region.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+}
 impl std::fmt::Debug for GroundStationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroundStationData");
@@ -296,6 +346,16 @@ pub struct DataflowEndpointListItem {
     /// <p>ARN of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
 }
+impl DataflowEndpointListItem {
+    /// <p>UUID of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_id.as_deref()
+    }
+    /// <p>ARN of a dataflow endpoint group.</p>
+    pub fn dataflow_endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DataflowEndpointListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataflowEndpointListItem");
@@ -374,6 +434,16 @@ pub struct EndpointDetails {
     /// <p>A dataflow endpoint.</p>
     pub endpoint: std::option::Option<crate::model::DataflowEndpoint>,
 }
+impl EndpointDetails {
+    /// <p>Endpoint security details.</p>
+    pub fn security_details(&self) -> std::option::Option<&crate::model::SecurityDetails> {
+        self.security_details.as_ref()
+    }
+    /// <p>A dataflow endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::DataflowEndpoint> {
+        self.endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for EndpointDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointDetails");
@@ -446,6 +516,24 @@ pub struct DataflowEndpoint {
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub mtu: std::option::Option<i32>,
+}
+impl DataflowEndpoint {
+    /// <p>Name of a dataflow endpoint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Socket address of a dataflow endpoint.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::SocketAddress> {
+        self.address.as_ref()
+    }
+    /// <p>Status of a dataflow endpoint.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+    pub fn mtu(&self) -> std::option::Option<i32> {
+        self.mtu
+    }
 }
 impl std::fmt::Debug for DataflowEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -609,6 +697,16 @@ pub struct SocketAddress {
     /// <p>Port of a socket address.</p>
     pub port: std::option::Option<i32>,
 }
+impl SocketAddress {
+    /// <p>Name of a socket address.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Port of a socket address.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+}
 impl std::fmt::Debug for SocketAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SocketAddress");
@@ -673,6 +771,20 @@ pub struct SecurityDetails {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl SecurityDetails {
+    /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The security groups to attach to the elastic network interfaces.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SecurityDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -790,6 +902,63 @@ pub struct ContactData {
     /// <p>Tags assigned to a contact.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ContactData {
+    /// <p>UUID of a contact.</p>
+    pub fn contact_id(&self) -> std::option::Option<&str> {
+        self.contact_id.as_deref()
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+        self.mission_profile_arn.as_deref()
+    }
+    /// <p>ARN of a satellite.</p>
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+        self.satellite_arn.as_deref()
+    }
+    /// <p>Start time of a contact.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>End time of a contact.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.pre_pass_start_time.as_ref()
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.post_pass_end_time.as_ref()
+    }
+    /// <p>Name of a ground station.</p>
+    pub fn ground_station(&self) -> std::option::Option<&str> {
+        self.ground_station.as_deref()
+    }
+    /// <p>Status of a contact.</p>
+    pub fn contact_status(&self) -> std::option::Option<&crate::model::ContactStatus> {
+        self.contact_status.as_ref()
+    }
+    /// <p>Error message of a contact.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Maximum elevation angle of a contact.</p>
+    pub fn maximum_elevation(&self) -> std::option::Option<&crate::model::Elevation> {
+        self.maximum_elevation.as_ref()
+    }
+    /// <p>Region of a contact.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ContactData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1044,6 +1213,16 @@ pub struct Elevation {
     /// <p>Elevation angle units.</p>
     pub unit: std::option::Option<crate::model::AngleUnits>,
 }
+impl Elevation {
+    /// <p>Elevation angle value.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p>Elevation angle units.</p>
+    pub fn unit(&self) -> std::option::Option<&crate::model::AngleUnits> {
+        self.unit.as_ref()
+    }
+}
 impl std::fmt::Debug for Elevation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Elevation");
@@ -1277,6 +1456,20 @@ pub struct DataflowDetail {
     /// <p>Error message for a dataflow.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl DataflowDetail {
+    /// <p>Dataflow details for the source side.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+        self.source.as_ref()
+    }
+    /// <p>Dataflow details for the destination side.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>Error message for a dataflow.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for DataflowDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataflowDetail");
@@ -1362,6 +1555,24 @@ pub struct Destination {
     pub config_details: std::option::Option<crate::model::ConfigDetails>,
     /// <p>Region of a dataflow destination.</p>
     pub dataflow_destination_region: std::option::Option<std::string::String>,
+}
+impl Destination {
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    pub fn config_details(&self) -> std::option::Option<&crate::model::ConfigDetails> {
+        self.config_details.as_ref()
+    }
+    /// <p>Region of a dataflow destination.</p>
+    pub fn dataflow_destination_region(&self) -> std::option::Option<&str> {
+        self.dataflow_destination_region.as_deref()
+    }
 }
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1468,6 +1679,15 @@ pub enum ConfigDetails {
     EndpointDetails(crate::model::EndpointDetails),
     /// <p>Details for an S3 recording <code>Config</code> in a contact.</p>
     S3RecordingDetails(crate::model::S3RecordingDetails),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ConfigDetails {
     /// Tries to convert the enum instance into [`AntennaDemodDecodeDetails`](crate::model::ConfigDetails::AntennaDemodDecodeDetails), extracting the inner [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
@@ -1515,6 +1735,10 @@ impl ConfigDetails {
     pub fn is_s3_recording_details(&self) -> bool {
         self.as_s3_recording_details().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Details about an S3 recording <code>Config</code> used in a contact.</p>
@@ -1525,6 +1749,16 @@ pub struct S3RecordingDetails {
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>Template of the S3 key used.</p>
     pub key_template: std::option::Option<std::string::String>,
+}
+impl S3RecordingDetails {
+    /// <p>ARN of the bucket used.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>Template of the S3 key used.</p>
+    pub fn key_template(&self) -> std::option::Option<&str> {
+        self.key_template.as_deref()
+    }
 }
 impl std::fmt::Debug for S3RecordingDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1586,6 +1820,12 @@ impl S3RecordingDetails {
 pub struct AntennaDemodDecodeDetails {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     pub output_node: std::option::Option<std::string::String>,
+}
+impl AntennaDemodDecodeDetails {
+    /// <p>Name of an antenna demod decode output node used in a contact.</p>
+    pub fn output_node(&self) -> std::option::Option<&str> {
+        self.output_node.as_deref()
+    }
 }
 impl std::fmt::Debug for AntennaDemodDecodeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1724,6 +1964,24 @@ pub struct Source {
     /// <p>Region of a dataflow source.</p>
     pub dataflow_source_region: std::option::Option<std::string::String>,
 }
+impl Source {
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
+    pub fn config_details(&self) -> std::option::Option<&crate::model::ConfigDetails> {
+        self.config_details.as_ref()
+    }
+    /// <p>Region of a dataflow source.</p>
+    pub fn dataflow_source_region(&self) -> std::option::Option<&str> {
+        self.dataflow_source_region.as_deref()
+    }
+}
 impl std::fmt::Debug for Source {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Source");
@@ -1825,6 +2083,24 @@ pub struct ConfigListItem {
     pub config_arn: std::option::Option<std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl ConfigListItem {
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn config_id(&self) -> std::option::Option<&str> {
+        self.config_id.as_deref()
+    }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+        self.config_type.as_ref()
+    }
+    /// <p>ARN of a <code>Config</code>.</p>
+    pub fn config_arn(&self) -> std::option::Option<&str> {
+        self.config_arn.as_deref()
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1929,6 +2205,15 @@ pub enum ConfigTypeData {
     /// <p>Information about an uplink echo <code>Config</code>.</p>
     /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
     UplinkEchoConfig(crate::model::UplinkEchoConfig),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ConfigTypeData {
     /// Tries to convert the enum instance into [`AntennaDownlinkConfig`](crate::model::ConfigTypeData::AntennaDownlinkConfig), extracting the inner [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).
@@ -2034,6 +2319,10 @@ impl ConfigTypeData {
     pub fn is_uplink_echo_config(&self) -> bool {
         self.as_uplink_echo_config().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Information about an S3 recording <code>Config</code>.</p>
@@ -2046,6 +2335,20 @@ pub struct S3RecordingConfig {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>S3 Key prefix to prefice data files.</p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl S3RecordingConfig {
+    /// <p>ARN of the bucket to record to.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>S3 Key prefix to prefice data files.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3RecordingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2126,6 +2429,16 @@ pub struct UplinkEchoConfig {
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub antenna_uplink_config_arn: std::option::Option<std::string::String>,
 }
+impl UplinkEchoConfig {
+    /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>ARN of an uplink <code>Config</code>.</p>
+    pub fn antenna_uplink_config_arn(&self) -> std::option::Option<&str> {
+        self.antenna_uplink_config_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UplinkEchoConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UplinkEchoConfig");
@@ -2193,6 +2506,20 @@ pub struct AntennaUplinkConfig {
     pub spectrum_config: std::option::Option<crate::model::UplinkSpectrumConfig>,
     /// <p>EIRP of the target.</p>
     pub target_eirp: std::option::Option<crate::model::Eirp>,
+}
+impl AntennaUplinkConfig {
+    /// <p>Whether or not uplink transmit is disabled.</p>
+    pub fn transmit_disabled(&self) -> std::option::Option<bool> {
+        self.transmit_disabled
+    }
+    /// <p>Information about the uplink spectral <code>Config</code>.</p>
+    pub fn spectrum_config(&self) -> std::option::Option<&crate::model::UplinkSpectrumConfig> {
+        self.spectrum_config.as_ref()
+    }
+    /// <p>EIRP of the target.</p>
+    pub fn target_eirp(&self) -> std::option::Option<&crate::model::Eirp> {
+        self.target_eirp.as_ref()
+    }
 }
 impl std::fmt::Debug for AntennaUplinkConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2272,6 +2599,16 @@ pub struct Eirp {
     pub value: std::option::Option<f64>,
     /// <p>Units of an EIRP.</p>
     pub units: std::option::Option<crate::model::EirpUnits>,
+}
+impl Eirp {
+    /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p>Units of an EIRP.</p>
+    pub fn units(&self) -> std::option::Option<&crate::model::EirpUnits> {
+        self.units.as_ref()
+    }
 }
 impl std::fmt::Debug for Eirp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2386,6 +2723,16 @@ pub struct UplinkSpectrumConfig {
     pub center_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub polarization: std::option::Option<crate::model::Polarization>,
+}
+impl UplinkSpectrumConfig {
+    /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
+    pub fn center_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.center_frequency.as_ref()
+    }
+    /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
+    pub fn polarization(&self) -> std::option::Option<&crate::model::Polarization> {
+        self.polarization.as_ref()
+    }
 }
 impl std::fmt::Debug for UplinkSpectrumConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2515,6 +2862,16 @@ pub struct Frequency {
     /// <p>Frequency units.</p>
     pub units: std::option::Option<crate::model::FrequencyUnits>,
 }
+impl Frequency {
+    /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p>Frequency units.</p>
+    pub fn units(&self) -> std::option::Option<&crate::model::FrequencyUnits> {
+        self.units.as_ref()
+    }
+}
 impl std::fmt::Debug for Frequency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Frequency");
@@ -2642,6 +2999,20 @@ pub struct AntennaDownlinkDemodDecodeConfig {
     /// <p>Information about the decode <code>Config</code>.</p>
     pub decode_config: std::option::Option<crate::model::DecodeConfig>,
 }
+impl AntennaDownlinkDemodDecodeConfig {
+    /// <p>Information about the spectral <code>Config</code>.</p>
+    pub fn spectrum_config(&self) -> std::option::Option<&crate::model::SpectrumConfig> {
+        self.spectrum_config.as_ref()
+    }
+    /// <p>Information about the demodulation <code>Config</code>.</p>
+    pub fn demodulation_config(&self) -> std::option::Option<&crate::model::DemodulationConfig> {
+        self.demodulation_config.as_ref()
+    }
+    /// <p>Information about the decode <code>Config</code>.</p>
+    pub fn decode_config(&self) -> std::option::Option<&crate::model::DecodeConfig> {
+        self.decode_config.as_ref()
+    }
+}
 impl std::fmt::Debug for AntennaDownlinkDemodDecodeConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AntennaDownlinkDemodDecodeConfig");
@@ -2725,6 +3096,12 @@ pub struct DecodeConfig {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     pub unvalidated_json: std::option::Option<std::string::String>,
 }
+impl DecodeConfig {
+    /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
+    pub fn unvalidated_json(&self) -> std::option::Option<&str> {
+        self.unvalidated_json.as_deref()
+    }
+}
 impl std::fmt::Debug for DecodeConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecodeConfig");
@@ -2775,6 +3152,12 @@ impl DecodeConfig {
 pub struct DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     pub unvalidated_json: std::option::Option<std::string::String>,
+}
+impl DemodulationConfig {
+    /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
+    pub fn unvalidated_json(&self) -> std::option::Option<&str> {
+        self.unvalidated_json.as_deref()
+    }
 }
 impl std::fmt::Debug for DemodulationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2841,6 +3224,31 @@ pub struct SpectrumConfig {
     pub bandwidth: std::option::Option<crate::model::FrequencyBandwidth>,
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub polarization: std::option::Option<crate::model::Polarization>,
+}
+impl SpectrumConfig {
+    /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    pub fn center_frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.center_frequency.as_ref()
+    }
+    /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+    /// </li>
+    /// </ul>
+    pub fn bandwidth(&self) -> std::option::Option<&crate::model::FrequencyBandwidth> {
+        self.bandwidth.as_ref()
+    }
+    /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
+    pub fn polarization(&self) -> std::option::Option<&crate::model::Polarization> {
+        self.polarization.as_ref()
+    }
 }
 impl std::fmt::Debug for SpectrumConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2959,6 +3367,27 @@ pub struct FrequencyBandwidth {
     pub value: std::option::Option<f64>,
     /// <p>Frequency bandwidth units.</p>
     pub units: std::option::Option<crate::model::BandwidthUnits>,
+}
+impl FrequencyBandwidth {
+    /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+    /// </li>
+    /// </ul>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
+    /// <p>Frequency bandwidth units.</p>
+    pub fn units(&self) -> std::option::Option<&crate::model::BandwidthUnits> {
+        self.units.as_ref()
+    }
 }
 impl std::fmt::Debug for FrequencyBandwidth {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3107,6 +3536,16 @@ pub struct DataflowEndpointConfig {
     /// <p>Region of a dataflow endpoint.</p>
     pub dataflow_endpoint_region: std::option::Option<std::string::String>,
 }
+impl DataflowEndpointConfig {
+    /// <p>Name of a dataflow endpoint.</p>
+    pub fn dataflow_endpoint_name(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_name.as_deref()
+    }
+    /// <p>Region of a dataflow endpoint.</p>
+    pub fn dataflow_endpoint_region(&self) -> std::option::Option<&str> {
+        self.dataflow_endpoint_region.as_deref()
+    }
+}
 impl std::fmt::Debug for DataflowEndpointConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataflowEndpointConfig");
@@ -3174,6 +3613,12 @@ impl DataflowEndpointConfig {
 pub struct TrackingConfig {
     /// <p>Current setting for autotrack.</p>
     pub autotrack: std::option::Option<crate::model::Criticality>,
+}
+impl TrackingConfig {
+    /// <p>Current setting for autotrack.</p>
+    pub fn autotrack(&self) -> std::option::Option<&crate::model::Criticality> {
+        self.autotrack.as_ref()
+    }
 }
 impl std::fmt::Debug for TrackingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3285,6 +3730,12 @@ impl AsRef<str> for Criticality {
 pub struct AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     pub spectrum_config: std::option::Option<crate::model::SpectrumConfig>,
+}
+impl AntennaDownlinkConfig {
+    /// <p>Object that describes a spectral <code>Config</code>.</p>
+    pub fn spectrum_config(&self) -> std::option::Option<&crate::model::SpectrumConfig> {
+        self.spectrum_config.as_ref()
+    }
 }
 impl std::fmt::Debug for AntennaDownlinkConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

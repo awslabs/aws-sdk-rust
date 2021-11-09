@@ -9,6 +9,17 @@ pub struct GetRecommendationsOutput {
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: std::option::Option<std::string::String>,
 }
+impl GetRecommendationsOutput {
+    /// <p>A list of recommendations sorted in ascending order by prediction score. There can be a
+    /// maximum of 500 items in the list.</p>
+    pub fn item_list(&self) -> std::option::Option<&[crate::model::PredictedItem]> {
+        self.item_list.as_deref()
+    }
+    /// <p>The ID of the recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecommendationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecommendationsOutput");
@@ -85,6 +96,16 @@ pub struct GetPersonalizedRankingOutput {
     pub personalized_ranking: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: std::option::Option<std::string::String>,
+}
+impl GetPersonalizedRankingOutput {
+    /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
+    pub fn personalized_ranking(&self) -> std::option::Option<&[crate::model::PredictedItem]> {
+        self.personalized_ranking.as_deref()
+    }
+    /// <p>The ID of the recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPersonalizedRankingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

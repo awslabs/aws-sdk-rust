@@ -2,28 +2,30 @@
 pub fn serialize_structure_crate_input_accept_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AcceptGrantInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.grant_arn {
         object.key("GrantArn").string(var_1);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_check_in_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CheckInLicenseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.license_consumption_token {
         object.key("LicenseConsumptionToken").string(var_2);
     }
     if let Some(var_3) = &input.beneficiary {
         object.key("Beneficiary").string(var_3);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_checkout_borrow_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CheckoutBorrowLicenseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.license_arn {
         object.key("LicenseArn").string(var_4);
     }
@@ -35,7 +37,7 @@ pub fn serialize_structure_crate_input_checkout_borrow_license_input(
                 crate::json_ser::serialize_structure_crate_model_entitlement_data(
                     &mut object_8,
                     item_7,
-                );
+                )?;
                 object_8.finish();
             }
         }
@@ -52,7 +54,7 @@ pub fn serialize_structure_crate_input_checkout_borrow_license_input(
         for item_13 in var_11 {
             {
                 let mut object_14 = array_12.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_metadata(&mut object_14, item_13);
+                crate::json_ser::serialize_structure_crate_model_metadata(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -61,12 +63,13 @@ pub fn serialize_structure_crate_input_checkout_borrow_license_input(
     if let Some(var_15) = &input.client_token {
         object.key("ClientToken").string(var_15);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_checkout_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CheckoutLicenseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.product_sku {
         object.key("ProductSKU").string(var_16);
     }
@@ -84,7 +87,7 @@ pub fn serialize_structure_crate_input_checkout_license_input(
                 crate::json_ser::serialize_structure_crate_model_entitlement_data(
                     &mut object_22,
                     item_21,
-                );
+                )?;
                 object_22.finish();
             }
         }
@@ -99,12 +102,13 @@ pub fn serialize_structure_crate_input_checkout_license_input(
     if let Some(var_25) = &input.node_id {
         object.key("NodeId").string(var_25);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGrantInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.client_token {
         object.key("ClientToken").string(var_26);
     }
@@ -135,12 +139,13 @@ pub fn serialize_structure_crate_input_create_grant_input(
         }
         array_34.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_grant_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGrantVersionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.client_token {
         object.key("ClientToken").string(var_36);
     }
@@ -168,12 +173,13 @@ pub fn serialize_structure_crate_input_create_grant_version_input(
     if let Some(var_44) = &input.source_version {
         object.key("SourceVersion").string(var_44);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.license_name {
         object.key("LicenseName").string(var_45);
     }
@@ -185,7 +191,7 @@ pub fn serialize_structure_crate_input_create_license_input(
     }
     if let Some(var_48) = &input.issuer {
         let mut object_49 = object.key("Issuer").start_object();
-        crate::json_ser::serialize_structure_crate_model_issuer(&mut object_49, var_48);
+        crate::json_ser::serialize_structure_crate_model_issuer(&mut object_49, var_48)?;
         object_49.finish();
     }
     if let Some(var_50) = &input.home_region {
@@ -193,7 +199,7 @@ pub fn serialize_structure_crate_input_create_license_input(
     }
     if let Some(var_51) = &input.validity {
         let mut object_52 = object.key("Validity").start_object();
-        crate::json_ser::serialize_structure_crate_model_datetime_range(&mut object_52, var_51);
+        crate::json_ser::serialize_structure_crate_model_datetime_range(&mut object_52, var_51)?;
         object_52.finish();
     }
     if let Some(var_53) = &input.entitlements {
@@ -204,7 +210,7 @@ pub fn serialize_structure_crate_input_create_license_input(
                 crate::json_ser::serialize_structure_crate_model_entitlement(
                     &mut object_56,
                     item_55,
-                );
+                )?;
                 object_56.finish();
             }
         }
@@ -218,7 +224,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         crate::json_ser::serialize_structure_crate_model_consumption_configuration(
             &mut object_59,
             var_58,
-        );
+        )?;
         object_59.finish();
     }
     if let Some(var_60) = &input.license_metadata {
@@ -226,7 +232,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         for item_62 in var_60 {
             {
                 let mut object_63 = array_61.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_metadata(&mut object_63, item_62);
+                crate::json_ser::serialize_structure_crate_model_metadata(&mut object_63, item_62)?;
                 object_63.finish();
             }
         }
@@ -235,12 +241,13 @@ pub fn serialize_structure_crate_input_create_license_input(
     if let Some(var_64) = &input.client_token {
         object.key("ClientToken").string(var_64);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.name {
         object.key("Name").string(var_65);
     }
@@ -273,7 +280,7 @@ pub fn serialize_structure_crate_input_create_license_configuration_input(
         for item_75 in var_73 {
             {
                 let mut object_76 = array_74.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_76, item_75);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_76, item_75)?;
                 object_76.finish();
             }
         }
@@ -290,18 +297,19 @@ pub fn serialize_structure_crate_input_create_license_configuration_input(
                 crate::json_ser::serialize_structure_crate_model_product_information(
                     &mut object_81,
                     item_80,
-                );
+                )?;
                 object_81.finish();
             }
         }
         array_79.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_license_conversion_task_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseConversionTaskForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.resource_arn {
         object.key("ResourceArn").string(var_82);
     }
@@ -310,7 +318,7 @@ pub fn serialize_structure_crate_input_create_license_conversion_task_for_resour
         crate::json_ser::serialize_structure_crate_model_license_conversion_context(
             &mut object_84,
             var_83,
-        );
+        )?;
         object_84.finish();
     }
     if let Some(var_85) = &input.destination_license_context {
@@ -318,15 +326,16 @@ pub fn serialize_structure_crate_input_create_license_conversion_task_for_resour
         crate::json_ser::serialize_structure_crate_model_license_conversion_context(
             &mut object_86,
             var_85,
-        );
+        )?;
         object_86.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseManagerReportGeneratorInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.report_generator_name {
         object.key("ReportGeneratorName").string(var_87);
     }
@@ -341,12 +350,12 @@ pub fn serialize_structure_crate_input_create_license_manager_report_generator_i
     }
     if let Some(var_91) = &input.report_context {
         let mut object_92 = object.key("ReportContext").start_object();
-        crate::json_ser::serialize_structure_crate_model_report_context(&mut object_92, var_91);
+        crate::json_ser::serialize_structure_crate_model_report_context(&mut object_92, var_91)?;
         object_92.finish();
     }
     if let Some(var_93) = &input.report_frequency {
         let mut object_94 = object.key("ReportFrequency").start_object();
-        crate::json_ser::serialize_structure_crate_model_report_frequency(&mut object_94, var_93);
+        crate::json_ser::serialize_structure_crate_model_report_frequency(&mut object_94, var_93)?;
         object_94.finish();
     }
     if let Some(var_95) = &input.client_token {
@@ -360,18 +369,19 @@ pub fn serialize_structure_crate_input_create_license_manager_report_generator_i
         for item_99 in var_97 {
             {
                 let mut object_100 = array_98.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_100, item_99);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_100, item_99)?;
                 object_100.finish();
             }
         }
         array_98.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_license_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseVersionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.license_arn {
         object.key("LicenseArn").string(var_101);
     }
@@ -383,7 +393,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
     }
     if let Some(var_104) = &input.issuer {
         let mut object_105 = object.key("Issuer").start_object();
-        crate::json_ser::serialize_structure_crate_model_issuer(&mut object_105, var_104);
+        crate::json_ser::serialize_structure_crate_model_issuer(&mut object_105, var_104)?;
         object_105.finish();
     }
     if let Some(var_106) = &input.home_region {
@@ -391,7 +401,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
     }
     if let Some(var_107) = &input.validity {
         let mut object_108 = object.key("Validity").start_object();
-        crate::json_ser::serialize_structure_crate_model_datetime_range(&mut object_108, var_107);
+        crate::json_ser::serialize_structure_crate_model_datetime_range(&mut object_108, var_107)?;
         object_108.finish();
     }
     if let Some(var_109) = &input.license_metadata {
@@ -402,7 +412,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
                 crate::json_ser::serialize_structure_crate_model_metadata(
                     &mut object_112,
                     item_111,
-                );
+                )?;
                 object_112.finish();
             }
         }
@@ -416,7 +426,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
                 crate::json_ser::serialize_structure_crate_model_entitlement(
                     &mut object_116,
                     item_115,
-                );
+                )?;
                 object_116.finish();
             }
         }
@@ -427,7 +437,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
         crate::json_ser::serialize_structure_crate_model_consumption_configuration(
             &mut object_118,
             var_117,
-        );
+        )?;
         object_118.finish();
     }
     if let Some(var_119) = &input.status {
@@ -439,12 +449,13 @@ pub fn serialize_structure_crate_input_create_license_version_input(
     if let Some(var_121) = &input.source_version {
         object.key("SourceVersion").string(var_121);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTokenInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_122) = &input.license_arn {
         object.key("LicenseArn").string(var_122);
     }
@@ -475,12 +486,13 @@ pub fn serialize_structure_crate_input_create_token_input(
     if let Some(var_130) = &input.client_token {
         object.key("ClientToken").string(var_130);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGrantInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_131) = &input.grant_arn {
         object.key("GrantArn").string(var_131);
     }
@@ -490,65 +502,71 @@ pub fn serialize_structure_crate_input_delete_grant_input(
     if let Some(var_133) = &input.version {
         object.key("Version").string(var_133);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLicenseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_134) = &input.license_arn {
         object.key("LicenseArn").string(var_134);
     }
     if let Some(var_135) = &input.source_version {
         object.key("SourceVersion").string(var_135);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLicenseConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_136) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_136);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_137) = &input.license_manager_report_generator_arn {
         object
             .key("LicenseManagerReportGeneratorArn")
             .string(var_137);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteTokenInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_138) = &input.token_id {
         object.key("TokenId").string(var_138);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_extend_license_consumption_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExtendLicenseConsumptionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_139) = &input.license_consumption_token {
         object.key("LicenseConsumptionToken").string(var_139);
     }
     if input.dry_run {
         object.key("DryRun").boolean(input.dry_run);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_access_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAccessTokenInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_140) = &input.token {
         object.key("Token").string(var_140);
     }
@@ -561,74 +579,81 @@ pub fn serialize_structure_crate_input_get_access_token_input(
         }
         array_142.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGrantInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_144) = &input.grant_arn {
         object.key("GrantArn").string(var_144);
     }
     if let Some(var_145) = &input.version {
         object.key("Version").string(var_145);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_146) = &input.license_arn {
         object.key("LicenseArn").string(var_146);
     }
     if let Some(var_147) = &input.version {
         object.key("Version").string(var_147);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_148) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_148);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_license_conversion_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseConversionTaskInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_149) = &input.license_conversion_task_id {
         object.key("LicenseConversionTaskId").string(var_149);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseManagerReportGeneratorInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_150) = &input.license_manager_report_generator_arn {
         object
             .key("LicenseManagerReportGeneratorArn")
             .string(var_150);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_license_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseUsageInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_151) = &input.license_arn {
         object.key("LicenseArn").string(var_151);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_associations_for_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAssociationsForLicenseConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_152) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_152);
     }
@@ -641,12 +666,13 @@ pub fn serialize_structure_crate_input_list_associations_for_license_configurati
     if let Some(var_154) = &input.next_token {
         object.key("NextToken").string(var_154);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_distributed_grants_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDistributedGrantsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_155) = &input.grant_arns {
         let mut array_156 = object.key("GrantArns").start_array();
         for item_157 in var_155 {
@@ -661,7 +687,7 @@ pub fn serialize_structure_crate_input_list_distributed_grants_input(
         for item_160 in var_158 {
             {
                 let mut object_161 = array_159.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_161, item_160);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_161, item_160)?;
                 object_161.finish();
             }
         }
@@ -676,12 +702,13 @@ pub fn serialize_structure_crate_input_list_distributed_grants_input(
             aws_smithy_types::Number::NegInt((*var_163).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_failures_for_license_configuration_operations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_164) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_164);
     }
@@ -694,12 +721,13 @@ pub fn serialize_structure_crate_input_list_failures_for_license_configuration_o
     if let Some(var_166) = &input.next_token {
         object.key("NextToken").string(var_166);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_license_configurations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseConfigurationsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_167) = &input.license_configuration_arns {
         let mut array_168 = object.key("LicenseConfigurationArns").start_array();
         for item_169 in var_167 {
@@ -723,18 +751,19 @@ pub fn serialize_structure_crate_input_list_license_configurations_input(
         for item_174 in var_172 {
             {
                 let mut object_175 = array_173.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_175, item_174);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_175, item_174)?;
                 object_175.finish();
             }
         }
         array_173.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_license_conversion_tasks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseConversionTasksInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_176) = &input.next_token {
         object.key("NextToken").string(var_176);
     }
@@ -749,24 +778,25 @@ pub fn serialize_structure_crate_input_list_license_conversion_tasks_input(
         for item_180 in var_178 {
             {
                 let mut object_181 = array_179.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_181, item_180);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_181, item_180)?;
                 object_181.finish();
             }
         }
         array_179.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_license_manager_report_generators_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseManagerReportGeneratorsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_182) = &input.filters {
         let mut array_183 = object.key("Filters").start_array();
         for item_184 in var_182 {
             {
                 let mut object_185 = array_183.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_185, item_184);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_185, item_184)?;
                 object_185.finish();
             }
         }
@@ -781,12 +811,13 @@ pub fn serialize_structure_crate_input_list_license_manager_report_generators_in
             aws_smithy_types::Number::NegInt((*var_187).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_licenses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicensesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_188) = &input.license_arns {
         let mut array_189 = object.key("LicenseArns").start_array();
         for item_190 in var_188 {
@@ -801,7 +832,7 @@ pub fn serialize_structure_crate_input_list_licenses_input(
         for item_193 in var_191 {
             {
                 let mut object_194 = array_192.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_194, item_193);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_194, item_193)?;
                 object_194.finish();
             }
         }
@@ -816,12 +847,13 @@ pub fn serialize_structure_crate_input_list_licenses_input(
             aws_smithy_types::Number::NegInt((*var_196).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_license_specifications_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseSpecificationsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.resource_arn {
         object.key("ResourceArn").string(var_197);
     }
@@ -834,12 +866,13 @@ pub fn serialize_structure_crate_input_list_license_specifications_for_resource_
     if let Some(var_199) = &input.next_token {
         object.key("NextToken").string(var_199);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_license_versions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseVersionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_200) = &input.license_arn {
         object.key("LicenseArn").string(var_200);
     }
@@ -852,12 +885,13 @@ pub fn serialize_structure_crate_input_list_license_versions_input(
             aws_smithy_types::Number::NegInt((*var_202).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_received_grants_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListReceivedGrantsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_203) = &input.grant_arns {
         let mut array_204 = object.key("GrantArns").start_array();
         for item_205 in var_203 {
@@ -872,7 +906,7 @@ pub fn serialize_structure_crate_input_list_received_grants_input(
         for item_208 in var_206 {
             {
                 let mut object_209 = array_207.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_209, item_208);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_209, item_208)?;
                 object_209.finish();
             }
         }
@@ -887,12 +921,13 @@ pub fn serialize_structure_crate_input_list_received_grants_input(
             aws_smithy_types::Number::NegInt((*var_211).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_received_licenses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListReceivedLicensesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_212) = &input.license_arns {
         let mut array_213 = object.key("LicenseArns").start_array();
         for item_214 in var_212 {
@@ -907,7 +942,7 @@ pub fn serialize_structure_crate_input_list_received_licenses_input(
         for item_217 in var_215 {
             {
                 let mut object_218 = array_216.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_218, item_217);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_218, item_217)?;
                 object_218.finish();
             }
         }
@@ -922,12 +957,13 @@ pub fn serialize_structure_crate_input_list_received_licenses_input(
             aws_smithy_types::Number::NegInt((*var_220).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_resource_inventory_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceInventoryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_221) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -945,27 +981,29 @@ pub fn serialize_structure_crate_input_list_resource_inventory_input(
                 crate::json_ser::serialize_structure_crate_model_inventory_filter(
                     &mut object_226,
                     item_225,
-                );
+                )?;
                 object_226.finish();
             }
         }
         array_224.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_227) = &input.resource_arn {
         object.key("ResourceArn").string(var_227);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tokens_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTokensInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_228) = &input.token_ids {
         let mut array_229 = object.key("TokenIds").start_array();
         for item_230 in var_228 {
@@ -980,7 +1018,7 @@ pub fn serialize_structure_crate_input_list_tokens_input(
         for item_233 in var_231 {
             {
                 let mut object_234 = array_232.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_234, item_233);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_234, item_233)?;
                 object_234.finish();
             }
         }
@@ -995,12 +1033,13 @@ pub fn serialize_structure_crate_input_list_tokens_input(
             aws_smithy_types::Number::NegInt((*var_236).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_usage_for_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListUsageForLicenseConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_237) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_237);
     }
@@ -1018,27 +1057,29 @@ pub fn serialize_structure_crate_input_list_usage_for_license_configuration_inpu
         for item_242 in var_240 {
             {
                 let mut object_243 = array_241.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_filter(&mut object_243, item_242);
+                crate::json_ser::serialize_structure_crate_model_filter(&mut object_243, item_242)?;
                 object_243.finish();
             }
         }
         array_241.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_reject_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RejectGrantInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_244) = &input.grant_arn {
         object.key("GrantArn").string(var_244);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_245) = &input.resource_arn {
         object.key("ResourceArn").string(var_245);
     }
@@ -1047,18 +1088,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_248 in var_246 {
             {
                 let mut object_249 = array_247.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_249, item_248);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_249, item_248)?;
                 object_249.finish();
             }
         }
         array_247.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_250) = &input.resource_arn {
         object.key("ResourceArn").string(var_250);
     }
@@ -1071,12 +1113,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_252.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLicenseConfigurationInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_254) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_254);
     }
@@ -1117,7 +1160,7 @@ pub fn serialize_structure_crate_input_update_license_configuration_input(
                 crate::json_ser::serialize_structure_crate_model_product_information(
                     &mut object_266,
                     item_265,
-                );
+                )?;
                 object_266.finish();
             }
         }
@@ -1126,12 +1169,13 @@ pub fn serialize_structure_crate_input_update_license_configuration_input(
     if let Some(var_267) = &input.disassociate_when_not_found {
         object.key("DisassociateWhenNotFound").boolean(*var_267);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_268) = &input.license_manager_report_generator_arn {
         object
             .key("LicenseManagerReportGeneratorArn")
@@ -1151,12 +1195,15 @@ pub fn serialize_structure_crate_input_update_license_manager_report_generator_i
     }
     if let Some(var_273) = &input.report_context {
         let mut object_274 = object.key("ReportContext").start_object();
-        crate::json_ser::serialize_structure_crate_model_report_context(&mut object_274, var_273);
+        crate::json_ser::serialize_structure_crate_model_report_context(&mut object_274, var_273)?;
         object_274.finish();
     }
     if let Some(var_275) = &input.report_frequency {
         let mut object_276 = object.key("ReportFrequency").start_object();
-        crate::json_ser::serialize_structure_crate_model_report_frequency(&mut object_276, var_275);
+        crate::json_ser::serialize_structure_crate_model_report_frequency(
+            &mut object_276,
+            var_275,
+        )?;
         object_276.finish();
     }
     if let Some(var_277) = &input.client_token {
@@ -1165,12 +1212,13 @@ pub fn serialize_structure_crate_input_update_license_manager_report_generator_i
     if let Some(var_278) = &input.description {
         object.key("Description").string(var_278);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_license_specifications_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_279) = &input.resource_arn {
         object.key("ResourceArn").string(var_279);
     }
@@ -1182,7 +1230,7 @@ pub fn serialize_structure_crate_input_update_license_specifications_for_resourc
                 crate::json_ser::serialize_structure_crate_model_license_specification(
                     &mut object_283,
                     item_282,
-                );
+                )?;
                 object_283.finish();
             }
         }
@@ -1196,18 +1244,19 @@ pub fn serialize_structure_crate_input_update_license_specifications_for_resourc
                 crate::json_ser::serialize_structure_crate_model_license_specification(
                     &mut object_287,
                     item_286,
-                );
+                )?;
                 object_287.finish();
             }
         }
         array_285.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_service_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateServiceSettingsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_288) = &input.s3_bucket_arn {
         object.key("S3BucketArn").string(var_288);
     }
@@ -1219,18 +1268,19 @@ pub fn serialize_structure_crate_input_update_service_settings_input(
         crate::json_ser::serialize_structure_crate_model_organization_configuration(
             &mut object_291,
             var_290,
-        );
+        )?;
         object_291.finish();
     }
     if let Some(var_292) = &input.enable_cross_accounts_discovery {
         object.key("EnableCrossAccountsDiscovery").boolean(*var_292);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_entitlement_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EntitlementData,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_293) = &input.name {
         object.key("Name").string(var_293);
     }
@@ -1240,48 +1290,52 @@ pub fn serialize_structure_crate_model_entitlement_data(
     if let Some(var_295) = &input.unit {
         object.key("Unit").string(var_295.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_metadata(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Metadata,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_296) = &input.name {
         object.key("Name").string(var_296);
     }
     if let Some(var_297) = &input.value {
         object.key("Value").string(var_297);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_issuer(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Issuer,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_298) = &input.name {
         object.key("Name").string(var_298);
     }
     if let Some(var_299) = &input.sign_key {
         object.key("SignKey").string(var_299);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_datetime_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatetimeRange,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_300) = &input.begin {
         object.key("Begin").string(var_300);
     }
     if let Some(var_301) = &input.end {
         object.key("End").string(var_301);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_entitlement(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Entitlement,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_302) = &input.name {
         object.key("Name").string(var_302);
     }
@@ -1303,12 +1357,13 @@ pub fn serialize_structure_crate_model_entitlement(
     if let Some(var_307) = &input.allow_check_in {
         object.key("AllowCheckIn").boolean(*var_307);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_consumption_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConsumptionConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_308) = &input.renew_type {
         object.key("RenewType").string(var_308.as_str());
     }
@@ -1317,7 +1372,7 @@ pub fn serialize_structure_crate_model_consumption_configuration(
         crate::json_ser::serialize_structure_crate_model_provisional_configuration(
             &mut object_310,
             var_309,
-        );
+        )?;
         object_310.finish();
     }
     if let Some(var_311) = &input.borrow_configuration {
@@ -1325,27 +1380,29 @@ pub fn serialize_structure_crate_model_consumption_configuration(
         crate::json_ser::serialize_structure_crate_model_borrow_configuration(
             &mut object_312,
             var_311,
-        );
+        )?;
         object_312.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_313) = &input.key {
         object.key("Key").string(var_313);
     }
     if let Some(var_314) = &input.value {
         object.key("Value").string(var_314);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_product_information(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProductInformation,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_315) = &input.resource_type {
         object.key("ResourceType").string(var_315);
     }
@@ -1357,27 +1414,29 @@ pub fn serialize_structure_crate_model_product_information(
                 crate::json_ser::serialize_structure_crate_model_product_information_filter(
                     &mut object_319,
                     item_318,
-                );
+                )?;
                 object_319.finish();
             }
         }
         array_317.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_license_conversion_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LicenseConversionContext,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_320) = &input.usage_operation {
         object.key("UsageOperation").string(var_320);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_report_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReportContext,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_321) = &input.license_configuration_arns {
         let mut array_322 = object.key("licenseConfigurationArns").start_array();
         for item_323 in var_321 {
@@ -1387,12 +1446,13 @@ pub fn serialize_structure_crate_model_report_context(
         }
         array_322.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_report_frequency(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReportFrequency,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_324) = &input.value {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]
@@ -1402,12 +1462,13 @@ pub fn serialize_structure_crate_model_report_frequency(
     if let Some(var_325) = &input.period {
         object.key("period").string(var_325.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_326) = &input.name {
         object.key("Name").string(var_326);
     }
@@ -1420,12 +1481,13 @@ pub fn serialize_structure_crate_model_filter(
         }
         array_328.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_inventory_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InventoryFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_330) = &input.name {
         object.key("Name").string(var_330);
     }
@@ -1435,47 +1497,51 @@ pub fn serialize_structure_crate_model_inventory_filter(
     if let Some(var_332) = &input.value {
         object.key("Value").string(var_332);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_license_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LicenseSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_333) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_333);
     }
     if let Some(var_334) = &input.ami_association_scope {
         object.key("AmiAssociationScope").string(var_334);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_organization_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OrganizationConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object
             .key("EnableIntegration")
             .boolean(input.enable_integration);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_provisional_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProvisionalConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_335) = &input.max_time_to_live_in_minutes {
         object.key("MaxTimeToLiveInMinutes").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_335).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_borrow_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BorrowConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_336) = &input.allow_early_check_in {
         object.key("AllowEarlyCheckIn").boolean(*var_336);
     }
@@ -1485,12 +1551,13 @@ pub fn serialize_structure_crate_model_borrow_configuration(
             aws_smithy_types::Number::NegInt((*var_337).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_product_information_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProductInformationFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_338) = &input.product_information_filter_name {
         object.key("ProductInformationFilterName").string(var_338);
     }
@@ -1508,4 +1575,5 @@ pub fn serialize_structure_crate_model_product_information_filter(
             .key("ProductInformationFilterComparator")
             .string(var_342);
     }
+    Ok(())
 }

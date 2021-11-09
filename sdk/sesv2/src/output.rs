@@ -222,6 +222,14 @@ pub struct TestRenderEmailTemplateOutput {
     /// parameter.</p>
     pub rendered_template: std::option::Option<std::string::String>,
 }
+impl TestRenderEmailTemplateOutput {
+    /// <p>The complete MIME message rendered by applying the data in the
+    /// <code>TemplateData</code> parameter to the template specified in the TemplateName
+    /// parameter.</p>
+    pub fn rendered_template(&self) -> std::option::Option<&str> {
+        self.rendered_template.as_deref()
+    }
+}
 impl std::fmt::Debug for TestRenderEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestRenderEmailTemplateOutput");
@@ -314,6 +322,19 @@ pub struct SendEmailOutput {
     /// </note>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendEmailOutput {
+    /// <p>A unique identifier for the message that is generated when the message is
+    /// accepted.</p>
+    /// <note>
+    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen
+    /// when the message that you're trying to send has an attachment contains a virus, or
+    /// when you send a templated email that contains invalid personalization content, for
+    /// example.</p>
+    /// </note>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEmailOutput");
@@ -377,6 +398,13 @@ pub struct SendCustomVerificationEmailOutput {
     /// <code>SendCustomVerificationEmail</code> operation.</p>
     pub message_id: std::option::Option<std::string::String>,
 }
+impl SendCustomVerificationEmailOutput {
+    /// <p>The unique message identifier returned from the
+    /// <code>SendCustomVerificationEmail</code> operation.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SendCustomVerificationEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendCustomVerificationEmailOutput");
@@ -428,6 +456,15 @@ pub struct SendBulkEmailOutput {
     /// with a failure status.</p>
     pub bulk_email_entry_results:
         std::option::Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
+}
+impl SendBulkEmailOutput {
+    /// <p>One object per intended recipient. Check each response object and retry any messages
+    /// with a failure status.</p>
+    pub fn bulk_email_entry_results(
+        &self,
+    ) -> std::option::Option<&[crate::model::BulkEmailEntryResult]> {
+        self.bulk_email_entry_results.as_deref()
+    }
 }
 impl std::fmt::Debug for SendBulkEmailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -633,6 +670,62 @@ pub struct PutEmailIdentityDkimSigningAttributesOutput {
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the
     /// appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PutEmailIdentityDkimSigningAttributesOutput {
+    /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication
+    /// status by searching for specific records in the DNS configuration for your domain. If
+    /// you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+    /// DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME
+    /// records in the DNS configuration for your domain.</p>
+    /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT
+    /// record that uses the selector that you specified. The value of the TXT record must be a
+    /// public key that's paired with the private key that you specified in the process of
+    /// creating the identity.</p>
+    /// <p>The status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code> – The verification process was initiated, but Amazon SES
+    /// hasn't yet detected the DKIM records in the DNS configuration for the
+    /// domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCESS</code> – The verification process completed
+    /// successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> – The verification process failed. This typically
+    /// occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the
+    /// domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES
+    /// from determining the DKIM authentication status of the domain.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_STARTED</code> – The DKIM verification process hasn't been
+    /// initiated for the domain.</p>
+    /// </li>
+    /// </ul>
+    pub fn dkim_status(&self) -> std::option::Option<&crate::model::DkimStatus> {
+        self.dkim_status.as_ref()
+    }
+    /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object
+    /// contains a set of unique strings that you use to create a set of CNAME records that you
+    /// add to the DNS configuration for your domain. When Amazon SES detects these records in the
+    /// DNS configuration for your domain, the DKIM authentication process is complete.</p>
+    /// <p>If you configured DKIM authentication for the domain by providing your own
+    /// public-private key pair, then this object contains the selector that's associated with
+    /// your public key.</p>
+    /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the
+    /// appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
+    pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
+        self.dkim_tokens.as_deref()
+    }
 }
 impl std::fmt::Debug for PutEmailIdentityDkimSigningAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1235,6 +1328,14 @@ pub struct ListTagsForResourceOutput {
     /// (<code>Value</code>)</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>An array that lists all the tags that are associated with the resource. Each tag
+    /// consists of a required tag key (<code>Key</code>) and an associated tag value
+    /// (<code>Value</code>)</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -1300,6 +1401,22 @@ pub struct ListSuppressedDestinationsOutput {
     /// <code>ListSuppressedDestinations</code>, and pass this token in the
     /// <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSuppressedDestinationsOutput {
+    /// <p>A list of summaries, each containing a summary for a suppressed email
+    /// destination.</p>
+    pub fn suppressed_destination_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::SuppressedDestinationSummary]> {
+        self.suppressed_destination_summaries.as_deref()
+    }
+    /// <p>A token that indicates that there are additional email addresses on the suppression
+    /// list for your account. To view additional suppressed addresses, issue another request to
+    /// <code>ListSuppressedDestinations</code>, and pass this token in the
+    /// <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSuppressedDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1391,6 +1508,18 @@ pub struct ListImportJobsOutput {
     /// same parameters to retrieve the next page of import jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImportJobsOutput {
+    /// <p>A list of the import job summaries.</p>
+    pub fn import_jobs(&self) -> std::option::Option<&[crate::model::ImportJobSummary]> {
+        self.import_jobs.as_deref()
+    }
+    /// <p>A string token indicating that there might be additional import jobs available to be
+    /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
+    /// same parameters to retrieve the next page of import jobs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImportJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImportJobsOutput");
@@ -1469,6 +1598,21 @@ pub struct ListEmailTemplatesOutput {
     /// Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the
     /// next 10 email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEmailTemplatesOutput {
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
+    /// account.</p>
+    pub fn templates_metadata(
+        &self,
+    ) -> std::option::Option<&[crate::model::EmailTemplateMetadata]> {
+        self.templates_metadata.as_deref()
+    }
+    /// <p>A token indicating that there are additional email templates available to be listed.
+    /// Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the
+    /// next 10 email templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEmailTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1557,6 +1701,20 @@ pub struct ListEmailIdentitiesOutput {
     /// parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEmailIdentitiesOutput {
+    /// <p>An array that includes all of the email identities associated with your Amazon Web Services
+    /// account.</p>
+    pub fn email_identities(&self) -> std::option::Option<&[crate::model::IdentityInfo]> {
+        self.email_identities.as_deref()
+    }
+    /// <p>A token that indicates that there are additional configuration sets to list. To view
+    /// additional configuration sets, issue another request to
+    /// <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code>
+    /// parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEmailIdentitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEmailIdentitiesOutput");
@@ -1642,6 +1800,21 @@ pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
     /// position of the campaign in the list of campaigns.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainDeliverabilityCampaignsOutput {
+    /// <p>An array of responses, one for each campaign that used the domain to send email during
+    /// the specified time range.</p>
+    pub fn domain_deliverability_campaigns(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityCampaign]> {
+        self.domain_deliverability_campaigns.as_deref()
+    }
+    /// <p>A token that’s returned from a previous call to the
+    /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
+    /// position of the campaign in the list of campaigns.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDomainDeliverabilityCampaignsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1732,6 +1905,20 @@ pub struct ListDeliverabilityTestReportsOutput {
     /// this token in the <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeliverabilityTestReportsOutput {
+    /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
+    pub fn deliverability_test_reports(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeliverabilityTestReport]> {
+        self.deliverability_test_reports.as_deref()
+    }
+    /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional
+    /// predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass
+    /// this token in the <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeliverabilityTestReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliverabilityTestReportsOutput");
@@ -1818,6 +2005,19 @@ pub struct ListDedicatedIpPoolsOutput {
     /// in the <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDedicatedIpPoolsOutput {
+    /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in
+    /// the current Region.</p>
+    pub fn dedicated_ip_pools(&self) -> std::option::Option<&[std::string::String]> {
+        self.dedicated_ip_pools.as_deref()
+    }
+    /// <p>A token that indicates that there are additional IP pools to list. To view additional
+    /// IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token
+    /// in the <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDedicatedIpPoolsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDedicatedIpPoolsOutput");
@@ -1899,6 +2099,21 @@ pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
     /// verification email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomVerificationEmailTemplatesOutput {
+    /// <p>A list of the custom verification email templates that exist in your account.</p>
+    pub fn custom_verification_email_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomVerificationEmailTemplateMetadata]> {
+        self.custom_verification_email_templates.as_deref()
+    }
+    /// <p>A token indicating that there are additional custom verification email templates
+    /// available to be listed. Pass this token to a subsequent call to
+    /// <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
+    /// verification email templates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomVerificationEmailTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1990,6 +2205,18 @@ pub struct ListContactsOutput {
     /// parameters to retrieve the next page of contacts.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListContactsOutput {
+    /// <p>The contacts present in a specific contact list.</p>
+    pub fn contacts(&self) -> std::option::Option<&[crate::model::Contact]> {
+        self.contacts.as_deref()
+    }
+    /// <p>A string token indicating that there might be additional contacts available to be
+    /// listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same
+    /// parameters to retrieve the next page of contacts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContactsOutput");
@@ -2067,6 +2294,18 @@ pub struct ListContactListsOutput {
     /// listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the
     /// same parameters to retrieve the next page of contact lists.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContactListsOutput {
+    /// <p>The available contact lists.</p>
+    pub fn contact_lists(&self) -> std::option::Option<&[crate::model::ContactList]> {
+        self.contact_lists.as_deref()
+    }
+    /// <p>A string token indicating that there might be additional contact lists available to be
+    /// listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the
+    /// same parameters to retrieve the next page of contact lists.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContactListsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2148,6 +2387,20 @@ pub struct ListConfigurationSetsOutput {
     /// <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListConfigurationSetsOutput {
+    /// <p>An array that contains all of the configuration sets in your Amazon SES account in the
+    /// current Amazon Web Services Region.</p>
+    pub fn configuration_sets(&self) -> std::option::Option<&[std::string::String]> {
+        self.configuration_sets.as_deref()
+    }
+    /// <p>A token that indicates that there are additional configuration sets to list. To view
+    /// additional configuration sets, issue another request to
+    /// <code>ListConfigurationSets</code>, and pass this token in the
+    /// <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListConfigurationSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConfigurationSetsOutput");
@@ -2226,6 +2479,14 @@ pub struct GetSuppressedDestinationOutput {
     /// <p>An object containing information about the suppressed email address.</p>
     pub suppressed_destination: std::option::Option<crate::model::SuppressedDestination>,
 }
+impl GetSuppressedDestinationOutput {
+    /// <p>An object containing information about the suppressed email address.</p>
+    pub fn suppressed_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::SuppressedDestination> {
+        self.suppressed_destination.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSuppressedDestinationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSuppressedDestinationOutput");
@@ -2297,6 +2558,45 @@ pub struct GetImportJobOutput {
     /// <p>The number of records that failed processing because of invalid input or other
     /// reasons.</p>
     pub failed_records_count: std::option::Option<i32>,
+}
+impl GetImportJobOutput {
+    /// <p>A string that represents the import job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The destination of the import job.</p>
+    pub fn import_destination(&self) -> std::option::Option<&crate::model::ImportDestination> {
+        self.import_destination.as_ref()
+    }
+    /// <p>The data source of the import job.</p>
+    pub fn import_data_source(&self) -> std::option::Option<&crate::model::ImportDataSource> {
+        self.import_data_source.as_ref()
+    }
+    /// <p>The failure details about an import job.</p>
+    pub fn failure_info(&self) -> std::option::Option<&crate::model::FailureInfo> {
+        self.failure_info.as_ref()
+    }
+    /// <p>The status of the import job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The time stamp of when the import job was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The time stamp of when the import job was completed.</p>
+    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_timestamp.as_ref()
+    }
+    /// <p>The current number of records processed.</p>
+    pub fn processed_records_count(&self) -> std::option::Option<i32> {
+        self.processed_records_count
+    }
+    /// <p>The number of records that failed processing because of invalid input or other
+    /// reasons.</p>
+    pub fn failed_records_count(&self) -> std::option::Option<i32> {
+        self.failed_records_count
+    }
 }
 impl std::fmt::Debug for GetImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2473,6 +2773,17 @@ pub struct GetEmailTemplateOutput {
     /// text-only part.</p>
     pub template_content: std::option::Option<crate::model::EmailTemplateContent>,
 }
+impl GetEmailTemplateOutput {
+    /// <p>The name of the template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a
+    /// text-only part.</p>
+    pub fn template_content(&self) -> std::option::Option<&crate::model::EmailTemplateContent> {
+        self.template_content.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEmailTemplateOutput");
@@ -2542,6 +2853,15 @@ pub struct GetEmailIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
     pub policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetEmailIdentityPoliciesOutput {
+    /// <p>A map of policy names to policies.</p>
+    pub fn policies(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.policies.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEmailIdentityPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2634,6 +2954,55 @@ pub struct GetEmailIdentityOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The configuration set used by default when sending from this identity.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
+}
+impl GetEmailIdentityOutput {
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
+    /// supported.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The feedback forwarding configuration for the identity.</p>
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
+    /// complaint events occur. These notifications are sent to the address that you specified
+    /// in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
+    /// set up another mechanism for receiving bounce or complaint notifications (for example,
+    /// by setting up an event destination), you receive an email notification when these events
+    /// occur (even if this setting is disabled).</p>
+    pub fn feedback_forwarding_status(&self) -> bool {
+        self.feedback_forwarding_status
+    }
+    /// <p>Specifies whether or not the identity is verified. You can only send email from
+    /// verified email addresses or domains. For more information about verifying identities,
+    /// see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    pub fn verified_for_sending_status(&self) -> bool {
+        self.verified_for_sending_status
+    }
+    /// <p>An object that contains information about the DKIM attributes for the identity.</p>
+    pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
+        self.dkim_attributes.as_ref()
+    }
+    /// <p>An object that contains information about the Mail-From attributes for the email
+    /// identity.</p>
+    pub fn mail_from_attributes(&self) -> std::option::Option<&crate::model::MailFromAttributes> {
+        self.mail_from_attributes.as_ref()
+    }
+    /// <p>A map of policy names to policies.</p>
+    pub fn policies(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.policies.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with
+    /// the email identity.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The configuration set used by default when sending from this identity.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetEmailIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2849,6 +3218,20 @@ pub struct GetDomainStatisticsReportOutput {
     /// the <code>EndDate</code>.</p>
     pub daily_volumes: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
 }
+impl GetDomainStatisticsReportOutput {
+    /// <p>An object that contains deliverability metrics for the domain that you specified. The
+    /// data in this object is a summary of all of the data that was collected from the
+    /// <code>StartDate</code> to the <code>EndDate</code>.</p>
+    pub fn overall_volume(&self) -> std::option::Option<&crate::model::OverallVolume> {
+        self.overall_volume.as_ref()
+    }
+    /// <p>An object that contains deliverability metrics for the domain that you specified. This
+    /// object contains data for each day, starting on the <code>StartDate</code> and ending on
+    /// the <code>EndDate</code>.</p>
+    pub fn daily_volumes(&self) -> std::option::Option<&[crate::model::DailyVolume]> {
+        self.daily_volumes.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDomainStatisticsReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainStatisticsReportOutput");
@@ -2933,6 +3316,14 @@ pub struct GetDomainDeliverabilityCampaignOutput {
     pub domain_deliverability_campaign:
         std::option::Option<crate::model::DomainDeliverabilityCampaign>,
 }
+impl GetDomainDeliverabilityCampaignOutput {
+    /// <p>An object that contains the deliverability data for the campaign.</p>
+    pub fn domain_deliverability_campaign(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainDeliverabilityCampaign> {
+        self.domain_deliverability_campaign.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDomainDeliverabilityCampaignOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainDeliverabilityCampaignOutput");
@@ -3003,6 +3394,35 @@ pub struct GetDeliverabilityTestReportOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with
     /// the predictive inbox placement test.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GetDeliverabilityTestReportOutput {
+    /// <p>An object that contains the results of the predictive inbox placement test.</p>
+    pub fn deliverability_test_report(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityTestReport> {
+        self.deliverability_test_report.as_ref()
+    }
+    /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were
+    /// delivered to recipients' inboxes, how many were sent to recipients' spam folders, and
+    /// how many weren't delivered.</p>
+    pub fn overall_placement(&self) -> std::option::Option<&crate::model::PlacementStatistics> {
+        self.overall_placement.as_ref()
+    }
+    /// <p>An object that describes how the test email was handled by several email providers,
+    /// including Gmail, Hotmail, Yahoo, AOL, and others.</p>
+    pub fn isp_placements(&self) -> std::option::Option<&[crate::model::IspPlacement]> {
+        self.isp_placements.as_deref()
+    }
+    /// <p>An object that contains the message that you sent when you performed this
+    /// predictive inbox placement test.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with
+    /// the predictive inbox placement test.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeliverabilityTestReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3164,6 +3584,44 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     /// end of the current calendar month.</p>
     pub pending_expiration_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+}
+impl GetDeliverabilityDashboardOptionsOutput {
+    /// <p>Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>,
+    /// the dashboard is enabled.</p>
+    pub fn dashboard_enabled(&self) -> bool {
+        self.dashboard_enabled
+    }
+    /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard
+    /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
+    /// current calendar month. This value is null if you have an active subscription that isn’t
+    /// due to expire at the end of the month.</p>
+    pub fn subscription_expiry_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.subscription_expiry_date.as_ref()
+    }
+    /// <p>The current status of your Deliverability dashboard subscription. If this value is
+    /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
+    /// of the current calendar month.</p>
+    pub fn account_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityDashboardAccountStatus> {
+        self.account_status.as_ref()
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and
+    /// currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at
+    /// the end of the current calendar month.</p>
+    pub fn active_subscribed_domains(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+        self.active_subscribed_domains.as_deref()
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and
+    /// currently has an active Deliverability dashboard subscription that's scheduled to expire at the
+    /// end of the current calendar month.</p>
+    pub fn pending_expiration_subscribed_domains(
+        &self,
+    ) -> std::option::Option<&[crate::model::DomainDeliverabilityTrackingOption]> {
+        self.pending_expiration_subscribed_domains.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeliverabilityDashboardOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3335,6 +3793,18 @@ pub struct GetDedicatedIpsOutput {
     /// passing this token in the <code>NextToken</code> parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDedicatedIpsOutput {
+    /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
+    pub fn dedicated_ips(&self) -> std::option::Option<&[crate::model::DedicatedIp]> {
+        self.dedicated_ips.as_deref()
+    }
+    /// <p>A token that indicates that there are additional dedicated IP addresses to list. To
+    /// view additional addresses, issue another request to <code>GetDedicatedIps</code>,
+    /// passing this token in the <code>NextToken</code> parameter.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDedicatedIpsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpsOutput");
@@ -3409,6 +3879,12 @@ pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     pub dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
 }
+impl GetDedicatedIpOutput {
+    /// <p>An object that contains information about a dedicated IP address.</p>
+    pub fn dedicated_ip(&self) -> std::option::Option<&crate::model::DedicatedIp> {
+        self.dedicated_ip.as_ref()
+    }
+}
 impl std::fmt::Debug for GetDedicatedIpOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDedicatedIpOutput");
@@ -3471,6 +3947,34 @@ pub struct GetCustomVerificationEmailTemplateOutput {
     /// <p>The URL that the recipient of the verification email is sent to if his or her address
     /// is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
+}
+impl GetCustomVerificationEmailTemplateOutput {
+    /// <p>The name of the custom verification email template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The email address that the custom verification email is sent from.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The subject line of the custom verification email.</p>
+    pub fn template_subject(&self) -> std::option::Option<&str> {
+        self.template_subject.as_deref()
+    }
+    /// <p>The content of the custom verification email.</p>
+    pub fn template_content(&self) -> std::option::Option<&str> {
+        self.template_content.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is successfully verified.</p>
+    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+        self.success_redirection_url.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is not successfully verified.</p>
+    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+        self.failure_redirection_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCustomVerificationEmailTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3617,6 +4121,33 @@ pub struct GetContactListOutput {
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags associated with a contact list.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GetContactListOutput {
+    /// <p>The name of the contact list.</p>
+    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+        self.contact_list_name.as_deref()
+    }
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple
+    /// topics.</p>
+    pub fn topics(&self) -> std::option::Option<&[crate::model::Topic]> {
+        self.topics.as_deref()
+    }
+    /// <p>A description of what the contact list is about.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A timestamp noting when the contact list was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>A timestamp noting the last time the contact list was updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The tags associated with a contact list.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContactListOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3775,6 +4306,43 @@ pub struct GetContactOutput {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetContactOutput {
+    /// <p>The name of the contact list to which the contact belongs.</p>
+    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+        self.contact_list_name.as_deref()
+    }
+    /// <p>The contact's email addres.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The contact's preference for being opted-in to or opted-out of a topic.></p>
+    pub fn topic_preferences(&self) -> std::option::Option<&[crate::model::TopicPreference]> {
+        self.topic_preferences.as_deref()
+    }
+    /// <p>The default topic preferences applied to the contact.</p>
+    pub fn topic_default_preferences(
+        &self,
+    ) -> std::option::Option<&[crate::model::TopicPreference]> {
+        self.topic_default_preferences.as_deref()
+    }
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
+    /// topics.</p>
+    pub fn unsubscribe_all(&self) -> bool {
+        self.unsubscribe_all
+    }
+    /// <p>The attribute data attached to a contact.</p>
+    pub fn attributes_data(&self) -> std::option::Option<&str> {
+        self.attributes_data.as_deref()
+    }
+    /// <p>A timestamp noting when the contact was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>A timestamp noting the last time the contact's information was updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for GetContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3959,6 +4527,13 @@ pub struct GetConfigurationSetEventDestinationsOutput {
     /// the configuration set.</p>
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
 }
+impl GetConfigurationSetEventDestinationsOutput {
+    /// <p>An array that includes all of the events destinations that have been configured for
+    /// the configuration set.</p>
+    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+        self.event_destinations.as_deref()
+    }
+}
 impl std::fmt::Debug for GetConfigurationSetEventDestinationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationSetEventDestinationsOutput");
@@ -4039,6 +4614,42 @@ pub struct GetConfigurationSetOutput {
     /// <p>An object that contains information about the suppression list preferences for your
     /// account.</p>
     pub suppression_options: std::option::Option<crate::model::SuppressionOptions>,
+}
+impl GetConfigurationSetOutput {
+    /// <p>The name of the configuration set.</p>
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
+    }
+    /// <p>An object that defines the open and click tracking options for emails that you send
+    /// using the configuration set.</p>
+    pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
+        self.tracking_options.as_ref()
+    }
+    /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
+    /// using the configuration set.</p>
+    pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
+        self.delivery_options.as_ref()
+    }
+    /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
+    /// that you send that use the configuration set.</p>
+    pub fn reputation_options(&self) -> std::option::Option<&crate::model::ReputationOptions> {
+        self.reputation_options.as_ref()
+    }
+    /// <p>An object that defines whether or not Amazon SES can send email that you send using the
+    /// configuration set.</p>
+    pub fn sending_options(&self) -> std::option::Option<&crate::model::SendingOptions> {
+        self.sending_options.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with
+    /// the configuration set.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An object that contains information about the suppression list preferences for your
+    /// account.</p>
+    pub fn suppression_options(&self) -> std::option::Option<&crate::model::SuppressionOptions> {
+        self.suppression_options.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConfigurationSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4208,6 +4819,20 @@ pub struct GetBlacklistReportsOutput {
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
     >,
 }
+impl GetBlacklistReportsOutput {
+    /// <p>An object that contains information about a blacklist that one of your dedicated IP
+    /// addresses appears on.</p>
+    pub fn blacklist_report(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::BlacklistEntry>,
+        >,
+    > {
+        self.blacklist_report.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBlacklistReportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlacklistReportsOutput");
@@ -4327,6 +4952,72 @@ pub struct GetAccountOutput {
     pub suppression_attributes: std::option::Option<crate::model::SuppressionAttributes>,
     /// <p>An object that defines your account details.</p>
     pub details: std::option::Option<crate::model::AccountDetails>,
+}
+impl GetAccountOutput {
+    /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP
+    /// addresses that are associated with your account.</p>
+    pub fn dedicated_ip_auto_warmup_enabled(&self) -> bool {
+        self.dedicated_ip_auto_warmup_enabled
+    }
+    /// <p>The reputation status of your Amazon SES account. The status can be one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HEALTHY</code> – There are no reputation-related issues that
+    /// currently impact your account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PROBATION</code> – We've identified potential issues with your
+    /// Amazon SES account. We're placing your account under review while you work on
+    /// correcting these issues.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SHUTDOWN</code> – Your account's ability to send email is
+    /// currently paused because of an issue with the email sent from your account. When
+    /// you correct the issue, you can contact us and request that your account's
+    /// ability to send email is resumed.</p>
+    /// </li>
+    /// </ul>
+    pub fn enforcement_status(&self) -> std::option::Option<&str> {
+        self.enforcement_status.as_deref()
+    }
+    /// <p>Indicates whether or not your account has production access in the current Amazon Web Services
+    /// Region.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the
+    /// <i>sandbox</i>. When your account is in the sandbox, you can only send
+    /// email to verified identities. Additionally, the maximum number of emails you can send in
+    /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
+    /// send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>true</code>, then your account has production access. When your
+    /// account has production access, you can send email to any address. The sending quota and
+    /// maximum sending rate for your account vary based on your specific use case.</p>
+    pub fn production_access_enabled(&self) -> bool {
+        self.production_access_enabled
+    }
+    /// <p>An object that contains information about the per-day and per-second sending limits
+    /// for your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub fn send_quota(&self) -> std::option::Option<&crate::model::SendQuota> {
+        self.send_quota.as_ref()
+    }
+    /// <p>Indicates whether or not email sending is enabled for your Amazon SES account in the
+    /// current Amazon Web Services Region.</p>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
+    /// <p>An object that contains information about the email address suppression preferences
+    /// for your account in the current Amazon Web Services Region.</p>
+    pub fn suppression_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::SuppressionAttributes> {
+        self.suppression_attributes.as_ref()
+    }
+    /// <p>An object that defines your account details.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::AccountDetails> {
+        self.details.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4854,6 +5545,12 @@ pub struct CreateImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CreateImportJobOutput {
+    /// <p>A string that represents the import job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImportJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImportJobOutput");
@@ -4973,6 +5670,23 @@ pub struct CreateEmailIdentityOutput {
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
 }
+impl CreateEmailIdentityOutput {
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
+    /// supported.</p>
+    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>Specifies whether or not the identity is verified. You can only send email from
+    /// verified email addresses or domains. For more information about verifying identities,
+    /// see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    pub fn verified_for_sending_status(&self) -> bool {
+        self.verified_for_sending_status
+    }
+    /// <p>An object that contains information about the DKIM attributes for the identity.</p>
+    pub fn dkim_attributes(&self) -> std::option::Option<&crate::model::DkimAttributes> {
+        self.dkim_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEmailIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEmailIdentityOutput");
@@ -5066,6 +5780,21 @@ pub struct CreateDeliverabilityTestReportOutput {
     /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
     /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
+}
+impl CreateDeliverabilityTestReportOutput {
+    /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    pub fn report_id(&self) -> std::option::Option<&str> {
+        self.report_id.as_deref()
+    }
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
+    /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
+    /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
+    /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    pub fn deliverability_test_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliverabilityTestStatus> {
+        self.deliverability_test_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDeliverabilityTestReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -124,10 +124,7 @@ impl CopyBackupToRegionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_copy_backup_to_region(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_copy_backup_to_region(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -376,10 +373,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -559,10 +553,7 @@ impl CreateHsmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_hsm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_hsm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -709,10 +700,7 @@ impl DeleteBackupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_backup(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_backup(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -863,10 +851,7 @@ impl DeleteClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1055,10 +1040,7 @@ impl DeleteHsmInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_hsm(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_hsm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1289,10 +1271,7 @@ impl DescribeBackupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_backups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_backups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1499,10 +1478,7 @@ impl DescribeClustersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1686,10 +1662,7 @@ impl InitializeClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_initialize_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_initialize_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1866,10 +1839,7 @@ impl ListTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2033,10 +2003,7 @@ impl ModifyBackupAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_backup_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2206,10 +2173,7 @@ impl ModifyClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2358,10 +2322,7 @@ impl RestoreBackupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_restore_backup(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_restore_backup(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2533,10 +2494,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2710,10 +2668,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2786,6 +2741,18 @@ pub struct UntagResourceInput {
     /// keys, not the tag values.</p>
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
+    /// cluster ID, use <a>DescribeClusters</a>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
+    /// keys, not the tag values.</p>
+    pub fn tag_key_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_key_list.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2805,6 +2772,17 @@ pub struct TagResourceInput {
     /// <p>A list of one or more tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
+    /// ID, use <a>DescribeClusters</a>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of one or more tags.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2820,6 +2798,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct RestoreBackupInput {
     /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
     pub backup_id: std::option::Option<std::string::String>,
+}
+impl RestoreBackupInput {
+    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2839,6 +2823,19 @@ pub struct ModifyClusterInput {
     /// <a>DescribeClusters</a>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
+impl ModifyClusterInput {
+    /// <p>A policy that defines how the service retains backups.</p>
+    pub fn backup_retention_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::BackupRetentionPolicy> {
+        self.backup_retention_policy.as_ref()
+    }
+    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
+    /// <a>DescribeClusters</a>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyClusterInput");
@@ -2857,6 +2854,17 @@ pub struct ModifyBackupAttributesInput {
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
     /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub never_expires: std::option::Option<bool>,
+}
+impl ModifyBackupAttributesInput {
+    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
+    /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    pub fn never_expires(&self) -> std::option::Option<bool> {
+        self.never_expires
+    }
 }
 impl std::fmt::Debug for ModifyBackupAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2880,6 +2888,23 @@ pub struct ListTagsInput {
     /// <p>The maximum number of tags to return in the response. When there are more tags than the
     /// number you specify, the response contains a <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListTagsInput {
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
+    /// cluster ID, use <a>DescribeClusters</a>.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
+    /// value to get more tags.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of tags to return in the response. When there are more tags than the
+    /// number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2906,6 +2931,25 @@ pub struct InitializeClusterInput {
     /// root certificate. The certificate must be in PEM format and can contain a
     /// maximum of 5000 characters.</p>
     pub trust_anchor: std::option::Option<std::string::String>,
+}
+impl InitializeClusterInput {
+    /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
+    /// <a>DescribeClusters</a>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
+    /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    pub fn signed_cert(&self) -> std::option::Option<&str> {
+        self.signed_cert.as_deref()
+    }
+    /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
+    /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
+    /// root certificate. The certificate must be in PEM format and can contain a
+    /// maximum of 5000 characters.</p>
+    pub fn trust_anchor(&self) -> std::option::Option<&str> {
+        self.trust_anchor.as_deref()
+    }
 }
 impl std::fmt::Debug for InitializeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2937,6 +2981,32 @@ pub struct DescribeClustersInput {
     /// <p>The maximum number of clusters to return in the response. When there are more clusters
     /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl DescribeClustersInput {
+    /// <p>One or more filters to limit the items returned in the response.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
+    /// clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
+    /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only clusters that match the specified
+    /// state.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.filters.as_ref()
+    }
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
+    /// value to get more clusters.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of clusters to return in the response. When there are more clusters
+    /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for DescribeClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2978,6 +3048,43 @@ pub struct DescribeBackupsInput {
     /// of generation.</p>
     pub sort_ascending: std::option::Option<bool>,
 }
+impl DescribeBackupsInput {
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
+    /// value to get more backups.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of backups to return in the response. When there are more backups
+    /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>One or more filters to limit the items returned in the response.</p>
+    /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
+    /// backups by their backup identifier (ID).</p>
+    /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
+    /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
+    /// clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only backups that match the specified
+    /// state.</p>
+    /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
+    /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
+    /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
+    /// defined at the cluster.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.filters.as_ref()
+    }
+    /// <p>Designates whether or not to sort the return backups by ascending chronological order
+    /// of generation.</p>
+    pub fn sort_ascending(&self) -> std::option::Option<bool> {
+        self.sort_ascending
+    }
+}
 impl std::fmt::Debug for DescribeBackupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBackupsInput");
@@ -3005,6 +3112,27 @@ pub struct DeleteHsmInput {
     /// deleting.</p>
     pub eni_ip: std::option::Option<std::string::String>,
 }
+impl DeleteHsmInput {
+    /// <p>The identifier (ID) of the cluster that contains the HSM that you are
+    /// deleting.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The identifier (ID) of the HSM that you are deleting.</p>
+    pub fn hsm_id(&self) -> std::option::Option<&str> {
+        self.hsm_id.as_deref()
+    }
+    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
+    /// deleting.</p>
+    pub fn eni_id(&self) -> std::option::Option<&str> {
+        self.eni_id.as_deref()
+    }
+    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
+    /// deleting.</p>
+    pub fn eni_ip(&self) -> std::option::Option<&str> {
+        self.eni_ip.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteHsmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteHsmInput");
@@ -3024,6 +3152,13 @@ pub struct DeleteClusterInput {
     /// <a>DescribeClusters</a>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
+impl DeleteClusterInput {
+    /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
+    /// <a>DescribeClusters</a>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterInput");
@@ -3038,6 +3173,12 @@ impl std::fmt::Debug for DeleteClusterInput {
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
     pub backup_id: std::option::Option<std::string::String>,
+}
+impl DeleteBackupInput {
+    /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3060,6 +3201,23 @@ pub struct CreateHsmInput {
     /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
     /// an IP address, one is chosen for you from that subnet.</p>
     pub ip_address: std::option::Option<std::string::String>,
+}
+impl CreateHsmInput {
+    /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
+    /// Availability Zones, use <a>DescribeClusters</a>.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
+    /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
+    /// an IP address, one is chosen for you from that subnet.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateHsmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3098,6 +3256,42 @@ pub struct CreateClusterInput {
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateClusterInput {
+    /// <p>A policy that defines how the service retains backups.</p>
+    pub fn backup_retention_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::BackupRetentionPolicy> {
+        self.backup_retention_policy.as_ref()
+    }
+    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
+    /// <code>hsm1.medium</code>.</p>
+    pub fn hsm_type(&self) -> std::option::Option<&str> {
+        self.hsm_type.as_deref()
+    }
+    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
+    /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
+    pub fn source_backup_id(&self) -> std::option::Option<&str> {
+        self.source_backup_id.as_deref()
+    }
+    /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
+    /// specify at least one subnet. If you specify multiple subnets, they must meet the following
+    /// criteria:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
+    /// </li>
+    /// <li>
+    /// <p>You can specify only one subnet per Availability Zone.</p>
+    /// </li>
+    /// </ul>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
@@ -3120,6 +3314,20 @@ pub struct CopyBackupToRegionInput {
     pub backup_id: std::option::Option<std::string::String>,
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CopyBackupToRegionInput {
+    /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+    pub fn destination_region(&self) -> std::option::Option<&str> {
+        self.destination_region.as_deref()
+    }
+    /// <p>The ID of the backup that will be copied to the destination region. </p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyBackupToRegionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

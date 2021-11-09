@@ -156,6 +156,12 @@ pub struct StartEngagementOutput {
     /// <p>The ARN of the engagement.</p>
     pub engagement_arn: std::option::Option<std::string::String>,
 }
+impl StartEngagementOutput {
+    /// <p>The ARN of the engagement.</p>
+    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+        self.engagement_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StartEngagementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartEngagementOutput");
@@ -267,6 +273,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags related to the contact or escalation plan.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags related to the contact or escalation plan.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -323,6 +335,16 @@ pub struct ListPagesByEngagementOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of engagements to contact channels.</p>
     pub pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
+}
+impl ListPagesByEngagementOutput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of engagements to contact channels.</p>
+    pub fn pages(&self) -> std::option::Option<&[crate::model::Page]> {
+        self.pages.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPagesByEngagementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -396,6 +418,16 @@ pub struct ListPagesByContactOutput {
     /// <p>The list of engagements to a contact's contact channel.</p>
     pub pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
 }
+impl ListPagesByContactOutput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The list of engagements to a contact's contact channel.</p>
+    pub fn pages(&self) -> std::option::Option<&[crate::model::Page]> {
+        self.pages.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPagesByContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPagesByContactOutput");
@@ -467,6 +499,16 @@ pub struct ListPageReceiptsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of each acknowledgement.</p>
     pub receipts: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
+}
+impl ListPageReceiptsOutput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of each acknowledgement.</p>
+    pub fn receipts(&self) -> std::option::Option<&[crate::model::Receipt]> {
+        self.receipts.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPageReceiptsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -540,6 +582,17 @@ pub struct ListEngagementsOutput {
     /// <p>A list of each engagement that occurred during the specified time range of an
     /// incident.</p>
     pub engagements: std::option::Option<std::vec::Vec<crate::model::Engagement>>,
+}
+impl ListEngagementsOutput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of each engagement that occurred during the specified time range of an
+    /// incident.</p>
+    pub fn engagements(&self) -> std::option::Option<&[crate::model::Engagement]> {
+        self.engagements.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEngagementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -615,6 +668,16 @@ pub struct ListContactsOutput {
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
     pub contacts: std::option::Option<std::vec::Vec<crate::model::Contact>>,
 }
+impl ListContactsOutput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
+    pub fn contacts(&self) -> std::option::Option<&[crate::model::Contact]> {
+        self.contacts.as_deref()
+    }
+}
 impl std::fmt::Debug for ListContactsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListContactsOutput");
@@ -686,6 +749,16 @@ pub struct ListContactChannelsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of contact channels related to the specified contact.</p>
     pub contact_channels: std::option::Option<std::vec::Vec<crate::model::ContactChannel>>,
+}
+impl ListContactChannelsOutput {
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of contact channels related to the specified contact.</p>
+    pub fn contact_channels(&self) -> std::option::Option<&[crate::model::ContactChannel]> {
+        self.contact_channels.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContactChannelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -760,6 +833,16 @@ pub struct GetContactPolicyOutput {
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetContactPolicyOutput {
+    /// <p>The ARN of the contact or escalation plan.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactPolicyOutput");
@@ -831,6 +914,33 @@ pub struct GetContactChannelOutput {
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
     pub activation_status: std::option::Option<crate::model::ActivationStatus>,
+}
+impl GetContactChannelOutput {
+    /// <p>The ARN of the contact that the channel belongs to.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The ARN of the contact channel.</p>
+    pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
+        self.contact_channel_arn.as_deref()
+    }
+    /// <p>The name of the contact channel</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or
+    /// <code>EMAIL</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
+    pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
+        self.delivery_address.as_ref()
+    }
+    /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
+    pub fn activation_status(&self) -> std::option::Option<&crate::model::ActivationStatus> {
+        self.activation_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetContactChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -966,6 +1076,30 @@ pub struct GetContactOutput {
     /// engagement plan.</p>
     pub plan: std::option::Option<crate::model::Plan>,
 }
+impl GetContactOutput {
+    /// <p>The ARN of the contact or escalation plan.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The alias of the contact or escalation plan. The alias is unique and
+    /// identifiable.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Details about the specific timing or stages and targets of the escalation plan or
+    /// engagement plan.</p>
+    pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
+        self.plan.as_ref()
+    }
+}
 impl std::fmt::Debug for GetContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactOutput");
@@ -1095,6 +1229,60 @@ pub struct DescribePageOutput {
     pub read_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the contact channel received the engagement.</p>
     pub delivery_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribePageOutput {
+    /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    pub fn page_arn(&self) -> std::option::Option<&str> {
+        self.page_arn.as_deref()
+    }
+    /// <p>The ARN of the engagement that engaged the contact channel.</p>
+    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+        self.engagement_arn.as_deref()
+    }
+    /// <p>The ARN of the contact that was engaged.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The user that started the engagement.</p>
+    pub fn sender(&self) -> std::option::Option<&str> {
+        self.sender.as_deref()
+    }
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for
+    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The secure content of the message that was sent to the contact. Use this field for
+    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
+    /// engagements to <code>SMS</code>.</p>
+    pub fn public_subject(&self) -> std::option::Option<&str> {
+        self.public_subject.as_deref()
+    }
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for
+    /// engagements to <code>SMS</code>.</p>
+    pub fn public_content(&self) -> std::option::Option<&str> {
+        self.public_content.as_deref()
+    }
+    /// <p>The ARN of the incident that engaged the contact channel.</p>
+    pub fn incident_id(&self) -> std::option::Option<&str> {
+        self.incident_id.as_deref()
+    }
+    /// <p>The time the engagement was sent to the contact channel.</p>
+    pub fn sent_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.sent_time.as_ref()
+    }
+    /// <p>The time that the contact channel acknowledged the engagement.</p>
+    pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.read_time.as_ref()
+    }
+    /// <p>The time that the contact channel received the engagement.</p>
+    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.delivery_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribePageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1334,6 +1522,52 @@ pub struct DescribeEngagementOutput {
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the engagement ended.</p>
     pub stop_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeEngagementOutput {
+    /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The ARN of the engagement.</p>
+    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+        self.engagement_arn.as_deref()
+    }
+    /// <p>The user that started the engagement.</p>
+    pub fn sender(&self) -> std::option::Option<&str> {
+        self.sender.as_deref()
+    }
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for
+    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The secure content of the message that was sent to the contact. Use this field for
+    /// engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
+    /// engagements to <code>SMS</code>.</p>
+    pub fn public_subject(&self) -> std::option::Option<&str> {
+        self.public_subject.as_deref()
+    }
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for
+    /// engagements to <code>SMS</code>.</p>
+    pub fn public_content(&self) -> std::option::Option<&str> {
+        self.public_content.as_deref()
+    }
+    /// <p>The ARN of the incident in which the engagement occurred.</p>
+    pub fn incident_id(&self) -> std::option::Option<&str> {
+        self.incident_id.as_deref()
+    }
+    /// <p>The time that the engagement started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time that the engagement ended.</p>
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stop_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEngagementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1613,6 +1847,12 @@ pub struct CreateContactChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_arn: std::option::Option<std::string::String>,
 }
+impl CreateContactChannelOutput {
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
+        self.contact_channel_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactChannelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactChannelOutput");
@@ -1663,6 +1903,12 @@ impl CreateContactChannelOutput {
 pub struct CreateContactOutput {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     pub contact_arn: std::option::Option<std::string::String>,
+}
+impl CreateContactOutput {
+    /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

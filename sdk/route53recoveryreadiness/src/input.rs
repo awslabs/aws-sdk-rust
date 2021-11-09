@@ -132,10 +132,7 @@ impl CreateCellInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cell(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cell(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -287,7 +284,7 @@ impl CreateCrossAccountAuthorizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cross_account_authorization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_cross_account_authorization(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -480,10 +477,9 @@ impl CreateReadinessCheckInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_readiness_check(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_readiness_check(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -681,10 +677,7 @@ impl CreateRecoveryGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_recovery_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_recovery_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -897,10 +890,7 @@ impl CreateResourceSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4554,10 +4544,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4915,10 +4902,7 @@ impl UpdateCellInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_cell(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_cell(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5101,10 +5085,9 @@ impl UpdateReadinessCheckInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_readiness_check(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_readiness_check(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5293,10 +5276,7 @@ impl UpdateRecoveryGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_recovery_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_recovery_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5500,10 +5480,7 @@ impl UpdateResourceSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_resource_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_resource_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5576,6 +5553,20 @@ pub struct UpdateResourceSetInput {
     /// A list of Resource objects
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
+impl UpdateResourceSetInput {
+    /// The ResourceSet to update
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+    /// AWS Resource Type of the resources in the ResourceSet
+    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+        self.resource_set_type.as_deref()
+    }
+    /// A list of Resource objects
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceSetInput");
@@ -5595,6 +5586,16 @@ pub struct UpdateRecoveryGroupInput {
     /// The RecoveryGroup to update
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
+impl UpdateRecoveryGroupInput {
+    /// A list of Cell arns, completely replaces previous list
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// The RecoveryGroup to update
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRecoveryGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecoveryGroupInput");
@@ -5612,6 +5613,16 @@ pub struct UpdateReadinessCheckInput {
     pub readiness_check_name: std::option::Option<std::string::String>,
     /// The name of the ResourceSet to check
     pub resource_set_name: std::option::Option<std::string::String>,
+}
+impl UpdateReadinessCheckInput {
+    /// The ReadinessCheck to update
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+    /// The name of the ResourceSet to check
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateReadinessCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5631,6 +5642,16 @@ pub struct UpdateCellInput {
     /// A list of Cell arns, completely replaces previous list
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateCellInput {
+    /// The Cell to update
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
+    /// A list of Cell arns, completely replaces previous list
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCellInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCellInput");
@@ -5648,6 +5669,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// A comma-separated list of the tag keys to remove from the resource.
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// A comma-separated list of the tag keys to remove from the resource.
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5668,6 +5699,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5683,6 +5727,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourcesInput {
     /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourcesInput {
+    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5703,6 +5753,20 @@ pub struct ListRulesInput {
     /// Filter parameter which specifies the rules to return given a resource type.
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ListRulesInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Filter parameter which specifies the rules to return given a resource type.
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRulesInput");
@@ -5722,6 +5786,16 @@ pub struct ListResourceSetsInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListResourceSetsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceSetsInput");
@@ -5739,6 +5813,16 @@ pub struct ListRecoveryGroupsInput {
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecoveryGroupsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListRecoveryGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5758,6 +5842,16 @@ pub struct ListReadinessChecksInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListReadinessChecksInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReadinessChecksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReadinessChecksInput");
@@ -5775,6 +5869,16 @@ pub struct ListCrossAccountAuthorizationsInput {
     pub max_results: i32,
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCrossAccountAuthorizationsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCrossAccountAuthorizationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5794,6 +5898,16 @@ pub struct ListCellsInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCellsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCellsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCellsInput");
@@ -5809,6 +5923,12 @@ impl std::fmt::Debug for ListCellsInput {
 pub struct GetResourceSetInput {
     /// The ResourceSet to get
     pub resource_set_name: std::option::Option<std::string::String>,
+}
+impl GetResourceSetInput {
+    /// The ResourceSet to get
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourceSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5829,6 +5949,20 @@ pub struct GetRecoveryGroupReadinessSummaryInput {
     /// The name of the RecoveryGroup
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
+impl GetRecoveryGroupReadinessSummaryInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The name of the RecoveryGroup
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecoveryGroupReadinessSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecoveryGroupReadinessSummaryInput");
@@ -5845,6 +5979,12 @@ impl std::fmt::Debug for GetRecoveryGroupReadinessSummaryInput {
 pub struct GetRecoveryGroupInput {
     /// The RecoveryGroup to get
     pub recovery_group_name: std::option::Option<std::string::String>,
+}
+impl GetRecoveryGroupInput {
+    /// The RecoveryGroup to get
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecoveryGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5864,6 +6004,20 @@ pub struct GetReadinessCheckStatusInput {
     pub next_token: std::option::Option<std::string::String>,
     /// The ReadinessCheck to get
     pub readiness_check_name: std::option::Option<std::string::String>,
+}
+impl GetReadinessCheckStatusInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The ReadinessCheck to get
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReadinessCheckStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5888,6 +6042,24 @@ pub struct GetReadinessCheckResourceStatusInput {
     /// The resource ARN or component Id to get
     pub resource_identifier: std::option::Option<std::string::String>,
 }
+impl GetReadinessCheckResourceStatusInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// The ReadinessCheck to get
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+    /// The resource ARN or component Id to get
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for GetReadinessCheckResourceStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReadinessCheckResourceStatusInput");
@@ -5905,6 +6077,12 @@ impl std::fmt::Debug for GetReadinessCheckResourceStatusInput {
 pub struct GetReadinessCheckInput {
     /// The ReadinessCheck to get
     pub readiness_check_name: std::option::Option<std::string::String>,
+}
+impl GetReadinessCheckInput {
+    /// The ReadinessCheck to get
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetReadinessCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5925,6 +6103,20 @@ pub struct GetCellReadinessSummaryInput {
     /// A token used to resume pagination from the end of a previous request.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetCellReadinessSummaryInput {
+    /// The name of the Cell
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCellReadinessSummaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCellReadinessSummaryInput");
@@ -5941,6 +6133,12 @@ impl std::fmt::Debug for GetCellReadinessSummaryInput {
 pub struct GetCellInput {
     /// The Cell to get
     pub cell_name: std::option::Option<std::string::String>,
+}
+impl GetCellInput {
+    /// The Cell to get
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCellInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5961,6 +6159,20 @@ pub struct GetArchitectureRecommendationsInput {
     /// Name of RecoveryGroup (top level resource) to be analyzed.
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
+impl GetArchitectureRecommendationsInput {
+    /// Upper bound on number of records to return.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// Name of RecoveryGroup (top level resource) to be analyzed.
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetArchitectureRecommendationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetArchitectureRecommendationsInput");
@@ -5978,6 +6190,12 @@ pub struct DeleteResourceSetInput {
     /// The ResourceSet to delete
     pub resource_set_name: std::option::Option<std::string::String>,
 }
+impl DeleteResourceSetInput {
+    /// The ResourceSet to delete
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceSetInput");
@@ -5992,6 +6210,12 @@ impl std::fmt::Debug for DeleteResourceSetInput {
 pub struct DeleteRecoveryGroupInput {
     /// The RecoveryGroup to delete
     pub recovery_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteRecoveryGroupInput {
+    /// The RecoveryGroup to delete
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRecoveryGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6008,6 +6232,12 @@ pub struct DeleteReadinessCheckInput {
     /// The ReadinessCheck to delete
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
+impl DeleteReadinessCheckInput {
+    /// The ReadinessCheck to delete
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReadinessCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReadinessCheckInput");
@@ -6022,6 +6252,12 @@ impl std::fmt::Debug for DeleteReadinessCheckInput {
 pub struct DeleteCrossAccountAuthorizationInput {
     /// The cross account authorization
     pub cross_account_authorization: std::option::Option<std::string::String>,
+}
+impl DeleteCrossAccountAuthorizationInput {
+    /// The cross account authorization
+    pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
+        self.cross_account_authorization.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCrossAccountAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6040,6 +6276,12 @@ impl std::fmt::Debug for DeleteCrossAccountAuthorizationInput {
 pub struct DeleteCellInput {
     /// The Cell to delete
     pub cell_name: std::option::Option<std::string::String>,
+}
+impl DeleteCellInput {
+    /// The Cell to delete
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCellInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6062,6 +6304,27 @@ pub struct CreateResourceSetInput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateResourceSetInput {
+    /// The name of the ResourceSet to create
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+    /// AWS Resource type of the resources in the ResourceSet
+    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+        self.resource_set_type.as_deref()
+    }
+    /// A list of Resource objects
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResourceSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6086,6 +6349,23 @@ pub struct CreateRecoveryGroupInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateRecoveryGroupInput {
+    /// A list of Cell arns
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// The name of the RecoveryGroup to create
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+        self.recovery_group_name.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateRecoveryGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRecoveryGroupInput");
@@ -6108,6 +6388,23 @@ pub struct CreateReadinessCheckInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateReadinessCheckInput {
+    /// The name of the ReadinessCheck to create
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+        self.readiness_check_name.as_deref()
+    }
+    /// The name of the ResourceSet to check
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+        self.resource_set_name.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReadinessCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReadinessCheckInput");
@@ -6124,6 +6421,12 @@ impl std::fmt::Debug for CreateReadinessCheckInput {
 pub struct CreateCrossAccountAuthorizationInput {
     /// The cross account authorization
     pub cross_account_authorization: std::option::Option<std::string::String>,
+}
+impl CreateCrossAccountAuthorizationInput {
+    /// The cross account authorization
+    pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
+        self.cross_account_authorization.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCrossAccountAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6147,6 +6450,23 @@ pub struct CreateCellInput {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateCellInput {
+    /// The name of the Cell to create
+    pub fn cell_name(&self) -> std::option::Option<&str> {
+        self.cell_name.as_deref()
+    }
+    /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+        self.cells.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCellInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

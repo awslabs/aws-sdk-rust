@@ -259,7 +259,7 @@ impl CountClosedWorkflowExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_count_closed_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_count_closed_workflow_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -507,7 +507,7 @@ impl CountOpenWorkflowExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_count_open_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_count_open_workflow_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -673,10 +673,7 @@ impl CountPendingActivityTasksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_count_pending_activity_tasks(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -841,10 +838,7 @@ impl CountPendingDecisionTasksInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_count_pending_decision_tasks(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1011,10 +1005,7 @@ impl DeprecateActivityTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_activity_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1162,10 +1153,7 @@ impl DeprecateDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deprecate_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deprecate_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1332,10 +1320,7 @@ impl DeprecateWorkflowTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_workflow_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1504,10 +1489,9 @@ impl DescribeActivityTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_activity_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_activity_type(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1654,10 +1638,8 @@ impl DescribeDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1825,10 +1807,7 @@ impl DescribeWorkflowExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workflow_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1993,10 +1972,9 @@ impl DescribeWorkflowTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workflow_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_workflow_type(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2221,7 +2199,7 @@ impl GetWorkflowExecutionHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_workflow_execution_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_workflow_execution_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2458,10 +2436,7 @@ impl ListActivityTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_activity_types(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_activity_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2845,7 +2820,7 @@ impl ListClosedWorkflowExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_closed_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_closed_workflow_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3057,10 +3032,7 @@ impl ListDomainsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3364,7 +3336,7 @@ impl ListOpenWorkflowExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_open_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_open_workflow_executions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3515,10 +3487,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3754,10 +3725,7 @@ impl ListWorkflowTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_workflow_types(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_workflow_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3945,10 +3913,9 @@ impl PollForActivityTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_poll_for_activity_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_poll_for_activity_task(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4211,10 +4178,9 @@ impl PollForDecisionTaskInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_poll_for_decision_task(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_poll_for_decision_task(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4389,7 +4355,7 @@ impl RecordActivityTaskHeartbeatInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_record_activity_task_heartbeat(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_record_activity_task_heartbeat(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4772,10 +4738,9 @@ impl RegisterActivityTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_activity_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_activity_type(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5007,10 +4972,8 @@ impl RegisterDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5422,10 +5385,9 @@ impl RegisterWorkflowTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_workflow_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_workflow_type(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5600,7 +5562,7 @@ impl RequestCancelWorkflowExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_request_cancel_workflow_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_request_cancel_workflow_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5776,7 +5738,7 @@ impl RespondActivityTaskCanceledInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_canceled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_canceled(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5954,7 +5916,7 @@ impl RespondActivityTaskCompletedInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_completed(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_completed(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6146,10 +6108,7 @@ impl RespondActivityTaskFailedInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_failed(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6352,7 +6311,7 @@ impl RespondDecisionTaskCompletedInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_respond_decision_task_completed(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_respond_decision_task_completed(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6556,10 +6515,7 @@ impl SignalWorkflowExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_signal_workflow_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7035,10 +6991,7 @@ impl StartWorkflowExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_workflow_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7210,10 +7163,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7481,10 +7431,7 @@ impl TerminateWorkflowExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_terminate_workflow_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7652,10 +7599,7 @@ impl UndeprecateActivityTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_undeprecate_activity_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7803,10 +7747,7 @@ impl UndeprecateDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_undeprecate_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_undeprecate_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7974,10 +7915,7 @@ impl UndeprecateWorkflowTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_undeprecate_workflow_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8147,10 +8085,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8221,6 +8156,16 @@ pub struct UntagResourceInput {
     /// <p>The list of tags to remove from the Amazon SWF domain.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tags to remove from the Amazon SWF domain.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -8239,6 +8184,16 @@ pub struct UndeprecateWorkflowTypeInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
 }
+impl UndeprecateWorkflowTypeInput {
+    /// <p>The name of the domain of the deprecated workflow type.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The name of the domain of the deprecated workflow type.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UndeprecateWorkflowTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UndeprecateWorkflowTypeInput");
@@ -8254,6 +8209,12 @@ impl std::fmt::Debug for UndeprecateWorkflowTypeInput {
 pub struct UndeprecateDomainInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl UndeprecateDomainInput {
+    /// <p>The name of the domain of the deprecated workflow type.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for UndeprecateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8271,6 +8232,16 @@ pub struct UndeprecateActivityTypeInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The activity type to undeprecate.</p>
     pub activity_type: std::option::Option<crate::model::ActivityType>,
+}
+impl UndeprecateActivityTypeInput {
+    /// <p>The name of the domain of the deprecated activity type.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The activity type to undeprecate.</p>
+    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+        self.activity_type.as_ref()
+    }
 }
 impl std::fmt::Debug for UndeprecateActivityTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8324,6 +8295,58 @@ pub struct TerminateWorkflowExecutionInput {
     /// </note>
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
 }
+impl TerminateWorkflowExecutionInput {
+    /// <p>The domain of the workflow execution to terminate.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The workflowId of the workflow execution to terminate.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The runId of the workflow execution to terminate.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p> Details for terminating the workflow execution.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
+    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
+    /// execution being terminated. This policy overrides the child policy specified for the workflow
+    /// execution at registration time or when starting the execution.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE</code> – The child executions are terminated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
+    /// history. It is up to the decider to take appropriate actions when it receives an execution
+    /// history with this event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ABANDON</code> – No action is taken. The child executions continue to
+    /// run.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for
+    /// the workflow type or through this parameter. If neither this parameter is set nor a default
+    /// child policy was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
+        self.child_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for TerminateWorkflowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateWorkflowExecutionInput");
@@ -8346,6 +8369,17 @@ pub struct TagResourceInput {
     /// <p>The list of tags to add to a domain. </p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The list of tags to add to a domain. </p>
+    /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8470,6 +8504,139 @@ pub struct StartWorkflowExecutionInput {
     /// </note>
     pub lambda_role: std::option::Option<std::string::String>,
 }
+impl StartWorkflowExecutionInput {
+    /// <p>The name of the domain in which the workflow execution is created.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The user defined identifier associated with the workflow execution. You can use this to
+    /// associate a custom identifier with the workflow execution. You may specify the same identifier
+    /// if a workflow execution is logically a <i>restart</i> of a previous execution.
+    /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
+    /// time within the same domain.</p>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The type of the workflow to start.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+    /// <p>The task list to use for the decision tasks generated for this workflow execution. This
+    /// overrides the <code>defaultTaskList</code> specified when registering the workflow
+    /// type.</p>
+    /// <note>
+    /// <p>A task list for this workflow execution must be specified either as a default for the
+    /// workflow type or through this parameter. If neither this parameter is set nor a default task
+    /// list was specified at registration time then a fault is returned.</p>
+    /// </note>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.task_list.as_ref()
+    }
+    /// <p>The task priority to use for this workflow execution. This overrides any default
+    /// priority that was assigned when the workflow type was registered. If not set, then the default
+    /// task priority for the workflow type is used. Valid values are integers that range from Java's
+    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+    /// Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+    /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn task_priority(&self) -> std::option::Option<&str> {
+        self.task_priority.as_deref()
+    }
+    /// <p>The input for the workflow execution. This is a free form string which should be
+    /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
+    /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+    /// <p>The total duration for this workflow execution. This overrides the
+    /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+    ///
+    /// <p>The duration is specified in seconds; an integer greater than or equal to
+    /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
+    /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
+    /// timeout; there is a one-year max limit on the time that a workflow execution can
+    /// run.</p>
+    ///
+    /// <note>
+    /// <p>An execution start-to-close timeout must be specified either through this parameter
+    /// or as a default when the workflow type is registered. If neither this parameter nor a
+    /// default execution start-to-close timeout is specified, a fault is returned.</p>
+    /// </note>
+    pub fn execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
+        self.execution_start_to_close_timeout.as_deref()
+    }
+    /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
+    /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
+    /// specifying a <a>TagFilter</a>.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_list.as_deref()
+    }
+    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
+    /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
+    /// the workflow type using <a>RegisterWorkflowType</a>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to
+    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <note>
+    /// <p>A task start-to-close timeout for this workflow execution must be specified either as
+    /// a default for the workflow type or through this parameter. If neither this parameter is set
+    /// nor a default task start-to-close timeout was specified at registration time then a fault is
+    /// returned.</p>
+    /// </note>
+    pub fn task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+        self.task_start_to_close_timeout.as_deref()
+    }
+    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
+    /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
+    /// action explicitly or due to an expired timeout. This policy overrides the default child policy
+    /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE</code> – The child executions are terminated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
+    /// history. It is up to the decider to take appropriate actions when it receives an execution
+    /// history with this event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ABANDON</code> – No action is taken. The child executions continue to
+    /// run.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for
+    /// the workflow type or through this parameter. If neither this parameter is set nor a default
+    /// child policy was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
+        self.child_policy.as_ref()
+    }
+    /// <p>The IAM role to attach to this workflow execution.</p>
+    /// <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
+    /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
+    /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
+    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// </note>
+    pub fn lambda_role(&self) -> std::option::Option<&str> {
+        self.lambda_role.as_deref()
+    }
+}
 impl std::fmt::Debug for StartWorkflowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartWorkflowExecutionInput");
@@ -8510,6 +8677,29 @@ pub struct SignalWorkflowExecutionInput {
     /// workflow execution's history.</p>
     pub input: std::option::Option<std::string::String>,
 }
+impl SignalWorkflowExecutionInput {
+    /// <p>The name of the domain containing the workflow execution to signal.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The workflowId of the workflow execution to signal.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The runId of the workflow execution to signal.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
+    /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
+    pub fn signal_name(&self) -> std::option::Option<&str> {
+        self.signal_name.as_deref()
+    }
+    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
+    /// workflow execution's history.</p>
+    pub fn input(&self) -> std::option::Option<&str> {
+        self.input.as_deref()
+    }
+}
 impl std::fmt::Debug for SignalWorkflowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SignalWorkflowExecutionInput");
@@ -8541,6 +8731,28 @@ pub struct RespondDecisionTaskCompletedInput {
     /// <p>User defined context to add to workflow execution.</p>
     pub execution_context: std::option::Option<std::string::String>,
 }
+impl RespondDecisionTaskCompletedInput {
+    /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
+    /// <important>
+    /// <p>
+    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+    /// This enables it to provide its progress and respond with results.</p>
+    /// </important>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>The list of decisions (possibly empty) made by the decider while processing this
+    /// decision task. See the docs for the <a>Decision</a> structure for
+    /// details.</p>
+    pub fn decisions(&self) -> std::option::Option<&[crate::model::Decision]> {
+        self.decisions.as_deref()
+    }
+    /// <p>User defined context to add to workflow execution.</p>
+    pub fn execution_context(&self) -> std::option::Option<&str> {
+        self.execution_context.as_deref()
+    }
+}
 impl std::fmt::Debug for RespondDecisionTaskCompletedInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RespondDecisionTaskCompletedInput");
@@ -8569,6 +8781,27 @@ pub struct RespondActivityTaskFailedInput {
     /// <p> Detailed information about the failure.</p>
     pub details: std::option::Option<std::string::String>,
 }
+impl RespondActivityTaskFailedInput {
+    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+    ///
+    /// <important>
+    /// <p>
+    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+    /// This enables it to provide its progress and respond with results.</p>
+    /// </important>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>Description of the error that may assist in diagnostics.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p> Detailed information about the failure.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
+}
 impl std::fmt::Debug for RespondActivityTaskFailedInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RespondActivityTaskFailedInput");
@@ -8595,6 +8828,23 @@ pub struct RespondActivityTaskCompletedInput {
     /// specific.</p>
     pub result: std::option::Option<std::string::String>,
 }
+impl RespondActivityTaskCompletedInput {
+    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+    /// <important>
+    /// <p>
+    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+    /// This enables it to provide its progress and respond with results.</p>
+    /// </important>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>The result of the activity task. It is a free form string that is implementation
+    /// specific.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+}
 impl std::fmt::Debug for RespondActivityTaskCompletedInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RespondActivityTaskCompletedInput");
@@ -8619,6 +8869,22 @@ pub struct RespondActivityTaskCanceledInput {
     /// <p> Information about the cancellation.</p>
     pub details: std::option::Option<std::string::String>,
 }
+impl RespondActivityTaskCanceledInput {
+    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+    /// <important>
+    /// <p>
+    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+    /// This enables it to provide its progress and respond with results.</p>
+    /// </important>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p> Information about the cancellation.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
+}
 impl std::fmt::Debug for RespondActivityTaskCanceledInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RespondActivityTaskCanceledInput");
@@ -8638,6 +8904,20 @@ pub struct RequestCancelWorkflowExecutionInput {
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The runId of the workflow execution to cancel.</p>
     pub run_id: std::option::Option<std::string::String>,
+}
+impl RequestCancelWorkflowExecutionInput {
+    /// <p>The name of the domain containing the workflow execution to cancel.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The workflowId of the workflow execution to cancel.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>The runId of the workflow execution to cancel.</p>
+    pub fn run_id(&self) -> std::option::Option<&str> {
+        self.run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RequestCancelWorkflowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8738,6 +9018,112 @@ pub struct RegisterWorkflowTypeInput {
     /// </note>
     pub default_lambda_role: std::option::Option<std::string::String>,
 }
+impl RegisterWorkflowTypeInput {
+    /// <p>The name of the domain in which to register the workflow type.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The name of the workflow type.</p>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the workflow type.</p>
+    /// <note>
+    /// <p>The workflow type consists of the name and version, the combination of which must be
+    /// unique within the domain. To get a list of all currently registered workflow types, use the
+    /// <a>ListWorkflowTypes</a> action.</p>
+    /// </note>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Textual description of the workflow type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
+    /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+    /// <a>Decision</a>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to
+    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+        self.default_task_start_to_close_timeout.as_deref()
+    }
+    /// <p>If set, specifies the default maximum duration for executions of this workflow type.
+    /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
+    /// <a>Decision</a>.</p>
+    ///
+    /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
+    /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
+    /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
+    /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
+    /// to time out.</p>
+    pub fn default_execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
+        self.default_execution_start_to_close_timeout.as_deref()
+    }
+    /// <p>If set, specifies the default task list to use for scheduling decision tasks for
+    /// executions of this workflow type. This default is used only if a task list isn't provided when
+    /// starting the execution through the <a>StartWorkflowExecution</a> Action or
+    /// <code>StartChildWorkflowExecution</code>
+    /// <a>Decision</a>.</p>
+    pub fn default_task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.default_task_list.as_ref()
+    }
+    /// <p>The default task priority to assign to the workflow type. If not assigned, then
+    /// <code>0</code> is used. Valid values are integers that range from Java's
+    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+    /// Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+    /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn default_task_priority(&self) -> std::option::Option<&str> {
+        self.default_task_priority.as_deref()
+    }
+    /// <p>If set, specifies the default policy to use for the child workflow executions when a
+    /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
+    /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+    /// <a>Decision</a>.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE</code> – The child executions are terminated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
+    /// history. It is up to the decider to take appropriate actions when it receives an execution
+    /// history with this event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ABANDON</code> – No action is taken. The child executions continue to
+    /// run.</p>
+    /// </li>
+    /// </ul>
+    pub fn default_child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
+        self.default_child_policy.as_ref()
+    }
+    /// <p>The default IAM role attached to this workflow type.</p>
+    /// <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
+    /// don't specify an IAM role when you start this workflow type, the default Lambda role is
+    /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
+    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// </note>
+    pub fn default_lambda_role(&self) -> std::option::Option<&str> {
+        self.default_lambda_role.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterWorkflowTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterWorkflowTypeInput");
@@ -8788,6 +9174,39 @@ pub struct RegisterDomainInput {
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+}
+impl RegisterDomainInput {
+    /// <p>Name of the domain to register. The name must be unique in the region that the domain
+    /// is registered in.</p>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A text description of the domain.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The duration (in days) that records and histories of workflow executions on the domain
+    /// should be kept by the service. After the retention period, the workflow execution isn't
+    /// available in the results of visibility calls.</p>
+    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
+    /// execution history isn't retained. As soon as the workflow execution completes, the execution
+    /// record and its history are deleted.</p>
+    /// <p>The maximum workflow execution retention period is 90 days. For more information about
+    /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
+    /// <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn workflow_execution_retention_period_in_days(&self) -> std::option::Option<&str> {
+        self.workflow_execution_retention_period_in_days.as_deref()
+    }
+    /// <p>Tags to be added when registering a domain.</p>
+    /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8875,6 +9294,95 @@ pub struct RegisterActivityTypeInput {
     /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_schedule_to_close_timeout: std::option::Option<std::string::String>,
 }
+impl RegisterActivityTypeInput {
+    /// <p>The name of the domain in which this activity is to be registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The name of the activity type within the domain.</p>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version of the activity type.</p>
+    /// <note>
+    /// <p>The activity type consists of the name and version, the combination of which must be
+    /// unique within the domain.</p>
+    /// </note>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>A textual description of the activity type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
+    /// of this activity type. This default can be overridden when scheduling an activity task using
+    /// the <code>ScheduleActivityTask</code>
+    /// <a>Decision</a>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to
+    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+        self.default_task_start_to_close_timeout.as_deref()
+    }
+    /// <p>If set, specifies the default maximum time before which a worker processing a task of
+    /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
+    /// the timeout is exceeded, the activity task is automatically timed out. This default can be
+    /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
+    /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
+    /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
+    /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
+    /// clean up the activity task.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to
+    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn default_task_heartbeat_timeout(&self) -> std::option::Option<&str> {
+        self.default_task_heartbeat_timeout.as_deref()
+    }
+    /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
+    /// type. This default task list is used if a task list isn't provided when a task is scheduled
+    /// through the <code>ScheduleActivityTask</code>
+    /// <a>Decision</a>.</p>
+    pub fn default_task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.default_task_list.as_ref()
+    }
+    /// <p>The default task priority to assign to the activity type. If not assigned, then
+    /// <code>0</code> is used. Valid values are integers that range from Java's
+    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+    /// Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+    /// Priority</a> in the <i>in the
+    /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
+    pub fn default_task_priority(&self) -> std::option::Option<&str> {
+        self.default_task_priority.as_deref()
+    }
+    /// <p>If set, specifies the default maximum duration that a task of this activity type can
+    /// wait before being assigned to a worker. This default can be overridden when scheduling an
+    /// activity task using the <code>ScheduleActivityTask</code>
+    /// <a>Decision</a>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to
+    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn default_task_schedule_to_start_timeout(&self) -> std::option::Option<&str> {
+        self.default_task_schedule_to_start_timeout.as_deref()
+    }
+    /// <p>If set, specifies the default maximum duration for a task of this activity type. This
+    /// default can be overridden when scheduling an activity task using the
+    /// <code>ScheduleActivityTask</code>
+    /// <a>Decision</a>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to
+    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn default_task_schedule_to_close_timeout(&self) -> std::option::Option<&str> {
+        self.default_task_schedule_to_close_timeout.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterActivityTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterActivityTypeInput");
@@ -8918,6 +9426,22 @@ pub struct RecordActivityTaskHeartbeatInput {
     pub task_token: std::option::Option<std::string::String>,
     /// <p>If specified, contains details about the progress of the task.</p>
     pub details: std::option::Option<std::string::String>,
+}
+impl RecordActivityTaskHeartbeatInput {
+    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+    /// <important>
+    /// <p>
+    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+    /// This enables it to provide its progress and respond with results. </p>
+    /// </important>
+    pub fn task_token(&self) -> std::option::Option<&str> {
+        self.task_token.as_deref()
+    }
+    /// <p>If specified, contains details about the progress of the task.</p>
+    pub fn details(&self) -> std::option::Option<&str> {
+        self.details.as_deref()
+    }
 }
 impl std::fmt::Debug for RecordActivityTaskHeartbeatInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8970,6 +9494,57 @@ pub struct PollForDecisionTaskInput {
     /// events.</p>
     pub reverse_order: bool,
 }
+impl PollForDecisionTaskInput {
+    /// <p>The name of the domain containing the task lists to poll.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>Specifies the task list to poll for decision tasks.</p>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.task_list.as_ref()
+    }
+    /// <p>Identity of the decider making the request, which is recorded in the
+    /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
+    /// problems arise. The form of this identity is user defined.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    /// <note>
+    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
+    /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
+    /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+    /// </note>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
+    /// <p>This
+    /// is an upper limit only; the actual number of results returned per call may be fewer than the
+    /// specified maximum.</p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
+    /// results are returned in ascending order of the <code>eventTimestamp</code> of the
+    /// events.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+}
 impl std::fmt::Debug for PollForDecisionTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PollForDecisionTaskInput");
@@ -9000,6 +9575,27 @@ pub struct PollForActivityTaskInput {
     /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
     /// tracing when problems arise. The form of this identity is user defined.</p>
     pub identity: std::option::Option<std::string::String>,
+}
+impl PollForActivityTaskInput {
+    /// <p>The name of the domain that contains the task lists being polled.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>Specifies the task list to poll for activity tasks.</p>
+    ///
+    /// <p>The specified string must not start or end with whitespace. It must not contain a
+    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.task_list.as_ref()
+    }
+    /// <p>Identity of the worker making the request, recorded in the
+    /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
+    /// tracing when problems arise. The form of this identity is user defined.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
 }
 impl std::fmt::Debug for PollForActivityTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9038,6 +9634,42 @@ pub struct ListWorkflowTypesInput {
     /// types.</p>
     pub reverse_order: bool,
 }
+impl ListWorkflowTypesInput {
+    /// <p>The name of the domain in which the workflow types have been registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>If specified, lists the workflow type with this name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the registration status of the workflow types to list.</p>
+    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.registration_status.as_ref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
+    /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
+    /// types.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+}
 impl std::fmt::Debug for ListWorkflowTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkflowTypesInput");
@@ -9057,6 +9689,12 @@ impl std::fmt::Debug for ListWorkflowTypesInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9114,6 +9752,67 @@ pub struct ListOpenWorkflowExecutionsInput {
     /// </note>
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
+impl ListOpenWorkflowExecutionsInput {
+    /// <p>The name of the domain that contains the workflow executions to list.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>Workflow executions are included in the returned results based on whether their start
+    /// times are within the range specified by this filter.</p>
+    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+        self.start_time_filter.as_ref()
+    }
+    /// <p>If specified, only executions of the type specified in the filter are
+    /// returned.</p>
+    /// <note>
+    /// <p>
+    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+        self.type_filter.as_ref()
+    }
+    /// <p>If specified, only executions that have the matching tag are listed.</p>
+    /// <note>
+    /// <p>
+    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+        self.tag_filter.as_ref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
+    /// results are returned in descending order of the start time of the executions.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
+    /// are returned.</p>
+    /// <note>
+    /// <p>
+    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+        self.execution_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListOpenWorkflowExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOpenWorkflowExecutionsInput");
@@ -9151,6 +9850,34 @@ pub struct ListDomainsInput {
     /// results are returned in ascending alphabetical order by <code>name</code> of the
     /// domains.</p>
     pub reverse_order: bool,
+}
+impl ListDomainsInput {
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>Specifies the registration status of the domains to list.</p>
+    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.registration_status.as_ref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
+    /// results are returned in ascending alphabetical order by <code>name</code> of the
+    /// domains.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
 }
 impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9240,6 +9967,100 @@ pub struct ListClosedWorkflowExecutionsInput {
     /// executions.</p>
     pub reverse_order: bool,
 }
+impl ListClosedWorkflowExecutionsInput {
+    /// <p>The name of the domain that contains the workflow executions to list.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>If specified, the workflow executions are included in the returned results based on
+    /// whether their start times are within the range specified by this filter. Also, if this
+    /// parameter is specified, the returned results are ordered by their start times.</p>
+    /// <note>
+    /// <p>
+    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+    /// must specify one of these in a request but not both.</p>
+    /// </note>
+    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+        self.start_time_filter.as_ref()
+    }
+    /// <p>If specified, the workflow executions are included in the returned results based on
+    /// whether their close times are within the range specified by this filter. Also, if this
+    /// parameter is specified, the returned results are ordered by their close times.</p>
+    /// <note>
+    /// <p>
+    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+    /// must specify one of these in a request but not both.</p>
+    /// </note>
+    pub fn close_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+        self.close_time_filter.as_ref()
+    }
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
+    /// are returned.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+        self.execution_filter.as_ref()
+    }
+    /// <p>If specified, only workflow executions that match this <i>close
+    /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
+    /// workflow executions are listed.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
+        self.close_status_filter.as_ref()
+    }
+    /// <p>If specified, only executions of the type specified in the filter are
+    /// returned.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+        self.type_filter.as_ref()
+    }
+    /// <p>If specified, only executions that have the matching tag are listed.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+        self.tag_filter.as_ref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
+    /// results are returned in descending order of the start or the close time of the
+    /// executions.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+}
 impl std::fmt::Debug for ListClosedWorkflowExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClosedWorkflowExecutionsInput");
@@ -9284,6 +10105,42 @@ pub struct ListActivityTypesInput {
     /// types.</p>
     pub reverse_order: bool,
 }
+impl ListActivityTypesInput {
+    /// <p>The name of the domain in which the activity types have been registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>If specified, only lists the activity types that have this name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the registration status of the activity types to list.</p>
+    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.registration_status.as_ref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
+    /// results are returned in ascending alphabetical order by <code>name</code> of the activity
+    /// types.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+}
 impl std::fmt::Debug for ListActivityTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActivityTypesInput");
@@ -9322,6 +10179,38 @@ pub struct GetWorkflowExecutionHistoryInput {
     /// events.</p>
     pub reverse_order: bool,
 }
+impl GetWorkflowExecutionHistoryInput {
+    /// <p>The name of the domain containing the workflow execution.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>Specifies the workflow execution for which to return the history.</p>
+    pub fn execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
+        self.execution.as_ref()
+    }
+    /// <p>If <code>NextPageToken</code> is returned there are more results
+    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+    /// exceeded its maximum lifetime</code>". </p>
+    ///
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+    /// in a single call. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+    /// <p>The maximum number of results that are returned per call.
+    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    pub fn maximum_page_size(&self) -> i32 {
+        self.maximum_page_size
+    }
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
+    /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
+    /// events.</p>
+    pub fn reverse_order(&self) -> bool {
+        self.reverse_order
+    }
+}
 impl std::fmt::Debug for GetWorkflowExecutionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetWorkflowExecutionHistoryInput");
@@ -9343,6 +10232,16 @@ pub struct DescribeWorkflowTypeInput {
     /// <p>The workflow type to describe.</p>
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
 }
+impl DescribeWorkflowTypeInput {
+    /// <p>The name of the domain in which this workflow type is registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The workflow type to describe.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkflowTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkflowTypeInput");
@@ -9361,6 +10260,16 @@ pub struct DescribeWorkflowExecutionInput {
     /// <p>The workflow execution to describe.</p>
     pub execution: std::option::Option<crate::model::WorkflowExecution>,
 }
+impl DescribeWorkflowExecutionInput {
+    /// <p>The name of the domain containing the workflow execution.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The workflow execution to describe.</p>
+    pub fn execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
+        self.execution.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkflowExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkflowExecutionInput");
@@ -9376,6 +10285,12 @@ impl std::fmt::Debug for DescribeWorkflowExecutionInput {
 pub struct DescribeDomainInput {
     /// <p>The name of the domain to describe.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DescribeDomainInput {
+    /// <p>The name of the domain to describe.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9396,6 +10311,18 @@ pub struct DescribeActivityTypeInput {
     /// registered.</p>
     pub activity_type: std::option::Option<crate::model::ActivityType>,
 }
+impl DescribeActivityTypeInput {
+    /// <p>The name of the domain in which the activity type is registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The activity type to get information about. Activity types are identified by the
+    /// <code>name</code> and <code>version</code> that were supplied when the activity was
+    /// registered.</p>
+    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+        self.activity_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeActivityTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActivityTypeInput");
@@ -9414,6 +10341,16 @@ pub struct DeprecateWorkflowTypeInput {
     /// <p>The workflow type to deprecate.</p>
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
 }
+impl DeprecateWorkflowTypeInput {
+    /// <p>The name of the domain in which the workflow type is registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The workflow type to deprecate.</p>
+    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+        self.workflow_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeprecateWorkflowTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeprecateWorkflowTypeInput");
@@ -9429,6 +10366,12 @@ impl std::fmt::Debug for DeprecateWorkflowTypeInput {
 pub struct DeprecateDomainInput {
     /// <p>The name of the domain to deprecate.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeprecateDomainInput {
+    /// <p>The name of the domain to deprecate.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeprecateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9446,6 +10389,16 @@ pub struct DeprecateActivityTypeInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The activity type to deprecate.</p>
     pub activity_type: std::option::Option<crate::model::ActivityType>,
+}
+impl DeprecateActivityTypeInput {
+    /// <p>The name of the domain in which the activity type is registered.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The activity type to deprecate.</p>
+    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+        self.activity_type.as_ref()
+    }
 }
 impl std::fmt::Debug for DeprecateActivityTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9465,6 +10418,16 @@ pub struct CountPendingDecisionTasksInput {
     /// <p>The name of the task list.</p>
     pub task_list: std::option::Option<crate::model::TaskList>,
 }
+impl CountPendingDecisionTasksInput {
+    /// <p>The name of the domain that contains the task list.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The name of the task list.</p>
+    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.task_list.as_ref()
+    }
+}
 impl std::fmt::Debug for CountPendingDecisionTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CountPendingDecisionTasksInput");
@@ -9482,6 +10445,16 @@ pub struct CountPendingActivityTasksInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the task list.</p>
     pub task_list: std::option::Option<crate::model::TaskList>,
+}
+impl CountPendingActivityTasksInput {
+    /// <p>The name of the domain that contains the task list.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The name of the task list.</p>
+    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+        self.task_list.as_ref()
+    }
 }
 impl std::fmt::Debug for CountPendingActivityTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9524,6 +10497,46 @@ pub struct CountOpenWorkflowExecutionsInput {
     /// mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
+}
+impl CountOpenWorkflowExecutionsInput {
+    /// <p>The name of the domain containing the workflow executions to count.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>Specifies the start time criteria that workflow executions must meet in order to be
+    /// counted.</p>
+    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+        self.start_time_filter.as_ref()
+    }
+    /// <p>Specifies the type of the workflow executions to be counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+        self.type_filter.as_ref()
+    }
+    /// <p>If specified, only executions that have a tag that matches the filter are
+    /// counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+        self.tag_filter.as_ref()
+    }
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
+    /// filter are counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+        self.execution_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for CountOpenWorkflowExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9595,6 +10608,76 @@ pub struct CountClosedWorkflowExecutionsInput {
     /// request.</p>
     /// </note>
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
+}
+impl CountClosedWorkflowExecutionsInput {
+    /// <p>The name of the domain containing the workflow executions to count.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter
+    /// are counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+    /// must specify one of these in a request but not both.</p>
+    /// </note>
+    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+        self.start_time_filter.as_ref()
+    }
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter
+    /// are counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+    /// must specify one of these in a request but not both.</p>
+    /// </note>
+    pub fn close_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+        self.close_time_filter.as_ref()
+    }
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
+    /// filter are counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+        self.execution_filter.as_ref()
+    }
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+        self.type_filter.as_ref()
+    }
+    /// <p>If specified, only executions that have a tag that matches the filter are
+    /// counted.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+        self.tag_filter.as_ref()
+    }
+    /// <p>If specified, only workflow executions that match this close status are counted. This
+    /// filter has an affect only if <code>executionStatus</code> is specified as
+    /// <code>CLOSED</code>.</p>
+    /// <note>
+    /// <p>
+    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+    /// request.</p>
+    /// </note>
+    pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
+        self.close_status_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for CountClosedWorkflowExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

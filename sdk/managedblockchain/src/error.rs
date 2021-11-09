@@ -3240,6 +3240,12 @@ pub struct ResourceNotFoundException {
     /// <p>A requested resource does not exist. It may have been deleted or referenced inaccurately.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>A requested resource does not exist. It may have been deleted or referenced inaccurately.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -3641,6 +3647,12 @@ pub struct TooManyTagsException {
     pub message: std::option::Option<std::string::String>,
     /// <p></p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl TooManyTagsException {
+    /// <p></p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -16,6 +16,27 @@ pub struct Template {
     /// <p>The HTML body of the email.</p>
     pub html_part: std::option::Option<std::string::String>,
 }
+impl Template {
+    /// <p>The name of the template. You will refer to this name when you send email using the
+    /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+    /// operations.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The subject line of the email.</p>
+    pub fn subject_part(&self) -> std::option::Option<&str> {
+        self.subject_part.as_deref()
+    }
+    /// <p>The email body that will be visible to recipients whose email clients do not display
+    /// HTML.</p>
+    pub fn text_part(&self) -> std::option::Option<&str> {
+        self.text_part.as_deref()
+    }
+    /// <p>The HTML body of the email.</p>
+    pub fn html_part(&self) -> std::option::Option<&str> {
+        self.html_part.as_deref()
+    }
+}
 impl std::fmt::Debug for Template {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Template");
@@ -147,6 +168,52 @@ pub struct ReceiptRule {
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for
     /// spam and viruses. The default value is <code>false</code>.</p>
     pub scan_enabled: bool,
+}
+impl ReceiptRule {
+    /// <p>The name of the receipt rule. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 64 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If <code>true</code>, the receipt rule is active. The default value is
+    /// <code>false</code>.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a
+    /// connection encrypted with Transport Layer Security (TLS). If this parameter is set to
+    /// <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The
+    /// default is <code>Optional</code>.</p>
+    pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
+        self.tls_policy.as_ref()
+    }
+    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this
+    /// field is not specified, this rule will match all recipients under all verified
+    /// domains.</p>
+    pub fn recipients(&self) -> std::option::Option<&[std::string::String]> {
+        self.recipients.as_deref()
+    }
+    /// <p>An ordered list of actions to perform on messages that match at least one of the
+    /// recipient email addresses or domains specified in the receipt rule.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::ReceiptAction]> {
+        self.actions.as_deref()
+    }
+    /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for
+    /// spam and viruses. The default value is <code>false</code>.</p>
+    pub fn scan_enabled(&self) -> bool {
+        self.scan_enabled
+    }
 }
 impl std::fmt::Debug for ReceiptRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -342,6 +409,40 @@ pub struct ReceiptAction {
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
     pub sns_action: std::option::Option<crate::model::SnsAction>,
 }
+impl ReceiptAction {
+    /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a
+    /// notification to Amazon SNS.</p>
+    pub fn s3_action(&self) -> std::option::Option<&crate::model::S3Action> {
+        self.s3_action.as_ref()
+    }
+    /// <p>Rejects the received email by returning a bounce response to the sender and,
+    /// optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
+    pub fn bounce_action(&self) -> std::option::Option<&crate::model::BounceAction> {
+        self.bounce_action.as_ref()
+    }
+    /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
+    /// Amazon SNS.</p>
+    pub fn workmail_action(&self) -> std::option::Option<&crate::model::WorkmailAction> {
+        self.workmail_action.as_ref()
+    }
+    /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
+    pub fn lambda_action(&self) -> std::option::Option<&crate::model::LambdaAction> {
+        self.lambda_action.as_ref()
+    }
+    /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a
+    /// notification to Amazon SNS.</p>
+    pub fn stop_action(&self) -> std::option::Option<&crate::model::StopAction> {
+        self.stop_action.as_ref()
+    }
+    /// <p>Adds a header to the received email.</p>
+    pub fn add_header_action(&self) -> std::option::Option<&crate::model::AddHeaderAction> {
+        self.add_header_action.as_ref()
+    }
+    /// <p>Publishes the email content within a notification to Amazon SNS.</p>
+    pub fn sns_action(&self) -> std::option::Option<&crate::model::SnsAction> {
+        self.sns_action.as_ref()
+    }
+}
 impl std::fmt::Debug for ReceiptAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReceiptAction");
@@ -517,6 +618,21 @@ pub struct SnsAction {
     /// UTF-8.</p>
     pub encoding: std::option::Option<crate::model::SnsActionEncoding>,
 }
+impl SnsAction {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS
+    /// topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
+    /// information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to
+    /// use, but may not preserve all special characters when a message was encoded with a
+    /// different encoding format. Base64 preserves all special characters. The default value is
+    /// UTF-8.</p>
+    pub fn encoding(&self) -> std::option::Option<&crate::model::SnsActionEncoding> {
+        self.encoding.as_ref()
+    }
+}
 impl std::fmt::Debug for SnsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnsAction");
@@ -653,6 +769,18 @@ pub struct AddHeaderAction {
     /// "\n").</p>
     pub header_value: std::option::Option<std::string::String>,
 }
+impl AddHeaderAction {
+    /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and
+    /// consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
+    pub fn header_name(&self) -> std::option::Option<&str> {
+        self.header_name.as_deref()
+    }
+    /// <p>Must be less than 2048 characters, and must not contain newline characters ("\r" or
+    /// "\n").</p>
+    pub fn header_value(&self) -> std::option::Option<&str> {
+        self.header_value.as_deref()
+    }
+}
 impl std::fmt::Debug for AddHeaderAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddHeaderAction");
@@ -725,6 +853,19 @@ pub struct StopAction {
     /// <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
     /// Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: std::option::Option<std::string::String>,
+}
+impl StopAction {
+    /// <p>The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.</p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::StopScope> {
+        self.scope.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is
+    /// taken. An example of an Amazon SNS topic ARN is
+    /// <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+    /// Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StopAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -869,6 +1010,35 @@ pub struct LambdaAction {
     /// such as whether to stop the receipt rule or the receipt rule set.</p>
     /// </important>
     pub invocation_type: std::option::Option<crate::model::InvocationType>,
+}
+impl LambdaAction {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is
+    /// taken. An example of an Amazon SNS topic ARN is
+    /// <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+    /// Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda
+    /// function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>.
+    /// For more information about AWS Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The invocation type of the AWS Lambda function. An invocation type of
+    /// <code>RequestResponse</code> means that the execution of the function will
+    /// immediately result in a response, and a value of <code>Event</code> means that the
+    /// function will be invoked asynchronously. The default value is <code>Event</code>. For
+    /// information about AWS Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
+    /// <important>
+    /// <p>There is a 30-second timeout on <code>RequestResponse</code> invocations. You
+    /// should use <code>Event</code> invocation in most cases. Use
+    /// <code>RequestResponse</code> only when you want to make a mail flow decision,
+    /// such as whether to stop the receipt rule or the receipt rule set.</p>
+    /// </important>
+    pub fn invocation_type(&self) -> std::option::Option<&crate::model::InvocationType> {
+        self.invocation_type.as_ref()
+    }
 }
 impl std::fmt::Debug for LambdaAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1046,6 +1216,23 @@ pub struct WorkmailAction {
     /// Administrator Guide</a>.</p>
     pub organization_arn: std::option::Option<std::string::String>,
 }
+impl WorkmailAction {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action
+    /// is called. An example of an Amazon SNS topic ARN is
+    /// <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+    /// Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail
+    /// organization ARN is
+    /// <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>.
+    /// For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+    /// Administrator Guide</a>.</p>
+    pub fn organization_arn(&self) -> std::option::Option<&str> {
+        self.organization_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for WorkmailAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkmailAction");
@@ -1140,6 +1327,32 @@ pub struct BounceAction {
     /// <p>The email address of the sender of the bounced email. This is the address from which
     /// the bounce message will be sent.</p>
     pub sender: std::option::Option<std::string::String>,
+}
+impl BounceAction {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is
+    /// taken. An example of an Amazon SNS topic ARN is
+    /// <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+    /// Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+    pub fn smtp_reply_code(&self) -> std::option::Option<&str> {
+        self.smtp_reply_code.as_deref()
+    }
+    /// <p>The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+    pub fn status_code(&self) -> std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>Human-readable text to include in the bounce message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The email address of the sender of the bounced email. This is the address from which
+    /// the bounce message will be sent.</p>
+    pub fn sender(&self) -> std::option::Option<&str> {
+        self.sender.as_deref()
+    }
 }
 impl std::fmt::Debug for BounceAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,6 +1515,59 @@ pub struct S3Action {
     /// information about client-side encryption using AWS KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3Action {
+    /// <p>The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. An
+    /// example of an Amazon SNS topic ARN is
+    /// <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
+    /// Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that
+    /// enables you to store similar data under the same directory in a bucket.</p>
+    pub fn object_key_prefix(&self) -> std::option::Option<&str> {
+        self.object_key_prefix.as_deref()
+    }
+    /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving
+    /// them to the Amazon S3 bucket. You can use the default master key or a custom master key you
+    /// created in AWS KMS as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To use the default master key, provide an ARN in the form of
+    /// <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>.
+    /// For example, if your AWS account ID is 123456789012 and you want to use the
+    /// default master key in the US West (Oregon) region, the ARN of the default master
+    /// key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If
+    /// you use the default master key, you don't need to perform any extra steps to
+    /// give Amazon SES permission to use the key.</p>
+    /// </li>
+    /// <li>
+    /// <p>To use a custom master key you created in AWS KMS, provide the ARN of the
+    /// master key and ensure that you add a statement to your key's policy to give
+    /// Amazon SES permission to use it. For more information about giving permissions, see
+    /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
+    /// Developer Guide</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS KMS Developer Guide</a>. If
+    /// you do not specify a master key, Amazon SES will not encrypt your emails.</p>
+    /// <important>
+    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail
+    /// is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side
+    /// encryption. This means that you must use the Amazon S3 encryption client to decrypt the
+    /// email after retrieving it from Amazon S3, as the service has no access to use your AWS
+    /// KMS keys for decryption. This encryption client is currently available with the
+    /// <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
+    /// information about client-side encryption using AWS KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
+    /// </important>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1523,6 +1789,13 @@ pub struct TrackingOptions {
     /// event tracking domain.</p>
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
+impl TrackingOptions {
+    /// <p>The custom subdomain that will be used to redirect email recipients to the Amazon SES
+    /// event tracking domain.</p>
+    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+        self.custom_redirect_domain.as_deref()
+    }
+}
 impl std::fmt::Debug for TrackingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrackingOptions");
@@ -1609,6 +1882,51 @@ pub struct EventDestination {
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
     /// destination.</p>
     pub sns_destination: std::option::Option<crate::model::SnsDestination>,
+}
+impl EventDestination {
+    /// <p>The name of the event destination. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 64 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with
+    /// the associated configuration set. Set to <code>true</code> to enable publishing to this
+    /// destination; set to <code>false</code> to prevent publishing to this destination. The
+    /// default value is <code>false</code>.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The type of email sending events to publish to the event destination.</p>
+    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.matching_event_types.as_deref()
+    }
+    /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with
+    /// an Amazon Kinesis Firehose event destination.</p>
+    pub fn kinesis_firehose_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+        self.kinesis_firehose_destination.as_ref()
+    }
+    /// <p>An object that contains the names, default values, and sources of the dimensions
+    /// associated with an Amazon CloudWatch event destination.</p>
+    pub fn cloud_watch_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchDestination> {
+        self.cloud_watch_destination.as_ref()
+    }
+    /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+    /// destination.</p>
+    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+        self.sns_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for EventDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1789,6 +2107,14 @@ pub struct SnsDestination {
     /// more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
+impl SnsDestination {
+    /// <p>The ARN of the Amazon SNS topic that email sending events will be published to. An example
+    /// of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For
+    /// more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SnsDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnsDestination");
@@ -1847,6 +2173,15 @@ pub struct CloudWatchDestination {
     /// sending events to Amazon CloudWatch.</p>
     pub dimension_configurations:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
+}
+impl CloudWatchDestination {
+    /// <p>A list of dimensions upon which to categorize your emails when you publish email
+    /// sending events to Amazon CloudWatch.</p>
+    pub fn dimension_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchDimensionConfiguration]> {
+        self.dimension_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1943,6 +2278,47 @@ pub struct CloudWatchDimensionConfiguration {
     /// </li>
     /// </ul>
     pub default_dimension_value: std::option::Option<std::string::String>,
+}
+impl CloudWatchDimensionConfiguration {
+    /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name
+    /// must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
+        self.dimension_name.as_deref()
+    }
+    /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you
+    /// want Amazon SES to use the message tags that you specify using an
+    /// <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+    /// <code>SendEmail</code>/<code>SendRawEmail</code> API, choose
+    /// <code>messageTag</code>. If you want Amazon SES to use your own email headers, choose
+    /// <code>emailHeader</code>.</p>
+    pub fn dimension_value_source(
+        &self,
+    ) -> std::option::Option<&crate::model::DimensionValueSource> {
+        self.dimension_value_source.as_ref()
+    }
+    /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide
+    /// the value of the dimension when you send an email. The default value must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn default_dimension_value(&self) -> std::option::Option<&str> {
+        self.default_dimension_value.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchDimensionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2143,6 +2519,17 @@ pub struct KinesisFirehoseDestination {
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
     pub delivery_stream_arn: std::option::Option<std::string::String>,
+}
+impl KinesisFirehoseDestination {
+    /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose
+    /// stream.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
+    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+        self.delivery_stream_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisFirehoseDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2435,6 +2822,34 @@ pub struct MessageTag {
     /// </ul>
     pub value: std::option::Option<std::string::String>,
 }
+impl MessageTag {
+    /// <p>The name of the tag. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the tag. The value must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 256 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageTag");
@@ -2544,6 +2959,20 @@ pub struct Destination {
     pub cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The recipients to place on the BCC: line of the message.</p>
     pub bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Destination {
+    /// <p>The recipients to place on the To: line of the message.</p>
+    pub fn to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.to_addresses.as_deref()
+    }
+    /// <p>The recipients to place on the CC: line of the message.</p>
+    pub fn cc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.cc_addresses.as_deref()
+    }
+    /// <p>The recipients to place on the BCC: line of the message.</p>
+    pub fn bcc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.bcc_addresses.as_deref()
+    }
 }
 impl std::fmt::Debug for Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2660,6 +3089,26 @@ pub struct RawMessage {
     /// Guide</a>.</p>
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
+impl RawMessage {
+    /// <p>The raw data of the message. This data needs to base64-encoded if you are accessing
+    /// Amazon SES directly through the HTTPS interface. If you are accessing Amazon SES using an AWS
+    /// SDK, the SDK takes care of the base 64-encoding for you. In all cases, the client must
+    /// ensure that the message format complies with Internet email standards regarding email
+    /// header fields, MIME types, and MIME encoding.</p>
+    /// <p>The To:, CC:, and BCC: headers in the raw message can contain a group list.</p>
+    /// <p>If you are using <code>SendRawEmail</code> with sending authorization, you can include
+    /// X-headers in the raw message to specify the "Source," "From," and "Return-Path"
+    /// addresses. For more information, see the documentation for <code>SendRawEmail</code>. </p>
+    /// <important>
+    /// <p>Do not include these X-headers in the DKIM signature, because they are removed by
+    /// Amazon SES before sending the email.</p>
+    /// </important>
+    /// <p>For more information, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+}
 impl std::fmt::Debug for RawMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RawMessage");
@@ -2737,6 +3186,17 @@ pub struct Message {
     /// <p>The message body.</p>
     pub body: std::option::Option<crate::model::Body>,
 }
+impl Message {
+    /// <p>The subject of the message: A short summary of the content, which will appear in the
+    /// recipient's inbox.</p>
+    pub fn subject(&self) -> std::option::Option<&crate::model::Content> {
+        self.subject.as_ref()
+    }
+    /// <p>The message body.</p>
+    pub fn body(&self) -> std::option::Option<&crate::model::Body> {
+        self.body.as_ref()
+    }
+}
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Message");
@@ -2806,6 +3266,19 @@ pub struct Body {
     /// process HTML. You can include clickable links, formatted text, and much more in an HTML
     /// message.</p>
     pub html: std::option::Option<crate::model::Content>,
+}
+impl Body {
+    /// <p>The content of the message, in text format. Use this for text-based email clients, or
+    /// clients on high-latency networks (such as mobile devices).</p>
+    pub fn text(&self) -> std::option::Option<&crate::model::Content> {
+        self.text.as_ref()
+    }
+    /// <p>The content of the message, in HTML format. Use this for email clients that can
+    /// process HTML. You can include clickable links, formatted text, and much more in an HTML
+    /// message.</p>
+    pub fn html(&self) -> std::option::Option<&crate::model::Content> {
+        self.html.as_ref()
+    }
 }
 impl std::fmt::Debug for Body {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2878,6 +3351,16 @@ pub struct Content {
     pub data: std::option::Option<std::string::String>,
     /// <p>The character set of the content.</p>
     pub charset: std::option::Option<std::string::String>,
+}
+impl Content {
+    /// <p>The textual data of the content.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+    /// <p>The character set of the content.</p>
+    pub fn charset(&self) -> std::option::Option<&str> {
+        self.charset.as_deref()
+    }
 }
 impl std::fmt::Debug for Content {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3023,6 +3506,99 @@ pub struct BulkEmailDestinationStatus {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
     /// operation.</p>
     pub message_id: std::option::Option<std::string::String>,
+}
+impl BulkEmailDestinationStatus {
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
+    /// operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver
+    /// it to the recipients.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MessageRejected</code>: The message was rejected because it contained a
+    /// virus.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MailFromDomainNotVerified</code>: The sender's email address or domain
+    /// was not verified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified
+    /// does not exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TemplateDoesNotExist</code>: The template you specified does not
+    /// exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountSuspended</code>: Your account has been shut down because of
+    /// issues related to your email sending practices.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountThrottled</code>: The number of emails you can send has been
+    /// reduced because your account has exceeded its allocated sending limit.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the
+    /// maximum number of emails you can send from your account in a 24-hour
+    /// period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InvalidSendingPoolName</code>: The configuration set you specified
+    /// refers to an IP pool that does not exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was
+    /// disabled using the <a>UpdateAccountSendingEnabled</a>
+    /// operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ConfigurationSetSendingPaused</code>: Email sending for this
+    /// configuration set was disabled using the <a>UpdateConfigurationSetSendingEnabled</a> operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InvalidParameterValue</code>: One or more of the parameters you
+    /// specified when calling this operation was invalid. See the error message for
+    /// additional information.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TransientFailure</code>: Amazon SES was unable to process your request
+    /// because of a temporary issue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>: Amazon SES was unable to process your request. See the error
+    /// message for additional information.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::BulkEmailStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description of an error that prevented a message being sent using the
+    /// <code>SendBulkTemplatedEmail</code> operation.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
+    /// operation.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BulkEmailDestinationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3395,6 +3971,33 @@ pub struct BulkEmailDestination {
     /// replacement tags in the email template.</p>
     pub replacement_template_data: std::option::Option<std::string::String>,
 }
+impl BulkEmailDestination {
+    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC:
+    /// fields.</p>
+    /// <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+    /// <i>local part</i> of a destination email address (the part of the
+    /// email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+    /// characters</a>. If the <i>domain part</i> of an address (the
+    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
+    /// </note>
+    pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
+        self.destination.as_ref()
+    }
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+    /// using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the
+    /// email that you define, so that you can publish email sending events.</p>
+    pub fn replacement_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
+        self.replacement_tags.as_deref()
+    }
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
+    /// object, typically consisting of key-value pairs in which the keys correspond to
+    /// replacement tags in the email template.</p>
+    pub fn replacement_template_data(&self) -> std::option::Option<&str> {
+        self.replacement_template_data.as_deref()
+    }
+}
 impl std::fmt::Debug for BulkEmailDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BulkEmailDestination");
@@ -3525,6 +4128,31 @@ pub struct BouncedRecipientInfo {
     /// when provided with a <code>BounceType</code>. You must provide either this parameter or
     /// <code>BounceType</code>.</p>
     pub recipient_dsn_fields: std::option::Option<crate::model::RecipientDsnFields>,
+}
+impl BouncedRecipientInfo {
+    /// <p>The email address of the recipient of the bounced email.</p>
+    pub fn recipient(&self) -> std::option::Option<&str> {
+        self.recipient.as_deref()
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+    /// that is associated with the sending authorization policy that permits you to receive
+    /// email for the recipient of the bounced email. For more information about sending
+    /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn recipient_arn(&self) -> std::option::Option<&str> {
+        self.recipient_arn.as_deref()
+    }
+    /// <p>The reason for the bounce. You must provide either this parameter or
+    /// <code>RecipientDsnFields</code>.</p>
+    pub fn bounce_type(&self) -> std::option::Option<&crate::model::BounceType> {
+        self.bounce_type.as_ref()
+    }
+    /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically
+    /// when provided with a <code>BounceType</code>. You must provide either this parameter or
+    /// <code>BounceType</code>.</p>
+    pub fn recipient_dsn_fields(&self) -> std::option::Option<&crate::model::RecipientDsnFields> {
+        self.recipient_dsn_fields.as_ref()
+    }
 }
 impl std::fmt::Debug for BouncedRecipientInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3665,6 +4293,51 @@ pub struct RecipientDsnFields {
     pub last_attempt_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Additional X-headers to include in the DSN.</p>
     pub extension_fields: std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
+}
+impl RecipientDsnFields {
+    /// <p>The email address that the message was ultimately delivered to. This corresponds to
+    /// the <code>Final-Recipient</code> in the DSN. If not specified,
+    /// <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in
+    /// the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or
+    /// the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original
+    /// bounced message.</p>
+    /// <note>
+    /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc
+    /// 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
+    /// </note>
+    pub fn final_recipient(&self) -> std::option::Option<&str> {
+        self.final_recipient.as_deref()
+    }
+    /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its
+    /// attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::DsnAction> {
+        self.action.as_ref()
+    }
+    /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as
+    /// specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+    /// (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+    /// propagating synchronous bounces.</p>
+    pub fn remote_mta(&self) -> std::option::Option<&str> {
+        self.remote_mta.as_deref()
+    }
+    /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See
+    /// <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+    /// formatting of this parameter.</p>
+    pub fn diagnostic_code(&self) -> std::option::Option<&str> {
+        self.diagnostic_code.as_deref()
+    }
+    /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+    pub fn last_attempt_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_attempt_date.as_ref()
+    }
+    /// <p>Additional X-headers to include in the DSN.</p>
+    pub fn extension_fields(&self) -> std::option::Option<&[crate::model::ExtensionField]> {
+        self.extension_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for RecipientDsnFields {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3847,6 +4520,18 @@ pub struct ExtensionField {
     /// <p>The value of the header to add. Must be less than 2048 characters, and must not
     /// contain newline characters ("\r" or "\n").</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ExtensionField {
+    /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and
+    /// consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the header to add. Must be less than 2048 characters, and must not
+    /// contain newline characters ("\r" or "\n").</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ExtensionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4068,6 +4753,23 @@ pub struct MessageDsn {
     /// <p>Additional X-headers to include in the DSN.</p>
     pub extension_fields: std::option::Option<std::vec::Vec<crate::model::ExtensionField>>,
 }
+impl MessageDsn {
+    /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in
+    /// <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+    /// (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+    /// inbound-smtp.[region].amazonaws.com</code>.</p>
+    pub fn reporting_mta(&self) -> std::option::Option<&str> {
+        self.reporting_mta.as_deref()
+    }
+    /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+    pub fn arrival_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.arrival_date.as_ref()
+    }
+    /// <p>Additional X-headers to include in the DSN.</p>
+    pub fn extension_fields(&self) -> std::option::Option<&[crate::model::ExtensionField]> {
+        self.extension_fields.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageDsn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageDsn");
@@ -4168,6 +4870,15 @@ pub struct DeliveryOptions {
     /// messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
 }
+impl DeliveryOptions {
+    /// <p>Specifies whether messages that use the configuration set are required to use
+    /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
+    /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
+    /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+    pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
+        self.tls_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for DeliveryOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeliveryOptions");
@@ -4226,6 +4937,16 @@ pub struct TemplateMetadata {
     pub name: std::option::Option<std::string::String>,
     /// <p>The time and date the template was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TemplateMetadata {
+    /// <p>The name of the template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The time and date the template was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for TemplateMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4308,6 +5029,28 @@ pub struct ReceiptRuleSetMetadata {
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the receipt rule set was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ReceiptRuleSetMetadata {
+    /// <p>The name of the receipt rule set. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 64 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date and time the receipt rule set was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for ReceiptRuleSetMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4414,6 +5157,29 @@ pub struct ReceiptFilter {
     /// allow incoming mail from them.</p>
     pub ip_filter: std::option::Option<crate::model::ReceiptIpFilter>,
 }
+impl ReceiptFilter {
+    /// <p>The name of the IP address filter. The name must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+    /// underscores (_), or dashes (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain less than 64 characters.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A structure that provides the IP addresses to block or allow, and whether to block or
+    /// allow incoming mail from them.</p>
+    pub fn ip_filter(&self) -> std::option::Option<&crate::model::ReceiptIpFilter> {
+        self.ip_filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ReceiptFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReceiptFilter");
@@ -4511,6 +5277,20 @@ pub struct ReceiptIpFilter {
     /// email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
     /// more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
     pub cidr: std::option::Option<std::string::String>,
+}
+impl ReceiptIpFilter {
+    /// <p>Indicates whether to block or allow incoming mail from the specified IP
+    /// addresses.</p>
+    pub fn policy(&self) -> std::option::Option<&crate::model::ReceiptFilterPolicy> {
+        self.policy.as_ref()
+    }
+    /// <p>A single IP address or a range of IP addresses that you want to block or allow,
+    /// specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single
+    /// email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+    /// more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
 }
 impl std::fmt::Debug for ReceiptIpFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4704,6 +5484,30 @@ pub struct CustomVerificationEmailTemplate {
     /// is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
+impl CustomVerificationEmailTemplate {
+    /// <p>The name of the custom verification email template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The email address that the custom verification email is sent from.</p>
+    pub fn from_email_address(&self) -> std::option::Option<&str> {
+        self.from_email_address.as_deref()
+    }
+    /// <p>The subject line of the custom verification email.</p>
+    pub fn template_subject(&self) -> std::option::Option<&str> {
+        self.template_subject.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is successfully verified.</p>
+    pub fn success_redirection_url(&self) -> std::option::Option<&str> {
+        self.success_redirection_url.as_deref()
+    }
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address
+    /// is not successfully verified.</p>
+    pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
+        self.failure_redirection_url.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomVerificationEmailTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomVerificationEmailTemplate");
@@ -4835,6 +5639,22 @@ pub struct ConfigurationSet {
     /// </ul>
     pub name: std::option::Option<std::string::String>,
 }
+impl ConfigurationSet {
+    /// <p>The name of the configuration set. The name must meet the following
+    /// requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+    /// (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Contain 64 characters or fewer.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfigurationSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationSet");
@@ -4909,6 +5729,28 @@ pub struct SendDataPoint {
     pub complaints: i64,
     /// <p>Number of emails rejected by Amazon SES.</p>
     pub rejects: i64,
+}
+impl SendDataPoint {
+    /// <p>Time of the data point.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>Number of emails that have been sent.</p>
+    pub fn delivery_attempts(&self) -> i64 {
+        self.delivery_attempts
+    }
+    /// <p>Number of emails that have bounced.</p>
+    pub fn bounces(&self) -> i64 {
+        self.bounces
+    }
+    /// <p>Number of unwanted emails that were rejected by recipients.</p>
+    pub fn complaints(&self) -> i64 {
+        self.complaints
+    }
+    /// <p>Number of emails rejected by Amazon SES.</p>
+    pub fn rejects(&self) -> i64 {
+        self.rejects
+    }
 }
 impl std::fmt::Debug for SendDataPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5016,6 +5858,18 @@ pub struct IdentityVerificationAttributes {
     /// <p>The verification token for a domain identity. Null for email address
     /// identities.</p>
     pub verification_token: std::option::Option<std::string::String>,
+}
+impl IdentityVerificationAttributes {
+    /// <p>The verification status of the identity: "Pending", "Success", "Failed", or
+    /// "TemporaryFailure".</p>
+    pub fn verification_status(&self) -> std::option::Option<&crate::model::VerificationStatus> {
+        self.verification_status.as_ref()
+    }
+    /// <p>The verification token for a domain identity. Null for email address
+    /// identities.</p>
+    pub fn verification_token(&self) -> std::option::Option<&str> {
+        self.verification_token.as_deref()
+    }
 }
 impl std::fmt::Debug for IdentityVerificationAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5191,6 +6045,52 @@ pub struct IdentityNotificationAttributes {
     /// include headers in delivery notifications, and a value of <code>false</code> specifies
     /// that Amazon SES will not include headers in delivery notifications.</p>
     pub headers_in_delivery_notifications_enabled: bool,
+}
+impl IdentityNotificationAttributes {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce
+    /// notifications.</p>
+    pub fn bounce_topic(&self) -> std::option::Option<&str> {
+        self.bounce_topic.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint
+    /// notifications.</p>
+    pub fn complaint_topic(&self) -> std::option::Option<&str> {
+        self.complaint_topic.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery
+    /// notifications.</p>
+    pub fn delivery_topic(&self) -> std::option::Option<&str> {
+        self.delivery_topic.as_deref()
+    }
+    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email.
+    /// <code>true</code> indicates that Amazon SES will forward bounce and complaint
+    /// notifications as email, while <code>false</code> indicates that bounce and complaint
+    /// notifications will be published only to the specified bounce and complaint Amazon SNS
+    /// topics.</p>
+    pub fn forwarding_enabled(&self) -> bool {
+        self.forwarding_enabled
+    }
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of
+    /// type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include
+    /// headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES
+    /// will not include headers in bounce notifications.</p>
+    pub fn headers_in_bounce_notifications_enabled(&self) -> bool {
+        self.headers_in_bounce_notifications_enabled
+    }
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of
+    /// type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will
+    /// include headers in complaint notifications, and a value of <code>false</code> specifies
+    /// that Amazon SES will not include headers in complaint notifications.</p>
+    pub fn headers_in_complaint_notifications_enabled(&self) -> bool {
+        self.headers_in_complaint_notifications_enabled
+    }
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of
+    /// type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will
+    /// include headers in delivery notifications, and a value of <code>false</code> specifies
+    /// that Amazon SES will not include headers in delivery notifications.</p>
+    pub fn headers_in_delivery_notifications_enabled(&self) -> bool {
+        self.headers_in_delivery_notifications_enabled
+    }
 }
 impl std::fmt::Debug for IdentityNotificationAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5396,6 +6296,35 @@ pub struct IdentityMailFromDomainAttributes {
     /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
+impl IdentityMailFromDomainAttributes {
+    /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
+    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+        self.mail_from_domain.as_deref()
+    }
+    /// <p>The state that indicates whether Amazon SES has successfully read the MX record required
+    /// for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the
+    /// specified custom MAIL FROM domain when the verified identity sends an email. All other
+    /// states indicate that Amazon SES takes the action described by
+    /// <code>BehaviorOnMXFailure</code>.</p>
+    pub fn mail_from_domain_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomMailFromStatus> {
+        self.mail_from_domain_status.as_ref()
+    }
+    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when
+    /// you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES
+    /// cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as
+    /// the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES
+    /// cannot read the required MX record, Amazon SES returns a
+    /// <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
+    /// <p>The custom MAIL FROM setup states that result in this behavior are
+    /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
+    pub fn behavior_on_mx_failure(
+        &self,
+    ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
+        self.behavior_on_mx_failure.as_ref()
+    }
+}
 impl std::fmt::Debug for IdentityMailFromDomainAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityMailFromDomainAttributes");
@@ -5581,6 +6510,32 @@ pub struct IdentityDkimAttributes {
     /// Guide</a>.</p>
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl IdentityDkimAttributes {
+    /// <p>Is true if DKIM signing is enabled for email sent from the identity. It's false
+    /// otherwise. The default value is true.</p>
+    pub fn dkim_enabled(&self) -> bool {
+        self.dkim_enabled
+    }
+    /// <p>Describes whether Amazon SES has successfully verified the DKIM DNS records (tokens)
+    /// published in the domain name's DNS. (This only applies to domain identities, not email
+    /// address identities.)</p>
+    pub fn dkim_verification_status(
+        &self,
+    ) -> std::option::Option<&crate::model::VerificationStatus> {
+        self.dkim_verification_status.as_ref()
+    }
+    /// <p>A set of character strings that represent the domain's identity. Using these tokens,
+    /// you need to create DNS CNAME records that point to DKIM public keys that are hosted by
+    /// Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection
+    /// process might take up to 72 hours. After successful detection, Amazon SES is able to
+    /// DKIM-sign email originating from that domain. (This only applies to domain identities,
+    /// not email address identities.)</p>
+    /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
+    /// Guide</a>.</p>
+    pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
+        self.dkim_tokens.as_deref()
+    }
+}
 impl std::fmt::Debug for IdentityDkimAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityDkimAttributes");
@@ -5704,6 +6659,34 @@ pub struct ReputationOptions {
     /// <p>If email sending for the configuration set has never been disabled and later
     /// re-enabled, the value of this attribute is <code>null</code>.</p>
     pub last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ReputationOptions {
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If
+    /// the value is <code>true</code>, then Amazon SES will send emails that use the configuration
+    /// set. If the value is <code>false</code>, Amazon SES will not send emails that use the
+    /// configuration set. The default value is <code>true</code>. You can change this setting
+    /// using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+    pub fn sending_enabled(&self) -> bool {
+        self.sending_enabled
+    }
+    /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set,
+    /// such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// <p>If the value is <code>true</code>, reputation metrics are published. If the value is
+    /// <code>false</code>, reputation metrics are not published. The default value is
+    /// <code>false</code>.</p>
+    pub fn reputation_metrics_enabled(&self) -> bool {
+        self.reputation_metrics_enabled
+    }
+    /// <p>The date and time at which the reputation metrics for the configuration set were last
+    /// reset. Resetting these metrics is known as a <i>fresh start</i>.</p>
+    /// <p>When you disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a> and later re-enable it, the
+    /// reputation metrics for the configuration set (but not for the entire Amazon SES account) are
+    /// reset.</p>
+    /// <p>If email sending for the configuration set has never been disabled and later
+    /// re-enabled, the value of this attribute is <code>null</code>.</p>
+    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_fresh_start.as_ref()
+    }
 }
 impl std::fmt::Debug for ReputationOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

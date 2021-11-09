@@ -8,6 +8,18 @@ pub struct ConfigurationOverrides {
     /// <p>The configurations for monitoring.</p>
     pub monitoring_configuration: std::option::Option<crate::model::MonitoringConfiguration>,
 }
+impl ConfigurationOverrides {
+    /// <p>The configurations for the application running by the job run. </p>
+    pub fn application_configuration(&self) -> std::option::Option<&[crate::model::Configuration]> {
+        self.application_configuration.as_deref()
+    }
+    /// <p>The configurations for monitoring.</p>
+    pub fn monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfigurationOverrides {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigurationOverrides");
@@ -93,6 +105,24 @@ pub struct MonitoringConfiguration {
         std::option::Option<crate::model::CloudWatchMonitoringConfiguration>,
     /// <p>Amazon S3 configuration for monitoring log publishing.</p>
     pub s3_monitoring_configuration: std::option::Option<crate::model::S3MonitoringConfiguration>,
+}
+impl MonitoringConfiguration {
+    /// <p>Monitoring configurations for the persistent application UI. </p>
+    pub fn persistent_app_ui(&self) -> std::option::Option<&crate::model::PersistentAppUi> {
+        self.persistent_app_ui.as_ref()
+    }
+    /// <p>Monitoring configurations for CloudWatch.</p>
+    pub fn cloud_watch_monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudWatchMonitoringConfiguration> {
+        self.cloud_watch_monitoring_configuration.as_ref()
+    }
+    /// <p>Amazon S3 configuration for monitoring log publishing.</p>
+    pub fn s3_monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::S3MonitoringConfiguration> {
+        self.s3_monitoring_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for MonitoringConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -191,6 +221,12 @@ pub struct S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub log_uri: std::option::Option<std::string::String>,
 }
+impl S3MonitoringConfiguration {
+    /// <p>Amazon S3 destination URI for log publishing.</p>
+    pub fn log_uri(&self) -> std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+}
 impl std::fmt::Debug for S3MonitoringConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3MonitoringConfiguration");
@@ -240,6 +276,16 @@ pub struct CloudWatchMonitoringConfiguration {
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The specified name prefix for log streams.</p>
     pub log_stream_name_prefix: std::option::Option<std::string::String>,
+}
+impl CloudWatchMonitoringConfiguration {
+    /// <p>The name of the log group for log publishing.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The specified name prefix for log streams.</p>
+    pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
+        self.log_stream_name_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for CloudWatchMonitoringConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -368,6 +414,23 @@ pub struct Configuration {
     /// <p>A list of additional configurations to apply within a configuration object.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
 }
+impl Configuration {
+    /// <p>The classification within a configuration.</p>
+    pub fn classification(&self) -> std::option::Option<&str> {
+        self.classification.as_deref()
+    }
+    /// <p>A set of properties specified within a configuration classification.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>A list of additional configurations to apply within a configuration object.</p>
+    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+        self.configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Configuration");
@@ -471,6 +534,14 @@ pub struct JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
     pub spark_submit_job_driver: std::option::Option<crate::model::SparkSubmitJobDriver>,
 }
+impl JobDriver {
+    /// <p>The job driver parameters specified for spark submit.</p>
+    pub fn spark_submit_job_driver(
+        &self,
+    ) -> std::option::Option<&crate::model::SparkSubmitJobDriver> {
+        self.spark_submit_job_driver.as_ref()
+    }
+}
 impl std::fmt::Debug for JobDriver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobDriver");
@@ -528,6 +599,20 @@ pub struct SparkSubmitJobDriver {
     pub entry_point_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub spark_submit_parameters: std::option::Option<std::string::String>,
+}
+impl SparkSubmitJobDriver {
+    /// <p>The entry point of job application.</p>
+    pub fn entry_point(&self) -> std::option::Option<&str> {
+        self.entry_point.as_deref()
+    }
+    /// <p>The arguments for job application.</p>
+    pub fn entry_point_arguments(&self) -> std::option::Option<&[std::string::String]> {
+        self.entry_point_arguments.as_deref()
+    }
+    /// <p>The Spark submit parameters that are used for job runs.</p>
+    pub fn spark_submit_parameters(&self) -> std::option::Option<&str> {
+        self.spark_submit_parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for SparkSubmitJobDriver {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -630,6 +715,39 @@ pub struct VirtualCluster {
     /// <p>The assigned tags of the virtual cluster.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl VirtualCluster {
+    /// <p>The ID of the virtual cluster.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the virtual cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the virtual cluster.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The state of the virtual cluster.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VirtualClusterState> {
+        self.state.as_ref()
+    }
+    /// <p>The container provider of the virtual cluster.</p>
+    pub fn container_provider(&self) -> std::option::Option<&crate::model::ContainerProvider> {
+        self.container_provider.as_ref()
+    }
+    /// <p>The date and time when the virtual cluster is created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The assigned tags of the virtual cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for VirtualCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -787,6 +905,20 @@ pub struct ContainerProvider {
     /// <p>The information about the container cluster.</p>
     pub info: std::option::Option<crate::model::ContainerInfo>,
 }
+impl ContainerProvider {
+    /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ContainerProviderType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ID of the container cluster.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The information about the container cluster.</p>
+    pub fn info(&self) -> std::option::Option<&crate::model::ContainerInfo> {
+        self.info.as_ref()
+    }
+}
 impl std::fmt::Debug for ContainerProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContainerProvider");
@@ -863,6 +995,15 @@ impl ContainerProvider {
 pub enum ContainerInfo {
     /// <p>The information about the EKS cluster.</p>
     EksInfo(crate::model::EksInfo),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ContainerInfo {
     #[allow(irrefutable_let_patterns)]
@@ -879,6 +1020,10 @@ impl ContainerInfo {
     pub fn is_eks_info(&self) -> bool {
         self.as_eks_info().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>The information about the EKS cluster.</p>
@@ -887,6 +1032,12 @@ impl ContainerInfo {
 pub struct EksInfo {
     /// <p>The namespaces of the EKS cluster.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl EksInfo {
+    /// <p>The namespaces of the EKS cluster.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for EksInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1091,6 +1242,92 @@ pub struct Endpoint {
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Endpoint {
+    /// <p>The ID of the endpoint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the endpoint.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the endpoint's virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+    /// <p>The type of the endpoint.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The state of the endpoint.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::EndpointState> {
+        self.state.as_ref()
+    }
+    /// <p>The EMR release version to be used for the endpoint.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>The execution role ARN of the endpoint.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The certificate ARN of the endpoint. This field is under deprecation and will be removed in future.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The certificate generated by emr control plane on customer behalf to secure the managed endpoint.</p>
+    pub fn certificate_authority(&self) -> std::option::Option<&crate::model::Certificate> {
+        self.certificate_authority.as_ref()
+    }
+    /// <p>The configuration settings that are used to override existing configurations for endpoints.</p>
+    pub fn configuration_overrides(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationOverrides> {
+        self.configuration_overrides.as_ref()
+    }
+    /// <p>The server URL of the endpoint.</p>
+    pub fn server_url(&self) -> std::option::Option<&str> {
+        self.server_url.as_deref()
+    }
+    /// <p>The date and time when the endpoint was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The security group configuration of the endpoint.
+    /// </p>
+    pub fn security_group(&self) -> std::option::Option<&str> {
+        self.security_group.as_deref()
+    }
+    /// <p>The subnet IDs of the endpoint.
+    /// </p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>
+    /// Additional details of the endpoint state.
+    /// </p>
+    pub fn state_details(&self) -> std::option::Option<&str> {
+        self.state_details.as_deref()
+    }
+    /// <p>
+    /// The reasons why the endpoint has failed.
+    /// </p>
+    pub fn failure_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
+        self.failure_reason.as_ref()
+    }
+    /// <p>The tags of the endpoint.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1508,6 +1745,16 @@ pub struct Certificate {
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
     pub certificate_data: std::option::Option<std::string::String>,
 }
+impl Certificate {
+    /// <p>The ARN of the certificate generated for managed endpoint.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+    /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
+    pub fn certificate_data(&self) -> std::option::Option<&str> {
+        self.certificate_data.as_deref()
+    }
+}
 impl std::fmt::Debug for Certificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Certificate");
@@ -1678,6 +1925,77 @@ pub struct JobRun {
     /// <p>The assigned tags of the job run.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl JobRun {
+    /// <p>The ID of the job run.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the job run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the job run's virtual cluster.</p>
+    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+        self.virtual_cluster_id.as_deref()
+    }
+    /// <p>The ARN of job run.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The state of the job run. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::JobRunState> {
+        self.state.as_ref()
+    }
+    /// <p>The client token used to start a job run.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The execution role ARN of the job run.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The release version of Amazon EMR.</p>
+    pub fn release_label(&self) -> std::option::Option<&str> {
+        self.release_label.as_deref()
+    }
+    /// <p>The configuration settings that are used to override default configuration.</p>
+    pub fn configuration_overrides(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationOverrides> {
+        self.configuration_overrides.as_ref()
+    }
+    /// <p>Parameters of job driver for the job run.</p>
+    pub fn job_driver(&self) -> std::option::Option<&crate::model::JobDriver> {
+        self.job_driver.as_ref()
+    }
+    /// <p>The date and time when the job run was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The user who created the job run.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The date and time when the job run has finished.</p>
+    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.finished_at.as_ref()
+    }
+    /// <p>Additional details of the job run state.</p>
+    pub fn state_details(&self) -> std::option::Option<&str> {
+        self.state_details.as_deref()
+    }
+    /// <p>The reasons why the job run has failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
+        self.failure_reason.as_ref()
+    }
+    /// <p>The assigned tags of the job run.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for JobRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

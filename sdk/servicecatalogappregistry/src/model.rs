@@ -19,6 +19,39 @@ pub struct AttributeGroup {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AttributeGroup {
+    /// <p>The globally unique attribute group identifier of the attribute group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the attribute group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>Key-value pairs you can use to associate with the attribute group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for AttributeGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeGroup");
@@ -181,6 +214,39 @@ pub struct Application {
     /// <p>Key-value pairs you can use to associate with the application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Application {
+    /// <p>The identifier of the application.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>Key-value pairs you can use to associate with the application.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for Application {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -447,6 +513,32 @@ pub struct AttributeGroupSummary {
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AttributeGroupSummary {
+    /// <p>The globally unique attribute group identifier of the attribute group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the attribute group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for AttributeGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeGroupSummary");
@@ -568,6 +660,16 @@ pub struct ResourceInfo {
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ResourceInfo {
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInfo");
@@ -638,6 +740,32 @@ pub struct ApplicationSummary {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ApplicationSummary {
+    /// <p>The identifier of the application.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -765,6 +893,25 @@ pub struct Resource {
     /// </p>
     pub integrations: std::option::Option<crate::model::ResourceIntegrations>,
 }
+impl Resource {
+    /// <p>The name of the resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon resource name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The time the resource was associated with the application.</p>
+    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.association_time.as_ref()
+    }
+    /// <p>The service integration information about the resource.
+    /// </p>
+    pub fn integrations(&self) -> std::option::Option<&crate::model::ResourceIntegrations> {
+        self.integrations.as_ref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -860,6 +1007,12 @@ pub struct ResourceIntegrations {
     /// <p>The information about the integration of Resource Groups.</p>
     pub resource_group: std::option::Option<crate::model::ResourceGroup>,
 }
+impl ResourceIntegrations {
+    /// <p>The information about the integration of Resource Groups.</p>
+    pub fn resource_group(&self) -> std::option::Option<&crate::model::ResourceGroup> {
+        self.resource_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceIntegrations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceIntegrations");
@@ -926,6 +1079,32 @@ pub struct ResourceGroup {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl ResourceGroup {
+    /// <p>The state of the propagation process for the resource group. The states includes:</p>
+    /// <p>
+    /// <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p>
+    /// <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p>
+    /// <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p>
+    /// <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p>
+    /// <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p>
+    /// <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ResourceGroupState> {
+        self.state.as_ref()
+    }
+    /// <p>The Amazon resource name (ARN) of the resource group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The error message that generates when the propagation process for the resource group fails.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1108,6 +1287,12 @@ impl AsRef<str> for ResourceGroupState {
 pub struct Integrations {
     /// <p> The information about the resource group integration.</p>
     pub resource_group: std::option::Option<crate::model::ResourceGroup>,
+}
+impl Integrations {
+    /// <p> The information about the resource group integration.</p>
+    pub fn resource_group(&self) -> std::option::Option<&crate::model::ResourceGroup> {
+        self.resource_group.as_ref()
+    }
 }
 impl std::fmt::Debug for Integrations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

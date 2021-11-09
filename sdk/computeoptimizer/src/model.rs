@@ -73,6 +73,22 @@ pub struct RecommendationSummary {
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl RecommendationSummary {
+    /// <p>An array of objects that describe a recommendation summary.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::Summary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>The resource type of the recommendation.</p>
+    pub fn recommendation_resource_type(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationSourceType> {
+        self.recommendation_resource_type.as_ref()
+    }
+    /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationSummary");
@@ -238,6 +254,20 @@ pub struct Summary {
     /// <p>An array of objects that summarize a finding reason code.</p>
     pub reason_code_summaries: std::option::Option<std::vec::Vec<crate::model::ReasonCodeSummary>>,
 }
+impl Summary {
+    /// <p>The finding classification of the recommendation.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::Finding> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the recommendation summary.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+    /// <p>An array of objects that summarize a finding reason code.</p>
+    pub fn reason_code_summaries(&self) -> std::option::Option<&[crate::model::ReasonCodeSummary]> {
+        self.reason_code_summaries.as_deref()
+    }
+}
 impl std::fmt::Debug for Summary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Summary");
@@ -326,6 +356,16 @@ pub struct ReasonCodeSummary {
     pub name: std::option::Option<crate::model::FindingReasonCode>,
     /// <p>The value of the finding reason code summary.</p>
     pub value: f64,
+}
+impl ReasonCodeSummary {
+    /// <p>The name of the finding reason code.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FindingReasonCode> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the finding reason code summary.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
 }
 impl std::fmt::Debug for ReasonCodeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -630,6 +670,153 @@ pub struct LambdaFunctionRecommendation {
     /// the function.</p>
     pub memory_size_recommendation_options:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryRecommendationOption>>,
+}
+impl LambdaFunctionRecommendation {
+    /// <p>The Amazon Resource Name (ARN) of the current function.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>The version number of the current function.</p>
+    pub fn function_version(&self) -> std::option::Option<&str> {
+        self.function_version.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the function.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
+    pub fn current_memory_size(&self) -> i32 {
+        self.current_memory_size
+    }
+    /// <p>The number of times your function code was applied during the look-back period.</p>
+    pub fn number_of_invocations(&self) -> i64 {
+        self.number_of_invocations
+    }
+    /// <p>An array of objects that describe the utilization metrics of the function.</p>
+    pub fn utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::LambdaFunctionUtilizationMetric]> {
+        self.utilization_metrics.as_deref()
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the
+    /// function.</p>
+    pub fn lookback_period_in_days(&self) -> f64 {
+        self.lookback_period_in_days
+    }
+    /// <p>The timestamp of when the function recommendation was last refreshed.</p>
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_refresh_timestamp.as_ref()
+    }
+    /// <p>The finding classification of the function.</p>
+    ///
+    /// <p>Findings for functions include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Optimized</code>
+    /// </b> — The function is
+    /// correctly provisioned to run your workload based on its current configuration
+    /// and its utilization history. This finding classification does not include
+    /// finding reason codes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NotOptimized</code>
+    /// </b> — The function is
+    /// performing at a higher level (over-provisioned) or at a lower level
+    /// (under-provisioned) than required for your workload because its current
+    /// configuration is not optimal. Over-provisioned resources might lead to
+    /// unnecessary infrastructure cost, and under-provisioned resources might lead to
+    /// poor application performance. This finding classification can include the
+    /// <code>MemoryUnderprovisioned</code> and <code>MemoryUnderprovisioned</code>
+    /// finding reason codes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Unavailable</code>
+    /// </b> — Compute Optimizer
+    /// was unable to generate a recommendation for the function. This could be because
+    /// the function has not accumulated sufficient metric data, or the function does
+    /// not qualify for a recommendation. This finding classification can include the
+    /// <code>InsufficientData</code> and <code>Inconclusive</code> finding reason
+    /// codes.</p>
+    /// <note>
+    /// <p>Functions with a finding of unavailable are not returned unless you
+    /// specify the <code>filter</code> parameter with a value of
+    /// <code>Unavailable</code> in your
+    /// <code>GetLambdaFunctionRecommendations</code> request.</p>
+    /// </note>
+    /// </li>
+    /// </ul>
+    pub fn finding(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionRecommendationFinding> {
+        self.finding.as_ref()
+    }
+    /// <p>The reason for the finding classification of the function.</p>
+    /// <note>
+    /// <p>Functions that have a finding classification of <code>Optimized</code> don't have
+    /// a finding reason code.</p>
+    /// </note>
+    /// <p>Finding reason codes for functions include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MemoryOverprovisioned</code>
+    /// </b> — The
+    /// function is over-provisioned when its memory configuration can be sized down
+    /// while still meeting the performance requirements of your workload. An
+    /// over-provisioned function might lead to unnecessary infrastructure cost. This
+    /// finding reason code is part of the <code>NotOptimized</code> finding
+    /// classification.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MemoryUnderprovisioned</code>
+    /// </b> — The
+    /// function is under-provisioned when its memory configuration doesn't meet the
+    /// performance requirements of the workload. An under-provisioned function might
+    /// lead to poor application performance. This finding reason code is part of the
+    /// <code>NotOptimized</code> finding classification.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>InsufficientData</code>
+    /// </b> — The function
+    /// does not have sufficient metric data for Compute Optimizer to generate a
+    /// recommendation. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+    /// requirements</a> in the <i>Compute Optimizer User
+    /// Guide</i>. This finding reason code is part of the
+    /// <code>Unavailable</code> finding classification.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Inconclusive</code>
+    /// </b> — The function does
+    /// not qualify for a recommendation because Compute Optimizer cannot generate a
+    /// recommendation with a high degree of confidence. This finding reason code is
+    /// part of the <code>Unavailable</code> finding classification.</p>
+    /// </li>
+    /// </ul>
+    pub fn finding_reason_codes(
+        &self,
+    ) -> std::option::Option<&[crate::model::LambdaFunctionRecommendationFindingReasonCode]> {
+        self.finding_reason_codes.as_deref()
+    }
+    /// <p>An array of objects that describe the memory configuration recommendation options for
+    /// the function.</p>
+    pub fn memory_size_recommendation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::LambdaFunctionMemoryRecommendationOption]> {
+        self.memory_size_recommendation_options.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaFunctionRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1062,6 +1249,25 @@ pub struct LambdaFunctionMemoryRecommendationOption {
     pub projected_utilization_metrics:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionMemoryProjectedMetric>>,
 }
+impl LambdaFunctionMemoryRecommendationOption {
+    /// <p>The rank of the function recommendation option.</p>
+    ///
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+    /// <p>The memory size, in MB, of the function recommendation option.</p>
+    pub fn memory_size(&self) -> i32 {
+        self.memory_size
+    }
+    /// <p>An array of objects that describe the projected utilization metrics of the function
+    /// recommendation option.</p>
+    pub fn projected_utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::LambdaFunctionMemoryProjectedMetric]> {
+        self.projected_utilization_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaFunctionMemoryRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionMemoryRecommendationOption");
@@ -1164,6 +1370,22 @@ pub struct LambdaFunctionMemoryProjectedMetric {
     pub statistic: std::option::Option<crate::model::LambdaFunctionMemoryMetricStatistic>,
     /// <p>The values of the projected utilization metrics.</p>
     pub value: f64,
+}
+impl LambdaFunctionMemoryProjectedMetric {
+    /// <p>The name of the projected utilization metric.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::LambdaFunctionMemoryMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The statistic of the projected utilization metric.</p>
+    pub fn statistic(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionMemoryMetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The values of the projected utilization metrics.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
 }
 impl std::fmt::Debug for LambdaFunctionMemoryProjectedMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1524,6 +1746,46 @@ pub struct LambdaFunctionUtilizationMetric {
     /// <p>The value of the utilization metric.</p>
     pub value: f64,
 }
+impl LambdaFunctionUtilizationMetric {
+    /// <p>The name of the utilization metric.</p>
+    ///
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Duration</code> - The amount of time that your function code spends
+    /// processing an event.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Memory</code> - The amount of memory used per invocation.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::LambdaFunctionMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The statistic of the utilization metric.</p>
+    ///
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
+    /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
+    /// highest value observed during the specified period.</p>
+    ///
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
+    /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
+    /// <code>SampleCount</code> during the specified period. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource
+    /// recommendations</a> in the <i>Compute Optimizer User
+    /// Guide</i>. You can also get averaged utilization metric data for your resources
+    /// using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch
+    /// User Guide</a>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::LambdaFunctionMetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The value of the utilization metric.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+}
 impl std::fmt::Debug for LambdaFunctionUtilizationMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionUtilizationMetric");
@@ -1796,6 +2058,41 @@ pub struct LambdaFunctionRecommendationFilter {
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl LambdaFunctionRecommendationFilter {
+    /// <p>The name of the filter.</p>
+    ///
+    /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
+    /// classification (for example, <code>NotOptimized</code>).</p>
+    ///
+    /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific
+    /// finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
+    pub fn name(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionRecommendationFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the filter.</p>
+    ///
+    /// <p>The valid values for this parameter are as follows, depending on what you specify for
+    /// the <code>name</code> parameter:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or
+    /// <code>Unavailable</code> if you specify the <code>name</code> parameter as
+    /// <code>Finding</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>MemoryOverprovisioned</code>,
+    /// <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>, or
+    /// <code>Inconclusive</code> if you specify the <code>name</code> parameter as
+    /// <code>FindingReasonCode</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaFunctionRecommendationFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionRecommendationFilter");
@@ -1980,6 +2277,28 @@ pub struct AccountEnrollmentStatus {
     /// updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AccountEnrollmentStatus {
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The account enrollment status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the account enrollment status.</p>
+    ///
+    /// <p>For example, an account might show a status of <code>Pending</code> because member
+    /// accounts of an organization require more time to be enrolled in the service.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last
+    /// updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for AccountEnrollmentStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountEnrollmentStatus");
@@ -2090,6 +2409,22 @@ pub struct EnrollmentFilter {
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
     /// and <code>Failed</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EnrollmentFilter {
+    /// <p>The name of the filter.</p>
+    ///
+    /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for
+    /// example, <code>Active</code>).</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::EnrollmentFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the filter.</p>
+    ///
+    /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
+    /// and <code>Failed</code>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for EnrollmentFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2244,6 +2579,26 @@ pub struct RecommendedOptionProjectedMetric {
     /// <p>An array of objects that describe a projected utilization metric.</p>
     pub projected_metrics: std::option::Option<std::vec::Vec<crate::model::ProjectedMetric>>,
 }
+impl RecommendedOptionProjectedMetric {
+    /// <p>The recommended instance type.</p>
+    pub fn recommended_instance_type(&self) -> std::option::Option<&str> {
+        self.recommended_instance_type.as_deref()
+    }
+    /// <p>The rank of the recommendation option projected metric.</p>
+    ///
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    ///
+    /// <p>The projected metric rank correlates to the recommendation option rank. For example,
+    /// the projected metric ranked as <code>1</code> is related to the recommendation option
+    /// that is also ranked as <code>1</code> in the same response.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+    /// <p>An array of objects that describe a projected utilization metric.</p>
+    pub fn projected_metrics(&self) -> std::option::Option<&[crate::model::ProjectedMetric]> {
+        self.projected_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendedOptionProjectedMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendedOptionProjectedMetric");
@@ -2391,6 +2746,49 @@ pub struct ProjectedMetric {
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
     /// <p>The values of the projected utilization metrics.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
+}
+impl ProjectedMetric {
+    /// <p>The name of the projected utilization metric.</p>
+    ///
+    /// <p>The following projected utilization metrics are returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Cpu</code> - The projected percentage of allocated EC2 compute units
+    /// that would be in use on the recommendation option had you used that resource
+    /// during the analyzed period. This metric identifies the processing power required
+    /// to run an application on the recommendation option.</p>
+    /// <p>Depending on the instance type, tools in your operating system can show a
+    /// lower percentage than CloudWatch when the instance is not allocated a full
+    /// processor core.</p>
+    /// <p>Units: Percent</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Memory</code> - The percentage of memory that would be in use on the
+    /// recommendation option had you used that resource during the analyzed period.
+    /// This metric identifies the amount of memory required to run an application on
+    /// the recommendation option.</p>
+    /// <p>Units: Percent</p>
+    /// <note>
+    /// <p>The <code>Memory</code> metric is returned only for resources that have
+    /// the unified CloudWatch agent installed on them. For more information,
+    /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+    /// Utilization with the CloudWatch Agent</a>.</p>
+    /// </note>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::MetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The timestamps of the projected utilization metric.</p>
+    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::Instant]> {
+        self.timestamps.as_deref()
+    }
+    /// <p>The values of the projected utilization metrics.</p>
+    pub fn values(&self) -> std::option::Option<&[f64]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectedMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2675,6 +3073,31 @@ pub struct RecommendationPreferences {
     pub cpu_vendor_architectures:
         std::option::Option<std::vec::Vec<crate::model::CpuVendorArchitecture>>,
 }
+impl RecommendationPreferences {
+    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
+    ///
+    /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer
+    /// returns recommendations that consist of Graviton2 instance types only.</p>
+    /// </li>
+    /// <li>
+    /// <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type
+    /// recommendations only.</p>
+    /// </li>
+    /// <li>
+    /// <p>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer
+    /// exports recommendations that consist of Graviton2 instance types only.</p>
+    /// </li>
+    /// </ul>
+    pub fn cpu_vendor_architectures(
+        &self,
+    ) -> std::option::Option<&[crate::model::CpuVendorArchitecture]> {
+        self.cpu_vendor_architectures.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendationPreferences {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationPreferences");
@@ -2887,6 +3310,20 @@ pub struct GetRecommendationError {
     pub code: std::option::Option<std::string::String>,
     /// <p>The message, or reason, for the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl GetRecommendationError {
+    /// <p>The ID of the error.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The message, or reason, for the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecommendationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3219,6 +3656,293 @@ pub struct InstanceRecommendation {
         std::option::Option<std::vec::Vec<crate::model::RecommendationSource>>,
     /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl InstanceRecommendation {
+    /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the instance.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The name of the current instance.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The instance type of the current instance.</p>
+    pub fn current_instance_type(&self) -> std::option::Option<&str> {
+        self.current_instance_type.as_deref()
+    }
+    /// <p>The finding classification of the instance.</p>
+    ///
+    /// <p>Findings for instances include:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Underprovisioned</code>
+    /// </b>—An instance is
+    /// considered under-provisioned when at least one specification of your instance,
+    /// such as CPU, memory, or network, does not meet the performance requirements of
+    /// your workload. Under-provisioned instances may lead to poor application
+    /// performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Overprovisioned</code>
+    /// </b>—An instance is
+    /// considered over-provisioned when at least one specification of your instance,
+    /// such as CPU, memory, or network, can be sized down while still meeting the
+    /// performance requirements of your workload, and no specification is
+    /// under-provisioned. Over-provisioned instances may lead to unnecessary
+    /// infrastructure cost.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Optimized</code>
+    /// </b>—An instance is
+    /// considered optimized when all specifications of your instance, such as CPU,
+    /// memory, and network, meet the performance requirements of your workload and is
+    /// not over provisioned. For optimized resources, Compute Optimizer might
+    /// recommend a new generation instance type.</p>
+    /// </li>
+    /// </ul>
+    pub fn finding(&self) -> std::option::Option<&crate::model::Finding> {
+        self.finding.as_ref()
+    }
+    /// <p>The reason for the finding classification of the instance.</p>
+    ///
+    /// <p>Finding reason codes for instances include:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CPUOverprovisioned</code>
+    /// </b> — The
+    /// instance’s CPU configuration can be sized down while still meeting the
+    /// performance requirements of your workload. This is identified by analyzing the
+    /// <code>CPUUtilization</code> metric of the current instance during the
+    /// look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CPUUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s CPU configuration doesn't meet the performance requirements of your
+    /// workload and there is an alternative instance type that provides better CPU
+    /// performance. This is identified by analyzing the <code>CPUUtilization</code>
+    /// metric of the current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MemoryOverprovisioned</code>
+    /// </b> — The
+    /// instance’s memory configuration can be sized down while still meeting the
+    /// performance requirements of your workload. This is identified by analyzing the
+    /// memory utilization metric of the current instance during the look-back
+    /// period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MemoryUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s memory configuration doesn't meet the performance requirements of
+    /// your workload and there is an alternative instance type that provides better
+    /// memory performance. This is identified by analyzing the memory utilization
+    /// metric of the current instance during the look-back period.</p>
+    ///
+    /// <note>
+    /// <p>Memory utilization is analyzed only for resources that have the unified
+    /// CloudWatch agent installed on them. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling memory
+    /// utilization with the Amazon CloudWatch Agent</a> in the
+    /// <i>Compute Optimizer User Guide</i>. On Linux
+    /// instances, Compute Optimizer analyses the <code>mem_used_percent</code>
+    /// metric in the <code>CWAgent</code> namespace, or the legacy
+    /// <code>MemoryUtilization</code> metric in the <code>System/Linux</code>
+    /// namespace. On Windows instances, Compute Optimizer analyses the <code>Memory
+    /// % Committed Bytes In Use</code> metric in the <code>CWAgent</code>
+    /// namespace.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSThroughputOverprovisioned</code>
+    /// </b> —
+    /// The instance’s EBS throughput configuration can be sized down while still
+    /// meeting the performance requirements of your workload. This is identified by
+    /// analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metrics
+    /// of EBS volumes attached to the current instance during the look-back
+    /// period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSThroughputUnderprovisioned</code>
+    /// </b> —
+    /// The instance’s EBS throughput configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type that
+    /// provides better EBS throughput performance. This is identified by analyzing the
+    /// <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metrics of EBS
+    /// volumes attached to the current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSIOPSOverprovisioned</code>
+    /// </b> — The
+    /// instance’s EBS IOPS configuration can be sized down while still meeting the
+    /// performance requirements of your workload. This is identified by analyzing the
+    /// <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS
+    /// volumes attached to the current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSIOPSUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s EBS IOPS configuration doesn't meet the performance requirements of
+    /// your workload and there is an alternative instance type that provides better EBS
+    /// IOPS performance. This is identified by analyzing the
+    /// <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS
+    /// volumes attached to the current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkBandwidthOverprovisioned</code>
+    /// </b>
+    /// — The instance’s network bandwidth configuration can be sized down while still
+    /// meeting the performance requirements of your workload. This is identified by
+    /// analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the
+    /// current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkBandwidthUnderprovisioned</code>
+    /// </b>
+    /// — The instance’s network bandwidth configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type that
+    /// provides better network bandwidth performance. This is identified by analyzing
+    /// the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current
+    /// instance during the look-back period. This finding reason happens when the
+    /// <code>NetworkIn</code> or <code>NetworkOut</code> performance of an instance
+    /// is impacted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkPPSOverprovisioned</code>
+    /// </b> — The
+    /// instance’s network PPS (packets per second) configuration can be sized down
+    /// while still meeting the performance requirements of your workload. This is
+    /// identified by analyzing the <code>NetworkPacketsIn</code> and
+    /// <code>NetworkPacketsIn</code> metrics of the current instance during the
+    /// look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkPPSUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s network PPS (packets per second) configuration doesn't meet the
+    /// performance requirements of your workload and there is an alternative instance
+    /// type that provides better network PPS performance. This is identified by
+    /// analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code>
+    /// metrics of the current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskIOPSOverprovisioned</code>
+    /// </b> — The
+    /// instance’s disk IOPS configuration can be sized down while still meeting the
+    /// performance requirements of your workload. This is identified by analyzing the
+    /// <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the
+    /// current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskIOPSUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s disk IOPS configuration doesn't meet the performance requirements of
+    /// your workload and there is an alternative instance type that provides better
+    /// disk IOPS performance. This is identified by analyzing the
+    /// <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the
+    /// current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskThroughputOverprovisioned</code>
+    /// </b> —
+    /// The instance’s disk throughput configuration can be sized down while still
+    /// meeting the performance requirements of your workload. This is identified by
+    /// analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics
+    /// of the current instance during the look-back period.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskThroughputUnderprovisioned</code>
+    /// </b> —
+    /// The instance’s disk throughput configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type that
+    /// provides better disk throughput performance. This is identified by analyzing the
+    /// <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the
+    /// current instance during the look-back period.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <note>
+    /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the
+    /// available CloudWatch metrics for your instances</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
+    /// about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon CloudWatch
+    /// metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud
+    /// User Guide</i>.</p>
+    /// </note>
+    pub fn finding_reason_codes(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceRecommendationFindingReasonCode]> {
+        self.finding_reason_codes.as_deref()
+    }
+    /// <p>An array of objects that describe the utilization metrics of the instance.</p>
+    pub fn utilization_metrics(&self) -> std::option::Option<&[crate::model::UtilizationMetric]> {
+        self.utilization_metrics.as_deref()
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the
+    /// instance.</p>
+    pub fn look_back_period_in_days(&self) -> f64 {
+        self.look_back_period_in_days
+    }
+    /// <p>An array of objects that describe the recommendation options for the instance.</p>
+    pub fn recommendation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::InstanceRecommendationOption]> {
+        self.recommendation_options.as_deref()
+    }
+    /// <p>An array of objects that describe the source resource of the recommendation.</p>
+    pub fn recommendation_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationSource]> {
+        self.recommendation_sources.as_deref()
+    }
+    /// <p>The timestamp of when the instance recommendation was last refreshed.</p>
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_refresh_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3935,6 +4659,18 @@ pub struct RecommendationSource {
     /// <p>The resource type of the recommendation source.</p>
     pub recommendation_source_type: std::option::Option<crate::model::RecommendationSourceType>,
 }
+impl RecommendationSource {
+    /// <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
+    pub fn recommendation_source_arn(&self) -> std::option::Option<&str> {
+        self.recommendation_source_arn.as_deref()
+    }
+    /// <p>The resource type of the recommendation source.</p>
+    pub fn recommendation_source_type(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationSourceType> {
+        self.recommendation_source_type.as_ref()
+    }
+}
 impl std::fmt::Debug for RecommendationSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationSource");
@@ -4140,6 +4876,153 @@ pub struct InstanceRecommendationOption {
     ///
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
+}
+impl InstanceRecommendationOption {
+    /// <p>The instance type of the instance recommendation.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>An array of objects that describe the projected utilization metrics of the instance
+    /// recommendation option.</p>
+    ///
+    /// <note>
+    /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
+    /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
+    /// returned only for resources that have the unified CloudWatch agent installed
+    /// on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+    /// Utilization with the CloudWatch Agent</a>.</p>
+    /// </note>
+    pub fn projected_utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::UtilizationMetric]> {
+        self.projected_utilization_metrics.as_deref()
+    }
+    /// <p>Describes the configuration differences between the current instance and the
+    /// recommended instance type. You should consider the configuration differences before
+    /// migrating your workloads from the current instance to the recommended instance type. The
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type
+    /// guide for Windows</a> provide general guidance for getting started with an
+    /// instance migration.</p>
+    ///
+    /// <p>Platform differences include:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Hypervisor</code>
+    /// </b> — The hypervisor of
+    /// the recommended instance type is different than that of the current instance.
+    /// For example, the recommended instance type uses a Nitro hypervisor and the
+    /// current instance uses a Xen hypervisor. The differences that you should consider
+    /// between these hypervisors are covered in the <a href="http://aws.amazon.com/ec2/faqs/#Nitro_Hypervisor">Nitro Hypervisor</a> section of the
+    /// Amazon EC2 frequently asked questions. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a> in the <i>Amazon EC2
+    /// User Guide for Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a> in the <i>Amazon EC2
+    /// User Guide for Windows</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkInterface</code>
+    /// </b> — The network
+    /// interface of the recommended instance type is different than that of the current
+    /// instance. For example, the recommended instance type supports enhanced
+    /// networking and the current instance might not. To enable enhanced networking for
+    /// the recommended instance type, you must install the Elastic Network Adapter
+    /// (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking and storage features</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced networking
+    /// on Linux</a> in the <i>Amazon EC2 User Guide for
+    /// Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instance-types.html#instance-networking-storage">Networking and storage features</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/enhanced-networking.html">Enhanced
+    /// networking on Windows</a> in the <i>Amazon EC2 User Guide for
+    /// Windows</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>StorageInterface</code>
+    /// </b> — The storage
+    /// interface of the recommended instance type is different than that of the current
+    /// instance. For example, the recommended instance type uses an NVMe storage
+    /// interface and the current instance does not. To access NVMe volumes for the
+    /// recommended instance type, you will need to install or upgrade the NVMe driver.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking and storage features</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on
+    /// Linux instances</a> in the <i>Amazon EC2 User Guide for
+    /// Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instance-types.html#instance-networking-storage">Networking and storage features</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe
+    /// on Windows instances</a> in the <i>Amazon EC2 User Guide for
+    /// Windows</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>InstanceStoreAvailability</code>
+    /// </b> — The
+    /// recommended instance type does not support instance store volumes and the
+    /// current instance does. Before migrating, you might need to back up the data on
+    /// your instance store volumes if you want to preserve them. For more information,
+    /// see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How do I back up an instance store volume on my Amazon EC2 instance
+    /// to Amazon EBS?</a> in the <i>Amazon Web Services Premium
+    /// Support Knowledge Base</i>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking and storage features</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2
+    /// instance store</a> in the <i>Amazon EC2 User Guide for
+    /// Linux</i>, or see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instance-types.html#instance-networking-storage">Networking and storage features</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/InstanceStorage.html">Amazon EC2
+    /// instance store</a> in the <i>Amazon EC2 User Guide for
+    /// Windows</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>VirtualizationType</code>
+    /// </b> — The
+    /// recommended instance type uses the hardware virtual machine (HVM) virtualization
+    /// type and the current instance uses the paravirtual (PV) virtualization type. For
+    /// more information about the differences between these virtualization types, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">Linux AMI
+    /// virtualization types</a> in the <i>Amazon EC2 User Guide for
+    /// Linux</i>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows AMI virtualization types</a> in the <i>Amazon EC2 User
+    /// Guide for Windows</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Architecture</code>
+    /// </b> — The CPU
+    /// architecture between the recommended instance type and the current instance is
+    /// different. For example, the recommended instance type might use an Arm CPU
+    /// architecture and the current instance type might use a different one, such as
+    /// x86. Before migrating, you should consider recompiling the software on your
+    /// instance for the new architecture. Alternatively, you might switch to an Amazon
+    /// Machine Image (AMI) that supports the new architecture. For more information
+    /// about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn platform_differences(&self) -> std::option::Option<&[crate::model::PlatformDifference]> {
+        self.platform_differences.as_deref()
+    }
+    /// <p>The performance risk of the instance recommendation option.</p>
+    ///
+    /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
+    /// the resource needs of your workload. Compute Optimizer calculates an individual
+    /// performance risk score for each specification of the recommended instance, including
+    /// CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput,
+    /// and network PPS.
+    /// The performance
+    /// risk of the recommended instance is calculated as the maximum performance risk score
+    /// across the analyzed resource specifications.</p>
+    ///
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
+    /// that the recommended resource is predicted to always provide enough hardware capability.
+    /// The higher the performance risk is, the more likely you should validate whether the
+    /// recommendation will meet the performance requirements of your workload before migrating
+    /// your resource.</p>
+    pub fn performance_risk(&self) -> f64 {
+        self.performance_risk
+    }
+    /// <p>The rank of the instance recommendation option.</p>
+    ///
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
 }
 impl std::fmt::Debug for InstanceRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4728,6 +5611,143 @@ pub struct UtilizationMetric {
     pub statistic: std::option::Option<crate::model::MetricStatistic>,
     /// <p>The value of the utilization metric.</p>
     pub value: f64,
+}
+impl UtilizationMetric {
+    /// <p>The name of the utilization metric.</p>
+    ///
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Cpu</code> - The percentage of allocated EC2 compute units that are
+    /// currently in use on the instance. This metric identifies the processing power
+    /// required to run an application on the instance.</p>
+    /// <p>Depending on the instance type, tools in your operating system can show a
+    /// lower percentage than CloudWatch when the instance is not allocated a full
+    /// processor core.</p>
+    /// <p>Units: Percent</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Memory</code> - The percentage of memory that is currently in use on the
+    /// instance. This metric identifies the amount of memory required to run an
+    /// application on the instance.</p>
+    /// <p>Units: Percent</p>
+    /// <note>
+    /// <p>The <code>Memory</code> metric is returned only for resources that have
+    /// the unified CloudWatch agent installed on them. For more information,
+    /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+    /// Utilization with the CloudWatch Agent</a>.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
+    /// EBS volumes attached to the instance in a specified period of time.</p>
+    /// <p>Unit: Count</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all
+    /// EBS volumes attached to the instance in a specified period of time.</p>
+    /// <p>Unit: Count</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes
+    /// attached to the instance in a specified period of time.</p>
+    /// <p>Unit: Bytes</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes
+    /// attached to the instance in a specified period of time.</p>
+    /// <p>Unit: Bytes</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all
+    /// instance store volumes available to the instance in a specified period of
+    /// time.</p>
+    /// <p>If there are no instance store volumes, either the value is <code>0</code> or
+    /// the metric is not reported.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from
+    /// all instance store volumes available to the instance in a specified period of
+    /// time.</p>
+    /// <p>If there are no instance store volumes, either the value is <code>0</code> or
+    /// the metric is not reported.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance
+    /// store volumes available to the instance. This metric is used to determine the
+    /// volume of the data the application reads from the disk of the instance. This can
+    /// be used to determine the speed of the application.</p>
+    /// <p>If there are no instance store volumes, either the value is <code>0</code> or
+    /// the metric is not reported.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance
+    /// store volumes available to the instance. This metric is used to determine the
+    /// volume of the data the application writes onto the disk of the instance. This
+    /// can be used to determine the speed of the application.</p>
+    /// <p>If there are no instance store volumes, either the value is <code>0</code> or
+    /// the metric is not reported.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the
+    /// instance on all network interfaces. This metric identifies the volume of
+    /// incoming network traffic to a single instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by
+    /// the instance on all network interfaces. This metric identifies the volume of
+    /// outgoing network traffic from a single instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by
+    /// the instance on all network interfaces. This metric identifies the volume of
+    /// incoming traffic in terms of the number of packets on a single instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out
+    /// by the instance on all network interfaces. This metric identifies the volume of
+    /// outgoing traffic in terms of the number of packets on a single instance.</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::MetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The statistic of the utilization metric.</p>
+    ///
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
+    /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
+    /// highest value observed during the specified period.</p>
+    ///
+    ///
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
+    /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
+    /// <code>SampleCount</code> during the specified period. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource
+    /// recommendations</a> in the <i>Compute Optimizer User
+    /// Guide</i>. You can also get averaged utilization metric data for your resources
+    /// using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch
+    /// User Guide</a>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::MetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The value of the utilization metric.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
 }
 impl std::fmt::Debug for UtilizationMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5420,6 +6440,193 @@ pub struct Filter {
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Filter {
+    /// <p>The name of the filter.</p>
+    ///
+    /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
+    /// classification (for example, <code>Underprovisioned</code>).</p>
+    ///
+    /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific
+    /// resource type (for example, <code>Ec2Instance</code>).</p>
+    ///
+    /// <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific
+    /// finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::FilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the filter.</p>
+    ///
+    /// <p>The valid values for this parameter are as follows, depending on what you specify for
+    /// the <code>name</code> parameter and the resource type that you wish to filter results
+    /// for:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the
+    /// <code>name</code> parameter as <code>Finding</code> and you want to filter
+    /// results for Auto Scaling groups.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+    /// <code>Optimized</code> if you specify the <code>name</code> parameter as
+    /// <code>Finding</code> and you want to filter results for EC2
+    /// instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+    /// specify the <code>name</code> parameter as
+    /// <code>RecommendationSourceType</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify one of the following options if you specify the <code>name</code>
+    /// parameter as <code>FindingReasonCodes</code>:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CPUOverprovisioned</code>
+    /// </b> — The
+    /// instance’s CPU configuration can be sized down while still meeting the
+    /// performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CPUUnderprovisioned</code>
+    /// </b> —
+    /// The instance’s CPU configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better CPU performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MemoryOverprovisioned</code>
+    /// </b> —
+    /// The instance’s memory configuration can be sized down while still
+    /// meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MemoryUnderprovisioned</code>
+    /// </b> —
+    /// The instance’s memory configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better memory performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSThroughputOverprovisioned</code>
+    /// </b> — The
+    /// instance’s EBS throughput configuration can be sized down while still
+    /// meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSThroughputUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s EBS throughput configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better EBS throughput performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSIOPSOverprovisioned</code>
+    /// </b> —
+    /// The instance’s EBS IOPS configuration can be sized down while still
+    /// meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EBSIOPSUnderprovisioned</code>
+    /// </b>
+    /// — The instance’s EBS IOPS configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better EBS IOPS performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkBandwidthOverprovisioned</code>
+    /// </b> — The
+    /// instance’s network bandwidth configuration can be sized down while still
+    /// meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkBandwidthUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s network bandwidth configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better network bandwidth performance. This finding reason
+    /// happens when the <code>NetworkIn</code> or <code>NetworkOut</code>
+    /// performance of an instance is impacted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkPPSOverprovisioned</code>
+    /// </b> — The instance’s
+    /// network PPS (packets per second) configuration can be sized down while
+    /// still meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NetworkPPSUnderprovisioned</code>
+    /// </b> — The instance’s
+    /// network PPS (packets per second) configuration doesn't meet the
+    /// performance requirements of your workload and there is an alternative
+    /// instance type that provides better network PPS performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskIOPSOverprovisioned</code>
+    /// </b>
+    /// — The instance’s disk IOPS configuration can be sized down while still
+    /// meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskIOPSUnderprovisioned</code>
+    /// </b>
+    /// — The instance’s disk IOPS configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better disk IOPS performance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskThroughputOverprovisioned</code>
+    /// </b> — The
+    /// instance’s disk throughput configuration can be sized down while still
+    /// meeting the performance requirements of your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>DiskThroughputUnderprovisioned</code>
+    /// </b> — The
+    /// instance’s disk throughput configuration doesn't meet the performance
+    /// requirements of your workload and there is an alternative instance type
+    /// that provides better disk throughput performance.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -5942,6 +7149,68 @@ pub struct VolumeRecommendation {
     /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
+impl VolumeRecommendation {
+    /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the volume.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>An array of objects that describe the current configuration of the volume.</p>
+    pub fn current_configuration(&self) -> std::option::Option<&crate::model::VolumeConfiguration> {
+        self.current_configuration.as_ref()
+    }
+    /// <p>The finding classification of the volume.</p>
+    ///
+    /// <p>Findings for volumes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NotOptimized</code>
+    /// </b>—A volume is
+    /// considered not optimized when Compute Optimizer identifies a recommendation
+    /// that can provide better performance for your workload.</p>
+    ///
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Optimized</code>
+    /// </b>—An volume is
+    /// considered optimized when Compute Optimizer determines that the volume is
+    /// correctly provisioned to run your workload based on the chosen volume type. For
+    /// optimized resources, Compute Optimizer might recommend a new generation volume
+    /// type.</p>
+    ///
+    /// </li>
+    /// </ul>
+    pub fn finding(&self) -> std::option::Option<&crate::model::EbsFinding> {
+        self.finding.as_ref()
+    }
+    /// <p>An array of objects that describe the utilization metrics of the volume.</p>
+    pub fn utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::EbsUtilizationMetric]> {
+        self.utilization_metrics.as_deref()
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
+    pub fn look_back_period_in_days(&self) -> f64 {
+        self.look_back_period_in_days
+    }
+    /// <p>An array of objects that describe the recommendation options for the volume.</p>
+    pub fn volume_recommendation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::VolumeRecommendationOption]> {
+        self.volume_recommendation_options.as_deref()
+    }
+    /// <p>The timestamp of when the volume recommendation was last refreshed.</p>
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_refresh_timestamp.as_ref()
+    }
+}
 impl std::fmt::Debug for VolumeRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeRecommendation");
@@ -6180,6 +7449,31 @@ pub struct VolumeRecommendationOption {
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
 }
+impl VolumeRecommendationOption {
+    /// <p>An array of objects that describe a volume configuration.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::VolumeConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The performance risk of the volume recommendation option.</p>
+    ///
+    /// <p>Performance risk is the likelihood of the recommended volume type meeting the
+    /// performance requirement of your workload.</p>
+    ///
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
+    /// that the recommended resource is predicted to always provide enough hardware capability.
+    /// The higher the performance risk is, the more likely you should validate whether the
+    /// recommendation will meet the performance requirements of your workload before migrating
+    /// your resource.</p>
+    pub fn performance_risk(&self) -> f64 {
+        self.performance_risk
+    }
+    /// <p>The rank of the volume recommendation option.</p>
+    ///
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+}
 impl std::fmt::Debug for VolumeRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VolumeRecommendationOption");
@@ -6294,6 +7588,37 @@ pub struct VolumeConfiguration {
     pub volume_baseline_throughput: i32,
     /// <p>The burst throughput of the volume.</p>
     pub volume_burst_throughput: i32,
+}
+impl VolumeConfiguration {
+    /// <p>The volume type.</p>
+    ///
+    /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
+    /// <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+    /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
+    /// volumes.</p>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn volume_size(&self) -> i32 {
+        self.volume_size
+    }
+    /// <p>The baseline IOPS of the volume.</p>
+    pub fn volume_baseline_iops(&self) -> i32 {
+        self.volume_baseline_iops
+    }
+    /// <p>The burst IOPS of the volume.</p>
+    pub fn volume_burst_iops(&self) -> i32 {
+        self.volume_burst_iops
+    }
+    /// <p>The baseline throughput of the volume.</p>
+    pub fn volume_baseline_throughput(&self) -> i32 {
+        self.volume_baseline_throughput
+    }
+    /// <p>The burst throughput of the volume.</p>
+    pub fn volume_burst_throughput(&self) -> i32 {
+        self.volume_burst_throughput
+    }
 }
 impl std::fmt::Debug for VolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6470,6 +7795,61 @@ pub struct EbsUtilizationMetric {
     pub statistic: std::option::Option<crate::model::MetricStatistic>,
     /// <p>The value of the utilization metric.</p>
     pub value: f64,
+}
+impl EbsUtilizationMetric {
+    /// <p>The name of the utilization metric.</p>
+    ///
+    /// <p>The following utilization metrics are available:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VolumeReadOpsPerSecond</code> - The completed read operations per second
+    /// from the volume in a specified period of time.</p>
+    /// <p>Unit: Count</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeWriteOpsPerSecond</code> - The completed write operations per
+    /// second to the volume in a specified period of time.</p>
+    /// <p>Unit: Count</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the
+    /// volume in a specified period of time.</p>
+    /// <p>Unit: Bytes</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a
+    /// specified period of time.</p>
+    /// <p>Unit: Bytes</p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&crate::model::EbsMetricName> {
+        self.name.as_ref()
+    }
+    /// <p>The statistic of the utilization metric.</p>
+    ///
+    /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs
+    /// return utilization metrics using only the <code>Maximum</code> statistic, which is the
+    /// highest value observed during the specified period.</p>
+    ///
+    /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the
+    /// <code>Average</code> statistic, which is the value of <code>Sum</code> /
+    /// <code>SampleCount</code> during the specified period. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource
+    /// recommendations</a> in the <i>Compute Optimizer User
+    /// Guide</i>. You can also get averaged utilization metric data for your resources
+    /// using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch
+    /// User Guide</a>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::MetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The value of the utilization metric.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
 }
 impl std::fmt::Debug for EbsUtilizationMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6765,6 +8145,21 @@ pub struct EbsFilter {
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EbsFilter {
+    /// <p>The name of the filter.</p>
+    ///
+    /// <p>Specify <code>Finding</code> to return recommendations with a specific finding
+    /// classification (for example, <code>NotOptimized</code>).</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::EbsFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the filter.</p>
+    ///
+    /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for EbsFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EbsFilter");
@@ -6938,6 +8333,74 @@ pub struct AutoScalingGroupRecommendation {
     /// <p>The timestamp  of when the Auto Scaling group recommendation was last
     /// refreshed.</p>
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AutoScalingGroupRecommendation {
+    /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+    pub fn auto_scaling_group_arn(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group_arn.as_deref()
+    }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group_name.as_deref()
+    }
+    /// <p>The finding classification of the Auto Scaling group.</p>
+    ///
+    /// <p>Findings for Auto Scaling groups include:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NotOptimized</code>
+    /// </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a
+    /// recommendation that can provide better performance for your workload.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Optimized</code>
+    /// </b>—An Auto Scaling
+    /// group is considered optimized when Compute Optimizer determines that the group
+    /// is correctly provisioned to run your workload based on the chosen instance type.
+    /// For optimized resources, Compute Optimizer might recommend a new generation
+    /// instance type.</p>
+    /// </li>
+    /// </ul>
+    pub fn finding(&self) -> std::option::Option<&crate::model::Finding> {
+        self.finding.as_ref()
+    }
+    /// <p>An array of objects that describe the utilization metrics of the Auto Scaling
+    /// group.</p>
+    pub fn utilization_metrics(&self) -> std::option::Option<&[crate::model::UtilizationMetric]> {
+        self.utilization_metrics.as_deref()
+    }
+    /// <p>The number of days for which utilization metrics were analyzed for the Auto Scaling group.</p>
+    pub fn look_back_period_in_days(&self) -> f64 {
+        self.look_back_period_in_days
+    }
+    /// <p>An array of objects that describe the current configuration of the Auto Scaling
+    /// group.</p>
+    pub fn current_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingGroupConfiguration> {
+        self.current_configuration.as_ref()
+    }
+    /// <p>An array of objects that describe the recommendation options for the Auto Scaling
+    /// group.</p>
+    pub fn recommendation_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutoScalingGroupRecommendationOption]> {
+        self.recommendation_options.as_deref()
+    }
+    /// <p>The timestamp  of when the Auto Scaling group recommendation was last
+    /// refreshed.</p>
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_refresh_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoScalingGroupRecommendation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7220,6 +8683,54 @@ pub struct AutoScalingGroupRecommendationOption {
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
 }
+impl AutoScalingGroupRecommendationOption {
+    /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoScalingGroupConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>
+    ///
+    /// <note>
+    /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected
+    /// utilization metrics returned. Additionally, the <code>Memory</code> metric is
+    /// returned only for resources that have the unified CloudWatch agent installed
+    /// on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+    /// Utilization with the CloudWatch Agent</a>.</p>
+    /// </note>
+    pub fn projected_utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::UtilizationMetric]> {
+        self.projected_utilization_metrics.as_deref()
+    }
+    /// <p>The performance risk of the Auto Scaling group configuration
+    /// recommendation.</p>
+    ///
+    /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting
+    /// the resource needs of your workload. Compute Optimizer calculates an individual
+    /// performance risk score for each specification of the recommended instance, including
+    /// CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput,
+    /// and network PPS.
+    /// The performance
+    /// risk of the recommended instance is calculated as the maximum performance risk score
+    /// across the analyzed resource specifications.</p>
+    ///
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
+    /// that the recommended resource is predicted to always provide enough hardware capability.
+    /// The higher the performance risk is, the more likely you should validate whether the
+    /// recommendation will meet the performance requirements of your workload before migrating
+    /// your resource.</p>
+    pub fn performance_risk(&self) -> f64 {
+        self.performance_risk
+    }
+    /// <p>The rank of the Auto Scaling group recommendation option.</p>
+    ///
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+}
 impl std::fmt::Debug for AutoScalingGroupRecommendationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingGroupRecommendationOption");
@@ -7386,6 +8897,26 @@ pub struct AutoScalingGroupConfiguration {
     /// <p>The instance type for the Auto Scaling group.</p>
     pub instance_type: std::option::Option<std::string::String>,
 }
+impl AutoScalingGroupConfiguration {
+    /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
+    pub fn desired_capacity(&self) -> i32 {
+        self.desired_capacity
+    }
+    /// <p>The minimum size, or minimum number of instances, for the Auto Scaling
+    /// group.</p>
+    pub fn min_size(&self) -> i32 {
+        self.min_size
+    }
+    /// <p>The maximum size, or maximum number of instances, for the Auto Scaling
+    /// group.</p>
+    pub fn max_size(&self) -> i32 {
+        self.max_size
+    }
+    /// <p>The instance type for the Auto Scaling group.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoScalingGroupConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingGroupConfiguration");
@@ -7489,6 +9020,25 @@ pub struct S3Destination {
     ///
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub metadata_key: std::option::Option<std::string::String>,
+}
+impl S3Destination {
+    /// <p>The name of the Amazon S3 bucket used as the destination of an export
+    /// file.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The Amazon S3 bucket key of an export file.</p>
+    ///
+    /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The Amazon S3 bucket key of a metadata file.</p>
+    ///
+    /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
+    pub fn metadata_key(&self) -> std::option::Option<&str> {
+        self.metadata_key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Destination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7636,6 +9186,17 @@ pub struct S3DestinationConfig {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
     pub key_prefix: std::option::Option<std::string::String>,
+}
+impl S3DestinationConfig {
+    /// <p>The name of the Amazon S3 bucket to use as the destination for an export
+    /// job.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The Amazon S3 bucket prefix for an export job.</p>
+    pub fn key_prefix(&self) -> std::option::Option<&str> {
+        self.key_prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for S3DestinationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8654,6 +10215,36 @@ pub struct RecommendationExportJob {
     /// <p>The reason for an export job failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
+impl RecommendationExportJob {
+    /// <p>The identification number of the export job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>An object that describes the destination of the export file.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::ExportDestination> {
+        self.destination.as_ref()
+    }
+    /// <p>The resource type of the exported recommendations.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The status of the export job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The timestamp of when the export job was created.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The timestamp of when the export job was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The reason for an export job failure.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
 impl std::fmt::Debug for RecommendationExportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecommendationExportJob");
@@ -8928,6 +10519,14 @@ pub struct ExportDestination {
     /// metadata file.</p>
     pub s3: std::option::Option<crate::model::S3Destination>,
 }
+impl ExportDestination {
+    /// <p>An object that describes the destination Amazon Simple Storage Service (Amazon S3)
+    /// bucket name and object keys of a recommendations export file, and its associated
+    /// metadata file.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Destination> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportDestination");
@@ -9008,6 +10607,39 @@ pub struct JobFilter {
     /// </li>
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl JobFilter {
+    /// <p>The name of the filter.</p>
+    ///
+    /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type
+    /// (for example, <code>Ec2Instance</code>).</p>
+    ///
+    /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g,
+    /// <code>Complete</code>).</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::JobFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The value of the filter.</p>
+    ///
+    /// <p>The valid values for this parameter are as follows, depending on what you specify for
+    /// the <code>name</code> parameter:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you
+    /// specify the <code>name</code> parameter as <code>ResourceType</code>. There is
+    /// no filter for EBS volumes because volume recommendations cannot be exported at
+    /// this time.</p>
+    /// </li>
+    /// <li>
+    /// <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>,
+    /// or <code>Failed</code> if you specify the <code>name</code> parameter as
+    /// <code>JobStatus</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for JobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

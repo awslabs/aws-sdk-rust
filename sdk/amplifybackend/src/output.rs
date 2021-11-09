@@ -20,6 +20,40 @@ pub struct UpdateBackendJobOutput {
     /// <p>The time when the job was last updated.</p>
     pub update_time: std::option::Option<std::string::String>,
 }
+impl UpdateBackendJobOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The time when the job was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&str> {
+        self.create_time.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The time when the job was last updated.</p>
+    pub fn update_time(&self) -> std::option::Option<&str> {
+        self.update_time.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBackendJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBackendJobOutput");
@@ -168,6 +202,24 @@ pub struct UpdateBackendConfigOutput {
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
     pub login_auth_config: std::option::Option<crate::model::LoginAuthConfigReqObj>,
 }
+impl UpdateBackendConfigOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The app ID for the backend manager.</p>
+    pub fn backend_manager_app_id(&self) -> std::option::Option<&str> {
+        self.backend_manager_app_id.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
+    pub fn login_auth_config(&self) -> std::option::Option<&crate::model::LoginAuthConfigReqObj> {
+        self.login_auth_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBackendConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBackendConfigOutput");
@@ -270,6 +322,32 @@ pub struct UpdateBackendAuthOutput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl UpdateBackendAuthOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateBackendAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -397,6 +475,32 @@ pub struct UpdateBackendApiOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl UpdateBackendApiOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateBackendApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBackendApiOutput");
@@ -513,6 +617,12 @@ pub struct RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
     pub error: std::option::Option<std::string::String>,
 }
+impl RemoveBackendConfigOutput {
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveBackendConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveBackendConfigOutput");
@@ -566,6 +676,28 @@ pub struct RemoveAllBackendsOutput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl RemoveAllBackendsOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveAllBackendsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -669,6 +801,16 @@ pub struct ListBackendJobsOutput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBackendJobsOutput {
+    /// <p>An array of jobs and their properties.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::BackendJobRespObj]> {
+        self.jobs.as_deref()
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBackendJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBackendJobsOutput");
@@ -748,6 +890,32 @@ pub struct ImportBackendAuthOutput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl ImportBackendAuthOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportBackendAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -871,6 +1039,24 @@ pub struct GetTokenOutput {
     /// <p>The expiry time for the one-time generated token code.</p>
     pub ttl: std::option::Option<std::string::String>,
 }
+impl GetTokenOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
+    pub fn challenge_code(&self) -> std::option::Option<&str> {
+        self.challenge_code.as_deref()
+    }
+    /// <p>A unique ID provided when creating a new challenge token.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The expiry time for the one-time generated token code.</p>
+    pub fn ttl(&self) -> std::option::Option<&str> {
+        self.ttl.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTokenOutput");
@@ -974,6 +1160,40 @@ pub struct GetBackendJobOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>The time when the job was last updated.</p>
     pub update_time: std::option::Option<std::string::String>,
+}
+impl GetBackendJobOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The time when the job was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&str> {
+        self.create_time.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The time when the job was last updated.</p>
+    pub fn update_time(&self) -> std::option::Option<&str> {
+        self.update_time.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBackendJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1125,6 +1345,30 @@ pub struct GetBackendAuthOutput {
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl GetBackendAuthOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
+    pub fn resource_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateBackendAuthResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetBackendAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBackendAuthOutput");
@@ -1240,6 +1484,16 @@ pub struct GetBackendApiModelsOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<crate::model::Status>,
 }
+impl GetBackendApiModelsOutput {
+    /// <p>Stringified JSON of the datastore model.</p>
+    pub fn models(&self) -> std::option::Option<&str> {
+        self.models.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for GetBackendApiModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBackendApiModelsOutput");
@@ -1308,6 +1562,28 @@ pub struct GetBackendApiOutput {
     pub resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
     /// <p>The name of this resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
+}
+impl GetBackendApiOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The resource configuration for this response object.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::BackendApiResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>The name of this resource.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBackendApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1429,6 +1705,36 @@ pub struct GetBackendOutput {
     pub backend_environment_name: std::option::Option<std::string::String>,
     /// <p>If the request failed, this is the returned error.</p>
     pub error: std::option::Option<std::string::String>,
+}
+impl GetBackendOutput {
+    /// <p>A stringified version of the cli.json file for your Amplify project.</p>
+    pub fn amplify_feature_flags(&self) -> std::option::Option<&str> {
+        self.amplify_feature_flags.as_deref()
+    }
+    /// <p>A stringified version of the current configs for your Amplify project.</p>
+    pub fn amplify_meta_config(&self) -> std::option::Option<&str> {
+        self.amplify_meta_config.as_deref()
+    }
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the app.</p>
+    pub fn app_name(&self) -> std::option::Option<&str> {
+        self.app_name.as_deref()
+    }
+    /// <p>A list of backend environments in an array.</p>
+    pub fn backend_environment_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.backend_environment_list.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request failed, this is the returned error.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBackendOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1585,6 +1891,32 @@ pub struct GenerateBackendApiModelsOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl GenerateBackendApiModelsOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateBackendApiModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateBackendApiModelsOutput");
@@ -1701,6 +2033,12 @@ pub struct DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
     pub is_success: bool,
 }
+impl DeleteTokenOutput {
+    /// <p>Indicates whether the request succeeded or failed.</p>
+    pub fn is_success(&self) -> bool {
+        self.is_success
+    }
+}
 impl std::fmt::Debug for DeleteTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTokenOutput");
@@ -1758,6 +2096,32 @@ pub struct DeleteBackendAuthOutput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl DeleteBackendAuthOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBackendAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1885,6 +2249,32 @@ pub struct DeleteBackendApiOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl DeleteBackendApiOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBackendApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackendApiOutput");
@@ -2011,6 +2401,32 @@ pub struct DeleteBackendOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl DeleteBackendOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBackendOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackendOutput");
@@ -2133,6 +2549,24 @@ pub struct CreateTokenOutput {
     /// <p>The expiry time for the one-time generated token code.</p>
     pub ttl: std::option::Option<std::string::String>,
 }
+impl CreateTokenOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
+    pub fn challenge_code(&self) -> std::option::Option<&str> {
+        self.challenge_code.as_deref()
+    }
+    /// <p>A unique ID provided when creating a new challenge token.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The expiry time for the one-time generated token code.</p>
+    pub fn ttl(&self) -> std::option::Option<&str> {
+        self.ttl.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTokenOutput");
@@ -2228,6 +2662,24 @@ pub struct CreateBackendConfigOutput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl CreateBackendConfigOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackendConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2328,6 +2780,32 @@ pub struct CreateBackendAuthOutput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl CreateBackendAuthOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackendAuthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2455,6 +2933,32 @@ pub struct CreateBackendApiOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl CreateBackendApiOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBackendApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackendApiOutput");
@@ -2581,6 +3085,32 @@ pub struct CreateBackendOutput {
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
 }
+impl CreateBackendOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBackendOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackendOutput");
@@ -2706,6 +3236,32 @@ pub struct CloneBackendOutput {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: std::option::Option<std::string::String>,
+}
+impl CloneBackendOutput {
+    /// <p>The app ID.</p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+        self.backend_environment_name.as_deref()
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl std::fmt::Debug for CloneBackendOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

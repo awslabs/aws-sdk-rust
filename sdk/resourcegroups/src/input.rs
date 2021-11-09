@@ -201,10 +201,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -360,10 +357,7 @@ impl DeleteGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -517,10 +511,7 @@ impl GetGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -663,10 +654,7 @@ impl GetGroupConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_group_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -822,10 +810,8 @@ impl GetGroupQueryInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_group_query(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_group_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1130,10 +1116,8 @@ impl GroupResourcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_group_resources(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_group_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1425,10 +1409,7 @@ impl ListGroupResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_group_resources(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_group_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1698,10 +1679,7 @@ impl ListGroupsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1891,10 +1869,7 @@ impl PutGroupConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_group_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2088,10 +2063,7 @@ impl SearchResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_resources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2276,9 +2248,7 @@ impl TagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag(&self).map_err(
-            |err| aws_smithy_http::operation::BuildError::SerializationError(err.into()),
-        )?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2441,10 +2411,7 @@ impl UngroupResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_ungroup_resources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_ungroup_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2624,9 +2591,7 @@ impl UntagInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag(&self).map_err(
-            |err| aws_smithy_http::operation::BuildError::SerializationError(err.into()),
-        )?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2794,10 +2759,7 @@ impl UpdateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2979,10 +2941,7 @@ impl UpdateGroupQueryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_group_query(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_group_query(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3060,6 +3019,25 @@ pub struct UpdateGroupQueryInput {
     /// </note>
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
 }
+impl UpdateGroupQueryInput {
+    /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name or the ARN of the resource group to query.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The resource query to determine which AWS resources are members of this resource
+    /// group.</p>
+    /// <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a
+    /// <code>ResourceQuery</code>, but not both.</p>
+    /// </note>
+    pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
+        self.resource_query.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupQueryInput");
@@ -3082,6 +3060,21 @@ pub struct UpdateGroupInput {
     /// contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateGroupInput {
+    /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name or the ARN of the resource group to modify.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The new description that you want to update the resource group with. Descriptions can
+    /// contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupInput");
@@ -3102,6 +3095,17 @@ pub struct UntagInput {
     /// <p>The keys of the tags to be removed.</p>
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagInput {
+    /// <p>The ARN of the resource group from which to remove tags. The command removed both the
+    /// specified keys and any values associated with those keys.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The keys of the tags to be removed.</p>
+    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagInput");
@@ -3119,6 +3123,16 @@ pub struct UngroupResourcesInput {
     pub group: std::option::Option<std::string::String>,
     /// <p>The ARNs of the resources to be removed from the group.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UngroupResourcesInput {
+    /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The ARNs of the resources to be removed from the group.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for UngroupResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3139,6 +3153,20 @@ pub struct TagInput {
     /// key-value pairs.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagInput {
+    /// <p>The ARN of the resource group to which to add tags.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of
+    /// key-value pairs.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3171,6 +3199,31 @@ pub struct SearchResourcesInput {
     /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SearchResourcesInput {
+    /// <p>The search query, using the same formats that are supported for resource group
+    /// definition. For more information, see <a>CreateGroup</a>.</p>
+    pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
+        self.resource_query.as_ref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that the service might return fewer results than the maximum even when there
+    /// are more results available. You should check <code>NextToken</code> after every operation to
+    /// ensure that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value provided by a previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchResourcesInput");
@@ -3198,6 +3251,25 @@ pub struct PutGroupConfigurationInput {
     /// <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
+}
+impl PutGroupConfigurationInput {
+    /// <p>The name or ARN of the resource group with the configuration that you want to
+    /// update.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The new configuration to associate with the specified group. A configuration
+    /// associates the resource group with an AWS service and specifies how the service can
+    /// interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.</p>
+    /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+    /// resource groups</a>.</p>
+    /// <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a
+    /// <code>ResourceQuery</code>, but not both.</p>
+    /// </note>
+    pub fn configuration(&self) -> std::option::Option<&[crate::model::GroupConfigurationItem]> {
+        self.configuration.as_deref()
+    }
 }
 impl std::fmt::Debug for PutGroupConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3258,6 +3330,60 @@ pub struct ListGroupsInput {
     /// indicates that more output is available. Set this parameter to the value provided by a previous
     /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListGroupsInput {
+    /// <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to
+    /// a <code>ListGroups</code> operation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>resource-type</code> - Filter the results to include only those of the
+    /// specified resource types. Specify up to five resource types in the format
+    /// <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i>
+    /// </code>.
+    /// For example, <code>AWS::EC2::Instance</code>, or
+    /// <code>AWS::S3::Bucket</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>configuration-type</code> - Filter the results to include only those
+    /// groups that have the specified configuration types attached. The current
+    /// supported values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AWS:EC2::CapacityReservationPool</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS:EC2::HostManagement</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::GroupFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that the service might return fewer results than the maximum even when there
+    /// are more results available. You should check <code>NextToken</code> after every operation to
+    /// ensure that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value provided by a previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3329,6 +3455,73 @@ pub struct ListGroupResourcesInput {
     /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupResourcesInput {
+    /// <important>
+    /// <p>
+    /// <i>
+    /// <b>Deprecated - don't use this parameter. Use the
+    /// <code>Group</code> request field instead.</b>
+    /// </i>
+    /// </p>
+    /// </important>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name or the ARN of the resource group</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>Filters, formatted as <a>ResourceFilter</a> objects, that you want to apply
+    /// to a <code>ListGroupResources</code> operation. Filters the results to include only
+    /// those of the specified resource types.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>resource-type</code> - Filter resources by their type. Specify up to
+    /// five resource types in the format <code>AWS::ServiceCode::ResourceType</code>.
+    /// For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When you specify a <code>resource-type</code> filter for
+    /// <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types
+    /// against the types that are defined in the query associated with the group. For example,
+    /// if a group contains only S3 buckets because its query specifies only that resource type,
+    /// but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups
+    /// does not filter for EC2 instances. In this case, a <code>ListGroupResources</code>
+    /// request returns a <code>BadRequestException</code> error with a message similar to the
+    /// following:</p>
+    /// <p>
+    /// <code>The resource types specified as filters in the request are not
+    /// valid.</code>
+    /// </p>
+    /// <p>The error includes a list of resource types that failed the validation because they
+    /// are not part of the query associated with the group. This validation doesn't occur when
+    /// the group query specifies <code>AWS::AllSupported</code>, because a group based on such
+    /// a query can contain any of the allowed resource types for the query type (tag-based or
+    /// AWS CloudFormation stack-based queries).</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ResourceFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The total number of results that you want included on each page of the
+    /// response. If you do not include this parameter, it defaults to a value that is specific to the
+    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
+    /// response element is present and has a value (is not null). Include that value as the
+    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
+    /// of the results. Note that the service might return fewer results than the maximum even when there
+    /// are more results available. You should check <code>NextToken</code> after every operation to
+    /// ensure that you receive all of the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The parameter for receiving additional results if you receive a
+    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
+    /// indicates that more output is available. Set this parameter to the value provided by a previous
+    /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupResourcesInput");
@@ -3350,6 +3543,16 @@ pub struct GroupResourcesInput {
     /// <p>The list of ARNs for resources to be added to the group. </p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GroupResourcesInput {
+    /// <p>The name or the ARN of the resource group to add resources to.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The list of ARNs for resources to be added to the group. </p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupResourcesInput");
@@ -3365,6 +3568,12 @@ impl std::fmt::Debug for GroupResourcesInput {
 pub struct GetTagsInput {
     /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl GetTagsInput {
+    /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3383,6 +3592,16 @@ pub struct GetGroupQueryInput {
     /// <p>The name or the ARN of the resource group to query.</p>
     pub group: std::option::Option<std::string::String>,
 }
+impl GetGroupQueryInput {
+    /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name or the ARN of the resource group to query.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupQueryInput");
@@ -3398,6 +3617,12 @@ impl std::fmt::Debug for GetGroupQueryInput {
 pub struct GetGroupConfigurationInput {
     /// <p>The name or the ARN of the resource group.</p>
     pub group: std::option::Option<std::string::String>,
+}
+impl GetGroupConfigurationInput {
+    /// <p>The name or the ARN of the resource group.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3416,6 +3641,16 @@ pub struct GetGroupInput {
     /// <p>The name or the ARN of the resource group to retrieve.</p>
     pub group: std::option::Option<std::string::String>,
 }
+impl GetGroupInput {
+    /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name or the ARN of the resource group to retrieve.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupInput");
@@ -3433,6 +3668,16 @@ pub struct DeleteGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The name or the ARN of the resource group to delete.</p>
     pub group: std::option::Option<std::string::String>,
+}
+impl DeleteGroupInput {
+    /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name or the ARN of the resource group to delete.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3477,6 +3722,50 @@ pub struct CreateGroupInput {
     /// <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
+}
+impl CreateGroupInput {
+    /// <p>The name of the group, which is the identifier of the group in other operations. You
+    /// can't change the name of a resource group after you create it. A resource group name can
+    /// consist of letters, numbers, hyphens, periods, and underscores. The name cannot start
+    /// with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name
+    /// must be unique within each AWS Region in your AWS account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the resource group. Descriptions can consist of letters, numbers,
+    /// hyphens, underscores, periods, and spaces.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The resource query that determines which AWS resources are members of this group.
+    /// For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+    /// a tag-based group in Resource Groups</a>. </p>
+    /// <note>
+    /// <p>A resource group can contain either a <code>ResourceQuery</code> or a
+    /// <code>Configuration</code>, but not both.</p>
+    /// </note>
+    pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
+        self.resource_query.as_ref()
+    }
+    /// <p>The tags to add to the group. A tag is key-value pair string.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A configuration associates the resource group with an AWS service and specifies how
+    /// the service can interact with the resources in the group. A configuration is an array of
+    /// <a>GroupConfigurationItem</a> elements. For details about the syntax of
+    /// service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+    /// groups</a>.</p>
+    /// <note>
+    /// <p>A resource group can contain either a <code>Configuration</code> or a
+    /// <code>ResourceQuery</code>, but not both.</p>
+    /// </note>
+    pub fn configuration(&self) -> std::option::Option<&[crate::model::GroupConfigurationItem]> {
+        self.configuration.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

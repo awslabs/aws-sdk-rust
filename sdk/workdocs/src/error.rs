@@ -6527,6 +6527,12 @@ pub struct UnauthorizedOperationException {
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
 }
+impl UnauthorizedOperationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for UnauthorizedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnauthorizedOperationException");
@@ -6864,6 +6870,12 @@ pub struct EntityNotExistsException {
     #[allow(missing_docs)] // documentation missing in model
     pub entity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EntityNotExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn entity_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for EntityNotExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityNotExistsException");
@@ -6950,6 +6962,12 @@ pub struct DeactivatingLastSystemUserException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+}
+impl DeactivatingLastSystemUserException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for DeactivatingLastSystemUserException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

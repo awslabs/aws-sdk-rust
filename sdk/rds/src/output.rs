@@ -7,6 +7,15 @@ pub struct StopDbInstanceAutomatedBackupsReplicationOutput {
     /// existed at the time you deleted the source instance.</p>
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
+impl StopDbInstanceAutomatedBackupsReplicationOutput {
+    /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that
+    /// existed at the time you deleted the source instance.</p>
+    pub fn db_instance_automated_backup(
+        &self,
+    ) -> std::option::Option<&crate::model::DbInstanceAutomatedBackup> {
+        self.db_instance_automated_backup.as_ref()
+    }
+}
 impl std::fmt::Debug for StopDbInstanceAutomatedBackupsReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDbInstanceAutomatedBackupsReplicationOutput");
@@ -71,6 +80,15 @@ pub struct StopDbInstanceOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl StopDbInstanceOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for StopDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopDbInstanceOutput");
@@ -131,6 +149,16 @@ pub struct StopDbClusterOutput {
     /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl StopDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for StopDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -195,6 +223,21 @@ pub struct StopActivityStreamOutput {
     pub kinesis_stream_name: std::option::Option<std::string::String>,
     /// <p>The status of the database activity stream.</p>
     pub status: std::option::Option<crate::model::ActivityStreamStatus>,
+}
+impl StopActivityStreamOutput {
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
+    pub fn kinesis_stream_name(&self) -> std::option::Option<&str> {
+        self.kinesis_stream_name.as_deref()
+    }
+    /// <p>The status of the database activity stream.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActivityStreamStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for StopActivityStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -335,6 +378,95 @@ pub struct StartExportTaskOutput {
     pub failure_cause: std::option::Option<std::string::String>,
     /// <p>A warning about the snapshot export task.</p>
     pub warning_message: std::option::Option<std::string::String>,
+}
+impl StartExportTaskOutput {
+    /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
+    /// the Amazon S3 bucket where the snapshot is exported to. </p>
+    pub fn export_task_identifier(&self) -> std::option::Option<&str> {
+        self.export_task_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The data exported from the snapshot. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>database</code> - Export all the data from a specified database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>database.table</code>
+    /// <i>table-name</i> -
+    /// Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>database.schema</code>
+    /// <i>schema-name</i> - Export a database schema of the snapshot.
+    /// This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>database.schema.table</code>
+    /// <i>table-name</i> - Export a table of the database schema.
+    /// This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p>
+    /// </li>
+    /// </ul>
+    pub fn export_only(&self) -> std::option::Option<&[std::string::String]> {
+        self.export_only.as_deref()
+    }
+    /// <p>The time that the snapshot was created.</p>
+    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_time.as_ref()
+    }
+    /// <p>The time that the snapshot export task started.</p>
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_start_time.as_ref()
+    }
+    /// <p>The time that the snapshot export task completed.</p>
+    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_end_time.as_ref()
+    }
+    /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to
+    /// Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+    /// must have encryption and decryption permissions to use this KMS key. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The progress status of the export task.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The progress of the snapshot export task as a percentage.</p>
+    pub fn percent_progress(&self) -> i32 {
+        self.percent_progress
+    }
+    /// <p>The total amount of data exported, in gigabytes.</p>
+    pub fn total_extracted_data_in_gb(&self) -> i32 {
+        self.total_extracted_data_in_gb
+    }
+    /// <p>The reason the export failed, if it failed.</p>
+    pub fn failure_cause(&self) -> std::option::Option<&str> {
+        self.failure_cause.as_deref()
+    }
+    /// <p>A warning about the snapshot export task.</p>
+    pub fn warning_message(&self) -> std::option::Option<&str> {
+        self.warning_message.as_deref()
+    }
 }
 impl std::fmt::Debug for StartExportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -651,6 +783,15 @@ pub struct StartDbInstanceAutomatedBackupsReplicationOutput {
     /// existed at the time you deleted the source instance.</p>
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
+impl StartDbInstanceAutomatedBackupsReplicationOutput {
+    /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that
+    /// existed at the time you deleted the source instance.</p>
+    pub fn db_instance_automated_backup(
+        &self,
+    ) -> std::option::Option<&crate::model::DbInstanceAutomatedBackup> {
+        self.db_instance_automated_backup.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDbInstanceAutomatedBackupsReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDbInstanceAutomatedBackupsReplicationOutput");
@@ -715,6 +856,15 @@ pub struct StartDbInstanceOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl StartDbInstanceOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDbInstanceOutput");
@@ -775,6 +925,16 @@ pub struct StartDbClusterOutput {
     /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl StartDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for StartDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -845,6 +1005,33 @@ pub struct StartActivityStreamOutput {
     pub apply_immediately: bool,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub engine_native_audit_fields_included: std::option::Option<bool>,
+}
+impl StartActivityStreamOutput {
+    /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
+    pub fn kinesis_stream_name(&self) -> std::option::Option<&str> {
+        self.kinesis_stream_name.as_deref()
+    }
+    /// <p>The status of the database activity stream.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActivityStreamStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The mode of the database activity stream.</p>
+    pub fn mode(&self) -> std::option::Option<&crate::model::ActivityStreamMode> {
+        self.mode.as_ref()
+    }
+    /// <p>Indicates whether or not the database activity stream will start as soon as possible,
+    /// regardless of the maintenance window for the database.</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    pub fn engine_native_audit_fields_included(&self) -> std::option::Option<bool> {
+        self.engine_native_audit_fields_included
+    }
 }
 impl std::fmt::Debug for StartActivityStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -980,6 +1167,16 @@ pub struct RevokeDbSecurityGroupIngressOutput {
     /// </p>
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
+impl RevokeDbSecurityGroupIngressOutput {
+    /// <p>Contains the details for an Amazon RDS DB security group.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSecurityGroups</code> action.
+    /// </p>
+    pub fn db_security_group(&self) -> std::option::Option<&crate::model::DbSecurityGroup> {
+        self.db_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for RevokeDbSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeDbSecurityGroupIngressOutput");
@@ -1042,6 +1239,15 @@ pub struct RestoreDbInstanceToPointInTimeOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl RestoreDbInstanceToPointInTimeOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreDbInstanceToPointInTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbInstanceToPointInTimeOutput");
@@ -1101,6 +1307,15 @@ pub struct RestoreDbInstanceFromS3Output {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+}
+impl RestoreDbInstanceFromS3Output {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreDbInstanceFromS3Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1162,6 +1377,15 @@ pub struct RestoreDbInstanceFromDbSnapshotOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl RestoreDbInstanceFromDbSnapshotOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbInstanceFromDbSnapshotOutput");
@@ -1222,6 +1446,16 @@ pub struct RestoreDbClusterToPointInTimeOutput {
     /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl RestoreDbClusterToPointInTimeOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1286,6 +1520,16 @@ pub struct RestoreDbClusterFromSnapshotOutput {
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl RestoreDbClusterFromSnapshotOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreDbClusterFromSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbClusterFromSnapshotOutput");
@@ -1349,6 +1593,16 @@ pub struct RestoreDbClusterFromS3Output {
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl RestoreDbClusterFromS3Output {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RestoreDbClusterFromS3Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbClusterFromS3Output");
@@ -1410,6 +1664,12 @@ impl RestoreDbClusterFromS3Output {
 pub struct ResetDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
     pub db_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl ResetDbParameterGroupOutput {
+    /// <p>The name of the DB parameter group.</p>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetDbParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1476,6 +1736,27 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl ResetDbClusterParameterGroupOutput {
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResetDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1594,6 +1875,12 @@ pub struct RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
+impl RemoveSourceIdentifierFromSubscriptionOutput {
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for RemoveSourceIdentifierFromSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveSourceIdentifierFromSubscriptionOutput");
@@ -1705,6 +1992,12 @@ pub struct RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
+impl RemoveFromGlobalClusterOutput {
+    /// <p>A data type representing an Aurora global database.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RemoveFromGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFromGlobalClusterOutput");
@@ -1755,6 +2048,12 @@ impl RemoveFromGlobalClusterOutput {
 pub struct RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
     pub db_proxy_targets: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
+}
+impl RegisterDbProxyTargetsOutput {
+    /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
+    pub fn db_proxy_targets(&self) -> std::option::Option<&[crate::model::DbProxyTarget]> {
+        self.db_proxy_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterDbProxyTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1817,6 +2116,15 @@ pub struct RebootDbInstanceOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl RebootDbInstanceOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for RebootDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootDbInstanceOutput");
@@ -1877,6 +2185,16 @@ pub struct PurchaseReservedDbInstancesOfferingOutput {
     /// <code>PurchaseReservedDBInstancesOffering</code> actions.
     /// </p>
     pub reserved_db_instance: std::option::Option<crate::model::ReservedDbInstance>,
+}
+impl PurchaseReservedDbInstancesOfferingOutput {
+    /// <p>
+    /// This data type is used as a response element in the
+    /// <code>DescribeReservedDBInstances</code> and
+    /// <code>PurchaseReservedDBInstancesOffering</code> actions.
+    /// </p>
+    pub fn reserved_db_instance(&self) -> std::option::Option<&crate::model::ReservedDbInstance> {
+        self.reserved_db_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for PurchaseReservedDbInstancesOfferingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,6 +2259,16 @@ pub struct PromoteReadReplicaDbClusterOutput {
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl PromoteReadReplicaDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for PromoteReadReplicaDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PromoteReadReplicaDbClusterOutput");
@@ -2003,6 +2331,15 @@ pub struct PromoteReadReplicaOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl PromoteReadReplicaOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for PromoteReadReplicaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PromoteReadReplicaOutput");
@@ -2060,6 +2397,12 @@ pub struct ModifyOptionGroupOutput {
     /// <p></p>
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
+impl ModifyOptionGroupOutput {
+    /// <p></p>
+    pub fn option_group(&self) -> std::option::Option<&crate::model::OptionGroup> {
+        self.option_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyOptionGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyOptionGroupOutput");
@@ -2111,6 +2454,12 @@ pub struct ModifyGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
+impl ModifyGlobalClusterOutput {
+    /// <p>A data type representing an Aurora global database.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyGlobalClusterOutput");
@@ -2161,6 +2510,12 @@ impl ModifyGlobalClusterOutput {
 pub struct ModifyEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl ModifyEventSubscriptionOutput {
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2216,6 +2571,16 @@ pub struct ModifyDbSubnetGroupOutput {
     /// in the <code>DescribeDBSubnetGroups</code> action.
     /// </p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+}
+impl ModifyDbSubnetGroupOutput {
+    /// <p>Contains the details of an Amazon RDS DB subnet group.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSubnetGroups</code> action.
+    /// </p>
+    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+        self.db_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2280,6 +2645,18 @@ pub struct ModifyDbSnapshotAttributeOutput {
     /// API action.</p>
     pub db_snapshot_attributes_result:
         std::option::Option<crate::model::DbSnapshotAttributesResult>,
+}
+impl ModifyDbSnapshotAttributeOutput {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
+    /// API action.</p>
+    /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
+    /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
+    /// API action.</p>
+    pub fn db_snapshot_attributes_result(
+        &self,
+    ) -> std::option::Option<&crate::model::DbSnapshotAttributesResult> {
+        self.db_snapshot_attributes_result.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbSnapshotAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2351,6 +2728,16 @@ pub struct ModifyDbSnapshotOutput {
     /// </p>
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
+impl ModifyDbSnapshotOutput {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSnapshots</code> action.
+    /// </p>
+    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+        self.db_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyDbSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbSnapshotOutput");
@@ -2410,6 +2797,12 @@ pub struct ModifyDbProxyTargetGroupOutput {
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
     pub db_proxy_target_group: std::option::Option<crate::model::DbProxyTargetGroup>,
 }
+impl ModifyDbProxyTargetGroupOutput {
+    /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
+    pub fn db_proxy_target_group(&self) -> std::option::Option<&crate::model::DbProxyTargetGroup> {
+        self.db_proxy_target_group.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyDbProxyTargetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbProxyTargetGroupOutput");
@@ -2460,6 +2853,12 @@ impl ModifyDbProxyTargetGroupOutput {
 pub struct ModifyDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
+}
+impl ModifyDbProxyEndpointOutput {
+    /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
+    pub fn db_proxy_endpoint(&self) -> std::option::Option<&crate::model::DbProxyEndpoint> {
+        self.db_proxy_endpoint.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbProxyEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2512,6 +2911,12 @@ pub struct ModifyDbProxyOutput {
     /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
+impl ModifyDbProxyOutput {
+    /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
+    pub fn db_proxy(&self) -> std::option::Option<&crate::model::DbProxy> {
+        self.db_proxy.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyDbProxyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbProxyOutput");
@@ -2562,6 +2967,12 @@ impl ModifyDbProxyOutput {
 pub struct ModifyDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
     pub db_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl ModifyDbParameterGroupOutput {
+    /// <p>The name of the DB parameter group.</p>
+    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2616,6 +3027,15 @@ pub struct ModifyDbInstanceOutput {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+}
+impl ModifyDbInstanceOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2678,6 +3098,18 @@ pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// API action.</p>
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+}
+impl ModifyDbClusterSnapshotAttributeOutput {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
+    /// API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
+    /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
+    /// API action.</p>
+    pub fn db_cluster_snapshot_attributes_result(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+        self.db_cluster_snapshot_attributes_result.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterSnapshotAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2759,6 +3191,27 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl ModifyDbClusterParameterGroupOutput {
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 letters or numbers.</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.db_cluster_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2894,6 +3347,53 @@ pub struct ModifyDbClusterEndpointOutput {
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+}
+impl ModifyDbClusterEndpointOutput {
+    /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
+    /// stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_resource_identifier.as_deref()
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
+    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
+    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+        self.custom_endpoint_type.as_deref()
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.static_members.as_deref()
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
+    /// All other eligible instances are reachable through the custom endpoint.
+    /// Only relevant if the list of static members is empty.</p>
+    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_members.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyDbClusterEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3124,6 +3624,16 @@ pub struct ModifyDbClusterOutput {
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl ModifyDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyDbClusterOutput");
@@ -3259,6 +3769,136 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ModifyCustomDbEngineVersionOutput {
+    /// <p>The name of the database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the DB parameter group family for the database engine.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>The description of the database engine.</p>
+    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+        self.db_engine_description.as_deref()
+    }
+    /// <p>The description of the database engine version.</p>
+    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+        self.db_engine_version_description.as_deref()
+    }
+    /// <p>
+    /// The default character set for new instances of this engine version,
+    /// if the <code>CharacterSetName</code> parameter of the CreateDBInstance API
+    /// isn't specified.
+    /// </p>
+    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+        self.default_character_set.as_ref()
+    }
+    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
+    /// </p>
+    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_character_sets.as_deref()
+    }
+    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
+    /// </p>
+    pub fn supported_nchar_character_sets(
+        &self,
+    ) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_nchar_character_sets.as_deref()
+    }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+        self.valid_upgrade_target.as_deref()
+    }
+    /// <p>A list of the time zones supported by this engine for the
+    /// <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.  
+    /// </p>
+    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+        self.supported_timezones.as_deref()
+    }
+    /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.exportable_log_types.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+        self.supports_log_exports_to_cloudwatch_logs
+    }
+    /// <p>Indicates whether the database engine version supports read replicas.</p>
+    pub fn supports_read_replica(&self) -> bool {
+        self.supports_read_replica
+    }
+    /// <p>A list of the supported DB engine modes.</p>
+    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_engine_modes.as_deref()
+    }
+    /// <p>
+    /// A list of features supported by the DB engine.
+    /// </p>
+    /// <p>The supported features vary by DB engine and DB engine version.</p>
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine <engine_name> --engine-version <engine_version></code>
+    /// </p>
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+    /// </p>
+    /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    pub fn supported_feature_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_feature_names.as_deref()
+    }
+    /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    pub fn supports_parallel_query(&self) -> bool {
+        self.supports_parallel_query
+    }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub fn supports_global_databases(&self) -> bool {
+        self.supports_global_databases
+    }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+        self.major_engine_version.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.database_installation_files_s3_bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files.
+    /// If not specified, then no prefix is assumed.</p>
+    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
+        self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn db_engine_version_arn(&self) -> std::option::Option<&str> {
+        self.db_engine_version_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for
+    /// RDS Custom, but optional for Amazon RDS.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>A list of tags.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+    /// </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyCustomDbEngineVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3827,6 +4467,30 @@ pub struct ModifyCurrentDbClusterCapacityOutput {
     /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     pub timeout_action: std::option::Option<std::string::String>,
 }
+impl ModifyCurrentDbClusterCapacityOutput {
+    /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that
+    /// identifies a DB cluster. </p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
+    pub fn pending_capacity(&self) -> std::option::Option<i32> {
+        self.pending_capacity
+    }
+    /// <p>The current capacity of the DB cluster.</p>
+    pub fn current_capacity(&self) -> std::option::Option<i32> {
+        self.current_capacity
+    }
+    /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
+    pub fn seconds_before_timeout(&self) -> std::option::Option<i32> {
+        self.seconds_before_timeout
+    }
+    /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+    /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
+    pub fn timeout_action(&self) -> std::option::Option<&str> {
+        self.timeout_action.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyCurrentDbClusterCapacityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCurrentDbClusterCapacityOutput");
@@ -3937,6 +4601,12 @@ pub struct ModifyCertificatesOutput {
     /// <p>A CA certificate for an Amazon Web Services account.</p>
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
+impl ModifyCertificatesOutput {
+    /// <p>A CA certificate for an Amazon Web Services account.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+        self.certificate.as_ref()
+    }
+}
 impl std::fmt::Debug for ModifyCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCertificatesOutput");
@@ -3987,6 +4657,12 @@ impl ModifyCertificatesOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>List of tags returned by the ListTagsForResource operation.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>List of tags returned by the ListTagsForResource operation.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4059,6 +4735,42 @@ pub struct ImportInstallationMediaOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>If an installation media failure occurred, the cause of the failure.</p>
     pub failure_cause: std::option::Option<crate::model::InstallationMediaFailureCause>,
+}
+impl ImportInstallationMediaOutput {
+    /// <p>The installation medium ID.</p>
+    pub fn installation_media_id(&self) -> std::option::Option<&str> {
+        self.installation_media_id.as_deref()
+    }
+    /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
+    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
+        self.custom_availability_zone_id.as_deref()
+    }
+    /// <p>The DB engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The engine version of the DB engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The path to the installation medium for the DB engine.</p>
+    pub fn engine_installation_media_path(&self) -> std::option::Option<&str> {
+        self.engine_installation_media_path.as_deref()
+    }
+    /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
+    pub fn os_installation_media_path(&self) -> std::option::Option<&str> {
+        self.os_installation_media_path.as_deref()
+    }
+    /// <p>The status of the installation medium.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an installation media failure occurred, the cause of the failure.</p>
+    pub fn failure_cause(
+        &self,
+    ) -> std::option::Option<&crate::model::InstallationMediaFailureCause> {
+        self.failure_cause.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportInstallationMediaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4232,6 +4944,12 @@ pub struct FailoverGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
+impl FailoverGlobalClusterOutput {
+    /// <p>A data type representing an Aurora global database.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for FailoverGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailoverGlobalClusterOutput");
@@ -4286,6 +5004,16 @@ pub struct FailoverDbClusterOutput {
     /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl FailoverDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for FailoverDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4349,6 +5077,20 @@ pub struct DownloadDbLogFilePortionOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     pub additional_data_pending: bool,
+}
+impl DownloadDbLogFilePortionOutput {
+    /// <p>Entries from the specified log file.</p>
+    pub fn log_file_data(&self) -> std::option::Option<&str> {
+        self.log_file_data.as_deref()
+    }
+    /// <p>A pagination token that can be used in a later DownloadDBLogFilePortion request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    pub fn additional_data_pending(&self) -> bool {
+        self.additional_data_pending
+    }
 }
 impl std::fmt::Debug for DownloadDbLogFilePortionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4433,6 +5175,19 @@ pub struct DescribeValidDbInstanceModificationsOutput {
     pub valid_db_instance_modifications_message:
         std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
 }
+impl DescribeValidDbInstanceModificationsOutput {
+    /// <p>Information about valid modifications that you can make to your DB instance.
+    /// Contains the result of a successful call to the
+    /// <code>DescribeValidDBInstanceModifications</code> action.
+    /// You can use this information when you call
+    /// <code>ModifyDBInstance</code>.
+    /// </p>
+    pub fn valid_db_instance_modifications_message(
+        &self,
+    ) -> std::option::Option<&crate::model::ValidDbInstanceModificationsMessage> {
+        self.valid_db_instance_modifications_message.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeValidDbInstanceModificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeValidDbInstanceModificationsOutput");
@@ -4509,6 +5264,22 @@ pub struct DescribeSourceRegionsOutput {
     /// <p>A list of SourceRegion instances that contains each source Amazon Web Services Region that the
     /// current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
     pub source_regions: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>,
+}
+impl DescribeSourceRegionsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of SourceRegion instances that contains each source Amazon Web Services Region that the
+    /// current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
+    pub fn source_regions(&self) -> std::option::Option<&[crate::model::SourceRegion]> {
+        self.source_regions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSourceRegionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4601,6 +5372,23 @@ pub struct DescribeReservedDbInstancesOfferingsOutput {
     /// <p>A list of reserved DB instance offerings.</p>
     pub reserved_db_instances_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
+}
+impl DescribeReservedDbInstancesOfferingsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of reserved DB instance offerings.</p>
+    pub fn reserved_db_instances_offerings(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedDbInstancesOffering]> {
+        self.reserved_db_instances_offerings.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedDbInstancesOfferingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4698,6 +5486,23 @@ pub struct DescribeReservedDbInstancesOutput {
     /// <p>A list of reserved DB instances.</p>
     pub reserved_db_instances: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstance>>,
 }
+impl DescribeReservedDbInstancesOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of reserved DB instances.</p>
+    pub fn reserved_db_instances(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReservedDbInstance]> {
+        self.reserved_db_instances.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedDbInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedDbInstancesOutput");
@@ -4790,6 +5595,24 @@ pub struct DescribePendingMaintenanceActionsOutput {
     /// up to a number of records specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribePendingMaintenanceActionsOutput {
+    /// <p>A list of the pending maintenance actions for the resource.</p>
+    pub fn pending_maintenance_actions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
+        self.pending_maintenance_actions.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// <code>DescribePendingMaintenanceActions</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to a number of records specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePendingMaintenanceActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4893,6 +5716,24 @@ pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeOrderableDbInstanceOptionsOutput {
+    /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
+    pub fn orderable_db_instance_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::OrderableDbInstanceOption]> {
+        self.orderable_db_instance_options.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// OrderableDBInstanceOptions request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrderableDbInstanceOptionsOutput");
@@ -4988,6 +5829,20 @@ pub struct DescribeOptionGroupsOutput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeOptionGroupsOutput {
+    /// <p>List of option groups.</p>
+    pub fn option_groups_list(&self) -> std::option::Option<&[crate::model::OptionGroup]> {
+        self.option_groups_list.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeOptionGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOptionGroupsOutput");
@@ -5071,6 +5926,19 @@ pub struct DescribeOptionGroupOptionsOutput {
     /// only records beyond the marker,
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeOptionGroupOptionsOutput {
+    /// <p>List of available option group options.</p>
+    pub fn option_group_options(&self) -> std::option::Option<&[crate::model::OptionGroupOption]> {
+        self.option_group_options.as_deref()
+    }
+    /// <p>An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOptionGroupOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5157,6 +6025,20 @@ pub struct DescribeInstallationMediaOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.</p>
     pub installation_media: std::option::Option<std::vec::Vec<crate::model::InstallationMedia>>,
+}
+impl DescribeInstallationMediaOutput {
+    /// <p>An optional pagination token provided by a previous
+    /// <a>DescribeInstallationMedia</a> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.</p>
+    pub fn installation_media(&self) -> std::option::Option<&[crate::model::InstallationMedia]> {
+        self.installation_media.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstallationMediaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5248,6 +6130,22 @@ pub struct DescribeGlobalClustersOutput {
     /// </p>
     pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
 }
+impl DescribeGlobalClustersOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// The list of global clusters returned by this request.
+    /// </p>
+    pub fn global_clusters(&self) -> std::option::Option<&[crate::model::GlobalCluster]> {
+        self.global_clusters.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeGlobalClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGlobalClustersOutput");
@@ -5334,6 +6232,18 @@ pub struct DescribeExportTasksOutput {
     /// <p>Information about an export of a snapshot to Amazon S3.</p>
     pub export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
 }
+impl DescribeExportTasksOutput {
+    /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code>
+    /// request. A marker is used for pagination to identify the location to begin output for
+    /// the next response of <code>DescribeExportTasks</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Information about an export of a snapshot to Amazon S3.</p>
+    pub fn export_tasks(&self) -> std::option::Option<&[crate::model::ExportTask]> {
+        self.export_tasks.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExportTasksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExportTasksOutput");
@@ -5416,6 +6326,24 @@ pub struct DescribeEventSubscriptionsOutput {
     /// <p>A list of EventSubscriptions data types.</p>
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+}
+impl DescribeEventSubscriptionsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// DescribeOrderableDBInstanceOptions request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of EventSubscriptions data types.</p>
+    pub fn event_subscriptions_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+        self.event_subscriptions_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEventSubscriptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5515,6 +6443,24 @@ pub struct DescribeEventsOutput {
     /// </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl DescribeEventsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// Events request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>Event</code> instances.
+    /// </p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsOutput");
@@ -5602,6 +6548,14 @@ pub struct DescribeEventCategoriesOutput {
     pub event_categories_map_list:
         std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
+impl DescribeEventCategoriesOutput {
+    /// <p>A list of EventCategoriesMap data types.</p>
+    pub fn event_categories_map_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::EventCategoriesMap]> {
+        self.event_categories_map_list.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventCategoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventCategoriesOutput");
@@ -5665,6 +6619,14 @@ pub struct DescribeEngineDefaultParametersOutput {
     /// </p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
+impl DescribeEngineDefaultParametersOutput {
+    /// <p>
+    /// Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.
+    /// </p>
+    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+        self.engine_defaults.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeEngineDefaultParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEngineDefaultParametersOutput");
@@ -5721,6 +6683,14 @@ pub struct DescribeEngineDefaultClusterParametersOutput {
     /// Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.
     /// </p>
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
+}
+impl DescribeEngineDefaultClusterParametersOutput {
+    /// <p>
+    /// Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.
+    /// </p>
+    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+        self.engine_defaults.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeEngineDefaultClusterParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5787,6 +6757,23 @@ pub struct DescribeDbSubnetGroupsOutput {
     /// A list of <code>DBSubnetGroup</code> instances.
     /// </p>
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
+}
+impl DescribeDbSubnetGroupsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBSubnetGroup</code> instances.
+    /// </p>
+    pub fn db_subnet_groups(&self) -> std::option::Option<&[crate::model::DbSubnetGroup]> {
+        self.db_subnet_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbSubnetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5884,6 +6871,23 @@ pub struct DescribeDbSnapshotsOutput {
     /// </p>
     pub db_snapshots: std::option::Option<std::vec::Vec<crate::model::DbSnapshot>>,
 }
+impl DescribeDbSnapshotsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBSnapshot</code> instances.
+    /// </p>
+    pub fn db_snapshots(&self) -> std::option::Option<&[crate::model::DbSnapshot]> {
+        self.db_snapshots.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbSnapshotsOutput");
@@ -5973,6 +6977,18 @@ pub struct DescribeDbSnapshotAttributesOutput {
     pub db_snapshot_attributes_result:
         std::option::Option<crate::model::DbSnapshotAttributesResult>,
 }
+impl DescribeDbSnapshotAttributesOutput {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
+    /// API action.</p>
+    /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
+    /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
+    /// API action.</p>
+    pub fn db_snapshot_attributes_result(
+        &self,
+    ) -> std::option::Option<&crate::model::DbSnapshotAttributesResult> {
+        self.db_snapshot_attributes_result.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDbSnapshotAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbSnapshotAttributesOutput");
@@ -6049,6 +7065,23 @@ pub struct DescribeDbSecurityGroupsOutput {
     /// A list of <code>DBSecurityGroup</code> instances.
     /// </p>
     pub db_security_groups: std::option::Option<std::vec::Vec<crate::model::DbSecurityGroup>>,
+}
+impl DescribeDbSecurityGroupsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBSecurityGroup</code> instances.
+    /// </p>
+    pub fn db_security_groups(&self) -> std::option::Option<&[crate::model::DbSecurityGroup]> {
+        self.db_security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbSecurityGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6144,6 +7177,20 @@ pub struct DescribeDbProxyTargetsOutput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbProxyTargetsOutput {
+    /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::DbProxyTarget]> {
+        self.targets.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbProxyTargetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbProxyTargetsOutput");
@@ -6227,6 +7274,20 @@ pub struct DescribeDbProxyTargetGroupsOutput {
     /// up to the value specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbProxyTargetGroupsOutput {
+    /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
+    pub fn target_groups(&self) -> std::option::Option<&[crate::model::DbProxyTargetGroup]> {
+        self.target_groups.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbProxyTargetGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6312,6 +7373,20 @@ pub struct DescribeDbProxyEndpointsOutput {
     /// up to the value specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbProxyEndpointsOutput {
+    /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
+    pub fn db_proxy_endpoints(&self) -> std::option::Option<&[crate::model::DbProxyEndpoint]> {
+        self.db_proxy_endpoints.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbProxyEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6401,6 +7476,20 @@ pub struct DescribeDbProxiesOutput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbProxiesOutput {
+    /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
+    pub fn db_proxies(&self) -> std::option::Option<&[crate::model::DbProxy]> {
+        self.db_proxies.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbProxiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbProxiesOutput");
@@ -6489,6 +7578,23 @@ pub struct DescribeDbParametersOutput {
     /// up to the value specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbParametersOutput {
+    /// <p>
+    /// A list of <code>Parameter</code> values.
+    /// </p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6585,6 +7691,23 @@ pub struct DescribeDbParameterGroupsOutput {
     /// </p>
     pub db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
 }
+impl DescribeDbParameterGroupsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBParameterGroup</code> instances.
+    /// </p>
+    pub fn db_parameter_groups(&self) -> std::option::Option<&[crate::model::DbParameterGroup]> {
+        self.db_parameter_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbParameterGroupsOutput");
@@ -6678,6 +7801,18 @@ pub struct DescribeDbLogFilesOutput {
     /// <p>A pagination token that can be used in a later DescribeDBLogFiles request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeDbLogFilesOutput {
+    /// <p>The DB log files returned.</p>
+    pub fn describe_db_log_files(
+        &self,
+    ) -> std::option::Option<&[crate::model::DescribeDbLogFilesDetails]> {
+        self.describe_db_log_files.as_deref()
+    }
+    /// <p>A pagination token that can be used in a later DescribeDBLogFiles request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbLogFilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbLogFilesOutput");
@@ -6762,6 +7897,23 @@ pub struct DescribeDbInstancesOutput {
     /// A list of <code>DBInstance</code> instances.
     /// </p>
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
+}
+impl DescribeDbInstancesOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBInstance</code> instances.
+    /// </p>
+    pub fn db_instances(&self) -> std::option::Option<&[crate::model::DbInstance]> {
+        self.db_instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6858,6 +8010,25 @@ pub struct DescribeDbInstanceAutomatedBackupsOutput {
     /// </p>
     pub db_instance_automated_backups:
         std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
+}
+impl DescribeDbInstanceAutomatedBackupsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBInstanceAutomatedBackup</code> instances.
+    /// </p>
+    pub fn db_instance_automated_backups(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbInstanceAutomatedBackup]> {
+        self.db_instance_automated_backups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbInstanceAutomatedBackupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6961,6 +8132,23 @@ pub struct DescribeDbEngineVersionsOutput {
     /// </p>
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
 }
+impl DescribeDbEngineVersionsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>
+    /// A list of <code>DBEngineVersion</code> elements.
+    /// </p>
+    pub fn db_engine_versions(&self) -> std::option::Option<&[crate::model::DbEngineVersion]> {
+        self.db_engine_versions.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbEngineVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbEngineVersionsOutput");
@@ -7059,6 +8247,22 @@ pub struct DescribeDbClusterSnapshotsOutput {
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
 }
+impl DescribeDbClusterSnapshotsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterSnapshots</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Provides a list of DB cluster snapshots for the user.</p>
+    pub fn db_cluster_snapshots(&self) -> std::option::Option<&[crate::model::DbClusterSnapshot]> {
+        self.db_cluster_snapshots.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterSnapshotsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterSnapshotsOutput");
@@ -7150,6 +8354,18 @@ pub struct DescribeDbClusterSnapshotAttributesOutput {
     pub db_cluster_snapshot_attributes_result:
         std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
+impl DescribeDbClusterSnapshotAttributesOutput {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
+    /// API action.</p>
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
+    /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
+    /// API action.</p>
+    pub fn db_cluster_snapshot_attributes_result(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+        self.db_cluster_snapshot_attributes_result.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterSnapshotAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterSnapshotAttributesOutput");
@@ -7217,6 +8433,16 @@ pub struct DescribeDbClustersOutput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Contains a list of DB clusters for the user.</p>
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
+}
+impl DescribeDbClustersOutput {
+    /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Contains a list of DB clusters for the user.</p>
+    pub fn db_clusters(&self) -> std::option::Option<&[crate::model::DbCluster]> {
+        self.db_clusters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7295,6 +8521,22 @@ pub struct DescribeDbClusterParametersOutput {
     /// up to the value specified by <code>MaxRecords</code> .
     /// </p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeDbClusterParametersOutput {
+    /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// DescribeDBClusterParameters request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClusterParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7386,6 +8628,24 @@ pub struct DescribeDbClusterParameterGroupsOutput {
     /// <p>A list of DB cluster parameter groups.</p>
     pub db_cluster_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+}
+impl DescribeDbClusterParameterGroupsOutput {
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterParameterGroups</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>A list of DB cluster parameter groups.</p>
+    pub fn db_cluster_parameter_groups(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbClusterParameterGroup]> {
+        self.db_cluster_parameter_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDbClusterParameterGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7484,6 +8744,22 @@ pub struct DescribeDbClusterEndpointsOutput {
     /// and matching any filter conditions.</p>
     pub db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
 }
+impl DescribeDbClusterEndpointsOutput {
+    /// <p> An optional pagination token provided by a previous
+    /// <code>DescribeDBClusterEndpoints</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Contains the details of the endpoints associated with the cluster
+    /// and matching any filter conditions.</p>
+    pub fn db_cluster_endpoints(&self) -> std::option::Option<&[crate::model::DbClusterEndpoint]> {
+        self.db_cluster_endpoints.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterEndpointsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterEndpointsOutput");
@@ -7572,6 +8848,18 @@ pub struct DescribeDbClusterBacktracksOutput {
     /// <p>Contains a list of backtracks for the user.</p>
     pub db_cluster_backtracks: std::option::Option<std::vec::Vec<crate::model::DbClusterBacktrack>>,
 }
+impl DescribeDbClusterBacktracksOutput {
+    /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Contains a list of backtracks for the user.</p>
+    pub fn db_cluster_backtracks(
+        &self,
+    ) -> std::option::Option<&[crate::model::DbClusterBacktrack]> {
+        self.db_cluster_backtracks.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDbClusterBacktracksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDbClusterBacktracksOutput");
@@ -7652,6 +8940,22 @@ pub struct DescribeCustomAvailabilityZonesOutput {
     /// <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.</p>
     pub custom_availability_zones:
         std::option::Option<std::vec::Vec<crate::model::CustomAvailabilityZone>>,
+}
+impl DescribeCustomAvailabilityZonesOutput {
+    /// <p>An optional pagination token provided by a previous
+    /// <code>DescribeCustomAvailabilityZones</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.</p>
+    pub fn custom_availability_zones(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomAvailabilityZone]> {
+        self.custom_availability_zones.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomAvailabilityZonesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7743,6 +9047,22 @@ pub struct DescribeCertificatesOutput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeCertificatesOutput {
+    /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+        self.certificates.as_deref()
+    }
+    /// <p>
+    /// An optional pagination token provided by a previous
+    /// <code>DescribeCertificates</code> request.
+    /// If this parameter is specified, the response includes
+    /// only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code> .
+    /// </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCertificatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCertificatesOutput");
@@ -7825,6 +9145,13 @@ pub struct DescribeAccountAttributesOutput {
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name,
     /// a count of usage toward the quota maximum, and a maximum value for the quota.</p>
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
+}
+impl DescribeAccountAttributesOutput {
+    /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name,
+    /// a count of usage toward the quota maximum, and a maximum value for the quota.</p>
+    pub fn account_quotas(&self) -> std::option::Option<&[crate::model::AccountQuota]> {
+        self.account_quotas.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7959,6 +9286,42 @@ pub struct DeleteInstallationMediaOutput {
     pub status: std::option::Option<std::string::String>,
     /// <p>If an installation media failure occurred, the cause of the failure.</p>
     pub failure_cause: std::option::Option<crate::model::InstallationMediaFailureCause>,
+}
+impl DeleteInstallationMediaOutput {
+    /// <p>The installation medium ID.</p>
+    pub fn installation_media_id(&self) -> std::option::Option<&str> {
+        self.installation_media_id.as_deref()
+    }
+    /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
+    pub fn custom_availability_zone_id(&self) -> std::option::Option<&str> {
+        self.custom_availability_zone_id.as_deref()
+    }
+    /// <p>The DB engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The engine version of the DB engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The path to the installation medium for the DB engine.</p>
+    pub fn engine_installation_media_path(&self) -> std::option::Option<&str> {
+        self.engine_installation_media_path.as_deref()
+    }
+    /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
+    pub fn os_installation_media_path(&self) -> std::option::Option<&str> {
+        self.os_installation_media_path.as_deref()
+    }
+    /// <p>The status of the installation medium.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>If an installation media failure occurred, the cause of the failure.</p>
+    pub fn failure_cause(
+        &self,
+    ) -> std::option::Option<&crate::model::InstallationMediaFailureCause> {
+        self.failure_cause.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteInstallationMediaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8132,6 +9495,12 @@ pub struct DeleteGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
+impl DeleteGlobalClusterOutput {
+    /// <p>A data type representing an Aurora global database.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGlobalClusterOutput");
@@ -8182,6 +9551,12 @@ impl DeleteGlobalClusterOutput {
 pub struct DeleteEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl DeleteEventSubscriptionOutput {
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8267,6 +9642,16 @@ pub struct DeleteDbSnapshotOutput {
     /// in the <code>DescribeDBSnapshots</code> action.
     /// </p>
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
+}
+impl DeleteDbSnapshotOutput {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSnapshots</code> action.
+    /// </p>
+    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+        self.db_snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDbSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8357,6 +9742,12 @@ pub struct DeleteDbProxyEndpointOutput {
     /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
+impl DeleteDbProxyEndpointOutput {
+    /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
+    pub fn db_proxy_endpoint(&self) -> std::option::Option<&crate::model::DbProxyEndpoint> {
+        self.db_proxy_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDbProxyEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbProxyEndpointOutput");
@@ -8407,6 +9798,12 @@ impl DeleteDbProxyEndpointOutput {
 pub struct DeleteDbProxyOutput {
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
+}
+impl DeleteDbProxyOutput {
+    /// <p>The data structure representing the details of the DB proxy that you delete.</p>
+    pub fn db_proxy(&self) -> std::option::Option<&crate::model::DbProxy> {
+        self.db_proxy.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDbProxyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8487,6 +9884,15 @@ pub struct DeleteDbInstanceAutomatedBackupOutput {
     /// existed at the time you deleted the source instance.</p>
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
+impl DeleteDbInstanceAutomatedBackupOutput {
+    /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that
+    /// existed at the time you deleted the source instance.</p>
+    pub fn db_instance_automated_backup(
+        &self,
+    ) -> std::option::Option<&crate::model::DbInstanceAutomatedBackup> {
+        self.db_instance_automated_backup.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDbInstanceAutomatedBackupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbInstanceAutomatedBackupOutput");
@@ -8550,6 +9956,15 @@ pub struct DeleteDbInstanceOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl DeleteDbInstanceOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbInstanceOutput");
@@ -8610,6 +10025,16 @@ pub struct DeleteDbClusterSnapshotOutput {
     /// in the <code>DescribeDBClusterSnapshots</code> action.
     /// </p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+}
+impl DeleteDbClusterSnapshotOutput {
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBClusterSnapshots</code> action.
+    /// </p>
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+        self.db_cluster_snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDbClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8747,6 +10172,53 @@ pub struct DeleteDbClusterEndpointOutput {
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+}
+impl DeleteDbClusterEndpointOutput {
+    /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
+    /// stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_resource_identifier.as_deref()
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
+    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
+    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+        self.custom_endpoint_type.as_deref()
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.static_members.as_deref()
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
+    /// All other eligible instances are reachable through the custom endpoint.
+    /// Only relevant if the list of static members is empty.</p>
+    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_members.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDbClusterEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8977,6 +10449,16 @@ pub struct DeleteDbClusterOutput {
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl DeleteDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDbClusterOutput");
@@ -9112,6 +10594,136 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DeleteCustomDbEngineVersionOutput {
+    /// <p>The name of the database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the DB parameter group family for the database engine.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>The description of the database engine.</p>
+    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+        self.db_engine_description.as_deref()
+    }
+    /// <p>The description of the database engine version.</p>
+    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+        self.db_engine_version_description.as_deref()
+    }
+    /// <p>
+    /// The default character set for new instances of this engine version,
+    /// if the <code>CharacterSetName</code> parameter of the CreateDBInstance API
+    /// isn't specified.
+    /// </p>
+    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+        self.default_character_set.as_ref()
+    }
+    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
+    /// </p>
+    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_character_sets.as_deref()
+    }
+    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
+    /// </p>
+    pub fn supported_nchar_character_sets(
+        &self,
+    ) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_nchar_character_sets.as_deref()
+    }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+        self.valid_upgrade_target.as_deref()
+    }
+    /// <p>A list of the time zones supported by this engine for the
+    /// <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.  
+    /// </p>
+    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+        self.supported_timezones.as_deref()
+    }
+    /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.exportable_log_types.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+        self.supports_log_exports_to_cloudwatch_logs
+    }
+    /// <p>Indicates whether the database engine version supports read replicas.</p>
+    pub fn supports_read_replica(&self) -> bool {
+        self.supports_read_replica
+    }
+    /// <p>A list of the supported DB engine modes.</p>
+    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_engine_modes.as_deref()
+    }
+    /// <p>
+    /// A list of features supported by the DB engine.
+    /// </p>
+    /// <p>The supported features vary by DB engine and DB engine version.</p>
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine <engine_name> --engine-version <engine_version></code>
+    /// </p>
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+    /// </p>
+    /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    pub fn supported_feature_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_feature_names.as_deref()
+    }
+    /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    pub fn supports_parallel_query(&self) -> bool {
+        self.supports_parallel_query
+    }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub fn supports_global_databases(&self) -> bool {
+        self.supports_global_databases
+    }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+        self.major_engine_version.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.database_installation_files_s3_bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files.
+    /// If not specified, then no prefix is assumed.</p>
+    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
+        self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn db_engine_version_arn(&self) -> std::option::Option<&str> {
+        self.db_engine_version_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for
+    /// RDS Custom, but optional for Amazon RDS.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>A list of tags.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+    /// </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCustomDbEngineVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9674,6 +11286,18 @@ pub struct DeleteCustomAvailabilityZoneOutput {
     /// </p>
     pub custom_availability_zone: std::option::Option<crate::model::CustomAvailabilityZone>,
 }
+impl DeleteCustomAvailabilityZoneOutput {
+    /// <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
+    /// <p>For more information about RDS on VMware, see the
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+    /// RDS on VMware User Guide.</a>
+    /// </p>
+    pub fn custom_availability_zone(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomAvailabilityZone> {
+        self.custom_availability_zone.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteCustomAvailabilityZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomAvailabilityZoneOutput");
@@ -9737,6 +11361,12 @@ pub struct CreateOptionGroupOutput {
     /// <p></p>
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
+impl CreateOptionGroupOutput {
+    /// <p></p>
+    pub fn option_group(&self) -> std::option::Option<&crate::model::OptionGroup> {
+        self.option_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateOptionGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOptionGroupOutput");
@@ -9788,6 +11418,12 @@ pub struct CreateGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
+impl CreateGlobalClusterOutput {
+    /// <p>A data type representing an Aurora global database.</p>
+    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+        self.global_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateGlobalClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGlobalClusterOutput");
@@ -9838,6 +11474,12 @@ impl CreateGlobalClusterOutput {
 pub struct CreateEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl CreateEventSubscriptionOutput {
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateEventSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9893,6 +11535,16 @@ pub struct CreateDbSubnetGroupOutput {
     /// in the <code>DescribeDBSubnetGroups</code> action.
     /// </p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+}
+impl CreateDbSubnetGroupOutput {
+    /// <p>Contains the details of an Amazon RDS DB subnet group.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSubnetGroups</code> action.
+    /// </p>
+    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+        self.db_subnet_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbSubnetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9957,6 +11609,16 @@ pub struct CreateDbSnapshotOutput {
     /// </p>
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
+impl CreateDbSnapshotOutput {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSnapshots</code> action.
+    /// </p>
+    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+        self.db_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbSnapshotOutput");
@@ -10020,6 +11682,16 @@ pub struct CreateDbSecurityGroupOutput {
     /// </p>
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
+impl CreateDbSecurityGroupOutput {
+    /// <p>Contains the details for an Amazon RDS DB security group.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSecurityGroups</code> action.
+    /// </p>
+    pub fn db_security_group(&self) -> std::option::Option<&crate::model::DbSecurityGroup> {
+        self.db_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbSecurityGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbSecurityGroupOutput");
@@ -10081,6 +11753,14 @@ pub struct CreateDbProxyEndpointOutput {
     /// or read-only operations, or using a different VPC than the proxy's default VPC.</p>
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
+impl CreateDbProxyEndpointOutput {
+    /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation.
+    /// The DB proxy endpoint that you create might provide capabilities such as read/write
+    /// or read-only operations, or using a different VPC than the proxy's default VPC.</p>
+    pub fn db_proxy_endpoint(&self) -> std::option::Option<&crate::model::DbProxyEndpoint> {
+        self.db_proxy_endpoint.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbProxyEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbProxyEndpointOutput");
@@ -10136,6 +11816,12 @@ pub struct CreateDbProxyOutput {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
+impl CreateDbProxyOutput {
+    /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
+    pub fn db_proxy(&self) -> std::option::Option<&crate::model::DbProxy> {
+        self.db_proxy.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbProxyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbProxyOutput");
@@ -10186,6 +11872,15 @@ pub struct CreateDbParameterGroupOutput {
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
     /// </p>
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
+}
+impl CreateDbParameterGroupOutput {
+    /// <p>Contains the details of an Amazon RDS DB parameter group.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
+    /// </p>
+    pub fn db_parameter_group(&self) -> std::option::Option<&crate::model::DbParameterGroup> {
+        self.db_parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10247,6 +11942,15 @@ pub struct CreateDbInstanceReadReplicaOutput {
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
+impl CreateDbInstanceReadReplicaOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbInstanceReadReplicaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbInstanceReadReplicaOutput");
@@ -10306,6 +12010,15 @@ pub struct CreateDbInstanceOutput {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+}
+impl CreateDbInstanceOutput {
+    /// <p>Contains the details of an Amazon RDS DB instance.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// </p>
+    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+        self.db_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10368,6 +12081,16 @@ pub struct CreateDbClusterSnapshotOutput {
     /// </p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
+impl CreateDbClusterSnapshotOutput {
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBClusterSnapshots</code> action.
+    /// </p>
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+        self.db_cluster_snapshot.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterSnapshotOutput");
@@ -10429,6 +12152,17 @@ pub struct CreateDbClusterParameterGroupOutput {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
     /// </p>
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+}
+impl CreateDbClusterParameterGroupOutput {
+    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
+    /// </p>
+    pub fn db_cluster_parameter_group(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+        self.db_cluster_parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10541,6 +12275,53 @@ pub struct CreateDbClusterEndpointOutput {
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+}
+impl CreateDbClusterEndpointOutput {
+    /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_identifier.as_deref()
+    }
+    /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
+    /// stored as a lowercase string.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_resource_identifier.as_deref()
+    }
+    /// <p>The DNS address of the endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
+    /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+        self.endpoint_type.as_deref()
+    }
+    /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
+    /// <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+        self.custom_endpoint_type.as_deref()
+    }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.static_members.as_deref()
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
+    /// All other eligible instances are reachable through the custom endpoint.
+    /// Only relevant if the list of static members is empty.</p>
+    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+        self.excluded_members.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+        self.db_cluster_endpoint_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDbClusterEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10771,6 +12552,16 @@ pub struct CreateDbClusterOutput {
     /// </p>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
+impl CreateDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
+    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// </p>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbClusterOutput");
@@ -10906,6 +12697,136 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateCustomDbEngineVersionOutput {
+    /// <p>The name of the database engine.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the DB parameter group family for the database engine.</p>
+    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.db_parameter_group_family.as_deref()
+    }
+    /// <p>The description of the database engine.</p>
+    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+        self.db_engine_description.as_deref()
+    }
+    /// <p>The description of the database engine version.</p>
+    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+        self.db_engine_version_description.as_deref()
+    }
+    /// <p>
+    /// The default character set for new instances of this engine version,
+    /// if the <code>CharacterSetName</code> parameter of the CreateDBInstance API
+    /// isn't specified.
+    /// </p>
+    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+        self.default_character_set.as_ref()
+    }
+    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
+    /// </p>
+    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_character_sets.as_deref()
+    }
+    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.  
+    /// </p>
+    pub fn supported_nchar_character_sets(
+        &self,
+    ) -> std::option::Option<&[crate::model::CharacterSet]> {
+        self.supported_nchar_character_sets.as_deref()
+    }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+        self.valid_upgrade_target.as_deref()
+    }
+    /// <p>A list of the time zones supported by this engine for the
+    /// <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.  
+    /// </p>
+    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+        self.supported_timezones.as_deref()
+    }
+    /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.exportable_log_types.as_deref()
+    }
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+        self.supports_log_exports_to_cloudwatch_logs
+    }
+    /// <p>Indicates whether the database engine version supports read replicas.</p>
+    pub fn supports_read_replica(&self) -> bool {
+        self.supports_read_replica
+    }
+    /// <p>A list of the supported DB engine modes.</p>
+    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_engine_modes.as_deref()
+    }
+    /// <p>
+    /// A list of features supported by the DB engine.
+    /// </p>
+    /// <p>The supported features vary by DB engine and DB engine version.</p>
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine <engine_name> --engine-version <engine_version></code>
+    /// </p>
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI,
+    /// use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+    /// </p>
+    /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    pub fn supported_feature_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_feature_names.as_deref()
+    }
+    /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    pub fn supports_parallel_query(&self) -> bool {
+        self.supports_parallel_query
+    }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub fn supports_global_databases(&self) -> bool {
+        self.supports_global_databases
+    }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+        self.major_engine_version.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.database_installation_files_s3_bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files.
+    /// If not specified, then no prefix is assumed.</p>
+    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
+        self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn db_engine_version_arn(&self) -> std::option::Option<&str> {
+        self.db_engine_version_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for
+    /// RDS Custom, but optional for Amazon RDS.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>A list of tags.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
+    /// </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCustomDbEngineVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11468,6 +13389,18 @@ pub struct CreateCustomAvailabilityZoneOutput {
     /// </p>
     pub custom_availability_zone: std::option::Option<crate::model::CustomAvailabilityZone>,
 }
+impl CreateCustomAvailabilityZoneOutput {
+    /// <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p>
+    /// <p>For more information about RDS on VMware, see the
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
+    /// RDS on VMware User Guide.</a>
+    /// </p>
+    pub fn custom_availability_zone(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomAvailabilityZone> {
+        self.custom_availability_zone.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCustomAvailabilityZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomAvailabilityZoneOutput");
@@ -11531,6 +13464,12 @@ pub struct CopyOptionGroupOutput {
     /// <p></p>
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
+impl CopyOptionGroupOutput {
+    /// <p></p>
+    pub fn option_group(&self) -> std::option::Option<&crate::model::OptionGroup> {
+        self.option_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CopyOptionGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyOptionGroupOutput");
@@ -11585,6 +13524,16 @@ pub struct CopyDbSnapshotOutput {
     /// in the <code>DescribeDBSnapshots</code> action.
     /// </p>
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
+}
+impl CopyDbSnapshotOutput {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSnapshots</code> action.
+    /// </p>
+    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+        self.db_snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyDbSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11648,6 +13597,15 @@ pub struct CopyDbParameterGroupOutput {
     /// </p>
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
+impl CopyDbParameterGroupOutput {
+    /// <p>Contains the details of an Amazon RDS DB parameter group.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
+    /// </p>
+    pub fn db_parameter_group(&self) -> std::option::Option<&crate::model::DbParameterGroup> {
+        self.db_parameter_group.as_ref()
+    }
+}
 impl std::fmt::Debug for CopyDbParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyDbParameterGroupOutput");
@@ -11708,6 +13666,16 @@ pub struct CopyDbClusterSnapshotOutput {
     /// in the <code>DescribeDBClusterSnapshots</code> action.
     /// </p>
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+}
+impl CopyDbClusterSnapshotOutput {
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBClusterSnapshots</code> action.
+    /// </p>
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+        self.db_cluster_snapshot.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyDbClusterSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11770,6 +13738,17 @@ pub struct CopyDbClusterParameterGroupOutput {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
     /// </p>
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+}
+impl CopyDbClusterParameterGroupOutput {
+    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.
+    /// </p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
+    /// </p>
+    pub fn db_cluster_parameter_group(
+        &self,
+    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+        self.db_cluster_parameter_group.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyDbClusterParameterGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11892,6 +13871,95 @@ pub struct CancelExportTaskOutput {
     pub failure_cause: std::option::Option<std::string::String>,
     /// <p>A warning about the snapshot export task.</p>
     pub warning_message: std::option::Option<std::string::String>,
+}
+impl CancelExportTaskOutput {
+    /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
+    /// the Amazon S3 bucket where the snapshot is exported to. </p>
+    pub fn export_task_identifier(&self) -> std::option::Option<&str> {
+        self.export_task_identifier.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The data exported from the snapshot. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>database</code> - Export all the data from a specified database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>database.table</code>
+    /// <i>table-name</i> -
+    /// Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>database.schema</code>
+    /// <i>schema-name</i> - Export a database schema of the snapshot.
+    /// This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>database.schema.table</code>
+    /// <i>table-name</i> - Export a table of the database schema.
+    /// This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p>
+    /// </li>
+    /// </ul>
+    pub fn export_only(&self) -> std::option::Option<&[std::string::String]> {
+        self.export_only.as_deref()
+    }
+    /// <p>The time that the snapshot was created.</p>
+    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_time.as_ref()
+    }
+    /// <p>The time that the snapshot export task started.</p>
+    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_start_time.as_ref()
+    }
+    /// <p>The time that the snapshot export task completed.</p>
+    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.task_end_time.as_ref()
+    }
+    /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+    /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to
+    /// Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+    /// must have encryption and decryption permissions to use this KMS key. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The progress status of the export task.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The progress of the snapshot export task as a percentage.</p>
+    pub fn percent_progress(&self) -> i32 {
+        self.percent_progress
+    }
+    /// <p>The total amount of data exported, in gigabytes.</p>
+    pub fn total_extracted_data_in_gb(&self) -> i32 {
+        self.total_extracted_data_in_gb
+    }
+    /// <p>The reason the export failed, if it failed.</p>
+    pub fn failure_cause(&self) -> std::option::Option<&str> {
+        self.failure_cause.as_deref()
+    }
+    /// <p>A warning about the snapshot export task.</p>
+    pub fn warning_message(&self) -> std::option::Option<&str> {
+        self.warning_message.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelExportTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12236,6 +14304,53 @@ pub struct BacktrackDbClusterOutput {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
 }
+impl BacktrackDbClusterOutput {
+    /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+    /// <p>Contains the backtrack identifier.</p>
+    pub fn backtrack_identifier(&self) -> std::option::Option<&str> {
+        self.backtrack_identifier.as_deref()
+    }
+    /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
+    pub fn backtrack_to(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backtrack_to.as_ref()
+    }
+    /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
+    pub fn backtracked_from(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backtracked_from.as_ref()
+    }
+    /// <p>The timestamp of the time at which the backtrack was requested.</p>
+    pub fn backtrack_request_creation_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.backtrack_request_creation_time.as_ref()
+    }
+    /// <p>The status of the backtrack. This property returns one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+}
 impl std::fmt::Debug for BacktrackDbClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BacktrackDbClusterOutput");
@@ -12409,6 +14524,16 @@ pub struct AuthorizeDbSecurityGroupIngressOutput {
     /// </p>
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
+impl AuthorizeDbSecurityGroupIngressOutput {
+    /// <p>Contains the details for an Amazon RDS DB security group.
+    /// </p>
+    /// <p>This data type is used as a response element
+    /// in the <code>DescribeDBSecurityGroups</code> action.
+    /// </p>
+    pub fn db_security_group(&self) -> std::option::Option<&crate::model::DbSecurityGroup> {
+        self.db_security_group.as_ref()
+    }
+}
 impl std::fmt::Debug for AuthorizeDbSecurityGroupIngressOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthorizeDbSecurityGroupIngressOutput");
@@ -12468,6 +14593,14 @@ pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>Describes the pending maintenance actions for a resource.</p>
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+}
+impl ApplyPendingMaintenanceActionOutput {
+    /// <p>Describes the pending maintenance actions for a resource.</p>
+    pub fn resource_pending_maintenance_actions(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
+        self.resource_pending_maintenance_actions.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplyPendingMaintenanceActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12556,6 +14689,12 @@ impl AddTagsToResourceOutput {
 pub struct AddSourceIdentifierToSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+}
+impl AddSourceIdentifierToSubscriptionOutput {
+    /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+        self.event_subscription.as_ref()
+    }
 }
 impl std::fmt::Debug for AddSourceIdentifierToSubscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

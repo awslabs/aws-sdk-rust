@@ -8139,6 +8139,12 @@ pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn retry_after_seconds(&self) -> i32 {
+        self.retry_after_seconds
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");

@@ -130,10 +130,7 @@ impl AcceptInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -321,10 +318,7 @@ impl ArchiveFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_archive_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_archive_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -546,10 +540,8 @@ impl CreateDetectorInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_detector(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_detector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1149,10 +1141,7 @@ impl CreateFilterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_filter(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1416,10 +1405,7 @@ impl CreateIpSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_set(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1608,10 +1594,7 @@ impl CreateMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1829,7 +1812,7 @@ impl CreatePublishingDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_publishing_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_publishing_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2016,10 +1999,9 @@ impl CreateSampleFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sample_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_sample_findings(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2289,10 +2271,7 @@ impl CreateThreatIntelSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_threat_intel_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2448,10 +2427,7 @@ impl DeclineInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2933,10 +2909,7 @@ impl DeleteInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3302,10 +3275,7 @@ impl DeleteMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4160,7 +4130,7 @@ impl DisableOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4503,10 +4473,7 @@ impl DisassociateMembersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_members(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4657,7 +4624,7 @@ impl EnableOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5182,10 +5149,7 @@ impl GetFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5394,10 +5358,7 @@ impl GetFindingsStatisticsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_findings_statistics(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6026,10 +5987,7 @@ impl GetMemberDetectorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_member_detectors(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_member_detectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6216,10 +6174,7 @@ impl GetMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6642,10 +6597,7 @@ impl GetUsageStatisticsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_usage_statistics(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_usage_statistics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6860,10 +6812,7 @@ impl InviteMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_invite_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_invite_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7757,10 +7706,7 @@ impl ListFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9236,10 +9182,7 @@ impl StartMonitoringMembersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_monitoring_members(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9429,10 +9372,7 @@ impl StopMonitoringMembersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_monitoring_members(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9621,10 +9561,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9810,10 +9747,7 @@ impl UnarchiveFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_unarchive_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_unarchive_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10198,10 +10132,8 @@ impl UpdateDetectorInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_detector(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_detector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10451,10 +10383,7 @@ impl UpdateFilterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_filter(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_filter(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10666,10 +10595,7 @@ impl UpdateFindingsFeedbackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_findings_feedback(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10899,10 +10825,7 @@ impl UpdateIpSetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_ip_set(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_ip_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11105,10 +11028,7 @@ impl UpdateMemberDetectorsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_member_detectors(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11305,7 +11225,7 @@ impl UpdateOrganizationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11523,7 +11443,7 @@ impl UpdatePublishingDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_publishing_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_publishing_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11762,10 +11682,7 @@ impl UpdateThreatIntelSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_threat_intel_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11844,6 +11761,30 @@ pub struct UpdateThreatIntelSetInput {
     /// not.</p>
     pub activate: bool,
 }
+impl UpdateThreatIntelSetInput {
+    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
+    /// update.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    pub fn threat_intel_set_id(&self) -> std::option::Option<&str> {
+        self.threat_intel_set_id.as_deref()
+    }
+    /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
+    /// not.</p>
+    pub fn activate(&self) -> bool {
+        self.activate
+    }
+}
 impl std::fmt::Debug for UpdateThreatIntelSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThreatIntelSetInput");
@@ -11868,6 +11809,23 @@ pub struct UpdatePublishingDestinationInput {
     /// and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
 }
+impl UpdatePublishingDestinationInput {
+    /// <p>The ID of the detector associated with the publishing destinations to update.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The ID of the publishing destination to update.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
+    /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+    pub fn destination_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationProperties> {
+        self.destination_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePublishingDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePublishingDestinationInput");
@@ -11889,6 +11847,22 @@ pub struct UpdateOrganizationConfigurationInput {
     /// <p>Describes which data sources will be updated.</p>
     pub data_sources: std::option::Option<crate::model::OrganizationDataSourceConfigurations>,
 }
+impl UpdateOrganizationConfigurationInput {
+    /// <p>The ID of the detector to update the delegated administrator for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+    /// <p>Describes which data sources will be updated.</p>
+    pub fn data_sources(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationDataSourceConfigurations> {
+        self.data_sources.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
@@ -11909,6 +11883,20 @@ pub struct UpdateMemberDetectorsInput {
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes which data sources will be updated.</p>
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurations>,
+}
+impl UpdateMemberDetectorsInput {
+    /// <p>The detector ID of the administrator account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of member account IDs to be updated.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>Describes which data sources will be updated.</p>
+    pub fn data_sources(&self) -> std::option::Option<&crate::model::DataSourceConfigurations> {
+        self.data_sources.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMemberDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11936,6 +11924,29 @@ pub struct UpdateIpSetInput {
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub activate: bool,
 }
+impl UpdateIpSetInput {
+    /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
+    /// <p>The unique ID that specifies the IPSet that you want to update.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated URI of the file that contains the IPSet. For example:
+    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
+    pub fn activate(&self) -> bool {
+        self.activate
+    }
+}
 impl std::fmt::Debug for UpdateIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIpSetInput");
@@ -11960,6 +11971,24 @@ pub struct UpdateFindingsFeedbackInput {
     pub feedback: std::option::Option<crate::model::Feedback>,
     /// <p>Additional feedback about the GuardDuty findings.</p>
     pub comments: std::option::Option<std::string::String>,
+}
+impl UpdateFindingsFeedbackInput {
+    /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+    /// <p>The feedback for the finding.</p>
+    pub fn feedback(&self) -> std::option::Option<&crate::model::Feedback> {
+        self.feedback.as_ref()
+    }
+    /// <p>Additional feedback about the GuardDuty findings.</p>
+    pub fn comments(&self) -> std::option::Option<&str> {
+        self.comments.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFindingsFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11991,6 +12020,34 @@ pub struct UpdateFilterInput {
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
 }
+impl UpdateFilterInput {
+    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
+    /// update a filter.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The name of the filter.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+    /// <p>The description of the filter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
+        self.action.as_ref()
+    }
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
+    /// order in which this filter is applied to the findings.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFilterInput");
@@ -12018,6 +12075,27 @@ pub struct UpdateDetectorInput {
     /// <p>Describes which data sources will be updated.</p>
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurations>,
 }
+impl UpdateDetectorInput {
+    /// <p>The unique ID of the detector to update.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>Specifies whether the detector is enabled or not enabled.</p>
+    pub fn enable(&self) -> bool {
+        self.enable
+    }
+    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
+    /// Events.</p>
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+        self.finding_publishing_frequency.as_ref()
+    }
+    /// <p>Describes which data sources will be updated.</p>
+    pub fn data_sources(&self) -> std::option::Option<&crate::model::DataSourceConfigurations> {
+        self.data_sources.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDetectorInput");
@@ -12041,6 +12119,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -12058,6 +12146,16 @@ pub struct UnarchiveFindingsInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings to unarchive.</p>
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UnarchiveFindingsInput {
+    /// <p>The ID of the detector associated with the findings to unarchive.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The IDs of the findings to unarchive.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for UnarchiveFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12078,6 +12176,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to be added to a resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -12097,6 +12208,17 @@ pub struct StopMonitoringMembersInput {
     /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl StopMonitoringMembersInput {
+    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
+    /// monitoring member accounts.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for StopMonitoringMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopMonitoringMembersInput");
@@ -12115,6 +12237,17 @@ pub struct StartMonitoringMembersInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StartMonitoringMembersInput {
+    /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
+    /// accounts to monitor.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for StartMonitoringMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12140,6 +12273,24 @@ pub struct ListThreatIntelSetsInput {
     /// continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListThreatIntelSetsInput {
+    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter to paginate results in the response. Set the value of this
+    /// parameter to null on your first call to the list action. For subsequent calls to the action,
+    /// fill nextToken in the request with the value of NextToken from the previous response to
+    /// continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListThreatIntelSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThreatIntelSetsInput");
@@ -12156,6 +12307,12 @@ impl std::fmt::Debug for ListThreatIntelSetsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12179,6 +12336,23 @@ pub struct ListPublishingDestinationsInput {
     /// after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPublishingDestinationsInput {
+    /// <p>The ID of the detector to retrieve publishing destinations for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of
+    /// this parameter to null for the first request to a list action. For subsequent calls, use the
+    /// <code>NextToken</code> value returned from the previous request to continue listing results
+    /// after the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPublishingDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPublishingDestinationsInput");
@@ -12200,6 +12374,19 @@ pub struct ListOrganizationAdminAccountsInput {
     /// <code>NextToken</code> value returned from the previous request to continue listing results
     /// after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationAdminAccountsInput {
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of
+    /// this parameter to null for the first request to a list action. For subsequent calls, use the
+    /// <code>NextToken</code> value returned from the previous request to continue listing results
+    /// after the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12228,6 +12415,29 @@ pub struct ListMembersInput {
     /// members who haven't been invited yet or have been disassociated).</p>
     pub only_associated: std::option::Option<std::string::String>,
 }
+impl ListMembersInput {
+    /// <p>The unique ID of the detector the member is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+    /// in the request with the value of NextToken from the previous response to continue listing
+    /// data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies whether to only return associated members or to return all members (including
+    /// members who haven't been invited yet or have been disassociated).</p>
+    pub fn only_associated(&self) -> std::option::Option<&str> {
+        self.only_associated.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersInput");
@@ -12254,6 +12464,24 @@ pub struct ListIpSetsInput {
     /// data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIpSetsInput {
+    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+    /// in the request with the value of NextToken from the previous response to continue listing
+    /// data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIpSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIpSetsInput");
@@ -12276,6 +12504,20 @@ pub struct ListInvitationsInput {
     /// in the request with the value of NextToken from the previous response to continue listing
     /// data.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInvitationsInput {
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+    /// in the request with the value of NextToken from the previous response to continue listing
+    /// data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12459,6 +12701,186 @@ pub struct ListFindingsInput {
     /// data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFindingsInput {
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
+    /// list.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>Represents the criteria used for querying findings. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>JSON field name</p>
+    /// </li>
+    /// <li>
+    /// <p>accountId</p>
+    /// </li>
+    /// <li>
+    /// <p>region</p>
+    /// </li>
+    /// <li>
+    /// <p>confidence</p>
+    /// </li>
+    /// <li>
+    /// <p>id</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.accessKeyId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.principalId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userName</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userType</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.instanceId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.resourceType</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.actionType</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.api</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.callerType</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.serviceName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.domain</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.blocked</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.connectionDirection</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.protocol</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+    /// </li>
+    /// <li>
+    /// <p>service.additionalInfo.threatListName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.archived</p>
+    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
+    /// to 'false', only unarchived findings are listed. When this attribute is not set, all
+    /// existing findings are listed.</p>
+    /// </li>
+    /// <li>
+    /// <p>service.resourceRole</p>
+    /// </li>
+    /// <li>
+    /// <p>severity</p>
+    /// </li>
+    /// <li>
+    /// <p>type</p>
+    /// </li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
+    /// </li>
+    /// </ul>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>Represents the criteria used for sorting findings.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+    /// in the request with the value of NextToken from the previous response to continue listing
+    /// data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsInput");
@@ -12486,6 +12908,24 @@ pub struct ListFiltersInput {
     /// data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFiltersInput {
+    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+    /// in the request with the value of NextToken from the previous response to continue listing
+    /// data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFiltersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFiltersInput");
@@ -12508,6 +12948,20 @@ pub struct ListDetectorsInput {
     /// in the request with the value of NextToken from the previous response to continue listing
     /// data.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDetectorsInput {
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+    /// response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+    /// in the request with the value of NextToken from the previous response to continue listing
+    /// data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12533,6 +12987,27 @@ pub struct InviteMembersInput {
     /// <p>The invitation message that you want to send to the accounts that you're inviting to
     /// GuardDuty as members.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InviteMembersInput {
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
+    /// with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+    /// members.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
+    pub fn disable_email_notification(&self) -> bool {
+        self.disable_email_notification
+    }
+    /// <p>The invitation message that you want to send to the accounts that you're inviting to
+    /// GuardDuty as members.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for InviteMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12570,6 +13045,37 @@ pub struct GetUsageStatisticsInput {
     /// page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetUsageStatisticsInput {
+    /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
+    /// want to retrieve.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The type of usage statistics to retrieve.</p>
+    pub fn usage_statistic_type(&self) -> std::option::Option<&crate::model::UsageStatisticType> {
+        self.usage_statistic_type.as_ref()
+    }
+    /// <p>Represents the criteria used for querying usage.</p>
+    pub fn usage_criteria(&self) -> std::option::Option<&crate::model::UsageCriteria> {
+        self.usage_criteria.as_ref()
+    }
+    /// <p>The currency unit you would like to view your usage statistics in. Current valid values
+    /// are USD.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of
+    /// this parameter to null for the first request to a list action. For subsequent calls, use the
+    /// NextToken value returned from the previous request to continue listing results after the first
+    /// page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUsageStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsageStatisticsInput");
@@ -12592,6 +13098,16 @@ pub struct GetThreatIntelSetInput {
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
     pub threat_intel_set_id: std::option::Option<std::string::String>,
 }
+impl GetThreatIntelSetInput {
+    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique ID of the threatIntelSet that you want to get.</p>
+    pub fn threat_intel_set_id(&self) -> std::option::Option<&str> {
+        self.threat_intel_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetThreatIntelSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetThreatIntelSetInput");
@@ -12611,6 +13127,17 @@ pub struct GetMembersInput {
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetMembersInput {
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
+    /// retrieve.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMembersInput");
@@ -12629,6 +13156,16 @@ pub struct GetMemberDetectorsInput {
     /// <p>The account ID of the member account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetMemberDetectorsInput {
+    /// <p>The detector ID for the administrator account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The account ID of the member account.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMemberDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMemberDetectorsInput");
@@ -12644,6 +13181,12 @@ impl std::fmt::Debug for GetMemberDetectorsInput {
 pub struct GetMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: std::option::Option<std::string::String>,
+}
+impl GetMasterAccountInput {
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMasterAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12661,6 +13204,16 @@ pub struct GetIpSetInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the IPSet to retrieve.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
+}
+impl GetIpSetInput {
+    /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique ID of the IPSet to retrieve.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12695,6 +13248,23 @@ pub struct GetFindingsStatisticsInput {
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
 }
+impl GetFindingsStatisticsInput {
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
+    /// want to retrieve.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The types of finding statistics to retrieve.</p>
+    pub fn finding_statistic_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::FindingStatisticType]> {
+        self.finding_statistic_types.as_deref()
+    }
+    /// <p>Represents the criteria that is used for querying findings.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFindingsStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingsStatisticsInput");
@@ -12717,6 +13287,21 @@ pub struct GetFindingsInput {
     /// <p>Represents the criteria used for sorting findings.</p>
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
+impl GetFindingsInput {
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
+    /// retrieve.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The IDs of the findings that you want to retrieve.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+    /// <p>Represents the criteria used for sorting findings.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingsInput");
@@ -12736,6 +13321,16 @@ pub struct GetFilterInput {
     /// <p>The name of the filter you want to get.</p>
     pub filter_name: std::option::Option<std::string::String>,
 }
+impl GetFilterInput {
+    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The name of the filter you want to get.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFilterInput");
@@ -12752,6 +13347,12 @@ pub struct GetDetectorInput {
     /// <p>The unique ID of the detector that you want to get.</p>
     pub detector_id: std::option::Option<std::string::String>,
 }
+impl GetDetectorInput {
+    /// <p>The unique ID of the detector that you want to get.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDetectorInput");
@@ -12767,6 +13368,13 @@ pub struct EnableOrganizationAdminAccountInput {
     /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
     /// administrator.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
+}
+impl EnableOrganizationAdminAccountInput {
+    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
+    /// administrator.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12787,6 +13395,18 @@ pub struct DisassociateMembersInput {
     /// the administrator account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DisassociateMembersInput {
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
+    /// disassociate from the administrator account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
+    /// the administrator account.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateMembersInput");
@@ -12803,6 +13423,12 @@ pub struct DisassociateFromMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: std::option::Option<std::string::String>,
 }
+impl DisassociateFromMasterAccountInput {
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateFromMasterAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateFromMasterAccountInput");
@@ -12818,6 +13444,13 @@ pub struct DisableOrganizationAdminAccountInput {
     /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
     /// administrator.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
+}
+impl DisableOrganizationAdminAccountInput {
+    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
+    /// administrator.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12837,6 +13470,17 @@ pub struct DescribePublishingDestinationInput {
     /// <p>The ID of the publishing destination to retrieve.</p>
     pub destination_id: std::option::Option<std::string::String>,
 }
+impl DescribePublishingDestinationInput {
+    /// <p>The unique ID of the detector associated with the publishing destination to
+    /// retrieve.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The ID of the publishing destination to retrieve.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePublishingDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePublishingDestinationInput");
@@ -12853,6 +13497,13 @@ pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ID of the detector to retrieve information about the delegated administrator
     /// from.</p>
     pub detector_id: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationConfigurationInput {
+    /// <p>The ID of the detector to retrieve information about the delegated administrator
+    /// from.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12871,6 +13522,16 @@ pub struct DeleteThreatIntelSetInput {
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
     pub threat_intel_set_id: std::option::Option<std::string::String>,
 }
+impl DeleteThreatIntelSetInput {
+    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
+    pub fn threat_intel_set_id(&self) -> std::option::Option<&str> {
+        self.threat_intel_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteThreatIntelSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteThreatIntelSetInput");
@@ -12888,6 +13549,16 @@ pub struct DeletePublishingDestinationInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the publishing destination to delete.</p>
     pub destination_id: std::option::Option<std::string::String>,
+}
+impl DeletePublishingDestinationInput {
+    /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The ID of the publishing destination to delete.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePublishingDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12908,6 +13579,17 @@ pub struct DeleteMembersInput {
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteMembersInput {
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
+    /// delete.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMembersInput");
@@ -12926,6 +13608,16 @@ pub struct DeleteIpSetInput {
     /// <p>The unique ID of the IPSet to delete.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
 }
+impl DeleteIpSetInput {
+    /// <p>The unique ID of the detector associated with the IPSet.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique ID of the IPSet to delete.</p>
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+        self.ip_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIpSetInput");
@@ -12942,6 +13634,13 @@ pub struct DeleteInvitationsInput {
     /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
     /// account that you want to delete invitations from.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteInvitationsInput {
+    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
+    /// account that you want to delete invitations from.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12960,6 +13659,16 @@ pub struct DeleteFilterInput {
     /// <p>The name of the filter that you want to delete.</p>
     pub filter_name: std::option::Option<std::string::String>,
 }
+impl DeleteFilterInput {
+    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The name of the filter that you want to delete.</p>
+    pub fn filter_name(&self) -> std::option::Option<&str> {
+        self.filter_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFilterInput");
@@ -12976,6 +13685,12 @@ pub struct DeleteDetectorInput {
     /// <p>The unique ID of the detector that you want to delete.</p>
     pub detector_id: std::option::Option<std::string::String>,
 }
+impl DeleteDetectorInput {
+    /// <p>The unique ID of the detector that you want to delete.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDetectorInput");
@@ -12991,6 +13706,13 @@ pub struct DeclineInvitationsInput {
     /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
     /// account that you want to decline invitations from.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeclineInvitationsInput {
+    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
+    /// account that you want to decline invitations from.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DeclineInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13024,6 +13746,43 @@ pub struct CreateThreatIntelSetInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateThreatIntelSetInput {
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
+    /// threatIntelSet for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
+    /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The format of the file that contains the ThreatIntelSet.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ThreatIntelSetFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The URI of the file that contains the ThreatIntelSet. For example:
+    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
+    /// ThreatIntelSet.</p>
+    pub fn activate(&self) -> bool {
+        self.activate
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags to be added to a new threat list resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateThreatIntelSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateThreatIntelSetInput");
@@ -13046,6 +13805,16 @@ pub struct CreateSampleFindingsInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The types of sample findings to generate.</p>
     pub finding_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CreateSampleFindingsInput {
+    /// <p>The ID of the detector to create sample findings for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The types of sample findings to generate.</p>
+    pub fn finding_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_types.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSampleFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13071,6 +13840,28 @@ pub struct CreatePublishingDestinationInput {
     /// <p>The idempotency token for the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreatePublishingDestinationInput {
+    /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
+    /// supported.</p>
+    pub fn destination_type(&self) -> std::option::Option<&crate::model::DestinationType> {
+        self.destination_type.as_ref()
+    }
+    /// <p>The properties of the publishing destination, including the ARNs for the destination and
+    /// the KMS key used for encryption.</p>
+    pub fn destination_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationProperties> {
+        self.destination_properties.as_ref()
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePublishingDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePublishingDestinationInput");
@@ -13092,6 +13883,18 @@ pub struct CreateMembersInput {
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate
     /// with the GuardDuty administrator account.</p>
     pub account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
+}
+impl CreateMembersInput {
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
+    /// accounts with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>A list of account ID and email address pairs of the accounts that you want to associate
+    /// with the GuardDuty administrator account.</p>
+    pub fn account_details(&self) -> std::option::Option<&[crate::model::AccountDetail]> {
+        self.account_details.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13125,6 +13928,43 @@ pub struct CreateIpSetInput {
     /// <p>The tags to be added to a new IP set resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateIpSetInput {
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
+    /// for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The user-friendly name to identify the IPSet.</p>
+    /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The format of the file that contains the IPSet.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::IpSetFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The URI of the file that contains the IPSet. For example:
+    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
+    /// IPSet.</p>
+    pub fn activate(&self) -> bool {
+        self.activate
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags to be added to a new IP set resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateIpSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13325,6 +14165,206 @@ pub struct CreateFilterInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateFilterInput {
+    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
+    /// for.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the filter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
+        self.action.as_ref()
+    }
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
+    /// order in which this filter is applied to the findings.</p>
+    pub fn rank(&self) -> i32 {
+        self.rank
+    }
+    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    /// <p>You can only use the following attributes to query findings:</p>
+    /// <ul>
+    /// <li>
+    /// <p>accountId</p>
+    /// </li>
+    /// <li>
+    /// <p>region</p>
+    /// </li>
+    /// <li>
+    /// <p>confidence</p>
+    /// </li>
+    /// <li>
+    /// <p>id</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.accessKeyId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.principalId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userName</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userType</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.instanceId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.outpostArn</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p>
+    /// </li>
+    /// <li>
+    /// <p>resource.resourceType</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.actionType</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.api</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.callerType</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.errorCode</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.serviceName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.domain</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.blocked</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.connectionDirection</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.protocol</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+    /// </li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+    /// </li>
+    /// <li>
+    /// <p>service.additionalInfo.threatListName</p>
+    /// </li>
+    /// <li>
+    /// <p>service.archived</p>
+    /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
+    /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
+    /// existing findings are listed.</p>
+    /// </li>
+    /// <li>
+    /// <p>service.resourceRole</p>
+    /// </li>
+    /// <li>
+    /// <p>severity</p>
+    /// </li>
+    /// <li>
+    /// <p>type</p>
+    /// </li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
+    /// depending on whether the value contains milliseconds.</p>
+    /// </li>
+    /// </ul>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The tags to be added to a new filter resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFilterInput");
@@ -13356,6 +14396,33 @@ pub struct CreateDetectorInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateDetectorInput {
+    /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
+    pub fn enable(&self) -> bool {
+        self.enable
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A value that specifies how frequently updated findings are exported.</p>
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+        self.finding_publishing_frequency.as_ref()
+    }
+    /// <p>Describes which data sources will be enabled for the detector.</p>
+    pub fn data_sources(&self) -> std::option::Option<&crate::model::DataSourceConfigurations> {
+        self.data_sources.as_ref()
+    }
+    /// <p>The tags to be added to a new detector resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDetectorInput");
@@ -13381,6 +14448,17 @@ pub struct ArchiveFindingsInput {
     /// <p>The IDs of the findings that you want to archive.</p>
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ArchiveFindingsInput {
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
+    /// archive.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The IDs of the findings that you want to archive.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ArchiveFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArchiveFindingsInput");
@@ -13400,6 +14478,20 @@ pub struct AcceptInvitationInput {
     pub master_id: std::option::Option<std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
+}
+impl AcceptInvitationInput {
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    pub fn master_id(&self) -> std::option::Option<&str> {
+        self.master_id.as_deref()
+    }
+    /// <p>The value that is used to validate the administrator account to the member account.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

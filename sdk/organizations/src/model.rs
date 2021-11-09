@@ -386,6 +386,16 @@ pub struct Policy {
     /// <p>The text content of the policy.</p>
     pub content: std::option::Option<std::string::String>,
 }
+impl Policy {
+    /// <p>A structure that contains additional details about the policy.</p>
+    pub fn policy_summary(&self) -> std::option::Option<&crate::model::PolicySummary> {
+        self.policy_summary.as_ref()
+    }
+    /// <p>The text content of the policy.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+}
 impl std::fmt::Debug for Policy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Policy");
@@ -469,6 +479,41 @@ pub struct PolicySummary {
     /// policy. If true, then you can attach the policy to roots, OUs, or accounts, but you
     /// cannot edit it.</p>
     pub aws_managed: bool,
+}
+impl PolicySummary {
+    /// <p>The unique identifier (ID) of the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
+    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the policy.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of policy.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A boolean value that indicates whether the specified policy is an AWS managed
+    /// policy. If true, then you can attach the policy to roots, OUs, or accounts, but you
+    /// cannot edit it.</p>
+    pub fn aws_managed(&self) -> bool {
+        self.aws_managed
+    }
 }
 impl std::fmt::Debug for PolicySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -684,6 +729,29 @@ pub struct OrganizationalUnit {
     /// character range.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl OrganizationalUnit {
+    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
+    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
+    /// or digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this OU.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of this OU.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for OrganizationalUnit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationalUnit");
@@ -794,6 +862,17 @@ pub struct Tag {
     /// tag to an empty string, but you can't set the value of a tag to null.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key identifier, or name, of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The string value that's associated with the key of the tag. You can set the value of a
+    /// tag to an empty string, but you can't set the value of a tag to null.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -886,6 +965,48 @@ pub struct PolicyTargetSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the policy target.</p>
     pub r#type: std::option::Option<crate::model::TargetType>,
+}
+impl PolicyTargetSummary {
+    /// <p>The unique identifier (ID) of the policy target.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the policy target.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the policy target.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for PolicyTargetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1103,6 +1224,37 @@ pub struct Root {
     /// </note>
     pub policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
 }
+impl Root {
+    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
+    /// from 4 to 32 lowercase letters or digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the root.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The types of policies that are currently enabled for the root and therefore can be
+    /// attached to the root or to its OUs or accounts.</p>
+    /// <note>
+    /// <p>Even if a policy type is shown as available in the organization, you can
+    /// separately enable and disable them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the availability of the policy types in
+    /// that organization.</p>
+    /// </note>
+    pub fn policy_types(&self) -> std::option::Option<&[crate::model::PolicyTypeSummary]> {
+        self.policy_types.as_deref()
+    }
+}
 impl std::fmt::Debug for Root {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Root");
@@ -1229,6 +1381,18 @@ pub struct PolicyTypeSummary {
     /// of the specified type to a root or to an OU or account in that root, it must be
     /// available in the organization and enabled for that root.</p>
     pub status: std::option::Option<crate::model::PolicyTypeStatus>,
+}
+impl PolicyTypeSummary {
+    /// <p>The name of the policy type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The status of the policy type as it relates to the associated root. To attach a policy
+    /// of the specified type to a root or to an OU or account in that root, it must be
+    /// available in the organization and enabled for that root.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PolicyTypeStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for PolicyTypeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1374,6 +1538,31 @@ pub struct Parent {
     pub id: std::option::Option<std::string::String>,
     /// <p>The type of the parent entity.</p>
     pub r#type: std::option::Option<crate::model::ParentType>,
+}
+impl Parent {
+    /// <p>The unique identifier (ID) of the parent entity.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
+    /// digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
+    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
+    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of the parent entity.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ParentType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Parent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1613,6 +1802,111 @@ pub struct Handshake {
     pub action: std::option::Option<crate::model::ActionType>,
     /// <p>Additional information that is needed to process the handshake.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
+}
+impl Handshake {
+    /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when
+    /// it initiates the handshake.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the two accounts that are participating in the handshake.</p>
+    pub fn parties(&self) -> std::option::Option<&[crate::model::HandshakeParty]> {
+        self.parties.as_deref()
+    }
+    /// <p>The current state of the handshake. Use the state to trace the flow of the handshake
+    /// through the process from its creation to its acceptance. The meaning of each of the
+    /// valid values is as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>REQUESTED</b>: This handshake was sent to
+    /// multiple recipients (applicable to only some handshake types) and not all
+    /// recipients have responded yet. The request stays in this state until all
+    /// recipients respond.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>OPEN</b>: This handshake was sent to multiple
+    /// recipients (applicable to only some policy types) and all recipients have
+    /// responded, allowing the originator to complete the handshake action.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CANCELED</b>: This handshake is no longer active
+    /// because it was canceled by the originating account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ACCEPTED</b>: This handshake is complete because
+    /// it has been accepted by the recipient.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DECLINED</b>: This handshake is no longer active
+    /// because it was declined by the recipient account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EXPIRED</b>: This handshake is no longer active
+    /// because the originator did not receive a response of any kind from the recipient
+    /// before the expiration time (15 days).</p>
+    /// </li>
+    /// </ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::HandshakeState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time that the handshake request was made.</p>
+    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_timestamp.as_ref()
+    }
+    /// <p>The date and time that the handshake expires. If the recipient of the handshake
+    /// request fails to respond before the specified date and time, the handshake becomes
+    /// inactive and is no longer valid.</p>
+    pub fn expiration_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration_timestamp.as_ref()
+    }
+    /// <p>The type of handshake, indicating what action occurs when the recipient accepts the
+    /// handshake. The following handshake types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>INVITE</b>: This type of handshake represents a
+    /// request to join an organization. It is always sent from the management account
+    /// to only non-member accounts.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+    /// represents a request to enable all features in an organization. It is always
+    /// sent from the management account to only <i>invited</i> member
+    /// accounts. Created accounts do not receive this because those accounts were
+    /// created by the organization's management account and approval is
+    /// inferred.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>APPROVE_ALL_FEATURES</b>: This type of handshake
+    /// is sent from the Organizations service when all member accounts have approved the
+    /// <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the
+    /// management account and signals the master that it can finalize the process to
+    /// enable all features.</p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action.as_ref()
+    }
+    /// <p>Additional information that is needed to process the handshake.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::HandshakeResource]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for Handshake {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1958,6 +2252,53 @@ pub struct HandshakeResource {
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code>
     /// objects.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
+}
+impl HandshakeResource {
+    /// <p>The information that is passed to the other party in the handshake. The format of the
+    /// value string must match the requirements of the specified type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by
+    /// the other party:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACCOUNT</code> - Specifies an AWS account ID number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ORGANIZATION</code> - Specifies an organization ID number.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>EMAIL</code> - Specifies the email address that is associated with the
+    /// account that receives the handshake. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+    /// management account. Included as information about an organization. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OWNER_NAME</code> - Specifies the name associated with the management
+    /// account. Included as information about an organization. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOTES</code> - Additional text provided by the handshake initiator and
+    /// intended for the recipient to read.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::HandshakeResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>When needed, contains an additional array of <code>HandshakeResource</code>
+    /// objects.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::HandshakeResource]> {
+        self.resources.as_deref()
+    }
 }
 impl std::fmt::Debug for HandshakeResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2353,6 +2694,18 @@ pub struct HandshakeParty {
     /// <p>The type of party.</p>
     pub r#type: std::option::Option<crate::model::HandshakePartyType>,
 }
+impl HandshakeParty {
+    /// <p>The unique identifier (ID) for the party.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of party.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::HandshakePartyType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for HandshakeParty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeParty");
@@ -2490,6 +2843,23 @@ pub struct HandshakeFilter {
     /// followed by from 8 to 32 lowercase letters or digits.</p>
     pub parent_handshake_id: std::option::Option<std::string::String>,
 }
+impl HandshakeFilter {
+    /// <p>Specifies the type of handshake action.</p>
+    /// <p>If you specify <code>ActionType</code>, you cannot also specify
+    /// <code>ParentHandshakeId</code>.</p>
+    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of
+    /// another type.</p>
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify
+    /// <code>ActionType</code>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
+    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn parent_handshake_id(&self) -> std::option::Option<&str> {
+        self.parent_handshake_id.as_deref()
+    }
+}
 impl std::fmt::Debug for HandshakeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeFilter");
@@ -2576,6 +2946,19 @@ pub struct DelegatedService {
     pub service_principal: std::option::Option<std::string::String>,
     /// <p>The date that the account became a delegated administrator for this service. </p>
     pub delegation_enabled_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DelegatedService {
+    /// <p>The name of an AWS service that can request an operation for the specified service.
+    /// This is typically in the form of a URL, such as:
+    /// <code>
+    /// <i>servicename</i>.amazonaws.com</code>.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
+    /// <p>The date that the account became a delegated administrator for this service. </p>
+    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.delegation_enabled_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DelegatedService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2666,6 +3049,43 @@ pub struct DelegatedAdministrator {
     pub joined_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the account was made a delegated administrator.</p>
     pub delegation_enabled_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DelegatedAdministrator {
+    /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The email address that is associated with the delegated administrator's AWS
+    /// account.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The friendly name of the delegated administrator's account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the delegated administrator's account in the organization.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The method by which the delegated administrator's account joined the
+    /// organization.</p>
+    pub fn joined_method(&self) -> std::option::Option<&crate::model::AccountJoinedMethod> {
+        self.joined_method.as_ref()
+    }
+    /// <p>The date when the delegated administrator's account became a part of the
+    /// organization.</p>
+    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.joined_timestamp.as_ref()
+    }
+    /// <p>The date when the account was made a delegated administrator.</p>
+    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.delegation_enabled_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DelegatedAdministrator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3013,6 +3433,105 @@ pub struct CreateAccountStatus {
     /// </li>
     /// </ul>
     pub failure_reason: std::option::Option<crate::model::CreateAccountFailureReason>,
+}
+impl CreateAccountStatus {
+    /// <p>The unique identifier (ID) that references this request. You get this value from the
+    /// response of the initial <a>CreateAccount</a> request to create the
+    /// account.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
+    /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The account name given to the account when it was created.</p>
+    pub fn account_name(&self) -> std::option::Option<&str> {
+        self.account_name.as_deref()
+    }
+    /// <p>The status of the asynchronous request to create an AWS account.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CreateAccountState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time that the request was made for the account creation.</p>
+    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.requested_timestamp.as_ref()
+    }
+    /// <p>The date and time that the account was created and the request completed.</p>
+    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_timestamp.as_ref()
+    }
+    /// <p>If the account was created successfully, the unique identifier (ID) of the new
+    /// account.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
+    /// digits.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>If the account was created successfully, the unique identifier (ID) of the new account
+    /// in the AWS GovCloud (US) Region.</p>
+    pub fn gov_cloud_account_id(&self) -> std::option::Option<&str> {
+        self.gov_cloud_account_id.as_deref()
+    }
+    /// <p>If the request failed, a description of the reason for the failure.</p>
+    /// <ul>
+    /// <li>
+    /// <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached
+    /// the limit on the number of accounts in your organization.</p>
+    /// </li>
+    /// <li>
+    /// <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same
+    /// information.</p>
+    /// </li>
+    /// <li>
+    /// <p>EMAIL_ALREADY_EXISTS: The account could not be created because another AWS
+    /// account with that email address already exists.</p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization
+    /// failed to receive business license validation.</p>
+    /// </li>
+    /// <li>
+    /// <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+    /// could not be created because this Region already includes an account with that
+    /// email address.</p>
+    /// </li>
+    /// <li>
+    /// <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your
+    /// organization can't complete business license validation because it doesn't have
+    /// valid identity data.</p>
+    /// </li>
+    /// <li>
+    /// <p>INVALID_ADDRESS: The account could not be created because the address you
+    /// provided is not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>INVALID_EMAIL: The account could not be created because the email address you
+    /// provided is not valid.</p>
+    /// </li>
+    /// <li>
+    /// <p>INTERNAL_FAILURE: The account could not be created because of an internal
+    /// failure. Try again later. If the problem persists, contact AWS Customer
+    /// Support.</p>
+    /// </li>
+    /// <li>
+    /// <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
+    /// not received Business Validation.</p>
+    /// </li>
+    /// <li>
+    /// <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+    /// valid payment method, such as a credit card.</p>
+    /// </li>
+    /// <li>
+    /// <p>PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is
+    /// still in the process of completing business license validation.</p>
+    /// </li>
+    /// <li>
+    /// <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has
+    /// an unknown issue with business license validation.</p>
+    /// </li>
+    /// </ul>
+    pub fn failure_reason(&self) -> std::option::Option<&crate::model::CreateAccountFailureReason> {
+        self.failure_reason.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAccountStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3499,6 +4018,31 @@ pub struct Child {
     /// <p>The type of this child entity.</p>
     pub r#type: std::option::Option<crate::model::ChildType>,
 }
+impl Child {
+    /// <p>The unique identifier (ID) of this child entity.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Organizational unit (OU)</b> - A string that begins with
+    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that
+    /// contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional
+    /// lowercase letters or digits.</p>
+    /// </li>
+    /// </ul>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of this child entity.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChildType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for Child {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Child");
@@ -3650,6 +4194,18 @@ pub struct EnabledServicePrincipal {
     /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
     pub date_enabled: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EnabledServicePrincipal {
+    /// <p>The name of the service principal. This is typically in the form of a URL, such as:
+    /// <code>
+    /// <i>servicename</i>.amazonaws.com</code>.</p>
+    pub fn service_principal(&self) -> std::option::Option<&str> {
+        self.service_principal.as_deref()
+    }
+    /// <p>The date that the service principal was enabled for integration with AWS Organizations.</p>
+    pub fn date_enabled(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_enabled.as_ref()
+    }
+}
 impl std::fmt::Debug for EnabledServicePrincipal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnabledServicePrincipal");
@@ -3742,6 +4298,45 @@ pub struct Account {
     pub joined_method: std::option::Option<crate::model::AccountJoinedMethod>,
     /// <p>The date the account became a part of the organization.</p>
     pub joined_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Account {
+    /// <p>The unique identifier (ID) of the account.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
+    /// digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the account.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The email address associated with the AWS account.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a
+    /// standard internet email address.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The friendly name of the account.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of any of the characters in the ASCII
+    /// character range.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the account in the organization.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The method by which the account joined the organization.</p>
+    pub fn joined_method(&self) -> std::option::Option<&crate::model::AccountJoinedMethod> {
+        self.joined_method.as_ref()
+    }
+    /// <p>The date the account became a part of the organization.</p>
+    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.joined_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for Account {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4022,6 +4617,57 @@ pub struct Organization {
     /// use the <a>ListRoots</a> operation instead.</p>
     pub available_policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
 }
+impl Organization {
+    /// <p>The unique identifier (ID) of an organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
+    /// followed by from 10 to 32 lowercase letters or digits.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the functionality that currently is available to the organization. If set to
+    /// "ALL", then all features are enabled and policies can be applied to accounts in the
+    /// organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing
+    /// functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features
+    /// in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    pub fn feature_set(&self) -> std::option::Option<&crate::model::OrganizationFeatureSet> {
+        self.feature_set.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management
+    /// account for the organization.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+    /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.</p>
+    pub fn master_account_arn(&self) -> std::option::Option<&str> {
+        self.master_account_arn.as_deref()
+    }
+    /// <p>The unique identifier (ID) of the management account of an organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
+    /// digits.</p>
+    pub fn master_account_id(&self) -> std::option::Option<&str> {
+        self.master_account_id.as_deref()
+    }
+    /// <p>The email address that is associated with the AWS account that is designated as the
+    /// management account for the organization.</p>
+    pub fn master_account_email(&self) -> std::option::Option<&str> {
+        self.master_account_email.as_deref()
+    }
+    /// <important>
+    /// <p>Do not use. This field is deprecated and doesn't provide complete information
+    /// about the policies in your organization.</p>
+    /// </important>
+    /// <p>To determine the policies that are enabled and available for use in your organization,
+    /// use the <a>ListRoots</a> operation instead.</p>
+    pub fn available_policy_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::PolicyTypeSummary]> {
+        self.available_policy_types.as_deref()
+    }
+}
 impl std::fmt::Debug for Organization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Organization");
@@ -4273,6 +4919,24 @@ pub struct EffectivePolicy {
     pub target_id: std::option::Option<std::string::String>,
     /// <p>The policy type.</p>
     pub policy_type: std::option::Option<crate::model::EffectivePolicyType>,
+}
+impl EffectivePolicy {
+    /// <p>The text content of the policy.</p>
+    pub fn policy_content(&self) -> std::option::Option<&str> {
+        self.policy_content.as_deref()
+    }
+    /// <p>The time of the last update to this policy.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_timestamp.as_ref()
+    }
+    /// <p>The account ID of the policy target. </p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The policy type.</p>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::EffectivePolicyType> {
+        self.policy_type.as_ref()
+    }
 }
 impl std::fmt::Debug for EffectivePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

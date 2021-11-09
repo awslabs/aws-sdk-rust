@@ -121,10 +121,7 @@ impl AddCustomRoutingEndpointsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_custom_routing_endpoints(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -274,10 +271,7 @@ impl AdvertiseByoipCidrInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_advertise_byoip_cidr(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_advertise_byoip_cidr(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -524,10 +518,7 @@ impl AllowCustomRoutingTrafficInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_allow_custom_routing_traffic(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -792,10 +783,7 @@ impl CreateAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_accelerator(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_accelerator(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1061,7 +1049,7 @@ impl CreateCustomRoutingAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_accelerator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1279,7 +1267,7 @@ impl CreateCustomRoutingEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_endpoint_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1479,7 +1467,7 @@ impl CreateCustomRoutingListenerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_listener(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1822,10 +1810,7 @@ impl CreateEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_endpoint_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2067,10 +2052,8 @@ impl CreateListenerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_listener(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_listener(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2223,10 +2206,7 @@ impl DeleteAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_accelerator(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_accelerator(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2380,7 +2360,7 @@ impl DeleteCustomRoutingAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_accelerator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2535,7 +2515,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_endpoint_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2687,7 +2667,7 @@ impl DeleteCustomRoutingListenerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_listener(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2841,10 +2821,7 @@ impl DeleteEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2993,10 +2970,8 @@ impl DeleteListenerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_listener(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_listener(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3241,10 +3216,7 @@ impl DenyCustomRoutingTrafficInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deny_custom_routing_traffic(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3394,10 +3366,9 @@ impl DeprovisionByoipCidrInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deprovision_byoip_cidr(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deprovision_byoip_cidr(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3550,10 +3521,7 @@ impl DescribeAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3707,7 +3675,7 @@ impl DescribeAcceleratorAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3862,7 +3830,7 @@ impl DescribeCustomRoutingAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4020,7 +3988,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4176,7 +4144,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_endpoint_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4328,7 +4296,7 @@ impl DescribeCustomRoutingListenerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_listener(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4484,10 +4452,7 @@ impl DescribeEndpointGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4637,10 +4602,7 @@ impl DescribeListenerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_listener(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_listener(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4802,10 +4764,7 @@ impl ListAcceleratorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_accelerators(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_accelerators(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4969,10 +4928,7 @@ impl ListByoipCidrsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_byoip_cidrs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_byoip_cidrs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5135,7 +5091,7 @@ impl ListCustomRoutingAcceleratorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_accelerators(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_accelerators(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5311,7 +5267,7 @@ impl ListCustomRoutingEndpointGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_endpoint_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_endpoint_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5490,7 +5446,7 @@ impl ListCustomRoutingListenersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_listeners(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_listeners(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5684,7 +5640,7 @@ impl ListCustomRoutingPortMappingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5880,7 +5836,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings_by_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings_by_destination(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6056,10 +6012,7 @@ impl ListEndpointGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_endpoint_groups(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_endpoint_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6235,10 +6188,7 @@ impl ListListenersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_listeners(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_listeners(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6388,10 +6338,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6568,10 +6517,7 @@ impl ProvisionByoipCidrInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_provision_byoip_cidr(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_provision_byoip_cidr(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6748,7 +6694,7 @@ impl RemoveCustomRoutingEndpointsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_custom_routing_endpoints(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_custom_routing_endpoints(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6919,10 +6865,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7092,10 +7035,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7291,10 +7231,7 @@ impl UpdateAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_accelerator(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_accelerator(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7508,7 +7445,7 @@ impl UpdateAcceleratorAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_accelerator_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7706,7 +7643,7 @@ impl UpdateCustomRoutingAcceleratorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7924,7 +7861,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator_attributes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8103,7 +8040,7 @@ impl UpdateCustomRoutingListenerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_listener(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8412,10 +8349,7 @@ impl UpdateEndpointGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_endpoint_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_endpoint_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8634,10 +8568,8 @@ impl UpdateListenerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_listener(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_listener(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8785,10 +8717,7 @@ impl WithdrawByoipCidrInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_withdraw_byoip_cidr(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_withdraw_byoip_cidr(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8857,6 +8786,12 @@ pub struct WithdrawByoipCidrInput {
     /// <p>The address range, in CIDR notation.</p>
     pub cidr: std::option::Option<std::string::String>,
 }
+impl WithdrawByoipCidrInput {
+    /// <p>The address range, in CIDR notation.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
+}
 impl std::fmt::Debug for WithdrawByoipCidrInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WithdrawByoipCidrInput");
@@ -8888,6 +8823,35 @@ pub struct UpdateListenerInput {
     /// source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub client_affinity: std::option::Option<crate::model::ClientAffinity>,
+}
+impl UpdateListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.port_ranges.as_deref()
+    }
+    /// <p>The updated protocol for the connections from clients to the accelerator.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
+    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
+    /// route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
+    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
+    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
+    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
+    /// be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
+    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
+    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>The default value is <code>NONE</code>.</p>
+    pub fn client_affinity(&self) -> std::option::Option<&crate::model::ClientAffinity> {
+        self.client_affinity.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8938,6 +8902,60 @@ pub struct UpdateEndpointGroupInput {
     /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub port_overrides: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
 }
+impl UpdateEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
+    pub fn endpoint_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointConfiguration]> {
+        self.endpoint_configurations.as_deref()
+    }
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
+    /// this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
+    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The default value is 100.</p>
+    pub fn traffic_dial_percentage(&self) -> std::option::Option<f32> {
+        self.traffic_dial_percentage
+    }
+    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
+    /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
+    /// the first port in the list.</p>
+    pub fn health_check_port(&self) -> std::option::Option<i32> {
+        self.health_check_port
+    }
+    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
+    /// value is TCP.</p>
+    pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::HealthCheckProtocol> {
+        self.health_check_protocol.as_ref()
+    }
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
+    /// default value is slash (/).</p>
+    pub fn health_check_path(&self) -> std::option::Option<&str> {
+        self.health_check_path.as_deref()
+    }
+    /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
+    pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
+        self.health_check_interval_seconds
+    }
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
+    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    pub fn threshold_count(&self) -> std::option::Option<i32> {
+        self.threshold_count
+    }
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+    /// For example, you can create a port override in which the listener
+    /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
+    /// and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn port_overrides(&self) -> std::option::Option<&[crate::model::PortOverride]> {
+        self.port_overrides.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEndpointGroupInput");
@@ -8968,6 +8986,19 @@ pub struct UpdateCustomRoutingListenerInput {
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
     /// endpoints for custom routing accelerators</a>.</p>
     pub port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
+}
+impl UpdateCustomRoutingListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
+    /// currently being used by a subnet endpoint, the call fails.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+    /// endpoints for custom routing accelerators</a>.</p>
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.port_ranges.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCustomRoutingListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9000,6 +9031,33 @@ pub struct UpdateCustomRoutingAcceleratorAttributesInput {
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
+impl UpdateCustomRoutingAcceleratorAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
+    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
+        self.flow_logs_enabled
+    }
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+    /// bucket.</p>
+    pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_bucket.as_deref()
+    }
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+    /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the
+    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
+    pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCustomRoutingAcceleratorAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomRoutingAcceleratorAttributesInput");
@@ -9025,6 +9083,26 @@ pub struct UpdateCustomRoutingAcceleratorInput {
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: std::option::Option<bool>,
+}
+impl UpdateCustomRoutingAcceleratorInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
+    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the address type must be IPv4.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl std::fmt::Debug for UpdateCustomRoutingAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9059,6 +9137,33 @@ pub struct UpdateAcceleratorAttributesInput {
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
 }
+impl UpdateAcceleratorAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
+    /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
+        self.flow_logs_enabled
+    }
+    /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+    /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+    /// bucket.</p>
+    pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_bucket.as_deref()
+    }
+    /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+    /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+    /// <p>If you don’t specify a prefix, the flow logs are stored in the
+    /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
+    pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
+        self.flow_logs_s3_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAcceleratorAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAcceleratorAttributesInput");
@@ -9085,6 +9190,26 @@ pub struct UpdateAcceleratorInput {
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl UpdateAcceleratorInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
+    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The IP address type, which must be IPv4.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for UpdateAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAcceleratorInput");
@@ -9105,6 +9230,16 @@ pub struct UntagResourceInput {
     /// <p>The tag key pairs that you want to remove from the specified resources.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key pairs that you want to remove from the specified resources.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -9122,6 +9257,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9141,6 +9286,17 @@ pub struct RemoveCustomRoutingEndpointsInput {
     pub endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl RemoveCustomRoutingEndpointsInput {
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
+    /// subnet IDs. </p>
+    pub fn endpoint_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.endpoint_ids.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveCustomRoutingEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9164,6 +9320,22 @@ pub struct ProvisionByoipCidrInput {
     /// </p>
     pub cidr_authorization_context: std::option::Option<crate::model::CidrAuthorizationContext>,
 }
+impl ProvisionByoipCidrInput {
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
+    /// specify is /24. The address range cannot overlap with another address range that you've brought
+    /// to this or another Region.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
+    /// Amazon using BYOIP.
+    /// </p>
+    pub fn cidr_authorization_context(
+        &self,
+    ) -> std::option::Option<&crate::model::CidrAuthorizationContext> {
+        self.cidr_authorization_context.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionByoipCidrInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionByoipCidrInput");
@@ -9183,6 +9355,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -9201,6 +9379,20 @@ pub struct ListListenersInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListListenersInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListListenersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9222,6 +9414,20 @@ pub struct ListEndpointGroupsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEndpointGroupsInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEndpointGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9247,6 +9453,25 @@ pub struct ListCustomRoutingPortMappingsByDestinationInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCustomRoutingPortMappingsByDestinationInput {
+    /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
+    /// mappings.</p>
+    pub fn destination_address(&self) -> std::option::Option<&str> {
+        self.destination_address.as_deref()
+    }
+    /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCustomRoutingPortMappingsByDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomRoutingPortMappingsByDestinationInput");
@@ -9271,6 +9496,24 @@ pub struct ListCustomRoutingPortMappingsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCustomRoutingPortMappingsInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCustomRoutingPortMappingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomRoutingPortMappingsInput");
@@ -9293,6 +9536,20 @@ pub struct ListCustomRoutingListenersInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCustomRoutingListenersInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCustomRoutingListenersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomRoutingListenersInput");
@@ -9314,6 +9571,20 @@ pub struct ListCustomRoutingEndpointGroupsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCustomRoutingEndpointGroupsInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCustomRoutingEndpointGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCustomRoutingEndpointGroupsInput");
@@ -9332,6 +9603,16 @@ pub struct ListCustomRoutingAcceleratorsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomRoutingAcceleratorsInput {
+    /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomRoutingAcceleratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9352,6 +9633,17 @@ pub struct ListByoipCidrsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListByoipCidrsInput {
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
+    /// another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListByoipCidrsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListByoipCidrsInput");
@@ -9370,6 +9662,16 @@ pub struct ListAcceleratorsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAcceleratorsInput {
+    /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAcceleratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAcceleratorsInput");
@@ -9386,6 +9688,12 @@ pub struct DescribeListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     pub listener_arn: std::option::Option<std::string::String>,
 }
+impl DescribeListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeListenerInput");
@@ -9400,6 +9708,12 @@ impl std::fmt::Debug for DescribeListenerInput {
 pub struct DescribeEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9416,6 +9730,12 @@ pub struct DescribeCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     pub listener_arn: std::option::Option<std::string::String>,
 }
+impl DescribeCustomRoutingListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomRoutingListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomRoutingListenerInput");
@@ -9430,6 +9750,12 @@ impl std::fmt::Debug for DescribeCustomRoutingListenerInput {
 pub struct DescribeCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl DescribeCustomRoutingEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomRoutingEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9446,6 +9772,12 @@ pub struct DescribeCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
+impl DescribeCustomRoutingAcceleratorAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCustomRoutingAcceleratorAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCustomRoutingAcceleratorAttributesInput");
@@ -9460,6 +9792,12 @@ impl std::fmt::Debug for DescribeCustomRoutingAcceleratorAttributesInput {
 pub struct DescribeCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
+}
+impl DescribeCustomRoutingAcceleratorInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCustomRoutingAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9476,6 +9814,12 @@ pub struct DescribeAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAcceleratorAttributesInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAcceleratorAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAcceleratorAttributesInput");
@@ -9490,6 +9834,12 @@ impl std::fmt::Debug for DescribeAcceleratorAttributesInput {
 pub struct DescribeAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAcceleratorInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9506,6 +9856,13 @@ pub struct DeprovisionByoipCidrInput {
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
     /// when you provisioned the address range.</p>
     pub cidr: std::option::Option<std::string::String>,
+}
+impl DeprovisionByoipCidrInput {
+    /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
+    /// when you provisioned the address range.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
 }
 impl std::fmt::Debug for DeprovisionByoipCidrInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9540,6 +9897,38 @@ pub struct DenyCustomRoutingTrafficInput {
     /// <p>The default value is FALSE.</p>
     pub deny_all_traffic_to_endpoint: std::option::Option<bool>,
 }
+impl DenyCustomRoutingTrafficInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
+    /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
+    /// endpoint group.</p>
+    pub fn destination_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.destination_addresses.as_deref()
+    }
+    /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
+    /// receiving traffic.</p>
+    pub fn destination_ports(&self) -> std::option::Option<&[i32]> {
+        self.destination_ports.as_deref()
+    }
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
+    /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
+    /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
+    /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
+    /// the same as the ports configured for the endpoint group.</p>
+    /// <p>The default value is FALSE.</p>
+    pub fn deny_all_traffic_to_endpoint(&self) -> std::option::Option<bool> {
+        self.deny_all_traffic_to_endpoint
+    }
+}
 impl std::fmt::Debug for DenyCustomRoutingTrafficInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DenyCustomRoutingTrafficInput");
@@ -9562,6 +9951,12 @@ pub struct DeleteListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: std::option::Option<std::string::String>,
 }
+impl DeleteListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteListenerInput");
@@ -9576,6 +9971,12 @@ impl std::fmt::Debug for DeleteListenerInput {
 pub struct DeleteEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9592,6 +9993,12 @@ pub struct DeleteCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
     pub listener_arn: std::option::Option<std::string::String>,
 }
+impl DeleteCustomRoutingListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCustomRoutingListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomRoutingListenerInput");
@@ -9606,6 +10013,12 @@ impl std::fmt::Debug for DeleteCustomRoutingListenerInput {
 pub struct DeleteCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl DeleteCustomRoutingEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCustomRoutingEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9622,6 +10035,12 @@ pub struct DeleteCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
+impl DeleteCustomRoutingAcceleratorInput {
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCustomRoutingAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomRoutingAcceleratorInput");
@@ -9636,6 +10055,12 @@ impl std::fmt::Debug for DeleteCustomRoutingAcceleratorInput {
 pub struct DeleteAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
     pub accelerator_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAcceleratorInput {
+    /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9671,6 +10096,40 @@ pub struct CreateListenerInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
     /// uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
+}
+impl CreateListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.port_ranges.as_deref()
+    }
+    /// <p>The protocol for connections from clients to your accelerator.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
+    /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
+    /// route each client to the same specific endpoint.</p>
+    /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
+    /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
+    /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
+    /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
+    /// be always routed to the same endpoint because the hash value changes. </p>
+    /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
+    /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
+    /// source (client) IP address and destination IP address—to select the hash value.</p>
+    /// <p>The default value is <code>NONE</code>.</p>
+    pub fn client_affinity(&self) -> std::option::Option<&crate::model::ClientAffinity> {
+        self.client_affinity.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+    /// uniqueness—of the request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9728,6 +10187,70 @@ pub struct CreateEndpointGroupInput {
     /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub port_overrides: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
 }
+impl CreateEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
+    /// specific Region.</p>
+    pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
+        self.endpoint_group_region.as_deref()
+    }
+    /// <p>The list of endpoint objects.</p>
+    pub fn endpoint_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointConfiguration]> {
+        self.endpoint_configurations.as_deref()
+    }
+    /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
+    /// this listener. </p>
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
+    /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The default value is 100.</p>
+    pub fn traffic_dial_percentage(&self) -> std::option::Option<f32> {
+        self.traffic_dial_percentage
+    }
+    /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
+    /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
+    /// first port in the list.</p>
+    pub fn health_check_port(&self) -> std::option::Option<i32> {
+        self.health_check_port
+    }
+    /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
+    /// value is TCP.</p>
+    pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::HealthCheckProtocol> {
+        self.health_check_protocol.as_ref()
+    }
+    /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
+    /// default value is slash (/).</p>
+    pub fn health_check_path(&self) -> std::option::Option<&str> {
+        self.health_check_path.as_deref()
+    }
+    /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
+    pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
+        self.health_check_interval_seconds
+    }
+    /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
+    /// unhealthy endpoint to healthy. The default value is 3.</p>
+    pub fn threshold_count(&self) -> std::option::Option<i32> {
+        self.threshold_count
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+    /// uniqueness—of the request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+    /// For example, you can create a port override in which the listener
+    /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
+    /// and 1443, respectively, on the endpoints.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn port_overrides(&self) -> std::option::Option<&[crate::model::PortOverride]> {
+        self.port_overrides.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEndpointGroupInput");
@@ -9763,6 +10286,23 @@ pub struct CreateCustomRoutingListenerInput {
     /// uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
+impl CreateCustomRoutingListenerInput {
+    /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+        self.accelerator_arn.as_deref()
+    }
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+    /// endpoints for custom routing accelerators</a>.</p>
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::model::PortRange]> {
+        self.port_ranges.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+    /// uniqueness—of the request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomRoutingListenerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomRoutingListenerInput");
@@ -9789,6 +10329,29 @@ pub struct CreateCustomRoutingEndpointGroupInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
     /// uniqueness—of the request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
+}
+impl CreateCustomRoutingEndpointGroupInput {
+    /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
+        self.listener_arn.as_deref()
+    }
+    /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
+    /// specific Region.</p>
+    pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
+        self.endpoint_group_region.as_deref()
+    }
+    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
+    /// client traffic on.</p>
+    pub fn destination_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomRoutingDestinationConfiguration]> {
+        self.destination_configurations.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+    /// uniqueness—of the request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCustomRoutingEndpointGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9835,6 +10398,46 @@ pub struct CreateCustomRoutingAcceleratorInput {
     /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateCustomRoutingAcceleratorInput {
+    /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
+    /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the address type must be IPv4.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+    /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+    /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
+    /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
+    /// accelerator from the AWS IP address pool.</p>
+    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+    /// accelerator with the new addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+    /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_addresses.as_deref()
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+    /// is, the uniqueness—of the request.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>Create tags for an accelerator.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomRoutingAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomRoutingAcceleratorInput");
@@ -9879,6 +10482,46 @@ pub struct CreateAcceleratorInput {
     /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAcceleratorInput {
+    /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
+    /// hyphens (-), and must not begin or end with a hyphen.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value for the address type must be IPv4.</p>
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+    /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+    /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+    /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
+    /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
+    /// accelerator from the AWS IP address pool.</p>
+    /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+    /// accelerator with the new addresses.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
+    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_addresses.as_deref()
+    }
+    /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+    /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+    /// uniqueness—of an accelerator.</p>
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
+    /// <p>Create tags for an accelerator.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAcceleratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAcceleratorInput");
@@ -9918,6 +10561,39 @@ pub struct AllowCustomRoutingTrafficInput {
     /// <p>The default value is FALSE.</p>
     pub allow_all_traffic_to_endpoint: std::option::Option<bool>,
 }
+impl AllowCustomRoutingTrafficInput {
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
+    /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
+    /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+    /// <p>
+    /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
+    /// not specified.</p>
+    pub fn destination_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.destination_addresses.as_deref()
+    }
+    /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
+    pub fn destination_ports(&self) -> std::option::Option<&[i32]> {
+        self.destination_ports.as_deref()
+    }
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
+    /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
+    /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
+    /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
+    /// the same as the ports configured for the endpoint group.</p>
+    /// <p>The default value is FALSE.</p>
+    pub fn allow_all_traffic_to_endpoint(&self) -> std::option::Option<bool> {
+        self.allow_all_traffic_to_endpoint
+    }
+}
 impl std::fmt::Debug for AllowCustomRoutingTrafficInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AllowCustomRoutingTrafficInput");
@@ -9941,6 +10617,13 @@ pub struct AdvertiseByoipCidrInput {
     /// You can't advertise only a portion of the provisioned range.</p>
     pub cidr: std::option::Option<std::string::String>,
 }
+impl AdvertiseByoipCidrInput {
+    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
+    /// You can't advertise only a portion of the provisioned range.</p>
+    pub fn cidr(&self) -> std::option::Option<&str> {
+        self.cidr.as_deref()
+    }
+}
 impl std::fmt::Debug for AdvertiseByoipCidrInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdvertiseByoipCidrInput");
@@ -9958,6 +10641,18 @@ pub struct AddCustomRoutingEndpointsInput {
         std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+}
+impl AddCustomRoutingEndpointsInput {
+    /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
+    pub fn endpoint_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomRoutingEndpointConfiguration]> {
+        self.endpoint_configurations.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+        self.endpoint_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AddCustomRoutingEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

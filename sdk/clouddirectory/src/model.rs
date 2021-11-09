@@ -8,6 +8,16 @@ pub struct TypedLinkFacetAttributeUpdate {
     /// <p>The action to perform when updating the attribute.</p>
     pub action: std::option::Option<crate::model::UpdateActionType>,
 }
+impl TypedLinkFacetAttributeUpdate {
+    /// <p>The attribute to update.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::TypedLinkAttributeDefinition> {
+        self.attribute.as_ref()
+    }
+    /// <p>The action to perform when updating the attribute.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::UpdateActionType> {
+        self.action.as_ref()
+    }
+}
 impl std::fmt::Debug for TypedLinkFacetAttributeUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TypedLinkFacetAttributeUpdate");
@@ -140,6 +150,37 @@ pub struct TypedLinkAttributeDefinition {
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
     pub required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
+}
+impl TypedLinkAttributeDefinition {
+    /// <p>The unique name of the typed link attribute.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the attribute.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FacetAttributeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The default value of the attribute (if configured).</p>
+    pub fn default_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.default_value.as_ref()
+    }
+    /// <p>Whether the attribute is mutable or not.</p>
+    pub fn is_immutable(&self) -> bool {
+        self.is_immutable
+    }
+    /// <p>Validation rules that are attached to the attribute definition.</p>
+    pub fn rules(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Rule>>
+    {
+        self.rules.as_ref()
+    }
+    /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
+    pub fn required_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::RequiredAttributeBehavior> {
+        self.required_behavior.as_ref()
+    }
 }
 impl std::fmt::Debug for TypedLinkAttributeDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -338,6 +379,19 @@ pub struct Rule {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl Rule {
+    /// <p>The type of attribute validation rule.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The minimum and maximum parameters that are associated with the rule.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for Rule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Rule");
@@ -493,6 +547,15 @@ pub enum TypedAttributeValue {
     NumberValue(std::string::String),
     /// <p>A string data value.</p>
     StringValue(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`BinaryValue`](crate::model::TypedAttributeValue::BinaryValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
@@ -559,6 +622,10 @@ impl TypedAttributeValue {
     /// Returns true if this is a [`StringValue`](crate::model::TypedAttributeValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -644,6 +711,18 @@ pub struct ObjectAttributeUpdate {
     /// <p>The action to perform as part of the attribute update.</p>
     pub object_attribute_action: std::option::Option<crate::model::ObjectAttributeAction>,
 }
+impl ObjectAttributeUpdate {
+    /// <p>The key of the attribute being updated.</p>
+    pub fn object_attribute_key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+        self.object_attribute_key.as_ref()
+    }
+    /// <p>The action to perform as part of the attribute update.</p>
+    pub fn object_attribute_action(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectAttributeAction> {
+        self.object_attribute_action.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectAttributeUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectAttributeUpdate");
@@ -716,6 +795,20 @@ pub struct ObjectAttributeAction {
     pub object_attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
     pub object_attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
+}
+impl ObjectAttributeAction {
+    /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
+    pub fn object_attribute_action_type(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateActionType> {
+        self.object_attribute_action_type.as_ref()
+    }
+    /// <p>The value that you want to update to.</p>
+    pub fn object_attribute_update_value(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.object_attribute_update_value.as_ref()
+    }
 }
 impl std::fmt::Debug for ObjectAttributeAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -802,6 +895,21 @@ pub struct AttributeKey {
     pub facet_name: std::option::Option<std::string::String>,
     /// <p>The name of the attribute.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl AttributeKey {
+    /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and
+    /// attribute.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the facet that the attribute exists within.</p>
+    pub fn facet_name(&self) -> std::option::Option<&str> {
+        self.facet_name.as_deref()
+    }
+    /// <p>The name of the attribute.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for AttributeKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -893,6 +1001,26 @@ pub struct ObjectReference {
     /// </ul>
     pub selector: std::option::Option<std::string::String>,
 }
+impl ObjectReference {
+    /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>/some/path</i> - Identifies the object based on path</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
+    /// </li>
+    /// </ul>
+    pub fn selector(&self) -> std::option::Option<&str> {
+        self.selector.as_deref()
+    }
+}
 impl std::fmt::Debug for ObjectReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectReference");
@@ -971,6 +1099,16 @@ pub struct LinkAttributeUpdate {
     /// <p>The action to perform as part of the attribute update.</p>
     pub attribute_action: std::option::Option<crate::model::LinkAttributeAction>,
 }
+impl LinkAttributeUpdate {
+    /// <p>The key of the attribute being updated.</p>
+    pub fn attribute_key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+        self.attribute_key.as_ref()
+    }
+    /// <p>The action to perform as part of the attribute update.</p>
+    pub fn attribute_action(&self) -> std::option::Option<&crate::model::LinkAttributeAction> {
+        self.attribute_action.as_ref()
+    }
+}
 impl std::fmt::Debug for LinkAttributeUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LinkAttributeUpdate");
@@ -1039,6 +1177,18 @@ pub struct LinkAttributeAction {
     pub attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
     pub attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
+}
+impl LinkAttributeAction {
+    /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
+    pub fn attribute_action_type(&self) -> std::option::Option<&crate::model::UpdateActionType> {
+        self.attribute_action_type.as_ref()
+    }
+    /// <p>The value that you want to update to.</p>
+    pub fn attribute_update_value(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.attribute_update_value.as_ref()
+    }
 }
 impl std::fmt::Debug for LinkAttributeAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1117,6 +1267,28 @@ pub struct TypedLinkSpecifier {
     /// <p>Identifies the attribute value to update.</p>
     pub identity_attribute_values:
         std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
+}
+impl TypedLinkSpecifier {
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn typed_link_facet(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.typed_link_facet.as_ref()
+    }
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn source_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.source_object_reference.as_ref()
+    }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn target_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_object_reference.as_ref()
+    }
+    /// <p>Identifies the attribute value to update.</p>
+    pub fn identity_attribute_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
+        self.identity_attribute_values.as_deref()
+    }
 }
 impl std::fmt::Debug for TypedLinkSpecifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1232,6 +1404,16 @@ pub struct AttributeNameAndValue {
     /// <p>The value for the typed link.</p>
     pub value: std::option::Option<crate::model::TypedAttributeValue>,
 }
+impl AttributeNameAndValue {
+    /// <p>The attribute name of the typed link.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The value for the typed link.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for AttributeNameAndValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeNameAndValue");
@@ -1302,6 +1484,17 @@ pub struct TypedLinkSchemaAndFacetName {
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
     pub typed_link_name: std::option::Option<std::string::String>,
+}
+impl TypedLinkSchemaAndFacetName {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn typed_link_name(&self) -> std::option::Option<&str> {
+        self.typed_link_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TypedLinkSchemaAndFacetName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1434,6 +1627,16 @@ pub struct FacetAttributeUpdate {
     /// <p>The action to perform when updating the attribute.</p>
     pub action: std::option::Option<crate::model::UpdateActionType>,
 }
+impl FacetAttributeUpdate {
+    /// <p>The attribute to update.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::FacetAttribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>The action to perform when updating the attribute.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::UpdateActionType> {
+        self.action.as_ref()
+    }
+}
 impl std::fmt::Debug for FacetAttributeUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FacetAttributeUpdate");
@@ -1507,6 +1710,31 @@ pub struct FacetAttribute {
     pub attribute_reference: std::option::Option<crate::model::FacetAttributeReference>,
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
+}
+impl FacetAttribute {
+    /// <p>The name of the facet attribute.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A facet attribute consists of either a definition or a reference. This structure
+    /// contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn attribute_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::FacetAttributeDefinition> {
+        self.attribute_definition.as_ref()
+    }
+    /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn attribute_reference(
+        &self,
+    ) -> std::option::Option<&crate::model::FacetAttributeReference> {
+        self.attribute_reference.as_ref()
+    }
+    /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
+    pub fn required_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::RequiredAttributeBehavior> {
+        self.required_behavior.as_ref()
+    }
 }
 impl std::fmt::Debug for FacetAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1613,6 +1841,16 @@ pub struct FacetAttributeReference {
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub target_attribute_name: std::option::Option<std::string::String>,
 }
+impl FacetAttributeReference {
+    /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn target_facet_name(&self) -> std::option::Option<&str> {
+        self.target_facet_name.as_deref()
+    }
+    /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
+    pub fn target_attribute_name(&self) -> std::option::Option<&str> {
+        self.target_attribute_name.as_deref()
+    }
+}
 impl std::fmt::Debug for FacetAttributeReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FacetAttributeReference");
@@ -1686,6 +1924,27 @@ pub struct FacetAttributeDefinition {
     /// <p>Validation rules attached to the attribute definition.</p>
     pub rules:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
+}
+impl FacetAttributeDefinition {
+    /// <p>The type of the attribute.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FacetAttributeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The default value of the attribute (if configured).</p>
+    pub fn default_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.default_value.as_ref()
+    }
+    /// <p>Whether the attribute is mutable or not.</p>
+    pub fn is_immutable(&self) -> bool {
+        self.is_immutable
+    }
+    /// <p>Validation rules attached to the attribute definition.</p>
+    pub fn rules(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Rule>>
+    {
+        self.rules.as_ref()
+    }
 }
 impl std::fmt::Debug for FacetAttributeDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1798,6 +2057,16 @@ pub struct Tag {
     /// <p>The value that is associated with the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key that is associated with the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value that is associated with the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -1861,6 +2130,17 @@ pub struct SchemaFacet {
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     pub facet_name: std::option::Option<std::string::String>,
+}
+impl SchemaFacet {
+    /// <p>The ARN of the schema that contains the facet with no minor component. See <a>arns</a> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions.
+    /// If this value is set, FacetName must also be set.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+    /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
+    pub fn facet_name(&self) -> std::option::Option<&str> {
+        self.facet_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SchemaFacet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1928,6 +2208,16 @@ pub struct PolicyToPath {
     pub path: std::option::Option<std::string::String>,
     /// <p>List of policy objects.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicyAttachment>>,
+}
+impl PolicyToPath {
+    /// <p>The path that is referenced from the root.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>List of policy objects.</p>
+    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicyAttachment]> {
+        self.policies.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyToPath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2005,6 +2295,21 @@ pub struct PolicyAttachment {
     pub object_identifier: std::option::Option<std::string::String>,
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
     pub policy_type: std::option::Option<std::string::String>,
+}
+impl PolicyAttachment {
+    /// <p>The ID of <code>PolicyAttachment</code>.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The <code>ObjectIdentifier</code> that is associated with
+    /// <code>PolicyAttachment</code>.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
+    /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
+    pub fn policy_type(&self) -> std::option::Option<&str> {
+        self.policy_type.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyAttachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2142,6 +2447,16 @@ pub struct TypedLinkAttributeRange {
     /// <p>The range of attribute values that are being selected.</p>
     pub range: std::option::Option<crate::model::TypedAttributeValueRange>,
 }
+impl TypedLinkAttributeRange {
+    /// <p>The unique name of the typed link attribute.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The range of attribute values that are being selected.</p>
+    pub fn range(&self) -> std::option::Option<&crate::model::TypedAttributeValueRange> {
+        self.range.as_ref()
+    }
+}
 impl std::fmt::Debug for TypedLinkAttributeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TypedLinkAttributeRange");
@@ -2214,6 +2529,24 @@ pub struct TypedAttributeValueRange {
     pub end_mode: std::option::Option<crate::model::RangeMode>,
     /// <p>The attribute value to terminate the range at.</p>
     pub end_value: std::option::Option<crate::model::TypedAttributeValue>,
+}
+impl TypedAttributeValueRange {
+    /// <p>The inclusive or exclusive range start.</p>
+    pub fn start_mode(&self) -> std::option::Option<&crate::model::RangeMode> {
+        self.start_mode.as_ref()
+    }
+    /// <p>The value to start the range at.</p>
+    pub fn start_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.start_value.as_ref()
+    }
+    /// <p>The inclusive or exclusive range end.</p>
+    pub fn end_mode(&self) -> std::option::Option<&crate::model::RangeMode> {
+        self.end_mode.as_ref()
+    }
+    /// <p>The attribute value to terminate the range at.</p>
+    pub fn end_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.end_value.as_ref()
+    }
 }
 impl std::fmt::Debug for TypedAttributeValueRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2386,6 +2719,16 @@ pub struct ObjectIdentifierAndLinkNameTuple {
     /// <p>The name of the link between the parent and the child object.</p>
     pub link_name: std::option::Option<std::string::String>,
 }
+impl ObjectIdentifierAndLinkNameTuple {
+    /// <p>The ID that is associated with the object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
+    /// <p>The name of the link between the parent and the child object.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ObjectIdentifierAndLinkNameTuple {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectIdentifierAndLinkNameTuple");
@@ -2453,6 +2796,17 @@ pub struct PathToObjectIdentifiers {
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the
     /// request.</p>
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PathToObjectIdentifiers {
+    /// <p>The path that is used to identify the object starting from directory root.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the
+    /// request.</p>
+    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for PathToObjectIdentifiers {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2528,6 +2882,16 @@ pub struct AttributeKeyAndValue {
     /// <p>The value of the attribute.</p>
     pub value: std::option::Option<crate::model::TypedAttributeValue>,
 }
+impl AttributeKeyAndValue {
+    /// <p>The key of the attribute.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+        self.key.as_ref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for AttributeKeyAndValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeKeyAndValue");
@@ -2593,6 +2957,16 @@ pub struct IndexAttachment {
     pub indexed_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>In response to <a>ListIndex</a>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <a>ListAttachedIndices</a>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl IndexAttachment {
+    /// <p>The indexed attribute values.</p>
+    pub fn indexed_attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.indexed_attributes.as_deref()
+    }
+    /// <p>In response to <a>ListIndex</a>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <a>ListAttachedIndices</a>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for IndexAttachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2673,6 +3047,16 @@ pub struct ObjectAttributeRange {
     /// <p>The range of attribute values being selected.</p>
     pub range: std::option::Option<crate::model::TypedAttributeValueRange>,
 }
+impl ObjectAttributeRange {
+    /// <p>The key of the attribute that the attribute range covers.</p>
+    pub fn attribute_key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+        self.attribute_key.as_ref()
+    }
+    /// <p>The range of attribute values being selected.</p>
+    pub fn range(&self) -> std::option::Option<&crate::model::TypedAttributeValueRange> {
+        self.range.as_ref()
+    }
+}
 impl std::fmt::Debug for ObjectAttributeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectAttributeRange");
@@ -2746,6 +3130,25 @@ pub struct Directory {
     pub state: std::option::Option<crate::model::DirectoryState>,
     /// <p>The date and time when the directory was created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Directory {
+    /// <p>The name of the directory.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::DirectoryState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time when the directory was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Directory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2910,6 +3313,20 @@ pub struct Facet {
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub facet_style: std::option::Option<crate::model::FacetStyle>,
 }
+impl Facet {
+    /// <p>The name of the <a>Facet</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+    pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectType> {
+        self.object_type.as_ref()
+    }
+    /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    pub fn facet_style(&self) -> std::option::Option<&crate::model::FacetStyle> {
+        self.facet_style.as_ref()
+    }
+}
 impl std::fmt::Debug for Facet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Facet");
@@ -3049,6 +3466,20 @@ pub struct TypedLinkFacet {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypedLinks</a> for details.</p>
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl TypedLinkFacet {
+    /// <p>The unique name of the typed link facet.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::TypedLinkAttributeDefinition]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypedLinks</a> for details.</p>
+    pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
+        self.identity_attribute_order.as_deref()
+    }
 }
 impl std::fmt::Debug for TypedLinkFacet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3332,6 +3763,85 @@ pub struct BatchWriteOperationResponse {
     /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
     pub update_link_attributes:
         std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
+}
+impl BatchWriteOperationResponse {
+    /// <p>Creates an object in a <a>Directory</a>.</p>
+    pub fn create_object(&self) -> std::option::Option<&crate::model::BatchCreateObjectResponse> {
+        self.create_object.as_ref()
+    }
+    /// <p>Attaches an object to a <a>Directory</a>.</p>
+    pub fn attach_object(&self) -> std::option::Option<&crate::model::BatchAttachObjectResponse> {
+        self.attach_object.as_ref()
+    }
+    /// <p>Detaches an object from a <a>Directory</a>.</p>
+    pub fn detach_object(&self) -> std::option::Option<&crate::model::BatchDetachObjectResponse> {
+        self.detach_object.as_ref()
+    }
+    /// <p>Updates a given object’s attributes.</p>
+    pub fn update_object_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchUpdateObjectAttributesResponse> {
+        self.update_object_attributes.as_ref()
+    }
+    /// <p>Deletes an object in a <a>Directory</a>.</p>
+    pub fn delete_object(&self) -> std::option::Option<&crate::model::BatchDeleteObjectResponse> {
+        self.delete_object.as_ref()
+    }
+    /// <p>The result of an add facet to object batch operation.</p>
+    pub fn add_facet_to_object(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchAddFacetToObjectResponse> {
+        self.add_facet_to_object.as_ref()
+    }
+    /// <p>The result of a batch remove facet from object operation.</p>
+    pub fn remove_facet_from_object(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchRemoveFacetFromObjectResponse> {
+        self.remove_facet_from_object.as_ref()
+    }
+    /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached
+    /// policies.</p>
+    pub fn attach_policy(&self) -> std::option::Option<&crate::model::BatchAttachPolicyResponse> {
+        self.attach_policy.as_ref()
+    }
+    /// <p>Detaches a policy from a <a>Directory</a>.</p>
+    pub fn detach_policy(&self) -> std::option::Option<&crate::model::BatchDetachPolicyResponse> {
+        self.detach_policy.as_ref()
+    }
+    /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
+    pub fn create_index(&self) -> std::option::Option<&crate::model::BatchCreateIndexResponse> {
+        self.create_index.as_ref()
+    }
+    /// <p>Attaches the specified object to the specified index.</p>
+    pub fn attach_to_index(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchAttachToIndexResponse> {
+        self.attach_to_index.as_ref()
+    }
+    /// <p>Detaches the specified object from the specified index.</p>
+    pub fn detach_from_index(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchDetachFromIndexResponse> {
+        self.detach_from_index.as_ref()
+    }
+    /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn attach_typed_link(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchAttachTypedLinkResponse> {
+        self.attach_typed_link.as_ref()
+    }
+    /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn detach_typed_link(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchDetachTypedLinkResponse> {
+        self.detach_typed_link.as_ref()
+    }
+    /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+    pub fn update_link_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchUpdateLinkAttributesResponse> {
+        self.update_link_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchWriteOperationResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3698,6 +4208,12 @@ pub struct BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
+impl BatchAttachTypedLinkResponse {
+    /// <p>Returns a typed link specifier as output.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchAttachTypedLinkResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchAttachTypedLinkResponse");
@@ -3748,6 +4264,12 @@ impl BatchAttachTypedLinkResponse {
 pub struct BatchDetachFromIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     pub detached_object_identifier: std::option::Option<std::string::String>,
+}
+impl BatchDetachFromIndexResponse {
+    /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
+    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+        self.detached_object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetachFromIndexResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3803,6 +4325,12 @@ pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
+impl BatchAttachToIndexResponse {
+    /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
+    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+        self.attached_object_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchAttachToIndexResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchAttachToIndexResponse");
@@ -3856,6 +4384,12 @@ impl BatchAttachToIndexResponse {
 pub struct BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl BatchCreateIndexResponse {
+    /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateIndexResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4059,6 +4593,12 @@ pub struct BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
 }
+impl BatchUpdateObjectAttributesResponse {
+    /// <p>ID that is associated with the object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateObjectAttributesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateObjectAttributesResponse");
@@ -4109,6 +4649,12 @@ impl BatchUpdateObjectAttributesResponse {
 pub struct BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
     pub detached_object_identifier: std::option::Option<std::string::String>,
+}
+impl BatchDetachObjectResponse {
+    /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
+    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+        self.detached_object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetachObjectResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4164,6 +4710,12 @@ pub struct BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
+impl BatchAttachObjectResponse {
+    /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
+    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+        self.attached_object_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchAttachObjectResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchAttachObjectResponse");
@@ -4217,6 +4769,12 @@ impl BatchAttachObjectResponse {
 pub struct BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl BatchCreateObjectResponse {
+    /// <p>The ID that is associated with the object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateObjectResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4297,6 +4855,75 @@ pub struct BatchWriteOperation {
     pub detach_typed_link: std::option::Option<crate::model::BatchDetachTypedLink>,
     /// <p>Updates a given object's attributes.</p>
     pub update_link_attributes: std::option::Option<crate::model::BatchUpdateLinkAttributes>,
+}
+impl BatchWriteOperation {
+    /// <p>Creates an object.</p>
+    pub fn create_object(&self) -> std::option::Option<&crate::model::BatchCreateObject> {
+        self.create_object.as_ref()
+    }
+    /// <p>Attaches an object to a <a>Directory</a>.</p>
+    pub fn attach_object(&self) -> std::option::Option<&crate::model::BatchAttachObject> {
+        self.attach_object.as_ref()
+    }
+    /// <p>Detaches an object from a <a>Directory</a>.</p>
+    pub fn detach_object(&self) -> std::option::Option<&crate::model::BatchDetachObject> {
+        self.detach_object.as_ref()
+    }
+    /// <p>Updates a given object's attributes.</p>
+    pub fn update_object_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchUpdateObjectAttributes> {
+        self.update_object_attributes.as_ref()
+    }
+    /// <p>Deletes an object in a <a>Directory</a>.</p>
+    pub fn delete_object(&self) -> std::option::Option<&crate::model::BatchDeleteObject> {
+        self.delete_object.as_ref()
+    }
+    /// <p>A batch operation that adds a facet to an object.</p>
+    pub fn add_facet_to_object(&self) -> std::option::Option<&crate::model::BatchAddFacetToObject> {
+        self.add_facet_to_object.as_ref()
+    }
+    /// <p>A batch operation that removes a facet from an object.</p>
+    pub fn remove_facet_from_object(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchRemoveFacetFromObject> {
+        self.remove_facet_from_object.as_ref()
+    }
+    /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached
+    /// policies.</p>
+    pub fn attach_policy(&self) -> std::option::Option<&crate::model::BatchAttachPolicy> {
+        self.attach_policy.as_ref()
+    }
+    /// <p>Detaches a policy from a <a>Directory</a>.</p>
+    pub fn detach_policy(&self) -> std::option::Option<&crate::model::BatchDetachPolicy> {
+        self.detach_policy.as_ref()
+    }
+    /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
+    pub fn create_index(&self) -> std::option::Option<&crate::model::BatchCreateIndex> {
+        self.create_index.as_ref()
+    }
+    /// <p>Attaches the specified object to the specified index.</p>
+    pub fn attach_to_index(&self) -> std::option::Option<&crate::model::BatchAttachToIndex> {
+        self.attach_to_index.as_ref()
+    }
+    /// <p>Detaches the specified object from the specified index.</p>
+    pub fn detach_from_index(&self) -> std::option::Option<&crate::model::BatchDetachFromIndex> {
+        self.detach_from_index.as_ref()
+    }
+    /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn attach_typed_link(&self) -> std::option::Option<&crate::model::BatchAttachTypedLink> {
+        self.attach_typed_link.as_ref()
+    }
+    /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn detach_typed_link(&self) -> std::option::Option<&crate::model::BatchDetachTypedLink> {
+        self.detach_typed_link.as_ref()
+    }
+    /// <p>Updates a given object's attributes.</p>
+    pub fn update_link_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchUpdateLinkAttributes> {
+        self.update_link_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchWriteOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4589,6 +5216,16 @@ pub struct BatchUpdateLinkAttributes {
     /// <p>The attributes update structure.</p>
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
 }
+impl BatchUpdateLinkAttributes {
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::LinkAttributeUpdate]> {
+        self.attribute_updates.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchUpdateLinkAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchUpdateLinkAttributes");
@@ -4666,6 +5303,12 @@ pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
+impl BatchDetachTypedLink {
+    /// <p>Used to accept a typed link specifier as input.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDetachTypedLink {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetachTypedLink");
@@ -4722,6 +5365,26 @@ pub struct BatchAttachTypedLink {
     pub typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>A set of attributes that are associated with the typed link.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
+}
+impl BatchAttachTypedLink {
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn source_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.source_object_reference.as_ref()
+    }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn target_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_object_reference.as_ref()
+    }
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn typed_link_facet(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.typed_link_facet.as_ref()
+    }
+    /// <p>A set of attributes that are associated with the typed link.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAttachTypedLink {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4834,6 +5497,16 @@ pub struct BatchDetachFromIndex {
     /// <p>A reference to the object being detached from the index.</p>
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl BatchDetachFromIndex {
+    /// <p>A reference to the index object.</p>
+    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.index_reference.as_ref()
+    }
+    /// <p>A reference to the object being detached from the index.</p>
+    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDetachFromIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetachFromIndex");
@@ -4902,6 +5575,16 @@ pub struct BatchAttachToIndex {
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl BatchAttachToIndex {
+    /// <p>A reference to the index that you are attaching the object to.</p>
+    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.index_reference.as_ref()
+    }
+    /// <p>A reference to the object that you are attaching to the index.</p>
+    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchAttachToIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4980,6 +5663,32 @@ pub struct BatchCreateIndex {
     pub link_name: std::option::Option<std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub batch_reference_name: std::option::Option<std::string::String>,
+}
+impl BatchCreateIndex {
+    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
+    /// is supported.</p>
+    pub fn ordered_indexed_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeKey]> {
+        self.ordered_indexed_attribute_list.as_deref()
+    }
+    /// <p>Indicates whether the attribute that is being indexed has unique values or
+    /// not.</p>
+    pub fn is_unique(&self) -> bool {
+        self.is_unique
+    }
+    /// <p>A reference to the parent object that contains the index object.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The name of the link between the parent object and the index object.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
+    /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+        self.batch_reference_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5109,6 +5818,16 @@ pub struct BatchDetachPolicy {
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl BatchDetachPolicy {
+    /// <p>Reference that identifies the policy object.</p>
+    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.policy_reference.as_ref()
+    }
+    /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDetachPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetachPolicy");
@@ -5178,6 +5897,17 @@ pub struct BatchAttachPolicy {
     /// <p>The reference that identifies the object to which the policy will be
     /// attached.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl BatchAttachPolicy {
+    /// <p>The reference that is associated with the policy object.</p>
+    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.policy_reference.as_ref()
+    }
+    /// <p>The reference that identifies the object to which the policy will be
+    /// attached.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchAttachPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5250,6 +5980,16 @@ pub struct BatchRemoveFacetFromObject {
     /// <p>A reference to the object whose facet will be removed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl BatchRemoveFacetFromObject {
+    /// <p>The facet to remove from the object.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.schema_facet.as_ref()
+    }
+    /// <p>A reference to the object whose facet will be removed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchRemoveFacetFromObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchRemoveFacetFromObject");
@@ -5321,6 +6061,22 @@ pub struct BatchAddFacetToObject {
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>A reference to the object being mutated.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+}
+impl BatchAddFacetToObject {
+    /// <p>Represents the facet being added to the object.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.schema_facet.as_ref()
+    }
+    /// <p>The attributes to set on the object.</p>
+    pub fn object_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.object_attribute_list.as_deref()
+    }
+    /// <p>A reference to the object being mutated.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchAddFacetToObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5415,6 +6171,12 @@ pub struct BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl BatchDeleteObject {
+    /// <p>The reference that identifies the object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchDeleteObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDeleteObject");
@@ -5467,6 +6229,16 @@ pub struct BatchUpdateObjectAttributes {
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Attributes update structure.</p>
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
+}
+impl BatchUpdateObjectAttributes {
+    /// <p>Reference that identifies the object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>Attributes update structure.</p>
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::ObjectAttributeUpdate]> {
+        self.attribute_updates.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateObjectAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5549,6 +6321,21 @@ pub struct BatchDetachObject {
     pub link_name: std::option::Option<std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub batch_reference_name: std::option::Option<std::string::String>,
+}
+impl BatchDetachObject {
+    /// <p>Parent reference from which the object with the specified link name is
+    /// detached.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The name of the link.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
+    /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+        self.batch_reference_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDetachObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5635,6 +6422,20 @@ pub struct BatchAttachObject {
     pub child_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The name of the link.</p>
     pub link_name: std::option::Option<std::string::String>,
+}
+impl BatchAttachObject {
+    /// <p>The parent object reference.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The child object reference that is to be attached to the object.</p>
+    pub fn child_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.child_reference.as_ref()
+    }
+    /// <p>The name of the link.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAttachObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5726,6 +6527,32 @@ pub struct BatchCreateObject {
     pub link_name: std::option::Option<std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub batch_reference_name: std::option::Option<std::string::String>,
+}
+impl BatchCreateObject {
+    /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+        self.schema_facet.as_deref()
+    }
+    /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as
+    /// the map value.</p>
+    pub fn object_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.object_attribute_list.as_deref()
+    }
+    /// <p>If specified, the parent reference to which this object will be attached.</p>
+    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.parent_reference.as_ref()
+    }
+    /// <p>The name of the link.</p>
+    pub fn link_name(&self) -> std::option::Option<&str> {
+        self.link_name.as_deref()
+    }
+    /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+        self.batch_reference_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5861,6 +6688,18 @@ pub struct BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has failed.</p>
     pub exception_response: std::option::Option<crate::model::BatchReadException>,
 }
+impl BatchReadOperationResponse {
+    /// <p>Identifies which operation in a batch has succeeded.</p>
+    pub fn successful_response(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchReadSuccessfulResponse> {
+        self.successful_response.as_ref()
+    }
+    /// <p>Identifies which operation in a batch has failed.</p>
+    pub fn exception_response(&self) -> std::option::Option<&crate::model::BatchReadException> {
+        self.exception_response.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchReadOperationResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchReadOperationResponse");
@@ -5934,6 +6773,16 @@ pub struct BatchReadException {
     pub r#type: std::option::Option<crate::model::BatchReadExceptionType>,
     /// <p>An exception message that is associated with the failure.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BatchReadException {
+    /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::BatchReadExceptionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>An exception message that is associated with the failure.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchReadException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6158,6 +7007,99 @@ pub struct BatchReadSuccessfulResponse {
     pub get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
     /// <p>The list of parent objects to retrieve.</p>
     pub list_object_parents: std::option::Option<crate::model::BatchListObjectParentsResponse>,
+}
+impl BatchReadSuccessfulResponse {
+    /// <p>Lists all attributes that are associated with an object.</p>
+    pub fn list_object_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectAttributesResponse> {
+        self.list_object_attributes.as_ref()
+    }
+    /// <p>Returns a paginated list of child objects that are associated with a given
+    /// object.</p>
+    pub fn list_object_children(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectChildrenResponse> {
+        self.list_object_children.as_ref()
+    }
+    /// <p>Retrieves metadata about an object.</p>
+    pub fn get_object_information(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetObjectInformationResponse> {
+        self.get_object_information.as_ref()
+    }
+    /// <p>Retrieves attributes within a facet that are associated with an object.</p>
+    pub fn get_object_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetObjectAttributesResponse> {
+        self.get_object_attributes.as_ref()
+    }
+    /// <p>Lists indices attached to an object.</p>
+    pub fn list_attached_indices(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListAttachedIndicesResponse> {
+        self.list_attached_indices.as_ref()
+    }
+    /// <p>Retrieves all available parent paths for any object type such as node, leaf node,
+    /// policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    pub fn list_object_parent_paths(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectParentPathsResponse> {
+        self.list_object_parent_paths.as_ref()
+    }
+    /// <p>Returns policies attached to an object in pagination fashion.</p>
+    pub fn list_object_policies(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectPoliciesResponse> {
+        self.list_object_policies.as_ref()
+    }
+    /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
+    pub fn list_policy_attachments(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListPolicyAttachmentsResponse> {
+        self.list_policy_attachments.as_ref()
+    }
+    /// <p>Lists all policies from the root of the <a>Directory</a> to the object
+    /// specified. If there are no policies present, an empty list is returned. If policies are
+    /// present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
+    /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
+    /// <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more
+    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    pub fn lookup_policy(&self) -> std::option::Option<&crate::model::BatchLookupPolicyResponse> {
+        self.lookup_policy.as_ref()
+    }
+    /// <p>Lists objects attached to the specified index.</p>
+    pub fn list_index(&self) -> std::option::Option<&crate::model::BatchListIndexResponse> {
+        self.list_index.as_ref()
+    }
+    /// <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
+    /// information for an object. It also supports filtering by typed link facet and identity
+    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn list_outgoing_typed_links(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListOutgoingTypedLinksResponse> {
+        self.list_outgoing_typed_links.as_ref()
+    }
+    /// <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
+    /// information for an object. It also supports filtering by typed link facet and identity
+    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn list_incoming_typed_links(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListIncomingTypedLinksResponse> {
+        self.list_incoming_typed_links.as_ref()
+    }
+    /// <p>The list of attributes to retrieve from the typed link.</p>
+    pub fn get_link_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetLinkAttributesResponse> {
+        self.get_link_attributes.as_ref()
+    }
+    /// <p>The list of parent objects to retrieve.</p>
+    pub fn list_object_parents(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectParentsResponse> {
+        self.list_object_parents.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchReadSuccessfulResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6491,6 +7433,18 @@ pub struct BatchListObjectParentsResponse {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchListObjectParentsResponse {
+    /// <p>Returns a list of parent reference and LinkName Tuples.</p>
+    pub fn parent_links(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectIdentifierAndLinkNameTuple]> {
+        self.parent_links.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchListObjectParentsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListObjectParentsResponse");
@@ -6567,6 +7521,12 @@ pub struct BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
+impl BatchGetLinkAttributesResponse {
+    /// <p>The attributes that are associated with the typed link.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetLinkAttributesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetLinkAttributesResponse");
@@ -6626,6 +7586,16 @@ pub struct BatchListIncomingTypedLinksResponse {
     pub link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchListIncomingTypedLinksResponse {
+    /// <p>Returns one or more typed link specifiers as output.</p>
+    pub fn link_specifiers(&self) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+        self.link_specifiers.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchListIncomingTypedLinksResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6703,6 +7673,18 @@ pub struct BatchListOutgoingTypedLinksResponse {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchListOutgoingTypedLinksResponse {
+    /// <p>Returns a typed link specifier as output.</p>
+    pub fn typed_link_specifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+        self.typed_link_specifiers.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchListOutgoingTypedLinksResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListOutgoingTypedLinksResponse");
@@ -6778,6 +7760,16 @@ pub struct BatchListIndexResponse {
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchListIndexResponse {
+    /// <p>The objects and indexed values attached to the index.</p>
+    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+        self.index_attachments.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchListIndexResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6857,6 +7849,18 @@ pub struct BatchLookupPolicyResponse {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchLookupPolicyResponse {
+    /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+    /// <code>PolicyType</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::model::PolicyToPath]> {
+        self.policy_to_path_list.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchLookupPolicyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchLookupPolicyResponse");
@@ -6934,6 +7938,16 @@ pub struct BatchListPolicyAttachmentsResponse {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchListPolicyAttachmentsResponse {
+    /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
+    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_identifiers.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchListPolicyAttachmentsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListPolicyAttachmentsResponse");
@@ -7006,6 +8020,17 @@ pub struct BatchListObjectPoliciesResponse {
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchListObjectPoliciesResponse {
+    /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
+    /// object.</p>
+    pub fn attached_policy_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.attached_policy_ids.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchListObjectPoliciesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7082,6 +8107,19 @@ pub struct BatchListObjectParentPathsResponse {
         std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchListObjectParentPathsResponse {
+    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
+    /// directory.</p>
+    pub fn path_to_object_identifiers_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PathToObjectIdentifiers]> {
+        self.path_to_object_identifiers_list.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchListObjectParentPathsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7164,6 +8202,16 @@ pub struct BatchListAttachedIndicesResponse {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchListAttachedIndicesResponse {
+    /// <p>The indices attached to the specified object.</p>
+    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+        self.index_attachments.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchListAttachedIndicesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListAttachedIndicesResponse");
@@ -7238,6 +8286,12 @@ pub struct BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
+impl BatchGetObjectAttributesResponse {
+    /// <p>The attribute values that are associated with an object.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetObjectAttributesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetObjectAttributesResponse");
@@ -7297,6 +8351,16 @@ pub struct BatchGetObjectInformationResponse {
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl BatchGetObjectInformationResponse {
+    /// <p>The facets attached to the specified object.</p>
+    pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+        self.schema_facets.as_deref()
+    }
+    /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetObjectInformationResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7374,6 +8438,20 @@ pub struct BatchListObjectChildrenResponse {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchListObjectChildrenResponse {
+    /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and
+    /// <code>ObjectIdentifier</code> as the value.</p>
+    pub fn children(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.children.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchListObjectChildrenResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7457,6 +8535,17 @@ pub struct BatchListObjectAttributesResponse {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl BatchListObjectAttributesResponse {
+    /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the
+    /// key; attribute value is the value.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchListObjectAttributesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7568,6 +8657,100 @@ pub struct BatchReadOperation {
     pub list_incoming_typed_links: std::option::Option<crate::model::BatchListIncomingTypedLinks>,
     /// <p>Retrieves attributes that are associated with a typed link.</p>
     pub get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributes>,
+}
+impl BatchReadOperation {
+    /// <p>Lists all attributes that are associated with an object.</p>
+    pub fn list_object_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectAttributes> {
+        self.list_object_attributes.as_ref()
+    }
+    /// <p>Returns a paginated list of child objects that are associated with a given
+    /// object.</p>
+    pub fn list_object_children(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectChildren> {
+        self.list_object_children.as_ref()
+    }
+    /// <p>Lists indices attached to an object.</p>
+    pub fn list_attached_indices(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListAttachedIndices> {
+        self.list_attached_indices.as_ref()
+    }
+    /// <p>Retrieves all available parent paths for any object type such as node, leaf node,
+    /// policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    pub fn list_object_parent_paths(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectParentPaths> {
+        self.list_object_parent_paths.as_ref()
+    }
+    /// <p>Retrieves metadata about an object.</p>
+    pub fn get_object_information(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetObjectInformation> {
+        self.get_object_information.as_ref()
+    }
+    /// <p>Retrieves attributes within a facet that are associated with an object.</p>
+    pub fn get_object_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetObjectAttributes> {
+        self.get_object_attributes.as_ref()
+    }
+    /// <p>Lists parent objects that are associated with a given object in pagination
+    /// fashion.</p>
+    pub fn list_object_parents(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectParents> {
+        self.list_object_parents.as_ref()
+    }
+    /// <p>Returns policies attached to an object in pagination fashion.</p>
+    pub fn list_object_policies(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListObjectPolicies> {
+        self.list_object_policies.as_ref()
+    }
+    /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
+    pub fn list_policy_attachments(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListPolicyAttachments> {
+        self.list_policy_attachments.as_ref()
+    }
+    /// <p>Lists all policies from the root of the <a>Directory</a> to the object
+    /// specified. If there are no policies present, an empty list is returned. If policies are
+    /// present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
+    /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
+    /// <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more
+    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    pub fn lookup_policy(&self) -> std::option::Option<&crate::model::BatchLookupPolicy> {
+        self.lookup_policy.as_ref()
+    }
+    /// <p>Lists objects attached to the specified index.</p>
+    pub fn list_index(&self) -> std::option::Option<&crate::model::BatchListIndex> {
+        self.list_index.as_ref()
+    }
+    /// <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
+    /// information for an object. It also supports filtering by typed link facet and identity
+    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn list_outgoing_typed_links(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListOutgoingTypedLinks> {
+        self.list_outgoing_typed_links.as_ref()
+    }
+    /// <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
+    /// information for an object. It also supports filtering by typed link facet and identity
+    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn list_incoming_typed_links(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchListIncomingTypedLinks> {
+        self.list_incoming_typed_links.as_ref()
+    }
+    /// <p>Retrieves attributes that are associated with a typed link.</p>
+    pub fn get_link_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchGetLinkAttributes> {
+        self.get_link_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchReadOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7892,6 +9075,16 @@ pub struct BatchGetLinkAttributes {
     /// <p>A list of attribute names whose values will be retrieved.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetLinkAttributes {
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+    /// <p>A list of attribute names whose values will be retrieved.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetLinkAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetLinkAttributes");
@@ -7976,6 +9169,35 @@ pub struct BatchListIncomingTypedLinks {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl BatchListIncomingTypedLinks {
+    /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
+    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
+    /// range specified are presumed to match the entire range.</p>
+    pub fn filter_attribute_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
+        self.filter_attribute_ranges.as_deref()
+    }
+    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
+    /// order in which they are supplied to any API calls.</p>
+    pub fn filter_typed_link(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.filter_typed_link.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for BatchListIncomingTypedLinks {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8118,6 +9340,35 @@ pub struct BatchListOutgoingTypedLinks {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl BatchListOutgoingTypedLinks {
+    /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
+    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
+    /// range specified are presumed to match the entire range.</p>
+    pub fn filter_attribute_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
+        self.filter_attribute_ranges.as_deref()
+    }
+    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
+    /// not the order they are supplied to any API calls.</p>
+    pub fn filter_typed_link(
+        &self,
+    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+        self.filter_typed_link.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for BatchListOutgoingTypedLinks {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListOutgoingTypedLinks");
@@ -8254,6 +9505,26 @@ pub struct BatchListIndex {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl BatchListIndex {
+    /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    pub fn ranges_on_indexed_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectAttributeRange]> {
+        self.ranges_on_indexed_values.as_deref()
+    }
+    /// <p>The reference to the index to list.</p>
+    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.index_reference.as_ref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchListIndex {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListIndex");
@@ -8361,6 +9632,20 @@ pub struct BatchLookupPolicy {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl BatchLookupPolicy {
+    /// <p>Reference that identifies the object whose policies will be looked up.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for BatchLookupPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchLookupPolicy");
@@ -8442,6 +9727,20 @@ pub struct BatchListPolicyAttachments {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl BatchListPolicyAttachments {
+    /// <p>The reference that identifies the policy object.</p>
+    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.policy_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for BatchListPolicyAttachments {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListPolicyAttachments");
@@ -8522,6 +9821,20 @@ pub struct BatchListObjectPolicies {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl BatchListObjectPolicies {
+    /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for BatchListObjectPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8606,6 +9919,21 @@ pub struct BatchListObjectParents {
     /// number.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl BatchListObjectParents {
+    /// <p>The reference that identifies an object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for BatchListObjectParents {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListObjectParents");
@@ -8688,6 +10016,20 @@ pub struct BatchGetObjectAttributes {
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetObjectAttributes {
+    /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.schema_facet.as_ref()
+    }
+    /// <p>List of attribute names whose values will be retrieved.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetObjectAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8778,6 +10120,12 @@ pub struct BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
+impl BatchGetObjectInformation {
+    /// <p>A reference to the object.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for BatchGetObjectInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetObjectInformation");
@@ -8832,6 +10180,20 @@ pub struct BatchListObjectParentPaths {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl BatchListObjectParentPaths {
+    /// <p>The reference that identifies the object whose attributes will be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for BatchListObjectParentPaths {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8914,6 +10276,20 @@ pub struct BatchListAttachedIndices {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl BatchListAttachedIndices {
+    /// <p>A reference to the object that has indices attached.</p>
+    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.target_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for BatchListAttachedIndices {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchListAttachedIndices");
@@ -8995,6 +10371,21 @@ pub struct BatchListObjectChildren {
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate
     /// number.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl BatchListObjectChildren {
+    /// <p>Reference of the object for which child objects are being listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for BatchListObjectChildren {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9082,6 +10473,26 @@ pub struct BatchListObjectAttributes {
     /// <p>Used to filter the list of object attributes that are associated with a certain
     /// facet.</p>
     pub facet_filter: std::option::Option<crate::model::SchemaFacet>,
+}
+impl BatchListObjectAttributes {
+    /// <p>Reference of the object whose attributes need to be listed.</p>
+    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+        self.object_reference.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Used to filter the list of object attributes that are associated with a certain
+    /// facet.</p>
+    pub fn facet_filter(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+        self.facet_filter.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchListObjectAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

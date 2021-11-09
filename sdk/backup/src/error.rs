@@ -8859,6 +8859,20 @@ pub struct ServiceUnavailableException {
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
+impl ServiceUnavailableException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceUnavailableException");
@@ -8968,6 +8982,20 @@ pub struct ResourceNotFoundException {
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -9076,6 +9104,20 @@ pub struct MissingParameterValueException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
+}
+impl MissingParameterValueException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl std::fmt::Debug for MissingParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9187,6 +9229,20 @@ pub struct InvalidParameterValueException {
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
+impl InvalidParameterValueException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterValueException");
@@ -9296,6 +9352,20 @@ pub struct ConflictException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9407,6 +9477,20 @@ pub struct InvalidRequestException {
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
+impl InvalidRequestException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidRequestException");
@@ -9516,6 +9600,20 @@ pub struct LimitExceededException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9629,6 +9727,28 @@ pub struct AlreadyExistsException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
+}
+impl AlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p></p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl std::fmt::Debug for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9769,6 +9889,20 @@ pub struct InvalidResourceStateException {
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
+impl InvalidResourceStateException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidResourceStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidResourceStateException");
@@ -9877,6 +10011,20 @@ pub struct DependencyFailureException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p></p>
     pub context: std::option::Option<std::string::String>,
+}
+impl DependencyFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p></p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p></p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl std::fmt::Debug for DependencyFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -13,6 +13,18 @@ pub struct Tag {
     /// "companyB." Tag values are case-sensitive.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are
+    /// case-sensitive.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or
+    /// "companyB." Tag values are case-sensitive.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -80,6 +92,18 @@ pub struct MetricPolicy {
     pub container_level_metrics: std::option::Option<crate::model::ContainerLevelMetrics>,
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
     pub metric_policy_rules: std::option::Option<std::vec::Vec<crate::model::MetricPolicyRule>>,
+}
+impl MetricPolicy {
+    /// <p>A setting to enable or disable metrics at the container level.</p>
+    pub fn container_level_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::ContainerLevelMetrics> {
+        self.container_level_metrics.as_ref()
+    }
+    /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
+    pub fn metric_policy_rules(&self) -> std::option::Option<&[crate::model::MetricPolicyRule]> {
+        self.metric_policy_rules.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -163,6 +187,16 @@ pub struct MetricPolicyRule {
     pub object_group: std::option::Option<std::string::String>,
     /// <p>A name that allows you to refer to the object group.</p>
     pub object_group_name: std::option::Option<std::string::String>,
+}
+impl MetricPolicyRule {
+    /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
+    pub fn object_group(&self) -> std::option::Option<&str> {
+        self.object_group.as_deref()
+    }
+    /// <p>A name that allows you to refer to the object group.</p>
+    pub fn object_group_name(&self) -> std::option::Option<&str> {
+        self.object_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for MetricPolicyRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -308,6 +342,45 @@ pub struct CorsRule {
     /// object).</p>
     /// <p>This element is optional for each rule.</p>
     pub expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CorsRule {
+    /// <p>One or more response headers that you want users to be able to access from their
+    /// applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
+    /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string
+    /// value can include only one wildcard character (*), for example, http://*.example.com.
+    /// Additionally, you can specify only one wildcard character to allow cross-origin access for
+    /// all origins.</p>
+    pub fn allowed_origins(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_origins.as_deref()
+    }
+    /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to
+    /// execute.</p>
+    /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one
+    /// <code>AllowedOrigins</code> element.</p>
+    pub fn allowed_methods(&self) -> std::option::Option<&[crate::model::MethodName]> {
+        self.allowed_methods.as_deref()
+    }
+    /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request
+    /// through the <code>Access-Control-Request-Headers</code> header. Each header name that is
+    /// specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in
+    /// the rule. Only the headers that were requested are sent back. </p>
+    /// <p>This element can contain only one wildcard character (*).</p>
+    pub fn allowed_headers(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_headers.as_deref()
+    }
+    /// <p>The time in seconds that your browser caches the preflight response for the specified
+    /// resource.</p>
+    /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
+    pub fn max_age_seconds(&self) -> i32 {
+        self.max_age_seconds
+    }
+    /// <p>One or more headers in the response that you want users to be able to access from
+    /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
+    /// object).</p>
+    /// <p>This element is optional for each rule.</p>
+    pub fn expose_headers(&self) -> std::option::Option<&[std::string::String]> {
+        self.expose_headers.as_deref()
+    }
 }
 impl std::fmt::Debug for CorsRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -561,6 +634,41 @@ pub struct Container {
     pub status: std::option::Option<crate::model::ContainerStatus>,
     /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
     pub access_logging_enabled: std::option::Option<bool>,
+}
+impl Container {
+    /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+    /// container when sending requests to the data plane. The service assigns this value when the
+    /// container is created. Once the value has been assigned, it does not change.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+    /// <p>Unix timestamp.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
+    /// format:</p>
+    /// <p>arn:aws:<region>:<account that owns this container>:container/<name of
+    /// container> </p>
+    /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the container.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of container creation or deletion. The status is one of the following:
+    /// <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service
+    /// is creating the container, the status is <code>CREATING</code>. When the endpoint is
+    /// available, the status changes to <code>ACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ContainerStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
+    pub fn access_logging_enabled(&self) -> std::option::Option<bool> {
+        self.access_logging_enabled
+    }
 }
 impl std::fmt::Debug for Container {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

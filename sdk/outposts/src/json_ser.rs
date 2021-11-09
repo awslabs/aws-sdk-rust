@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_order_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateOrderInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.line_items {
         let mut array_2 = object.key("LineItems").start_array();
         for item_3 in var_1 {
@@ -11,7 +11,7 @@ pub fn serialize_structure_crate_input_create_order_input(
                 crate::json_ser::serialize_structure_crate_model_line_item_request(
                     &mut object_4,
                     item_3,
-                );
+                )?;
                 object_4.finish();
             }
         }
@@ -26,12 +26,13 @@ pub fn serialize_structure_crate_input_create_order_input(
     if let Some(var_7) = &input.payment_term {
         object.key("PaymentTerm").string(var_7.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_outpost_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateOutpostInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.availability_zone {
         object.key("AvailabilityZone").string(var_8);
     }
@@ -56,12 +57,13 @@ pub fn serialize_structure_crate_input_create_outpost_input(
         }
         object_14.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.tags {
         let mut object_18 = object.key("Tags").start_object();
         for (key_19, value_20) in var_17 {
@@ -71,12 +73,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_18.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_line_item_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LineItemRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.catalog_item_id {
         object.key("CatalogItemId").string(var_21);
     }
@@ -86,4 +89,5 @@ pub fn serialize_structure_crate_model_line_item_request(
             aws_smithy_types::Number::NegInt((input.quantity).into()),
         );
     }
+    Ok(())
 }

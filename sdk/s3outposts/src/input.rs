@@ -147,10 +147,8 @@ impl CreateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -530,6 +528,16 @@ pub struct ListEndpointsInput {
     /// <p>The max number of endpoints that can be returned on the request.</p>
     pub max_results: i32,
 }
+impl ListEndpointsInput {
+    /// <p>The next endpoint requested in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The max number of endpoints that can be returned on the request.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsInput");
@@ -547,6 +555,16 @@ pub struct DeleteEndpointInput {
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS Outposts. </p>
     pub outpost_id: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointInput {
+    /// <p>The ID of the endpoint.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The ID of the AWS Outposts. </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -575,6 +593,32 @@ pub struct CreateEndpointInput {
     /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
     /// IP addresses will be allocated from this pool for the endpoint.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
+}
+impl CreateEndpointInput {
+    /// <p>The ID of the AWS Outposts. </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
+    /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The ID of the security group to use with the endpoint.</p>
+    pub fn security_group_id(&self) -> std::option::Option<&str> {
+        self.security_group_id.as_deref()
+    }
+    /// <p>The type of access for the on-premise network connectivity for the
+    /// Outpost endpoint. To access the endpoint from an on-premises network, you must
+    /// specify the access type and provide the customer owned IPv4 pool.</p>
+    pub fn access_type(&self) -> std::option::Option<&crate::model::EndpointAccessType> {
+        self.access_type.as_ref()
+    }
+    /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
+    /// IP addresses will be allocated from this pool for the endpoint.</p>
+    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
+        self.customer_owned_ipv4_pool.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -51,6 +51,76 @@ pub struct ResolverRule {
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: std::option::Option<std::string::String>,
 }
+impl ResolverRule {
+    /// <p>The ID that Resolver assigned to the Resolver rule when you created it.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A unique string that you specified when you created the Resolver rule.
+    /// <code>CreatorRequestId</code> identifies the request and allows failed requests to
+    /// be retried without the risk of running the operation twice. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>. If a query matches
+    /// multiple Resolver rules (example.com and www.example.com), the query is routed using the Resolver rule that contains the most specific domain name
+    /// (www.example.com).</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A code that specifies the current status of the Resolver rule.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResolverRuleStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A detailed description of the status of a Resolver rule.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
+    /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for
+    /// a subdomain of that domain, specify <code>SYSTEM</code>.</p>
+    /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code>
+    /// for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify
+    /// <code>SYSTEM</code> for <code>RuleType</code>.</p>
+    /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
+    pub fn rule_type(&self) -> std::option::Option<&crate::model::RuleTypeOption> {
+        self.rule_type.as_ref()
+    }
+    /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
+    /// these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+    pub fn target_ips(&self) -> std::option::Option<&[crate::model::TargetAddress]> {
+        self.target_ips.as_deref()
+    }
+    /// <p>The ID of the endpoint that the rule is associated with.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+    /// <p>When a rule is shared with another Amazon Web Services account, the account ID of the account that the rule is shared with.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>Whether the rule is shared and, if so, whether the current account is sharing the rule with
+    /// another account, or another account is sharing the rule with the current account.</p>
+    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.share_status.as_ref()
+    }
+    /// <p>The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolverRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolverRule");
@@ -388,6 +458,16 @@ pub struct TargetAddress {
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub port: std::option::Option<i32>,
 }
+impl TargetAddress {
+    /// <p>One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+    /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+}
 impl std::fmt::Debug for TargetAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetAddress");
@@ -578,6 +658,21 @@ pub struct ResolverRuleConfig {
     /// <code>TargetIps</code>.</p>
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
 }
+impl ResolverRuleConfig {
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
+    pub fn target_ips(&self) -> std::option::Option<&[crate::model::TargetAddress]> {
+        self.target_ips.as_deref()
+    }
+    /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in
+    /// <code>TargetIps</code>.</p>
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+        self.resolver_endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolverRuleConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolverRuleConfig");
@@ -753,6 +848,115 @@ pub struct ResolverEndpoint {
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: std::option::Option<std::string::String>,
+}
+impl ResolverEndpoint {
+    /// <p>The ID of the Resolver endpoint.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A unique string that identifies the request that created the Resolver endpoint. The
+    /// <code>CreatorRequestId</code> allows failed requests to be retried without the risk
+    /// of running the operation twice.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name that you assigned to the Resolver endpoint when you submitted a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
+    /// request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules
+    /// (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access.
+    /// For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INBOUND</code>: allows DNS queries to your VPC from your network</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p>
+    /// </li>
+    /// </ul>
+    pub fn direction(&self) -> std::option::Option<&crate::model::ResolverEndpointDirection> {
+        self.direction.as_ref()
+    }
+    /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
+    pub fn ip_address_count(&self) -> std::option::Option<i32> {
+        self.ip_address_count
+    }
+    /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
+    pub fn host_vpc_id(&self) -> std::option::Option<&str> {
+        self.host_vpc_id.as_deref()
+    }
+    /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces
+    /// for this endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and
+    /// able to pass inbound or outbound DNS queries between your network and Resolver.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces
+    /// with this endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces
+    /// that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the
+    /// limit on the number of DNS queries per IP address (per network interface). For the current limit, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it.
+    /// To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address
+    /// that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include
+    /// at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResolverEndpointStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A detailed description of the status of the Resolver endpoint.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
 }
 impl std::fmt::Debug for ResolverEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1247,6 +1451,44 @@ pub struct ResolverDnssecConfig {
     /// </ul>
     pub validation_status: std::option::Option<crate::model::ResolverDnssecValidationStatus>,
 }
+impl ResolverDnssecConfig {
+    /// <p>The ID for a configuration for DNSSEC validation.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC validation status for.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The validation status for a DNSSEC configuration. The status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ENABLING:</b> DNSSEC validation is being enabled but is not complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ENABLED:</b> DNSSEC validation is enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DISABLING:</b> DNSSEC validation is being disabled but is not complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DISABLED</b> DNSSEC validation is disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn validation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverDnssecValidationStatus> {
+        self.validation_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ResolverDnssecConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolverDnssecConfig");
@@ -1526,6 +1768,52 @@ pub struct ResolverConfig {
     /// </li>
     /// </ul>
     pub autodefined_reverse: std::option::Option<crate::model::ResolverAutodefinedReverseStatus>,
+}
+impl ResolverConfig {
+    /// <p>ID for the Resolver configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The owner account ID of the Amazon Virtual Private Cloud VPC.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p> The status of whether or not the Resolver will create autodefined rules for reverse DNS
+    /// lookups. This is enabled by default. The status can be one of following:</p>
+    /// <p> Status of the rules generated by VPCs based on CIDR/Region for reverse DNS resolution. The
+    /// status can be one of following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ENABLING:</b> Autodefined rules for reverse DNS lookups are being
+    /// enabled but are not complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>ENABLED:</b> Autodefined rules for reverse DNS lookups are
+    /// enabled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are
+    /// being disabled but are not complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are
+    /// disabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn autodefined_reverse(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverAutodefinedReverseStatus> {
+        self.autodefined_reverse.as_ref()
+    }
 }
 impl std::fmt::Debug for ResolverConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1819,6 +2107,66 @@ pub struct FirewallRuleGroupAssociation {
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The date and time that the association was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: std::option::Option<std::string::String>,
+}
+impl FirewallRuleGroupAssociation {
+    /// <p>The identifier for the association.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall rule group association.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier of the firewall rule group. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The unique identifier of the VPC that is associated with the rule group. </p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The name of the association.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The setting that determines the processing order of the rule group among the rule groups that are associated with a single VPC. DNS Firewall
+    /// filters VPC traffic starting from rule group with the lowest numeric priority setting. </p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
+    pub fn mutation_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MutationProtectionStatus> {
+        self.mutation_protection.as_ref()
+    }
+    /// <p>The owner of the association, used only for associations that are not managed by you. If you use Firewall Manager to
+    /// manage your DNS Firewalls, then this reports Firewall Manager as the managed owner.</p>
+    pub fn managed_owner_name(&self) -> std::option::Option<&str> {
+        self.managed_owner_name.as_deref()
+    }
+    /// <p>The current status of the association.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallRuleGroupAssociationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the status of the response, if available.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed
+    /// requests without the risk of running the operation twice. This can be any unique string,
+    /// for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The date and time that the association was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the association was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
 }
 impl std::fmt::Debug for FirewallRuleGroupAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2223,6 +2571,87 @@ pub struct FirewallRule {
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: std::option::Option<std::string::String>,
+}
+impl FirewallRule {
+    /// <p>The unique identifier of the firewall rule group of the rule. </p>
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>The ID of the domain list that's used in the rule. </p>
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+        self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>The name of the rule. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The priority of the rule in the rule group. This value must be unique within the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    pub fn priority(&self) -> std::option::Option<i32> {
+        self.priority
+    }
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW</code> - Permit the request to go through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
+    /// </li>
+    /// </ul>
+    pub fn block_response(&self) -> std::option::Option<&crate::model::BlockResponse> {
+        self.block_response.as_ref()
+    }
+    /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn block_override_domain(&self) -> std::option::Option<&str> {
+        self.block_override_domain.as_deref()
+    }
+    /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn block_override_dns_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BlockOverrideDnsType> {
+        self.block_override_dns_type.as_ref()
+    }
+    /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
+    pub fn block_override_ttl(&self) -> std::option::Option<i32> {
+        self.block_override_ttl
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests
+    /// without the risk of executing the operation twice. This can be any unique string, for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The date and time that the rule was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
 }
 impl std::fmt::Debug for FirewallRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2819,6 +3248,35 @@ pub struct FirewallConfig {
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
     pub firewall_fail_open: std::option::Option<crate::model::FirewallFailOpenStatus>,
 }
+impl FirewallConfig {
+    /// <p>The ID of the firewall configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the VPC that this firewall configuration applies to.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
+    /// <ul>
+    /// <li>
+    /// <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall returns
+    /// a failure error when it is unable to properly evaluate a query. </p>
+    /// </li>
+    /// <li>
+    /// <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it
+    /// is unable to properly evaluate them. </p>
+    /// </li>
+    /// </ul>
+    /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    pub fn firewall_fail_open(&self) -> std::option::Option<&crate::model::FirewallFailOpenStatus> {
+        self.firewall_fail_open.as_ref()
+    }
+}
 impl std::fmt::Debug for FirewallConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirewallConfig");
@@ -2989,6 +3447,18 @@ pub struct Tag {
     /// <p>The value for the tag. For example, if <code>Key</code> is <code>account-id</code>, then <code>Value</code> might be the ID of the
     /// customer account that you're creating the resource for.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The name for the tag. For example, if you want to associate Resolver resources with the account IDs of your customers for billing purposes,
+    /// the value of <code>Key</code> might be <code>account-id</code>.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for the tag. For example, if <code>Key</code> is <code>account-id</code>, then <code>Value</code> might be the ID of the
+    /// customer account that you're creating the resource for.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3307,6 +3777,257 @@ pub struct Filter {
     /// the value of the parameter that you want to use to filter objects. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for
     /// <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Filter {
+    /// <p>The name of the parameter that you want to use to filter objects.</p>
+    /// <p>The valid values for <code>Name</code> depend on the action that you're including the filter in,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>,
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a>,
+    /// or
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>.</p>
+    ///
+    /// <note>
+    /// <p>In early versions of Resolver, values for <code>Name</code> were listed as uppercase, with underscore (_) delimiters. For example,
+    /// <code>CreatorRequestId</code> was originally listed as <code>CREATOR_REQUEST_ID</code>. Uppercase values for <code>Name</code> are still supported.</p>
+    /// </note>
+    ///
+    /// <p>
+    /// <b>ListResolverEndpoints</b>
+    /// </p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreatorRequestId</code>: The value that you specified when you created the Resolver endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Direction</code>: Whether you want to return inbound or outbound Resolver endpoints. If you specify <code>DIRECTION</code>
+    /// for <code>Name</code>, specify <code>INBOUND</code> or <code>OUTBOUND</code> for <code>Values</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through on the way from your network to your VPCs in a region, or
+    /// the VPC that outbound queries pass through on the way from your VPCs to your network. In a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
+    /// request, <code>SubnetId</code> indirectly identifies the VPC. In a
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+    /// request, the VPC ID for a Resolver endpoint
+    /// is returned in the <code>HostVPCId</code> element. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IpAddressCount</code>: The number of IP addresses that you have associated with the Resolver endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code>: The name of the Resolver endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SecurityGroupIds</code>: The IDs of the VPC security groups that you specified when you created the
+    /// Resolver endpoint.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The status of the Resolver endpoint. If you specify <code>Status</code> for <code>Name</code>,
+    /// specify one of the following status codes for <code>Values</code>: <code>CREATING</code>, <code>OPERATIONAL</code>, <code>UPDATING</code>,
+    /// <code>AUTO_RECOVERING</code>, <code>ACTION_NEEDED</code>, or <code>DELETING</code>. For more information, see <code>Status</code> in
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverEndpoint.html">ResolverEndpoint</a>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>ListResolverRules</b>
+    /// </p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreatorRequestId</code>: The value that you specified when you created the Resolver rule.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DomainName</code>: The domain name for which Resolver is forwarding DNS queries to your network. In the value that
+    /// you specify for <code>Values</code>, include a trailing dot (.) after the domain name. For example, if the domain name is example.com,
+    /// specify the following value. Note the "." after <code>com</code>:</p>
+    /// <p>
+    /// <code>example.com.</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code>: The name of the Resolver rule.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResolverEndpointId</code>: The ID of the Resolver endpoint that the Resolver rule is associated with.</p>
+    /// <note>
+    /// <p>You can filter on the Resolver endpoint only for rules that have a value of <code>FORWARD</code> for
+    /// <code>RuleType</code>.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The status of the Resolver rule. If you specify <code>Status</code> for <code>Name</code>,
+    /// specify one of the following status codes for <code>Values</code>: <code>COMPLETE</code>, <code>DELETING</code>, <code>UPDATING</code>,
+    /// or <code>FAILED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Type</code>: The type of the Resolver rule. If you specify <code>TYPE</code>
+    /// for <code>Name</code>, specify <code>FORWARD</code> or <code>SYSTEM</code> for <code>Values</code>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>ListResolverRuleAssociations</b>
+    /// </p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Name</code>: The name of the Resolver rule association.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResolverRuleId</code>: The ID of the Resolver rule that is associated with one or more VPCs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The status of the Resolver rule association. If you specify <code>Status</code> for <code>Name</code>,
+    /// specify one of the following status codes for <code>Values</code>: <code>CREATING</code>, <code>COMPLETE</code>, <code>DELETING</code>, or
+    /// <code>FAILED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VPCId</code>: The ID of the VPC that the Resolver rule is associated with.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>ListResolverQueryLogConfigs</b>
+    /// </p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Arn</code>: The ARN for the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AssociationCount</code>: The number of VPCs that are associated with the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreationTime</code>: The date and time that the query logging configuration was created, in Unix time format and
+    /// Coordinated Universal Time (UTC). </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreatorRequestId</code>: A unique string that identifies the request that created the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Destination</code>: The Amazon Web Services service that you want to forward query logs to. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>S3</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CloudWatchLogs</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KinesisFirehose</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DestinationArn</code>: The ARN of the location that Resolver is sending query logs to. This value can be the ARN for an
+    /// S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Id</code>: The ID of the query logging configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Name</code>: The name of the query logging configuration</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OwnerId</code>: The Amazon Web Services account ID for the account that created the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ShareStatus</code>: An indication of whether the query logging configuration is shared with other Amazon Web Services accounts,
+    /// or was shared with the current account by another Amazon Web Services account. Valid values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>,
+    /// or <code>SHARED_BY_ME</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The status of the query logging configuration. If you specify <code>Status</code> for <code>Name</code>,
+    /// specify the applicable status code for <code>Values</code>: <code>CREATING</code>, <code>CREATED</code>,
+    /// <code>DELETING</code>, or <code>FAILED</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfig.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfig-Status">Status</a>.
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>ListResolverQueryLogConfigAssociations</b>
+    /// </p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CreationTime</code>: The date and time that the VPC was associated with the query logging configuration, in Unix time format and
+    /// Coordinated Universal Time (UTC).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Error</code>: If the value of <code>Status</code> is <code>FAILED</code>, specify the cause:
+    /// <code>DESTINATION_NOT_FOUND</code> or <code>ACCESS_DENIED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Id</code>: The ID of the query logging association.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResolverQueryLogConfigId</code>: The ID of the query logging configuration that a VPC is associated with.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ResourceId</code>: The ID of the Amazon VPC that is associated with the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Status</code>: The status of the query logging association. If you specify <code>Status</code> for <code>Name</code>,
+    /// specify the applicable status code for <code>Values</code>: <code>CREATING</code>, <code>CREATED</code>,
+    /// <code>DELETING</code>, or <code>FAILED</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ResolverQueryLogConfigAssociation.html#Route53Resolver-Type-route53resolver_ResolverQueryLogConfigAssociation-Status">Status</a>.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>When you're using a <code>List</code> operation and you want the operation to return a subset of objects, such as Resolver endpoints or Resolver rules,
+    /// the value of the parameter that you want to use to filter objects. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for
+    /// <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3878,6 +4599,34 @@ pub struct ResolverRuleAssociation {
     /// <p>A detailed description of the status of the association between a Resolver rule and a VPC.</p>
     pub status_message: std::option::Option<std::string::String>,
 }
+impl ResolverRuleAssociation {
+    /// <p>The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>
+    /// request.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.</p>
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+        self.resolver_rule_id.as_deref()
+    }
+    /// <p>The name of an association between a Resolver rule and a VPC.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the VPC that you associated the Resolver rule with.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A code that specifies the current status of the association between a Resolver rule and a VPC.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResolverRuleAssociationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A detailed description of the status of the association between a Resolver rule and a VPC.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolverRuleAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolverRuleAssociation");
@@ -4126,6 +4875,80 @@ pub struct ResolverQueryLogConfig {
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub creation_time: std::option::Option<std::string::String>,
+}
+impl ResolverQueryLogConfig {
+    /// <p>The ID for the query logging configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code>: Resolver is creating the query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code>: The query logging configuration was successfully created.
+    /// Resolver is logging queries that originate in the specified VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code>: Resolver is deleting this query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration.
+    /// Here are two common causes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResolverQueryLogConfigStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another
+    /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
+    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.share_status.as_ref()
+    }
+    /// <p>The number of VPCs that are associated with the query logging configuration.</p>
+    pub fn association_count(&self) -> i32 {
+        self.association_count
+    }
+    /// <p>The ARN for the query logging configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the query logging configuration. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or
+    /// a Kinesis Data Firehose delivery stream.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>A unique string that identifies the request that created the query logging configuration.
+    /// The <code>CreatorRequestId</code> allows failed requests to be retried without the risk
+    /// of running the operation twice.</p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
 }
 impl std::fmt::Debug for ResolverQueryLogConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4537,6 +5360,70 @@ pub struct ResolverQueryLogConfigAssociation {
     /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub creation_time: std::option::Option<std::string::String>,
 }
+impl ResolverQueryLogConfigAssociation {
+    /// <p>The ID of the query logging association.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the query logging configuration that a VPC is associated with.</p>
+    pub fn resolver_query_log_config_id(&self) -> std::option::Option<&str> {
+        self.resolver_query_log_config_id.as_deref()
+    }
+    /// <p>The ID of the Amazon VPC that is associated with the query logging configuration.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The status of the specified query logging association. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration
+    /// was successfully created. Resolver is logging queries that originate in the specified VPC.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETING</code>: Resolver is deleting this query logging association.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null. </p>
+    pub fn error(
+        &self,
+    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociationError> {
+        self.error.as_ref()
+    }
+    /// <p>Contains additional information about the error. If the value or <code>Error</code> is null, the value of <code>ErrorMessage</code> also is null.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolverQueryLogConfigAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolverQueryLogConfigAssociation");
@@ -4904,6 +5791,36 @@ pub struct IpAddressResponse {
     /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: std::option::Option<std::string::String>,
 }
+impl IpAddressResponse {
+    /// <p>The ID of one IP address.</p>
+    pub fn ip_id(&self) -> std::option::Option<&str> {
+        self.ip_id.as_deref()
+    }
+    /// <p>The ID of one subnet.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>One IP address that the Resolver endpoint uses for DNS queries.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+    /// <p>A status code that gives the current status of the request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IpAddressStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message that provides additional information about the status of the request.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The date and time that the IP address was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the IP address was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
+}
 impl std::fmt::Debug for IpAddressResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpAddressResponse");
@@ -5155,6 +6072,36 @@ pub struct FirewallRuleGroupMetadata {
     /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub share_status: std::option::Option<crate::model::ShareStatus>,
 }
+impl FirewallRuleGroupMetadata {
+    /// <p>The ID of the rule group. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the rule group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account,
+    /// this is the account that has shared the rule group with you.  </p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed
+    /// requests without the risk of running the operation twice. This can be any unique string,
+    /// for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another
+    /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
+    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.share_status.as_ref()
+    }
+}
 impl std::fmt::Debug for FirewallRuleGroupMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirewallRuleGroupMetadata");
@@ -5292,6 +6239,30 @@ pub struct FirewallDomainListMetadata {
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub managed_owner_name: std::option::Option<std::string::String>,
+}
+impl FirewallDomainListMetadata {
+    /// <p>The ID of the domain list. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall domain list metadata.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the domain list. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed
+    /// requests without the risk of running the operation twice. This can be any unique string,
+    /// for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
+    pub fn managed_owner_name(&self) -> std::option::Option<&str> {
+        self.managed_owner_name.as_deref()
+    }
 }
 impl std::fmt::Debug for FirewallDomainListMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5477,6 +6448,56 @@ pub struct FirewallRuleGroup {
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: std::option::Option<std::string::String>,
+}
+impl FirewallRuleGroup {
+    /// <p>The ID of the rule group. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ARN (Amazon Resource Name) of the rule group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the rule group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of rules in the rule group.</p>
+    pub fn rule_count(&self) -> std::option::Option<i32> {
+        self.rule_count
+    }
+    /// <p>The status of the domain list.  </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallRuleGroupStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the status of the rule group, if available.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account,
+    /// this is the account that has shared the rule group with you.  </p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed
+    /// requests without the risk of running the operation twice. This can be any unique string,
+    /// for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another
+    /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
+    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.share_status.as_ref()
+    }
+    /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
 }
 impl std::fmt::Debug for FirewallRuleGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5762,6 +6783,50 @@ pub struct FirewallDomainList {
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub modification_time: std::option::Option<std::string::String>,
 }
+impl FirewallDomainList {
+    /// <p>The ID of the domain list. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the domain list. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The number of domain names that are specified in the domain list.</p>
+    pub fn domain_count(&self) -> std::option::Option<i32> {
+        self.domain_count
+    }
+    /// <p>The status of the domain list.  </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FirewallDomainListStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the status of the list, if available.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
+    pub fn managed_owner_name(&self) -> std::option::Option<&str> {
+        self.managed_owner_name.as_deref()
+    }
+    /// <p>A unique string defined by you to identify the request. This allows you to retry failed
+    /// requests without the risk of running the operation twice. This can be any unique string,
+    /// for example, a timestamp. </p>
+    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+        self.creator_request_id.as_deref()
+    }
+    /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn creation_time(&self) -> std::option::Option<&str> {
+        self.creation_time.as_deref()
+    }
+    /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
+    pub fn modification_time(&self) -> std::option::Option<&str> {
+        self.modification_time.as_deref()
+    }
+}
 impl std::fmt::Debug for FirewallDomainList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirewallDomainList");
@@ -5959,6 +7024,24 @@ pub struct IpAddressUpdate {
     /// <p>The new IP address.</p>
     pub ip: std::option::Option<std::string::String>,
 }
+impl IpAddressUpdate {
+    /// <p>
+    /// <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove.
+    /// To get this ID, use
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    pub fn ip_id(&self) -> std::option::Option<&str> {
+        self.ip_id.as_deref()
+    }
+    /// <p>The ID of the subnet that includes the IP address that you want to update. To get this ID, use
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The new IP address.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
+}
 impl std::fmt::Debug for IpAddressUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IpAddressUpdate");
@@ -6045,6 +7128,16 @@ pub struct IpAddressRequest {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The IP address that you want to use for DNS queries.</p>
     pub ip: std::option::Option<std::string::String>,
+}
+impl IpAddressRequest {
+    /// <p>The ID of the subnet that contains the IP address. </p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The IP address that you want to use for DNS queries.</p>
+    pub fn ip(&self) -> std::option::Option<&str> {
+        self.ip.as_deref()
+    }
 }
 impl std::fmt::Debug for IpAddressRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

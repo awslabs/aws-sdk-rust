@@ -37,6 +37,54 @@ pub struct PipelineDeclaration {
     /// 1. This number is incremented when a pipeline is updated.</p>
     pub version: std::option::Option<i32>,
 }
+impl PipelineDeclaration {
+    /// <p>The name of the pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform
+    /// actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with
+    /// an <code>actionRoleArn</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the
+    /// pipeline.</p>
+    /// <note>
+    /// <p>You must include either <code>artifactStore</code> or
+    /// <code>artifactStores</code> in your pipeline, but you cannot use both. If you
+    /// create a cross-region action in your pipeline, you must use
+    /// <code>artifactStores</code>.</p>
+    /// </note>
+    pub fn artifact_store(&self) -> std::option::Option<&crate::model::ArtifactStore> {
+        self.artifact_store.as_ref()
+    }
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS
+    /// Regions. There must be an artifact store for the pipeline Region and for each
+    /// cross-region action in the pipeline.</p>
+    /// <note>
+    /// <p>You must include either <code>artifactStore</code> or
+    /// <code>artifactStores</code> in your pipeline, but you cannot use both. If you
+    /// create a cross-region action in your pipeline, you must use
+    /// <code>artifactStores</code>.</p>
+    /// </note>
+    pub fn artifact_stores(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ArtifactStore>,
+    > {
+        self.artifact_stores.as_ref()
+    }
+    /// <p>The stage in which to perform the action.</p>
+    pub fn stages(&self) -> std::option::Option<&[crate::model::StageDeclaration]> {
+        self.stages.as_deref()
+    }
+    /// <p>The version number of the pipeline. A new pipeline always has a version number of
+    /// 1. This number is incremented when a pipeline is updated.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+}
 impl std::fmt::Debug for PipelineDeclaration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipelineDeclaration");
@@ -219,6 +267,20 @@ pub struct StageDeclaration {
     /// <p>The actions included in a stage.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionDeclaration>>,
 }
+impl StageDeclaration {
+    /// <p>The name of the stage.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn blockers(&self) -> std::option::Option<&[crate::model::BlockerDeclaration]> {
+        self.blockers.as_deref()
+    }
+    /// <p>The actions included in a stage.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::ActionDeclaration]> {
+        self.actions.as_deref()
+    }
+}
 impl std::fmt::Debug for StageDeclaration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StageDeclaration");
@@ -344,6 +406,64 @@ pub struct ActionDeclaration {
     /// <p>The variable namespace associated with the action. All variables produced as output by
     /// this action fall under this namespace.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl ActionDeclaration {
+    /// <p>The action declaration's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the action type and the provider of the action.</p>
+    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.action_type_id.as_ref()
+    }
+    /// <p>The order in which actions are run.</p>
+    pub fn run_order(&self) -> std::option::Option<i32> {
+        self.run_order
+    }
+    /// <p>The action's configuration. These are key-value pairs that specify input values for
+    /// an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of
+    /// configuration properties for the AWS CloudFormation action type in CodePipeline, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User
+    /// Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the
+    /// <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON
+    /// configuration item format is as follows: </p>
+    /// <p>
+    /// <i>JSON:</i>
+    /// </p>
+    /// <p>
+    /// <code>"Configuration" : { Key : Value },</code>
+    /// </p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.configuration.as_ref()
+    }
+    /// <p>The name or ID of the result of the action declaration, such as a test or build
+    /// artifact.</p>
+    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::OutputArtifact]> {
+        self.output_artifacts.as_deref()
+    }
+    /// <p>The name or ID of the artifact consumed by the action, such as a test or build
+    /// artifact.</p>
+    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::InputArtifact]> {
+        self.input_artifacts.as_deref()
+    }
+    /// <p>The ARN of the IAM service role that performs the declared action. This is assumed
+    /// through the roleArn for the pipeline.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The action declaration's AWS Region, such as us-east-1.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The variable namespace associated with the action. All variables produced as output by
+    /// this action fall under this namespace.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for ActionDeclaration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -576,6 +696,17 @@ pub struct InputArtifact {
     /// actions.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl InputArtifact {
+    /// <p>The name of the artifact to be worked on (for example, "My App").</p>
+    /// <p>The input artifact of an action must exactly match the output artifact declared in
+    /// a preceding action, but the input artifact does not have to be the next action in strict
+    /// sequence from the action that provided the output artifact. Actions in parallel can
+    /// declare different output artifacts, which are in turn consumed by different following
+    /// actions.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for InputArtifact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputArtifact");
@@ -637,6 +768,18 @@ pub struct OutputArtifact {
     /// actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl OutputArtifact {
+    /// <p>The name of the output of an artifact, such as "My App".</p>
+    /// <p>The input artifact of an action must exactly match the output artifact declared in
+    /// a preceding action, but the input artifact does not have to be the next action in strict
+    /// sequence from the action that provided the output artifact. Actions in parallel can
+    /// declare different output artifacts, which are in turn consumed by different following
+    /// actions.</p>
+    /// <p>Output artifact names must be unique within a pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for OutputArtifact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -729,6 +872,52 @@ pub struct ActionTypeId {
     pub provider: std::option::Option<std::string::String>,
     /// <p>A string that describes the action version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl ActionTypeId {
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains
+    /// the provider type for the action. Valid categories are limited to one of the following
+    /// values. </p>
+    /// <ul>
+    /// <li>
+    /// <p>Source</p>
+    /// </li>
+    /// <li>
+    /// <p>Build</p>
+    /// </li>
+    /// <li>
+    /// <p>Test</p>
+    /// </li>
+    /// <li>
+    /// <p>Deploy</p>
+    /// </li>
+    /// <li>
+    /// <p>Invoke</p>
+    /// </li>
+    /// <li>
+    /// <p>Approval</p>
+    /// </li>
+    /// </ul>
+    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The creator of the action being called. There are three valid values for the
+    /// <code>Owner</code> field in the action category section within your pipeline
+    /// structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
+    pub fn owner(&self) -> std::option::Option<&crate::model::ActionOwner> {
+        self.owner.as_ref()
+    }
+    /// <p>The provider of the service being called by the action. Valid providers are
+    /// determined by the action category. For example, an action in the Deploy category type
+    /// might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy. For
+    /// more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>A string that describes the action version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for ActionTypeId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1008,6 +1197,16 @@ pub struct BlockerDeclaration {
     /// <p>Reserved for future use.</p>
     pub r#type: std::option::Option<crate::model::BlockerType>,
 }
+impl BlockerDeclaration {
+    /// <p>Reserved for future use.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::BlockerType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for BlockerDeclaration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BlockerDeclaration");
@@ -1136,6 +1335,26 @@ pub struct ArtifactStore {
     /// S3 is used.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
+impl ArtifactStore {
+    /// <p>The type of the artifact store, such as S3.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactStoreType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the
+    /// name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline
+    /// artifacts is created for you based on the name of the pipeline. You can use any S3
+    /// bucket in the same AWS Region as the pipeline to store your pipeline
+    /// artifacts.</p>
+    pub fn location(&self) -> std::option::Option<&str> {
+        self.location.as_deref()
+    }
+    /// <p>The encryption key used to encrypt the data in the artifact store, such as an AWS
+    /// Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon
+    /// S3 is used.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
+}
 impl std::fmt::Debug for ArtifactStore {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactStore");
@@ -1237,6 +1456,23 @@ pub struct EncryptionKey {
     /// <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key.
     /// When creating or updating a pipeline, the value must be set to 'KMS'.</p>
     pub r#type: std::option::Option<crate::model::EncryptionKeyType>,
+}
+impl EncryptionKey {
+    /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the
+    /// key ARN, or the alias ARN.</p>
+    /// <note>
+    /// <p>Aliases are recognized only in the account that created the customer master key
+    /// (CMK). For cross-account actions, you can only use the key ID or key ARN to identify
+    /// the key.</p>
+    /// </note>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key.
+    /// When creating or updating a pipeline, the value must be set to 'KMS'.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionKeyType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for EncryptionKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1438,6 +1674,49 @@ pub struct ActionTypeDeclaration {
     /// <p>The links associated with the action type to be updated.</p>
     pub urls: std::option::Option<crate::model::ActionTypeUrls>,
 }
+impl ActionTypeDeclaration {
+    /// <p>The description for the action type to be updated.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Information about the executor for an action type that was created with any supported
+    /// integration model.</p>
+    pub fn executor(&self) -> std::option::Option<&crate::model::ActionTypeExecutor> {
+        self.executor.as_ref()
+    }
+    /// <p>The action category, owner, provider, and version of the action type to be
+    /// updated.</p>
+    pub fn id(&self) -> std::option::Option<&crate::model::ActionTypeIdentifier> {
+        self.id.as_ref()
+    }
+    /// <p>Details for the artifacts, such as application files, to be worked on by the action.
+    /// For example, the minimum and maximum number of input artifacts allowed.</p>
+    pub fn input_artifact_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActionTypeArtifactDetails> {
+        self.input_artifact_details.as_ref()
+    }
+    /// <p>Details for the output artifacts, such as a built application, that are the result of
+    /// the action. For example, the minimum and maximum number of output artifacts
+    /// allowed.</p>
+    pub fn output_artifact_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ActionTypeArtifactDetails> {
+        self.output_artifact_details.as_ref()
+    }
+    /// <p>Details identifying the accounts with permissions to use the action type.</p>
+    pub fn permissions(&self) -> std::option::Option<&crate::model::ActionTypePermissions> {
+        self.permissions.as_ref()
+    }
+    /// <p>The properties of the action type to be updated.</p>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::ActionTypeProperty]> {
+        self.properties.as_deref()
+    }
+    /// <p>The links associated with the action type to be updated.</p>
+    pub fn urls(&self) -> std::option::Option<&crate::model::ActionTypeUrls> {
+        self.urls.as_ref()
+    }
+}
 impl std::fmt::Debug for ActionTypeDeclaration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTypeDeclaration");
@@ -1635,6 +1914,30 @@ pub struct ActionTypeUrls {
     /// customers can update or change the configuration of the external action.</p>
     pub revision_url_template: std::option::Option<std::string::String>,
 }
+impl ActionTypeUrls {
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where
+    /// customers can configure the external action.</p>
+    pub fn configuration_url(&self) -> std::option::Option<&str> {
+        self.configuration_url.as_deref()
+    }
+    /// <p>The URL returned to the CodePipeline console that provides a deep link to the
+    /// resources of the external system, such as a status page. This link is provided as part
+    /// of the action display in the pipeline.</p>
+    pub fn entity_url_template(&self) -> std::option::Option<&str> {
+        self.entity_url_template.as_deref()
+    }
+    /// <p>The link to an execution page for the action type in progress. For example, for a
+    /// CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline
+    /// console, and it links to a CodeDeploy status page.</p>
+    pub fn execution_url_template(&self) -> std::option::Option<&str> {
+        self.execution_url_template.as_deref()
+    }
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where
+    /// customers can update or change the configuration of the external action.</p>
+    pub fn revision_url_template(&self) -> std::option::Option<&str> {
+        self.revision_url_template.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionTypeUrls {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTypeUrls");
@@ -1762,6 +2065,36 @@ pub struct ActionTypeProperty {
     /// <p>The description of the property that is displayed to users.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl ActionTypeProperty {
+    /// <p>The property name that is displayed to users.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Whether the configuration property is an optional value.</p>
+    pub fn optional(&self) -> bool {
+        self.optional
+    }
+    /// <p>Whether the configuration property is a key.</p>
+    pub fn key(&self) -> bool {
+        self.key
+    }
+    /// <p>Whether to omit the field value entered by the customer in the log. If
+    /// <code>true</code>, the value is not saved in CloudTrail logs for the action
+    /// execution.</p>
+    pub fn no_echo(&self) -> bool {
+        self.no_echo
+    }
+    /// <p>Indicates that the property is used with polling. An action type can have up to one
+    /// queryable property. If it has one, that property must be both required and not
+    /// secret.</p>
+    pub fn queryable(&self) -> bool {
+        self.queryable
+    }
+    /// <p>The description of the property that is displayed to users.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionTypeProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTypeProperty");
@@ -1884,6 +2217,13 @@ pub struct ActionTypePermissions {
     /// pipelines.</p>
     pub allowed_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ActionTypePermissions {
+    /// <p>A list of AWS account IDs with access to use the action type in their
+    /// pipelines.</p>
+    pub fn allowed_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionTypePermissions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTypePermissions");
@@ -1949,6 +2289,20 @@ pub struct ActionTypeArtifactDetails {
     /// should specify a minimum and maximum of zero input artifacts for an action type with a
     /// category of <code>source</code>.</p>
     pub maximum_count: i32,
+}
+impl ActionTypeArtifactDetails {
+    /// <p>The minimum number of artifacts that can be used with the action type. For example,
+    /// you should specify a minimum and maximum of zero input artifacts for an action type with
+    /// a category of <code>source</code>.</p>
+    pub fn minimum_count(&self) -> i32 {
+        self.minimum_count
+    }
+    /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you
+    /// should specify a minimum and maximum of zero input artifacts for an action type with a
+    /// category of <code>source</code>.</p>
+    pub fn maximum_count(&self) -> i32 {
+        self.maximum_count
+    }
 }
 impl std::fmt::Debug for ActionTypeArtifactDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2058,6 +2412,58 @@ pub struct ActionTypeIdentifier {
     pub provider: std::option::Option<std::string::String>,
     /// <p>A string that describes the action type version.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl ActionTypeIdentifier {
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Source</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Build</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Test</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Deploy</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Approval</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invoke</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The creator of the action type being called: <code>AWS</code> or
+    /// <code>ThirdParty</code>.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The provider of the action type being called. The provider name is supplied when the
+    /// action type is created.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>A string that describes the action type version.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for ActionTypeIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2236,6 +2642,34 @@ pub struct ActionTypeExecutor {
     /// is the timeout for a single job, not the entire action execution.</p>
     pub job_timeout: std::option::Option<i32>,
 }
+impl ActionTypeExecutor {
+    /// <p>The action configuration properties for the action type. These properties are
+    /// specified in the action definition when the action type is created.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::ExecutorConfiguration> {
+        self.configuration.as_ref()
+    }
+    /// <p>The integration model used to create and update the action type, <code>Lambda</code>
+    /// or <code>JobWorker</code>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ExecutorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s
+    /// account that are needed to successfully run an action.</p>
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a
+    /// domain-style identifier defined by the service, for example
+    /// <code>codepipeline.amazonaws.com</code>.</p>
+    /// <note>
+    /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
+    /// </note>
+    pub fn policy_statements_template(&self) -> std::option::Option<&str> {
+        self.policy_statements_template.as_deref()
+    }
+    /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This
+    /// is the timeout for a single job, not the entire action execution.</p>
+    pub fn job_timeout(&self) -> std::option::Option<i32> {
+        self.job_timeout
+    }
+}
 impl std::fmt::Debug for ActionTypeExecutor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTypeExecutor");
@@ -2413,6 +2847,20 @@ pub struct ExecutorConfiguration {
     pub job_worker_executor_configuration:
         std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
 }
+impl ExecutorConfiguration {
+    /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
+    pub fn lambda_executor_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaExecutorConfiguration> {
+        self.lambda_executor_configuration.as_ref()
+    }
+    /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
+    pub fn job_worker_executor_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::JobWorkerExecutorConfiguration> {
+        self.job_worker_executor_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecutorConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutorConfiguration");
@@ -2498,6 +2946,18 @@ pub struct JobWorkerExecutorConfiguration {
     /// <p>The service Principals in which the job worker is configured and might poll for jobs
     /// as part of the action execution.</p>
     pub polling_service_principals: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl JobWorkerExecutorConfiguration {
+    /// <p>The accounts in which the job worker is configured and might poll for jobs as part of
+    /// the action execution.</p>
+    pub fn polling_accounts(&self) -> std::option::Option<&[std::string::String]> {
+        self.polling_accounts.as_deref()
+    }
+    /// <p>The service Principals in which the job worker is configured and might poll for jobs
+    /// as part of the action execution.</p>
+    pub fn polling_service_principals(&self) -> std::option::Option<&[std::string::String]> {
+        self.polling_service_principals.as_deref()
+    }
 }
 impl std::fmt::Debug for JobWorkerExecutorConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2587,6 +3047,12 @@ pub struct LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
+impl LambdaExecutorConfiguration {
+    /// <p>The ARN of the Lambda function used by the action engine.</p>
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+        self.lambda_function_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaExecutorConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaExecutorConfiguration");
@@ -2639,6 +3105,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2769,6 +3245,41 @@ pub struct ListWebhookItem {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the tags applied to the webhook.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListWebhookItem {
+    /// <p>The detail returned for each webhook, such as the webhook authentication type and
+    /// filter rules.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::WebhookDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>A unique URL generated by CodePipeline. When a POST request is made to this URL,
+    /// the defined pipeline is started as long as the body of the post request satisfies the
+    /// defined authentication and filtering conditions. Deleting and re-creating a webhook
+    /// makes the old URL invalid and generates a new one.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The text of the error message about the webhook.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The number code of the error.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The date and time a webhook was last successfully triggered, in timestamp
+    /// format.</p>
+    pub fn last_triggered(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_triggered.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the tags applied to the webhook.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWebhookItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2956,6 +3467,57 @@ pub struct WebhookDefinition {
     /// <code>AllowedIPRange </code>property must be set to a valid CIDR range. For
     /// UNAUTHENTICATED, no properties can be set.</p>
     pub authentication_configuration: std::option::Option<crate::model::WebhookAuthConfiguration>,
+}
+impl WebhookDefinition {
+    /// <p>The name of the webhook.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the pipeline you want to connect to the webhook.</p>
+    pub fn target_pipeline(&self) -> std::option::Option<&str> {
+        self.target_pipeline.as_deref()
+    }
+    /// <p>The name of the action in a pipeline you want to connect to the webhook. The action
+    /// must be from the source (first) stage of the pipeline.</p>
+    pub fn target_action(&self) -> std::option::Option<&str> {
+        self.target_action.as_deref()
+    }
+    /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook
+    /// URL. All defined rules must pass for the request to be accepted and the pipeline
+    /// started.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::WebhookFilterRule]> {
+        self.filters.as_deref()
+    }
+    /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For information about the authentication scheme implemented by GITHUB_HMAC,
+    /// see <a href="https://developer.github.com/webhooks/securing/">Securing your
+    /// webhooks</a> on the GitHub Developer website.</p>
+    /// </li>
+    /// <li>
+    /// <p> IP rejects webhooks trigger requests unless they originate from an IP
+    /// address in the IP range whitelisted in the authentication
+    /// configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of
+    /// origin.</p>
+    /// </li>
+    /// </ul>
+    pub fn authentication(&self) -> std::option::Option<&crate::model::WebhookAuthenticationType> {
+        self.authentication.as_ref()
+    }
+    /// <p>Properties that configure the authentication applied to incoming webhook trigger
+    /// requests. The required properties depend on the authentication type. For GITHUB_HMAC,
+    /// only the <code>SecretToken </code>property must be set. For IP, only the
+    /// <code>AllowedIPRange </code>property must be set to a valid CIDR range. For
+    /// UNAUTHENTICATED, no properties can be set.</p>
+    pub fn authentication_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::WebhookAuthConfiguration> {
+        self.authentication_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for WebhookDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3149,6 +3711,19 @@ pub struct WebhookAuthConfiguration {
     /// <code>SecretToken</code> property must be set.</p>
     pub secret_token: std::option::Option<std::string::String>,
 }
+impl WebhookAuthConfiguration {
+    /// <p>The property used to configure acceptance of webhooks in an IP address range. For
+    /// IP, only the <code>AllowedIPRange</code> property must be set. This property must be set
+    /// to a valid CIDR range.</p>
+    pub fn allowed_ip_range(&self) -> std::option::Option<&str> {
+        self.allowed_ip_range.as_deref()
+    }
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the
+    /// <code>SecretToken</code> property must be set.</p>
+    pub fn secret_token(&self) -> std::option::Option<&str> {
+        self.secret_token.as_deref()
+    }
+}
 impl std::fmt::Debug for WebhookAuthConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebhookAuthConfiguration");
@@ -3292,6 +3867,27 @@ pub struct WebhookFilterRule {
     /// action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
     pub match_equals: std::option::Option<std::string::String>,
 }
+impl WebhookFilterRule {
+    /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value
+    /// selected by the JsonPath expression must match the value specified in the
+    /// <code>MatchEquals</code> field. Otherwise, the request is ignored. For more
+    /// information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath
+    /// implementation</a> in GitHub.</p>
+    pub fn json_path(&self) -> std::option::Option<&str> {
+        self.json_path.as_deref()
+    }
+    /// <p>The value selected by the <code>JsonPath</code> expression must match what is
+    /// supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored.
+    /// Properties from the target action configuration can be included as placeholders in this
+    /// value by surrounding the action configuration key with curly brackets. For example, if
+    /// the value supplied here is "refs/heads/{Branch}" and the target action has an action
+    /// configuration property called "Branch" with a value of "master", the
+    /// <code>MatchEquals</code> value is evaluated as "refs/heads/master". For a list of
+    /// action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
+    pub fn match_equals(&self) -> std::option::Option<&str> {
+        self.match_equals.as_deref()
+    }
+}
 impl std::fmt::Debug for WebhookFilterRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebhookFilterRule");
@@ -3382,6 +3978,22 @@ pub struct ExecutionDetails {
     /// percent.</p>
     pub percent_complete: std::option::Option<i32>,
 }
+impl ExecutionDetails {
+    /// <p>The summary of the current status of the actions.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The system-generated unique ID of this action used to identify this job worker in
+    /// any external systems, such as AWS CodeDeploy.</p>
+    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+        self.external_execution_id.as_deref()
+    }
+    /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100
+    /// percent.</p>
+    pub fn percent_complete(&self) -> std::option::Option<i32> {
+        self.percent_complete
+    }
+}
 impl std::fmt::Debug for ExecutionDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionDetails");
@@ -3469,6 +4081,25 @@ pub struct CurrentRevision {
     pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The summary of the most recent revision of the artifact.</p>
     pub revision_summary: std::option::Option<std::string::String>,
+}
+impl CurrentRevision {
+    /// <p>The revision ID of the current version of an artifact.</p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+    /// <p>The change identifier for the current revision.</p>
+    pub fn change_identifier(&self) -> std::option::Option<&str> {
+        self.change_identifier.as_deref()
+    }
+    /// <p>The date and time when the most recent revision of the artifact was created, in
+    /// timestamp format.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The summary of the most recent revision of the artifact.</p>
+    pub fn revision_summary(&self) -> std::option::Option<&str> {
+        self.revision_summary.as_deref()
+    }
 }
 impl std::fmt::Debug for CurrentRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3571,6 +4202,20 @@ pub struct FailureDetails {
     pub message: std::option::Option<std::string::String>,
     /// <p>The external ID of the run of the action that failed.</p>
     pub external_execution_id: std::option::Option<std::string::String>,
+}
+impl FailureDetails {
+    /// <p>The type of the failure.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FailureType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The message about the failure.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The external ID of the run of the action that failed.</p>
+    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+        self.external_execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for FailureDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3730,6 +4375,17 @@ pub struct ApprovalResult {
     /// request.</p>
     pub status: std::option::Option<crate::model::ApprovalStatus>,
 }
+impl ApprovalResult {
+    /// <p>The summary of the current status of the approval request.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The response submitted by a reviewer assigned to an approval action
+    /// request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ApprovalStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ApprovalResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApprovalResult");
@@ -3858,6 +4514,23 @@ pub struct ActionRevision {
     /// timestamp format.</p>
     pub created: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ActionRevision {
+    /// <p>The system-generated unique ID that identifies the revision number of the
+    /// action.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The unique identifier of the change that set the state to this revision (for
+    /// example, a deployment ID or timestamp).</p>
+    pub fn revision_change_id(&self) -> std::option::Option<&str> {
+        self.revision_change_id.as_deref()
+    }
+    /// <p>The date and time when the most recent version of the action was created, in
+    /// timestamp format.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+}
 impl std::fmt::Debug for ActionRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionRevision");
@@ -3949,6 +4622,18 @@ pub struct ThirdPartyJob {
     /// <p>The identifier used to identify the job in AWS CodePipeline.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl ThirdPartyJob {
+    /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and
+    /// <code>clientToken</code> pair used to verify that the calling entity is allowed
+    /// access to the job and its details.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The identifier used to identify the job in AWS CodePipeline.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ThirdPartyJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThirdPartyJob");
@@ -4020,6 +4705,25 @@ pub struct Job {
     pub nonce: std::option::Option<std::string::String>,
     /// <p>The ID of the AWS account to use when performing the job.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl Job {
+    /// <p>The unique system-generated ID of the job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Other data about a job.</p>
+    pub fn data(&self) -> std::option::Option<&crate::model::JobData> {
+        self.data.as_ref()
+    }
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
+    /// is being worked on by only one job worker. Use this number in an <a>AcknowledgeJob</a> request.</p>
+    pub fn nonce(&self) -> std::option::Option<&str> {
+        self.nonce.as_deref()
+    }
+    /// <p>The ID of the AWS account to use when performing the job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4133,6 +4837,51 @@ pub struct JobData {
     /// <p>Represents information about the key used to encrypt data in the artifact store,
     /// such as an AWS Key Management Service (AWS KMS) key. </p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
+}
+impl JobData {
+    /// <p>Represents information about an action type.</p>
+    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.action_type_id.as_ref()
+    }
+    /// <p>Represents information about an action configuration.</p>
+    pub fn action_configuration(&self) -> std::option::Option<&crate::model::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
+    /// <p>Represents information about a pipeline to a job worker.</p>
+    /// <note>
+    /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
+    /// custom jobs.</p>
+    /// </note>
+    pub fn pipeline_context(&self) -> std::option::Option<&crate::model::PipelineContext> {
+        self.pipeline_context.as_ref()
+    }
+    /// <p>The artifact supplied to the job.</p>
+    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+        self.input_artifacts.as_deref()
+    }
+    /// <p>The output of the job.</p>
+    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+        self.output_artifacts.as_deref()
+    }
+    /// <p>Represents an AWS session credentials object. These credentials are temporary
+    /// credentials that are issued by AWS Secure Token Service (STS). They can be used to
+    /// access input and output artifacts in the S3 bucket used to store artifacts for the
+    /// pipeline in AWS CodePipeline.</p>
+    pub fn artifact_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsSessionCredentials> {
+        self.artifact_credentials.as_ref()
+    }
+    /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job
+    /// to continue the job asynchronously.</p>
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
+        self.continuation_token.as_deref()
+    }
+    /// <p>Represents information about the key used to encrypt data in the artifact store,
+    /// such as an AWS Key Management Service (AWS KMS) key. </p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
 }
 impl std::fmt::Debug for JobData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4334,6 +5083,20 @@ pub struct AwsSessionCredentials {
     /// <p>The token for the session.</p>
     pub session_token: std::option::Option<std::string::String>,
 }
+impl AwsSessionCredentials {
+    /// <p>The access key for the session.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The secret access key for the session.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The token for the session.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AwsSessionCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsSessionCredentials");
@@ -4423,6 +5186,21 @@ pub struct Artifact {
     /// <p>The location of an artifact.</p>
     pub location: std::option::Option<crate::model::ArtifactLocation>,
 }
+impl Artifact {
+    /// <p>The artifact's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit
+    /// ID (GitHub) or a revision ID (Amazon S3).</p>
+    pub fn revision(&self) -> std::option::Option<&str> {
+        self.revision.as_deref()
+    }
+    /// <p>The location of an artifact.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::ArtifactLocation> {
+        self.location.as_ref()
+    }
+}
 impl std::fmt::Debug for Artifact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Artifact");
@@ -4504,6 +5282,16 @@ pub struct ArtifactLocation {
     /// <p>The S3 bucket that contains the artifact.</p>
     pub s3_location: std::option::Option<crate::model::S3ArtifactLocation>,
 }
+impl ArtifactLocation {
+    /// <p>The type of artifact in the location.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactLocationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The S3 bucket that contains the artifact.</p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3ArtifactLocation> {
+        self.s3_location.as_ref()
+    }
+}
 impl std::fmt::Debug for ArtifactLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactLocation");
@@ -4573,6 +5361,17 @@ pub struct S3ArtifactLocation {
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the
     /// bucket.</p>
     pub object_key: std::option::Option<std::string::String>,
+}
+impl S3ArtifactLocation {
+    /// <p>The name of the S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the
+    /// bucket.</p>
+    pub fn object_key(&self) -> std::option::Option<&str> {
+        self.object_key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ArtifactLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4703,6 +5502,29 @@ pub struct PipelineContext {
     /// <p>The execution ID of the pipeline.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
+impl PipelineContext {
+    /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be
+    /// unique across all pipeline names under an Amazon Web Services account.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The stage of the pipeline.</p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::StageContext> {
+        self.stage.as_ref()
+    }
+    /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ActionContext> {
+        self.action.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
+    /// <p>The execution ID of the pipeline.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PipelineContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipelineContext");
@@ -4817,6 +5639,16 @@ pub struct ActionContext {
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
     pub action_execution_id: std::option::Option<std::string::String>,
 }
+impl ActionContext {
+    /// <p>The name of the action in the context of a job.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
+    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+        self.action_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionContext");
@@ -4881,6 +5713,12 @@ pub struct StageContext {
     /// <p>The name of the stage.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl StageContext {
+    /// <p>The name of the stage.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for StageContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StageContext");
@@ -4927,6 +5765,15 @@ pub struct ActionConfiguration {
     /// <p>The configuration data for the action.</p>
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ActionConfiguration {
+    /// <p>The configuration data for the action.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4999,6 +5846,25 @@ pub struct PipelineSummary {
     /// <p>The date and time of the last update to the pipeline, in timestamp
     /// format.</p>
     pub updated: std::option::Option<aws_smithy_types::Instant>,
+}
+impl PipelineSummary {
+    /// <p>The name of the pipeline.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version number of the pipeline.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+    /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The date and time of the last update to the pipeline, in timestamp
+    /// format.</p>
+    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated.as_ref()
+    }
 }
 impl std::fmt::Debug for PipelineSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5134,6 +6000,64 @@ pub struct PipelineExecutionSummary {
     pub trigger: std::option::Option<crate::model::ExecutionTrigger>,
     /// <p>The interaction that stopped a pipeline execution.</p>
     pub stop_trigger: std::option::Option<crate::model::StopExecutionTrigger>,
+}
+impl PipelineExecutionSummary {
+    /// <p>The ID of the pipeline execution.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+    /// <p>The status of the pipeline execution.</p>
+    /// <ul>
+    /// <li>
+    /// <p>InProgress: The pipeline execution is currently running.</p>
+    /// </li>
+    /// <li>
+    /// <p>Stopped: The pipeline execution was manually stopped. For more information,
+    /// see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Stopping: The pipeline execution received a request to be manually stopped.
+    /// Depending on the selected stop mode, the execution is either completing or
+    /// abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Succeeded: The pipeline execution was completed successfully. </p>
+    /// </li>
+    /// <li>
+    /// <p>Superseded: While this pipeline execution was waiting for the next stage to
+    /// be completed, a newer pipeline execution advanced and continued through the
+    /// pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed: The pipeline execution was not completed successfully.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PipelineExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time of the last change to the pipeline execution, in timestamp
+    /// format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>A list of the source artifact revisions that initiated a pipeline
+    /// execution.</p>
+    pub fn source_revisions(&self) -> std::option::Option<&[crate::model::SourceRevision]> {
+        self.source_revisions.as_deref()
+    }
+    /// <p>The interaction or event that started a pipeline execution, such as automated change
+    /// detection or a <code>StartPipelineExecution</code> API call.</p>
+    pub fn trigger(&self) -> std::option::Option<&crate::model::ExecutionTrigger> {
+        self.trigger.as_ref()
+    }
+    /// <p>The interaction that stopped a pipeline execution.</p>
+    pub fn stop_trigger(&self) -> std::option::Option<&crate::model::StopExecutionTrigger> {
+        self.stop_trigger.as_ref()
+    }
 }
 impl std::fmt::Debug for PipelineExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5345,6 +6269,12 @@ pub struct StopExecutionTrigger {
     /// <p>The user-specified reason the pipeline was stopped.</p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl StopExecutionTrigger {
+    /// <p>The user-specified reason the pipeline was stopped.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for StopExecutionTrigger {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopExecutionTrigger");
@@ -5397,6 +6327,19 @@ pub struct ExecutionTrigger {
     /// of the webhook that triggered the pipeline execution or the user ARN for a
     /// user-initiated <code>start-pipeline-execution</code> CLI command.</p>
     pub trigger_detail: std::option::Option<std::string::String>,
+}
+impl ExecutionTrigger {
+    /// <p>The type of change-detection method, command, or user interaction that started a
+    /// pipeline execution.</p>
+    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+        self.trigger_type.as_ref()
+    }
+    /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN
+    /// of the webhook that triggered the pipeline execution or the user ARN for a
+    /// user-initiated <code>start-pipeline-execution</code> CLI command.</p>
+    pub fn trigger_detail(&self) -> std::option::Option<&str> {
+        self.trigger_detail.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecutionTrigger {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5561,6 +6504,30 @@ pub struct SourceRevision {
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS
     /// CodeCommit repositories, the commit ID is linked to a commit details page.</p>
     pub revision_url: std::option::Option<std::string::String>,
+}
+impl SourceRevision {
+    /// <p>The name of the action that processed the revision to the source
+    /// artifact.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The system-generated unique ID that identifies the revision number of the
+    /// artifact.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>Summary information about the most recent revision of the artifact. For GitHub and
+    /// AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the
+    /// user-provided content of a <code>codepipeline-artifact-revision-summary</code> key
+    /// specified in the object metadata.</p>
+    pub fn revision_summary(&self) -> std::option::Option<&str> {
+        self.revision_summary.as_deref()
+    }
+    /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS
+    /// CodeCommit repositories, the commit ID is linked to a commit details page.</p>
+    pub fn revision_url(&self) -> std::option::Option<&str> {
+        self.revision_url.as_deref()
+    }
 }
 impl std::fmt::Debug for SourceRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5756,6 +6723,30 @@ pub struct ActionType {
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
     pub output_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
 }
+impl ActionType {
+    /// <p>Represents information about an action type.</p>
+    pub fn id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.id.as_ref()
+    }
+    /// <p>The settings for the action type.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::ActionTypeSettings> {
+        self.settings.as_ref()
+    }
+    /// <p>The configuration properties for the action type.</p>
+    pub fn action_configuration_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::ActionConfigurationProperty]> {
+        self.action_configuration_properties.as_deref()
+    }
+    /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    pub fn input_artifact_details(&self) -> std::option::Option<&crate::model::ArtifactDetails> {
+        self.input_artifact_details.as_ref()
+    }
+    /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    pub fn output_artifact_details(&self) -> std::option::Option<&crate::model::ArtifactDetails> {
+        self.output_artifact_details.as_ref()
+    }
+}
 impl std::fmt::Debug for ActionType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionType");
@@ -5883,6 +6874,16 @@ pub struct ArtifactDetails {
     /// <p>The maximum number of artifacts allowed for the action type.</p>
     pub maximum_count: i32,
 }
+impl ArtifactDetails {
+    /// <p>The minimum number of artifacts allowed for the action type.</p>
+    pub fn minimum_count(&self) -> i32 {
+        self.minimum_count
+    }
+    /// <p>The maximum number of artifacts allowed for the action type.</p>
+    pub fn maximum_count(&self) -> i32 {
+        self.maximum_count
+    }
+}
 impl std::fmt::Debug for ArtifactDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactDetails");
@@ -5966,6 +6967,47 @@ pub struct ActionConfigurationProperty {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the configuration property.</p>
     pub r#type: std::option::Option<crate::model::ActionConfigurationPropertyType>,
+}
+impl ActionConfigurationProperty {
+    /// <p>The name of the action configuration property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Whether the configuration property is a required value.</p>
+    pub fn required(&self) -> bool {
+        self.required
+    }
+    /// <p>Whether the configuration property is a key.</p>
+    pub fn key(&self) -> bool {
+        self.key
+    }
+    /// <p>Whether the configuration property is secret. Secrets are hidden from all calls
+    /// except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>,
+    /// <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>When updating a pipeline, passing * * * * * without changing any other values of
+    /// the action preserves the previous value of the secret.</p>
+    pub fn secret(&self) -> bool {
+        self.secret
+    }
+    /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a
+    /// custom action, an action can have up to one queryable property. If it has one, that
+    /// property must be both required and not secret.</p>
+    /// <p>If you create a pipeline with a custom action type, and that custom action contains
+    /// a queryable property, the value for that configuration property is subject to other
+    /// restrictions. The value must be less than or equal to twenty (20) characters. The value
+    /// can contain only alphanumeric characters, underscores, and hyphens.</p>
+    pub fn queryable(&self) -> bool {
+        self.queryable
+    }
+    /// <p>The description of the action configuration property that is displayed to
+    /// users.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the configuration property.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ActionConfigurationPropertyType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionConfigurationProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6191,6 +7233,32 @@ pub struct ActionTypeSettings {
     /// where customers can update or change the configuration of the external action.</p>
     pub revision_url_template: std::option::Option<std::string::String>,
 }
+impl ActionTypeSettings {
+    /// <p>The URL of a sign-up page where users can sign up for an external service and
+    /// perform initial configuration of the action provided by that service.</p>
+    pub fn third_party_configuration_url(&self) -> std::option::Option<&str> {
+        self.third_party_configuration_url.as_deref()
+    }
+    /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the
+    /// resources of the external system, such as the configuration page for an AWS CodeDeploy
+    /// deployment group. This link is provided as part of the action display in the
+    /// pipeline.</p>
+    pub fn entity_url_template(&self) -> std::option::Option<&str> {
+        self.entity_url_template.as_deref()
+    }
+    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the
+    /// top-level landing page for the external system, such as the console page for AWS
+    /// CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console
+    /// and provides a link to the execution entity of the external action.</p>
+    pub fn execution_url_template(&self) -> std::option::Option<&str> {
+        self.execution_url_template.as_deref()
+    }
+    /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page
+    /// where customers can update or change the configuration of the external action.</p>
+    pub fn revision_url_template(&self) -> std::option::Option<&str> {
+        self.revision_url_template.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionTypeSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionTypeSettings");
@@ -6332,6 +7400,50 @@ pub struct ActionExecutionDetail {
     pub input: std::option::Option<crate::model::ActionExecutionInput>,
     /// <p>Output details for the action execution, such as the action execution result.</p>
     pub output: std::option::Option<crate::model::ActionExecutionOutput>,
+}
+impl ActionExecutionDetail {
+    /// <p>The pipeline execution ID for the action execution.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+    /// <p>The action execution ID.</p>
+    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+        self.action_execution_id.as_deref()
+    }
+    /// <p>The version of the pipeline where the action was run.</p>
+    pub fn pipeline_version(&self) -> std::option::Option<i32> {
+        self.pipeline_version
+    }
+    /// <p>The name of the stage that contains the action.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>The name of the action.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The start time of the action execution.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The last update time of the action execution.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p> The status of the action execution. Status categories are <code>InProgress</code>,
+    /// <code>Succeeded</code>, and <code>Failed</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Input details for the action execution, such as role ARN, Region, and input
+    /// artifacts.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::ActionExecutionInput> {
+        self.input.as_ref()
+    }
+    /// <p>Output details for the action execution, such as the action execution result.</p>
+    pub fn output(&self) -> std::option::Option<&crate::model::ActionExecutionOutput> {
+        self.output.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionExecutionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6532,6 +7644,26 @@ pub struct ActionExecutionOutput {
     pub output_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ActionExecutionOutput {
+    /// <p>Details of output artifacts of the action that correspond to the action
+    /// execution.</p>
+    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::ArtifactDetail]> {
+        self.output_artifacts.as_deref()
+    }
+    /// <p>Execution result information listed in the output details for an action
+    /// execution.</p>
+    pub fn execution_result(&self) -> std::option::Option<&crate::model::ActionExecutionResult> {
+        self.execution_result.as_ref()
+    }
+    /// <p>The outputVariables field shows the key-value pairs that were output as part of that
+    /// execution.</p>
+    pub fn output_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.output_variables.as_ref()
+    }
+}
 impl std::fmt::Debug for ActionExecutionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionExecutionOutput");
@@ -6647,6 +7779,21 @@ pub struct ActionExecutionResult {
     /// deployment endpoint) that is used when running the action.</p>
     pub external_execution_url: std::option::Option<std::string::String>,
 }
+impl ActionExecutionResult {
+    /// <p>The action provider's external ID for the action execution.</p>
+    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+        self.external_execution_id.as_deref()
+    }
+    /// <p>The action provider's summary for the action execution.</p>
+    pub fn external_execution_summary(&self) -> std::option::Option<&str> {
+        self.external_execution_summary.as_deref()
+    }
+    /// <p>The deepest external link to the external resource (for example, a repository URL or
+    /// deployment endpoint) that is used when running the action.</p>
+    pub fn external_execution_url(&self) -> std::option::Option<&str> {
+        self.external_execution_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionExecutionResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionExecutionResult");
@@ -6737,6 +7884,16 @@ pub struct ArtifactDetail {
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     pub s3location: std::option::Option<crate::model::S3Location>,
 }
+impl ArtifactDetail {
+    /// <p>The artifact object name for the action execution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon S3 artifact location for the action execution.</p>
+    pub fn s3location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3location.as_ref()
+    }
+}
 impl std::fmt::Debug for ArtifactDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactDetail");
@@ -6802,6 +7959,16 @@ pub struct S3Location {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The artifact name.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The Amazon S3 artifact bucket for an action's artifacts.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The artifact name.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6881,6 +8048,46 @@ pub struct ActionExecutionInput {
     /// <p>The variable namespace associated with the action. All variables produced as output by
     /// this action fall under this namespace.</p>
     pub namespace: std::option::Option<std::string::String>,
+}
+impl ActionExecutionInput {
+    /// <p>Represents information about an action type.</p>
+    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.action_type_id.as_ref()
+    }
+    /// <p>Configuration data for an action execution.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.configuration.as_ref()
+    }
+    /// <p>Configuration data for an action execution with all variable references replaced with
+    /// their real values for the execution.</p>
+    pub fn resolved_configuration(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.resolved_configuration.as_ref()
+    }
+    /// <p>The ARN of the IAM service role that performs the declared action. This is assumed
+    /// through the roleArn for the pipeline. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The AWS Region for the action, such as us-east-1.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>Details of input artifacts of the action that correspond to the action
+    /// execution.</p>
+    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::ArtifactDetail]> {
+        self.input_artifacts.as_deref()
+    }
+    /// <p>The variable namespace associated with the action. All variables produced as output by
+    /// this action fall under this namespace.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
 }
 impl std::fmt::Debug for ActionExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7126,6 +8333,12 @@ pub struct ActionExecutionFilter {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
+impl ActionExecutionFilter {
+    /// <p>The pipeline execution ID used to filter action execution history.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionExecutionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionExecutionFilter");
@@ -7182,6 +8395,21 @@ pub struct ThirdPartyJobDetails {
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
     /// is being worked on by only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.</p>
     pub nonce: std::option::Option<std::string::String>,
+}
+impl ThirdPartyJobDetails {
+    /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The data to be returned by the third party job worker.</p>
+    pub fn data(&self) -> std::option::Option<&crate::model::ThirdPartyJobData> {
+        self.data.as_ref()
+    }
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
+    /// is being worked on by only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.</p>
+    pub fn nonce(&self) -> std::option::Option<&str> {
+        self.nonce.as_deref()
+    }
 }
 impl std::fmt::Debug for ThirdPartyJobDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7290,6 +8518,57 @@ pub struct ThirdPartyJobData {
     /// pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and
     /// might not be present.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
+}
+impl ThirdPartyJobData {
+    /// <p>Represents information about an action type.</p>
+    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+        self.action_type_id.as_ref()
+    }
+    /// <p>Represents information about an action configuration.</p>
+    pub fn action_configuration(&self) -> std::option::Option<&crate::model::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
+    /// <p>Represents information about a pipeline to a job worker.</p>
+    /// <note>
+    /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code>
+    /// for ThirdParty jobs.</p>
+    /// </note>
+    pub fn pipeline_context(&self) -> std::option::Option<&crate::model::PipelineContext> {
+        self.pipeline_context.as_ref()
+    }
+    /// <p>The name of the artifact that is worked on by the action, if any. This name might
+    /// be system-generated, such as "MyApp", or it might be defined by the user when the action
+    /// is created. The input artifact name must match the name of an output artifact generated
+    /// by an action in an earlier action or stage of the pipeline.</p>
+    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+        self.input_artifacts.as_deref()
+    }
+    /// <p>The name of the artifact that is the result of the action, if any. This name might
+    /// be system-generated, such as "MyBuiltApp", or it might be defined by the user when the
+    /// action is created.</p>
+    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+        self.output_artifacts.as_deref()
+    }
+    /// <p>Represents an AWS session credentials object. These credentials are temporary
+    /// credentials that are issued by AWS Secure Token Service (STS). They can be used to
+    /// access input and output artifacts in the S3 bucket used to store artifact for the
+    /// pipeline in AWS CodePipeline. </p>
+    pub fn artifact_credentials(
+        &self,
+    ) -> std::option::Option<&crate::model::AwsSessionCredentials> {
+        self.artifact_credentials.as_ref()
+    }
+    /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
+    /// requires to continue the job asynchronously.</p>
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
+        self.continuation_token.as_deref()
+    }
+    /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the
+    /// pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and
+    /// might not be present.</p>
+    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+        self.encryption_key.as_ref()
+    }
 }
 impl std::fmt::Debug for ThirdPartyJobData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7505,6 +8784,29 @@ pub struct StageState {
     /// status.</p>
     pub latest_execution: std::option::Option<crate::model::StageExecution>,
 }
+impl StageState {
+    /// <p>The name of the stage.</p>
+    pub fn stage_name(&self) -> std::option::Option<&str> {
+        self.stage_name.as_deref()
+    }
+    /// <p>Represents information about the run of a stage.</p>
+    pub fn inbound_execution(&self) -> std::option::Option<&crate::model::StageExecution> {
+        self.inbound_execution.as_ref()
+    }
+    /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
+    pub fn inbound_transition_state(&self) -> std::option::Option<&crate::model::TransitionState> {
+        self.inbound_transition_state.as_ref()
+    }
+    /// <p>The state of the stage.</p>
+    pub fn action_states(&self) -> std::option::Option<&[crate::model::ActionState]> {
+        self.action_states.as_deref()
+    }
+    /// <p>Information about the latest execution in the stage, including its ID and
+    /// status.</p>
+    pub fn latest_execution(&self) -> std::option::Option<&crate::model::StageExecution> {
+        self.latest_execution.as_ref()
+    }
+}
 impl std::fmt::Debug for StageState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StageState");
@@ -7631,6 +8933,21 @@ pub struct StageExecution {
     /// stage execution could be completed.</p>
     /// </note>
     pub status: std::option::Option<crate::model::StageExecutionStatus>,
+}
+impl StageExecution {
+    /// <p>The ID of the pipeline execution associated with the stage.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+    /// <p>The status of the stage, or for a completed stage, the last status of the
+    /// stage.</p>
+    /// <note>
+    /// <p>A status of cancelled means that the pipeline’s definition was updated before the
+    /// stage execution could be completed.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&crate::model::StageExecutionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for StageExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7797,6 +9114,30 @@ pub struct ActionState {
     /// page.</p>
     pub revision_url: std::option::Option<std::string::String>,
 }
+impl ActionState {
+    /// <p>The name of the action.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>Represents information about the version (or revision) of an action.</p>
+    pub fn current_revision(&self) -> std::option::Option<&crate::model::ActionRevision> {
+        self.current_revision.as_ref()
+    }
+    /// <p>Represents information about the run of an action.</p>
+    pub fn latest_execution(&self) -> std::option::Option<&crate::model::ActionExecution> {
+        self.latest_execution.as_ref()
+    }
+    /// <p>A URL link for more information about the state of the action, such as a deployment
+    /// group details page.</p>
+    pub fn entity_url(&self) -> std::option::Option<&str> {
+        self.entity_url.as_deref()
+    }
+    /// <p>A URL link for more information about the revision, such as a commit details
+    /// page.</p>
+    pub fn revision_url(&self) -> std::option::Option<&str> {
+        self.revision_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ActionState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActionState");
@@ -7934,6 +9275,58 @@ pub struct ActionExecution {
     pub percent_complete: std::option::Option<i32>,
     /// <p>The details of an error returned by a URL external to AWS.</p>
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
+}
+impl ActionExecution {
+    /// <p>ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to retrieve the current action execution details
+    /// of the current stage.</p>
+    /// <note>
+    /// <p>For older executions, this field might be empty. The action execution ID is
+    /// available for executions run on or after March 2020.</p>
+    /// </note>
+    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+        self.action_execution_id.as_deref()
+    }
+    /// <p>The status of the action, or for a completed action, the last status of the
+    /// action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A summary of the run of the action.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The last status change of the action.</p>
+    pub fn last_status_change(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_status_change.as_ref()
+    }
+    /// <p>The system-generated token used to identify a unique approval request. The token
+    /// for each open approval request can be obtained using the <code>GetPipelineState</code>
+    /// command. It is used to validate that the approval request corresponding to this token is
+    /// still valid.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>The ARN of the user who last changed the pipeline.</p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p>The external ID of the run of the action.</p>
+    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+        self.external_execution_id.as_deref()
+    }
+    /// <p>The URL of a resource external to AWS that is used when running the action (for
+    /// example, an external repository URL).</p>
+    pub fn external_execution_url(&self) -> std::option::Option<&str> {
+        self.external_execution_url.as_deref()
+    }
+    /// <p>A percentage of completeness of the action as it runs.</p>
+    pub fn percent_complete(&self) -> std::option::Option<i32> {
+        self.percent_complete
+    }
+    /// <p>The details of an error returned by a URL external to AWS.</p>
+    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error_details.as_ref()
+    }
 }
 impl std::fmt::Debug for ActionExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8143,6 +9536,16 @@ pub struct ErrorDetails {
     /// <p>The text of the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ErrorDetails {
+    /// <p>The system ID or number code of the error.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The text of the error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ErrorDetails");
@@ -8212,6 +9615,26 @@ pub struct TransitionState {
     /// <p>The user-specified reason why the transition between two stages of a pipeline was
     /// disabled.</p>
     pub disabled_reason: std::option::Option<std::string::String>,
+}
+impl TransitionState {
+    /// <p>Whether the transition between stages is enabled (true) or disabled
+    /// (false).</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The ID of the user who last changed the transition state.</p>
+    pub fn last_changed_by(&self) -> std::option::Option<&str> {
+        self.last_changed_by.as_deref()
+    }
+    /// <p>The timestamp when the transition state was last changed.</p>
+    pub fn last_changed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_changed_at.as_ref()
+    }
+    /// <p>The user-specified reason why the transition between two stages of a pipeline was
+    /// disabled.</p>
+    pub fn disabled_reason(&self) -> std::option::Option<&str> {
+        self.disabled_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for TransitionState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8352,6 +9775,62 @@ pub struct PipelineExecution {
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
     /// execution.</p>
     pub artifact_revisions: std::option::Option<std::vec::Vec<crate::model::ArtifactRevision>>,
+}
+impl PipelineExecution {
+    /// <p>The name of the pipeline with the specified pipeline execution.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The version number of the pipeline with the specified pipeline execution.</p>
+    pub fn pipeline_version(&self) -> std::option::Option<i32> {
+        self.pipeline_version
+    }
+    /// <p>The ID of the pipeline execution.</p>
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_id.as_deref()
+    }
+    /// <p>The status of the pipeline execution.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cancelled: The pipeline’s definition was updated before the pipeline
+    /// execution could be completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>InProgress: The pipeline execution is currently running.</p>
+    /// </li>
+    /// <li>
+    /// <p>Stopped: The pipeline execution was manually stopped. For more information,
+    /// see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Stopping: The pipeline execution received a request to be manually stopped.
+    /// Depending on the selected stop mode, the execution is either completing or
+    /// abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Succeeded: The pipeline execution was completed successfully. </p>
+    /// </li>
+    /// <li>
+    /// <p>Superseded: While this pipeline execution was waiting for the next stage to
+    /// be completed, a newer pipeline execution advanced and continued through the
+    /// pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed: The pipeline execution was not completed successfully.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::PipelineExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A summary that contains a description of the pipeline execution status.</p>
+    pub fn status_summary(&self) -> std::option::Option<&str> {
+        self.status_summary.as_deref()
+    }
+    /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+    /// execution.</p>
+    pub fn artifact_revisions(&self) -> std::option::Option<&[crate::model::ArtifactRevision]> {
+        self.artifact_revisions.as_deref()
+    }
 }
 impl std::fmt::Debug for PipelineExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8568,6 +10047,39 @@ pub struct ArtifactRevision {
     /// CodeCommit repositories, the commit ID is linked to a commit details page.</p>
     pub revision_url: std::option::Option<std::string::String>,
 }
+impl ArtifactRevision {
+    /// <p>The name of an artifact. This name might be system-generated, such as "MyApp", or
+    /// defined by the user when an action is created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The revision ID of the artifact.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>An additional identifier for a revision, such as a commit date or, for artifacts
+    /// stored in Amazon S3 buckets, the ETag value.</p>
+    pub fn revision_change_identifier(&self) -> std::option::Option<&str> {
+        self.revision_change_identifier.as_deref()
+    }
+    /// <p>Summary information about the most recent revision of the artifact. For GitHub and
+    /// AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the
+    /// user-provided content of a <code>codepipeline-artifact-revision-summary</code> key
+    /// specified in the object metadata.</p>
+    pub fn revision_summary(&self) -> std::option::Option<&str> {
+        self.revision_summary.as_deref()
+    }
+    /// <p>The date and time when the most recent revision of the artifact was created, in
+    /// timestamp format.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS
+    /// CodeCommit repositories, the commit ID is linked to a commit details page.</p>
+    pub fn revision_url(&self) -> std::option::Option<&str> {
+        self.revision_url.as_deref()
+    }
+}
 impl std::fmt::Debug for ArtifactRevision {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactRevision");
@@ -8711,6 +10223,20 @@ pub struct PipelineMetadata {
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub updated: std::option::Option<aws_smithy_types::Instant>,
 }
+impl PipelineMetadata {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_arn.as_deref()
+    }
+    /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated.as_ref()
+    }
+}
 impl std::fmt::Debug for PipelineMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipelineMetadata");
@@ -8795,6 +10321,21 @@ pub struct JobDetails {
     pub data: std::option::Option<crate::model::JobData>,
     /// <p>The AWS account ID associated with the job.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl JobDetails {
+    /// <p>The unique system-generated ID of the job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Represents other information about a job required for a job worker to complete the
+    /// job. </p>
+    pub fn data(&self) -> std::option::Option<&crate::model::JobData> {
+        self.data.as_ref()
+    }
+    /// <p>The AWS account ID associated with the job.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for JobDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

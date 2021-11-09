@@ -15,6 +15,27 @@ pub struct VpcConfiguration {
     /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
     pub tls_certificate: std::option::Option<std::string::String>,
 }
+impl VpcConfiguration {
+    /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is
+    /// installed.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
+    /// infrastructure where your provider type is installed.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
+    /// to the infrastructure where your provider type is installed.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
+    pub fn tls_certificate(&self) -> std::option::Option<&str> {
+        self.tls_certificate.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcConfiguration");
@@ -132,6 +153,16 @@ pub struct Tag {
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -212,6 +243,38 @@ pub struct Host {
     pub status: std::option::Option<std::string::String>,
     /// <p>The status description for the host.</p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl Host {
+    /// <p>The name of the host.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
+    /// <p>The name of the installed provider to be associated with your connection. The host
+    /// resource represents the infrastructure where your provider type is installed. The valid
+    /// provider type is GitHub Enterprise Server.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
+    pub fn provider_endpoint(&self) -> std::option::Option<&str> {
+        self.provider_endpoint.as_deref()
+    }
+    /// <p>The VPC configuration provisioned for the host.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The status description for the host.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for Host {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -431,6 +494,38 @@ pub struct Connection {
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub host_arn: std::option::Option<std::string::String>,
+}
+impl Connection {
+    /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
+    pub fn connection_name(&self) -> std::option::Option<&str> {
+        self.connection_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
+    /// reference when the connection is shared between AWS services.</p>
+    /// <note>
+    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// </note>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>The name of the external provider where your third-party code repository is
+    /// configured.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The identifier of the external provider where your third-party code repository is configured.
+    /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The current status of the connection. </p>
+    pub fn connection_status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.connection_status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

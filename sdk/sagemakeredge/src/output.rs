@@ -38,6 +38,16 @@ pub struct GetDeviceRegistrationOutput {
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     pub cache_ttl: std::option::Option<std::string::String>,
 }
+impl GetDeviceRegistrationOutput {
+    /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
+    pub fn device_registration(&self) -> std::option::Option<&str> {
+        self.device_registration.as_deref()
+    }
+    /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
+    pub fn cache_ttl(&self) -> std::option::Option<&str> {
+        self.cache_ttl.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceRegistrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceRegistrationOutput");

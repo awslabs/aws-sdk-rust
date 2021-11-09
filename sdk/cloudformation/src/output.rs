@@ -19,6 +19,33 @@ pub struct ValidateTemplateOutput {
     /// <p>A list of the transforms that are declared in the template.</p>
     pub declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ValidateTemplateOutput {
+    /// <p>A list of <code>TemplateParameter</code> structures.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::TemplateParameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The description found within the template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The capabilities found within the template. If your template contains IAM resources,
+    /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
+    /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+    /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The list of resources that generated the values in the <code>Capabilities</code>
+    /// response element.</p>
+    pub fn capabilities_reason(&self) -> std::option::Option<&str> {
+        self.capabilities_reason.as_deref()
+    }
+    /// <p>A list of the transforms that are declared in the template.</p>
+    pub fn declared_transforms(&self) -> std::option::Option<&[std::string::String]> {
+        self.declared_transforms.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateTemplateOutput");
@@ -159,6 +186,12 @@ pub struct UpdateTerminationProtectionOutput {
     /// <p>The unique ID of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl UpdateTerminationProtectionOutput {
+    /// <p>The unique ID of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTerminationProtectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTerminationProtectionOutput");
@@ -206,6 +239,12 @@ impl UpdateTerminationProtectionOutput {
 pub struct UpdateStackSetOutput {
     /// <p>The unique ID for this stack set operation.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl UpdateStackSetOutput {
+    /// <p>The unique ID for this stack set operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateStackSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -255,6 +294,12 @@ pub struct UpdateStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation. </p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl UpdateStackInstancesOutput {
+    /// <p>The unique identifier for this stack set operation. </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStackInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackInstancesOutput");
@@ -303,6 +348,12 @@ pub struct UpdateStackOutput {
     /// <p>Unique identifier of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl UpdateStackOutput {
+    /// <p>Unique identifier of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStackOutput");
@@ -350,6 +401,12 @@ impl UpdateStackOutput {
 pub struct TestTypeOutput {
     /// <p>The Amazon Resource Number (ARN) of the extension.</p>
     pub type_version_arn: std::option::Option<std::string::String>,
+}
+impl TestTypeOutput {
+    /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+    pub fn type_version_arn(&self) -> std::option::Option<&str> {
+        self.type_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for TestTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -495,6 +552,15 @@ pub struct SetTypeConfigurationOutput {
     /// <code>TypeName</code>.</p>
     pub configuration_arn: std::option::Option<std::string::String>,
 }
+impl SetTypeConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and
+    /// region.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+    /// <code>TypeName</code>.</p>
+    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+        self.configuration_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SetTypeConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetTypeConfigurationOutput");
@@ -582,6 +648,12 @@ pub struct RollbackStackOutput {
     /// <p>Unique identifier of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
+impl RollbackStackOutput {
+    /// <p>Unique identifier of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RollbackStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RollbackStackOutput");
@@ -633,6 +705,16 @@ pub struct RegisterTypeOutput {
     /// </code>, which returns information about the status and IDs of the extension
     /// registration. </p>
     pub registration_token: std::option::Option<std::string::String>,
+}
+impl RegisterTypeOutput {
+    /// <p>The identifier for this registration request.</p>
+    /// <p>Use this registration token when calling <code>
+    /// <a>DescribeTypeRegistration</a>
+    /// </code>, which returns information about the status and IDs of the extension
+    /// registration. </p>
+    pub fn registration_token(&self) -> std::option::Option<&str> {
+        self.registration_token.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -692,6 +774,12 @@ impl RegisterTypeOutput {
 pub struct RegisterPublisherOutput {
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
     pub publisher_id: std::option::Option<std::string::String>,
+}
+impl RegisterPublisherOutput {
+    /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterPublisherOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -772,6 +860,13 @@ pub struct PublishTypeOutput {
     /// publication.</p>
     pub public_type_arn: std::option::Option<std::string::String>,
 }
+impl PublishTypeOutput {
+    /// <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+    /// publication.</p>
+    pub fn public_type_arn(&self) -> std::option::Option<&str> {
+        self.public_type_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishTypeOutput");
@@ -831,6 +926,22 @@ pub struct ListTypeVersionsOutput {
     /// token to the request object's <code>NextToken</code> parameter. If the request returns all
     /// results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTypeVersionsOutput {
+    /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the
+    /// specified extension's versions.</p>
+    pub fn type_version_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypeVersionSummary]> {
+        self.type_version_summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+    /// set to a token. To retrieve the next set of results, call this action again and assign that
+    /// token to the request object's <code>NextToken</code> parameter. If the request returns all
+    /// results, <code>NextToken</code> is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTypeVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -920,6 +1031,20 @@ pub struct ListTypesOutput {
     /// results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTypesOutput {
+    /// <p>A list of <code>TypeSummary</code> structures that contain information about the
+    /// specified extensions.</p>
+    pub fn type_summaries(&self) -> std::option::Option<&[crate::model::TypeSummary]> {
+        self.type_summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+    /// set to a token. To retrieve the next set of results, call this action again and assign that
+    /// token to the request object's <code>NextToken</code> parameter. If the request returns all
+    /// results, <code>NextToken</code> is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTypesOutput");
@@ -1006,6 +1131,23 @@ pub struct ListTypeRegistrationsOutput {
     /// token to the request object's <code>NextToken</code> parameter. If the request returns all
     /// results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTypeRegistrationsOutput {
+    /// <p> A list of extension registration tokens.</p>
+    /// <p>Use <code>
+    /// <a>DescribeTypeRegistration</a>
+    /// </code> to return detailed
+    /// information about a type registration request.</p>
+    pub fn registration_token_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.registration_token_list.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+    /// set to a token. To retrieve the next set of results, call this action again and assign that
+    /// token to the request object's <code>NextToken</code> parameter. If the request returns all
+    /// results, <code>NextToken</code> is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTypeRegistrationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1098,6 +1240,21 @@ pub struct ListStackSetsOutput {
     /// <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListStackSetsOutput {
+    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the
+    /// user's stack sets.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::StackSetSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+    /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
+    /// again and assign that token to the request object's <code>NextToken</code> parameter. If
+    /// the request returns all results, <code>NextToken</code> is set to
+    /// <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStackSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStackSetsOutput");
@@ -1183,6 +1340,20 @@ pub struct ListStackSetOperationsOutput {
     /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
     /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStackSetOperationsOutput {
+    /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary
+    /// information about operations for the specified stack set.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::StackSetOperationSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
+    /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
+    /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+    /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStackSetOperationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1273,6 +1444,23 @@ pub struct ListStackSetOperationResultsOutput {
     /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListStackSetOperationResultsOutput {
+    /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
+    /// information about the specified operation results, for accounts and Regions that are
+    /// included in the operation.</p>
+    pub fn summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::StackSetOperationResultSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
+    /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
+    /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+    /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStackSetOperationResultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStackSetOperationResultsOutput");
@@ -1361,6 +1549,18 @@ pub struct ListStacksOutput {
     /// If no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListStacksOutput {
+    /// <p>A list of <code>StackSummary</code> structures containing information about the
+    /// specified stacks.</p>
+    pub fn stack_summaries(&self) -> std::option::Option<&[crate::model::StackSummary]> {
+        self.stack_summaries.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
+    /// If no additional page exists, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListStacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStacksOutput");
@@ -1438,6 +1638,19 @@ pub struct ListStackResourcesOutput {
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
     /// resources. If no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStackResourcesOutput {
+    /// <p>A list of <code>StackResourceSummary</code> structures.</p>
+    pub fn stack_resource_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::StackResourceSummary]> {
+        self.stack_resource_summaries.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
+    /// resources. If no additional page exists, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStackResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1521,6 +1734,21 @@ pub struct ListStackInstancesOutput {
     /// the request returns all results, <code>NextToken</code> is set to
     /// <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStackInstancesOutput {
+    /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about
+    /// the specified stack instances.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::StackInstanceSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+    /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
+    /// again and assign that token to the request object's <code>NextToken</code> parameter. If
+    /// the request returns all results, <code>NextToken</code> is set to
+    /// <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStackInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1606,6 +1834,17 @@ pub struct ListImportsOutput {
     /// this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListImportsOutput {
+    /// <p>A list of stack names that are importing the specified exported output value.</p>
+    pub fn imports(&self) -> std::option::Option<&[std::string::String]> {
+        self.imports.as_deref()
+    }
+    /// <p>A string that identifies the next page of exports. If there is no additional page,
+    /// this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListImportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImportsOutput");
@@ -1680,6 +1919,17 @@ pub struct ListExportsOutput {
     /// <p>If the output exceeds 100 exported output values, a string that identifies the next
     /// page of exports. If there is no additional page, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExportsOutput {
+    /// <p>The output for the <a>ListExports</a> action.</p>
+    pub fn exports(&self) -> std::option::Option<&[crate::model::Export]> {
+        self.exports.as_deref()
+    }
+    /// <p>If the output exceeds 100 exported output values, a string that identifies the next
+    /// page of exports. If there is no additional page, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1757,6 +2007,18 @@ pub struct ListChangeSetsOutput {
     /// there is no additional page, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListChangeSetsOutput {
+    /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of
+    /// each change set for the specified stack.</p>
+    pub fn summaries(&self) -> std::option::Option<&[crate::model::ChangeSetSummary]> {
+        self.summaries.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If
+    /// there is no additional page, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListChangeSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChangeSetsOutput");
@@ -1830,6 +2092,12 @@ impl ListChangeSetsOutput {
 pub struct ImportStacksToStackSetOutput {
     /// <p>The unique identifier for the stack set operation.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl ImportStacksToStackSetOutput {
+    /// <p>The unique identifier for the stack set operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportStacksToStackSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1909,6 +2177,60 @@ pub struct GetTemplateSummaryOutput {
     /// <code>AWS::S3::Bucket</code> resource.</p>
     pub resource_identifier_summaries:
         std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
+}
+impl GetTemplateSummaryOutput {
+    /// <p>A list of parameter declarations that describe various properties for each
+    /// parameter.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::ParameterDeclaration]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The value that is defined in the <code>Description</code> property of the
+    /// template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The capabilities found within the template. If your template contains IAM resources,
+    /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
+    /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+    /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>The list of resources that generated the values in the <code>Capabilities</code>
+    /// response element.</p>
+    pub fn capabilities_reason(&self) -> std::option::Option<&str> {
+        self.capabilities_reason.as_deref()
+    }
+    /// <p>A list of all the template resource types that are defined in the template, such as
+    /// <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+    /// <code>Custom::MyCustomInstance</code>.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The Amazon Web Services template format version, which identifies the capabilities of the
+    /// template.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The value that is defined for the <code>Metadata</code> property of the
+    /// template.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>A list of the transforms that are declared in the template.</p>
+    pub fn declared_transforms(&self) -> std::option::Option<&[std::string::String]> {
+        self.declared_transforms.as_deref()
+    }
+    /// <p>A list of resource identifier summaries that describe the target resources of an import
+    /// operation and the properties you can provide during the import to identify the target
+    /// resources. For example, <code>BucketName</code> is a possible identifier property for an
+    /// <code>AWS::S3::Bucket</code> resource.</p>
+    pub fn resource_identifier_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceIdentifierSummary]> {
+        self.resource_identifier_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for GetTemplateSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2154,6 +2476,22 @@ pub struct GetTemplateOutput {
     /// becomes available.</p>
     pub stages_available: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
 }
+impl GetTemplateOutput {
+    /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+    /// <p>CloudFormation returns the same template that was used when the stack was
+    /// created.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>The stage of the template that you can retrieve. For stacks, the
+    /// <code>Original</code> and <code>Processed</code> templates are always available. For
+    /// change sets, the <code>Original</code> template is always available. After
+    /// CloudFormation finishes creating the change set, the <code>Processed</code> template
+    /// becomes available.</p>
+    pub fn stages_available(&self) -> std::option::Option<&[crate::model::TemplateStage]> {
+        self.stages_available.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTemplateOutput");
@@ -2241,6 +2579,13 @@ pub struct GetStackPolicyOutput {
     /// to Stack Resources</a> in the CloudFormation User Guide.)</p>
     pub stack_policy_body: std::option::Option<std::string::String>,
 }
+impl GetStackPolicyOutput {
+    /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
+    /// to Stack Resources</a> in the CloudFormation User Guide.)</p>
+    pub fn stack_policy_body(&self) -> std::option::Option<&str> {
+        self.stack_policy_body.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStackPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStackPolicyOutput");
@@ -2325,6 +2670,13 @@ pub struct EstimateTemplateCostOutput {
     /// required to run the template.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl EstimateTemplateCostOutput {
+    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
+    /// required to run the template.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for EstimateTemplateCostOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EstimateTemplateCostOutput");
@@ -2375,6 +2727,15 @@ pub struct DetectStackSetDriftOutput {
     /// <a>DescribeStackSetOperation</a>
     /// </code> to monitor the progress of the drift detection operation. </p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl DetectStackSetDriftOutput {
+    /// <p>The ID of the drift detection stack set operation. </p>
+    /// <p>you can use this operation id with <code>
+    /// <a>DescribeStackSetOperation</a>
+    /// </code> to monitor the progress of the drift detection operation. </p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectStackSetDriftOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2431,6 +2792,14 @@ pub struct DetectStackResourceDriftOutput {
     /// expected template configuration, including actual and expected property values and any
     /// differences detected.</p>
     pub stack_resource_drift: std::option::Option<crate::model::StackResourceDrift>,
+}
+impl DetectStackResourceDriftOutput {
+    /// <p>Information about whether the resource's actual configuration has drifted from its
+    /// expected template configuration, including actual and expected property values and any
+    /// differences detected.</p>
+    pub fn stack_resource_drift(&self) -> std::option::Option<&crate::model::StackResourceDrift> {
+        self.stack_resource_drift.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectStackResourceDriftOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2489,6 +2858,15 @@ pub struct DetectStackDriftOutput {
     /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
     /// long, may vary.</p>
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
+}
+impl DetectStackDriftOutput {
+    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+    /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
+    /// long, may vary.</p>
+    pub fn stack_drift_detection_id(&self) -> std::option::Option<&str> {
+        self.stack_drift_detection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectStackDriftOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2557,6 +2935,29 @@ pub struct DescribeTypeRegistrationOutput {
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than
     /// <code>COMPLETE</code>, this will be <code>null</code>.</p>
     pub type_version_arn: std::option::Option<std::string::String>,
+}
+impl DescribeTypeRegistrationOutput {
+    /// <p>The current status of the extension registration request.</p>
+    pub fn progress_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+        self.progress_status.as_ref()
+    }
+    /// <p>The description of the extension registration request.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+    /// <p>For registration requests with a <code>ProgressStatus</code> of other than
+    /// <code>COMPLETE</code>, this will be <code>null</code>.</p>
+    pub fn type_arn(&self) -> std::option::Option<&str> {
+        self.type_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being
+    /// registered.</p>
+    /// <p>For registration requests with a <code>ProgressStatus</code> of other than
+    /// <code>COMPLETE</code>, this will be <code>null</code>.</p>
+    pub fn type_version_arn(&self) -> std::option::Option<&str> {
+        self.type_version_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTypeRegistrationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2870,6 +3271,275 @@ pub struct DescribeTypeOutput {
     /// Major versions released by the publisher must be manually updated. For more information,
     /// see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     pub auto_update: std::option::Option<bool>,
+}
+impl DescribeTypeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The kind of extension. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RegistryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>If the extension is a public third-party type you have activated with a type name alias,
+    /// CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The ID of the default version of the extension. The default version is used when the
+    /// extension version is not specified.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public
+    /// extensions, both those provided by Amazon and published by third parties, CloudFormation
+    /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>To set the default version of an extension, use <code>
+    /// <a>SetTypeDefaultVersion</a>
+    /// </code>. </p>
+    pub fn default_version_id(&self) -> std::option::Option<&str> {
+        self.default_version_id.as_deref()
+    }
+    /// <p>Whether the specified extension version is set as the default version.</p>
+    /// <p>This applies only to private extensions you have registered in your account, and
+    /// extensions published by Amazon. For public third-party extensions, whether or not they are
+    /// activated in your account, CloudFormation returns <code>null</code>.</p>
+    pub fn is_default_version(&self) -> std::option::Option<bool> {
+        self.is_default_version
+    }
+    /// <p>The contract test status of the registered extension version. To return the extension
+    /// test status of a specifc extension version, you must specify <code>VersionId</code>. </p>
+    /// <p>This applies only to registered private extension versions. CloudFormation does not
+    /// return this information for public extensions, whether or not they are activated in your
+    /// account.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PASSED</code>: The extension has passed all its contract tests.</p>
+    /// <p>An extension must have a test status of <code>PASSED</code> before it can be
+    /// published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public
+    /// use</a> in the <i>CloudFormation Command Line Interface User
+    /// Guide</i>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The extension has failed one or more contract tests.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
+    /// extension.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_TESTED</code>: Contract tests have not been performed on the
+    /// extension.</p>
+    /// </li>
+    /// </ul>
+    pub fn type_tests_status(&self) -> std::option::Option<&crate::model::TypeTestsStatus> {
+        self.type_tests_status.as_ref()
+    }
+    /// <p>The description of the test status. To return the extension test status of a specifc
+    /// extension version, you must specify <code>VersionId</code>. </p>
+    /// <p>This applies only to registered private extension versions. CloudFormation does not
+    /// return this information for public extensions, whether or not they are activated in your
+    /// account.</p>
+    pub fn type_tests_status_description(&self) -> std::option::Option<&str> {
+        self.type_tests_status_description.as_deref()
+    }
+    /// <p>The description of the extension.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The schema that defines the extension.</p>
+    /// <p>For more information on extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider
+    /// Schema</a> in the <i>CloudFormation CLI User
+    /// Guide</i>.</p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation
+    /// determines the provisioning type during registration, based on the types of handlers in the
+    /// schema handler package submitted.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to
+    /// process updates to the type during stack update operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+    /// the type cannot be updated and must instead be replaced during stack update
+    /// operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
+    /// following handlers, and therefore cannot actually be provisioned.</p>
+    /// <ul>
+    /// <li>
+    /// <p>create</p>
+    /// </li>
+    /// <li>
+    /// <p>read</p>
+    /// </li>
+    /// <li>
+    /// <p>delete</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn provisioning_type(&self) -> std::option::Option<&crate::model::ProvisioningType> {
+        self.provisioning_type.as_ref()
+    }
+    /// <p>The deprecation status of the extension version.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>LIVE</code>: The extension is activated or registered and can be used in
+    /// CloudFormation operations, dependent on its provisioning behavior and
+    /// visibility scope.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
+    /// can no longer be used in CloudFormation operations. </p>
+    /// </li>
+    /// </ul>
+    /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
+    pub fn deprecated_status(&self) -> std::option::Option<&crate::model::DeprecatedStatus> {
+        self.deprecated_status.as_ref()
+    }
+    /// <p>Contains logging configuration information for private extensions. This applies only to
+    /// private extensions you have registered in your account. For public extensions, both those
+    /// provided by Amazon and published by third parties, CloudFormation returns
+    /// <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
+        self.logging_config.as_ref()
+    }
+    /// <p>For extensions that are modules, the public third-party extensions that must be
+    /// activated in your account in order for the module itself to be activated.</p>
+    pub fn required_activated_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::RequiredActivatedType]> {
+        self.required_activated_types.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension.
+    /// This applies only to private extensions you have registered in your account. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p></p>
+    /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an
+    /// <i>
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+    /// execution role</a>
+    /// </i> that includes the necessary permissions to call
+    /// those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the
+    /// appropriate credentials.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The scope at which the extension is visible and usable in CloudFormation
+    /// operations.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PRIVATE</code>: The extension is only visible and usable within the account
+    /// in which it is registered. CloudFormation marks any extensions you register as
+    /// <code>PRIVATE</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PUBLIC</code>: The extension is publically visible and usable within any
+    /// Amazon account.</p>
+    /// </li>
+    /// </ul>
+    pub fn visibility(&self) -> std::option::Option<&crate::model::Visibility> {
+        self.visibility.as_ref()
+    }
+    /// <p>The URL of the source code for the extension.</p>
+    pub fn source_url(&self) -> std::option::Option<&str> {
+        self.source_url.as_deref()
+    }
+    /// <p>The URL of a page providing detailed documentation for this extension.</p>
+    pub fn documentation_url(&self) -> std::option::Option<&str> {
+        self.documentation_url.as_deref()
+    }
+    /// <p>When the specified extension version was registered. This applies only to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Private extensions you have registered in your account. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Public extensions you have activated in your account with auto-update specified.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+    /// </li>
+    /// </ul>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>When the specified private extension version was registered or activated in your
+    /// account. </p>
+    pub fn time_created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.time_created.as_ref()
+    }
+    /// <p>A JSON string that represent the current configuration data for the extension in this
+    /// account and region.</p>
+    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation
+    /// User Guide</i>.</p>
+    pub fn configuration_schema(&self) -> std::option::Option<&str> {
+        self.configuration_schema.as_deref()
+    }
+    /// <p>The publisher ID of the extension publisher.</p>
+    /// <p>This applies only to public third-party extensions. For private registered extensions,
+    /// and extensions provided by Amazon, CloudFormation returns <code>null</code>.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
+    /// <p>For public extensions that have been activated for this account and region, the type
+    /// name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
+    /// account and region, CloudFormation treats that alias as the extension's type name within
+    /// the account and region, not the type name of the public extension. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
+    /// <i>CloudFormation User Guide</i>.</p>
+    pub fn original_type_name(&self) -> std::option::Option<&str> {
+        self.original_type_name.as_deref()
+    }
+    /// <p>For public extensions that have been activated for this account and region, the Amazon
+    /// Resource Name (ARN) of the public extension.</p>
+    pub fn original_type_arn(&self) -> std::option::Option<&str> {
+        self.original_type_arn.as_deref()
+    }
+    /// <p>The version number of a public third-party extension.</p>
+    /// <p>This applies only if you specify a public extension you have activated in your account,
+    /// or specify a public extension without specifying a version. For all other extensions,
+    /// CloudFormation returns <code>null</code>.</p>
+    pub fn public_version_number(&self) -> std::option::Option<&str> {
+        self.public_version_number.as_deref()
+    }
+    /// <p>The latest version of a public extension <i>that is available</i> for
+    /// use.</p>
+    /// <p>This only applies if you specify a public extension, and you do not specify a version.
+    /// For all other requests, CloudFormation returns <code>null</code>.</p>
+    pub fn latest_public_version(&self) -> std::option::Option<&str> {
+        self.latest_public_version.as_deref()
+    }
+    /// <p>Whether or not the extension is activated in the account and region.</p>
+    /// <p>This only applies to public third-party extensions. For all other extensions,
+    /// CloudFormation returns <code>null</code>.</p>
+    pub fn is_activated(&self) -> std::option::Option<bool> {
+        self.is_activated
+    }
+    /// <p>Whether CloudFormation automatically updates the extension in this account and region
+    /// when a new <i>minor</i> version is published by the extension publisher.
+    /// Major versions released by the publisher must be manually updated. For more information,
+    /// see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn auto_update(&self) -> std::option::Option<bool> {
+        self.auto_update
+    }
 }
 impl std::fmt::Debug for DescribeTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3638,6 +4308,12 @@ pub struct DescribeStackSetOperationOutput {
     /// <p>The specified stack set operation.</p>
     pub stack_set_operation: std::option::Option<crate::model::StackSetOperation>,
 }
+impl DescribeStackSetOperationOutput {
+    /// <p>The specified stack set operation.</p>
+    pub fn stack_set_operation(&self) -> std::option::Option<&crate::model::StackSetOperation> {
+        self.stack_set_operation.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackSetOperationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackSetOperationOutput");
@@ -3689,6 +4365,12 @@ pub struct DescribeStackSetOutput {
     /// <p>The specified stack set.</p>
     pub stack_set: std::option::Option<crate::model::StackSet>,
 }
+impl DescribeStackSetOutput {
+    /// <p>The specified stack set.</p>
+    pub fn stack_set(&self) -> std::option::Option<&crate::model::StackSet> {
+        self.stack_set.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackSetOutput");
@@ -3739,6 +4421,17 @@ pub struct DescribeStacksOutput {
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
     /// If no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStacksOutput {
+    /// <p>A list of stack structures.</p>
+    pub fn stacks(&self) -> std::option::Option<&[crate::model::Stack]> {
+        self.stacks.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
+    /// If no additional page exists, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStacksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3812,6 +4505,12 @@ pub struct DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
     pub stack_resources: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
 }
+impl DescribeStackResourcesOutput {
+    /// <p>A list of <code>StackResource</code> structures.</p>
+    pub fn stack_resources(&self) -> std::option::Option<&[crate::model::StackResource]> {
+        self.stack_resources.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStackResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackResourcesOutput");
@@ -3881,6 +4580,29 @@ pub struct DescribeStackResourceDriftsOutput {
     /// object's <code>NextToken</code> parameter. If the request returns all results,
     /// <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStackResourceDriftsOutput {
+    /// <p>Drift information for the resources that have been checked for drift in the specified
+    /// stack. This includes actual and expected configuration values for resources where CloudFormation
+    /// detects drift.</p>
+    /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack
+    /// resource that has been checked for drift. Resources that have not yet been checked for
+    /// drift are not included. Resources that do not currently support drift detection are not
+    /// checked, and so not included. For a list of resources that support drift detection, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
+    pub fn stack_resource_drifts(
+        &self,
+    ) -> std::option::Option<&[crate::model::StackResourceDrift]> {
+        self.stack_resource_drifts.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+    /// set to a token. To retrieve the next set of results, call
+    /// <code>DescribeStackResourceDrifts</code> again and assign that token to the request
+    /// object's <code>NextToken</code> parameter. If the request returns all results,
+    /// <code>NextToken</code> is set to <code>null</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStackResourceDriftsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3979,6 +4701,13 @@ pub struct DescribeStackResourceOutput {
     /// specified resource in the specified stack.</p>
     pub stack_resource_detail: std::option::Option<crate::model::StackResourceDetail>,
 }
+impl DescribeStackResourceOutput {
+    /// <p>A <code>StackResourceDetail</code> structure containing the description of the
+    /// specified resource in the specified stack.</p>
+    pub fn stack_resource_detail(&self) -> std::option::Option<&crate::model::StackResourceDetail> {
+        self.stack_resource_detail.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeStackResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStackResourceOutput");
@@ -4031,6 +4760,12 @@ impl DescribeStackResourceOutput {
 pub struct DescribeStackInstanceOutput {
     /// <p>The stack instance that matches the specified request parameters.</p>
     pub stack_instance: std::option::Option<crate::model::StackInstance>,
+}
+impl DescribeStackInstanceOutput {
+    /// <p>The stack instance that matches the specified request parameters.</p>
+    pub fn stack_instance(&self) -> std::option::Option<&crate::model::StackInstance> {
+        self.stack_instance.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStackInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4085,6 +4820,17 @@ pub struct DescribeStackEventsOutput {
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
     /// If no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStackEventsOutput {
+    /// <p>A list of <code>StackEvents</code> structures.</p>
+    pub fn stack_events(&self) -> std::option::Option<&[crate::model::StackEvent]> {
+        self.stack_events.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
+    /// If no additional page exists, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStackEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4219,6 +4965,88 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     pub drifted_stack_resource_count: std::option::Option<i32>,
     /// <p>Time at which the stack drift detection operation was initiated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeStackDriftDetectionStatusOutput {
+    /// <p>The ID of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
+    /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
+    /// may vary.</p>
+    pub fn stack_drift_detection_id(&self) -> std::option::Option<&str> {
+        self.stack_drift_detection_id.as_deref()
+    }
+    /// <p>Status of the stack's actual configuration compared to its expected
+    /// configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DRIFTED</code>: The stack differs from its expected template
+    /// configuration. A stack is considered to have drifted if one or more of its resources
+    /// have drifted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
+    /// expected template configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
+    /// template configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
+    /// </li>
+    /// </ul>
+    pub fn stack_drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
+        self.stack_drift_status.as_ref()
+    }
+    /// <p>The status of the stack drift detection operation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
+    /// successfully completed for all resources in the stack that support drift detection.
+    /// (Resources that do not currently support stack detection remain unchecked.)</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the
+    /// stack drift detection operation, only the resources with those logical IDs are
+    /// checked for drift.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
+    /// for at least one resource in the stack. Results will be available for resources on
+    /// which CloudFormation successfully completed drift detection.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+    /// currently in progress.</p>
+    /// </li>
+    /// </ul>
+    pub fn detection_status(
+        &self,
+    ) -> std::option::Option<&crate::model::StackDriftDetectionStatus> {
+        self.detection_status.as_ref()
+    }
+    /// <p>The reason the stack drift detection operation has its current status.</p>
+    pub fn detection_status_reason(&self) -> std::option::Option<&str> {
+        self.detection_status_reason.as_deref()
+    }
+    /// <p>Total number of stack resources that have drifted. This is NULL until the drift
+    /// detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be
+    /// 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
+    pub fn drifted_stack_resource_count(&self) -> std::option::Option<i32> {
+        self.drifted_stack_resource_count
+    }
+    /// <p>Time at which the stack drift detection operation was initiated.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeStackDriftDetectionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4472,6 +5300,26 @@ pub struct DescribePublisherOutput {
     /// <p>The URL to the publisher's profile with the identity provider.</p>
     pub publisher_profile: std::option::Option<std::string::String>,
 }
+impl DescribePublisherOutput {
+    /// <p>The ID of the extension publisher.</p>
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
+        self.publisher_id.as_deref()
+    }
+    /// <p>Whether the publisher is verified. Currently, all registered publishers are
+    /// verified.</p>
+    pub fn publisher_status(&self) -> std::option::Option<&crate::model::PublisherStatus> {
+        self.publisher_status.as_ref()
+    }
+    /// <p>The type of account used as the identity provider when registering this publisher with
+    /// CloudFormation.</p>
+    pub fn identity_provider(&self) -> std::option::Option<&crate::model::IdentityProvider> {
+        self.identity_provider.as_ref()
+    }
+    /// <p>The URL to the publisher's profile with the identity provider.</p>
+    pub fn publisher_profile(&self) -> std::option::Option<&str> {
+        self.publisher_profile.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePublisherOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePublisherOutput");
@@ -4622,6 +5470,101 @@ pub struct DescribeChangeSetOutput {
     /// <p>Specifies the change set ID of the root change set in the current nested change set
     /// hierarchy.</p>
     pub root_change_set_id: std::option::Option<std::string::String>,
+}
+impl DescribeChangeSetOutput {
+    /// <p>The name of the change set.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>The ARN of the change set.</p>
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
+        self.change_set_id.as_deref()
+    }
+    /// <p>The ARN of the stack that is associated with the change set.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
+    /// <p>The name of the stack that is associated with the change set.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>Information about the change set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of <code>Parameter</code> structures that describes the input parameters and
+    /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.parameters.as_deref()
+    }
+    /// <p>The start time when the change set was created, in UTC.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
+    /// change set. If you can’t execute the change set, the status indicates why. For example, a
+    /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
+    /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
+    /// updated.</p>
+    pub fn execution_status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.execution_status.as_ref()
+    }
+    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>,
+    /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ChangeSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description of the change set's status. For example, if your attempt to create a
+    /// change set failed, CloudFormation shows the error message.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be
+    /// associated with the stack if you execute the change set.</p>
+    pub fn notification_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_ar_ns.as_deref()
+    }
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+    /// updating operations, and for the specified monitoring period afterwards.</p>
+    pub fn rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RollbackConfiguration> {
+        self.rollback_configuration.as_ref()
+    }
+    /// <p>If you execute the change set, the list of capabilities that were explicitly
+    /// acknowledged when the change set was created.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>If you execute the change set, the tags that will be associated with the
+    /// stack.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A list of <code>Change</code> structures that describes the resources
+    /// CloudFormation changes if you execute the change set.</p>
+    pub fn changes(&self) -> std::option::Option<&[crate::model::Change]> {
+        self.changes.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
+    /// there is no additional page, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
+    pub fn include_nested_stacks(&self) -> std::option::Option<bool> {
+        self.include_nested_stacks
+    }
+    /// <p>Specifies the change set ID of the parent change set in the current nested change set
+    /// hierarchy.</p>
+    pub fn parent_change_set_id(&self) -> std::option::Option<&str> {
+        self.parent_change_set_id.as_deref()
+    }
+    /// <p>Specifies the change set ID of the root change set in the current nested change set
+    /// hierarchy.</p>
+    pub fn root_change_set_id(&self) -> std::option::Option<&str> {
+        self.root_change_set_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5014,6 +5957,18 @@ pub struct DescribeAccountLimitsOutput {
     /// If no additional page exists, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAccountLimitsOutput {
+    /// <p>An account limit structure that contain a list of CloudFormation account limits
+    /// and their values.</p>
+    pub fn account_limits(&self) -> std::option::Option<&[crate::model::AccountLimit]> {
+        self.account_limits.as_deref()
+    }
+    /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
+    /// If no additional page exists, this value is null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAccountLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountLimitsOutput");
@@ -5147,6 +6102,12 @@ impl DeleteStackSetOutput {
 pub struct DeleteStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation.</p>
     pub operation_id: std::option::Option<std::string::String>,
+}
+impl DeleteStackInstancesOutput {
+    /// <p>The unique identifier for this stack set operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStackInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5286,6 +6247,12 @@ pub struct CreateStackSetOutput {
     /// <p>The ID of the stack set that you're creating.</p>
     pub stack_set_id: std::option::Option<std::string::String>,
 }
+impl CreateStackSetOutput {
+    /// <p>The ID of the stack set that you're creating.</p>
+    pub fn stack_set_id(&self) -> std::option::Option<&str> {
+        self.stack_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStackSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackSetOutput");
@@ -5334,6 +6301,12 @@ pub struct CreateStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
+impl CreateStackInstancesOutput {
+    /// <p>The unique identifier for this stack set operation.</p>
+    pub fn operation_id(&self) -> std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStackInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStackInstancesOutput");
@@ -5381,6 +6354,12 @@ impl CreateStackInstancesOutput {
 pub struct CreateStackOutput {
     /// <p>Unique identifier of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl CreateStackOutput {
+    /// <p>Unique identifier of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateStackOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5431,6 +6410,16 @@ pub struct CreateChangeSetOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
+}
+impl CreateChangeSetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The unique ID of the stack.</p>
+    pub fn stack_id(&self) -> std::option::Option<&str> {
+        self.stack_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateChangeSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5563,6 +6552,29 @@ pub struct BatchDescribeTypeConfigurationsOutput {
     pub type_configurations:
         std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
 }
+impl BatchDescribeTypeConfigurationsOutput {
+    /// <p>A list of information concerning any errors generated during the setting of the
+    /// specified configurations.</p>
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchDescribeTypeConfigurationsError]> {
+        self.errors.as_deref()
+    }
+    /// <p>A list of any of the specified extension configurations that CloudFormation could not
+    /// process for any reason.</p>
+    pub fn unprocessed_type_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypeConfigurationIdentifier]> {
+        self.unprocessed_type_configurations.as_deref()
+    }
+    /// <p>A list of any of the specified extension configurations from the CloudFormation
+    /// registry.</p>
+    pub fn type_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypeConfigurationDetails]> {
+        self.type_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDescribeTypeConfigurationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDescribeTypeConfigurationsOutput");
@@ -5687,6 +6699,13 @@ pub struct ActivateTypeOutput {
     /// <p>The Amazon Resource Number (ARN) of the activated extension, in this account and
     /// region.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ActivateTypeOutput {
+    /// <p>The Amazon Resource Number (ARN) of the activated extension, in this account and
+    /// region.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivateTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

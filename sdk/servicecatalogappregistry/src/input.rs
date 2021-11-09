@@ -538,10 +538,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -760,10 +757,9 @@ impl CreateAttributeGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_attribute_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_attribute_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3187,10 +3183,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3556,10 +3549,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3765,10 +3755,9 @@ impl UpdateAttributeGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_attribute_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_attribute_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3844,6 +3833,25 @@ pub struct UpdateAttributeGroupInput {
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub attributes: std::option::Option<std::string::String>,
 }
+impl UpdateAttributeGroupInput {
+    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
+        self.attribute_group.as_deref()
+    }
+    /// <p>The new name of the attribute group. The name must be unique in the region in which you are
+    /// updating the attribute group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn attributes(&self) -> std::option::Option<&str> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAttributeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAttributeGroupInput");
@@ -3866,6 +3874,20 @@ pub struct UpdateApplicationInput {
     /// <p>The new description of the application.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateApplicationInput {
+    /// <p>The name or ID of the application that will be updated.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationInput");
@@ -3884,6 +3906,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the tag keys to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the tag keys to remove from the specified resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3904,6 +3936,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The new or modified tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -3922,6 +3967,16 @@ pub struct SyncResourceInput {
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     pub resource: std::option::Option<std::string::String>,
 }
+impl SyncResourceInput {
+    /// <p>The type of resource of which the application will be associated.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+}
 impl std::fmt::Debug for SyncResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SyncResourceInput");
@@ -3937,6 +3992,12 @@ impl std::fmt::Debug for SyncResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3954,6 +4015,16 @@ pub struct ListAttributeGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAttributeGroupsInput {
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAttributeGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3974,6 +4045,20 @@ pub struct ListAssociatedResourcesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAssociatedResourcesInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAssociatedResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3996,6 +4081,20 @@ pub struct ListAssociatedAttributeGroupsInput {
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssociatedAttributeGroupsInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssociatedAttributeGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociatedAttributeGroupsInput");
@@ -4015,6 +4114,16 @@ pub struct ListApplicationsInput {
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListApplicationsInput {
+    /// <p>The token to use to get the next page of results after a previous API call. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationsInput");
@@ -4030,6 +4139,12 @@ impl std::fmt::Debug for ListApplicationsInput {
 pub struct GetAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
+}
+impl GetAttributeGroupInput {
+    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
+        self.attribute_group.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAttributeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4050,6 +4165,20 @@ pub struct GetAssociatedResourceInput {
     /// <p>The name or ID of the resource associated with the application.</p>
     pub resource: std::option::Option<std::string::String>,
 }
+impl GetAssociatedResourceInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The type of resource associated with the application.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The name or ID of the resource associated with the application.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAssociatedResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssociatedResourceInput");
@@ -4066,6 +4195,12 @@ impl std::fmt::Debug for GetAssociatedResourceInput {
 pub struct GetApplicationInput {
     /// <p>The name or ID of the application.</p>
     pub application: std::option::Option<std::string::String>,
+}
+impl GetApplicationInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4086,6 +4221,20 @@ pub struct DisassociateResourceInput {
     /// <p>The name or ID of the resource.</p>
     pub resource: std::option::Option<std::string::String>,
 }
+impl DisassociateResourceInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The type of the resource that is being disassociated.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The name or ID of the resource.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateResourceInput");
@@ -4105,6 +4254,16 @@ pub struct DisassociateAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
 }
+impl DisassociateAttributeGroupInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
+        self.attribute_group.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateAttributeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateAttributeGroupInput");
@@ -4121,6 +4280,12 @@ pub struct DeleteAttributeGroupInput {
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
 }
+impl DeleteAttributeGroupInput {
+    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
+        self.attribute_group.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAttributeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAttributeGroupInput");
@@ -4135,6 +4300,12 @@ impl std::fmt::Debug for DeleteAttributeGroupInput {
 pub struct DeleteApplicationInput {
     /// <p>The name or ID of the application.</p>
     pub application: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4162,6 +4333,34 @@ pub struct CreateAttributeGroupInput {
     /// without performing any further actions. If you retry a successful request using the same
     /// client token, but one or more of the parameters are different, the retry fails.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateAttributeGroupInput {
+    /// <p>The name of the attribute group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn attributes(&self) -> std::option::Option<&str> {
+        self.attributes.as_deref()
+    }
+    /// <p>Key-value pairs you can use to associate with the attribute group.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
+    /// completed successfully using the same client token and the same parameters, the retry succeeds
+    /// without performing any further actions. If you retry a successful request using the same
+    /// client token, but one or more of the parameters are different, the retry fails.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAttributeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4192,6 +4391,30 @@ pub struct CreateApplicationInput {
     /// client token, but one or more of the parameters are different, the retry fails.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateApplicationInput {
+    /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Key-value pairs you can use to associate with the application.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
+    /// completed successfully using the same client token and the same parameters, the retry succeeds
+    /// without performing any further actions. If you retry a successful request using the same
+    /// client token, but one or more of the parameters are different, the retry fails.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApplicationInput");
@@ -4214,6 +4437,20 @@ pub struct AssociateResourceInput {
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub resource: std::option::Option<std::string::String>,
 }
+impl AssociateResourceInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The type of resource of which the application will be associated.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The name or ID of the resource of which the application will be associated.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateResourceInput");
@@ -4232,6 +4469,16 @@ pub struct AssociateAttributeGroupInput {
     pub application: std::option::Option<std::string::String>,
     /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: std::option::Option<std::string::String>,
+}
+impl AssociateAttributeGroupInput {
+    /// <p>The name or ID of the application.</p>
+    pub fn application(&self) -> std::option::Option<&str> {
+        self.application.as_deref()
+    }
+    /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
+        self.attribute_group.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAttributeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

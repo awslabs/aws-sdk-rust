@@ -8,6 +8,16 @@ pub struct UpdateJobQueueOutput {
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
     pub job_queue_arn: std::option::Option<std::string::String>,
 }
+impl UpdateJobQueueOutput {
+    /// <p>The name of the job queue.</p>
+    pub fn job_queue_name(&self) -> std::option::Option<&str> {
+        self.job_queue_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    pub fn job_queue_arn(&self) -> std::option::Option<&str> {
+        self.job_queue_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateJobQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobQueueOutput");
@@ -77,6 +87,17 @@ pub struct UpdateComputeEnvironmentOutput {
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
+}
+impl UpdateComputeEnvironmentOutput {
+    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+    /// underscores are allowed.</p>
+    pub fn compute_environment_name(&self) -> std::option::Option<&str> {
+        self.compute_environment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    pub fn compute_environment_arn(&self) -> std::option::Option<&str> {
+        self.compute_environment_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateComputeEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -241,6 +262,20 @@ pub struct SubmitJobOutput {
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl SubmitJobOutput {
+    /// <p>The Amazon Resource Name (ARN) for the job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SubmitJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubmitJobOutput");
@@ -318,6 +353,20 @@ pub struct RegisterJobDefinitionOutput {
     pub job_definition_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the job definition.</p>
     pub revision: i32,
+}
+impl RegisterJobDefinitionOutput {
+    /// <p>The name of the job definition.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+    /// <p>The revision of the job definition.</p>
+    pub fn revision(&self) -> i32 {
+        self.revision
+    }
 }
 impl std::fmt::Debug for RegisterJobDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -400,6 +449,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -466,6 +524,18 @@ pub struct ListJobsOutput {
     /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
     /// results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobsOutput {
+    /// <p>A list of job summaries that match the request.</p>
+    pub fn job_summary_list(&self) -> std::option::Option<&[crate::model::JobSummary]> {
+        self.job_summary_list.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a
+    /// <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -541,6 +611,12 @@ pub struct DescribeJobsOutput {
     /// <p>The list of jobs.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobDetail>>,
 }
+impl DescribeJobsOutput {
+    /// <p>The list of jobs.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::JobDetail]> {
+        self.jobs.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobsOutput");
@@ -599,6 +675,18 @@ pub struct DescribeJobQueuesOutput {
     /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
     /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeJobQueuesOutput {
+    /// <p>The list of job queues.</p>
+    pub fn job_queues(&self) -> std::option::Option<&[crate::model::JobQueueDetail]> {
+        self.job_queues.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results
+    /// of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+    /// next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobQueuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -677,6 +765,18 @@ pub struct DescribeJobDefinitionsOutput {
     /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
     /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeJobDefinitionsOutput {
+    /// <p>The list of job definitions.</p>
+    pub fn job_definitions(&self) -> std::option::Option<&[crate::model::JobDefinition]> {
+        self.job_definitions.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the
+    /// results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to
+    /// retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobDefinitionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -757,6 +857,21 @@ pub struct DescribeComputeEnvironmentsOutput {
     /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeComputeEnvironmentsOutput {
+    /// <p>The list of compute environments.</p>
+    pub fn compute_environments(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComputeEnvironmentDetail]> {
+        self.compute_environments.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When
+    /// the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used
+    /// to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeComputeEnvironmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -930,6 +1045,16 @@ pub struct CreateJobQueueOutput {
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
     pub job_queue_arn: std::option::Option<std::string::String>,
 }
+impl CreateJobQueueOutput {
+    /// <p>The name of the job queue.</p>
+    pub fn job_queue_name(&self) -> std::option::Option<&str> {
+        self.job_queue_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    pub fn job_queue_arn(&self) -> std::option::Option<&str> {
+        self.job_queue_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateJobQueueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateJobQueueOutput");
@@ -999,6 +1124,17 @@ pub struct CreateComputeEnvironmentOutput {
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
+}
+impl CreateComputeEnvironmentOutput {
+    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+    /// underscores are allowed.</p>
+    pub fn compute_environment_name(&self) -> std::option::Option<&str> {
+        self.compute_environment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    pub fn compute_environment_arn(&self) -> std::option::Option<&str> {
+        self.compute_environment_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateComputeEnvironmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

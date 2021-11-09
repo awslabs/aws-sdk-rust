@@ -354,10 +354,9 @@ impl CreateDeliveryStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_delivery_stream(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_delivery_stream(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -536,10 +535,9 @@ impl DeleteDeliveryStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_delivery_stream(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_delivery_stream(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -728,10 +726,7 @@ impl DescribeDeliveryStreamInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_delivery_stream(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -948,10 +943,7 @@ impl ListDeliveryStreamsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_delivery_streams(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_delivery_streams(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1142,7 +1134,7 @@ impl ListTagsForDeliveryStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_delivery_stream(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_delivery_stream(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1305,10 +1297,7 @@ impl PutRecordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_record(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_record(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1480,10 +1469,7 @@ impl PutRecordBatchInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_record_batch(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_record_batch(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1661,7 +1647,7 @@ impl StartDeliveryStreamEncryptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_delivery_stream_encryption(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_delivery_stream_encryption(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1818,7 +1804,7 @@ impl StopDeliveryStreamEncryptionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_delivery_stream_encryption(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_delivery_stream_encryption(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1993,10 +1979,7 @@ impl TagDeliveryStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_tag_delivery_stream(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_tag_delivery_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2172,10 +2155,7 @@ impl UntagDeliveryStreamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_untag_delivery_stream(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_untag_delivery_stream(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2499,10 +2479,7 @@ impl UpdateDestinationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_destination(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_destination(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2597,6 +2574,64 @@ pub struct UpdateDestinationInput {
     pub http_endpoint_destination_update:
         std::option::Option<crate::model::HttpEndpointDestinationUpdate>,
 }
+impl UpdateDestinationInput {
+    /// <p>The name of the delivery stream.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>Obtain this value from the <code>VersionId</code> result of <a>DeliveryStreamDescription</a>. This value is required, and helps the service
+    /// perform conditional operations. For example, if there is an interleaving update and this
+    /// value is null, then the update destination fails. After the update is successful, the
+    /// <code>VersionId</code> value is updated. The service then performs a merge of the old
+    /// configuration with the new configuration.</p>
+    pub fn current_delivery_stream_version_id(&self) -> std::option::Option<&str> {
+        self.current_delivery_stream_version_id.as_deref()
+    }
+    /// <p>The ID of the destination.</p>
+    pub fn destination_id(&self) -> std::option::Option<&str> {
+        self.destination_id.as_deref()
+    }
+    /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
+    pub fn s3_destination_update(&self) -> std::option::Option<&crate::model::S3DestinationUpdate> {
+        self.s3_destination_update.as_ref()
+    }
+    /// <p>Describes an update for a destination in Amazon S3.</p>
+    pub fn extended_s3_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ExtendedS3DestinationUpdate> {
+        self.extended_s3_destination_update.as_ref()
+    }
+    /// <p>Describes an update for a destination in Amazon Redshift.</p>
+    pub fn redshift_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftDestinationUpdate> {
+        self.redshift_destination_update.as_ref()
+    }
+    /// <p>Describes an update for a destination in Amazon ES.</p>
+    pub fn elasticsearch_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchDestinationUpdate> {
+        self.elasticsearch_destination_update.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn amazonopensearchservice_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonopensearchserviceDestinationUpdate> {
+        self.amazonopensearchservice_destination_update.as_ref()
+    }
+    /// <p>Describes an update for a destination in Splunk.</p>
+    pub fn splunk_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::SplunkDestinationUpdate> {
+        self.splunk_destination_update.as_ref()
+    }
+    /// <p>Describes an update to the specified HTTP endpoint destination.</p>
+    pub fn http_endpoint_destination_update(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpEndpointDestinationUpdate> {
+        self.http_endpoint_destination_update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDestinationInput");
@@ -2642,6 +2677,17 @@ pub struct UntagDeliveryStreamInput {
     /// stream.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagDeliveryStreamInput {
+    /// <p>The name of the delivery stream.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>A list of tag keys. Each corresponding tag is removed from the delivery
+    /// stream.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagDeliveryStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagDeliveryStreamInput");
@@ -2660,6 +2706,16 @@ pub struct TagDeliveryStreamInput {
     /// <p>A set of key-value pairs to use to create the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagDeliveryStreamInput {
+    /// <p>The name of the delivery stream to which you want to add the tags.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>A set of key-value pairs to use to create the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagDeliveryStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagDeliveryStreamInput");
@@ -2676,6 +2732,13 @@ pub struct StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption
     /// (SSE).</p>
     pub delivery_stream_name: std::option::Option<std::string::String>,
+}
+impl StopDeliveryStreamEncryptionInput {
+    /// <p>The name of the delivery stream for which you want to disable server-side encryption
+    /// (SSE).</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopDeliveryStreamEncryptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2696,6 +2759,20 @@ pub struct StartDeliveryStreamEncryptionInput {
     /// Server-Side Encryption (SSE).</p>
     pub delivery_stream_encryption_configuration_input:
         std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
+}
+impl StartDeliveryStreamEncryptionInput {
+    /// <p>The name of the delivery stream for which you want to enable server-side encryption
+    /// (SSE).</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
+    /// Server-Side Encryption (SSE).</p>
+    pub fn delivery_stream_encryption_configuration_input(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliveryStreamEncryptionConfigurationInput> {
+        self.delivery_stream_encryption_configuration_input.as_ref()
+    }
 }
 impl std::fmt::Debug for StartDeliveryStreamEncryptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2718,6 +2795,16 @@ pub struct PutRecordBatchInput {
     /// <p>One or more records.</p>
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
+impl PutRecordBatchInput {
+    /// <p>The name of the delivery stream.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>One or more records.</p>
+    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+        self.records.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRecordBatchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRecordBatchInput");
@@ -2735,6 +2822,16 @@ pub struct PutRecordInput {
     pub delivery_stream_name: std::option::Option<std::string::String>,
     /// <p>The record.</p>
     pub record: std::option::Option<crate::model::Record>,
+}
+impl PutRecordInput {
+    /// <p>The name of the delivery stream.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>The record.</p>
+    pub fn record(&self) -> std::option::Option<&crate::model::Record> {
+        self.record.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRecordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2760,6 +2857,25 @@ pub struct ListTagsForDeliveryStreamInput {
     /// in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last
     /// key in the response. </p>
     pub limit: std::option::Option<i32>,
+}
+impl ListTagsForDeliveryStreamInput {
+    /// <p>The name of the delivery stream whose tags you want to list.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>The key to use as the starting point for the list of tags. If you set this parameter,
+    /// <code>ListTagsForDeliveryStream</code> gets all tags that occur after
+    /// <code>ExclusiveStartTagKey</code>.</p>
+    pub fn exclusive_start_tag_key(&self) -> std::option::Option<&str> {
+        self.exclusive_start_tag_key.as_deref()
+    }
+    /// <p>The number of tags to return. If this number is less than the total number of tags
+    /// associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code>
+    /// in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last
+    /// key in the response. </p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
 }
 impl std::fmt::Debug for ListTagsForDeliveryStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2799,6 +2915,37 @@ pub struct ListDeliveryStreamsInput {
     /// <code>ExclusiveStartDeliveryStreamName</code>.</p>
     pub exclusive_start_delivery_stream_name: std::option::Option<std::string::String>,
 }
+impl ListDeliveryStreamsInput {
+    /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The delivery stream type. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DirectPut</code>: Provider applications access the delivery stream
+    /// directly.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+    /// stream as a source.</p>
+    /// </li>
+    /// </ul>
+    /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all
+    /// types are returned.</p>
+    pub fn delivery_stream_type(&self) -> std::option::Option<&crate::model::DeliveryStreamType> {
+        self.delivery_stream_type.as_ref()
+    }
+    /// <p>The list of delivery streams returned by this call to
+    /// <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes
+    /// alphabetically immediately after the name you specify in
+    /// <code>ExclusiveStartDeliveryStreamName</code>.</p>
+    pub fn exclusive_start_delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.exclusive_start_delivery_stream_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeliveryStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeliveryStreamsInput");
@@ -2824,6 +2971,22 @@ pub struct DescribeDeliveryStreamInput {
     /// <p>The ID of the destination to start returning the destination information. Kinesis
     /// Data Firehose supports one destination per delivery stream.</p>
     pub exclusive_start_destination_id: std::option::Option<std::string::String>,
+}
+impl DescribeDeliveryStreamInput {
+    /// <p>The name of the delivery stream.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>The limit on the number of destinations to return. You can have one destination per
+    /// delivery stream.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The ID of the destination to start returning the destination information. Kinesis
+    /// Data Firehose supports one destination per delivery stream.</p>
+    pub fn exclusive_start_destination_id(&self) -> std::option::Option<&str> {
+        self.exclusive_start_destination_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeliveryStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2853,6 +3016,23 @@ pub struct DeleteDeliveryStreamInput {
     /// operation.</p>
     /// <p>The default value is false.</p>
     pub allow_force_delete: std::option::Option<bool>,
+}
+impl DeleteDeliveryStreamInput {
+    /// <p>The name of the delivery stream.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose
+    /// is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire
+    /// the grant due to a customer error, such as when the CMK or the grant are in an invalid
+    /// state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
+    /// revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant
+    /// happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete
+    /// operation.</p>
+    /// <p>The default value is false.</p>
+    pub fn allow_force_delete(&self) -> std::option::Option<bool> {
+        self.allow_force_delete
+    }
 }
 impl std::fmt::Debug for DeleteDeliveryStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2924,6 +3104,100 @@ pub struct CreateDeliveryStreamInput {
     ///
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDeliveryStreamInput {
+    /// <p>The name of the delivery stream. This name must be unique per AWS account in the same
+    /// AWS Region. If the delivery streams are in different accounts or different Regions, you can
+    /// have multiple delivery streams with the same name.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>The delivery stream type. This parameter can be one of the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DirectPut</code>: Provider applications access the delivery stream
+    /// directly.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+    /// stream as a source.</p>
+    /// </li>
+    /// </ul>
+    pub fn delivery_stream_type(&self) -> std::option::Option<&crate::model::DeliveryStreamType> {
+        self.delivery_stream_type.as_ref()
+    }
+    /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon
+    /// Resource Name (ARN) and the role ARN for the source stream.</p>
+    pub fn kinesis_stream_source_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamSourceConfiguration> {
+        self.kinesis_stream_source_configuration.as_ref()
+    }
+    /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
+    /// Server-Side Encryption (SSE).</p>
+    pub fn delivery_stream_encryption_configuration_input(
+        &self,
+    ) -> std::option::Option<&crate::model::DeliveryStreamEncryptionConfigurationInput> {
+        self.delivery_stream_encryption_configuration_input.as_ref()
+    }
+    /// <p>[Deprecated]
+    /// The destination in Amazon S3. You can specify only one destination.</p>
+    pub fn s3_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
+        self.s3_destination_configuration.as_ref()
+    }
+    /// <p>The destination in Amazon S3. You can specify only one destination.</p>
+    pub fn extended_s3_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ExtendedS3DestinationConfiguration> {
+        self.extended_s3_destination_configuration.as_ref()
+    }
+    /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
+    pub fn redshift_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftDestinationConfiguration> {
+        self.redshift_destination_configuration.as_ref()
+    }
+    /// <p>The destination in Amazon ES. You can specify only one destination.</p>
+    pub fn elasticsearch_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ElasticsearchDestinationConfiguration> {
+        self.elasticsearch_destination_configuration.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn amazonopensearchservice_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AmazonopensearchserviceDestinationConfiguration> {
+        self.amazonopensearchservice_destination_configuration
+            .as_ref()
+    }
+    /// <p>The destination in Splunk. You can specify only one destination.</p>
+    pub fn splunk_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SplunkDestinationConfiguration> {
+        self.splunk_destination_configuration.as_ref()
+    }
+    /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination.
+    /// You can specify only one destination.</p>
+    pub fn http_endpoint_destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::HttpEndpointDestinationConfiguration> {
+        self.http_endpoint_destination_configuration.as_ref()
+    }
+    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can
+    /// define and assign to AWS resources. Tags are metadata. For example, you can add friendly
+    /// names and descriptions or other types of information that can help you distinguish the
+    /// delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+    /// Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+    ///
+    /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDeliveryStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

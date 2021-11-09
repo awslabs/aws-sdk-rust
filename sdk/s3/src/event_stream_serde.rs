@@ -46,7 +46,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                         )
                         .map_err(|err| {
                             aws_smithy_eventstream::error::Error::Unmarshalling(format!(
-                                "failed to unmarshall Details: {}",
+                                "failed to unmarshall details: {}",
                                 err
                             ))
                         })?,
@@ -63,7 +63,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                         )
                         .map_err(|err| {
                             aws_smithy_eventstream::error::Error::Unmarshalling(format!(
-                                "failed to unmarshall Details: {}",
+                                "failed to unmarshall details: {}",
                                 err
                             ))
                         })?,
@@ -82,11 +82,9 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                         crate::model::EndEvent::builder().build(),
                     ),
                 )),
-                smithy_type => {
-                    return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
-                        format!("unrecognized :event-type: {}", smithy_type),
-                    ));
-                }
+                _unknown_variant => Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::model::SelectObjectContentEventStream::Unknown,
+                )),
             },
             "exception" => {
                 let generic =

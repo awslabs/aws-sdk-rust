@@ -39,6 +39,82 @@ pub struct UpdateReplicationConfigurationOutput {
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateReplicationConfigurationOutput {
+    /// <p>Replication Configuration Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Replication Configuration name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Replication Configuration Staging Area subnet ID.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Replication Configuration Replication Server Security Group IDs.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Replication Configuration Replication Server instance type.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Replication Configuration use Dedicated Replication Server.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Replication Configuration use default large Staging Disks.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration replicated disks.</p>
+    pub fn replicated_disks(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationConfigurationReplicatedDisk]> {
+        self.replicated_disks.as_deref()
+    }
+    /// <p>Replication Configuration EBS encryption.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Replication Configuration EBS encryption key ARN.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Replication Configuration set bandwidth throttling.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Replication Configuration data plane routing.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Replication Configuration create Public IP.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Replication Configuration Staging Area tags.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateReplicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationConfigurationOutput");
@@ -392,6 +468,42 @@ pub struct UpdateLaunchConfigurationOutput {
     /// <p>Configure launch configuration OS licensing.</p>
     pub licensing: std::option::Option<crate::model::Licensing>,
 }
+impl UpdateLaunchConfigurationOutput {
+    /// <p>Configure launch configuration Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Configure launch configuration name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Configure EC2 lauch configuration template ID.</p>
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+        self.ec2_launch_template_id.as_deref()
+    }
+    /// <p>Configure launch dispostion for launch configuration.</p>
+    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+        self.launch_disposition.as_ref()
+    }
+    /// <p>Configure launch configuration Target instance type right sizing method.</p>
+    pub fn target_instance_type_right_sizing_method(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+        self.target_instance_type_right_sizing_method.as_ref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn copy_private_ip(&self) -> std::option::Option<bool> {
+        self.copy_private_ip
+    }
+    /// <p>Copy Tags during Launch Configuration.</p>
+    pub fn copy_tags(&self) -> std::option::Option<bool> {
+        self.copy_tags
+    }
+    /// <p>Configure launch configuration OS licensing.</p>
+    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+        self.licensing.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateLaunchConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLaunchConfigurationOutput");
@@ -568,6 +680,43 @@ pub struct RetryDataReplicationOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+}
+impl RetryDataReplicationOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for RetryDataReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -754,6 +903,43 @@ pub struct MarkAsArchivedOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+}
+impl MarkAsArchivedOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for MarkAsArchivedOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -958,6 +1144,82 @@ pub struct GetReplicationConfigurationOutput {
     /// <p>Replication Configuration Staging Area tags.</p>
     pub staging_area_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetReplicationConfigurationOutput {
+    /// <p>Replication Configuration Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Replication Configuration name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Replication Configuration Staging Area subnet ID.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Replication Configuration associate default Application Migration Service Security Group.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Replication Configuration Replication Server Security Group IDs.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Replication Configuration Replication Server instance type.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Replication Configuration use Dedicated Replication Server.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Replication Configuration use default large Staging Disks.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration replicated disks.</p>
+    pub fn replicated_disks(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationConfigurationReplicatedDisk]> {
+        self.replicated_disks.as_deref()
+    }
+    /// <p>Replication Configuration EBS encryption.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Replication Configuration EBS encryption key ARN.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Replication Configuration set bandwidth throttling.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Replication Configuration data plane routing.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Replication Configuration create Public IP.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Replication Configuration Staging Area tags.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetReplicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1312,6 +1574,42 @@ pub struct GetLaunchConfigurationOutput {
     /// <p>Configure launch configuration OS licensing.</p>
     pub licensing: std::option::Option<crate::model::Licensing>,
 }
+impl GetLaunchConfigurationOutput {
+    /// <p>Configure launch configuration Source Server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Configure launch configuration name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Configure EC2 lauch configuration template ID.</p>
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+        self.ec2_launch_template_id.as_deref()
+    }
+    /// <p>Configure launch dispostion for launch configuration.</p>
+    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+        self.launch_disposition.as_ref()
+    }
+    /// <p>Configure launch configuration Target instance type right sizing method.</p>
+    pub fn target_instance_type_right_sizing_method(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+        self.target_instance_type_right_sizing_method.as_ref()
+    }
+    /// <p>Copy Private IP during Launch Configuration.</p>
+    pub fn copy_private_ip(&self) -> std::option::Option<bool> {
+        self.copy_private_ip
+    }
+    /// <p>Copy Tags during Launch Configuration.</p>
+    pub fn copy_tags(&self) -> std::option::Option<bool> {
+        self.copy_tags
+    }
+    /// <p>Configure launch configuration OS licensing.</p>
+    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+        self.licensing.as_ref()
+    }
+}
 impl std::fmt::Debug for GetLaunchConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLaunchConfigurationOutput");
@@ -1488,6 +1786,43 @@ pub struct FinalizeCutoverOutput {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+}
+impl FinalizeCutoverOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for FinalizeCutoverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1675,6 +2010,43 @@ pub struct DisconnectFromServiceOutput {
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
 }
+impl DisconnectFromServiceOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DisconnectFromServiceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisconnectFromServiceOutput");
@@ -1861,6 +2233,43 @@ pub struct ChangeServerLifeCycleStateOutput {
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
 }
+impl ChangeServerLifeCycleStateOutput {
+    /// <p>Source server ID.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Source server ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Source server archived status.</p>
+    pub fn is_archived(&self) -> std::option::Option<bool> {
+        self.is_archived
+    }
+    /// <p>Source server Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+        self.launched_instance.as_ref()
+    }
+    /// <p>Source server data replication info.</p>
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+        self.data_replication_info.as_ref()
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+        self.life_cycle.as_ref()
+    }
+    /// <p>Source server properties.</p>
+    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+        self.source_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for ChangeServerLifeCycleStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangeServerLifeCycleStateOutput");
@@ -2032,6 +2441,12 @@ pub struct TerminateTargetInstancesOutput {
     /// <p>Terminate Target instance Job response.</p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl TerminateTargetInstancesOutput {
+    /// <p>Terminate Target instance Job response.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for TerminateTargetInstancesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateTargetInstancesOutput");
@@ -2078,6 +2493,12 @@ pub struct StartTestOutput {
     /// <p>Start Test Job response.</p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl StartTestOutput {
+    /// <p>Start Test Job response.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for StartTestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTestOutput");
@@ -2123,6 +2544,12 @@ impl StartTestOutput {
 pub struct StartCutoverOutput {
     /// <p>Start Cutover Job response.</p>
     pub job: std::option::Option<crate::model::Job>,
+}
+impl StartCutoverOutput {
+    /// <p>Start Cutover Job response.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for StartCutoverOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2171,6 +2598,16 @@ pub struct DescribeSourceServersOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::SourceServer>>,
     /// <p>Request to filter Source Servers next token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSourceServersOutput {
+    /// <p>Request to filter Source Servers list by item.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::SourceServer]> {
+        self.items.as_deref()
+    }
+    /// <p>Request to filter Source Servers next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSourceServersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2273,6 +2710,16 @@ pub struct DescribeReplicationConfigurationTemplatesOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
     /// <p>Request to describe Replication Configuration template by next token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReplicationConfigurationTemplatesOutput {
+    /// <p>Request to describe Replication Configuration template by items.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ReplicationConfigurationTemplate]> {
+        self.items.as_deref()
+    }
+    /// <p>Request to describe Replication Configuration template by next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReplicationConfigurationTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2383,6 +2830,83 @@ pub struct CreateReplicationConfigurationTemplateOutput {
     /// <p>Replication Configuration template Tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateReplicationConfigurationTemplateOutput {
+    /// <p>Replication Configuration template template ID.</p>
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.replication_configuration_template_id.as_deref()
+    }
+    /// <p>Replication Configuration template ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Replication Configuration template Staging Area subnet ID.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Replication Configuration template server Security Groups IDs.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Replication Configuration template server instance type.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Replication Configuration template use Dedicated Replication Server.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration template EBS encryption.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Replication Configuration template EBS encryption key ARN.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Replication Configuration template bandwidth throtting.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Replication Configuration template data plane routing.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Replication Configuration template create Public IP.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Replication Configuration template Staging Area Tags.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
+    /// <p>Replication Configuration template Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationConfigurationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2792,6 +3316,83 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateReplicationConfigurationTemplateOutput {
+    /// <p>Replication Configuration template template ID.</p>
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+        self.replication_configuration_template_id.as_deref()
+    }
+    /// <p>Replication Configuration template ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Replication Configuration template Staging Area subnet ID.</p>
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
+    }
+    /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
+    pub fn associate_default_security_group(&self) -> std::option::Option<bool> {
+        self.associate_default_security_group
+    }
+    /// <p>Replication Configuration template server Security Groups IDs.</p>
+    pub fn replication_servers_security_groups_i_ds(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.replication_servers_security_groups_i_ds.as_deref()
+    }
+    /// <p>Replication Configuration template server instance type.</p>
+    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
+    }
+    /// <p>Replication Configuration template use Dedicated Replication Server.</p>
+    pub fn use_dedicated_replication_server(&self) -> std::option::Option<bool> {
+        self.use_dedicated_replication_server
+    }
+    /// <p>Replication Configuration template use dedault large Staging Disk type.</p>
+    pub fn default_large_staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.default_large_staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration template EBS encryption.</p>
+    pub fn ebs_encryption(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
+    }
+    /// <p>Replication Configuration template EBS encryption key ARN.</p>
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.ebs_encryption_key_arn.as_deref()
+    }
+    /// <p>Replication Configuration template bandwidth throtting.</p>
+    pub fn bandwidth_throttling(&self) -> i64 {
+        self.bandwidth_throttling
+    }
+    /// <p>Replication Configuration template data plane routing.</p>
+    pub fn data_plane_routing(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
+    }
+    /// <p>Replication Configuration template create Public IP.</p>
+    pub fn create_public_ip(&self) -> std::option::Option<bool> {
+        self.create_public_ip
+    }
+    /// <p>Replication Configuration template Staging Area Tags.</p>
+    pub fn staging_area_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.staging_area_tags.as_ref()
+    }
+    /// <p>Replication Configuration template Tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateReplicationConfigurationTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationConfigurationTemplateOutput");
@@ -3139,6 +3740,16 @@ pub struct DescribeJobLogItemsOutput {
     /// <p>Request to describe Job log response next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeJobLogItemsOutput {
+    /// <p>Request to describe Job log response items.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::JobLog]> {
+        self.items.as_deref()
+    }
+    /// <p>Request to describe Job log response next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobLogItemsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobLogItemsOutput");
@@ -3210,6 +3821,16 @@ pub struct DescribeJobsOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::Job>>,
     /// <p>Request to describe Job response by next token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeJobsOutput {
+    /// <p>Request to describe Job log items.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.items.as_deref()
+    }
+    /// <p>Request to describe Job response by next token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3371,6 +3992,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>List tags for resource response.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>List tags for resource response.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -122,10 +122,7 @@ impl AssociateEntityToThingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_entity_to_thing(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -292,10 +289,7 @@ impl CreateFlowTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_flow_template(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_flow_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -552,10 +546,9 @@ impl CreateSystemInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_system_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_system_instance(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -722,10 +715,9 @@ impl CreateSystemTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_system_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_system_template(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -881,10 +873,7 @@ impl DeleteFlowTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_flow_template(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_flow_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1020,10 +1009,7 @@ impl DeleteNamespaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_namespace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_namespace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1163,10 +1149,9 @@ impl DeleteSystemInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_system_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_system_instance(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1322,10 +1307,9 @@ impl DeleteSystemTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_system_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_system_template(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1481,10 +1465,9 @@ impl DeploySystemInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deploy_system_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deploy_system_instance(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1642,10 +1625,7 @@ impl DeprecateFlowTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_flow_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1804,10 +1784,7 @@ impl DeprecateSystemTemplateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_system_template(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1960,10 +1937,7 @@ impl DescribeNamespaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_namespace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_namespace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2131,10 +2105,7 @@ impl DissociateEntityFromThingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_dissociate_entity_from_thing(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2312,10 +2283,7 @@ impl GetEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_entities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2485,10 +2453,7 @@ impl GetFlowTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_flow_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_flow_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2673,10 +2638,7 @@ impl GetFlowTemplateRevisionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_flow_template_revisions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2813,7 +2775,7 @@ impl GetNamespaceDeletionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_namespace_deletion_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_namespace_deletion_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2962,10 +2924,7 @@ impl GetSystemInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_system_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_system_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3135,10 +3094,7 @@ impl GetSystemTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_system_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_system_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3321,7 +3277,7 @@ impl GetSystemTemplateRevisionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_system_template_revisions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_system_template_revisions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3472,10 +3428,7 @@ impl GetUploadStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_upload_status(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_upload_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3655,10 +3608,7 @@ impl ListFlowExecutionMessagesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_flow_execution_messages(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3832,10 +3782,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4058,10 +4007,8 @@ impl SearchEntitiesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_entities(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_entities(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4283,10 +4230,9 @@ impl SearchFlowExecutionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_flow_executions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_flow_executions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4469,10 +4415,7 @@ impl SearchFlowTemplatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_flow_templates(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_flow_templates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4661,10 +4604,7 @@ impl SearchSystemInstancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_system_instances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4849,10 +4789,7 @@ impl SearchSystemTemplatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_system_templates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5045,10 +4982,7 @@ impl SearchThingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_things(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_things(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5218,10 +5152,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5371,10 +5302,7 @@ impl UndeploySystemInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_undeploy_system_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5546,10 +5474,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5738,10 +5663,7 @@ impl UpdateFlowTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_template(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5928,10 +5850,9 @@ impl UpdateSystemTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_system_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_system_template(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6113,10 +6034,7 @@ impl UploadEntityDefinitionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upload_entity_definitions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6190,6 +6108,21 @@ pub struct UploadEntityDefinitionsInput {
     /// If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub deprecate_existing_entities: bool,
 }
+impl UploadEntityDefinitionsInput {
+    /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
+    pub fn document(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.document.as_ref()
+    }
+    /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    pub fn sync_with_public_namespace(&self) -> bool {
+        self.sync_with_public_namespace
+    }
+    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
+    /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+    pub fn deprecate_existing_entities(&self) -> bool {
+        self.deprecate_existing_entities
+    }
+}
 impl std::fmt::Debug for UploadEntityDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadEntityDefinitionsInput");
@@ -6222,6 +6155,25 @@ pub struct UpdateSystemTemplateInput {
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub compatible_namespace_version: std::option::Option<i64>,
 }
+impl UpdateSystemTemplateInput {
+    /// <p>The ID of the system to be updated.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
+        self.compatible_namespace_version
+    }
+}
 impl std::fmt::Debug for UpdateSystemTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSystemTemplateInput");
@@ -6252,6 +6204,26 @@ pub struct UpdateFlowTemplateInput {
     /// to update.</p>
     pub compatible_namespace_version: std::option::Option<i64>,
 }
+impl UpdateFlowTemplateInput {
+    /// <p>The ID of the workflow to be updated.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The version of the user's namespace.</p>
+    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
+    /// to update.</p>
+    pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
+        self.compatible_namespace_version
+    }
+}
 impl std::fmt::Debug for UpdateFlowTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowTemplateInput");
@@ -6275,6 +6247,17 @@ pub struct UntagResourceInput {
     /// <p>This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>
+    /// <p>This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6290,6 +6273,12 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct UndeploySystemInstanceInput {
     /// <p>The ID of the system instance to remove from its target.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl UndeploySystemInstanceInput {
+    /// <p>The ID of the system instance to remove from its target.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for UndeploySystemInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6307,6 +6296,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to add to the resource.></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tags to add to the resource.></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6334,6 +6333,28 @@ pub struct SearchThingsInput {
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
 }
+impl SearchThingsInput {
+    /// <p>The ID of the entity to which the things are associated.</p>
+    /// <p>The IDs should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
+    /// </p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn namespace_version(&self) -> std::option::Option<i64> {
+        self.namespace_version
+    }
+}
 impl std::fmt::Debug for SearchThingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchThingsInput");
@@ -6355,6 +6376,20 @@ pub struct SearchSystemTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl SearchSystemTemplatesInput {
+    /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SystemTemplateFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for SearchSystemTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6379,6 +6414,22 @@ pub struct SearchSystemInstancesInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl SearchSystemInstancesInput {
+    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
+    /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+    /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::SystemInstanceFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchSystemInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchSystemInstancesInput");
@@ -6399,6 +6450,20 @@ pub struct SearchFlowTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl SearchFlowTemplatesInput {
+    /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::FlowTemplateFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for SearchFlowTemplatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6426,6 +6491,32 @@ pub struct SearchFlowExecutionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl SearchFlowExecutionsInput {
+    /// <p>The ID of the system instance that contains the flow.</p>
+    pub fn system_instance_id(&self) -> std::option::Option<&str> {
+        self.system_instance_id.as_deref()
+    }
+    /// <p>The ID of a flow execution.</p>
+    pub fn flow_execution_id(&self) -> std::option::Option<&str> {
+        self.flow_execution_id.as_deref()
+    }
+    /// <p>The date and time of the earliest flow execution to return.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time of the latest flow execution to return.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for SearchFlowExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6459,6 +6550,32 @@ pub struct SearchEntitiesInput {
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
 }
+impl SearchEntitiesInput {
+    /// <p>The entity types for which to search.</p>
+    pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityType]> {
+        self.entity_types.as_deref()
+    }
+    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
+    /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
+    /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
+    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::EntityFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn namespace_version(&self) -> std::option::Option<i64> {
+        self.namespace_version
+    }
+}
 impl std::fmt::Debug for SearchEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchEntitiesInput");
@@ -6482,6 +6599,20 @@ pub struct ListTagsForResourceInput {
     /// <p>The token that specifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The maximum number of tags to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The token that specifies the next page of results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6503,6 +6634,20 @@ pub struct ListFlowExecutionMessagesInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFlowExecutionMessagesInput {
+    /// <p>The ID of the flow execution.</p>
+    pub fn flow_execution_id(&self) -> std::option::Option<&str> {
+        self.flow_execution_id.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFlowExecutionMessagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFlowExecutionMessagesInput");
@@ -6519,6 +6664,12 @@ impl std::fmt::Debug for ListFlowExecutionMessagesInput {
 pub struct GetUploadStatusInput {
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
     pub upload_id: std::option::Option<std::string::String>,
+}
+impl GetUploadStatusInput {
+    /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    pub fn upload_id(&self) -> std::option::Option<&str> {
+        self.upload_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUploadStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6543,6 +6694,24 @@ pub struct GetSystemTemplateRevisionsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetSystemTemplateRevisionsInput {
+    /// <p>The ID of the system template.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetSystemTemplateRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSystemTemplateRevisionsInput");
@@ -6566,6 +6735,20 @@ pub struct GetSystemTemplateInput {
     /// <p>The number that specifies the revision of the system to get.</p>
     pub revision_number: std::option::Option<i64>,
 }
+impl GetSystemTemplateInput {
+    /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The number that specifies the revision of the system to get.</p>
+    pub fn revision_number(&self) -> std::option::Option<i64> {
+        self.revision_number
+    }
+}
 impl std::fmt::Debug for GetSystemTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSystemTemplateInput");
@@ -6585,6 +6768,16 @@ pub struct GetSystemInstanceInput {
     /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
     /// </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetSystemInstanceInput {
+    /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSystemInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6620,6 +6813,24 @@ pub struct GetFlowTemplateRevisionsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetFlowTemplateRevisionsInput {
+    /// <p>The ID of the workflow.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetFlowTemplateRevisionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFlowTemplateRevisionsInput");
@@ -6643,6 +6854,20 @@ pub struct GetFlowTemplateInput {
     /// <p>The number of the workflow revision to retrieve.</p>
     pub revision_number: std::option::Option<i64>,
 }
+impl GetFlowTemplateInput {
+    /// <p>The ID of the workflow.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The number of the workflow revision to retrieve.</p>
+    pub fn revision_number(&self) -> std::option::Option<i64> {
+        self.revision_number
+    }
+}
 impl std::fmt::Debug for GetFlowTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFlowTemplateInput");
@@ -6665,6 +6890,20 @@ pub struct GetEntitiesInput {
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
 }
+impl GetEntitiesInput {
+    /// <p>An array of entity IDs.</p>
+    /// <p>The IDs should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
+    /// </p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn namespace_version(&self) -> std::option::Option<i64> {
+        self.namespace_version
+    }
+}
 impl std::fmt::Debug for GetEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEntitiesInput");
@@ -6683,6 +6922,16 @@ pub struct DissociateEntityFromThingInput {
     /// <p>The entity type from which to disassociate the thing.</p>
     pub entity_type: std::option::Option<crate::model::EntityType>,
 }
+impl DissociateEntityFromThingInput {
+    /// <p>The name of the thing to disassociate.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The entity type from which to disassociate the thing.</p>
+    pub fn entity_type(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.entity_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DissociateEntityFromThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DissociateEntityFromThingInput");
@@ -6698,6 +6947,12 @@ impl std::fmt::Debug for DissociateEntityFromThingInput {
 pub struct DescribeNamespaceInput {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     pub namespace_name: std::option::Option<std::string::String>,
+}
+impl DescribeNamespaceInput {
+    /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
+        self.namespace_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNamespaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6718,6 +6973,16 @@ pub struct DeprecateSystemTemplateInput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeprecateSystemTemplateInput {
+    /// <p>The ID of the system to delete.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeprecateSystemTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeprecateSystemTemplateInput");
@@ -6736,6 +7001,16 @@ pub struct DeprecateFlowTemplateInput {
     /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
     /// </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeprecateFlowTemplateInput {
+    /// <p>The ID of the workflow to be deleted.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeprecateFlowTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6756,6 +7031,16 @@ pub struct DeploySystemInstanceInput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeploySystemInstanceInput {
+    /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeploySystemInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploySystemInstanceInput");
@@ -6775,6 +7060,16 @@ pub struct DeleteSystemTemplateInput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteSystemTemplateInput {
+    /// <p>The ID of the system to be deleted.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSystemTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSystemTemplateInput");
@@ -6789,6 +7084,12 @@ impl std::fmt::Debug for DeleteSystemTemplateInput {
 pub struct DeleteSystemInstanceInput {
     /// <p>The ID of the system instance to be deleted.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteSystemInstanceInput {
+    /// <p>The ID of the system instance to be deleted.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSystemInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6820,6 +7121,16 @@ pub struct DeleteFlowTemplateInput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteFlowTemplateInput {
+    /// <p>The ID of the workflow to be deleted.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFlowTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFlowTemplateInput");
@@ -6837,6 +7148,17 @@ pub struct CreateSystemTemplateInput {
     /// <p>The namespace version in which the system is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub compatible_namespace_version: std::option::Option<i64>,
+}
+impl CreateSystemTemplateInput {
+    /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The namespace version in which the system is to be created.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
+        self.compatible_namespace_version
+    }
 }
 impl std::fmt::Debug for CreateSystemTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6873,6 +7195,42 @@ pub struct CreateSystemInstanceInput {
     /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
+impl CreateSystemInstanceInput {
+    /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A document that defines an entity. </p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
+        self.target.as_ref()
+    }
+    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
+    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    pub fn greengrass_group_name(&self) -> std::option::Option<&str> {
+        self.greengrass_group_name.as_deref()
+    }
+    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
+    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    pub fn metrics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MetricsConfiguration> {
+        self.metrics_configuration.as_ref()
+    }
+    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
+    /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
+    /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
+        self.flow_actions_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSystemInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSystemInstanceInput");
@@ -6896,6 +7254,17 @@ pub struct CreateFlowTemplateInput {
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub compatible_namespace_version: std::option::Option<i64>,
+}
+impl CreateFlowTemplateInput {
+    /// <p>The workflow <code>DefinitionDocument</code>.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+        self.definition.as_ref()
+    }
+    /// <p>The namespace version in which the workflow is to be created.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
+        self.compatible_namespace_version
+    }
 }
 impl std::fmt::Debug for CreateFlowTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6923,6 +7292,24 @@ pub struct AssociateEntityToThingInput {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
+}
+impl AssociateEntityToThingInput {
+    /// <p>The name of the thing to which the entity is to be associated.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p>
+    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
+    /// </p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn namespace_version(&self) -> std::option::Option<i64> {
+        self.namespace_version
+    }
 }
 impl std::fmt::Debug for AssociateEntityToThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

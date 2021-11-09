@@ -4261,6 +4261,12 @@ pub struct ResourceNotFoundException {
     /// <p>Type of resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>Type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -4473,6 +4479,16 @@ pub struct InvalidParameterException {
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
     /// <p>Fields that caused the exception.</p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
+}
+impl InvalidParameterException {
+    /// <p>Additional information about the exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+    /// <p>Fields that caused the exception.</p>
+    pub fn fields(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
+        self.fields.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5028,6 +5044,12 @@ pub struct ResourceAlreadyExistsException {
     /// <p>The type of resource that already exists.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceAlreadyExistsException {
+    /// <p>The type of resource that already exists.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAlreadyExistsException");
@@ -5111,6 +5133,16 @@ pub struct LimitsExceededException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The threshold that would be exceeded.</p>
     pub limit: i64,
+}
+impl LimitsExceededException {
+    /// <p>The type of limit that would be exceeded.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The threshold that would be exceeded.</p>
+    pub fn limit(&self) -> i64 {
+        self.limit
+    }
 }
 impl std::fmt::Debug for LimitsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

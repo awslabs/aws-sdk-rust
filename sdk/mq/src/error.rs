@@ -2722,6 +2722,12 @@ pub struct NotFoundException {
     /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl NotFoundException {
+    /// <p>The attribute which caused the error.</p>
+    pub fn error_attribute(&self) -> std::option::Option<&str> {
+        self.error_attribute.as_deref()
+    }
+}
 impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotFoundException");
@@ -2803,6 +2809,12 @@ pub struct InternalServerErrorException {
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InternalServerErrorException {
+    /// <p>The attribute which caused the error.</p>
+    pub fn error_attribute(&self) -> std::option::Option<&str> {
+        self.error_attribute.as_deref()
+    }
 }
 impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2886,6 +2898,12 @@ pub struct ForbiddenException {
     /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ForbiddenException {
+    /// <p>The attribute which caused the error.</p>
+    pub fn error_attribute(&self) -> std::option::Option<&str> {
+        self.error_attribute.as_deref()
+    }
+}
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForbiddenException");
@@ -2967,6 +2985,12 @@ pub struct ConflictException {
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    /// <p>The attribute which caused the error.</p>
+    pub fn error_attribute(&self) -> std::option::Option<&str> {
+        self.error_attribute.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3050,6 +3074,12 @@ pub struct BadRequestException {
     /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl BadRequestException {
+    /// <p>The attribute which caused the error.</p>
+    pub fn error_attribute(&self) -> std::option::Option<&str> {
+        self.error_attribute.as_deref()
+    }
+}
 impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BadRequestException");
@@ -3131,6 +3161,12 @@ pub struct UnauthorizedException {
     pub error_attribute: std::option::Option<std::string::String>,
     /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl UnauthorizedException {
+    /// <p>The attribute which caused the error.</p>
+    pub fn error_attribute(&self) -> std::option::Option<&str> {
+        self.error_attribute.as_deref()
+    }
 }
 impl std::fmt::Debug for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

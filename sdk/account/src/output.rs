@@ -66,6 +66,12 @@ pub struct GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
     pub alternate_contact: std::option::Option<crate::model::AlternateContact>,
 }
+impl GetAlternateContactOutput {
+    /// <p>A structure that contains the details for the specified alternate contact.</p>
+    pub fn alternate_contact(&self) -> std::option::Option<&crate::model::AlternateContact> {
+        self.alternate_contact.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAlternateContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAlternateContactOutput");

@@ -8,6 +8,16 @@ pub struct ApplicationMaintenanceConfigurationDescription {
     /// <p>The end time for the maintenance window.</p>
     pub application_maintenance_window_end_time: std::option::Option<std::string::String>,
 }
+impl ApplicationMaintenanceConfigurationDescription {
+    /// <p>The start time for the maintenance window.</p>
+    pub fn application_maintenance_window_start_time(&self) -> std::option::Option<&str> {
+        self.application_maintenance_window_start_time.as_deref()
+    }
+    /// <p>The end time for the maintenance window.</p>
+    pub fn application_maintenance_window_end_time(&self) -> std::option::Option<&str> {
+        self.application_maintenance_window_end_time.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplicationMaintenanceConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationMaintenanceConfigurationDescription");
@@ -90,6 +100,13 @@ impl ApplicationMaintenanceConfigurationDescription {
 pub struct ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
     pub application_maintenance_window_start_time_update: std::option::Option<std::string::String>,
+}
+impl ApplicationMaintenanceConfigurationUpdate {
+    /// <p>The updated start time for the maintenance window.</p>
+    pub fn application_maintenance_window_start_time_update(&self) -> std::option::Option<&str> {
+        self.application_maintenance_window_start_time_update
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for ApplicationMaintenanceConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -188,6 +205,86 @@ pub struct ApplicationDetail {
     pub application_version_rolled_back_to: std::option::Option<i64>,
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
+}
+impl ApplicationDetail {
+    /// <p>The ARN of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The description of the application.</p>
+    pub fn application_description(&self) -> std::option::Option<&str> {
+        self.application_description.as_deref()
+    }
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+    pub fn runtime_environment(&self) -> std::option::Option<&crate::model::RuntimeEnvironment> {
+        self.runtime_environment.as_ref()
+    }
+    /// <p>Specifies the IAM role that the application uses to access external resources.</p>
+    pub fn service_execution_role(&self) -> std::option::Option<&str> {
+        self.service_execution_role.as_deref()
+    }
+    /// <p>The status of the application.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
+    /// <p>Provides the current application version. Kinesis Data Analytics updates the
+    /// <code>ApplicationVersionId</code> each time you update the application.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The current timestamp when the application was created.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+    /// <p>The current timestamp when the application was last updated.</p>
+    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_timestamp.as_ref()
+    }
+    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    pub fn application_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationConfigurationDescription> {
+        self.application_configuration_description.as_ref()
+    }
+    /// <p>Describes the application Amazon CloudWatch logging options.</p>
+    pub fn cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionDescription]> {
+        self.cloud_watch_logging_option_descriptions.as_deref()
+    }
+    /// <p>The details of the maintenance configuration for the application.</p>
+    pub fn application_maintenance_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationMaintenanceConfigurationDescription> {
+        self.application_maintenance_configuration_description
+            .as_ref()
+    }
+    /// <p>The previous application version before the latest application update. <a>RollbackApplication</a>
+    /// reverts the application to this version.</p>
+    pub fn application_version_updated_from(&self) -> std::option::Option<i64> {
+        self.application_version_updated_from
+    }
+    /// <p>If you reverted the application using <a>RollbackApplication</a>,
+    /// the application version when <code>RollbackApplication</code> was called.</p>
+    pub fn application_version_rolled_back_from(&self) -> std::option::Option<i64> {
+        self.application_version_rolled_back_from
+    }
+    /// <p>A value you use to implement strong concurrency for application updates.</p>
+    pub fn conditional_token(&self) -> std::option::Option<&str> {
+        self.conditional_token.as_deref()
+    }
+    /// <p>The version to which you want to roll back the application.</p>
+    pub fn application_version_rolled_back_to(&self) -> std::option::Option<i64> {
+        self.application_version_rolled_back_to
+    }
+    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
+        self.application_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -607,6 +704,25 @@ pub struct CloudWatchLoggingOptionDescription {
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl CloudWatchLoggingOptionDescription {
+    /// <p>The ID of the CloudWatch logging option description.</p>
+    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logging_option_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application
+    /// messages.</p>
+    pub fn log_stream_arn(&self) -> std::option::Option<&str> {
+        self.log_stream_arn.as_deref()
+    }
+    /// <p>The IAM ARN of the role to use to send application messages. </p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications created with the current API version have an
+    /// application-level service execution role rather than a resource-level role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLoggingOptionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLoggingOptionDescription");
@@ -724,6 +840,56 @@ pub struct ApplicationConfigurationDescription {
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
     pub zeppelin_application_configuration_description:
         std::option::Option<crate::model::ZeppelinApplicationConfigurationDescription>,
+}
+impl ApplicationConfigurationDescription {
+    /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
+    pub fn sql_application_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::SqlApplicationConfigurationDescription> {
+        self.sql_application_configuration_description.as_ref()
+    }
+    /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn application_code_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationCodeConfigurationDescription> {
+        self.application_code_configuration_description.as_ref()
+    }
+    /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
+    pub fn run_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::RunConfigurationDescription> {
+        self.run_configuration_description.as_ref()
+    }
+    /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
+    pub fn flink_application_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::FlinkApplicationConfigurationDescription> {
+        self.flink_application_configuration_description.as_ref()
+    }
+    /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn environment_property_descriptions(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentPropertyDescriptions> {
+        self.environment_property_descriptions.as_ref()
+    }
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn application_snapshot_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationSnapshotConfigurationDescription> {
+        self.application_snapshot_configuration_description.as_ref()
+    }
+    /// <p>The array of descriptions of VPC configurations available to the application.</p>
+    pub fn vpc_configuration_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcConfigurationDescription]> {
+        self.vpc_configuration_descriptions.as_deref()
+    }
+    /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
+    pub fn zeppelin_application_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ZeppelinApplicationConfigurationDescription> {
+        self.zeppelin_application_configuration_description.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -965,6 +1131,33 @@ pub struct ZeppelinApplicationConfigurationDescription {
     pub custom_artifacts_configuration_description:
         std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfigurationDescription>>,
 }
+impl ZeppelinApplicationConfigurationDescription {
+    /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn monitoring_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ZeppelinMonitoringConfigurationDescription> {
+        self.monitoring_configuration_description.as_ref()
+    }
+    /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    pub fn catalog_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogConfigurationDescription> {
+        self.catalog_configuration_description.as_ref()
+    }
+    /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
+    pub fn deploy_as_application_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::DeployAsApplicationConfigurationDescription> {
+        self.deploy_as_application_configuration_description
+            .as_ref()
+    }
+    /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
+    pub fn custom_artifacts_configuration_description(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomArtifactConfigurationDescription]> {
+        self.custom_artifacts_configuration_description.as_deref()
+    }
+}
 impl std::fmt::Debug for ZeppelinApplicationConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZeppelinApplicationConfigurationDescription");
@@ -1113,6 +1306,28 @@ pub struct CustomArtifactConfigurationDescription {
     /// <p>The parameters that are required to specify a Maven dependency.</p>
     pub maven_reference_description: std::option::Option<crate::model::MavenReference>,
 }
+impl CustomArtifactConfigurationDescription {
+    /// <p>
+    /// <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
+    pub fn artifact_type(&self) -> std::option::Option<&crate::model::ArtifactType> {
+        self.artifact_type.as_ref()
+    }
+    /// <p>For a Kinesis Data Analytics application provides a
+    /// description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket,
+    /// the name of the Amazon S3 object that contains the data, and the version number of the Amazon
+    /// S3 object that contains the data. </p>
+    pub fn s3_content_location_description(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ContentLocation> {
+        self.s3_content_location_description.as_ref()
+    }
+    /// <p>The parameters that are required to specify a Maven dependency.</p>
+    pub fn maven_reference_description(
+        &self,
+    ) -> std::option::Option<&crate::model::MavenReference> {
+        self.maven_reference_description.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomArtifactConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomArtifactConfigurationDescription");
@@ -1218,6 +1433,20 @@ pub struct MavenReference {
     /// <p>The version of the Maven reference.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl MavenReference {
+    /// <p>The group ID of the Maven reference.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The artifact ID of the Maven reference.</p>
+    pub fn artifact_id(&self) -> std::option::Option<&str> {
+        self.artifact_id.as_deref()
+    }
+    /// <p>The version of the Maven reference.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for MavenReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MavenReference");
@@ -1298,6 +1527,20 @@ pub struct S3ContentLocation {
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of the object containing the application code.</p>
     pub object_version: std::option::Option<std::string::String>,
+}
+impl S3ContentLocation {
+    /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The file key for the object containing the application code.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>The version of the object containing the application code.</p>
+    pub fn object_version(&self) -> std::option::Option<&str> {
+        self.object_version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ContentLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1432,6 +1675,14 @@ pub struct DeployAsApplicationConfigurationDescription {
     pub s3_content_location_description:
         std::option::Option<crate::model::S3ContentBaseLocationDescription>,
 }
+impl DeployAsApplicationConfigurationDescription {
+    /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
+    pub fn s3_content_location_description(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ContentBaseLocationDescription> {
+        self.s3_content_location_description.as_ref()
+    }
+}
 impl std::fmt::Debug for DeployAsApplicationConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeployAsApplicationConfigurationDescription");
@@ -1491,6 +1742,16 @@ pub struct S3ContentBaseLocationDescription {
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The base path for the S3 bucket.</p>
     pub base_path: std::option::Option<std::string::String>,
+}
+impl S3ContentBaseLocationDescription {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The base path for the S3 bucket.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ContentBaseLocationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1554,6 +1815,14 @@ pub struct CatalogConfigurationDescription {
     pub glue_data_catalog_configuration_description:
         std::option::Option<crate::model::GlueDataCatalogConfigurationDescription>,
 }
+impl CatalogConfigurationDescription {
+    /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    pub fn glue_data_catalog_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::GlueDataCatalogConfigurationDescription> {
+        self.glue_data_catalog_configuration_description.as_ref()
+    }
+}
 impl std::fmt::Debug for CatalogConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CatalogConfigurationDescription");
@@ -1613,6 +1882,12 @@ pub struct GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub database_arn: std::option::Option<std::string::String>,
 }
+impl GlueDataCatalogConfigurationDescription {
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn database_arn(&self) -> std::option::Option<&str> {
+        self.database_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GlueDataCatalogConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlueDataCatalogConfigurationDescription");
@@ -1660,6 +1935,12 @@ impl GlueDataCatalogConfigurationDescription {
 pub struct ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl ZeppelinMonitoringConfigurationDescription {
+    /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ZeppelinMonitoringConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1780,6 +2061,26 @@ pub struct VpcConfigurationDescription {
     /// IDs used by the VPC configuration.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl VpcConfigurationDescription {
+    /// <p>The ID of the VPC configuration.</p>
+    pub fn vpc_configuration_id(&self) -> std::option::Option<&str> {
+        self.vpc_configuration_id.as_deref()
+    }
+    /// <p>The ID of the associated VPC.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a>
+    /// IDs used by the VPC configuration.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
+    /// IDs used by the VPC configuration.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for VpcConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VpcConfigurationDescription");
@@ -1892,6 +2193,12 @@ pub struct ApplicationSnapshotConfigurationDescription {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub snapshots_enabled: std::option::Option<bool>,
 }
+impl ApplicationSnapshotConfigurationDescription {
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn snapshots_enabled(&self) -> std::option::Option<bool> {
+        self.snapshots_enabled
+    }
+}
 impl std::fmt::Debug for ApplicationSnapshotConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSnapshotConfigurationDescription");
@@ -1940,6 +2247,14 @@ pub struct EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
     pub property_group_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
+}
+impl EnvironmentPropertyDescriptions {
+    /// <p>Describes the execution property groups.</p>
+    pub fn property_group_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PropertyGroup]> {
+        self.property_group_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for EnvironmentPropertyDescriptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2007,6 +2322,19 @@ pub struct PropertyGroup {
     /// <p>Describes the value of an application execution property key-value pair.</p>
     pub property_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PropertyGroup {
+    /// <p>Describes the key of an application execution property key-value pair.</p>
+    pub fn property_group_id(&self) -> std::option::Option<&str> {
+        self.property_group_id.as_deref()
+    }
+    /// <p>Describes the value of an application execution property key-value pair.</p>
+    pub fn property_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.property_map.as_ref()
+    }
 }
 impl std::fmt::Debug for PropertyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2100,6 +2428,33 @@ pub struct FlinkApplicationConfigurationDescription {
     /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
     /// Documentation</a>. To retrieve the job plan for the application, use the <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the <a>DescribeApplication</a> operation.</p>
     pub job_plan_description: std::option::Option<std::string::String>,
+}
+impl FlinkApplicationConfigurationDescription {
+    /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state
+    /// for fault tolerance.</p>
+    pub fn checkpoint_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::CheckpointConfigurationDescription> {
+        self.checkpoint_configuration_description.as_ref()
+    }
+    /// <p>Describes configuration parameters for Amazon CloudWatch logging for an
+    /// application.</p>
+    pub fn monitoring_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringConfigurationDescription> {
+        self.monitoring_configuration_description.as_ref()
+    }
+    /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
+    pub fn parallelism_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelismConfigurationDescription> {
+        self.parallelism_configuration_description.as_ref()
+    }
+    /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+    /// Documentation</a>. To retrieve the job plan for the application, use the <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the <a>DescribeApplication</a> operation.</p>
+    pub fn job_plan_description(&self) -> std::option::Option<&str> {
+        self.job_plan_description.as_deref()
+    }
 }
 impl std::fmt::Debug for FlinkApplicationConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2244,6 +2599,37 @@ pub struct ParallelismConfigurationDescription {
     pub current_parallelism: std::option::Option<i32>,
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
     pub auto_scaling_enabled: std::option::Option<bool>,
+}
+impl ParallelismConfigurationDescription {
+    /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
+    /// If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application
+    /// load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+    /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can
+    /// reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    pub fn parallelism(&self) -> std::option::Option<i32> {
+        self.parallelism
+    }
+    /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
+    /// Kinesis Processing Unit (KPU) used by the application.</p>
+    pub fn parallelism_per_kpu(&self) -> std::option::Option<i32> {
+        self.parallelism_per_kpu
+    }
+    /// <p>Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
+    /// If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to application
+    /// load. The service can increase this value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+    /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce
+    /// the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    pub fn current_parallelism(&self) -> std::option::Option<i32> {
+        self.current_parallelism
+    }
+    /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
+    pub fn auto_scaling_enabled(&self) -> std::option::Option<bool> {
+        self.auto_scaling_enabled
+    }
 }
 impl std::fmt::Debug for ParallelismConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2424,6 +2810,20 @@ pub struct MonitoringConfigurationDescription {
     pub metrics_level: std::option::Option<crate::model::MetricsLevel>,
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl MonitoringConfigurationDescription {
+    /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+    pub fn metrics_level(&self) -> std::option::Option<&crate::model::MetricsLevel> {
+        self.metrics_level.as_ref()
+    }
+    /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for MonitoringConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2609,6 +3009,59 @@ pub struct CheckpointConfigurationDescription {
     /// </note>
     pub min_pause_between_checkpoints: std::option::Option<i64>,
 }
+impl CheckpointConfigurationDescription {
+    /// <p>Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
+    /// <note>
+    /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values,
+    /// even if they are set to other values using APIs or
+    /// application code:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>CheckpointingEnabled:</b> true</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CheckpointInterval:</b> 60000</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>MinPauseBetweenCheckpoints:</b> 5000</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to
+    /// another value using this API or in application code.</p>
+    /// </note>
+    pub fn checkpointing_enabled(&self) -> std::option::Option<bool> {
+        self.checkpointing_enabled
+    }
+    /// <p>Describes the interval in milliseconds between checkpoint operations. </p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value
+    /// using this API or in application code.</p>
+    /// </note>
+    pub fn checkpoint_interval(&self) -> std::option::Option<i64> {
+        self.checkpoint_interval
+    }
+    /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
+    /// can start. </p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this
+    /// API or in application code.</p>
+    /// </note>
+    pub fn min_pause_between_checkpoints(&self) -> std::option::Option<i64> {
+        self.min_pause_between_checkpoints
+    }
+}
 impl std::fmt::Debug for CheckpointConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CheckpointConfigurationDescription");
@@ -2779,6 +3232,20 @@ pub struct RunConfigurationDescription {
     pub flink_run_configuration_description:
         std::option::Option<crate::model::FlinkRunConfiguration>,
 }
+impl RunConfigurationDescription {
+    /// <p>Describes the restore behavior of a restarting application.</p>
+    pub fn application_restore_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationRestoreConfiguration> {
+        self.application_restore_configuration_description.as_ref()
+    }
+    /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn flink_run_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::FlinkRunConfiguration> {
+        self.flink_run_configuration_description.as_ref()
+    }
+}
 impl std::fmt::Debug for RunConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RunConfigurationDescription");
@@ -2873,6 +3340,24 @@ pub struct FlinkRunConfiguration {
     /// </note>
     pub allow_non_restored_state: std::option::Option<bool>,
 }
+impl FlinkRunConfiguration {
+    /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot
+    /// be mapped to the new program.
+    /// This will happen if the program is updated between snapshots to remove stateful parameters, and
+    /// state data in the snapshot no longer
+    /// corresponds to valid application data. For more information, see
+    /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+    /// Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+    /// documentation</a>.</p>
+    /// <note>
+    /// <p>This value defaults to <code>false</code>. If you update your application without
+    /// specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>,
+    /// even if it was previously set to <code>true</code>.</p>
+    /// </note>
+    pub fn allow_non_restored_state(&self) -> std::option::Option<bool> {
+        self.allow_non_restored_state
+    }
+}
 impl std::fmt::Debug for FlinkRunConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FlinkRunConfiguration");
@@ -2948,6 +3433,20 @@ pub struct ApplicationRestoreConfiguration {
     /// The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
     /// <code>ApplicationRestoreType</code>.</p>
     pub snapshot_name: std::option::Option<std::string::String>,
+}
+impl ApplicationRestoreConfiguration {
+    /// <p>Specifies how the application should be restored.</p>
+    pub fn application_restore_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationRestoreType> {
+        self.application_restore_type.as_ref()
+    }
+    /// <p>The identifier of an existing snapshot of application state to use to restart an application.
+    /// The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
+    /// <code>ApplicationRestoreType</code>.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplicationRestoreConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3089,6 +3588,18 @@ pub struct ApplicationCodeConfigurationDescription {
     /// <p>Describes details about the location and format of the application code.</p>
     pub code_content_description: std::option::Option<crate::model::CodeContentDescription>,
 }
+impl ApplicationCodeConfigurationDescription {
+    /// <p>Specifies whether the code content is in text or zip format.</p>
+    pub fn code_content_type(&self) -> std::option::Option<&crate::model::CodeContentType> {
+        self.code_content_type.as_ref()
+    }
+    /// <p>Describes details about the location and format of the application code.</p>
+    pub fn code_content_description(
+        &self,
+    ) -> std::option::Option<&crate::model::CodeContentDescription> {
+        self.code_content_description.as_ref()
+    }
+}
 impl std::fmt::Debug for ApplicationCodeConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationCodeConfigurationDescription");
@@ -3167,6 +3678,27 @@ pub struct CodeContentDescription {
     /// code stored in Amazon S3.</p>
     pub s3_application_code_location_description:
         std::option::Option<crate::model::S3ApplicationCodeLocationDescription>,
+}
+impl CodeContentDescription {
+    /// <p>The text-format code</p>
+    pub fn text_content(&self) -> std::option::Option<&str> {
+        self.text_content.as_deref()
+    }
+    /// <p>The checksum that can be used to validate zip-format code.</p>
+    pub fn code_md5(&self) -> std::option::Option<&str> {
+        self.code_md5.as_deref()
+    }
+    /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
+    pub fn code_size(&self) -> std::option::Option<i64> {
+        self.code_size
+    }
+    /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application
+    /// code stored in Amazon S3.</p>
+    pub fn s3_application_code_location_description(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ApplicationCodeLocationDescription> {
+        self.s3_application_code_location_description.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeContentDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3271,6 +3803,20 @@ pub struct S3ApplicationCodeLocationDescription {
     pub file_key: std::option::Option<std::string::String>,
     /// <p>The version of the object containing the application code.</p>
     pub object_version: std::option::Option<std::string::String>,
+}
+impl S3ApplicationCodeLocationDescription {
+    /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The file key for the object containing the application code.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>The version of the object containing the application code.</p>
+    pub fn object_version(&self) -> std::option::Option<&str> {
+        self.object_version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ApplicationCodeLocationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3412,6 +3958,25 @@ pub struct SqlApplicationConfigurationDescription {
     pub reference_data_source_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
 }
+impl SqlApplicationConfigurationDescription {
+    /// <p>The array of <a>InputDescription</a> objects describing the input streams used
+    /// by the application.</p>
+    pub fn input_descriptions(&self) -> std::option::Option<&[crate::model::InputDescription]> {
+        self.input_descriptions.as_deref()
+    }
+    /// <p>The array of <a>OutputDescription</a> objects describing the destination
+    /// streams used by the application.</p>
+    pub fn output_descriptions(&self) -> std::option::Option<&[crate::model::OutputDescription]> {
+        self.output_descriptions.as_deref()
+    }
+    /// <p>The array of <a>ReferenceDataSourceDescription</a> objects describing the
+    /// reference data sources used by the application.</p>
+    pub fn reference_data_source_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReferenceDataSourceDescription]> {
+        self.reference_data_source_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for SqlApplicationConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqlApplicationConfigurationDescription");
@@ -3543,6 +4108,27 @@ pub struct ReferenceDataSourceDescription {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
 }
+impl ReferenceDataSourceDescription {
+    /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns
+    /// when you add the reference data source to your application using the <a>CreateApplication</a> or <a>UpdateApplication</a> operation.</p>
+    pub fn reference_id(&self) -> std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
+    /// <p>The in-application table name created by the specific reference data source configuration.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
+    pub fn s3_reference_data_source_description(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReferenceDataSourceDescription> {
+        self.s3_reference_data_source_description.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    pub fn reference_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.reference_schema.as_ref()
+    }
+}
 impl std::fmt::Debug for ReferenceDataSourceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReferenceDataSourceDescription");
@@ -3651,6 +4237,20 @@ pub struct SourceSchema {
     /// <p>A list of <code>RecordColumn</code> objects. </p>
     pub record_columns: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
 }
+impl SourceSchema {
+    /// <p>Specifies the format of the records on the streaming source.</p>
+    pub fn record_format(&self) -> std::option::Option<&crate::model::RecordFormat> {
+        self.record_format.as_ref()
+    }
+    /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    pub fn record_encoding(&self) -> std::option::Option<&str> {
+        self.record_encoding.as_deref()
+    }
+    /// <p>A list of <code>RecordColumn</code> objects. </p>
+    pub fn record_columns(&self) -> std::option::Option<&[crate::model::RecordColumn]> {
+        self.record_columns.as_deref()
+    }
+}
 impl std::fmt::Debug for SourceSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceSchema");
@@ -3749,6 +4349,22 @@ pub struct RecordColumn {
     /// <p>The type of column created in the in-application input stream or reference table.</p>
     pub sql_type: std::option::Option<std::string::String>,
 }
+impl RecordColumn {
+    /// <p>The name of the column that is created in the in-application input stream or reference
+    /// table.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A reference to the data element in the streaming input or the reference data
+    /// source.</p>
+    pub fn mapping(&self) -> std::option::Option<&str> {
+        self.mapping.as_deref()
+    }
+    /// <p>The type of column created in the in-application input stream or reference table.</p>
+    pub fn sql_type(&self) -> std::option::Option<&str> {
+        self.sql_type.as_deref()
+    }
+}
 impl std::fmt::Debug for RecordColumn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordColumn");
@@ -3833,6 +4449,18 @@ pub struct RecordFormat {
     /// record fields delimited by some delimiter) on the streaming source.</p>
     pub mapping_parameters: std::option::Option<crate::model::MappingParameters>,
 }
+impl RecordFormat {
+    /// <p>The type of record format.</p>
+    pub fn record_format_type(&self) -> std::option::Option<&crate::model::RecordFormatType> {
+        self.record_format_type.as_ref()
+    }
+    /// <p>When you configure application input at the time of creating or updating an application,
+    /// provides additional mapping information specific to the record format (such as JSON, CSV, or
+    /// record fields delimited by some delimiter) on the streaming source.</p>
+    pub fn mapping_parameters(&self) -> std::option::Option<&crate::model::MappingParameters> {
+        self.mapping_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for RecordFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordFormat");
@@ -3909,6 +4537,21 @@ pub struct MappingParameters {
     /// <p>Provides additional mapping information when the record format uses delimiters
     /// (for example, CSV).</p>
     pub csv_mapping_parameters: std::option::Option<crate::model::CsvMappingParameters>,
+}
+impl MappingParameters {
+    /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+    pub fn json_mapping_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::JsonMappingParameters> {
+        self.json_mapping_parameters.as_ref()
+    }
+    /// <p>Provides additional mapping information when the record format uses delimiters
+    /// (for example, CSV).</p>
+    pub fn csv_mapping_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::CsvMappingParameters> {
+        self.csv_mapping_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for MappingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3997,6 +4640,18 @@ pub struct CsvMappingParameters {
     /// delimiter.</p>
     pub record_column_delimiter: std::option::Option<std::string::String>,
 }
+impl CsvMappingParameters {
+    /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical
+    /// row delimiter.</p>
+    pub fn record_row_delimiter(&self) -> std::option::Option<&str> {
+        self.record_row_delimiter.as_deref()
+    }
+    /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column
+    /// delimiter.</p>
+    pub fn record_column_delimiter(&self) -> std::option::Option<&str> {
+        self.record_column_delimiter.as_deref()
+    }
+}
 impl std::fmt::Debug for CsvMappingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CsvMappingParameters");
@@ -4068,6 +4723,12 @@ impl CsvMappingParameters {
 pub struct JsonMappingParameters {
     /// <p>The path to the top-level parent that contains the records.</p>
     pub record_row_path: std::option::Option<std::string::String>,
+}
+impl JsonMappingParameters {
+    /// <p>The path to the top-level parent that contains the records.</p>
+    pub fn record_row_path(&self) -> std::option::Option<&str> {
+        self.record_row_path.as_deref()
+    }
 }
 impl std::fmt::Debug for JsonMappingParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4186,6 +4847,26 @@ pub struct S3ReferenceDataSourceDescription {
     /// </note>
     pub reference_role_arn: std::option::Option<std::string::String>,
 }
+impl S3ReferenceDataSourceDescription {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>Amazon S3 object key name.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3
+    /// object on your behalf to populate the in-application reference table. </p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn reference_role_arn(&self) -> std::option::Option<&str> {
+        self.reference_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ReferenceDataSourceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ReferenceDataSourceDescription");
@@ -4292,6 +4973,41 @@ pub struct OutputDescription {
     pub lambda_output_description: std::option::Option<crate::model::LambdaOutputDescription>,
     /// <p>The data format used for writing data to the destination.</p>
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
+}
+impl OutputDescription {
+    /// <p>A unique identifier for the output configuration.</p>
+    pub fn output_id(&self) -> std::option::Option<&str> {
+        self.output_id.as_deref()
+    }
+    /// <p>The name of the in-application stream that is configured as output.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Describes the Kinesis data stream that is configured as the destination where output is
+    /// written.</p>
+    pub fn kinesis_streams_output_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsOutputDescription> {
+        self.kinesis_streams_output_description.as_ref()
+    }
+    /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination
+    /// where output is written.</p>
+    pub fn kinesis_firehose_output_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseOutputDescription> {
+        self.kinesis_firehose_output_description.as_ref()
+    }
+    /// <p>Describes the Lambda function that is configured as the destination where output is
+    /// written.</p>
+    pub fn lambda_output_description(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaOutputDescription> {
+        self.lambda_output_description.as_ref()
+    }
+    /// <p>The data format used for writing data to the destination.</p>
+    pub fn destination_schema(&self) -> std::option::Option<&crate::model::DestinationSchema> {
+        self.destination_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for OutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4442,6 +5158,12 @@ pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
     pub record_format_type: std::option::Option<crate::model::RecordFormatType>,
 }
+impl DestinationSchema {
+    /// <p>Specifies the format of the records on the output stream.</p>
+    pub fn record_format_type(&self) -> std::option::Option<&crate::model::RecordFormatType> {
+        self.record_format_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DestinationSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationSchema");
@@ -4501,6 +5223,22 @@ pub struct LambdaOutputDescription {
     /// role.</p>
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl LambdaOutputDescription {
+    /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination
+    /// function.</p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for LambdaOutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4584,6 +5322,22 @@ pub struct KinesisFirehoseOutputDescription {
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseOutputDescription {
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
+    /// stream.</p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseOutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseOutputDescription");
@@ -4665,6 +5419,22 @@ pub struct KinesisStreamsOutputDescription {
     /// role.</p>
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsOutputDescription {
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
+    /// stream.</p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsOutputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4761,6 +5531,55 @@ pub struct InputDescription {
     /// <p>The point at which the application is configured to read from the input stream.</p>
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
+}
+impl InputDescription {
+    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input
+    /// configuration that you add to your application. </p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>The in-application name prefix.</p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>Returns the in-application stream names that are mapped to the stream source. </p>
+    pub fn in_app_stream_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.in_app_stream_names.as_deref()
+    }
+    /// <p>The description of the preprocessor that executes on records in this input before the application's code is run. </p>
+    pub fn input_processing_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfigurationDescription> {
+        self.input_processing_configuration_description.as_ref()
+    }
+    /// <p>If a Kinesis data stream is configured as a streaming source, provides the Kinesis data
+    /// stream's Amazon Resource Name (ARN). </p>
+    pub fn kinesis_streams_input_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsInputDescription> {
+        self.kinesis_streams_input_description.as_ref()
+    }
+    /// <p>If a Kinesis Data Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN. </p>
+    pub fn kinesis_firehose_input_description(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseInputDescription> {
+        self.kinesis_firehose_input_description.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+    /// in the in-application stream that is being created. </p>
+    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.input_schema.as_ref()
+    }
+    /// <p>Describes the configured parallelism (number of in-application streams mapped to the streaming source). </p>
+    pub fn input_parallelism(&self) -> std::option::Option<&crate::model::InputParallelism> {
+        self.input_parallelism.as_ref()
+    }
+    /// <p>The point at which the application is configured to read from the input stream.</p>
+    pub fn input_starting_position_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
+        self.input_starting_position_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for InputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4996,6 +5815,33 @@ pub struct InputStartingPositionConfiguration {
     /// </ul>
     pub input_starting_position: std::option::Option<crate::model::InputStartingPosition>,
 }
+impl InputStartingPositionConfiguration {
+    /// <p>The starting position on the stream.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NOW</code> - Start reading just after the most recent record in the stream, and
+    /// start at the request timestamp that the customer issued.</p>
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream,
+    /// which is the oldest record available in the stream. This option is not available
+    /// for an Amazon Kinesis Data Firehose delivery stream.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p>
+    /// </li>
+    /// </ul>
+    pub fn input_starting_position(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPosition> {
+        self.input_starting_position.as_ref()
+    }
+}
 impl std::fmt::Debug for InputStartingPositionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputStartingPositionConfiguration");
@@ -5149,6 +5995,12 @@ pub struct InputParallelism {
     /// <p>The number of in-application streams to create.</p>
     pub count: std::option::Option<i32>,
 }
+impl InputParallelism {
+    /// <p>The number of in-application streams to create.</p>
+    pub fn count(&self) -> std::option::Option<i32> {
+        self.count
+    }
+}
 impl std::fmt::Debug for InputParallelism {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputParallelism");
@@ -5202,6 +6054,21 @@ pub struct KinesisFirehoseInputDescription {
     /// role.</p>
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl KinesisFirehoseInputDescription {
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics assumes to access the stream.</p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisFirehoseInputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5283,6 +6150,22 @@ pub struct KinesisStreamsInputDescription {
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl KinesisStreamsInputDescription {
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
+    /// stream.</p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisStreamsInputDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisStreamsInputDescription");
@@ -5359,6 +6242,15 @@ pub struct InputProcessingConfigurationDescription {
     pub input_lambda_processor_description:
         std::option::Option<crate::model::InputLambdaProcessorDescription>,
 }
+impl InputProcessingConfigurationDescription {
+    /// <p>Provides configuration information about the associated <a>InputLambdaProcessorDescription</a>
+    /// </p>
+    pub fn input_lambda_processor_description(
+        &self,
+    ) -> std::option::Option<&crate::model::InputLambdaProcessorDescription> {
+        self.input_lambda_processor_description.as_ref()
+    }
+}
 impl std::fmt::Debug for InputProcessingConfigurationDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputProcessingConfigurationDescription");
@@ -5432,6 +6324,26 @@ pub struct InputLambdaProcessorDescription {
     /// role.</p>
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl InputLambdaProcessorDescription {
+    /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the
+    /// stream.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role that is used to access the Amazon Lambda function.</p>
+    /// <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API
+    /// version have an application-level service execution role rather than a resource-level
+    /// role.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for InputLambdaProcessorDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5703,6 +6615,17 @@ pub struct CloudWatchLoggingOptionUpdate {
     /// messages.</p>
     pub log_stream_arn_update: std::option::Option<std::string::String>,
 }
+impl CloudWatchLoggingOptionUpdate {
+    /// <p>The ID of the CloudWatch logging option to update</p>
+    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logging_option_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application
+    /// messages.</p>
+    pub fn log_stream_arn_update(&self) -> std::option::Option<&str> {
+        self.log_stream_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLoggingOptionUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLoggingOptionUpdate");
@@ -5780,6 +6703,20 @@ pub struct RunConfigurationUpdate {
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
     pub application_restore_configuration:
         std::option::Option<crate::model::ApplicationRestoreConfiguration>,
+}
+impl RunConfigurationUpdate {
+    /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn flink_run_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FlinkRunConfiguration> {
+        self.flink_run_configuration.as_ref()
+    }
+    /// <p>Describes updates to the restore behavior of a restarting application.</p>
+    pub fn application_restore_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationRestoreConfiguration> {
+        self.application_restore_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RunConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5878,6 +6815,52 @@ pub struct ApplicationConfigurationUpdate {
     /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub zeppelin_application_configuration_update:
         std::option::Option<crate::model::ZeppelinApplicationConfigurationUpdate>,
+}
+impl ApplicationConfigurationUpdate {
+    /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's
+    /// configuration.</p>
+    pub fn sql_application_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::SqlApplicationConfigurationUpdate> {
+        self.sql_application_configuration_update.as_ref()
+    }
+    /// <p>Describes updates to an application's code
+    /// configuration.</p>
+    pub fn application_code_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationCodeConfigurationUpdate> {
+        self.application_code_configuration_update.as_ref()
+    }
+    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    pub fn flink_application_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::FlinkApplicationConfigurationUpdate> {
+        self.flink_application_configuration_update.as_ref()
+    }
+    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn environment_property_updates(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentPropertyUpdates> {
+        self.environment_property_updates.as_ref()
+    }
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn application_snapshot_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationSnapshotConfigurationUpdate> {
+        self.application_snapshot_configuration_update.as_ref()
+    }
+    /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
+    pub fn vpc_configuration_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::VpcConfigurationUpdate]> {
+        self.vpc_configuration_updates.as_deref()
+    }
+    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn zeppelin_application_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ZeppelinApplicationConfigurationUpdate> {
+        self.zeppelin_application_configuration_update.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6093,6 +7076,32 @@ pub struct ZeppelinApplicationConfigurationUpdate {
     pub custom_artifacts_configuration_update:
         std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfiguration>>,
 }
+impl ZeppelinApplicationConfigurationUpdate {
+    /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn monitoring_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ZeppelinMonitoringConfigurationUpdate> {
+        self.monitoring_configuration_update.as_ref()
+    }
+    /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    pub fn catalog_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogConfigurationUpdate> {
+        self.catalog_configuration_update.as_ref()
+    }
+    /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
+    pub fn deploy_as_application_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::DeployAsApplicationConfigurationUpdate> {
+        self.deploy_as_application_configuration_update.as_ref()
+    }
+    /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
+    pub fn custom_artifacts_configuration_update(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomArtifactConfiguration]> {
+        self.custom_artifacts_configuration_update.as_deref()
+    }
+}
 impl std::fmt::Debug for ZeppelinApplicationConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZeppelinApplicationConfigurationUpdate");
@@ -6237,6 +7246,24 @@ pub struct CustomArtifactConfiguration {
     /// <p>The parameters required to fully specify a Maven reference.</p>
     pub maven_reference: std::option::Option<crate::model::MavenReference>,
 }
+impl CustomArtifactConfiguration {
+    /// <p>
+    /// <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
+    pub fn artifact_type(&self) -> std::option::Option<&crate::model::ArtifactType> {
+        self.artifact_type.as_ref()
+    }
+    /// <p>For a Kinesis Data Analytics application provides a
+    /// description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket,
+    /// the name of the Amazon S3 object that contains the data, and the version number of the Amazon
+    /// S3 object that contains the data. </p>
+    pub fn s3_content_location(&self) -> std::option::Option<&crate::model::S3ContentLocation> {
+        self.s3_content_location.as_ref()
+    }
+    /// <p>The parameters required to fully specify a Maven reference.</p>
+    pub fn maven_reference(&self) -> std::option::Option<&crate::model::MavenReference> {
+        self.maven_reference.as_ref()
+    }
+}
 impl std::fmt::Debug for CustomArtifactConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomArtifactConfiguration");
@@ -6328,6 +7355,14 @@ pub struct DeployAsApplicationConfigurationUpdate {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
     pub s3_content_location_update: std::option::Option<crate::model::S3ContentBaseLocationUpdate>,
 }
+impl DeployAsApplicationConfigurationUpdate {
+    /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
+    pub fn s3_content_location_update(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ContentBaseLocationUpdate> {
+        self.s3_content_location_update.as_ref()
+    }
+}
 impl std::fmt::Debug for DeployAsApplicationConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeployAsApplicationConfigurationUpdate");
@@ -6387,6 +7422,16 @@ pub struct S3ContentBaseLocationUpdate {
     pub bucket_arn_update: std::option::Option<std::string::String>,
     /// <p>The updated S3 bucket path.</p>
     pub base_path_update: std::option::Option<std::string::String>,
+}
+impl S3ContentBaseLocationUpdate {
+    /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn_update(&self) -> std::option::Option<&str> {
+        self.bucket_arn_update.as_deref()
+    }
+    /// <p>The updated S3 bucket path.</p>
+    pub fn base_path_update(&self) -> std::option::Option<&str> {
+        self.base_path_update.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ContentBaseLocationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6456,6 +7501,14 @@ pub struct CatalogConfigurationUpdate {
     pub glue_data_catalog_configuration_update:
         std::option::Option<crate::model::GlueDataCatalogConfigurationUpdate>,
 }
+impl CatalogConfigurationUpdate {
+    /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    pub fn glue_data_catalog_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::GlueDataCatalogConfigurationUpdate> {
+        self.glue_data_catalog_configuration_update.as_ref()
+    }
+}
 impl std::fmt::Debug for CatalogConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CatalogConfigurationUpdate");
@@ -6514,6 +7567,12 @@ pub struct GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     pub database_arn_update: std::option::Option<std::string::String>,
 }
+impl GlueDataCatalogConfigurationUpdate {
+    /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
+    pub fn database_arn_update(&self) -> std::option::Option<&str> {
+        self.database_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for GlueDataCatalogConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlueDataCatalogConfigurationUpdate");
@@ -6564,6 +7623,12 @@ impl GlueDataCatalogConfigurationUpdate {
 pub struct ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
     pub log_level_update: std::option::Option<crate::model::LogLevel>,
+}
+impl ZeppelinMonitoringConfigurationUpdate {
+    /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
+    pub fn log_level_update(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level_update.as_ref()
+    }
 }
 impl std::fmt::Debug for ZeppelinMonitoringConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6622,6 +7687,23 @@ pub struct VpcConfigurationUpdate {
     /// <p>Describes updates to the array of
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub security_group_id_updates: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfigurationUpdate {
+    /// <p>Describes an update to the ID of the VPC configuration.</p>
+    pub fn vpc_configuration_id(&self) -> std::option::Option<&str> {
+        self.vpc_configuration_id.as_deref()
+    }
+    /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a>
+    /// IDs
+    /// used by the VPC configuration.</p>
+    pub fn subnet_id_updates(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_id_updates.as_deref()
+    }
+    /// <p>Describes updates to the array of
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
+    pub fn security_group_id_updates(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_id_updates.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6725,6 +7807,12 @@ pub struct ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub snapshots_enabled_update: std::option::Option<bool>,
 }
+impl ApplicationSnapshotConfigurationUpdate {
+    /// <p>Describes updates to whether snapshots are enabled for an application.</p>
+    pub fn snapshots_enabled_update(&self) -> std::option::Option<bool> {
+        self.snapshots_enabled_update
+    }
+}
 impl std::fmt::Debug for ApplicationSnapshotConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSnapshotConfigurationUpdate");
@@ -6772,6 +7860,12 @@ impl ApplicationSnapshotConfigurationUpdate {
 pub struct EnvironmentPropertyUpdates {
     /// <p>Describes updates to the execution property groups.</p>
     pub property_groups: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
+}
+impl EnvironmentPropertyUpdates {
+    /// <p>Describes updates to the execution property groups.</p>
+    pub fn property_groups(&self) -> std::option::Option<&[crate::model::PropertyGroup]> {
+        self.property_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for EnvironmentPropertyUpdates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6838,6 +7932,28 @@ pub struct FlinkApplicationConfigurationUpdate {
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
     pub parallelism_configuration_update:
         std::option::Option<crate::model::ParallelismConfigurationUpdate>,
+}
+impl FlinkApplicationConfigurationUpdate {
+    /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting
+    /// application state for fault tolerance.</p>
+    pub fn checkpoint_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::CheckpointConfigurationUpdate> {
+        self.checkpoint_configuration_update.as_ref()
+    }
+    /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an
+    /// application.</p>
+    pub fn monitoring_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringConfigurationUpdate> {
+        self.monitoring_configuration_update.as_ref()
+    }
+    /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
+    pub fn parallelism_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelismConfigurationUpdate> {
+        self.parallelism_configuration_update.as_ref()
+    }
 }
 impl std::fmt::Debug for FlinkApplicationConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6959,6 +8075,32 @@ pub struct ParallelismConfigurationUpdate {
     /// <p>Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based Kinesis Data Analytics application in response to increased throughput.</p>
     pub auto_scaling_enabled_update: std::option::Option<bool>,
 }
+impl ParallelismConfigurationUpdate {
+    /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used.
+    /// You must set this property to <code>CUSTOM</code>
+    /// in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
+    pub fn configuration_type_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type_update.as_ref()
+    }
+    /// <p>Describes updates to the initial number of parallel tasks an application can perform. If <code>AutoScalingEnabled</code> is set to True, then
+    /// Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application
+    /// load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+    /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service will
+    /// reduce <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.</p>
+    pub fn parallelism_update(&self) -> std::option::Option<i32> {
+        self.parallelism_update
+    }
+    /// <p>Describes updates to the number of parallel tasks an application can perform per Kinesis Processing Unit (KPU) used by the application.</p>
+    pub fn parallelism_per_kpu_update(&self) -> std::option::Option<i32> {
+        self.parallelism_per_kpu_update
+    }
+    /// <p>Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based Kinesis Data Analytics application in response to increased throughput.</p>
+    pub fn auto_scaling_enabled_update(&self) -> std::option::Option<bool> {
+        self.auto_scaling_enabled_update
+    }
+}
 impl std::fmt::Debug for ParallelismConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParallelismConfigurationUpdate");
@@ -7073,6 +8215,25 @@ pub struct MonitoringConfigurationUpdate {
     pub metrics_level_update: std::option::Option<crate::model::MetricsLevel>,
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
     pub log_level_update: std::option::Option<crate::model::LogLevel>,
+}
+impl MonitoringConfigurationUpdate {
+    /// <p>Describes updates to whether to use the default CloudWatch logging configuration for
+    /// an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+    /// <code>MetricsLevel</code> parameters.</p>
+    pub fn configuration_type_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type_update.as_ref()
+    }
+    /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+    /// level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
+    pub fn metrics_level_update(&self) -> std::option::Option<&crate::model::MetricsLevel> {
+        self.metrics_level_update.as_ref()
+    }
+    /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
+    pub fn log_level_update(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level_update.as_ref()
+    }
 }
 impl std::fmt::Debug for MonitoringConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7206,6 +8367,64 @@ pub struct CheckpointConfigurationUpdate {
     /// in application code.</p>
     /// </note>
     pub min_pause_between_checkpoints_update: std::option::Option<i64>,
+}
+impl CheckpointConfigurationUpdate {
+    /// <p>Describes updates to whether the application uses the default checkpointing behavior of
+    /// Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the
+    /// <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+    /// </p>
+    /// <note>
+    /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are
+    /// set to other values using APIs or
+    /// application code:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>CheckpointingEnabled:</b> true</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CheckpointInterval:</b> 60000</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>MinPauseBetweenCheckpoints:</b> 5000</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn configuration_type_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type_update.as_ref()
+    }
+    /// <p>Describes updates to whether checkpointing is enabled for an application.</p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to
+    /// another value using this API or in application code.</p>
+    /// </note>
+    pub fn checkpointing_enabled_update(&self) -> std::option::Option<bool> {
+        self.checkpointing_enabled_update
+    }
+    /// <p>Describes updates to the interval in milliseconds between checkpoint operations.</p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value
+    /// using this API or in application code.</p>
+    /// </note>
+    pub fn checkpoint_interval_update(&self) -> std::option::Option<i64> {
+        self.checkpoint_interval_update
+    }
+    /// <p>Describes updates to the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
+    /// can start.</p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or
+    /// in application code.</p>
+    /// </note>
+    pub fn min_pause_between_checkpoints_update(&self) -> std::option::Option<i64> {
+        self.min_pause_between_checkpoints_update
+    }
 }
 impl std::fmt::Debug for CheckpointConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7390,6 +8609,16 @@ pub struct ApplicationCodeConfigurationUpdate {
     /// <p>Describes updates to the code content of an application.</p>
     pub code_content_update: std::option::Option<crate::model::CodeContentUpdate>,
 }
+impl ApplicationCodeConfigurationUpdate {
+    /// <p>Describes updates to the code content type.</p>
+    pub fn code_content_type_update(&self) -> std::option::Option<&crate::model::CodeContentType> {
+        self.code_content_type_update.as_ref()
+    }
+    /// <p>Describes updates to the code content of an application.</p>
+    pub fn code_content_update(&self) -> std::option::Option<&crate::model::CodeContentUpdate> {
+        self.code_content_update.as_ref()
+    }
+}
 impl std::fmt::Debug for ApplicationCodeConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationCodeConfigurationUpdate");
@@ -7460,6 +8689,22 @@ pub struct CodeContentUpdate {
     pub zip_file_content_update: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Describes an update to the location of code for an application.</p>
     pub s3_content_location_update: std::option::Option<crate::model::S3ContentLocationUpdate>,
+}
+impl CodeContentUpdate {
+    /// <p>Describes an update to the text code for an application.</p>
+    pub fn text_content_update(&self) -> std::option::Option<&str> {
+        self.text_content_update.as_deref()
+    }
+    /// <p>Describes an update to the zipped code for an application.</p>
+    pub fn zip_file_content_update(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.zip_file_content_update.as_ref()
+    }
+    /// <p>Describes an update to the location of code for an application.</p>
+    pub fn s3_content_location_update(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ContentLocationUpdate> {
+        self.s3_content_location_update.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeContentUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7555,6 +8800,20 @@ pub struct S3ContentLocationUpdate {
     /// <p>The new version of the object containing the application code.</p>
     pub object_version_update: std::option::Option<std::string::String>,
 }
+impl S3ContentLocationUpdate {
+    /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
+    pub fn bucket_arn_update(&self) -> std::option::Option<&str> {
+        self.bucket_arn_update.as_deref()
+    }
+    /// <p>The new file key for the object containing the application code.</p>
+    pub fn file_key_update(&self) -> std::option::Option<&str> {
+        self.file_key_update.as_deref()
+    }
+    /// <p>The new version of the object containing the application code.</p>
+    pub fn object_version_update(&self) -> std::option::Option<&str> {
+        self.object_version_update.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ContentLocationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ContentLocationUpdate");
@@ -7646,6 +8905,25 @@ pub struct SqlApplicationConfigurationUpdate {
     /// reference data sources used by the application.</p>
     pub reference_data_source_updates:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceUpdate>>,
+}
+impl SqlApplicationConfigurationUpdate {
+    /// <p>The array of <a>InputUpdate</a> objects describing the new input streams used
+    /// by the application.</p>
+    pub fn input_updates(&self) -> std::option::Option<&[crate::model::InputUpdate]> {
+        self.input_updates.as_deref()
+    }
+    /// <p>The array of <a>OutputUpdate</a> objects describing the new destination streams
+    /// used by the application.</p>
+    pub fn output_updates(&self) -> std::option::Option<&[crate::model::OutputUpdate]> {
+        self.output_updates.as_deref()
+    }
+    /// <p>The array of <a>ReferenceDataSourceUpdate</a> objects describing the new
+    /// reference data sources used by the application.</p>
+    pub fn reference_data_source_updates(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReferenceDataSourceUpdate]> {
+        self.reference_data_source_updates.as_deref()
+    }
 }
 impl std::fmt::Debug for SqlApplicationConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7774,6 +9052,28 @@ pub struct ReferenceDataSourceUpdate {
     /// corresponding columns created in the in-application stream. </p>
     pub reference_schema_update: std::option::Option<crate::model::SourceSchema>,
 }
+impl ReferenceDataSourceUpdate {
+    /// <p>The ID of the reference data source that is being updated. You can use the <a>DescribeApplication</a> operation to get this value.</p>
+    pub fn reference_id(&self) -> std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
+    /// <p>The in-application table name that is created by this update.</p>
+    pub fn table_name_update(&self) -> std::option::Option<&str> {
+        self.table_name_update.as_deref()
+    }
+    /// <p>Describes the S3 bucket name, object key name, and IAM role that Kinesis Data Analytics can assume to read the
+    /// Amazon S3 object on your behalf and populate the in-application reference table.</p>
+    pub fn s3_reference_data_source_update(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReferenceDataSourceUpdate> {
+        self.s3_reference_data_source_update.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to
+    /// corresponding columns created in the in-application stream. </p>
+    pub fn reference_schema_update(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.reference_schema_update.as_ref()
+    }
+}
 impl std::fmt::Debug for ReferenceDataSourceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReferenceDataSourceUpdate");
@@ -7884,6 +9184,16 @@ pub struct S3ReferenceDataSourceUpdate {
     /// <p>The object key name.</p>
     pub file_key_update: std::option::Option<std::string::String>,
 }
+impl S3ReferenceDataSourceUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn_update(&self) -> std::option::Option<&str> {
+        self.bucket_arn_update.as_deref()
+    }
+    /// <p>The object key name.</p>
+    pub fn file_key_update(&self) -> std::option::Option<&str> {
+        self.file_key_update.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ReferenceDataSourceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ReferenceDataSourceUpdate");
@@ -7967,6 +9277,42 @@ pub struct OutputUpdate {
     /// <p>Describes the data format when records are written to the destination.
     /// </p>
     pub destination_schema_update: std::option::Option<crate::model::DestinationSchema>,
+}
+impl OutputUpdate {
+    /// <p>Identifies the specific output configuration that you want to update.</p>
+    pub fn output_id(&self) -> std::option::Option<&str> {
+        self.output_id.as_deref()
+    }
+    /// <p>If you want to specify a different in-application stream
+    /// for this output configuration, use this field to
+    /// specify the new in-application stream name.</p>
+    pub fn name_update(&self) -> std::option::Option<&str> {
+        self.name_update.as_deref()
+    }
+    /// <p>Describes a Kinesis data stream as the destination for the output.</p>
+    pub fn kinesis_streams_output_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsOutputUpdate> {
+        self.kinesis_streams_output_update.as_ref()
+    }
+    /// <p>Describes a Kinesis Data Firehose delivery stream as the destination for the
+    /// output.</p>
+    pub fn kinesis_firehose_output_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseOutputUpdate> {
+        self.kinesis_firehose_output_update.as_ref()
+    }
+    /// <p>Describes an Amazon Lambda function as the destination for the output.</p>
+    pub fn lambda_output_update(&self) -> std::option::Option<&crate::model::LambdaOutputUpdate> {
+        self.lambda_output_update.as_ref()
+    }
+    /// <p>Describes the data format when records are written to the destination.
+    /// </p>
+    pub fn destination_schema_update(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationSchema> {
+        self.destination_schema_update.as_ref()
+    }
 }
 impl std::fmt::Debug for OutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8121,6 +9467,16 @@ pub struct LambdaOutputUpdate {
     /// </note>
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
+impl LambdaOutputUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaOutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaOutputUpdate");
@@ -8182,6 +9538,12 @@ pub struct KinesisFirehoseOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseOutputUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseOutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseOutputUpdate");
@@ -8235,6 +9597,13 @@ pub struct KinesisStreamsOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the
     /// output.</p>
     pub resource_arn_update: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsOutputUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the
+    /// output.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsOutputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8307,6 +9676,48 @@ pub struct InputUpdate {
     pub input_schema_update: std::option::Option<crate::model::InputSchemaUpdate>,
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
     pub input_parallelism_update: std::option::Option<crate::model::InputParallelismUpdate>,
+}
+impl InputUpdate {
+    /// <p>The input ID of the application input to be updated.</p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the
+    /// specific streaming source.</p>
+    pub fn name_prefix_update(&self) -> std::option::Option<&str> {
+        self.name_prefix_update.as_deref()
+    }
+    /// <p>Describes updates to an <a>InputProcessingConfiguration</a>.</p>
+    pub fn input_processing_configuration_update(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfigurationUpdate> {
+        self.input_processing_configuration_update.as_ref()
+    }
+    /// <p>If a Kinesis data stream is the streaming source to be updated, provides an
+    /// updated stream Amazon Resource Name (ARN).</p>
+    pub fn kinesis_streams_input_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsInputUpdate> {
+        self.kinesis_streams_input_update.as_ref()
+    }
+    /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be
+    /// updated, provides an updated stream ARN.</p>
+    pub fn kinesis_firehose_input_update(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseInputUpdate> {
+        self.kinesis_firehose_input_update.as_ref()
+    }
+    /// <p>Describes the data format on the streaming source, and
+    /// how record elements on the streaming source map to columns of the in-application stream that is created.</p>
+    pub fn input_schema_update(&self) -> std::option::Option<&crate::model::InputSchemaUpdate> {
+        self.input_schema_update.as_ref()
+    }
+    /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
+    pub fn input_parallelism_update(
+        &self,
+    ) -> std::option::Option<&crate::model::InputParallelismUpdate> {
+        self.input_parallelism_update.as_ref()
+    }
 }
 impl std::fmt::Debug for InputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8486,6 +9897,12 @@ pub struct InputParallelismUpdate {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     pub count_update: std::option::Option<i32>,
 }
+impl InputParallelismUpdate {
+    /// <p>The number of in-application streams to create for the specified streaming source.</p>
+    pub fn count_update(&self) -> std::option::Option<i32> {
+        self.count_update
+    }
+}
 impl std::fmt::Debug for InputParallelismUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputParallelismUpdate");
@@ -8539,6 +9956,21 @@ pub struct InputSchemaUpdate {
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
     /// of the streaming source element to the corresponding column in the in-application stream.</p>
     pub record_column_updates: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
+}
+impl InputSchemaUpdate {
+    /// <p>Specifies the format of the records on the streaming source.</p>
+    pub fn record_format_update(&self) -> std::option::Option<&crate::model::RecordFormat> {
+        self.record_format_update.as_ref()
+    }
+    /// <p>Specifies the encoding of the records in the streaming source; for example, UTF-8.</p>
+    pub fn record_encoding_update(&self) -> std::option::Option<&str> {
+        self.record_encoding_update.as_deref()
+    }
+    /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
+    /// of the streaming source element to the corresponding column in the in-application stream.</p>
+    pub fn record_column_updates(&self) -> std::option::Option<&[crate::model::RecordColumn]> {
+        self.record_column_updates.as_deref()
+    }
 }
 impl std::fmt::Debug for InputSchemaUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8637,6 +10069,12 @@ pub struct KinesisFirehoseInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input delivery stream to read.</p>
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseInputUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the input delivery stream to read.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseInputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseInputUpdate");
@@ -8690,6 +10128,12 @@ pub struct KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
+impl KinesisStreamsInputUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisStreamsInputUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisStreamsInputUpdate");
@@ -8741,6 +10185,14 @@ pub struct InputProcessingConfigurationUpdate {
     /// <p>Provides update information for an <a>InputLambdaProcessor</a>.</p>
     pub input_lambda_processor_update:
         std::option::Option<crate::model::InputLambdaProcessorUpdate>,
+}
+impl InputProcessingConfigurationUpdate {
+    /// <p>Provides update information for an <a>InputLambdaProcessor</a>.</p>
+    pub fn input_lambda_processor_update(
+        &self,
+    ) -> std::option::Option<&crate::model::InputLambdaProcessorUpdate> {
+        self.input_lambda_processor_update.as_ref()
+    }
 }
 impl std::fmt::Debug for InputProcessingConfigurationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8806,6 +10258,17 @@ pub struct InputLambdaProcessorUpdate {
     /// </p>
     /// </note>
     pub resource_arn_update: std::option::Option<std::string::String>,
+}
+impl InputLambdaProcessorUpdate {
+    /// <p>The Amazon Resource Name (ARN) of the new Amazon Lambda function that is used to preprocess
+    /// the records in the stream.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+        self.resource_arn_update.as_deref()
+    }
 }
 impl std::fmt::Debug for InputLambdaProcessorUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8876,6 +10339,16 @@ pub struct Tag {
     /// <p>The value of the key-value tag. The value is optional.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the key-value tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the key-value tag. The value is optional.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -8943,6 +10416,27 @@ pub struct RunConfiguration {
     /// <p>Describes the restore behavior of a restarting application.</p>
     pub application_restore_configuration:
         std::option::Option<crate::model::ApplicationRestoreConfiguration>,
+}
+impl RunConfiguration {
+    /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn flink_run_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FlinkRunConfiguration> {
+        self.flink_run_configuration.as_ref()
+    }
+    /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application
+    /// application.</p>
+    pub fn sql_run_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SqlRunConfiguration]> {
+        self.sql_run_configurations.as_deref()
+    }
+    /// <p>Describes the restore behavior of a restarting application.</p>
+    pub fn application_restore_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationRestoreConfiguration> {
+        self.application_restore_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RunConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9054,6 +10548,19 @@ pub struct SqlRunConfiguration {
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
 }
+impl SqlRunConfiguration {
+    /// <p>The input source ID. You can get this ID by calling the <a>DescribeApplication</a> operation. </p>
+    pub fn input_id(&self) -> std::option::Option<&str> {
+        self.input_id.as_deref()
+    }
+    /// <p>The point at which you want the application to start processing records from the streaming
+    /// source. </p>
+    pub fn input_starting_position_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
+        self.input_starting_position_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for SqlRunConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqlRunConfiguration");
@@ -9129,6 +10636,16 @@ pub struct ApplicationVersionSummary {
     /// <p>The status of the application.</p>
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
 }
+impl ApplicationVersionSummary {
+    /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The status of the application.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
+}
 impl std::fmt::Debug for ApplicationVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationVersionSummary");
@@ -9198,6 +10715,24 @@ pub struct SnapshotDetails {
     pub application_version_id: std::option::Option<i64>,
     /// <p>The timestamp of the application snapshot.</p>
     pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SnapshotDetails {
+    /// <p>The identifier for the application snapshot.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>The status of the application snapshot.</p>
+    pub fn snapshot_status(&self) -> std::option::Option<&crate::model::SnapshotStatus> {
+        self.snapshot_status.as_ref()
+    }
+    /// <p>The current application version ID when the snapshot was created.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The timestamp of the application snapshot.</p>
+    pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.snapshot_creation_timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for SnapshotDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9371,6 +10906,32 @@ pub struct ApplicationSummary {
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
+impl ApplicationSummary {
+    /// <p>The name of the application.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn application_arn(&self) -> std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
+    /// <p>The status of the application.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
+    /// <p>Provides the current application version.</p>
+    pub fn application_version_id(&self) -> std::option::Option<i64> {
+        self.application_version_id
+    }
+    /// <p>The runtime environment for the application.</p>
+    pub fn runtime_environment(&self) -> std::option::Option<&crate::model::RuntimeEnvironment> {
+        self.runtime_environment.as_ref()
+    }
+    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
+        self.application_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for ApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSummary");
@@ -9502,6 +11063,15 @@ pub struct InputProcessingConfiguration {
     /// in the stream before being processed by your application code.</p>
     pub input_lambda_processor: std::option::Option<crate::model::InputLambdaProcessor>,
 }
+impl InputProcessingConfiguration {
+    /// <p>The <a>InputLambdaProcessor</a> that is used to preprocess the records
+    /// in the stream before being processed by your application code.</p>
+    pub fn input_lambda_processor(
+        &self,
+    ) -> std::option::Option<&crate::model::InputLambdaProcessor> {
+        self.input_lambda_processor.as_ref()
+    }
+}
 impl std::fmt::Debug for InputProcessingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputProcessingConfiguration");
@@ -9559,6 +11129,16 @@ pub struct InputLambdaProcessor {
     /// </p>
     /// </note>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl InputLambdaProcessor {
+    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for InputLambdaProcessor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9619,6 +11199,16 @@ pub struct S3Configuration {
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The name of the object that contains the data.</p>
     pub file_key: std::option::Option<std::string::String>,
+}
+impl S3Configuration {
+    /// <p>The ARN of the S3 bucket that contains the data.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The name of the object that contains the data.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9737,6 +11327,12 @@ pub struct CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
     pub log_stream_arn: std::option::Option<std::string::String>,
 }
+impl CloudWatchLoggingOption {
+    /// <p>The ARN of the CloudWatch log to receive application messages.</p>
+    pub fn log_stream_arn(&self) -> std::option::Option<&str> {
+        self.log_stream_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CloudWatchLoggingOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CloudWatchLoggingOption");
@@ -9804,6 +11400,48 @@ pub struct ApplicationConfiguration {
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
     pub zeppelin_application_configuration:
         std::option::Option<crate::model::ZeppelinApplicationConfiguration>,
+}
+impl ApplicationConfiguration {
+    /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
+    pub fn sql_application_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SqlApplicationConfiguration> {
+        self.sql_application_configuration.as_ref()
+    }
+    /// <p>The creation and update parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn flink_application_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FlinkApplicationConfiguration> {
+        self.flink_application_configuration.as_ref()
+    }
+    /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn environment_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentProperties> {
+        self.environment_properties.as_ref()
+    }
+    /// <p>The code location and type parameters for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn application_code_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationCodeConfiguration> {
+        self.application_code_configuration.as_ref()
+    }
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn application_snapshot_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationSnapshotConfiguration> {
+        self.application_snapshot_configuration.as_ref()
+    }
+    /// <p>The array of descriptions of VPC configurations available to the application.</p>
+    pub fn vpc_configurations(&self) -> std::option::Option<&[crate::model::VpcConfiguration]> {
+        self.vpc_configurations.as_deref()
+    }
+    /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
+    pub fn zeppelin_application_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ZeppelinApplicationConfiguration> {
+        self.zeppelin_application_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10009,6 +11647,32 @@ pub struct ZeppelinApplicationConfiguration {
     pub custom_artifacts_configuration:
         std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfiguration>>,
 }
+impl ZeppelinApplicationConfiguration {
+    /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    pub fn monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ZeppelinMonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
+    /// <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
+    pub fn catalog_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CatalogConfiguration> {
+        self.catalog_configuration.as_ref()
+    }
+    /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
+    pub fn deploy_as_application_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeployAsApplicationConfiguration> {
+        self.deploy_as_application_configuration.as_ref()
+    }
+    /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
+    pub fn custom_artifacts_configuration(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomArtifactConfiguration]> {
+        self.custom_artifacts_configuration.as_deref()
+    }
+}
 impl std::fmt::Debug for ZeppelinApplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ZeppelinApplicationConfiguration");
@@ -10133,6 +11797,13 @@ pub struct DeployAsApplicationConfiguration {
     /// </p>
     pub s3_content_location: std::option::Option<crate::model::S3ContentBaseLocation>,
 }
+impl DeployAsApplicationConfiguration {
+    /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.    
+    /// </p>
+    pub fn s3_content_location(&self) -> std::option::Option<&crate::model::S3ContentBaseLocation> {
+        self.s3_content_location.as_ref()
+    }
+}
 impl std::fmt::Debug for DeployAsApplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeployAsApplicationConfiguration");
@@ -10187,6 +11858,16 @@ pub struct S3ContentBaseLocation {
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The base path for the S3 bucket.</p>
     pub base_path: std::option::Option<std::string::String>,
+}
+impl S3ContentBaseLocation {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The base path for the S3 bucket.</p>
+    pub fn base_path(&self) -> std::option::Option<&str> {
+        self.base_path.as_deref()
+    }
 }
 impl std::fmt::Debug for S3ContentBaseLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10250,6 +11931,14 @@ pub struct CatalogConfiguration {
     pub glue_data_catalog_configuration:
         std::option::Option<crate::model::GlueDataCatalogConfiguration>,
 }
+impl CatalogConfiguration {
+    /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
+    pub fn glue_data_catalog_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::GlueDataCatalogConfiguration> {
+        self.glue_data_catalog_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CatalogConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CatalogConfiguration");
@@ -10308,6 +11997,12 @@ pub struct GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub database_arn: std::option::Option<std::string::String>,
 }
+impl GlueDataCatalogConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn database_arn(&self) -> std::option::Option<&str> {
+        self.database_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GlueDataCatalogConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlueDataCatalogConfiguration");
@@ -10355,6 +12050,12 @@ impl GlueDataCatalogConfiguration {
 pub struct ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl ZeppelinMonitoringConfiguration {
+    /// <p>The verbosity of the CloudWatch Logs for an application.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for ZeppelinMonitoringConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10407,6 +12108,18 @@ pub struct VpcConfiguration {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
     /// IDs used by the VPC configuration.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfiguration {
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs
+    /// used by the VPC configuration.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
+    /// IDs used by the VPC configuration.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10491,6 +12204,12 @@ pub struct ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub snapshots_enabled: std::option::Option<bool>,
 }
+impl ApplicationSnapshotConfiguration {
+    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn snapshots_enabled(&self) -> std::option::Option<bool> {
+        self.snapshots_enabled
+    }
+}
 impl std::fmt::Debug for ApplicationSnapshotConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSnapshotConfiguration");
@@ -10540,6 +12259,16 @@ pub struct ApplicationCodeConfiguration {
     pub code_content: std::option::Option<crate::model::CodeContent>,
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub code_content_type: std::option::Option<crate::model::CodeContentType>,
+}
+impl ApplicationCodeConfiguration {
+    /// <p>The location and type of the application code.</p>
+    pub fn code_content(&self) -> std::option::Option<&crate::model::CodeContent> {
+        self.code_content.as_ref()
+    }
+    /// <p>Specifies whether the code content is in text or zip format.</p>
+    pub fn code_content_type(&self) -> std::option::Option<&crate::model::CodeContentType> {
+        self.code_content_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationCodeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10612,6 +12341,20 @@ pub struct CodeContent {
     pub zip_file_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
     pub s3_content_location: std::option::Option<crate::model::S3ContentLocation>,
+}
+impl CodeContent {
+    /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn text_content(&self) -> std::option::Option<&str> {
+        self.text_content.as_deref()
+    }
+    /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
+    pub fn zip_file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.zip_file_content.as_ref()
+    }
+    /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
+    pub fn s3_content_location(&self) -> std::option::Option<&crate::model::S3ContentLocation> {
+        self.s3_content_location.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10693,6 +12436,12 @@ pub struct EnvironmentProperties {
     /// <p>Describes the execution property groups.</p>
     pub property_groups: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
 }
+impl EnvironmentProperties {
+    /// <p>Describes the execution property groups.</p>
+    pub fn property_groups(&self) -> std::option::Option<&[crate::model::PropertyGroup]> {
+        self.property_groups.as_deref()
+    }
+}
 impl std::fmt::Debug for EnvironmentProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentProperties");
@@ -10759,6 +12508,32 @@ pub struct FlinkApplicationConfiguration {
     pub monitoring_configuration: std::option::Option<crate::model::MonitoringConfiguration>,
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub parallelism_configuration: std::option::Option<crate::model::ParallelismConfiguration>,
+}
+impl FlinkApplicationConfiguration {
+    /// <p>Describes an application's checkpointing configuration. Checkpointing is the
+    /// process of persisting application state for fault tolerance.
+    /// For more information, see
+    /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+    /// Checkpoints for Fault Tolerance</a> in the
+    /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
+    pub fn checkpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CheckpointConfiguration> {
+        self.checkpoint_configuration.as_ref()
+    }
+    /// <p>Describes configuration parameters for Amazon CloudWatch logging for an
+    /// application.</p>
+    pub fn monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
+    /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
+    pub fn parallelism_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelismConfiguration> {
+        self.parallelism_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for FlinkApplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10885,6 +12660,33 @@ pub struct ParallelismConfiguration {
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
     pub auto_scaling_enabled: std::option::Option<bool>,
 }
+impl ParallelismConfiguration {
+    /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code>
+    /// in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code>
+    /// is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application
+    /// load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is
+    /// <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+    /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If
+    /// application load is reduced, the service can
+    /// reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
+    pub fn parallelism(&self) -> std::option::Option<i32> {
+        self.parallelism
+    }
+    /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit
+    /// (KPU) used by the application. For more
+    /// information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.</p>
+    pub fn parallelism_per_kpu(&self) -> std::option::Option<i32> {
+        self.parallelism_per_kpu
+    }
+    /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
+    pub fn auto_scaling_enabled(&self) -> std::option::Option<bool> {
+        self.auto_scaling_enabled
+    }
+}
 impl std::fmt::Debug for ParallelismConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParallelismConfiguration");
@@ -10999,6 +12801,23 @@ pub struct MonitoringConfiguration {
     pub metrics_level: std::option::Option<crate::model::MetricsLevel>,
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: std::option::Option<crate::model::LogLevel>,
+}
+impl MonitoringConfiguration {
+    /// <p>Describes whether to use the default CloudWatch logging configuration for an application.
+    /// You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+    /// <code>MetricsLevel</code> parameters.</p>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+    /// level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
+    pub fn metrics_level(&self) -> std::option::Option<&crate::model::MetricsLevel> {
+        self.metrics_level.as_ref()
+    }
+    /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+        self.log_level.as_ref()
+    }
 }
 impl std::fmt::Debug for MonitoringConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11135,6 +12954,63 @@ pub struct CheckpointConfiguration {
     /// API or in application code.</p>
     /// </note>
     pub min_pause_between_checkpoints: std::option::Option<i64>,
+}
+impl CheckpointConfiguration {
+    /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior.
+    /// You must set this property to <code>CUSTOM</code> in order to set the
+    /// <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p>
+    /// <note>
+    /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or
+    /// application code:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>CheckpointingEnabled:</b> true</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>CheckpointInterval:</b> 60000</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>MinPauseBetweenCheckpoints:</b> 5000</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationType> {
+        self.configuration_type.as_ref()
+    }
+    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
+    /// is set to another value using this API or in application code.</p>
+    /// </note>
+    pub fn checkpointing_enabled(&self) -> std::option::Option<bool> {
+        self.checkpointing_enabled
+    }
+    /// <p>Describes the interval in milliseconds between checkpoint operations. </p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set
+    /// to another value using this API or in application code.</p>
+    /// </note>
+    pub fn checkpoint_interval(&self) -> std::option::Option<i64> {
+        self.checkpoint_interval
+    }
+    /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a
+    /// new checkpoint operation can start. If a checkpoint operation takes longer than the
+    /// <code>CheckpointInterval</code>, the application otherwise performs continual checkpoint
+    /// operations. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"> Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+    /// Documentation</a>.</p>
+    /// <note>
+    /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+    /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this
+    /// API or in application code.</p>
+    /// </note>
+    pub fn min_pause_between_checkpoints(&self) -> std::option::Option<i64> {
+        self.min_pause_between_checkpoints
+    }
 }
 impl std::fmt::Debug for CheckpointConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11318,6 +13194,25 @@ pub struct SqlApplicationConfiguration {
     pub reference_data_sources:
         std::option::Option<std::vec::Vec<crate::model::ReferenceDataSource>>,
 }
+impl SqlApplicationConfiguration {
+    /// <p>The array of <a>Input</a> objects describing the input streams used by the
+    /// application.</p>
+    pub fn inputs(&self) -> std::option::Option<&[crate::model::Input]> {
+        self.inputs.as_deref()
+    }
+    /// <p>The array of <a>Output</a> objects describing the destination streams used by
+    /// the application.</p>
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+        self.outputs.as_deref()
+    }
+    /// <p>The array of <a>ReferenceDataSource</a> objects describing the reference data
+    /// sources used by the application.</p>
+    pub fn reference_data_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReferenceDataSource]> {
+        self.reference_data_sources.as_deref()
+    }
+}
 impl std::fmt::Debug for SqlApplicationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqlApplicationConfiguration");
@@ -11438,6 +13333,24 @@ pub struct ReferenceDataSource {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema: std::option::Option<crate::model::SourceSchema>,
 }
+impl ReferenceDataSource {
+    /// <p>The name of the in-application table to create.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Identifies the S3 bucket and object that contains the reference data.
+    ///
+    /// A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p>
+    pub fn s3_reference_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::S3ReferenceDataSource> {
+        self.s3_reference_data_source.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+    pub fn reference_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.reference_schema.as_ref()
+    }
+}
 impl std::fmt::Debug for ReferenceDataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReferenceDataSource");
@@ -11532,6 +13445,16 @@ pub struct S3ReferenceDataSource {
     /// <p>The object key name containing the reference data.</p>
     pub file_key: std::option::Option<std::string::String>,
 }
+impl S3ReferenceDataSource {
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+        self.bucket_arn.as_deref()
+    }
+    /// <p>The object key name containing the reference data.</p>
+    pub fn file_key(&self) -> std::option::Option<&str> {
+        self.file_key.as_deref()
+    }
+}
 impl std::fmt::Debug for S3ReferenceDataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ReferenceDataSource");
@@ -11607,6 +13530,34 @@ pub struct Output {
     /// <p>Describes the data format when records are written to the destination.
     /// </p>
     pub destination_schema: std::option::Option<crate::model::DestinationSchema>,
+}
+impl Output {
+    /// <p>The name of the in-application stream.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Identifies a Kinesis data stream
+    /// as the destination.</p>
+    pub fn kinesis_streams_output(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisStreamsOutput> {
+        self.kinesis_streams_output.as_ref()
+    }
+    /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
+    pub fn kinesis_firehose_output(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseOutput> {
+        self.kinesis_firehose_output.as_ref()
+    }
+    /// <p>Identifies an Amazon Lambda function as the destination.</p>
+    pub fn lambda_output(&self) -> std::option::Option<&crate::model::LambdaOutput> {
+        self.lambda_output.as_ref()
+    }
+    /// <p>Describes the data format when records are written to the destination.
+    /// </p>
+    pub fn destination_schema(&self) -> std::option::Option<&crate::model::DestinationSchema> {
+        self.destination_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11734,6 +13685,16 @@ pub struct LambdaOutput {
     /// </note>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl LambdaOutput {
+    /// <p>The Amazon Resource Name (ARN) of the destination Lambda function to write to.</p>
+    /// <note>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+    /// </p>
+    /// </note>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for LambdaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaOutput");
@@ -11792,6 +13753,12 @@ pub struct KinesisFirehoseOutput {
     /// <p>The ARN of the destination delivery stream to write to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseOutput {
+    /// <p>The ARN of the destination delivery stream to write to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseOutput");
@@ -11841,6 +13808,12 @@ impl KinesisFirehoseOutput {
 pub struct KinesisStreamsOutput {
     /// <p>The ARN of the destination Kinesis data stream to write to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsOutput {
+    /// <p>The ARN of the destination Kinesis data stream to write to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11910,6 +13883,44 @@ pub struct Input {
     /// to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
+}
+impl Input {
+    /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a
+    /// prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more
+    /// (as per the <code>InputParallelism</code> count you specified) in-application streams with the
+    /// names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and
+    /// so on. </p>
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
+        self.name_prefix.as_deref()
+    }
+    /// <p>The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received
+    /// from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is
+    /// <a>InputLambdaProcessor</a>. </p>
+    pub fn input_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InputProcessingConfiguration> {
+        self.input_processing_configuration.as_ref()
+    }
+    /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
+    pub fn kinesis_streams_input(&self) -> std::option::Option<&crate::model::KinesisStreamsInput> {
+        self.kinesis_streams_input.as_ref()
+    }
+    /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
+    pub fn kinesis_firehose_input(
+        &self,
+    ) -> std::option::Option<&crate::model::KinesisFirehoseInput> {
+        self.kinesis_firehose_input.as_ref()
+    }
+    /// <p>Describes the number of in-application streams to create. </p>
+    pub fn input_parallelism(&self) -> std::option::Option<&crate::model::InputParallelism> {
+        self.input_parallelism.as_ref()
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps
+    /// to corresponding columns in the in-application stream that is being created.</p>
+    /// <p>Also used to describe the format of the reference data source.</p>
+    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.input_schema.as_ref()
+    }
 }
 impl std::fmt::Debug for Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12064,6 +14075,12 @@ pub struct KinesisFirehoseInput {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl KinesisFirehoseInput {
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for KinesisFirehoseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisFirehoseInput");
@@ -12112,6 +14129,12 @@ impl KinesisFirehoseInput {
 pub struct KinesisStreamsInput {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl KinesisStreamsInput {
+    /// <p>The ARN of the input Kinesis data stream to read.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KinesisStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

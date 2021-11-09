@@ -2802,6 +2802,12 @@ pub struct InvalidResourceException {
     /// <p>The provided resource value is invalid.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl InvalidResourceException {
+    /// <p>The provided resource value is invalid.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidResourceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidResourceException");
@@ -3275,6 +3281,12 @@ pub struct ConflictException {
     pub conflict_resource: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn conflict_resource(&self) -> std::option::Option<&str> {
+        self.conflict_resource.as_deref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

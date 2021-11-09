@@ -131,6 +131,15 @@ pub enum Action {
     /// <p>The Systems Manager automation document to start as the runbook at the beginning of
     /// the incident.</p>
     SsmAutomation(crate::model::SsmAutomation),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Action {
     #[allow(irrefutable_let_patterns)]
@@ -146,6 +155,10 @@ impl Action {
     /// Returns true if this is a [`SsmAutomation`](crate::model::Action::SsmAutomation).
     pub fn is_ssm_automation(&self) -> bool {
         self.as_ssm_automation().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -166,6 +179,32 @@ pub struct SsmAutomation {
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+}
+impl SsmAutomation {
+    /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The automation document's name.</p>
+    pub fn document_name(&self) -> std::option::Option<&str> {
+        self.document_name.as_deref()
+    }
+    /// <p>The automation document's version to use when running.</p>
+    pub fn document_version(&self) -> std::option::Option<&str> {
+        self.document_version.as_deref()
+    }
+    /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
+    pub fn target_account(&self) -> std::option::Option<&crate::model::SsmTargetAccount> {
+        self.target_account.as_ref()
+    }
+    /// <p>The key-value pair parameters to use when running the automation document.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for SsmAutomation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -354,6 +393,15 @@ pub enum ChatChannel {
     ChatbotSns(std::vec::Vec<std::string::String>),
     /// <p>Used to remove the chat channel from an incident record or response plan.</p>
     Empty(crate::model::EmptyChatChannel),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ChatChannel {
     /// Tries to convert the enum instance into [`ChatbotSns`](crate::model::ChatChannel::ChatbotSns), extracting the inner [`Vec`](std::vec::Vec).
@@ -383,6 +431,10 @@ impl ChatChannel {
     /// Returns true if this is a [`Empty`](crate::model::ChatChannel::Empty).
     pub fn is_empty(&self) -> bool {
         self.as_empty().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -422,6 +474,15 @@ impl EmptyChatChannel {
 pub enum NotificationTargetItem {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
     SnsTopicArn(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl NotificationTargetItem {
     #[allow(irrefutable_let_patterns)]
@@ -438,6 +499,10 @@ impl NotificationTargetItem {
     pub fn is_sns_topic_arn(&self) -> bool {
         self.as_sns_topic_arn().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Details used when updating the replication set.</p>
@@ -450,6 +515,15 @@ pub enum UpdateReplicationSetAction {
     /// <p>Details about the Amazon Web Services Region that you're deleting to the replication
     /// set.</p>
     DeleteRegionAction(crate::model::DeleteRegionAction),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl UpdateReplicationSetAction {
     /// Tries to convert the enum instance into [`AddRegionAction`](crate::model::UpdateReplicationSetAction::AddRegionAction), extracting the inner [`AddRegionAction`](crate::model::AddRegionAction).
@@ -482,6 +556,10 @@ impl UpdateReplicationSetAction {
     pub fn is_delete_region_action(&self) -> bool {
         self.as_delete_region_action().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Defines the information about the Amazon Web Services Region you're deleting from your
@@ -492,6 +570,13 @@ pub struct DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication
     /// set.</p>
     pub region_name: std::option::Option<std::string::String>,
+}
+impl DeleteRegionAction {
+    /// <p>The name of the Amazon Web Services Region you're deleting from the replication
+    /// set.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRegionAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -545,6 +630,16 @@ pub struct AddRegionAction {
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub sse_kms_key_id: std::option::Option<std::string::String>,
+}
+impl AddRegionAction {
+    /// <p>The Amazon Web Services Region name to add to the replication set.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>The KMS key ID to use to encrypt your replication set.</p>
+    pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
+        self.sse_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddRegionAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -611,6 +706,15 @@ pub enum RelatedItemsUpdate {
     ItemToAdd(crate::model::RelatedItem),
     /// <p>Details about the related item you're deleting.</p>
     ItemToRemove(crate::model::ItemIdentifier),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl RelatedItemsUpdate {
     /// Tries to convert the enum instance into [`ItemToAdd`](crate::model::RelatedItemsUpdate::ItemToAdd), extracting the inner [`RelatedItem`](crate::model::RelatedItem).
@@ -638,6 +742,10 @@ impl RelatedItemsUpdate {
     /// Returns true if this is a [`ItemToRemove`](crate::model::RelatedItemsUpdate::ItemToRemove).
     pub fn is_item_to_remove(&self) -> bool {
         self.as_item_to_remove().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -681,6 +789,48 @@ pub struct ItemIdentifier {
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ItemType>,
+}
+impl ItemIdentifier {
+    /// <p>Details about the related item.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::ItemValue> {
+        self.value.as_ref()
+    }
+    /// <p>The type of related item. Incident Manager supports the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ANALYSIS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INCIDENT</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>METRIC</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PARENT</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ATTACHMENT</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OTHER</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ItemIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -889,6 +1039,15 @@ pub enum ItemValue {
     MetricDefinition(std::string::String),
     /// <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
     Url(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ItemValue {
     /// Tries to convert the enum instance into [`Arn`](crate::model::ItemValue::Arn), extracting the inner [`String`](std::string::String).
@@ -930,6 +1089,10 @@ impl ItemValue {
     pub fn is_url(&self) -> bool {
         self.as_url().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Resources that responders use to triage and mitigate the incident.</p>
@@ -940,6 +1103,16 @@ pub struct RelatedItem {
     pub identifier: std::option::Option<crate::model::ItemIdentifier>,
     /// <p>The title of the related item.</p>
     pub title: std::option::Option<std::string::String>,
+}
+impl RelatedItem {
+    /// <p>Details about the related item.</p>
+    pub fn identifier(&self) -> std::option::Option<&crate::model::ItemIdentifier> {
+        self.identifier.as_ref()
+    }
+    /// <p>The title of the related item.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
 }
 impl std::fmt::Debug for RelatedItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1068,6 +1241,26 @@ pub struct TriggerDetails {
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub raw_data: std::option::Option<std::string::String>,
 }
+impl TriggerDetails {
+    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
+    /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
+    /// package-name style reverse domain-name strings. </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
+    pub fn trigger_arn(&self) -> std::option::Option<&str> {
+        self.trigger_arn.as_deref()
+    }
+    /// <p>The time that the incident was detected.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
+    pub fn raw_data(&self) -> std::option::Option<&str> {
+        self.raw_data.as_deref()
+    }
+}
 impl std::fmt::Debug for TriggerDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TriggerDetails");
@@ -1169,6 +1362,28 @@ pub struct EventSummary {
     pub event_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
     pub event_type: std::option::Option<std::string::String>,
+}
+impl EventSummary {
+    /// <p>The Amazon Resource Name (ARN) of the incident that the event happened during.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The timeline event ID.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The time that the event occurred.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>The time that the timeline event was last updated.</p>
+    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_updated_time.as_ref()
+    }
+    /// <p>The type of event. The timeline event must be <code>Custom Event</code>.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
 }
 impl std::fmt::Debug for EventSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1387,6 +1602,16 @@ pub struct Filter {
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub condition: std::option::Option<crate::model::Condition>,
 }
+impl Filter {
+    /// <p>The key that you're filtering on.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -1457,6 +1682,15 @@ pub enum Condition {
     Before(aws_smithy_types::Instant),
     /// <p>The value is equal to the provided string or integer. </p>
     Equals(crate::model::AttributeValueList),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Condition {
     /// Tries to convert the enum instance into [`After`](crate::model::Condition::After), extracting the inner [`Instant`](aws_smithy_types::Instant).
@@ -1498,6 +1732,10 @@ impl Condition {
     pub fn is_equals(&self) -> bool {
         self.as_equals().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Use the AttributeValueList to filter by string or integer values.</p>
@@ -1508,6 +1746,15 @@ pub enum AttributeValueList {
     IntegerValues(std::vec::Vec<i32>),
     /// <p>The list of string values that the filter matches.</p>
     StringValues(std::vec::Vec<std::string::String>),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AttributeValueList {
     /// Tries to convert the enum instance into [`IntegerValues`](crate::model::AttributeValueList::IntegerValues), extracting the inner [`Vec`](std::vec::Vec).
@@ -1538,6 +1785,10 @@ impl AttributeValueList {
     pub fn is_string_values(&self) -> bool {
         self.as_string_values().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Details of the response plan that are used when creating an incident.</p>
@@ -1550,6 +1801,20 @@ pub struct ResponsePlanSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub display_name: std::option::Option<std::string::String>,
+}
+impl ResponsePlanSummary {
+    /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the response plan. This can't include spaces.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The human readable name of the response plan. This can include spaces.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResponsePlanSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1637,6 +1902,39 @@ pub struct IncidentRecordSummary {
     pub resolved_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>What caused Incident Manager to create the incident.</p>
     pub incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
+}
+impl IncidentRecordSummary {
+    /// <p>The Amazon Resource Name (ARN) of the incident.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The title of the incident. This value is either provided by the response plan or
+    /// overwritten on creation.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The current status of the incident.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IncidentRecordStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Defines the impact to customers and applications.</p>
+    pub fn impact(&self) -> std::option::Option<i32> {
+        self.impact
+    }
+    /// <p>The time the incident was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the incident was resolved.</p>
+    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.resolved_time.as_ref()
+    }
+    /// <p>What caused Incident Manager to create the incident.</p>
+    pub fn incident_record_source(
+        &self,
+    ) -> std::option::Option<&crate::model::IncidentRecordSource> {
+        self.incident_record_source.as_ref()
+    }
 }
 impl std::fmt::Debug for IncidentRecordSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1786,6 +2084,26 @@ pub struct IncidentRecordSource {
     /// event.</p>
     pub source: std::option::Option<std::string::String>,
 }
+impl IncidentRecordSource {
+    /// <p>The principal that started the incident.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The principal the assumed the role specified of the <code>createdBy</code>.</p>
+    pub fn invoked_by(&self) -> std::option::Option<&str> {
+        self.invoked_by.as_deref()
+    }
+    /// <p>The resource that caused the incident to be created.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The service that started the incident. This can be manually created from Incident Manager,
+    /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
+    /// event.</p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+}
 impl std::fmt::Debug for IncidentRecordSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncidentRecordSource");
@@ -1887,6 +2205,33 @@ pub struct TimelineEvent {
     pub event_type: std::option::Option<std::string::String>,
     /// <p>A short description of the event.</p>
     pub event_data: std::option::Option<std::string::String>,
+}
+impl TimelineEvent {
+    /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
+    }
+    /// <p>The ID of the timeline event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The time that the event occurred.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>The time that the timeline event was last updated.</p>
+    pub fn event_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_updated_time.as_ref()
+    }
+    /// <p>The type of event that occurred. Currently Incident Manager supports only the <code>Custom
+    /// Event</code> type.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>A short description of the event.</p>
+    pub fn event_data(&self) -> std::option::Option<&str> {
+        self.event_data.as_deref()
+    }
 }
 impl std::fmt::Debug for TimelineEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2023,6 +2368,32 @@ pub struct IncidentTemplate {
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
+impl IncidentTemplate {
+    /// <p>The title of the incident. </p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The impact of the incident on your customers and applications. </p>
+    pub fn impact(&self) -> std::option::Option<i32> {
+        self.impact
+    }
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
+    /// currently happening, and context.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
+    pub fn dedupe_string(&self) -> std::option::Option<&str> {
+        self.dedupe_string.as_deref()
+    }
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
+    pub fn notification_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
+        self.notification_targets.as_deref()
+    }
+}
 impl std::fmt::Debug for IncidentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncidentTemplate");
@@ -2147,6 +2518,20 @@ pub struct ResourcePolicy {
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub ram_resource_share_region: std::option::Option<std::string::String>,
 }
+impl ResourcePolicy {
+    /// <p>The JSON blob that describes the policy.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>The ID of the resource policy.</p>
+    pub fn policy_id(&self) -> std::option::Option<&str> {
+        self.policy_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
+    pub fn ram_resource_share_region(&self) -> std::option::Option<&str> {
+        self.ram_resource_share_region.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourcePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourcePolicy");
@@ -2246,6 +2631,47 @@ pub struct ReplicationSet {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Who last modified the replication set.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
+}
+impl ReplicationSet {
+    /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
+    pub fn region_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
+    > {
+        self.region_map.as_ref()
+    }
+    /// <p>The status of the replication set. If the replication set is still pending, you can't
+    /// use Incident Manager functionality.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReplicationSetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
+    /// protection is enabled, you can't delete the last Amazon Web Services Region in the
+    /// replication set. </p>
+    pub fn deletion_protected(&self) -> std::option::Option<bool> {
+        self.deletion_protected
+    }
+    /// <p>When the replication set was created.</p>
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_time.as_ref()
+    }
+    /// <p>Details about who created the replication set.</p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>When the replication set was last updated.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Who last modified the replication set.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicationSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2494,6 +2920,24 @@ pub struct RegionInfo {
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
     pub status_update_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RegionInfo {
+    /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
+    pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
+        self.sse_kms_key_id.as_deref()
+    }
+    /// <p>The status of the Amazon Web Services Region in the replication set.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RegionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
+    pub fn status_update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.status_update_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for RegionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegionInfo");
@@ -2685,6 +3129,72 @@ pub struct IncidentRecord {
     /// incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
+}
+impl IncidentRecord {
+    /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The title of the incident.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
+    /// currently happening, and context of the incident.</p>
+    pub fn summary(&self) -> std::option::Option<&str> {
+        self.summary.as_deref()
+    }
+    /// <p>The current status of the incident.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IncidentRecordStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The impact of the incident on customers and applications.</p>
+    pub fn impact(&self) -> std::option::Option<i32> {
+        self.impact
+    }
+    /// <p>The time that Incident Manager created the incident record.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.resolved_time.as_ref()
+    }
+    /// <p>The time at which the incident was most recently modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>Who modified the incident most recently.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
+    pub fn automation_executions(
+        &self,
+    ) -> std::option::Option<&[crate::model::AutomationExecution]> {
+        self.automation_executions.as_deref()
+    }
+    /// <p>Details about the action that started the incident.</p>
+    pub fn incident_record_source(
+        &self,
+    ) -> std::option::Option<&crate::model::IncidentRecordSource> {
+        self.incident_record_source.as_ref()
+    }
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
+    pub fn dedupe_string(&self) -> std::option::Option<&str> {
+        self.dedupe_string.as_deref()
+    }
+    /// <p>The chat channel used for collaboration during an incident.</p>
+    pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
+        self.chat_channel.as_ref()
+    }
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
+    pub fn notification_targets(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
+        self.notification_targets.as_deref()
+    }
 }
 impl std::fmt::Debug for IncidentRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2957,6 +3467,15 @@ impl IncidentRecord {
 pub enum AutomationExecution {
     /// <p>The Amazon Resource Name (ARN) of the automation process.</p>
     SsmExecutionArn(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AutomationExecution {
     #[allow(irrefutable_let_patterns)]
@@ -2973,6 +3492,10 @@ impl AutomationExecution {
     pub fn is_ssm_execution_arn(&self) -> bool {
         self.as_ssm_execution_arn().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>The mapping between a Amazon Web Services Region and the key that's used to encrypt the
@@ -2982,6 +3505,12 @@ impl AutomationExecution {
 pub struct RegionMapInputValue {
     /// <p>The KMS key used to encrypt the data in your replication set.</p>
     pub sse_kms_key_id: std::option::Option<std::string::String>,
+}
+impl RegionMapInputValue {
+    /// <p>The KMS key used to encrypt the data in your replication set.</p>
+    pub fn sse_kms_key_id(&self) -> std::option::Option<&str> {
+        self.sse_kms_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RegionMapInputValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

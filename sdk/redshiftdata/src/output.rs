@@ -8,6 +8,16 @@ pub struct ListTablesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTablesOutput {
+    /// <p>The tables that match the request pattern. </p>
+    pub fn tables(&self) -> std::option::Option<&[crate::model::TableMember]> {
+        self.tables.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTablesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTablesOutput");
@@ -79,6 +89,16 @@ pub struct ListStatementsOutput {
     pub statements: std::option::Option<std::vec::Vec<crate::model::StatementData>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListStatementsOutput {
+    /// <p>The SQL statements. </p>
+    pub fn statements(&self) -> std::option::Option<&[crate::model::StatementData]> {
+        self.statements.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListStatementsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -152,6 +172,16 @@ pub struct ListSchemasOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSchemasOutput {
+    /// <p>The schemas that match the request pattern. </p>
+    pub fn schemas(&self) -> std::option::Option<&[std::string::String]> {
+        self.schemas.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSchemasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasOutput");
@@ -223,6 +253,16 @@ pub struct ListDatabasesOutput {
     pub databases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatabasesOutput {
+    /// <p>The names of databases. </p>
+    pub fn databases(&self) -> std::option::Option<&[std::string::String]> {
+        self.databases.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDatabasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -300,6 +340,25 @@ pub struct GetStatementResultOutput {
     pub total_num_rows: i64,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetStatementResultOutput {
+    /// <p>The results of the SQL statement.</p>
+    pub fn records(&self) -> std::option::Option<&[std::vec::Vec<crate::model::Field>]> {
+        self.records.as_deref()
+    }
+    /// <p>The properties (metadata) of a column. </p>
+    pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+        self.column_metadata.as_deref()
+    }
+    /// <p>The total number of rows in the result set returned from a query.
+    /// You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
+    pub fn total_num_rows(&self) -> i64 {
+        self.total_num_rows
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStatementResultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -418,6 +477,32 @@ pub struct ExecuteStatementOutput {
     pub database: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. </p>
     pub secret_arn: std::option::Option<std::string::String>,
+}
+impl ExecuteStatementOutput {
+    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time (UTC) the statement was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The cluster identifier. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The database user name.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -541,6 +626,20 @@ pub struct DescribeTableOutput {
     pub column_list: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeTableOutput {
+    /// <p>The table name. </p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A list of columns in the table. </p>
+    pub fn column_list(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+        self.column_list.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTableOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -685,6 +784,107 @@ pub struct DescribeStatementOutput {
     pub query_parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
     /// <p>The SQL statements from a multiple statement run.</p>
     pub sub_statements: std::option::Option<std::vec::Vec<crate::model::SubStatementData>>,
+}
+impl DescribeStatementOutput {
+    /// <p>The identifier of the SQL statement described. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the secret that enables access to the database. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database. </p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The cluster identifier. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The amount of time in nanoseconds that the statement ran. </p>
+    pub fn duration(&self) -> i64 {
+        self.duration
+    }
+    /// <p>The error message from the cluster if the SQL statement encountered an error while running. </p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user. </p>
+    /// </li>
+    /// <li>
+    /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The query run failed. </p>
+    /// </li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running. </p>
+    /// </li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run. </p>
+    /// </li>
+    /// <li>
+    /// <p>STARTED - The query run has started. </p>
+    /// </li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusString> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time (UTC) when the SQL statement was submitted to run. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An
+    /// example is the time the status last changed. </p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The process identifier from Amazon Redshift. </p>
+    pub fn redshift_pid(&self) -> i64 {
+        self.redshift_pid
+    }
+    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. </p>
+    pub fn has_result_set(&self) -> std::option::Option<bool> {
+        self.has_result_set
+    }
+    /// <p>The SQL statement text. </p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
+    /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
+    /// A <code>-1</code> indicates the value is null.</p>
+    pub fn result_rows(&self) -> i64 {
+        self.result_rows
+    }
+    /// <p>The size in bytes of the returned results. A <code>-1</code> indicates the value is null.</p>
+    pub fn result_size(&self) -> i64 {
+        self.result_size
+    }
+    /// <p>The identifier of the query generated by Amazon Redshift.
+    /// These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
+    pub fn redshift_query_id(&self) -> i64 {
+        self.redshift_query_id
+    }
+    /// <p>The parameters for the SQL statement.</p>
+    pub fn query_parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
+        self.query_parameters.as_deref()
+    }
+    /// <p>The SQL statements from a multiple statement run.</p>
+    pub fn sub_statements(&self) -> std::option::Option<&[crate::model::SubStatementData]> {
+        self.sub_statements.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1040,6 +1240,12 @@ pub struct CancelStatementOutput {
     /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
     pub status: std::option::Option<bool>,
 }
+impl CancelStatementOutput {
+    /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
+    pub fn status(&self) -> std::option::Option<bool> {
+        self.status
+    }
+}
 impl std::fmt::Debug for CancelStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelStatementOutput");
@@ -1098,6 +1304,33 @@ pub struct BatchExecuteStatementOutput {
     pub database: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. </p>
     pub secret_arn: std::option::Option<std::string::String>,
+}
+impl BatchExecuteStatementOutput {
+    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+    /// This identifier is returned by <code>BatchExecuteStatment</code>. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time (UTC) the statement was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The cluster identifier. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The database user name.</p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

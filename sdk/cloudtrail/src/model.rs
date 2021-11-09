@@ -9,6 +9,17 @@ pub struct Tag {
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters.
+    /// The key must be unique for the resource to which it applies.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -71,6 +82,12 @@ impl Tag {
 pub struct InsightSelector {
     /// <p>The type of Insights events to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
     pub insight_type: std::option::Option<crate::model::InsightType>,
+}
+impl InsightSelector {
+    /// <p>The type of Insights events to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    pub fn insight_type(&self) -> std::option::Option<&crate::model::InsightType> {
+        self.insight_type.as_ref()
+    }
 }
 impl std::fmt::Debug for InsightSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -211,6 +228,17 @@ pub struct AdvancedEventSelector {
     pub name: std::option::Option<std::string::String>,
     /// <p>Contains all selector statements in an advanced event selector.</p>
     pub field_selectors: std::option::Option<std::vec::Vec<crate::model::AdvancedFieldSelector>>,
+}
+impl AdvancedEventSelector {
+    /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events
+    /// for only two S3 buckets".</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Contains all selector statements in an advanced event selector.</p>
+    pub fn field_selectors(&self) -> std::option::Option<&[crate::model::AdvancedFieldSelector]> {
+        self.field_selectors.as_deref()
+    }
 }
 impl std::fmt::Debug for AdvancedEventSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -462,6 +490,199 @@ pub struct AdvancedFieldSelector {
     /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
     /// </p>
     pub not_ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AdvancedFieldSelector {
+    /// <p>
+    /// A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>,
+    /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>readOnly</code>
+    /// </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
+    /// or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and
+    /// <code>write</code> events.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>eventSource</code>
+    /// </b> - For filtering management events only.
+    /// This can be set only to <code>NotEquals</code>
+    /// <code>kms.amazonaws.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>eventName</code>
+    /// </b> - Can use any operator. You can use it to ﬁlter in
+    /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values
+    /// for this ﬁeld, separated by commas.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>eventCategory</code>
+    /// </b> - This is required. It must be set to <code>Equals</code>, and
+    /// the value must be <code>Management</code> or <code>Data</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>resources.type</code>
+    /// </b> - This ﬁeld is required.
+    /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
+    /// value can be one of the following: <code>AWS::S3::Object</code>,
+    /// <code>AWS::S3::AccessPoint</code>,
+    /// <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+    /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+    /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
+    /// events on more than one resource type, add another selector.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>resources.ARN</code>
+    /// </b> - You can use any operator with
+    /// resources.ARN, but if you use <code>Equals</code> or <code>NotEquals</code>, the
+    /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
+    /// the template as the value of resources.type. For example, if resources.type equals
+    /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
+    /// log all data events for all objects in a specific S3 bucket, use the
+    /// <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+    /// <p>The trailing slash is intentional; do not exclude it. Replace the text between
+    /// less than and greater than symbols (<>) with resource-specific information. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:s3:::<bucket_name>/</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:s3:::<bucket_name>/<object_path>/</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
+    /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
+    /// one of the following formats. To log events on all objects in an S3 access point, we
+    /// recommend that you use only the access point ARN, don’t include the object path, and
+    /// use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name></code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name>/object/<object_path></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set
+    /// to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:lambda:<region>:<account_ID>:function:<function_name></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
+    /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
+    /// following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table:<table_name></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator
+    /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:s3-outposts:<region>:<account_ID>:<object_path></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
+    /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+    /// must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:managedblockchain:<region>:<account_ID>:nodes/<node_ID></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+    /// format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:s3-object-lambda:<region>:<account_ID>:accesspoint/<access_point_name></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the
+    /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
+    /// the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn field(&self) -> std::option::Option<&str> {
+        self.field.as_deref()
+    }
+    /// <p> An operator that includes events that match the exact value of the event record field
+    /// specified as the value of <code>Field</code>. This is the only valid operator that you can
+    /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
+    /// <code>resources.type</code> fields.</p>
+    pub fn equals(&self) -> std::option::Option<&[std::string::String]> {
+        self.equals.as_deref()
+    }
+    /// <p>An operator that includes events that match the first few characters of the event record
+    /// field specified as the value of <code>Field</code>.</p>
+    pub fn starts_with(&self) -> std::option::Option<&[std::string::String]> {
+        self.starts_with.as_deref()
+    }
+    /// <p>An operator that includes events that match the last few characters of the event record
+    /// field specified as the value of <code>Field</code>.</p>
+    pub fn ends_with(&self) -> std::option::Option<&[std::string::String]> {
+        self.ends_with.as_deref()
+    }
+    /// <p>
+    /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
+    /// </p>
+    pub fn not_equals(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_equals.as_deref()
+    }
+    /// <p>
+    /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
+    /// </p>
+    pub fn not_starts_with(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_starts_with.as_deref()
+    }
+    /// <p>
+    /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
+    /// </p>
+    pub fn not_ends_with(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_ends_with.as_deref()
+    }
 }
 impl std::fmt::Debug for AdvancedFieldSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1002,6 +1223,44 @@ pub struct EventSelector {
     /// Amazon RDS Data API events are logged to your trail.</p>
     pub exclude_management_event_sources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EventSelector {
+    /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example,
+    /// the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
+    /// <code>RunInstances</code> is a write-only API operation.</p>
+    /// <p> By default, the value is <code>All</code>.</p>
+    pub fn read_write_type(&self) -> std::option::Option<&crate::model::ReadWriteType> {
+        self.read_write_type.as_ref()
+    }
+    /// <p>Specify if you want your event selector to include management events for your trail.</p>
+    /// <p>
+    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    ///
+    /// <p>By default, the value is <code>true</code>.</p>
+    /// <p>The first copy of management events is free. You are charged for additional copies of management
+    /// events that you are logging on any subsequent trail in the same region. For more information about
+    /// CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
+    pub fn include_management_events(&self) -> std::option::Option<bool> {
+        self.include_management_events
+    }
+    /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
+    /// and Amazon DynamoDB tables
+    /// with basic event selectors. You can specify up to 250 resources for an individual event
+    /// selector, but the total number of data resources cannot exceed 250 across all event
+    /// selectors in a trail. This limit does not apply if you configure resource logging for all
+    /// data events.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
+    /// in the <i>CloudTrail User Guide</i>.</p>
+    pub fn data_resources(&self) -> std::option::Option<&[crate::model::DataResource]> {
+        self.data_resources.as_deref()
+    }
+    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
+    /// or it can filter out Key Management Service or Amazon RDS Data API events by
+    /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
+    /// Amazon RDS Data API events are logged to your trail.</p>
+    pub fn exclude_management_event_sources(&self) -> std::option::Option<&[std::string::String]> {
+        self.exclude_management_event_sources.as_deref()
+    }
+}
 impl std::fmt::Debug for EventSelector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventSelector");
@@ -1257,6 +1516,63 @@ pub struct DataResource {
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DataResource {
+    /// <p>The resource type in which you want to log data events. You can specify
+    /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
+    /// <code>AWS::DynamoDB::Table</code> resources.</p>
+    /// <p>The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code> resource types are not valid in basic
+    /// event selectors. To log data events on these resource types, use advanced event
+    /// selectors.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
+    /// prefix as <code>arn:aws:s3:::</code>.</p>
+    /// <note>
+    /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
+    /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
+    /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
+    /// all objects in this S3 bucket.</p>
+    /// </li>
+    /// <li>
+    /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
+    /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
+    /// objects in this S3 bucket that match the prefix.</p>
+    /// </li>
+    /// <li>
+    /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
+    /// <code>arn:aws:lambda</code>.</p>
+    /// <note>
+    /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
+    /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
+    /// <note>
+    /// <p>Lambda function ARNs are exact. For example, if you specify a
+    /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
+    /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
+    /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
+    /// as <code>arn:aws:dynamodb</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for DataResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataResource");
@@ -1497,6 +1813,45 @@ pub struct Event {
     /// <p>A JSON string that contains a representation of the event returned.</p>
     pub cloud_trail_event: std::option::Option<std::string::String>,
 }
+impl Event {
+    /// <p>The CloudTrail ID of the event returned.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The name of the event returned.</p>
+    pub fn event_name(&self) -> std::option::Option<&str> {
+        self.event_name.as_deref()
+    }
+    /// <p>Information about whether the event is a write event or a read event. </p>
+    pub fn read_only(&self) -> std::option::Option<&str> {
+        self.read_only.as_deref()
+    }
+    /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made
+    /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The date and time of the event returned.</p>
+    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.event_time.as_ref()
+    }
+    /// <p>The Amazon Web Services service to which the request was made.</p>
+    pub fn event_source(&self) -> std::option::Option<&str> {
+        self.event_source.as_deref()
+    }
+    /// <p>A user name or role name of the requester that called the API in the event returned.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>A list of resources referenced by the event returned.</p>
+    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+        self.resources.as_deref()
+    }
+    /// <p>A JSON string that contains a representation of the event returned.</p>
+    pub fn cloud_trail_event(&self) -> std::option::Option<&str> {
+        self.cloud_trail_event.as_deref()
+    }
+}
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Event");
@@ -1674,6 +2029,19 @@ pub struct Resource {
     /// <p>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567" for an EC2 Instance.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl Resource {
+    /// <p>The type of a resource referenced by the event returned. When the resource type cannot be
+    /// determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2,
+    /// <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM.
+    /// To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567" for an EC2 Instance.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -1799,6 +2167,16 @@ pub struct LookupAttribute {
     pub attribute_key: std::option::Option<crate::model::LookupAttributeKey>,
     /// <p>Specifies a value for the specified AttributeKey.</p>
     pub attribute_value: std::option::Option<std::string::String>,
+}
+impl LookupAttribute {
+    /// <p>Specifies an attribute on which to filter the events returned.</p>
+    pub fn attribute_key(&self) -> std::option::Option<&crate::model::LookupAttributeKey> {
+        self.attribute_key.as_ref()
+    }
+    /// <p>Specifies a value for the specified AttributeKey.</p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
 }
 impl std::fmt::Debug for LookupAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1959,6 +2337,20 @@ pub struct TrailInfo {
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     pub home_region: std::option::Option<std::string::String>,
 }
+impl TrailInfo {
+    /// <p>The ARN of a trail.</p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>The name of a trail.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region in which a trail was created.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+}
 impl std::fmt::Debug for TrailInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrailInfo");
@@ -2035,6 +2427,16 @@ pub struct ResourceTag {
     /// <p>A list of tags.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ResourceTag {
+    /// <p>Specifies the ARN of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>A list of tags.</p>
+    pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceTag");
@@ -2110,6 +2512,24 @@ pub struct PublicKey {
     pub validity_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The fingerprint of the public key.</p>
     pub fingerprint: std::option::Option<std::string::String>,
+}
+impl PublicKey {
+    /// <p>The DER encoded public key value in PKCS#1 format.</p>
+    pub fn value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.value.as_ref()
+    }
+    /// <p>The starting time of validity of the public key.</p>
+    pub fn validity_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.validity_start_time.as_ref()
+    }
+    /// <p>The ending time of validity of the public key.</p>
+    pub fn validity_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.validity_end_time.as_ref()
+    }
+    /// <p>The fingerprint of the public key.</p>
+    pub fn fingerprint(&self) -> std::option::Option<&str> {
+        self.fingerprint.as_deref()
+    }
 }
 impl std::fmt::Debug for PublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2248,6 +2668,87 @@ pub struct Trail {
     pub has_insight_selectors: std::option::Option<bool>,
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub is_organization_trail: std::option::Option<bool>,
+}
+impl Trail {
+    /// <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128
+    /// characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.
+    /// The maximum length is 200 characters.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>This field is no longer in use. Use SnsTopicARN.</p>
+    pub fn sns_topic_name(&self) -> std::option::Option<&str> {
+        self.sns_topic_name.as_deref()
+    }
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
+    /// when log files are delivered. The following is the format of a topic ARN.</p>
+    /// <p>
+    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
+    /// </p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM.
+    /// Otherwise, <b>False</b>.</p>
+    pub fn include_global_service_events(&self) -> std::option::Option<bool> {
+        self.include_global_service_events
+    }
+    /// <p>Specifies whether the trail exists only in one region or exists in all regions.</p>
+    pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
+        self.is_multi_region_trail
+    }
+    /// <p>The region in which the trail was created.</p>
+    pub fn home_region(&self) -> std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
+    /// <p>
+    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+    /// </p>
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
+    /// <p>Specifies whether log file validation is enabled.</p>
+    pub fn log_file_validation_enabled(&self) -> std::option::Option<bool> {
+        self.log_file_validation_enabled
+    }
+    /// <p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered.</p>
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_log_group_arn.as_deref()
+    }
+    /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
+    /// The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>
+    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+    /// </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies if the trail has custom event selectors.</p>
+    pub fn has_custom_event_selectors(&self) -> std::option::Option<bool> {
+        self.has_custom_event_selectors
+    }
+    /// <p>Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.</p>
+    pub fn has_insight_selectors(&self) -> std::option::Option<bool> {
+        self.has_insight_selectors
+    }
+    /// <p>Specifies whether the trail is an organization trail.</p>
+    pub fn is_organization_trail(&self) -> std::option::Option<bool> {
+        self.is_organization_trail
+    }
 }
 impl std::fmt::Debug for Trail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

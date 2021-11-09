@@ -128,10 +128,9 @@ impl AddFlowMediaStreamsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_media_streams(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_media_streams(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -313,10 +312,7 @@ impl AddFlowOutputsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_outputs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_outputs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -498,10 +494,7 @@ impl AddFlowSourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_flow_sources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_flow_sources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -693,10 +686,7 @@ impl AddFlowVpcInterfacesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_flow_vpc_interfaces(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1001,10 +991,7 @@ impl CreateFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1795,10 +1782,7 @@ impl GrantFlowEntitlementsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_grant_flow_entitlements(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2757,10 +2741,7 @@ impl PurchaseOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4139,10 +4120,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4494,10 +4472,7 @@ impl UpdateFlowInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4758,10 +4733,7 @@ impl UpdateFlowEntitlementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_flow_entitlement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5025,10 +4997,7 @@ impl UpdateFlowMediaStreamInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_flow_media_stream(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5411,10 +5380,7 @@ impl UpdateFlowOutputInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_output(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_output(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5790,10 +5756,7 @@ impl UpdateFlowSourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_flow_source(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_flow_source(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5891,6 +5854,70 @@ pub struct UpdateFlowSourceInput {
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub whitelist_cidr: std::option::Option<std::string::String>,
 }
+impl UpdateFlowSourceInput {
+    /// The type of encryption used on the content ingested from this source.
+    pub fn decryption(&self) -> std::option::Option<&crate::model::UpdateEncryption> {
+        self.decryption.as_ref()
+    }
+    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The flow that is associated with the source that you want to update.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The port that the flow will be listening on for incoming content.
+    pub fn ingest_port(&self) -> i32 {
+        self.ingest_port
+    }
+    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    pub fn max_bitrate(&self) -> i32 {
+        self.max_bitrate
+    }
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    pub fn max_latency(&self) -> i32 {
+        self.max_latency
+    }
+    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    pub fn max_sync_buffer(&self) -> i32 {
+        self.max_sync_buffer
+    }
+    /// The media streams that are associated with the source, and the parameters for those associations.
+    pub fn media_stream_source_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamSourceConfigurationRequest]> {
+        self.media_stream_source_configurations.as_deref()
+    }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn min_latency(&self) -> i32 {
+        self.min_latency
+    }
+    /// The protocol that is used by the source.
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// The ARN of the source that you want to update.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// The name of the VPC interface to use for this source.
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+        self.vpc_interface_name.as_deref()
+    }
+    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
+        self.whitelist_cidr.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowSourceInput");
@@ -5952,6 +5979,72 @@ pub struct UpdateFlowOutputInput {
     /// The name of the VPC interface attachment to use for this output.
     pub vpc_interface_attachment: std::option::Option<crate::model::VpcInterfaceAttachment>,
 }
+impl UpdateFlowOutputInput {
+    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.cidr_allow_list.as_deref()
+    }
+    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The IP address where you want to send the output.
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn encryption(&self) -> std::option::Option<&crate::model::UpdateEncryption> {
+        self.encryption.as_ref()
+    }
+    /// The flow that is associated with the output that you want to update.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The maximum latency in milliseconds for Zixi-based streams.
+    pub fn max_latency(&self) -> i32 {
+        self.max_latency
+    }
+    /// The media streams that are associated with the output, and the parameters for those associations.
+    pub fn media_stream_output_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::MediaStreamOutputConfigurationRequest]> {
+        self.media_stream_output_configurations.as_deref()
+    }
+    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    pub fn min_latency(&self) -> i32 {
+        self.min_latency
+    }
+    /// The ARN of the output that you want to update.
+    pub fn output_arn(&self) -> std::option::Option<&str> {
+        self.output_arn.as_deref()
+    }
+    /// The port to use when content is distributed to this output.
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+    /// The protocol to use for the output.
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
+    /// The remote ID for the Zixi-pull stream.
+    pub fn remote_id(&self) -> std::option::Option<&str> {
+        self.remote_id.as_deref()
+    }
+    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    pub fn smoothing_latency(&self) -> i32 {
+        self.smoothing_latency
+    }
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    pub fn stream_id(&self) -> std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
+    /// The name of the VPC interface attachment to use for this output.
+    pub fn vpc_interface_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::VpcInterfaceAttachment> {
+        self.vpc_interface_attachment.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowOutputInput");
@@ -5996,6 +6089,36 @@ pub struct UpdateFlowMediaStreamInput {
     /// The resolution of the video.
     pub video_format: std::option::Option<std::string::String>,
 }
+impl UpdateFlowMediaStreamInput {
+    /// The attributes that you want to assign to the media stream.
+    pub fn attributes(&self) -> std::option::Option<&crate::model::MediaStreamAttributesRequest> {
+        self.attributes.as_ref()
+    }
+    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    pub fn clock_rate(&self) -> i32 {
+        self.clock_rate
+    }
+    /// Description
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The name of the media stream that you want to update.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
+    /// The type of media stream.
+    pub fn media_stream_type(&self) -> std::option::Option<&crate::model::MediaStreamType> {
+        self.media_stream_type.as_ref()
+    }
+    /// The resolution of the video.
+    pub fn video_format(&self) -> std::option::Option<&str> {
+        self.video_format.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowMediaStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowMediaStreamInput");
@@ -6027,6 +6150,32 @@ pub struct UpdateFlowEntitlementInput {
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateFlowEntitlementInput {
+    /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// The type of encryption that will be used on the output associated with this entitlement.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::UpdateEncryption> {
+        self.encryption.as_ref()
+    }
+    /// The ARN of the entitlement that you want to update.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
+    pub fn entitlement_status(&self) -> std::option::Option<&crate::model::EntitlementStatus> {
+        self.entitlement_status.as_ref()
+    }
+    /// The flow that is associated with the entitlement that you want to update.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
+    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+        self.subscribers.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowEntitlementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowEntitlementInput");
@@ -6049,6 +6198,18 @@ pub struct UpdateFlowInput {
     /// The settings for source failover
     pub source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
 }
+impl UpdateFlowInput {
+    /// The flow that you want to update.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The settings for source failover
+    pub fn source_failover_config(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateFailoverConfig> {
+        self.source_failover_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowInput");
@@ -6066,6 +6227,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// The keys of the tags to be removed.
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// The keys of the tags to be removed.
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6086,6 +6257,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -6102,6 +6286,12 @@ pub struct StopFlowInput {
     /// The ARN of the flow that you want to stop.
     pub flow_arn: std::option::Option<std::string::String>,
 }
+impl StopFlowInput {
+    /// The ARN of the flow that you want to stop.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopFlowInput");
@@ -6116,6 +6306,12 @@ impl std::fmt::Debug for StopFlowInput {
 pub struct StartFlowInput {
     /// The ARN of the flow that you want to start.
     pub flow_arn: std::option::Option<std::string::String>,
+}
+impl StartFlowInput {
+    /// The ARN of the flow that you want to start.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6133,6 +6329,16 @@ pub struct RevokeFlowEntitlementInput {
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The flow that you want to revoke an entitlement from.
     pub flow_arn: std::option::Option<std::string::String>,
+}
+impl RevokeFlowEntitlementInput {
+    /// The ARN of the entitlement that you want to revoke.
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+        self.entitlement_arn.as_deref()
+    }
+    /// The flow that you want to revoke an entitlement from.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RevokeFlowEntitlementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6152,6 +6358,16 @@ pub struct RemoveFlowVpcInterfaceInput {
     /// The name of the VPC interface that you want to remove.
     pub vpc_interface_name: std::option::Option<std::string::String>,
 }
+impl RemoveFlowVpcInterfaceInput {
+    /// The flow that you want to remove a VPC interface from.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The name of the VPC interface that you want to remove.
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+        self.vpc_interface_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveFlowVpcInterfaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowVpcInterfaceInput");
@@ -6169,6 +6385,16 @@ pub struct RemoveFlowSourceInput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The ARN of the source that you want to remove.
     pub source_arn: std::option::Option<std::string::String>,
+}
+impl RemoveFlowSourceInput {
+    /// The flow that you want to remove a source from.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The ARN of the source that you want to remove.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveFlowSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6188,6 +6414,16 @@ pub struct RemoveFlowOutputInput {
     /// The ARN of the output that you want to remove.
     pub output_arn: std::option::Option<std::string::String>,
 }
+impl RemoveFlowOutputInput {
+    /// The flow that you want to remove an output from.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The ARN of the output that you want to remove.
+    pub fn output_arn(&self) -> std::option::Option<&str> {
+        self.output_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveFlowOutputInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveFlowOutputInput");
@@ -6205,6 +6441,16 @@ pub struct RemoveFlowMediaStreamInput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The name of the media stream that you want to remove.
     pub media_stream_name: std::option::Option<std::string::String>,
+}
+impl RemoveFlowMediaStreamInput {
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The name of the media stream that you want to remove.
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+        self.media_stream_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveFlowMediaStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6226,6 +6472,20 @@ pub struct PurchaseOfferingInput {
     /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
     pub start: std::option::Option<std::string::String>,
 }
+impl PurchaseOfferingInput {
+    /// The Amazon Resource Name (ARN) of the offering.
+    pub fn offering_arn(&self) -> std::option::Option<&str> {
+        self.offering_arn.as_deref()
+    }
+    /// The name that you want to use for the reservation.
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
+    /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+}
 impl std::fmt::Debug for PurchaseOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseOfferingInput");
@@ -6243,6 +6503,12 @@ pub struct ListTagsForResourceInput {
     /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6259,6 +6525,16 @@ pub struct ListReservationsInput {
     pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReservationsInput {
+    /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReservationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6278,6 +6554,16 @@ pub struct ListOfferingsInput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListOfferingsInput {
+    /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOfferingsInput");
@@ -6295,6 +6581,16 @@ pub struct ListFlowsInput {
     pub max_results: i32,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFlowsInput {
+    /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFlowsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6314,6 +6610,16 @@ pub struct ListEntitlementsInput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListEntitlementsInput {
+    /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListEntitlementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntitlementsInput");
@@ -6332,6 +6638,16 @@ pub struct GrantFlowEntitlementsInput {
     /// The flow that you want to grant entitlements on.
     pub flow_arn: std::option::Option<std::string::String>,
 }
+impl GrantFlowEntitlementsInput {
+    /// The list of entitlements that you want to grant.
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::GrantEntitlementRequest]> {
+        self.entitlements.as_deref()
+    }
+    /// The flow that you want to grant entitlements on.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GrantFlowEntitlementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GrantFlowEntitlementsInput");
@@ -6348,6 +6664,12 @@ pub struct DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
     pub reservation_arn: std::option::Option<std::string::String>,
 }
+impl DescribeReservationInput {
+    /// The Amazon Resource Name (ARN) of the reservation.
+    pub fn reservation_arn(&self) -> std::option::Option<&str> {
+        self.reservation_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservationInput");
@@ -6362,6 +6684,12 @@ impl std::fmt::Debug for DescribeReservationInput {
 pub struct DescribeOfferingInput {
     /// The Amazon Resource Name (ARN) of the offering.
     pub offering_arn: std::option::Option<std::string::String>,
+}
+impl DescribeOfferingInput {
+    /// The Amazon Resource Name (ARN) of the offering.
+    pub fn offering_arn(&self) -> std::option::Option<&str> {
+        self.offering_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6378,6 +6706,12 @@ pub struct DescribeFlowInput {
     /// The ARN of the flow that you want to describe.
     pub flow_arn: std::option::Option<std::string::String>,
 }
+impl DescribeFlowInput {
+    /// The ARN of the flow that you want to describe.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFlowInput");
@@ -6392,6 +6726,12 @@ impl std::fmt::Debug for DescribeFlowInput {
 pub struct DeleteFlowInput {
     /// The ARN of the flow that you want to delete.
     pub flow_arn: std::option::Option<std::string::String>,
+}
+impl DeleteFlowInput {
+    /// The ARN of the flow that you want to delete.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6424,6 +6764,44 @@ pub struct CreateFlowInput {
     /// The VPC interfaces you want on the flow.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
 }
+impl CreateFlowInput {
+    /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// The entitlements that you want to grant on a flow.
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::GrantEntitlementRequest]> {
+        self.entitlements.as_deref()
+    }
+    /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
+    pub fn media_streams(&self) -> std::option::Option<&[crate::model::AddMediaStreamRequest]> {
+        self.media_streams.as_deref()
+    }
+    /// The name of the flow.
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// The outputs that you want to add to this flow.
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::AddOutputRequest]> {
+        self.outputs.as_deref()
+    }
+    /// The settings for the source of the flow.
+    pub fn source(&self) -> std::option::Option<&crate::model::SetSourceRequest> {
+        self.source.as_ref()
+    }
+    /// The settings for source failover
+    pub fn source_failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
+        self.source_failover_config.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SetSourceRequest]> {
+        self.sources.as_deref()
+    }
+    /// The VPC interfaces you want on the flow.
+    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterfaceRequest]> {
+        self.vpc_interfaces.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFlowInput");
@@ -6449,6 +6827,16 @@ pub struct AddFlowVpcInterfacesInput {
     /// A list of VPC interfaces that you want to add.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
 }
+impl AddFlowVpcInterfacesInput {
+    /// The flow that you want to mutate.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// A list of VPC interfaces that you want to add.
+    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterfaceRequest]> {
+        self.vpc_interfaces.as_deref()
+    }
+}
 impl std::fmt::Debug for AddFlowVpcInterfacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowVpcInterfacesInput");
@@ -6466,6 +6854,16 @@ pub struct AddFlowSourcesInput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// A list of sources that you want to add.
     pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
+}
+impl AddFlowSourcesInput {
+    /// The flow that you want to mutate.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// A list of sources that you want to add.
+    pub fn sources(&self) -> std::option::Option<&[crate::model::SetSourceRequest]> {
+        self.sources.as_deref()
+    }
 }
 impl std::fmt::Debug for AddFlowSourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6485,6 +6883,16 @@ pub struct AddFlowOutputsInput {
     /// A list of outputs that you want to add.
     pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
 }
+impl AddFlowOutputsInput {
+    /// The flow that you want to add outputs to.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// A list of outputs that you want to add.
+    pub fn outputs(&self) -> std::option::Option<&[crate::model::AddOutputRequest]> {
+        self.outputs.as_deref()
+    }
+}
 impl std::fmt::Debug for AddFlowOutputsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddFlowOutputsInput");
@@ -6502,6 +6910,16 @@ pub struct AddFlowMediaStreamsInput {
     pub flow_arn: std::option::Option<std::string::String>,
     /// The media streams that you want to add to the flow.
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
+}
+impl AddFlowMediaStreamsInput {
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// The media streams that you want to add to the flow.
+    pub fn media_streams(&self) -> std::option::Option<&[crate::model::AddMediaStreamRequest]> {
+        self.media_streams.as_deref()
+    }
 }
 impl std::fmt::Debug for AddFlowMediaStreamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

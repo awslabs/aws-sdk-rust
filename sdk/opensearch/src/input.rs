@@ -260,10 +260,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -594,7 +591,7 @@ impl CancelServiceSoftwareUpdateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_service_software_update(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_service_software_update(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1052,10 +1049,7 @@ impl CreateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1264,10 +1258,7 @@ impl CreateOutboundConnectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_outbound_connection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1458,10 +1449,7 @@ impl CreatePackageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2418,10 +2406,7 @@ impl DescribeDomainAutoTunesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_domain_auto_tunes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2727,10 +2712,7 @@ impl DescribeDomainsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_domains(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2942,10 +2924,7 @@ impl DescribeInboundConnectionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_inbound_connections(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3406,7 +3385,7 @@ impl DescribeOutboundConnectionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_outbound_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_outbound_connections(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3592,10 +3571,7 @@ impl DescribePackagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_packages(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_packages(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6091,7 +6067,7 @@ impl PurchaseReservedInstanceOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_instance_offering(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_instance_offering(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6416,10 +6392,7 @@ impl RemoveTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6566,7 +6539,7 @@ impl StartServiceSoftwareUpdateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_service_software_update(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_service_software_update(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6991,10 +6964,7 @@ impl UpdateDomainConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_config(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_config(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7189,10 +7159,7 @@ impl UpdatePackageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_package(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7435,10 +7402,7 @@ impl UpgradeDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_upgrade_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_upgrade_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7541,6 +7505,48 @@ pub struct UpgradeDomainInput {
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpgradeDomainInput {
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
+    pub fn target_version(&self) -> std::option::Option<&str> {
+        self.target_version.as_deref()
+    }
+    /// <p>
+    /// When true, indicates that an upgrade eligibility check needs to be performed.
+    /// Does not actually perform the upgrade.
+    /// </p>
+    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+        self.perform_check_only
+    }
+    /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the
+    /// following advanced options are available:
+    /// </p>
+    /// <ul>
+    /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
+    /// access to individual sub-resources. By default, the value is <code>true</code>.
+    /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
+    /// </a> for more information.
+    /// </li>
+    /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
+    /// unbounded.
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
+    /// Advanced cluster parameters</a>.
+    /// </p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpgradeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradeDomainInput");
@@ -7573,6 +7579,27 @@ pub struct UpdatePackageInput {
     /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
     /// </p>
     pub commit_message: std::option::Option<std::string::String>,
+}
+impl UpdatePackageInput {
+    /// <p>The unique identifier for the package.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and
+    /// <code>S3Key</code>
+    /// </p>
+    pub fn package_source(&self) -> std::option::Option<&crate::model::PackageSource> {
+        self.package_source.as_ref()
+    }
+    /// <p>A new description of the package.</p>
+    pub fn package_description(&self) -> std::option::Option<&str> {
+        self.package_description.as_deref()
+    }
+    /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
+    /// </p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7637,6 +7664,89 @@ pub struct UpdateDomainConfigInput {
     /// <p>Specifies Auto-Tune options.</p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptions>,
 }
+impl UpdateDomainConfigInput {
+    /// <p>The name of the domain you're updating.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The type and number of instances to instantiate for the domain cluster.</p>
+    pub fn cluster_config(&self) -> std::option::Option<&crate::model::ClusterConfig> {
+        self.cluster_config.as_ref()
+    }
+    /// <p>Specify the type and size of the EBS volume to use.</p>
+    pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
+        self.ebs_options.as_ref()
+    }
+    /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.
+    /// </p>
+    pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
+        self.snapshot_options.as_ref()
+    }
+    /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
+    /// </a>.
+    /// </p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcOptions> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+    /// </p>
+    pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
+        self.cognito_options.as_ref()
+    }
+    /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when
+    /// configuring access to individual sub-resources. By default, the value is <code>true</code>.
+    /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
+    /// </a> for more information.
+    /// </p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+    /// <p>IAM access policy as a JSON-formatted string.</p>
+    pub fn access_policies(&self) -> std::option::Option<&str> {
+        self.access_policies.as_deref()
+    }
+    /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
+    /// of OpenSearch log.
+    /// </p>
+    pub fn log_publishing_options(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
+    > {
+        self.log_publishing_options.as_ref()
+    }
+    /// <p>Specifies encryption of data at rest options.</p>
+    pub fn encryption_at_rest_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.domain_endpoint_options.as_ref()
+    }
+    /// <p>Specifies node-to-node encryption options.</p>
+    pub fn node_to_node_encryption_options(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
+        self.node_to_node_encryption_options.as_ref()
+    }
+    /// <p>Specifies advanced security options.</p>
+    pub fn advanced_security_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityOptionsInput> {
+        self.advanced_security_options.as_ref()
+    }
+    /// <p>Specifies Auto-Tune options.</p>
+    pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptions> {
+        self.auto_tune_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainConfigInput");
@@ -7676,6 +7786,12 @@ pub struct StartServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl StartServiceSoftwareUpdateInput {
+    /// <p>The name of the domain that you want to update to the latest service software.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartServiceSoftwareUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartServiceSoftwareUpdateInput");
@@ -7701,6 +7817,18 @@ pub struct RemoveTagsInput {
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsInput {
+    /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The <code>TagKey</code> list you want to remove from the domain.
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsInput");
@@ -7722,6 +7850,12 @@ pub struct RejectInboundConnectionInput {
     /// <p>The ID of the inbound connection to reject.</p>
     pub connection_id: std::option::Option<std::string::String>,
 }
+impl RejectInboundConnectionInput {
+    /// <p>The ID of the inbound connection to reject.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectInboundConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectInboundConnectionInput");
@@ -7742,6 +7876,20 @@ pub struct PurchaseReservedInstanceOfferingInput {
     pub reservation_name: std::option::Option<std::string::String>,
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub instance_count: i32,
+}
+impl PurchaseReservedInstanceOfferingInput {
+    /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
+    pub fn reserved_instance_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_offering_id.as_deref()
+    }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
+        self.reservation_name.as_deref()
+    }
+    /// <p>The number of OpenSearch instances to reserve.</p>
+    pub fn instance_count(&self) -> i32 {
+        self.instance_count
+    }
 }
 impl std::fmt::Debug for PurchaseReservedInstanceOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7793,6 +7941,22 @@ pub struct ListVersionsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListVersionsInput {
+    /// <p>
+    /// Set this value to limit the number of results returned.
+    /// Value must be greater than 10 or it won't be honored.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Paginated APIs accept the NextToken input to return the next page of results and provide
+    /// a NextToken output in the response, which you can use to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVersionsInput");
@@ -7816,6 +7980,14 @@ pub struct ListTagsInput {
     /// to view are attached to.
     /// </p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ListTagsInput {
+    /// <p>Specify the <code>ARN</code> of the domain that the tags you want
+    /// to view are attached to.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7843,6 +8015,22 @@ pub struct ListPackagesForDomainInput {
     /// returns results for the next page.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPackagesForDomainInput {
+    /// <p>The name of the domain for which you want to list associated packages.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Limits results to a maximum number of packages.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
+    /// returns results for the next page.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPackagesForDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7875,6 +8063,32 @@ pub struct ListInstanceTypeDetailsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInstanceTypeDetailsInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// Set this value to limit the number of results returned.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Paginated APIs accept the NextToken input to return the next page of results and provide
+    /// a NextToken output in the response, which you can use to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInstanceTypeDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceTypeDetailsInput");
@@ -7905,6 +8119,22 @@ pub struct ListDomainsForPackageInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDomainsForPackageInput {
+    /// <p>The package for which to list associated domains.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Limits the results to a maximum number of domains.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
+    /// returns results for the next page.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDomainsForPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsForPackageInput");
@@ -7921,6 +8151,12 @@ impl std::fmt::Debug for ListDomainsForPackageInput {
 pub struct ListDomainNamesInput {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
+}
+impl ListDomainNamesInput {
+    /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+        self.engine_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDomainNamesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7945,6 +8181,15 @@ pub struct GetUpgradeStatusInput {
     /// and - (hyphen).
     /// </p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl GetUpgradeStatusInput {
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUpgradeStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7979,6 +8224,28 @@ pub struct GetUpgradeHistoryInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetUpgradeHistoryInput {
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// Set this value to limit the number of results returned.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Paginated APIs accept the NextToken input to return the next page of results and provide
+    /// a NextToken output in the response, which you can use to retrieve more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUpgradeHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUpgradeHistoryInput");
@@ -8008,6 +8275,22 @@ pub struct GetPackageVersionHistoryInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetPackageVersionHistoryInput {
+    /// <p>Returns an audit history of package versions.</p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>Limits results to a maximum number of package versions.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
+    /// returns results for the next page.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPackageVersionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPackageVersionHistoryInput");
@@ -8034,6 +8317,15 @@ pub struct GetCompatibleVersionsInput {
     /// </p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl GetCompatibleVersionsInput {
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+    /// and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCompatibleVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCompatibleVersionsInput");
@@ -8058,6 +8350,18 @@ pub struct DissociatePackageInput {
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The name of the domain to associate the package with.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DissociatePackageInput {
+    /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
+    /// this value.
+    /// </p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The name of the domain to associate the package with.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DissociatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8084,6 +8388,23 @@ pub struct DescribeReservedInstancesInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeReservedInstancesInput {
+    /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the
+    /// specified reserved OpenSearch instance ID.
+    /// </p>
+    pub fn reserved_instance_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_id.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedInstancesInput");
@@ -8109,6 +8430,23 @@ pub struct DescribeReservedInstanceOfferingsInput {
     /// <p>Provides an identifier to allow retrieval of paginated results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReservedInstanceOfferingsInput {
+    /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the
+    /// specified reservation identifier.
+    /// </p>
+    pub fn reserved_instance_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_instance_offering_id.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedInstanceOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8142,6 +8480,23 @@ pub struct DescribePackagesInput {
     /// returns results for the next page.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePackagesInput {
+    /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DescribePackagesFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Limits results to a maximum number of packages.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
+    /// returns results for the next page.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8182,6 +8537,34 @@ pub struct DescribeOutboundConnectionsInput {
     pub max_results: i32,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeOutboundConnectionsInput {
+    /// <p>
+    /// A list of filters used to match properties for outbound cross-cluster connections.
+    /// Available
+    /// <code>
+    /// <a>Filter</a>
+    /// </code>
+    /// names for this operation are:
+    /// <ul>
+    /// <li>connection-id</li>
+    /// <li>remote-domain-info.domain-name</li>
+    /// <li>remote-domain-info.owner-id</li>
+    /// <li>remote-domain-info.region</li>
+    /// <li>local-domain-info.domain-name</li>
+    /// </ul>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOutboundConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8229,6 +8612,41 @@ pub struct DescribeInstanceTypeLimitsInput {
     /// </p>
     pub engine_version: std::option::Option<std::string::String>,
 }
+impl DescribeInstanceTypeLimitsInput {
+    /// <p>
+    /// The name of the domain you want to modify. Only include this value if you're
+    /// querying OpenSearch
+    /// <code>
+    /// <a>Limits</a>
+    /// </code>
+    /// for an existing domain.
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>
+    /// The instance type for an OpenSearch cluster for which OpenSearch
+    /// <code>
+    /// <a>Limits</a>
+    /// </code>
+    /// are needed.
+    /// </p>
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>
+    /// Version of OpenSearch for which
+    /// <code>
+    /// <a>Limits</a>
+    /// </code>
+    /// are needed.
+    /// </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInstanceTypeLimitsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInstanceTypeLimitsInput");
@@ -8270,6 +8688,35 @@ pub struct DescribeInboundConnectionsInput {
     /// NextToken to paginate the remaining results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeInboundConnectionsInput {
+    /// <p>
+    /// A list of filters used to match properties for inbound cross-cluster connections.
+    /// Available
+    /// <code>
+    /// <a>Filter</a>
+    /// </code>
+    /// values are:
+    /// <ul>
+    /// <li>connection-id</li>
+    /// <li>local-domain-info.domain-name</li>
+    /// <li>local-domain-info.owner-id</li>
+    /// <li>local-domain-info.region</li>
+    /// <li>remote-domain-info.domain-name</li>
+    /// </ul>
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
+    /// NextToken to paginate the remaining results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInboundConnectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInboundConnectionsInput");
@@ -8292,6 +8739,12 @@ pub struct DescribeDomainsInput {
     /// <p>The domains for which you want information.</p>
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribeDomainsInput {
+    /// <p>The domains for which you want information.</p>
+    pub fn domain_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.domain_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainsInput");
@@ -8308,6 +8761,12 @@ impl std::fmt::Debug for DescribeDomainsInput {
 pub struct DescribeDomainConfigInput {
     /// <p>The domain you want to get information about.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DescribeDomainConfigInput {
+    /// <p>The domain you want to get information about.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8328,6 +8787,20 @@ pub struct DescribeDomainAutoTunesInput {
     pub max_results: i32,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDomainAutoTunesInput {
+    /// <p>The domain name for which you want Auto-Tune action details.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainAutoTunesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8351,6 +8824,12 @@ pub struct DescribeDomainInput {
     /// <p>The name of the domain for which you want information.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DescribeDomainInput {
+    /// <p>The name of the domain for which you want information.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainInput");
@@ -8373,6 +8852,13 @@ pub struct DeletePackageInput {
     /// </p>
     pub package_id: std::option::Option<std::string::String>,
 }
+impl DeletePackageInput {
+    /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.
+    /// </p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePackageInput");
@@ -8392,6 +8878,12 @@ impl std::fmt::Debug for DeletePackageInput {
 pub struct DeleteOutboundConnectionInput {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl DeleteOutboundConnectionInput {
+    /// <p>The ID of the outbound connection you want to permanently delete.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOutboundConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8413,6 +8905,12 @@ pub struct DeleteInboundConnectionInput {
     /// <p>The ID of the inbound connection to permanently delete.</p>
     pub connection_id: std::option::Option<std::string::String>,
 }
+impl DeleteInboundConnectionInput {
+    /// <p>The ID of the inbound connection to permanently delete.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteInboundConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteInboundConnectionInput");
@@ -8432,6 +8930,12 @@ impl std::fmt::Debug for DeleteInboundConnectionInput {
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl DeleteDomainInput {
+    /// <p>The name of the domain you want to permanently delete.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8460,6 +8964,25 @@ pub struct CreatePackageInput {
     /// <p>The Amazon S3 location from which to import the package.
     /// </p>
     pub package_source: std::option::Option<crate::model::PackageSource>,
+}
+impl CreatePackageInput {
+    /// <p>Unique identifier for the package.</p>
+    pub fn package_name(&self) -> std::option::Option<&str> {
+        self.package_name.as_deref()
+    }
+    /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+        self.package_type.as_ref()
+    }
+    /// <p>Description of the package.</p>
+    pub fn package_description(&self) -> std::option::Option<&str> {
+        self.package_description.as_deref()
+    }
+    /// <p>The Amazon S3 location from which to import the package.
+    /// </p>
+    pub fn package_source(&self) -> std::option::Option<&crate::model::PackageSource> {
+        self.package_source.as_ref()
+    }
 }
 impl std::fmt::Debug for CreatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8497,6 +9020,34 @@ pub struct CreateOutboundConnectionInput {
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
     pub connection_alias: std::option::Option<std::string::String>,
+}
+impl CreateOutboundConnectionInput {
+    /// <p>The
+    /// <code>
+    /// <a>AWSDomainInformation</a>
+    /// </code>
+    /// for the local OpenSearch domain.
+    /// </p>
+    pub fn local_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.local_domain_info.as_ref()
+    }
+    /// <p>The
+    /// <code>
+    /// <a>AWSDomainInformation</a>
+    /// </code>
+    /// for the remote OpenSearch domain.
+    /// </p>
+    pub fn remote_domain_info(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainInformationContainer> {
+        self.remote_domain_info.as_ref()
+    }
+    /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
+    pub fn connection_alias(&self) -> std::option::Option<&str> {
+        self.connection_alias.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateOutboundConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8568,6 +9119,106 @@ pub struct CreateDomainInput {
     /// <p>Specifies Auto-Tune options.</p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsInput>,
 }
+impl CreateDomainInput {
+    /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by
+    /// an account within an AWS region. Domain names must start with a lowercase letter and can contain the following
+    /// characters: a-z (lowercase), 0-9, and - (hyphen).
+    /// </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain.
+    /// For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information,
+    /// see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains
+    /// </a>.
+    /// </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the
+    /// domain.
+    /// </p>
+    pub fn cluster_config(&self) -> std::option::Option<&crate::model::ClusterConfig> {
+        self.cluster_config.as_ref()
+    }
+    /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
+    pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
+        self.ebs_options.as_ref()
+    }
+    /// <p>IAM access policy as a JSON-formatted string.</p>
+    pub fn access_policies(&self) -> std::option::Option<&str> {
+        self.access_policies.as_deref()
+    }
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
+    pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
+        self.snapshot_options.as_ref()
+    }
+    /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
+    /// </a>.
+    /// </p>
+    pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcOptions> {
+        self.vpc_options.as_ref()
+    }
+    /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+    /// </p>
+    pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
+        self.cognito_options.as_ref()
+    }
+    /// <p>Options for encryption of data at rest.</p>
+    pub fn encryption_at_rest_options(
+        &self,
+    ) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>Node-to-node encryption options.</p>
+    pub fn node_to_node_encryption_options(
+        &self,
+    ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
+        self.node_to_node_encryption_options.as_ref()
+    }
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
+    /// to individual sub-resources. By default, the value is <code>true</code>.
+    /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
+    /// </a> for more information.
+    /// </p>
+    pub fn advanced_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.advanced_options.as_ref()
+    }
+    /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
+    /// of OpenSearch log.
+    /// </p>
+    pub fn log_publishing_options(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
+    > {
+        self.log_publishing_options.as_ref()
+    }
+    /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptions> {
+        self.domain_endpoint_options.as_ref()
+    }
+    /// <p>Specifies advanced security options.</p>
+    pub fn advanced_security_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AdvancedSecurityOptionsInput> {
+        self.advanced_security_options.as_ref()
+    }
+    /// <p>A list of <code>Tag</code> added during domain creation.
+    /// </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+    /// <p>Specifies Auto-Tune options.</p>
+    pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptionsInput> {
+        self.auto_tune_options.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainInput");
@@ -8609,6 +9260,12 @@ pub struct CancelServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl CancelServiceSoftwareUpdateInput {
+    /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelServiceSoftwareUpdateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelServiceSoftwareUpdateInput");
@@ -8633,6 +9290,18 @@ pub struct AssociatePackageInput {
     pub package_id: std::option::Option<std::string::String>,
     /// <p>The name of the domain to associate the package with.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl AssociatePackageInput {
+    /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
+    /// this value.
+    /// </p>
+    pub fn package_id(&self) -> std::option::Option<&str> {
+        self.package_id.as_deref()
+    }
+    /// <p>The name of the domain to associate the package with.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociatePackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8659,6 +9328,18 @@ pub struct AddTagsInput {
     /// </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl AddTagsInput {
+    /// <p>Specify the <code>ARN</code> of the domain you want to add tags to.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>List of <code>Tag</code> to add to the domain.
+    /// </p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddTagsInput");
@@ -8679,6 +9360,12 @@ impl std::fmt::Debug for AddTagsInput {
 pub struct AcceptInboundConnectionInput {
     /// <p>The ID of the inbound connection you want to accept.</p>
     pub connection_id: std::option::Option<std::string::String>,
+}
+impl AcceptInboundConnectionInput {
+    /// <p>The ID of the inbound connection you want to accept.</p>
+    pub fn connection_id(&self) -> std::option::Option<&str> {
+        self.connection_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptInboundConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

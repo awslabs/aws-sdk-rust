@@ -1520,6 +1520,14 @@ pub struct TooManyRequestsException {
     /// </p>
     pub message: std::option::Option<std::string::String>,
 }
+impl TooManyRequestsException {
+    /// <p>
+    /// The Exception Error Message.
+    /// </p>
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+        self.retry_after_seconds.as_deref()
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -1616,6 +1624,14 @@ pub struct ServiceUnavailableException {
     /// The Exception Error Message.
     /// </p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ServiceUnavailableException {
+    /// <p>
+    /// The Exception Error Message.
+    /// </p>
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+        self.retry_after_seconds.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1787,6 +1803,14 @@ pub struct LimitExceededException {
     /// The Exception Error Message.
     /// </p>
     pub message: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    /// <p>
+    /// The Exception Error Message.
+    /// </p>
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+        self.retry_after_seconds.as_deref()
+    }
 }
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

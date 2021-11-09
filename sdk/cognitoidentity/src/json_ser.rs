@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_identity_pool_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateIdentityPoolInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.identity_pool_name {
         object.key("IdentityPoolName").string(var_1);
     }
@@ -43,7 +43,7 @@ pub fn serialize_structure_crate_input_create_identity_pool_input(
                 crate::json_ser::serialize_structure_crate_model_cognito_identity_provider(
                     &mut object_14,
                     item_13,
-                );
+                )?;
                 object_14.finish();
             }
         }
@@ -67,12 +67,13 @@ pub fn serialize_structure_crate_input_create_identity_pool_input(
         }
         object_19.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_identities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteIdentitiesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.identity_ids_to_delete {
         let mut array_23 = object.key("IdentityIdsToDelete").start_array();
         for item_24 in var_22 {
@@ -82,39 +83,43 @@ pub fn serialize_structure_crate_input_delete_identities_input(
         }
         array_23.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_identity_pool_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteIdentityPoolInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_25);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_identity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeIdentityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.identity_id {
         object.key("IdentityId").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_identity_pool_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeIdentityPoolInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_27);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_credentials_for_identity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCredentialsForIdentityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.identity_id {
         object.key("IdentityId").string(var_28);
     }
@@ -130,12 +135,13 @@ pub fn serialize_structure_crate_input_get_credentials_for_identity_input(
     if let Some(var_33) = &input.custom_role_arn {
         object.key("CustomRoleArn").string(var_33);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_id_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetIdInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.account_id {
         object.key("AccountId").string(var_34);
     }
@@ -151,21 +157,23 @@ pub fn serialize_structure_crate_input_get_id_input(
         }
         object_37.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_identity_pool_roles_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetIdentityPoolRolesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_40);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_open_id_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetOpenIdTokenInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.identity_id {
         object.key("IdentityId").string(var_41);
     }
@@ -178,12 +186,13 @@ pub fn serialize_structure_crate_input_get_open_id_token_input(
         }
         object_43.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_open_id_token_for_developer_identity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_46);
     }
@@ -214,24 +223,26 @@ pub fn serialize_structure_crate_input_get_open_id_token_for_developer_identity_
             aws_smithy_types::Number::NegInt((*var_56).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_principal_tag_attribute_map_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPrincipalTagAttributeMapInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_57);
     }
     if let Some(var_58) = &input.identity_provider_name {
         object.key("IdentityProviderName").string(var_58);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_identities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListIdentitiesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_59);
     }
@@ -247,12 +258,13 @@ pub fn serialize_structure_crate_input_list_identities_input(
     if input.hide_disabled {
         object.key("HideDisabled").boolean(input.hide_disabled);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_identity_pools_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListIdentityPoolsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -262,21 +274,23 @@ pub fn serialize_structure_crate_input_list_identity_pools_input(
     if let Some(var_61) = &input.next_token {
         object.key("NextToken").string(var_61);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_62) = &input.resource_arn {
         object.key("ResourceArn").string(var_62);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_lookup_developer_identity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::LookupDeveloperIdentityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_63);
     }
@@ -295,12 +309,13 @@ pub fn serialize_structure_crate_input_lookup_developer_identity_input(
     if let Some(var_66) = &input.next_token {
         object.key("NextToken").string(var_66);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_merge_developer_identities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::MergeDeveloperIdentitiesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.source_user_identifier {
         object.key("SourceUserIdentifier").string(var_67);
     }
@@ -313,12 +328,13 @@ pub fn serialize_structure_crate_input_merge_developer_identities_input(
     if let Some(var_70) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_70);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_set_identity_pool_roles_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetIdentityPoolRolesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_71);
     }
@@ -339,18 +355,19 @@ pub fn serialize_structure_crate_input_set_identity_pool_roles_input(
                 crate::json_ser::serialize_structure_crate_model_role_mapping(
                     &mut object_80,
                     value_79,
-                );
+                )?;
                 object_80.finish();
             }
         }
         object_77.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_set_principal_tag_attribute_map_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetPrincipalTagAttributeMapInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_81);
     }
@@ -369,12 +386,13 @@ pub fn serialize_structure_crate_input_set_principal_tag_attribute_map_input(
         }
         object_85.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.resource_arn {
         object.key("ResourceArn").string(var_88);
     }
@@ -387,12 +405,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_90.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_unlink_developer_identity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UnlinkDeveloperIdentityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.identity_id {
         object.key("IdentityId").string(var_93);
     }
@@ -405,12 +424,13 @@ pub fn serialize_structure_crate_input_unlink_developer_identity_input(
     if let Some(var_96) = &input.developer_user_identifier {
         object.key("DeveloperUserIdentifier").string(var_96);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_unlink_identity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UnlinkIdentityInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.identity_id {
         object.key("IdentityId").string(var_97);
     }
@@ -432,12 +452,13 @@ pub fn serialize_structure_crate_input_unlink_identity_input(
         }
         array_103.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_105) = &input.resource_arn {
         object.key("ResourceArn").string(var_105);
     }
@@ -450,12 +471,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_107.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_identity_pool_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateIdentityPoolInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_109);
     }
@@ -499,7 +521,7 @@ pub fn serialize_structure_crate_input_update_identity_pool_input(
                 crate::json_ser::serialize_structure_crate_model_cognito_identity_provider(
                     &mut object_123,
                     item_122,
-                );
+                )?;
                 object_123.finish();
             }
         }
@@ -523,12 +545,13 @@ pub fn serialize_structure_crate_input_update_identity_pool_input(
         }
         object_128.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_cognito_identity_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CognitoIdentityProvider,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_131) = &input.provider_name {
         object.key("ProviderName").string(var_131);
     }
@@ -538,12 +561,13 @@ pub fn serialize_structure_crate_model_cognito_identity_provider(
     if let Some(var_133) = &input.server_side_token_check {
         object.key("ServerSideTokenCheck").boolean(*var_133);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_role_mapping(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RoleMapping,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_134) = &input.r#type {
         object.key("Type").string(var_134.as_str());
     }
@@ -557,15 +581,16 @@ pub fn serialize_structure_crate_model_role_mapping(
         crate::json_ser::serialize_structure_crate_model_rules_configuration_type(
             &mut object_137,
             var_136,
-        );
+        )?;
         object_137.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_rules_configuration_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RulesConfigurationType,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_138) = &input.rules {
         let mut array_139 = object.key("Rules").start_array();
         for item_140 in var_138 {
@@ -574,18 +599,19 @@ pub fn serialize_structure_crate_model_rules_configuration_type(
                 crate::json_ser::serialize_structure_crate_model_mapping_rule(
                     &mut object_141,
                     item_140,
-                );
+                )?;
                 object_141.finish();
             }
         }
         array_139.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_mapping_rule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MappingRule,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_142) = &input.claim {
         object.key("Claim").string(var_142);
     }
@@ -598,4 +624,5 @@ pub fn serialize_structure_crate_model_mapping_rule(
     if let Some(var_145) = &input.role_arn {
         object.key("RoleARN").string(var_145);
     }
+    Ok(())
 }

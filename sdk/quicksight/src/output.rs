@@ -10,6 +10,20 @@ pub struct UpdateUserOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UpdateUserOutput {
+    /// <p>The Amazon QuickSight user.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserOutput");
@@ -91,6 +105,28 @@ pub struct UpdateThemePermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateThemePermissionsOutput {
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>The resulting list of resource permissions for the theme.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateThemePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -206,6 +242,20 @@ pub struct UpdateThemeAliasOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl UpdateThemeAliasOutput {
+    /// <p>Information about the theme alias.</p>
+    pub fn theme_alias(&self) -> std::option::Option<&crate::model::ThemeAlias> {
+        self.theme_alias.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateThemeAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateThemeAliasOutput");
@@ -292,6 +342,32 @@ pub struct UpdateThemeOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl UpdateThemeOutput {
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the theme.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the new version of the theme.</p>
+    pub fn version_arn(&self) -> std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The creation status of the theme.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateThemeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -417,6 +493,28 @@ pub struct UpdateTemplatePermissionsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UpdateTemplatePermissionsOutput {
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>A list of resource permissions to be set on the template.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateTemplatePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTemplatePermissionsOutput");
@@ -531,6 +629,20 @@ pub struct UpdateTemplateAliasOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl UpdateTemplateAliasOutput {
+    /// <p>The template alias.</p>
+    pub fn template_alias(&self) -> std::option::Option<&crate::model::TemplateAlias> {
+        self.template_alias.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTemplateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTemplateAliasOutput");
@@ -617,6 +729,32 @@ pub struct UpdateTemplateOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl UpdateTemplateOutput {
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN for the template, including the version information of the first version.</p>
+    pub fn version_arn(&self) -> std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The creation status of the template.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -738,6 +876,20 @@ pub struct UpdateIpRestrictionOutput {
     /// <p>The status of the updated IP rules. A successful request returns a 200 code.</p>
     pub status: i32,
 }
+impl UpdateIpRestrictionOutput {
+    /// <p>Your AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The ID of the update request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The status of the updated IP rules. A successful request returns a 200 code.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateIpRestrictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIpRestrictionOutput");
@@ -845,6 +997,57 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateIamPolicyAssignmentOutput {
+    /// <p>The name of the assignment or rule.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The ID of the assignment.</p>
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
+        self.assignment_id.as_deref()
+    }
+    /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
+    /// assignment.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+    pub fn identities(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.identities.as_ref()
+    }
+    /// <p>The status of the assignment. Possible values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
+    /// source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
+    /// data source.</p>
+    /// </li>
+    /// </ul>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateIamPolicyAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1036,6 +1239,20 @@ pub struct UpdateGroupOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UpdateGroupOutput {
+    /// <p>The name of the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupOutput");
@@ -1117,6 +1334,28 @@ pub struct UpdateFolderPermissionsOutput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl UpdateFolderPermissionsOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>Information about the permissions on the dashboard.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFolderPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1234,6 +1473,24 @@ pub struct UpdateFolderOutput {
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl UpdateFolderOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFolderOutput");
@@ -1326,6 +1583,24 @@ pub struct UpdateDataSourcePermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateDataSourcePermissionsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+        self.data_source_arn.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateDataSourcePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1427,6 +1702,28 @@ pub struct UpdateDataSourceOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateDataSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The update status of the data source's last update.</p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1541,6 +1838,25 @@ pub struct UpdateDataSetPermissionsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UpdateDataSetPermissionsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+        self.data_set_arn.as_deref()
+    }
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
+    /// Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateDataSetPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSetPermissionsOutput");
@@ -1641,6 +1957,34 @@ pub struct UpdateDataSetOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateDataSetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
+    /// mode is SPICE.</p>
+    pub fn ingestion_arn(&self) -> std::option::Option<&str> {
+        self.ingestion_arn.as_deref()
+    }
+    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
+    /// mode is SPICE.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1768,6 +2112,24 @@ pub struct UpdateDashboardPublishedVersionOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl UpdateDashboardPublishedVersionOutput {
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+        self.dashboard_arn.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDashboardPublishedVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDashboardPublishedVersionOutput");
@@ -1865,6 +2227,28 @@ pub struct UpdateDashboardPermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateDashboardPermissionsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+        self.dashboard_arn.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>Information about the permissions on the dashboard.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateDashboardPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1988,6 +2372,32 @@ pub struct UpdateDashboardOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl UpdateDashboardOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the dashboard, including the version number.</p>
+    pub fn version_arn(&self) -> std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The creation status of the request.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDashboardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2114,6 +2524,29 @@ pub struct UpdateAnalysisPermissionsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UpdateAnalysisPermissionsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
+    pub fn analysis_arn(&self) -> std::option::Option<&str> {
+        self.analysis_arn.as_deref()
+    }
+    /// <p>The ID of the analysis that you updated permissions for.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>A structure that describes the principals and the resource-level permissions on an
+    /// analysis.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateAnalysisPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnalysisPermissionsOutput");
@@ -2234,6 +2667,28 @@ pub struct UpdateAnalysisOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl UpdateAnalysisOutput {
+    /// <p>The ARN of the analysis that you're updating.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The update status of the last update that was made to the analysis.</p>
+    pub fn update_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAnalysisOutput");
@@ -2339,6 +2794,16 @@ pub struct UpdateAccountSettingsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UpdateAccountSettingsOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UpdateAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountSettingsOutput");
@@ -2410,6 +2875,35 @@ pub struct UpdateAccountCustomizationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl UpdateAccountCustomizationOutput {
+    /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
+    /// for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace associated with the customization that you're updating.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    pub fn account_customization(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountCustomization> {
+        self.account_customization.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for UpdateAccountCustomizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2534,6 +3028,16 @@ pub struct UntagResourceOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl UntagResourceOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceOutput");
@@ -2596,6 +3100,16 @@ pub struct TagResourceOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl TagResourceOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for TagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2663,6 +3177,24 @@ pub struct SearchFoldersOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl SearchFoldersOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+    pub fn folder_summary_list(&self) -> std::option::Option<&[crate::model::FolderSummary]> {
+        self.folder_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchFoldersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2770,6 +3302,25 @@ pub struct SearchDashboardsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl SearchDashboardsOutput {
+    /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your
+    /// request.</p>
+    pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
+        self.dashboard_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchDashboardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2880,6 +3431,25 @@ pub struct SearchAnalysesOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl SearchAnalysesOutput {
+    /// <p>Metadata describing the analyses that you searched for.</p>
+    pub fn analysis_summary_list(&self) -> std::option::Option<&[crate::model::AnalysisSummary]> {
+        self.analysis_summary_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchAnalysesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchAnalysesOutput");
@@ -2989,6 +3559,25 @@ pub struct RestoreAnalysisOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl RestoreAnalysisOutput {
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the analysis that you're restoring.
+    /// </p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RestoreAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreAnalysisOutput");
@@ -3084,6 +3673,25 @@ pub struct RegisterUserOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl RegisterUserOutput {
+    /// <p>The user's user name.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+    /// <p>The URL the user visits to complete registration and provide a password. This is
+    /// returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+    pub fn user_invitation_url(&self) -> std::option::Option<&str> {
+        self.user_invitation_url.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for RegisterUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3182,6 +3790,24 @@ pub struct ListUsersOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl ListUsersOutput {
+    /// <p>The list of users.</p>
+    pub fn user_list(&self) -> std::option::Option<&[crate::model::User]> {
+        self.user_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for ListUsersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3285,6 +3911,24 @@ pub struct ListUserGroupsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl ListUserGroupsOutput {
+    /// <p>The list of groups the user is a member of.</p>
+    pub fn group_list(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.group_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for ListUserGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserGroupsOutput");
@@ -3387,6 +4031,26 @@ pub struct ListThemeVersionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ListThemeVersionsOutput {
+    /// <p>A structure containing a list of all the versions of the specified theme.</p>
+    pub fn theme_version_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ThemeVersionSummary]> {
+        self.theme_version_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListThemeVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3497,6 +4161,24 @@ pub struct ListThemesOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl ListThemesOutput {
+    /// <p>Information about the themes in the list.</p>
+    pub fn theme_summary_list(&self) -> std::option::Option<&[crate::model::ThemeSummary]> {
+        self.theme_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListThemesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThemesOutput");
@@ -3600,6 +4282,24 @@ pub struct ListThemeAliasesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListThemeAliasesOutput {
+    /// <p>A structure containing the list of the theme's aliases.</p>
+    pub fn theme_alias_list(&self) -> std::option::Option<&[crate::model::ThemeAlias]> {
+        self.theme_alias_list.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListThemeAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListThemeAliasesOutput");
@@ -3702,6 +4402,26 @@ pub struct ListTemplateVersionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ListTemplateVersionsOutput {
+    /// <p>A structure containing a list of all the versions of the specified template.</p>
+    pub fn template_version_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TemplateVersionSummary]> {
+        self.template_version_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTemplateVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3812,6 +4532,24 @@ pub struct ListTemplatesOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl ListTemplatesOutput {
+    /// <p>A structure containing information about the templates in the list.</p>
+    pub fn template_summary_list(&self) -> std::option::Option<&[crate::model::TemplateSummary]> {
+        self.template_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplatesOutput");
@@ -3918,6 +4656,24 @@ pub struct ListTemplateAliasesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTemplateAliasesOutput {
+    /// <p>A structure containing the list of the template's aliases.</p>
+    pub fn template_alias_list(&self) -> std::option::Option<&[crate::model::TemplateAlias]> {
+        self.template_alias_list.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTemplateAliasesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTemplateAliasesOutput");
@@ -4023,6 +4779,21 @@ pub struct ListTagsForResourceOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl ListTagsForResourceOutput {
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
+    /// resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -4115,6 +4886,26 @@ pub struct ListNamespacesOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl ListNamespacesOutput {
+    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
+    /// the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and
+    /// identity store.</p>
+    pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceInfoV2]> {
+        self.namespaces.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for ListNamespacesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4222,6 +5013,24 @@ pub struct ListIngestionsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl ListIngestionsOutput {
+    /// <p>A list of the ingestions.</p>
+    pub fn ingestions(&self) -> std::option::Option<&[crate::model::Ingestion]> {
+        self.ingestions.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for ListIngestionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIngestionsOutput");
@@ -4324,6 +5133,26 @@ pub struct ListIamPolicyAssignmentsForUserOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl ListIamPolicyAssignmentsForUserOutput {
+    /// <p>The active assignments for this user.</p>
+    pub fn active_assignments(
+        &self,
+    ) -> std::option::Option<&[crate::model::ActiveIamPolicyAssignment]> {
+        self.active_assignments.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for ListIamPolicyAssignmentsForUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4432,6 +5261,26 @@ pub struct ListIamPolicyAssignmentsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl ListIamPolicyAssignmentsOutput {
+    /// <p>Information describing the IAMpolicy assignments.</p>
+    pub fn iam_policy_assignments(
+        &self,
+    ) -> std::option::Option<&[crate::model::IamPolicyAssignmentSummary]> {
+        self.iam_policy_assignments.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for ListIamPolicyAssignmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIamPolicyAssignmentsOutput");
@@ -4538,6 +5387,24 @@ pub struct ListGroupsOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl ListGroupsOutput {
+    /// <p>The list of the groups.</p>
+    pub fn group_list(&self) -> std::option::Option<&[crate::model::Group]> {
+        self.group_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for ListGroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsOutput");
@@ -4639,6 +5506,24 @@ pub struct ListGroupMembershipsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl ListGroupMembershipsOutput {
+    /// <p>The list of the members of the group.</p>
+    pub fn group_member_list(&self) -> std::option::Option<&[crate::model::GroupMember]> {
+        self.group_member_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for ListGroupMembershipsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4742,6 +5627,25 @@ pub struct ListFoldersOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ListFoldersOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
+    /// </p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+    pub fn folder_summary_list(&self) -> std::option::Option<&[crate::model::FolderSummary]> {
+        self.folder_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFoldersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4852,6 +5756,25 @@ pub struct ListFolderMembersOutput {
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl ListFolderMembersOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
+    /// </p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
+    pub fn folder_member_list(&self) -> std::option::Option<&[crate::model::MemberIdArnPair]> {
+        self.folder_member_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFolderMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFolderMembersOutput");
@@ -4960,6 +5883,24 @@ pub struct ListDataSourcesOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl ListDataSourcesOutput {
+    /// <p>A list of data sources.</p>
+    pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
+        self.data_sources.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for ListDataSourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataSourcesOutput");
@@ -5061,6 +6002,24 @@ pub struct ListDataSetsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl ListDataSetsOutput {
+    /// <p>The list of dataset summaries.</p>
+    pub fn data_set_summaries(&self) -> std::option::Option<&[crate::model::DataSetSummary]> {
+        self.data_set_summaries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for ListDataSetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5168,6 +6127,26 @@ pub struct ListDashboardVersionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl ListDashboardVersionsOutput {
+    /// <p>A structure that contains information about each version of the dashboard.</p>
+    pub fn dashboard_version_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DashboardVersionSummary]> {
+        self.dashboard_version_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDashboardVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5279,6 +6258,25 @@ pub struct ListDashboardsOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl ListDashboardsOutput {
+    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
+    /// provides basic information about the dashboards.</p>
+    pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
+        self.dashboard_summary_list.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDashboardsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDashboardsOutput");
@@ -5387,6 +6385,24 @@ pub struct ListAnalysesOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl ListAnalysesOutput {
+    /// <p>Metadata describing each of the analyses that are listed.</p>
+    pub fn analysis_summary_list(&self) -> std::option::Option<&[crate::model::AnalysisSummary]> {
+        self.analysis_summary_list.as_deref()
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnalysesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnalysesOutput");
@@ -5494,6 +6510,23 @@ pub struct GetSessionEmbedUrlOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl GetSessionEmbedUrlOutput {
+    /// <p>A single-use URL that you can put into your server-side web page to embed your
+    /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
+    /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
+    /// that is valid for 10 hours. </p>
+    pub fn embed_url(&self) -> std::option::Option<&str> {
+        self.embed_url.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSessionEmbedUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionEmbedUrlOutput");
@@ -5581,6 +6614,23 @@ pub struct GetDashboardEmbedUrlOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl GetDashboardEmbedUrlOutput {
+    /// <p>A single-use URL that you can put into your server-side webpage to embed your
+    /// dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an
+    /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
+    /// that is valid for 10 hours. </p>
+    pub fn embed_url(&self) -> std::option::Option<&str> {
+        self.embed_url.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDashboardEmbedUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDashboardEmbedUrlOutput");
@@ -5665,6 +6715,20 @@ pub struct GenerateEmbedUrlForRegisteredUserOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl GenerateEmbedUrlForRegisteredUserOutput {
+    /// <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search bar.</p>
+    pub fn embed_url(&self) -> std::option::Option<&str> {
+        self.embed_url.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserOutput");
@@ -5743,6 +6807,20 @@ pub struct GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl GenerateEmbedUrlForAnonymousUserOutput {
+    /// <p>The embed URL for the dashboard.</p>
+    pub fn embed_url(&self) -> std::option::Option<&str> {
+        self.embed_url.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserOutput");
@@ -5820,6 +6898,20 @@ pub struct DescribeUserOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeUserOutput {
+    /// <p>The user name.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+        self.user.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5902,6 +6994,28 @@ pub struct DescribeThemePermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeThemePermissionsOutput {
+    /// <p>The ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme.</p>
+    pub fn theme_arn(&self) -> std::option::Option<&str> {
+        self.theme_arn.as_deref()
+    }
+    /// <p>A list of resource permissions set on the theme. </p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeThemePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6017,6 +7131,20 @@ pub struct DescribeThemeAliasOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeThemeAliasOutput {
+    /// <p>Information about the theme alias.</p>
+    pub fn theme_alias(&self) -> std::option::Option<&crate::model::ThemeAlias> {
+        self.theme_alias.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeThemeAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeThemeAliasOutput");
@@ -6097,6 +7225,20 @@ pub struct DescribeThemeOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeThemeOutput {
+    /// <p>The information about the theme that you are describing.</p>
+    pub fn theme(&self) -> std::option::Option<&crate::model::Theme> {
+        self.theme.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeThemeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6179,6 +7321,28 @@ pub struct DescribeTemplatePermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeTemplatePermissionsOutput {
+    /// <p>The ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>A list of resource permissions to be set on the template. </p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeTemplatePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6294,6 +7458,20 @@ pub struct DescribeTemplateAliasOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeTemplateAliasOutput {
+    /// <p>Information about the template alias.</p>
+    pub fn template_alias(&self) -> std::option::Option<&crate::model::TemplateAlias> {
+        self.template_alias.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTemplateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTemplateAliasOutput");
@@ -6375,6 +7553,20 @@ pub struct DescribeTemplateOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeTemplateOutput {
+    /// <p>The template structure for the object you want to describe.</p>
+    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+        self.template.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTemplateOutput");
@@ -6455,6 +7647,23 @@ pub struct DescribeNamespaceOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeNamespaceOutput {
+    /// <p>The information about the namespace that you're describing. The response includes
+    /// the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also
+    /// works for namespaces that are in the process of being created. For incomplete namespaces,
+    /// this API operation lists the namespace error types and messages associated with the creation process.</p>
+    pub fn namespace(&self) -> std::option::Option<&crate::model::NamespaceInfoV2> {
+        self.namespace.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6547,6 +7756,31 @@ pub struct DescribeIpRestrictionOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The status of a set of IP restrictions. A successful request returns a 200 status code.</p>
     pub status: i32,
+}
+impl DescribeIpRestrictionOutput {
+    /// <p>Your AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>Describes the IP rules with CIDR range and description.</p>
+    pub fn ip_restriction_rule_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.ip_restriction_rule_map.as_ref()
+    }
+    /// <p>Whether or not IP rules are enabled.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>The ID of the describe request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The status of a set of IP restrictions. A successful request returns a 200 status code.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeIpRestrictionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6672,6 +7906,20 @@ pub struct DescribeIngestionOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DescribeIngestionOutput {
+    /// <p>Information about the ingestion.</p>
+    pub fn ingestion(&self) -> std::option::Option<&crate::model::Ingestion> {
+        self.ingestion.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DescribeIngestionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIngestionOutput");
@@ -6753,6 +8001,20 @@ pub struct DescribeIamPolicyAssignmentOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DescribeIamPolicyAssignmentOutput {
+    /// <p>Information describing the IAMpolicy assignment.</p>
+    pub fn iam_policy_assignment(&self) -> std::option::Option<&crate::model::IamPolicyAssignment> {
+        self.iam_policy_assignment.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DescribeIamPolicyAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIamPolicyAssignmentOutput");
@@ -6833,6 +8095,20 @@ pub struct DescribeGroupOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeGroupOutput {
+    /// <p>The name of the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6916,6 +8192,29 @@ pub struct DescribeFolderResolvedPermissionsOutput {
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeFolderResolvedPermissionsOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
+    /// </p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the permissions on the dashboard.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFolderResolvedPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7037,6 +8336,28 @@ pub struct DescribeFolderPermissionsOutput {
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeFolderPermissionsOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the folder.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the permissions on the folder.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFolderPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFolderPermissionsOutput");
@@ -7151,6 +8472,20 @@ pub struct DescribeFolderOutput {
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeFolderOutput {
+    /// <p>The status. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>Information about the folder.</p>
+    pub fn folder(&self) -> std::option::Option<&crate::model::Folder> {
+        self.folder.as_ref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFolderOutput");
@@ -7232,6 +8567,28 @@ pub struct DescribeDataSourcePermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeDataSourcePermissionsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+        self.data_source_arn.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>A list of resource permissions on the data source.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeDataSourcePermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7353,6 +8710,20 @@ pub struct DescribeDataSourceOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DescribeDataSourceOutput {
+    /// <p>The information on the data source.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DescribeDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSourceOutput");
@@ -7437,6 +8808,28 @@ pub struct DescribeDataSetPermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeDataSetPermissionsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+        self.data_set_arn.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>A list of resource permissions on the dataset.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeDataSetPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7552,6 +8945,20 @@ pub struct DescribeDataSetOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DescribeDataSetOutput {
+    /// <p>Information on the dataset.</p>
+    pub fn data_set(&self) -> std::option::Option<&crate::model::DataSet> {
+        self.data_set.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DescribeDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataSetOutput");
@@ -7633,6 +9040,28 @@ pub struct DescribeDashboardPermissionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeDashboardPermissionsOutput {
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+        self.dashboard_arn.as_deref()
+    }
+    /// <p>A structure that contains the permissions for the dashboard.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDashboardPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7751,6 +9180,20 @@ pub struct DescribeDashboardOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeDashboardOutput {
+    /// <p>Information about the dashboard.</p>
+    pub fn dashboard(&self) -> std::option::Option<&crate::model::Dashboard> {
+        self.dashboard.as_ref()
+    }
+    /// <p>The HTTP status of this request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDashboardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDashboardOutput");
@@ -7837,6 +9280,30 @@ pub struct DescribeAnalysisPermissionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DescribeAnalysisPermissionsOutput {
+    /// <p>The ID of the analysis whose permissions you're describing.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're
+    /// describing.</p>
+    pub fn analysis_arn(&self) -> std::option::Option<&str> {
+        self.analysis_arn.as_deref()
+    }
+    /// <p>A structure that describes the principals and the resource-level permissions on an
+    /// analysis.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAnalysisPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7957,6 +9424,21 @@ pub struct DescribeAnalysisOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl DescribeAnalysisOutput {
+    /// <p>A metadata structure that contains summary information for the analysis that you're
+    /// describing.</p>
+    pub fn analysis(&self) -> std::option::Option<&crate::model::Analysis> {
+        self.analysis.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAnalysisOutput");
@@ -8041,6 +9523,25 @@ pub struct DescribeAccountSettingsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeAccountSettingsOutput {
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
+    /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
+    /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
+    /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+    /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
+    /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
+        self.account_settings.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeAccountSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8138,6 +9639,34 @@ pub struct DescribeAccountCustomizationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DescribeAccountCustomizationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that you're describing.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The Amazon QuickSight namespace that you're describing. </p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon QuickSight customizations that exist in the current Amazon Web Services Region. </p>
+    pub fn account_customization(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountCustomization> {
+        self.account_customization.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DescribeAccountCustomizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8260,6 +9789,16 @@ pub struct DeleteUserByPrincipalIdOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteUserByPrincipalIdOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteUserByPrincipalIdOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserByPrincipalIdOutput");
@@ -8322,6 +9861,16 @@ pub struct DeleteUserOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DeleteUserOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DeleteUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8391,6 +9940,28 @@ pub struct DeleteThemeAliasOutput {
     pub status: i32,
     /// <p>An ID for the theme associated with the deletion.</p>
     pub theme_id: std::option::Option<std::string::String>,
+}
+impl DeleteThemeAliasOutput {
+    /// <p>The name for the theme alias.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the theme resource using the deleted alias.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>An ID for the theme associated with the deletion.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteThemeAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8498,6 +10069,24 @@ pub struct DeleteThemeOutput {
     /// <p>An ID for the theme.</p>
     pub theme_id: std::option::Option<std::string::String>,
 }
+impl DeleteThemeOutput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>An ID for the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteThemeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteThemeOutput");
@@ -8592,6 +10181,28 @@ pub struct DeleteTemplateAliasOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DeleteTemplateAliasOutput {
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>An ID for the template associated with the deletion.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The name for the template alias.</p>
+    pub fn alias_name(&self) -> std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTemplateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8699,6 +10310,24 @@ pub struct DeleteTemplateOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteTemplateOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An ID for the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTemplateOutput");
@@ -8788,6 +10417,16 @@ pub struct DeleteNamespaceOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteNamespaceOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNamespaceOutput");
@@ -8852,6 +10491,20 @@ pub struct DeleteIamPolicyAssignmentOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DeleteIamPolicyAssignmentOutput {
+    /// <p>The name of the assignment. </p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DeleteIamPolicyAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8932,6 +10585,16 @@ pub struct DeleteGroupMembershipOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteGroupMembershipOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteGroupMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGroupMembershipOutput");
@@ -8995,6 +10658,16 @@ pub struct DeleteGroupOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteGroupOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGroupOutput");
@@ -9057,6 +10730,16 @@ pub struct DeleteFolderMembershipOutput {
     pub status: i32,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DeleteFolderMembershipOutput {
+    /// <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFolderMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9124,6 +10807,24 @@ pub struct DeleteFolderOutput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DeleteFolderOutput {
+    /// <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Resource Name of the deleted folder.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The folder ID.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9217,6 +10918,24 @@ pub struct DeleteDataSourceOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl DeleteDataSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the data source that you deleted.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for DeleteDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9314,6 +11033,24 @@ pub struct DeleteDataSetOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteDataSetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDataSetOutput");
@@ -9406,6 +11143,24 @@ pub struct DeleteDashboardOutput {
     pub dashboard_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DeleteDashboardOutput {
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDashboardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9501,6 +11256,28 @@ pub struct DeleteAnalysisOutput {
     pub deletion_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl DeleteAnalysisOutput {
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the deleted analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The date and time that the analysis is scheduled to be deleted.</p>
+    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deletion_time.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9607,6 +11384,16 @@ pub struct DeleteAccountCustomizationOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl DeleteAccountCustomizationOutput {
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for DeleteAccountCustomizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccountCustomizationOutput");
@@ -9671,6 +11458,20 @@ pub struct CreateThemeAliasOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateThemeAliasOutput {
+    /// <p>Information about the theme alias.</p>
+    pub fn theme_alias(&self) -> std::option::Option<&crate::model::ThemeAlias> {
+        self.theme_alias.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateThemeAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9758,6 +11559,32 @@ pub struct CreateThemeOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateThemeOutput {
+    /// <p>The Amazon Resource Name (ARN) for the theme.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the new theme.</p>
+    pub fn version_arn(&self) -> std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The ID of the theme.</p>
+    pub fn theme_id(&self) -> std::option::Option<&str> {
+        self.theme_id.as_deref()
+    }
+    /// <p>The theme creation status.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateThemeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9879,6 +11706,20 @@ pub struct CreateTemplateAliasOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl CreateTemplateAliasOutput {
+    /// <p>Information about the template alias.</p>
+    pub fn template_alias(&self) -> std::option::Option<&crate::model::TemplateAlias> {
+        self.template_alias.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTemplateAliasOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTemplateAliasOutput");
@@ -9966,6 +11807,33 @@ pub struct CreateTemplateOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateTemplateOutput {
+    /// <p>The ARN for the template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN for the template, including the version information of
+    /// the first version.</p>
+    pub fn version_arn(&self) -> std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The ID of the template.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+    /// <p>The template creation status.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10102,6 +11970,42 @@ pub struct CreateNamespaceOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl CreateNamespaceOutput {
+    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the new namespace that you created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace.
+    /// This is set to the region that you run CreateNamespace in. </p>
+    pub fn capacity_region(&self) -> std::option::Option<&str> {
+        self.capacity_region.as_deref()
+    }
+    /// <p>The status of the creation of the namespace. This is an asynchronous process. A status
+    /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
+    /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In
+    /// the case of a non-retryable error, refer to the error message for follow-up
+    /// tasks.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::NamespaceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users
+    /// with an identity type of <code>QUICKSIGHT</code>.</p>
+    pub fn identity_store(&self) -> std::option::Option<&crate::model::IdentityStore> {
+        self.identity_store.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for CreateNamespaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10258,6 +12162,28 @@ pub struct CreateIngestionOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl CreateIngestionOutput {
+    /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An ID for the ingestion.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
+    /// <p>The ingestion status.</p>
+    pub fn ingestion_status(&self) -> std::option::Option<&crate::model::IngestionStatus> {
+        self.ingestion_status.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for CreateIngestionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIngestionOutput");
@@ -10390,6 +12316,56 @@ pub struct CreateIamPolicyAssignmentOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl CreateIamPolicyAssignmentOutput {
+    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
+        self.assignment_name.as_deref()
+    }
+    /// <p>The ID for the assignment.</p>
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
+        self.assignment_id.as_deref()
+    }
+    /// <p>The status of the assignment. Possible values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
+    /// source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
+    /// data source.</p>
+    /// </li>
+    /// </ul>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
+    /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+    pub fn identities(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.identities.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for CreateIamPolicyAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10579,6 +12555,20 @@ pub struct CreateGroupMembershipOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl CreateGroupMembershipOutput {
+    /// <p>The group member.</p>
+    pub fn group_member(&self) -> std::option::Option<&crate::model::GroupMember> {
+        self.group_member.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for CreateGroupMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupMembershipOutput");
@@ -10660,6 +12650,20 @@ pub struct CreateGroupOutput {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
 }
+impl CreateGroupOutput {
+    /// <p>The name of the group.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+        self.group.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+}
 impl std::fmt::Debug for CreateGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupOutput");
@@ -10737,6 +12741,20 @@ pub struct CreateFolderMembershipOutput {
     pub folder_member: std::option::Option<crate::model::FolderMember>,
     /// <p>The request ID.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateFolderMembershipOutput {
+    /// <p>The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>Information about the member in the folder.</p>
+    pub fn folder_member(&self) -> std::option::Option<&crate::model::FolderMember> {
+        self.folder_member.as_ref()
+    }
+    /// <p>The request ID.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFolderMembershipOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10820,6 +12838,24 @@ pub struct CreateFolderOutput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The request ID for the newly created folder.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl CreateFolderOutput {
+    /// <p>The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The folder ID for the newly created folder.</p>
+    pub fn folder_id(&self) -> std::option::Option<&str> {
+        self.folder_id.as_deref()
+    }
+    /// <p>The request ID for the newly created folder.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFolderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10915,6 +12951,28 @@ pub struct CreateDataSourceOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl CreateDataSourceOutput {
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
+        self.data_source_id.as_deref()
+    }
+    /// <p>The status of creating the data source.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for CreateDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11033,6 +13091,34 @@ pub struct CreateDataSetOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl CreateDataSetOutput {
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
+    /// mode is SPICE.</p>
+    pub fn ingestion_arn(&self) -> std::option::Option<&str> {
+        self.ingestion_arn.as_deref()
+    }
+    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
+    /// mode is SPICE.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for CreateDataSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11165,6 +13251,33 @@ pub struct CreateDashboardOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl CreateDashboardOutput {
+    /// <p>The ARN of the dashboard.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the dashboard, including the version number of the first version that is
+    /// created.</p>
+    pub fn version_arn(&self) -> std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+        self.dashboard_id.as_deref()
+    }
+    /// <p>The status of the dashboard creation request.</p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDashboardOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDashboardOutput");
@@ -11291,6 +13404,28 @@ pub struct CreateAnalysisOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl CreateAnalysisOutput {
+    /// <p>The ARN for the analysis.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID of the analysis.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+    /// <p>The status of the creation of the analysis. </p>
+    pub fn creation_status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.creation_status.as_ref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnalysisOutput");
@@ -11403,6 +13538,34 @@ pub struct CreateAccountCustomizationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl CreateAccountCustomizationOutput {
+    /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The namespace associated with the customization you're creating. </p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
+    pub fn account_customization(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountCustomization> {
+        self.account_customization.as_ref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for CreateAccountCustomizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11528,6 +13691,24 @@ pub struct CancelIngestionOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+}
+impl CancelIngestionOutput {
+    /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An ID for the ingestion.</p>
+    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+        self.ingestion_id.as_deref()
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn status(&self) -> i32 {
+        self.status
+    }
 }
 impl std::fmt::Debug for CancelIngestionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

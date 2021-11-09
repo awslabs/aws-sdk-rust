@@ -533,10 +533,7 @@ impl CreateWorkspaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1759,10 +1756,7 @@ impl UpdatePermissionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_permissions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_permissions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2159,10 +2153,7 @@ impl UpdateWorkspaceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_workspace(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2380,7 +2371,7 @@ impl UpdateWorkspaceAuthenticationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace_authentication(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_workspace_authentication(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2453,6 +2444,17 @@ pub struct ListWorkspacesInput {
     /// previous <code>ListWorkspaces</code> operation.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListWorkspacesInput {
+    /// <p>The maximum number of workspaces to include in the results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next set of workspaces to return. (You receive this token from a
+    /// previous <code>ListWorkspaces</code> operation.)</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkspacesInput");
@@ -2523,6 +2525,90 @@ pub struct CreateWorkspaceInput {
     pub authentication_providers:
         std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
 }
+impl CreateWorkspaceInput {
+    /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
+    /// other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must
+    /// specify which organizational units the workspace can access in the
+    /// <code>workspaceOrganizationalUnits</code> parameter.</p>
+    pub fn account_access_type(&self) -> std::option::Option<&crate::model::AccountAccessType> {
+        self.account_access_type.as_ref()
+    }
+    /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services
+    /// data sources and notification channels in other accounts in an organization.</p>
+    pub fn organization_role_name(&self) -> std::option::Option<&str> {
+        self.organization_role_name.as_deref()
+    }
+    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+    /// the IAM roles and provisions the permissions that the workspace needs to use
+    /// Amazon Web Services data sources and notification channels.</p>
+    /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+    /// permissions yourself. If you are creating this workspace in a member account of an
+    /// organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services
+    /// accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for
+    /// Amazon Web Services data sources and notification channels</a>
+    /// </p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The name of the CloudFormation stack set to use to generate IAM roles
+    /// to be used for this workspace.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>Specify the Amazon Web Services data sources that you want to be queried in this
+    /// workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these
+    /// sources. You must still add them as data sources in the Grafana console in the
+    /// workspace.</p>
+    /// <p>If you don't specify a data source here, you can still add it as a data source in the
+    /// workspace console later. However, you will then have to manually configure permissions for
+    /// it.</p>
+    pub fn workspace_data_sources(&self) -> std::option::Option<&[crate::model::DataSourceType]> {
+        self.workspace_data_sources.as_deref()
+    }
+    /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+    pub fn workspace_description(&self) -> std::option::Option<&str> {
+        self.workspace_description.as_deref()
+    }
+    /// <p>The name for the workspace. It does not have to be unique.</p>
+    pub fn workspace_name(&self) -> std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
+    /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these
+    /// data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
+    /// Amazon Managed Grafana to use these channels.</p>
+    pub fn workspace_notification_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationDestinationType]> {
+        self.workspace_notification_destinations.as_deref()
+    }
+    /// <p>Specifies the organizational units that this workspace is allowed to use data sources
+    /// from, if this workspace is in an account that is part of an organization.</p>
+    pub fn workspace_organizational_units(&self) -> std::option::Option<&[std::string::String]> {
+        self.workspace_organizational_units.as_deref()
+    }
+    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
+    /// workspace will view data from. If you already have a role that you want to use, specify it here. If you omit
+    /// this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
+    /// <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
+    /// automatically created.</p>
+    pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
+        self.workspace_role_arn.as_deref()
+    }
+    /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate
+    /// users for using the Grafana console within a workspace. For more information,
+    /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
+    /// Amazon Managed Grafana</a>.</p>
+    pub fn authentication_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
+        self.authentication_providers.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceInput");
@@ -2554,6 +2640,12 @@ impl std::fmt::Debug for CreateWorkspaceInput {
 pub struct DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl DeleteWorkspaceInput {
+    /// <p>The ID of the workspace to delete.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2617,6 +2709,80 @@ pub struct UpdateWorkspaceInput {
     /// automatically created.</p>
     pub workspace_role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateWorkspaceInput {
+    /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
+    /// other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must
+    /// specify which organizational units the workspace can access in the
+    /// <code>workspaceOrganizationalUnits</code> parameter.</p>
+    pub fn account_access_type(&self) -> std::option::Option<&crate::model::AccountAccessType> {
+        self.account_access_type.as_ref()
+    }
+    /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
+    pub fn organization_role_name(&self) -> std::option::Option<&str> {
+        self.organization_role_name.as_deref()
+    }
+    /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+    /// the IAM roles and provisions the permissions that the workspace needs to use
+    /// Amazon Web Services data sources and notification channels.</p>
+    /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+    /// permissions yourself. If you are creating this workspace in a member account of an
+    /// organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services
+    /// accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for
+    /// Amazon Web Services data sources and notification channels</a>
+    /// </p>
+    pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
+        self.permission_type.as_ref()
+    }
+    /// <p>The name of the CloudFormation stack set to use to generate IAM roles
+    /// to be used for this workspace.</p>
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
+        self.stack_set_name.as_deref()
+    }
+    /// <p>Specify the Amazon Web Services data sources that you want to be queried in this
+    /// workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these
+    /// sources. You must still add them as data sources in the Grafana console in the
+    /// workspace.</p>
+    /// <p>If you don't specify a data source here, you can still add it as a data source later in
+    /// the workspace console. However, you will then have to manually configure permissions for
+    /// it.</p>
+    pub fn workspace_data_sources(&self) -> std::option::Option<&[crate::model::DataSourceType]> {
+        self.workspace_data_sources.as_deref()
+    }
+    /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
+    pub fn workspace_description(&self) -> std::option::Option<&str> {
+        self.workspace_description.as_deref()
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>A new name for the workspace to update.</p>
+    pub fn workspace_name(&self) -> std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
+    /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these
+    /// data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
+    /// Amazon Managed Grafana to use these channels.</p>
+    pub fn workspace_notification_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotificationDestinationType]> {
+        self.workspace_notification_destinations.as_deref()
+    }
+    /// <p>Specifies the organizational units that this workspace is allowed to use data sources
+    /// from, if this workspace is in an account that is part of an organization.</p>
+    pub fn workspace_organizational_units(&self) -> std::option::Option<&[std::string::String]> {
+        self.workspace_organizational_units.as_deref()
+    }
+    /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
+    /// workspace will view data from. If you already have a role that you want to use, specify it here. If you omit
+    /// this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
+    /// <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
+    /// automatically created.</p>
+    pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
+        self.workspace_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceInput");
@@ -2648,6 +2814,12 @@ pub struct DescribeWorkspaceInput {
     /// <p>The ID of the workspace to display information about.</p>
     pub workspace_id: std::option::Option<std::string::String>,
 }
+impl DescribeWorkspaceInput {
+    /// <p>The ID of the workspace to display information about.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkspaceInput");
@@ -2665,6 +2837,18 @@ pub struct UpdatePermissionsInput {
         std::option::Option<std::vec::Vec<crate::model::UpdateInstruction>>,
     /// <p>The ID of the workspace to update.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl UpdatePermissionsInput {
+    /// <p>An array of structures that contain the permission updates to make.</p>
+    pub fn update_instruction_batch(
+        &self,
+    ) -> std::option::Option<&[crate::model::UpdateInstruction]> {
+        self.update_instruction_batch.as_deref()
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2695,6 +2879,35 @@ pub struct ListPermissionsInput {
     /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
     pub workspace_id: std::option::Option<std::string::String>,
 }
+impl ListPermissionsInput {
+    /// <p>The maximum number of results to include in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous
+    /// <code>ListPermissions</code> operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users
+    /// are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
+    /// are returned.</p>
+    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+        self.user_type.as_ref()
+    }
+    /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPermissionsInput");
@@ -2717,6 +2930,16 @@ pub struct DisassociateLicenseInput {
     /// <p>The type of license to remove from the workspace.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
 }
+impl DisassociateLicenseInput {
+    /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The type of license to remove from the workspace.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+        self.license_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateLicenseInput");
@@ -2734,6 +2957,16 @@ pub struct AssociateLicenseInput {
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The type of license to associate with the workspace.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
+}
+impl AssociateLicenseInput {
+    /// <p>The ID of the workspace to associate the license with.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The type of license to associate with the workspace.</p>
+    pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
+        self.license_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateLicenseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2762,6 +2995,28 @@ pub struct UpdateWorkspaceAuthenticationInput {
     /// in the workspace.</p>
     pub saml_configuration: std::option::Option<crate::model::SamlConfiguration>,
 }
+impl UpdateWorkspaceAuthenticationInput {
+    /// <p>The ID of the workspace to update the authentication for.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate
+    /// users for using the Grafana console within a workspace. For more information,
+    /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
+    /// Amazon Managed Grafana</a>.</p>
+    pub fn authentication_providers(
+        &self,
+    ) -> std::option::Option<&[crate::model::AuthenticationProviderTypes]> {
+        self.authentication_providers.as_deref()
+    }
+    /// <p>If the workspace uses SAML, use this structure to
+    /// map SAML assertion attributes to workspace user information and
+    /// define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles
+    /// in the workspace.</p>
+    pub fn saml_configuration(&self) -> std::option::Option<&crate::model::SamlConfiguration> {
+        self.saml_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkspaceAuthenticationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkspaceAuthenticationInput");
@@ -2778,6 +3033,12 @@ impl std::fmt::Debug for UpdateWorkspaceAuthenticationInput {
 pub struct DescribeWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to return authentication information about.</p>
     pub workspace_id: std::option::Option<std::string::String>,
+}
+impl DescribeWorkspaceAuthenticationInput {
+    /// <p>The ID of the workspace to return authentication information about.</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkspaceAuthenticationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

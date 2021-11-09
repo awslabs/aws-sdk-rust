@@ -157,10 +157,8 @@ impl AddAssociationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_association(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_add_association(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -334,10 +332,7 @@ impl AddTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -503,10 +498,7 @@ impl AssociateTrialComponentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_trial_component(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -668,10 +660,7 @@ impl BatchDescribeModelPackageInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_describe_model_package(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -939,10 +928,7 @@ impl CreateActionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_action(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1295,10 +1281,7 @@ impl CreateAlgorithmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_algorithm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_algorithm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1524,10 +1507,7 @@ impl CreateAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1720,10 +1700,7 @@ impl CreateAppImageConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_app_image_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1970,10 +1947,8 @@ impl CreateArtifactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_artifact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_artifact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2299,10 +2274,7 @@ impl CreateAutoMlJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_auto_ml_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_auto_ml_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2501,10 +2473,9 @@ impl CreateCodeRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_code_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_code_repository(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2814,10 +2785,9 @@ impl CreateCompilationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_compilation_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_compilation_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3055,10 +3025,7 @@ impl CreateContextInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_context(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_context(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3372,7 +3339,7 @@ impl CreateDataQualityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_data_quality_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_data_quality_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3606,10 +3573,7 @@ impl CreateDeviceFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_device_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_device_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3973,10 +3937,7 @@ impl CreateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4233,10 +4194,7 @@ impl CreateEdgePackagingJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_edge_packaging_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4434,10 +4392,8 @@ impl CreateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4774,10 +4730,9 @@ impl CreateEndpointConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_endpoint_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_endpoint_config(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4983,10 +4938,7 @@ impl CreateExperimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_experiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_experiment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5432,10 +5384,7 @@ impl CreateFeatureGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_feature_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_feature_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5691,10 +5640,9 @@ impl CreateFlowDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_flow_definition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_flow_definition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5883,10 +5831,7 @@ impl CreateHumanTaskUiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_human_task_ui(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_human_task_ui(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6210,7 +6155,7 @@ impl CreateHyperParameterTuningJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_hyper_parameter_tuning_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_hyper_parameter_tuning_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6417,10 +6362,7 @@ impl CreateImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6607,10 +6549,7 @@ impl CreateImageVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_image_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_image_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7178,10 +7117,7 @@ impl CreateLabelingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_labeling_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_labeling_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7485,10 +7421,7 @@ impl CreateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7802,7 +7735,7 @@ impl CreateModelBiasJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_model_bias_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_model_bias_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8124,7 +8057,7 @@ impl CreateModelExplainabilityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_model_explainability_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_model_explainability_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8543,10 +8476,7 @@ impl CreateModelPackageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_model_package(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_model_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8745,10 +8675,7 @@ impl CreateModelPackageGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_model_package_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9063,7 +8990,7 @@ impl CreateModelQualityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_model_quality_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_model_quality_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9266,10 +9193,7 @@ impl CreateMonitoringScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_monitoring_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9744,10 +9668,7 @@ impl CreateNotebookInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_notebook_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9961,7 +9882,7 @@ impl CreateNotebookInstanceLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_notebook_instance_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_notebook_instance_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10212,10 +10133,8 @@ impl CreatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10412,10 +10331,7 @@ impl CreatePresignedDomainUrlInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_presigned_domain_url(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10584,7 +10500,7 @@ impl CreatePresignedNotebookInstanceUrlInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_presigned_notebook_instance_url(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_presigned_notebook_instance_url(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10975,10 +10891,7 @@ impl CreateProcessingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_processing_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_processing_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11190,10 +11103,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11408,7 +11318,7 @@ impl CreateStudioLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_studio_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_studio_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12125,10 +12035,7 @@ impl CreateTrainingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_training_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_training_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12602,10 +12509,7 @@ impl CreateTransformJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_transform_job(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_transform_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12823,10 +12727,7 @@ impl CreateTrialInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_trial(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_trial(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13205,10 +13106,9 @@ impl CreateTrialComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_trial_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_trial_component(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13456,10 +13356,7 @@ impl CreateUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13702,10 +13599,7 @@ impl CreateWorkforceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_workforce(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_workforce(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13989,10 +13883,8 @@ impl CreateWorkteamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_workteam(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_workteam(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14141,10 +14033,7 @@ impl DeleteActionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_action(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14297,10 +14186,7 @@ impl DeleteAlgorithmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_algorithm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_algorithm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14486,10 +14372,7 @@ impl DeleteAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14642,10 +14525,7 @@ impl DeleteAppImageConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_app_image_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14809,10 +14689,8 @@ impl DeleteArtifactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_artifact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_artifact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14977,10 +14855,7 @@ impl DeleteAssociationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_association(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_association(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15133,10 +15008,9 @@ impl DeleteCodeRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_code_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_code_repository(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15285,10 +15159,7 @@ impl DeleteContextInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_context(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_context(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15442,7 +15313,7 @@ impl DeleteDataQualityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_data_quality_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_quality_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15596,10 +15467,7 @@ impl DeleteDeviceFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_device_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_device_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15767,10 +15635,7 @@ impl DeleteDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15922,10 +15787,8 @@ impl DeleteEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16078,10 +15941,9 @@ impl DeleteEndpointConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_config(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_config(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16234,10 +16096,7 @@ impl DeleteExperimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_experiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_experiment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16392,10 +16251,7 @@ impl DeleteFeatureGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_feature_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_feature_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16548,10 +16404,9 @@ impl DeleteFlowDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_flow_definition(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_flow_definition(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16704,10 +16559,7 @@ impl DeleteHumanTaskUiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_human_task_ui(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_human_task_ui(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16856,10 +16708,7 @@ impl DeleteImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17021,10 +16870,7 @@ impl DeleteImageVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_image_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_image_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17173,10 +17019,7 @@ impl DeleteModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17330,7 +17173,7 @@ impl DeleteModelBiasJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_model_bias_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_bias_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17486,7 +17329,7 @@ impl DeleteModelExplainabilityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_model_explainability_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_explainability_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17644,10 +17487,7 @@ impl DeleteModelPackageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_model_package(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17803,10 +17643,7 @@ impl DeleteModelPackageGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_model_package_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17960,7 +17797,7 @@ impl DeleteModelPackageGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_model_package_group_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_package_group_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -18115,7 +17952,7 @@ impl DeleteModelQualityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_model_quality_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_quality_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -18272,10 +18109,7 @@ impl DeleteMonitoringScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_monitoring_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18430,10 +18264,7 @@ impl DeleteNotebookInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_notebook_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18593,7 +18424,7 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_notebook_instance_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_notebook_instance_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -18766,10 +18597,8 @@ impl DeletePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18918,10 +18747,7 @@ impl DeleteProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19078,7 +18904,7 @@ impl DeleteStudioLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_studio_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_studio_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -19251,10 +19077,7 @@ impl DeleteTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19403,10 +19226,7 @@ impl DeleteTrialInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trial(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_trial(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19559,10 +19379,9 @@ impl DeleteTrialComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_trial_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_trial_component(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19727,10 +19546,7 @@ impl DeleteUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19883,10 +19699,7 @@ impl DeleteWorkforceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_workforce(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_workforce(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20038,10 +19851,8 @@ impl DeleteWorkteamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_workteam(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_workteam(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20215,10 +20026,7 @@ impl DeregisterDevicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_devices(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20367,10 +20175,8 @@ impl DescribeActionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_action(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20523,10 +20329,7 @@ impl DescribeAlgorithmInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_algorithm(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_algorithm(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20714,10 +20517,7 @@ impl DescribeAppInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_app(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_app(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20872,10 +20672,7 @@ impl DescribeAppImageConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_app_image_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21025,10 +20822,7 @@ impl DescribeArtifactInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_artifact(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_artifact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21181,10 +20975,7 @@ impl DescribeAutoMlJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_auto_ml_job(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_auto_ml_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21339,10 +21130,7 @@ impl DescribeCodeRepositoryInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_code_repository(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21497,10 +21285,7 @@ impl DescribeCompilationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_compilation_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21650,10 +21435,7 @@ impl DescribeContextInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_context(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_context(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21807,7 +21589,7 @@ impl DescribeDataQualityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_quality_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_quality_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21984,10 +21766,8 @@ impl DescribeDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22140,10 +21920,7 @@ impl DescribeDeviceFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_device_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_device_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22292,10 +22069,8 @@ impl DescribeDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22451,10 +22226,7 @@ impl DescribeEdgePackagingJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_edge_packaging_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22607,10 +22379,7 @@ impl DescribeEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22765,10 +22534,7 @@ impl DescribeEndpointConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22921,10 +22687,7 @@ impl DescribeExperimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_experiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_experiment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23093,10 +22856,9 @@ impl DescribeFeatureGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_feature_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_feature_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23251,10 +23013,7 @@ impl DescribeFlowDefinitionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_flow_definition(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23409,10 +23168,9 @@ impl DescribeHumanTaskUiInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_human_task_ui(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_human_task_ui(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23569,7 +23327,7 @@ impl DescribeHyperParameterTuningJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_hyper_parameter_tuning_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_hyper_parameter_tuning_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23719,10 +23477,7 @@ impl DescribeImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23884,10 +23639,9 @@ impl DescribeImageVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_image_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_image_version(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24040,10 +23794,7 @@ impl DescribeLabelingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_labeling_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_labeling_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24192,10 +23943,7 @@ impl DescribeModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24351,7 +24099,7 @@ impl DescribeModelBiasJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_model_bias_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_model_bias_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24511,7 +24259,7 @@ impl DescribeModelExplainabilityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_model_explainability_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_model_explainability_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -24669,10 +24417,9 @@ impl DescribeModelPackageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_model_package(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_model_package(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24828,10 +24575,7 @@ impl DescribeModelPackageGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_model_package_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24987,7 +24731,7 @@ impl DescribeModelQualityJobDefinitionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_model_quality_job_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_model_quality_job_definition(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25144,10 +24888,7 @@ impl DescribeMonitoringScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_monitoring_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25303,10 +25044,7 @@ impl DescribeNotebookInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_notebook_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25466,7 +25204,7 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_notebook_instance_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_notebook_instance_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25620,10 +25358,7 @@ impl DescribePipelineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pipeline(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25778,7 +25513,7 @@ impl DescribePipelineDefinitionForExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_pipeline_definition_for_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_pipeline_definition_for_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25935,10 +25670,7 @@ impl DescribePipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26095,10 +25827,7 @@ impl DescribeProcessingJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_processing_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26248,10 +25977,7 @@ impl DescribeProjectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_project(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26408,7 +26134,7 @@ impl DescribeStudioLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_studio_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_studio_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -26562,10 +26288,7 @@ impl DescribeSubscribedWorkteamInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_subscribed_workteam(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26718,10 +26441,7 @@ impl DescribeTrainingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_training_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_training_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26874,10 +26594,9 @@ impl DescribeTransformJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_transform_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_transform_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27026,10 +26745,7 @@ impl DescribeTrialInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_trial(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_trial(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27184,10 +26900,7 @@ impl DescribeTrialComponentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_trial_component(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27352,10 +27065,7 @@ impl DescribeUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27512,10 +27222,7 @@ impl DescribeWorkforceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workforce(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_workforce(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27668,10 +27375,7 @@ impl DescribeWorkteamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_workteam(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_workteam(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27809,7 +27513,7 @@ impl DisableSagemakerServicecatalogPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_sagemaker_servicecatalog_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_sagemaker_servicecatalog_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27970,10 +27674,7 @@ impl DisassociateTrialComponentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_trial_component(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28111,7 +27812,7 @@ impl EnableSagemakerServicecatalogPortfolioInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_sagemaker_servicecatalog_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_sagemaker_servicecatalog_portfolio(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28259,10 +27960,7 @@ impl GetDeviceFleetReportInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_device_fleet_report(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28416,7 +28114,7 @@ impl GetModelPackageGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_model_package_group_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_model_package_group_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28555,7 +28253,7 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sagemaker_servicecatalog_portfolio_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_sagemaker_servicecatalog_portfolio_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28716,10 +28414,9 @@ impl GetSearchSuggestionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_search_suggestions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_search_suggestions(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28966,10 +28663,7 @@ impl ListActionsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_actions(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_actions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29217,10 +28911,8 @@ impl ListAlgorithmsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_algorithms(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_algorithms(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29491,10 +29183,9 @@ impl ListAppImageConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_app_image_configs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_app_image_configs(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29712,10 +29403,7 @@ impl ListAppsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_apps(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_apps(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29963,10 +29651,7 @@ impl ListArtifactsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_artifacts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_artifacts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30259,10 +29944,7 @@ impl ListAssociationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_associations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30546,10 +30228,7 @@ impl ListAutoMlJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_auto_ml_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_auto_ml_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30791,7 +30470,7 @@ impl ListCandidatesForAutoMlJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_candidates_for_auto_ml_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_candidates_for_auto_ml_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -31073,10 +30752,9 @@ impl ListCodeRepositoriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_code_repositories(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_code_repositories(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31372,10 +31050,7 @@ impl ListCompilationJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_compilation_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_compilation_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31622,10 +31297,7 @@ impl ListContextsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_contexts(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_contexts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -31892,7 +31564,7 @@ impl ListDataQualityJobDefinitionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_data_quality_job_definitions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_data_quality_job_definitions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -32160,10 +31832,7 @@ impl ListDeviceFleetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_device_fleets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_device_fleets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32366,10 +32035,7 @@ impl ListDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32532,10 +32198,7 @@ impl ListDomainsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -32834,10 +32497,7 @@ impl ListEdgePackagingJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_edge_packaging_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -33084,10 +32744,7 @@ impl ListEndpointConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_endpoint_configs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_endpoint_configs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -33384,10 +33041,7 @@ impl ListEndpointsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_endpoints(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -33613,10 +33267,7 @@ impl ListExperimentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_experiments(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_experiments(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -33897,10 +33548,7 @@ impl ListFeatureGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_feature_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_feature_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34107,10 +33755,7 @@ impl ListFlowDefinitionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_flow_definitions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_flow_definitions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34317,10 +33962,7 @@ impl ListHumanTaskUisInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_human_task_uis(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_human_task_uis(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -34640,7 +34282,7 @@ impl ListHyperParameterTuningJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_hyper_parameter_tuning_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_hyper_parameter_tuning_jobs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -34909,10 +34551,7 @@ impl ListImagesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_images(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_images(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35178,10 +34817,7 @@ impl ListImageVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_image_versions(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_image_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35474,10 +35110,7 @@ impl ListLabelingJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -35746,7 +35379,7 @@ impl ListLabelingJobsForWorkteamInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs_for_workteam(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs_for_workteam(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -36008,7 +35641,7 @@ impl ListModelBiasJobDefinitionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_model_bias_job_definitions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_model_bias_job_definitions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -36273,7 +35906,7 @@ impl ListModelExplainabilityJobDefinitionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_model_explainability_job_definitions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_model_explainability_job_definitions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -36519,10 +36152,7 @@ impl ListModelPackageGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_model_package_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -36848,10 +36478,7 @@ impl ListModelPackagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_model_packages(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_model_packages(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -37118,7 +36745,7 @@ impl ListModelQualityJobDefinitionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_model_quality_job_definitions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_model_quality_job_definitions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -37365,10 +36992,7 @@ impl ListModelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_models(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_models(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -37741,10 +37365,7 @@ impl ListMonitoringExecutionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_monitoring_executions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -38087,10 +37708,7 @@ impl ListMonitoringSchedulesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_monitoring_schedules(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -38381,7 +37999,7 @@ impl ListNotebookInstanceLifecycleConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_notebook_instance_lifecycle_configs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_notebook_instance_lifecycle_configs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -38758,10 +38376,7 @@ impl ListNotebookInstancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_notebook_instances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -39006,10 +38621,7 @@ impl ListPipelineExecutionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_pipeline_executions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -39204,7 +38816,7 @@ impl ListPipelineExecutionStepsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pipeline_execution_steps(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_pipeline_execution_steps(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -39385,7 +38997,7 @@ impl ListPipelineParametersForExecutionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pipeline_parameters_for_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_pipeline_parameters_for_execution(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -39628,10 +39240,7 @@ impl ListPipelinesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -39916,10 +39525,7 @@ impl ListProcessingJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_processing_jobs(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_processing_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40163,10 +39769,7 @@ impl ListProjectsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_projects(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40452,7 +40055,7 @@ impl ListStudioLifecycleConfigsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_studio_lifecycle_configs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_studio_lifecycle_configs(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -40639,10 +40242,7 @@ impl ListSubscribedWorkteamsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_subscribed_workteams(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -40819,10 +40419,7 @@ impl ListTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41113,10 +40710,7 @@ impl ListTrainingJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_training_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_training_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41365,7 +40959,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_training_jobs_for_hyper_parameter_tuning_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_training_jobs_for_hyper_parameter_tuning_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -41652,10 +41246,7 @@ impl ListTransformJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_transform_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_transform_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -41932,10 +41523,7 @@ impl ListTrialComponentsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_trial_components(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_trial_components(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42190,10 +41778,7 @@ impl ListTrialsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_trials(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_trials(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42417,10 +42002,7 @@ impl ListUserProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_user_profiles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_user_profiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42626,10 +42208,8 @@ impl ListWorkforcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_workforces(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_workforces(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -42841,10 +42421,7 @@ impl ListWorkteamsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_workteams(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_workteams(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43013,7 +42590,7 @@ impl PutModelPackageGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_model_package_group_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_model_package_group_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -43209,10 +42786,7 @@ impl RegisterDevicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_devices(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43417,10 +42991,7 @@ impl RenderUiTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_render_ui_template(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_render_ui_template(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43595,10 +43166,7 @@ impl RetryPipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_retry_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -43832,10 +43400,7 @@ impl SearchInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44022,7 +43587,7 @@ impl SendPipelineExecutionStepFailureInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_failure(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_failure(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -44222,7 +43787,7 @@ impl SendPipelineExecutionStepSuccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_success(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_success(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -44379,10 +43944,7 @@ impl StartMonitoringScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_monitoring_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44537,10 +44099,7 @@ impl StartNotebookInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_notebook_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44772,10 +44331,7 @@ impl StartPipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -44928,10 +44484,7 @@ impl StopAutoMlJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_auto_ml_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_auto_ml_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -45084,10 +44637,7 @@ impl StopCompilationJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_compilation_job(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_compilation_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -45242,10 +44792,7 @@ impl StopEdgePackagingJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_edge_packaging_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -45402,7 +44949,7 @@ impl StopHyperParameterTuningJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_hyper_parameter_tuning_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_stop_hyper_parameter_tuning_job(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -45556,10 +45103,7 @@ impl StopLabelingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_labeling_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_labeling_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -45714,10 +45258,7 @@ impl StopMonitoringScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_monitoring_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -45870,10 +45411,9 @@ impl StopNotebookInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_notebook_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_notebook_instance(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -46048,10 +45588,7 @@ impl StopPipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -46204,10 +45741,7 @@ impl StopProcessingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_processing_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_processing_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -46360,10 +45894,7 @@ impl StopTrainingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_training_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_training_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -46516,10 +46047,7 @@ impl StopTransformJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_transform_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_transform_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -46745,10 +46273,7 @@ impl UpdateActionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_action(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_action(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -46922,10 +46447,7 @@ impl UpdateAppImageConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_app_image_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -47139,10 +46661,8 @@ impl UpdateArtifactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_artifact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_artifact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -47324,10 +46844,9 @@ impl UpdateCodeRepositoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_code_repository(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_code_repository(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -47538,10 +47057,7 @@ impl UpdateContextInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_context(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_context(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -47753,10 +47269,7 @@ impl UpdateDeviceFleetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_fleet(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_device_fleet(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -47929,10 +47442,7 @@ impl UpdateDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -48115,10 +47625,7 @@ impl UpdateDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -48362,10 +47869,8 @@ impl UpdateEndpointInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_endpoint(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -48544,7 +48049,7 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_endpoint_weights_and_capacities(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_endpoint_weights_and_capacities(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -48724,10 +48229,7 @@ impl UpdateExperimentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_experiment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_experiment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -48935,10 +48437,7 @@ impl UpdateImageInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_image(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_image(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -49177,10 +48676,7 @@ impl UpdateModelPackageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_model_package(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_model_package(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -49359,10 +48855,7 @@ impl UpdateMonitoringScheduleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_monitoring_schedule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -49805,10 +49298,7 @@ impl UpdateNotebookInstanceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_notebook_instance(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -50024,7 +49514,7 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_notebook_instance_lifecycle_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_notebook_instance_lifecycle_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -50234,10 +49724,8 @@ impl UpdatePipelineInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -50429,10 +49917,7 @@ impl UpdatePipelineExecutionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_pipeline_execution(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -50649,10 +50134,7 @@ impl UpdateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -50849,10 +50331,7 @@ impl UpdateTrainingJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_training_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_training_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -51015,10 +50494,7 @@ impl UpdateTrialInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_trial(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_trial(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -51396,10 +50872,9 @@ impl UpdateTrialComponentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_trial_component(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_trial_component(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -51579,10 +51054,7 @@ impl UpdateUserProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -51773,10 +51245,7 @@ impl UpdateWorkforceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workforce(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_workforce(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -52022,10 +51491,8 @@ impl UpdateWorkteamInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_workteam(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_workteam(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -52119,6 +51586,45 @@ pub struct UpdateWorkteamInput {
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
 }
+impl UpdateWorkteamInput {
+    /// <p>The name of the work team to update.</p>
+    pub fn workteam_name(&self) -> std::option::Option<&str> {
+        self.workteam_name.as_deref()
+    }
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
+    /// the workers that make up the work team. </p>
+    /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP).
+    /// For private workforces created using Amazon Cognito use
+    /// <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity
+    /// provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input
+    /// for both of these parameters in a single request.</p>
+    /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito
+    /// <i>user groups</i> within the user pool used to create a workforce. All of the
+    /// <code>CognitoMemberDefinition</code> objects that make up the member definition must
+    /// have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon
+    /// Cognito user group to an existing worker pool, see <a href="">Adding groups to a User
+    /// Pool</a>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User
+    /// Pools</a>.</p>
+    /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want
+    /// to include in your private work team in <code>OidcMemberDefinition</code> by listing
+    /// those groups in <code>Groups</code>. Be aware that user groups that are already in the
+    /// work team must also be listed in <code>Groups</code> when you make this request to
+    /// remain on the work team. If you do not include these user groups, they will no longer be
+    /// associated with the work team you update. </p>
+    pub fn member_definitions(&self) -> std::option::Option<&[crate::model::MemberDefinition]> {
+        self.member_definitions.as_deref()
+    }
+    /// <p>An updated description for the work team.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configures SNS topic notifications for available or expiring work items</p>
+    pub fn notification_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+        self.notification_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkteamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkteamInput");
@@ -52148,6 +51654,24 @@ pub struct UpdateWorkforceInput {
     /// configuration for a workforce made using your own IdP.</p>
     pub oidc_config: std::option::Option<crate::model::OidcConfig>,
 }
+impl UpdateWorkforceInput {
+    /// <p>The name of the private workforce that you want to update. You can find your workforce
+    /// name by using the  operation.</p>
+    pub fn workforce_name(&self) -> std::option::Option<&str> {
+        self.workforce_name.as_deref()
+    }
+    /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
+    /// access tasks assigned to this workforce.</p>
+    /// <p>Maximum: Ten CIDR values</p>
+    pub fn source_ip_config(&self) -> std::option::Option<&crate::model::SourceIpConfig> {
+        self.source_ip_config.as_ref()
+    }
+    /// <p>Use this parameter to update your OIDC Identity Provider (IdP)
+    /// configuration for a workforce made using your own IdP.</p>
+    pub fn oidc_config(&self) -> std::option::Option<&crate::model::OidcConfig> {
+        self.oidc_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateWorkforceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkforceInput");
@@ -52168,6 +51692,20 @@ pub struct UpdateUserProfileInput {
     pub user_profile_name: std::option::Option<std::string::String>,
     /// <p>A collection of settings.</p>
     pub user_settings: std::option::Option<crate::model::UserSettings>,
+}
+impl UpdateUserProfileInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>A collection of settings.</p>
+    pub fn user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.user_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52214,6 +51752,66 @@ pub struct UpdateTrialComponentInput {
     /// <p>The output artifacts to remove from the component.</p>
     pub output_artifacts_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateTrialComponentInput {
+    /// <p>The name of the component to update.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+    /// <p>The name of the component as displayed. The name doesn't need to be unique. If
+    /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
+    /// displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The new status of the component.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TrialComponentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the component started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>When the component ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentParameterValue>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The hyperparameters to remove from the component.</p>
+    pub fn parameters_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.parameters_to_remove.as_deref()
+    }
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts.</p>
+    pub fn input_artifacts(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
+    > {
+        self.input_artifacts.as_ref()
+    }
+    /// <p>The input artifacts to remove from the component.</p>
+    pub fn input_artifacts_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.input_artifacts_to_remove.as_deref()
+    }
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts.</p>
+    pub fn output_artifacts(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
+    > {
+        self.output_artifacts.as_ref()
+    }
+    /// <p>The output artifacts to remove from the component.</p>
+    pub fn output_artifacts_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.output_artifacts_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTrialComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrialComponentInput");
@@ -52245,6 +51843,17 @@ pub struct UpdateTrialInput {
     /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
+impl UpdateTrialInput {
+    /// <p>The name of the trial to update.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
+    /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
+    /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateTrialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateTrialInput");
@@ -52267,6 +51876,24 @@ pub struct UpdateTrainingJobInput {
     /// metrics.</p>
     pub profiler_rule_configurations:
         std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
+}
+impl UpdateTrainingJobInput {
+    /// <p>The name of a training job to update the Debugger profiling configuration.</p>
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
+        self.training_job_name.as_deref()
+    }
+    /// <p>Configuration information for Debugger system monitoring, framework profiling, and
+    /// storage paths.</p>
+    pub fn profiler_config(&self) -> std::option::Option<&crate::model::ProfilerConfigForUpdate> {
+        self.profiler_config.as_ref()
+    }
+    /// <p>Configuration information for Debugger rules for profiling system and framework
+    /// metrics.</p>
+    pub fn profiler_rule_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
+        self.profiler_rule_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTrainingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52301,6 +51928,32 @@ pub struct UpdateProjectInput {
     /// environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UpdateProjectInput {
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The description for the project.</p>
+    pub fn project_description(&self) -> std::option::Option<&str> {
+        self.project_description.as_deref()
+    }
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog.
+    /// The provisioning artifact ID will default to the latest provisioning artifact
+    /// ID of the product, if you don't provide the provisioning artifact ID. For more
+    /// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.
+    /// </p>
+    pub fn service_catalog_provisioning_update_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceCatalogProvisioningUpdateDetails> {
+        self.service_catalog_provisioning_update_details.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your
+    /// Amazon Web Services resources in different ways, for example, by purpose, owner, or
+    /// environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
@@ -52325,6 +51978,20 @@ pub struct UpdatePipelineExecutionInput {
     pub pipeline_execution_description: std::option::Option<std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
     pub pipeline_execution_display_name: std::option::Option<std::string::String>,
+}
+impl UpdatePipelineExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+    /// <p>The description of the pipeline execution.</p>
+    pub fn pipeline_execution_description(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_description.as_deref()
+    }
+    /// <p>The display name of the pipeline execution.</p>
+    pub fn pipeline_execution_display_name(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_display_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52357,6 +52024,28 @@ pub struct UpdatePipelineInput {
     /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdatePipelineInput {
+    /// <p>The name of the pipeline to update.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The display name of the pipeline.</p>
+    pub fn pipeline_display_name(&self) -> std::option::Option<&str> {
+        self.pipeline_display_name.as_deref()
+    }
+    /// <p>The JSON pipeline definition.</p>
+    pub fn pipeline_definition(&self) -> std::option::Option<&str> {
+        self.pipeline_definition.as_deref()
+    }
+    /// <p>The description of the pipeline.</p>
+    pub fn pipeline_description(&self) -> std::option::Option<&str> {
+        self.pipeline_description.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePipelineInput");
@@ -52382,6 +52071,23 @@ pub struct UpdateNotebookInstanceLifecycleConfigInput {
     /// you create the notebook instance. The shell script must be a base64-encoded
     /// string.</p>
     pub on_start: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+}
+impl UpdateNotebookInstanceLifecycleConfigInput {
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name.as_deref()
+    }
+    /// <p>The shell script that runs only once, when you create a notebook instance. The shell
+    /// script must be a base64-encoded string.</p>
+    pub fn on_create(&self) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleHook]> {
+        self.on_create.as_deref()
+    }
+    /// <p>The shell script that runs every time you start a notebook instance, including when
+    /// you create the notebook instance. The shell script must be a base64-encoded
+    /// string.</p>
+    pub fn on_start(&self) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleHook]> {
+        self.on_start.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateNotebookInstanceLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52470,6 +52176,104 @@ pub struct UpdateNotebookInstanceInput {
     /// </note>
     pub root_access: std::option::Option<crate::model::RootAccess>,
 }
+impl UpdateNotebookInstanceInput {
+    /// <p>The name of the notebook instance to update.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+    /// <p>The Amazon ML compute instance type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the
+    /// notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p>
+    /// <note>
+    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+    /// <code>iam:PassRole</code> permission.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
+    /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+    /// Customize a Notebook Instance</a>.</p>
+    pub fn lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.lifecycle_config_name.as_deref()
+    }
+    /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration
+    /// currently associated with the notebook instance. This operation is idempotent. If you
+    /// specify a lifecycle configuration that is not associated with the notebook instance when
+    /// you call this method, it does not throw an error.</p>
+    pub fn disassociate_lifecycle_config(&self) -> bool {
+        self.disassociate_lifecycle_config
+    }
+    /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
+    /// default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the
+    /// amount of available free space on the volume. Because of this, you can increase the
+    /// volume size when you update a notebook instance, but you can't decrease the volume size.
+    /// If you want to decrease the size of the ML storage volume in use, create a new notebook
+    /// instance with the desired size.</p>
+    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+        self.volume_size_in_gb
+    }
+    /// <p>The Git repository to associate with the notebook instance as its default code
+    /// repository. This can be either the name of a Git repository stored as a resource in your
+    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
+    /// other Git repository. When you open a notebook instance, it opens in the directory that
+    /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
+    /// Notebook Instances</a>.</p>
+    pub fn default_code_repository(&self) -> std::option::Option<&str> {
+        self.default_code_repository.as_deref()
+    }
+    /// <p>An array of up to three Git repositories to associate with the notebook instance.
+    /// These can be either the names of Git repositories stored as resources in your account,
+    /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
+    /// other Git repository. These repositories are cloned at the same level as the default
+    /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+    /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    pub fn additional_code_repositories(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_code_repositories.as_deref()
+    }
+    /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook
+    /// instance. Currently only one EI instance type can be associated with a notebook
+    /// instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+    /// SageMaker</a>.</p>
+    pub fn accelerator_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookInstanceAcceleratorType]> {
+        self.accelerator_types.as_deref()
+    }
+    /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook
+    /// instance. This operation is idempotent. If you specify an accelerator type that is not
+    /// associated with the notebook instance when you call this method, it does not throw an
+    /// error.</p>
+    pub fn disassociate_accelerator_types(&self) -> bool {
+        self.disassociate_accelerator_types
+    }
+    /// <p>The name or URL of the default Git repository to remove from this notebook instance.
+    /// This operation is idempotent. If you specify a Git repository that is not associated
+    /// with the notebook instance when you call this method, it does not throw an error.</p>
+    pub fn disassociate_default_code_repository(&self) -> bool {
+        self.disassociate_default_code_repository
+    }
+    /// <p>A list of names or URLs of the default Git repositories to remove from this notebook
+    /// instance. This operation is idempotent. If you specify a Git repository that is not
+    /// associated with the notebook instance when you call this method, it does not throw an
+    /// error.</p>
+    pub fn disassociate_additional_code_repositories(&self) -> bool {
+        self.disassociate_additional_code_repositories
+    }
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
+    /// default value is <code>Enabled</code>.</p>
+    /// <note>
+    /// <p>If you set this to <code>Disabled</code>, users don't have root access on the
+    /// notebook instance, but lifecycle configuration scripts still run with root
+    /// permissions.</p>
+    /// </note>
+    pub fn root_access(&self) -> std::option::Option<&crate::model::RootAccess> {
+        self.root_access.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNotebookInstanceInput");
@@ -52516,6 +52320,20 @@ pub struct UpdateMonitoringScheduleInput {
     /// monitoring job.</p>
     pub monitoring_schedule_config: std::option::Option<crate::model::MonitoringScheduleConfig>,
 }
+impl UpdateMonitoringScheduleInput {
+    /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+    /// an Amazon Web Services account.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the
+    /// monitoring job.</p>
+    pub fn monitoring_schedule_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringScheduleConfig> {
+        self.monitoring_schedule_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMonitoringScheduleInput");
@@ -52544,6 +52362,33 @@ pub struct UpdateModelPackageInput {
     /// <p>The metadata properties associated with the model package versions to remove.</p>
     pub customer_metadata_properties_to_remove:
         std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateModelPackageInput {
+    /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    pub fn model_package_arn(&self) -> std::option::Option<&str> {
+        self.model_package_arn.as_deref()
+    }
+    /// <p>The approval status of the model.</p>
+    pub fn model_approval_status(&self) -> std::option::Option<&crate::model::ModelApprovalStatus> {
+        self.model_approval_status.as_ref()
+    }
+    /// <p>A description for the approval status of the model.</p>
+    pub fn approval_description(&self) -> std::option::Option<&str> {
+        self.approval_description.as_deref()
+    }
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn customer_metadata_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.customer_metadata_properties.as_ref()
+    }
+    /// <p>The metadata properties associated with the model package versions to remove.</p>
+    pub fn customer_metadata_properties_to_remove(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.customer_metadata_properties_to_remove.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52579,6 +52424,29 @@ pub struct UpdateImageInput {
     /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl UpdateImageInput {
+    /// <p>A list of properties to delete. Only the <code>Description</code> and
+    /// <code>DisplayName</code> properties can be deleted.</p>
+    pub fn delete_properties(&self) -> std::option::Option<&[std::string::String]> {
+        self.delete_properties.as_deref()
+    }
+    /// <p>The new description for the image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The new display name for the image.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The name of the image to update.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateImageInput");
@@ -52603,6 +52471,21 @@ pub struct UpdateExperimentInput {
     /// <p>The description of the experiment.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateExperimentInput {
+    /// <p>The name of the experiment to update.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If
+    /// <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description of the experiment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateExperimentInput");
@@ -52622,6 +52505,18 @@ pub struct UpdateEndpointWeightsAndCapacitiesInput {
     /// <p>An object that provides new capacity and weight values for a variant.</p>
     pub desired_weights_and_capacities:
         std::option::Option<std::vec::Vec<crate::model::DesiredWeightAndCapacity>>,
+}
+impl UpdateEndpointWeightsAndCapacitiesInput {
+    /// <p>The name of an existing Amazon SageMaker endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>An object that provides new capacity and weight values for a variant.</p>
+    pub fn desired_weights_and_capacities(
+        &self,
+    ) -> std::option::Option<&[crate::model::DesiredWeightAndCapacity]> {
+        self.desired_weights_and_capacities.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateEndpointWeightsAndCapacitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52661,6 +52556,40 @@ pub struct UpdateEndpointInput {
     /// <p>The deployment configuration for the endpoint to be updated.</p>
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
 }
+impl UpdateEndpointInput {
+    /// <p>The name of the endpoint whose configuration you want to update.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The name of the new endpoint configuration.</p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
+    /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To
+    /// retain the variant properties of an endpoint when updating it, set
+    /// <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant
+    /// properties specified in a new <code>EndpointConfig</code> call when updating an
+    /// endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default
+    /// is <code>false</code>.</p>
+    pub fn retain_all_variant_properties(&self) -> bool {
+        self.retain_all_variant_properties
+    }
+    /// <p>When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
+    /// <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list
+    /// of type <a>VariantProperty</a> to override with the values provided by
+    /// <code>EndpointConfig</code>. If you don't specify a value for
+    /// <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+    /// </p>
+    pub fn exclude_retained_variant_properties(
+        &self,
+    ) -> std::option::Option<&[crate::model::VariantProperty]> {
+        self.exclude_retained_variant_properties.as_deref()
+    }
+    /// <p>The deployment configuration for the endpoint to be updated.</p>
+    pub fn deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
+        self.deployment_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEndpointInput");
@@ -52690,6 +52619,22 @@ pub struct UpdateDomainInput {
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     pub domain_settings_for_update: std::option::Option<crate::model::DomainSettingsForUpdate>,
 }
+impl UpdateDomainInput {
+    /// <p>The ID of the domain to be updated.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>A collection of settings.</p>
+    pub fn default_user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.default_user_settings.as_ref()
+    }
+    /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
+    pub fn domain_settings_for_update(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainSettingsForUpdate> {
+        self.domain_settings_for_update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainInput");
@@ -52711,6 +52656,16 @@ pub struct UpdateDevicesInput {
     pub device_fleet_name: std::option::Option<std::string::String>,
     /// <p>List of devices to register with Edge Manager agent.</p>
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
+}
+impl UpdateDevicesInput {
+    /// <p>The name of the fleet the devices belong to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>List of devices to register with Edge Manager agent.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52740,6 +52695,32 @@ pub struct UpdateDeviceFleetInput {
     /// the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub enable_iot_role_alias: std::option::Option<bool>,
 }
+impl UpdateDeviceFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Description of the fleet.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Output configuration  for storing sample data collected by the fleet.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::EdgeOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
+    /// The name of the role alias generated will match this pattern:
+    /// "SageMakerEdge-{DeviceFleetName}".</p>
+    /// <p>For example, if your device fleet is called "demo-fleet", the name of
+    /// the role alias will be "SageMakerEdge-demo-fleet".</p>
+    pub fn enable_iot_role_alias(&self) -> std::option::Option<bool> {
+        self.enable_iot_role_alias
+    }
+}
 impl std::fmt::Debug for UpdateDeviceFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceFleetInput");
@@ -52765,6 +52746,27 @@ pub struct UpdateContextInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of properties to remove.</p>
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateContextInput {
+    /// <p>The name of the context to update.</p>
+    pub fn context_name(&self) -> std::option::Option<&str> {
+        self.context_name.as_deref()
+    }
+    /// <p>The new description for the context.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn properties_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.properties_to_remove.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateContextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52793,6 +52795,23 @@ pub struct UpdateCodeRepositoryInput {
     /// </p>
     pub git_config: std::option::Option<crate::model::GitConfigForUpdate>,
 }
+impl UpdateCodeRepositoryInput {
+    /// <p>The name of the Git repository to update.</p>
+    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+        self.code_repository_name.as_deref()
+    }
+    /// <p>The configuration of the git repository, including the URL and the Amazon Resource
+    /// Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to
+    /// access the repository. The secret must have a staging label of <code>AWSCURRENT</code>
+    /// and must be in the following format:</p>
+    /// <p>
+    /// <code>{"username": <i>UserName</i>, "password":
+    /// <i>Password</i>}</code>
+    /// </p>
+    pub fn git_config(&self) -> std::option::Option<&crate::model::GitConfigForUpdate> {
+        self.git_config.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateCodeRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCodeRepositoryInput");
@@ -52816,6 +52835,27 @@ pub struct UpdateArtifactInput {
     /// <p>A list of properties to remove.</p>
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateArtifactInput {
+    /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
+    /// <p>The new name for the artifact.</p>
+    pub fn artifact_name(&self) -> std::option::Option<&str> {
+        self.artifact_name.as_deref()
+    }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn properties_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.properties_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateArtifactInput");
@@ -52835,6 +52875,18 @@ pub struct UpdateAppImageConfigInput {
     pub app_image_config_name: std::option::Option<std::string::String>,
     /// <p>The new KernelGateway app to run on the image.</p>
     pub kernel_gateway_image_config: std::option::Option<crate::model::KernelGatewayImageConfig>,
+}
+impl UpdateAppImageConfigInput {
+    /// <p>The name of the AppImageConfig to update.</p>
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
+        self.app_image_config_name.as_deref()
+    }
+    /// <p>The new KernelGateway app to run on the image.</p>
+    pub fn kernel_gateway_image_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KernelGatewayImageConfig> {
+        self.kernel_gateway_image_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAppImageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52864,6 +52916,31 @@ pub struct UpdateActionInput {
     /// <p>A list of properties to remove.</p>
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateActionInput {
+    /// <p>The name of the action to update.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The new description for the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The new status for the action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn properties_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.properties_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateActionInput");
@@ -52883,6 +52960,12 @@ pub struct StopTransformJobInput {
     /// <p>The name of the transform job to stop.</p>
     pub transform_job_name: std::option::Option<std::string::String>,
 }
+impl StopTransformJobInput {
+    /// <p>The name of the transform job to stop.</p>
+    pub fn transform_job_name(&self) -> std::option::Option<&str> {
+        self.transform_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopTransformJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTransformJobInput");
@@ -52898,6 +52981,12 @@ pub struct StopTrainingJobInput {
     /// <p>The name of the training job to stop.</p>
     pub training_job_name: std::option::Option<std::string::String>,
 }
+impl StopTrainingJobInput {
+    /// <p>The name of the training job to stop.</p>
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
+        self.training_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopTrainingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTrainingJobInput");
@@ -52912,6 +53001,12 @@ impl std::fmt::Debug for StopTrainingJobInput {
 pub struct StopProcessingJobInput {
     /// <p>The name of the processing job to stop.</p>
     pub processing_job_name: std::option::Option<std::string::String>,
+}
+impl StopProcessingJobInput {
+    /// <p>The name of the processing job to stop.</p>
+    pub fn processing_job_name(&self) -> std::option::Option<&str> {
+        self.processing_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopProcessingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52931,6 +53026,17 @@ pub struct StopPipelineExecutionInput {
     /// operation. An idempotent operation completes no more than once.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl StopPipelineExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than once.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StopPipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopPipelineExecutionInput");
@@ -52947,6 +53053,12 @@ pub struct StopNotebookInstanceInput {
     /// <p>The name of the notebook instance to terminate.</p>
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
+impl StopNotebookInstanceInput {
+    /// <p>The name of the notebook instance to terminate.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopNotebookInstanceInput");
@@ -52961,6 +53073,12 @@ impl std::fmt::Debug for StopNotebookInstanceInput {
 pub struct StopMonitoringScheduleInput {
     /// <p>The name of the schedule to stop.</p>
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
+}
+impl StopMonitoringScheduleInput {
+    /// <p>The name of the schedule to stop.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -52977,6 +53095,12 @@ pub struct StopLabelingJobInput {
     /// <p>The name of the labeling job to stop.</p>
     pub labeling_job_name: std::option::Option<std::string::String>,
 }
+impl StopLabelingJobInput {
+    /// <p>The name of the labeling job to stop.</p>
+    pub fn labeling_job_name(&self) -> std::option::Option<&str> {
+        self.labeling_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopLabelingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopLabelingJobInput");
@@ -52991,6 +53115,12 @@ impl std::fmt::Debug for StopLabelingJobInput {
 pub struct StopHyperParameterTuningJobInput {
     /// <p>The name of the tuning job to stop.</p>
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+}
+impl StopHyperParameterTuningJobInput {
+    /// <p>The name of the tuning job to stop.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopHyperParameterTuningJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53010,6 +53140,12 @@ pub struct StopEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
 }
+impl StopEdgePackagingJobInput {
+    /// <p>The name of the edge packaging job.</p>
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopEdgePackagingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopEdgePackagingJobInput");
@@ -53025,6 +53161,12 @@ pub struct StopCompilationJobInput {
     /// <p>The name of the model compilation job to stop.</p>
     pub compilation_job_name: std::option::Option<std::string::String>,
 }
+impl StopCompilationJobInput {
+    /// <p>The name of the model compilation job to stop.</p>
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+        self.compilation_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StopCompilationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopCompilationJobInput");
@@ -53039,6 +53181,12 @@ impl std::fmt::Debug for StopCompilationJobInput {
 pub struct StopAutoMlJobInput {
     /// <p>The name of the object you are requesting.</p>
     pub auto_ml_job_name: std::option::Option<std::string::String>,
+}
+impl StopAutoMlJobInput {
+    /// <p>The name of the object you are requesting.</p>
+    pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StopAutoMlJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53063,6 +53211,29 @@ pub struct StartPipelineExecutionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// operation. An idempotent operation completes no more than once.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl StartPipelineExecutionInput {
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The display name of the pipeline execution.</p>
+    pub fn pipeline_execution_display_name(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_display_name.as_deref()
+    }
+    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    pub fn pipeline_parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+        self.pipeline_parameters.as_deref()
+    }
+    /// <p>The description of the pipeline execution.</p>
+    pub fn pipeline_execution_description(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_description.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than once.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartPipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53089,6 +53260,12 @@ pub struct StartNotebookInstanceInput {
     /// <p>The name of the notebook instance to start.</p>
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
+impl StartNotebookInstanceInput {
+    /// <p>The name of the notebook instance to start.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for StartNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartNotebookInstanceInput");
@@ -53103,6 +53280,12 @@ impl std::fmt::Debug for StartNotebookInstanceInput {
 pub struct StartMonitoringScheduleInput {
     /// <p>The name of the schedule to start.</p>
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
+}
+impl StartMonitoringScheduleInput {
+    /// <p>The name of the schedule to start.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for StartMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53123,6 +53306,21 @@ pub struct SendPipelineExecutionStepSuccessInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// operation. An idempotent operation completes no more than one time.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl SendPipelineExecutionStepSuccessInput {
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn callback_token(&self) -> std::option::Option<&str> {
+        self.callback_token.as_deref()
+    }
+    /// <p>A list of the output parameters of the callback step.</p>
+    pub fn output_parameters(&self) -> std::option::Option<&[crate::model::OutputParameter]> {
+        self.output_parameters.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than one time.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SendPipelineExecutionStepSuccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53145,6 +53343,21 @@ pub struct SendPipelineExecutionStepFailureInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// operation. An idempotent operation completes no more than one time.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl SendPipelineExecutionStepFailureInput {
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn callback_token(&self) -> std::option::Option<&str> {
+        self.callback_token.as_deref()
+    }
+    /// <p>A message describing why the step failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than one time.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SendPipelineExecutionStepFailureInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53182,6 +53395,41 @@ pub struct SearchInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl SearchInput {
+    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource.as_ref()
+    }
+    /// <p>A Boolean conditional statement. Resources must satisfy this condition to be
+    /// included in search results. You must provide at least one subexpression, filter, or
+    /// nested filter. The maximum number of recursive <code>SubExpressions</code>,
+    /// <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+    /// <code>SearchExpression</code> object is 50.</p>
+    pub fn search_expression(&self) -> std::option::Option<&crate::model::SearchExpression> {
+        self.search_expression.as_ref()
+    }
+    /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The
+    /// default is <code>LastModifiedTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&str> {
+        self.sort_by.as_deref()
+    }
+    /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
+    /// <code>Descending</code>. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SearchSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If more than <code>MaxResults</code> resources match the specified
+    /// <code>SearchExpression</code>, the response includes a
+    /// <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+    /// <code>SearchRequest</code> to continue retrieving results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchInput");
@@ -53204,6 +53452,17 @@ pub struct RetryPipelineExecutionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
     /// operation. An idempotent operation completes no more than once.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl RetryPipelineExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than once.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for RetryPipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53232,6 +53491,29 @@ pub struct RenderUiTemplateInput {
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.</p>
     pub human_task_ui_arn: std::option::Option<std::string::String>,
 }
+impl RenderUiTemplateInput {
+    /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
+    pub fn ui_template(&self) -> std::option::Option<&crate::model::UiTemplate> {
+        self.ui_template.as_ref()
+    }
+    /// <p>A <code>RenderableTask</code> object containing a representative task to
+    /// render.</p>
+    pub fn task(&self) -> std::option::Option<&crate::model::RenderableTask> {
+        self.task.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the
+    /// template.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not
+    /// provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+    /// parameter.</p>
+    /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.</p>
+    pub fn human_task_ui_arn(&self) -> std::option::Option<&str> {
+        self.human_task_ui_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RenderUiTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RenderUiTemplateInput");
@@ -53254,6 +53536,20 @@ pub struct RegisterDevicesInput {
     /// <p>The tags associated with devices.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RegisterDevicesInput {
+    /// <p>The name of the fleet.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>A list of devices to register with SageMaker Edge Manager.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+    /// <p>The tags associated with devices.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterDevicesInput");
@@ -53272,6 +53568,16 @@ pub struct PutModelPackageGroupPolicyInput {
     pub model_package_group_name: std::option::Option<std::string::String>,
     /// <p>The resource policy for the model group.</p>
     pub resource_policy: std::option::Option<std::string::String>,
+}
+impl PutModelPackageGroupPolicyInput {
+    /// <p>The name of the model group to add a resource policy to.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>The resource policy for the model group.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutModelPackageGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53300,6 +53606,31 @@ pub struct ListWorkteamsInput {
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListWorkteamsInput {
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListWorkteamsSortByOptions> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A string in the work team's name. This filter returns only work teams whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the
+    /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
+    /// use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of work teams to return in each page of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListWorkteamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListWorkteamsInput");
@@ -53326,6 +53657,28 @@ pub struct ListWorkforcesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of workforces returned in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListWorkforcesInput {
+    /// <p>Sort workforces using the workforce name or creation date.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListWorkforcesSortByOptions> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Sort workforces in ascending or descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A token to resume pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of workforces returned in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListWorkforcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53356,6 +53709,33 @@ pub struct ListUserProfilesInput {
     pub domain_id_equals: std::option::Option<std::string::String>,
     /// <p>A parameter by which to filter the results.</p>
     pub user_profile_name_contains: std::option::Option<std::string::String>,
+}
+impl ListUserProfilesInput {
+    /// <p>If the previous response was truncated, you will receive this token.
+    /// Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns a list up to a specified limit.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The sort order for the results. The default is Ascending.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::UserProfileSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>A parameter by which to filter the results.</p>
+    pub fn domain_id_equals(&self) -> std::option::Option<&str> {
+        self.domain_id_equals.as_deref()
+    }
+    /// <p>A parameter by which to filter the results.</p>
+    pub fn user_profile_name_contains(&self) -> std::option::Option<&str> {
+        self.user_profile_name_contains.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53395,6 +53775,42 @@ pub struct ListTrialsInput {
     /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
     /// call returns a token for getting the next set of trials.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTrialsInput {
+    /// <p>A filter that returns only trials that are part of the specified experiment.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>A filter that returns only trials that are associated with the specified trial
+    /// component.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+    /// <p>A filter that returns only trials created after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only trials created before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortTrialsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
+    /// call returns a token for getting the next set of trials.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTrialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53442,6 +53858,52 @@ pub struct ListTrialComponentsInput {
     /// components, the call returns a token for getting the next set of components.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTrialComponentsInput {
+    /// <p>A filter that returns only components that are part of the specified experiment. If you
+    /// specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or
+    /// <code>TrialName</code>.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>A filter that returns only components that are part of the specified trial. If you specify
+    /// <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or
+    /// <code>SourceArn</code>.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
+    /// <p>A filter that returns only components that have the specified source Amazon Resource Name
+    /// (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code>
+    /// or <code>TrialName</code>.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>A filter that returns only components created after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only components created before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortTrialComponentsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The maximum number of components to return in the response. The default value is
+    /// 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of
+    /// components, the call returns a token for getting the next set of components.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTrialComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrialComponentsInput");
@@ -53486,6 +53948,51 @@ pub struct ListTransformJobsInput {
     /// <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTransformJobsInput {
+    /// <p>A filter that returns only transform jobs created after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only transform jobs created before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only transform jobs modified after the specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only transform jobs modified before the specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A string in the transform job name. This filter returns only transform jobs whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that retrieves only transform jobs with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::TransformJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of transform
+    /// jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTransformJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTransformJobsInput");
@@ -53529,6 +54036,42 @@ pub struct ListTrainingJobsForHyperParameterTuningJobInput {
     /// for
     /// results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListTrainingJobsForHyperParameterTuningJobInput {
+    /// <p>The name of the tuning job whose training jobs you want to list.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code>
+    /// request was truncated, the response includes a <code>NextToken</code>. To retrieve the
+    /// next set of training jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of training jobs to return. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that returns only training jobs with the
+    /// specified
+    /// status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::TrainingJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The field to sort
+    /// results
+    /// by. The default is <code>Name</code>.</p>
+    /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training
+    /// jobs that did not return an objective metric are not listed.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::TrainingJobSortByOptions> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order
+    /// for
+    /// results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTrainingJobsForHyperParameterTuningJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53578,6 +54121,55 @@ pub struct ListTrainingJobsInput {
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListTrainingJobsInput {
+    /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of training
+    /// jobs, use the token in the next request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of training jobs to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that returns only training jobs created after the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only training jobs created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only training jobs modified after the specified time
+    /// (timestamp).</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only training jobs modified before the specified time
+    /// (timestamp).</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A string in the training job name. This filter returns only training jobs whose
+    /// name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that retrieves only training jobs with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::TrainingJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTrainingJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTrainingJobsInput");
@@ -53609,6 +54201,23 @@ pub struct ListTagsInput {
     /// <p>Maximum number of tags to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
+    /// retrieve.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker
+    /// returns this token. To retrieve the next set of tags, use it in the subsequent request.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of tags to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsInput");
@@ -53632,6 +54241,23 @@ pub struct ListSubscribedWorkteamsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSubscribedWorkteamsInput {
+    /// <p>A string in the work team name. This filter returns only work teams whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// labeling jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of work teams to return in each page of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSubscribedWorkteamsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53667,6 +54293,50 @@ pub struct ListStudioLifecycleConfigsInput {
     pub sort_by: std::option::Option<crate::model::StudioLifecycleConfigSortKey>,
     /// <p>The sort order. The default value is Descending.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListStudioLifecycleConfigsInput {
+    /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
+    pub fn app_type_equals(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioLifecycleConfigAppType> {
+        self.app_type_equals.as_ref()
+    }
+    /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
+    pub fn modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
+    pub fn modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_time_after.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is CreationTime.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::StudioLifecycleConfigSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is Descending.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListStudioLifecycleConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53707,6 +54377,40 @@ pub struct ListProjectsInput {
     pub sort_by: std::option::Option<crate::model::ProjectSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::ProjectSortOrder>,
+}
+impl ListProjectsInput {
+    /// <p>A filter that returns the projects that were created after a specified
+    /// time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns the projects that were created before a specified
+    /// time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The maximum number of projects to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that returns the projects whose name contains a specified
+    /// string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListProjects</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ProjectSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::ProjectSortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53750,6 +54454,51 @@ pub struct ListProcessingJobsInput {
     /// <p>The maximum number of processing jobs to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListProcessingJobsInput {
+    /// <p>A filter that returns only processing jobs created after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only processing jobs created after the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only processing jobs modified after the specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only processing jobs modified before the specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A string in the processing job name. This filter returns only processing jobs whose
+    /// name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that retrieves only processing jobs with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::ProcessingJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of processing
+    /// jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of processing jobs to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListProcessingJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProcessingJobsInput");
@@ -53789,6 +54538,39 @@ pub struct ListPipelinesInput {
     /// <p>The maximum number of pipelines to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPipelinesInput {
+    /// <p>The prefix of the pipeline name.</p>
+    pub fn pipeline_name_prefix(&self) -> std::option::Option<&str> {
+        self.pipeline_name_prefix.as_deref()
+    }
+    /// <p>A filter that returns the pipelines that were created after a specified
+    /// time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns the pipelines that were created before a specified
+    /// time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortPipelinesBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of pipelines to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPipelinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelinesInput");
@@ -53815,6 +54597,21 @@ pub struct ListPipelineParametersForExecutionInput {
     /// <p>The maximum number of parameters to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPipelineParametersForExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of parameters to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPipelineParametersForExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipelineParametersForExecutionInput");
@@ -53838,6 +54635,25 @@ pub struct ListPipelineExecutionStepsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListPipelineExecutionStepsInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of pipeline execution steps to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListPipelineExecutionStepsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53871,6 +54687,39 @@ pub struct ListPipelineExecutionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of pipeline executions to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListPipelineExecutionsInput {
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>A filter that returns the pipeline executions that were created after a specified
+    /// time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns the pipeline executions that were created before a specified
+    /// time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortPipelineExecutionsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of pipeline executions to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListPipelineExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53935,6 +54784,79 @@ pub struct ListNotebookInstancesInput {
     /// repository.</p>
     pub additional_code_repository_equals: std::option::Option<std::string::String>,
 }
+impl ListNotebookInstancesInput {
+    /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the
+    /// response includes a <code>NextToken</code>. You can use this token in your subsequent
+    /// <code>ListNotebookInstances</code> request to fetch the next set of notebook
+    /// instances. </p>
+    /// <note>
+    /// <p>You might specify a filter or a sort order in your request. When response is
+    /// truncated, you must use the same values for the filer and sort order in the next
+    /// request. </p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of notebook instances to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::NotebookInstanceSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. </p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::NotebookInstanceSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A string in the notebook instances' name. This filter returns only notebook
+    /// instances whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only notebook instances that were created before the
+    /// specified time (timestamp). </p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only notebook instances that were created after the specified
+    /// time (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only notebook instances that were modified before the
+    /// specified time (timestamp).</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only notebook instances that were modified after the
+    /// specified time (timestamp).</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only notebook instances with the specified status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::NotebookInstanceStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>A string in the name of a notebook instances lifecycle configuration associated with
+    /// this notebook instance. This filter returns only notebook instances associated with a
+    /// lifecycle configuration with a name that contains the specified string.</p>
+    pub fn notebook_instance_lifecycle_config_name_contains(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name_contains
+            .as_deref()
+    }
+    /// <p>A string in the name or URL of a Git repository associated with this notebook
+    /// instance. This filter returns only notebook instances associated with a git repository
+    /// with a name that contains the specified string.</p>
+    pub fn default_code_repository_contains(&self) -> std::option::Option<&str> {
+        self.default_code_repository_contains.as_deref()
+    }
+    /// <p>A filter that returns only notebook instances with associated with the specified git
+    /// repository.</p>
+    pub fn additional_code_repository_equals(&self) -> std::option::Option<&str> {
+        self.additional_code_repository_equals.as_deref()
+    }
+}
 impl std::fmt::Debug for ListNotebookInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotebookInstancesInput");
@@ -53994,6 +54916,55 @@ pub struct ListNotebookInstanceLifecycleConfigsInput {
     /// specified time (timestamp).</p>
     pub last_modified_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListNotebookInstanceLifecycleConfigsInput {
+    /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To get the next set of
+    /// lifecycle configurations, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of lifecycle configurations to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(
+        &self,
+    ) -> std::option::Option<&crate::model::NotebookInstanceLifecycleConfigSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results.</p>
+    pub fn sort_order(
+        &self,
+    ) -> std::option::Option<&crate::model::NotebookInstanceLifecycleConfigSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle
+    /// configurations whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only lifecycle configurations that were created before the
+    /// specified time (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only lifecycle configurations that were created after the
+    /// specified time (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only lifecycle configurations that were modified before the
+    /// specified time (timestamp).</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only lifecycle configurations that were modified after the
+    /// specified time (timestamp).</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ListNotebookInstanceLifecycleConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotebookInstanceLifecycleConfigsInput");
@@ -54045,6 +55016,65 @@ pub struct ListMonitoringSchedulesInput {
     /// <p>A filter that returns only the monitoring schedules for the specified monitoring
     /// type.</p>
     pub monitoring_type_equals: std::option::Option<crate::model::MonitoringType>,
+}
+impl ListMonitoringSchedulesInput {
+    /// <p>Name of a specific endpoint to fetch schedules for.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+    /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringScheduleSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
+    /// The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job
+    /// executions, use it in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filter for monitoring schedules whose name contains a specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::ScheduleStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>Gets a list of the monitoring schedules for the specified monitoring job
+    /// definition.</p>
+    pub fn monitoring_job_definition_name(&self) -> std::option::Option<&str> {
+        self.monitoring_job_definition_name.as_deref()
+    }
+    /// <p>A filter that returns only the monitoring schedules for the specified monitoring
+    /// type.</p>
+    pub fn monitoring_type_equals(&self) -> std::option::Option<&crate::model::MonitoringType> {
+        self.monitoring_type_equals.as_ref()
+    }
 }
 impl std::fmt::Debug for ListMonitoringSchedulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54109,6 +55139,73 @@ pub struct ListMonitoringExecutionsInput {
     /// type.</p>
     pub monitoring_type_equals: std::option::Option<crate::model::MonitoringType>,
 }
+impl ListMonitoringExecutionsInput {
+    /// <p>Name of a specific schedule to fetch jobs for.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>Name of a specific endpoint to fetch jobs for.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+    /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringExecutionSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
+    /// The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job
+    /// executions, use it in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filter for jobs scheduled before a specified time.</p>
+    pub fn scheduled_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_time_before.as_ref()
+    }
+    /// <p>Filter for jobs scheduled after a specified time.</p>
+    pub fn scheduled_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_time_after.as_ref()
+    }
+    /// <p>A filter that returns only jobs created before a specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only jobs created after a specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only jobs modified after a specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only jobs modified before a specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that retrieves only jobs with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>Gets a list of the monitoring job runs of the specified monitoring job
+    /// definitions.</p>
+    pub fn monitoring_job_definition_name(&self) -> std::option::Option<&str> {
+        self.monitoring_job_definition_name.as_deref()
+    }
+    /// <p>A filter that returns only the monitoring job runs of the specified monitoring
+    /// type.</p>
+    pub fn monitoring_type_equals(&self) -> std::option::Option<&crate::model::MonitoringType> {
+        self.monitoring_type_equals.as_ref()
+    }
+}
 impl std::fmt::Debug for ListMonitoringExecutionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMonitoringExecutionsInput");
@@ -54158,6 +55255,41 @@ pub struct ListModelsInput {
     /// specified time (timestamp).</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListModelsInput {
+    /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ModelSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::OrderKey> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListModels</code> request was truncated, the
+    /// response includes a <code>NextToken</code>. To retrieve the next set of models, use the
+    /// token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of models to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the model name. This filter returns only models whose
+    /// name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only models created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only models with a creation time greater than or equal to the
+    /// specified time (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ListModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelsInput");
@@ -54199,6 +55331,47 @@ pub struct ListModelQualityJobDefinitionsInput {
     /// <p>A filter that returns only model quality monitoring job definitions created after the
     /// specified time.</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListModelQualityJobDefinitionsInput {
+    /// <p>A filter that returns only model quality monitoring job definitions that are associated
+    /// with the specified endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringJobDefinitionSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// model quality monitoring job definitions, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a call to
+    /// <code>ListModelQualityJobDefinitions</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the transform job name. This filter returns only model quality monitoring
+    /// job definitions whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only model quality monitoring job definitions created before the
+    /// specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only model quality monitoring job definitions created after the
+    /// specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ListModelQualityJobDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54262,6 +55435,70 @@ pub struct ListModelPackagesInput {
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListModelPackagesInput {
+    /// <p>A filter that returns only model packages created after the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only model packages created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The maximum number of model packages to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the model package name. This filter returns only model packages whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only the model packages with the specified approval
+    /// status.</p>
+    pub fn model_approval_status(&self) -> std::option::Option<&crate::model::ModelApprovalStatus> {
+        self.model_approval_status.as_ref()
+    }
+    /// <p>A filter that returns only model versions that belong to the specified model group.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>A filter that returns onlyl the model packages of the specified type. This can be one
+    /// of the following values.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VERSIONED</code> - List only versioned models.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNVERSIONED</code> - List only unversioined models.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BOTH</code> - List both versioned and unversioned models.</p>
+    /// </li>
+    /// </ul>
+    pub fn model_package_type(&self) -> std::option::Option<&crate::model::ModelPackageType> {
+        self.model_package_type.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of model
+    /// packages, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The parameter by which to sort the results. The default is
+    /// <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ModelPackageSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListModelPackagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelPackagesInput");
@@ -54300,6 +55537,39 @@ pub struct ListModelPackageGroupsInput {
     pub sort_by: std::option::Option<crate::model::ModelPackageGroupSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListModelPackageGroupsInput {
+    /// <p>A filter that returns only model groups created after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only model groups created before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the model group name. This filter returns only model groups whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// model groups, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ModelPackageGroupSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListModelPackageGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54341,6 +55611,45 @@ pub struct ListModelExplainabilityJobDefinitionsInput {
     /// time.</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListModelExplainabilityJobDefinitionsInput {
+    /// <p>Name of the endpoint to monitor for model explainability.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
+    /// default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringJobDefinitionSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
+    /// The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job
+    /// executions, use it in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only model explainability jobs created before a specified
+    /// time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only model explainability jobs created after a specified
+    /// time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ListModelExplainabilityJobDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListModelExplainabilityJobDefinitionsInput");
@@ -54380,6 +55689,44 @@ pub struct ListModelBiasJobDefinitionsInput {
     pub creation_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A filter that returns only model bias jobs created after a specified time.</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListModelBiasJobDefinitionsInput {
+    /// <p>Name of the endpoint to monitor for model bias.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
+    /// default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringJobDefinitionSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
+    /// The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job
+    /// executions, use it in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of model bias jobs to return in the response. The default value is
+    /// 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filter for model bias jobs whose name contains a specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only model bias jobs created before a specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only model bias jobs created after a specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ListModelBiasJobDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54422,6 +55769,48 @@ pub struct ListLabelingJobsForWorkteamInput {
     pub sort_by: std::option::Option<crate::model::ListLabelingJobsForWorkteamSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListLabelingJobsForWorkteamInput {
+    /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling
+    /// jobs for.</p>
+    pub fn workteam_arn(&self) -> std::option::Option<&str> {
+        self.workteam_arn.as_deref()
+    }
+    /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// labeling jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A filter that returns only labeling jobs created after the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only labeling jobs created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter the limits jobs to only the ones whose job reference code contains the
+    /// specified string.</p>
+    pub fn job_reference_code_contains(&self) -> std::option::Option<&str> {
+        self.job_reference_code_contains.as_deref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(
+        &self,
+    ) -> std::option::Option<&crate::model::ListLabelingJobsForWorkteamSortByOptions> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListLabelingJobsForWorkteamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54473,6 +55862,55 @@ pub struct ListLabelingJobsInput {
     /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
     pub status_equals: std::option::Option<crate::model::LabelingJobStatus>,
 }
+impl ListLabelingJobsInput {
+    /// <p>A filter that returns only labeling jobs created after the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only labeling jobs created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only labeling jobs modified after the specified time
+    /// (timestamp).</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only labeling jobs modified before the specified time
+    /// (timestamp).</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the
+    /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
+    /// use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::LabelingJobStatus> {
+        self.status_equals.as_ref()
+    }
+}
 impl std::fmt::Debug for ListLabelingJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLabelingJobsInput");
@@ -54514,6 +55952,45 @@ pub struct ListImageVersionsInput {
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     pub sort_order: std::option::Option<crate::model::ImageVersionSortOrder>,
 }
+impl ListImageVersionsInput {
+    /// <p>A filter that returns only versions created on or after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only versions created on or before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The name of the image to list the versions of.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>A filter that returns only versions modified on or after the specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only versions modified on or before the specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of
+    /// versions, the call returns a token for getting the next set of versions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ImageVersionSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::ImageVersionSortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListImageVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListImageVersionsInput");
@@ -54553,6 +56030,45 @@ pub struct ListImagesInput {
     pub sort_by: std::option::Option<crate::model::ImageSortBy>,
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
     pub sort_order: std::option::Option<crate::model::ImageSortOrder>,
+}
+impl ListImagesInput {
+    /// <p>A filter that returns only images created on or after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only images created on or before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only images modified on or after the specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only images modified on or before the specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>The maximum number of images to return in the response. The default value is 10. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that returns only images whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images,
+    /// the call returns a token for getting the next set of images.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ImageSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::ImageSortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54612,6 +56128,69 @@ pub struct ListHyperParameterTuningJobsInput {
     /// status.</p>
     pub status_equals: std::option::Option<crate::model::HyperParameterTuningJobStatus>,
 }
+impl ListHyperParameterTuningJobsInput {
+    /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// tuning jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The
+    /// maximum number of tuning jobs to return. The default value is
+    /// 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The
+    /// field
+    /// to sort results by. The default is <code>Name</code>.</p>
+    pub fn sort_by(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobSortByOptions> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort
+    /// order
+    /// for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only tuning jobs that were created after the
+    /// specified
+    /// time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only tuning jobs that were created before the
+    /// specified
+    /// time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only tuning jobs that were modified after the specified
+    /// time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only tuning jobs that were modified before the specified
+    /// time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only tuning jobs with the
+    /// specified
+    /// status.</p>
+    pub fn status_equals(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobStatus> {
+        self.status_equals.as_ref()
+    }
+}
 impl std::fmt::Debug for ListHyperParameterTuningJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHyperParameterTuningJobsInput");
@@ -54644,6 +56223,28 @@ pub struct ListHumanTaskUisInput {
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListHumanTaskUisInput {
+    /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A token to resume pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListHumanTaskUisInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHumanTaskUisInput");
@@ -54670,6 +56271,28 @@ pub struct ListFlowDefinitionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListFlowDefinitionsInput {
+    /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>A token to resume pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListFlowDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54708,6 +56331,51 @@ pub struct ListFeatureGroupsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFeatureGroupsInput {
+    /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
+    /// <code>FeatureGroup</code>s by name. </p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
+    pub fn feature_group_status_equals(
+        &self,
+    ) -> std::option::Option<&crate::model::FeatureGroupStatus> {
+        self.feature_group_status_equals.as_ref()
+    }
+    /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
+    pub fn offline_store_status_equals(
+        &self,
+    ) -> std::option::Option<&crate::model::OfflineStoreStatusValue> {
+        self.offline_store_status_equals.as_ref()
+    }
+    /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
+    /// date and time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
+    /// date and time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The order in which feature groups are listed.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::FeatureGroupSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The value on which the feature group list is sorted.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::FeatureGroupSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFeatureGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54749,6 +56417,34 @@ pub struct ListExperimentsInput {
     /// <p>The maximum number of experiments to return in the response. The default value is
     /// 10.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListExperimentsInput {
+    /// <p>A filter that returns only experiments created after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only experiments created before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortExperimentsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of
+    /// experiments, the call returns a token for getting the next set of experiments.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of experiments to return in the response. The default value is
+    /// 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListExperimentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54796,6 +56492,56 @@ pub struct ListEndpointsInput {
     /// <p> A filter that returns only endpoints with the specified status.</p>
     pub status_equals: std::option::Option<crate::model::EndpointStatus>,
 }
+impl ListEndpointsInput {
+    /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::EndpointSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::OrderKey> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response
+    /// includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token
+    /// in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of endpoints to return in the response. This value defaults to
+    /// 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in endpoint names. This filter returns only endpoints whose name contains
+    /// the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only endpoints that were created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only endpoints with a creation time greater than or equal to
+    /// the specified time (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p> A filter that returns only endpoints that were modified before the specified
+    /// timestamp. </p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p> A filter that returns only endpoints that were modified after the specified
+    /// timestamp. </p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p> A filter that returns only endpoints with the specified status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+        self.status_equals.as_ref()
+    }
+}
 impl std::fmt::Debug for ListEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEndpointsInput");
@@ -54836,6 +56582,41 @@ pub struct ListEndpointConfigsInput {
     /// <p>A filter that returns only endpoint configurations with a creation time greater
     /// than or equal to the specified time (timestamp).</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ListEndpointConfigsInput {
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::EndpointConfigSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::OrderKey> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// endpoint configurations, use the token in the next request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of training jobs to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint
+    /// configurations whose name contains the specified string. </p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only endpoint configurations created before the specified
+    /// time (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only endpoint configurations with a creation time greater
+    /// than or equal to the specified time (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ListEndpointConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54878,6 +56659,52 @@ pub struct ListEdgePackagingJobsInput {
     /// <p>What direction to sort by.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListEdgePackagingJobsInput {
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to select.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Select jobs where the job was created after specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Select jobs where the job was created before specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Select jobs where the job was updated after specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>Select jobs where the job was updated before specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>Filter for jobs containing this name in their packaging job name.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>Filter for jobs where the model name contains this string.</p>
+    pub fn model_name_contains(&self) -> std::option::Option<&str> {
+        self.model_name_contains.as_deref()
+    }
+    /// <p>The job status to filter for.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::EdgePackagingJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>Use to specify what column to sort by.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListEdgePackagingJobsSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>What direction to sort by.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListEdgePackagingJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEdgePackagingJobsInput");
@@ -54906,6 +56733,17 @@ pub struct ListDomainsInput {
     /// <p>Returns a list up to a specified limit.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDomainsInput {
+    /// <p>If the previous response was truncated, you will receive this token.
+    /// Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns a list up to a specified limit.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDomainsInput");
@@ -54929,6 +56767,28 @@ pub struct ListDevicesInput {
     pub model_name: std::option::Option<std::string::String>,
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
+}
+impl ListDevicesInput {
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Maximum number of results to select.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Select fleets where the job was updated after X</p>
+    pub fn latest_heartbeat_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_heartbeat_after.as_ref()
+    }
+    /// <p>A filter that searches devices that contains this name in any of their models.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>Filter for fleets containing this name in their device fleet name.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54964,6 +56824,44 @@ pub struct ListDeviceFleetsInput {
     pub sort_by: std::option::Option<crate::model::ListDeviceFleetsSortBy>,
     /// <p>What direction to sort in.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListDeviceFleetsInput {
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to select.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Filter fleets where packaging job was created after specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Select fleets where the job was updated after X</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>Select fleets where the job was updated before X</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>Filter for fleets containing this name in their fleet device name.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>The column to sort by.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListDeviceFleetsSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>What direction to sort in.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDeviceFleetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55009,6 +56907,47 @@ pub struct ListDataQualityJobDefinitionsInput {
     /// specified time.</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ListDataQualityJobDefinitionsInput {
+    /// <p>A filter that lists the data quality job definitions associated with the specified
+    /// endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::MonitoringJobDefinitionSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
+    /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
+    /// transform jobs, use the token in the next request.></p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of data quality monitoring job definitions to return in the
+    /// response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the data quality monitoring job definition name. This filter returns only
+    /// data quality monitoring job definitions whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only data quality monitoring job definitions created before the
+    /// specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only data quality monitoring job definitions created after the
+    /// specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+}
 impl std::fmt::Debug for ListDataQualityJobDefinitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDataQualityJobDefinitionsInput");
@@ -55045,6 +56984,41 @@ pub struct ListContextsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListContextsInput {
+    /// <p>A filter that returns only contexts with the specified source URI.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+    /// <p>A filter that returns only contexts of the specified type.</p>
+    pub fn context_type(&self) -> std::option::Option<&str> {
+        self.context_type.as_deref()
+    }
+    /// <p>A filter that returns only contexts created on or after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only contexts created on or before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortContextsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts,
+    /// the call returns a token for getting the next set of contexts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListContextsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55093,6 +57067,55 @@ pub struct ListCompilationJobsInput {
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListCompilationJobsInput {
+    /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
+    /// the response includes a <code>NextToken</code>. To retrieve the next set of model
+    /// compilation jobs, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of model compilation jobs to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A filter that returns the model compilation jobs that were created after a specified
+    /// time. </p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns the model compilation jobs that were created before a specified
+    /// time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns the model compilation jobs that were modified after a specified
+    /// time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns the model compilation jobs that were modified before a specified
+    /// time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns the model compilation jobs whose name contains a specified
+    /// string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::CompilationJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::ListCompilationJobsSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListCompilationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCompilationJobsInput");
@@ -55140,6 +57163,51 @@ pub struct ListCodeRepositoriesInput {
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::CodeRepositorySortOrder>,
 }
+impl ListCodeRepositoriesInput {
+    /// <p>A filter that returns only Git repositories that were created after the specified
+    /// time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only Git repositories that were created before the specified
+    /// time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only Git repositories that were last modified after the
+    /// specified time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only Git repositories that were last modified before the
+    /// specified time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>The maximum number of Git repositories to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the Git repositories name. This filter returns only repositories whose
+    /// name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
+    /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
+    /// the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::CodeRepositorySortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::CodeRepositorySortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListCodeRepositoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCodeRepositoriesInput");
@@ -55176,6 +57244,38 @@ pub struct ListCandidatesForAutoMlJobInput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next
     /// request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCandidatesForAutoMlJobInput {
+    /// <p>List the candidates created for the job by providing the job's name.</p>
+    pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_name.as_deref()
+    }
+    /// <p>List the candidates for the job and filter by status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::CandidateStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>List the candidates for the job and filter by candidate name.</p>
+    pub fn candidate_name_equals(&self) -> std::option::Option<&str> {
+        self.candidate_name_equals.as_deref()
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::AutoMlSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The parameter by which to sort the results. The default is
+    /// <code>Descending</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::CandidateSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>List the job's candidates up to a specified limit.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next
+    /// request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCandidatesForAutoMlJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55216,6 +57316,49 @@ pub struct ListAutoMlJobsInput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next
     /// request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAutoMlJobsInput {
+    /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>Request a list of jobs, using a search filter for name.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>Request a list of jobs, using a filter for status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::AutoMlJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::AutoMlSortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::AutoMlSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>Request a list of jobs up to a specified limit.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next
+    /// request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAutoMlJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55262,6 +57405,53 @@ pub struct ListAssociationsInput {
     /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAssociationsInput {
+    /// <p>A filter that returns only associations with the specified source ARN.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>A filter that returns only associations with the specified source type.</p>
+    pub fn source_type(&self) -> std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
+    /// <p>A filter that returns only associations with the specified destination type.</p>
+    pub fn destination_type(&self) -> std::option::Option<&str> {
+        self.destination_type.as_deref()
+    }
+    /// <p>A filter that returns only associations of the specified type.</p>
+    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationEdgeType> {
+        self.association_type.as_ref()
+    }
+    /// <p>A filter that returns only associations created on or after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only associations created on or before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortAssociationsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations,
+    /// the call returns a token for getting the next set of associations.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAssociationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssociationsInput");
@@ -55302,6 +57492,41 @@ pub struct ListArtifactsInput {
     /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListArtifactsInput {
+    /// <p>A filter that returns only artifacts with the specified source URI.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+    /// <p>A filter that returns only artifacts of the specified type.</p>
+    pub fn artifact_type(&self) -> std::option::Option<&str> {
+        self.artifact_type.as_deref()
+    }
+    /// <p>A filter that returns only artifacts created on or after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only artifacts created on or before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortArtifactsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
+    /// the call returns a token for getting the next set of artifacts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListArtifactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListArtifactsInput");
@@ -55334,6 +57559,33 @@ pub struct ListAppsInput {
     pub domain_id_equals: std::option::Option<std::string::String>,
     /// <p>A parameter to search by user profile name.</p>
     pub user_profile_name_equals: std::option::Option<std::string::String>,
+}
+impl ListAppsInput {
+    /// <p>If the previous response was truncated, you will receive this token.
+    /// Use it in your next request to receive the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns a list up to a specified limit.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The sort order for the results. The default is Ascending.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::AppSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>A parameter to search for the domain ID.</p>
+    pub fn domain_id_equals(&self) -> std::option::Option<&str> {
+        self.domain_id_equals.as_deref()
+    }
+    /// <p>A parameter to search by user profile name.</p>
+    pub fn user_profile_name_equals(&self) -> std::option::Option<&str> {
+        self.user_profile_name_equals.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55372,6 +57624,46 @@ pub struct ListAppImageConfigsInput {
     pub sort_by: std::option::Option<crate::model::AppImageConfigSortKey>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
+}
+impl ListAppImageConfigsInput {
+    /// <p>The maximum number of AppImageConfigs to return in the response. The default value is
+    /// 10. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the previous call to <code>ListImages</code> didn't return the full set of
+    /// AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
+    pub fn modified_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_time_before.as_ref()
+    }
+    /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
+    pub fn modified_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.modified_time_after.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::AppImageConfigSortKey> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
 }
 impl std::fmt::Debug for ListAppImageConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55414,6 +57706,42 @@ pub struct ListAlgorithmsInput {
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
+impl ListAlgorithmsInput {
+    /// <p>A filter that returns only algorithms created after the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only algorithms created before the specified time
+    /// (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>The maximum number of algorithms to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A string in the algorithm name. This filter returns only algorithms whose name
+    /// contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the
+    /// response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use
+    /// the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The parameter by which to sort the results. The default is
+    /// <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::AlgorithmSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAlgorithmsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlgorithmsInput");
@@ -55450,6 +57778,41 @@ pub struct ListActionsInput {
     /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListActionsInput {
+    /// <p>A filter that returns only actions with the specified source URI.</p>
+    pub fn source_uri(&self) -> std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
+    /// <p>A filter that returns only actions of the specified type.</p>
+    pub fn action_type(&self) -> std::option::Option<&str> {
+        self.action_type.as_deref()
+    }
+    /// <p>A filter that returns only actions created on or after the specified time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_after.as_ref()
+    }
+    /// <p>A filter that returns only actions created on or before the specified time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_before.as_ref()
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortActionsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions,
+    /// the call returns a token for getting the next set of actions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActionsInput");
@@ -55473,6 +57836,16 @@ pub struct GetSearchSuggestionsInput {
     pub resource: std::option::Option<crate::model::ResourceType>,
     /// <p>Limits the property names that are included in the response.</p>
     pub suggestion_query: std::option::Option<crate::model::SuggestionQuery>,
+}
+impl GetSearchSuggestionsInput {
+    /// <p>The name of the Amazon SageMaker resource to search for.</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource.as_ref()
+    }
+    /// <p>Limits the property names that are included in the response.</p>
+    pub fn suggestion_query(&self) -> std::option::Option<&crate::model::SuggestionQuery> {
+        self.suggestion_query.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSearchSuggestionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55501,6 +57874,12 @@ pub struct GetModelPackageGroupPolicyInput {
     /// <p>The name of the model group for which to get the resource policy.</p>
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
+impl GetModelPackageGroupPolicyInput {
+    /// <p>The name of the model group for which to get the resource policy.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetModelPackageGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetModelPackageGroupPolicyInput");
@@ -55515,6 +57894,12 @@ impl std::fmt::Debug for GetModelPackageGroupPolicyInput {
 pub struct GetDeviceFleetReportInput {
     /// <p>The name of the fleet.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
+}
+impl GetDeviceFleetReportInput {
+    /// <p>The name of the fleet.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceFleetReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55544,6 +57929,16 @@ pub struct DisassociateTrialComponentInput {
     /// <p>The name of the trial to disassociate from.</p>
     pub trial_name: std::option::Option<std::string::String>,
 }
+impl DisassociateTrialComponentInput {
+    /// <p>The name of the component to disassociate from the trial.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+    /// <p>The name of the trial to disassociate from.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateTrialComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateTrialComponentInput");
@@ -55571,6 +57966,12 @@ pub struct DescribeWorkteamInput {
     /// <p>The name of the work team to return a description of.</p>
     pub workteam_name: std::option::Option<std::string::String>,
 }
+impl DescribeWorkteamInput {
+    /// <p>The name of the work team to return a description of.</p>
+    pub fn workteam_name(&self) -> std::option::Option<&str> {
+        self.workteam_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeWorkteamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeWorkteamInput");
@@ -55587,6 +57988,14 @@ pub struct DescribeWorkforceInput {
     /// <code>WorkforceName</code> is automatically set to <code>default</code> when a
     /// workforce is created and cannot be modified. </p>
     pub workforce_name: std::option::Option<std::string::String>,
+}
+impl DescribeWorkforceInput {
+    /// <p>The name of the private workforce whose access you want to restrict.
+    /// <code>WorkforceName</code> is automatically set to <code>default</code> when a
+    /// workforce is created and cannot be modified. </p>
+    pub fn workforce_name(&self) -> std::option::Option<&str> {
+        self.workforce_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeWorkforceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55605,6 +58014,16 @@ pub struct DescribeUserProfileInput {
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub user_profile_name: std::option::Option<std::string::String>,
 }
+impl DescribeUserProfileInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name. This value is not case sensitive.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserProfileInput");
@@ -55621,6 +58040,12 @@ pub struct DescribeTrialComponentInput {
     /// <p>The name of the trial component to describe.</p>
     pub trial_component_name: std::option::Option<std::string::String>,
 }
+impl DescribeTrialComponentInput {
+    /// <p>The name of the trial component to describe.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTrialComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTrialComponentInput");
@@ -55635,6 +58060,12 @@ impl std::fmt::Debug for DescribeTrialComponentInput {
 pub struct DescribeTrialInput {
     /// <p>The name of the trial to describe.</p>
     pub trial_name: std::option::Option<std::string::String>,
+}
+impl DescribeTrialInput {
+    /// <p>The name of the trial to describe.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55651,6 +58082,12 @@ pub struct DescribeTransformJobInput {
     /// <p>The name of the transform job that you want to view details of.</p>
     pub transform_job_name: std::option::Option<std::string::String>,
 }
+impl DescribeTransformJobInput {
+    /// <p>The name of the transform job that you want to view details of.</p>
+    pub fn transform_job_name(&self) -> std::option::Option<&str> {
+        self.transform_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeTransformJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTransformJobInput");
@@ -55665,6 +58102,12 @@ impl std::fmt::Debug for DescribeTransformJobInput {
 pub struct DescribeTrainingJobInput {
     /// <p>The name of the training job.</p>
     pub training_job_name: std::option::Option<std::string::String>,
+}
+impl DescribeTrainingJobInput {
+    /// <p>The name of the training job.</p>
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
+        self.training_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTrainingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55681,6 +58124,12 @@ pub struct DescribeSubscribedWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     pub workteam_arn: std::option::Option<std::string::String>,
 }
+impl DescribeSubscribedWorkteamInput {
+    /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+    pub fn workteam_arn(&self) -> std::option::Option<&str> {
+        self.workteam_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSubscribedWorkteamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscribedWorkteamInput");
@@ -55695,6 +58144,12 @@ impl std::fmt::Debug for DescribeSubscribedWorkteamInput {
 pub struct DescribeStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+}
+impl DescribeStudioLifecycleConfigInput {
+    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStudioLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55714,6 +58169,12 @@ pub struct DescribeProjectInput {
     /// <p>The name of the project to describe.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
+impl DescribeProjectInput {
+    /// <p>The name of the project to describe.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectInput");
@@ -55730,6 +58191,13 @@ pub struct DescribeProcessingJobInput {
     /// Amazon Web Services account.</p>
     pub processing_job_name: std::option::Option<std::string::String>,
 }
+impl DescribeProcessingJobInput {
+    /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
+    pub fn processing_job_name(&self) -> std::option::Option<&str> {
+        self.processing_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProcessingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProcessingJobInput");
@@ -55744,6 +58212,12 @@ impl std::fmt::Debug for DescribeProcessingJobInput {
 pub struct DescribePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
+}
+impl DescribePipelineExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePipelineExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55760,6 +58234,12 @@ pub struct DescribePipelineDefinitionForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
 }
+impl DescribePipelineDefinitionForExecutionInput {
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+        self.pipeline_execution_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePipelineDefinitionForExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipelineDefinitionForExecutionInput");
@@ -55775,6 +58255,12 @@ pub struct DescribePipelineInput {
     /// <p>The name of the pipeline to describe.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
 }
+impl DescribePipelineInput {
+    /// <p>The name of the pipeline to describe.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipelineInput");
@@ -55789,6 +58275,12 @@ impl std::fmt::Debug for DescribePipelineInput {
 pub struct DescribeNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration to describe.</p>
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
+}
+impl DescribeNotebookInstanceLifecycleConfigInput {
+    /// <p>The name of the lifecycle configuration to describe.</p>
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNotebookInstanceLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55808,6 +58300,12 @@ pub struct DescribeNotebookInstanceInput {
     /// <p>The name of the notebook instance that you want information about.</p>
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
+impl DescribeNotebookInstanceInput {
+    /// <p>The name of the notebook instance that you want information about.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNotebookInstanceInput");
@@ -55822,6 +58320,12 @@ impl std::fmt::Debug for DescribeNotebookInstanceInput {
 pub struct DescribeMonitoringScheduleInput {
     /// <p>Name of a previously created monitoring schedule.</p>
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
+}
+impl DescribeMonitoringScheduleInput {
+    /// <p>Name of a previously created monitoring schedule.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55839,6 +58343,13 @@ pub struct DescribeModelQualityJobDefinitionInput {
     /// Amazon Web Services account.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
 }
+impl DescribeModelQualityJobDefinitionInput {
+    /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeModelQualityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelQualityJobDefinitionInput");
@@ -55853,6 +58364,12 @@ impl std::fmt::Debug for DescribeModelQualityJobDefinitionInput {
 pub struct DescribeModelPackageGroupInput {
     /// <p>The name of the model group to describe.</p>
     pub model_package_group_name: std::option::Option<std::string::String>,
+}
+impl DescribeModelPackageGroupInput {
+    /// <p>The name of the model group to describe.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeModelPackageGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55871,6 +58388,14 @@ pub struct DescribeModelPackageInput {
     /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub model_package_name: std::option::Option<std::string::String>,
 }
+impl DescribeModelPackageInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+    /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
+    /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    pub fn model_package_name(&self) -> std::option::Option<&str> {
+        self.model_package_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelPackageInput");
@@ -55886,6 +58411,13 @@ pub struct DescribeModelExplainabilityJobDefinitionInput {
     /// <p>The name of the model explainability job definition. The name must be unique within an
     /// Amazon Web Services Region in the Amazon Web Services account.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
+}
+impl DescribeModelExplainabilityJobDefinitionInput {
+    /// <p>The name of the model explainability job definition. The name must be unique within an
+    /// Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeModelExplainabilityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55903,6 +58435,13 @@ pub struct DescribeModelBiasJobDefinitionInput {
     /// in the Amazon Web Services account.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
 }
+impl DescribeModelBiasJobDefinitionInput {
+    /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region
+    /// in the Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeModelBiasJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelBiasJobDefinitionInput");
@@ -55918,6 +58457,12 @@ pub struct DescribeModelInput {
     /// <p>The name of the model.</p>
     pub model_name: std::option::Option<std::string::String>,
 }
+impl DescribeModelInput {
+    /// <p>The name of the model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelInput");
@@ -55932,6 +58477,12 @@ impl std::fmt::Debug for DescribeModelInput {
 pub struct DescribeLabelingJobInput {
     /// <p>The name of the labeling job to return information for.</p>
     pub labeling_job_name: std::option::Option<std::string::String>,
+}
+impl DescribeLabelingJobInput {
+    /// <p>The name of the labeling job to return information for.</p>
+    pub fn labeling_job_name(&self) -> std::option::Option<&str> {
+        self.labeling_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLabelingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55950,6 +58501,16 @@ pub struct DescribeImageVersionInput {
     /// <p>The version of the image. If not specified, the latest version is described.</p>
     pub version: std::option::Option<i32>,
 }
+impl DescribeImageVersionInput {
+    /// <p>The name of the image.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The version of the image. If not specified, the latest version is described.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+}
 impl std::fmt::Debug for DescribeImageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImageVersionInput");
@@ -55966,6 +58527,12 @@ pub struct DescribeImageInput {
     /// <p>The name of the image to describe.</p>
     pub image_name: std::option::Option<std::string::String>,
 }
+impl DescribeImageInput {
+    /// <p>The name of the image to describe.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeImageInput");
@@ -55980,6 +58547,12 @@ impl std::fmt::Debug for DescribeImageInput {
 pub struct DescribeHyperParameterTuningJobInput {
     /// <p>The name of the tuning job.</p>
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+}
+impl DescribeHyperParameterTuningJobInput {
+    /// <p>The name of the tuning job.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeHyperParameterTuningJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56000,6 +58573,13 @@ pub struct DescribeHumanTaskUiInput {
     /// (worker task template) you want information about.</p>
     pub human_task_ui_name: std::option::Option<std::string::String>,
 }
+impl DescribeHumanTaskUiInput {
+    /// <p>The name of the human task user interface
+    /// (worker task template) you want information about.</p>
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
+        self.human_task_ui_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeHumanTaskUiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeHumanTaskUiInput");
@@ -56014,6 +58594,12 @@ impl std::fmt::Debug for DescribeHumanTaskUiInput {
 pub struct DescribeFlowDefinitionInput {
     /// <p>The name of the flow definition.</p>
     pub flow_definition_name: std::option::Option<std::string::String>,
+}
+impl DescribeFlowDefinitionInput {
+    /// <p>The name of the flow definition.</p>
+    pub fn flow_definition_name(&self) -> std::option::Option<&str> {
+        self.flow_definition_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFlowDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56034,6 +58620,18 @@ pub struct DescribeFeatureGroupInput {
     /// default.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFeatureGroupInput {
+    /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>A token to resume pagination of the list of <code>Features</code>
+    /// (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by
+    /// default.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFeatureGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFeatureGroupInput");
@@ -56050,6 +58648,12 @@ pub struct DescribeExperimentInput {
     /// <p>The name of the experiment to describe.</p>
     pub experiment_name: std::option::Option<std::string::String>,
 }
+impl DescribeExperimentInput {
+    /// <p>The name of the experiment to describe.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExperimentInput");
@@ -56064,6 +58668,12 @@ impl std::fmt::Debug for DescribeExperimentInput {
 pub struct DescribeEndpointConfigInput {
     /// <p>The name of the endpoint configuration.</p>
     pub endpoint_config_name: std::option::Option<std::string::String>,
+}
+impl DescribeEndpointConfigInput {
+    /// <p>The name of the endpoint configuration.</p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEndpointConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56080,6 +58690,12 @@ pub struct DescribeEndpointInput {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
 }
+impl DescribeEndpointInput {
+    /// <p>The name of the endpoint.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEndpointInput");
@@ -56094,6 +58710,12 @@ impl std::fmt::Debug for DescribeEndpointInput {
 pub struct DescribeEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
+}
+impl DescribeEdgePackagingJobInput {
+    /// <p>The name of the edge packaging job.</p>
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeEdgePackagingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56110,6 +58732,12 @@ pub struct DescribeDomainInput {
     /// <p>The domain ID.</p>
     pub domain_id: std::option::Option<std::string::String>,
 }
+impl DescribeDomainInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainInput");
@@ -56124,6 +58752,12 @@ impl std::fmt::Debug for DescribeDomainInput {
 pub struct DescribeDeviceFleetInput {
     /// <p>The name of the fleet.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
+}
+impl DescribeDeviceFleetInput {
+    /// <p>The name of the fleet.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56144,6 +58778,20 @@ pub struct DescribeDeviceInput {
     /// <p>The name of the fleet the devices belong to.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
+impl DescribeDeviceInput {
+    /// <p>Next token of device description.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The unique ID of the device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The name of the fleet the devices belong to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDeviceInput");
@@ -56161,6 +58809,12 @@ pub struct DescribeDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to describe.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
 }
+impl DescribeDataQualityJobDefinitionInput {
+    /// <p>The name of the data quality monitoring job definition to describe.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeDataQualityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDataQualityJobDefinitionInput");
@@ -56175,6 +58829,12 @@ impl std::fmt::Debug for DescribeDataQualityJobDefinitionInput {
 pub struct DescribeContextInput {
     /// <p>The name of the context to describe.</p>
     pub context_name: std::option::Option<std::string::String>,
+}
+impl DescribeContextInput {
+    /// <p>The name of the context to describe.</p>
+    pub fn context_name(&self) -> std::option::Option<&str> {
+        self.context_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeContextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56191,6 +58851,12 @@ pub struct DescribeCompilationJobInput {
     /// <p>The name of the model compilation job that you want information about.</p>
     pub compilation_job_name: std::option::Option<std::string::String>,
 }
+impl DescribeCompilationJobInput {
+    /// <p>The name of the model compilation job that you want information about.</p>
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+        self.compilation_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCompilationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCompilationJobInput");
@@ -56205,6 +58871,12 @@ impl std::fmt::Debug for DescribeCompilationJobInput {
 pub struct DescribeCodeRepositoryInput {
     /// <p>The name of the Git repository to describe.</p>
     pub code_repository_name: std::option::Option<std::string::String>,
+}
+impl DescribeCodeRepositoryInput {
+    /// <p>The name of the Git repository to describe.</p>
+    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+        self.code_repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCodeRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56221,6 +58893,12 @@ pub struct DescribeAutoMlJobInput {
     /// <p>Requests information about an AutoML job using its unique name.</p>
     pub auto_ml_job_name: std::option::Option<std::string::String>,
 }
+impl DescribeAutoMlJobInput {
+    /// <p>Requests information about an AutoML job using its unique name.</p>
+    pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAutoMlJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAutoMlJobInput");
@@ -56236,6 +58914,12 @@ pub struct DescribeArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
     pub artifact_arn: std::option::Option<std::string::String>,
 }
+impl DescribeArtifactInput {
+    /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeArtifactInput");
@@ -56250,6 +58934,12 @@ impl std::fmt::Debug for DescribeArtifactInput {
 pub struct DescribeAppImageConfigInput {
     /// <p>The name of the AppImageConfig to describe.</p>
     pub app_image_config_name: std::option::Option<std::string::String>,
+}
+impl DescribeAppImageConfigInput {
+    /// <p>The name of the AppImageConfig to describe.</p>
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
+        self.app_image_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAppImageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56272,6 +58962,24 @@ pub struct DescribeAppInput {
     /// <p>The name of the app.</p>
     pub app_name: std::option::Option<std::string::String>,
 }
+impl DescribeAppInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>The type of app.</p>
+    pub fn app_type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.app_type.as_ref()
+    }
+    /// <p>The name of the app.</p>
+    pub fn app_name(&self) -> std::option::Option<&str> {
+        self.app_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInput");
@@ -56290,6 +58998,12 @@ pub struct DescribeAlgorithmInput {
     /// <p>The name of the algorithm to describe.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
 }
+impl DescribeAlgorithmInput {
+    /// <p>The name of the algorithm to describe.</p>
+    pub fn algorithm_name(&self) -> std::option::Option<&str> {
+        self.algorithm_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAlgorithmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlgorithmInput");
@@ -56304,6 +59018,12 @@ impl std::fmt::Debug for DescribeAlgorithmInput {
 pub struct DescribeActionInput {
     /// <p>The name of the action to describe.</p>
     pub action_name: std::option::Option<std::string::String>,
+}
+impl DescribeActionInput {
+    /// <p>The name of the action to describe.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56322,6 +59042,16 @@ pub struct DeregisterDevicesInput {
     /// <p>The unique IDs of the devices.</p>
     pub device_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeregisterDevicesInput {
+    /// <p>The name of the fleet the devices belong to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The unique IDs of the devices.</p>
+    pub fn device_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_names.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterDevicesInput");
@@ -56338,6 +59068,12 @@ pub struct DeleteWorkteamInput {
     /// <p>The name of the work team to delete.</p>
     pub workteam_name: std::option::Option<std::string::String>,
 }
+impl DeleteWorkteamInput {
+    /// <p>The name of the work team to delete.</p>
+    pub fn workteam_name(&self) -> std::option::Option<&str> {
+        self.workteam_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteWorkteamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteWorkteamInput");
@@ -56352,6 +59088,12 @@ impl std::fmt::Debug for DeleteWorkteamInput {
 pub struct DeleteWorkforceInput {
     /// <p>The name of the workforce.</p>
     pub workforce_name: std::option::Option<std::string::String>,
+}
+impl DeleteWorkforceInput {
+    /// <p>The name of the workforce.</p>
+    pub fn workforce_name(&self) -> std::option::Option<&str> {
+        self.workforce_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteWorkforceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56370,6 +59112,16 @@ pub struct DeleteUserProfileInput {
     /// <p>The user profile name.</p>
     pub user_profile_name: std::option::Option<std::string::String>,
 }
+impl DeleteUserProfileInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserProfileInput");
@@ -56386,6 +59138,12 @@ pub struct DeleteTrialComponentInput {
     /// <p>The name of the component to delete.</p>
     pub trial_component_name: std::option::Option<std::string::String>,
 }
+impl DeleteTrialComponentInput {
+    /// <p>The name of the component to delete.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTrialComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTrialComponentInput");
@@ -56400,6 +59158,12 @@ impl std::fmt::Debug for DeleteTrialComponentInput {
 pub struct DeleteTrialInput {
     /// <p>The name of the trial to delete.</p>
     pub trial_name: std::option::Option<std::string::String>,
+}
+impl DeleteTrialInput {
+    /// <p>The name of the trial to delete.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTrialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56419,6 +59183,17 @@ pub struct DeleteTagsInput {
     /// <p>An array or one or more tag keys to delete.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
+    /// delete.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array or one or more tag keys to delete.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTagsInput");
@@ -56434,6 +59209,12 @@ impl std::fmt::Debug for DeleteTagsInput {
 pub struct DeleteStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
+}
+impl DeleteStudioLifecycleConfigInput {
+    /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStudioLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56453,6 +59234,12 @@ pub struct DeleteProjectInput {
     /// <p>The name of the project to delete.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
+impl DeleteProjectInput {
+    /// <p>The name of the project to delete.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteProjectInput");
@@ -56471,6 +59258,17 @@ pub struct DeletePipelineInput {
     /// operation. An idempotent operation completes no more than one time.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
+impl DeletePipelineInput {
+    /// <p>The name of the pipeline to delete.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than one time.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePipelineInput");
@@ -56486,6 +59284,12 @@ impl std::fmt::Debug for DeletePipelineInput {
 pub struct DeleteNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration to delete.</p>
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
+}
+impl DeleteNotebookInstanceLifecycleConfigInput {
+    /// <p>The name of the lifecycle configuration to delete.</p>
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNotebookInstanceLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56505,6 +59309,12 @@ pub struct DeleteNotebookInstanceInput {
     /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
+impl DeleteNotebookInstanceInput {
+    /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNotebookInstanceInput");
@@ -56519,6 +59329,12 @@ impl std::fmt::Debug for DeleteNotebookInstanceInput {
 pub struct DeleteMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule to delete.</p>
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
+}
+impl DeleteMonitoringScheduleInput {
+    /// <p>The name of the monitoring schedule to delete.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56535,6 +59351,12 @@ pub struct DeleteModelQualityJobDefinitionInput {
     /// <p>The name of the model quality monitoring job definition to delete.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
 }
+impl DeleteModelQualityJobDefinitionInput {
+    /// <p>The name of the model quality monitoring job definition to delete.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteModelQualityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelQualityJobDefinitionInput");
@@ -56550,6 +59372,12 @@ pub struct DeleteModelPackageGroupPolicyInput {
     /// <p>The name of the model group for which to delete the policy.</p>
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteModelPackageGroupPolicyInput {
+    /// <p>The name of the model group for which to delete the policy.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteModelPackageGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelPackageGroupPolicyInput");
@@ -56564,6 +59392,12 @@ impl std::fmt::Debug for DeleteModelPackageGroupPolicyInput {
 pub struct DeleteModelPackageGroupInput {
     /// <p>The name of the model group to delete.</p>
     pub model_package_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteModelPackageGroupInput {
+    /// <p>The name of the model group to delete.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelPackageGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56582,6 +59416,14 @@ pub struct DeleteModelPackageInput {
     /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub model_package_name: std::option::Option<std::string::String>,
 }
+impl DeleteModelPackageInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
+    /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
+    /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    pub fn model_package_name(&self) -> std::option::Option<&str> {
+        self.model_package_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelPackageInput");
@@ -56596,6 +59438,12 @@ impl std::fmt::Debug for DeleteModelPackageInput {
 pub struct DeleteModelExplainabilityJobDefinitionInput {
     /// <p>The name of the model explainability job definition to delete.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
+}
+impl DeleteModelExplainabilityJobDefinitionInput {
+    /// <p>The name of the model explainability job definition to delete.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelExplainabilityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56612,6 +59460,12 @@ pub struct DeleteModelBiasJobDefinitionInput {
     /// <p>The name of the model bias job definition to delete.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
 }
+impl DeleteModelBiasJobDefinitionInput {
+    /// <p>The name of the model bias job definition to delete.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteModelBiasJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelBiasJobDefinitionInput");
@@ -56626,6 +59480,12 @@ impl std::fmt::Debug for DeleteModelBiasJobDefinitionInput {
 pub struct DeleteModelInput {
     /// <p>The name of the model to delete.</p>
     pub model_name: std::option::Option<std::string::String>,
+}
+impl DeleteModelInput {
+    /// <p>The name of the model to delete.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56644,6 +59504,16 @@ pub struct DeleteImageVersionInput {
     /// <p>The version to delete.</p>
     pub version: std::option::Option<i32>,
 }
+impl DeleteImageVersionInput {
+    /// <p>The name of the image.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The version to delete.</p>
+    pub fn version(&self) -> std::option::Option<i32> {
+        self.version
+    }
+}
 impl std::fmt::Debug for DeleteImageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageVersionInput");
@@ -56660,6 +59530,12 @@ pub struct DeleteImageInput {
     /// <p>The name of the image to delete.</p>
     pub image_name: std::option::Option<std::string::String>,
 }
+impl DeleteImageInput {
+    /// <p>The name of the image to delete.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteImageInput");
@@ -56675,6 +59551,12 @@ pub struct DeleteHumanTaskUiInput {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
     pub human_task_ui_name: std::option::Option<std::string::String>,
 }
+impl DeleteHumanTaskUiInput {
+    /// <p>The name of the human task user interface (work task template) you want to delete.</p>
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
+        self.human_task_ui_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteHumanTaskUiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteHumanTaskUiInput");
@@ -56689,6 +59571,12 @@ impl std::fmt::Debug for DeleteHumanTaskUiInput {
 pub struct DeleteFlowDefinitionInput {
     /// <p>The name of the flow definition you are deleting.</p>
     pub flow_definition_name: std::option::Option<std::string::String>,
+}
+impl DeleteFlowDefinitionInput {
+    /// <p>The name of the flow definition you are deleting.</p>
+    pub fn flow_definition_name(&self) -> std::option::Option<&str> {
+        self.flow_definition_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFlowDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56706,6 +59594,13 @@ pub struct DeleteFeatureGroupInput {
     /// within an Amazon Web Services Region in an Amazon Web Services account. </p>
     pub feature_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteFeatureGroupInput {
+    /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
+    /// within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFeatureGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFeatureGroupInput");
@@ -56720,6 +59615,12 @@ impl std::fmt::Debug for DeleteFeatureGroupInput {
 pub struct DeleteExperimentInput {
     /// <p>The name of the experiment to delete.</p>
     pub experiment_name: std::option::Option<std::string::String>,
+}
+impl DeleteExperimentInput {
+    /// <p>The name of the experiment to delete.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56736,6 +59637,12 @@ pub struct DeleteEndpointConfigInput {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
     pub endpoint_config_name: std::option::Option<std::string::String>,
 }
+impl DeleteEndpointConfigInput {
+    /// <p>The name of the endpoint configuration that you want to delete.</p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEndpointConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEndpointConfigInput");
@@ -56750,6 +59657,12 @@ impl std::fmt::Debug for DeleteEndpointConfigInput {
 pub struct DeleteEndpointInput {
     /// <p>The name of the endpoint that you want to delete.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
+}
+impl DeleteEndpointInput {
+    /// <p>The name of the endpoint that you want to delete.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56770,6 +59683,18 @@ pub struct DeleteDomainInput {
     /// </p>
     pub retention_policy: std::option::Option<crate::model::RetentionPolicy>,
 }
+impl DeleteDomainInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted.
+    /// By default, all resources are retained (not automatically deleted).
+    /// </p>
+    pub fn retention_policy(&self) -> std::option::Option<&crate::model::RetentionPolicy> {
+        self.retention_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDomainInput");
@@ -56786,6 +59711,12 @@ pub struct DeleteDeviceFleetInput {
     /// <p>The name of the fleet to delete.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
+impl DeleteDeviceFleetInput {
+    /// <p>The name of the fleet to delete.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceFleetInput");
@@ -56800,6 +59731,12 @@ impl std::fmt::Debug for DeleteDeviceFleetInput {
 pub struct DeleteDataQualityJobDefinitionInput {
     /// <p>The name of the data quality monitoring job definition to delete.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
+}
+impl DeleteDataQualityJobDefinitionInput {
+    /// <p>The name of the data quality monitoring job definition to delete.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteDataQualityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56816,6 +59753,12 @@ pub struct DeleteContextInput {
     /// <p>The name of the context to delete.</p>
     pub context_name: std::option::Option<std::string::String>,
 }
+impl DeleteContextInput {
+    /// <p>The name of the context to delete.</p>
+    pub fn context_name(&self) -> std::option::Option<&str> {
+        self.context_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteContextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteContextInput");
@@ -56830,6 +59773,12 @@ impl std::fmt::Debug for DeleteContextInput {
 pub struct DeleteCodeRepositoryInput {
     /// <p>The name of the Git repository to delete.</p>
     pub code_repository_name: std::option::Option<std::string::String>,
+}
+impl DeleteCodeRepositoryInput {
+    /// <p>The name of the Git repository to delete.</p>
+    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+        self.code_repository_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCodeRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56847,6 +59796,16 @@ pub struct DeleteAssociationInput {
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub destination_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAssociationInput {
+    /// <p>The ARN of the source.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56866,6 +59825,16 @@ pub struct DeleteArtifactInput {
     /// <p>The URI of the source.</p>
     pub source: std::option::Option<crate::model::ArtifactSource>,
 }
+impl DeleteArtifactInput {
+    /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
+    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+        self.artifact_arn.as_deref()
+    }
+    /// <p>The URI of the source.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ArtifactSource> {
+        self.source.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteArtifactInput");
@@ -56881,6 +59850,12 @@ impl std::fmt::Debug for DeleteArtifactInput {
 pub struct DeleteAppImageConfigInput {
     /// <p>The name of the AppImageConfig to delete.</p>
     pub app_image_config_name: std::option::Option<std::string::String>,
+}
+impl DeleteAppImageConfigInput {
+    /// <p>The name of the AppImageConfig to delete.</p>
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
+        self.app_image_config_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppImageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56903,6 +59878,24 @@ pub struct DeleteAppInput {
     /// <p>The name of the app.</p>
     pub app_name: std::option::Option<std::string::String>,
 }
+impl DeleteAppInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>The type of app.</p>
+    pub fn app_type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.app_type.as_ref()
+    }
+    /// <p>The name of the app.</p>
+    pub fn app_name(&self) -> std::option::Option<&str> {
+        self.app_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppInput");
@@ -56921,6 +59914,12 @@ pub struct DeleteAlgorithmInput {
     /// <p>The name of the algorithm to delete.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
 }
+impl DeleteAlgorithmInput {
+    /// <p>The name of the algorithm to delete.</p>
+    pub fn algorithm_name(&self) -> std::option::Option<&str> {
+        self.algorithm_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAlgorithmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAlgorithmInput");
@@ -56935,6 +59934,12 @@ impl std::fmt::Debug for DeleteAlgorithmInput {
 pub struct DeleteActionInput {
     /// <p>The name of the action to delete.</p>
     pub action_name: std::option::Option<std::string::String>,
+}
+impl DeleteActionInput {
+    /// <p>The name of the action to delete.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56981,6 +59986,54 @@ pub struct CreateWorkteamInput {
     /// Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWorkteamInput {
+    /// <p>The name of the work team. Use this name to identify the work team.</p>
+    pub fn workteam_name(&self) -> std::option::Option<&str> {
+        self.workteam_name.as_deref()
+    }
+    /// <p>The name of the workforce.</p>
+    pub fn workforce_name(&self) -> std::option::Option<&str> {
+        self.workforce_name.as_deref()
+    }
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
+    /// the workers that make up the work team. </p>
+    /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+    /// private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For
+    /// workforces created using your own OIDC identity provider (IdP) use
+    /// <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters
+    /// in a single request.</p>
+    /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito
+    /// <i>user groups</i> within the user pool used to create a workforce. All of the
+    /// <code>CognitoMemberDefinition</code> objects that make up the member definition must
+    /// have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon
+    /// Cognito user group to an existing worker pool, see <a href="">Adding groups to a User
+    /// Pool</a>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User
+    /// Pools</a>.</p>
+    /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to
+    /// include in your private work team in <code>OidcMemberDefinition</code> by listing those groups
+    /// in <code>Groups</code>.</p>
+    pub fn member_definitions(&self) -> std::option::Option<&[crate::model::MemberDefinition]> {
+        self.member_definitions.as_deref()
+    }
+    /// <p>A description of the work team.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Configures notification of workers regarding available or expiring work items.</p>
+    pub fn notification_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NotificationConfiguration> {
+        self.notification_configuration.as_ref()
+    }
+    /// <p>An array of key-value pairs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+    /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+    /// Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User
+    /// Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkteamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkteamInput");
@@ -57024,6 +60077,40 @@ pub struct CreateWorkforceInput {
     /// both of which you define.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateWorkforceInput {
+    /// <p>Use this parameter to configure an Amazon Cognito private workforce.
+    /// A single Cognito workforce is created using and corresponds to a single
+    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+    /// Amazon Cognito user pool</a>.</p>
+    ///
+    /// <p>Do not use <code>OidcConfig</code> if you specify values for
+    /// <code>CognitoConfig</code>.</p>
+    pub fn cognito_config(&self) -> std::option::Option<&crate::model::CognitoConfig> {
+        self.cognito_config.as_ref()
+    }
+    /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
+    /// <p>Do not use <code>CognitoConfig</code> if you specify values for
+    /// <code>OidcConfig</code>.</p>
+    pub fn oidc_config(&self) -> std::option::Option<&crate::model::OidcConfig> {
+        self.oidc_config.as_ref()
+    }
+    /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow
+    /// list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an
+    /// IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
+    pub fn source_ip_config(&self) -> std::option::Option<&crate::model::SourceIpConfig> {
+        self.source_ip_config.as_ref()
+    }
+    /// <p>The name of the private workforce.</p>
+    pub fn workforce_name(&self) -> std::option::Option<&str> {
+        self.workforce_name.as_deref()
+    }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and
+    /// organize our workforce. Each tag consists of a key and a value,
+    /// both of which you define.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateWorkforceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkforceInput");
@@ -57059,6 +60146,39 @@ pub struct CreateUserProfileInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A collection of settings.</p>
     pub user_settings: std::option::Option<crate::model::UserSettings>,
+}
+impl CreateUserProfileInput {
+    /// <p>The ID of the associated Domain.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>A name for the UserProfile. This value is not case sensitive.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue.  Currently, the only supported value is "UserName".
+    /// If the Domain's AuthMode is SSO, this field is required.  If the Domain's AuthMode is not SSO, this field cannot be specified.
+    /// </p>
+    pub fn single_sign_on_user_identifier(&self) -> std::option::Option<&str> {
+        self.single_sign_on_user_identifier.as_deref()
+    }
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
+    /// required, and must match a valid username of a user in your directory.  If the Domain's AuthMode is not SSO, this field cannot be specified.
+    /// </p>
+    pub fn single_sign_on_user_value(&self) -> std::option::Option<&str> {
+        self.single_sign_on_user_value.as_deref()
+    }
+    /// <p>Each tag consists of a key and an optional value.
+    /// Tag keys must be unique per resource.</p>
+    /// <p>Tags that you specify for the User Profile are also added to all Apps that the
+    /// User Profile launches.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A collection of settings.</p>
+    pub fn user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.user_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57124,6 +60244,77 @@ pub struct CreateTrialComponentInput {
     /// to search on the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateTrialComponentInput {
+    /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not
+    /// case-sensitive.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+    /// <p>The name of the component as displayed. The name doesn't need to be unique. If
+    /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
+    /// displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The status of the component. States include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>InProgress</p>
+    /// </li>
+    /// <li>
+    /// <p>Completed</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::TrialComponentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>When the component started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>When the component ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The hyperparameters for the component.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentParameterValue>,
+    > {
+        self.parameters.as_ref()
+    }
+    /// <p>The input artifacts for the component. Examples of input artifacts are datasets,
+    /// algorithms, hyperparameters, source code, and instance types.</p>
+    pub fn input_artifacts(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
+    > {
+        self.input_artifacts.as_ref()
+    }
+    /// <p>The output artifacts for the component. Examples of output artifacts are metrics,
+    /// snapshots, logs, and images.</p>
+    pub fn output_artifacts(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>,
+    > {
+        self.output_artifacts.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>A list of tags to associate with the component. You can use <a>Search</a> API
+    /// to search on the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTrialComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrialComponentInput");
@@ -57158,6 +60349,31 @@ pub struct CreateTrialInput {
     /// <p>A list of tags to associate with the trial. You can use <a>Search</a> API to
     /// search on the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateTrialInput {
+    /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not
+    /// case-sensitive.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
+    /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
+    /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The name of the experiment to associate the trial with.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>A list of tags to associate with the trial. You can use <a>Search</a> API to
+    /// search on the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTrialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57267,6 +60483,128 @@ pub struct CreateTransformJobInput {
     /// </li>
     /// </ul>
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
+}
+impl CreateTransformJobInput {
+    /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an
+    /// Amazon Web Services account. </p>
+    pub fn transform_job_name(&self) -> std::option::Option<&str> {
+        self.transform_job_name.as_deref()
+    }
+    /// <p>The name of the model that you want to use for the transform job.
+    /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services
+    /// Region in an Amazon Web Services account.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The maximum number of parallel requests that can be sent to each instance in a
+    /// transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left
+    /// unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your
+    /// chosen algorithm. If the execution-parameters endpoint is not enabled, the default value
+    /// is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to
+    /// set a value for <code>MaxConcurrentTransforms</code>.</p>
+    pub fn max_concurrent_transforms(&self) -> std::option::Option<i32> {
+        self.max_concurrent_transforms
+    }
+    /// <p>Configures the timeout and maximum number of retries for processing a transform job
+    /// invocation.</p>
+    pub fn model_client_config(&self) -> std::option::Option<&crate::model::ModelClientConfig> {
+        self.model_client_config.as_ref()
+    }
+    /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the
+    /// data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code>
+    /// must be greater than, or equal to, the size of a single record. To estimate the size of
+    /// a record in MB, divide the size of your dataset by the number of records. To ensure that
+    /// the records fit within the maximum payload size, we recommend using a slightly larger
+    /// value. The default value is <code>6</code> MB.
+    /// </p>
+    /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP
+    /// chunked encoding, set the value to <code>0</code>.
+    /// This
+    /// feature works only in supported algorithms. Currently, Amazon SageMaker built-in
+    /// algorithms do not support HTTP chunked encoding.</p>
+    pub fn max_payload_in_mb(&self) -> std::option::Option<i32> {
+        self.max_payload_in_mb
+    }
+    /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference
+    /// request. A <i>record</i>
+    /// <i></i> is a single unit of input data that
+    /// inference can be made on. For example, a single line in a CSV file is a record. </p>
+    /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to
+    /// <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
+    /// <p>To use only one record when making an HTTP invocation request to a container, set
+    /// <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code>
+    /// to <code>Line</code>.</p>
+    /// <p>To fit as many records in a mini-batch as can fit within the
+    /// <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to
+    /// <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+    pub fn batch_strategy(&self) -> std::option::Option<&crate::model::BatchStrategy> {
+        self.batch_strategy.as_ref()
+    }
+    /// <p>The environment variables to set in the Docker container. We support up to 16 key and
+    /// values entries in the map.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
+    /// <p>Describes the input source and
+    /// the
+    /// way the transform job consumes it.</p>
+    pub fn transform_input(&self) -> std::option::Option<&crate::model::TransformInput> {
+        self.transform_input.as_ref()
+    }
+    /// <p>Describes the results of the transform job.</p>
+    pub fn transform_output(&self) -> std::option::Option<&crate::model::TransformOutput> {
+        self.transform_output.as_ref()
+    }
+    /// <p>Describes the resources, including
+    /// ML
+    /// instance types and ML instance count, to use for the transform
+    /// job.</p>
+    pub fn transform_resources(&self) -> std::option::Option<&crate::model::TransformResources> {
+        self.transform_resources.as_ref()
+    }
+    /// <p>The data structure used to specify the data to be used for inference in a batch
+    /// transform job and to associate the data that is relevant to the prediction results in
+    /// the output. The input filter provided allows you to exclude input data that is not
+    /// needed for inference in a batch transform job. The output filter provided allows you to
+    /// include input data relevant to interpreting the predictions in the output from the job.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
+    /// Results with their Corresponding Input Records</a>.</p>
+    pub fn data_processing(&self) -> std::option::Option<&crate::model::DataProcessing> {
+        self.data_processing.as_ref()
+    }
+    /// <p>(Optional)
+    /// An
+    /// array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+    /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User
+    /// Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
+    /// you call the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>CreateProcessingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTrainingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTransformJob</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
+        self.experiment_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTransformJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57433,6 +60771,202 @@ pub struct CreateTrainingJobInput {
     /// <code>InternalServerError</code>.</p>
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
 }
+impl CreateTrainingJobInput {
+    /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an
+    /// Amazon Web Services account. </p>
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
+        self.training_job_name.as_deref()
+    }
+    /// <p>Algorithm-specific parameters that influence the quality of the model. You set
+    /// hyperparameters before you start the learning process. For a list of hyperparameters for
+    /// each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+    /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a
+    /// key-value pair. Each key and value is limited to 256 characters, as specified by the
+    /// <code>Length Constraint</code>. </p>
+    pub fn hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.hyper_parameters.as_ref()
+    }
+    /// <p>The registry path of the Docker image that contains the training algorithm and
+    /// algorithm-specific metadata, including the input mode. For more information about
+    /// algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about
+    /// providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+    /// SageMaker</a>. </p>
+    pub fn algorithm_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::AlgorithmSpecification> {
+        self.algorithm_specification.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform
+    /// tasks on your behalf. </p>
+    /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3
+    /// bucket, download a Docker image that contains training code, write model artifacts to an
+    /// S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
+    /// permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
+    /// Roles</a>. </p>
+    /// <note>
+    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+    /// <code>iam:PassRole</code> permission.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An array of <code>Channel</code> objects. Each channel is a named input source.
+    /// <code>InputDataConfig</code>
+    /// describes the input data and its location. </p>
+    /// <p>Algorithms can accept input data from one or more channels. For example, an
+    /// algorithm might have two channels of input data, <code>training_data</code> and
+    /// <code>validation_data</code>. The configuration for each channel provides the S3,
+    /// EFS, or FSx location where the input data is stored. It also provides information about
+    /// the stored data: the MIME type, compression method, and whether the data is wrapped in
+    /// RecordIO format. </p>
+    /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input
+    /// data files from an S3 bucket to a local directory in the Docker container, or makes it
+    /// available as input streams. For example, if you specify an EFS location, input data
+    /// files will be made available as input streams. They do not need to be
+    /// downloaded.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&[crate::model::Channel]> {
+        self.input_data_config.as_deref()
+    }
+    /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker
+    /// creates subfolders for the artifacts. </p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>The resources, including the ML compute instances and ML storage volumes, to use
+    /// for model training. </p>
+    /// <p>ML storage volumes store model artifacts and incremental states. Training
+    /// algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use
+    /// the ML storage volume to store the training data, choose <code>File</code> as the
+    /// <code>TrainingInputMode</code> in the algorithm specification. For distributed
+    /// training algorithms, specify an instance count greater than 1.</p>
+    pub fn resource_config(&self) -> std::option::Option<&crate::model::ResourceConfig> {
+        self.resource_config.as_ref()
+    }
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+    /// training job to connect to. Control access to and from your training container by
+    /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+    /// Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long
+    /// a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker
+    /// ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
+    /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
+    /// model artifacts, so the results of training are not lost. </p>
+    pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made,
+    /// except for calls between peers within a training cluster for distributed training. If
+    /// you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker
+    /// downloads and uploads customer data and model artifacts through the specified VPC, but
+    /// the training container does not have network access.</p>
+    pub fn enable_network_isolation(&self) -> bool {
+        self.enable_network_isolation
+    }
+    /// <p>To encrypt all communications between ML compute instances in distributed training,
+    /// choose <code>True</code>. Encryption provides greater security for distributed training,
+    /// but training might take longer. How long it takes depends on the amount of communication
+    /// between compute instances, especially if you use a deep learning algorithm in
+    /// distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML
+    /// Compute Instances in a Distributed Training Job</a>.</p>
+    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+        self.enable_inter_container_traffic_encryption
+    }
+    /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot
+    /// training provides a fully managed and scalable infrastructure for training machine
+    /// learning models. this option is useful when training jobs can be interrupted and when
+    /// there is flexibility when the training job is run. </p>
+    /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be
+    /// used as a starting point to train models incrementally. Amazon SageMaker provides metrics and
+    /// logs in CloudWatch. They can be used to see when managed spot training jobs are running,
+    /// interrupted, resumed, or completed. </p>
+    pub fn enable_managed_spot_training(&self) -> bool {
+        self.enable_managed_spot_training
+    }
+    /// <p>Contains information about the output location for managed spot training checkpoint
+    /// data.</p>
+    pub fn checkpoint_config(&self) -> std::option::Option<&crate::model::CheckpointConfig> {
+        self.checkpoint_config.as_ref()
+    }
+    /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and
+    /// storage paths. To learn more about
+    /// how to configure the <code>DebugHookConfig</code> parameter,
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    pub fn debug_hook_config(&self) -> std::option::Option<&crate::model::DebugHookConfig> {
+        self.debug_hook_config.as_ref()
+    }
+    /// <p>Configuration information for Debugger rules for debugging output tensors.</p>
+    pub fn debug_rule_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::DebugRuleConfiguration]> {
+        self.debug_rule_configurations.as_deref()
+    }
+    /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
+    pub fn tensor_board_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::TensorBoardOutputConfig> {
+        self.tensor_board_output_config.as_ref()
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
+    /// you call the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>CreateProcessingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTrainingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTransformJob</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
+        self.experiment_config.as_ref()
+    }
+    /// <p>Configuration information for Debugger system monitoring, framework profiling, and
+    /// storage paths.</p>
+    pub fn profiler_config(&self) -> std::option::Option<&crate::model::ProfilerConfig> {
+        self.profiler_config.as_ref()
+    }
+    /// <p>Configuration information for Debugger rules for profiling system and framework
+    /// metrics.</p>
+    pub fn profiler_rule_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProfilerRuleConfiguration]> {
+        self.profiler_rule_configurations.as_deref()
+    }
+    /// <p>The environment variables to set in the Docker container.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
+    /// <p>The number of times to retry the job when the job fails due to an
+    /// <code>InternalServerError</code>.</p>
+    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
+        self.retry_strategy.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateTrainingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTrainingJobInput");
@@ -57488,6 +61022,26 @@ pub struct CreateStudioLifecycleConfigInput {
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateStudioLifecycleConfigInput {
+    /// <p>The name of the Studio Lifecycle Configuration to create.</p>
+    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_name.as_deref()
+    }
+    /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    pub fn studio_lifecycle_config_content(&self) -> std::option::Option<&str> {
+        self.studio_lifecycle_config_content.as_deref()
+    }
+    /// <p>The App type that the Lifecycle Configuration is attached to.</p>
+    pub fn studio_lifecycle_config_app_type(
+        &self,
+    ) -> std::option::Option<&crate::model::StudioLifecycleConfigAppType> {
+        self.studio_lifecycle_config_app_type.as_ref()
+    }
+    /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateStudioLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioLifecycleConfigInput");
@@ -57525,6 +61079,30 @@ pub struct CreateProjectInput {
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services
     /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateProjectInput {
+    /// <p>The name of the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A description for the project.</p>
+    pub fn project_description(&self) -> std::option::Option<&str> {
+        self.project_description.as_deref()
+    }
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning
+    /// artifact ID will default to the latest provisioning artifact ID of the product, if you don't
+    /// provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+    /// Catalog</a>.</p>
+    pub fn service_catalog_provisioning_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceCatalogProvisioningDetails> {
+        self.service_catalog_provisioning_details.as_ref()
+    }
+    /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services
+    /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57594,6 +61172,85 @@ pub struct CreateProcessingJobInput {
     /// </ul>
     pub experiment_config: std::option::Option<crate::model::ExperimentConfig>,
 }
+impl CreateProcessingJobInput {
+    /// <p>An array of inputs configuring the data to download into the
+    /// processing container.</p>
+    pub fn processing_inputs(&self) -> std::option::Option<&[crate::model::ProcessingInput]> {
+        self.processing_inputs.as_deref()
+    }
+    /// <p>Output configuration for the processing job.</p>
+    pub fn processing_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProcessingOutputConfig> {
+        self.processing_output_config.as_ref()
+    }
+    /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
+    pub fn processing_job_name(&self) -> std::option::Option<&str> {
+        self.processing_job_name.as_deref()
+    }
+    /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
+    /// processing job. In distributed training, you specify more than one instance.</p>
+    pub fn processing_resources(&self) -> std::option::Option<&crate::model::ProcessingResources> {
+        self.processing_resources.as_ref()
+    }
+    /// <p>The time limit for how long the processing job is allowed to run.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::ProcessingStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>Configures the processing job to run a specified Docker container image.</p>
+    pub fn app_specification(&self) -> std::option::Option<&crate::model::AppSpecification> {
+        self.app_specification.as_ref()
+    }
+    /// <p>The environment variables to set in the Docker container. Up to
+    /// 100 key and values entries in the map are supported.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
+    /// <p>Networking options for a processing job, such as whether to allow inbound and
+    /// outbound network calls to and from processing containers, and the VPC subnets and
+    /// security groups to use for VPC-enabled processing jobs.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::NetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
+    /// your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
+    /// you call the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>CreateProcessingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTrainingJob</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>CreateTransformJob</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn experiment_config(&self) -> std::option::Option<&crate::model::ExperimentConfig> {
+        self.experiment_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateProcessingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProcessingJobInput");
@@ -57621,6 +61278,16 @@ pub struct CreatePresignedNotebookInstanceUrlInput {
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
     pub session_expiration_duration_in_seconds: std::option::Option<i32>,
 }
+impl CreatePresignedNotebookInstanceUrlInput {
+    /// <p>The name of the notebook instance.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+    /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
+    pub fn session_expiration_duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.session_expiration_duration_in_seconds
+    }
+}
 impl std::fmt::Debug for CreatePresignedNotebookInstanceUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePresignedNotebookInstanceUrlInput");
@@ -57646,6 +61313,25 @@ pub struct CreatePresignedDomainUrlInput {
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
     /// 300.</p>
     pub expires_in_seconds: std::option::Option<i32>,
+}
+impl CreatePresignedDomainUrlInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The name of the UserProfile to sign-in as.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
+    pub fn session_expiration_duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.session_expiration_duration_in_seconds
+    }
+    /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
+    /// 300.</p>
+    pub fn expires_in_seconds(&self) -> std::option::Option<i32> {
+        self.expires_in_seconds
+    }
 }
 impl std::fmt::Debug for CreatePresignedDomainUrlInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57681,6 +61367,37 @@ pub struct CreatePipelineInput {
     /// <p>A list of tags to apply to the created pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePipelineInput {
+    /// <p>The name of the pipeline.</p>
+    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+        self.pipeline_name.as_deref()
+    }
+    /// <p>The display name of the pipeline.</p>
+    pub fn pipeline_display_name(&self) -> std::option::Option<&str> {
+        self.pipeline_display_name.as_deref()
+    }
+    /// <p>The JSON pipeline definition of the pipeline.</p>
+    pub fn pipeline_definition(&self) -> std::option::Option<&str> {
+        self.pipeline_definition.as_deref()
+    }
+    /// <p>A description of the pipeline.</p>
+    pub fn pipeline_description(&self) -> std::option::Option<&str> {
+        self.pipeline_description.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// operation. An idempotent operation completes no more than one time.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of tags to apply to the created pipeline.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePipelineInput");
@@ -57707,6 +61424,22 @@ pub struct CreateNotebookInstanceLifecycleConfigInput {
     /// <p>A shell script that runs every time you start a notebook instance, including when you
     /// create the notebook instance. The shell script must be a base64-encoded string.</p>
     pub on_start: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+}
+impl CreateNotebookInstanceLifecycleConfigInput {
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn notebook_instance_lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_lifecycle_config_name.as_deref()
+    }
+    /// <p>A shell script that runs only once, when you create a notebook instance. The shell
+    /// script must be a base64-encoded string.</p>
+    pub fn on_create(&self) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleHook]> {
+        self.on_create.as_deref()
+    }
+    /// <p>A shell script that runs every time you start a notebook instance, including when you
+    /// create the notebook instance. The shell script must be a base64-encoded string.</p>
+    pub fn on_start(&self) -> std::option::Option<&[crate::model::NotebookInstanceLifecycleHook]> {
+        self.on_start.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateNotebookInstanceLifecycleConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57801,6 +61534,116 @@ pub struct CreateNotebookInstanceInput {
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
     pub platform_identifier: std::option::Option<std::string::String>,
 }
+impl CreateNotebookInstanceInput {
+    /// <p>The name of the new notebook instance.</p>
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
+        self.notebook_instance_name.as_deref()
+    }
+    /// <p>The type of ML compute instance to launch for the notebook instance.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from
+    /// your ML compute instance. </p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be
+    /// for the same VPC as specified in the subnet. </p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
+    /// assumes this role to perform tasks on your behalf. You must grant this role necessary
+    /// permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service
+    /// principal (sagemaker.amazonaws.com) permissions to assume this role. For more
+    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p>
+    /// <note>
+    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+    /// <code>iam:PassRole</code> permission.</p>
+    /// </note>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
+    /// the storage volume attached to your notebook instance. The KMS key you provide must be
+    /// enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
+    /// Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
+    /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
+    /// Customize a Notebook Instance</a>.</p>
+    pub fn lifecycle_config_name(&self) -> std::option::Option<&str> {
+        self.lifecycle_config_name.as_deref()
+    }
+    /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this
+    /// to <code>Disabled</code> this notebook instance is able to access resources only in your
+    /// VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you
+    /// configure a NAT Gateway in your VPC.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value
+    /// of this parameter to <code>Disabled</code> only if you set a value for the
+    /// <code>SubnetId</code> parameter.</p>
+    pub fn direct_internet_access(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectInternetAccess> {
+        self.direct_internet_access.as_ref()
+    }
+    /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
+    /// default value is 5 GB.</p>
+    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+        self.volume_size_in_gb
+    }
+    /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook
+    /// instance. Currently, only one instance type can be associated with a notebook instance.
+    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+    pub fn accelerator_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotebookInstanceAcceleratorType]> {
+        self.accelerator_types.as_deref()
+    }
+    /// <p>A Git repository to associate with the notebook instance as its default code
+    /// repository. This can be either the name of a Git repository stored as a resource in your
+    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
+    /// other Git repository. When you open a notebook instance, it opens in the directory that
+    /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
+    /// Notebook Instances</a>.</p>
+    pub fn default_code_repository(&self) -> std::option::Option<&str> {
+        self.default_code_repository.as_deref()
+    }
+    /// <p>An array of up to three Git repositories to associate with the notebook instance.
+    /// These can be either the names of Git repositories stored as resources in your account,
+    /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
+    /// other Git repository. These repositories are cloned at the same level as the default
+    /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+    /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+    pub fn additional_code_repositories(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_code_repositories.as_deref()
+    }
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
+    /// default value is <code>Enabled</code>.</p>
+    /// <note>
+    /// <p>Lifecycle configurations need root access to be able to set up a notebook
+    /// instance. Because of this, lifecycle configurations associated with a notebook
+    /// instance always run with root access even if you disable root access for
+    /// users.</p>
+    /// </note>
+    pub fn root_access(&self) -> std::option::Option<&crate::model::RootAccess> {
+        self.root_access.as_ref()
+    }
+    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    pub fn platform_identifier(&self) -> std::option::Option<&str> {
+        self.platform_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNotebookInstanceInput");
@@ -57839,6 +61682,25 @@ pub struct CreateMonitoringScheduleInput {
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateMonitoringScheduleInput {
+    /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+    /// an Amazon Web Services account.</p>
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+        self.monitoring_schedule_name.as_deref()
+    }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the
+    /// monitoring job.</p>
+    pub fn monitoring_schedule_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringScheduleConfig> {
+        self.monitoring_schedule_config.as_ref()
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMonitoringScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57882,6 +61744,60 @@ pub struct CreateModelQualityJobDefinitionInput {
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateModelQualityJobDefinitionInput {
+    /// <p>The name of the monitoring job definition.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>Specifies the constraints and baselines for the monitoring job.</p>
+    pub fn model_quality_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelQualityBaselineConfig> {
+        self.model_quality_baseline_config.as_ref()
+    }
+    /// <p>The container that runs the monitoring job.</p>
+    pub fn model_quality_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelQualityAppSpecification> {
+        self.model_quality_app_specification.as_ref()
+    }
+    /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
+    pub fn model_quality_job_input(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelQualityJobInput> {
+        self.model_quality_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn model_quality_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.model_quality_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Specifies the network configuration for the monitoring job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+    /// perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelQualityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelQualityJobDefinitionInput");
@@ -57920,6 +61836,22 @@ pub struct CreateModelPackageGroupInput {
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateModelPackageGroupInput {
+    /// <p>The name of the model group.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>A description for the model group.</p>
+    pub fn model_package_group_description(&self) -> std::option::Option<&str> {
+        self.model_package_group_description.as_deref()
+    }
+    /// <p>A list of key value pairs associated with the model group. For more information, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelPackageGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57996,6 +61928,97 @@ pub struct CreateModelPackageInput {
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateModelPackageInput {
+    /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters
+    /// are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// <p>This parameter is required for unversioned models. It is not applicable to versioned
+    /// models.</p>
+    pub fn model_package_name(&self) -> std::option::Option<&str> {
+        self.model_package_name.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>
+    /// <p>This parameter is required for versioned models, and does not apply to unversioned
+    /// models.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>A description of the model package.</p>
+    pub fn model_package_description(&self) -> std::option::Option<&str> {
+        self.model_package_description.as_deref()
+    }
+    /// <p>Specifies details about inference jobs that can be run with models based on this model
+    /// package, including the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model
+    /// artifacts.</p>
+    /// </li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and
+    /// real-time endpoints used for inference.</p>
+    /// </li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for
+    /// inference.</p>
+    /// </li>
+    /// </ul>
+    pub fn inference_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceSpecification> {
+        self.inference_specification.as_ref()
+    }
+    /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the
+    /// model package.</p>
+    pub fn validation_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackageValidationSpecification> {
+        self.validation_specification.as_ref()
+    }
+    /// <p>Details about the algorithm that was used to create the model package.</p>
+    pub fn source_algorithm_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::SourceAlgorithmSpecification> {
+        self.source_algorithm_specification.as_ref()
+    }
+    /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
+    /// <p>This parameter is optional for unversioned models, and does not apply to versioned
+    /// models.</p>
+    pub fn certify_for_marketplace(&self) -> bool {
+        self.certify_for_marketplace
+    }
+    /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Whether the model is approved for deployment.</p>
+    /// <p>This parameter is optional for versioned models, and does not apply to unversioned
+    /// models.</p>
+    /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code>
+    /// to deploy the model.</p>
+    pub fn model_approval_status(&self) -> std::option::Option<&crate::model::ModelApprovalStatus> {
+        self.model_approval_status.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>A structure that contains model metrics reports.</p>
+    pub fn model_metrics(&self) -> std::option::Option<&crate::model::ModelMetrics> {
+        self.model_metrics.as_ref()
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn customer_metadata_properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.customer_metadata_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelPackageInput");
@@ -58055,6 +62078,62 @@ pub struct CreateModelExplainabilityJobDefinitionInput {
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateModelExplainabilityJobDefinitionInput {
+    /// <p> The name of the model explainability job definition. The name must be unique within an
+    /// Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The baseline configuration for a model explainability job.</p>
+    pub fn model_explainability_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelExplainabilityBaselineConfig> {
+        self.model_explainability_baseline_config.as_ref()
+    }
+    /// <p>Configures the model explainability job to run a specified Docker container
+    /// image.</p>
+    pub fn model_explainability_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelExplainabilityAppSpecification> {
+        self.model_explainability_app_specification.as_ref()
+    }
+    /// <p>Inputs for the model explainability job.</p>
+    pub fn model_explainability_job_input(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelExplainabilityJobInput> {
+        self.model_explainability_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn model_explainability_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.model_explainability_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Networking options for a model explainability job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+    /// perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelExplainabilityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelExplainabilityJobDefinitionInput");
@@ -58111,6 +62190,59 @@ pub struct CreateModelBiasJobDefinitionInput {
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateModelBiasJobDefinitionInput {
+    /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The baseline configuration for a model bias job.</p>
+    pub fn model_bias_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelBiasBaselineConfig> {
+        self.model_bias_baseline_config.as_ref()
+    }
+    /// <p>Configures the model bias job to run a specified Docker container image.</p>
+    pub fn model_bias_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelBiasAppSpecification> {
+        self.model_bias_app_specification.as_ref()
+    }
+    /// <p>Inputs for the model bias job.</p>
+    pub fn model_bias_job_input(&self) -> std::option::Option<&crate::model::ModelBiasJobInput> {
+        self.model_bias_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn model_bias_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.model_bias_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Networking options for a model bias job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+    /// perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelBiasJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58176,6 +62308,60 @@ pub struct CreateModelInput {
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
     /// from the model container.</p>
     pub enable_network_isolation: bool,
+}
+impl CreateModelInput {
+    /// <p>The name of the new model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The location of the primary docker image containing inference code, associated
+    /// artifacts, and custom environment map that the inference code uses when the model is
+    /// deployed for predictions. </p>
+    pub fn primary_container(&self) -> std::option::Option<&crate::model::ContainerDefinition> {
+        self.primary_container.as_ref()
+    }
+    /// <p>Specifies the containers in the inference pipeline.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::ContainerDefinition]> {
+        self.containers.as_deref()
+    }
+    /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
+    pub fn inference_execution_config(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceExecutionConfig> {
+        self.inference_execution_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model
+    /// artifacts and docker image for deployment on ML compute instances or for batch transform
+    /// jobs. Deploying on ML compute instances is part of model hosting. For more information,
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
+    /// Roles</a>. </p>
+    /// <note>
+    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+    /// <code>iam:PassRole</code> permission.</p>
+    /// </note>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model
+    /// to connect to. Control access to and from your model container by configuring the VPC.
+    /// <code>VpcConfig</code> is used in hosting services and in batch transform. For more
+    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch
+    /// Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
+    /// from the model container.</p>
+    pub fn enable_network_isolation(&self) -> bool {
+        self.enable_network_isolation
+    }
 }
 impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58354,6 +62540,185 @@ pub struct CreateLabelingJobInput {
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateLabelingJobInput {
+    /// <p>The name of the labeling job. This name is used to identify the job in a list of
+    /// labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region.
+    /// <code>LabelingJobName</code> is not case sensitive. For example, Example-job and
+    /// example-job are considered the same labeling job name by Ground Truth.</p>
+    pub fn labeling_job_name(&self) -> std::option::Option<&str> {
+        self.labeling_job_name.as_deref()
+    }
+    /// <p>The attribute name to use for the label in the output manifest file. This is the key
+    /// for the key/value pair formed with the label that a worker assigns to the object. The
+    /// <code>LabelAttributeName</code> must meet the following requirements.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The name can't end with "-metadata". </p>
+    /// </li>
+    /// <li>
+    /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>,
+    /// the attribute name <i>must</i> end with "-ref". If the task type
+    /// you are using is not listed below, the attribute name <i>must
+    /// not</i> end with "-ref".</p>
+    /// <ul>
+    /// <li>
+    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and
+    /// adjustment (<code>AdjustmentSemanticSegmentation</code>) and
+    /// verification (<code>VerificationSemanticSegmentation</code>) labeling
+    /// jobs for this task type.</p>
+    /// </li>
+    /// <li>
+    /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and
+    /// adjustment and verification
+    /// (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this
+    /// task type.</p>
+    /// </li>
+    /// <li>
+    /// <p>Video frame object tracking (<code>VideoObjectTracking</code>), and
+    /// adjustment and verification (<code>AdjustmentVideoObjectTracking</code>)
+    /// labeling jobs for this task type.</p>
+    /// </li>
+    /// <li>
+    /// <p>3D point cloud semantic segmentation
+    /// (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and
+    /// verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>)
+    /// labeling jobs for this task type. </p>
+    /// </li>
+    /// <li>
+    /// <p>3D point cloud object tracking
+    /// (<code>3DPointCloudObjectTracking</code>), and adjustment and
+    /// verification (<code>Adjustment3DPointCloudObjectTracking</code>)
+    /// labeling jobs for this task type. </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    /// <p></p>
+    /// <important>
+    /// <p>If you are creating an adjustment or verification labeling job, you must use a
+    /// <i>different</i>
+    /// <code>LabelAttributeName</code> than the one used in the original labeling job. The
+    /// original labeling job is the Ground Truth labeling job that produced the labels that you
+    /// want verified or adjusted. To learn more about adjustment and verification labeling
+    /// jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust
+    /// Labels</a>.</p>
+    /// </important>
+    pub fn label_attribute_name(&self) -> std::option::Option<&str> {
+        self.label_attribute_name.as_deref()
+    }
+    /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the
+    /// location of the manifest file that describes the data objects.</p>
+    /// <p>You must specify at least one of the following: <code>S3DataSource</code> or
+    /// <code>SnsDataSource</code>. </p>
+    /// <ul>
+    /// <li>
+    /// <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming
+    /// labeling job. If you do not specify and SNS input topic ARN, Ground Truth will
+    /// create a one-time labeling job that stops after all data objects in the input
+    /// manifest file have been labeled.</p>
+    /// </li>
+    /// <li>
+    /// <p>Use <code>S3DataSource</code> to specify an input manifest file for both
+    /// streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is
+    /// optional if you use <code>SnsDataSource</code> to create a streaming labeling
+    /// job.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include
+    /// confidential information, personal information or protected health information. Use
+    /// <code>ContentClassifiers</code> to specify that your data is free of personally
+    /// identifiable information and adult content.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::LabelingJobInputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt
+    /// the output data, if any.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::LabelingJobOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
+    /// during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker
+    /// can successfully complete data labeling.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The S3 URI of the file, referred to as a <i>label category configuration
+    /// file</i>, that defines the categories used to label the data objects.</p>
+    /// <p>For 3D point cloud and video frame task types, you can add label category attributes
+    /// and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
+    /// Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
+    /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must
+    /// provide worker instructions in the label category configuration file using the
+    /// <code>"instructions"</code> parameter: <code>"instructions":
+    /// {"shortInstruction":"<h1>Add header</h1><p>Add Instructions</p>",
+    /// "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details
+    /// and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a
+    /// Named Entity Recognition Labeling Job (API) </a>.</p>
+    /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+    /// tasks</a>, your label category configuration file must be a JSON file in the
+    /// following format. Identify the labels you want to use by replacing <code>label_1</code>,
+    /// <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label
+    /// categories.</p>
+    /// <p>
+    /// <code>{ </code>
+    /// </p>
+    /// <p>
+    /// <code>"document-version": "2018-11-28",</code>
+    /// </p>
+    /// <p>
+    /// <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label":
+    /// "label_n"}]</code>
+    /// </p>
+    /// <p>
+    /// <code>}</code>
+    /// </p>
+    /// <p>Note the following about the label category configuration file:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For image classification and text classification (single and multi-label) you
+    /// must specify at least two label categories. For all other task types, the
+    /// minimum number of label categories required is one. </p>
+    /// </li>
+    /// <li>
+    /// <p>Each label category must be unique, you cannot specify duplicate label
+    /// categories.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create a 3D point cloud or video frame adjustment or verification
+    /// labeling job, you must include <code>auditLabelAttributeName</code> in the label
+    /// category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName">
+    /// <code>LabelAttributeName</code>
+    /// </a> of the labeling job you want to
+    /// adjust or verify annotations of.</p>
+    /// </li>
+    /// </ul>
+    pub fn label_category_config_s3_uri(&self) -> std::option::Option<&str> {
+        self.label_category_config_s3_uri.as_deref()
+    }
+    /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met,
+    /// the job is automatically stopped. You can use these conditions to control the cost of
+    /// data labeling.</p>
+    pub fn stopping_conditions(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelingJobStoppingConditions> {
+        self.stopping_conditions.as_ref()
+    }
+    /// <p>Configures the information required to perform automated data labeling.</p>
+    pub fn labeling_job_algorithms_config(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelingJobAlgorithmsConfig> {
+        self.labeling_job_algorithms_config.as_ref()
+    }
+    /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
+    pub fn human_task_config(&self) -> std::option::Option<&crate::model::HumanTaskConfig> {
+        self.human_task_config.as_ref()
+    }
+    /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLabelingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLabelingJobInput");
@@ -58393,6 +62758,25 @@ pub struct CreateImageVersionInput {
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
     pub image_name: std::option::Option<std::string::String>,
 }
+impl CreateImageVersionInput {
+    /// <p>The registry path of the container image to use as the starting point for this
+    /// version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
+    /// <p>
+    /// <code><acct-id>.dkr.ecr.<region>.amazonaws.com/<repo-name[:tag] or [@digest]></code>
+    /// </p>
+    pub fn base_image(&self) -> std::option::Option<&str> {
+        self.base_image.as_deref()
+    }
+    /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python
+    /// (Boto3), add a unique value to the call.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateImageVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateImageVersionInput");
@@ -58417,6 +62801,28 @@ pub struct CreateImageInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to the image.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateImageInput {
+    /// <p>The description of the image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The name of the image. Must be unique to your account.</p>
+    pub fn image_name(&self) -> std::option::Option<&str> {
+        self.image_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A list of tags to apply to the image.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateImageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58482,6 +62888,71 @@ pub struct CreateHyperParameterTuningJobInput {
     /// tuning job launches.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateHyperParameterTuningJobInput {
+    /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs
+    /// that this tuning job launches. The name must be unique within the same Amazon Web Services account and
+    /// Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9,
+    /// and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
+    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+        self.hyper_parameter_tuning_job_name.as_deref()
+    }
+    /// <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
+    /// job, including the search strategy, the objective metric used to evaluate training jobs,
+    /// ranges of parameters to search, and resource limits for the tuning job. For more
+    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+    /// Hyperparameter Tuning Works</a>.</p>
+    pub fn hyper_parameter_tuning_job_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobConfig> {
+        self.hyper_parameter_tuning_job_config.as_ref()
+    }
+    /// <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
+    /// training jobs that this tuning job launches,
+    /// including
+    /// static hyperparameters, input data configuration, output data configuration, resource
+    /// configuration, and stopping condition.</p>
+    pub fn training_job_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTrainingJobDefinition> {
+        self.training_job_definition.as_ref()
+    }
+    /// <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched
+    /// for this tuning job.</p>
+    pub fn training_job_definitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::HyperParameterTrainingJobDefinition]> {
+        self.training_job_definitions.as_deref()
+    }
+    /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or
+    /// more previous tuning jobs as a starting point. The results of previous tuning jobs are
+    /// used to inform which combinations of hyperparameters to search over in the new tuning
+    /// job.</p>
+    /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using
+    /// the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the
+    /// <code>WarmStartType</code> value for the warm start configuration, the training job
+    /// that performs the best in the new tuning job is compared to the best training jobs from
+    /// the parent tuning jobs. From these, the training job that performs the best as measured
+    /// by the objective metric is returned as the overall best training job.</p>
+    /// <note>
+    /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new
+    /// hyperparameter tuning jobs count against the limit of training jobs for the tuning
+    /// job.</p>
+    /// </note>
+    pub fn warm_start_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HyperParameterTuningJobWarmStartConfig> {
+        self.warm_start_config.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    /// <p>Tags that you specify for the tuning job are also added to all training jobs that the
+    /// tuning job launches.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHyperParameterTuningJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHyperParameterTuningJobInput");
@@ -58512,6 +62983,20 @@ pub struct CreateHumanTaskUiInput {
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateHumanTaskUiInput {
+    /// <p>The name of the user interface you are creating.</p>
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
+        self.human_task_ui_name.as_deref()
+    }
+    /// <p>The Liquid template for the worker user interface.</p>
+    pub fn ui_template(&self) -> std::option::Option<&crate::model::UiTemplate> {
+        self.ui_template.as_ref()
+    }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHumanTaskUiInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHumanTaskUiInput");
@@ -58541,6 +63026,41 @@ pub struct CreateFlowDefinitionInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateFlowDefinitionInput {
+    /// <p>The name of your flow definition.</p>
+    pub fn flow_definition_name(&self) -> std::option::Option<&str> {
+        self.flow_definition_name.as_deref()
+    }
+    /// <p>Container for configuring the source of human task requests. Use to specify if
+    /// Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    pub fn human_loop_request_source(
+        &self,
+    ) -> std::option::Option<&crate::model::HumanLoopRequestSource> {
+        self.human_loop_request_source.as_ref()
+    }
+    /// <p>An object containing information about the events that trigger a human workflow.</p>
+    pub fn human_loop_activation_config(
+        &self,
+    ) -> std::option::Option<&crate::model::HumanLoopActivationConfig> {
+        self.human_loop_activation_config.as_ref()
+    }
+    /// <p>An object containing information about the tasks the human reviewers will perform.</p>
+    pub fn human_loop_config(&self) -> std::option::Option<&crate::model::HumanLoopConfig> {
+        self.human_loop_config.as_ref()
+    }
+    /// <p>An object containing information about where the human review results will be uploaded.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::FlowDefinitionOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFlowDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58662,6 +63182,124 @@ pub struct CreateFeatureGroupInput {
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateFeatureGroupInput {
+    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
+    /// in an Amazon Web Services account. The name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+        self.feature_group_name.as_deref()
+    }
+    /// <p>The name of the <code>Feature</code> whose value uniquely identifies a
+    /// <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per
+    /// identifier value will be stored in the <code>OnlineStore</code>.
+    /// <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
+    /// names.</p>
+    /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a
+    /// <code>FeatureStore</code>.</p>
+    /// <p>This name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not
+    /// allowed. </p>
+    /// </li>
+    /// </ul>
+    pub fn record_identifier_feature_name(&self) -> std::option::Option<&str> {
+        self.record_identifier_feature_name.as_deref()
+    }
+    /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code>
+    /// in a <code>FeatureGroup</code>.</p>
+    /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to
+    /// the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All
+    /// <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding
+    /// <code>EventTime</code>.</p>
+    /// <p>An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix
+    /// timestamp in seconds.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601
+    /// string in the format. The following formats are supported
+    /// <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code>
+    /// where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year,
+    /// month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>,
+    /// and if applicable, <code>SSS</code> represent the hour, month, second and
+    /// milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p>
+    /// </li>
+    /// </ul>
+    pub fn event_time_feature_name(&self) -> std::option::Option<&str> {
+        self.event_time_feature_name.as_deref()
+    }
+    /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code>
+    /// is compulsory per <code>Feature</code>. </p>
+    /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>,
+    /// <code>Fractional</code> and <code>String</code>.</p>
+    /// <p>
+    /// <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>,
+    /// <code>write_time</code>, <code>api_invocation_time</code>
+    /// </p>
+    /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per
+    /// <code>FeatureGroup</code>.</p>
+    pub fn feature_definitions(&self) -> std::option::Option<&[crate::model::FeatureDefinition]> {
+        self.feature_definitions.as_deref()
+    }
+    /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for
+    /// the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default
+    /// value is <code>False</code>.</p>
+    /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
+    /// the <code>OnlineStore</code>.</p>
+    pub fn online_store_config(&self) -> std::option::Option<&crate::model::OnlineStoreConfig> {
+        self.online_store_config.as_ref()
+    }
+    /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to
+    /// specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) location of an
+    /// <code>OfflineStore</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p>
+    /// </li>
+    /// <li>
+    /// <p>An KMS encryption key to encrypt the Amazon S3 location used for
+    /// <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using
+    /// Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE,
+    /// you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p>
+    /// </li>
+    /// </ul>
+    /// <p>To learn more about this parameter, see <a>OfflineStoreConfig</a>.</p>
+    pub fn offline_store_config(&self) -> std::option::Option<&crate::model::OfflineStoreConfig> {
+        self.offline_store_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
+    /// <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFeatureGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFeatureGroupInput");
@@ -58697,6 +63335,28 @@ pub struct CreateExperimentInput {
     /// <p>A list of tags to associate with the experiment. You can use <a>Search</a> API
     /// to search on the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateExperimentInput {
+    /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not
+    /// case-sensitive.</p>
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
+        self.experiment_name.as_deref()
+    }
+    /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't
+    /// specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is
+    /// displayed.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The description of the experiment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tags to associate with the experiment. You can use <a>Search</a> API
+    /// to search on the tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58774,6 +63434,82 @@ pub struct CreateEndpointConfigInput {
     /// </a>.</p>
     pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
+impl CreateEndpointConfigInput {
+    /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
+    /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want
+    /// to host at this endpoint.</p>
+    pub fn production_variants(&self) -> std::option::Option<&[crate::model::ProductionVariant]> {
+        self.production_variants.as_deref()
+    }
+    /// <p></p>
+    pub fn data_capture_config(&self) -> std::option::Option<&crate::model::DataCaptureConfig> {
+        self.data_capture_config.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
+    /// the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+    /// <p>The KmsKeyId can be any of the following formats: </p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Key ARN:
+    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Alias name: <code>alias/ExampleAlias</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Alias name ARN:
+    /// <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
+    /// <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more
+    /// information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
+    /// Policies in Amazon Web Services KMS </a>
+    /// </p>
+    /// <note>
+    /// <p>Certain Nitro-based instances include local storage, dependent on the instance
+    /// type. Local storage volumes are encrypted using a hardware module on the instance.
+    /// You can't request a <code>KmsKeyId</code> when using an instance type with local
+    /// storage. If any of the models that you specify in the
+    /// <code>ProductionVariants</code> parameter use nitro-based instances with local
+    /// storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you
+    /// specify a value for <code>KmsKeyId</code> when using any nitro-based instances with
+    /// local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
+    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+    /// Instance Store Volumes</a>.</p>
+    /// </note>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
+    /// This is a required field in order for your Endpoint to be invoked using
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+    /// <code>InvokeEndpointAsync</code>
+    /// </a>.</p>
+    pub fn async_inference_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AsyncInferenceConfig> {
+        self.async_inference_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateEndpointConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEndpointConfigInput");
@@ -58802,6 +63538,25 @@ pub struct CreateEndpointInput {
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateEndpointInput {
+    /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
+    /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is
+    /// preserved and must be matched in .</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>. </p>
+    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+        self.endpoint_config_name.as_deref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58833,6 +63588,40 @@ pub struct CreateEdgePackagingJobInput {
     pub resource_key: std::option::Option<std::string::String>,
     /// <p>Creates tags for the packaging job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateEdgePackagingJobInput {
+    /// <p>The name of the edge packaging job.</p>
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+        self.edge_packaging_job_name.as_deref()
+    }
+    /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+        self.compilation_job_name.as_deref()
+    }
+    /// <p>The name of the model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The version of the model.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Provides information about the output location for the packaged model.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::EdgeOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
+    pub fn resource_key(&self) -> std::option::Option<&str> {
+        self.resource_key.as_deref()
+    }
+    /// <p>Creates tags for the packaging job.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateEdgePackagingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58903,6 +63692,82 @@ pub struct CreateDomainInput {
     /// <p>A collection of <code>Domain</code> settings.</p>
     pub domain_settings: std::option::Option<crate::model::DomainSettings>,
 }
+impl CreateDomainInput {
+    /// <p>A name for the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The mode of authentication that members use to access the domain.</p>
+    pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+        self.auth_mode.as_ref()
+    }
+    /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified
+    /// in the call to the <code>CreateUserProfile</code> API.</p>
+    /// <p>
+    /// <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
+    /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
+    /// take precedence over those specified in <code>CreateDomain</code>.</p>
+    pub fn default_user_settings(&self) -> std::option::Option<&crate::model::UserSettings> {
+        self.default_user_settings.as_ref()
+    }
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value.
+    /// Tag keys must be unique per resource. Tags are searchable using the
+    /// <code>Search</code> API.</p>
+    /// <p>Tags that you specify for the Domain are also added to all Apps that the
+    /// Domain launches.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is
+    /// <code>PublicInternetOnly</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+    /// Amazon SageMaker, which allows direct internet access</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p>
+    /// </li>
+    /// </ul>
+    pub fn app_network_access_type(
+        &self,
+    ) -> std::option::Option<&crate::model::AppNetworkAccessType> {
+        self.app_network_access_type.as_ref()
+    }
+    /// <p>This member is deprecated and replaced with <code>KmsKeyId</code>.</p>
+    pub fn home_efs_file_system_kms_key_id(&self) -> std::option::Option<&str> {
+        self.home_efs_file_system_kms_key_id.as_deref()
+    }
+    /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
+    /// key by default. For more control, specify a customer managed key.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The entity that creates and manages the required security groups for inter-app
+    /// communication in <code>VPCOnly</code> mode. Required when
+    /// <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+    /// <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is
+    /// provided.</p>
+    pub fn app_security_group_management(
+        &self,
+    ) -> std::option::Option<&crate::model::AppSecurityGroupManagement> {
+        self.app_security_group_management.as_ref()
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(&self) -> std::option::Option<&crate::model::DomainSettings> {
+        self.domain_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainInput");
@@ -58948,6 +63813,36 @@ pub struct CreateDeviceFleetInput {
     /// the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub enable_iot_role_alias: std::option::Option<bool>,
 }
+impl CreateDeviceFleetInput {
+    /// <p>The name of the fleet that the device belongs to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A description of the fleet.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The output configuration for storing sample data collected by the fleet.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::EdgeOutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>Creates tags for the specified fleet.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
+    /// The name of the role alias generated will match this pattern:
+    /// "SageMakerEdge-{DeviceFleetName}".</p>
+    /// <p>For example, if your device fleet is called "demo-fleet", the name of
+    /// the role alias will be "SageMakerEdge-demo-fleet".</p>
+    pub fn enable_iot_role_alias(&self) -> std::option::Option<bool> {
+        self.enable_iot_role_alias
+    }
+}
 impl std::fmt::Debug for CreateDeviceFleetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeviceFleetInput");
@@ -58989,6 +63884,61 @@ pub struct CreateDataQualityJobDefinitionInput {
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateDataQualityJobDefinitionInput {
+    /// <p>The name for the monitoring job definition.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>Configures the constraints and baselines for the monitoring job.</p>
+    pub fn data_quality_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityBaselineConfig> {
+        self.data_quality_baseline_config.as_ref()
+    }
+    /// <p>Specifies the container that runs the monitoring job.</p>
+    pub fn data_quality_app_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityAppSpecification> {
+        self.data_quality_app_specification.as_ref()
+    }
+    /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring
+    /// inputs.</p>
+    pub fn data_quality_job_input(
+        &self,
+    ) -> std::option::Option<&crate::model::DataQualityJobInput> {
+        self.data_quality_job_input.as_ref()
+    }
+    /// <p>The output configuration for monitoring jobs.</p>
+    pub fn data_quality_job_output_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringOutputConfig> {
+        self.data_quality_job_output_config.as_ref()
+    }
+    /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    pub fn job_resources(&self) -> std::option::Option<&crate::model::MonitoringResources> {
+        self.job_resources.as_ref()
+    }
+    /// <p>Specifies networking configuration for the monitoring job.</p>
+    pub fn network_config(&self) -> std::option::Option<&crate::model::MonitoringNetworkConfig> {
+        self.network_config.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
+    /// perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
+    pub fn stopping_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringStoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+    /// User Guide</i>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDataQualityJobDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59033,6 +63983,35 @@ pub struct CreateContextInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of tags to apply to the context.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateContextInput {
+    /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn context_name(&self) -> std::option::Option<&str> {
+        self.context_name.as_deref()
+    }
+    /// <p>The source type, ID, and URI.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ContextSource> {
+        self.source.as_ref()
+    }
+    /// <p>The context type.</p>
+    pub fn context_type(&self) -> std::option::Option<&str> {
+        self.context_type.as_deref()
+    }
+    /// <p>The description of the context.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of properties to add to the context.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>A list of tags to apply to the context.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateContextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59098,6 +64077,68 @@ pub struct CreateCompilationJobInput {
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateCompilationJobInput {
+    /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region
+    /// and within your Amazon Web Services account. </p>
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+        self.compilation_job_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on
+    /// your behalf. </p>
+    /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Read input data from an S3 bucket</p>
+    /// </li>
+    /// <li>
+    /// <p>Write model artifacts to an S3 bucket</p>
+    /// </li>
+    /// <li>
+    /// <p>Write logs to Amazon CloudWatch Logs</p>
+    /// </li>
+    /// <li>
+    /// <p>Publish metrics to Amazon CloudWatch</p>
+    /// </li>
+    /// </ul>
+    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to
+    /// Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For
+    /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
+    /// Roles.</a>
+    /// </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Provides information about the location of input model artifacts, the name and shape
+    /// of the expected data inputs, and the framework in which the model was trained.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::InputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>Provides information about the output location for the compiled model and the target
+    /// device the model runs on.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+    /// compilation job to connect to. Control access to your models by
+    /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+    /// Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::NeoVpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
+    /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
+    /// costs.</p>
+    pub fn stopping_condition(&self) -> std::option::Option<&crate::model::StoppingCondition> {
+        self.stopping_condition.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCompilationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCompilationJobInput");
@@ -59127,6 +64168,25 @@ pub struct CreateCodeRepositoryInput {
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateCodeRepositoryInput {
+    /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
+    /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+        self.code_repository_name.as_deref()
+    }
+    /// <p>Specifies details about the repository, including the URL where the repository is
+    /// located, the default branch, and credentials to use to access the repository.</p>
+    pub fn git_config(&self) -> std::option::Option<&crate::model::GitConfig> {
+        self.git_config.as_ref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCodeRepositoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59176,6 +64236,61 @@ pub struct CreateAutoMlJobInput {
     /// deployment.</p>
     pub model_deploy_config: std::option::Option<crate::model::ModelDeployConfig>,
 }
+impl CreateAutoMlJobInput {
+    /// <p>Identifies an Autopilot job. The name must be unique to your account and is
+    /// case-insensitive.</p>
+    pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
+        self.auto_ml_job_name.as_deref()
+    }
+    /// <p>An array of channel objects that describes the input data and its location. Each channel
+    /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum
+    /// of 500 rows.</p>
+    pub fn input_data_config(&self) -> std::option::Option<&[crate::model::AutoMlChannel]> {
+        self.input_data_config.as_deref()
+    }
+    /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
+    /// from an AutoML job. Format(s) supported: CSV.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::AutoMlOutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p>Defines the type of supervised learning available for the candidates. Options include:
+    /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and
+    /// <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+    /// Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+    pub fn problem_type(&self) -> std::option::Option<&crate::model::ProblemType> {
+        self.problem_type.as_ref()
+    }
+    /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
+    /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
+    /// minimize or maximize it.</p>
+    pub fn auto_ml_job_objective(&self) -> std::option::Option<&crate::model::AutoMlJobObjective> {
+        self.auto_ml_job_objective.as_ref()
+    }
+    /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
+    /// the AutoML job.</p>
+    pub fn auto_ml_job_config(&self) -> std::option::Option<&crate::model::AutoMlJobConfig> {
+        self.auto_ml_job_config.as_ref()
+    }
+    /// <p>The ARN of the role that is used to access the data.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Generates possible candidates without training the models. A candidate is a combination
+    /// of data preprocessors, algorithms, and algorithm parameter settings.</p>
+    pub fn generate_candidate_definitions_only(&self) -> bool {
+        self.generate_candidate_definitions_only
+    }
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per
+    /// resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model
+    /// deployment.</p>
+    pub fn model_deploy_config(&self) -> std::option::Option<&crate::model::ModelDeployConfig> {
+        self.model_deploy_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAutoMlJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAutoMlJobInput");
@@ -59214,6 +64329,35 @@ pub struct CreateArtifactInput {
     /// <p>A list of tags to apply to the artifact.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateArtifactInput {
+    /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn artifact_name(&self) -> std::option::Option<&str> {
+        self.artifact_name.as_deref()
+    }
+    /// <p>The ID, ID type, and URI of the source.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ArtifactSource> {
+        self.source.as_ref()
+    }
+    /// <p>The artifact type.</p>
+    pub fn artifact_type(&self) -> std::option::Option<&str> {
+        self.artifact_type.as_deref()
+    }
+    /// <p>A list of properties to add to the artifact.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>A list of tags to apply to the artifact.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateArtifactInput");
@@ -59237,6 +64381,22 @@ pub struct CreateAppImageConfigInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The KernelGatewayImageConfig.</p>
     pub kernel_gateway_image_config: std::option::Option<crate::model::KernelGatewayImageConfig>,
+}
+impl CreateAppImageConfigInput {
+    /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
+        self.app_image_config_name.as_deref()
+    }
+    /// <p>A list of tags to apply to the AppImageConfig.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The KernelGatewayImageConfig.</p>
+    pub fn kernel_gateway_image_config(
+        &self,
+    ) -> std::option::Option<&crate::model::KernelGatewayImageConfig> {
+        self.kernel_gateway_image_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAppImageConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59269,6 +64429,34 @@ pub struct CreateAppInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub resource_spec: std::option::Option<crate::model::ResourceSpec>,
+}
+impl CreateAppInput {
+    /// <p>The domain ID.</p>
+    pub fn domain_id(&self) -> std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
+    /// <p>The user profile name.</p>
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+        self.user_profile_name.as_deref()
+    }
+    /// <p>The type of app. Supported apps are <code>JupyterServer</code> and
+    /// <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+    pub fn app_type(&self) -> std::option::Option<&crate::model::AppType> {
+        self.app_type.as_ref()
+    }
+    /// <p>The name of the app.</p>
+    pub fn app_name(&self) -> std::option::Option<&str> {
+        self.app_name.as_deref()
+    }
+    /// <p>Each tag consists of a key and an optional value.
+    /// Tag keys must be unique per resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    pub fn resource_spec(&self) -> std::option::Option<&crate::model::ResourceSpec> {
+        self.resource_spec.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAppInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59351,6 +64539,90 @@ pub struct CreateAlgorithmInput {
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAlgorithmInput {
+    /// <p>The name of the algorithm.</p>
+    pub fn algorithm_name(&self) -> std::option::Option<&str> {
+        self.algorithm_name.as_deref()
+    }
+    /// <p>A description of the algorithm.</p>
+    pub fn algorithm_description(&self) -> std::option::Option<&str> {
+        self.algorithm_description.as_deref()
+    }
+    /// <p>Specifies details about training jobs run by this algorithm, including the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR path of the container and the version digest of the
+    /// algorithm.</p>
+    /// </li>
+    /// <li>
+    /// <p>The hyperparameters that the algorithm supports.</p>
+    /// </li>
+    /// <li>
+    /// <p>The instance types that the algorithm supports for training.</p>
+    /// </li>
+    /// <li>
+    /// <p>Whether the algorithm supports distributed training.</p>
+    /// </li>
+    /// <li>
+    /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p>
+    /// </li>
+    /// <li>
+    /// <p>Which metrics that the algorithm emits can be used as the objective metric for
+    /// hyperparameter tuning jobs.</p>
+    /// </li>
+    /// <li>
+    /// <p>The input channels that the algorithm supports for training data. For example,
+    /// an algorithm might support <code>train</code>, <code>validation</code>, and
+    /// <code>test</code> channels.</p>
+    /// </li>
+    /// </ul>
+    pub fn training_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingSpecification> {
+        self.training_specification.as_ref()
+    }
+    /// <p>Specifies details about inference jobs that the algorithm runs, including the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model
+    /// artifacts.</p>
+    /// </li>
+    /// <li>
+    /// <p>The instance types that the algorithm supports for transform jobs and
+    /// real-time endpoints used for inference.</p>
+    /// </li>
+    /// <li>
+    /// <p>The input and output content formats that the algorithm supports for
+    /// inference.</p>
+    /// </li>
+    /// </ul>
+    pub fn inference_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceSpecification> {
+        self.inference_specification.as_ref()
+    }
+    /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
+    /// algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker
+    /// runs to test the algorithm's inference code.</p>
+    pub fn validation_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::AlgorithmValidationSpecification> {
+        self.validation_specification.as_ref()
+    }
+    /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
+    pub fn certify_for_marketplace(&self) -> bool {
+        self.certify_for_marketplace
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAlgorithmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAlgorithmInput");
@@ -59387,6 +64659,43 @@ pub struct CreateActionInput {
     /// <p>A list of tags to apply to the action.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateActionInput {
+    /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p>The source type, ID, and URI.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ActionSource> {
+        self.source.as_ref()
+    }
+    /// <p>The action type.</p>
+    pub fn action_type(&self) -> std::option::Option<&str> {
+        self.action_type.as_deref()
+    }
+    /// <p>The description of the action.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The status of the action.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of properties to add to the action.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::model::MetadataProperties> {
+        self.metadata_properties.as_ref()
+    }
+    /// <p>A list of tags to apply to the action.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateActionInput");
@@ -59409,6 +64718,12 @@ pub struct BatchDescribeModelPackageInput {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
     pub model_package_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchDescribeModelPackageInput {
+    /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
+    pub fn model_package_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.model_package_arn_list.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDescribeModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDescribeModelPackageInput");
@@ -59425,6 +64740,16 @@ pub struct AssociateTrialComponentInput {
     pub trial_component_name: std::option::Option<std::string::String>,
     /// <p>The name of the trial to associate with.</p>
     pub trial_name: std::option::Option<std::string::String>,
+}
+impl AssociateTrialComponentInput {
+    /// <p>The name of the component to associated with the trial.</p>
+    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+        self.trial_component_name.as_deref()
+    }
+    /// <p>The name of the trial to associate with.</p>
+    pub fn trial_name(&self) -> std::option::Option<&str> {
+        self.trial_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateTrialComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59446,6 +64771,19 @@ pub struct AddTagsInput {
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59486,6 +64824,40 @@ pub struct AddAssociationInput {
     /// </li>
     /// </ul>
     pub association_type: std::option::Option<crate::model::AssociationEdgeType>,
+}
+impl AddAssociationInput {
+    /// <p>The ARN of the source.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker
+    /// places no restrictions on their use.</p>
+    /// <ul>
+    /// <li>
+    /// <p>ContributedTo - The source contributed to the destination or had a part in
+    /// enabling the destination. For example, the training data contributed to the training
+    /// job.</p>
+    /// </li>
+    /// <li>
+    /// <p>AssociatedWith - The source is connected to the destination. For example, an
+    /// approval workflow is associated with a model deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>DerivedFrom - The destination is a modification of the source. For example, a digest
+    /// output of a channel input for a processing job is derived from the original inputs.</p>
+    /// </li>
+    /// <li>
+    /// <p>Produced - The source generated the destination. For example, a training job
+    /// produced a model artifact.</p>
+    /// </li>
+    /// </ul>
+    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationEdgeType> {
+        self.association_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AddAssociationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

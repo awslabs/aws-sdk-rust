@@ -1589,6 +1589,12 @@ pub struct ResourceNotFoundException {
     /// <p>The requested device could not be found.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceNotFoundException {
+    /// <p>404</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -1667,6 +1673,12 @@ pub struct InvalidRequestException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The 400 error message returned by the web server.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidRequestException {
+    /// <p>400</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1747,6 +1759,12 @@ pub struct InternalFailureException {
     /// <p>The 500 error message returned by the web server.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalFailureException {
+    /// <p>500</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalFailureException");
@@ -1826,6 +1844,12 @@ pub struct RangeNotSatisfiableException {
     /// <p>The requested number of results specified by nextToken cannot be
     /// satisfied.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl RangeNotSatisfiableException {
+    /// <p>416</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for RangeNotSatisfiableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1908,6 +1932,12 @@ pub struct ResourceConflictException {
     /// <p>An error message explaining the error or its remedy.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceConflictException {
+    /// <p>409</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceConflictException");
@@ -1987,6 +2017,12 @@ pub struct PreconditionFailedException {
     /// <p>An error message explaining the error or its remedy.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl PreconditionFailedException {
+    /// <p>412</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for PreconditionFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreconditionFailedException");
@@ -2065,6 +2101,12 @@ pub struct ForbiddenException {
     pub code: std::option::Option<std::string::String>,
     /// <p>The 403 error message returned by the web server.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ForbiddenException {
+    /// <p>403</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
 }
 impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

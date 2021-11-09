@@ -37,6 +37,64 @@ pub struct ReportDefinition {
     /// </p>
     pub billing_view_arn: std::option::Option<std::string::String>,
 }
+impl ReportDefinition {
+    /// <p>The name of the report that you want to create. The name must be unique,
+    /// is case sensitive, and can't include spaces. </p>
+    pub fn report_name(&self) -> std::option::Option<&str> {
+        self.report_name.as_deref()
+    }
+    /// <p>The length of time covered by the report. </p>
+    pub fn time_unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
+        self.time_unit.as_ref()
+    }
+    /// <p>The format that AWS saves the report in.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::ReportFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The compression format that AWS uses for the report.</p>
+    pub fn compression(&self) -> std::option::Option<&crate::model::CompressionFormat> {
+        self.compression.as_ref()
+    }
+    /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
+    pub fn additional_schema_elements(
+        &self,
+    ) -> std::option::Option<&[crate::model::SchemaElement]> {
+        self.additional_schema_elements.as_deref()
+    }
+    /// <p>The S3 bucket where AWS delivers the report.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix
+    /// can't include spaces.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+    /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
+    pub fn s3_region(&self) -> std::option::Option<&crate::model::AwsRegion> {
+        self.s3_region.as_ref()
+    }
+    /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
+    pub fn additional_artifacts(&self) -> std::option::Option<&[crate::model::AdditionalArtifact]> {
+        self.additional_artifacts.as_deref()
+    }
+    /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to
+    /// previous months. These charges can include refunds, credits, or support fees.</p>
+    pub fn refresh_closed_reports(&self) -> std::option::Option<bool> {
+        self.refresh_closed_reports
+    }
+    /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or
+    /// to deliver the report in addition to the previous versions.</p>
+    pub fn report_versioning(&self) -> std::option::Option<&crate::model::ReportVersioning> {
+        self.report_versioning.as_ref()
+    }
+    /// <p>
+    /// The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.
+    /// </p>
+    pub fn billing_view_arn(&self) -> std::option::Option<&str> {
+        self.billing_view_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ReportDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportDefinition");

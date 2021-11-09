@@ -394,10 +394,7 @@ impl DescribeDimensionKeysInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dimension_keys(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -626,10 +623,7 @@ impl GetDimensionKeyDetailsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_dimension_key_details(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -969,10 +963,7 @@ impl GetResourceMetricsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_metrics(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_metrics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1099,6 +1090,84 @@ pub struct GetResourceMetricsInput {
     /// value specified by <code>MaxRecords</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourceMetricsInput {
+    /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is
+    /// <code>RDS</code>.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
+    /// this data source.</p>
+    /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify
+    /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and
+    /// can optionally specify aggregation and filtering criteria.</p>
+    pub fn metric_queries(&self) -> std::option::Option<&[crate::model::MetricQuery]> {
+        self.metric_queries.as_deref()
+    }
+    /// <p>The date and time specifying the beginning of the requested time series data. You can't
+    /// specify a <code>StartTime</code> that's earlier than 7 days ago. The value specified is
+    /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
+    /// will be returned.</p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time specifying the end of the requested time series data.  The value specified is
+    /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
+    /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
+    /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>1</code> (one second)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>60</code> (one minute)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>300</code> (five minutes)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>3600</code> (one hour)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>86400</code> (twenty-four hours)</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for
+    /// you, with a goal of returning roughly 100-200 data points in the response.</p>
+    pub fn period_in_seconds(&self) -> std::option::Option<i32> {
+        self.period_in_seconds
+    }
+    /// <p>The maximum number of items to return in the response.
+    /// If more items exist than the specified <code>MaxRecords</code> value, a pagination
+    /// token is included in the response so that the remaining
+    /// results can be retrieved.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional pagination token provided by a previous request. If
+    /// this parameter is specified, the response includes only records beyond the token, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceMetricsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceMetricsInput");
@@ -1135,6 +1204,35 @@ pub struct GetDimensionKeyDetailsInput {
     /// dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all
     /// dimension data within the specified dimension group.</p>
     pub requested_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetDimensionKeyDetailsInput {
+    /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS
+    /// Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify
+    /// <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The name of the dimension group. The only valid value is <code>db.sql</code>. Performance Insights searches the
+    /// specified group for the dimension group ID.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+    /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>,
+    /// the group ID is <code>db.sql.id</code>.</p>
+    pub fn group_identifier(&self) -> std::option::Option<&str> {
+        self.group_identifier.as_deref()
+    }
+    /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group
+    /// <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short
+    /// dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all
+    /// dimension data within the specified dimension group.</p>
+    pub fn requested_dimensions(&self) -> std::option::Option<&[std::string::String]> {
+        self.requested_dimensions.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDimensionKeyDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1251,6 +1349,131 @@ pub struct DescribeDimensionKeysInput {
     /// this parameter is specified, the response includes only records beyond the token, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDimensionKeysInput {
+    /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is
+    /// <code>RDS</code>.</p>
+    pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
+        self.service_type.as_ref()
+    }
+    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
+    /// this data source.</p>
+    /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example,
+    /// specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
+    /// </p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The date and time specifying the beginning of the requested time series data. You must specify a
+    /// <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means
+    /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
+    /// <p>The value for <code>StartTime</code> must be earlier than the value for
+    /// <code>EndTime</code>.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The date and time specifying the end of the requested time series data. The value specified is
+    /// <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are
+    /// returned.</p>
+    /// <p>The value for <code>EndTime</code> must be later than the value for
+    /// <code>StartTime</code>.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of a Performance Insights metric to be measured.</p>
+    /// <p>Valid values for <code>Metric</code> are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>db.load.avg</code> - a scaled representation of the number of active sessions
+    /// for the database engine.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>db.sampledload.avg</code> - the raw number of active sessions for the
+    /// database engine.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code>
+    /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
+    /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
+    /// For most use cases, you can query <code>db.load.avg</code> only. </p>
+    pub fn metric(&self) -> std::option::Option<&str> {
+        self.metric.as_deref()
+    }
+    /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
+    /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>1</code> (one second)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>60</code> (one minute)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>300</code> (five minutes)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>3600</code> (one hour)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>86400</code> (twenty-four hours)</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning
+    /// roughly 100-200 data points in the response.</p>
+    pub fn period_in_seconds(&self) -> std::option::Option<i32> {
+        self.period_in_seconds
+    }
+    /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group.
+    /// Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group.
+    /// You can also request that Performance Insights return a limited number of values for a dimension.</p>
+    pub fn group_by(&self) -> std::option::Option<&crate::model::DimensionGroup> {
+        self.group_by.as_ref()
+    }
+    /// <p>For each dimension specified in
+    /// <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
+    pub fn partition_by(&self) -> std::option::Option<&crate::model::DimensionGroup> {
+        self.partition_by.as_ref()
+    }
+    /// <p>One or more filters to apply in the request.  Restrictions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or
+    /// <code>Partition</code> parameters.</p>
+    /// </li>
+    /// <li>
+    /// <p>A single filter for any other dimension in this dimension group.</p>
+    /// </li>
+    /// </ul>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.filter.as_ref()
+    }
+    /// <p>The maximum number of items to return in the response.
+    /// If more items exist than the specified <code>MaxRecords</code> value, a pagination
+    /// token is included in the response so that the remaining
+    /// results can be retrieved.
+    /// </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>An optional pagination token provided by a previous request. If
+    /// this parameter is specified, the response includes only records beyond the token, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDimensionKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

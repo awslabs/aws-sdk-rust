@@ -6,6 +6,12 @@ pub struct UpdateServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain.</p>
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
 }
+impl UpdateServiceAccessPoliciesOutput {
+    /// <p>The access rules configured for the domain.</p>
+    pub fn access_policies(&self) -> std::option::Option<&crate::model::AccessPoliciesStatus> {
+        self.access_policies.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceAccessPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceAccessPoliciesOutput");
@@ -57,6 +63,14 @@ pub struct UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
 }
+impl UpdateScalingParametersOutput {
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
+    pub fn scaling_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ScalingParametersStatus> {
+        self.scaling_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateScalingParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateScalingParametersOutput");
@@ -107,6 +121,14 @@ impl UpdateScalingParametersOutput {
 pub struct UpdateDomainEndpointOptionsOutput {
     /// <p>The newly-configured domain endpoint options.</p>
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
+}
+impl UpdateDomainEndpointOptionsOutput {
+    /// <p>The newly-configured domain endpoint options.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptionsStatus> {
+        self.domain_endpoint_options.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainEndpointOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -163,6 +185,14 @@ pub struct UpdateAvailabilityOptionsOutput {
     /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
     pub availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
 }
+impl UpdateAvailabilityOptionsOutput {
+    /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
+    pub fn availability_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AvailabilityOptionsStatus> {
+        self.availability_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAvailabilityOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAvailabilityOptionsOutput");
@@ -218,6 +248,15 @@ pub struct ListDomainNamesOutput {
     /// <p>The names of the search domains owned by an account.</p>
     pub domain_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListDomainNamesOutput {
+    /// <p>The names of the search domains owned by an account.</p>
+    pub fn domain_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.domain_names.as_ref()
+    }
 }
 impl std::fmt::Debug for ListDomainNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -284,6 +323,12 @@ pub struct IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl IndexDocumentsOutput {
+    /// <p>The names of the fields that are currently being indexed.</p>
+    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.field_names.as_deref()
+    }
+}
 impl std::fmt::Debug for IndexDocumentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IndexDocumentsOutput");
@@ -340,6 +385,12 @@ impl IndexDocumentsOutput {
 pub struct DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
     pub suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
+}
+impl DescribeSuggestersOutput {
+    /// <p>The suggesters configured for the domain specified in the request.</p>
+    pub fn suggesters(&self) -> std::option::Option<&[crate::model::SuggesterStatus]> {
+        self.suggesters.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSuggestersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -398,6 +449,12 @@ pub struct DescribeServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain specified in the request.</p>
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
 }
+impl DescribeServiceAccessPoliciesOutput {
+    /// <p>The access rules configured for the domain specified in the request.</p>
+    pub fn access_policies(&self) -> std::option::Option<&crate::model::AccessPoliciesStatus> {
+        self.access_policies.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeServiceAccessPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeServiceAccessPoliciesOutput");
@@ -449,6 +506,14 @@ pub struct DescribeScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
 }
+impl DescribeScalingParametersOutput {
+    /// <p>The status and configuration of a search domain's scaling parameters. </p>
+    pub fn scaling_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::ScalingParametersStatus> {
+        self.scaling_parameters.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeScalingParametersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeScalingParametersOutput");
@@ -499,6 +564,12 @@ impl DescribeScalingParametersOutput {
 pub struct DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
     pub index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
+}
+impl DescribeIndexFieldsOutput {
+    /// <p>The index fields configured for the domain.</p>
+    pub fn index_fields(&self) -> std::option::Option<&[crate::model::IndexFieldStatus]> {
+        self.index_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeIndexFieldsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -557,6 +628,12 @@ pub struct DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
     pub expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
 }
+impl DescribeExpressionsOutput {
+    /// <p>The expressions configured for the domain.</p>
+    pub fn expressions(&self) -> std::option::Option<&[crate::model::ExpressionStatus]> {
+        self.expressions.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeExpressionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExpressionsOutput");
@@ -613,6 +690,12 @@ impl DescribeExpressionsOutput {
 pub struct DescribeDomainsOutput {
     /// <p>A list that contains the status of each requested domain.</p>
     pub domain_status_list: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
+}
+impl DescribeDomainsOutput {
+    /// <p>A list that contains the status of each requested domain.</p>
+    pub fn domain_status_list(&self) -> std::option::Option<&[crate::model::DomainStatus]> {
+        self.domain_status_list.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDomainsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -672,6 +755,14 @@ pub struct DescribeDomainEndpointOptionsOutput {
     /// <p>The status and configuration of a search domain's endpoint options.</p>
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
 }
+impl DescribeDomainEndpointOptionsOutput {
+    /// <p>The status and configuration of a search domain's endpoint options.</p>
+    pub fn domain_endpoint_options(
+        &self,
+    ) -> std::option::Option<&crate::model::DomainEndpointOptionsStatus> {
+        self.domain_endpoint_options.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDomainEndpointOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDomainEndpointOptionsOutput");
@@ -727,6 +818,14 @@ pub struct DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     pub availability_options: std::option::Option<crate::model::AvailabilityOptionsStatus>,
 }
+impl DescribeAvailabilityOptionsOutput {
+    /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
+    pub fn availability_options(
+        &self,
+    ) -> std::option::Option<&crate::model::AvailabilityOptionsStatus> {
+        self.availability_options.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAvailabilityOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAvailabilityOptionsOutput");
@@ -781,6 +880,12 @@ impl DescribeAvailabilityOptionsOutput {
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
     pub analysis_schemes: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
+}
+impl DescribeAnalysisSchemesOutput {
+    /// <p>The analysis scheme descriptions.</p>
+    pub fn analysis_schemes(&self) -> std::option::Option<&[crate::model::AnalysisSchemeStatus]> {
+        self.analysis_schemes.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAnalysisSchemesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -843,6 +948,12 @@ pub struct DeleteSuggesterOutput {
     /// <p>The status of the suggester being deleted.</p>
     pub suggester: std::option::Option<crate::model::SuggesterStatus>,
 }
+impl DeleteSuggesterOutput {
+    /// <p>The status of the suggester being deleted.</p>
+    pub fn suggester(&self) -> std::option::Option<&crate::model::SuggesterStatus> {
+        self.suggester.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSuggesterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSuggesterOutput");
@@ -893,6 +1004,12 @@ impl DeleteSuggesterOutput {
 pub struct DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
     pub index_field: std::option::Option<crate::model::IndexFieldStatus>,
+}
+impl DeleteIndexFieldOutput {
+    /// <p>The status of the index field being deleted.</p>
+    pub fn index_field(&self) -> std::option::Option<&crate::model::IndexFieldStatus> {
+        self.index_field.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteIndexFieldOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -945,6 +1062,12 @@ pub struct DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
     pub expression: std::option::Option<crate::model::ExpressionStatus>,
 }
+impl DeleteExpressionOutput {
+    /// <p>The status of the expression being deleted.</p>
+    pub fn expression(&self) -> std::option::Option<&crate::model::ExpressionStatus> {
+        self.expression.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteExpressionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteExpressionOutput");
@@ -995,6 +1118,12 @@ impl DeleteExpressionOutput {
 pub struct DeleteDomainOutput {
     /// <p>The current status of the search domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
+}
+impl DeleteDomainOutput {
+    /// <p>The current status of the search domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1047,6 +1176,12 @@ pub struct DeleteAnalysisSchemeOutput {
     /// <p>The status of the analysis scheme being deleted.</p>
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
+impl DeleteAnalysisSchemeOutput {
+    /// <p>The status of the analysis scheme being deleted.</p>
+    pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisSchemeStatus> {
+        self.analysis_scheme.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAnalysisSchemeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAnalysisSchemeOutput");
@@ -1097,6 +1232,12 @@ impl DeleteAnalysisSchemeOutput {
 pub struct DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     pub suggester: std::option::Option<crate::model::SuggesterStatus>,
+}
+impl DefineSuggesterOutput {
+    /// <p>The value of a <code>Suggester</code> and its current status.</p>
+    pub fn suggester(&self) -> std::option::Option<&crate::model::SuggesterStatus> {
+        self.suggester.as_ref()
+    }
 }
 impl std::fmt::Debug for DefineSuggesterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1149,6 +1290,12 @@ pub struct DefineIndexFieldOutput {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
     pub index_field: std::option::Option<crate::model::IndexFieldStatus>,
 }
+impl DefineIndexFieldOutput {
+    /// <p>The value of an <code>IndexField</code> and its current status.</p>
+    pub fn index_field(&self) -> std::option::Option<&crate::model::IndexFieldStatus> {
+        self.index_field.as_ref()
+    }
+}
 impl std::fmt::Debug for DefineIndexFieldOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefineIndexFieldOutput");
@@ -1199,6 +1346,12 @@ impl DefineIndexFieldOutput {
 pub struct DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
     pub expression: std::option::Option<crate::model::ExpressionStatus>,
+}
+impl DefineExpressionOutput {
+    /// <p>The value of an <code>Expression</code> and its current status.</p>
+    pub fn expression(&self) -> std::option::Option<&crate::model::ExpressionStatus> {
+        self.expression.as_ref()
+    }
 }
 impl std::fmt::Debug for DefineExpressionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1251,6 +1404,12 @@ pub struct DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
+impl DefineAnalysisSchemeOutput {
+    /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+    pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisSchemeStatus> {
+        self.analysis_scheme.as_ref()
+    }
+}
 impl std::fmt::Debug for DefineAnalysisSchemeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefineAnalysisSchemeOutput");
@@ -1302,6 +1461,12 @@ pub struct CreateDomainOutput {
     /// <p>The current status of the search domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
 }
+impl CreateDomainOutput {
+    /// <p>The current status of the search domain.</p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDomainOutput");
@@ -1352,6 +1517,12 @@ impl CreateDomainOutput {
 pub struct BuildSuggestersOutput {
     /// <p>A list of field names.</p>
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BuildSuggestersOutput {
+    /// <p>A list of field names.</p>
+    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.field_names.as_deref()
+    }
 }
 impl std::fmt::Debug for BuildSuggestersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -116,7 +116,7 @@ impl AssociateDelegateToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_delegate_to_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_delegate_to_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -296,10 +296,7 @@ impl AssociateMemberToGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_member_to_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -481,10 +478,7 @@ impl CancelMailboxExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_mailbox_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -660,10 +654,7 @@ impl CreateAliasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -827,10 +818,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1211,7 +1199,7 @@ impl CreateMobileDeviceAccessRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_mobile_device_access_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_mobile_device_access_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1436,10 +1424,7 @@ impl CreateOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1619,10 +1604,8 @@ impl CreateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1810,10 +1793,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1981,10 +1961,7 @@ impl DeleteAccessControlRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_access_control_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2164,10 +2141,7 @@ impl DeleteAliasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_alias(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2331,10 +2305,7 @@ impl DeleteGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2518,10 +2489,7 @@ impl DeleteMailboxPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_mailbox_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2727,7 +2695,7 @@ impl DeleteMobileDeviceAccessOverrideInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_mobile_device_access_override(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_mobile_device_access_override(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2900,7 +2868,7 @@ impl DeleteMobileDeviceAccessRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_mobile_device_access_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_mobile_device_access_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3081,10 +3049,7 @@ impl DeleteOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3250,10 +3215,8 @@ impl DeleteResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3420,10 +3383,7 @@ impl DeleteRetentionPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_retention_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3587,10 +3547,7 @@ impl DeleteUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3757,10 +3714,7 @@ impl DeregisterFromWorkMailInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_from_work_mail(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3925,10 +3879,9 @@ impl DeregisterMailDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_mail_domain(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deregister_mail_domain(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4092,10 +4045,7 @@ impl DescribeGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4249,7 +4199,7 @@ impl DescribeInboundDmarcSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_inbound_dmarc_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_inbound_dmarc_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4418,10 +4368,7 @@ impl DescribeMailboxExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_mailbox_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4574,10 +4521,7 @@ impl DescribeOrganizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_organization(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4744,10 +4688,7 @@ impl DescribeResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4911,10 +4852,7 @@ impl DescribeUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_user(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5096,7 +5034,7 @@ impl DisassociateDelegateFromResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_delegate_from_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_delegate_from_resource(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5275,7 +5213,7 @@ impl DisassociateMemberFromGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_member_from_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_member_from_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5471,10 +5409,7 @@ impl GetAccessControlEffectInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_access_control_effect(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5630,10 +5565,7 @@ impl GetDefaultRetentionPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_default_retention_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5800,10 +5732,7 @@ impl GetMailboxDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_mailbox_details(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_mailbox_details(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5967,10 +5896,8 @@ impl GetMailDomainInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_mail_domain(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_mail_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6178,7 +6105,7 @@ impl GetMobileDeviceAccessEffectInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_mobile_device_access_effect(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_mobile_device_access_effect(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6385,7 +6312,7 @@ impl GetMobileDeviceAccessOverrideInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_mobile_device_access_override(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_mobile_device_access_override(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6541,10 +6468,7 @@ impl ListAccessControlRulesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_access_control_rules(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6734,10 +6658,7 @@ impl ListAliasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_aliases(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_aliases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6930,10 +6851,7 @@ impl ListGroupMembersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_group_members(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_group_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7111,10 +7029,7 @@ impl ListGroupsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7293,10 +7208,7 @@ impl ListMailboxExportJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_mailbox_export_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7493,10 +7405,7 @@ impl ListMailboxPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_mailbox_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7673,10 +7582,7 @@ impl ListMailDomainsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_mail_domains(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_mail_domains(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7906,7 +7812,7 @@ impl ListMobileDeviceAccessOverridesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_mobile_device_access_overrides(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_mobile_device_access_overrides(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8061,7 +7967,7 @@ impl ListMobileDeviceAccessRulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_mobile_device_access_rules(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_mobile_device_access_rules(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8226,10 +8132,7 @@ impl ListOrganizationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_organizations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_organizations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8424,10 +8327,7 @@ impl ListResourceDelegatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_delegates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8605,10 +8505,7 @@ impl ListResourcesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8758,10 +8655,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8937,10 +8833,7 @@ impl ListUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9266,10 +9159,7 @@ impl PutAccessControlRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_access_control_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9437,10 +9327,7 @@ impl PutInboundDmarcSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_inbound_dmarc_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9657,10 +9544,7 @@ impl PutMailboxPermissionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_mailbox_permissions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9893,7 +9777,7 @@ impl PutMobileDeviceAccessOverrideInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_mobile_device_access_override(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_mobile_device_access_override(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10108,10 +9992,7 @@ impl PutRetentionPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_retention_policy(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_retention_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10291,10 +10172,7 @@ impl RegisterMailDomainInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_mail_domain(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_mail_domain(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10473,10 +10351,7 @@ impl RegisterToWorkMailInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_to_work_mail(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_to_work_mail(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10654,10 +10529,7 @@ impl ResetPasswordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reset_password(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reset_password(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10906,10 +10778,7 @@ impl StartMailboxExportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_mailbox_export_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11079,10 +10948,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11252,10 +11118,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11423,10 +11286,7 @@ impl UpdateDefaultMailDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_default_mail_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11605,10 +11465,7 @@ impl UpdateMailboxQuotaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_mailbox_quota(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_mailbox_quota(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11992,7 +11849,7 @@ impl UpdateMobileDeviceAccessRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_mobile_device_access_rule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_mobile_device_access_rule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12173,10 +12030,7 @@ impl UpdatePrimaryEmailAddressInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_primary_email_address(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12369,10 +12223,8 @@ impl UpdateResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12448,6 +12300,25 @@ pub struct UpdateResourceInput {
     /// <p>The resource's booking options to be updated.</p>
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
 }
+impl UpdateResourceInput {
+    /// <p>The identifier associated with the organization for which the resource is
+    /// updated.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the resource to be updated.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The name of the resource to be updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The resource's booking options to be updated.</p>
+    pub fn booking_options(&self) -> std::option::Option<&crate::model::BookingOptions> {
+        self.booking_options.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceInput");
@@ -12469,6 +12340,20 @@ pub struct UpdatePrimaryEmailAddressInput {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The value of the email to be updated as primary.</p>
     pub email: std::option::Option<std::string::String>,
+}
+impl UpdatePrimaryEmailAddressInput {
+    /// <p>The organization that contains the user, group, or resource to update.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The user, group, or resource to update.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The value of the email to be updated as primary.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePrimaryEmailAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12511,6 +12396,60 @@ pub struct UpdateMobileDeviceAccessRuleInput {
     /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateMobileDeviceAccessRuleInput {
+    /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the rule to be updated.</p>
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+        self.mobile_device_access_rule_id.as_deref()
+    }
+    /// <p>The updated rule name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>Device types that the updated rule will match.</p>
+    pub fn device_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_types.as_deref()
+    }
+    /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
+    pub fn not_device_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_types.as_deref()
+    }
+    /// <p>Device models that the updated rule will match.</p>
+    pub fn device_models(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_models.as_deref()
+    }
+    /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
+    pub fn not_device_models(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_models.as_deref()
+    }
+    /// <p>Device operating systems that the updated rule will match.</p>
+    pub fn device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_operating_systems.as_deref()
+    }
+    /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
+    pub fn not_device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_operating_systems.as_deref()
+    }
+    /// <p>User agents that the updated rule will match.</p>
+    pub fn device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_user_agents.as_deref()
+    }
+    /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
+    pub fn not_device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_user_agents.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateMobileDeviceAccessRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMobileDeviceAccessRuleInput");
@@ -12549,6 +12488,21 @@ pub struct UpdateMailboxQuotaInput {
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
     pub mailbox_quota: std::option::Option<i32>,
 }
+impl UpdateMailboxQuotaInput {
+    /// <p>The identifier for the organization that contains the user for whom to update the
+    /// mailbox quota.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The updated mailbox quota, in MB, for the specified user.</p>
+    pub fn mailbox_quota(&self) -> std::option::Option<i32> {
+        self.mailbox_quota
+    }
+}
 impl std::fmt::Debug for UpdateMailboxQuotaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMailboxQuotaInput");
@@ -12568,6 +12522,16 @@ pub struct UpdateDefaultMailDomainInput {
     /// <p>The domain name that will become the default domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl UpdateDefaultMailDomainInput {
+    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain name that will become the default domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDefaultMailDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDefaultMailDomainInput");
@@ -12586,6 +12550,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -12603,6 +12577,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12636,6 +12620,42 @@ pub struct StartMailboxExportJobInput {
     /// <p>The S3 bucket prefix.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
 }
+impl StartMailboxExportJobInput {
+    /// <p>The idempotency token for the client request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The identifier associated with the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The mailbox export job description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
+    /// bucket.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
+    /// key that encrypts the exported mailbox content.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 bucket prefix.</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for StartMailboxExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMailboxExportJobInput");
@@ -12663,6 +12683,21 @@ pub struct ResetPasswordInput {
     /// <p>The new password for the user.</p>
     pub password: std::option::Option<std::string::String>,
 }
+impl ResetPasswordInput {
+    /// <p>The identifier of the organization that contains the user for which the password is
+    /// reset.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the user for whom the password is reset.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The new password for the user.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetPasswordInput");
@@ -12685,6 +12720,21 @@ pub struct RegisterToWorkMailInput {
     /// <p>The email for the user, group, or resource to be updated.</p>
     pub email: std::option::Option<std::string::String>,
 }
+impl RegisterToWorkMailInput {
+    /// <p>The identifier for the organization under which the user, group, or resource
+    /// exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the user, group, or resource to be updated.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The email for the user, group, or resource to be updated.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterToWorkMailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterToWorkMailInput");
@@ -12705,6 +12755,20 @@ pub struct RegisterMailDomainInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
     pub domain_name: std::option::Option<std::string::String>,
+}
+impl RegisterMailDomainInput {
+    /// <p>Idempotency token used when retrying requests.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RegisterMailDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12731,6 +12795,30 @@ pub struct PutRetentionPolicyInput {
     /// <p>The retention policy folder configurations.</p>
     pub folder_configurations:
         std::option::Option<std::vec::Vec<crate::model::FolderConfiguration>>,
+}
+impl PutRetentionPolicyInput {
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The retention policy ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The retention policy name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The retention policy description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The retention policy folder configurations.</p>
+    pub fn folder_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::FolderConfiguration]> {
+        self.folder_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRetentionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12773,6 +12861,42 @@ pub struct PutMobileDeviceAccessOverrideInput {
     /// <p>A description of the override.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl PutMobileDeviceAccessOverrideInput {
+    /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li>
+    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Email address: <code>user@domain.tld</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>User name: <code>user</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>A description of the override.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for PutMobileDeviceAccessOverrideInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMobileDeviceAccessOverrideInput");
@@ -12806,6 +12930,32 @@ pub struct PutMailboxPermissionsInput {
     /// mailbox.</p>
     pub permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
+impl PutMailboxPermissionsInput {
+    /// <p>The identifier of the organization under which the user, group, or resource
+    /// exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the user, group, or resource for which to update mailbox
+    /// permissions.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The identifier of the user, group, or resource to which to grant the
+    /// permissions.</p>
+    pub fn grantee_id(&self) -> std::option::Option<&str> {
+        self.grantee_id.as_deref()
+    }
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
+    /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
+    /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
+    /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
+    /// access to the mailbox, irrespective of other folder-level permissions set on the
+    /// mailbox.</p>
+    pub fn permission_values(&self) -> std::option::Option<&[crate::model::PermissionType]> {
+        self.permission_values.as_deref()
+    }
+}
 impl std::fmt::Debug for PutMailboxPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutMailboxPermissionsInput");
@@ -12825,6 +12975,16 @@ pub struct PutInboundDmarcSettingsInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Enforces or suspends a policy after it's applied.</p>
     pub enforced: std::option::Option<bool>,
+}
+impl PutInboundDmarcSettingsInput {
+    /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>Enforces or suspends a policy after it's applied.</p>
+    pub fn enforced(&self) -> std::option::Option<bool> {
+        self.enforced
+    }
 }
 impl std::fmt::Debug for PutInboundDmarcSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12864,6 +13024,52 @@ pub struct PutAccessControlRuleInput {
     /// <p>The identifier of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
 }
+impl PutAccessControlRuleInput {
+    /// <p>The rule name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The rule effect.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::AccessControlRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    pub fn ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+        self.ip_ranges.as_deref()
+    }
+    /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    pub fn not_ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_ip_ranges.as_deref()
+    }
+    /// <p>Access protocol actions to include in the rule. Valid values include
+    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.actions.as_deref()
+    }
+    /// <p>Access protocol actions to exclude from the rule. Valid values include
+    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn not_actions(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_actions.as_deref()
+    }
+    /// <p>User IDs to include in the rule.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>User IDs to exclude from the rule.</p>
+    pub fn not_user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_user_ids.as_deref()
+    }
+    /// <p>The identifier of the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAccessControlRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccessControlRuleInput");
@@ -12893,6 +13099,21 @@ pub struct ListUsersInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListUsersInput {
+    /// <p>The identifier for the organization under which the users exist.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -12909,6 +13130,12 @@ impl std::fmt::Debug for ListUsersInput {
 pub struct ListTagsForResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12929,6 +13156,21 @@ pub struct ListResourcesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListResourcesInput {
+    /// <p>The identifier for the organization under which the resources exist.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12955,6 +13197,26 @@ pub struct ListResourceDelegatesInput {
     /// <p>The number of maximum results in a page.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListResourceDelegatesInput {
+    /// <p>The identifier for the organization that contains the resource for which delegates
+    /// are listed.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the resource whose delegates are listed.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The token used to paginate through the delegates associated with a
+    /// resource.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of maximum results in a page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListResourceDelegatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceDelegatesInput");
@@ -12976,6 +13238,17 @@ pub struct ListOrganizationsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListOrganizationsInput {
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListOrganizationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOrganizationsInput");
@@ -12991,6 +13264,12 @@ impl std::fmt::Debug for ListOrganizationsInput {
 pub struct ListMobileDeviceAccessRulesInput {
     /// <p>The Amazon WorkMail organization for which to list the rules.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl ListMobileDeviceAccessRulesInput {
+    /// <p>The Amazon WorkMail organization for which to list the rules.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMobileDeviceAccessRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13029,6 +13308,42 @@ pub struct ListMobileDeviceAccessOverridesInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListMobileDeviceAccessOverridesInput {
+    /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li>
+    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Email address: <code>user@domain.tld</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>User name: <code>user</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The mobile device to which the access override applies.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListMobileDeviceAccessOverridesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMobileDeviceAccessOverridesInput");
@@ -13051,6 +13366,20 @@ pub struct ListMailDomainsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListMailDomainsInput {
+    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListMailDomainsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13078,6 +13407,27 @@ pub struct ListMailboxPermissionsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListMailboxPermissionsInput {
+    /// <p>The identifier of the organization under which the user, group, or resource
+    /// exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the user, group, or resource for which to list mailbox
+    /// permissions.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListMailboxPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMailboxPermissionsInput");
@@ -13100,6 +13450,20 @@ pub struct ListMailboxExportJobsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListMailboxExportJobsInput {
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListMailboxExportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMailboxExportJobsInput");
@@ -13121,6 +13485,21 @@ pub struct ListGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListGroupsInput {
+    /// <p>The identifier for the organization under which the groups exist.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13147,6 +13526,26 @@ pub struct ListGroupMembersInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListGroupMembersInput {
+    /// <p>The identifier for the organization under which the group exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the group to which the members (users or groups) are
+    /// associated.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p> The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListGroupMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupMembersInput");
@@ -13172,6 +13571,25 @@ pub struct ListAliasesInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAliasesInput {
+    /// <p>The identifier for the organization under which the entity exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the entity for which to list the aliases.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not
+    /// contain any tokens.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAliasesInput");
@@ -13189,6 +13607,12 @@ impl std::fmt::Debug for ListAliasesInput {
 pub struct ListAccessControlRulesInput {
     /// <p>The identifier for the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl ListAccessControlRulesInput {
+    /// <p>The identifier for the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccessControlRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13223,6 +13647,34 @@ pub struct GetMobileDeviceAccessOverrideInput {
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl GetMobileDeviceAccessOverrideInput {
+    /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
+    /// <ul>
+    /// <li>
+    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Email address: <code>user@domain.tld</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>User name: <code>user</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMobileDeviceAccessOverrideInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMobileDeviceAccessOverrideInput");
@@ -13248,6 +13700,28 @@ pub struct GetMobileDeviceAccessEffectInput {
     /// <p>Device user agent the simulated user will report.</p>
     pub device_user_agent: std::option::Option<std::string::String>,
 }
+impl GetMobileDeviceAccessEffectInput {
+    /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>Device type the simulated user will report.</p>
+    pub fn device_type(&self) -> std::option::Option<&str> {
+        self.device_type.as_deref()
+    }
+    /// <p>Device model the simulated user will report.</p>
+    pub fn device_model(&self) -> std::option::Option<&str> {
+        self.device_model.as_deref()
+    }
+    /// <p>Device operating system the simulated user will report.</p>
+    pub fn device_operating_system(&self) -> std::option::Option<&str> {
+        self.device_operating_system.as_deref()
+    }
+    /// <p>Device user agent the simulated user will report.</p>
+    pub fn device_user_agent(&self) -> std::option::Option<&str> {
+        self.device_user_agent.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMobileDeviceAccessEffectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMobileDeviceAccessEffectInput");
@@ -13269,6 +13743,16 @@ pub struct GetMailDomainInput {
     /// <p>The domain from which you want to retrieve details.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl GetMailDomainInput {
+    /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain from which you want to retrieve details.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMailDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMailDomainInput");
@@ -13288,6 +13772,17 @@ pub struct GetMailboxDetailsInput {
     /// <p>The identifier for the user whose mailbox details are being requested.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl GetMailboxDetailsInput {
+    /// <p>The identifier for the organization that contains the user whose mailbox details are
+    /// being requested.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the user whose mailbox details are being requested.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMailboxDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMailboxDetailsInput");
@@ -13303,6 +13798,12 @@ impl std::fmt::Debug for GetMailboxDetailsInput {
 pub struct GetDefaultRetentionPolicyInput {
     /// <p>The organization ID.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl GetDefaultRetentionPolicyInput {
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDefaultRetentionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13327,6 +13828,26 @@ pub struct GetAccessControlEffectInput {
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl GetAccessControlEffectInput {
+    /// <p>The identifier for the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The IPv4 address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
+    /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
+    /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn action(&self) -> std::option::Option<&str> {
+        self.action.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccessControlEffectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccessControlEffectInput");
@@ -13348,6 +13869,20 @@ pub struct DisassociateMemberFromGroupInput {
     pub group_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member to be removed to the group.</p>
     pub member_id: std::option::Option<std::string::String>,
+}
+impl DisassociateMemberFromGroupInput {
+    /// <p>The identifier for the organization under which the group exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the group from which members are removed.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The identifier for the member to be removed to the group.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateMemberFromGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13372,6 +13907,22 @@ pub struct DisassociateDelegateFromResourceInput {
     /// delegates.</p>
     pub entity_id: std::option::Option<std::string::String>,
 }
+impl DisassociateDelegateFromResourceInput {
+    /// <p>The identifier for the organization under which the resource exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the resource from which delegates' set members are removed.
+    /// </p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The identifier for the member (user, group) to be removed from the resource's
+    /// delegates.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateDelegateFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateDelegateFromResourceInput");
@@ -13390,6 +13941,16 @@ pub struct DescribeUserInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user to be described.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl DescribeUserInput {
+    /// <p>The identifier for the organization under which the user exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the user to be described.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13410,6 +13971,17 @@ pub struct DescribeResourceInput {
     /// <p>The identifier of the resource to be described.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
+impl DescribeResourceInput {
+    /// <p>The identifier associated with the organization for which the resource is
+    /// described.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the resource to be described.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceInput");
@@ -13425,6 +13997,12 @@ impl std::fmt::Debug for DescribeResourceInput {
 pub struct DescribeOrganizationInput {
     /// <p>The identifier for the organization to be described.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationInput {
+    /// <p>The identifier for the organization to be described.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13443,6 +14021,16 @@ pub struct DescribeMailboxExportJobInput {
     /// <p>The organization ID.</p>
     pub organization_id: std::option::Option<std::string::String>,
 }
+impl DescribeMailboxExportJobInput {
+    /// <p>The mailbox export job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeMailboxExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeMailboxExportJobInput");
@@ -13458,6 +14046,12 @@ impl std::fmt::Debug for DescribeMailboxExportJobInput {
 pub struct DescribeInboundDmarcSettingsInput {
     /// <p>Lists the ID of the given organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
+}
+impl DescribeInboundDmarcSettingsInput {
+    /// <p>Lists the ID of the given organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInboundDmarcSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13475,6 +14069,16 @@ pub struct DescribeGroupInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the group to be described.</p>
     pub group_id: std::option::Option<std::string::String>,
+}
+impl DescribeGroupInput {
+    /// <p>The identifier for the organization under which the group exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the group to be described.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13494,6 +14098,16 @@ pub struct DeregisterMailDomainInput {
     /// <p>The domain to deregister in WorkMail and SES. </p>
     pub domain_name: std::option::Option<std::string::String>,
 }
+impl DeregisterMailDomainInput {
+    /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The domain to deregister in WorkMail and SES. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterMailDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterMailDomainInput");
@@ -13511,6 +14125,16 @@ pub struct DeregisterFromWorkMailInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the member (user or group) to be updated.</p>
     pub entity_id: std::option::Option<std::string::String>,
+}
+impl DeregisterFromWorkMailInput {
+    /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the member (user or group) to be updated.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterFromWorkMailInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13530,6 +14154,16 @@ pub struct DeleteUserInput {
     /// <p>The identifier of the user to be deleted.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserInput {
+    /// <p>The organization that contains the user to be deleted.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the user to be deleted.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
@@ -13547,6 +14181,16 @@ pub struct DeleteRetentionPolicyInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The retention policy ID.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteRetentionPolicyInput {
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The retention policy ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRetentionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13566,6 +14210,17 @@ pub struct DeleteResourceInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be deleted.</p>
     pub resource_id: std::option::Option<std::string::String>,
+}
+impl DeleteResourceInput {
+    /// <p>The identifier associated with the organization from which the resource is
+    /// deleted.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the resource to be deleted.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13587,6 +14242,20 @@ pub struct DeleteOrganizationInput {
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
     pub delete_directory: bool,
 }
+impl DeleteOrganizationInput {
+    /// <p>The idempotency token associated with the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
+    pub fn delete_directory(&self) -> bool {
+        self.delete_directory
+    }
+}
 impl std::fmt::Debug for DeleteOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOrganizationInput");
@@ -13605,6 +14274,16 @@ pub struct DeleteMobileDeviceAccessRuleInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the rule to be deleted.</p>
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
+}
+impl DeleteMobileDeviceAccessRuleInput {
+    /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the rule to be deleted.</p>
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+        self.mobile_device_access_rule_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMobileDeviceAccessRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13643,6 +14322,34 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     pub device_id: std::option::Option<std::string::String>,
 }
+impl DeleteMobileDeviceAccessOverrideInput {
+    /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li>
+    /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>Email address: <code>user@domain.tld</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>User name: <code>user</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
+    pub fn device_id(&self) -> std::option::Option<&str> {
+        self.device_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMobileDeviceAccessOverrideInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMobileDeviceAccessOverrideInput");
@@ -13666,6 +14373,22 @@ pub struct DeleteMailboxPermissionsInput {
     /// permissions.</p>
     pub grantee_id: std::option::Option<std::string::String>,
 }
+impl DeleteMailboxPermissionsInput {
+    /// <p>The identifier of the organization under which the member (user or group)
+    /// exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The identifier of the member (user or group) for which to delete granted
+    /// permissions.</p>
+    pub fn grantee_id(&self) -> std::option::Option<&str> {
+        self.grantee_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMailboxPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMailboxPermissionsInput");
@@ -13684,6 +14407,16 @@ pub struct DeleteGroupInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the group to be deleted.</p>
     pub group_id: std::option::Option<std::string::String>,
+}
+impl DeleteGroupInput {
+    /// <p>The organization that contains the group.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier of the group to be deleted.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13707,6 +14440,22 @@ pub struct DeleteAliasInput {
     /// list are collapsed into single entries (the list is transformed into a set).</p>
     pub alias: std::option::Option<std::string::String>,
 }
+impl DeleteAliasInput {
+    /// <p>The identifier for the organization under which the user exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The identifier for the member (user or group) from which to have the aliases
+    /// removed.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
+    /// list are collapsed into single entries (the list is transformed into a set).</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAliasInput");
@@ -13725,6 +14474,16 @@ pub struct DeleteAccessControlRuleInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the access control rule.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteAccessControlRuleInput {
+    /// <p>The identifier for the organization.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The name of the access control rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessControlRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13747,6 +14506,24 @@ pub struct CreateUserInput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The password for the new user.</p>
     pub password: std::option::Option<std::string::String>,
+}
+impl CreateUserInput {
+    /// <p>The identifier of the organization for which the user is created.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The display name for the new user.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The password for the new user.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13771,6 +14548,22 @@ pub struct CreateResourceInput {
     /// <p>The type of the new resource. The available types are <code>equipment</code> and
     /// <code>room</code>.</p>
     pub r#type: std::option::Option<crate::model::ResourceType>,
+}
+impl CreateResourceInput {
+    /// <p>The identifier associated with the organization for which the resource is
+    /// created.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The name of the new resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and
+    /// <code>room</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13799,6 +14592,33 @@ pub struct CreateOrganizationInput {
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
     pub enable_interoperability: bool,
+}
+impl CreateOrganizationInput {
+    /// <p>The AWS Directory Service directory ID.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The organization alias.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The idempotency token associated with the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The email domains to associate with the organization.</p>
+    pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
+        self.domains.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
+    /// KMS.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+    pub fn enable_interoperability(&self) -> bool {
+        self.enable_interoperability
+    }
 }
 impl std::fmt::Debug for CreateOrganizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13844,6 +14664,60 @@ pub struct CreateMobileDeviceAccessRuleInput {
     /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateMobileDeviceAccessRuleInput {
+    /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The idempotency token for the client request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The rule name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+        self.effect.as_ref()
+    }
+    /// <p>Device types that the rule will match.</p>
+    pub fn device_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_types.as_deref()
+    }
+    /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
+    pub fn not_device_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_types.as_deref()
+    }
+    /// <p>Device models that the rule will match.</p>
+    pub fn device_models(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_models.as_deref()
+    }
+    /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
+    pub fn not_device_models(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_models.as_deref()
+    }
+    /// <p>Device operating systems that the rule will match.</p>
+    pub fn device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_operating_systems.as_deref()
+    }
+    /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
+    pub fn not_device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_operating_systems.as_deref()
+    }
+    /// <p>Device user agents that the rule will match.</p>
+    pub fn device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.device_user_agents.as_deref()
+    }
+    /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
+    pub fn not_device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_device_user_agents.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMobileDeviceAccessRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMobileDeviceAccessRuleInput");
@@ -13876,6 +14750,16 @@ pub struct CreateGroupInput {
     /// <p>The name of the group.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CreateGroupInput {
+    /// <p>The organization under which the group is to be created.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupInput");
@@ -13895,6 +14779,20 @@ pub struct CreateAliasInput {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The alias to add to the member set.</p>
     pub alias: std::option::Option<std::string::String>,
+}
+impl CreateAliasInput {
+    /// <p>The organization under which the member (user or group) exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The member (user or group) to which this alias is added.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The alias to add to the member set.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13917,6 +14815,20 @@ pub struct CancelMailboxExportJobInput {
     /// <p>The organization ID.</p>
     pub organization_id: std::option::Option<std::string::String>,
 }
+impl CancelMailboxExportJobInput {
+    /// <p>The idempotency token for the client request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The job ID.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The organization ID.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelMailboxExportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelMailboxExportJobInput");
@@ -13938,6 +14850,20 @@ pub struct AssociateMemberToGroupInput {
     /// <p>The member (user or group) to associate to the group.</p>
     pub member_id: std::option::Option<std::string::String>,
 }
+impl AssociateMemberToGroupInput {
+    /// <p>The organization under which the group exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The group to which the member (user or group) is associated.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>The member (user or group) to associate to the group.</p>
+    pub fn member_id(&self) -> std::option::Option<&str> {
+        self.member_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateMemberToGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateMemberToGroupInput");
@@ -13958,6 +14884,20 @@ pub struct AssociateDelegateToResourceInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The member (user or group) to associate to the resource.</p>
     pub entity_id: std::option::Option<std::string::String>,
+}
+impl AssociateDelegateToResourceInput {
+    /// <p>The organization under which the resource exists.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The resource for which members (users or groups) are associated.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The member (user or group) to associate to the resource.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDelegateToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

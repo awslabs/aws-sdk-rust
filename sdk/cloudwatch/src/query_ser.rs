@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_dimension(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Dimension,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     if let Some(var_2) = &input.name {
@@ -14,13 +14,14 @@ pub fn serialize_structure_crate_model_dimension(
     if let Some(var_4) = &input.value {
         scope_3.string(var_4);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_data_query(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricDataQuery,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Id");
     if let Some(var_6) = &input.id {
@@ -29,7 +30,7 @@ pub fn serialize_structure_crate_model_metric_data_query(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("MetricStat");
     if let Some(var_8) = &input.metric_stat {
-        crate::query_ser::serialize_structure_crate_model_metric_stat(scope_7, var_8);
+        crate::query_ser::serialize_structure_crate_model_metric_stat(scope_7, var_8)?;
     }
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("Expression");
@@ -59,25 +60,27 @@ pub fn serialize_structure_crate_model_metric_data_query(
     if let Some(var_18) = &input.account_id {
         scope_17.string(var_18);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_label_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LabelOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("Timezone");
     if let Some(var_20) = &input.timezone {
         scope_19.string(var_20);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_dimension_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DimensionFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("Name");
     if let Some(var_22) = &input.name {
@@ -88,13 +91,14 @@ pub fn serialize_structure_crate_model_dimension_filter(
     if let Some(var_24) = &input.value {
         scope_23.string(var_24);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_anomaly_detector_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AnomalyDetectorConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("ExcludedTimeRanges");
     if let Some(var_26) = &input.excluded_time_ranges {
@@ -102,7 +106,7 @@ pub fn serialize_structure_crate_model_anomaly_detector_configuration(
         for item_27 in var_26 {
             #[allow(unused_mut)]
             let mut entry_29 = list_28.entry();
-            crate::query_ser::serialize_structure_crate_model_range(entry_29, item_27);
+            crate::query_ser::serialize_structure_crate_model_range(entry_29, item_27)?;
         }
         list_28.finish();
     }
@@ -111,13 +115,14 @@ pub fn serialize_structure_crate_model_anomaly_detector_configuration(
     if let Some(var_31) = &input.metric_timezone {
         scope_30.string(var_31);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_32 = writer.prefix("Key");
     if let Some(var_33) = &input.key {
@@ -128,13 +133,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_35) = &input.value {
         scope_34.string(var_35);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_datum(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricDatum,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_36 = writer.prefix("MetricName");
     if let Some(var_37) = &input.metric_name {
@@ -147,7 +153,7 @@ pub fn serialize_structure_crate_model_metric_datum(
         for item_40 in var_39 {
             #[allow(unused_mut)]
             let mut entry_42 = list_41.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_42, item_40);
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_42, item_40)?;
         }
         list_41.finish();
     }
@@ -167,7 +173,7 @@ pub fn serialize_structure_crate_model_metric_datum(
     #[allow(unused_mut)]
     let mut scope_47 = writer.prefix("StatisticValues");
     if let Some(var_48) = &input.statistic_values {
-        crate::query_ser::serialize_structure_crate_model_statistic_set(scope_47, var_48);
+        crate::query_ser::serialize_structure_crate_model_statistic_set(scope_47, var_48)?;
     }
     #[allow(unused_mut)]
     let mut scope_49 = writer.prefix("Values");
@@ -210,29 +216,31 @@ pub fn serialize_structure_crate_model_metric_datum(
             aws_smithy_types::Number::NegInt((*var_62).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_stream_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricStreamFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_63 = writer.prefix("Namespace");
     if let Some(var_64) = &input.namespace {
         scope_63.string(var_64);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_stat(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricStat,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_65 = writer.prefix("Metric");
     if let Some(var_66) = &input.metric {
-        crate::query_ser::serialize_structure_crate_model_metric(scope_65, var_66);
+        crate::query_ser::serialize_structure_crate_model_metric(scope_65, var_66)?;
     }
     #[allow(unused_mut)]
     let mut scope_67 = writer.prefix("Period");
@@ -252,13 +260,14 @@ pub fn serialize_structure_crate_model_metric_stat(
     if let Some(var_72) = &input.unit {
         scope_71.string(var_72.as_str());
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_range(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Range,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_73 = writer.prefix("StartTime");
     if let Some(var_74) = &input.start_time {
@@ -269,13 +278,14 @@ pub fn serialize_structure_crate_model_range(
     if let Some(var_76) = &input.end_time {
         scope_75.instant(var_76, aws_smithy_types::instant::Format::DateTime);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_statistic_set(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StatisticSet,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_77 = writer.prefix("SampleCount");
     if let Some(var_78) = &input.sample_count {
@@ -308,13 +318,14 @@ pub fn serialize_structure_crate_model_statistic_set(
             aws_smithy_types::Number::Float((*var_84).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Metric,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_85 = writer.prefix("Namespace");
     if let Some(var_86) = &input.namespace {
@@ -332,8 +343,9 @@ pub fn serialize_structure_crate_model_metric(
         for item_91 in var_90 {
             #[allow(unused_mut)]
             let mut entry_93 = list_92.entry();
-            crate::query_ser::serialize_structure_crate_model_dimension(entry_93, item_91);
+            crate::query_ser::serialize_structure_crate_model_dimension(entry_93, item_91)?;
         }
         list_92.finish();
     }
+    Ok(())
 }

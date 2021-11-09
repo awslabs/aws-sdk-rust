@@ -6,6 +6,12 @@ pub struct UpdateFlowOutput {
     /// <p>Indicates the current status of the flow. </p>
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
+impl UpdateFlowOutput {
+    /// <p>Indicates the current status of the flow. </p>
+    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+        self.flow_status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFlowOutput");
@@ -56,6 +62,12 @@ impl UpdateFlowOutput {
 pub struct UpdateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     pub connector_profile_arn: std::option::Option<std::string::String>,
+}
+impl UpdateConnectorProfileOutput {
+    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
+        self.connector_profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateConnectorProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -170,6 +182,16 @@ pub struct StopFlowOutput {
     /// <p> Indicates the current status of the flow. </p>
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
+impl StopFlowOutput {
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+        self.flow_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopFlowOutput");
@@ -238,6 +260,21 @@ pub struct StartFlowOutput {
     /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For
     /// scheduled or event-triggered flows, this value is null. </p>
     pub execution_id: std::option::Option<std::string::String>,
+}
+impl StartFlowOutput {
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+        self.flow_status.as_ref()
+    }
+    /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For
+    /// scheduled or event-triggered flows, this value is null. </p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -319,6 +356,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -383,6 +429,16 @@ pub struct ListFlowsOutput {
     pub flows: std::option::Option<std::vec::Vec<crate::model::FlowDefinition>>,
     /// <p> The pagination token for next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFlowsOutput {
+    /// <p> The list of flows associated with your account. </p>
+    pub fn flows(&self) -> std::option::Option<&[crate::model::FlowDefinition]> {
+        self.flows.as_deref()
+    }
+    /// <p> The pagination token for next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFlowsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -461,6 +517,21 @@ pub struct ListConnectorEntitiesOutput {
         >,
     >,
 }
+impl ListConnectorEntitiesOutput {
+    /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category.
+    /// This map's key represents the group name, and its value contains the list of entities
+    /// belonging to that group. </p>
+    pub fn connector_entity_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::ConnectorEntity>,
+        >,
+    > {
+        self.connector_entity_map.as_ref()
+    }
+}
 impl std::fmt::Debug for ListConnectorEntitiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConnectorEntitiesOutput");
@@ -537,6 +608,16 @@ pub struct DescribeFlowExecutionRecordsOutput {
     pub flow_executions: std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>,
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFlowExecutionRecordsOutput {
+    /// <p> Returns a list of all instances when this flow was run. </p>
+    pub fn flow_executions(&self) -> std::option::Option<&[crate::model::ExecutionRecord]> {
+        self.flow_executions.as_deref()
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeFlowExecutionRecordsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -648,6 +729,87 @@ pub struct DescribeFlowOutput {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl DescribeFlowOutput {
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// <p> A description of the flow. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+    /// (-) only. </p>
+    pub fn flow_name(&self) -> std::option::Option<&str> {
+        self.flow_name.as_deref()
+    }
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
+    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
+    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
+    /// </p>
+    pub fn kms_arn(&self) -> std::option::Option<&str> {
+        self.kms_arn.as_deref()
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+        self.flow_status.as_ref()
+    }
+    /// <p> Contains an error message if the flow status is in a suspended or error state. This
+    /// applies only to scheduled or event-triggered flows. </p>
+    pub fn flow_status_message(&self) -> std::option::Option<&str> {
+        self.flow_status_message.as_deref()
+    }
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
+    /// connector. </p>
+    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
+        self.source_flow_config.as_ref()
+    }
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
+    /// connector. </p>
+    pub fn destination_flow_config_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
+        self.destination_flow_config_list.as_deref()
+    }
+    /// <p> Describes the details of the most recent flow run. </p>
+    pub fn last_run_execution_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ExecutionDetails> {
+        self.last_run_execution_details.as_ref()
+    }
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
+        self.trigger_config.as_ref()
+    }
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
+    /// </p>
+    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+        self.tasks.as_deref()
+    }
+    /// <p> Specifies when the flow was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p> Specifies when the flow was last updated. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The ARN of the user who created the flow. </p>
+    pub fn created_by(&self) -> std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p> Specifies the user name of the account that performed the most recent update. </p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p> The tags used to organize, track, or control access for your flow. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -984,6 +1146,23 @@ pub struct DescribeConnectorsOutput {
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConnectorsOutput {
+    /// <p> The configuration that is applied to the connectors used in the flow. </p>
+    pub fn connector_configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::ConnectorType,
+            crate::model::ConnectorConfiguration,
+        >,
+    > {
+        self.connector_configurations.as_ref()
+    }
+    /// <p> The pagination token for the next page of data. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorsOutput");
@@ -1072,6 +1251,19 @@ pub struct DescribeConnectorProfilesOutput {
     /// means that all records have been fetched. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeConnectorProfilesOutput {
+    /// <p> Returns information about the connector profiles associated with the flow. </p>
+    pub fn connector_profile_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectorProfile]> {
+        self.connector_profile_details.as_deref()
+    }
+    /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this
+    /// means that all records have been fetched. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeConnectorProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeConnectorProfilesOutput");
@@ -1150,6 +1342,16 @@ pub struct DescribeConnectorEntityOutput {
     /// <i>account ID</i>, and so on. </p>
     pub connector_entity_fields:
         std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
+}
+impl DescribeConnectorEntityOutput {
+    /// <p> Describes the fields for that connector entity. For example, for an
+    /// <i>account</i> entity, the fields would be <i>account name</i>,
+    /// <i>account ID</i>, and so on. </p>
+    pub fn connector_entity_fields(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectorEntityField]> {
+        self.connector_entity_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeConnectorEntityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1278,6 +1480,16 @@ pub struct CreateFlowOutput {
     /// <p> Indicates the current status of the flow. </p>
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
+impl CreateFlowOutput {
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
+        self.flow_arn.as_deref()
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+        self.flow_status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFlowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFlowOutput");
@@ -1341,6 +1553,12 @@ impl CreateFlowOutput {
 pub struct CreateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     pub connector_profile_arn: std::option::Option<std::string::String>,
+}
+impl CreateConnectorProfileOutput {
+    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
+        self.connector_profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectorProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

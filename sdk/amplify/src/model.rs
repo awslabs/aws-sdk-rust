@@ -18,6 +18,36 @@ pub struct Webhook {
     /// <p> Updates the date and time for a webhook. </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Webhook {
+    /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
+    pub fn webhook_arn(&self) -> std::option::Option<&str> {
+        self.webhook_arn.as_deref()
+    }
+    /// <p> The ID of the webhook. </p>
+    pub fn webhook_id(&self) -> std::option::Option<&str> {
+        self.webhook_id.as_deref()
+    }
+    /// <p> The URL of the webhook. </p>
+    pub fn webhook_url(&self) -> std::option::Option<&str> {
+        self.webhook_url.as_deref()
+    }
+    /// <p> The name for a branch that is part of an Amplify app. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The description for a webhook. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The create date and time for a webhook. </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p> Updates the date and time for a webhook. </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Webhook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Webhook");
@@ -167,6 +197,45 @@ pub struct DomainAssociation {
     pub certificate_verification_dns_record: std::option::Option<std::string::String>,
     /// <p> The subdomains for the domain association. </p>
     pub sub_domains: std::option::Option<std::vec::Vec<crate::model::SubDomain>>,
+}
+impl DomainAssociation {
+    /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
+    pub fn domain_association_arn(&self) -> std::option::Option<&str> {
+        self.domain_association_arn.as_deref()
+    }
+    /// <p> The name of the domain. </p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p> Enables the automated creation of subdomains for branches. </p>
+    pub fn enable_auto_sub_domain(&self) -> std::option::Option<bool> {
+        self.enable_auto_sub_domain
+    }
+    /// <p> Sets branch patterns for automatic subdomain creation. </p>
+    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_sub_domain_creation_patterns.as_deref()
+    }
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
+    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
+        self.auto_sub_domain_iam_role.as_deref()
+    }
+    /// <p> The current status of the domain association. </p>
+    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+        self.domain_status.as_ref()
+    }
+    /// <p> The reason for the current status of the domain association. </p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p> The DNS record for certificate verification. </p>
+    pub fn certificate_verification_dns_record(&self) -> std::option::Option<&str> {
+        self.certificate_verification_dns_record.as_deref()
+    }
+    /// <p> The subdomains for the domain association. </p>
+    pub fn sub_domains(&self) -> std::option::Option<&[crate::model::SubDomain]> {
+        self.sub_domains.as_deref()
+    }
 }
 impl std::fmt::Debug for DomainAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +441,20 @@ pub struct SubDomain {
     /// <p> The DNS record for the subdomain. </p>
     pub dns_record: std::option::Option<std::string::String>,
 }
+impl SubDomain {
+    /// <p> Describes the settings for the subdomain. </p>
+    pub fn sub_domain_setting(&self) -> std::option::Option<&crate::model::SubDomainSetting> {
+        self.sub_domain_setting.as_ref()
+    }
+    /// <p> The verified status of the subdomain </p>
+    pub fn verified(&self) -> std::option::Option<bool> {
+        self.verified
+    }
+    /// <p> The DNS record for the subdomain. </p>
+    pub fn dns_record(&self) -> std::option::Option<&str> {
+        self.dns_record.as_deref()
+    }
+}
 impl std::fmt::Debug for SubDomain {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SubDomain");
@@ -450,6 +533,16 @@ pub struct SubDomainSetting {
     pub prefix: std::option::Option<std::string::String>,
     /// <p> The branch name setting for the subdomain. </p>
     pub branch_name: std::option::Option<std::string::String>,
+}
+impl SubDomainSetting {
+    /// <p> The prefix setting for the subdomain. </p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p> The branch name setting for the subdomain. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
 }
 impl std::fmt::Debug for SubDomainSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -656,6 +749,125 @@ pub struct Branch {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
     /// app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
+}
+impl Branch {
+    /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
+    pub fn branch_arn(&self) -> std::option::Option<&str> {
+        self.branch_arn.as_deref()
+    }
+    /// <p> The name for the branch that is part of an Amplify app. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+    /// <p> The description for the branch that is part of an Amplify app. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The tag for the branch of an Amplify app. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The current stage for the branch that is part of an Amplify app. </p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::Stage> {
+        self.stage.as_ref()
+    }
+    /// <p> The display name for the branch. This is used as the default domain prefix. </p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
+    pub fn enable_notification(&self) -> std::option::Option<bool> {
+        self.enable_notification
+    }
+    /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+    /// <p> The environment variables specific to a branch of an Amplify app. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
+    pub fn enable_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_auto_build
+    }
+    /// <p> The custom domains for a branch of an Amplify app. </p>
+    pub fn custom_domains(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_domains.as_deref()
+    }
+    /// <p> The framework for a branch of an Amplify app. </p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p> The ID of the active job for a branch of an Amplify app. </p>
+    pub fn active_job_id(&self) -> std::option::Option<&str> {
+        self.active_job_id.as_deref()
+    }
+    /// <p> The total number of jobs that are part of an Amplify app. </p>
+    pub fn total_number_of_jobs(&self) -> std::option::Option<&str> {
+        self.total_number_of_jobs.as_deref()
+    }
+    /// <p> Enables basic authorization for a branch of an Amplify app. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
+        self.enable_performance_mode
+    }
+    /// <p> The thumbnail URL for the branch of an Amplify app. </p>
+    pub fn thumbnail_url(&self) -> std::option::Option<&str> {
+        self.thumbnail_url.as_deref()
+    }
+    /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> The build specification (build spec) content for the branch of an Amplify app.
+    /// </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p> The content Time to Live (TTL) for the website in seconds. </p>
+    pub fn ttl(&self) -> std::option::Option<&str> {
+        self.ttl.as_deref()
+    }
+    /// <p> A list of custom resources that are linked to this branch. </p>
+    pub fn associated_resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.associated_resources.as_deref()
+    }
+    /// <p> Enables pull request previews for the branch. </p>
+    pub fn enable_pull_request_preview(&self) -> std::option::Option<bool> {
+        self.enable_pull_request_preview
+    }
+    /// <p> The Amplify environment name for the pull request. </p>
+    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+        self.pull_request_environment_name.as_deref()
+    }
+    /// <p> The destination branch if the branch is a pull request branch. </p>
+    pub fn destination_branch(&self) -> std::option::Option<&str> {
+        self.destination_branch.as_deref()
+    }
+    /// <p> The source branch if the branch is a pull request branch. </p>
+    pub fn source_branch(&self) -> std::option::Option<&str> {
+        self.source_branch.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+    /// app. </p>
+    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+        self.backend_environment_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Branch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1263,6 +1475,111 @@ pub struct App {
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
 }
+impl App {
+    /// <p> The unique ID of the Amplify app. </p>
+    pub fn app_id(&self) -> std::option::Option<&str> {
+        self.app_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
+    pub fn app_arn(&self) -> std::option::Option<&str> {
+        self.app_arn.as_deref()
+    }
+    /// <p> The name for the Amplify app. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> The tag for the Amplify app. </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p> The description for the Amplify app. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The repository for the Amplify app. </p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p> The platform for the Amplify app. </p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p> Creates a date and time for the Amplify app. </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p> Updates the date and time for the Amplify app. </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+    /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
+    /// Name (ARN) of the Amplify app. </p>
+    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_service_role_arn.as_deref()
+    }
+    /// <p> The environment variables for the Amplify app. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> The default domain for the Amplify app. </p>
+    pub fn default_domain(&self) -> std::option::Option<&str> {
+        self.default_domain.as_deref()
+    }
+    /// <p> Enables the auto-building of branches for the Amplify app. </p>
+    pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_branch_auto_build
+    }
+    /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch
+    /// from your Git repository. </p>
+    pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
+        self.enable_branch_auto_deletion
+    }
+    /// <p> Enables basic authorization for the Amplify app's branches. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p> The basic authorization credentials for branches for the Amplify app. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
+    pub fn custom_rules(&self) -> std::option::Option<&[crate::model::CustomRule]> {
+        self.custom_rules.as_deref()
+    }
+    /// <p> Describes the information about a production branch of the Amplify app. </p>
+    pub fn production_branch(&self) -> std::option::Option<&crate::model::ProductionBranch> {
+        self.production_branch.as_ref()
+    }
+    /// <p> Describes the content of the build specification (build spec) for the Amplify app.
+    /// </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p>Describes the custom HTTP headers for the Amplify app.</p>
+    pub fn custom_headers(&self) -> std::option::Option<&str> {
+        self.custom_headers.as_deref()
+    }
+    /// <p> Enables automated branch creation for the Amplify app. </p>
+    pub fn enable_auto_branch_creation(&self) -> std::option::Option<bool> {
+        self.enable_auto_branch_creation
+    }
+    /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
+    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_branch_creation_patterns.as_deref()
+    }
+    /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
+    pub fn auto_branch_creation_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
+        self.auto_branch_creation_config.as_ref()
+    }
+}
 impl std::fmt::Debug for App {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("App");
@@ -1719,6 +2036,52 @@ pub struct AutoBranchCreationConfig {
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: std::option::Option<std::string::String>,
 }
+impl AutoBranchCreationConfig {
+    /// <p> Describes the current stage for the autocreated branch. </p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::Stage> {
+        self.stage.as_ref()
+    }
+    /// <p> The framework for the autocreated branch. </p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p> Enables auto building for the autocreated branch. </p>
+    pub fn enable_auto_build(&self) -> std::option::Option<bool> {
+        self.enable_auto_build
+    }
+    /// <p> The environment variables for the autocreated branch. </p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
+    /// <p> The basic authorization credentials for the autocreated branch. </p>
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+        self.basic_auth_credentials.as_deref()
+    }
+    /// <p> Enables basic authorization for the autocreated branch. </p>
+    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+        self.enable_basic_auth
+    }
+    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
+        self.enable_performance_mode
+    }
+    /// <p> The build specification (build spec) for the autocreated branch. </p>
+    pub fn build_spec(&self) -> std::option::Option<&str> {
+        self.build_spec.as_deref()
+    }
+    /// <p> Enables pull request previews for the autocreated branch. </p>
+    pub fn enable_pull_request_preview(&self) -> std::option::Option<bool> {
+        self.enable_pull_request_preview
+    }
+    /// <p> The Amplify environment name for the pull request. </p>
+    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+        self.pull_request_environment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoBranchCreationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoBranchCreationConfig");
@@ -1924,6 +2287,24 @@ pub struct ProductionBranch {
     /// <p> The branch name for the production branch. </p>
     pub branch_name: std::option::Option<std::string::String>,
 }
+impl ProductionBranch {
+    /// <p> The last deploy time of the production branch. </p>
+    pub fn last_deploy_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_deploy_time.as_ref()
+    }
+    /// <p> The status of the production branch. </p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p> The thumbnail URL for the production branch. </p>
+    pub fn thumbnail_url(&self) -> std::option::Option<&str> {
+        self.thumbnail_url.as_deref()
+    }
+    /// <p> The branch name for the production branch. </p>
+    pub fn branch_name(&self) -> std::option::Option<&str> {
+        self.branch_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ProductionBranch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProductionBranch");
@@ -2045,6 +2426,47 @@ pub struct CustomRule {
     pub status: std::option::Option<std::string::String>,
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
     pub condition: std::option::Option<std::string::String>,
+}
+impl CustomRule {
+    /// <p> The source pattern for a URL rewrite or redirect rule. </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p> The target pattern for a URL rewrite or redirect rule. </p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p> The status code for a URL rewrite or redirect rule. </p>
+    ///
+    /// <dl>
+    /// <dt>200</dt>
+    /// <dd>
+    /// <p>Represents a 200 rewrite rule.</p>
+    /// </dd>
+    /// <dt>301</dt>
+    /// <dd>
+    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
+    /// </dd>
+    /// <dt>302</dt>
+    /// <dd>
+    /// <p>Represents a 302 temporary redirect rule.</p>
+    /// </dd>
+    /// <dt>404</dt>
+    /// <dd>
+    /// <p>Represents a 404 redirect rule.</p>
+    /// </dd>
+    /// <dt>404-200</dt>
+    /// <dd>
+    /// <p>Represents a 404 rewrite rule.</p>
+    /// </dd>
+    /// </dl>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
+    pub fn condition(&self) -> std::option::Option<&str> {
+        self.condition.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2249,6 +2671,48 @@ pub struct JobSummary {
     /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
     /// webhooks. </p>
     pub job_type: std::option::Option<crate::model::JobType>,
+}
+impl JobSummary {
+    /// <p> The Amazon Resource Name (ARN) for the job. </p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p> The unique ID for the job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p> The commit ID from a third-party repository provider for the job. </p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
+    /// <p> The commit message from a third-party repository provider for the job. </p>
+    pub fn commit_message(&self) -> std::option::Option<&str> {
+        self.commit_message.as_deref()
+    }
+    /// <p> The commit date and time for the job. </p>
+    pub fn commit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.commit_time.as_ref()
+    }
+    /// <p> The start date and time for the job. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p> The current status for the job. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The end date and time for the job. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
+    /// released from its source by using the <code>StartJob</code> API. If the value is
+    /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
+    /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+    /// webhooks. </p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
 }
 impl std::fmt::Debug for JobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2581,6 +3045,35 @@ pub struct BackendEnvironment {
     /// app. </p>
     pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BackendEnvironment {
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+    /// app. </p>
+    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+        self.backend_environment_arn.as_deref()
+    }
+    /// <p> The name for a backend environment that is part of an Amplify app. </p>
+    pub fn environment_name(&self) -> std::option::Option<&str> {
+        self.environment_name.as_deref()
+    }
+    /// <p> The AWS CloudFormation stack name of a backend environment. </p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p> The name of deployment artifacts. </p>
+    pub fn deployment_artifacts(&self) -> std::option::Option<&str> {
+        self.deployment_artifacts.as_deref()
+    }
+    /// <p> The creation date and time for a backend environment that is part of an Amplify app.
+    /// </p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p> The last updated date and time for a backend environment that is part of an Amplify
+    /// app. </p>
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_time.as_ref()
+    }
+}
 impl std::fmt::Debug for BackendEnvironment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackendEnvironment");
@@ -2717,6 +3210,16 @@ pub struct Artifact {
     /// <p> The unique ID for the artifact. </p>
     pub artifact_id: std::option::Option<std::string::String>,
 }
+impl Artifact {
+    /// <p> The file name for the artifact. </p>
+    pub fn artifact_file_name(&self) -> std::option::Option<&str> {
+        self.artifact_file_name.as_deref()
+    }
+    /// <p> The unique ID for the artifact. </p>
+    pub fn artifact_id(&self) -> std::option::Option<&str> {
+        self.artifact_id.as_deref()
+    }
+}
 impl std::fmt::Debug for Artifact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Artifact");
@@ -2782,6 +3285,16 @@ pub struct Job {
     pub summary: std::option::Option<crate::model::JobSummary>,
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
+}
+impl Job {
+    /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::JobSummary> {
+        self.summary.as_ref()
+    }
+    /// <p> The execution steps for an execution job, for an Amplify app. </p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
+        self.steps.as_deref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2874,6 +3387,56 @@ pub struct Step {
     /// <p> The context for the current step. Includes a build image if the step is build.
     /// </p>
     pub context: std::option::Option<std::string::String>,
+}
+impl Step {
+    /// <p> The name of the execution step. </p>
+    pub fn step_name(&self) -> std::option::Option<&str> {
+        self.step_name.as_deref()
+    }
+    /// <p> The start date and time of the execution step. </p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p> The status of the execution step. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The end date and time of the execution step. </p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p> The URL to the logs for the execution step. </p>
+    pub fn log_url(&self) -> std::option::Option<&str> {
+        self.log_url.as_deref()
+    }
+    /// <p> The URL to the artifact for the execution step. </p>
+    pub fn artifacts_url(&self) -> std::option::Option<&str> {
+        self.artifacts_url.as_deref()
+    }
+    /// <p> The URL to the test artifact for the execution step. </p>
+    pub fn test_artifacts_url(&self) -> std::option::Option<&str> {
+        self.test_artifacts_url.as_deref()
+    }
+    /// <p> The URL to the test configuration for the execution step. </p>
+    pub fn test_config_url(&self) -> std::option::Option<&str> {
+        self.test_config_url.as_deref()
+    }
+    /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
+    pub fn screenshots(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.screenshots.as_ref()
+    }
+    /// <p> The reason for the current step status. </p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p> The context for the current step. Includes a build image if the step is build.
+    /// </p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl std::fmt::Debug for Step {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

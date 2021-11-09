@@ -44,6 +44,16 @@ pub struct ResourceAttribute {
     /// <p>Value of the resource type.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ResourceAttribute {
+    /// <p>Type of resource.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceAttributeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Value of the resource type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAttribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAttribute");
@@ -211,6 +221,22 @@ pub struct Task {
     pub status_detail: std::option::Option<std::string::String>,
     /// <p>Indication of the percentage completion of the task.</p>
     pub progress_percent: std::option::Option<i32>,
+}
+impl Task {
+    /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Details of task status as notified by a migration tool. A tool might use this field to
+    /// provide clarifying information about the status that is unique to that tool or that
+    /// explains an error state.</p>
+    pub fn status_detail(&self) -> std::option::Option<&str> {
+        self.status_detail.as_deref()
+    }
+    /// <p>Indication of the percentage completion of the task.</p>
+    pub fn progress_percent(&self) -> std::option::Option<i32> {
+        self.progress_percent
+    }
 }
 impl std::fmt::Debug for Task {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -418,6 +444,14 @@ pub struct ProgressUpdateStreamSummary {
     /// </p>
     pub progress_update_stream_name: std::option::Option<std::string::String>,
 }
+impl ProgressUpdateStreamSummary {
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
+    /// field.</i>
+    /// </p>
+    pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
+        self.progress_update_stream_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ProgressUpdateStreamSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProgressUpdateStreamSummary");
@@ -493,6 +527,35 @@ pub struct MigrationTaskSummary {
     pub status_detail: std::option::Option<std::string::String>,
     /// <p>The timestamp when the task was gathered.</p>
     pub update_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl MigrationTaskSummary {
+    /// <p>An AWS resource used for access control. It should uniquely identify the migration tool
+    /// as it is used for all updates made by the tool.</p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>Status of the task.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>Indication of the percentage completion of the task.</p>
+    pub fn progress_percent(&self) -> std::option::Option<i32> {
+        self.progress_percent
+    }
+    /// <p>Detail information of what is being done within the overall status state.</p>
+    pub fn status_detail(&self) -> std::option::Option<&str> {
+        self.status_detail.as_deref()
+    }
+    /// <p>The timestamp when the task was gathered.</p>
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for MigrationTaskSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -629,6 +692,18 @@ pub struct DiscoveredResource {
     /// discovered resource for clarity or later reference.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl DiscoveredResource {
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
+    /// on-premise resource.</p>
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
+        self.configuration_id.as_deref()
+    }
+    /// <p>A description that can be free-form text to record additional detail about the
+    /// discovered resource for clarity or later reference.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for DiscoveredResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DiscoveredResource");
@@ -701,6 +776,17 @@ pub struct CreatedArtifact {
     /// for clarity or for later reference.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl CreatedArtifact {
+    /// <p>An ARN that uniquely identifies the result of a migration task.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description that can be free-form text to record additional detail about the artifact
+    /// for clarity or for later reference.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatedArtifact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatedArtifact");
@@ -769,6 +855,21 @@ pub struct ApplicationState {
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application status was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ApplicationState {
+    /// <p>The configurationId from the Application Discovery Service that uniquely identifies an
+    /// application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The current status of an application.</p>
+    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+        self.application_status.as_ref()
+    }
+    /// <p>The timestamp when the application status was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -866,6 +967,33 @@ pub struct MigrationTask {
     /// task to a resource in the Application Discovery Service repository.</p>
     pub resource_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
+}
+impl MigrationTask {
+    /// <p>A name that identifies the vendor of the migration tool being used.</p>
+    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+        self.progress_update_stream.as_deref()
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal
+    /// data in this field.</i>
+    /// </p>
+    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+        self.migration_task_name.as_deref()
+    }
+    /// <p>Task object encapsulating task information.</p>
+    pub fn task(&self) -> std::option::Option<&crate::model::Task> {
+        self.task.as_ref()
+    }
+    /// <p>The timestamp when the task was gathered.</p>
+    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.update_date_time.as_ref()
+    }
+    /// <p>Information about the resource that is being migrated. This data will be used to map the
+    /// task to a resource in the Application Discovery Service repository.</p>
+    pub fn resource_attribute_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceAttribute]> {
+        self.resource_attribute_list.as_deref()
+    }
 }
 impl std::fmt::Debug for MigrationTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

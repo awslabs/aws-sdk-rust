@@ -34,7 +34,7 @@ impl Error {
     }
 
     /// Returns a custom error without an offset.
-    pub fn custom(message: &'static str) -> Error {
+    pub fn custom(message: impl Into<Cow<'static, str>>) -> Error {
         Error::new(ErrorReason::Custom(message.into()), None)
     }
 }

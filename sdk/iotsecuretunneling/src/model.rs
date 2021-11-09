@@ -9,6 +9,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -72,6 +82,14 @@ pub struct TimeoutConfig {
     /// hours (720 minutes) </p>
     pub max_lifetime_timeout_minutes: std::option::Option<i32>,
 }
+impl TimeoutConfig {
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified,
+    /// maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12
+    /// hours (720 minutes) </p>
+    pub fn max_lifetime_timeout_minutes(&self) -> std::option::Option<i32> {
+        self.max_lifetime_timeout_minutes
+    }
+}
 impl std::fmt::Debug for TimeoutConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeoutConfig");
@@ -131,6 +149,19 @@ pub struct DestinationConfig {
     /// instantiates the local proxy which uses this information to connect to the destination
     /// application.</p>
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DestinationConfig {
+    /// <p>The name of the IoT thing to which you want to connect.</p>
+    pub fn thing_name(&self) -> std::option::Option<&str> {
+        self.thing_name.as_deref()
+    }
+    /// <p>A list of service names that identity the target application. The AWS IoT client running on the destination device reads
+    /// this value and uses it to look up a port or an IP address and a port. The AWS IoT client
+    /// instantiates the local proxy which uses this information to connect to the destination
+    /// application.</p>
+    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+        self.services.as_deref()
+    }
 }
 impl std::fmt::Debug for DestinationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -219,6 +250,34 @@ pub struct TunnelSummary {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the tunnel was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TunnelSummary {
+    /// <p>The unique alpha-numeric identifier for the tunnel.</p>
+    pub fn tunnel_id(&self) -> std::option::Option<&str> {
+        self.tunnel_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name of the tunnel. The tunnel ARN format is
+    /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
+    /// </p>
+    pub fn tunnel_arn(&self) -> std::option::Option<&str> {
+        self.tunnel_arn.as_deref()
+    }
+    /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TunnelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description of the tunnel.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time the tunnel was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time the tunnel was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for TunnelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -424,6 +483,58 @@ pub struct Tunnel {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the tunnel was updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Tunnel {
+    /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
+    pub fn tunnel_id(&self) -> std::option::Option<&str> {
+        self.tunnel_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a tunnel. The tunnel ARN format is
+    /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
+    /// </p>
+    pub fn tunnel_arn(&self) -> std::option::Option<&str> {
+        self.tunnel_arn.as_deref()
+    }
+    /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TunnelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The connection state of the source application.</p>
+    pub fn source_connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
+        self.source_connection_state.as_ref()
+    }
+    /// <p>The connection state of the destination application.</p>
+    pub fn destination_connection_state(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectionState> {
+        self.destination_connection_state.as_ref()
+    }
+    /// <p>A description of the tunnel.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The destination configuration that specifies the thing name of the destination
+    /// device and a service name that the local proxy uses to connect to the destination
+    /// application.</p>
+    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+        self.destination_config.as_ref()
+    }
+    /// <p>Timeout configuration for the tunnel.</p>
+    pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
+        self.timeout_config.as_ref()
+    }
+    /// <p>A list of tag metadata associated with the secure tunnel.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The time when the tunnel was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The last time the tunnel was updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for Tunnel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -649,6 +760,17 @@ pub struct ConnectionState {
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The last time the connection status was updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ConnectionState {
+    /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and
+    /// <code>DISCONNECTED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The last time the connection status was updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for ConnectionState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

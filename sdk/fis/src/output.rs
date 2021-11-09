@@ -6,6 +6,12 @@ pub struct UpdateExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
 }
+impl UpdateExperimentTemplateOutput {
+    /// <p>Information about the experiment template.</p>
+    pub fn experiment_template(&self) -> std::option::Option<&crate::model::ExperimentTemplate> {
+        self.experiment_template.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateExperimentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateExperimentTemplateOutput");
@@ -117,6 +123,12 @@ pub struct StopExperimentOutput {
     /// <p>Information about the experiment.</p>
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
+impl StopExperimentOutput {
+    /// <p>Information about the experiment.</p>
+    pub fn experiment(&self) -> std::option::Option<&crate::model::Experiment> {
+        self.experiment.as_ref()
+    }
+}
 impl std::fmt::Debug for StopExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopExperimentOutput");
@@ -167,6 +179,12 @@ impl StopExperimentOutput {
 pub struct StartExperimentOutput {
     /// <p>Information about the experiment.</p>
     pub experiment: std::option::Option<crate::model::Experiment>,
+}
+impl StartExperimentOutput {
+    /// <p>Information about the experiment.</p>
+    pub fn experiment(&self) -> std::option::Option<&crate::model::Experiment> {
+        self.experiment.as_ref()
+    }
 }
 impl std::fmt::Debug for StartExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -219,6 +237,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -285,6 +312,18 @@ pub struct ListExperimentTemplatesOutput {
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListExperimentTemplatesOutput {
+    /// <p>The experiment templates.</p>
+    pub fn experiment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExperimentTemplateSummary]> {
+        self.experiment_templates.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExperimentTemplatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -362,6 +401,16 @@ pub struct ListExperimentsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListExperimentsOutput {
+    /// <p>The experiments.</p>
+    pub fn experiments(&self) -> std::option::Option<&[crate::model::ExperimentSummary]> {
+        self.experiments.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListExperimentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListExperimentsOutput");
@@ -434,6 +483,16 @@ pub struct ListActionsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListActionsOutput {
+    /// <p>The actions.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::ActionSummary]> {
+        self.actions.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListActionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListActionsOutput");
@@ -504,6 +563,12 @@ pub struct GetExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
 }
+impl GetExperimentTemplateOutput {
+    /// <p>Information about the experiment template.</p>
+    pub fn experiment_template(&self) -> std::option::Option<&crate::model::ExperimentTemplate> {
+        self.experiment_template.as_ref()
+    }
+}
 impl std::fmt::Debug for GetExperimentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExperimentTemplateOutput");
@@ -554,6 +619,12 @@ impl GetExperimentTemplateOutput {
 pub struct GetExperimentOutput {
     /// <p>Information about the experiment.</p>
     pub experiment: std::option::Option<crate::model::Experiment>,
+}
+impl GetExperimentOutput {
+    /// <p>Information about the experiment.</p>
+    pub fn experiment(&self) -> std::option::Option<&crate::model::Experiment> {
+        self.experiment.as_ref()
+    }
 }
 impl std::fmt::Debug for GetExperimentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -606,6 +677,12 @@ pub struct GetActionOutput {
     /// <p>Information about the action.</p>
     pub action: std::option::Option<crate::model::Action>,
 }
+impl GetActionOutput {
+    /// <p>Information about the action.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+}
 impl std::fmt::Debug for GetActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActionOutput");
@@ -653,6 +730,12 @@ impl GetActionOutput {
 pub struct DeleteExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
+}
+impl DeleteExperimentTemplateOutput {
+    /// <p>Information about the experiment template.</p>
+    pub fn experiment_template(&self) -> std::option::Option<&crate::model::ExperimentTemplate> {
+        self.experiment_template.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteExperimentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -704,6 +787,12 @@ impl DeleteExperimentTemplateOutput {
 pub struct CreateExperimentTemplateOutput {
     /// <p>Information about the experiment template.</p>
     pub experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
+}
+impl CreateExperimentTemplateOutput {
+    /// <p>Information about the experiment template.</p>
+    pub fn experiment_template(&self) -> std::option::Option<&crate::model::ExperimentTemplate> {
+        self.experiment_template.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateExperimentTemplateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

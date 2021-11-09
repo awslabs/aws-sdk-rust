@@ -14,6 +14,20 @@ pub struct PosixProfile {
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
     pub secondary_gids: std::option::Option<std::vec::Vec<i64>>,
 }
+impl PosixProfile {
+    /// <p>The POSIX user ID used for all EFS operations by this user.</p>
+    pub fn uid(&self) -> std::option::Option<i64> {
+        self.uid
+    }
+    /// <p>The POSIX group ID used for all EFS operations by this user.</p>
+    pub fn gid(&self) -> std::option::Option<i64> {
+        self.gid
+    }
+    /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
+    pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
+        self.secondary_gids.as_deref()
+    }
+}
 impl std::fmt::Debug for PosixProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PosixProfile");
@@ -112,6 +126,16 @@ pub struct HomeDirectoryMapEntry {
     pub entry: std::option::Option<std::string::String>,
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
     pub target: std::option::Option<std::string::String>,
+}
+impl HomeDirectoryMapEntry {
+    /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
+    pub fn entry(&self) -> std::option::Option<&str> {
+        self.entry.as_deref()
+    }
+    /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
 }
 impl std::fmt::Debug for HomeDirectoryMapEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -230,6 +254,12 @@ pub struct WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     pub on_upload: std::option::Option<std::vec::Vec<crate::model::WorkflowDetail>>,
 }
+impl WorkflowDetails {
+    /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
+    pub fn on_upload(&self) -> std::option::Option<&[crate::model::WorkflowDetail]> {
+        self.on_upload.as_deref()
+    }
+}
 impl std::fmt::Debug for WorkflowDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkflowDetails");
@@ -289,6 +319,17 @@ pub struct WorkflowDetail {
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can
     /// assume, so that all workflow steps can operate on the required resources</p>
     pub execution_role: std::option::Option<std::string::String>,
+}
+impl WorkflowDetail {
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can
+    /// assume, so that all workflow steps can operate on the required resources</p>
+    pub fn execution_role(&self) -> std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
 }
 impl std::fmt::Debug for WorkflowDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -421,6 +462,21 @@ pub struct IdentityProviderDetails {
     pub invocation_role: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Web ServicesDirectory Service directory that you want to stop sharing.</p>
     pub directory_id: std::option::Option<std::string::String>,
+}
+impl IdentityProviderDetails {
+    /// <p>Provides the location of the service endpoint used to authenticate users.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>Provides the type of <code>InvocationRole</code> used to authenticate the user
+    /// account.</p>
+    pub fn invocation_role(&self) -> std::option::Option<&str> {
+        self.invocation_role.as_deref()
+    }
+    /// <p>The identifier of the Amazon Web ServicesDirectory Service directory that you want to stop sharing.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
 }
 impl std::fmt::Debug for IdentityProviderDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -618,6 +674,64 @@ pub struct EndpointDetails {
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl EndpointDetails {
+    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your
+    /// server's endpoint.</p>
+    ///
+    /// <note>
+    ///
+    /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>
+    /// and it is only valid in the <code>UpdateServer</code> API.</p>
+    /// </note>
+    pub fn address_allocation_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.address_allocation_ids.as_deref()
+    }
+    /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p>
+    ///
+    /// <note>
+    /// <p>This property can only be set when <code>EndpointType</code> is set to
+    /// <code>VPC</code>.</p>
+    /// </note>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The ID of the VPC endpoint.</p>
+    ///
+    /// <note>
+    /// <p>This property can only be set when <code>EndpointType</code> is set to
+    /// <code>VPC_ENDPOINT</code>.</p>
+    ///
+    /// <p>For more information, see
+    /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+    /// </note>
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p>
+    ///
+    /// <note>
+    /// <p>This property can only be set when <code>EndpointType</code> is set to
+    /// <code>VPC</code>.</p>
+    /// </note>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of security groups IDs that are available to attach to your server's
+    /// endpoint.</p>
+    ///
+    /// <note>
+    /// <p>This property can only be set when <code>EndpointType</code> is set to
+    /// <code>VPC</code>.</p>
+    ///
+    /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from
+    /// <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security
+    /// groups associated with your server's VPC endpoint after creation, use the Amazon EC2
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
+    /// </note>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -845,6 +959,29 @@ pub struct ProtocolDetails {
     /// </note>
     pub passive_ip: std::option::Option<std::string::String>,
 }
+impl ProtocolDetails {
+    /// <p>
+    /// Indicates passive mode, for FTP and FTPS protocols.
+    /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+    /// For example:
+    /// </p>
+    /// <p>
+    /// <code>
+    /// aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i>
+    /// </code>
+    /// </p>
+    /// <p>Replace <code>
+    /// <i>0.0.0.0</i>
+    /// </code> in the example above with the actual IP address you want to use.</p>
+    /// <note>
+    /// <p>
+    /// If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+    /// </p>
+    /// </note>
+    pub fn passive_ip(&self) -> std::option::Option<&str> {
+        self.passive_ip.as_deref()
+    }
+}
 impl std::fmt::Debug for ProtocolDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtocolDetails");
@@ -932,6 +1069,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>Contains one or more values that you assigned to the key name you create.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The name assigned to the tag that you create.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Contains one or more values that you assigned to the key name you create.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1053,6 +1200,20 @@ pub struct ListedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl ListedWorkflow {
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>Specifies the text description for the workflow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListedWorkflow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListedWorkflow");
@@ -1153,6 +1314,49 @@ pub struct ListedUser {
     /// <p>Specifies the name of the user whose ARN was specified. User names are used for
     /// authentication purposes.</p>
     pub user_name: std::option::Option<std::string::String>,
+}
+impl ListedUser {
+    /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn
+    /// about.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    pub fn home_directory(&self) -> std::option::Option<&str> {
+        self.home_directory.as_deref()
+    }
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// S3 or EFS paths visible to your users.</p>
+    pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
+        self.home_directory_type.as_ref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <note>
+    ///
+    /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>.
+    /// </p>
+    /// <p>The policies attached to this role determine the level of access you want to provide your users when
+    /// transferring files into and out of your S3 buckets or EFS file systems.</p>
+    ///
+    /// </note>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>Specifies the number of SSH public keys stored for the user you specified.</p>
+    pub fn ssh_public_key_count(&self) -> std::option::Option<i32> {
+        self.ssh_public_key_count
+    }
+    /// <p>Specifies the name of the user whose ARN was specified. User names are used for
+    /// authentication purposes.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListedUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1341,6 +1545,63 @@ pub struct ListedServer {
     /// <p>Specifies the number of users that are assigned to a server you specified with the
     /// <code>ServerId</code>.</p>
     pub user_count: std::option::Option<i32>,
+}
+impl ListedServer {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for a server to be listed.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+    /// <p>Specifies the mode of authentication for a server. The default value is
+    /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
+    /// the Amazon Web Services Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
+    /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
+    /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
+    /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+    /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
+    /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    pub fn identity_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider_type.as_ref()
+    }
+    /// <p>Specifies the type of VPC endpoint that your server is connected to. If your server is
+    /// connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+    /// your CloudWatch logs.</p>
+    pub fn logging_role(&self) -> std::option::Option<&str> {
+        self.logging_role.as_deref()
+    }
+    /// <p>Specifies the unique system assigned identifier for the servers that were listed.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Specifies the condition of a server for the server that was described. A value of
+    /// <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A
+    /// <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file
+    /// transfer operations.</p>
+    ///
+    /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is
+    /// in an intermediate state, either not fully able to respond, or not fully offline. The values
+    /// of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error
+    /// condition.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>Specifies the number of users that are assigned to a server you specified with the
+    /// <code>ServerId</code>.</p>
+    pub fn user_count(&self) -> std::option::Option<i32> {
+        self.user_count
+    }
 }
 impl std::fmt::Debug for ListedServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1745,6 +2006,26 @@ pub struct ListedExecution {
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
 }
+impl ListedExecution {
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>A structure that describes the Amazon S3 or EFS file location.
+    /// This is the file location when the execution begins: if the file is being copied,
+    /// this is the initial (as opposed to destination) file location.</p>
+    pub fn initial_file_location(&self) -> std::option::Option<&crate::model::FileLocation> {
+        self.initial_file_location.as_ref()
+    }
+    /// <p>A container object for the session details associated with a workflow.</p>
+    pub fn service_metadata(&self) -> std::option::Option<&crate::model::ServiceMetadata> {
+        self.service_metadata.as_ref()
+    }
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListedExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListedExecution");
@@ -1913,6 +2194,12 @@ pub struct ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     pub user_details: std::option::Option<crate::model::UserDetails>,
 }
+impl ServiceMetadata {
+    /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
+    pub fn user_details(&self) -> std::option::Option<&crate::model::UserDetails> {
+        self.user_details.as_ref()
+    }
+}
 impl std::fmt::Debug for ServiceMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceMetadata");
@@ -1967,6 +2254,20 @@ pub struct UserDetails {
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub session_id: std::option::Option<std::string::String>,
+}
+impl UserDetails {
+    /// <p>A unique string that identifies a user account associated with a server.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UserDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2044,6 +2345,16 @@ pub struct FileLocation {
     /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
+impl FileLocation {
+    /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+    pub fn s3_file_location(&self) -> std::option::Option<&crate::model::S3FileLocation> {
+        self.s3_file_location.as_ref()
+    }
+    /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+    pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
+        self.efs_file_location.as_ref()
+    }
+}
 impl std::fmt::Debug for FileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FileLocation");
@@ -2116,6 +2427,16 @@ pub struct EfsFileLocation {
     /// <p>The pathname for the folder being used by a workflow.</p>
     pub path: std::option::Option<std::string::String>,
 }
+impl EfsFileLocation {
+    /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The pathname for the folder being used by a workflow.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+}
 impl std::fmt::Debug for EfsFileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EfsFileLocation");
@@ -2185,6 +2506,24 @@ pub struct S3FileLocation {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
     pub etag: std::option::Option<std::string::String>,
+}
+impl S3FileLocation {
+    /// <p>Specifies the S3 bucket that contains the file being used.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Specifies the file version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
+    pub fn etag(&self) -> std::option::Option<&str> {
+        self.etag.as_deref()
+    }
 }
 impl std::fmt::Debug for S3FileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2297,6 +2636,43 @@ pub struct ListedAccess {
     /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
+}
+impl ListedAccess {
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    pub fn home_directory(&self) -> std::option::Option<&str> {
+        self.home_directory.as_deref()
+    }
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// S3 or EFS paths visible to your users.</p>
+    pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
+        self.home_directory_type.as_ref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+    /// server to access your resources when servicing your users' transfer requests.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>A unique identifier that is required to identify specific groups within your directory.
+    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
+    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
+    /// you can view the SID values by running the following command using Windows PowerShell.</p>
+    ///
+    /// <p>
+    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
+    /// </p>
+    ///
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    ///
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
+    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListedAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2438,6 +2814,32 @@ pub struct DescribedWorkflow {
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DescribedWorkflow {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the text description for the workflow.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::WorkflowStep]> {
+        self.steps.as_deref()
+    }
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+    pub fn on_exception_steps(&self) -> std::option::Option<&[crate::model::WorkflowStep]> {
+        self.on_exception_steps.as_deref()
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
+        self.workflow_id.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribedWorkflow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2626,6 +3028,67 @@ pub struct WorkflowStep {
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
     pub tag_step_details: std::option::Option<crate::model::TagStepDetails>,
+}
+impl WorkflowStep {
+    /// <p>
+    /// Currently, the following step types are supported.
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Copy</i>: copy the file to another location</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Custom</i>: custom step with a lambda target</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Delete</i>: delete the file</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Tag</i>: add a tag to the file</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::WorkflowStepType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p>
+    /// Consists of the following values:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A description</p>
+    /// </li>
+    /// <li>
+    /// <p>An S3 location for the destination of the file copy.</p>
+    /// </li>
+    /// <li>
+    /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
+    /// The default is <code>FALSE</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn copy_step_details(&self) -> std::option::Option<&crate::model::CopyStepDetails> {
+        self.copy_step_details.as_ref()
+    }
+    /// <p>Details for a step that invokes a lambda function.</p>
+    /// <p>
+    /// Consists of the lambda function name, target, and timeout (in seconds).
+    /// </p>
+    pub fn custom_step_details(&self) -> std::option::Option<&crate::model::CustomStepDetails> {
+        self.custom_step_details.as_ref()
+    }
+    /// <p>Details for a step that deletes the file.</p>
+    pub fn delete_step_details(&self) -> std::option::Option<&crate::model::DeleteStepDetails> {
+        self.delete_step_details.as_ref()
+    }
+    /// <p>Details for a step that creates one or more tags.</p>
+    /// <p>You specify one or more tags: each tag contains a key/value pair.</p>
+    pub fn tag_step_details(&self) -> std::option::Option<&crate::model::TagStepDetails> {
+        self.tag_step_details.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkflowStep {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2823,6 +3286,16 @@ pub struct TagStepDetails {
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
+impl TagStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Array that contains from 1 to 10 key/value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagStepDetails");
@@ -2895,6 +3368,16 @@ pub struct S3Tag {
     /// <p>The value that corresponds to the key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl S3Tag {
+    /// <p>The name assigned to the tag that you create.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value that corresponds to the key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Tag");
@@ -2956,6 +3439,12 @@ pub struct DeleteStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteStepDetails");
@@ -3005,6 +3494,20 @@ pub struct CustomStepDetails {
     pub target: std::option::Option<std::string::String>,
     /// <p>Timeout, in seconds, for the step.</p>
     pub timeout_seconds: std::option::Option<i32>,
+}
+impl CustomStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN for the lambda function that is being called.</p>
+    pub fn target(&self) -> std::option::Option<&str> {
+        self.target.as_deref()
+    }
+    /// <p>Timeout, in seconds, for the step.</p>
+    pub fn timeout_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_seconds
+    }
 }
 impl std::fmt::Debug for CustomStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3084,6 +3587,23 @@ pub struct CopyStepDetails {
     /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
     /// The default is <code>FALSE</code>.</p>
     pub overwrite_existing: std::option::Option<crate::model::OverwriteExisting>,
+}
+impl CopyStepDetails {
+    /// <p>The name of the step, used as an identifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
+    pub fn destination_file_location(
+        &self,
+    ) -> std::option::Option<&crate::model::InputFileLocation> {
+        self.destination_file_location.as_ref()
+    }
+    /// <p>A flag that indicates whether or not to overwrite an existing file of the same name.
+    /// The default is <code>FALSE</code>.</p>
+    pub fn overwrite_existing(&self) -> std::option::Option<&crate::model::OverwriteExisting> {
+        self.overwrite_existing.as_ref()
+    }
 }
 impl std::fmt::Debug for CopyStepDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3224,6 +3744,16 @@ pub struct InputFileLocation {
     /// <p>Reserved for future use.</p>
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
+impl InputFileLocation {
+    /// <p>Specifies the details for the S3 file being copied.</p>
+    pub fn s3_file_location(&self) -> std::option::Option<&crate::model::S3InputFileLocation> {
+        self.s3_file_location.as_ref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn efs_file_location(&self) -> std::option::Option<&crate::model::EfsFileLocation> {
+        self.efs_file_location.as_ref()
+    }
+}
 impl std::fmt::Debug for InputFileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputFileLocation");
@@ -3302,6 +3832,16 @@ pub struct S3InputFileLocation {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
     pub key: std::option::Option<std::string::String>,
+}
+impl S3InputFileLocation {
+    /// <p>Specifies the S3 bucket for the customer input file.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3InputFileLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3476,6 +4016,81 @@ pub struct DescribedUser {
     /// authentication purposes. This is the string that will be used by your user when they log in to
     /// your server.</p>
     pub user_name: std::option::Option<std::string::String>,
+}
+impl DescribedUser {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be
+    /// described.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    pub fn home_directory(&self) -> std::option::Option<&str> {
+        self.home_directory.as_deref()
+    }
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+    /// be visible to your user and how you want to make them visible. You must specify the
+    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+    /// can only be set when <code>HomeDirectoryType</code> is set to
+    /// <i>LOGICAL</i>.</p>
+    ///
+    /// <p>In most cases, you can use this value instead of the session policy to lock your user
+    /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
+    /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+    /// parameter value.</p>
+    pub fn home_directory_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
+        self.home_directory_mappings.as_deref()
+    }
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// S3 or EFS paths visible to your users.</p>
+    pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
+        self.home_directory_type.as_ref()
+    }
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
+    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+    /// your users' access to your Amazon Elastic File System (Amazon EFS) file systems. The POSIX
+    /// permissions that are set on files and directories in your file system determine the level of
+    /// access your users get when transferring files into and out of your Amazon EFS file
+    /// systems.</p>
+    pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
+        self.posix_profile.as_ref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+    /// server to access your resources when servicing your users' transfer requests.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described
+    /// user.</p>
+    pub fn ssh_public_keys(&self) -> std::option::Option<&[crate::model::SshPublicKey]> {
+        self.ssh_public_keys.as_deref()
+    }
+    /// <p>Specifies the key-value pairs for the user requested. Tag can be used to search for and
+    /// group users for a variety of purposes.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies the name of the user that was requested to be described. User names are used for
+    /// authentication purposes. This is the string that will be used by your user when they log in to
+    /// your server.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribedUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3754,6 +4369,22 @@ pub struct SshPublicKey {
     /// key.</p>
     pub ssh_public_key_id: std::option::Option<std::string::String>,
 }
+impl SshPublicKey {
+    /// <p>Specifies the date that the public key was added to the user account.</p>
+    pub fn date_imported(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date_imported.as_ref()
+    }
+    /// <p>Specifies the content of the SSH public key as specified by the
+    /// <code>PublicKeyId</code>.</p>
+    pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_body.as_deref()
+    }
+    /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public
+    /// key.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SshPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SshPublicKey");
@@ -3928,6 +4559,135 @@ pub struct DescribedServer {
     pub user_count: std::option::Option<i32>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
+}
+impl DescribedServer {
+    /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+    /// <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>
+    /// The protocol settings that are configured for your server.
+    /// </p>
+    /// <p>
+    /// Use the <code>PassiveIp</code> parameter to indicate passive mode.
+    /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+    /// </p>
+    pub fn protocol_details(&self) -> std::option::Option<&crate::model::ProtocolDetails> {
+        self.protocol_details.as_ref()
+    }
+    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
+    /// When you host your endpoint within your VPC, you can make it accessible only to resources
+    /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
+    /// the internet. Your VPC's default security groups are automatically assigned to your
+    /// endpoint.</p>
+    pub fn endpoint_details(&self) -> std::option::Option<&crate::model::EndpointDetails> {
+        self.endpoint_details.as_ref()
+    }
+    /// <p>Defines the type of endpoint that your server is connected to. If your server is connected
+    /// to a VPC endpoint, your server isn't accessible over the public internet.</p>
+    pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value
+    /// is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code>
+    /// command.</p>
+    pub fn host_key_fingerprint(&self) -> std::option::Option<&str> {
+        self.host_key_fingerprint.as_deref()
+    }
+    /// <p>Specifies information to call a customer-supplied authentication API. This field is not
+    /// populated when the <code>IdentityProviderType</code> of a server is
+    /// <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
+    pub fn identity_provider_details(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderDetails> {
+        self.identity_provider_details.as_ref()
+    }
+    /// <p>Specifies the mode of authentication for a server. The default value is
+    /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
+    /// the Amazon Web Services Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
+    /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
+    /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
+    /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+    /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
+    /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    pub fn identity_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderType> {
+        self.identity_provider_type.as_ref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+    /// your CloudWatch logs.</p>
+    pub fn logging_role(&self) -> std::option::Option<&str> {
+        self.logging_role.as_deref()
+    }
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
+    /// client can connect to your server's endpoint. The available protocols are:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
+    /// SSH</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
+    /// encryption</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
+    /// </li>
+    /// </ul>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
+        self.protocols.as_deref()
+    }
+    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    pub fn security_policy_name(&self) -> std::option::Option<&str> {
+        self.security_policy_name.as_deref()
+    }
+    /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>Specifies the condition of a server for the server that was described. A value of
+    /// <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A
+    /// <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file
+    /// transfer operations.</p>
+    ///
+    /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is
+    /// in an intermediate state, either not fully able to respond, or not fully offline. The values
+    /// of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error
+    /// condition.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>Specifies the key-value pairs that you can use to search for and group servers that were
+    /// assigned to the server that was described.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Specifies the number of users that are assigned to a server you specified with the
+    /// <code>ServerId</code>.</p>
+    pub fn user_count(&self) -> std::option::Option<i32> {
+        self.user_count
+    }
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
+        self.workflow_details.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribedServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4358,6 +5118,37 @@ pub struct DescribedSecurityPolicy {
     /// security policy that is attached to the server.</p>
     pub tls_ciphers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DescribedSecurityPolicy {
+    /// <p>Specifies whether this policy enables Federal Information Processing Standards
+    /// (FIPS).</p>
+    pub fn fips(&self) -> std::option::Option<bool> {
+        self.fips
+    }
+    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    pub fn security_policy_name(&self) -> std::option::Option<&str> {
+        self.security_policy_name.as_deref()
+    }
+    /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security
+    /// policy that is attached to the server.</p>
+    pub fn ssh_ciphers(&self) -> std::option::Option<&[std::string::String]> {
+        self.ssh_ciphers.as_deref()
+    }
+    /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy
+    /// that is attached to the server.</p>
+    pub fn ssh_kexs(&self) -> std::option::Option<&[std::string::String]> {
+        self.ssh_kexs.as_deref()
+    }
+    /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the
+    /// security policy that is attached to the server.</p>
+    pub fn ssh_macs(&self) -> std::option::Option<&[std::string::String]> {
+        self.ssh_macs.as_deref()
+    }
+    /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the
+    /// security policy that is attached to the server.</p>
+    pub fn tls_ciphers(&self) -> std::option::Option<&[std::string::String]> {
+        self.tls_ciphers.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribedSecurityPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribedSecurityPolicy");
@@ -4542,6 +5333,50 @@ pub struct DescribedExecution {
     /// error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     pub results: std::option::Option<crate::model::ExecutionResults>,
 }
+impl DescribedExecution {
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn execution_id(&self) -> std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
+    /// <p>A structure that describes the Amazon S3 or EFS file location.
+    /// This is the file location when the execution begins: if the file is being copied,
+    /// this is the initial (as opposed to destination) file location.</p>
+    pub fn initial_file_location(&self) -> std::option::Option<&crate::model::FileLocation> {
+        self.initial_file_location.as_ref()
+    }
+    /// <p>A container object for the session details associated with a workflow.</p>
+    pub fn service_metadata(&self) -> std::option::Option<&crate::model::ServiceMetadata> {
+        self.service_metadata.as_ref()
+    }
+    /// <p>The IAM role associated with the execution.</p>
+    pub fn execution_role(&self) -> std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
+    /// <p>The IAM logging role associated with the execution.</p>
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
+    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+    /// files and directories in your file system determine the level of access your users get when
+    /// transferring files into and out of your Amazon EFS file systems.</p>
+    pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
+        self.posix_profile.as_ref()
+    }
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step,
+    /// error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
+    pub fn results(&self) -> std::option::Option<&crate::model::ExecutionResults> {
+        self.results.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribedExecution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribedExecution");
@@ -4720,6 +5555,16 @@ pub struct ExecutionResults {
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::ExecutionStepResult>>,
 }
+impl ExecutionResults {
+    /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+    pub fn steps(&self) -> std::option::Option<&[crate::model::ExecutionStepResult]> {
+        self.steps.as_deref()
+    }
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+    pub fn on_exception_steps(&self) -> std::option::Option<&[crate::model::ExecutionStepResult]> {
+        self.on_exception_steps.as_deref()
+    }
+}
 impl std::fmt::Debug for ExecutionResults {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionResults");
@@ -4824,6 +5669,38 @@ pub struct ExecutionStepResult {
     pub outputs: std::option::Option<std::string::String>,
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
     pub error: std::option::Option<crate::model::ExecutionError>,
+}
+impl ExecutionStepResult {
+    /// <p>One of the available step types.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>Copy</i>: copy the file to another location</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Custom</i>: custom step with a lambda target</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Delete</i>: delete the file</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Tag</i>: add a tag to the file</p>
+    /// </li>
+    /// </ul>
+    pub fn step_type(&self) -> std::option::Option<&crate::model::WorkflowStepType> {
+        self.step_type.as_ref()
+    }
+    /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
+    pub fn outputs(&self) -> std::option::Option<&str> {
+        self.outputs.as_deref()
+    }
+    /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ExecutionError> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecutionStepResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4943,6 +5820,17 @@ pub struct ExecutionError {
     pub r#type: std::option::Option<crate::model::ExecutionErrorType>,
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ExecutionError {
+    /// <p>Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>, which occurs
+    /// if your policy does not contain the correct permissions to complete one or more of the steps in the workflow.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ExecutionErrorType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5065,6 +5953,18 @@ pub struct LoggingConfiguration {
     /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl LoggingConfiguration {
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+    /// your CloudWatch logs.</p>
+    pub fn logging_role(&self) -> std::option::Option<&str> {
+        self.logging_role.as_deref()
+    }
+    /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for LoggingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoggingConfiguration");
@@ -5182,6 +6082,75 @@ pub struct DescribedAccess {
     /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
+}
+impl DescribedAccess {
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    pub fn home_directory(&self) -> std::option::Option<&str> {
+        self.home_directory.as_deref()
+    }
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+    /// be visible to your user and how you want to make them visible. You must specify the
+    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+    /// can only be set when <code>HomeDirectoryType</code> is set to
+    /// <i>LOGICAL</i>.</p>
+    ///
+    /// <p>In most cases, you can use this value instead of the session policy to lock down the
+    /// associated access to the designated home directory ("<code>chroot</code>"). To do this, you
+    /// can set <code>Entry</code> to '/' and set <code>Target</code> to the
+    /// <code>HomeDirectory</code> parameter value.</p>
+    pub fn home_directory_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
+        self.home_directory_mappings.as_deref()
+    }
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+    /// S3 or EFS paths visible to your users.</p>
+    pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
+        self.home_directory_type.as_ref()
+    }
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
+    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+    /// files and directories in your file system determine the level of access your users get when
+    /// transferring files into and out of your Amazon EFS file systems.</p>
+    pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
+        self.posix_profile.as_ref()
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+    /// server to access your resources when servicing your users' transfer requests.</p>
+    pub fn role(&self) -> std::option::Option<&str> {
+        self.role.as_deref()
+    }
+    /// <p>A unique identifier that is required to identify specific groups within your directory.
+    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
+    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
+    /// you can view the SID values by running the following command using Windows PowerShell.</p>
+    ///
+    /// <p>
+    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
+    /// </p>
+    ///
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    ///
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
+    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribedAccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -11,6 +11,17 @@ pub struct PredictedItem {
     /// selection. For more information on scoring logic, see <a>how-scores-work</a>.</p>
     pub score: std::option::Option<f64>,
 }
+impl PredictedItem {
+    /// <p>The recommended item ID.</p>
+    pub fn item_id(&self) -> std::option::Option<&str> {
+        self.item_id.as_deref()
+    }
+    /// <p>A numeric representation of the model's certainty that the item will be the next user
+    /// selection. For more information on scoring logic, see <a>how-scores-work</a>.</p>
+    pub fn score(&self) -> std::option::Option<f64> {
+        self.score
+    }
+}
 impl std::fmt::Debug for PredictedItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PredictedItem");

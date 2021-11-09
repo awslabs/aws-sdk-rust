@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_discoverer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDiscovererInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if input.cross_account {
         object.key("CrossAccount").boolean(input.cross_account);
     }
@@ -21,12 +21,13 @@ pub fn serialize_structure_crate_input_create_discoverer_input(
         }
         object_4.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_registry_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRegistryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.description {
         object.key("Description").string(var_7);
     }
@@ -39,12 +40,13 @@ pub fn serialize_structure_crate_input_create_registry_input(
         }
         object_9.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_schema_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateSchemaInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.content {
         object.key("Content").string(var_12);
     }
@@ -63,12 +65,13 @@ pub fn serialize_structure_crate_input_create_schema_input(
     if let Some(var_18) = &input.r#type {
         object.key("Type").string(var_18.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_discovered_schema_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDiscoveredSchemaInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.events {
         let mut array_20 = object.key("Events").start_array();
         for item_21 in var_19 {
@@ -81,24 +84,26 @@ pub fn serialize_structure_crate_input_get_discovered_schema_input(
     if let Some(var_22) = &input.r#type {
         object.key("Type").string(var_22.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_resource_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutResourcePolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.policy {
         object.key("Policy").string(var_23);
     }
     if let Some(var_24) = &input.revision_id {
         object.key("RevisionId").string(var_24);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.tags {
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
@@ -108,33 +113,36 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_26.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_discoverer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDiscovererInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if input.cross_account {
         object.key("CrossAccount").boolean(input.cross_account);
     }
     if let Some(var_29) = &input.description {
         object.key("Description").string(var_29);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_registry_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRegistryInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.description {
         object.key("Description").string(var_30);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_schema_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSchemaInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.client_token_id {
         object.key("ClientTokenId").string(var_31);
     }
@@ -147,4 +155,5 @@ pub fn serialize_structure_crate_input_update_schema_input(
     if let Some(var_34) = &input.r#type {
         object.key("Type").string(var_34.as_str());
     }
+    Ok(())
 }

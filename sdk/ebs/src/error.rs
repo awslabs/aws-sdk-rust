@@ -930,6 +930,12 @@ pub struct ValidationException {
     /// <p>The reason for the validation exception.</p>
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
 }
+impl ValidationException {
+    /// <p>The reason for the validation exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -1011,6 +1017,14 @@ pub struct ServiceQuotaExceededException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
     pub reason: std::option::Option<crate::model::ServiceQuotaExceededExceptionReason>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>The reason for the exception.</p>
+    pub fn reason(
+        &self,
+    ) -> std::option::Option<&crate::model::ServiceQuotaExceededExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1094,6 +1108,12 @@ pub struct ResourceNotFoundException {
     /// <p>The reason for the exception.</p>
     pub reason: std::option::Option<crate::model::ResourceNotFoundExceptionReason>,
 }
+impl ResourceNotFoundException {
+    /// <p>The reason for the exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::ResourceNotFoundExceptionReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotFoundException");
@@ -1176,6 +1196,12 @@ pub struct RequestThrottledException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
     pub reason: std::option::Option<crate::model::RequestThrottledExceptionReason>,
+}
+impl RequestThrottledException {
+    /// <p>The reason for the exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::RequestThrottledExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for RequestThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1453,6 +1479,12 @@ pub struct AccessDeniedException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The reason for the exception.</p>
     pub reason: std::option::Option<crate::model::AccessDeniedExceptionReason>,
+}
+impl AccessDeniedException {
+    /// <p>The reason for the exception.</p>
+    pub fn reason(&self) -> std::option::Option<&crate::model::AccessDeniedExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

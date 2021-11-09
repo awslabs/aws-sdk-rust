@@ -5304,6 +5304,12 @@ pub struct MalformedQueryException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl MalformedQueryException {
+    /// <p>Reserved.</p>
+    pub fn query_compile_error(&self) -> std::option::Option<&crate::model::QueryCompileError> {
+        self.query_compile_error.as_ref()
+    }
+}
 impl std::fmt::Debug for MalformedQueryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MalformedQueryException");
@@ -5580,6 +5586,12 @@ pub struct InvalidSequenceTokenException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidSequenceTokenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn expected_sequence_token(&self) -> std::option::Option<&str> {
+        self.expected_sequence_token.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidSequenceTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidSequenceTokenException");
@@ -5661,6 +5673,12 @@ pub struct DataAlreadyAcceptedException {
     pub expected_sequence_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl DataAlreadyAcceptedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn expected_sequence_token(&self) -> std::option::Option<&str> {
+        self.expected_sequence_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DataAlreadyAcceptedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

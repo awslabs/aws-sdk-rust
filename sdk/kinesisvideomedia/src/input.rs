@@ -113,10 +113,7 @@ impl GetMediaInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_media(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_media(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -189,6 +186,23 @@ pub struct GetMediaInput {
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
     pub start_selector: std::option::Option<crate::model::StartSelector>,
+}
+impl GetMediaInput {
+    /// <p>The Kinesis video stream name from where you want to get the media content. If you
+    /// don't specify the <code>streamName</code>, you must specify the
+    /// <code>streamARN</code>.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The ARN of the stream from where you want to get the media content. If you don't
+    /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    pub fn start_selector(&self) -> std::option::Option<&crate::model::StartSelector> {
+        self.start_selector.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMediaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

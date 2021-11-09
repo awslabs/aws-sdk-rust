@@ -6,6 +6,12 @@ pub struct UpgradePublishedSchemaOutput {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub upgraded_schema_arn: std::option::Option<std::string::String>,
 }
+impl UpgradePublishedSchemaOutput {
+    /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
+    pub fn upgraded_schema_arn(&self) -> std::option::Option<&str> {
+        self.upgraded_schema_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpgradePublishedSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpgradePublishedSchemaOutput");
@@ -58,6 +64,16 @@ pub struct UpgradeAppliedSchemaOutput {
     pub upgraded_schema_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the directory that is returned as part of the response.</p>
     pub directory_arn: std::option::Option<std::string::String>,
+}
+impl UpgradeAppliedSchemaOutput {
+    /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
+    pub fn upgraded_schema_arn(&self) -> std::option::Option<&str> {
+        self.upgraded_schema_arn.as_deref()
+    }
+    /// <p>The ARN of the directory that is returned as part of the response.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpgradeAppliedSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -156,6 +172,12 @@ pub struct UpdateSchemaOutput {
     /// <p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSchemaOutput {
+    /// <p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSchemaOutput");
@@ -203,6 +225,12 @@ impl UpdateSchemaOutput {
 pub struct UpdateObjectAttributesOutput {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl UpdateObjectAttributesOutput {
+    /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateObjectAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -405,6 +433,12 @@ pub struct PutSchemaFromJsonOutput {
     /// <p>The ARN of the schema to update.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl PutSchemaFromJsonOutput {
+    /// <p>The ARN of the schema to update.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutSchemaFromJsonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSchemaFromJsonOutput");
@@ -450,6 +484,12 @@ impl PutSchemaFromJsonOutput {
 pub struct PublishSchemaOutput {
     /// <p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>
     pub published_schema_arn: std::option::Option<std::string::String>,
+}
+impl PublishSchemaOutput {
+    /// <p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>
+    pub fn published_schema_arn(&self) -> std::option::Option<&str> {
+        self.published_schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PublishSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -505,6 +545,18 @@ pub struct LookupPolicyOutput {
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl LookupPolicyOutput {
+    /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+    /// <code>PolicyType</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::model::PolicyToPath]> {
+        self.policy_to_path_list.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for LookupPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -583,6 +635,16 @@ pub struct ListTypedLinkFacetNamesOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTypedLinkFacetNamesOutput {
+    /// <p>The names of typed link facets that exist within the schema.</p>
+    pub fn facet_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.facet_names.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTypedLinkFacetNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTypedLinkFacetNamesOutput");
@@ -654,6 +716,16 @@ pub struct ListTypedLinkFacetAttributesOutput {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTypedLinkFacetAttributesOutput {
+    /// <p>An ordered set of attributes associate with the typed link.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::TypedLinkAttributeDefinition]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTypedLinkFacetAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -731,6 +803,16 @@ pub struct ListTagsForResourceOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag key value pairs that are associated with the response.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -802,6 +884,16 @@ pub struct ListPublishedSchemaArnsOutput {
     pub schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPublishedSchemaArnsOutput {
+    /// <p>The ARNs of published schemas.</p>
+    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.schema_arns.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPublishedSchemaArnsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -875,6 +967,16 @@ pub struct ListPolicyAttachmentsOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPolicyAttachmentsOutput {
+    /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
+    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_identifiers.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPolicyAttachmentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPolicyAttachmentsOutput");
@@ -946,6 +1048,18 @@ pub struct ListOutgoingTypedLinksOutput {
     pub typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOutgoingTypedLinksOutput {
+    /// <p>Returns a typed link specifier as output.</p>
+    pub fn typed_link_specifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+        self.typed_link_specifiers.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOutgoingTypedLinksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1023,6 +1137,17 @@ pub struct ListObjectPoliciesOutput {
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListObjectPoliciesOutput {
+    /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
+    /// object.</p>
+    pub fn attached_policy_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.attached_policy_ids.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListObjectPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1102,6 +1227,26 @@ pub struct ListObjectParentsOutput {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     pub parent_links:
         std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+}
+impl ListObjectParentsOutput {
+    /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and
+    /// LinkName as the value.</p>
+    pub fn parents(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parents.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns a list of parent reference and LinkName Tuples.</p>
+    pub fn parent_links(
+        &self,
+    ) -> std::option::Option<&[crate::model::ObjectIdentifierAndLinkNameTuple]> {
+        self.parent_links.as_deref()
+    }
 }
 impl std::fmt::Debug for ListObjectParentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1215,6 +1360,19 @@ pub struct ListObjectParentPathsOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListObjectParentPathsOutput {
+    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
+    /// directory.</p>
+    pub fn path_to_object_identifiers_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::PathToObjectIdentifiers]> {
+        self.path_to_object_identifiers_list.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListObjectParentPathsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListObjectParentPathsOutput");
@@ -1297,6 +1455,20 @@ pub struct ListObjectChildrenOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListObjectChildrenOutput {
+    /// <p>Children structure, which is a map with key as the <code>LinkName</code> and
+    /// <code>ObjectIdentifier</code> as the value.</p>
+    pub fn children(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.children.as_ref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListObjectChildrenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1381,6 +1553,17 @@ pub struct ListObjectAttributesOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListObjectAttributesOutput {
+    /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the
+    /// key, and attribute value is the value.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListObjectAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListObjectAttributesOutput");
@@ -1456,6 +1639,16 @@ pub struct ListManagedSchemaArnsOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListManagedSchemaArnsOutput {
+    /// <p>The ARNs for all AWS managed schemas.</p>
+    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.schema_arns.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListManagedSchemaArnsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListManagedSchemaArnsOutput");
@@ -1527,6 +1720,16 @@ pub struct ListIndexOutput {
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIndexOutput {
+    /// <p>The objects and indexed values attached to the index.</p>
+    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+        self.index_attachments.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1604,6 +1807,16 @@ pub struct ListIncomingTypedLinksOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListIncomingTypedLinksOutput {
+    /// <p>Returns one or more typed link specifiers as output.</p>
+    pub fn link_specifiers(&self) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+        self.link_specifiers.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListIncomingTypedLinksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIncomingTypedLinksOutput");
@@ -1680,6 +1893,16 @@ pub struct ListFacetNamesOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFacetNamesOutput {
+    /// <p>The names of facets that exist within the schema.</p>
+    pub fn facet_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.facet_names.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFacetNamesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFacetNamesOutput");
@@ -1751,6 +1974,16 @@ pub struct ListFacetAttributesOutput {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFacetAttributesOutput {
+    /// <p>The attributes attached to the facet.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::FacetAttribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFacetAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1824,6 +2057,17 @@ pub struct ListDirectoriesOutput {
     pub directories: std::option::Option<std::vec::Vec<crate::model::Directory>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDirectoriesOutput {
+    /// <p>Lists all directories that are associated with your account in pagination
+    /// fashion.</p>
+    pub fn directories(&self) -> std::option::Option<&[crate::model::Directory]> {
+        self.directories.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDirectoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1899,6 +2143,16 @@ pub struct ListDevelopmentSchemaArnsOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDevelopmentSchemaArnsOutput {
+    /// <p>The ARNs of retrieved development schemas.</p>
+    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.schema_arns.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDevelopmentSchemaArnsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevelopmentSchemaArnsOutput");
@@ -1970,6 +2224,16 @@ pub struct ListAttachedIndicesOutput {
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAttachedIndicesOutput {
+    /// <p>The indices attached to the specified object.</p>
+    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+        self.index_attachments.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAttachedIndicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2047,6 +2311,16 @@ pub struct ListAppliedSchemaArnsOutput {
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppliedSchemaArnsOutput {
+    /// <p>The ARNs of schemas that are applied to the directory.</p>
+    pub fn schema_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.schema_arns.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppliedSchemaArnsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppliedSchemaArnsOutput");
@@ -2122,6 +2396,17 @@ pub struct GetTypedLinkFacetInformationOutput {
     /// they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetTypedLinkFacetInformationOutput {
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
+    /// links considers the order that the attributes are defined on the typed link facet. When
+    /// providing ranges to typed link selection, any inexact ranges must be specified at the end. Any
+    /// attributes that do not have a range specified are presumed to match the entire range. Filters
+    /// are interpreted in the order of the attributes on the typed link facet, not the order in which
+    /// they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
+        self.identity_attribute_order.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTypedLinkFacetInformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTypedLinkFacetInformationOutput");
@@ -2192,6 +2477,16 @@ pub struct GetSchemaAsJsonOutput {
     /// <p>The JSON representation of the schema document.</p>
     pub document: std::option::Option<std::string::String>,
 }
+impl GetSchemaAsJsonOutput {
+    /// <p>The name of the retrieved schema.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The JSON representation of the schema document.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+}
 impl std::fmt::Debug for GetSchemaAsJsonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSchemaAsJsonOutput");
@@ -2254,6 +2549,16 @@ pub struct GetObjectInformationOutput {
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl GetObjectInformationOutput {
+    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
+    pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+        self.schema_facets.as_deref()
+    }
+    /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for GetObjectInformationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2328,6 +2633,12 @@ pub struct GetObjectAttributesOutput {
     /// <p>The attributes that are associated with the object.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
+impl GetObjectAttributesOutput {
+    /// <p>The attributes that are associated with the object.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for GetObjectAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetObjectAttributesOutput");
@@ -2385,6 +2696,12 @@ impl GetObjectAttributesOutput {
 pub struct GetLinkAttributesOutput {
     /// <p>The attributes that are associated with the typed link.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+}
+impl GetLinkAttributesOutput {
+    /// <p>The attributes that are associated with the typed link.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for GetLinkAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2444,6 +2761,12 @@ pub struct GetFacetOutput {
     /// <p>The <a>Facet</a> structure that is associated with the facet.</p>
     pub facet: std::option::Option<crate::model::Facet>,
 }
+impl GetFacetOutput {
+    /// <p>The <a>Facet</a> structure that is associated with the facet.</p>
+    pub fn facet(&self) -> std::option::Option<&crate::model::Facet> {
+        self.facet.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFacetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFacetOutput");
@@ -2489,6 +2812,12 @@ impl GetFacetOutput {
 pub struct GetDirectoryOutput {
     /// <p>Metadata about the directory.</p>
     pub directory: std::option::Option<crate::model::Directory>,
+}
+impl GetDirectoryOutput {
+    /// <p>Metadata about the directory.</p>
+    pub fn directory(&self) -> std::option::Option<&crate::model::Directory> {
+        self.directory.as_ref()
+    }
 }
 impl std::fmt::Debug for GetDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2541,6 +2870,12 @@ pub struct GetAppliedSchemaVersionOutput {
     /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     pub applied_schema_arn: std::option::Option<std::string::String>,
 }
+impl GetAppliedSchemaVersionOutput {
+    /// <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
+    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
+        self.applied_schema_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAppliedSchemaVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAppliedSchemaVersionOutput");
@@ -2592,6 +2927,12 @@ pub struct EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
     pub directory_arn: std::option::Option<std::string::String>,
 }
+impl EnableDirectoryOutput {
+    /// <p>The ARN of the enabled directory.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableDirectoryOutput");
@@ -2642,6 +2983,12 @@ impl EnableDirectoryOutput {
 pub struct DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
     pub directory_arn: std::option::Option<std::string::String>,
+}
+impl DisableDirectoryOutput {
+    /// <p>The ARN of the directory that has been disabled.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2754,6 +3101,12 @@ pub struct DetachObjectOutput {
     /// <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
+impl DetachObjectOutput {
+    /// <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
+    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+        self.detached_object_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachObjectOutput");
@@ -2807,6 +3160,12 @@ impl DetachObjectOutput {
 pub struct DetachFromIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     pub detached_object_identifier: std::option::Option<std::string::String>,
+}
+impl DetachFromIndexOutput {
+    /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
+    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+        self.detached_object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachFromIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2892,6 +3251,13 @@ pub struct DeleteSchemaOutput {
     /// <p>The input ARN that is returned as part of the response. For more information, see
     /// <a>arns</a>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSchemaOutput {
+    /// <p>The input ARN that is returned as part of the response. For more information, see
+    /// <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3003,6 +3369,12 @@ pub struct DeleteDirectoryOutput {
     /// <p>The ARN of the deleted directory.</p>
     pub directory_arn: std::option::Option<std::string::String>,
 }
+impl DeleteDirectoryOutput {
+    /// <p>The ARN of the deleted directory.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDirectoryOutput");
@@ -3085,6 +3457,13 @@ pub struct CreateSchemaOutput {
     /// information, see <a>arns</a>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
+impl CreateSchemaOutput {
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+    /// information, see <a>arns</a>.</p>
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
+        self.schema_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSchemaOutput");
@@ -3134,6 +3513,12 @@ impl CreateSchemaOutput {
 pub struct CreateObjectOutput {
     /// <p>The identifier that is associated with the object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl CreateObjectOutput {
+    /// <p>The identifier that is associated with the object.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3185,6 +3570,12 @@ impl CreateObjectOutput {
 pub struct CreateIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     pub object_identifier: std::option::Option<std::string::String>,
+}
+impl CreateIndexOutput {
+    /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3275,6 +3666,27 @@ pub struct CreateDirectoryOutput {
     /// schema is copied into the directory, it has its own ARN, which is referred to applied schema
     /// ARN. For more information, see <a>arns</a>.</p>
     pub applied_schema_arn: std::option::Option<std::string::String>,
+}
+impl CreateDirectoryOutput {
+    /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
+    /// see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
+    /// <p>The name of the <a>Directory</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The root object node of the created directory.</p>
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
+        self.object_identifier.as_deref()
+    }
+    /// <p>The ARN of the published schema in the <a>Directory</a>. Once a published
+    /// schema is copied into the directory, it has its own ARN, which is referred to applied schema
+    /// ARN. For more information, see <a>arns</a>.</p>
+    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
+        self.applied_schema_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDirectoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3378,6 +3790,12 @@ pub struct BatchWriteOutput {
     /// <p>A list of all the responses for each batch write.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
 }
+impl BatchWriteOutput {
+    /// <p>A list of all the responses for each batch write.</p>
+    pub fn responses(&self) -> std::option::Option<&[crate::model::BatchWriteOperationResponse]> {
+        self.responses.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchWriteOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchWriteOutput");
@@ -3438,6 +3856,12 @@ impl BatchWriteOutput {
 pub struct BatchReadOutput {
     /// <p>A list of all the responses for each batch read.</p>
     pub responses: std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
+}
+impl BatchReadOutput {
+    /// <p>A list of all the responses for each batch read.</p>
+    pub fn responses(&self) -> std::option::Option<&[crate::model::BatchReadOperationResponse]> {
+        self.responses.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchReadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3500,6 +3924,12 @@ pub struct AttachTypedLinkOutput {
     /// <p>Returns a typed link specifier as output.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
+impl AttachTypedLinkOutput {
+    /// <p>Returns a typed link specifier as output.</p>
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+        self.typed_link_specifier.as_ref()
+    }
+}
 impl std::fmt::Debug for AttachTypedLinkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachTypedLinkOutput");
@@ -3550,6 +3980,12 @@ impl AttachTypedLinkOutput {
 pub struct AttachToIndexOutput {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub attached_object_identifier: std::option::Option<std::string::String>,
+}
+impl AttachToIndexOutput {
+    /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
+    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+        self.attached_object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachToIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3636,6 +4072,13 @@ pub struct AttachObjectOutput {
     /// <code>ObjectIdentifier</code>.</p>
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
+impl AttachObjectOutput {
+    /// <p>The attached <code>ObjectIdentifier</code>, which is the child
+    /// <code>ObjectIdentifier</code>.</p>
+    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+        self.attached_object_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachObjectOutput");
@@ -3695,6 +4138,18 @@ pub struct ApplySchemaOutput {
     /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
     /// see <a>arns</a>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
+}
+impl ApplySchemaOutput {
+    /// <p>The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on
+    /// this directory. For more information, see <a>arns</a>.</p>
+    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
+        self.applied_schema_arn.as_deref()
+    }
+    /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
+    /// see <a>arns</a>.</p>
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
+        self.directory_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplySchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8193,6 +8193,16 @@ pub struct InvalidObjectState {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidObjectState {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn access_tier(&self) -> std::option::Option<&crate::model::IntelligentTieringAccessTier> {
+        self.access_tier.as_ref()
+    }
+}
 impl std::fmt::Debug for InvalidObjectState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidObjectState");

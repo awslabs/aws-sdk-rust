@@ -8300,6 +8300,20 @@ pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub reason: std::option::Option<crate::model::ThrottleReason>,
 }
+impl TooManyRequestsException {
+    /// <p>The number of seconds the caller should wait before retrying.</p>
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+        self.retry_after_seconds.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn reason(&self) -> std::option::Option<&crate::model::ThrottleReason> {
+        self.reason.as_ref()
+    }
+}
 impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyRequestsException");
@@ -8411,6 +8425,12 @@ pub struct ServiceException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ServiceException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceException");
@@ -8489,6 +8509,12 @@ pub struct ResourceNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8569,6 +8595,12 @@ pub struct ResourceConflictException {
     /// <p>The exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceConflictException {
+    /// <p>The exception type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceConflictException");
@@ -8647,6 +8679,12 @@ pub struct InvalidParameterValueException {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidParameterValueException {
+    /// <p>The exception type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8729,6 +8767,12 @@ pub struct PreconditionFailedException {
     /// <p>The exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl PreconditionFailedException {
+    /// <p>The exception type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for PreconditionFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PreconditionFailedException");
@@ -8808,6 +8852,12 @@ pub struct InvalidCodeSignatureException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidCodeSignatureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidCodeSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8889,6 +8939,12 @@ pub struct CodeVerificationFailedException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl CodeVerificationFailedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for CodeVerificationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeVerificationFailedException");
@@ -8967,6 +9023,12 @@ pub struct CodeSigningConfigNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl CodeSigningConfigNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for CodeSigningConfigNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9048,6 +9110,12 @@ pub struct CodeStorageExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl CodeStorageExceededException {
+    /// <p>The exception type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for CodeStorageExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeStorageExceededException");
@@ -9128,6 +9196,12 @@ pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInUseException");
@@ -9206,6 +9280,12 @@ pub struct InvalidRuntimeException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidRuntimeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidRuntimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9286,6 +9366,12 @@ pub struct InvalidRequestContentException {
     /// <p>The exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidRequestContentException {
+    /// <p>The exception type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidRequestContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidRequestContentException");
@@ -9364,6 +9450,12 @@ pub struct UnsupportedMediaTypeException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl UnsupportedMediaTypeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for UnsupportedMediaTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9444,6 +9536,12 @@ pub struct SubnetIpAddressLimitReachedException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl SubnetIpAddressLimitReachedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for SubnetIpAddressLimitReachedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9528,6 +9626,12 @@ pub struct ResourceNotReadyException {
     /// <p>The exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceNotReadyException {
+    /// <p>The exception type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceNotReadyException");
@@ -9607,6 +9711,12 @@ pub struct RequestTooLargeException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl RequestTooLargeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for RequestTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9688,6 +9798,12 @@ pub struct KmsNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl KmsNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KmsNotFoundException");
@@ -9767,6 +9883,12 @@ pub struct KmsInvalidStateException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl KmsInvalidStateException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9848,6 +9970,12 @@ pub struct KmsDisabledException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl KmsDisabledException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KmsDisabledException");
@@ -9928,6 +10056,12 @@ pub struct KmsAccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl KmsAccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KmsAccessDeniedException");
@@ -10006,6 +10140,12 @@ pub struct InvalidZipFileException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidZipFileException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidZipFileException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10086,6 +10226,12 @@ pub struct InvalidSubnetIdException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InvalidSubnetIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidSubnetIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidSubnetIdException");
@@ -10164,6 +10310,12 @@ pub struct InvalidSecurityGroupIdException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidSecurityGroupIdException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidSecurityGroupIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10248,6 +10400,12 @@ pub struct EniLimitReachedException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl EniLimitReachedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for EniLimitReachedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EniLimitReachedException");
@@ -10328,6 +10486,12 @@ pub struct EfsMountTimeoutException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl EfsMountTimeoutException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for EfsMountTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EfsMountTimeoutException");
@@ -10407,6 +10571,12 @@ pub struct EfsMountFailureException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl EfsMountFailureException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for EfsMountFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EfsMountFailureException");
@@ -10485,6 +10655,12 @@ pub struct EfsMountConnectivityException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl EfsMountConnectivityException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for EfsMountConnectivityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10568,6 +10744,12 @@ pub struct EfsioException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl EfsioException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for EfsioException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EfsioException");
@@ -10648,6 +10830,16 @@ pub struct Ec2UnexpectedException {
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub ec2_error_code: std::option::Option<std::string::String>,
+}
+impl Ec2UnexpectedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn ec2_error_code(&self) -> std::option::Option<&str> {
+        self.ec2_error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for Ec2UnexpectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10745,6 +10937,12 @@ pub struct Ec2ThrottledException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl Ec2ThrottledException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for Ec2ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ec2ThrottledException");
@@ -10823,6 +11021,12 @@ pub struct Ec2AccessDeniedException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl Ec2AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for Ec2AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10903,6 +11107,12 @@ pub struct ProvisionedConcurrencyConfigNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ProvisionedConcurrencyConfigNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+}
 impl std::fmt::Debug for ProvisionedConcurrencyConfigNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionedConcurrencyConfigNotFoundException");
@@ -10982,6 +11192,12 @@ pub struct PolicyLengthExceededException {
     pub r#type: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl PolicyLengthExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

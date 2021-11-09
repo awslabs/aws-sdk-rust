@@ -200,10 +200,7 @@ impl CreateDatasetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -486,10 +483,7 @@ impl CreateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -686,10 +680,7 @@ impl CreateProjectInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3253,10 +3244,7 @@ impl StartModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3678,10 +3666,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4126,10 +4111,9 @@ impl UpdateDatasetEntriesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_dataset_entries(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_dataset_entries(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4214,6 +4198,34 @@ pub struct UpdateDatasetEntriesInput {
     /// </p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateDatasetEntriesInput {
+    /// <p>The name of the project that contains the dataset that you want to update.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update
+    /// the training dataset. Specify <code>test</code> to update the test dataset. If you
+    /// have a single dataset project, specify <code>train</code>.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>The entries to add to the dataset.</p>
+    pub fn changes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.changes.as_ref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>UpdateDatasetEntries</code>.
+    /// In this case, safely retry your call
+    /// to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency
+    /// token is active for 8 hours.
+    /// </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDatasetEntriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDatasetEntriesInput");
@@ -4234,6 +4246,16 @@ pub struct UntagResourceInput {
     /// <p>A list of the keys of the tags that you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of the keys of the tags that you want to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4251,6 +4273,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key-value tags to assign to the model.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key-value tags to assign to the model.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4281,6 +4313,30 @@ pub struct StopModelInput {
     ///
     /// </p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl StopModelInput {
+    /// <p>The name of the project that contains the model that you want to stop.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The version of the model that you want to stop.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>StopModel</code>.
+    /// In this case, safely retry your call
+    /// to <code>StopModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>StopModel</code>. An idempotency
+    /// token is active for 8 hours.
+    ///
+    ///
+    /// </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StopModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4317,6 +4373,36 @@ pub struct StartModelInput {
     /// </p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartModelInput {
+    /// <p>The name of the project that contains the model that you want to start.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The version of the model that you want to start.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The minimum number of inference units to use. A single
+    /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
+    /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
+    /// of inference units that you use.
+    /// </p>
+    pub fn min_inference_units(&self) -> std::option::Option<i32> {
+        self.min_inference_units
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>StartModel</code>.
+    /// In this case, safely retry your call
+    /// to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency
+    /// token is active for 8 hours.
+    /// </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartModelInput");
@@ -4334,6 +4420,12 @@ impl std::fmt::Debug for StartModelInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4355,6 +4447,20 @@ pub struct ListProjectsInput {
     /// If you specify a value greater than 100, a ValidationException
     /// error occurs. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListProjectsInput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
+    /// retrieve the next set of projects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4379,6 +4485,24 @@ pub struct ListModelsInput {
     /// If you specify a value greater than 100, a ValidationException
     /// error occurs. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListModelsInput {
+    /// <p>The name of the project that contains the model versions that you want to list.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
+    /// retrieve the next set of models.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4422,6 +4546,53 @@ pub struct ListDatasetEntriesInput {
     /// For example a value of "IMG_17"  returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
     pub source_ref_contains: std::option::Option<std::string::String>,
 }
+impl ListDatasetEntriesInput {
+    /// <p>The name of the project that contains the dataset that you want to list.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The type of the dataset that you want to list.  Specify <code>train</code> to list
+    /// the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset
+    /// project, specify <code>train</code>.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you
+    /// don't specify a value, Lookout for Vision returns all entries.</p>
+    pub fn labeled(&self) -> std::option::Option<bool> {
+        self.labeled
+    }
+    /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include
+    /// anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
+    pub fn anomaly_class(&self) -> std::option::Option<&str> {
+        self.anomaly_class.as_deref()
+    }
+    /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
+    pub fn before_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.before_creation_date.as_ref()
+    }
+    /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
+    pub fn after_creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.after_creation_date.as_ref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve),
+    /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
+    /// retrieve the next set of dataset entries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Perform a "contains" search on the  values of the <code>source-ref</code> key within the dataset.
+    /// For example a value of "IMG_17"  returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
+    pub fn source_ref_contains(&self) -> std::option::Option<&str> {
+        self.source_ref_contains.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetEntriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetEntriesInput");
@@ -4451,6 +4622,25 @@ pub struct DetectAnomaliesInput {
     /// Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub content_type: std::option::Option<std::string::String>,
 }
+impl DetectAnomaliesInput {
+    /// <p>The name of the project that contains the model version that you want to use.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The version of the model that you want to use.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.body
+    }
+    /// <p>The type of the image passed in <code>Body</code>.
+    /// Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectAnomaliesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectAnomaliesInput");
@@ -4469,6 +4659,12 @@ pub struct DescribeProjectInput {
     /// <p>The name of the project that you want to describe.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
+impl DescribeProjectInput {
+    /// <p>The name of the project that you want to describe.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectInput");
@@ -4485,6 +4681,16 @@ pub struct DescribeModelInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The version of the model that you want to describe.</p>
     pub model_version: std::option::Option<std::string::String>,
+}
+impl DescribeModelInput {
+    /// <p>The project that contains the version of a model that you want to describe.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The version of the model that you want to describe.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4506,6 +4712,19 @@ pub struct DescribeDatasetInput {
     /// If you have a single dataset project, specify <code>train</code>
     /// </p>
     pub dataset_type: std::option::Option<std::string::String>,
+}
+impl DescribeDatasetInput {
+    /// <p>The name of the project that contains the dataset that you want to describe.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the
+    /// training dataset. Specify <code>test</code> to describe the test dataset.
+    /// If you have a single dataset project, specify <code>train</code>
+    /// </p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4531,6 +4750,23 @@ pub struct DeleteProjectInput {
     /// value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency
     /// token is active for 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteProjectInput {
+    /// <p>The name of the project to delete.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>DeleteProject</code>.
+    /// In this case, safely retry your call
+    /// to <code>DeleteProject</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency
+    /// token is active for 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4558,6 +4794,27 @@ pub struct DeleteModelInput {
     /// value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency
     /// token is active for 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteModelInput {
+    /// <p>The name of the project that contains the model that you want to delete.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The version of the model that you want to delete.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>DeleteModel</code>.
+    /// In this case, safely retry your call
+    /// to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency
+    /// token is active for 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4589,6 +4846,29 @@ pub struct DeleteDatasetInput {
     /// token is active for 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeleteDatasetInput {
+    /// <p>The name of the project that contains the dataset that you want to delete.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset.
+    /// Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project,
+    /// specify <code>train</code>.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>DeleteDataset</code>.
+    /// In this case, safely retry your call
+    /// to <code>DeleteDataset</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency
+    /// token is active for 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDatasetInput");
@@ -4614,6 +4894,23 @@ pub struct CreateProjectInput {
     /// value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency
     /// token is active for 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateProjectInput {
+    /// <p>The name for the project.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>CreateProject</code>.
+    /// In this case, safely retry your call
+    /// to <code>CreateProject</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency
+    /// token is active for 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4650,6 +4947,42 @@ pub struct CreateModelInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateModelInput {
+    /// <p>The name of the project in which you want to create a model version.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>A description for the version of the model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>CreateModel</code>.
+    /// In this case, safely retry your call
+    /// to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency
+    /// token is active for 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
+    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
+        self.output_config.as_ref()
+    }
+    /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
+    /// The key is used to encrypt training and test images copied into the service for model training. Your
+    /// source images are unaffected.
+    /// If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4692,6 +5025,40 @@ pub struct CreateDatasetInput {
     /// token is active for 8 hours.
     /// </p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl CreateDatasetInput {
+    /// <p>The name of the project in which you want to create a dataset.</p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The type of the dataset. Specify <code>train</code> for a training dataset.
+    /// Specify <code>test</code> for a test dataset.</p>
+    pub fn dataset_type(&self) -> std::option::Option<&str> {
+        self.dataset_type.as_deref()
+    }
+    /// <p>The location of the manifest file that Amazon Lookout for Vision uses to create the dataset.</p>
+    /// <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation
+    /// synchronously returns. Later, you can add JSON Lines by calling <a>UpdateDatasetEntries</a>.
+    /// </p>
+    /// <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location
+    /// is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous
+    /// and might take a while to complete. To find out the current status, Check the value of <code>Status</code>
+    /// returned in a call to <a>DescribeDataset</a>.</p>
+    pub fn dataset_source(&self) -> std::option::Option<&crate::model::DatasetSource> {
+        self.dataset_source.as_ref()
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code>
+    /// completes only once.  You choose the value to pass. For example, An issue,
+    /// such as an network outage, might prevent you from getting a response from <code>CreateDataset</code>.
+    /// In this case, safely retry your call
+    /// to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value. An error occurs
+    /// if the other input parameters are not the same as in the first request. Using a different  
+    /// value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency
+    /// token is active for 8 hours.
+    /// </p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

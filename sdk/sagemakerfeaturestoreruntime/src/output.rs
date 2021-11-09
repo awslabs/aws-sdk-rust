@@ -36,6 +36,12 @@ pub struct GetRecordOutput {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
 }
+impl GetRecordOutput {
+    /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
+    pub fn record(&self) -> std::option::Option<&[crate::model::FeatureValue]> {
+        self.record.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRecordOutput");
@@ -128,6 +134,23 @@ pub struct BatchGetRecordOutput {
     /// and Feature name.</p>
     pub unprocessed_identifiers:
         std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+}
+impl BatchGetRecordOutput {
+    /// <p>A list of Records you requested to be retrieved in batch.</p>
+    pub fn records(&self) -> std::option::Option<&[crate::model::BatchGetRecordResultDetail]> {
+        self.records.as_deref()
+    }
+    /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetRecordError]> {
+        self.errors.as_deref()
+    }
+    /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
+    /// and Feature name.</p>
+    pub fn unprocessed_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetRecordIdentifier]> {
+        self.unprocessed_identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetRecordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

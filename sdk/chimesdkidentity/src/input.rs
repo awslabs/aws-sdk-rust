@@ -134,10 +134,7 @@ impl CreateAppInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_app_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_app_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -322,10 +319,7 @@ impl CreateAppInstanceAdminInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_app_instance_admin(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -553,10 +547,7 @@ impl CreateAppInstanceUserInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_app_instance_user(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3114,7 +3105,7 @@ impl PutAppInstanceRetentionSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_app_instance_retention_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_app_instance_retention_settings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3403,7 +3394,7 @@ impl RegisterAppInstanceUserEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_app_instance_user_endpoint(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_register_app_instance_user_endpoint(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3574,10 +3565,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3747,10 +3735,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3942,10 +3927,7 @@ impl UpdateAppInstanceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_app_instance(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_app_instance(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4139,10 +4121,7 @@ impl UpdateAppInstanceUserInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_app_instance_user(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4368,7 +4347,7 @@ impl UpdateAppInstanceUserEndpointInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_app_instance_user_endpoint(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_app_instance_user_endpoint(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4445,6 +4424,25 @@ pub struct UpdateAppInstanceUserEndpointInput {
     /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
+impl UpdateAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
+        self.allow_messages.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointInput");
@@ -4467,6 +4465,20 @@ pub struct UpdateAppInstanceUserInput {
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl UpdateAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserInput");
@@ -4488,6 +4500,20 @@ pub struct UpdateAppInstanceInput {
     /// <p>The metadata that you want to change.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
+impl UpdateAppInstanceInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The name that you want to change.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata that you want to change.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceInput");
@@ -4507,6 +4533,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4524,6 +4560,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4569,6 +4615,52 @@ pub struct RegisterAppInstanceUserEndpointInput {
     /// <code>NONE</code> indicates the endpoint receives no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
+impl RegisterAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GCM</code>: The mobile notification service for an Android device.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The attributes of an <code>Endpoint</code>.</p>
+    pub fn endpoint_attributes(&self) -> std::option::Option<&crate::model::EndpointAttributes> {
+        self.endpoint_attributes.as_ref()
+    }
+    /// <p>The idempotency token for each client request. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
+    /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+    pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
+        self.allow_messages.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterAppInstanceUserEndpointInput");
@@ -4593,6 +4685,18 @@ pub struct PutAppInstanceRetentionSettingsInput {
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
 }
+impl PutAppInstanceRetentionSettingsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The time in days to retain data. Data type: number.</p>
+    pub fn app_instance_retention_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
+        self.app_instance_retention_settings.as_ref()
+    }
+}
 impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAppInstanceRetentionSettingsInput");
@@ -4612,6 +4716,12 @@ pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -4630,6 +4740,20 @@ pub struct ListAppInstanceUsersInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstanceUsersInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The maximum number of requests that you want returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstanceUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4652,6 +4776,20 @@ pub struct ListAppInstanceUserEndpointsInput {
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppInstanceUserEndpointsInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The maximum number of endpoints that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppInstanceUserEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsInput");
@@ -4671,6 +4809,17 @@ pub struct ListAppInstancesInput {
     /// <p>The token passed by previous API requests until you reach the maximum number of
     /// <code>AppInstances</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAppInstancesInput {
+    /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token passed by previous API requests until you reach the maximum number of
+    /// <code>AppInstances</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAppInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4693,6 +4842,21 @@ pub struct ListAppInstanceAdminsInput {
     /// reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAppInstanceAdminsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The maximum number of administrators that you want to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token returned from previous API requests until the number of administrators is
+    /// reached.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAppInstanceAdminsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceAdminsInput");
@@ -4709,6 +4873,12 @@ impl std::fmt::Debug for ListAppInstanceAdminsInput {
 pub struct GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl GetAppInstanceRetentionSettingsInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4727,6 +4897,16 @@ pub struct DescribeAppInstanceUserEndpointInput {
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
 }
+impl DescribeAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceUserEndpointInput");
@@ -4742,6 +4922,12 @@ impl std::fmt::Debug for DescribeAppInstanceUserEndpointInput {
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4760,6 +4946,16 @@ pub struct DescribeAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl DescribeAppInstanceAdminInput {
+    /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_admin_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAppInstanceAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceAdminInput");
@@ -4775,6 +4971,12 @@ impl std::fmt::Debug for DescribeAppInstanceAdminInput {
 pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl DescribeAppInstanceInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4793,6 +4995,16 @@ pub struct DeregisterAppInstanceUserEndpointInput {
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
 }
+impl DeregisterAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeregisterAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeregisterAppInstanceUserEndpointInput");
@@ -4808,6 +5020,12 @@ impl std::fmt::Debug for DeregisterAppInstanceUserEndpointInput {
 pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAppInstanceUserInput {
+    /// <p>The ARN of the user request being deleted.</p>
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4826,6 +5044,16 @@ pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl DeleteAppInstanceAdminInput {
+    /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_admin_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAppInstanceAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAppInstanceAdminInput");
@@ -4841,6 +5069,12 @@ impl std::fmt::Debug for DeleteAppInstanceAdminInput {
 pub struct DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAppInstanceInput {
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4867,6 +5101,32 @@ pub struct CreateAppInstanceUserInput {
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAppInstanceUserInput {
+    /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+    /// <p>The user ID of the <code>AppInstance</code>.</p>
+    pub fn app_instance_user_id(&self) -> std::option::Option<&str> {
+        self.app_instance_user_id.as_deref()
+    }
+    /// <p>The user's name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppInstanceUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceUserInput");
@@ -4889,6 +5149,16 @@ pub struct CreateAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
+impl CreateAppInstanceAdminInput {
+    /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_admin_arn.as_deref()
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+        self.app_instance_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAppInstanceAdminInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceAdminInput");
@@ -4910,6 +5180,24 @@ pub struct CreateAppInstanceInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateAppInstanceInput {
+    /// <p>The name of the <code>AppInstance</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+    /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

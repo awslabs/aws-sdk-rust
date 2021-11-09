@@ -4234,6 +4234,16 @@ pub struct ResourceAlreadyExistsException {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ResourceAlreadyExistsException {
+    /// <p>The ID of the resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceAlreadyExistsException");

@@ -246,6 +246,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>An array of key:value pairs that are assigned to the container.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>An array of key:value pairs that are assigned to the container.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -305,6 +311,19 @@ pub struct ListContainersOutput {
     /// This token is returned only if you included the <code>MaxResults</code> tag in the original
     /// command, and only if there are still containers to return. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContainersOutput {
+    /// <p>The names of the containers.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+        self.containers.as_deref()
+    }
+    /// <p>
+    /// <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>.
+    /// This token is returned only if you included the <code>MaxResults</code> tag in the original
+    /// command, and only if there are still containers to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListContainersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -382,6 +401,12 @@ pub struct GetMetricPolicyOutput {
     /// <p>The metric policy that is associated with the specific container.</p>
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
+impl GetMetricPolicyOutput {
+    /// <p>The metric policy that is associated with the specific container.</p>
+    pub fn metric_policy(&self) -> std::option::Option<&crate::model::MetricPolicy> {
+        self.metric_policy.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMetricPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMetricPolicyOutput");
@@ -433,6 +458,12 @@ pub struct GetLifecyclePolicyOutput {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
     pub lifecycle_policy: std::option::Option<std::string::String>,
 }
+impl GetLifecyclePolicyOutput {
+    /// <p>The object lifecycle policy that is assigned to the container.</p>
+    pub fn lifecycle_policy(&self) -> std::option::Option<&str> {
+        self.lifecycle_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLifecyclePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLifecyclePolicyOutput");
@@ -483,6 +514,12 @@ impl GetLifecyclePolicyOutput {
 pub struct GetCorsPolicyOutput {
     /// <p>The CORS policy assigned to the container.</p>
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
+}
+impl GetCorsPolicyOutput {
+    /// <p>The CORS policy assigned to the container.</p>
+    pub fn cors_policy(&self) -> std::option::Option<&[crate::model::CorsRule]> {
+        self.cors_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCorsPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -541,6 +578,12 @@ pub struct GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
+impl GetContainerPolicyOutput {
+    /// <p>The contents of the access policy.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContainerPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContainerPolicyOutput");
@@ -588,6 +631,12 @@ impl GetContainerPolicyOutput {
 pub struct DescribeContainerOutput {
     /// <p>The name of the queried container.</p>
     pub container: std::option::Option<crate::model::Container>,
+}
+impl DescribeContainerOutput {
+    /// <p>The name of the queried container.</p>
+    pub fn container(&self) -> std::option::Option<&crate::model::Container> {
+        self.container.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeContainerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -800,6 +849,23 @@ pub struct CreateContainerOutput {
     /// <p>The return value does not include the container's endpoint. To make downstream
     /// requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
     pub container: std::option::Option<crate::model::Container>,
+}
+impl CreateContainerOutput {
+    /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN
+    /// has the following format: arn:aws:<region>:<account that owns this
+    /// container>:container/<name of container>. For example:
+    /// arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+    /// <p>ContainerName: The container name as specified in the request.</p>
+    /// <p>CreationTime: Unix time stamp.</p>
+    /// <p>Status: The status of container creation or deletion. The status is one of the
+    /// following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the
+    /// service is creating the container, the status is <code>CREATING</code>. When an endpoint is
+    /// available, the status changes to <code>ACTIVE</code>.</p>
+    /// <p>The return value does not include the container's endpoint. To make downstream
+    /// requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
+    pub fn container(&self) -> std::option::Option<&crate::model::Container> {
+        self.container.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateContainerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

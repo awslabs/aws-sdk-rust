@@ -80,6 +80,46 @@ pub struct RadiusSettings {
     /// <p>Not currently used.</p>
     pub use_same_username: bool,
 }
+impl RadiusSettings {
+    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP
+    /// addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
+    /// load balancer.</p>
+    pub fn radius_servers(&self) -> std::option::Option<&[std::string::String]> {
+        self.radius_servers.as_deref()
+    }
+    /// <p>The port that your RADIUS server is using for communications. Your self-managed
+    /// network must allow inbound traffic over this port from the Directory Service servers.</p>
+    pub fn radius_port(&self) -> i32 {
+        self.radius_port
+    }
+    /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
+    pub fn radius_timeout(&self) -> i32 {
+        self.radius_timeout
+    }
+    /// <p>The maximum number of times that communication with the RADIUS server is
+    /// attempted.</p>
+    pub fn radius_retries(&self) -> i32 {
+        self.radius_retries
+    }
+    /// <p>Required for enabling RADIUS on the directory.</p>
+    pub fn shared_secret(&self) -> std::option::Option<&str> {
+        self.shared_secret.as_deref()
+    }
+    /// <p>The protocol specified for your RADIUS endpoints.</p>
+    pub fn authentication_protocol(
+        &self,
+    ) -> std::option::Option<&crate::model::RadiusAuthenticationProtocol> {
+        self.authentication_protocol.as_ref()
+    }
+    /// <p>Not currently used.</p>
+    pub fn display_label(&self) -> std::option::Option<&str> {
+        self.display_label.as_deref()
+    }
+    /// <p>Not currently used.</p>
+    pub fn use_same_username(&self) -> bool {
+        self.use_same_username
+    }
+}
 impl std::fmt::Debug for RadiusSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RadiusSettings");
@@ -315,6 +355,16 @@ pub struct UnshareTarget {
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     pub r#type: std::option::Option<crate::model::TargetType>,
 }
+impl UnshareTarget {
+    /// <p>Identifier of the directory consumer account.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for UnshareTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnshareTarget");
@@ -484,6 +534,16 @@ pub struct ShareTarget {
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
     pub r#type: std::option::Option<crate::model::TargetType>,
 }
+impl ShareTarget {
+    /// <p>Identifier of the directory consumer account.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for ShareTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareTarget");
@@ -544,6 +604,12 @@ impl ShareTarget {
 pub struct ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     pub ocsp_url: std::option::Option<std::string::String>,
+}
+impl ClientCertAuthSettings {
+    /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
+    pub fn ocsp_url(&self) -> std::option::Option<&str> {
+        self.ocsp_url.as_deref()
+    }
 }
 impl std::fmt::Debug for ClientCertAuthSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -655,6 +721,21 @@ pub struct Tag {
     /// (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be
+    /// prefixed with "aws:". The string can contain only the set of Unicode letters, digits,
+    /// white-space, '_', '.', '/', '=', '+', '-' (Java regex:
+    /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string
+    /// can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
+    /// (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -738,6 +819,39 @@ pub struct SchemaExtensionInfo {
     pub start_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the schema extension was completed.</p>
     pub end_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SchemaExtensionInfo {
+    /// <p>The identifier of the directory to which the schema extension is applied.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The identifier of the schema extension.</p>
+    pub fn schema_extension_id(&self) -> std::option::Option<&str> {
+        self.schema_extension_id.as_deref()
+    }
+    /// <p>A description of the schema extension.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the schema extension.</p>
+    pub fn schema_extension_status(
+        &self,
+    ) -> std::option::Option<&crate::model::SchemaExtensionStatus> {
+        self.schema_extension_status.as_ref()
+    }
+    /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
+    pub fn schema_extension_status_reason(&self) -> std::option::Option<&str> {
+        self.schema_extension_status_reason.as_deref()
+    }
+    /// <p>The date and time that the schema extension started being applied to the
+    /// directory.</p>
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_date_time.as_ref()
+    }
+    /// <p>The date and time that the schema extension was completed.</p>
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for SchemaExtensionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -991,6 +1105,23 @@ pub struct LogSubscription {
     /// <p>The date and time that the log subscription was created.</p>
     pub subscription_created_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl LogSubscription {
+    /// <p>Identifier (ID) of the directory that you want to associate with the log
+    /// subscription.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the log group.</p>
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+    /// <p>The date and time that the log subscription was created.</p>
+    pub fn subscription_created_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.subscription_created_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for LogSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LogSubscription");
@@ -1085,6 +1216,32 @@ pub struct IpRouteInfo {
     pub ip_route_status_reason: std::option::Option<std::string::String>,
     /// <p>Description of the <a>IpRouteInfo</a>.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl IpRouteInfo {
+    /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>IP address block in the <a>IpRoute</a>.</p>
+    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+        self.cidr_ip.as_deref()
+    }
+    /// <p>The status of the IP address block.</p>
+    pub fn ip_route_status_msg(&self) -> std::option::Option<&crate::model::IpRouteStatusMsg> {
+        self.ip_route_status_msg.as_ref()
+    }
+    /// <p>The date and time the address block was added to the directory.</p>
+    pub fn added_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.added_date_time.as_ref()
+    }
+    /// <p>The reason for the IpRouteStatusMsg.</p>
+    pub fn ip_route_status_reason(&self) -> std::option::Option<&str> {
+        self.ip_route_status_reason.as_deref()
+    }
+    /// <p>Description of the <a>IpRouteInfo</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for IpRouteInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1294,6 +1451,28 @@ pub struct CertificateInfo {
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     pub r#type: std::option::Option<crate::model::CertificateType>,
 }
+impl CertificateInfo {
+    /// <p>The identifier of the certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The common name for the certificate.</p>
+    pub fn common_name(&self) -> std::option::Option<&str> {
+        self.common_name.as_deref()
+    }
+    /// <p>The state of the certificate.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CertificateState> {
+        self.state.as_ref()
+    }
+    /// <p>The date and time when the certificate will expire.</p>
+    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiry_date_time.as_ref()
+    }
+    /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for CertificateInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateInfo");
@@ -1488,6 +1667,20 @@ pub struct SnapshotLimits {
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
     pub manual_snapshots_limit_reached: bool,
 }
+impl SnapshotLimits {
+    /// <p>The maximum number of manual snapshots allowed.</p>
+    pub fn manual_snapshots_limit(&self) -> std::option::Option<i32> {
+        self.manual_snapshots_limit
+    }
+    /// <p>The current number of manual snapshots of the directory.</p>
+    pub fn manual_snapshots_current_count(&self) -> std::option::Option<i32> {
+        self.manual_snapshots_current_count
+    }
+    /// <p>Indicates if the manual snapshot limit has been reached.</p>
+    pub fn manual_snapshots_limit_reached(&self) -> bool {
+        self.manual_snapshots_limit_reached
+    }
+}
 impl std::fmt::Debug for SnapshotLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotLimits");
@@ -1591,6 +1784,44 @@ pub struct DirectoryLimits {
     pub connected_directories_current_count: std::option::Option<i32>,
     /// <p>Indicates if the connected directory limit has been reached.</p>
     pub connected_directories_limit_reached: bool,
+}
+impl DirectoryLimits {
+    /// <p>The maximum number of cloud directories allowed in the Region.</p>
+    pub fn cloud_only_directories_limit(&self) -> std::option::Option<i32> {
+        self.cloud_only_directories_limit
+    }
+    /// <p>The current number of cloud directories in the Region.</p>
+    pub fn cloud_only_directories_current_count(&self) -> std::option::Option<i32> {
+        self.cloud_only_directories_current_count
+    }
+    /// <p>Indicates if the cloud directory limit has been reached.</p>
+    pub fn cloud_only_directories_limit_reached(&self) -> bool {
+        self.cloud_only_directories_limit_reached
+    }
+    /// <p>The maximum number of Managed Microsoft AD directories allowed in the region.</p>
+    pub fn cloud_only_microsoft_ad_limit(&self) -> std::option::Option<i32> {
+        self.cloud_only_microsoft_ad_limit
+    }
+    /// <p>The current number of Managed Microsoft AD directories in the region.</p>
+    pub fn cloud_only_microsoft_ad_current_count(&self) -> std::option::Option<i32> {
+        self.cloud_only_microsoft_ad_current_count
+    }
+    /// <p>Indicates if the Managed Microsoft AD directory limit has been reached.</p>
+    pub fn cloud_only_microsoft_ad_limit_reached(&self) -> bool {
+        self.cloud_only_microsoft_ad_limit_reached
+    }
+    /// <p>The maximum number of connected directories allowed in the Region.</p>
+    pub fn connected_directories_limit(&self) -> std::option::Option<i32> {
+        self.connected_directories_limit
+    }
+    /// <p>The current number of connected directories in the Region.</p>
+    pub fn connected_directories_current_count(&self) -> std::option::Option<i32> {
+        self.connected_directories_current_count
+    }
+    /// <p>Indicates if the connected directory limit has been reached.</p>
+    pub fn connected_directories_limit_reached(&self) -> bool {
+        self.connected_directories_limit_reached
+    }
 }
 impl std::fmt::Debug for DirectoryLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1921,6 +2152,53 @@ pub struct Trust {
     pub trust_state_reason: std::option::Option<std::string::String>,
     /// <p>Current state of selective authentication for the trust.</p>
     pub selective_auth: std::option::Option<crate::model::SelectiveAuth>,
+}
+impl Trust {
+    /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The unique ID of the trust relationship.</p>
+    pub fn trust_id(&self) -> std::option::Option<&str> {
+        self.trust_id.as_deref()
+    }
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust
+    /// relationship.</p>
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+        self.remote_domain_name.as_deref()
+    }
+    /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
+    pub fn trust_type(&self) -> std::option::Option<&crate::model::TrustType> {
+        self.trust_type.as_ref()
+    }
+    /// <p>The trust relationship direction.</p>
+    pub fn trust_direction(&self) -> std::option::Option<&crate::model::TrustDirection> {
+        self.trust_direction.as_ref()
+    }
+    /// <p>The trust relationship state.</p>
+    pub fn trust_state(&self) -> std::option::Option<&crate::model::TrustState> {
+        self.trust_state.as_ref()
+    }
+    /// <p>The date and time that the trust relationship was created.</p>
+    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date_time.as_ref()
+    }
+    /// <p>The date and time that the trust relationship was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The date and time that the TrustState was last updated.</p>
+    pub fn state_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.state_last_updated_date_time.as_ref()
+    }
+    /// <p>The reason for the TrustState.</p>
+    pub fn trust_state_reason(&self) -> std::option::Option<&str> {
+        self.trust_state_reason.as_deref()
+    }
+    /// <p>Current state of selective authentication for the trust.</p>
+    pub fn selective_auth(&self) -> std::option::Option<&crate::model::SelectiveAuth> {
+        self.selective_auth.as_ref()
+    }
 }
 impl std::fmt::Debug for Trust {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2359,6 +2637,32 @@ pub struct Snapshot {
     /// <p>The date and time that the snapshot was taken.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Snapshot {
+    /// <p>The directory identifier.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The snapshot identifier.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The snapshot type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SnapshotType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The descriptive name of the snapshot.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The snapshot status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::SnapshotStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time that the snapshot was taken.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for Snapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Snapshot");
@@ -2615,6 +2919,51 @@ pub struct SharedDirectory {
     pub created_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the shared directory was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl SharedDirectory {
+    /// <p>Identifier of the directory owner account, which contains the directory that has been
+    /// shared to the consumer account.</p>
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>Identifier of the directory in the directory owner account. </p>
+    pub fn owner_directory_id(&self) -> std::option::Option<&str> {
+        self.owner_directory_id.as_deref()
+    }
+    /// <p>The method used when sharing a directory to determine whether the directory should be
+    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
+    /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
+        self.share_method.as_ref()
+    }
+    /// <p>Identifier of the directory consumer account that has access to the shared directory
+    /// (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+        self.shared_account_id.as_deref()
+    }
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
+    /// different for each directory owner account.</p>
+    pub fn shared_directory_id(&self) -> std::option::Option<&str> {
+        self.shared_directory_id.as_deref()
+    }
+    /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
+    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.share_status.as_ref()
+    }
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
+    /// The request includes a typed message to help the directory consumer administrator determine
+    /// whether to approve or reject the share invitation.</p>
+    pub fn share_notes(&self) -> std::option::Option<&str> {
+        self.share_notes.as_deref()
+    }
+    /// <p>The date and time that the shared directory was created.</p>
+    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date_time.as_ref()
+    }
+    /// <p>The date and time that the shared directory was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for SharedDirectory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2916,6 +3265,45 @@ pub struct RegionDescription {
     /// <p>The date and time that the Region description was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RegionDescription {
+    /// <p>The identifier of the directory.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
+    pub fn region_name(&self) -> std::option::Option<&str> {
+        self.region_name.as_deref()
+    }
+    /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
+    pub fn region_type(&self) -> std::option::Option<&crate::model::RegionType> {
+        self.region_type.as_ref()
+    }
+    /// <p>The status of the replication process for the specified Region.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DirectoryStage> {
+        self.status.as_ref()
+    }
+    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
+        self.vpc_settings.as_ref()
+    }
+    /// <p>The desired number of domain controllers in the specified Region for the specified
+    /// directory.</p>
+    pub fn desired_number_of_domain_controllers(&self) -> i32 {
+        self.desired_number_of_domain_controllers
+    }
+    /// <p>Specifies when the Region replication began.</p>
+    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.launch_time.as_ref()
+    }
+    /// <p>The date and time that the Region status was last updated.</p>
+    pub fn status_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.status_last_updated_date_time.as_ref()
+    }
+    /// <p>The date and time that the Region description was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for RegionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegionDescription");
@@ -3102,6 +3490,18 @@ pub struct DirectoryVpcSettings {
     /// different Availability Zones. Directory Service creates a directory server and a DNS
     /// server in each of these subnets.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DirectoryVpcSettings {
+    /// <p>The identifier of the VPC in which to create the directory.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in
+    /// different Availability Zones. Directory Service creates a directory server and a DNS
+    /// server in each of these subnets.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectoryVpcSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3339,6 +3739,20 @@ pub struct LdapsSettingInfo {
     /// <p>The date and time when the LDAPS settings were last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl LdapsSettingInfo {
+    /// <p>The state of the LDAPS settings.</p>
+    pub fn ldaps_status(&self) -> std::option::Option<&crate::model::LdapsStatus> {
+        self.ldaps_status.as_ref()
+    }
+    /// <p>Describes a state change for LDAPS.</p>
+    pub fn ldaps_status_reason(&self) -> std::option::Option<&str> {
+        self.ldaps_status_reason.as_deref()
+    }
+    /// <p>The date and time when the LDAPS settings were last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for LdapsSettingInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LdapsSettingInfo");
@@ -3493,6 +3907,29 @@ pub struct EventTopic {
     pub created_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The topic registration status.</p>
     pub status: std::option::Option<crate::model::TopicStatus>,
+}
+impl EventTopic {
+    /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS
+    /// topic.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
+    pub fn topic_name(&self) -> std::option::Option<&str> {
+        self.topic_name.as_deref()
+    }
+    /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
+    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date_time.as_ref()
+    }
+    /// <p>The topic registration status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TopicStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for EventTopic {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3679,6 +4116,48 @@ pub struct DomainController {
     pub launch_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the status was last updated.</p>
     pub status_last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DomainController {
+    /// <p>Identifier of the directory where the domain controller resides.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>Identifies a specific domain controller in the directory.</p>
+    pub fn domain_controller_id(&self) -> std::option::Option<&str> {
+        self.domain_controller_id.as_deref()
+    }
+    /// <p>The IP address of the domain controller.</p>
+    pub fn dns_ip_addr(&self) -> std::option::Option<&str> {
+        self.dns_ip_addr.as_deref()
+    }
+    /// <p>The identifier of the VPC that contains the domain controller.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The Availability Zone where the domain controller is located.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The status of the domain controller.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DomainControllerStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A description of the domain controller state.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Specifies when the domain controller was created.</p>
+    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.launch_time.as_ref()
+    }
+    /// <p>The date and time that the status was last updated.</p>
+    pub fn status_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.status_last_updated_date_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DomainController {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4013,6 +4492,131 @@ pub struct DirectoryDescription {
     pub owner_directory_description: std::option::Option<crate::model::OwnerDirectoryDescription>,
     /// <p>Lists the Regions where the directory has replicated.</p>
     pub regions_info: std::option::Option<crate::model::RegionsInfo>,
+}
+impl DirectoryDescription {
+    /// <p>The directory identifier.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>The fully qualified name of the directory.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The short name of the directory.</p>
+    pub fn short_name(&self) -> std::option::Option<&str> {
+        self.short_name.as_deref()
+    }
+    /// <p>The directory size.</p>
+    pub fn size(&self) -> std::option::Option<&crate::model::DirectorySize> {
+        self.size.as_ref()
+    }
+    /// <p>The edition associated with this directory.</p>
+    pub fn edition(&self) -> std::option::Option<&crate::model::DirectoryEdition> {
+        self.edition.as_ref()
+    }
+    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is
+    /// the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The access URL for the directory, such as
+    /// <code>http://<alias>.awsapps.com</code>. If no alias has been created for the
+    /// directory, <code><alias></code> is the directory identifier, such as
+    /// <code>d-XXXXXXXXXX</code>.</p>
+    pub fn access_url(&self) -> std::option::Option<&str> {
+        self.access_url.as_deref()
+    }
+    /// <p>The description for the directory.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD
+    /// directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For
+    /// an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers
+    /// in your self-managed directory to which the AD Connector is connected.</p>
+    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addrs.as_deref()
+    }
+    /// <p>The current stage of the directory.</p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::DirectoryStage> {
+        self.stage.as_ref()
+    }
+    /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
+    pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.share_status.as_ref()
+    }
+    /// <p>The method used when sharing a directory to determine whether the directory should be
+    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
+    /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
+        self.share_method.as_ref()
+    }
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
+    /// The request includes a typed message to help the directory consumer administrator determine
+    /// whether to approve or reject the share invitation.</p>
+    pub fn share_notes(&self) -> std::option::Option<&str> {
+        self.share_notes.as_deref()
+    }
+    /// <p>Specifies when the directory was created.</p>
+    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.launch_time.as_ref()
+    }
+    /// <p>The date and time that the stage was last updated.</p>
+    pub fn stage_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.stage_last_updated_date_time.as_ref()
+    }
+    /// <p>The directory size.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DirectoryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
+    /// information about a directory. This member is only present if the directory is a Simple AD or
+    /// Managed Microsoft AD directory.</p>
+    pub fn vpc_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectoryVpcSettingsDescription> {
+        self.vpc_settings.as_ref()
+    }
+    /// <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
+    /// information about an AD Connector directory. This member is only present if the directory is
+    /// an AD Connector directory.</p>
+    pub fn connect_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectoryConnectSettingsDescription> {
+        self.connect_settings.as_ref()
+    }
+    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+    /// server configured for this directory.</p>
+    pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
+        self.radius_settings.as_ref()
+    }
+    /// <p>The status of the RADIUS MFA server connection.</p>
+    pub fn radius_status(&self) -> std::option::Option<&crate::model::RadiusStatus> {
+        self.radius_status.as_ref()
+    }
+    /// <p>Additional information about the directory stage.</p>
+    pub fn stage_reason(&self) -> std::option::Option<&str> {
+        self.stage_reason.as_deref()
+    }
+    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
+    pub fn sso_enabled(&self) -> bool {
+        self.sso_enabled
+    }
+    /// <p>The desired number of domain controllers in the directory if the directory is Microsoft
+    /// AD.</p>
+    pub fn desired_number_of_domain_controllers(&self) -> i32 {
+        self.desired_number_of_domain_controllers
+    }
+    /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
+    pub fn owner_directory_description(
+        &self,
+    ) -> std::option::Option<&crate::model::OwnerDirectoryDescription> {
+        self.owner_directory_description.as_ref()
+    }
+    /// <p>Lists the Regions where the directory has replicated.</p>
+    pub fn regions_info(&self) -> std::option::Option<&crate::model::RegionsInfo> {
+        self.regions_info.as_ref()
+    }
 }
 impl std::fmt::Debug for DirectoryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4482,6 +5086,17 @@ pub struct RegionsInfo {
     /// Region.</p>
     pub additional_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RegionsInfo {
+    /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
+    pub fn primary_region(&self) -> std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>Lists the Regions where the directory has been replicated, excluding the primary
+    /// Region.</p>
+    pub fn additional_regions(&self) -> std::option::Option<&[std::string::String]> {
+        self.additional_regions.as_deref()
+    }
+}
 impl std::fmt::Debug for RegionsInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegionsInfo");
@@ -4569,6 +5184,36 @@ pub struct OwnerDirectoryDescription {
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
     /// <p>Information about the status of the RADIUS server.</p>
     pub radius_status: std::option::Option<crate::model::RadiusStatus>,
+}
+impl OwnerDirectoryDescription {
+    /// <p>Identifier of the Managed Microsoft AD directory in the directory owner
+    /// account.</p>
+    pub fn directory_id(&self) -> std::option::Option<&str> {
+        self.directory_id.as_deref()
+    }
+    /// <p>Identifier of the directory owner account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>IP address of the directory’s domain controllers.</p>
+    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addrs.as_deref()
+    }
+    /// <p>Information about the VPC settings for the directory.</p>
+    pub fn vpc_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectoryVpcSettingsDescription> {
+        self.vpc_settings.as_ref()
+    }
+    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+    /// server.</p>
+    pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
+        self.radius_settings.as_ref()
+    }
+    /// <p>Information about the status of the RADIUS server.</p>
+    pub fn radius_status(&self) -> std::option::Option<&crate::model::RadiusStatus> {
+        self.radius_status.as_ref()
+    }
 }
 impl std::fmt::Debug for OwnerDirectoryDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4773,6 +5418,24 @@ pub struct DirectoryVpcSettingsDescription {
     /// <p>The list of Availability Zones that the directory is in.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DirectoryVpcSettingsDescription {
+    /// <p>The identifier of the VPC that the directory is in.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The identifiers of the subnets for the directory servers.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The domain controller security group identifier for the directory.</p>
+    pub fn security_group_id(&self) -> std::option::Option<&str> {
+        self.security_group_id.as_deref()
+    }
+    /// <p>The list of Availability Zones that the directory is in.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+}
 impl std::fmt::Debug for DirectoryVpcSettingsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DirectoryVpcSettingsDescription");
@@ -4890,6 +5553,32 @@ pub struct DirectoryConnectSettingsDescription {
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IP addresses of the AD Connector servers.</p>
     pub connect_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DirectoryConnectSettingsDescription {
+    /// <p>The identifier of the VPC that the AD Connector is in.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The user name of the service account in your self-managed directory.</p>
+    pub fn customer_user_name(&self) -> std::option::Option<&str> {
+        self.customer_user_name.as_deref()
+    }
+    /// <p>The security group identifier for the AD Connector directory.</p>
+    pub fn security_group_id(&self) -> std::option::Option<&str> {
+        self.security_group_id.as_deref()
+    }
+    /// <p>A list of the Availability Zones that the directory is in.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+    /// <p>The IP addresses of the AD Connector servers.</p>
+    pub fn connect_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.connect_ips.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectoryConnectSettingsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5225,6 +5914,24 @@ pub struct ConditionalForwarder {
     /// controllers for your Amazon Web Services directory.</p>
     pub replication_scope: std::option::Option<crate::model::ReplicationScope>,
 }
+impl ConditionalForwarder {
+    /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the
+    /// conditional forwarder.</p>
+    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+        self.remote_domain_name.as_deref()
+    }
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the
+    /// IP address of the DNS server that your conditional forwarder points to.</p>
+    pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
+        self.dns_ip_addrs.as_deref()
+    }
+    /// <p>The replication scope of the conditional forwarder. The only allowed value is
+    /// <code>Domain</code>, which will replicate the conditional forwarder to all of the domain
+    /// controllers for your Amazon Web Services directory.</p>
+    pub fn replication_scope(&self) -> std::option::Option<&crate::model::ReplicationScope> {
+        self.replication_scope.as_ref()
+    }
+}
 impl std::fmt::Debug for ConditionalForwarder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalForwarder");
@@ -5377,6 +6084,20 @@ pub struct ClientAuthenticationSettingInfo {
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
     pub last_updated_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ClientAuthenticationSettingInfo {
+    /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ClientAuthenticationType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ClientAuthenticationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time when the status of the client authentication type was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_date_time.as_ref()
+    }
+}
 impl std::fmt::Debug for ClientAuthenticationSettingInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClientAuthenticationSettingInfo");
@@ -5528,6 +6249,42 @@ pub struct Certificate {
     pub r#type: std::option::Option<crate::model::CertificateType>,
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
     pub client_cert_auth_settings: std::option::Option<crate::model::ClientCertAuthSettings>,
+}
+impl Certificate {
+    /// <p>The identifier of the certificate.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>The state of the certificate.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CertificateState> {
+        self.state.as_ref()
+    }
+    /// <p>Describes a state change for the certificate.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>The common name for the certificate.</p>
+    pub fn common_name(&self) -> std::option::Option<&str> {
+        self.common_name.as_deref()
+    }
+    /// <p>The date and time that the certificate was registered.</p>
+    pub fn registered_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.registered_date_time.as_ref()
+    }
+    /// <p>The date and time when the certificate will expire.</p>
+    pub fn expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiry_date_time.as_ref()
+    }
+    /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
+    pub fn client_cert_auth_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientCertAuthSettings> {
+        self.client_cert_auth_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for Certificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5695,6 +6452,21 @@ pub struct Computer {
     /// computer account.</p>
     pub computer_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
+impl Computer {
+    /// <p>The identifier of the computer.</p>
+    pub fn computer_id(&self) -> std::option::Option<&str> {
+        self.computer_id.as_deref()
+    }
+    /// <p>The computer name.</p>
+    pub fn computer_name(&self) -> std::option::Option<&str> {
+        self.computer_name.as_deref()
+    }
+    /// <p>An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the
+    /// computer account.</p>
+    pub fn computer_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.computer_attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for Computer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Computer");
@@ -5785,6 +6557,16 @@ pub struct Attribute {
     /// <p>The value of the attribute.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Attribute {
+    /// <p>The name of the attribute.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Attribute");
@@ -5865,6 +6647,37 @@ pub struct DirectoryConnectSettings {
     /// </li>
     /// </ul>
     pub customer_user_name: std::option::Option<std::string::String>,
+}
+impl DirectoryConnectSettings {
+    /// <p>The identifier of the VPC in which the AD Connector is created.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
+    /// directory.</p>
+    pub fn customer_dns_ips(&self) -> std::option::Option<&[std::string::String]> {
+        self.customer_dns_ips.as_deref()
+    }
+    /// <p>The user name of an account in your self-managed directory that is used to connect to the
+    /// directory. This account must have the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Read users and groups</p>
+    /// </li>
+    /// <li>
+    /// <p>Create computer objects</p>
+    /// </li>
+    /// <li>
+    /// <p>Join computers to the domain</p>
+    /// </li>
+    /// </ul>
+    pub fn customer_user_name(&self) -> std::option::Option<&str> {
+        self.customer_user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DirectoryConnectSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6004,6 +6817,18 @@ pub struct IpRoute {
     pub cidr_ip: std::option::Option<std::string::String>,
     /// <p>Description of the address block.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl IpRoute {
+    /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the
+    /// address block of the DNS server used for your self-managed domain. For a single IP address
+    /// use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+        self.cidr_ip.as_deref()
+    }
+    /// <p>Description of the address block.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for IpRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

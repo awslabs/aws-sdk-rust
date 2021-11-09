@@ -35,6 +35,12 @@ pub struct GetRawMessageContentOutput {
     /// <p>The raw content of the email message, in MIME format.</p>
     pub message_content: aws_smithy_http::byte_stream::ByteStream,
 }
+impl GetRawMessageContentOutput {
+    /// <p>The raw content of the email message, in MIME format.</p>
+    pub fn message_content(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+        &self.message_content
+    }
+}
 impl std::fmt::Debug for GetRawMessageContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRawMessageContentOutput");

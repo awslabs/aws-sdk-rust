@@ -157,6 +157,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The list of tag keys and values associated with the canary that you specified.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -225,6 +234,20 @@ pub struct GetCanaryRunsOutput {
     /// operation to retrieve the next
     /// set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCanaryRunsOutput {
+    /// <p>An array of structures. Each structure contains the details of one of the
+    /// retrieved canary runs.</p>
+    pub fn canary_runs(&self) -> std::option::Option<&[crate::model::CanaryRun]> {
+        self.canary_runs.as_deref()
+    }
+    /// <p>A token that indicates that there is more data
+    /// available. You can use this token in a subsequent <code>GetCanaryRuns</code>
+    /// operation to retrieve the next
+    /// set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCanaryRunsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -304,6 +327,12 @@ pub struct GetCanaryOutput {
     /// <p>A strucure that contains the full information about the canary.</p>
     pub canary: std::option::Option<crate::model::Canary>,
 }
+impl GetCanaryOutput {
+    /// <p>A strucure that contains the full information about the canary.</p>
+    pub fn canary(&self) -> std::option::Option<&crate::model::Canary> {
+        self.canary.as_ref()
+    }
+}
 impl std::fmt::Debug for GetCanaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCanaryOutput");
@@ -356,6 +385,19 @@ pub struct DescribeRuntimeVersionsOutput {
     /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
     /// set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeRuntimeVersionsOutput {
+    /// <p>An array of objects that display the details about each Synthetics canary runtime
+    /// version.</p>
+    pub fn runtime_versions(&self) -> std::option::Option<&[crate::model::RuntimeVersion]> {
+        self.runtime_versions.as_deref()
+    }
+    /// <p>A token that indicates that there is more data
+    /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
+    /// set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeRuntimeVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -439,6 +481,19 @@ pub struct DescribeCanariesLastRunOutput {
     /// set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeCanariesLastRunOutput {
+    /// <p>An array that contains the information from the most recent run of each
+    /// canary.</p>
+    pub fn canaries_last_run(&self) -> std::option::Option<&[crate::model::CanaryLastRun]> {
+        self.canaries_last_run.as_deref()
+    }
+    /// <p>A token that indicates that there is more data
+    /// available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next
+    /// set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCanariesLastRunOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCanariesLastRunOutput");
@@ -520,6 +575,19 @@ pub struct DescribeCanariesOutput {
     /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
     /// set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeCanariesOutput {
+    /// <p>Returns an array. Each item in the array contains the full information about
+    /// one canary.</p>
+    pub fn canaries(&self) -> std::option::Option<&[crate::model::Canary]> {
+        self.canaries.as_deref()
+    }
+    /// <p>A token that indicates that there is more data
+    /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
+    /// set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCanariesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -626,6 +694,12 @@ impl DeleteCanaryOutput {
 pub struct CreateCanaryOutput {
     /// <p>The full details about the canary you have created.</p>
     pub canary: std::option::Option<crate::model::Canary>,
+}
+impl CreateCanaryOutput {
+    /// <p>The full details about the canary you have created.</p>
+    pub fn canary(&self) -> std::option::Option<&crate::model::Canary> {
+        self.canary.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCanaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -288,10 +288,7 @@ impl CreateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -550,10 +547,7 @@ impl CreateApplicationVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_application_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -991,7 +985,7 @@ impl CreateCloudFormationChangeSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_change_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_change_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1180,7 +1174,7 @@ impl CreateCloudFormationTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2608,10 +2602,9 @@ impl PutApplicationPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_application_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_application_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2794,10 +2787,7 @@ impl UnshareApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_unshare_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_unshare_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3049,10 +3039,7 @@ impl UpdateApplicationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_application(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3133,6 +3120,36 @@ pub struct UpdateApplicationInput {
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
     pub readme_url: std::option::Option<std::string::String>,
 }
+impl UpdateApplicationInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn home_page_url(&self) -> std::option::Option<&str> {
+        self.home_page_url.as_deref()
+    }
+    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    pub fn readme_body(&self) -> std::option::Option<&str> {
+        self.readme_body.as_deref()
+    }
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+    pub fn readme_url(&self) -> std::option::Option<&str> {
+        self.readme_url.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApplicationInput");
@@ -3156,6 +3173,16 @@ pub struct UnshareApplicationInput {
     /// <p>The AWS Organization ID to unshare the application from.</p>
     pub organization_id: std::option::Option<std::string::String>,
 }
+impl UnshareApplicationInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The AWS Organization ID to unshare the application from.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UnshareApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnshareApplicationInput");
@@ -3173,6 +3200,16 @@ pub struct PutApplicationPolicyInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>An array of policy statements applied to the application.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
+}
+impl PutApplicationPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>An array of policy statements applied to the application.</p>
+    pub fn statements(&self) -> std::option::Option<&[crate::model::ApplicationPolicyStatement]> {
+        self.statements.as_deref()
+    }
 }
 impl std::fmt::Debug for PutApplicationPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3194,6 +3231,20 @@ pub struct ListApplicationVersionsInput {
     /// <p>A token to specify where to start paginating.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListApplicationVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The total number of items to return.</p>
+    pub fn max_items(&self) -> i32 {
+        self.max_items
+    }
+    /// <p>A token to specify where to start paginating.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationVersionsInput");
@@ -3212,6 +3263,16 @@ pub struct ListApplicationsInput {
     pub max_items: i32,
     /// <p>A token to specify where to start paginating.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListApplicationsInput {
+    /// <p>The total number of items to return.</p>
+    pub fn max_items(&self) -> i32 {
+        self.max_items
+    }
+    /// <p>A token to specify where to start paginating.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListApplicationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3235,6 +3296,24 @@ pub struct ListApplicationDependenciesInput {
     /// <p>The semantic version of the application to get.</p>
     pub semantic_version: std::option::Option<std::string::String>,
 }
+impl ListApplicationDependenciesInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The total number of items to return.</p>
+    pub fn max_items(&self) -> i32 {
+        self.max_items
+    }
+    /// <p>A token to specify where to start paginating.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The semantic version of the application to get.</p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+}
 impl std::fmt::Debug for ListApplicationDependenciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListApplicationDependenciesInput");
@@ -3255,6 +3334,16 @@ pub struct GetCloudFormationTemplateInput {
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub template_id: std::option::Option<std::string::String>,
 }
+impl GetCloudFormationTemplateInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCloudFormationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCloudFormationTemplateInput");
@@ -3270,6 +3359,12 @@ impl std::fmt::Debug for GetCloudFormationTemplateInput {
 pub struct GetApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl GetApplicationPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetApplicationPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3288,6 +3383,16 @@ pub struct GetApplicationInput {
     /// <p>The semantic version of the application to get.</p>
     pub semantic_version: std::option::Option<std::string::String>,
 }
+impl GetApplicationInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The semantic version of the application to get.</p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+}
 impl std::fmt::Debug for GetApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetApplicationInput");
@@ -3303,6 +3408,12 @@ impl std::fmt::Debug for GetApplicationInput {
 pub struct DeleteApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: std::option::Option<std::string::String>,
+}
+impl DeleteApplicationInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3322,6 +3433,18 @@ pub struct CreateCloudFormationTemplateInput {
     /// <a href="https://semver.org/">https://semver.org/</a>
     /// </p>
     pub semantic_version: std::option::Option<std::string::String>,
+}
+impl CreateCloudFormationTemplateInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCloudFormationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3395,6 +3518,94 @@ pub struct CreateCloudFormationChangeSetInput {
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
     pub template_id: std::option::Option<std::string::String>,
 }
+impl CreateCloudFormationChangeSetInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>A list of values that you must specify before you can deploy certain applications.
+    /// Some applications might include resources that can affect permissions in your AWS
+    /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
+    /// For those applications, you must explicitly acknowledge their capabilities by
+    /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
+    /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
+    /// CAPABILITY_NAMED_IAM:
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
+    /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
+    /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
+    /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
+    /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
+    /// all permissions associated with the application before deploying. If you don't specify
+    /// this parameter for an application that requires capabilities, the call will fail.</p>
+    pub fn capabilities(&self) -> std::option::Option<&[std::string::String]> {
+        self.capabilities.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
+        self.change_set_name.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.notification_arns.as_deref()
+    }
+    /// <p>A list of parameter values for the parameters of the application.</p>
+    pub fn parameter_overrides(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
+        self.parameter_overrides.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RollbackConfiguration> {
+        self.rollback_configuration.as_ref()
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+    /// </i> API.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCloudFormationChangeSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCloudFormationChangeSetInput");
@@ -3431,6 +3642,32 @@ pub struct CreateApplicationVersionInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub template_url: std::option::Option<std::string::String>,
+}
+impl CreateApplicationVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The semantic version of the new version.</p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
+        self.source_code_archive_url.as_deref()
+    }
+    /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    pub fn source_code_url(&self) -> std::option::Option<&str> {
+        self.source_code_url.as_deref()
+    }
+    /// <p>The raw packaged AWS SAM template of your application.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>A link to the packaged AWS SAM template of your application.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3484,6 +3721,73 @@ pub struct CreateApplicationInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
     pub template_url: std::option::Option<std::string::String>,
+}
+impl CreateApplicationInput {
+    /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn author(&self) -> std::option::Option<&str> {
+        self.author.as_deref()
+    }
+    /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn home_page_url(&self) -> std::option::Option<&str> {
+        self.home_page_url.as_deref()
+    }
+    /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
+    /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+    pub fn license_body(&self) -> std::option::Option<&str> {
+        self.license_body.as_deref()
+    }
+    /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+    pub fn license_url(&self) -> std::option::Option<&str> {
+        self.license_url.as_deref()
+    }
+    /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
+    /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+    pub fn readme_body(&self) -> std::option::Option<&str> {
+        self.readme_body.as_deref()
+    }
+    /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+    pub fn readme_url(&self) -> std::option::Option<&str> {
+        self.readme_url.as_deref()
+    }
+    /// <p>The semantic version of the application:</p><p>
+    /// <a href="https://semver.org/">https://semver.org/</a>
+    /// </p>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+    pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
+        self.source_code_archive_url.as_deref()
+    }
+    /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
+    pub fn source_code_url(&self) -> std::option::Option<&str> {
+        self.source_code_url.as_deref()
+    }
+    /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
+    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+        self.spdx_license_id.as_deref()
+    }
+    /// <p>The local raw packaged AWS SAM template file of your application.
+    /// The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+    pub fn template_body(&self) -> std::option::Option<&str> {
+        self.template_body.as_deref()
+    }
+    /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+    pub fn template_url(&self) -> std::option::Option<&str> {
+        self.template_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -46,6 +46,70 @@ pub struct Channel {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl Channel {
+    /// <p>Channel ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Channel name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+    /// correspond to Ultra-low and Standard, respectively.)</p>
+    pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
+        self.latency_mode.as_ref()
+    }
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
+    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
+    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
+    /// automatically give viewers the best experience for their devices and network conditions.
+    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
+    /// for renditions 360p and below; above that, audio is passed through.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
+    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
+    /// bitrate can be up to 1.5 Mbps.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
+    /// is enabled. Default: "" (empty string, recording is disabled).</p>
+    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+        self.recording_configuration_arn.as_deref()
+    }
+    /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up
+    /// streaming software.</p>
+    pub fn ingest_endpoint(&self) -> std::option::Option<&str> {
+        self.ingest_endpoint.as_deref()
+    }
+    /// <p>Channel playback URL.</p>
+    pub fn playback_url(&self) -> std::option::Option<&str> {
+        self.playback_url.as_deref()
+    }
+    /// <p>Whether the channel is private (enabled for playback authorization). Default:
+    /// <code>false</code>.</p>
+    pub fn authorized(&self) -> bool {
+        self.authorized
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Channel");
@@ -397,6 +461,31 @@ pub struct StreamSummary {
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl StreamSummary {
+    /// <p>Channel ARN for the stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The stream’s state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
+        self.state.as_ref()
+    }
+    /// <p>The stream’s health.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+        self.health.as_ref()
+    }
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+    /// -1 indicates that the request timed out; in this case, retry.</p>
+    pub fn viewer_count(&self) -> i64 {
+        self.viewer_count
+    }
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for StreamSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamSummary");
@@ -628,6 +717,23 @@ pub struct StreamKeySummary {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl StreamKeySummary {
+    /// <p>Stream-key ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Channel ARN for the stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for StreamKeySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamKeySummary");
@@ -728,6 +834,34 @@ pub struct RecordingConfigurationSummary {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl RecordingConfigurationSummary {
+    /// <p>Recording-configuration ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Recording-configuration name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A complex type that contains information about where recorded video will be stored.</p>
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+        self.destination_configuration.as_ref()
+    }
+    /// <p>Indicates the current state of the recording configuration. When the state is
+    /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
+        self.state.as_ref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for RecordingConfigurationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -919,6 +1053,12 @@ pub struct DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     pub s3: std::option::Option<crate::model::S3DestinationConfiguration>,
 }
+impl DestinationConfiguration {
+    /// <p>An S3 destination configuration where recorded videos will be stored.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3DestinationConfiguration> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for DestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DestinationConfiguration");
@@ -967,6 +1107,12 @@ impl DestinationConfiguration {
 pub struct S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     pub bucket_name: std::option::Option<std::string::String>,
+}
+impl S3DestinationConfiguration {
+    /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
 }
 impl std::fmt::Debug for S3DestinationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1020,6 +1166,23 @@ pub struct PlaybackKeyPairSummary {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PlaybackKeyPairSummary {
+    /// <p>Key-pair ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for PlaybackKeyPairSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1127,6 +1290,40 @@ pub struct ChannelSummary {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ChannelSummary {
+    /// <p>Channel ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Channel name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+    /// correspond to Ultra-low and Standard, respectively.)</p>
+    pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
+        self.latency_mode.as_ref()
+    }
+    /// <p>Whether the channel is private (enabled for playback authorization). Default:
+    /// <code>false</code>.</p>
+    pub fn authorized(&self) -> bool {
+        self.authorized
+    }
+    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
+    /// is enabled. Default: "" (empty string, recording is disabled).</p>
+    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+        self.recording_configuration_arn.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1287,6 +1484,27 @@ pub struct PlaybackKeyPair {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl PlaybackKeyPair {
+    /// <p>Key-pair ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Key-pair identifier.</p>
+    pub fn fingerprint(&self) -> std::option::Option<&str> {
+        self.fingerprint.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for PlaybackKeyPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlaybackKeyPair");
@@ -1397,6 +1615,27 @@ pub struct StreamKey {
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl StreamKey {
+    /// <p>Stream-key ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Stream-key value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>Channel ARN for the stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1514,6 +1753,35 @@ pub struct Stream {
     /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
     /// -1 indicates that the request timed out; in this case, retry.</p>
     pub viewer_count: i64,
+}
+impl Stream {
+    /// <p>Channel ARN for the stream.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
+    pub fn playback_url(&self) -> std::option::Option<&str> {
+        self.playback_url.as_deref()
+    }
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The stream’s state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::StreamState> {
+        self.state.as_ref()
+    }
+    /// <p>The stream’s health.</p>
+    pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
+        self.health.as_ref()
+    }
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+    /// -1 indicates that the request timed out; in this case, retry.</p>
+    pub fn viewer_count(&self) -> i64 {
+        self.viewer_count
+    }
 }
 impl std::fmt::Debug for Stream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1650,6 +1918,34 @@ pub struct RecordingConfiguration {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RecordingConfiguration {
+    /// <p>Recording-configuration ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Recording-configuration name. The value does not need to be unique.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A complex type that contains information about where recorded video will be stored.</p>
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DestinationConfiguration> {
+        self.destination_configuration.as_ref()
+    }
+    /// <p>Indicates the current state of the recording configuration. When the state is
+    /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
+        self.state.as_ref()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for RecordingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecordingConfiguration");
@@ -1782,6 +2078,20 @@ pub struct BatchError {
     pub code: std::option::Option<std::string::String>,
     /// <p>Error message, determined by the application.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl BatchError {
+    /// <p>Channel ARN.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Error code.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Error message, determined by the application.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

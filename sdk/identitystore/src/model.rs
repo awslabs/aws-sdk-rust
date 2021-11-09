@@ -70,6 +70,19 @@ pub struct User {
     /// <p>The identifier for a user in the identity store.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl User {
+    /// <p>Contains the user’s user name value. The length limit is 128 characters. This value can
+    /// consist of letters, accented characters, symbols, numbers, and punctuation. The characters
+    /// <code><>;:%</code> are excluded. This value is specified at the time the user is
+    /// created and stored as an attribute of the user object in the identity store.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
@@ -142,6 +155,19 @@ pub struct Filter {
     pub attribute_path: std::option::Option<std::string::String>,
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub attribute_value: std::option::Option<std::string::String>,
+}
+impl Filter {
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit
+    /// is 255 characters. For example, <code>UserName</code> is a valid attribute path for the
+    /// <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for
+    /// the <code>ListGroups</code> API.</p>
+    pub fn attribute_path(&self) -> std::option::Option<&str> {
+        self.attribute_path.as_deref()
+    }
+    /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
+        self.attribute_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -221,6 +247,20 @@ pub struct Group {
     /// <code><>;:%</code> are excluded. This value is specified at the time the group
     /// is created and stored as an attribute of the group object in the identity store.</p>
     pub display_name: std::option::Option<std::string::String>,
+}
+impl Group {
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+    /// <p>Contains the group’s display name value. The length limit is 1,024 characters. This
+    /// value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new
+    /// line, carriage return, space, and nonbreaking space in this attribute. The characters
+    /// <code><>;:%</code> are excluded. This value is specified at the time the group
+    /// is created and stored as an attribute of the group object in the identity store.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
 }
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

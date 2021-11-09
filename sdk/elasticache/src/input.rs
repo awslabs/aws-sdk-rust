@@ -117,10 +117,7 @@ impl AddTagsToResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -306,7 +303,7 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_authorize_cache_security_group_ingress(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_authorize_cache_security_group_ingress(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -499,10 +496,7 @@ impl BatchApplyUpdateActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_apply_update_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -694,10 +688,7 @@ impl BatchStopUpdateActionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_stop_update_action(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -857,10 +848,7 @@ impl CompleteMigrationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_complete_migration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_complete_migration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1086,10 +1074,7 @@ impl CopySnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_copy_snapshot(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_copy_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2295,10 +2280,7 @@ impl CreateCacheClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cache_cluster(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_cache_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2522,10 +2504,7 @@ impl CreateCacheParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2715,10 +2694,7 @@ impl CreateCacheSecurityGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_security_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2934,10 +2910,7 @@ impl CreateCacheSubnetGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_subnet_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3129,7 +3102,7 @@ impl CreateGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4613,10 +4586,7 @@ impl CreateReplicationGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_replication_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4826,10 +4796,8 @@ impl CreateSnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5066,10 +5034,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5271,10 +5236,7 @@ impl CreateUserGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_user_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_user_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5513,7 +5475,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decrease_node_groups_in_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_decrease_node_groups_in_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5781,10 +5743,9 @@ impl DecreaseReplicaCountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decrease_replica_count(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_decrease_replica_count(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5949,10 +5910,7 @@ impl DeleteCacheClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_cache_cluster(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_cache_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6109,10 +6067,7 @@ impl DeleteCacheParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6269,10 +6224,7 @@ impl DeleteCacheSecurityGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_security_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6424,10 +6376,7 @@ impl DeleteCacheSubnetGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_subnet_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6596,7 +6545,7 @@ impl DeleteGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6782,10 +6731,7 @@ impl DeleteReplicationGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_replication_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6932,10 +6878,8 @@ impl DeleteSnapshotInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_snapshot(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_snapshot(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7079,10 +7023,7 @@ impl DeleteUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7230,10 +7171,7 @@ impl DeleteUserGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7459,10 +7397,7 @@ impl DescribeCacheClustersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_clusters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7745,7 +7680,7 @@ impl DescribeCacheEngineVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cache_engine_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cache_engine_versions(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7933,7 +7868,7 @@ impl DescribeCacheParameterGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameter_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameter_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8141,10 +8076,7 @@ impl DescribeCacheParametersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameters(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8331,7 +8263,7 @@ impl DescribeCacheSecurityGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cache_security_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cache_security_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8523,10 +8455,7 @@ impl DescribeCacheSubnetGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_subnet_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8738,7 +8667,7 @@ impl DescribeEngineDefaultParametersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -8995,10 +8924,8 @@ impl DescribeEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9186,7 +9113,7 @@ impl DescribeGlobalReplicationGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_global_replication_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_global_replication_groups(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9378,10 +9305,7 @@ impl DescribeReplicationGroupsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_groups(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10089,7 +10013,7 @@ impl DescribeReservedCacheNodesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10788,7 +10712,7 @@ impl DescribeReservedCacheNodesOfferingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes_offerings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10994,10 +10918,7 @@ impl DescribeServiceUpdatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_service_updates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11250,10 +11171,7 @@ impl DescribeSnapshotsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_snapshots(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_snapshots(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11567,10 +11485,7 @@ impl DescribeUpdateActionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_update_actions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11742,10 +11657,7 @@ impl DescribeUserGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_user_groups(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_user_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11946,10 +11858,7 @@ impl DescribeUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12131,7 +12040,7 @@ impl DisassociateGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12317,7 +12226,7 @@ impl FailoverGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_failover_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_failover_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12522,7 +12431,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_increase_node_groups_in_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_increase_node_groups_in_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12735,10 +12644,9 @@ impl IncreaseReplicaCountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_increase_replica_count(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_increase_replica_count(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12928,7 +12836,7 @@ impl ListAllowedNodeTypeModificationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_allowed_node_type_modifications(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_allowed_node_type_modifications(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13083,10 +12991,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14050,10 +13957,7 @@ impl ModifyCacheClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_cache_cluster(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_cache_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14229,10 +14133,7 @@ impl ModifyCacheParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cache_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14427,10 +14328,7 @@ impl ModifyCacheSubnetGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cache_subnet_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14673,7 +14571,7 @@ impl ModifyGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15431,10 +15329,7 @@ impl ModifyReplicationGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_replication_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15721,7 +15616,7 @@ impl ModifyReplicationGroupShardConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_replication_group_shard_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_replication_group_shard_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15929,10 +15824,7 @@ impl ModifyUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_modify_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_modify_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16122,10 +16014,7 @@ impl ModifyUserGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_user_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_modify_user_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16345,7 +16234,7 @@ impl PurchaseReservedCacheNodesOfferingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_cache_nodes_offering(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_cache_nodes_offering(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16511,7 +16400,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rebalance_slots_in_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_rebalance_slots_in_global_replication_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16682,10 +16571,7 @@ impl RebootCacheClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reboot_cache_cluster(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_reboot_cache_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16862,10 +16748,7 @@ impl RemoveTagsFromResourceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17071,10 +16954,7 @@ impl ResetCacheParameterGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reset_cache_parameter_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17260,7 +17140,7 @@ impl RevokeCacheSecurityGroupIngressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_cache_security_group_ingress(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_revoke_cache_security_group_ingress(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17433,10 +17313,8 @@ impl StartMigrationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_start_migration(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_migration(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17604,10 +17482,7 @@ impl TestFailoverInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_test_failover(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_test_failover(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17681,6 +17556,19 @@ pub struct TestFailoverInput {
     /// You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
     pub node_group_id: std::option::Option<std::string::String>,
 }
+impl TestFailoverInput {
+    /// <p>The name of the replication group (console: cluster) whose automatic failover is being
+    /// tested by this operation.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The name of the node group (called shard in the console) in this replication group on
+    /// which automatic failover is to be tested.
+    /// You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    pub fn node_group_id(&self) -> std::option::Option<&str> {
+        self.node_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for TestFailoverInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestFailoverInput");
@@ -17699,6 +17587,18 @@ pub struct StartMigrationInput {
     /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
     pub customer_node_endpoint_list:
         std::option::Option<std::vec::Vec<crate::model::CustomerNodeEndpoint>>,
+}
+impl StartMigrationInput {
+    /// <p>The ID of the replication group to which data should be migrated.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
+    pub fn customer_node_endpoint_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::CustomerNodeEndpoint]> {
+        self.customer_node_endpoint_list.as_deref()
+    }
 }
 impl std::fmt::Debug for StartMigrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17724,6 +17624,22 @@ pub struct RevokeCacheSecurityGroupIngressInput {
     /// Note that this is not the same thing as an Amazon access key ID - you must provide
     /// a valid Amazon account number for this parameter.</p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
+}
+impl RevokeCacheSecurityGroupIngressInput {
+    /// <p>The name of the cache security group to revoke ingress from.</p>
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+        self.cache_security_group_name.as_deref()
+    }
+    /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_name.as_deref()
+    }
+    /// <p>The Amazon account number of the Amazon EC2 security group owner.
+    /// Note that this is not the same thing as an Amazon access key ID - you must provide
+    /// a valid Amazon account number for this parameter.</p>
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_owner_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RevokeCacheSecurityGroupIngressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17758,6 +17674,31 @@ pub struct ResetCacheParameterGroupInput {
     /// you must specify the name of at least one parameter to reset.</p>
     pub parameter_name_values: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
 }
+impl ResetCacheParameterGroupInput {
+    /// <p>The name of the cache parameter group to reset.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>If <code>true</code>,
+    /// all parameters in the cache parameter group are reset to their default values.
+    /// If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code>
+    /// are reset to their default values.</p>
+    /// <p>Valid values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn reset_all_parameters(&self) -> bool {
+        self.reset_all_parameters
+    }
+    /// <p>An array of parameter names to reset to their default values.
+    /// If <code>ResetAllParameters</code> is <code>true</code>,
+    /// do not use <code>ParameterNameValues</code>.
+    /// If <code>ResetAllParameters</code> is <code>false</code>,
+    /// you must specify the name of at least one parameter to reset.</p>
+    pub fn parameter_name_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParameterNameValue]> {
+        self.parameter_name_values.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetCacheParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetCacheParameterGroupInput");
@@ -17783,6 +17724,19 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RemoveTagsFromResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed,
+    /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+    /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveTagsFromResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveTagsFromResourceInput");
@@ -17801,6 +17755,16 @@ pub struct RebootCacheClusterInput {
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
     pub cache_node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RebootCacheClusterInput {
+    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
+    pub fn cache_node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_node_ids_to_reboot.as_deref()
+    }
+}
 impl std::fmt::Debug for RebootCacheClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RebootCacheClusterInput");
@@ -17818,6 +17782,16 @@ pub struct RebalanceSlotsInGlobalReplicationGroupInput {
     pub global_replication_group_id: std::option::Option<std::string::String>,
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
     pub apply_immediately: bool,
+}
+impl RebalanceSlotsInGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>If <code>True</code>, redistribution is applied immediately.</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
 }
 impl std::fmt::Debug for RebalanceSlotsInGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17854,6 +17828,34 @@ pub struct PurchaseReservedCacheNodesOfferingInput {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PurchaseReservedCacheNodesOfferingInput {
+    /// <p>The ID of the reserved cache node offering to purchase.</p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
+    /// </p>
+    pub fn reserved_cache_nodes_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_cache_nodes_offering_id.as_deref()
+    }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    /// <note>
+    /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation.
+    /// If this parameter is not specified,
+    /// ElastiCache automatically generates an identifier for the reservation.</p>
+    /// </note>
+    /// <p>Example: myreservationID</p>
+    pub fn reserved_cache_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_cache_node_id.as_deref()
+    }
+    /// <p>The number of cache node instances to reserve.</p>
+    /// <p>Default: <code>1</code>
+    /// </p>
+    pub fn cache_node_count(&self) -> std::option::Option<i32> {
+        self.cache_node_count
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PurchaseReservedCacheNodesOfferingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurchaseReservedCacheNodesOfferingInput");
@@ -17879,6 +17881,20 @@ pub struct ModifyUserGroupInput {
     /// <p>The list of user IDs to remove from the user group.</p>
     pub user_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ModifyUserGroupInput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+    /// <p>The list of user IDs to add to the user group.</p>
+    pub fn user_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids_to_add.as_deref()
+    }
+    /// <p>The list of user IDs to remove from the user group.</p>
+    pub fn user_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids_to_remove.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyUserGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyUserGroupInput");
@@ -17903,6 +17919,28 @@ pub struct ModifyUserInput {
     pub passwords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates no password is required for the user.</p>
     pub no_password_required: std::option::Option<bool>,
+}
+impl ModifyUserInput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn access_string(&self) -> std::option::Option<&str> {
+        self.access_string.as_deref()
+    }
+    /// <p>Adds additional user permissions to the access string.</p>
+    pub fn append_access_string(&self) -> std::option::Option<&str> {
+        self.append_access_string.as_deref()
+    }
+    /// <p>The passwords belonging to the user. You are allowed up to two.</p>
+    pub fn passwords(&self) -> std::option::Option<&[std::string::String]> {
+        self.passwords.as_deref()
+    }
+    /// <p>Indicates no password is required for the user.</p>
+    pub fn no_password_required(&self) -> std::option::Option<bool> {
+        self.no_password_required
+    }
 }
 impl std::fmt::Debug for ModifyUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17955,6 +17993,56 @@ pub struct ModifyReplicationGroupShardConfigurationInput {
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code>
     /// from the cluster.</p>
     pub node_groups_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ModifyReplicationGroupShardConfigurationInput {
+    /// <p>The name of the Redis (cluster mode enabled) cluster (replication group)
+    /// on which the shards are to be configured.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The number of node groups (shards) that results from the modification of the
+    /// shard configuration.</p>
+    pub fn node_group_count(&self) -> i32 {
+        self.node_group_count
+    }
+    /// <p>Indicates that the shard reconfiguration process begins immediately.
+    /// At present, the only permitted value for this parameter is <code>true</code>.</p>
+    /// <p>Value: true</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>Specifies the preferred availability zones for each node group in the cluster.
+    /// If the value of <code>NodeGroupCount</code> is greater than the current number
+    /// of node groups (shards), you can use this parameter to specify the preferred
+    /// availability zones of the cluster's shards.
+    /// If you omit this parameter ElastiCache selects availability zones for you.</p>
+    /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code>
+    /// is greater than the current number of node groups (shards).</p>
+    pub fn resharding_configuration(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReshardingConfiguration]> {
+        self.resharding_configuration.as_deref()
+    }
+    /// <p>If the value of <code>NodeGroupCount</code> is less than the
+    /// current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or
+    /// <code>NodeGroupsToRetain</code> is required.
+    /// <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove
+    /// from the cluster.</p>
+    /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+    /// from the cluster.</p>
+    pub fn node_groups_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_groups_to_remove.as_deref()
+    }
+    /// <p>If the value of <code>NodeGroupCount</code> is less than the
+    /// current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or
+    /// <code>NodeGroupsToRetain</code> is required.
+    /// <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain
+    /// in the cluster.</p>
+    /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code>
+    /// from the cluster.</p>
+    pub fn node_groups_to_retain(&self) -> std::option::Option<&[std::string::String]> {
+        self.node_groups_to_retain.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyReplicationGroupShardConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18135,6 +18223,222 @@ pub struct ModifyReplicationGroupInput {
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfigurationRequest>>,
 }
+impl ModifyReplicationGroupInput {
+    /// <p>The identifier of the replication group to modify.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>A description for the replication group. Maximum length is 255 characters.</p>
+    pub fn replication_group_description(&self) -> std::option::Option<&str> {
+        self.replication_group_description.as_deref()
+    }
+    /// <p>For replication groups with a single primary,
+    /// if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role.
+    /// The nodes of all other clusters in the replication group are read replicas.</p>
+    pub fn primary_cluster_id(&self) -> std::option::Option<&str> {
+        self.primary_cluster_id.as_deref()
+    }
+    /// <p>The cluster ID that is used as the daily snapshot source for the replication group.
+    /// This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
+    pub fn snapshotting_cluster_id(&self) -> std::option::Option<&str> {
+        self.snapshotting_cluster_id.as_deref()
+    }
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
+    /// <p>Valid values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub fn automatic_failover_enabled(&self) -> std::option::Option<bool> {
+        self.automatic_failover_enabled
+    }
+    /// <p>A flag to indicate MultiAZ is enabled.</p>
+    pub fn multi_az_enabled(&self) -> std::option::Option<bool> {
+        self.multi_az_enabled
+    }
+    /// <p>Deprecated. This parameter is not used.</p>
+    pub fn node_group_id(&self) -> std::option::Option<&str> {
+        self.node_group_id.as_deref()
+    }
+    /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
+    /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
+    pub fn cache_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_security_group_names.as_deref()
+    }
+    /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
+    /// <p>This parameter can be used only with replication group containing clusters running in
+    /// an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>Specifies the weekly time range during which maintenance
+    /// on the cluster is performed. It is specified as a range in
+    /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+    /// maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sun</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tue</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>wed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>thu</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>fri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sat</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code>
+    /// </p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
+    /// <note>
+    /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+    /// </note>
+    pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
+        self.notification_topic_arn.as_deref()
+    }
+    /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group.
+    /// This change is asynchronously applied as soon as possible for parameters when the
+    /// <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The status of the Amazon SNS notification topic for the replication group.
+    /// Notifications are sent only if the status is <code>active</code>.</p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code>
+    /// </p>
+    pub fn notification_topic_status(&self) -> std::option::Option<&str> {
+        self.notification_topic_status.as_deref()
+    }
+    /// <p>If <code>true</code>, this parameter causes the modifications in this request and any
+    /// pending modifications to be applied, asynchronously and as soon as possible, regardless
+    /// of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
+    /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on
+    /// the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
+    /// <p>Valid values: <code>true</code> | <code>false</code>
+    /// </p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
+    ///
+    /// <p>
+    /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+    /// If you want to use an earlier engine version,
+    /// you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>This parameter is currently disabled.</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before
+    /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
+    /// snapshot that was taken today is retained for 5 days before being deleted.</p>
+    /// <p>
+    /// <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0),
+    /// backups are turned off.</p>
+    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+        self.snapshot_retention_limit
+    }
+    /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
+    /// the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
+    /// <p>Example: <code>05:00-09:00</code>
+    /// </p>
+    /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
+    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+        self.snapshot_window.as_deref()
+    }
+    /// <p>A valid cache node type that you want to scale this replication group to.</p>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code>
+    /// parameter.
+    /// Password constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be only printable ASCII characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128 characters in length</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p>
+    /// </li>
+    /// </ul>
+    /// <p>     
+    ///
+    /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+    /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
+    /// Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Rotate</p>
+    /// </li>
+    /// <li>
+    /// <p>Set</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a>
+    /// </p>
+    pub fn auth_token_update_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthTokenUpdateStrategyType> {
+        self.auth_token_update_strategy.as_ref()
+    }
+    /// <p>The ID of the user group you are associating with the replication group.</p>
+    pub fn user_group_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_group_ids_to_add.as_deref()
+    }
+    /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
+    pub fn user_group_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_group_ids_to_remove.as_deref()
+    }
+    /// <p>Removes the user group associated with this replication group.</p>
+    pub fn remove_user_groups(&self) -> std::option::Option<bool> {
+        self.remove_user_groups
+    }
+    /// <p>Specifies the destination, format and type of the logs.</p>
+    pub fn log_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LogDeliveryConfigurationRequest]> {
+        self.log_delivery_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyReplicationGroupInput");
@@ -18212,6 +18516,38 @@ pub struct ModifyGlobalReplicationGroupInput {
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
     pub automatic_failover_enabled: std::option::Option<bool>,
 }
+impl ModifyGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global
+    /// Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.
+    /// </p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>A description of the Global datastore</p>
+    pub fn global_replication_group_description(&self) -> std::option::Option<&str> {
+        self.global_replication_group_description.as_deref()
+    }
+    /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    pub fn automatic_failover_enabled(&self) -> std::option::Option<bool> {
+        self.automatic_failover_enabled
+    }
+}
 impl std::fmt::Debug for ModifyGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyGlobalReplicationGroupInput");
@@ -18252,6 +18588,23 @@ pub struct ModifyCacheSubnetGroupInput {
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ModifyCacheSubnetGroupInput {
+    /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// <p>Example: <code>mysubnetgroup</code>
+    /// </p>
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_name.as_deref()
+    }
+    /// <p>A description of the cache subnet group.</p>
+    pub fn cache_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_description.as_deref()
+    }
+    /// <p>The EC2 subnet IDs for the cache subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyCacheSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCacheSubnetGroupInput");
@@ -18273,6 +18626,18 @@ pub struct ModifyCacheParameterGroupInput {
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
     pub parameter_name_values: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
+}
+impl ModifyCacheParameterGroupInput {
+    /// <p>The name of the cache parameter group to modify.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
+    pub fn parameter_name_values(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParameterNameValue]> {
+        self.parameter_name_values.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyCacheParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18584,6 +18949,344 @@ pub struct ModifyCacheClusterInput {
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfigurationRequest>>,
 }
+impl ModifyCacheClusterInput {
+    /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>The number of cache nodes that the cluster should have.
+    /// If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and
+    /// the number of cache nodes pending creation (which may be zero), more nodes are added.
+    /// If the value is less than the number of existing cache nodes,  nodes are removed.
+    /// If the value is equal to the number of current cache nodes,
+    /// any pending add or remove requests are canceled.</p>
+    /// <p>If you are removing cache nodes, you must
+    /// use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
+    /// <p>For clusters running Redis, this value must be 1.
+    /// For clusters running Memcached, this value must be between 1 and 40.</p>
+    ///
+    /// <note>
+    /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
+    /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
+    /// whether by adding or removing nodes in accordance with the scale out architecture, is not queued.
+    /// The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the
+    /// number of cache nodes in the cluster.
+    /// For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes.
+    /// Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa.
+    /// As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement,
+    /// a request to add nodes does not automatically override a previous pending operation to add nodes.
+    /// The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and
+    /// retry the new request.
+    /// To cancel pending operations to modify the number of cache nodes in a cluster,
+    /// use the <code>ModifyCacheCluster</code> request and
+    /// set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
+    /// </note>
+    pub fn num_cache_nodes(&self) -> std::option::Option<i32> {
+        self.num_cache_nodes
+    }
+    /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002,
+    /// etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number
+    /// of cache nodes. The number of cache node IDs supplied in this parameter must match the
+    /// difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is
+    /// greater, and the value of <code>NumCacheNodes</code> in the request.</p>
+    /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
+    /// <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
+    pub fn cache_node_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_node_ids_to_remove.as_deref()
+    }
+    /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a
+    /// single Availability Zone or created across multiple Availability Zones.</p>
+    /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
+    /// <p>This option is only supported for Memcached clusters.</p>
+    /// <note>
+    /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones.            
+    /// If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
+    /// <p>Only newly created nodes are located in different Availability Zones.
+    /// </p>
+    /// </note>
+    pub fn az_mode(&self) -> std::option::Option<&crate::model::AzMode> {
+        self.az_mode.as_ref()
+    }
+    /// <note>
+    /// <p>This option is only supported on Memcached clusters.</p>
+    /// </note>
+    /// <p>The list of Availability Zones where the new Memcached cache nodes are created.</p>  
+    /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater
+    /// than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero).
+    /// The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
+    ///
+    /// <p>Scenarios:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+    /// Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones
+    /// for the two new nodes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+    /// (from the scenario 1 call) and want to add 1 more node.
+    /// Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and
+    /// optionally specify an Availability Zone for the new node.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Scenario 3:</b> You want to cancel all pending operations.
+    /// Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation,
+    /// add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
+    /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.
+    /// Only newly created nodes can be located in different Availability Zones.
+    /// For guidance on how to move existing Memcached nodes to different Availability Zones, see the
+    /// <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
+    ///
+    /// <p>
+    /// <b>Impact of new add/remove requests upon pending requests</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>Scenario-1</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending Action: Delete</p>
+    /// </li>
+    /// <li>
+    /// <p>New Request: Delete</p>
+    /// </li>
+    /// <li>
+    /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Scenario-2</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending Action: Delete</p>
+    /// </li>
+    /// <li>
+    /// <p>New Request: Create</p>
+    /// </li>
+    /// <li>
+    /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Scenario-3</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending Action: Create</p>
+    /// </li>
+    /// <li>
+    /// <p>New Request: Delete</p>
+    /// </li>
+    /// <li>
+    /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Scenario-4</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending Action: Create</p>
+    /// </li>
+    /// <li>
+    /// <p>New Request: Create</p>
+    /// </li>
+    /// <li>
+    /// <p>Result: The new create is added to the pending create.</p>
+    /// <important>
+    /// <p>
+    /// <b>Important:</b>
+    /// If the new create request is <b>Apply Immediately - Yes</b>,
+    /// all creates are performed immediately.
+    /// If the new create request is <b>Apply Immediately - No</b>,
+    /// all creates are pending.</p>
+    /// </important>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn new_availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.new_availability_zones.as_deref()
+    }
+    /// <p>A list of cache security group names to authorize on this cluster.
+    /// This change is asynchronously applied as soon as possible.</p>
+    /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
+    pub fn cache_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_security_group_names.as_deref()
+    }
+    /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
+    /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>Specifies the weekly time range during which maintenance
+    /// on the cluster is performed. It is specified as a range in
+    /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+    /// maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sun</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tue</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>wed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>thu</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>fri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sat</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code>
+    /// </p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
+    /// <note>
+    /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
+    /// </note>
+    pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
+        self.notification_topic_arn.as_deref()
+    }
+    /// <p>The name of the cache parameter group to apply to this cluster. This change is
+    /// asynchronously applied as soon as possible for parameters when the
+    /// <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the
+    /// status is <code>active</code>.</p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code>
+    /// </p>
+    pub fn notification_topic_status(&self) -> std::option::Option<&str> {
+        self.notification_topic_status.as_deref()
+    }
+    /// <p>If <code>true</code>, this parameter causes the modifications in this request and any
+    /// pending modifications to be applied, asynchronously and as soon as possible, regardless
+    /// of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
+    /// <p>If <code>false</code>, changes to the cluster are applied on the next
+    /// maintenance reboot, or the next failure reboot, whichever occurs first.</p>
+    /// <important>
+    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied,
+    /// the pending modification is replaced by the newer modification.</p>
+    /// </important>
+    /// <p>Valid values: <code>true</code> | <code>false</code>
+    /// </p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+    /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
+    ///
+    /// <p>
+    /// <b>Important:</b> You can upgrade to a newer engine version
+    /// (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+    /// If you want to use an earlier engine version,
+    /// you must delete the existing cluster and create it anew with the earlier engine version. </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>This parameter is currently disabled.</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before
+    /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,  a
+    /// snapshot that was taken today is retained for 5 days before being deleted.</p>
+    /// <note>
+    /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+    /// </note>
+    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+        self.snapshot_retention_limit
+    }
+    /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
+    /// your cluster. </p>
+    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+        self.snapshot_window.as_deref()
+    }
+    /// <p>A valid cache node type that you want to scale this cluster up to.</p>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter.
+    /// Password constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be only printable ASCII characters</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128 characters in length</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p>
+    /// </li>
+    /// </ul>
+    /// <p>     
+    ///
+    /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+    /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
+    /// Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Rotate</p>
+    /// </li>
+    /// <li>
+    /// <p>Set</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a>
+    /// </p>
+    pub fn auth_token_update_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::AuthTokenUpdateStrategyType> {
+        self.auth_token_update_strategy.as_ref()
+    }
+    /// <p>Specifies the destination, format and type of the logs.</p>
+    pub fn log_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LogDeliveryConfigurationRequest]> {
+        self.log_delivery_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for ModifyCacheClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyCacheClusterInput");
@@ -18639,6 +19342,15 @@ pub struct ListTagsForResourceInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
+    /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+    /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -18669,6 +19381,29 @@ pub struct ListAllowedNodeTypeModificationsInput {
     /// </important>
     pub replication_group_id: std::option::Option<std::string::String>,
 }
+impl ListAllowedNodeTypeModificationsInput {
+    /// <p>The name of the cluster you want to scale up to a larger node instanced type.
+    /// ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p>
+    ///
+    /// <important>
+    /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
+    /// <code>ReplicationGroupId</code>.</p>
+    /// </important>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>The name of the replication group want to scale up to a larger node type.
+    /// ElastiCache uses the replication group id to identify the current node type being used by
+    /// this replication group, and from that to create a list of node types you can scale up to.</p>
+    ///
+    /// <important>
+    /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
+    /// <code>ReplicationGroupId</code>.</p>
+    /// </important>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAllowedNodeTypeModificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAllowedNodeTypeModificationsInput");
@@ -18698,6 +19433,31 @@ pub struct IncreaseReplicaCountInput {
     /// <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub apply_immediately: bool,
 }
+impl IncreaseReplicaCountInput {
+    /// <p>The id of the replication group to which you want to add replica nodes.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The number of read replica nodes you want at the completion of this operation.
+    /// For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the
+    /// replication group. For Redis (cluster mode enabled) replication groups, this is the number of
+    /// replica nodes in each of the replication group's node groups.</p>
+    pub fn new_replica_count(&self) -> std::option::Option<i32> {
+        self.new_replica_count
+    }
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
+    /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
+    /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    pub fn replica_configuration(&self) -> std::option::Option<&[crate::model::ConfigureShard]> {
+        self.replica_configuration.as_deref()
+    }
+    /// <p>If <code>True</code>, the number of replica nodes is increased immediately.
+    ///
+    /// <code>ApplyImmediately=False</code> is not currently supported.</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+}
 impl std::fmt::Debug for IncreaseReplicaCountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncreaseReplicaCountInput");
@@ -18723,6 +19483,26 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
     pub apply_immediately: bool,
 }
+impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The number of node groups you wish to add</p>
+    pub fn node_group_count(&self) -> i32 {
+        self.node_group_count
+    }
+    /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+    pub fn regional_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RegionalConfiguration]> {
+        self.regional_configurations.as_deref()
+    }
+    /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+}
 impl std::fmt::Debug for IncreaseNodeGroupsInGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IncreaseNodeGroupsInGlobalReplicationGroupInput");
@@ -18747,6 +19527,20 @@ pub struct FailoverGlobalReplicationGroupInput {
     pub primary_region: std::option::Option<std::string::String>,
     /// <p>The name of the primary replication group</p>
     pub primary_replication_group_id: std::option::Option<std::string::String>,
+}
+impl FailoverGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The Amazon region of the primary cluster of the Global datastore</p>
+    pub fn primary_region(&self) -> std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>The name of the primary replication group</p>
+    pub fn primary_replication_group_id(&self) -> std::option::Option<&str> {
+        self.primary_replication_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for FailoverGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18774,6 +19568,20 @@ pub struct DisassociateGlobalReplicationGroupInput {
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
     pub replication_group_region: std::option::Option<std::string::String>,
+}
+impl DisassociateGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
+    pub fn replication_group_region(&self) -> std::option::Option<&str> {
+        self.replication_group_region.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18803,6 +19611,28 @@ pub struct DescribeUsersInput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeUsersInput {
+    /// <p>The Redis engine. </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>Filter to determine the list of User IDs to return.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsersInput");
@@ -18825,6 +19655,20 @@ pub struct DescribeUserGroupsInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeUserGroupsInput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18864,6 +19708,53 @@ pub struct DescribeUpdateActionsInput {
     /// parameter is specified, the response includes only records beyond the marker, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeUpdateActionsInput {
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
+        self.service_update_name.as_deref()
+    }
+    /// <p>The replication group IDs</p>
+    pub fn replication_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_group_ids.as_deref()
+    }
+    /// <p>The cache cluster IDs</p>
+    pub fn cache_cluster_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_cluster_ids.as_deref()
+    }
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The status of the service update</p>
+    pub fn service_update_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceUpdateStatus]> {
+        self.service_update_status.as_deref()
+    }
+    /// <p>The range of time specified to search for service updates that are in available status</p>
+    pub fn service_update_time_range(&self) -> std::option::Option<&crate::model::TimeRangeFilter> {
+        self.service_update_time_range.as_ref()
+    }
+    /// <p>The status of the update action.</p>
+    pub fn update_action_status(&self) -> std::option::Option<&[crate::model::UpdateActionStatus]> {
+        self.update_action_status.as_deref()
+    }
+    /// <p>Dictates whether to include node level update status in the response </p>
+    pub fn show_node_level_update_status(&self) -> std::option::Option<bool> {
+        self.show_node_level_update_status
+    }
+    /// <p>The maximum number of records to include in the response</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUpdateActionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18916,6 +19807,48 @@ pub struct DescribeSnapshotsInput {
     /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
     pub show_node_group_config: std::option::Option<bool>,
 }
+impl DescribeSnapshotsInput {
+    /// <p>A user-supplied replication group identifier.
+    /// If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>A user-supplied cluster identifier.
+    /// If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>A user-supplied name of the snapshot.
+    /// If this parameter is specified, only this snapshot are described.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache.
+    /// If set to <code>user</code> the output shows snapshots that were manually created.
+    /// If omitted, the output shows both automatically and manually created snapshots.</p>
+    pub fn snapshot_source(&self) -> std::option::Option<&str> {
+        self.snapshot_source.as_deref()
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    /// <p>Default: 50</p>
+    /// <p>Constraints: minimum 20; maximum 50.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
+    pub fn show_node_group_config(&self) -> std::option::Option<bool> {
+        self.show_node_group_config
+    }
+}
 impl std::fmt::Debug for DescribeSnapshotsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSnapshotsInput");
@@ -18946,6 +19879,29 @@ pub struct DescribeServiceUpdatesInput {
     /// parameter is specified, the response includes only records beyond the marker, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeServiceUpdatesInput {
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
+        self.service_update_name.as_deref()
+    }
+    /// <p>The status of the service update</p>
+    pub fn service_update_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ServiceUpdateStatus]> {
+        self.service_update_status.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeServiceUpdatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19208,6 +20164,268 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// If this parameter is specified, the response includes only records beyond the marker,
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReservedCacheNodesOfferingsInput {
+    /// <p>The offering identifier filter value.
+    /// Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+    /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
+    /// </p>
+    pub fn reserved_cache_nodes_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_cache_nodes_offering_id.as_deref()
+    }
+    /// <p>The cache node type filter value.
+    /// Use this parameter to show only the available offerings matching the specified cache node type.</p>
+    ///
+    /// <p>The following node types are supported by ElastiCache.
+    /// Generally speaking, the current generation types provide more memory and computational power
+    /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li>
+    /// <p>General purpose:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    /// <p>  
+    /// <code>cache.m6g.large</code>,
+    /// <code>cache.m6g.xlarge</code>,
+    /// <code>cache.m6g.2xlarge</code>,
+    /// <code>cache.m6g.4xlarge</code>,
+    /// <code>cache.m6g.8xlarge</code>,
+    /// <code>cache.m6g.12xlarge</code>,
+    /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
+    /// </p>  
+    ///
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    ///
+    ///
+    /// <p>
+    /// <b>M5 node types:</b>
+    /// <code>cache.m5.large</code>,
+    /// <code>cache.m5.xlarge</code>,
+    /// <code>cache.m5.2xlarge</code>,
+    /// <code>cache.m5.4xlarge</code>,
+    /// <code>cache.m5.12xlarge</code>,
+    /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
+    /// </p>  
+    ///
+    ///
+    /// <p>
+    /// <b>M4 node types:</b>
+    /// <code>cache.m4.large</code>,
+    /// <code>cache.m4.xlarge</code>,
+    /// <code>cache.m4.2xlarge</code>,
+    /// <code>cache.m4.4xlarge</code>,
+    /// <code>cache.m4.10xlarge</code>
+    /// </p>
+    /// <p>
+    /// <b>T3 node types:</b>
+    /// <code>cache.t3.micro</code>,
+    /// <code>cache.t3.small</code>,
+    /// <code>cache.t3.medium</code>
+    /// </p>
+    ///
+    ///
+    /// <p>
+    /// <b>T2 node types:</b>
+    /// <code>cache.t2.micro</code>,
+    /// <code>cache.t2.small</code>,
+    /// <code>cache.t2.medium</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>T1 node types:</b>
+    /// <code>cache.t1.micro</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M1 node types:</b>
+    /// <code>cache.m1.small</code>,
+    /// <code>cache.m1.medium</code>,
+    /// <code>cache.m1.large</code>,
+    /// <code>cache.m1.xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M3 node types:</b>
+    /// <code>cache.m3.medium</code>,
+    /// <code>cache.m3.large</code>,
+    /// <code>cache.m3.xlarge</code>,
+    /// <code>cache.m3.2xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Compute optimized:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>C1 node types:</b>
+    /// <code>cache.c1.xlarge</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Memory optimized:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    /// <p>
+    /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    /// <code>cache.r6g.large</code>,
+    /// <code>cache.r6g.xlarge</code>,
+    /// <code>cache.r6g.2xlarge</code>,
+    /// <code>cache.r6g.4xlarge</code>,
+    /// <code>cache.r6g.8xlarge</code>,
+    /// <code>cache.r6g.12xlarge</code>,
+    /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>  
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    /// <p>
+    /// <b>R5 node types:</b>
+    /// <code>cache.r5.large</code>,
+    /// <code>cache.r5.xlarge</code>,
+    /// <code>cache.r5.2xlarge</code>,
+    /// <code>cache.r5.4xlarge</code>,
+    /// <code>cache.r5.12xlarge</code>,
+    /// <code>cache.r5.24xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R4 node types:</b>
+    /// <code>cache.r4.large</code>,
+    /// <code>cache.r4.xlarge</code>,
+    /// <code>cache.r4.2xlarge</code>,
+    /// <code>cache.r4.4xlarge</code>,
+    /// <code>cache.r4.8xlarge</code>,
+    /// <code>cache.r4.16xlarge</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>M2 node types:</b>            
+    /// <code>cache.m2.xlarge</code>,
+    /// <code>cache.m2.2xlarge</code>,
+    /// <code>cache.m2.4xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R3 node types:</b>
+    /// <code>cache.r3.large</code>,
+    /// <code>cache.r3.xlarge</code>,
+    /// <code>cache.r3.2xlarge</code>,  
+    /// <code>cache.r3.4xlarge</code>,
+    /// <code>cache.r3.8xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>Additional node type info</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis configuration variables <code>appendonly</code> and
+    /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>Duration filter value, specified in years or seconds.
+    /// Use this parameter to show only reservations for a given duration.</p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+    /// </p>
+    pub fn duration(&self) -> std::option::Option<&str> {
+        self.duration.as_deref()
+    }
+    /// <p>The product description filter value.
+    /// Use this parameter to show only the available offerings matching the specified product description.</p>
+    pub fn product_description(&self) -> std::option::Option<&str> {
+        self.product_description.as_deref()
+    }
+    /// <p>The offering type filter value.
+    /// Use this parameter to show only the available offerings matching the specified offering type.</p>
+    /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
+    /// </p>
+    pub fn offering_type(&self) -> std::option::Option<&str> {
+        self.offering_type.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReservedCacheNodesOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19477,6 +20695,270 @@ pub struct DescribeReservedCacheNodesInput {
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReservedCacheNodesInput {
+    /// <p>The reserved cache node identifier filter value.
+    /// Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+    pub fn reserved_cache_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_cache_node_id.as_deref()
+    }
+    /// <p>The offering identifier filter value.
+    /// Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+    pub fn reserved_cache_nodes_offering_id(&self) -> std::option::Option<&str> {
+        self.reserved_cache_nodes_offering_id.as_deref()
+    }
+    /// <p>The cache node type filter value.
+    /// Use this parameter to show only those reservations matching the specified cache node type.</p>
+    ///
+    /// <p>The following node types are supported by ElastiCache.
+    /// Generally speaking, the current generation types provide more memory and computational power
+    /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li>
+    /// <p>General purpose:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    /// <p>  
+    /// <code>cache.m6g.large</code>,
+    /// <code>cache.m6g.xlarge</code>,
+    /// <code>cache.m6g.2xlarge</code>,
+    /// <code>cache.m6g.4xlarge</code>,
+    /// <code>cache.m6g.8xlarge</code>,
+    /// <code>cache.m6g.12xlarge</code>,
+    /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
+    /// </p>  
+    ///
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    ///
+    ///
+    /// <p>
+    /// <b>M5 node types:</b>
+    /// <code>cache.m5.large</code>,
+    /// <code>cache.m5.xlarge</code>,
+    /// <code>cache.m5.2xlarge</code>,
+    /// <code>cache.m5.4xlarge</code>,
+    /// <code>cache.m5.12xlarge</code>,
+    /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
+    /// </p>  
+    ///
+    ///
+    /// <p>
+    /// <b>M4 node types:</b>
+    /// <code>cache.m4.large</code>,
+    /// <code>cache.m4.xlarge</code>,
+    /// <code>cache.m4.2xlarge</code>,
+    /// <code>cache.m4.4xlarge</code>,
+    /// <code>cache.m4.10xlarge</code>
+    /// </p>
+    /// <p>
+    /// <b>T3 node types:</b>
+    /// <code>cache.t3.micro</code>,
+    /// <code>cache.t3.small</code>,
+    /// <code>cache.t3.medium</code>
+    /// </p>
+    ///
+    ///
+    /// <p>
+    /// <b>T2 node types:</b>
+    /// <code>cache.t2.micro</code>,
+    /// <code>cache.t2.small</code>,
+    /// <code>cache.t2.medium</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>T1 node types:</b>
+    /// <code>cache.t1.micro</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M1 node types:</b>
+    /// <code>cache.m1.small</code>,
+    /// <code>cache.m1.medium</code>,
+    /// <code>cache.m1.large</code>,
+    /// <code>cache.m1.xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M3 node types:</b>
+    /// <code>cache.m3.medium</code>,
+    /// <code>cache.m3.large</code>,
+    /// <code>cache.m3.xlarge</code>,
+    /// <code>cache.m3.2xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Compute optimized:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>C1 node types:</b>
+    /// <code>cache.c1.xlarge</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Memory optimized:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    /// <p>
+    /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    /// <code>cache.r6g.large</code>,
+    /// <code>cache.r6g.xlarge</code>,
+    /// <code>cache.r6g.2xlarge</code>,
+    /// <code>cache.r6g.4xlarge</code>,
+    /// <code>cache.r6g.8xlarge</code>,
+    /// <code>cache.r6g.12xlarge</code>,
+    /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>  
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    /// <p>
+    /// <b>R5 node types:</b>
+    /// <code>cache.r5.large</code>,
+    /// <code>cache.r5.xlarge</code>,
+    /// <code>cache.r5.2xlarge</code>,
+    /// <code>cache.r5.4xlarge</code>,
+    /// <code>cache.r5.12xlarge</code>,
+    /// <code>cache.r5.24xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R4 node types:</b>
+    /// <code>cache.r4.large</code>,
+    /// <code>cache.r4.xlarge</code>,
+    /// <code>cache.r4.2xlarge</code>,
+    /// <code>cache.r4.4xlarge</code>,
+    /// <code>cache.r4.8xlarge</code>,
+    /// <code>cache.r4.16xlarge</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>M2 node types:</b>            
+    /// <code>cache.m2.xlarge</code>,
+    /// <code>cache.m2.2xlarge</code>,
+    /// <code>cache.m2.4xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R3 node types:</b>
+    /// <code>cache.r3.large</code>,
+    /// <code>cache.r3.xlarge</code>,
+    /// <code>cache.r3.2xlarge</code>,  
+    /// <code>cache.r3.4xlarge</code>,
+    /// <code>cache.r3.8xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>Additional node type info</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis configuration variables <code>appendonly</code> and
+    /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>The duration filter value, specified in years or seconds.
+    /// Use this parameter to show only reservations for this duration.</p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+    /// </p>
+    pub fn duration(&self) -> std::option::Option<&str> {
+        self.duration.as_deref()
+    }
+    /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
+    pub fn product_description(&self) -> std::option::Option<&str> {
+        self.product_description.as_deref()
+    }
+    /// <p>The offering type filter value.
+    /// Use this parameter to show only the available offerings matching the specified offering type.</p>
+    /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code>
+    /// </p>
+    pub fn offering_type(&self) -> std::option::Option<&str> {
+        self.offering_type.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReservedCacheNodesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReservedCacheNodesInput");
@@ -19514,6 +20996,28 @@ pub struct DescribeReplicationGroupsInput {
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeReplicationGroupsInput {
+    /// <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>
+    /// <p>If you do not specify this parameter, information about all replication groups is returned.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReplicationGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReplicationGroupsInput");
@@ -19536,6 +21040,24 @@ pub struct DescribeGlobalReplicationGroupsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Returns the list of members that comprise the Global datastore.</p>
     pub show_member_info: std::option::Option<bool>,
+}
+impl DescribeGlobalReplicationGroupsInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Returns the list of members that comprise the Global datastore.</p>
+    pub fn show_member_info(&self) -> std::option::Option<bool> {
+        self.show_member_info
+    }
 }
 impl std::fmt::Debug for DescribeGlobalReplicationGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19584,6 +21106,50 @@ pub struct DescribeEventsInput {
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEventsInput {
+    /// <p>The identifier of the event source for which events are returned.
+    /// If not specified, all sources are included in the response.</p>
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
+        self.source_identifier.as_deref()
+    }
+    /// <p>The event source to retrieve events for.
+    /// If no value is specified, all events are returned.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    /// <p>
+    /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    /// <p>
+    /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The number of minutes worth of events to retrieve.</p>
+    pub fn duration(&self) -> std::option::Option<i32> {
+        self.duration
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker,
+    /// up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEventsInput");
@@ -19627,6 +21193,38 @@ pub struct DescribeEngineDefaultParametersInput {
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeEngineDefaultParametersInput {
+    /// <p>The name of the cache parameter group family.</p>
+    /// <p>Valid values are:
+    /// <code>memcached1.4</code> |
+    /// <code>memcached1.5</code> |
+    /// <code>memcached1.6</code> |
+    /// <code>redis2.6</code> |
+    /// <code>redis2.8</code> |
+    /// <code>redis3.2</code> |
+    /// <code>redis4.0</code> |
+    /// <code>redis5.0</code> |
+    /// <code>redis6.x</code> |
+    /// </p>
+    pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_family.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeEngineDefaultParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeEngineDefaultParametersInput");
@@ -19659,6 +21257,28 @@ pub struct DescribeCacheSubnetGroupsInput {
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeCacheSubnetGroupsInput {
+    /// <p>The name of the cache subnet group to return details for.</p>
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_name.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCacheSubnetGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCacheSubnetGroupsInput");
@@ -19686,6 +21306,27 @@ pub struct DescribeCacheSecurityGroupsInput {
     /// parameter is specified, the response includes only records beyond the marker, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeCacheSecurityGroupsInput {
+    /// <p>The name of the cache security group to return details for.</p>
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+        self.cache_security_group_name.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCacheSecurityGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19720,6 +21361,34 @@ pub struct DescribeCacheParametersInput {
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl DescribeCacheParametersInput {
+    /// <p>The name of a specific cache parameter group to return details for.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The parameter types to return.</p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
+    /// </p>
+    pub fn source(&self) -> std::option::Option<&str> {
+        self.source.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeCacheParametersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCacheParametersInput");
@@ -19751,6 +21420,27 @@ pub struct DescribeCacheParameterGroupsInput {
     /// If this parameter is specified, the response includes only records beyond the marker, up to the
     /// value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeCacheParameterGroupsInput {
+    /// <p>The name of a specific cache parameter group to return details for.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeCacheParameterGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19816,6 +21506,66 @@ pub struct DescribeCacheEngineVersionsInput {
     /// and major version combination is to be returned.</p>
     pub default_only: bool,
 }
+impl DescribeCacheEngineVersionsInput {
+    /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
+    /// </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The cache engine version to return.</p>
+    /// <p>Example: <code>1.4.14</code>
+    /// </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of a specific cache parameter group family to return details for.</p>
+    /// <p>Valid values are:
+    /// <code>memcached1.4</code> |
+    /// <code>memcached1.5</code> |
+    /// <code>memcached1.6</code> |
+    /// <code>redis2.6</code> |
+    /// <code>redis2.8</code> |
+    /// <code>redis3.2</code> |
+    /// <code>redis4.0</code> |
+    /// <code>redis5.0</code> |
+    /// <code>redis6.x</code> |
+    /// </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p>
+    /// </li>
+    /// <li>
+    /// <p>First character must be a letter</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_family.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+    /// If this parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine
+    /// and major version combination is to be returned.</p>
+    pub fn default_only(&self) -> bool {
+        self.default_only
+    }
+}
 impl std::fmt::Debug for DescribeCacheEngineVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCacheEngineVersionsInput");
@@ -19859,6 +21609,40 @@ pub struct DescribeCacheClustersInput {
     /// In practice, this mean Memcached and single node Redis clusters.</p>
     pub show_cache_clusters_not_in_replication_groups: std::option::Option<bool>,
 }
+impl DescribeCacheClustersInput {
+    /// <p>The user-supplied cluster identifier. If this parameter is specified, only information
+    /// about that specific cluster is returned. This parameter isn't case sensitive.</p>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>The maximum number of records to include in the response. If more records exist than the
+    /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    ///
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional marker returned from a prior request.
+    /// Use this marker for pagination of results from this operation. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the
+    /// value specified by <code>MaxRecords</code>.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
+    /// to retrieve information about the individual cache nodes.</p>
+    pub fn show_cache_node_info(&self) -> std::option::Option<bool> {
+        self.show_cache_node_info
+    }
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
+    /// to show only nodes (API/CLI: clusters) that are not members of a replication group.
+    /// In practice, this mean Memcached and single node Redis clusters.</p>
+    pub fn show_cache_clusters_not_in_replication_groups(&self) -> std::option::Option<bool> {
+        self.show_cache_clusters_not_in_replication_groups
+    }
+}
 impl std::fmt::Debug for DescribeCacheClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeCacheClustersInput");
@@ -19881,6 +21665,12 @@ pub struct DeleteUserGroupInput {
     /// <p>The ID of the user group.</p>
     pub user_group_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserGroupInput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserGroupInput");
@@ -19896,6 +21686,12 @@ pub struct DeleteUserInput {
     /// <p>The ID of the user.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserInput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
@@ -19910,6 +21706,12 @@ impl std::fmt::Debug for DeleteUserInput {
 pub struct DeleteSnapshotInput {
     /// <p>The name of the snapshot to be deleted.</p>
     pub snapshot_name: std::option::Option<std::string::String>,
+}
+impl DeleteSnapshotInput {
+    /// <p>The name of the snapshot to be deleted.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19934,6 +21736,24 @@ pub struct DeleteReplicationGroupInput {
     /// After the final snapshot is taken, the replication group is immediately deleted.</p>
     pub final_snapshot_identifier: std::option::Option<std::string::String>,
 }
+impl DeleteReplicationGroupInput {
+    /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>If set to <code>true</code>, all of the read replicas are deleted,
+    /// but the primary node is retained.</p>
+    pub fn retain_primary_cluster(&self) -> std::option::Option<bool> {
+        self.retain_primary_cluster
+    }
+    /// <p>The name of a final node group (shard) snapshot.
+    /// ElastiCache creates the snapshot from the primary node in the cluster,
+    /// rather than one of the replicas; this is to ensure that it captures the freshest data.
+    /// After the final snapshot is taken, the replication group is immediately deleted.</p>
+    pub fn final_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.final_snapshot_identifier.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteReplicationGroupInput");
@@ -19952,6 +21772,16 @@ pub struct DeleteGlobalReplicationGroupInput {
     pub global_replication_group_id: std::option::Option<std::string::String>,
     /// <p>The primary replication group is retained as a standalone replication group. </p>
     pub retain_primary_replication_group: bool,
+}
+impl DeleteGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The primary replication group is retained as a standalone replication group. </p>
+    pub fn retain_primary_replication_group(&self) -> bool {
+        self.retain_primary_replication_group
+    }
 }
 impl std::fmt::Debug for DeleteGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19976,6 +21806,13 @@ pub struct DeleteCacheSubnetGroupInput {
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteCacheSubnetGroupInput {
+    /// <p>The name of the cache subnet group to delete.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCacheSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCacheSubnetGroupInput");
@@ -19994,6 +21831,15 @@ pub struct DeleteCacheSecurityGroupInput {
     /// </note>
     pub cache_security_group_name: std::option::Option<std::string::String>,
 }
+impl DeleteCacheSecurityGroupInput {
+    /// <p>The name of the cache security group to delete.</p>
+    /// <note>
+    /// <p>You cannot delete the default security group.</p>
+    /// </note>
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+        self.cache_security_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCacheSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCacheSecurityGroupInput");
@@ -20011,6 +21857,15 @@ pub struct DeleteCacheParameterGroupInput {
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
+}
+impl DeleteCacheParameterGroupInput {
+    /// <p>The name of the cache parameter group to delete.</p>
+    /// <note>
+    /// <p>The specified cache security group must not be associated with any clusters.</p>
+    /// </note>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCacheParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20032,6 +21887,17 @@ pub struct DeleteCacheClusterInput {
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot.
     /// ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub final_snapshot_identifier: std::option::Option<std::string::String>,
+}
+impl DeleteCacheClusterInput {
+    /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot.
+    /// ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    pub fn final_snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.final_snapshot_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCacheClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20081,6 +21947,52 @@ pub struct DecreaseReplicaCountInput {
     /// <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub apply_immediately: bool,
 }
+impl DecreaseReplicaCountInput {
+    /// <p>The id of the replication group from which you want to remove replica nodes.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The number of read replica nodes you want at the completion of this operation.
+    /// For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the
+    /// replication group. For Redis (cluster mode enabled) replication groups, this is the number of
+    /// replica nodes in each of the replication group's node groups.</p>
+    /// <p>The minimum number of replicas in a shard or replication group is:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Redis (cluster mode disabled)</p>
+    /// <ul>
+    /// <li>
+    /// <p>If Multi-AZ is enabled: 1</p>
+    /// </li>
+    /// <li>
+    /// <p>If Multi-AZ is not enabled: 0</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p>
+    /// </li>
+    /// </ul>
+    pub fn new_replica_count(&self) -> std::option::Option<i32> {
+        self.new_replica_count
+    }
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
+    /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
+    /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    pub fn replica_configuration(&self) -> std::option::Option<&[crate::model::ConfigureShard]> {
+        self.replica_configuration.as_deref()
+    }
+    /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
+    pub fn replicas_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.replicas_to_remove.as_deref()
+    }
+    /// <p>If <code>True</code>, the number of replica nodes is decreased immediately.
+    ///
+    /// <code>ApplyImmediately=False</code> is not currently supported.</p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
+}
 impl std::fmt::Debug for DecreaseReplicaCountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DecreaseReplicaCountInput");
@@ -20112,6 +22024,33 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput {
     pub global_node_groups_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
     pub apply_immediately: bool,
+}
+impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
+    pub fn node_group_count(&self) -> i32 {
+        self.node_group_count
+    }
+    /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+    ///
+    /// ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
+    pub fn global_node_groups_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+        self.global_node_groups_to_remove.as_deref()
+    }
+    /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster.
+    ///
+    ///
+    /// </p>
+    pub fn global_node_groups_to_retain(&self) -> std::option::Option<&[std::string::String]> {
+        self.global_node_groups_to_retain.as_deref()
+    }
+    /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
+    pub fn apply_immediately(&self) -> bool {
+        self.apply_immediately
+    }
 }
 impl std::fmt::Debug for DecreaseNodeGroupsInGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20147,6 +22086,24 @@ pub struct CreateUserGroupInput {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateUserGroupInput {
+    /// <p>The ID of the user group.</p>
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
+        self.user_group_id.as_deref()
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_ids.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserGroupInput");
@@ -20177,6 +22134,36 @@ pub struct CreateUserInput {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateUserInput {
+    /// <p>The ID of the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The username of the user.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
+    pub fn passwords(&self) -> std::option::Option<&[std::string::String]> {
+        self.passwords.as_deref()
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn access_string(&self) -> std::option::Option<&str> {
+        self.access_string.as_deref()
+    }
+    /// <p>Indicates a password is not required for this user.</p>
+    pub fn no_password_required(&self) -> std::option::Option<bool> {
+        self.no_password_required
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
@@ -20205,6 +22192,28 @@ pub struct CreateSnapshotInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSnapshotInput {
+    /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>A name for the snapshot being created.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20701,6 +22710,554 @@ pub struct CreateReplicationGroupInput {
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfigurationRequest>>,
 }
+impl CreateReplicationGroupInput {
+    /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
+    ///
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A name must contain from 1 to 40 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>A user-created description for the replication group.</p>
+    pub fn replication_group_description(&self) -> std::option::Option<&str> {
+        self.replication_group_description.as_deref()
+    }
+    /// <p>The name of the Global datastore</p>
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id.as_deref()
+    }
+    /// <p>The identifier of the cluster that serves as the primary for this replication
+    /// group. This cluster must already exist and have a status of <code>available</code>.</p>
+    /// <p>This parameter is not required if <code>NumCacheClusters</code>,
+    /// <code>NumNodeGroups</code>, or
+    /// <code>ReplicasPerNodeGroup</code> is specified.</p>
+    pub fn primary_cluster_id(&self) -> std::option::Option<&str> {
+        self.primary_cluster_id.as_deref()
+    }
+    /// <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>
+    ///
+    /// <p>
+    /// <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>
+    ///
+    /// <p>Default: false</p>
+    pub fn automatic_failover_enabled(&self) -> std::option::Option<bool> {
+        self.automatic_failover_enabled
+    }
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
+    pub fn multi_az_enabled(&self) -> std::option::Option<bool> {
+        self.multi_az_enabled
+    }
+    /// <p>The number of clusters this replication group initially has.</p>
+    /// <p>This parameter is not used if there is more than one node group (shard).  
+    /// You should use <code>ReplicasPerNodeGroup</code> instead.</p>
+    /// <p>If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2.
+    /// If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1), or you
+    /// can explicitly set it to a value between 2 and 6.</p>
+    /// <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
+    pub fn num_cache_clusters(&self) -> std::option::Option<i32> {
+        self.num_cache_clusters
+    }
+    /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created.
+    /// The order of the Availability Zones in the list is the order in which clusters are allocated.
+    /// The primary cluster is created in the first AZ in the list.</p>
+    /// <p>This parameter is not used if there is more than one node group (shard).  
+    /// You should use <code>NodeGroupConfiguration</code> instead.</p>
+    /// <note>
+    /// <p>If you are creating your replication group in an Amazon VPC (recommended),
+    /// you can only locate clusters in Availability Zones associated with the subnets in the selected subnet group.</p>
+    /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
+    /// </note>
+    /// <p>Default: system chosen Availability Zones.</p>
+    pub fn preferred_cache_cluster_a_zs(&self) -> std::option::Option<&[std::string::String]> {
+        self.preferred_cache_cluster_a_zs.as_deref()
+    }
+    /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group.
+    /// For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
+    /// <p>Default: 1</p>
+    pub fn num_node_groups(&self) -> std::option::Option<i32> {
+        self.num_node_groups
+    }
+    /// <p>An optional parameter that specifies the number of replica nodes in each node group (shard).
+    /// Valid values are 0 to 5.</p>
+    pub fn replicas_per_node_group(&self) -> std::option::Option<i32> {
+        self.replicas_per_node_group
+    }
+    /// <p>A list of node group (shard) configuration options.
+    /// Each node group (shard) configuration has the following members:
+    /// <code>PrimaryAvailabilityZone</code>,
+    /// <code>ReplicaAvailabilityZones</code>,
+    /// <code>ReplicaCount</code>, and
+    /// <code>Slots</code>.</p>
+    /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to
+    /// individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a
+    /// Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter
+    /// because you must specify the slots for each node group.</p>
+    pub fn node_group_configuration(
+        &self,
+    ) -> std::option::Option<&[crate::model::NodeGroupConfiguration]> {
+        self.node_group_configuration.as_deref()
+    }
+    /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>        
+    /// <p>The following node types are supported by ElastiCache.
+    /// Generally speaking, the current generation types provide more memory and computational power
+    /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li>
+    /// <p>General purpose:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    /// <p>  
+    /// <code>cache.m6g.large</code>,
+    /// <code>cache.m6g.xlarge</code>,
+    /// <code>cache.m6g.2xlarge</code>,
+    /// <code>cache.m6g.4xlarge</code>,
+    /// <code>cache.m6g.8xlarge</code>,
+    /// <code>cache.m6g.12xlarge</code>,
+    /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
+    /// </p>  
+    ///
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    ///
+    ///
+    /// <p>
+    /// <b>M5 node types:</b>
+    /// <code>cache.m5.large</code>,
+    /// <code>cache.m5.xlarge</code>,
+    /// <code>cache.m5.2xlarge</code>,
+    /// <code>cache.m5.4xlarge</code>,
+    /// <code>cache.m5.12xlarge</code>,
+    /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
+    /// </p>  
+    ///
+    ///
+    /// <p>
+    /// <b>M4 node types:</b>
+    /// <code>cache.m4.large</code>,
+    /// <code>cache.m4.xlarge</code>,
+    /// <code>cache.m4.2xlarge</code>,
+    /// <code>cache.m4.4xlarge</code>,
+    /// <code>cache.m4.10xlarge</code>
+    /// </p>
+    /// <p>
+    /// <b>T3 node types:</b>
+    /// <code>cache.t3.micro</code>,
+    /// <code>cache.t3.small</code>,
+    /// <code>cache.t3.medium</code>
+    /// </p>
+    ///
+    ///
+    /// <p>
+    /// <b>T2 node types:</b>
+    /// <code>cache.t2.micro</code>,
+    /// <code>cache.t2.small</code>,
+    /// <code>cache.t2.medium</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>T1 node types:</b>
+    /// <code>cache.t1.micro</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M1 node types:</b>
+    /// <code>cache.m1.small</code>,
+    /// <code>cache.m1.medium</code>,
+    /// <code>cache.m1.large</code>,
+    /// <code>cache.m1.xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M3 node types:</b>
+    /// <code>cache.m3.medium</code>,
+    /// <code>cache.m3.large</code>,
+    /// <code>cache.m3.xlarge</code>,
+    /// <code>cache.m3.2xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Compute optimized:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>C1 node types:</b>
+    /// <code>cache.c1.xlarge</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Memory optimized:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    /// <p>
+    /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    /// <code>cache.r6g.large</code>,
+    /// <code>cache.r6g.xlarge</code>,
+    /// <code>cache.r6g.2xlarge</code>,
+    /// <code>cache.r6g.4xlarge</code>,
+    /// <code>cache.r6g.8xlarge</code>,
+    /// <code>cache.r6g.12xlarge</code>,
+    /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>  
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    /// <p>
+    /// <b>R5 node types:</b>
+    /// <code>cache.r5.large</code>,
+    /// <code>cache.r5.xlarge</code>,
+    /// <code>cache.r5.2xlarge</code>,
+    /// <code>cache.r5.4xlarge</code>,
+    /// <code>cache.r5.12xlarge</code>,
+    /// <code>cache.r5.24xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R4 node types:</b>
+    /// <code>cache.r4.large</code>,
+    /// <code>cache.r4.xlarge</code>,
+    /// <code>cache.r4.2xlarge</code>,
+    /// <code>cache.r4.4xlarge</code>,
+    /// <code>cache.r4.8xlarge</code>,
+    /// <code>cache.r4.16xlarge</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>M2 node types:</b>            
+    /// <code>cache.m2.xlarge</code>,
+    /// <code>cache.m2.2xlarge</code>,
+    /// <code>cache.m2.4xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R3 node types:</b>
+    /// <code>cache.r3.large</code>,
+    /// <code>cache.r3.xlarge</code>,
+    /// <code>cache.r3.2xlarge</code>,  
+    /// <code>cache.r3.4xlarge</code>,
+    /// <code>cache.r3.8xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>Additional node type info</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis configuration variables <code>appendonly</code> and
+    /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>The name of the cache engine to be used for the clusters in this replication group. Must be Redis.</p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the cache engine to be used for the clusters in this replication group.
+    /// To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+    ///
+    /// <p>
+    /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>,
+    /// but you cannot downgrade to an earlier engine version.
+    /// If you want to use an earlier engine version,
+    /// you must delete the existing cluster or replication group and
+    /// create it anew with the earlier engine version. </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the parameter group to associate with this replication group.
+    /// If this argument is omitted, the default cache parameter group for the specified engine is
+    /// used.</p>
+    ///
+    /// <p>If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter group,
+    /// we recommend that you specify the parameter group by name. </p>
+    /// <ul>
+    /// <li>
+    /// <p>To create a Redis (cluster mode disabled) replication group, use <code>CacheParameterGroupName=default.redis3.2</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The name of the cache subnet group to be used for the replication group.</p>
+    /// <important>
+    /// <p>If you're going to launch your cluster in an Amazon VPC,
+    /// you need to create a subnet group before you start creating a cluster.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
+    /// </important>
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_name.as_deref()
+    }
+    /// <p>A list of cache security group names to associate with this replication group.</p>
+    pub fn cache_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_security_group_names.as_deref()
+    }
+    /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
+    /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource.
+    /// Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
+    /// Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A list of Amazon Resource Names (ARN) that uniquely identify
+    /// the Redis RDB snapshot files stored in Amazon S3.
+    /// The snapshot files are used to populate the new replication group.
+    /// The Amazon S3 object name in the ARN cannot contain any commas.
+    /// The new replication group will have the number of node groups (console: shards)
+    /// specified by the parameter <i>NumNodeGroups</i> or the number of
+    /// node groups configured by <i>NodeGroupConfiguration</i> regardless
+    /// of the number of ARNs specified here.</p>
+    /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+    /// </p>
+    pub fn snapshot_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.snapshot_arns.as_deref()
+    }
+    /// <p>The name of a snapshot from which to restore data into the new replication group.
+    /// The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>Specifies the weekly time range during which maintenance
+    /// on the cluster is performed. It is specified as a range in
+    /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+    /// maintenance window is a 60 minute period.
+    /// Valid values for <code>ddd</code> are:</p>
+    ///
+    /// <p>Specifies the weekly time range during which maintenance
+    /// on the cluster is performed. It is specified as a range in
+    /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+    /// maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>sun</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tue</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>wed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>thu</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>fri</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sat</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code>
+    /// </p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The port number on which each member of the replication group accepts connections.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)
+    /// topic to which notifications are sent.</p>
+    /// <note>
+    /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
+    /// </note>
+    pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
+        self.notification_topic_arn.as_deref()
+    }
+    /// <p>This parameter is currently disabled.</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them.
+    /// For example, if you set <code>SnapshotRetentionLimit</code> to 5,
+    /// a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    /// <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
+    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+        self.snapshot_retention_limit
+    }
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
+    /// <p>Example: <code>05:00-09:00</code>
+    /// </p>
+    /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
+    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+        self.snapshot_window.as_deref()
+    }
+    /// <p>
+    /// <b>Reserved parameter.</b>  
+    /// The password used to access a password protected server.</p>
+    /// <p>
+    /// <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code> is
+    /// <code>true</code>.</p>
+    /// <important>
+    /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
+    /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
+    /// </important>
+    /// <p>Password constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be only printable ASCII characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128
+    /// characters in length.</p>
+    /// </li>
+    /// <li>
+    /// <p>The only permitted printable special characters are !, &, #, $, ^, <, >, and -. Other printable special characters cannot be used in the AUTH token.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+    /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+    /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
+    /// after the cluster is created. To enable in-transit encryption on a cluster
+    /// you must set <code>TransitEncryptionEnabled</code> to <code>true</code>
+    /// when you create a cluster.</p>
+    /// <p>This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>,
+    /// the <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later,
+    /// and the cluster is being created in an Amazon VPC.</p>
+    /// <p>If you enable in-transit encryption, you must also specify a value for
+    /// <code>CacheSubnetGroup</code>.</p>
+    /// <p>
+    /// <b>Required:</b>
+    /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    /// <important>
+    /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
+    /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
+    /// </important>
+    pub fn transit_encryption_enabled(&self) -> std::option::Option<bool> {
+        self.transit_encryption_enabled
+    }
+    /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
+    /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication
+    /// group is created.
+    /// To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+    /// <code>true</code> when you create the replication group. </p>
+    /// <p>
+    /// <b>Required:</b>
+    /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+    /// <p>Default: <code>false</code>
+    /// </p>
+    pub fn at_rest_encryption_enabled(&self) -> std::option::Option<bool> {
+        self.at_rest_encryption_enabled
+    }
+    /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The user group to associate with the replication group.</p>
+    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_group_ids.as_deref()
+    }
+    /// <p>Specifies the destination, format and type of the logs.</p>
+    pub fn log_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LogDeliveryConfigurationRequest]> {
+        self.log_delivery_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReplicationGroupInput");
@@ -20787,6 +23344,22 @@ pub struct CreateGlobalReplicationGroupInput {
     /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
     pub primary_replication_group_id: std::option::Option<std::string::String>,
 }
+impl CreateGlobalReplicationGroupInput {
+    /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix
+    /// to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
+    /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
+    pub fn global_replication_group_id_suffix(&self) -> std::option::Option<&str> {
+        self.global_replication_group_id_suffix.as_deref()
+    }
+    /// <p>Provides details of the Global datastore</p>
+    pub fn global_replication_group_description(&self) -> std::option::Option<&str> {
+        self.global_replication_group_description.as_deref()
+    }
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    pub fn primary_replication_group_id(&self) -> std::option::Option<&str> {
+        self.primary_replication_group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGlobalReplicationGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGlobalReplicationGroupInput");
@@ -20822,6 +23395,27 @@ pub struct CreateCacheSubnetGroupInput {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateCacheSubnetGroupInput {
+    /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// <p>Example: <code>mysubnetgroup</code>
+    /// </p>
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_name.as_deref()
+    }
+    /// <p>A description for the cache subnet group.</p>
+    pub fn cache_subnet_group_description(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_description.as_deref()
+    }
+    /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCacheSubnetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCacheSubnetGroupInput");
@@ -20849,6 +23443,23 @@ pub struct CreateCacheSecurityGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateCacheSecurityGroupInput {
+    /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
+    /// <p>Example: <code>mysecuritygroup</code>
+    /// </p>
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+        self.cache_security_group_name.as_deref()
+    }
+    /// <p>A description for the cache security group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCacheSecurityGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20883,6 +23494,35 @@ pub struct CreateCacheParameterGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateCacheParameterGroupInput {
+    /// <p>A user-specified name for the cache parameter group.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
+    /// <p>Valid values are:
+    /// <code>memcached1.4</code> |
+    /// <code>memcached1.5</code> |
+    /// <code>memcached1.6</code> |
+    /// <code>redis2.6</code> |
+    /// <code>redis2.8</code> |
+    /// <code>redis3.2</code> |
+    /// <code>redis4.0</code> |
+    /// <code>redis5.0</code> |
+    /// <code>redis6.x</code> |
+    /// </p>
+    pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_family.as_deref()
+    }
+    /// <p>A user-specified description for the cache parameter group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateCacheParameterGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21276,6 +23916,433 @@ pub struct CreateCacheClusterInput {
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfigurationRequest>>,
 }
+impl CreateCacheClusterInput {
+    /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>        
+    /// <p>
+    /// <b>Constraints:</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>A name must contain from 1 to 50 alphanumeric characters or hyphens.</p>
+    /// </li>
+    /// <li>
+    /// <p>The first character must be a letter.</p>
+    /// </li>
+    /// <li>
+    /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+        self.cache_cluster_id.as_deref()
+    }
+    /// <p>The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.</p>
+    /// <p>If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the cluster is created in Availability Zones that provide the best spread of read replicas across Availability Zones.</p>
+    /// <note>
+    /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+    /// </note>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or
+    /// created across multiple Availability Zones in the cluster's region.</p>
+    /// <p>This parameter is only supported for Memcached clusters.</p>
+    /// <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are not specified,
+    /// ElastiCache assumes <code>single-az</code> mode.</p>
+    pub fn az_mode(&self) -> std::option::Option<&crate::model::AzMode> {
+        self.az_mode.as_ref()
+    }
+    /// <p>The EC2 Availability Zone in which the cluster is created.</p>
+    /// <p>All nodes belonging to this cluster are placed in the preferred Availability Zone.
+    /// If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>Default: System chosen Availability Zone.</p>
+    pub fn preferred_availability_zone(&self) -> std::option::Option<&str> {
+        self.preferred_availability_zone.as_deref()
+    }
+    /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
+    /// <p>This option is only supported on Memcached.</p>
+    /// <note>
+    /// <p>If you are creating your cluster in an Amazon VPC (recommended) you can only locate nodes in Availability Zones that are associated with the subnets in the selected subnet group.</p>
+    /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheNodes</code>.</p>
+    /// </note>
+    /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or
+    /// repeat the Availability Zone multiple times in the list.</p>
+    /// <p>Default: System chosen Availability Zones.</p>
+    pub fn preferred_availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.preferred_availability_zones.as_deref()
+    }
+    /// <p>The initial number of cache nodes that the cluster has.</p>
+    /// <p>For clusters running Redis, this value must be 1.
+    /// For clusters running Memcached, this value must be between 1 and 40.</p>
+    /// <p>If you need more than 40 nodes for your Memcached cluster,
+    /// please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
+    pub fn num_cache_nodes(&self) -> std::option::Option<i32> {
+        self.num_cache_nodes
+    }
+    /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
+    /// <p>The following node types are supported by ElastiCache.
+    /// Generally speaking, the current generation types provide more memory and computational power
+    /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li>
+    /// <p>General purpose:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    /// <p>  
+    /// <code>cache.m6g.large</code>,
+    /// <code>cache.m6g.xlarge</code>,
+    /// <code>cache.m6g.2xlarge</code>,
+    /// <code>cache.m6g.4xlarge</code>,
+    /// <code>cache.m6g.8xlarge</code>,
+    /// <code>cache.m6g.12xlarge</code>,
+    /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
+    /// </p>  
+    ///
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    ///
+    ///
+    /// <p>
+    /// <b>M5 node types:</b>
+    /// <code>cache.m5.large</code>,
+    /// <code>cache.m5.xlarge</code>,
+    /// <code>cache.m5.2xlarge</code>,
+    /// <code>cache.m5.4xlarge</code>,
+    /// <code>cache.m5.12xlarge</code>,
+    /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
+    /// </p>  
+    ///
+    ///
+    /// <p>
+    /// <b>M4 node types:</b>
+    /// <code>cache.m4.large</code>,
+    /// <code>cache.m4.xlarge</code>,
+    /// <code>cache.m4.2xlarge</code>,
+    /// <code>cache.m4.4xlarge</code>,
+    /// <code>cache.m4.10xlarge</code>
+    /// </p>
+    /// <p>
+    /// <b>T3 node types:</b>
+    /// <code>cache.t3.micro</code>,
+    /// <code>cache.t3.small</code>,
+    /// <code>cache.t3.medium</code>
+    /// </p>
+    ///
+    ///
+    /// <p>
+    /// <b>T2 node types:</b>
+    /// <code>cache.t2.micro</code>,
+    /// <code>cache.t2.small</code>,
+    /// <code>cache.t2.medium</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>T1 node types:</b>
+    /// <code>cache.t1.micro</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M1 node types:</b>
+    /// <code>cache.m1.small</code>,
+    /// <code>cache.m1.medium</code>,
+    /// <code>cache.m1.large</code>,
+    /// <code>cache.m1.xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>M3 node types:</b>
+    /// <code>cache.m3.medium</code>,
+    /// <code>cache.m3.large</code>,
+    /// <code>cache.m3.xlarge</code>,
+    /// <code>cache.m3.2xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Compute optimized:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>C1 node types:</b>
+    /// <code>cache.c1.xlarge</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Memory optimized:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    /// <p>
+    /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    /// <code>cache.r6g.large</code>,
+    /// <code>cache.r6g.xlarge</code>,
+    /// <code>cache.r6g.2xlarge</code>,
+    /// <code>cache.r6g.4xlarge</code>,
+    /// <code>cache.r6g.8xlarge</code>,
+    /// <code>cache.r6g.12xlarge</code>,
+    /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>  
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    /// <p>
+    /// <b>R5 node types:</b>
+    /// <code>cache.r5.large</code>,
+    /// <code>cache.r5.xlarge</code>,
+    /// <code>cache.r5.2xlarge</code>,
+    /// <code>cache.r5.4xlarge</code>,
+    /// <code>cache.r5.12xlarge</code>,
+    /// <code>cache.r5.24xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R4 node types:</b>
+    /// <code>cache.r4.large</code>,
+    /// <code>cache.r4.xlarge</code>,
+    /// <code>cache.r4.2xlarge</code>,
+    /// <code>cache.r4.4xlarge</code>,
+    /// <code>cache.r4.8xlarge</code>,
+    /// <code>cache.r4.16xlarge</code>
+    /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </li>
+    /// <li>
+    /// <p>Previous generation: (not recommended)</p>
+    /// <p>
+    /// <b>M2 node types:</b>            
+    /// <code>cache.m2.xlarge</code>,
+    /// <code>cache.m2.2xlarge</code>,
+    /// <code>cache.m2.4xlarge</code>
+    /// </p>
+    ///
+    /// <p>
+    /// <b>R3 node types:</b>
+    /// <code>cache.r3.large</code>,
+    /// <code>cache.r3.xlarge</code>,
+    /// <code>cache.r3.2xlarge</code>,  
+    /// <code>cache.r3.4xlarge</code>,
+    /// <code>cache.r3.8xlarge</code>
+    /// </p>
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>
+    /// <b>Additional node type info</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>Redis configuration variables <code>appendonly</code> and
+    /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+    /// </li>
+    /// </ul>
+    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+        self.cache_node_type.as_deref()
+    }
+    /// <p>The name of the cache engine to be used for this cluster.</p>
+    /// <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code>
+    /// </p>
+    pub fn engine(&self) -> std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+    /// <p>The version number of the cache engine to be used for this cluster.
+    /// To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
+    ///
+    /// <p>
+    /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+    /// If you want to use an earlier engine version,
+    /// you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
+    pub fn engine_version(&self) -> std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>The name of the parameter group to associate with this cluster.
+    /// If this argument is omitted, the default parameter group for the specified engine is used.
+    /// You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+        self.cache_parameter_group_name.as_deref()
+    }
+    /// <p>The name of the subnet group to be used for the cluster.</p>
+    /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    /// <important>
+    /// <p>If you're going to launch your cluster in an Amazon VPC,
+    /// you need to create a subnet group before you start creating a cluster.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
+    /// </important>
+    pub fn cache_subnet_group_name(&self) -> std::option::Option<&str> {
+        self.cache_subnet_group_name.as_deref()
+    }
+    /// <p>A list of security group names to associate with this cluster.</p>
+    /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    pub fn cache_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_security_group_names.as_deref()
+    }
+    /// <p>One or more VPC security groups associated with the cluster.</p>
+    /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies
+    /// a Redis RDB snapshot file stored in Amazon S3.
+    /// The snapshot file is used to populate the node group (shard).
+    /// The Amazon S3 object name in the ARN cannot contain any commas.</p>
+    /// <note>
+    /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+    /// </note>
+    /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+    /// </p>
+    pub fn snapshot_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.snapshot_arns.as_deref()
+    }
+    /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard).
+    /// The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p>
+    /// <note>
+    /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+    /// </note>
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+        self.snapshot_name.as_deref()
+    }
+    /// <p>Specifies the weekly time range during which maintenance
+    /// on the cluster is performed. It is specified as a range in
+    /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+    /// maintenance window is a 60 minute period.
+    /// Valid values for <code>ddd</code> are:</p>
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+        self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The port number on which each of the cache nodes  accepts connections.</p>
+    pub fn port(&self) -> std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
+    /// to which notifications are sent.</p>
+    /// <note>
+    /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
+    /// </note>
+    pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
+        self.notification_topic_arn.as_deref()
+    }
+    /// <p>This parameter is currently disabled.</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them.
+    /// For example, if you set <code>SnapshotRetentionLimit</code> to 5,
+    /// a snapshot taken today is retained for 5 days before being deleted.</p>
+    /// <note>
+    /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+    /// </note>
+    /// <p>Default: 0 (i.e., automatic backups are disabled for this cache cluster).</p>
+    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+        self.snapshot_retention_limit
+    }
+    /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
+    /// <p>Example: <code>05:00-09:00</code>
+    /// </p>
+    /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
+    /// <note>
+    /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+    /// </note>
+    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+        self.snapshot_window.as_deref()
+    }
+    /// <p>
+    /// <b>Reserved parameter.</b>  
+    /// The password used to access a password protected server.</p>
+    /// <p>Password constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be only printable ASCII characters.</p>
+    /// </li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128
+    /// characters in length.</p>
+    /// </li>
+    /// <li>
+    /// <p>The only permitted printable special characters are !, &, #, $, ^, <, >, and -. Other printable special characters cannot be used in the AUTH token.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
+    pub fn auth_token(&self) -> std::option::Option<&str> {
+        self.auth_token.as_deref()
+    }
+    /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
+    pub fn outpost_mode(&self) -> std::option::Option<&crate::model::OutpostMode> {
+        self.outpost_mode.as_ref()
+    }
+    /// <p>The outpost ARN in which the cache cluster is created.</p>
+    pub fn preferred_outpost_arn(&self) -> std::option::Option<&str> {
+        self.preferred_outpost_arn.as_deref()
+    }
+    /// <p>The outpost ARNs in which the cache cluster is created.</p>
+    pub fn preferred_outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.preferred_outpost_arns.as_deref()
+    }
+    /// <p>Specifies the destination, format and type of the logs. </p>
+    pub fn log_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::LogDeliveryConfigurationRequest]> {
+        self.log_delivery_configurations.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCacheClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCacheClusterInput");
@@ -21354,6 +24421,36 @@ pub struct CopySnapshotInput {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CopySnapshotInput {
+    /// <p>The name of an existing snapshot from which to make a copy.</p>
+    pub fn source_snapshot_name(&self) -> std::option::Option<&str> {
+        self.source_snapshot_name.as_deref()
+    }
+    /// <p>A name for the snapshot copy.
+    /// ElastiCache does not permit overwriting a snapshot, therefore
+    /// this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    pub fn target_snapshot_name(&self) -> std::option::Option<&str> {
+        self.target_snapshot_name.as_deref()
+    }
+    /// <p>The Amazon S3 bucket to which the snapshot is exported.
+    /// This parameter is used only when exporting a snapshot for external access.</p>
+    /// <p>When using this parameter to export a snapshot,
+    /// be sure Amazon ElastiCache has the needed permissions to this S3 bucket.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+    ///
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+    pub fn target_bucket(&self) -> std::option::Option<&str> {
+        self.target_bucket.as_deref()
+    }
+    /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CopySnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopySnapshotInput");
@@ -21375,6 +24472,16 @@ pub struct CompleteMigrationInput {
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub force: bool,
 }
+impl CompleteMigrationInput {
+    /// <p>The ID of the replication group to which data is being migrated.</p>
+    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+        self.replication_group_id.as_deref()
+    }
+    /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
+    pub fn force(&self) -> bool {
+        self.force
+    }
+}
 impl std::fmt::Debug for CompleteMigrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompleteMigrationInput");
@@ -21394,6 +24501,20 @@ pub struct BatchStopUpdateActionInput {
     pub cache_cluster_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
+}
+impl BatchStopUpdateActionInput {
+    /// <p>The replication group IDs</p>
+    pub fn replication_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_group_ids.as_deref()
+    }
+    /// <p>The cache cluster IDs</p>
+    pub fn cache_cluster_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_cluster_ids.as_deref()
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
+        self.service_update_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchStopUpdateActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21415,6 +24536,20 @@ pub struct BatchApplyUpdateActionInput {
     pub cache_cluster_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
+}
+impl BatchApplyUpdateActionInput {
+    /// <p>The replication group IDs</p>
+    pub fn replication_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.replication_group_ids.as_deref()
+    }
+    /// <p>The cache cluster IDs</p>
+    pub fn cache_cluster_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.cache_cluster_ids.as_deref()
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
+        self.service_update_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchApplyUpdateActionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21438,6 +24573,22 @@ pub struct AuthorizeCacheSecurityGroupIngressInput {
     /// Note that this is not the same thing as an Amazon access key ID -
     /// you must provide a valid Amazon account number for this parameter.</p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
+}
+impl AuthorizeCacheSecurityGroupIngressInput {
+    /// <p>The cache security group that allows network ingress.</p>
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+        self.cache_security_group_name.as_deref()
+    }
+    /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_name.as_deref()
+    }
+    /// <p>The Amazon account number of the Amazon EC2 security group owner.
+    /// Note that this is not the same thing as an Amazon access key ID -
+    /// you must provide a valid Amazon account number for this parameter.</p>
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+        self.ec2_security_group_owner_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AuthorizeCacheSecurityGroupIngressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21465,6 +24616,21 @@ pub struct AddTagsToResourceInput {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
     /// A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl AddTagsToResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added,
+    /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+    /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+    /// ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
+    /// A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for AddTagsToResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

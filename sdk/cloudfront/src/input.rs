@@ -1215,10 +1215,8 @@ impl CreateFunctionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_function(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_function(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2254,10 +2252,7 @@ impl CreateRealtimeLogConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_realtime_log_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4744,10 +4739,7 @@ impl DeleteRealtimeLogConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_realtime_log_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8353,10 +8345,7 @@ impl GetRealtimeLogConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_realtime_log_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10512,7 +10501,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_distributions_by_realtime_log_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_distributions_by_realtime_log_config(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13420,10 +13409,7 @@ impl TestFunctionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_test_function(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_test_function(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14926,10 +14912,8 @@ impl UpdateFunctionInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_function(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_function(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15807,10 +15791,7 @@ impl UpdateRealtimeLogConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_realtime_log_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16331,6 +16312,23 @@ pub struct UpdateStreamingDistributionInput {
     /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl UpdateStreamingDistributionInput {
+    /// <p>The streaming distribution's configuration information.</p>
+    pub fn streaming_distribution_config(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistributionConfig> {
+        self.streaming_distribution_config.as_ref()
+    }
+    /// <p>The streaming distribution's id.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
+    /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateStreamingDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStreamingDistributionInput");
@@ -16357,6 +16355,24 @@ pub struct UpdateResponseHeadersPolicyInput {
     /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
     /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdateResponseHeadersPolicyInput {
+    /// <p>A response headers policy configuration.</p>
+    pub fn response_headers_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyConfig> {
+        self.response_headers_policy_config.as_ref()
+    }
+    /// <p>The identifier for the response headers policy that you are updating.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the response headers policy that you are updating.</p>
+    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
+    /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateResponseHeadersPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16391,6 +16407,33 @@ pub struct UpdateRealtimeLogConfigInput {
     /// provide an integer between 1 and 100, inclusive.</p>
     pub sampling_rate: std::option::Option<i64>,
 }
+impl UpdateRealtimeLogConfigInput {
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
+    /// log data.</p>
+    pub fn end_points(&self) -> std::option::Option<&[crate::model::EndPoint]> {
+        self.end_points.as_deref()
+    }
+    /// <p>A list of fields to include in each real-time log record.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn fields(&self) -> std::option::Option<&[std::string::String]> {
+        self.fields.as_deref()
+    }
+    /// <p>The name for this real-time log configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
+    /// percentage of viewer requests that are represented in the real-time log data. You must
+    /// provide an integer between 1 and 100, inclusive.</p>
+    pub fn sampling_rate(&self) -> std::option::Option<i64> {
+        self.sampling_rate
+    }
+}
 impl std::fmt::Debug for UpdateRealtimeLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRealtimeLogConfigInput");
@@ -16414,6 +16457,21 @@ pub struct UpdatePublicKeyInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdatePublicKeyInput {
+    /// <p>A public key configuration.</p>
+    pub fn public_key_config(&self) -> std::option::Option<&crate::model::PublicKeyConfig> {
+        self.public_key_config.as_ref()
+    }
+    /// <p>The identifier of the public key that you are updating.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
+    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16440,6 +16498,26 @@ pub struct UpdateOriginRequestPolicyInput {
     /// <code>GetOriginRequestPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl UpdateOriginRequestPolicyInput {
+    /// <p>An origin request policy configuration.</p>
+    pub fn origin_request_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginRequestPolicyConfig> {
+        self.origin_request_policy_config.as_ref()
+    }
+    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
+    /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
+    /// to <code>GetDistributionConfig</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the origin request policy that you are updating. The version is returned in
+    /// the origin request policy’s <code>ETag</code> field in the response to
+    /// <code>GetOriginRequestPolicyConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateOriginRequestPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOriginRequestPolicyInput");
@@ -16464,6 +16542,21 @@ pub struct UpdateKeyGroupInput {
     /// <p>The version of the key group that you are updating. The version is the key group’s
     /// <code>ETag</code> value.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdateKeyGroupInput {
+    /// <p>The key group configuration.</p>
+    pub fn key_group_config(&self) -> std::option::Option<&crate::model::KeyGroupConfig> {
+        self.key_group_config.as_ref()
+    }
+    /// <p>The identifier of the key group that you are updating.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the key group that you are updating. The version is the key group’s
+    /// <code>ETag</code> value.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateKeyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16490,6 +16583,26 @@ pub struct UpdateFunctionInput {
     /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
 }
+impl UpdateFunctionInput {
+    /// <p>The name of the function that you are updating.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
+    /// you can get using <code>DescribeFunction</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+    /// <p>Configuration information about the function.</p>
+    pub fn function_config(&self) -> std::option::Option<&crate::model::FunctionConfig> {
+        self.function_config.as_ref()
+    }
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
+    /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn function_code(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.function_code.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionInput");
@@ -16513,6 +16626,23 @@ pub struct UpdateFieldLevelEncryptionProfileInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdateFieldLevelEncryptionProfileInput {
+    /// <p>Request to update a field-level encryption profile. </p>
+    pub fn field_level_encryption_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileConfig> {
+        self.field_level_encryption_profile_config.as_ref()
+    }
+    /// <p>The ID of the field-level encryption profile request. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
+    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateFieldLevelEncryptionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16540,6 +16670,23 @@ pub struct UpdateFieldLevelEncryptionConfigInput {
     /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl UpdateFieldLevelEncryptionConfigInput {
+    /// <p>Request to update a field-level encryption configuration. </p>
+    pub fn field_level_encryption_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionConfig> {
+        self.field_level_encryption_config.as_ref()
+    }
+    /// <p>The ID of the configuration you want to update.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
+    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFieldLevelEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFieldLevelEncryptionConfigInput");
@@ -16565,6 +16712,21 @@ pub struct UpdateDistributionInput {
     /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl UpdateDistributionInput {
+    /// <p>The distribution's configuration information.</p>
+    pub fn distribution_config(&self) -> std::option::Option<&crate::model::DistributionConfig> {
+        self.distribution_config.as_ref()
+    }
+    /// <p>The distribution's id.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
+    /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDistributionInput");
@@ -16587,6 +16749,23 @@ pub struct UpdateCloudFrontOriginAccessIdentityInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the
     /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl UpdateCloudFrontOriginAccessIdentityInput {
+    /// <p>The identity's configuration information.</p>
+    pub fn cloud_front_origin_access_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityConfig> {
+        self.cloud_front_origin_access_identity_config.as_ref()
+    }
+    /// <p>The identity's id.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
+    /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16616,6 +16795,24 @@ pub struct UpdateCachePolicyInput {
     /// <code>GetCachePolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl UpdateCachePolicyInput {
+    /// <p>A cache policy configuration.</p>
+    pub fn cache_policy_config(&self) -> std::option::Option<&crate::model::CachePolicyConfig> {
+        self.cache_policy_config.as_ref()
+    }
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
+    /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
+    /// <code>GetDistributionConfig</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache
+    /// policy’s <code>ETag</code> field in the response to
+    /// <code>GetCachePolicyConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateCachePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCachePolicyInput");
@@ -16634,6 +16831,16 @@ pub struct UntagResourceInput {
     pub resource: std::option::Option<std::string::String>,
     /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub tag_keys: std::option::Option<crate::model::TagKeys>,
+}
+impl UntagResourceInput {
+    /// <p> An ARN of a CloudFront resource.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&crate::model::TagKeys> {
+        self.tag_keys.as_ref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16660,6 +16867,27 @@ pub struct TestFunctionInput {
     /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub event_object: std::option::Option<aws_smithy_types::Blob>,
 }
+impl TestFunctionInput {
+    /// <p>The name of the function that you are testing.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
+    /// you can get using <code>DescribeFunction</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+    /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
+    /// <code>LIVE</code>.</p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
+        self.stage.as_ref()
+    }
+    /// <p>The event object to test the function with. For more information about the structure of the
+    /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn event_object(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.event_object.as_ref()
+    }
+}
 impl std::fmt::Debug for TestFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestFunctionInput");
@@ -16680,6 +16908,16 @@ pub struct TagResourceInput {
     /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: std::option::Option<crate::model::Tags>,
 }
+impl TagResourceInput {
+    /// <p> An ARN of a CloudFront resource.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(&self) -> std::option::Option<&crate::model::Tags> {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -16699,6 +16937,17 @@ pub struct PublishFunctionInput {
     /// you can get using <code>DescribeFunction</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl PublishFunctionInput {
+    /// <p>The name of the function that you are publishing.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
+    /// you can get using <code>DescribeFunction</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for PublishFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PublishFunctionInput");
@@ -16714,6 +16963,12 @@ impl std::fmt::Debug for PublishFunctionInput {
 pub struct ListTagsForResourceInput {
     /// <p> An ARN of a CloudFront resource.</p>
     pub resource: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p> An ARN of a CloudFront resource.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16731,6 +16986,16 @@ pub struct ListStreamingDistributionsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListStreamingDistributionsInput {
+    /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListStreamingDistributionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16767,6 +17032,35 @@ pub struct ListResponseHeadersPoliciesInput {
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListResponseHeadersPoliciesInput {
+    /// <p>A filter to get only the specified kind of response headers policies. Valid values
+    /// are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>custom</code> – Gets only the custom policies created in your
+    /// Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResponseHeadersPolicyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of response
+    /// headers policies. The response includes response headers policies in the list that occur
+    /// after the marker. To get the next page of the list, set this field’s value to the value
+    /// of <code>NextMarker</code> from the current page’s response. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListResponseHeadersPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResponseHeadersPoliciesInput");
@@ -16789,6 +17083,19 @@ pub struct ListRealtimeLogConfigsInput {
     /// value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl ListRealtimeLogConfigsInput {
+    /// <p>The maximum number of real-time log configurations that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
+    /// log configurations. The response includes real-time log configurations in the list that
+    /// occur after the marker. To get the next page of the list, set this field’s value to the
+    /// value of <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRealtimeLogConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRealtimeLogConfigsInput");
@@ -16808,6 +17115,18 @@ pub struct ListPublicKeysInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of public keys you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListPublicKeysInput {
+    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
+    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
+    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of public keys you want in the response body. </p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListPublicKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16843,6 +17162,34 @@ pub struct ListOriginRequestPoliciesInput {
     /// <p>The maximum number of origin request policies that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListOriginRequestPoliciesInput {
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values
+    /// are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::OriginRequestPolicyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// origin request policies. The response includes origin request policies in the list that
+    /// occur after the marker. To get the next page of the list, set this field’s value to the
+    /// value of <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of origin request policies that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListOriginRequestPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOriginRequestPoliciesInput");
@@ -16864,6 +17211,19 @@ pub struct ListKeyGroupsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of key groups that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListKeyGroupsInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of key
+    /// groups. The response includes key groups in the list that occur after the marker. To get
+    /// the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of key groups that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListKeyGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16891,6 +17251,26 @@ pub struct ListInvalidationsInput {
     /// body.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListInvalidationsInput {
+    /// <p>The distribution's ID.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
+    /// <p>Use this parameter when paginating results to indicate where to begin in your list of
+    /// invalidation batches. Because the results are returned in decreasing order from most recent to
+    /// oldest, the most recent results are on the first page, the second page will contain earlier
+    /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
+    /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
+    /// of the last invalidation batch on that page. </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of invalidation batches that you want in the response
+    /// body.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListInvalidationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvalidationsInput");
@@ -16916,6 +17296,24 @@ pub struct ListFunctionsInput {
     /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
+impl ListFunctionsInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// functions. The response includes functions in the list that occur after the marker. To
+    /// get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of functions that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>An optional filter to return only the functions that are in the specified stage,
+    /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
+        self.stage.as_ref()
+    }
+}
 impl std::fmt::Debug for ListFunctionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFunctionsInput");
@@ -16937,6 +17335,18 @@ pub struct ListFieldLevelEncryptionProfilesInput {
     /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListFieldLevelEncryptionProfilesInput {
+    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
+    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
+    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListFieldLevelEncryptionProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFieldLevelEncryptionProfilesInput");
@@ -16956,6 +17366,18 @@ pub struct ListFieldLevelEncryptionConfigsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListFieldLevelEncryptionConfigsInput {
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
+    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
+    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListFieldLevelEncryptionConfigsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16985,6 +17407,27 @@ pub struct ListDistributionsByWebAclIdInput {
     /// associated with a web ACL.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
 }
+impl ListDistributionsByWebAclIdInput {
+    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
+    /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
+    /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
+    /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
+    /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
+    /// The maximum and default values are both 100.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
+    /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
+    /// associated with a web ACL.</p>
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+        self.web_acl_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByWebAclIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByWebAclIdInput");
@@ -17009,6 +17452,24 @@ pub struct ListDistributionsByResponseHeadersPolicyIdInput {
     /// <p>The ID of the response headers policy whose associated distribution IDs you want to
     /// list.</p>
     pub response_headers_policy_id: std::option::Option<std::string::String>,
+}
+impl ListDistributionsByResponseHeadersPolicyIdInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// distribution IDs. The response includes distribution IDs in the list that occur after
+    /// the marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The ID of the response headers policy whose associated distribution IDs you want to
+    /// list.</p>
+    pub fn response_headers_policy_id(&self) -> std::option::Option<&str> {
+        self.response_headers_policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17041,6 +17502,29 @@ pub struct ListDistributionsByRealtimeLogConfigInput {
     /// distributions you want to list.</p>
     pub realtime_log_config_arn: std::option::Option<std::string::String>,
 }
+impl ListDistributionsByRealtimeLogConfigInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// distributions. The response includes distributions in the list that occur after the
+    /// marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distributions that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The name of the real-time log configuration whose associated distributions you want to
+    /// list.</p>
+    pub fn realtime_log_config_name(&self) -> std::option::Option<&str> {
+        self.realtime_log_config_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
+    /// distributions you want to list.</p>
+    pub fn realtime_log_config_arn(&self) -> std::option::Option<&str> {
+        self.realtime_log_config_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByRealtimeLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByRealtimeLogConfigInput");
@@ -17067,6 +17551,24 @@ pub struct ListDistributionsByOriginRequestPolicyIdInput {
     /// list.</p>
     pub origin_request_policy_id: std::option::Option<std::string::String>,
 }
+impl ListDistributionsByOriginRequestPolicyIdInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// distribution IDs. The response includes distribution IDs in the list that occur after
+    /// the marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The ID of the origin request policy whose associated distribution IDs you want to
+    /// list.</p>
+    pub fn origin_request_policy_id(&self) -> std::option::Option<&str> {
+        self.origin_request_policy_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByOriginRequestPolicyIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByOriginRequestPolicyIdInput");
@@ -17090,6 +17592,23 @@ pub struct ListDistributionsByKeyGroupInput {
     pub max_items: std::option::Option<i32>,
     /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
     pub key_group_id: std::option::Option<std::string::String>,
+}
+impl ListDistributionsByKeyGroupInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// distribution IDs. The response includes distribution IDs in the list that occur after
+    /// the marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
+    pub fn key_group_id(&self) -> std::option::Option<&str> {
+        self.key_group_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDistributionsByKeyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17115,6 +17634,23 @@ pub struct ListDistributionsByCachePolicyIdInput {
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
     pub cache_policy_id: std::option::Option<std::string::String>,
 }
+impl ListDistributionsByCachePolicyIdInput {
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// distribution IDs. The response includes distribution IDs in the list that occur after
+    /// the marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distribution IDs that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
+    pub fn cache_policy_id(&self) -> std::option::Option<&str> {
+        self.cache_policy_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDistributionsByCachePolicyIdInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDistributionsByCachePolicyIdInput");
@@ -17137,6 +17673,20 @@ pub struct ListDistributionsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions you want in the response body.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListDistributionsInput {
+    /// <p>Use this when paginating results to indicate where to begin in your list of
+    /// distributions. The results include distributions in the list that occur after the marker. To
+    /// get the next page of results, set the <code>Marker</code> to the value of the
+    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
+    /// distribution on that page).</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of distributions you want in the response body.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListDistributionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17164,6 +17714,28 @@ pub struct ListConflictingAliasesInput {
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListConflictingAliasesInput {
+    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
+    /// includes the provided alias.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
+    /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in the list of
+    /// conflicting aliases. The response includes conflicting aliases in the list that occur
+    /// after the marker. To get the next page of the list, set this field’s value to the value
+    /// of <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of conflicting aliases that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListConflictingAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConflictingAliasesInput");
@@ -17188,6 +17760,21 @@ pub struct ListCloudFrontOriginAccessIdentitiesInput {
     /// <p>The maximum number of origin access identities you want in the response body.
     /// </p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListCloudFrontOriginAccessIdentitiesInput {
+    /// <p>Use this when paginating results to indicate where to begin in your list of origin
+    /// access identities. The results include identities in the list that occur after the marker. To
+    /// get the next page of results, set the <code>Marker</code> to the value of the
+    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
+    /// identity on that page).</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of origin access identities you want in the response body.
+    /// </p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListCloudFrontOriginAccessIdentitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17223,6 +17810,34 @@ pub struct ListCachePoliciesInput {
     /// <p>The maximum number of cache policies that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListCachePoliciesInput {
+    /// <p>A filter to return only the specified kinds of cache policies. Valid values
+    /// are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CachePolicyType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of
+    /// cache policies. The response includes cache policies in the list that occur after the
+    /// marker. To get the next page of the list, set this field’s value to the value of
+    /// <code>NextMarker</code> from the current page’s response.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The maximum number of cache policies that you want in the response.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListCachePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCachePoliciesInput");
@@ -17240,6 +17855,12 @@ pub struct GetStreamingDistributionConfigInput {
     /// <p>The streaming distribution's ID.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetStreamingDistributionConfigInput {
+    /// <p>The streaming distribution's ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetStreamingDistributionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetStreamingDistributionConfigInput");
@@ -17254,6 +17875,12 @@ impl std::fmt::Debug for GetStreamingDistributionConfigInput {
 pub struct GetStreamingDistributionInput {
     /// <p>The streaming distribution's ID.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetStreamingDistributionInput {
+    /// <p>The streaming distribution's ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStreamingDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17275,6 +17902,17 @@ pub struct GetResponseHeadersPolicyConfigInput {
     /// <code>ListResponseHeadersPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetResponseHeadersPolicyConfigInput {
+    /// <p>The identifier for the response headers policy.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+    /// get the policy’s identifier using <code>ListDistributions</code> or
+    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+    /// cache behavior, you can get the identifier using
+    /// <code>ListResponseHeadersPolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResponseHeadersPolicyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResponseHeadersPolicyConfigInput");
@@ -17295,6 +17933,17 @@ pub struct GetResponseHeadersPolicyInput {
     /// <code>ListResponseHeadersPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetResponseHeadersPolicyInput {
+    /// <p>The identifier for the response headers policy.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+    /// get the policy’s identifier using <code>ListDistributions</code> or
+    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+    /// cache behavior, you can get the identifier using
+    /// <code>ListResponseHeadersPolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResponseHeadersPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResponseHeadersPolicyInput");
@@ -17312,6 +17961,16 @@ pub struct GetRealtimeLogConfigInput {
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetRealtimeLogConfigInput {
+    /// <p>The name of the real-time log configuration to get.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRealtimeLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRealtimeLogConfigInput");
@@ -17328,6 +17987,12 @@ pub struct GetPublicKeyConfigInput {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetPublicKeyConfigInput {
+    /// <p>The identifier of the public key whose configuration you are getting.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPublicKeyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPublicKeyConfigInput");
@@ -17342,6 +18007,12 @@ impl std::fmt::Debug for GetPublicKeyConfigInput {
 pub struct GetPublicKeyInput {
     /// <p>The identifier of the public key you are getting.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetPublicKeyInput {
+    /// <p>The identifier of the public key you are getting.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17362,6 +18033,16 @@ pub struct GetOriginRequestPolicyConfigInput {
     /// <code>ListOriginRequestPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetOriginRequestPolicyConfigInput {
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is
+    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
+    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
+    /// policy is not attached to a cache behavior, you can get the identifier using
+    /// <code>ListOriginRequestPolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOriginRequestPolicyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOriginRequestPolicyConfigInput");
@@ -17381,6 +18062,16 @@ pub struct GetOriginRequestPolicyInput {
     /// <code>ListOriginRequestPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetOriginRequestPolicyInput {
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is
+    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
+    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
+    /// policy is not attached to a cache behavior, you can get the identifier using
+    /// <code>ListOriginRequestPolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOriginRequestPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOriginRequestPolicyInput");
@@ -17395,6 +18086,12 @@ impl std::fmt::Debug for GetOriginRequestPolicyInput {
 pub struct GetMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
     pub distribution_id: std::option::Option<std::string::String>,
+}
+impl GetMonitoringSubscriptionInput {
+    /// <p>The ID of the distribution that you are getting metrics information for.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMonitoringSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17412,6 +18109,13 @@ pub struct GetKeyGroupConfigInput {
     /// identifier, use <code>ListKeyGroups</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetKeyGroupConfigInput {
+    /// <p>The identifier of the key group whose configuration you are getting. To get the
+    /// identifier, use <code>ListKeyGroups</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetKeyGroupConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetKeyGroupConfigInput");
@@ -17427,6 +18131,13 @@ pub struct GetKeyGroupInput {
     /// <p>The identifier of the key group that you are getting. To get the identifier, use
     /// <code>ListKeyGroups</code>.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetKeyGroupInput {
+    /// <p>The identifier of the key group that you are getting. To get the identifier, use
+    /// <code>ListKeyGroups</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetKeyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17446,6 +18157,17 @@ pub struct GetInvalidationInput {
     /// <code>IDFDVBD632BHDS5</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetInvalidationInput {
+    /// <p>The distribution's ID.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
+    /// <p>The identifier for the invalidation request, for example,
+    /// <code>IDFDVBD632BHDS5</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetInvalidationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInvalidationInput");
@@ -17464,6 +18186,16 @@ pub struct GetFunctionInput {
     /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
+impl GetFunctionInput {
+    /// <p>The name of the function whose code you are getting.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
+        self.stage.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionInput");
@@ -17480,6 +18212,12 @@ pub struct GetFieldLevelEncryptionProfileConfigInput {
     /// <p>Get the ID for the field-level encryption profile configuration information.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetFieldLevelEncryptionProfileConfigInput {
+    /// <p>Get the ID for the field-level encryption profile configuration information.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFieldLevelEncryptionProfileConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFieldLevelEncryptionProfileConfigInput");
@@ -17494,6 +18232,12 @@ impl std::fmt::Debug for GetFieldLevelEncryptionProfileConfigInput {
 pub struct GetFieldLevelEncryptionProfileInput {
     /// <p>Get the ID for the field-level encryption profile information.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetFieldLevelEncryptionProfileInput {
+    /// <p>Get the ID for the field-level encryption profile information.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFieldLevelEncryptionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17510,6 +18254,12 @@ pub struct GetFieldLevelEncryptionConfigInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetFieldLevelEncryptionConfigInput {
+    /// <p>Request the ID for the field-level encryption configuration information.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFieldLevelEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFieldLevelEncryptionConfigInput");
@@ -17524,6 +18274,12 @@ impl std::fmt::Debug for GetFieldLevelEncryptionConfigInput {
 pub struct GetFieldLevelEncryptionInput {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetFieldLevelEncryptionInput {
+    /// <p>Request the ID for the field-level encryption configuration information.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFieldLevelEncryptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17540,6 +18296,12 @@ pub struct GetDistributionConfigInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetDistributionConfigInput {
+    /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDistributionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDistributionConfigInput");
@@ -17554,6 +18316,12 @@ impl std::fmt::Debug for GetDistributionConfigInput {
 pub struct GetDistributionInput {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetDistributionInput {
+    /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17571,6 +18339,12 @@ pub struct GetCloudFrontOriginAccessIdentityConfigInput {
     /// <p>The identity's ID. </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetCloudFrontOriginAccessIdentityConfigInput {
+    /// <p>The identity's ID. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCloudFrontOriginAccessIdentityConfigInput");
@@ -17585,6 +18359,12 @@ impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityConfigInput {
 pub struct GetCloudFrontOriginAccessIdentityInput {
     /// <p>The identity's ID.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetCloudFrontOriginAccessIdentityInput {
+    /// <p>The identity's ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17605,6 +18385,16 @@ pub struct GetCachePolicyConfigInput {
     /// <code>ListCachePolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetCachePolicyConfigInput {
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
+    /// distribution’s cache behavior, you can get the policy’s identifier using
+    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
+    /// not attached to a cache behavior, you can get the identifier using
+    /// <code>ListCachePolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCachePolicyConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCachePolicyConfigInput");
@@ -17624,6 +18414,16 @@ pub struct GetCachePolicyInput {
     /// <code>ListCachePolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetCachePolicyInput {
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
+    /// distribution’s cache behavior, you can get the policy’s identifier using
+    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
+    /// not attached to a cache behavior, you can get the identifier using
+    /// <code>ListCachePolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetCachePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCachePolicyInput");
@@ -17640,6 +18440,16 @@ pub struct DescribeFunctionInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
+}
+impl DescribeFunctionInput {
+    /// <p>The name of the function that you are getting information about.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
+        self.stage.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17659,6 +18469,17 @@ pub struct DeleteStreamingDistributionInput {
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the
     /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl DeleteStreamingDistributionInput {
+    /// <p>The distribution ID. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the
+    /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStreamingDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17683,6 +18504,21 @@ pub struct DeleteResponseHeadersPolicyInput {
     /// <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl DeleteResponseHeadersPolicyInput {
+    /// <p>The identifier for the response headers policy that you are deleting.</p>
+    /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the response headers policy that you are deleting.</p>
+    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
+    /// get using <code>ListResponseHeadersPolicies</code>,
+    /// <code>GetResponseHeadersPolicy</code>, or
+    /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResponseHeadersPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResponseHeadersPolicyInput");
@@ -17700,6 +18536,16 @@ pub struct DeleteRealtimeLogConfigInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteRealtimeLogConfigInput {
+    /// <p>The name of the real-time log configuration to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRealtimeLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17719,6 +18565,17 @@ pub struct DeletePublicKeyInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the
     /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl DeletePublicKeyInput {
+    /// <p>The ID of the public key you want to remove from CloudFront.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
+    /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for DeletePublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17742,6 +18599,20 @@ pub struct DeleteOriginRequestPolicyInput {
     /// <code>GetOriginRequestPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl DeleteOriginRequestPolicyInput {
+    /// <p>The unique identifier for the origin request policy that you are deleting. To get the
+    /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the origin request policy that you are deleting. The version is the origin
+    /// request policy’s <code>ETag</code> value, which you can get using
+    /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
+    /// <code>GetOriginRequestPolicyConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteOriginRequestPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteOriginRequestPolicyInput");
@@ -17757,6 +18628,12 @@ impl std::fmt::Debug for DeleteOriginRequestPolicyInput {
 pub struct DeleteMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
     pub distribution_id: std::option::Option<std::string::String>,
+}
+impl DeleteMonitoringSubscriptionInput {
+    /// <p>The ID of the distribution that you are disabling metrics for.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteMonitoringSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17778,6 +18655,19 @@ pub struct DeleteKeyGroupInput {
     /// <code>GetKeyGroupConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl DeleteKeyGroupInput {
+    /// <p>The identifier of the key group that you are deleting. To get the identifier, use
+    /// <code>ListKeyGroups</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the key group that you are deleting. The version is the key group’s
+    /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
+    /// <code>GetKeyGroupConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteKeyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteKeyGroupInput");
@@ -17796,6 +18686,17 @@ pub struct DeleteFunctionInput {
     /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
     /// you can get using <code>DescribeFunction</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl DeleteFunctionInput {
+    /// <p>The name of the function that you are deleting.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
+    /// you can get using <code>DescribeFunction</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17816,6 +18717,17 @@ pub struct DeleteFieldLevelEncryptionProfileInput {
     /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl DeleteFieldLevelEncryptionProfileInput {
+    /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
+    /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFieldLevelEncryptionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFieldLevelEncryptionProfileInput");
@@ -17834,6 +18746,17 @@ pub struct DeleteFieldLevelEncryptionConfigInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the
     /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl DeleteFieldLevelEncryptionConfigInput {
+    /// <p>The ID of the configuration you want to delete from CloudFront.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
+    /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteFieldLevelEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17900,6 +18823,17 @@ pub struct DeleteDistributionInput {
     /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl DeleteDistributionInput {
+    /// <p>The distribution ID. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the
+    /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDistributionInput");
@@ -17918,6 +18852,17 @@ pub struct DeleteCloudFrontOriginAccessIdentityInput {
     /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
     /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
+}
+impl DeleteCloudFrontOriginAccessIdentityInput {
+    /// <p>The origin access identity's ID.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
+    /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCloudFrontOriginAccessIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17941,6 +18886,20 @@ pub struct DeleteCachePolicyInput {
     /// <code>GetCachePolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
+impl DeleteCachePolicyInput {
+    /// <p>The unique identifier for the cache policy that you are deleting. To get the
+    /// identifier, you can use <code>ListCachePolicies</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version of the cache policy that you are deleting. The version is the cache
+    /// policy’s <code>ETag</code> value, which you can get using
+    /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
+    /// <code>GetCachePolicyConfig</code>.</p>
+    pub fn if_match(&self) -> std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCachePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCachePolicyInput");
@@ -17957,6 +18916,14 @@ pub struct CreateStreamingDistributionWithTagsInput {
     /// <p> The streaming distribution's configuration information. </p>
     pub streaming_distribution_config_with_tags:
         std::option::Option<crate::model::StreamingDistributionConfigWithTags>,
+}
+impl CreateStreamingDistributionWithTagsInput {
+    /// <p> The streaming distribution's configuration information. </p>
+    pub fn streaming_distribution_config_with_tags(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistributionConfigWithTags> {
+        self.streaming_distribution_config_with_tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStreamingDistributionWithTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17977,6 +18944,14 @@ pub struct CreateStreamingDistributionInput {
     pub streaming_distribution_config:
         std::option::Option<crate::model::StreamingDistributionConfig>,
 }
+impl CreateStreamingDistributionInput {
+    /// <p>The streaming distribution's configuration information.</p>
+    pub fn streaming_distribution_config(
+        &self,
+    ) -> std::option::Option<&crate::model::StreamingDistributionConfig> {
+        self.streaming_distribution_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateStreamingDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamingDistributionInput");
@@ -17996,6 +18971,15 @@ pub struct CreateResponseHeadersPolicyInput {
     /// specify the response headers.</p>
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+}
+impl CreateResponseHeadersPolicyInput {
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that
+    /// specify the response headers.</p>
+    pub fn response_headers_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ResponseHeadersPolicyConfig> {
+        self.response_headers_policy_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateResponseHeadersPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18026,6 +19010,29 @@ pub struct CreateRealtimeLogConfigInput {
     /// provide an integer between 1 and 100, inclusive.</p>
     pub sampling_rate: std::option::Option<i64>,
 }
+impl CreateRealtimeLogConfigInput {
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
+    /// log data.</p>
+    pub fn end_points(&self) -> std::option::Option<&[crate::model::EndPoint]> {
+        self.end_points.as_deref()
+    }
+    /// <p>A list of fields to include in each real-time log record.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn fields(&self) -> std::option::Option<&[std::string::String]> {
+        self.fields.as_deref()
+    }
+    /// <p>A unique name to identify this real-time log configuration.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
+    /// percentage of viewer requests that are represented in the real-time log data. You must
+    /// provide an integer between 1 and 100, inclusive.</p>
+    pub fn sampling_rate(&self) -> std::option::Option<i64> {
+        self.sampling_rate
+    }
+}
 impl std::fmt::Debug for CreateRealtimeLogConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRealtimeLogConfigInput");
@@ -18044,6 +19051,12 @@ pub struct CreatePublicKeyInput {
     /// <p>A CloudFront public key configuration.</p>
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
 }
+impl CreatePublicKeyInput {
+    /// <p>A CloudFront public key configuration.</p>
+    pub fn public_key_config(&self) -> std::option::Option<&crate::model::PublicKeyConfig> {
+        self.public_key_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreatePublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePublicKeyInput");
@@ -18058,6 +19071,14 @@ impl std::fmt::Debug for CreatePublicKeyInput {
 pub struct CreateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
+}
+impl CreateOriginRequestPolicyInput {
+    /// <p>An origin request policy configuration.</p>
+    pub fn origin_request_policy_config(
+        &self,
+    ) -> std::option::Option<&crate::model::OriginRequestPolicyConfig> {
+        self.origin_request_policy_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOriginRequestPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18080,6 +19101,19 @@ pub struct CreateMonitoringSubscriptionInput {
     /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
+impl CreateMonitoringSubscriptionInput {
+    /// <p>The ID of the distribution that you are enabling metrics for.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
+    /// <p>A monitoring subscription. This structure contains information about whether additional
+    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    pub fn monitoring_subscription(
+        &self,
+    ) -> std::option::Option<&crate::model::MonitoringSubscription> {
+        self.monitoring_subscription.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateMonitoringSubscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMonitoringSubscriptionInput");
@@ -18095,6 +19129,12 @@ impl std::fmt::Debug for CreateMonitoringSubscriptionInput {
 pub struct CreateKeyGroupInput {
     /// <p>A key group configuration.</p>
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
+}
+impl CreateKeyGroupInput {
+    /// <p>A key group configuration.</p>
+    pub fn key_group_config(&self) -> std::option::Option<&crate::model::KeyGroupConfig> {
+        self.key_group_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateKeyGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18112,6 +19152,16 @@ pub struct CreateInvalidationInput {
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>The batch information for the invalidation.</p>
     pub invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
+}
+impl CreateInvalidationInput {
+    /// <p>The distribution's id.</p>
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
+        self.distribution_id.as_deref()
+    }
+    /// <p>The batch information for the invalidation.</p>
+    pub fn invalidation_batch(&self) -> std::option::Option<&crate::model::InvalidationBatch> {
+        self.invalidation_batch.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInvalidationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18135,6 +19185,22 @@ pub struct CreateFunctionInput {
     /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
 }
+impl CreateFunctionInput {
+    /// <p>A name to identify the function.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Configuration information about the function, including an optional comment and the
+    /// function’s runtime.</p>
+    pub fn function_config(&self) -> std::option::Option<&crate::model::FunctionConfig> {
+        self.function_config.as_ref()
+    }
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
+    /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn function_code(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.function_code.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFunctionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFunctionInput");
@@ -18152,6 +19218,14 @@ pub struct CreateFieldLevelEncryptionProfileInput {
     /// <p>The request to create a field-level encryption profile.</p>
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
+}
+impl CreateFieldLevelEncryptionProfileInput {
+    /// <p>The request to create a field-level encryption profile.</p>
+    pub fn field_level_encryption_profile_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionProfileConfig> {
+        self.field_level_encryption_profile_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFieldLevelEncryptionProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18172,6 +19246,14 @@ pub struct CreateFieldLevelEncryptionConfigInput {
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
 }
+impl CreateFieldLevelEncryptionConfigInput {
+    /// <p>The request to create a new field-level encryption configuration.</p>
+    pub fn field_level_encryption_config(
+        &self,
+    ) -> std::option::Option<&crate::model::FieldLevelEncryptionConfig> {
+        self.field_level_encryption_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFieldLevelEncryptionConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFieldLevelEncryptionConfigInput");
@@ -18191,6 +19273,14 @@ pub struct CreateDistributionWithTagsInput {
     pub distribution_config_with_tags:
         std::option::Option<crate::model::DistributionConfigWithTags>,
 }
+impl CreateDistributionWithTagsInput {
+    /// <p>The distribution's configuration information. </p>
+    pub fn distribution_config_with_tags(
+        &self,
+    ) -> std::option::Option<&crate::model::DistributionConfigWithTags> {
+        self.distribution_config_with_tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateDistributionWithTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDistributionWithTagsInput");
@@ -18208,6 +19298,12 @@ impl std::fmt::Debug for CreateDistributionWithTagsInput {
 pub struct CreateDistributionInput {
     /// <p>The distribution's configuration information.</p>
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
+}
+impl CreateDistributionInput {
+    /// <p>The distribution's configuration information.</p>
+    pub fn distribution_config(&self) -> std::option::Option<&crate::model::DistributionConfig> {
+        self.distribution_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDistributionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18229,6 +19325,14 @@ pub struct CreateCloudFrontOriginAccessIdentityInput {
     pub cloud_front_origin_access_identity_config:
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
 }
+impl CreateCloudFrontOriginAccessIdentityInput {
+    /// <p>The current configuration information for the identity.</p>
+    pub fn cloud_front_origin_access_identity_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFrontOriginAccessIdentityConfig> {
+        self.cloud_front_origin_access_identity_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCloudFrontOriginAccessIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCloudFrontOriginAccessIdentityInput");
@@ -18247,6 +19351,12 @@ pub struct CreateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
 }
+impl CreateCachePolicyInput {
+    /// <p>A cache policy configuration.</p>
+    pub fn cache_policy_config(&self) -> std::option::Option<&crate::model::CachePolicyConfig> {
+        self.cache_policy_config.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateCachePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCachePolicyInput");
@@ -18263,6 +19373,16 @@ pub struct AssociateAliasInput {
     pub target_distribution_id: std::option::Option<std::string::String>,
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
     pub alias: std::option::Option<std::string::String>,
+}
+impl AssociateAliasInput {
+    /// <p>The ID of the distribution that you’re associating the alias with.</p>
+    pub fn target_distribution_id(&self) -> std::option::Option<&str> {
+        self.target_distribution_id.as_deref()
+    }
+    /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

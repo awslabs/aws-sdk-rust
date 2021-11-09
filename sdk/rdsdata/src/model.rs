@@ -17,6 +17,15 @@ pub enum Field {
     LongValue(i64),
     /// <p>A value of string data type.</p>
     StringValue(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Field {
     /// Tries to convert the enum instance into [`ArrayValue`](crate::model::Field::ArrayValue), extracting the inner [`ArrayValue`](crate::model::ArrayValue).
@@ -110,6 +119,10 @@ impl Field {
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Contains an array.</p>
@@ -126,6 +139,15 @@ pub enum ArrayValue {
     LongValues(std::vec::Vec<i64>),
     /// <p>An array of strings.</p>
     StringValues(std::vec::Vec<std::string::String>),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl ArrayValue {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::model::ArrayValue::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
@@ -197,6 +219,10 @@ impl ArrayValue {
     pub fn is_string_values(&self) -> bool {
         self.as_string_values().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Contains the metadata for a column.</p>
@@ -231,6 +257,64 @@ pub struct ColumnMetadata {
     pub scale: i32,
     /// <p>The type of the column.</p>
     pub array_base_column_type: i32,
+}
+impl ColumnMetadata {
+    /// <p>The name of the column.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the column.</p>
+    pub fn r#type(&self) -> i32 {
+        self.r#type
+    }
+    /// <p>The database-specific data type of the column.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>The label for the column.</p>
+    pub fn label(&self) -> std::option::Option<&str> {
+        self.label.as_deref()
+    }
+    /// <p>The name of the schema that owns the table that includes the column.</p>
+    pub fn schema_name(&self) -> std::option::Option<&str> {
+        self.schema_name.as_deref()
+    }
+    /// <p>The name of the table that includes the column.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>A value that indicates whether the column increments automatically.</p>
+    pub fn is_auto_increment(&self) -> bool {
+        self.is_auto_increment
+    }
+    /// <p>A value that indicates whether an integer column is signed.</p>
+    pub fn is_signed(&self) -> bool {
+        self.is_signed
+    }
+    /// <p>A value that indicates whether the column contains currency values.</p>
+    pub fn is_currency(&self) -> bool {
+        self.is_currency
+    }
+    /// <p>A value that indicates whether the column is case-sensitive.</p>
+    pub fn is_case_sensitive(&self) -> bool {
+        self.is_case_sensitive
+    }
+    /// <p>A value that indicates whether the column is nullable.</p>
+    pub fn nullable(&self) -> i32 {
+        self.nullable
+    }
+    /// <p>The precision value of a decimal number column.</p>
+    pub fn precision(&self) -> i32 {
+        self.precision
+    }
+    /// <p>The scale value of a decimal number column.</p>
+    pub fn scale(&self) -> i32 {
+        self.scale
+    }
+    /// <p>The type of the column.</p>
+    pub fn array_base_column_type(&self) -> i32 {
+        self.array_base_column_type
+    }
 }
 impl std::fmt::Debug for ColumnMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -457,6 +541,20 @@ pub struct ResultSetOptions {
     /// </important>
     pub decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
 }
+impl ResultSetOptions {
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented
+    /// in the response. The value of <code>STRING</code>, the default, specifies that
+    /// it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code>
+    /// specifies that it is converted to a Long value if its scale is 0, or to a Double
+    /// value otherwise.</p>
+    /// <important>
+    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss.
+    /// We recommend converting to String, especially when working with currency values.</p>
+    /// </important>
+    pub fn decimal_return_type(&self) -> std::option::Option<&crate::model::DecimalReturnType> {
+        self.decimal_return_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ResultSetOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultSetOptions");
@@ -616,6 +714,54 @@ pub struct SqlParameter {
     /// </li>
     /// </ul>
     pub type_hint: std::option::Option<crate::model::TypeHint>,
+}
+impl SqlParameter {
+    /// <p>The name of the parameter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the parameter.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::Field> {
+        self.value.as_ref()
+    }
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values
+    /// are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object
+    /// of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object
+    /// of <code>DECIMAL</code> type to the database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an
+    /// object of <code>JSON</code> type to the database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object
+    /// of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object
+    /// of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of
+    /// <code>UUID</code> type to the database.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn type_hint(&self) -> std::option::Option<&crate::model::TypeHint> {
+        self.type_hint.as_ref()
+    }
 }
 impl std::fmt::Debug for SqlParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -836,6 +982,16 @@ pub struct SqlStatementResult {
     /// <p>The number of records updated by a SQL statement.</p>
     pub number_of_records_updated: i64,
 }
+impl SqlStatementResult {
+    /// <p>The result set of the SQL statement.</p>
+    pub fn result_frame(&self) -> std::option::Option<&crate::model::ResultFrame> {
+        self.result_frame.as_ref()
+    }
+    /// <p>The number of records updated by a SQL statement.</p>
+    pub fn number_of_records_updated(&self) -> i64 {
+        self.number_of_records_updated
+    }
+}
 impl std::fmt::Debug for SqlStatementResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqlStatementResult");
@@ -901,6 +1057,16 @@ pub struct ResultFrame {
     pub result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
     /// <p>The records in the result set.</p>
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
+}
+impl ResultFrame {
+    /// <p>The result-set metadata in the result set.</p>
+    pub fn result_set_metadata(&self) -> std::option::Option<&crate::model::ResultSetMetadata> {
+        self.result_set_metadata.as_ref()
+    }
+    /// <p>The records in the result set.</p>
+    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+        self.records.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultFrame {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -974,6 +1140,12 @@ impl ResultFrame {
 pub struct Record {
     /// <p>The values returned in the record.</p>
     pub values: std::option::Option<std::vec::Vec<crate::model::Value>>,
+}
+impl Record {
+    /// <p>The values returned in the record.</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::Value]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for Record {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1053,6 +1225,15 @@ pub enum Value {
     StringValue(std::string::String),
     /// <p>A value for a column of STRUCT data type.</p>
     StructValue(crate::model::StructValue),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl Value {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::model::Value::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
@@ -1187,6 +1368,10 @@ impl Value {
     pub fn is_struct_value(&self) -> bool {
         self.as_struct_value().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>A structure value returned by a call.</p>
@@ -1195,6 +1380,12 @@ impl Value {
 pub struct StructValue {
     /// <p>The attributes returned in the record.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Value>>,
+}
+impl StructValue {
+    /// <p>The attributes returned in the record.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Value]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for StructValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1254,6 +1445,16 @@ pub struct ResultSetMetadata {
     pub column_count: i64,
     /// <p>The metadata of the columns in the result set.</p>
     pub column_metadata: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
+}
+impl ResultSetMetadata {
+    /// <p>The number of columns in the result set.</p>
+    pub fn column_count(&self) -> i64 {
+        self.column_count
+    }
+    /// <p>The metadata of the columns in the result set.</p>
+    pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+        self.column_metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultSetMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1325,6 +1526,12 @@ impl ResultSetMetadata {
 pub struct UpdateResult {
     /// <p>Values for fields generated during the request.</p>
     pub generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+}
+impl UpdateResult {
+    /// <p>Values for fields generated during the request.</p>
+    pub fn generated_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+        self.generated_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

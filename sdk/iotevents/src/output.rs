@@ -6,6 +6,12 @@ pub struct UpdateInputOutput {
     /// <p>Information about the configuration of the input.</p>
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
 }
+impl UpdateInputOutput {
+    /// <p>Information about the configuration of the input.</p>
+    pub fn input_configuration(&self) -> std::option::Option<&crate::model::InputConfiguration> {
+        self.input_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateInputOutput");
@@ -56,6 +62,14 @@ impl UpdateInputOutput {
 pub struct UpdateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
+}
+impl UpdateDetectorModelOutput {
+    /// <p>Information about how the detector model is configured.</p>
+    pub fn detector_model_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelConfiguration> {
+        self.detector_model_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDetectorModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -143,6 +157,49 @@ pub struct UpdateAlarmModelOutput {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
+}
+impl UpdateAlarmModelOutput {
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+        self.alarm_model_arn.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+    /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
+    /// Activating an alarm model can take up to a few minutes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
+    /// Check your alarm model information and update the alarm model.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
+    /// and try again.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAlarmModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -361,6 +418,12 @@ pub struct StartDetectorModelAnalysisOutput {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
     pub analysis_id: std::option::Option<std::string::String>,
 }
+impl StartDetectorModelAnalysisOutput {
+    /// <p>The ID that you can use to retrieve the analysis result.</p>
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
+        self.analysis_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDetectorModelAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDetectorModelAnalysisOutput");
@@ -439,6 +502,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The list of tags assigned to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -496,6 +565,17 @@ pub struct ListInputsOutput {
     /// <p>The token that you can use to return the next set of results,
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInputsOutput {
+    /// <p>Summary information about the inputs.</p>
+    pub fn input_summaries(&self) -> std::option::Option<&[crate::model::InputSummary]> {
+        self.input_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInputsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -575,6 +655,21 @@ pub struct ListInputRoutingsOutput {
     /// or <code>null</code> if there are no more results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInputRoutingsOutput {
+    /// <p>
+    /// Summary information about the routed resources.
+    /// </p>
+    pub fn routed_resources(&self) -> std::option::Option<&[crate::model::RoutedResource]> {
+        self.routed_resources.as_deref()
+    }
+    /// <p>
+    /// The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInputRoutingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -661,6 +756,19 @@ pub struct ListDetectorModelVersionsOutput {
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDetectorModelVersionsOutput {
+    /// <p>Summary information about the detector model versions.</p>
+    pub fn detector_model_version_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DetectorModelVersionSummary]> {
+        self.detector_model_version_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDetectorModelVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorModelVersionsOutput");
@@ -744,6 +852,19 @@ pub struct ListDetectorModelsOutput {
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDetectorModelsOutput {
+    /// <p>Summary information about the detector models.</p>
+    pub fn detector_model_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DetectorModelSummary]> {
+        self.detector_model_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDetectorModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorModelsOutput");
@@ -823,6 +944,19 @@ pub struct ListAlarmModelVersionsOutput {
     /// <p>The token that you can use to return the next set of results,
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAlarmModelVersionsOutput {
+    /// <p>A list that summarizes each alarm model version.</p>
+    pub fn alarm_model_version_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AlarmModelVersionSummary]> {
+        self.alarm_model_version_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAlarmModelVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -906,6 +1040,17 @@ pub struct ListAlarmModelsOutput {
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAlarmModelsOutput {
+    /// <p>A list that summarizes each alarm model.</p>
+    pub fn alarm_model_summaries(&self) -> std::option::Option<&[crate::model::AlarmModelSummary]> {
+        self.alarm_model_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAlarmModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlarmModelsOutput");
@@ -985,6 +1130,17 @@ pub struct GetDetectorModelAnalysisResultsOutput {
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetDetectorModelAnalysisResultsOutput {
+    /// <p>Contains information about one or more analysis results.</p>
+    pub fn analysis_results(&self) -> std::option::Option<&[crate::model::AnalysisResult]> {
+        self.analysis_results.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDetectorModelAnalysisResultsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDetectorModelAnalysisResultsOutput");
@@ -1058,6 +1214,12 @@ pub struct DescribeLoggingOptionsOutput {
     /// <p>The current settings of the AWS IoT Events logging options.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
+impl DescribeLoggingOptionsOutput {
+    /// <p>The current settings of the AWS IoT Events logging options.</p>
+    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+        self.logging_options.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLoggingOptionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoggingOptionsOutput");
@@ -1108,6 +1270,12 @@ impl DescribeLoggingOptionsOutput {
 pub struct DescribeInputOutput {
     /// <p>Information about the input.</p>
     pub input: std::option::Option<crate::model::Input>,
+}
+impl DescribeInputOutput {
+    /// <p>Information about the input.</p>
+    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+        self.input.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1170,6 +1338,28 @@ pub struct DescribeDetectorModelAnalysisOutput {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AnalysisStatus>,
+}
+impl DescribeDetectorModelAnalysisOutput {
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take
+    /// several minutes to complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again
+    /// later.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AnalysisStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDetectorModelAnalysisOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1253,6 +1443,12 @@ impl DescribeDetectorModelAnalysisOutput {
 pub struct DescribeDetectorModelOutput {
     /// <p>Information about the detector model.</p>
     pub detector_model: std::option::Option<crate::model::DetectorModel>,
+}
+impl DescribeDetectorModelOutput {
+    /// <p>Information about the detector model.</p>
+    pub fn detector_model(&self) -> std::option::Option<&crate::model::DetectorModel> {
+        self.detector_model.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDetectorModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1357,6 +1553,93 @@ pub struct DescribeAlarmModelOutput {
     pub alarm_event_actions: std::option::Option<crate::model::AlarmEventActions>,
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
+}
+impl DescribeAlarmModelOutput {
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+        self.alarm_model_arn.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+    /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
+    /// Activating an alarm model can take up to a few minutes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
+    /// Check your alarm model information and update the alarm model.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
+    /// and try again.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// Contains information about the status of the alarm model.
+    /// </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The description of the alarm model.</p>
+    pub fn alarm_model_description(&self) -> std::option::Option<&str> {
+        self.alarm_model_description.as_deref()
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>An input attribute used as a key to create an alarm.
+    /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
+    /// associated with this key to the alarm.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn severity(&self) -> std::option::Option<i32> {
+        self.severity
+    }
+    /// <p>Defines when your alarm is invoked.</p>
+    pub fn alarm_rule(&self) -> std::option::Option<&crate::model::AlarmRule> {
+        self.alarm_rule.as_ref()
+    }
+    /// <p>Contains information about one or more notification actions.</p>
+    pub fn alarm_notification(&self) -> std::option::Option<&crate::model::AlarmNotification> {
+        self.alarm_notification.as_ref()
+    }
+    /// <p>Contains information about one or more alarm actions.</p>
+    pub fn alarm_event_actions(&self) -> std::option::Option<&crate::model::AlarmEventActions> {
+        self.alarm_event_actions.as_ref()
+    }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn alarm_capabilities(&self) -> std::option::Option<&crate::model::AlarmCapabilities> {
+        self.alarm_capabilities.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAlarmModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1764,6 +2047,12 @@ pub struct CreateInputOutput {
     /// <p>Information about the configuration of the input.</p>
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
 }
+impl CreateInputOutput {
+    /// <p>Information about the configuration of the input.</p>
+    pub fn input_configuration(&self) -> std::option::Option<&crate::model::InputConfiguration> {
+        self.input_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateInputOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInputOutput");
@@ -1814,6 +2103,14 @@ impl CreateInputOutput {
 pub struct CreateDetectorModelOutput {
     /// <p>Information about how the detector model is configured.</p>
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
+}
+impl CreateDetectorModelOutput {
+    /// <p>Information about how the detector model is configured.</p>
+    pub fn detector_model_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelConfiguration> {
+        self.detector_model_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDetectorModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1901,6 +2198,49 @@ pub struct CreateAlarmModelOutput {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
+}
+impl CreateAlarmModelOutput {
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+        self.alarm_model_arn.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+    /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
+    /// Activating an alarm model can take up to a few minutes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
+    /// Check your alarm model information and update the alarm model.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
+    /// and try again.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAlarmModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -177,10 +177,7 @@ impl BatchExecuteStatementInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -330,10 +327,7 @@ impl CancelStatementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_statement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_cancel_statement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -487,10 +481,7 @@ impl DescribeStatementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_statement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_statement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -747,10 +738,7 @@ impl DescribeTableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_table(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_table(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -999,10 +987,7 @@ impl ExecuteStatementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1170,10 +1155,7 @@ impl GetStatementResultInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_statement_result(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_statement_result(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1387,10 +1369,7 @@ impl ListDatabasesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1640,10 +1619,7 @@ impl ListSchemasInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1902,10 +1878,8 @@ impl ListStatementsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_statements(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_statements(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2182,10 +2156,7 @@ impl ListTablesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2280,6 +2251,54 @@ pub struct ListTablesInput {
     /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
 }
+impl ListTablesInput {
+    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database that contains the tables to list.
+    /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
+    pub fn connected_database(&self) -> std::option::Option<&str> {
+        self.connected_database.as_deref()
+    }
+    /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
+    /// substring of 0 or more characters and "_" means match any one character. Only schema name
+    /// entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match
+    /// <code>TablePattern</code> are returned.
+    /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+    pub fn schema_pattern(&self) -> std::option::Option<&str> {
+        self.schema_pattern.as_deref()
+    }
+    /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any
+    /// substring of 0 or more characters and "_" means match any one character. Only table name
+    /// entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match
+    /// <code>SchemaPattern</code>are returned.  
+    /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+    pub fn table_pattern(&self) -> std::option::Option<&str> {
+        self.table_pattern.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of tables to return in the response.
+    /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTablesInput");
@@ -2339,6 +2358,56 @@ pub struct ListStatementsInput {
     /// If false, only statements run by the caller's IAM role in the current IAM session are returned.  The default is true. </p>
     pub role_level: std::option::Option<bool>,
 }
+impl ListStatementsInput {
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of SQL statements to return in the response.
+    /// If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query.
+    /// You can list multiple statements by providing a prefix that matches the beginning of the statement name.
+    /// For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.  
+    /// Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user. </p>
+    /// </li>
+    /// <li>
+    /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
+    /// </li>
+    /// <li>
+    /// <p>FAILED - The query run failed. </p>
+    /// </li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running. </p>
+    /// </li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run. </p>
+    /// </li>
+    /// <li>
+    /// <p>STARTED - The query run has started. </p>
+    /// </li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusString> {
+        self.status.as_ref()
+    }
+    /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned.
+    /// If false, only statements run by the caller's IAM role in the current IAM session are returned.  The default is true. </p>
+    pub fn role_level(&self) -> std::option::Option<bool> {
+        self.role_level
+    }
+}
 impl std::fmt::Debug for ListStatementsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListStatementsInput");
@@ -2376,6 +2445,44 @@ pub struct ListSchemasInput {
     /// If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
 }
+impl ListSchemasInput {
+    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database that contains the schemas to list.
+    /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
+    pub fn connected_database(&self) -> std::option::Option<&str> {
+        self.connected_database.as_deref()
+    }
+    /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
+    /// substring of 0 or more characters and "_" means match any one character. Only schema name
+    /// entries matching the search pattern are returned. </p>
+    pub fn schema_pattern(&self) -> std::option::Option<&str> {
+        self.schema_pattern.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of schemas to return in the response.
+    /// If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSchemasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSchemasInput");
@@ -2409,6 +2516,33 @@ pub struct ListDatabasesInput {
     /// If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
 }
+impl ListDatabasesInput {
+    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of databases to return in the response.
+    /// If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDatabasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatabasesInput");
@@ -2433,6 +2567,19 @@ pub struct GetStatementResultInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetStatementResultInput {
+    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+    /// A suffix indicates then number of the SQL statement.
+    /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
+    /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetStatementResultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2463,6 +2610,40 @@ pub struct ExecuteStatementInput {
     pub statement_name: std::option::Option<std::string::String>,
     /// <p>The parameters for the SQL statement.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+}
+impl ExecuteStatementInput {
+    /// <p>The SQL statement text to run. </p>
+    pub fn sql(&self) -> std::option::Option<&str> {
+        self.sql.as_deref()
+    }
+    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
+    pub fn with_event(&self) -> std::option::Option<bool> {
+        self.with_event
+    }
+    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
+    /// <p>The parameters for the SQL statement.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2505,6 +2686,47 @@ pub struct DescribeTableInput {
     /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub max_results: i32,
 }
+impl DescribeTableInput {
+    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database that contains the tables to be described.  
+    /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
+    pub fn connected_database(&self) -> std::option::Option<&str> {
+        self.connected_database.as_deref()
+    }
+    /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned.
+    /// If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
+    pub fn table(&self) -> std::option::Option<&str> {
+        self.table.as_deref()
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of tables to return in the response.
+    /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTableInput");
@@ -2531,6 +2753,15 @@ pub struct DescribeStatementInput {
     /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeStatementInput {
+    /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+    /// A suffix indicates the number of the SQL statement.
+    /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
+    /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStatementInput");
@@ -2546,6 +2777,13 @@ pub struct CancelStatementInput {
     /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
     /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl CancelStatementInput {
+    /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+    /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2573,6 +2811,36 @@ pub struct BatchExecuteStatementInput {
     pub with_event: std::option::Option<bool>,
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub statement_name: std::option::Option<std::string::String>,
+}
+impl BatchExecuteStatementInput {
+    /// <p>One or more SQL statements to run. </p>
+    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
+        self.sqls.as_deref()
+    }
+    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
+        self.secret_arn.as_deref()
+    }
+    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    pub fn db_user(&self) -> std::option::Option<&str> {
+        self.db_user.as_deref()
+    }
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn database(&self) -> std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
+    pub fn with_event(&self) -> std::option::Option<bool> {
+        self.with_event
+    }
+    /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
+    pub fn statement_name(&self) -> std::option::Option<&str> {
+        self.statement_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

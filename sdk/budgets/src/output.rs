@@ -76,6 +76,28 @@ pub struct UpdateBudgetActionOutput {
     /// </p>
     pub new_action: std::option::Option<crate::model::Action>,
 }
+impl UpdateBudgetActionOutput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// The previous action resource information.
+    /// </p>
+    pub fn old_action(&self) -> std::option::Option<&crate::model::Action> {
+        self.old_action.as_ref()
+    }
+    /// <p>
+    /// The updated action resource information.
+    /// </p>
+    pub fn new_action(&self) -> std::option::Option<&crate::model::Action> {
+        self.new_action.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBudgetActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBudgetActionOutput");
@@ -211,6 +233,28 @@ pub struct ExecuteBudgetActionOutput {
     /// </p>
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
+impl ExecuteBudgetActionOutput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>
+    /// The type of execution.
+    /// </p>
+    pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
+        self.execution_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ExecuteBudgetActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteBudgetActionOutput");
@@ -311,6 +355,16 @@ pub struct DescribeSubscribersForNotificationOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeSubscribersForNotificationOutput {
+    /// <p>A list of subscribers that are associated with a notification.</p>
+    pub fn subscribers(&self) -> std::option::Option<&[crate::model::Subscriber]> {
+        self.subscribers.as_deref()
+    }
+    /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeSubscribersForNotificationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSubscribersForNotificationOutput");
@@ -382,6 +436,16 @@ pub struct DescribeNotificationsForBudgetOutput {
     pub notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNotificationsForBudgetOutput {
+    /// <p>A list of notifications that are associated with a budget.</p>
+    pub fn notifications(&self) -> std::option::Option<&[crate::model::Notification]> {
+        self.notifications.as_deref()
+    }
+    /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNotificationsForBudgetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -455,6 +519,16 @@ pub struct DescribeBudgetsOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBudgetsOutput {
+    /// <p>A list of budgets.</p>
+    pub fn budgets(&self) -> std::option::Option<&[crate::model::Budget]> {
+        self.budgets.as_deref()
+    }
+    /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetsOutput");
@@ -527,6 +601,19 @@ pub struct DescribeBudgetPerformanceHistoryOutput {
     pub budget_performance_history: std::option::Option<crate::model::BudgetPerformanceHistory>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetPerformanceHistoryOutput {
+    /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
+    /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
+    pub fn budget_performance_history(
+        &self,
+    ) -> std::option::Option<&crate::model::BudgetPerformanceHistory> {
+        self.budget_performance_history.as_ref()
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetPerformanceHistoryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -604,6 +691,18 @@ pub struct DescribeBudgetActionsForBudgetOutput {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetActionsForBudgetOutput {
+    /// <p>
+    /// A list of the budget action resources information.
+    /// </p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetActionsForBudgetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -683,6 +782,18 @@ pub struct DescribeBudgetActionsForAccountOutput {
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBudgetActionsForAccountOutput {
+    /// <p>
+    /// A list of the budget action resources information.
+    /// </p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetActionsForAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetActionsForAccountOutput");
@@ -760,6 +871,18 @@ pub struct DescribeBudgetActionHistoriesOutput {
     pub action_histories: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
     /// <p> A generic string.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeBudgetActionHistoriesOutput {
+    /// <p>
+    /// The historical record of the budget action resource.
+    /// </p>
+    pub fn action_histories(&self) -> std::option::Option<&[crate::model::ActionHistory]> {
+        self.action_histories.as_deref()
+    }
+    /// <p> A generic string.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetActionHistoriesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -842,6 +965,22 @@ pub struct DescribeBudgetActionOutput {
     /// </p>
     pub action: std::option::Option<crate::model::Action>,
 }
+impl DescribeBudgetActionOutput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A budget action resource.
+    /// </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeBudgetActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBudgetActionOutput");
@@ -919,6 +1058,12 @@ impl DescribeBudgetActionOutput {
 pub struct DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
     pub budget: std::option::Option<crate::model::Budget>,
+}
+impl DescribeBudgetOutput {
+    /// <p>The description of the budget.</p>
+    pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
+        self.budget.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeBudgetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1033,6 +1178,22 @@ pub struct DeleteBudgetActionOutput {
     /// A budget action resource.
     /// </p>
     pub action: std::option::Option<crate::model::Action>,
+}
+impl DeleteBudgetActionOutput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A budget action resource.
+    /// </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteBudgetActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1207,6 +1368,22 @@ pub struct CreateBudgetActionOutput {
     /// A system-generated universally unique identifier (UUID) for the action.
     /// </p>
     pub action_id: std::option::Option<std::string::String>,
+}
+impl CreateBudgetActionOutput {
+    /// <p>The account ID of the user. It should be a 12-digit number.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn budget_name(&self) -> std::option::Option<&str> {
+        self.budget_name.as_deref()
+    }
+    /// <p>
+    /// A system-generated universally unique identifier (UUID) for the action.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBudgetActionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

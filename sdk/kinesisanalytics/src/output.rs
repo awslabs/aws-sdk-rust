@@ -156,6 +156,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>The key-value tags assigned to the application.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The key-value tags assigned to the application.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -212,6 +218,18 @@ pub struct ListApplicationsOutput {
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub has_more_applications: std::option::Option<bool>,
+}
+impl ListApplicationsOutput {
+    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    pub fn application_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+        self.application_summaries.as_deref()
+    }
+    /// <p>Returns true if there are more applications to retrieve.</p>
+    pub fn has_more_applications(&self) -> std::option::Option<bool> {
+        self.has_more_applications
+    }
 }
 impl std::fmt::Debug for ListApplicationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -293,6 +311,26 @@ pub struct DiscoverInputSchemaOutput {
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Raw stream data that was sampled to infer the schema.</p>
     pub raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DiscoverInputSchemaOutput {
+    /// <p>Schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
+    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+        self.input_schema.as_ref()
+    }
+    /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
+    pub fn parsed_input_records(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+        self.parsed_input_records.as_deref()
+    }
+    /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
+    pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.processed_input_records.as_deref()
+    }
+    /// <p>Raw stream data that was sampled to infer the schema.</p>
+    pub fn raw_input_records(&self) -> std::option::Option<&[std::string::String]> {
+        self.raw_input_records.as_deref()
+    }
 }
 impl std::fmt::Debug for DiscoverInputSchemaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -414,6 +452,12 @@ impl DiscoverInputSchemaOutput {
 pub struct DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
+}
+impl DescribeApplicationOutput {
+    /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
+    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+        self.application_detail.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -619,6 +663,14 @@ pub struct CreateApplicationOutput {
     /// response with a summary of the application it created, including the application Amazon Resource Name (ARN),
     /// name, and status.</p>
     pub application_summary: std::option::Option<crate::model::ApplicationSummary>,
+}
+impl CreateApplicationOutput {
+    /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a
+    /// response with a summary of the application it created, including the application Amazon Resource Name (ARN),
+    /// name, and status.</p>
+    pub fn application_summary(&self) -> std::option::Option<&crate::model::ApplicationSummary> {
+        self.application_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

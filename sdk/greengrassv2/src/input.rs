@@ -138,7 +138,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_client_device_with_core_device(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_client_device_with_core_device(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -340,7 +340,7 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_client_device_from_core_device(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_client_device_from_core_device(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -724,10 +724,7 @@ impl CreateComponentVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_component_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1018,10 +1015,7 @@ impl CreateDeploymentInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3857,10 +3851,7 @@ impl ResolveComponentCandidatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resolve_component_candidates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4053,10 +4044,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4304,6 +4292,16 @@ pub struct UntagResourceInput {
     /// <p>A list of keys for tags to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of keys for tags to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -4325,6 +4323,21 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more
+    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -4343,6 +4356,16 @@ pub struct ResolveComponentCandidatesInput {
     /// <p>The list of components to resolve.</p>
     pub component_candidates: std::option::Option<std::vec::Vec<crate::model::ComponentCandidate>>,
 }
+impl ResolveComponentCandidatesInput {
+    /// <p>The platform to use to resolve compatible components.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::ComponentPlatform> {
+        self.platform.as_ref()
+    }
+    /// <p>The list of components to resolve.</p>
+    pub fn component_candidates(&self) -> std::option::Option<&[crate::model::ComponentCandidate]> {
+        self.component_candidates.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveComponentCandidatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveComponentCandidatesInput");
@@ -4358,6 +4381,12 @@ impl std::fmt::Debug for ResolveComponentCandidatesInput {
 pub struct ListTagsForResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4377,6 +4406,20 @@ pub struct ListInstalledComponentsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInstalledComponentsInput {
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstalledComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4398,6 +4441,20 @@ pub struct ListEffectiveDeploymentsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEffectiveDeploymentsInput {
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEffectiveDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4434,6 +4491,37 @@ pub struct ListDeploymentsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDeploymentsInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The filter for the list of deployments. Choose one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code> – The list includes all deployments.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
+    /// deployment.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default: <code>LATEST_ONLY</code>
+    /// </p>
+    pub fn history_filter(&self) -> std::option::Option<&crate::model::DeploymentHistoryFilter> {
+        self.history_filter.as_ref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDeploymentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4472,6 +4560,37 @@ pub struct ListCoreDevicesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCoreDevicesInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
+    /// list includes only core devices that are members of this thing group.</p>
+    pub fn thing_group_arn(&self) -> std::option::Option<&str> {
+        self.thing_group_arn.as_deref()
+    }
+    /// <p>The core device status by which to filter. If you specify this parameter, the list
+    /// includes only core devices that have this status. Choose one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
+    /// on the core device.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::CoreDeviceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCoreDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCoreDevicesInput");
@@ -4493,6 +4612,20 @@ pub struct ListComponentVersionsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListComponentVersionsInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListComponentVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4517,6 +4650,22 @@ pub struct ListComponentsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListComponentsInput {
+    /// <p>The scope of the components to list.</p>
+    /// <p>Default: <code>PRIVATE</code>
+    /// </p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::ComponentVisibilityScope> {
+        self.scope.as_ref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListComponentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListComponentsInput");
@@ -4538,6 +4687,20 @@ pub struct ListClientDevicesAssociatedWithCoreDeviceInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClientDevicesAssociatedWithCoreDeviceInput {
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClientDevicesAssociatedWithCoreDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClientDevicesAssociatedWithCoreDeviceInput");
@@ -4555,6 +4718,12 @@ pub struct GetDeploymentInput {
     /// <p>The ID of the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
+impl GetDeploymentInput {
+    /// <p>The ID of the deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeploymentInput");
@@ -4569,6 +4738,12 @@ impl std::fmt::Debug for GetDeploymentInput {
 pub struct GetCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
+}
+impl GetCoreDeviceInput {
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCoreDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4592,6 +4767,21 @@ pub struct GetComponentVersionArtifactInput {
     /// <code>SomeArtifact.zip</code>.</p>
     pub artifact_name: std::option::Option<std::string::String>,
 }
+impl GetComponentVersionArtifactInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the artifact.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
+    /// download the component recipe, which includes the URI of the artifact. The artifact name is
+    /// the section of the URI after the scheme. For example, in the artifact URI
+    /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
+    /// <code>SomeArtifact.zip</code>.</p>
+    pub fn artifact_name(&self) -> std::option::Option<&str> {
+        self.artifact_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComponentVersionArtifactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComponentVersionArtifactInput");
@@ -4610,6 +4800,16 @@ pub struct GetComponentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl GetComponentInput {
+    /// <p>The format of the recipe.</p>
+    pub fn recipe_output_format(&self) -> std::option::Option<&crate::model::RecipeOutputFormat> {
+        self.recipe_output_format.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComponentInput");
@@ -4626,6 +4826,12 @@ pub struct DescribeComponentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl DescribeComponentInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeComponentInput");
@@ -4641,6 +4847,12 @@ pub struct DeleteCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
+impl DeleteCoreDeviceInput {
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteCoreDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCoreDeviceInput");
@@ -4655,6 +4867,12 @@ impl std::fmt::Debug for DeleteCoreDeviceInput {
 pub struct DeleteComponentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteComponentInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteComponentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4698,6 +4916,57 @@ pub struct CreateDeploymentInput {
     /// idempotent requests for up to 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateDeploymentInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>The name of the deployment.</p>
+    pub fn deployment_name(&self) -> std::option::Option<&str> {
+        self.deployment_name.as_deref()
+    }
+    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
+    /// and each key's value is the version and configuration to deploy for that component.</p>
+    pub fn components(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::ComponentDeploymentSpecification,
+        >,
+    > {
+        self.components.as_ref()
+    }
+    /// <p>The job configuration for the deployment configuration. The job configuration specifies
+    /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    pub fn iot_job_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentIoTJobConfiguration> {
+        self.iot_job_configuration.as_ref()
+    }
+    /// <p>The deployment policies for the deployment. These policies define how the deployment
+    /// updates components and handles failure.</p>
+    pub fn deployment_policies(&self) -> std::option::Option<&crate::model::DeploymentPolicies> {
+        self.deployment_policies.as_ref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more
+    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+    /// idempotent requests for up to 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentInput");
@@ -4735,6 +5004,38 @@ pub struct CreateComponentVersionInput {
     /// idempotent requests for up to 8 hours.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateComponentVersionInput {
+    /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
+    /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+    /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
+    pub fn inline_recipe(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.inline_recipe.as_ref()
+    }
+    /// <p>The parameters to create a component from a Lambda function.</p>
+    /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
+    pub fn lambda_function(
+        &self,
+    ) -> std::option::Option<&crate::model::LambdaFunctionRecipeSource> {
+        self.lambda_function.as_ref()
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more
+    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+    /// idempotent requests for up to 8 hours.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateComponentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComponentVersionInput");
@@ -4752,6 +5053,12 @@ impl std::fmt::Debug for CreateComponentVersionInput {
 pub struct CancelDeploymentInput {
     /// <p>The ID of the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
+}
+impl CancelDeploymentInput {
+    /// <p>The ID of the deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4772,6 +5079,18 @@ pub struct BatchDisassociateClientDeviceFromCoreDeviceInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
+impl BatchDisassociateClientDeviceFromCoreDeviceInput {
+    /// <p>The list of client devices to disassociate.</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DisassociateClientDeviceFromCoreDeviceEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisassociateClientDeviceFromCoreDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisassociateClientDeviceFromCoreDeviceInput");
@@ -4790,6 +5109,18 @@ pub struct BatchAssociateClientDeviceWithCoreDeviceInput {
         std::option::Option<std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceEntry>>,
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
+}
+impl BatchAssociateClientDeviceWithCoreDeviceInput {
+    /// <p>The list of client devices to associate.</p>
+    pub fn entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociateClientDeviceWithCoreDeviceEntry]> {
+        self.entries.as_deref()
+    }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAssociateClientDeviceWithCoreDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

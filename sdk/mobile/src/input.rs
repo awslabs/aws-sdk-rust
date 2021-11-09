@@ -1554,6 +1554,22 @@ pub struct UpdateProjectInput {
     /// </p>
     pub project_id: std::option::Option<std::string::String>,
 }
+impl UpdateProjectInput {
+    /// <p>
+    /// ZIP or YAML file which contains project configuration to be updated. This should
+    /// be the contents of the file downloaded from the URL provided in an export project
+    /// operation.
+    /// </p>
+    pub fn contents(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.contents.as_ref()
+    }
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
@@ -1579,6 +1595,22 @@ pub struct ListProjectsInput {
     /// value in here in another request to list more projects.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListProjectsInput {
+    /// <p>
+    /// Maximum number of records to list in a single response.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Pagination token. Set to null to start listing projects from start.
+    /// If non-null pagination token is returned in a result, then pass its
+    /// value in here in another request to list more projects.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1606,6 +1638,22 @@ pub struct ListBundlesInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListBundlesInput {
+    /// <p>
+    /// Maximum number of records to list in a single response.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// Pagination token. Set to null to start listing bundles from start.
+    /// If non-null pagination token is returned in a result, then pass its
+    /// value in here in another request to list more bundles.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListBundlesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBundlesInput");
@@ -1625,6 +1673,14 @@ pub struct ExportProjectInput {
     /// Unique project identifier.
     /// </p>
     pub project_id: std::option::Option<std::string::String>,
+}
+impl ExportProjectInput {
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1654,6 +1710,26 @@ pub struct ExportBundleInput {
     /// </p>
     pub platform: std::option::Option<crate::model::Platform>,
 }
+impl ExportBundleInput {
+    /// <p>
+    /// Unique bundle identifier.
+    /// </p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>
+    /// Developer desktop or target application platform.
+    /// </p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+}
 impl std::fmt::Debug for ExportBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportBundleInput");
@@ -1679,6 +1755,20 @@ pub struct DescribeProjectInput {
     /// </p>
     pub sync_from_resources: bool,
 }
+impl DescribeProjectInput {
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>
+    /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
+    /// </p>
+    pub fn sync_from_resources(&self) -> bool {
+        self.sync_from_resources
+    }
+}
 impl std::fmt::Debug for DescribeProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectInput");
@@ -1699,6 +1789,14 @@ pub struct DescribeBundleInput {
     /// </p>
     pub bundle_id: std::option::Option<std::string::String>,
 }
+impl DescribeBundleInput {
+    /// <p>
+    /// Unique bundle identifier.
+    /// </p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBundleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBundleInput");
@@ -1717,6 +1815,14 @@ pub struct DeleteProjectInput {
     /// Unique project identifier.
     /// </p>
     pub project_id: std::option::Option<std::string::String>,
+}
+impl DeleteProjectInput {
+    /// <p>
+    /// Unique project identifier.
+    /// </p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1751,6 +1857,35 @@ pub struct CreateProjectInput {
     /// snapshot identifier is included in the share URL when a project is exported.
     /// </p>
     pub snapshot_id: std::option::Option<std::string::String>,
+}
+impl CreateProjectInput {
+    /// <p>
+    /// Name of the project.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// Default region where project resources should be created.
+    /// </p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>
+    /// ZIP or YAML file which contains configuration settings to be used when creating
+    /// the project. This may be the contents of the file downloaded from the URL provided
+    /// in an export project operation.
+    /// </p>
+    pub fn contents(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.contents.as_ref()
+    }
+    /// <p>
+    /// Unique identifier for an exported snapshot of project configuration. This
+    /// snapshot identifier is included in the share URL when a project is exported.
+    /// </p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

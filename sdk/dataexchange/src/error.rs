@@ -3343,6 +3343,12 @@ pub struct ValidationException {
     /// <p>The message that informs you about what the exception was.</p>
     pub exception_cause: std::option::Option<crate::model::ExceptionCause>,
 }
+impl ValidationException {
+    /// <p>The message that informs you about what the exception was.</p>
+    pub fn exception_cause(&self) -> std::option::Option<&crate::model::ExceptionCause> {
+        self.exception_cause.as_ref()
+    }
+}
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
@@ -3490,6 +3496,16 @@ pub struct ResourceNotFoundException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource that couldn't be found.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
+}
+impl ResourceNotFoundException {
+    /// <p>The unique identifier for the resource that couldn't be found.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of resource that couldn't be found.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3652,6 +3668,16 @@ pub struct ConflictException {
     /// <p>The type of the resource with the conflict.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
+impl ConflictException {
+    /// <p>The unique identifier for the resource with the conflict.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource with the conflict.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConflictException");
@@ -3812,6 +3838,16 @@ pub struct ServiceLimitExceededException {
     pub limit_value: f64,
     /// <p>The request has exceeded the quotas imposed by the service.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ServiceLimitExceededException {
+    /// <p>The name of the quota that was exceeded.</p>
+    pub fn limit_name(&self) -> std::option::Option<&crate::model::LimitName> {
+        self.limit_name.as_ref()
+    }
+    /// <p>The maximum value for the service-specific limit.</p>
+    pub fn limit_value(&self) -> f64 {
+        self.limit_value
+    }
 }
 impl std::fmt::Debug for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

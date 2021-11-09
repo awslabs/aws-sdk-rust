@@ -2,37 +2,40 @@
 pub fn serialize_structure_crate_input_close_tunnel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CloseTunnelInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.tunnel_id {
         object.key("tunnelId").string(var_1);
     }
     if let Some(var_2) = &input.delete {
         object.key("delete").boolean(*var_2);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_tunnel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTunnelInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.tunnel_id {
         object.key("tunnelId").string(var_3);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.resource_arn {
         object.key("resourceArn").string(var_4);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tunnels_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTunnelsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.thing_name {
         object.key("thingName").string(var_5);
     }
@@ -45,12 +48,13 @@ pub fn serialize_structure_crate_input_list_tunnels_input(
     if let Some(var_7) = &input.next_token {
         object.key("nextToken").string(var_7);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_open_tunnel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::OpenTunnelInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.description {
         object.key("description").string(var_8);
     }
@@ -59,7 +63,7 @@ pub fn serialize_structure_crate_input_open_tunnel_input(
         for item_11 in var_9 {
             {
                 let mut object_12 = array_10.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -67,20 +71,24 @@ pub fn serialize_structure_crate_input_open_tunnel_input(
     }
     if let Some(var_13) = &input.destination_config {
         let mut object_14 = object.key("destinationConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_destination_config(&mut object_14, var_13);
+        crate::json_ser::serialize_structure_crate_model_destination_config(
+            &mut object_14,
+            var_13,
+        )?;
         object_14.finish();
     }
     if let Some(var_15) = &input.timeout_config {
         let mut object_16 = object.key("timeoutConfig").start_object();
-        crate::json_ser::serialize_structure_crate_model_timeout_config(&mut object_16, var_15);
+        crate::json_ser::serialize_structure_crate_model_timeout_config(&mut object_16, var_15)?;
         object_16.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.resource_arn {
         object.key("resourceArn").string(var_17);
     }
@@ -89,18 +97,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         for item_20 in var_18 {
             {
                 let mut object_21 = array_19.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_21, item_20);
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }
         array_19.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.resource_arn {
         object.key("resourceArn").string(var_22);
     }
@@ -113,24 +122,26 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         }
         array_24.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.key {
         object.key("key").string(var_26);
     }
     if let Some(var_27) = &input.value {
         object.key("value").string(var_27);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_destination_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DestinationConfig,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.thing_name {
         object.key("thingName").string(var_28);
     }
@@ -143,16 +154,18 @@ pub fn serialize_structure_crate_model_destination_config(
         }
         array_30.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_timeout_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TimeoutConfig,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.max_lifetime_timeout_minutes {
         object.key("maxLifetimeTimeoutMinutes").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
+    Ok(())
 }

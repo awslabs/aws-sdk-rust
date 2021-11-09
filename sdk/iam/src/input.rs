@@ -106,7 +106,7 @@ impl AddClientIdToOpenIdConnectProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_client_id_to_open_id_connect_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_add_client_id_to_open_id_connect_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -278,10 +278,7 @@ impl AddRoleToInstanceProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_role_to_instance_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -446,10 +443,7 @@ impl AddUserToGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_user_to_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_user_to_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -612,10 +606,7 @@ impl AttachGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_group_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_attach_group_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -778,10 +769,7 @@ impl AttachRolePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_role_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_attach_role_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -944,10 +932,7 @@ impl AttachUserPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_user_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_attach_user_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1119,10 +1104,8 @@ impl ChangePasswordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_change_password(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_change_password(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1271,10 +1254,7 @@ impl CreateAccessKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_access_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_access_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1428,10 +1408,7 @@ impl CreateAccountAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_account_alias(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_account_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1605,10 +1582,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1819,10 +1793,7 @@ impl CreateInstanceProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_instance_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2011,10 +1982,7 @@ impl CreateLoginProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_login_profile(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_login_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2299,7 +2267,7 @@ impl CreateOpenIdConnectProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_open_id_connect_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_open_id_connect_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2600,10 +2568,7 @@ impl CreatePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2833,10 +2798,7 @@ impl CreatePolicyVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_policy_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_policy_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3170,10 +3132,7 @@ impl CreateRoleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_role(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3384,10 +3343,7 @@ impl CreateSamlProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_saml_provider(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_saml_provider(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3595,10 +3551,7 @@ impl CreateServiceLinkedRoleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_service_linked_role(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3768,7 +3721,7 @@ impl CreateServiceSpecificCredentialInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_service_specific_credential(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_service_specific_credential(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3993,10 +3946,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4209,10 +4159,7 @@ impl CreateVirtualMfaDeviceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_virtual_mfa_device(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4384,10 +4331,7 @@ impl DeactivateMfaDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deactivate_mfa_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_deactivate_mfa_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4557,10 +4501,7 @@ impl DeleteAccessKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_access_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_access_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4714,10 +4655,7 @@ impl DeleteAccountAliasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_account_alias(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_account_alias(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4849,7 +4787,7 @@ impl DeleteAccountPasswordPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_account_password_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_account_password_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4990,10 +4928,7 @@ impl DeleteGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5160,10 +5095,7 @@ impl DeleteGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_group_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_group_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5317,10 +5249,7 @@ impl DeleteInstanceProfileInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_instance_profile(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5469,10 +5398,7 @@ impl DeleteLoginProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_login_profile(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_login_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5626,7 +5552,7 @@ impl DeleteOpenIdConnectProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_open_id_connect_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_open_id_connect_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5773,10 +5699,7 @@ impl DeletePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_policy(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5947,10 +5870,7 @@ impl DeletePolicyVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_policy_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_policy_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6098,10 +6018,7 @@ impl DeleteRoleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_role(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6249,7 +6166,7 @@ impl DeleteRolePermissionsBoundaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_role_permissions_boundary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_role_permissions_boundary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6417,10 +6334,7 @@ impl DeleteRolePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_role_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_role_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6568,10 +6482,7 @@ impl DeleteSamlProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_saml_provider(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_saml_provider(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6726,10 +6637,7 @@ impl DeleteServerCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_server_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6877,10 +6785,7 @@ impl DeleteServiceLinkedRoleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_service_linked_role(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7058,7 +6963,7 @@ impl DeleteServiceSpecificCredentialInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_service_specific_credential(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_service_specific_credential(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7230,10 +7135,7 @@ impl DeleteSigningCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_signing_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7401,10 +7303,7 @@ impl DeleteSshPublicKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_ssh_public_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_ssh_public_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7552,10 +7451,7 @@ impl DeleteUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7703,7 +7599,7 @@ impl DeleteUserPermissionsBoundaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_permissions_boundary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_permissions_boundary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7871,10 +7767,7 @@ impl DeleteUserPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8032,10 +7925,7 @@ impl DeleteVirtualMfaDeviceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_virtual_mfa_device(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8198,10 +8088,7 @@ impl DetachGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_group_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detach_group_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8364,10 +8251,7 @@ impl DetachRolePolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_role_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detach_role_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8530,10 +8414,7 @@ impl DetachUserPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_user_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_detach_user_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8771,10 +8652,7 @@ impl EnableMfaDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_mfa_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_enable_mfa_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8908,10 +8786,7 @@ impl GenerateCredentialReportInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_generate_credential_report(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9080,7 +8955,7 @@ impl GenerateOrganizationsAccessReportInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_organizations_access_report(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_generate_organizations_access_report(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9258,7 +9133,7 @@ impl GenerateServiceLastAccessedDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_service_last_accessed_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_generate_service_last_accessed_details(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9413,10 +9288,7 @@ impl GetAccessKeyLastUsedInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_access_key_last_used(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9623,7 +9495,7 @@ impl GetAccountAuthorizationDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_account_authorization_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_account_authorization_details(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9758,10 +9630,7 @@ impl GetAccountPasswordPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_account_password_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9884,10 +9753,7 @@ impl GetAccountSummaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_account_summary(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_account_summary(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10070,7 +9936,7 @@ impl GetContextKeysForCustomPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_context_keys_for_custom_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_context_keys_for_custom_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10289,7 +10155,7 @@ impl GetContextKeysForPrincipalPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_context_keys_for_principal_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_context_keys_for_principal_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10421,10 +10287,7 @@ impl GetCredentialReportInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_credential_report(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_credential_report(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10606,10 +10469,7 @@ impl GetGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10769,10 +10629,7 @@ impl GetGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_group_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_group_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10924,10 +10781,7 @@ impl GetInstanceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_instance_profile(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_instance_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11076,10 +10930,7 @@ impl GetLoginProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_login_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_login_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11237,10 +11088,7 @@ impl GetOpenIdConnectProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_open_id_connect_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11449,7 +11297,7 @@ impl GetOrganizationsAccessReportInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_organizations_access_report(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_organizations_access_report(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11596,10 +11444,7 @@ impl GetPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11764,10 +11609,7 @@ impl GetPolicyVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_policy_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_policy_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11913,10 +11755,7 @@ impl GetRoleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_role(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12075,10 +11914,8 @@ impl GetRolePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_role_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_role_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12230,10 +12067,7 @@ impl GetSamlProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_saml_provider(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_saml_provider(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12385,10 +12219,9 @@ impl GetServerCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_server_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_server_certificate(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12584,7 +12417,7 @@ impl GetServiceLastAccessedDetailsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_last_accessed_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_service_last_accessed_details(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12809,7 +12642,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_last_accessed_details_with_entities(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_service_last_accessed_details_with_entities(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -12962,7 +12795,7 @@ impl GetServiceLinkedRoleDeletionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_linked_role_deletion_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_service_linked_role_deletion_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13150,10 +12983,7 @@ impl GetSshPublicKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ssh_public_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ssh_public_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13301,10 +13131,7 @@ impl GetUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13463,10 +13290,8 @@ impl GetUserPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_user_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_user_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13659,10 +13484,7 @@ impl ListAccessKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_access_keys(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_access_keys(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13839,10 +13661,7 @@ impl ListAccountAliasesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_account_aliases(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_account_aliases(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14060,10 +13879,7 @@ impl ListAttachedGroupPoliciesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_attached_group_policies(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14281,10 +14097,7 @@ impl ListAttachedRolePoliciesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_attached_role_policies(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14502,10 +14315,7 @@ impl ListAttachedUserPoliciesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_attached_user_policies(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14770,10 +14580,7 @@ impl ListEntitiesForPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_entities_for_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14966,10 +14773,7 @@ impl ListGroupPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_group_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_group_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15171,10 +14975,7 @@ impl ListGroupsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15367,10 +15168,7 @@ impl ListGroupsForUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_groups_for_user(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_groups_for_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15573,10 +15371,9 @@ impl ListInstanceProfilesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15770,7 +15567,7 @@ impl ListInstanceProfilesForRoleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles_for_role(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles_for_role(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15970,10 +15767,7 @@ impl ListInstanceProfileTagsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_instance_profile_tags(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16166,10 +15960,7 @@ impl ListMfaDevicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_mfa_devices(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_mfa_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16367,10 +16158,7 @@ impl ListMfaDeviceTagsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_mfa_device_tags(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_mfa_device_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16502,7 +16290,7 @@ impl ListOpenIdConnectProvidersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_open_id_connect_providers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_open_id_connect_providers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16697,7 +16485,7 @@ impl ListOpenIdConnectProviderTagsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_open_id_connect_provider_tags(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_open_id_connect_provider_tags(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -16964,10 +16752,7 @@ impl ListPoliciesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_policies(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17166,7 +16951,7 @@ impl ListPoliciesGrantingServiceAccessInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_policies_granting_service_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_policies_granting_service_access(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -17360,10 +17145,7 @@ impl ListPolicyTagsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_policy_tags(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_policy_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17556,10 +17338,7 @@ impl ListPolicyVersionsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_policy_versions(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_policy_versions(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17752,10 +17531,7 @@ impl ListRolePoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_role_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_role_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17955,10 +17731,7 @@ impl ListRolesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_roles(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_roles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18148,10 +17921,7 @@ impl ListRoleTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_role_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_role_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18282,10 +18052,7 @@ impl ListSamlProvidersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_saml_providers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_saml_providers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18477,10 +18244,7 @@ impl ListSamlProviderTagsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_saml_provider_tags(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18685,10 +18449,7 @@ impl ListServerCertificatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_server_certificates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18887,10 +18648,7 @@ impl ListServerCertificateTagsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_server_certificate_tags(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19058,7 +18816,7 @@ impl ListServiceSpecificCredentialsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_specific_credentials(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_service_specific_credentials(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -19255,10 +19013,7 @@ impl ListSigningCertificatesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_signing_certificates(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19455,10 +19210,7 @@ impl ListSshPublicKeysInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_ssh_public_keys(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_ssh_public_keys(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19651,10 +19403,7 @@ impl ListUserPoliciesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_user_policies(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_user_policies(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19854,10 +19603,7 @@ impl ListUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20047,10 +19793,7 @@ impl ListUserTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_user_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_user_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20250,10 +19993,7 @@ impl ListVirtualMfaDevicesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_virtual_mfa_devices(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20473,10 +20213,7 @@ impl PutGroupPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_group_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_group_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20641,7 +20378,7 @@ impl PutRolePermissionsBoundaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_role_permissions_boundary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_role_permissions_boundary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -20859,10 +20596,8 @@ impl PutRolePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_role_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_role_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21027,7 +20762,7 @@ impl PutUserPermissionsBoundaryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_user_permissions_boundary(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_user_permissions_boundary(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21247,10 +20982,8 @@ impl PutUserPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_user_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_user_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21421,7 +21154,7 @@ impl RemoveClientIdFromOpenIdConnectProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_client_id_from_open_id_connect_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_client_id_from_open_id_connect_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21592,7 +21325,7 @@ impl RemoveRoleFromInstanceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_role_from_instance_profile(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_role_from_instance_profile(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -21758,10 +21491,9 @@ impl RemoveUserFromGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_user_from_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_remove_user_from_group(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21937,7 +21669,7 @@ impl ResetServiceSpecificCredentialInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reset_service_specific_credential(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reset_service_specific_credential(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -22140,10 +21872,7 @@ impl ResyncMfaDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_resync_mfa_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_resync_mfa_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22311,10 +22040,7 @@ impl SetDefaultPolicyVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_default_policy_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22479,7 +22205,7 @@ impl SetSecurityTokenServicePreferencesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_security_token_service_preferences(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_security_token_service_preferences(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -23127,10 +22853,9 @@ impl SimulateCustomPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_simulate_custom_policy(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_simulate_custom_policy(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23807,10 +23532,7 @@ impl SimulatePrincipalPolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_simulate_principal_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23985,10 +23707,7 @@ impl TagInstanceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_tag_instance_profile(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_tag_instance_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24164,10 +23883,7 @@ impl TagMfaDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_mfa_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_mfa_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24348,10 +24064,7 @@ impl TagOpenIdConnectProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_tag_open_id_connect_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24520,10 +24233,7 @@ impl TagPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24688,10 +24398,7 @@ impl TagRoleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_role(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -24861,10 +24568,7 @@ impl TagSamlProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_tag_saml_provider(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_tag_saml_provider(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25039,10 +24743,9 @@ impl TagServerCertificateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_tag_server_certificate(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_tag_server_certificate(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25209,10 +24912,7 @@ impl TagUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25382,10 +25082,9 @@ impl UntagInstanceProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_untag_instance_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_untag_instance_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25562,10 +25261,7 @@ impl UntagMfaDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_untag_mfa_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_untag_mfa_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -25744,7 +25440,7 @@ impl UntagOpenIdConnectProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_untag_open_id_connect_provider(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_untag_open_id_connect_provider(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -25918,10 +25614,7 @@ impl UntagPolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26090,10 +25783,7 @@ impl UntagRoleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_role(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26268,10 +25958,7 @@ impl UntagSamlProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_untag_saml_provider(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_untag_saml_provider(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26448,10 +26135,7 @@ impl UntagServerCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_untag_server_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26620,10 +26304,7 @@ impl UntagUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -26805,10 +26486,7 @@ impl UpdateAccessKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_access_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_access_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27129,7 +26807,7 @@ impl UpdateAccountPasswordPolicyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_account_password_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_account_password_policy(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -27334,10 +27012,7 @@ impl UpdateAssumeRolePolicyInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_assume_role_policy(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27528,10 +27203,7 @@ impl UpdateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27742,10 +27414,7 @@ impl UpdateLoginProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_login_profile(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_login_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -27927,7 +27596,7 @@ impl UpdateOpenIdConnectProviderThumbprintInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_open_id_connect_provider_thumbprint(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_open_id_connect_provider_thumbprint(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -28120,10 +27789,7 @@ impl UpdateRoleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_role(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_role(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28282,10 +27948,7 @@ impl UpdateRoleDescriptionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_role_description(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28458,10 +28121,7 @@ impl UpdateSamlProviderInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_saml_provider(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_saml_provider(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28662,10 +28322,7 @@ impl UpdateServerCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_server_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -28853,7 +28510,7 @@ impl UpdateServiceSpecificCredentialInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_service_specific_credential(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_service_specific_credential(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -29041,10 +28698,7 @@ impl UpdateSigningCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_signing_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29228,10 +28882,7 @@ impl UpdateSshPublicKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_ssh_public_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_ssh_public_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29426,10 +29077,7 @@ impl UpdateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29795,10 +29443,7 @@ impl UploadServerCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upload_server_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -29997,10 +29642,7 @@ impl UploadSigningCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upload_signing_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30200,10 +29842,7 @@ impl UploadSshPublicKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_upload_ssh_public_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_upload_ssh_public_key(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -30294,6 +29933,36 @@ pub struct UploadSshPublicKeyInput {
     /// </ul>
     pub ssh_public_key_body: std::option::Option<std::string::String>,
 }
+impl UploadSshPublicKeyInput {
+    /// <p>The name of the IAM user to associate the SSH public key with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
+    /// The minimum bit-length of the public key is 2048 bits. For example, you can generate a
+    /// 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_body.as_deref()
+    }
+}
 impl std::fmt::Debug for UploadSshPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadSshPublicKeyInput");
@@ -30329,6 +29998,34 @@ pub struct UploadSigningCertificateInput {
     /// </li>
     /// </ul>
     pub certificate_body: std::option::Option<std::string::String>,
+}
+impl UploadSigningCertificateInput {
+    /// <p>The name of the user the signing certificate is for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The contents of the signing certificate.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn certificate_body(&self) -> std::option::Option<&str> {
+        self.certificate_body.as_deref()
+    }
 }
 impl std::fmt::Debug for UploadSigningCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30426,6 +30123,102 @@ pub struct UploadServerCertificateInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UploadServerCertificateInput {
+    /// <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).
+    /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    /// <note>
+    /// <p> If you are uploading a server certificate specifically for use with Amazon
+    /// CloudFront distributions, you must specify a path using the <code>path</code>
+    /// parameter. The path must begin with <code>/cloudfront</code> and must include a
+    /// trailing slash (for example, <code>/cloudfront/test/</code>).</p>
+    /// </note>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name for the server certificate. Do not include the path in this value. The name
+    /// of the certificate cannot contain any spaces.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+    /// <p>The contents of the public key certificate in PEM-encoded format.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn certificate_body(&self) -> std::option::Option<&str> {
+        self.certificate_body.as_deref()
+    }
+    /// <p>The contents of the private key in PEM-encoded format.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>The contents of the certificate chain. This is typically a concatenation of the
+    /// PEM-encoded public key certificates of the chain.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new IAM server certificate resource.
+    /// Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UploadServerCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadServerCertificateInput");
@@ -30462,6 +30255,32 @@ pub struct UpdateUserInput {
     /// "MyResource" and "myresource".</p>
     pub new_user_name: std::option::Option<std::string::String>,
 }
+impl UpdateUserInput {
+    /// <p>Name of the user to update. If you're changing the name of the user, this is the
+    /// original user name.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>New path for the IAM user. Include this parameter only if you're changing the user's
+    /// path.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn new_path(&self) -> std::option::Option<&str> {
+        self.new_path.as_deref()
+    }
+    /// <p>New name for the user. Include this parameter only if you're changing the user's
+    /// name.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
+    /// not distinguished by case. For example, you cannot create resources named both
+    /// "MyResource" and "myresource".</p>
+    pub fn new_user_name(&self) -> std::option::Option<&str> {
+        self.new_user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
@@ -30488,6 +30307,26 @@ pub struct UpdateSshPublicKeyInput {
     /// be used for authentication with an CodeCommit repository. <code>Inactive</code> means that
     /// the key cannot be used.</p>
     pub status: std::option::Option<crate::model::StatusType>,
+}
+impl UpdateSshPublicKeyInput {
+    /// <p>The name of the IAM user associated with the SSH public key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier for the SSH public key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+    /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can
+    /// be used for authentication with an CodeCommit repository. <code>Inactive</code> means that
+    /// the key cannot be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateSshPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30516,6 +30355,26 @@ pub struct UpdateSigningCertificateInput {
     /// the certificate cannot be used.</p>
     pub status: std::option::Option<crate::model::StatusType>,
 }
+impl UpdateSigningCertificateInput {
+    /// <p>The name of the IAM user the signing certificate belongs to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID of the signing certificate you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p> The status you want to assign to the certificate. <code>Active</code> means that the
+    /// certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that
+    /// the certificate cannot be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateSigningCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSigningCertificateInput");
@@ -30542,6 +30401,26 @@ pub struct UpdateServiceSpecificCredentialInput {
     pub service_specific_credential_id: std::option::Option<std::string::String>,
     /// <p>The status to be assigned to the service-specific credential.</p>
     pub status: std::option::Option<crate::model::StatusType>,
+}
+impl UpdateServiceSpecificCredentialInput {
+    /// <p>The name of the IAM user associated with the service-specific credential. If you do
+    /// not specify this value, then the operation assumes the user whose credentials are used
+    /// to call the operation.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn service_specific_credential_id(&self) -> std::option::Option<&str> {
+        self.service_specific_credential_id.as_deref()
+    }
+    /// <p>The status to be assigned to the service-specific credential.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateServiceSpecificCredentialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30577,6 +30456,30 @@ pub struct UpdateServerCertificateInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub new_server_certificate_name: std::option::Option<std::string::String>,
 }
+impl UpdateServerCertificateInput {
+    /// <p>The name of the server certificate that you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+    /// <p>The new path for the server certificate. Include this only if you are updating the
+    /// server certificate's path.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn new_path(&self) -> std::option::Option<&str> {
+        self.new_path.as_deref()
+    }
+    /// <p>The new name for the server certificate. Include this only if you are updating the
+    /// server certificate's name. The name of the certificate cannot contain any spaces.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn new_server_certificate_name(&self) -> std::option::Option<&str> {
+        self.new_server_certificate_name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateServerCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServerCertificateInput");
@@ -30604,6 +30507,21 @@ pub struct UpdateSamlProviderInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub saml_provider_arn: std::option::Option<std::string::String>,
 }
+impl UpdateSamlProviderInput {
+    /// <p>An XML document generated by an identity provider (IdP) that supports SAML 2.0. The
+    /// document includes the issuer's name, expiration information, and keys that can be used
+    /// to validate the SAML authentication response (assertions) that are received from the
+    /// IdP. You must generate the metadata document using the identity management software that
+    /// is used as your organization's IdP.</p>
+    pub fn saml_metadata_document(&self) -> std::option::Option<&str> {
+        self.saml_metadata_document.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSamlProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSamlProviderInput");
@@ -30621,6 +30539,16 @@ pub struct UpdateRoleDescriptionInput {
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The new description that you want to apply to the specified role.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateRoleDescriptionInput {
+    /// <p>The name of the role that you want to modify.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The new description that you want to apply to the specified role.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRoleDescriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30654,6 +30582,32 @@ pub struct UpdateRoleInput {
     /// roles</a> in the <i>IAM User Guide</i>.</p>
     pub max_session_duration: std::option::Option<i32>,
 }
+impl UpdateRoleInput {
+    /// <p>The name of the role that you want to modify.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The new description that you want to apply to the specified role.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
+    /// If you do not specify a value for this setting, the default maximum of one hour is
+    /// applied. This setting can have a value from 1 hour to 12 hours.</p>
+    /// <p>Anyone who assumes the role from the CLI or API can use the
+    /// <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI
+    /// parameter to request a longer session. The <code>MaxSessionDuration</code> setting
+    /// determines the maximum duration that can be requested using the
+    /// <code>DurationSeconds</code> parameter. If users don't specify a value for the
+    /// <code>DurationSeconds</code> parameter, their security credentials are valid for one
+    /// hour by default. This applies when you use the <code>AssumeRole*</code> API operations
+    /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
+    /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+    /// roles</a> in the <i>IAM User Guide</i>.</p>
+    pub fn max_session_duration(&self) -> std::option::Option<i32> {
+        self.max_session_duration
+    }
+}
 impl std::fmt::Debug for UpdateRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRoleInput");
@@ -30676,6 +30630,20 @@ pub struct UpdateOpenIdConnectProviderThumbprintInput {
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID
     /// Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateOpenIdConnectProviderThumbprintInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which
+    /// you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the
+    /// <a>ListOpenIDConnectProviders</a> operation.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID
+    /// Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
+    pub fn thumbprint_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.thumbprint_list.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateOpenIdConnectProviderThumbprintInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30721,6 +30689,41 @@ pub struct UpdateLoginProfileInput {
     /// set a new password on next sign-in.</p>
     pub password_reset_required: std::option::Option<bool>,
 }
+impl UpdateLoginProfileInput {
+    /// <p>The name of the user whose password you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The new password for the specified IAM user.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p>However, the format can be further restricted by the account administrator by setting
+    /// a password policy on the Amazon Web Services account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>Allows this new password to be used only once by requiring the specified IAM user to
+    /// set a new password on next sign-in.</p>
+    pub fn password_reset_required(&self) -> std::option::Option<bool> {
+        self.password_reset_required
+    }
+}
 impl std::fmt::Debug for UpdateLoginProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLoginProfileInput");
@@ -30751,6 +30754,30 @@ pub struct UpdateGroupInput {
     /// not distinguished by case. For example, you cannot create resources named both
     /// "MyResource" and "myresource".</p>
     pub new_group_name: std::option::Option<std::string::String>,
+}
+impl UpdateGroupInput {
+    /// <p>Name of the IAM group to update. If you're changing the name of the group, this is
+    /// the original name.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>New path for the IAM group. Only include this if changing the group's path.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn new_path(&self) -> std::option::Option<&str> {
+        self.new_path.as_deref()
+    }
+    /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
+    /// not distinguished by case. For example, you cannot create resources named both
+    /// "MyResource" and "myresource".</p>
+    pub fn new_group_name(&self) -> std::option::Option<&str> {
+        self.new_group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30791,6 +30818,37 @@ pub struct UpdateAssumeRolePolicyInput {
     /// </li>
     /// </ul>
     pub policy_document: std::option::Option<std::string::String>,
+}
+impl UpdateAssumeRolePolicyInput {
+    /// <p>The name of the role to update with the new policy.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The policy that grants an entity permission to assume the role.</p>
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+    /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+    /// IAM.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateAssumeRolePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30858,6 +30916,78 @@ pub struct UpdateAccountPasswordPolicyInput {
     /// after they expire and continue to sign in as the user.</p>
     pub hard_expiry: std::option::Option<bool>,
 }
+impl UpdateAccountPasswordPolicyInput {
+    /// <p>The minimum number of characters allowed in an IAM user password.</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>6</code>.</p>
+    pub fn minimum_password_length(&self) -> std::option::Option<i32> {
+        self.minimum_password_length
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one of the following
+    /// non-alphanumeric characters:</p>
+    /// <p>! @ # $ % ^ & * ( ) _ + - = [ ] { } | '</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>false</code>. The result is that passwords do not require at least one
+    /// symbol character.</p>
+    pub fn require_symbols(&self) -> bool {
+        self.require_symbols
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0
+    /// to 9).</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>false</code>. The result is that passwords do not require at least one
+    /// numeric character.</p>
+    pub fn require_numbers(&self) -> bool {
+        self.require_numbers
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one uppercase character
+    /// from the ISO basic Latin alphabet (A to Z).</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>false</code>. The result is that passwords do not require at least one
+    /// uppercase character.</p>
+    pub fn require_uppercase_characters(&self) -> bool {
+        self.require_uppercase_characters
+    }
+    /// <p>Specifies whether IAM user passwords must contain at least one lowercase character
+    /// from the ISO basic Latin alphabet (a to z).</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>false</code>. The result is that passwords do not require at least one
+    /// lowercase character.</p>
+    pub fn require_lowercase_characters(&self) -> bool {
+        self.require_lowercase_characters
+    }
+    /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own
+    /// passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change their own
+    /// passwords</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>false</code>. The result is that IAM users in the account do not
+    /// automatically have permissions to change their own password.</p>
+    pub fn allow_users_to_change_password(&self) -> bool {
+        self.allow_users_to_change_password
+    }
+    /// <p>The number of days that an IAM user password is valid.</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>0</code>. The result is that IAM user passwords never expire.</p>
+    pub fn max_password_age(&self) -> std::option::Option<i32> {
+        self.max_password_age
+    }
+    /// <p>Specifies the number of previous passwords that IAM users are prevented from
+    /// reusing.</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>0</code>. The result is that IAM users are not prevented from reusing
+    /// previous passwords.</p>
+    pub fn password_reuse_prevention(&self) -> std::option::Option<i32> {
+        self.password_reuse_prevention
+    }
+    /// <p>Prevents IAM users from setting a new password after their password has expired. The
+    /// IAM user cannot be accessed until an administrator resets the password.</p>
+    /// <p>If you do not specify a value for this parameter, then the operation uses the default
+    /// value of <code>false</code>. The result is that IAM users can change their passwords
+    /// after they expire and continue to sign in as the user.</p>
+    pub fn hard_expiry(&self) -> std::option::Option<bool> {
+        self.hard_expiry
+    }
+}
 impl std::fmt::Debug for UpdateAccountPasswordPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccountPasswordPolicyInput");
@@ -30900,6 +31030,26 @@ pub struct UpdateAccessKeyInput {
     /// means that the key cannot be used.</p>
     pub status: std::option::Option<crate::model::StatusType>,
 }
+impl UpdateAccessKeyInput {
+    /// <p>The name of the user whose key you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The access key ID of the secret access key you want to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p> The status you want to assign to the secret access key. <code>Active</code> means
+    /// that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code>
+    /// means that the key cannot be used.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAccessKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAccessKeyInput");
@@ -30922,6 +31072,19 @@ pub struct UntagUserInput {
     /// removed from the specified user.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagUserInput {
+    /// <p>The name of the IAM user from which you want to remove tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified user.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagUserInput");
@@ -30942,6 +31105,19 @@ pub struct UntagServerCertificateInput {
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are
     /// removed from the specified IAM server certificate.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagServerCertificateInput {
+    /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified IAM server certificate.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagServerCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30965,6 +31141,20 @@ pub struct UntagSamlProviderInput {
     /// removed from the specified SAML identity provider.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagSamlProviderInput {
+    /// <p>The ARN of the SAML identity provider in IAM from which you want to remove
+    /// tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified SAML identity provider.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagSamlProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagSamlProviderInput");
@@ -30985,6 +31175,19 @@ pub struct UntagRoleInput {
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are
     /// removed from the specified role.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagRoleInput {
+    /// <p>The name of the IAM role from which you want to remove tags.</p>
+    /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified role.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31008,6 +31211,20 @@ pub struct UntagPolicyInput {
     /// removed from the specified policy.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagPolicyInput {
+    /// <p>The ARN of the IAM customer managed policy from which you want to remove
+    /// tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified policy.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagPolicyInput");
@@ -31028,6 +31245,19 @@ pub struct UntagOpenIdConnectProviderInput {
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are
     /// removed from the specified OIDC provider.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagOpenIdConnectProviderInput {
+    /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified OIDC provider.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31054,6 +31284,20 @@ pub struct UntagMfaDeviceInput {
     /// removed from the specified instance profile.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagMfaDeviceInput {
+    /// <p>The unique identifier for the IAM virtual MFA device from which you want to remove
+    /// tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified instance profile.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagMfaDeviceInput");
@@ -31075,6 +31319,19 @@ pub struct UntagInstanceProfileInput {
     /// removed from the specified instance profile.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagInstanceProfileInput {
+    /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are
+    /// removed from the specified instance profile.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagInstanceProfileInput");
@@ -31094,6 +31351,18 @@ pub struct TagUserInput {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagUserInput {
+    /// <p>The name of the IAM user to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31116,6 +31385,19 @@ pub struct TagServerCertificateInput {
     /// Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagServerCertificateInput {
+    /// <p>The name of the IAM server certificate to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the IAM server certificate.
+    /// Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagServerCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagServerCertificateInput");
@@ -31137,6 +31419,19 @@ pub struct TagSamlProviderInput {
     /// Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagSamlProviderInput {
+    /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the SAML identity provider in IAM.
+    /// Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagSamlProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagSamlProviderInput");
@@ -31156,6 +31451,18 @@ pub struct TagRoleInput {
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagRoleInput {
+    /// <p>The name of the IAM role to which you want to add tags.</p>
+    /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31178,6 +31485,19 @@ pub struct TagPolicyInput {
     /// Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagPolicyInput {
+    /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the IAM customer managed policy.
+    /// Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagPolicyInput");
@@ -31198,6 +31518,19 @@ pub struct TagOpenIdConnectProviderInput {
     /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM.
     /// Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagOpenIdConnectProviderInput {
+    /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM.
+    /// Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31224,6 +31557,20 @@ pub struct TagMfaDeviceInput {
     /// Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagMfaDeviceInput {
+    /// <p>The unique identifier for the IAM virtual MFA device to which you want to add tags.
+    /// For virtual MFA devices, the serial number is the same as the ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the IAM virtual MFA device.
+    /// Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagMfaDeviceInput");
@@ -31244,6 +31591,19 @@ pub struct TagInstanceProfileInput {
     /// <p>The list of tags that you want to attach to the IAM instance profile.
     /// Each tag consists of a key name and an associated value.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagInstanceProfileInput {
+    /// <p>The name of the IAM instance profile to which you want to add tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>The list of tags that you want to attach to the IAM instance profile.
+    /// Each tag consists of a key name and an associated value.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31450,6 +31810,225 @@ pub struct SimulatePrincipalPolicyInput {
     /// <code>Marker</code> element in the response that you received to indicate where the next call
     /// should start.</p>
     pub marker: std::option::Option<std::string::String>,
+}
+impl SimulatePrincipalPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to
+    /// include in the simulation. If you specify a user, group, or role, the simulation
+    /// includes all policies that are associated with that entity. If you specify a user, the
+    /// simulation also includes all policies that are attached to any groups the user belongs
+    /// to.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_source_arn(&self) -> std::option::Option<&str> {
+        self.policy_source_arn.as_deref()
+    }
+    /// <p>An optional list of additional policy documents to include in the simulation. Each
+    /// document is specified as a string containing the complete, valid JSON text of an IAM
+    /// policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_input_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_input_list.as_deref()
+    }
+    /// <p>The IAM permissions boundary policy to simulate. The permissions boundary sets the
+    /// maximum permissions that the entity can have. You can input only one permissions
+    /// boundary when you pass a policy to this operation. An IAM entity can only have one
+    /// permissions boundary in effect at a time. For example, if a permissions boundary is
+    /// attached to an entity and you pass in a different permissions boundary policy using this
+    /// parameter, then the new permissions boundary policy is used for the simulation. For more
+    /// information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// entities</a> in the <i>IAM User Guide</i>. The policy input is
+    /// specified as a string containing the complete, valid JSON text of a permissions boundary
+    /// policy.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn permissions_boundary_policy_input_list(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.permissions_boundary_policy_input_list.as_deref()
+    }
+    /// <p>A list of names of API operations to evaluate in the simulation. Each operation is
+    /// evaluated for each resource. Each operation must include the service identifier, such as
+    /// <code>iam:CreateUser</code>.</p>
+    pub fn action_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.action_names.as_deref()
+    }
+    /// <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is
+    /// not provided, then the value defaults to <code>*</code> (all resources). Each API in the
+    /// <code>ActionNames</code> parameter is evaluated for each resource in this list. The
+    /// simulation determines the access result (allowed or denied) of each combination and
+    /// reports it in the response. You can simulate resources that don't exist in your
+    /// account.</p>
+    /// <p>The simulation does not automatically retrieve policies for the specified resources.
+    /// If you want to include a resource policy in the simulation, then you must include the
+    /// policy as a string in the <code>ResourcePolicy</code> parameter.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>A resource-based policy to include in the simulation provided as a string. Each
+    /// resource in the simulation is treated as if it had this policy attached. You can include
+    /// only one resource-based policy in a simulation.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
+    /// <p>An Amazon Web Services account ID that specifies the owner of any simulated resource that does not
+    /// identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket
+    /// or object. If <code>ResourceOwner</code> is specified, it is also used as the account
+    /// owner of any <code>ResourcePolicy</code> included in the simulation. If the
+    /// <code>ResourceOwner</code> parameter is not specified, then the owner of the
+    /// resources and the resource policy defaults to the account of the identity provided in
+    /// <code>CallerArn</code>. This parameter is required only if you specify a
+    /// resource-based policy and account that owns the resource is different from the account
+    /// that owns the simulated calling user <code>CallerArn</code>.</p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The ARN of the IAM user that you want to specify as the simulated caller of the API
+    /// operations. If you do not specify a <code>CallerArn</code>, it defaults to the ARN of
+    /// the user that you specify in <code>PolicySourceArn</code>, if you specified a user. If
+    /// you include both a <code>PolicySourceArn</code> (for example,
+    /// <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code> (for
+    /// example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+    /// simulate calling the API operations as Bob, as if Bob had David's policies.</p>
+    /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
+    /// assumed role, federated user, or a service principal.</p>
+    /// <p>
+    /// <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> and
+    /// the <code>PolicySourceArn</code> is not the ARN for an IAM user. This is required so
+    /// that the resource-based policy's <code>Principal</code> element has a value to use in
+    /// evaluating the policy.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn caller_arn(&self) -> std::option::Option<&str> {
+        self.caller_arn.as_deref()
+    }
+    /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a
+    /// context key is evaluated in one of the simulated IAM permissions policies, the
+    /// corresponding value is supplied.</p>
+    pub fn context_entries(&self) -> std::option::Option<&[crate::model::ContextEntry]> {
+        self.context_entries.as_deref()
+    }
+    /// <p>Specifies the type of simulation to run. Different API operations that support
+    /// resource-based policies require different combinations of resources. By specifying the
+    /// type of simulation to run, you enable the policy simulator to enforce the presence of
+    /// the required resources to ensure reliable simulation results. If your simulation does
+    /// not match one of the following scenarios, then you can omit this parameter. The
+    /// following list shows each of the supported scenario values and the resources that you
+    /// must define to run the simulation.</p>
+    /// <p>Each of the EC2 scenarios requires that you specify instance, image, and security
+    /// group resources. If your scenario includes an EBS volume, then you must specify that
+    /// volume as a resource. If the EC2 scenario includes VPC, then you must supply the network
+    /// interface resource. If it includes an IP subnet, then you must specify the subnet
+    /// resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a> in the <i>Amazon EC2 User
+    /// Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>EC2-Classic-InstanceStore</b>
+    /// </p>
+    /// <p>instance, image, security group</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-Classic-EBS</b>
+    /// </p>
+    /// <p>instance, image, security group, volume</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-InstanceStore</b>
+    /// </p>
+    /// <p>instance, image, security group, network interface</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-InstanceStore-Subnet</b>
+    /// </p>
+    /// <p>instance, image, security group, network interface, subnet</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-EBS</b>
+    /// </p>
+    /// <p>instance, image, security group, network interface, volume</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-EBS-Subnet</b>
+    /// </p>
+    /// <p>instance, image, security group, network interface, subnet, volume</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_handling_option(&self) -> std::option::Option<&str> {
+        self.resource_handling_option.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
 }
 impl std::fmt::Debug for SimulatePrincipalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31662,6 +32241,215 @@ pub struct SimulateCustomPolicyInput {
     /// should start.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl SimulateCustomPolicyInput {
+    /// <p>A list of policy documents to include in the simulation. Each document is specified as
+    /// a string containing the complete, valid JSON text of an IAM policy. Do not include any
+    /// resource-based policies in this parameter. Any resource-based policy must be submitted
+    /// with the <code>ResourcePolicy</code> parameter. The policies cannot be "scope-down"
+    /// policies, such as you could include in a call to <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or one of
+    /// the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API operations. In other words, do not use policies designed to
+    /// restrict what a user can do while using the temporary credentials.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_input_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_input_list.as_deref()
+    }
+    /// <p>The IAM permissions boundary policy to simulate. The permissions boundary sets the
+    /// maximum permissions that an IAM entity can have. You can input only one permissions
+    /// boundary when you pass a policy to this operation. For more information about
+    /// permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+    /// entities</a> in the <i>IAM User Guide</i>. The policy input is
+    /// specified as a string that contains the complete, valid JSON text of a permissions
+    /// boundary policy.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn permissions_boundary_policy_input_list(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.permissions_boundary_policy_input_list.as_deref()
+    }
+    /// <p>A list of names of API operations to evaluate in the simulation. Each operation is
+    /// evaluated against each resource. Each operation must include the service identifier,
+    /// such as <code>iam:CreateUser</code>. This operation does not support using wildcards (*)
+    /// in an action name.</p>
+    pub fn action_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.action_names.as_deref()
+    }
+    /// <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is
+    /// not provided, then the value defaults to <code>*</code> (all resources). Each API in the
+    /// <code>ActionNames</code> parameter is evaluated for each resource in this list. The
+    /// simulation determines the access result (allowed or denied) of each combination and
+    /// reports it in the response. You can simulate resources that don't exist in your
+    /// account.</p>
+    /// <p>The simulation does not automatically retrieve policies for the specified resources.
+    /// If you want to include a resource policy in the simulation, then you must include the
+    /// policy as a string in the <code>ResourcePolicy</code> parameter.</p>
+    /// <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to all of the
+    /// resources included in the simulation or you receive an invalid input error.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>A resource-based policy to include in the simulation provided as a string. Each
+    /// resource in the simulation is treated as if it had this policy attached. You can include
+    /// only one resource-based policy in a simulation.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
+    /// <p>An ARN representing the Amazon Web Services account ID that specifies the owner of any simulated
+    /// resource that does not identify its owner in the resource ARN. Examples of resource ARNs
+    /// include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
+    /// used as the account owner of any <code>ResourcePolicy</code> included in the simulation.
+    /// If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+    /// resources and the resource policy defaults to the account of the identity provided in
+    /// <code>CallerArn</code>. This parameter is required only if you specify a
+    /// resource-based policy and account that owns the resource is different from the account
+    /// that owns the simulated calling user <code>CallerArn</code>.</p>
+    /// <p>The ARN for an account uses the following syntax:
+    /// <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example,
+    /// to represent the account with the 112233445566 ID, use the following ARN:
+    /// <code>arn:aws:iam::112233445566-ID:root</code>. </p>
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
+    /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API
+    /// operations. <code>CallerArn</code> is required if you include a
+    /// <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has
+    /// a value to use in evaluating the policy.</p>
+    /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
+    /// assumed role, federated user, or a service principal.</p>
+    pub fn caller_arn(&self) -> std::option::Option<&str> {
+        self.caller_arn.as_deref()
+    }
+    /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a
+    /// context key is evaluated in one of the simulated IAM permissions policies, the
+    /// corresponding value is supplied.</p>
+    pub fn context_entries(&self) -> std::option::Option<&[crate::model::ContextEntry]> {
+        self.context_entries.as_deref()
+    }
+    /// <p>Specifies the type of simulation to run. Different API operations that support
+    /// resource-based policies require different combinations of resources. By specifying the
+    /// type of simulation to run, you enable the policy simulator to enforce the presence of
+    /// the required resources to ensure reliable simulation results. If your simulation does
+    /// not match one of the following scenarios, then you can omit this parameter. The
+    /// following list shows each of the supported scenario values and the resources that you
+    /// must define to run the simulation.</p>
+    /// <p>Each of the EC2 scenarios requires that you specify instance, image, and
+    /// security-group resources. If your scenario includes an EBS volume, then you must specify
+    /// that volume as a resource. If the EC2 scenario includes VPC, then you must supply the
+    /// network-interface resource. If it includes an IP subnet, then you must specify the
+    /// subnet resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a> in the <i>Amazon EC2 User
+    /// Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>EC2-Classic-InstanceStore</b>
+    /// </p>
+    /// <p>instance, image, security-group</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-Classic-EBS</b>
+    /// </p>
+    /// <p>instance, image, security-group, volume</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-InstanceStore</b>
+    /// </p>
+    /// <p>instance, image, security-group, network-interface</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-InstanceStore-Subnet</b>
+    /// </p>
+    /// <p>instance, image, security-group, network-interface, subnet</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-EBS</b>
+    /// </p>
+    /// <p>instance, image, security-group, network-interface, volume</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>EC2-VPC-EBS-Subnet</b>
+    /// </p>
+    /// <p>instance, image, security-group, network-interface, subnet, volume</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_handling_option(&self) -> std::option::Option<&str> {
+        self.resource_handling_option.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for SimulateCustomPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimulateCustomPolicyInput");
@@ -31697,6 +32485,20 @@ pub struct SetSecurityTokenServicePreferencesInput {
     pub global_endpoint_token_version:
         std::option::Option<crate::model::GlobalEndpointTokenVersion>,
 }
+impl SetSecurityTokenServicePreferencesInput {
+    /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in
+    /// manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid
+    /// in all Regions. However, version 2 tokens are longer and might affect systems where you
+    /// temporarily store tokens.</p>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+    /// deactivating STS in an Amazon Web Services Region</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn global_endpoint_token_version(
+        &self,
+    ) -> std::option::Option<&crate::model::GlobalEndpointTokenVersion> {
+        self.global_endpoint_token_version.as_ref()
+    }
+}
 impl std::fmt::Debug for SetSecurityTokenServicePreferencesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetSecurityTokenServicePreferencesInput");
@@ -31720,6 +32522,20 @@ pub struct SetDefaultPolicyVersionInput {
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
     /// policies</a> in the <i>IAM User Guide</i>.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl SetDefaultPolicyVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
+    /// set.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The version of the policy to set as the default (operative) version.</p>
+    /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+    /// policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SetDefaultPolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31749,6 +32565,30 @@ pub struct ResyncMfaDeviceInput {
     /// <p>The format for this parameter is a sequence of six digits.</p>
     pub authentication_code2: std::option::Option<std::string::String>,
 }
+impl ResyncMfaDeviceInput {
+    /// <p>The name of the user whose MFA device you want to resynchronize.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Serial number that uniquely identifies the MFA device.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>An authentication code emitted by the device.</p>
+    /// <p>The format for this parameter is a sequence of six digits.</p>
+    pub fn authentication_code1(&self) -> std::option::Option<&str> {
+        self.authentication_code1.as_deref()
+    }
+    /// <p>A subsequent authentication code emitted by the device.</p>
+    /// <p>The format for this parameter is a sequence of six digits.</p>
+    pub fn authentication_code2(&self) -> std::option::Option<&str> {
+        self.authentication_code2.as_deref()
+    }
+}
 impl std::fmt::Debug for ResyncMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResyncMfaDeviceInput");
@@ -31775,6 +32615,22 @@ pub struct ResetServiceSpecificCredentialInput {
     /// consist of any upper or lowercased letter or digit.</p>
     pub service_specific_credential_id: std::option::Option<std::string::String>,
 }
+impl ResetServiceSpecificCredentialInput {
+    /// <p>The name of the IAM user associated with the service-specific credential. If this
+    /// value is not specified, then the operation assumes the user whose credentials are used
+    /// to call the operation.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn service_specific_credential_id(&self) -> std::option::Option<&str> {
+        self.service_specific_credential_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetServiceSpecificCredentialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetServiceSpecificCredentialInput");
@@ -31800,6 +32656,20 @@ pub struct RemoveUserFromGroupInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl RemoveUserFromGroupInput {
+    /// <p>The name of the group to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name of the user to remove.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveUserFromGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveUserFromGroupInput");
@@ -31822,6 +32692,20 @@ pub struct RemoveRoleFromInstanceProfileInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub role_name: std::option::Option<std::string::String>,
 }
+impl RemoveRoleFromInstanceProfileInput {
+    /// <p>The name of the instance profile to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>The name of the role to remove.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveRoleFromInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveRoleFromInstanceProfileInput");
@@ -31842,6 +32726,19 @@ pub struct RemoveClientIdFromOpenIdConnectProviderInput {
     /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider
     /// resource. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
     pub client_id: std::option::Option<std::string::String>,
+}
+impl RemoveClientIdFromOpenIdConnectProviderInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the
+    /// client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider
+    /// resource. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveClientIdFromOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31890,6 +32787,44 @@ pub struct PutUserPolicyInput {
     /// </ul>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl PutUserPolicyInput {
+    /// <p>The name of the user to associate the policy with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The name of the policy document.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    ///
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+    /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+    /// IAM.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for PutUserPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutUserPolicyInput");
@@ -31910,6 +32845,18 @@ pub struct PutUserPermissionsBoundaryInput {
     /// <p>The ARN of the policy that is used to set the permissions boundary for the
     /// user.</p>
     pub permissions_boundary: std::option::Option<std::string::String>,
+}
+impl PutUserPermissionsBoundaryInput {
+    /// <p>The name (friendly name, not ARN) of the IAM user for which you want to set the
+    /// permissions boundary.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ARN of the policy that is used to set the permissions boundary for the
+    /// user.</p>
+    pub fn permissions_boundary(&self) -> std::option::Option<&str> {
+        self.permissions_boundary.as_deref()
+    }
 }
 impl std::fmt::Debug for PutUserPermissionsBoundaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31954,6 +32901,43 @@ pub struct PutRolePolicyInput {
     /// </ul>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl PutRolePolicyInput {
+    /// <p>The name of the role to associate the policy with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The name of the policy document.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+    /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+    /// IAM.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for PutRolePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutRolePolicyInput");
@@ -31974,6 +32958,18 @@ pub struct PutRolePermissionsBoundaryInput {
     /// <p>The ARN of the policy that is used to set the permissions boundary for the
     /// role.</p>
     pub permissions_boundary: std::option::Option<std::string::String>,
+}
+impl PutRolePermissionsBoundaryInput {
+    /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the
+    /// permissions boundary.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The ARN of the policy that is used to set the permissions boundary for the
+    /// role.</p>
+    pub fn permissions_boundary(&self) -> std::option::Option<&str> {
+        self.permissions_boundary.as_deref()
+    }
 }
 impl std::fmt::Debug for PutRolePermissionsBoundaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32019,6 +33015,44 @@ pub struct PutGroupPolicyInput {
     /// </ul>
     pub policy_document: std::option::Option<std::string::String>,
 }
+impl PutGroupPolicyInput {
+    /// <p>The name of the group to associate the policy with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name of the policy document.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The policy document.</p>
+    ///
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+    /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+    /// =            IAM.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
 impl std::fmt::Debug for PutGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutGroupPolicyInput");
@@ -32053,6 +33087,33 @@ pub struct ListVirtualMfaDevicesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListVirtualMfaDevicesInput {
+    /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list.
+    /// If you do not specify an <code>AssignmentStatus</code>, the operation defaults to
+    /// <code>Any</code>, which lists both assigned and unassigned virtual MFA
+    /// devices.,</p>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatusType> {
+        self.assignment_status.as_ref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListVirtualMfaDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVirtualMfaDevicesInput");
@@ -32085,6 +33146,32 @@ pub struct ListUserTagsInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListUserTagsInput {
+    /// <p>The name of the IAM user whose tags you want to see.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListUserTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32124,6 +33211,37 @@ pub struct ListUsersInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListUsersInput {
+    /// <p> The path prefix for filtering the results. For example:
+    /// <code>/division_abc/subdivision_xyz/</code>, which would get all user names whose
+    /// path starts with <code>/division_abc/subdivision_xyz/</code>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing
+    /// all user names. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -32156,6 +33274,32 @@ pub struct ListUserPoliciesInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListUserPoliciesInput {
+    /// <p>The name of the user to list policies for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListUserPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32192,6 +33336,34 @@ pub struct ListSshPublicKeysInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListSshPublicKeysInput {
+    /// <p>The name of the IAM user to list SSH public keys for. If none is specified, the
+    /// <code>UserName</code> field is determined implicitly based on the Amazon Web Services access key
+    /// used to sign the request.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListSshPublicKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSshPublicKeysInput");
@@ -32225,6 +33397,32 @@ pub struct ListSigningCertificatesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListSigningCertificatesInput {
+    /// <p>The name of the IAM user whose signing certificates you want to examine.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListSigningCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSigningCertificatesInput");
@@ -32248,6 +33446,21 @@ pub struct ListServiceSpecificCredentialsInput {
     /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not
     /// specified, then Amazon Web Services returns service-specific credentials for all services.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl ListServiceSpecificCredentialsInput {
+    /// <p>The name of the user whose service-specific credentials you want information about. If
+    /// this value is not specified, then the operation assumes the user whose credentials are
+    /// used to call the operation.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not
+    /// specified, then Amazon Web Services returns service-specific credentials for all services.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListServiceSpecificCredentialsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32280,6 +33493,32 @@ pub struct ListServerCertificateTagsInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListServerCertificateTagsInput {
+    /// <p>The name of the IAM server certificate whose tags you want to see.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListServerCertificateTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32319,6 +33558,37 @@ pub struct ListServerCertificatesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListServerCertificatesInput {
+    /// <p> The path prefix for filtering the results. For example:
+    /// <code>/company/servercerts</code> would get all server certificates for which the
+    /// path starts with <code>/company/servercerts</code>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing
+    /// all server certificates. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListServerCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListServerCertificatesInput");
@@ -32352,6 +33622,33 @@ pub struct ListSamlProviderTagsInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListSamlProviderTagsInput {
+    /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags
+    /// you want to see.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListSamlProviderTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32397,6 +33694,32 @@ pub struct ListRoleTagsInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListRoleTagsInput {
+    /// <p>The name of the IAM role for which you want to see the list of tags.</p>
+    /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListRoleTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRoleTagsInput");
@@ -32435,6 +33758,37 @@ pub struct ListRolesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListRolesInput {
+    /// <p> The path prefix for filtering the results. For example, the prefix
+    /// <code>/application_abc/component_xyz/</code> gets all roles whose path starts with
+    /// <code>/application_abc/component_xyz/</code>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing
+    /// all roles. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRolesInput");
@@ -32467,6 +33821,32 @@ pub struct ListRolePoliciesInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListRolePoliciesInput {
+    /// <p>The name of the role to list policies for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListRolePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32501,6 +33881,32 @@ pub struct ListPolicyVersionsInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListPolicyVersionsInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+    /// versions.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListPolicyVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPolicyVersionsInput");
@@ -32534,6 +33940,32 @@ pub struct ListPolicyTagsInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListPolicyTagsInput {
+    /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListPolicyTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPolicyTagsInput");
@@ -32564,6 +33996,30 @@ pub struct ListPoliciesGrantingServiceAccessInput {
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
     /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub service_namespaces: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ListPoliciesGrantingServiceAccessInput {
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The ARN of the IAM identity (user, group, or role) whose policies you want to
+    /// list.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
+    /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+    /// <i>IAM User Guide</i>. Choose the name of the service to view
+    /// details for that service. In the first paragraph, find the service prefix. For example,
+    /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn service_namespaces(&self) -> std::option::Option<&[std::string::String]> {
+        self.service_namespaces.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPoliciesGrantingServiceAccessInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32620,6 +34076,60 @@ pub struct ListPoliciesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListPoliciesInput {
+    /// <p>The scope to use for filtering the results.</p>
+    /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To
+    /// list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to
+    /// <code>Local</code>.</p>
+    /// <p>This parameter is optional. If it is not included, or if it is set to
+    /// <code>All</code>, all policies are returned.</p>
+    pub fn scope(&self) -> std::option::Option<&crate::model::PolicyScopeType> {
+        self.scope.as_ref()
+    }
+    /// <p>A flag to filter the results to only the attached policies.</p>
+    /// <p>When <code>OnlyAttached</code> is <code>true</code>, the returned list contains only
+    /// the policies that are attached to an IAM user, group, or role. When
+    /// <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
+    /// included, all policies are returned.</p>
+    pub fn only_attached(&self) -> bool {
+        self.only_attached
+    }
+    /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
+    /// included, it defaults to a slash (/), listing all policies. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>The policy usage method to use for filtering the results.</p>
+    /// <p>To list only permissions policies,
+    /// set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list only
+    /// the policies used to set permissions boundaries, set the value
+    /// to <code>PermissionsBoundary</code>.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    pub fn policy_usage_filter(&self) -> std::option::Option<&crate::model::PolicyUsageType> {
+        self.policy_usage_filter.as_ref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPoliciesInput");
@@ -32656,6 +34166,33 @@ pub struct ListOpenIdConnectProviderTagsInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListOpenIdConnectProviderTagsInput {
+    /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to
+    /// see.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListOpenIdConnectProviderTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32705,6 +34242,33 @@ pub struct ListMfaDeviceTagsInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListMfaDeviceTagsInput {
+    /// <p>The unique identifier for the IAM virtual MFA device whose tags you want to see.
+    /// For virtual MFA devices, the serial number is the same as the ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListMfaDeviceTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMfaDeviceTagsInput");
@@ -32737,6 +34301,32 @@ pub struct ListMfaDevicesInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListMfaDevicesInput {
+    /// <p>The name of the user whose MFA devices you want to list.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListMfaDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32771,6 +34361,32 @@ pub struct ListInstanceProfileTagsInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListInstanceProfileTagsInput {
+    /// <p>The name of the IAM instance profile whose tags you want to see.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListInstanceProfileTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceProfileTagsInput");
@@ -32803,6 +34419,32 @@ pub struct ListInstanceProfilesForRoleInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListInstanceProfilesForRoleInput {
+    /// <p>The name of the role to list instance profiles for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListInstanceProfilesForRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32842,6 +34484,37 @@ pub struct ListInstanceProfilesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListInstanceProfilesInput {
+    /// <p> The path prefix for filtering the results. For example, the prefix
+    /// <code>/application_abc/component_xyz/</code> gets all instance profiles whose path
+    /// starts with <code>/application_abc/component_xyz/</code>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing
+    /// all instance profiles. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListInstanceProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceProfilesInput");
@@ -32874,6 +34547,32 @@ pub struct ListGroupsForUserInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListGroupsForUserInput {
+    /// <p>The name of the user to list groups for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListGroupsForUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32913,6 +34612,37 @@ pub struct ListGroupsInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListGroupsInput {
+    /// <p> The path prefix for filtering the results. For example, the prefix
+    /// <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with
+    /// <code>/division_abc/subdivision_xyz/</code>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing
+    /// all groups. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsInput");
@@ -32945,6 +34675,32 @@ pub struct ListGroupPoliciesInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListGroupPoliciesInput {
+    /// <p>The name of the group to list policies for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListGroupPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32999,6 +34755,58 @@ pub struct ListEntitiesForPolicyInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListEntitiesForPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+    /// versions.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The entity type to use for filtering the results.</p>
+    /// <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that
+    /// are attached to the specified policy are returned. This parameter is optional. If it is
+    /// not included, all attached entities (users, groups, and roles) are returned. The
+    /// argument for this parameter must be one of the valid values listed below.</p>
+    pub fn entity_filter(&self) -> std::option::Option<&crate::model::EntityType> {
+        self.entity_filter.as_ref()
+    }
+    /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
+    /// included, it defaults to a slash (/), listing all entities.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>The policy usage method to use for filtering the results.</p>
+    /// <p>To list only permissions policies,
+    /// set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list only
+    /// the policies used to set permissions boundaries, set the value
+    /// to <code>PermissionsBoundary</code>.</p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    pub fn policy_usage_filter(&self) -> std::option::Option<&crate::model::PolicyUsageType> {
+        self.policy_usage_filter.as_ref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListEntitiesForPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEntitiesForPolicyInput");
@@ -33042,6 +34850,41 @@ pub struct ListAttachedUserPoliciesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListAttachedUserPoliciesInput {
+    /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
+    /// included, it defaults to a slash (/), listing all policies.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListAttachedUserPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttachedUserPoliciesInput");
@@ -33082,6 +34925,41 @@ pub struct ListAttachedRolePoliciesInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListAttachedRolePoliciesInput {
+    /// <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
+    /// included, it defaults to a slash (/), listing all policies.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListAttachedRolePoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33124,6 +35002,41 @@ pub struct ListAttachedGroupPoliciesInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListAttachedGroupPoliciesInput {
+    /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
+    /// included, it defaults to a slash (/), listing all policies.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path_prefix(&self) -> std::option::Option<&str> {
+        self.path_prefix.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListAttachedGroupPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAttachedGroupPoliciesInput");
@@ -33153,6 +35066,26 @@ pub struct ListAccountAliasesInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl ListAccountAliasesInput {
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for ListAccountAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33186,6 +35119,32 @@ pub struct ListAccessKeysInput {
     /// from.</p>
     pub max_items: std::option::Option<i32>,
 }
+impl ListAccessKeysInput {
+    /// <p>The name of the user.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+}
 impl std::fmt::Debug for ListAccessKeysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccessKeysInput");
@@ -33209,6 +35168,20 @@ pub struct GetUserPolicyInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl GetUserPolicyInput {
+    /// <p>The name of the user who the policy is associated with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The name of the policy document to get.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUserPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserPolicyInput");
@@ -33227,6 +35200,15 @@ pub struct GetUserInput {
     /// request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
+}
+impl GetUserInput {
+    /// <p>The name of the user to get information about.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to the user making the
+    /// request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33253,6 +35235,26 @@ pub struct GetSshPublicKeyInput {
     /// format, use <code>PEM</code>.</p>
     pub encoding: std::option::Option<crate::model::EncodingType>,
 }
+impl GetSshPublicKeyInput {
+    /// <p>The name of the IAM user associated with the SSH public key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier for the SSH public key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+    /// <p>Specifies the public key encoding format to use in the response. To retrieve the
+    /// public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM
+    /// format, use <code>PEM</code>.</p>
+    pub fn encoding(&self) -> std::option::Option<&crate::model::EncodingType> {
+        self.encoding.as_ref()
+    }
+}
 impl std::fmt::Debug for GetSshPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSshPublicKeyInput");
@@ -33270,6 +35272,13 @@ pub struct GetServiceLinkedRoleDeletionStatusInput {
     /// <p>The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a> operation in the format
     /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
     pub deletion_task_id: std::option::Option<std::string::String>,
+}
+impl GetServiceLinkedRoleDeletionStatusInput {
+    /// <p>The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a> operation in the format
+    /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
+    pub fn deletion_task_id(&self) -> std::option::Option<&str> {
+        self.deletion_task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetServiceLinkedRoleDeletionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33310,6 +35319,42 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesInput {
     /// should start.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl GetServiceLastAccessedDetailsWithEntitiesInput {
+    /// <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code>
+    /// operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The service namespace for an Amazon Web Services service. Provide the service namespace to learn
+    /// when the IAM entity last attempted to access the specified service.</p>
+    /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+    /// <i>IAM User Guide</i>. Choose the name of the service to view
+    /// details for that service. In the first paragraph, find the service prefix. For example,
+    /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn service_namespace(&self) -> std::option::Option<&str> {
+        self.service_namespace.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceLastAccessedDetailsWithEntitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceLastAccessedDetailsWithEntitiesInput");
@@ -33345,6 +35390,33 @@ pub struct GetServiceLastAccessedDetailsInput {
     /// should start.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl GetServiceLastAccessedDetailsInput {
+    /// <p>The ID of the request generated by the <a>GenerateServiceLastAccessedDetails</a> operation. The <code>JobId</code>
+    /// returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
+    /// within a session, or by the same user when used to call
+    /// <code>GetServiceLastAccessedDetail</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceLastAccessedDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceLastAccessedDetailsInput");
@@ -33364,6 +35436,14 @@ pub struct GetServerCertificateInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub server_certificate_name: std::option::Option<std::string::String>,
 }
+impl GetServerCertificateInput {
+    /// <p>The name of the server certificate you want to retrieve information about.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServerCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServerCertificateInput");
@@ -33380,6 +35460,14 @@ pub struct GetSamlProviderInput {
     /// information about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub saml_provider_arn: std::option::Option<std::string::String>,
+}
+impl GetSamlProviderInput {
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get
+    /// information about.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSamlProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33402,6 +35490,20 @@ pub struct GetRolePolicyInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl GetRolePolicyInput {
+    /// <p>The name of the role associated with the policy.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The name of the policy document to get.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRolePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRolePolicyInput");
@@ -33419,6 +35521,14 @@ pub struct GetRoleInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub role_name: std::option::Option<std::string::String>,
+}
+impl GetRoleInput {
+    /// <p>The name of the IAM role to get information about.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33442,6 +35552,21 @@ pub struct GetPolicyVersionInput {
     /// followed by a period '.' and a string of letters and digits.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl GetPolicyVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
+    /// about.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>Identifies the policy version to retrieve.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that
+    /// consists of the lowercase letter 'v' followed by one or two digits, and optionally
+    /// followed by a period '.' and a string of letters and digits.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetPolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPolicyVersionInput");
@@ -33459,6 +35584,14 @@ pub struct GetPolicyInput {
     /// about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
+}
+impl GetPolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
+    /// about.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33493,6 +35626,36 @@ pub struct GetOrganizationsAccessReportInput {
     /// numerically by the date and time.</p>
     pub sort_key: std::option::Option<crate::model::SortKeyType>,
 }
+impl GetOrganizationsAccessReportInput {
+    /// <p>The identifier of the request generated by the <a>GenerateOrganizationsAccessReport</a> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>The key that is used to sort the results. If you choose the namespace key, the results
+    /// are returned in alphabetical order. If you choose the time key, the results are sorted
+    /// numerically by the date and time.</p>
+    pub fn sort_key(&self) -> std::option::Option<&crate::model::SortKeyType> {
+        self.sort_key.as_ref()
+    }
+}
 impl std::fmt::Debug for GetOrganizationsAccessReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOrganizationsAccessReportInput");
@@ -33512,6 +35675,14 @@ pub struct GetOpenIdConnectProviderInput {
     /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
+}
+impl GetOpenIdConnectProviderInput {
+    /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
+    /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33533,6 +35704,14 @@ pub struct GetLoginProfileInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl GetLoginProfileInput {
+    /// <p>The name of the user whose login profile you want to retrieve.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetLoginProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLoginProfileInput");
@@ -33549,6 +35728,14 @@ pub struct GetInstanceProfileInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
+}
+impl GetInstanceProfileInput {
+    /// <p>The name of the instance profile to get information about.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33570,6 +35757,20 @@ pub struct GetGroupPolicyInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: std::option::Option<std::string::String>,
+}
+impl GetGroupPolicyInput {
+    /// <p>The name of the group the policy is associated with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name of the policy document to get.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33602,6 +35803,32 @@ pub struct GetGroupInput {
     /// contains a value to include in the subsequent call that tells the service where to continue
     /// from.</p>
     pub max_items: std::option::Option<i32>,
+}
+impl GetGroupInput {
+    /// <p>The name of the group.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
 }
 impl std::fmt::Debug for GetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33657,6 +35884,40 @@ pub struct GetContextKeysForPrincipalPolicyInput {
     /// </ul>
     pub policy_input_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetContextKeysForPrincipalPolicyInput {
+    /// <p>The ARN of a user, group, or role whose policies contain the context keys that you
+    /// want listed. If you specify a user, the list includes context keys that are found in all
+    /// policies that are attached to the user. The list also includes all groups that the user
+    /// is a member of. If you pick a group or a role, then it includes only those context keys
+    /// that are found in policies attached to that entity. Note that all parameters are shown
+    /// in unencoded form here for clarity, but must be URL encoded to be included as a part of
+    /// a real HTML request.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_source_arn(&self) -> std::option::Option<&str> {
+        self.policy_source_arn.as_deref()
+    }
+    /// <p>An optional list of additional policies for which you want the list of context keys
+    /// that are referenced.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_input_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_input_list.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContextKeysForPrincipalPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContextKeysForPrincipalPolicyInput");
@@ -33690,6 +35951,30 @@ pub struct GetContextKeysForCustomPolicyInput {
     /// </li>
     /// </ul>
     pub policy_input_list: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetContextKeysForCustomPolicyInput {
+    /// <p>A list of policies for which you want the list of context keys referenced in those
+    /// policies. Each document is specified as a string containing the complete, valid JSON
+    /// text of an IAM policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_input_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.policy_input_list.as_deref()
+    }
 }
 impl std::fmt::Debug for GetContextKeysForCustomPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33746,6 +36031,34 @@ pub struct GetAccountAuthorizationDetailsInput {
     /// should start.</p>
     pub marker: std::option::Option<std::string::String>,
 }
+impl GetAccountAuthorizationDetailsInput {
+    /// <p>A list of entity types used to filter the results. Only the entities that match the
+    /// types you specify are included in the output. Use the value
+    /// <code>LocalManagedPolicy</code> to include customer managed policies.</p>
+    /// <p>The format for this parameter is a comma-separated (if more than one) list of strings.
+    /// Each string value in the list must be one of the valid values listed below.</p>
+    pub fn filter(&self) -> std::option::Option<&[crate::model::EntityType]> {
+        self.filter.as_deref()
+    }
+    /// <p>Use this only when paginating results to indicate the
+    /// maximum number of items you want in the response. If additional items exist beyond the maximum
+    /// you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+    /// <p>If you do not include this parameter, the number of items defaults to 100. Note that
+    /// IAM might return fewer results, even when there are more results available. In that case, the
+    /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
+    /// contains a value to include in the subsequent call that tells the service where to continue
+    /// from.</p>
+    pub fn max_items(&self) -> std::option::Option<i32> {
+        self.max_items
+    }
+    /// <p>Use this parameter only when paginating results and only after
+    /// you receive a response indicating that the results are truncated. Set it to the value of the
+    /// <code>Marker</code> element in the response that you received to indicate where the next call
+    /// should start.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAccountAuthorizationDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAccountAuthorizationDetailsInput");
@@ -33764,6 +36077,14 @@ pub struct GetAccessKeyLastUsedInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
     /// consist of any upper or lowercased letter or digit.</p>
     pub access_key_id: std::option::Option<std::string::String>,
+}
+impl GetAccessKeyLastUsedInput {
+    /// <p>The identifier of an access key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessKeyLastUsedInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33787,6 +36108,24 @@ pub struct GenerateServiceLastAccessedDetailsInput {
     /// specify action-level granularity, it generates service and action data. If you don't
     /// include this optional parameter, the operation generates service data.</p>
     pub granularity: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
+}
+impl GenerateServiceLastAccessedDetailsInput {
+    /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate
+    /// information about when the resource was last used in an attempt to access an Amazon Web Services
+    /// service.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The level of detail that you want to generate. You can specify whether you want to
+    /// generate information about the last attempt to access services or actions. If you
+    /// specify service-level granularity, this operation generates only service data. If you
+    /// specify action-level granularity, it generates service and action data. If you don't
+    /// include this optional parameter, the operation generates service data.</p>
+    pub fn granularity(
+        &self,
+    ) -> std::option::Option<&crate::model::AccessAdvisorUsageGranularityType> {
+        self.granularity.as_ref()
+    }
 }
 impl std::fmt::Debug for GenerateServiceLastAccessedDetailsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33813,6 +36152,24 @@ pub struct GenerateOrganizationsAccessReportInput {
     /// <p>This ID is used to generate information about when an account principal that is
     /// limited by the SCP attempted to access an Amazon Web Services service.</p>
     pub organizations_policy_id: std::option::Option<std::string::String>,
+}
+impl GenerateOrganizationsAccessReportInput {
+    /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path
+    /// using the known structure of your organization. For example, assume that your account ID
+    /// is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The
+    /// organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is
+    /// <code>o-a1b2c3d4e5</code>. Your entity path is
+    /// <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
+    pub fn entity_path(&self) -> std::option::Option<&str> {
+        self.entity_path.as_deref()
+    }
+    /// <p>The identifier of the Organizations service control policy (SCP). This parameter is
+    /// optional.</p>
+    /// <p>This ID is used to generate information about when an account principal that is
+    /// limited by the SCP attempted to access an Amazon Web Services service.</p>
+    pub fn organizations_policy_id(&self) -> std::option::Option<&str> {
+        self.organizations_policy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GenerateOrganizationsAccessReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33871,6 +36228,48 @@ pub struct EnableMfaDeviceInput {
     /// </important>
     pub authentication_code2: std::option::Option<std::string::String>,
 }
+impl EnableMfaDeviceInput {
+    /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+    /// the serial number is the device ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+    /// following characters: =,.@:/-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>An authentication code emitted by the device. </p>
+    /// <p>The format for this parameter is a string of six digits.</p>
+    /// <important>
+    /// <p>Submit your request immediately after generating the authentication codes. If you
+    /// generate the codes and then wait too long to submit the request, the MFA device
+    /// successfully associates with the user but the MFA device becomes out of sync. This
+    /// happens because time-based one-time passwords (TOTP) expire after a short period of
+    /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+    /// device</a>.</p>
+    /// </important>
+    pub fn authentication_code1(&self) -> std::option::Option<&str> {
+        self.authentication_code1.as_deref()
+    }
+    /// <p>A subsequent authentication code emitted by the device.</p>
+    /// <p>The format for this parameter is a string of six digits.</p>
+    /// <important>
+    /// <p>Submit your request immediately after generating the authentication codes. If you
+    /// generate the codes and then wait too long to submit the request, the MFA device
+    /// successfully associates with the user but the MFA device becomes out of sync. This
+    /// happens because time-based one-time passwords (TOTP) expire after a short period of
+    /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+    /// device</a>.</p>
+    /// </important>
+    pub fn authentication_code2(&self) -> std::option::Option<&str> {
+        self.authentication_code2.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableMfaDeviceInput");
@@ -33894,6 +36293,19 @@ pub struct DetachUserPolicyInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl DetachUserPolicyInput {
+    /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachUserPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachUserPolicyInput");
@@ -33914,6 +36326,19 @@ pub struct DetachRolePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
+}
+impl DetachRolePolicyInput {
+    /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DetachRolePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33936,6 +36361,19 @@ pub struct DetachGroupPolicyInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl DetachGroupPolicyInput {
+    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachGroupPolicyInput");
@@ -33955,6 +36393,16 @@ pub struct DeleteVirtualMfaDeviceInput {
     /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
     /// following characters: =,.@:/-</p>
     pub serial_number: std::option::Option<std::string::String>,
+}
+impl DeleteVirtualMfaDeviceInput {
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+    /// the serial number is the same as the ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+    /// following characters: =,.@:/-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteVirtualMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33978,6 +36426,21 @@ pub struct DeleteUserPolicyInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl DeleteUserPolicyInput {
+    /// <p>The name (friendly name, not ARN) identifying the user that the policy is embedded
+    /// in.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The name identifying the policy document to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserPolicyInput");
@@ -33995,6 +36458,13 @@ pub struct DeleteUserPermissionsBoundaryInput {
     /// permissions boundary.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl DeleteUserPermissionsBoundaryInput {
+    /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the
+    /// permissions boundary.</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserPermissionsBoundaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserPermissionsBoundaryInput");
@@ -34011,6 +36481,14 @@ pub struct DeleteUserInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
+}
+impl DeleteUserInput {
+    /// <p>The name of the user to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34033,6 +36511,20 @@ pub struct DeleteSshPublicKeyInput {
     /// consist of any upper or lowercased letter or digit.</p>
     pub ssh_public_key_id: std::option::Option<std::string::String>,
 }
+impl DeleteSshPublicKeyInput {
+    /// <p>The name of the IAM user associated with the SSH public key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier for the SSH public key.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+        self.ssh_public_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteSshPublicKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSshPublicKeyInput");
@@ -34054,6 +36546,20 @@ pub struct DeleteSigningCertificateInput {
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
     /// characters that can be upper- or lower-cased letters or digits.</p>
     pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DeleteSigningCertificateInput {
+    /// <p>The name of the user the signing certificate belongs to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ID of the signing certificate to delete.</p>
+    /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+    /// characters that can be upper- or lower-cased letters or digits.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSigningCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34080,6 +36586,23 @@ pub struct DeleteServiceSpecificCredentialInput {
     /// consist of any upper or lowercased letter or digit.</p>
     pub service_specific_credential_id: std::option::Option<std::string::String>,
 }
+impl DeleteServiceSpecificCredentialInput {
+    /// <p>The name of the IAM user associated with the service-specific credential. If this
+    /// value is not specified, then the operation assumes the user whose credentials are used
+    /// to call the operation.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The unique identifier of the service-specific credential. You can get this value by
+    /// calling <a>ListServiceSpecificCredentials</a>.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn service_specific_credential_id(&self) -> std::option::Option<&str> {
+        self.service_specific_credential_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServiceSpecificCredentialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceSpecificCredentialInput");
@@ -34099,6 +36622,12 @@ pub struct DeleteServiceLinkedRoleInput {
     /// <p>The name of the service-linked role to be deleted.</p>
     pub role_name: std::option::Option<std::string::String>,
 }
+impl DeleteServiceLinkedRoleInput {
+    /// <p>The name of the service-linked role to be deleted.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServiceLinkedRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServiceLinkedRoleInput");
@@ -34116,6 +36645,14 @@ pub struct DeleteServerCertificateInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub server_certificate_name: std::option::Option<std::string::String>,
 }
+impl DeleteServerCertificateInput {
+    /// <p>The name of the server certificate you want to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn server_certificate_name(&self) -> std::option::Option<&str> {
+        self.server_certificate_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteServerCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteServerCertificateInput");
@@ -34130,6 +36667,12 @@ impl std::fmt::Debug for DeleteServerCertificateInput {
 pub struct DeleteSamlProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
     pub saml_provider_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSamlProviderInput {
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+        self.saml_provider_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSamlProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34153,6 +36696,21 @@ pub struct DeleteRolePolicyInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl DeleteRolePolicyInput {
+    /// <p>The name (friendly name, not ARN) identifying the role that the policy is embedded
+    /// in.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The name of the inline policy to delete from the specified IAM role.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRolePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRolePolicyInput");
@@ -34170,6 +36728,13 @@ pub struct DeleteRolePermissionsBoundaryInput {
     /// permissions boundary.</p>
     pub role_name: std::option::Option<std::string::String>,
 }
+impl DeleteRolePermissionsBoundaryInput {
+    /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the
+    /// permissions boundary.</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRolePermissionsBoundaryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRolePermissionsBoundaryInput");
@@ -34186,6 +36751,14 @@ pub struct DeleteRoleInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub role_name: std::option::Option<std::string::String>,
+}
+impl DeleteRoleInput {
+    /// <p>The name of the role to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34211,6 +36784,23 @@ pub struct DeletePolicyVersionInput {
     /// policies</a> in the <i>IAM User Guide</i>.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
+impl DeletePolicyVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a
+    /// version.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The policy version to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that
+    /// consists of the lowercase letter 'v' followed by one or two digits, and optionally
+    /// followed by a period '.' and a string of letters and digits.</p>
+    /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+    /// policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePolicyVersionInput");
@@ -34228,6 +36818,13 @@ pub struct DeletePolicyInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl DeletePolicyInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePolicyInput");
@@ -34243,6 +36840,13 @@ pub struct DeleteOpenIdConnectProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to
     /// delete. You can get a list of OpenID Connect provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
+}
+impl DeleteOpenIdConnectProviderInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to
+    /// delete. You can get a list of OpenID Connect provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34264,6 +36868,14 @@ pub struct DeleteLoginProfileInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl DeleteLoginProfileInput {
+    /// <p>The name of the user whose password you want to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLoginProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLoginProfileInput");
@@ -34280,6 +36892,14 @@ pub struct DeleteInstanceProfileInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
+}
+impl DeleteInstanceProfileInput {
+    /// <p>The name of the instance profile to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34303,6 +36923,21 @@ pub struct DeleteGroupPolicyInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
+impl DeleteGroupPolicyInput {
+    /// <p>The name (friendly name, not ARN) identifying the group that the policy is embedded
+    /// in.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name identifying the policy document to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteGroupPolicyInput");
@@ -34320,6 +36955,14 @@ pub struct DeleteGroupInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub group_name: std::option::Option<std::string::String>,
+}
+impl DeleteGroupInput {
+    /// <p>The name of the IAM group to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34350,6 +36993,15 @@ pub struct DeleteAccountAliasInput {
     /// two dashes in a row.</p>
     pub account_alias: std::option::Option<std::string::String>,
 }
+impl DeleteAccountAliasInput {
+    /// <p>The name of the account alias to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
+    /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
+    /// two dashes in a row.</p>
+    pub fn account_alias(&self) -> std::option::Option<&str> {
+        self.account_alias.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAccountAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAccountAliasInput");
@@ -34371,6 +37023,21 @@ pub struct DeleteAccessKeyInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
     /// consist of any upper or lowercased letter or digit.</p>
     pub access_key_id: std::option::Option<std::string::String>,
+}
+impl DeleteAccessKeyInput {
+    /// <p>The name of the user whose access key pair you want to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The access key ID for the access key ID and secret access key you want to
+    /// delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
+    /// consist of any upper or lowercased letter or digit.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccessKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34395,6 +37062,22 @@ pub struct DeactivateMfaDeviceInput {
     /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
     /// following characters: =,.@:/-</p>
     pub serial_number: std::option::Option<std::string::String>,
+}
+impl DeactivateMfaDeviceInput {
+    /// <p>The name of the user whose MFA device you want to deactivate.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+    /// the serial number is the device ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+    /// following characters: =,.@:/-</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
 }
 impl std::fmt::Debug for DeactivateMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34430,6 +37113,35 @@ pub struct CreateVirtualMfaDeviceInput {
     /// fails and the resource is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateVirtualMfaDeviceInput {
+    /// <p> The path for the virtual MFA device. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA
+    /// device.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn virtual_mfa_device_name(&self) -> std::option::Option<&str> {
+        self.virtual_mfa_device_name.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new IAM virtual MFA device.
+    /// Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVirtualMfaDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34470,6 +37182,40 @@ pub struct CreateUserInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateUserInput {
+    /// <p> The path for the user name. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name of the user to create.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
+    /// not distinguished by case. For example, you cannot create resources named both
+    /// "MyResource" and "myresource".</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The ARN of the policy that is used to set the permissions boundary for the
+    /// user.</p>
+    pub fn permissions_boundary(&self) -> std::option::Option<&str> {
+        self.permissions_boundary.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
@@ -34495,6 +37241,22 @@ pub struct CreateServiceSpecificCredentialInput {
     /// service you specify here is the only service that can be accessed using these
     /// credentials.</p>
     pub service_name: std::option::Option<std::string::String>,
+}
+impl CreateServiceSpecificCredentialInput {
+    /// <p>The name of the IAM user that is to be associated with the credentials. The new
+    /// service-specific credentials have the same permissions as the associated user except
+    /// that they can be used only to access the specified service.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The
+    /// service you specify here is the only service that can be accessed using these
+    /// credentials.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateServiceSpecificCredentialInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34531,6 +37293,35 @@ pub struct CreateServiceLinkedRoleInput {
     /// suffix.</p>
     pub custom_suffix: std::option::Option<std::string::String>,
 }
+impl CreateServiceLinkedRoleInput {
+    /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a
+    /// string similar to a URL but without the http:// in front. For example:
+    /// <code>elasticbeanstalk.amazonaws.com</code>. </p>
+    /// <p>Service principals are unique and case-sensitive. To find the exact service principal
+    /// for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services
+    /// that work with IAM</a> in the <i>IAM User Guide</i>. Look for
+    /// the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that
+    /// service.</p>
+    pub fn aws_service_name(&self) -> std::option::Option<&str> {
+        self.aws_service_name.as_deref()
+    }
+    /// <p>The description of the role.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p></p>
+    /// <p>A string that you provide, which is combined with the service-provided prefix to form
+    /// the complete role name. If you make multiple requests for the same service, then you
+    /// must supply a different <code>CustomSuffix</code> for each request. Otherwise the
+    /// request fails with a duplicate role name error. For example, you could add
+    /// <code>-1</code> or <code>-debug</code> to the suffix.</p>
+    /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide
+    /// an optional suffix and the operation fails, try the operation again without the
+    /// suffix.</p>
+    pub fn custom_suffix(&self) -> std::option::Option<&str> {
+        self.custom_suffix.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateServiceLinkedRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceLinkedRoleInput");
@@ -34566,6 +37357,35 @@ pub struct CreateSamlProviderInput {
     /// fails and the resource is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSamlProviderInput {
+    /// <p>An XML document generated by an identity provider (IdP) that supports SAML 2.0. The
+    /// document includes the issuer's name, expiration information, and keys that can be used
+    /// to validate the SAML authentication response (assertions) that are received from the
+    /// IdP. You must generate the metadata document using the identity management software that
+    /// is used as your organization's IdP.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+    /// federation</a> in the <i>IAM User Guide</i>
+    /// </p>
+    pub fn saml_metadata_document(&self) -> std::option::Option<&str> {
+        self.saml_metadata_document.as_deref()
+    }
+    /// <p>The name of the provider to create.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new IAM SAML provider.
+    /// Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSamlProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34646,6 +37466,86 @@ pub struct CreateRoleInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRoleInput {
+    /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name of the role to create.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
+    /// not distinguished by case. For example, you cannot create resources named both
+    /// "MyResource" and "myresource".</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The trust relationship policy document that grants an entity permission to assume the
+    /// role.</p>
+    /// <p>In IAM, you must provide a JSON policy that has been converted to a string. However,
+    /// for CloudFormation templates formatted in YAML, you can provide the policy in JSON
+    /// or YAML format. CloudFormation always converts a YAML policy to JSON format before
+    /// submitting it to IAM.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    /// <p> Upon success, the response includes the same trust policy in JSON format.</p>
+    pub fn assume_role_policy_document(&self) -> std::option::Option<&str> {
+        self.assume_role_policy_document.as_deref()
+    }
+    /// <p>A description of the role.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
+    /// If you do not specify a value for this setting, the default maximum of one hour is
+    /// applied. This setting can have a value from 1 hour to 12 hours.</p>
+    /// <p>Anyone who assumes the role from the  or API can use the
+    /// <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI
+    /// parameter to request a longer session. The <code>MaxSessionDuration</code> setting
+    /// determines the maximum duration that can be requested using the
+    /// <code>DurationSeconds</code> parameter. If users don't specify a value for the
+    /// <code>DurationSeconds</code> parameter, their security credentials are valid for one
+    /// hour by default. This applies when you use the <code>AssumeRole*</code> API operations
+    /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
+    /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+    /// roles</a> in the <i>IAM User Guide</i>.</p>
+    pub fn max_session_duration(&self) -> std::option::Option<i32> {
+        self.max_session_duration
+    }
+    /// <p>The ARN of the policy that is used to set the permissions boundary for the
+    /// role.</p>
+    pub fn permissions_boundary(&self) -> std::option::Option<&str> {
+        self.permissions_boundary.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value.
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRoleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRoleInput");
@@ -34702,6 +37602,49 @@ pub struct CreatePolicyVersionInput {
     /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
     /// policies</a> in the <i>IAM User Guide</i>.</p>
     pub set_as_default: bool,
+}
+impl CreatePolicyVersionInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new
+    /// version.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+    /// <p>The JSON policy document that you want to use as the content for this new version of
+    /// the policy.</p>
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+    /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+    /// IAM.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>Specifies whether to set this version as the policy's default version.</p>
+    /// <p>When this parameter is <code>true</code>, the new policy version becomes the operative
+    /// version. That is, it becomes the version that is in effect for the IAM users, groups,
+    /// and roles that the policy is attached to.</p>
+    /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+    /// policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn set_as_default(&self) -> bool {
+        self.set_as_default
+    }
 }
 impl std::fmt::Debug for CreatePolicyVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34776,6 +37719,76 @@ pub struct CreatePolicyInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePolicyInput {
+    /// <p>The friendly name of the policy.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
+    /// not distinguished by case. For example, you cannot create resources named both
+    /// "MyResource" and "myresource".</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The path for the policy.</p>
+    /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    /// <note>
+    /// <p>You cannot use an asterisk (*) in the path name.</p>
+    /// </note>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The JSON policy document that you want to use as the content for the new
+    /// policy.</p>
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation
+    /// templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to
+    ///
+    /// IAM.</p>
+    /// <p>The maximum length of the policy document that you can pass in this operation,
+    /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
+    /// <p>To learn more about JSON policy grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar of the IAM JSON
+    /// policy language</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Any printable ASCII
+    /// character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p>
+    /// </li>
+    /// <li>
+    /// <p>The printable characters in the Basic Latin and  Latin-1 Supplement character set
+    /// (through <code>\u00FF</code>)</p>
+    /// </li>
+    /// <li>
+    /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+    /// carriage return (<code>\u000D</code>)</p>
+    /// </li>
+    /// </ul>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>A friendly description of the policy.</p>
+    /// <p>Typically used to store information about the permissions defined in the policy. For
+    /// example, "Grants access to production DynamoDB tables."</p>
+    /// <p>The policy description is immutable. After a value is assigned, it cannot be
+    /// changed.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new IAM customer managed policy.
+    /// Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePolicyInput");
@@ -34839,6 +37852,62 @@ pub struct CreateOpenIdConnectProviderInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateOpenIdConnectProviderInput {
+    /// <p>The URL of the identity provider. The URL must begin with <code>https://</code> and
+    /// should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID
+    /// tokens. Per the OIDC standard, path components are allowed but query parameters are not.
+    /// Typically the URL consists of only a hostname, like
+    /// <code>https://server.example.org</code> or <code>https://example.com</code>. The URL
+    /// should not contain a port number. </p>
+    /// <p>You cannot register the same provider multiple times in a single Amazon Web Services account. If you
+    /// try to submit a URL that has already been used for an OpenID Connect provider in the
+    /// Amazon Web Services account, you will get an error.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>Provides a list of client IDs, also known as audiences. When a mobile or web app registers
+    /// with an OpenID Connect provider, they establish a value that identifies the application.
+    /// This is the value that's sent as the <code>client_id</code> parameter on OAuth
+    /// requests.</p>
+    /// <p>You can register multiple client IDs with the same provider. For example, you might
+    /// have multiple applications that use the same OIDC provider. You cannot register more
+    /// than 100 client IDs with a single IAM OIDC provider.</p>
+    /// <p>There is no defined format for a client ID. The
+    /// <code>CreateOpenIDConnectProviderRequest</code> operation accepts client IDs up to
+    /// 255 characters long.</p>
+    pub fn client_id_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.client_id_list.as_deref()
+    }
+    /// <p>A list of server certificate thumbprints for the OpenID Connect (OIDC) identity
+    /// provider's server certificates. Typically this list includes only one entry. However,
+    /// IAM lets you have up to five thumbprints for an OIDC provider. This lets you maintain
+    /// multiple thumbprints if the identity provider is rotating certificates.</p>
+    /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+    /// certificate used by the domain where the OpenID Connect provider makes its keys
+    /// available. It is always a 40-character string.</p>
+    /// <p>You must provide at least one thumbprint when creating an IAM OIDC provider. For
+    /// example, assume that the OIDC provider is <code>server.example.com</code> and the
+    /// provider stores its keys at https://keys.server.example.com/openid-connect. In that
+    /// case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+    /// used by <code>https://keys.server.example.com.</code>
+    /// </p>
+    /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the
+    /// thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+    /// Guide</i>.</p>
+    pub fn thumbprint_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.thumbprint_list.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider.
+    /// Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOpenIdConnectProviderInput");
@@ -34870,6 +37939,30 @@ pub struct CreateLoginProfileInput {
     pub password: std::option::Option<std::string::String>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: bool,
+}
+impl CreateLoginProfileInput {
+    /// <p>The name of the IAM user to create a password for. The user must already
+    /// exist.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The new password for the user.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of characters. That string can include almost any printable
+    /// ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>).
+    /// You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
+    /// characters. Any of these characters are valid in a password. However, many tools, such
+    /// as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have
+    /// special meaning within that tool.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
+    pub fn password_reset_required(&self) -> bool {
+        self.password_reset_required
+    }
 }
 impl std::fmt::Debug for CreateLoginProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34906,6 +37999,34 @@ pub struct CreateInstanceProfileInput {
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateInstanceProfileInput {
+    /// <p>The name of the instance profile to create.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>A list of tags that you want to attach to the newly created IAM instance profile.
+    /// Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+    /// fails and the resource is not created.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateInstanceProfileInput");
@@ -34934,6 +38055,25 @@ pub struct CreateGroupInput {
     /// "MyResource" and "myresource".</p>
     pub group_name: std::option::Option<std::string::String>,
 }
+impl CreateGroupInput {
+    /// <p> The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+    /// identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
+    /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
+    /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
+    /// most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The name of the group to create. Do not include the path in this value.</p>
+    /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
+    /// not distinguished by case. For example, you cannot create resources named both
+    /// "MyResource" and "myresource".</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupInput");
@@ -34953,6 +38093,15 @@ pub struct CreateAccountAliasInput {
     /// two dashes in a row.</p>
     pub account_alias: std::option::Option<std::string::String>,
 }
+impl CreateAccountAliasInput {
+    /// <p>The account alias to create.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
+    /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
+    /// two dashes in a row.</p>
+    pub fn account_alias(&self) -> std::option::Option<&str> {
+        self.account_alias.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAccountAliasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountAliasInput");
@@ -34969,6 +38118,14 @@ pub struct CreateAccessKeyInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
+}
+impl CreateAccessKeyInput {
+    /// <p>The name of the IAM user that the new key will belong to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateAccessKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34995,6 +38152,24 @@ pub struct ChangePasswordInput {
     /// special meaning within that tool.</p>
     pub new_password: std::option::Option<std::string::String>,
 }
+impl ChangePasswordInput {
+    /// <p>The IAM user's current password.</p>
+    pub fn old_password(&self) -> std::option::Option<&str> {
+        self.old_password.as_deref()
+    }
+    /// <p>The new password. The new password must conform to the Amazon Web Services account's password
+    /// policy, if one exists.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+    /// that is used to validate this parameter is a string of characters. That string can include almost any printable
+    /// ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>).
+    /// You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
+    /// characters. Any of these characters are valid in a password. However, many tools, such
+    /// as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have
+    /// special meaning within that tool.</p>
+    pub fn new_password(&self) -> std::option::Option<&str> {
+        self.new_password.as_deref()
+    }
+}
 impl std::fmt::Debug for ChangePasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangePasswordInput");
@@ -35015,6 +38190,19 @@ pub struct AttachUserPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
+}
+impl AttachUserPolicyInput {
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachUserPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35037,6 +38225,19 @@ pub struct AttachRolePolicyInput {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
+impl AttachRolePolicyInput {
+    /// <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AttachRolePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttachRolePolicyInput");
@@ -35057,6 +38258,19 @@ pub struct AttachGroupPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
+}
+impl AttachGroupPolicyInput {
+    /// <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
+        self.policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachGroupPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35080,6 +38294,20 @@ pub struct AddUserToGroupInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: std::option::Option<std::string::String>,
 }
+impl AddUserToGroupInput {
+    /// <p>The name of the group to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The name of the user to add.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn user_name(&self) -> std::option::Option<&str> {
+        self.user_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AddUserToGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddUserToGroupInput");
@@ -35102,6 +38330,20 @@ pub struct AddRoleToInstanceProfileInput {
     /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub role_name: std::option::Option<std::string::String>,
 }
+impl AddRoleToInstanceProfileInput {
+    /// <p>The name of the instance profile to update.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+        self.instance_profile_name.as_deref()
+    }
+    /// <p>The name of the role to add.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+    /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn role_name(&self) -> std::option::Option<&str> {
+        self.role_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AddRoleToInstanceProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddRoleToInstanceProfileInput");
@@ -35121,6 +38363,18 @@ pub struct AddClientIdToOpenIdConnectProviderInput {
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider
     /// resource.</p>
     pub client_id: std::option::Option<std::string::String>,
+}
+impl AddClientIdToOpenIdConnectProviderInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to
+    /// add the client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+        self.open_id_connect_provider_arn.as_deref()
+    }
+    /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider
+    /// resource.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AddClientIdToOpenIdConnectProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

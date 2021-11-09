@@ -6,6 +6,12 @@ pub struct EgressAccessLogs {
     /// Customize the log group name.
     pub log_group_name: std::option::Option<std::string::String>,
 }
+impl EgressAccessLogs {
+    /// Customize the log group name.
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
+        self.log_group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for EgressAccessLogs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EgressAccessLogs");
@@ -58,6 +64,16 @@ pub struct Authorization {
     pub cdn_identifier_secret: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
     pub secrets_role_arn: std::option::Option<std::string::String>,
+}
+impl Authorization {
+    /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
+    pub fn cdn_identifier_secret(&self) -> std::option::Option<&str> {
+        self.cdn_identifier_secret.as_deref()
+    }
+    /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+    pub fn secrets_role_arn(&self) -> std::option::Option<&str> {
+        self.secrets_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Authorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -136,6 +152,35 @@ pub struct PackagingGroup {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PackagingGroup {
+    /// The ARN of the PackagingGroup.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// CDN Authorization credentials
+    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+        self.authorization.as_ref()
+    }
+    /// The fully qualified domain name for Assets in the PackagingGroup.
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// Configure egress access logging.
+    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+        self.egress_access_logs.as_ref()
+    }
+    /// The ID of the PackagingGroup.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for PackagingGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -287,6 +332,43 @@ pub struct PackagingConfiguration {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl PackagingConfiguration {
+    /// The ARN of the PackagingConfiguration.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// A CMAF packaging configuration.
+    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+        self.cmaf_package.as_ref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+        self.dash_package.as_ref()
+    }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+        self.hls_package.as_ref()
+    }
+    /// The ID of the PackagingConfiguration.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+        self.mss_package.as_ref()
+    }
+    /// The ID of a PackagingGroup.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for PackagingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -463,6 +545,20 @@ pub struct MssPackage {
     /// The duration (in seconds) of each segment.
     pub segment_duration_seconds: i32,
 }
+impl MssPackage {
+    /// A Microsoft Smooth Streaming (MSS) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::MssEncryption> {
+        self.encryption.as_ref()
+    }
+    /// A list of MSS manifest configurations.
+    pub fn mss_manifests(&self) -> std::option::Option<&[crate::model::MssManifest]> {
+        self.mss_manifests.as_deref()
+    }
+    /// The duration (in seconds) of each segment.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+}
 impl std::fmt::Debug for MssPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MssPackage");
@@ -551,6 +647,16 @@ pub struct MssManifest {
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
+impl MssManifest {
+    /// An optional string to include in the name of the manifest.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
+}
 impl std::fmt::Debug for MssManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MssManifest");
@@ -621,6 +727,20 @@ pub struct StreamSelection {
     pub min_video_bits_per_second: i32,
     /// A directive that determines the order of streams in the output.
     pub stream_order: std::option::Option<crate::model::StreamOrder>,
+}
+impl StreamSelection {
+    /// The maximum video bitrate (bps) to include in output.
+    pub fn max_video_bits_per_second(&self) -> i32 {
+        self.max_video_bits_per_second
+    }
+    /// The minimum video bitrate (bps) to include in output.
+    pub fn min_video_bits_per_second(&self) -> i32 {
+        self.min_video_bits_per_second
+    }
+    /// A directive that determines the order of streams in the output.
+    pub fn stream_order(&self) -> std::option::Option<&crate::model::StreamOrder> {
+        self.stream_order.as_ref()
+    }
 }
 impl std::fmt::Debug for StreamSelection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -762,6 +882,12 @@ pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl MssEncryption {
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for MssEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MssEncryption");
@@ -817,6 +943,21 @@ pub struct SpekeKeyProvider {
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The URL of the external key provider service.
     pub url: std::option::Option<std::string::String>,
+}
+impl SpekeKeyProvider {
+    /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
+    /// MediaPackage will assume when accessing the key provider service.
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// The system IDs to include in key requests.
+    pub fn system_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.system_ids.as_deref()
+    }
+    /// The URL of the external key provider service.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for SpekeKeyProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -911,6 +1052,29 @@ pub struct HlsPackage {
     pub segment_duration_seconds: i32,
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub use_audio_rendition_group: bool,
+}
+impl HlsPackage {
+    /// An HTTP Live Streaming (HLS) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::HlsEncryption> {
+        self.encryption.as_ref()
+    }
+    /// A list of HLS manifest configurations.
+    pub fn hls_manifests(&self) -> std::option::Option<&[crate::model::HlsManifest]> {
+        self.hls_manifests.as_deref()
+    }
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub fn include_dvb_subtitles(&self) -> bool {
+        self.include_dvb_subtitles
+    }
+    /// Duration (in seconds) of each fragment. Actual fragments will be
+    /// rounded to the nearest multiple of the source fragment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// When enabled, audio streams will be placed in rendition groups in the output.
+    pub fn use_audio_rendition_group(&self) -> bool {
+        self.use_audio_rendition_group
+    }
 }
 impl std::fmt::Debug for HlsPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1048,6 +1212,45 @@ pub struct HlsManifest {
     pub repeat_ext_x_key: bool,
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
+}
+impl HlsManifest {
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint.
+    /// "NONE" will omit all SCTE-35 ad markers from the output.
+    /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
+    /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
+    /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
+    /// messages in the input source.
+    pub fn ad_markers(&self) -> std::option::Option<&crate::model::AdMarkers> {
+        self.ad_markers.as_ref()
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn include_iframe_only_stream(&self) -> bool {
+        self.include_iframe_only_stream
+    }
+    /// An optional string to include in the name of the manifest.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+    /// inserted into manifests. Additionally, when an interval is specified
+    /// ID3Timed Metadata messages will be generated every 5 seconds using the
+    /// ingest time of the content.
+    /// If the interval is not specified, or set to 0, then
+    /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+    /// ID3Timed Metadata messages will be generated. Note that irrespective
+    /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+    /// it will be passed through to HLS output.
+    pub fn program_date_time_interval_seconds(&self) -> i32 {
+        self.program_date_time_interval_seconds
+    }
+    /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
+    pub fn repeat_ext_x_key(&self) -> bool {
+        self.repeat_ext_x_key
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
 }
 impl std::fmt::Debug for HlsManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1272,6 +1475,21 @@ pub struct HlsEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl HlsEncryption {
+    /// A constant initialization vector for encryption (optional).
+    /// When not specified the initialization vector will be periodically rotated.
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// The encryption method to use.
+    pub fn encryption_method(&self) -> std::option::Option<&crate::model::EncryptionMethod> {
+        self.encryption_method.as_ref()
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for HlsEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HlsEncryption");
@@ -1431,6 +1649,38 @@ pub struct DashPackage {
     pub segment_duration_seconds: i32,
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
     pub segment_template_format: std::option::Option<crate::model::SegmentTemplateFormat>,
+}
+impl DashPackage {
+    /// A list of DASH manifest configurations.
+    pub fn dash_manifests(&self) -> std::option::Option<&[crate::model::DashManifest]> {
+        self.dash_manifests.as_deref()
+    }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::DashEncryption> {
+        self.encryption.as_ref()
+    }
+    /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+    pub fn include_encoder_configuration_in_segments(&self) -> bool {
+        self.include_encoder_configuration_in_segments
+    }
+    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
+    /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+    /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+    /// the Asset contains SCTE-35 ad markers.
+    pub fn period_triggers(&self) -> std::option::Option<&[crate::model::PeriodTriggersElement]> {
+        self.period_triggers.as_deref()
+    }
+    /// Duration (in seconds) of each segment. Actual segments will be
+    /// rounded to the nearest multiple of the source segment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+    pub fn segment_template_format(
+        &self,
+    ) -> std::option::Option<&crate::model::SegmentTemplateFormat> {
+        self.segment_template_format.as_ref()
+    }
 }
 impl std::fmt::Debug for DashPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1707,6 +1957,12 @@ pub struct DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl DashEncryption {
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for DashEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DashEncryption");
@@ -1765,6 +2021,28 @@ pub struct DashManifest {
     pub profile: std::option::Option<crate::model::Profile>,
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
+}
+impl DashManifest {
+    /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    pub fn manifest_layout(&self) -> std::option::Option<&crate::model::ManifestLayout> {
+        self.manifest_layout.as_ref()
+    }
+    /// An optional string to include in the name of the manifest.
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
+        self.manifest_name.as_deref()
+    }
+    /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
+    pub fn min_buffer_time_seconds(&self) -> i32 {
+        self.min_buffer_time_seconds
+    }
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
+        self.profile.as_ref()
+    }
+    /// A StreamSelection configuration.
+    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+        self.stream_selection.as_ref()
+    }
 }
 impl std::fmt::Debug for DashManifest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1992,6 +2270,25 @@ pub struct CmafPackage {
     /// rounded to the nearest multiple of the source fragment duration.
     pub segment_duration_seconds: i32,
 }
+impl CmafPackage {
+    /// A CMAF encryption configuration.
+    pub fn encryption(&self) -> std::option::Option<&crate::model::CmafEncryption> {
+        self.encryption.as_ref()
+    }
+    /// A list of HLS manifest configurations.
+    pub fn hls_manifests(&self) -> std::option::Option<&[crate::model::HlsManifest]> {
+        self.hls_manifests.as_deref()
+    }
+    /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+    pub fn include_encoder_configuration_in_segments(&self) -> bool {
+        self.include_encoder_configuration_in_segments
+    }
+    /// Duration (in seconds) of each fragment. Actual fragments will be
+    /// rounded to the nearest multiple of the source fragment duration.
+    pub fn segment_duration_seconds(&self) -> i32 {
+        self.segment_duration_seconds
+    }
+}
 impl std::fmt::Debug for CmafPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CmafPackage");
@@ -2103,6 +2400,16 @@ pub struct CmafEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
+impl CmafEncryption {
+    /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
+    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+        self.constant_initialization_vector.as_deref()
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+        self.speke_key_provider.as_ref()
+    }
+}
 impl std::fmt::Debug for CmafEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CmafEncryption");
@@ -2190,6 +2497,43 @@ pub struct AssetShallow {
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AssetShallow {
+    /// The ARN of the Asset.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// The time the Asset was initially submitted for Ingest.
+    pub fn created_at(&self) -> std::option::Option<&str> {
+        self.created_at.as_deref()
+    }
+    /// The unique identifier for the Asset.
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// The ID of the PackagingGroup for the Asset.
+    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+        self.packaging_group_id.as_deref()
+    }
+    /// The resource ID to include in SPEKE key requests.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// ARN of the source object in S3.
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// The IAM role ARN used to access the source S3 bucket.
+    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+        self.source_role_arn.as_deref()
+    }
+    /// A collection of tags associated with a resource
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetShallow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2356,6 +2700,20 @@ pub struct EgressEndpoint {
     pub status: std::option::Option<std::string::String>,
     /// The URL of the parent manifest for the repackaged Asset.
     pub url: std::option::Option<std::string::String>,
+}
+impl EgressEndpoint {
+    /// The ID of the PackagingConfiguration being applied to the Asset.
+    pub fn packaging_configuration_id(&self) -> std::option::Option<&str> {
+        self.packaging_configuration_id.as_deref()
+    }
+    /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// The URL of the parent manifest for the repackaged Asset.
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for EgressEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

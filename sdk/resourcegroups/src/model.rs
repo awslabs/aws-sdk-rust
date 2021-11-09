@@ -11,6 +11,18 @@ pub struct GroupQuery {
     /// resource group.</p>
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
 }
+impl GroupQuery {
+    /// <p>The name of the resource group that is associated with the specified resource
+    /// query.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The resource query that determines which AWS resources are members of the associated
+    /// resource group.</p>
+    pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
+        self.resource_query.as_ref()
+    }
+}
 impl std::fmt::Debug for GroupQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupQuery");
@@ -247,6 +259,83 @@ pub struct ResourceQuery {
     pub r#type: std::option::Option<crate::model::QueryType>,
     /// <p>The query that defines a group or a search.</p>
     pub query: std::option::Option<std::string::String>,
+}
+impl ResourceQuery {
+    /// <p>The type of the query. You can use the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>
+    /// <code>CLOUDFORMATION_STACK_1_0:</code>
+    /// </i>Specifies that the
+    /// <code>Query</code> contains an ARN for a CloudFormation stack.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>
+    /// <code>TAG_FILTERS_1_0:</code>
+    /// </i>Specifies that the
+    /// <code>Query</code> parameter contains a JSON string that represents a
+    /// collection of simple tag filters for resource types and tags. The JSON string
+    /// uses a syntax similar to the <code>
+    /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+    /// </code> operation, but uses only the <code>
+    /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a>
+    /// </code> and <code>
+    /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a>
+    /// </code> fields. If you specify more than one tag key,
+    /// only resources that match all tag keys, and at least one value of each specified
+    /// tag key, are returned in your query. If you specify more than one value for a
+    /// tag key, a resource matches the filter if it has a tag key value that matches
+    /// <i>any</i> of the specified values.</p>
+    /// <p>For example, consider the following sample query for resources that have two
+    /// tags, <code>Stage</code> and <code>Version</code>, with two values each:</p>
+    /// <p>
+    /// <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code>
+    /// </p>
+    /// <p>The results of this query could include the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>An EC2 instance that has the following two tags:
+    /// <code>{"Stage":"Deploy"}</code>, and
+    /// <code>{"Version":"2"}</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>An S3 bucket that has the following two tags:
+    /// <code>{"Stage":"Test"}</code>, and
+    /// <code>{"Version":"1"}</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The query would not include the following items in the results, however. </p>
+    /// <ul>
+    /// <li>
+    /// <p>An EC2 instance that has only the following tag:
+    /// <code>{"Stage":"Deploy"}</code>.</p>
+    /// <p>The instance does not have <b>all</b> of the
+    /// tag keys specified in the filter, so it is excluded from the
+    /// results.</p>
+    /// </li>
+    /// <li>
+    /// <p>An RDS database that has the following two tags:
+    /// <code>{"Stage":"Archived"}</code> and
+    /// <code>{"Version":"4"}</code>
+    /// </p>
+    /// <p>The database has all of the tag keys, but none of those keys has an
+    /// associated value that matches at least one of the specified values in
+    /// the filter.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::QueryType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The query that defines a group or a search.</p>
+    pub fn query(&self) -> std::option::Option<&str> {
+        self.query.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceQuery {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -518,6 +607,20 @@ pub struct Group {
     /// <p>The description of the resource group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl Group {
+    /// <p>The ARN of the resource group.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+    /// <p>The name of the resource group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the resource group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
@@ -594,6 +697,12 @@ pub struct PendingResource {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl PendingResource {
+    /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PendingResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PendingResource");
@@ -645,6 +754,20 @@ pub struct FailedResource {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The error code associated with the failure.</p>
     pub error_code: std::option::Option<std::string::String>,
+}
+impl FailedResource {
+    /// <p>The ARN of the resource that failed to be added or removed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The error message text associated with the failure.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>The error code associated with the failure.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for FailedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -734,6 +857,21 @@ pub struct QueryError {
     /// CloudFormation stack has a status that is not (or no longer) active, such as
     /// <code>CREATE_FAILED</code>.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl QueryError {
+    /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
+    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::QueryErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that
+    /// the specified CloudFormation stack does not exist (or no longer exists). For
+    /// <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the
+    /// CloudFormation stack has a status that is not (or no longer) active, such as
+    /// <code>CREATE_FAILED</code>.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for QueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -869,6 +1007,16 @@ pub struct ResourceIdentifier {
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
+impl ResourceIdentifier {
+    /// <p>The ARN of a resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceIdentifier");
@@ -941,6 +1089,21 @@ pub struct GroupConfigurationItem {
     /// parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
     /// resource types and parameters</a>.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
+}
+impl GroupConfigurationItem {
+    /// <p>Specifies the type of group configuration item. Each item must have a unique value for
+    /// <code>type</code>. For the list of types that you can specify for a configuration
+    /// item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+    /// parameters</a>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>A collection of parameters for this group configuration item. For the list of
+    /// parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+    /// resource types and parameters</a>.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::GroupConfigurationParameter]> {
+        self.parameters.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupConfigurationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1034,6 +1197,20 @@ pub struct GroupConfigurationParameter {
     /// parameters</a>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GroupConfigurationParameter {
+    /// <p>The name of the group configuration parameter. For the list of parameters that you can
+    /// use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+    /// parameters</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value or values to be used for the specified parameter. For the list of values you
+    /// can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+    /// parameters</a>.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupConfigurationParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupConfigurationParameter");
@@ -1114,6 +1291,16 @@ pub struct GroupIdentifier {
     /// <p>The ARN of the resource group.</p>
     pub group_arn: std::option::Option<std::string::String>,
 }
+impl GroupIdentifier {
+    /// <p>The name of the resource group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ARN of the resource group.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupIdentifier");
@@ -1178,6 +1365,17 @@ pub struct GroupFilter {
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are
     /// case-sensitive.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GroupFilter {
+    /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::GroupFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>One or more filter values. Allowed filter values vary by group filter name, and are
+    /// case-sensitive.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1318,6 +1516,21 @@ pub struct ListGroupResourcesItem {
     /// </note>
     pub status: std::option::Option<crate::model::ResourceStatus>,
 }
+impl ListGroupResourcesItem {
+    /// <p>A structure that contains the ARN of a resource and its resource type.</p>
+    pub fn identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+        self.identifier.as_ref()
+    }
+    /// <p>A structure that contains the status of this resource's membership in the
+    /// group.</p>
+    /// <note>
+    /// <p>This field is present in the response only if the group is of type
+    /// <code>AWS::EC2::HostManagement</code>.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for ListGroupResourcesItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupResourcesItem");
@@ -1397,6 +1610,12 @@ impl ListGroupResourcesItem {
 pub struct ResourceStatus {
     /// <p>The current status.</p>
     pub name: std::option::Option<crate::model::ResourceStatusValue>,
+}
+impl ResourceStatus {
+    /// <p>The current status.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ResourceStatusValue> {
+        self.name.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1501,6 +1720,17 @@ pub struct ResourceFilter {
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are
     /// case-sensitive.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ResourceFilter {
+    /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ResourceFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are
+    /// case-sensitive.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1640,6 +1870,27 @@ pub struct GroupConfiguration {
     pub status: std::option::Option<crate::model::GroupConfigurationStatus>,
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+}
+impl GroupConfiguration {
+    /// <p>The configuration currently associated with the group and in effect.</p>
+    pub fn configuration(&self) -> std::option::Option<&[crate::model::GroupConfigurationItem]> {
+        self.configuration.as_deref()
+    }
+    /// <p>If present, the new configuration that is in the process of being applied to the
+    /// group.</p>
+    pub fn proposed_configuration(
+        &self,
+    ) -> std::option::Option<&[crate::model::GroupConfigurationItem]> {
+        self.proposed_configuration.as_deref()
+    }
+    /// <p>The current status of an attempt to update the group configuration.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::GroupConfigurationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>If present, the reason why a request to update the group configuration failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for GroupConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -74,6 +74,101 @@ pub struct QualificationType {
     /// </p>
     pub auto_granted_value: std::option::Option<i32>,
 }
+impl QualificationType {
+    /// <p> A unique identifier for the Qualification type. A
+    /// Qualification type is given a Qualification type ID when you call the
+    /// CreateQualificationType operation.
+    /// </p>
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+        self.qualification_type_id.as_deref()
+    }
+    /// <p> The date and time the Qualification type was created.
+    /// </p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The name of the Qualification type. The type name is used to
+    /// identify the type, and to find the type using a Qualification type
+    /// search.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p> A long description for the Qualification type.
+    /// </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> One or more words or phrases that describe theQualification
+    /// type, separated by commas. The Keywords make the type easier to find
+    /// using a search.
+    /// </p>
+    pub fn keywords(&self) -> std::option::Option<&str> {
+        self.keywords.as_deref()
+    }
+    /// <p> The status of the Qualification type. A Qualification type's
+    /// status determines if users can apply to receive a Qualification of
+    /// this type, and if HITs can be created with requirements based on this
+    /// type. Valid values are Active | Inactive.
+    /// </p>
+    pub fn qualification_type_status(
+        &self,
+    ) -> std::option::Option<&crate::model::QualificationTypeStatus> {
+        self.qualification_type_status.as_ref()
+    }
+    /// <p> The questions for a Qualification test associated with this
+    /// Qualification type that a user can take to obtain a Qualification of
+    /// this type. This parameter must be specified if AnswerKey is present.
+    /// A Qualification type cannot have both a specified Test parameter and
+    /// an AutoGranted value of true.
+    /// </p>
+    pub fn test(&self) -> std::option::Option<&str> {
+        self.test.as_deref()
+    }
+    /// <p> The amount of time, in seconds, given to a Worker to
+    /// complete the Qualification test, beginning from the time the Worker
+    /// requests the Qualification.
+    /// </p>
+    pub fn test_duration_in_seconds(&self) -> std::option::Option<i64> {
+        self.test_duration_in_seconds
+    }
+    /// <p>The answers to the Qualification test specified in the Test
+    /// parameter.</p>
+    pub fn answer_key(&self) -> std::option::Option<&str> {
+        self.answer_key.as_deref()
+    }
+    /// <p> The amount of time, in seconds, Workers must wait after
+    /// taking the Qualification test before they can take it again. Workers
+    /// can take a Qualification test multiple times if they were not granted
+    /// the Qualification from a previous attempt, or if the test offers a
+    /// gradient score and they want a better score. If not specified,
+    /// retries are disabled and Workers can request a Qualification only
+    /// once.
+    /// </p>
+    pub fn retry_delay_in_seconds(&self) -> std::option::Option<i64> {
+        self.retry_delay_in_seconds
+    }
+    /// <p> Specifies whether the Qualification type is one that a user
+    /// can request through the Amazon Mechanical Turk web site, such as by
+    /// taking a Qualification test. This value is False for Qualifications
+    /// assigned automatically by the system. Valid values are True | False.
+    /// </p>
+    pub fn is_requestable(&self) -> std::option::Option<bool> {
+        self.is_requestable
+    }
+    /// <p>Specifies that requests for the Qualification type are
+    /// granted immediately, without prompting the Worker with a
+    /// Qualification test. Valid values are True | False.</p>
+    pub fn auto_granted(&self) -> std::option::Option<bool> {
+        self.auto_granted
+    }
+    /// <p> The Qualification integer value to use for automatically
+    /// granted Qualifications, if AutoGranted is true. This is 1 by default.
+    /// </p>
+    pub fn auto_granted_value(&self) -> std::option::Option<i32> {
+        self.auto_granted_value
+    }
+}
 impl std::fmt::Debug for QualificationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QualificationType");
@@ -453,6 +548,46 @@ pub struct NotificationSpecification {
     /// </p>
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
 }
+impl NotificationSpecification {
+    /// <p>
+    /// The target for notification messages. The Destination’s format is determined by the specified Transport:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>When Transport is Email, the Destination is your email address.</p>
+    /// </li>
+    /// <li>
+    /// <p>When Transport is SQS, the Destination is your queue URL.</p>
+    /// </li>
+    /// <li>
+    /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p>
+    /// </li>
+    /// </ul>
+    pub fn destination(&self) -> std::option::Option<&str> {
+        self.destination.as_deref()
+    }
+    /// <p> The method Amazon Mechanical Turk uses to send the
+    /// notification. Valid Values: Email | SQS | SNS.
+    /// </p>
+    pub fn transport(&self) -> std::option::Option<&crate::model::NotificationTransport> {
+        self.transport.as_ref()
+    }
+    /// <p>The version of the Notification API to use. Valid value is
+    /// 2006-05-05.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p> The list of events that should cause notifications to be
+    /// sent. Valid Values: AssignmentAccepted | AssignmentAbandoned |
+    /// AssignmentReturned | AssignmentSubmitted | AssignmentRejected |
+    /// AssignmentApproved | HITCreated | HITExtended | HITDisposed |
+    /// HITReviewable | HITExpired | Ping. The Ping event is only valid for
+    /// the SendTestEventNotification operation.
+    /// </p>
+    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+        self.event_types.as_deref()
+    }
+}
 impl std::fmt::Debug for NotificationSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationSpecification");
@@ -772,6 +907,25 @@ pub struct NotifyWorkersFailureStatus {
     /// <p> The ID of the Worker.</p>
     pub worker_id: std::option::Option<std::string::String>,
 }
+impl NotifyWorkersFailureStatus {
+    /// <p> Encoded value for the failure type.
+    /// </p>
+    pub fn notify_workers_failure_code(
+        &self,
+    ) -> std::option::Option<&crate::model::NotifyWorkersFailureCode> {
+        self.notify_workers_failure_code.as_ref()
+    }
+    /// <p> A message detailing the reason the Worker could not be
+    /// notified.
+    /// </p>
+    pub fn notify_workers_failure_message(&self) -> std::option::Option<&str> {
+        self.notify_workers_failure_message.as_deref()
+    }
+    /// <p> The ID of the Worker.</p>
+    pub fn worker_id(&self) -> std::option::Option<&str> {
+        self.worker_id.as_deref()
+    }
+}
 impl std::fmt::Debug for NotifyWorkersFailureStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyWorkersFailureStatus");
@@ -944,6 +1098,39 @@ pub struct Qualification {
     /// <p> The status of the Qualification. Valid values are Granted |
     /// Revoked.</p>
     pub status: std::option::Option<crate::model::QualificationStatus>,
+}
+impl Qualification {
+    /// <p> The ID of the Qualification type for the Qualification.</p>
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+        self.qualification_type_id.as_deref()
+    }
+    /// <p> The ID of the Worker who possesses the Qualification.
+    /// </p>
+    pub fn worker_id(&self) -> std::option::Option<&str> {
+        self.worker_id.as_deref()
+    }
+    /// <p> The date and time the Qualification was granted to the
+    /// Worker. If the Worker's Qualification was revoked, and then
+    /// re-granted based on a new Qualification request, GrantTime is the
+    /// date and time of the last call to the AcceptQualificationRequest
+    /// operation.</p>
+    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.grant_time.as_ref()
+    }
+    /// <p> The value (score) of the Qualification, if the Qualification
+    /// has an integer value.</p>
+    pub fn integer_value(&self) -> std::option::Option<i32> {
+        self.integer_value
+    }
+    /// <p>The Locale data structure represents a geographical region or location.</p>
+    pub fn locale_value(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale_value.as_ref()
+    }
+    /// <p> The status of the Qualification. Valid values are Granted |
+    /// Revoked.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::QualificationStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for Qualification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1146,6 +1333,21 @@ pub struct Locale {
     /// Washington.</p>
     pub subdivision: std::option::Option<std::string::String>,
 }
+impl Locale {
+    /// <p> The country of the locale. Must be a valid ISO 3166 country
+    /// code. For example, the code US refers to the United States of
+    /// America.
+    /// </p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The state or subdivision of the locale. A valid ISO 3166-2
+    /// subdivision code. For example, the code WA refers to the state of
+    /// Washington.</p>
+    pub fn subdivision(&self) -> std::option::Option<&str> {
+        self.subdivision.as_deref()
+    }
+}
 impl std::fmt::Debug for Locale {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Locale");
@@ -1223,6 +1425,17 @@ pub struct WorkerBlock {
     /// </p>
     pub reason: std::option::Option<std::string::String>,
 }
+impl WorkerBlock {
+    /// <p> The ID of the Worker who accepted the HIT.</p>
+    pub fn worker_id(&self) -> std::option::Option<&str> {
+        self.worker_id.as_deref()
+    }
+    /// <p> A message explaining the reason the Worker was blocked.
+    /// </p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+}
 impl std::fmt::Debug for WorkerBlock {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerBlock");
@@ -1293,6 +1506,20 @@ pub struct ReviewReport {
     /// the Review Policy.
     /// </p>
     pub review_actions: std::option::Option<std::vec::Vec<crate::model::ReviewActionDetail>>,
+}
+impl ReviewReport {
+    /// <p> A list of ReviewResults objects for each action specified in
+    /// the Review Policy.
+    /// </p>
+    pub fn review_results(&self) -> std::option::Option<&[crate::model::ReviewResultDetail]> {
+        self.review_results.as_deref()
+    }
+    /// <p> A list of ReviewAction objects for each action specified in
+    /// the Review Policy.
+    /// </p>
+    pub fn review_actions(&self) -> std::option::Option<&[crate::model::ReviewActionDetail]> {
+        self.review_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for ReviewReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1410,6 +1637,44 @@ pub struct ReviewActionDetail {
     pub result: std::option::Option<std::string::String>,
     /// <p> Present only when the Results have a FAILED Status.</p>
     pub error_code: std::option::Option<std::string::String>,
+}
+impl ReviewActionDetail {
+    /// <p>The unique identifier for the action.</p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p> The nature of the action itself. The Review Policy is
+    /// responsible for examining the HIT and Assignments, emitting results,
+    /// and deciding which other actions will be necessary. </p>
+    pub fn action_name(&self) -> std::option::Option<&str> {
+        self.action_name.as_deref()
+    }
+    /// <p> The specific HITId or AssignmentID targeted by the action.</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p> The type of object in TargetId.</p>
+    pub fn target_type(&self) -> std::option::Option<&str> {
+        self.target_type.as_deref()
+    }
+    /// <p> The current disposition of the action: INTENDED, SUCCEEDED,
+    /// FAILED, or CANCELLED.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ReviewActionStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The date when the action was completed.</p>
+    pub fn complete_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.complete_time.as_ref()
+    }
+    /// <p> A description of the outcome of the review.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+    /// <p> Present only when the Results have a FAILED Status.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ReviewActionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1655,6 +1920,48 @@ pub struct ReviewResultDetail {
     /// </p>
     pub value: std::option::Option<std::string::String>,
 }
+impl ReviewResultDetail {
+    /// <p> A unique identifier of the Review action result.
+    /// </p>
+    pub fn action_id(&self) -> std::option::Option<&str> {
+        self.action_id.as_deref()
+    }
+    /// <p>The HITID or AssignmentId about which this result was taken.
+    /// Note that HIT-level Review Policies will often emit results about
+    /// both the HIT itself and its Assignments, while Assignment-level
+    /// review policies generally only emit results about the Assignment
+    /// itself.
+    /// </p>
+    pub fn subject_id(&self) -> std::option::Option<&str> {
+        self.subject_id.as_deref()
+    }
+    /// <p> The type of the object from the SubjectId field.</p>
+    pub fn subject_type(&self) -> std::option::Option<&str> {
+        self.subject_type.as_deref()
+    }
+    /// <p> Specifies the QuestionId the result is describing. Depending
+    /// on whether the TargetType is a HIT or Assignment this results could
+    /// specify multiple values. If TargetType is HIT and QuestionId is
+    /// absent, then the result describes results of the HIT, including the
+    /// HIT agreement score. If ObjectType is Assignment and QuestionId is
+    /// absent, then the result describes the Worker's performance on the
+    /// HIT.
+    /// </p>
+    pub fn question_id(&self) -> std::option::Option<&str> {
+        self.question_id.as_deref()
+    }
+    /// <p> Key identifies the particular piece of reviewed information.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p> The values of Key provided by the review policies you have
+    /// selected.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for ReviewResultDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReviewResultDetail");
@@ -1806,6 +2113,18 @@ pub struct ReviewPolicy {
     /// <p>Name of the parameter from the Review policy.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::PolicyParameter>>,
 }
+impl ReviewPolicy {
+    /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
+    /// ScoreMyKnownAnswers/2011-09-01
+    /// </p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>Name of the parameter from the Review policy.</p>
+    pub fn parameters(&self) -> std::option::Option<&[crate::model::PolicyParameter]> {
+        self.parameters.as_deref()
+    }
+}
 impl std::fmt::Debug for ReviewPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReviewPolicy");
@@ -1886,6 +2205,22 @@ pub struct PolicyParameter {
     /// <p> List of ParameterMapEntry objects.
     /// </p>
     pub map_entries: std::option::Option<std::vec::Vec<crate::model::ParameterMapEntry>>,
+}
+impl PolicyParameter {
+    /// <p> Name of the parameter from the list of Review Polices.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p> The list of values of the Parameter</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p> List of ParameterMapEntry objects.
+    /// </p>
+    pub fn map_entries(&self) -> std::option::Option<&[crate::model::ParameterMapEntry]> {
+        self.map_entries.as_deref()
+    }
 }
 impl std::fmt::Debug for PolicyParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1992,6 +2327,22 @@ pub struct ParameterMapEntry {
     /// the answer to be scored correctly.
     /// </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ParameterMapEntry {
+    /// <p> The QuestionID from the HIT that is used to identify which
+    /// question requires Mechanical Turk to score as part of the
+    /// ScoreMyKnownAnswers/2011-09-01 Review Policy.
+    /// </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p> The list of answers to the question specified in the
+    /// MapEntry Key element. The Worker must match all values in order for
+    /// the answer to be scored correctly.
+    /// </p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for ParameterMapEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2200,6 +2551,122 @@ pub struct Hit {
     /// <p> The number of assignments for this HIT that have been
     /// approved or rejected.</p>
     pub number_of_assignments_completed: std::option::Option<i32>,
+}
+impl Hit {
+    /// <p> A unique identifier for the HIT.</p>
+    pub fn hit_id(&self) -> std::option::Option<&str> {
+        self.hit_id.as_deref()
+    }
+    /// <p>The ID of the HIT type of this HIT</p>
+    pub fn hit_type_id(&self) -> std::option::Option<&str> {
+        self.hit_type_id.as_deref()
+    }
+    /// <p> The ID of the HIT Group of this HIT.</p>
+    pub fn hit_group_id(&self) -> std::option::Option<&str> {
+        self.hit_group_id.as_deref()
+    }
+    /// <p> The ID of the HIT Layout of this HIT.</p>
+    pub fn hit_layout_id(&self) -> std::option::Option<&str> {
+        self.hit_layout_id.as_deref()
+    }
+    /// <p> The date and time the HIT was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p> The title of the HIT.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p> A general description of the HIT.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The data the Worker completing the HIT uses produce the
+    /// results. This is either either a QuestionForm, HTMLQuestion or an
+    /// ExternalQuestion data structure.</p>
+    pub fn question(&self) -> std::option::Option<&str> {
+        self.question.as_deref()
+    }
+    /// <p> One or more words or phrases that describe the HIT,
+    /// separated by commas. Search terms similar to the keywords of a HIT
+    /// are more likely to have the HIT in the search results.</p>
+    pub fn keywords(&self) -> std::option::Option<&str> {
+        self.keywords.as_deref()
+    }
+    /// <p>The status of the HIT and its assignments. Valid Values are
+    /// Assignable | Unassignable | Reviewable | Reviewing | Disposed.
+    /// </p>
+    pub fn hit_status(&self) -> std::option::Option<&crate::model::HitStatus> {
+        self.hit_status.as_ref()
+    }
+    /// <p>The number of times the HIT can be accepted and completed
+    /// before the HIT becomes unavailable.
+    /// </p>
+    pub fn max_assignments(&self) -> std::option::Option<i32> {
+        self.max_assignments
+    }
+    /// <p>A string representing a currency amount.</p>
+    pub fn reward(&self) -> std::option::Option<&str> {
+        self.reward.as_deref()
+    }
+    /// <p>The amount of time, in seconds, after the Worker submits an
+    /// assignment for the HIT that the results are automatically approved by
+    /// Amazon Mechanical Turk. This is the amount of time the Requester has
+    /// to reject an assignment submitted by a Worker before the assignment
+    /// is auto-approved and the Worker is paid.
+    /// </p>
+    pub fn auto_approval_delay_in_seconds(&self) -> std::option::Option<i64> {
+        self.auto_approval_delay_in_seconds
+    }
+    /// <p>The date and time the HIT expires.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration.as_ref()
+    }
+    /// <p> The length of time, in seconds, that a Worker has to
+    /// complete the HIT after accepting it.</p>
+    pub fn assignment_duration_in_seconds(&self) -> std::option::Option<i64> {
+        self.assignment_duration_in_seconds
+    }
+    /// <p> An arbitrary data field the Requester who created the HIT
+    /// can use. This field is visible only to the creator of the HIT.</p>
+    pub fn requester_annotation(&self) -> std::option::Option<&str> {
+        self.requester_annotation.as_deref()
+    }
+    /// <p>
+    /// Conditions that a Worker's Qualifications must meet in order
+    /// to accept the HIT. A HIT can have between zero and ten
+    /// Qualification requirements. All requirements must be met in
+    /// order for a Worker to accept the HIT. Additionally, other
+    /// actions can be restricted using the <code>ActionsGuarded</code>
+    /// field on each <code>QualificationRequirement</code> structure.
+    /// </p>
+    pub fn qualification_requirements(
+        &self,
+    ) -> std::option::Option<&[crate::model::QualificationRequirement]> {
+        self.qualification_requirements.as_deref()
+    }
+    /// <p> Indicates the review status of the HIT. Valid Values are
+    /// NotReviewed | MarkedForReview | ReviewedAppropriate |
+    /// ReviewedInappropriate.</p>
+    pub fn hit_review_status(&self) -> std::option::Option<&crate::model::HitReviewStatus> {
+        self.hit_review_status.as_ref()
+    }
+    /// <p> The number of assignments for this HIT that are being
+    /// previewed or have been accepted by Workers, but have not yet been
+    /// submitted, returned, or abandoned.</p>
+    pub fn number_of_assignments_pending(&self) -> std::option::Option<i32> {
+        self.number_of_assignments_pending
+    }
+    /// <p> The number of assignments for this HIT that are available
+    /// for Workers to accept.</p>
+    pub fn number_of_assignments_available(&self) -> std::option::Option<i32> {
+        self.number_of_assignments_available
+    }
+    /// <p> The number of assignments for this HIT that have been
+    /// approved or rejected.</p>
+    pub fn number_of_assignments_completed(&self) -> std::option::Option<i32> {
+        self.number_of_assignments_completed
+    }
 }
 impl std::fmt::Debug for Hit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2763,6 +3230,83 @@ pub struct QualificationRequirement {
     /// </p>
     pub actions_guarded: std::option::Option<crate::model::HitAccessActions>,
 }
+impl QualificationRequirement {
+    /// <p> The ID of the Qualification type for the requirement.</p>
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+        self.qualification_type_id.as_deref()
+    }
+    /// <p>The kind of comparison to make against a Qualification's
+    /// value. You can compare a Qualification's value to an IntegerValue to
+    /// see if it is LessThan, LessThanOrEqualTo, GreaterThan,
+    /// GreaterThanOrEqualTo, EqualTo, or NotEqualTo the IntegerValue. You
+    /// can compare it to a LocaleValue to see if it is EqualTo, or
+    /// NotEqualTo the LocaleValue. You can check to see if the value is In
+    /// or NotIn a set of IntegerValue
+    /// or LocaleValue values. Lastly, a
+    /// Qualification requirement can also
+    /// test if a Qualification Exists or
+    /// DoesNotExist in the user's profile,
+    /// regardless of its value.
+    /// </p>
+    pub fn comparator(&self) -> std::option::Option<&crate::model::Comparator> {
+        self.comparator.as_ref()
+    }
+    /// <p> The integer value to compare against the Qualification's
+    /// value. IntegerValue must not be present if Comparator is Exists or
+    /// DoesNotExist. IntegerValue can only be used if the Qualification type
+    /// has an integer value; it cannot be used with the Worker_Locale
+    /// QualificationType ID. When performing a set comparison by using the
+    /// In or the NotIn comparator, you can use up to 15 IntegerValue
+    /// elements in a QualificationRequirement data structure.
+    /// </p>
+    pub fn integer_values(&self) -> std::option::Option<&[i32]> {
+        self.integer_values.as_deref()
+    }
+    /// <p> The locale value to compare against the Qualification's
+    /// value. The local value must be a valid ISO 3166 country code or
+    /// supports ISO 3166-2 subdivisions. LocaleValue can only be used with a
+    /// Worker_Locale QualificationType ID. LocaleValue can only be used with
+    /// the EqualTo, NotEqualTo, In, and NotIn comparators. You must only use
+    /// a single LocaleValue element when using the EqualTo or NotEqualTo
+    /// comparators. When performing a set comparison by using the In or the
+    /// NotIn comparator, you can use up to 30 LocaleValue elements in a
+    /// QualificationRequirement data structure.
+    /// </p>
+    pub fn locale_values(&self) -> std::option::Option<&[crate::model::Locale]> {
+        self.locale_values.as_deref()
+    }
+    /// <p> DEPRECATED: Use the <code>ActionsGuarded</code> field instead.
+    /// If RequiredToPreview is true, the question data for the HIT will not be shown
+    /// when a Worker whose Qualifications do not meet this requirement tries
+    /// to preview the HIT. That is, a Worker's Qualifications must meet all
+    /// of the requirements for which RequiredToPreview is true in order to
+    /// preview the HIT. If a Worker meets all of the requirements where
+    /// RequiredToPreview is true (or if there are no such requirements), but
+    /// does not meet all of the requirements for the HIT, the Worker will be
+    /// allowed to preview the HIT's question data, but will not be allowed
+    /// to accept and complete the HIT. The default is false. This should not
+    /// be used in combination with the <code>ActionsGuarded</code> field.
+    /// </p>
+    pub fn required_to_preview(&self) -> std::option::Option<bool> {
+        self.required_to_preview
+    }
+    /// <p> Setting this attribute prevents Workers whose Qualifications do not meet
+    /// this QualificationRequirement from taking the specified action. Valid arguments include
+    /// "Accept" (Worker cannot accept the HIT, but can preview the HIT and see it in their search results),
+    /// "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see the HIT in their search results),
+    /// and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with multiple
+    /// QualificationRequirements (which can have different values for the ActionGuarded attribute). In this case,
+    /// the Worker is only permitted to perform an action when they have met all QualificationRequirements guarding
+    /// the action. The actions in the order of least restrictive to most restrictive are Discover, Preview and Accept.
+    /// For example, if a Worker meets all QualificationRequirements that are set to DiscoverPreviewAndAccept, but do
+    /// not meet all requirements that are set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+    /// HIT in their search result, but will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+    /// <code>RequiredToPreview</code> field.
+    /// </p>
+    pub fn actions_guarded(&self) -> std::option::Option<&crate::model::HitAccessActions> {
+        self.actions_guarded.as_ref()
+    }
+}
 impl std::fmt::Debug for QualificationRequirement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QualificationRequirement");
@@ -3319,6 +3863,49 @@ pub struct QualificationRequest {
     /// </p>
     pub submit_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl QualificationRequest {
+    /// <p>The ID of the Qualification request, a unique identifier
+    /// generated when the request was submitted.
+    ///
+    /// </p>
+    pub fn qualification_request_id(&self) -> std::option::Option<&str> {
+        self.qualification_request_id.as_deref()
+    }
+    /// <p> The ID of the Qualification type the Worker is requesting,
+    /// as returned by the CreateQualificationType operation.
+    /// </p>
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+        self.qualification_type_id.as_deref()
+    }
+    /// <p> The ID of the Worker requesting the Qualification.</p>
+    pub fn worker_id(&self) -> std::option::Option<&str> {
+        self.worker_id.as_deref()
+    }
+    /// <p> The contents of the Qualification test that was presented to
+    /// the Worker, if the type has a test and the Worker has submitted
+    /// answers. This value is identical to the QuestionForm associated with
+    /// the Qualification type at the time the Worker requests the
+    /// Qualification.</p>
+    pub fn test(&self) -> std::option::Option<&str> {
+        self.test.as_deref()
+    }
+    /// <p> The Worker's answers for the Qualification type's test
+    /// contained in a QuestionFormAnswers document, if the type has a test
+    /// and the Worker has submitted answers. If the Worker does not provide
+    /// any answers, Answer may be empty.
+    /// </p>
+    pub fn answer(&self) -> std::option::Option<&str> {
+        self.answer.as_deref()
+    }
+    /// <p>The date and time the Qualification request had a status of
+    /// Submitted. This is either the time the Worker submitted answers for a
+    /// Qualification test, or the time the Worker requested the
+    /// Qualification if the Qualification type does not have a test.
+    /// </p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+}
 impl std::fmt::Debug for QualificationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QualificationRequest");
@@ -3483,6 +4070,28 @@ pub struct BonusPayment {
     /// <p>The date and time of when the bonus was granted.</p>
     pub grant_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl BonusPayment {
+    /// <p>The ID of the Worker to whom the bonus was paid.</p>
+    pub fn worker_id(&self) -> std::option::Option<&str> {
+        self.worker_id.as_deref()
+    }
+    /// <p>A string representing a currency amount.</p>
+    pub fn bonus_amount(&self) -> std::option::Option<&str> {
+        self.bonus_amount.as_deref()
+    }
+    /// <p>The ID of the assignment associated with this bonus payment.</p>
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
+        self.assignment_id.as_deref()
+    }
+    /// <p>The Reason text given when the bonus was granted, if any.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The date and time of when the bonus was granted.</p>
+    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.grant_time.as_ref()
+    }
+}
 impl std::fmt::Debug for BonusPayment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BonusPayment");
@@ -3633,6 +4242,76 @@ pub struct Assignment {
     /// ApproveAssignment operation or the RejectAssignment operation, if the
     /// Requester approved or rejected the assignment and specified feedback.</p>
     pub requester_feedback: std::option::Option<std::string::String>,
+}
+impl Assignment {
+    /// <p> A unique identifier for the assignment.</p>
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
+        self.assignment_id.as_deref()
+    }
+    /// <p> The ID of the Worker who accepted the HIT.</p>
+    pub fn worker_id(&self) -> std::option::Option<&str> {
+        self.worker_id.as_deref()
+    }
+    /// <p> The ID of the HIT.</p>
+    pub fn hit_id(&self) -> std::option::Option<&str> {
+        self.hit_id.as_deref()
+    }
+    /// <p> The status of the assignment.</p>
+    pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
+        self.assignment_status.as_ref()
+    }
+    /// <p> If results have been submitted, AutoApprovalTime is the date
+    /// and time the results of the assignment results are considered
+    /// Approved automatically if they have not already been explicitly
+    /// approved or rejected by the Requester. This value is derived from the
+    /// auto-approval delay specified by the Requester in the HIT. This value
+    /// is omitted from the assignment if the Worker has not yet submitted
+    /// results.</p>
+    pub fn auto_approval_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.auto_approval_time.as_ref()
+    }
+    /// <p> The date and time the Worker accepted the assignment.</p>
+    pub fn accept_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.accept_time.as_ref()
+    }
+    /// <p> If the Worker has submitted results, SubmitTime is the date
+    /// and time the assignment was submitted. This value is omitted from the
+    /// assignment if the Worker has not yet submitted results.</p>
+    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.submit_time.as_ref()
+    }
+    /// <p> If the Worker has submitted results and the Requester has
+    /// approved the results, ApprovalTime is the date and time the Requester
+    /// approved the results. This value is omitted from the assignment if
+    /// the Requester has not yet approved the results.</p>
+    pub fn approval_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.approval_time.as_ref()
+    }
+    /// <p> If the Worker has submitted results and the Requester has
+    /// rejected the results, RejectionTime is the date and time the
+    /// Requester rejected the results.</p>
+    pub fn rejection_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.rejection_time.as_ref()
+    }
+    /// <p> The date and time of the deadline for the assignment. This
+    /// value is derived from the deadline specification for the HIT and the
+    /// date and time the Worker accepted the HIT.</p>
+    pub fn deadline(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deadline.as_ref()
+    }
+    /// <p> The Worker's answers submitted for the HIT contained in a
+    /// QuestionFormAnswers document, if the Worker provides an answer. If
+    /// the Worker does not provide any answers, Answer may contain a
+    /// QuestionFormAnswers document, or Answer may be empty.</p>
+    pub fn answer(&self) -> std::option::Option<&str> {
+        self.answer.as_deref()
+    }
+    /// <p> The feedback string included with the call to the
+    /// ApproveAssignment operation or the RejectAssignment operation, if the
+    /// Requester approved or rejected the assignment and specified feedback.</p>
+    pub fn requester_feedback(&self) -> std::option::Option<&str> {
+        self.requester_feedback.as_deref()
+    }
 }
 impl std::fmt::Debug for Assignment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3959,6 +4638,19 @@ pub struct HitLayoutParameter {
     /// HITLayout.
     /// </p>
     pub value: std::option::Option<std::string::String>,
+}
+impl HitLayoutParameter {
+    /// <p> The name of the parameter in the HITLayout.
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value substituted for the parameter referenced in the
+    /// HITLayout.
+    /// </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for HitLayoutParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

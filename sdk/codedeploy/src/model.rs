@@ -8,6 +8,16 @@ pub struct AutoScalingGroup {
     /// <p>An Auto Scaling lifecycle event hook name.</p>
     pub hook: std::option::Option<std::string::String>,
 }
+impl AutoScalingGroup {
+    /// <p>The Auto Scaling group name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    pub fn hook(&self) -> std::option::Option<&str> {
+        self.hook.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoScalingGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoScalingGroup");
@@ -71,6 +81,16 @@ pub struct OnPremisesTagSet {
     /// in the list.</p>
     pub on_premises_tag_set_list:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagFilter>>>,
+}
+impl OnPremisesTagSet {
+    /// <p>A list that contains other lists of on-premises instance tag groups. For an instance
+    /// to be included in the deployment group, it must be identified by all of the tag groups
+    /// in the list.</p>
+    pub fn on_premises_tag_set_list(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::TagFilter>]> {
+        self.on_premises_tag_set_list.as_deref()
+    }
 }
 impl std::fmt::Debug for OnPremisesTagSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -151,6 +171,31 @@ pub struct TagFilter {
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::TagFilterType>,
+}
+impl TagFilter {
+    /// <p>The on-premises instance tag filter key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The on-premises instance tag filter value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The on-premises instance tag filter type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>KEY_ONLY: Key only.</p>
+    /// </li>
+    /// <li>
+    /// <p>VALUE_ONLY: Value only.</p>
+    /// </li>
+    /// <li>
+    /// <p>KEY_AND_VALUE: Key and value.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TagFilterType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for TagFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -310,6 +355,16 @@ pub struct EcsService {
     /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
     pub cluster_name: std::option::Option<std::string::String>,
 }
+impl EcsService {
+    /// <p> The name of the target Amazon ECS service. </p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+}
 impl std::fmt::Debug for EcsService {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EcsService");
@@ -373,6 +428,16 @@ pub struct Ec2TagSet {
     /// list.</p>
     pub ec2_tag_set_list:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
+}
+impl Ec2TagSet {
+    /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be
+    /// included in the deployment group, it must be identified by all of the tag groups in the
+    /// list.</p>
+    pub fn ec2_tag_set_list(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::Ec2TagFilter>]> {
+        self.ec2_tag_set_list.as_deref()
+    }
 }
 impl std::fmt::Debug for Ec2TagSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -456,6 +521,34 @@ pub struct Ec2TagFilter {
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::Ec2TagFilterType>,
+}
+impl Ec2TagFilter {
+    /// <p>The tag filter key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag filter value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The tag filter type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>KEY_ONLY</code>: Key only.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VALUE_ONLY</code>: Value only.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KEY_AND_VALUE</code>: Key and value.</p>
+    /// </li>
+    /// </ul>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Ec2TagFilterType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Ec2TagFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -638,6 +731,33 @@ pub struct LoadBalancerInfo {
     pub target_group_pair_info_list:
         std::option::Option<std::vec::Vec<crate::model::TargetGroupPairInfo>>,
 }
+impl LoadBalancerInfo {
+    /// <p>An array that contains information about the load balancer to use for load balancing
+    /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
+    /// Balancers.</p>
+    /// <note>
+    /// <p> Adding more than one load balancer to the array is not supported. </p>
+    /// </note>
+    pub fn elb_info_list(&self) -> std::option::Option<&[crate::model::ElbInfo]> {
+        self.elb_info_list.as_deref()
+    }
+    /// <p>An array that contains information about the target group to use for load balancing in
+    /// a deployment. In Elastic Load Balancing, target groups are used with Application Load
+    /// Balancers.</p>
+    /// <note>
+    /// <p> Adding more than one target group to the array is not supported. </p>
+    /// </note>
+    pub fn target_group_info_list(&self) -> std::option::Option<&[crate::model::TargetGroupInfo]> {
+        self.target_group_info_list.as_deref()
+    }
+    /// <p> The target group pair information. This is an array of
+    /// <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+    pub fn target_group_pair_info_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetGroupPairInfo]> {
+        self.target_group_pair_info_list.as_deref()
+    }
+}
 impl std::fmt::Debug for LoadBalancerInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoadBalancerInfo");
@@ -782,6 +902,25 @@ pub struct TargetGroupPairInfo {
     /// </p>
     pub test_traffic_route: std::option::Option<crate::model::TrafficRoute>,
 }
+impl TargetGroupPairInfo {
+    /// <p> One pair of target groups. One is associated with the original task set. The second
+    /// is associated with the task set that serves traffic after the deployment is complete.
+    /// </p>
+    pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroupInfo]> {
+        self.target_groups.as_deref()
+    }
+    /// <p> The path used by a load balancer to route production traffic when an Amazon ECS
+    /// deployment is complete. </p>
+    pub fn prod_traffic_route(&self) -> std::option::Option<&crate::model::TrafficRoute> {
+        self.prod_traffic_route.as_ref()
+    }
+    /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS
+    /// deployment. Validation can occur while test traffic is served during a deployment.
+    /// </p>
+    pub fn test_traffic_route(&self) -> std::option::Option<&crate::model::TrafficRoute> {
+        self.test_traffic_route.as_ref()
+    }
+}
 impl std::fmt::Debug for TargetGroupPairInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetGroupPairInfo");
@@ -884,6 +1023,14 @@ pub struct TrafficRoute {
     /// size of one. </p>
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TrafficRoute {
+    /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route
+    /// between a target group and a load balancer. This is an array of strings with a maximum
+    /// size of one. </p>
+    pub fn listener_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.listener_arns.as_deref()
+    }
+}
 impl std::fmt::Debug for TrafficRoute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrafficRoute");
@@ -951,6 +1098,16 @@ pub struct TargetGroupInfo {
     /// and then re-registered with after the deployment is complete. </p>
     pub name: std::option::Option<std::string::String>,
 }
+impl TargetGroupInfo {
+    /// <p>For blue/green deployments, the name of the target group that instances in the
+    /// original environment are deregistered from, and instances in the replacement environment
+    /// are registered with. For in-place deployments, the name of the target group that
+    /// instances are deregistered from, so they are not serving traffic during a deployment,
+    /// and then re-registered with after the deployment is complete. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for TargetGroupInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetGroupInfo");
@@ -1010,6 +1167,16 @@ pub struct ElbInfo {
     /// so they are not serving traffic during a deployment, and then re-registered with after
     /// the deployment is complete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl ElbInfo {
+    /// <p>For blue/green deployments, the name of the load balancer that is used to route
+    /// traffic from original instances to replacement instances in a blue/green deployment. For
+    /// in-place deployments, the name of the load balancer that instances are deregistered from
+    /// so they are not serving traffic during a deployment, and then re-registered with after
+    /// the deployment is complete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for ElbInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1073,6 +1240,29 @@ pub struct BlueGreenDeploymentConfiguration {
     /// blue/green deployment.</p>
     pub green_fleet_provisioning_option:
         std::option::Option<crate::model::GreenFleetProvisioningOption>,
+}
+impl BlueGreenDeploymentConfiguration {
+    /// <p>Information about whether to terminate instances in the original fleet during a
+    /// blue/green deployment.</p>
+    pub fn terminate_blue_instances_on_deployment_success(
+        &self,
+    ) -> std::option::Option<&crate::model::BlueInstanceTerminationOption> {
+        self.terminate_blue_instances_on_deployment_success.as_ref()
+    }
+    /// <p>Information about the action to take when newly provisioned instances are ready to
+    /// receive traffic in a blue/green deployment.</p>
+    pub fn deployment_ready_option(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentReadyOption> {
+        self.deployment_ready_option.as_ref()
+    }
+    /// <p>Information about how instances are provisioned for a replacement environment in a
+    /// blue/green deployment.</p>
+    pub fn green_fleet_provisioning_option(
+        &self,
+    ) -> std::option::Option<&crate::model::GreenFleetProvisioningOption> {
+        self.green_fleet_provisioning_option.as_ref()
+    }
 }
 impl std::fmt::Debug for BlueGreenDeploymentConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1194,6 +1384,24 @@ pub struct GreenFleetProvisioningOption {
     /// </li>
     /// </ul>
     pub action: std::option::Option<crate::model::GreenFleetProvisioningAction>,
+}
+impl GreenFleetProvisioningOption {
+    /// <p>The method used to add instances to a replacement environment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be
+    /// created manually.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto
+    /// Scaling group to define and create instances in a new Auto Scaling group.</p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::GreenFleetProvisioningAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for GreenFleetProvisioningOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1343,6 +1551,32 @@ pub struct DeploymentReadyOption {
     /// to Stopped if rerouting is not started manually. Applies only to the
     /// <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
     pub wait_time_in_minutes: i32,
+}
+impl DeploymentReadyOption {
+    /// <p>Information about when to reroute traffic from an original environment to a
+    /// replacement environment in a blue/green deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately
+    /// after the new application revision is installed on the instances in the
+    /// replacement environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless
+    /// traffic rerouting is started using <a>ContinueDeployment</a>. If
+    /// traffic rerouting is not started before the end of the specified wait period,
+    /// the deployment status is changed to Stopped.</p>
+    /// </li>
+    /// </ul>
+    pub fn action_on_timeout(&self) -> std::option::Option<&crate::model::DeploymentReadyAction> {
+        self.action_on_timeout.as_ref()
+    }
+    /// <p>The number of minutes to wait before the status of a blue/green deployment is changed
+    /// to Stopped if rerouting is not started manually. Applies only to the
+    /// <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
+    pub fn wait_time_in_minutes(&self) -> i32 {
+        self.wait_time_in_minutes
+    }
 }
 impl std::fmt::Debug for DeploymentReadyOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1520,6 +1754,37 @@ pub struct BlueInstanceTerminationOption {
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
     pub termination_wait_time_in_minutes: i32,
 }
+impl BlueInstanceTerminationOption {
+    /// <p>The action to take on instances in the original environment after a successful
+    /// blue/green deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TERMINATE</code>: Instances are terminated after a specified wait
+    /// time.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>KEEP_ALIVE</code>: Instances are left running after they are
+    /// deregistered from the load balancer and removed from the deployment
+    /// group.</p>
+    /// </li>
+    /// </ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::InstanceAction> {
+        self.action.as_ref()
+    }
+    /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful
+    /// blue/green deployment before terminating instances from the original environment.</p>
+    ///
+    /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original
+    /// (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the
+    /// original (blue) task set to a replacement (green) task set. </p>
+    ///
+    /// <p> The maximum setting is 2880 minutes (2 days). </p>
+    pub fn termination_wait_time_in_minutes(&self) -> i32 {
+        self.termination_wait_time_in_minutes
+    }
+}
 impl std::fmt::Debug for BlueInstanceTerminationOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BlueInstanceTerminationOption");
@@ -1691,6 +1956,16 @@ pub struct DeploymentStyle {
     pub deployment_type: std::option::Option<crate::model::DeploymentType>,
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
     pub deployment_option: std::option::Option<crate::model::DeploymentOption>,
+}
+impl DeploymentStyle {
+    /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
+    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+        self.deployment_type.as_ref()
+    }
+    /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
+    pub fn deployment_option(&self) -> std::option::Option<&crate::model::DeploymentOption> {
+        self.deployment_option.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentStyle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1928,6 +2203,17 @@ pub struct AutoRollbackConfiguration {
     /// <p>The event type or types that trigger a rollback.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::AutoRollbackEvent>>,
 }
+impl AutoRollbackConfiguration {
+    /// <p>Indicates whether a defined automatic rollback configuration is currently
+    /// enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The event type or types that trigger a rollback.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::AutoRollbackEvent]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoRollbackConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoRollbackConfiguration");
@@ -2081,6 +2367,34 @@ pub struct AlarmConfiguration {
     /// added to a deployment group.</p>
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
 }
+impl AlarmConfiguration {
+    /// <p>Indicates whether the alarm configuration is enabled.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Indicates whether a deployment should continue if information about the current state
+    /// of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>true</code>: The deployment proceeds even if alarm status information
+    /// can't be retrieved from Amazon CloudWatch.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>false</code>: The deployment stops if alarm status information can't be
+    /// retrieved from Amazon CloudWatch.</p>
+    /// </li>
+    /// </ul>
+    pub fn ignore_poll_alarm_failure(&self) -> bool {
+        self.ignore_poll_alarm_failure
+    }
+    /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be
+    /// added to a deployment group.</p>
+    pub fn alarms(&self) -> std::option::Option<&[crate::model::Alarm]> {
+        self.alarms.as_deref()
+    }
+}
 impl std::fmt::Debug for AlarmConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlarmConfiguration");
@@ -2193,6 +2507,13 @@ pub struct Alarm {
     /// only once in a list of alarms.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl Alarm {
+    /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used
+    /// only once in a list of alarms.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for Alarm {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Alarm");
@@ -2245,6 +2566,21 @@ pub struct TriggerConfig {
     pub trigger_target_arn: std::option::Option<std::string::String>,
     /// <p>The event type or types for which notifications are triggered.</p>
     pub trigger_events: std::option::Option<std::vec::Vec<crate::model::TriggerEventType>>,
+}
+impl TriggerConfig {
+    /// <p>The name of the notification trigger.</p>
+    pub fn trigger_name(&self) -> std::option::Option<&str> {
+        self.trigger_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through
+    /// which notifications about deployment or instance events are sent.</p>
+    pub fn trigger_target_arn(&self) -> std::option::Option<&str> {
+        self.trigger_target_arn.as_deref()
+    }
+    /// <p>The event type or types for which notifications are triggered.</p>
+    pub fn trigger_events(&self) -> std::option::Option<&[crate::model::TriggerEventType]> {
+        self.trigger_events.as_deref()
+    }
 }
 impl std::fmt::Debug for TriggerConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2435,6 +2771,16 @@ pub struct Tag {
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -2578,6 +2924,48 @@ pub struct RevisionLocation {
     /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
     /// content is formatted as JSON or YAML and stored as a RawString. </p>
     pub app_spec_content: std::option::Option<crate::model::AppSpecContent>,
+}
+impl RevisionLocation {
+    /// <p>The type of application revision:</p>
+    /// <ul>
+    /// <li>
+    /// <p>S3: An application revision stored in Amazon S3.</p>
+    /// </li>
+    /// <li>
+    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments
+    /// only).</p>
+    /// </li>
+    /// <li>
+    /// <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments
+    /// only).</p>
+    /// </li>
+    /// <li>
+    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
+    /// contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
+    /// content is formatted as JSON or YAML stored as a RawString.</p>
+    /// </li>
+    /// </ul>
+    pub fn revision_type(&self) -> std::option::Option<&crate::model::RevisionLocationType> {
+        self.revision_type.as_ref()
+    }
+    /// <p>Information about the location of a revision stored in Amazon S3. </p>
+    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_location.as_ref()
+    }
+    /// <p>Information about the location of application artifacts stored in GitHub.</p>
+    pub fn git_hub_location(&self) -> std::option::Option<&crate::model::GitHubLocation> {
+        self.git_hub_location.as_ref()
+    }
+    /// <p>Information about the location of an AWS Lambda deployment revision stored as a
+    /// RawString.</p>
+    pub fn string(&self) -> std::option::Option<&crate::model::RawString> {
+        self.string.as_ref()
+    }
+    /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
+    /// content is formatted as JSON or YAML and stored as a RawString. </p>
+    pub fn app_spec_content(&self) -> std::option::Option<&crate::model::AppSpecContent> {
+        self.app_spec_content.as_ref()
+    }
 }
 impl std::fmt::Debug for RevisionLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2744,6 +3132,24 @@ pub struct AppSpecContent {
     /// <p> The SHA256 hash value of the revision content. </p>
     pub sha256: std::option::Option<std::string::String>,
 }
+impl AppSpecContent {
+    /// <p> The YAML-formatted or JSON-formatted revision string. </p>
+    /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias
+    /// for its original version, and the alias for its replacement version. The deployment
+    /// shifts traffic from the original version of the Lambda function to the replacement
+    /// version. </p>
+    /// <p> For an Amazon ECS deployment, the content includes the task name, information about
+    /// the load balancer that serves traffic to the container, and more. </p>
+    /// <p> For both types of deployments, the content can specify Lambda functions that run at
+    /// specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p> The SHA256 hash value of the revision content. </p>
+    pub fn sha256(&self) -> std::option::Option<&str> {
+        self.sha256.as_deref()
+    }
+}
 impl std::fmt::Debug for AppSpecContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppSpecContent");
@@ -2826,6 +3232,18 @@ pub struct RawString {
     /// <p>The SHA256 hash value of the revision content.</p>
     pub sha256: std::option::Option<std::string::String>,
 }
+impl RawString {
+    /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about
+    /// which Lambda function to update and optional Lambda functions that validate deployment
+    /// lifecycle events.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The SHA256 hash value of the revision content.</p>
+    pub fn sha256(&self) -> std::option::Option<&str> {
+        self.sha256.as_deref()
+    }
+}
 impl std::fmt::Debug for RawString {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RawString");
@@ -2895,6 +3313,19 @@ pub struct GitHubLocation {
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the
     /// application revision.</p>
     pub commit_id: std::option::Option<std::string::String>,
+}
+impl GitHubLocation {
+    /// <p>The GitHub account and repository pair that stores a reference to the commit that
+    /// represents the bundled artifacts for the application revision. </p>
+    /// <p>Specified as account/repository.</p>
+    pub fn repository(&self) -> std::option::Option<&str> {
+        self.repository.as_deref()
+    }
+    /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the
+    /// application revision.</p>
+    pub fn commit_id(&self) -> std::option::Option<&str> {
+        self.commit_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GitHubLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2991,6 +3422,49 @@ pub struct S3Location {
     /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is
     /// skipped.</p>
     pub e_tag: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The name of the Amazon S3 bucket where the application revision is stored.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name of the Amazon S3 object that represents the bundled artifacts for the
+    /// application revision.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The file type of the application revision. Must be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>tar</code>: A tar archive file.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>tgz</code>: A compressed tar archive file.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>zip</code>: A zip archive file.</p>
+    /// </li>
+    /// </ul>
+    pub fn bundle_type(&self) -> std::option::Option<&crate::model::BundleType> {
+        self.bundle_type.as_ref()
+    }
+    /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for
+    /// the application revision.</p>
+    /// <p>If the version is not specified, the system uses the most recent version by
+    /// default.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the
+    /// application revision.</p>
+    /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is
+    /// skipped.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3462,6 +3936,22 @@ pub struct TimeRange {
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
     pub end: std::option::Option<aws_smithy_types::Instant>,
+}
+impl TimeRange {
+    /// <p>The start time of the time range.</p>
+    /// <note>
+    /// <p>Specify null to leave the start time open-ended.</p>
+    /// </note>
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start.as_ref()
+    }
+    /// <p>The end time of the time range.</p>
+    /// <note>
+    /// <p>Specify null to leave the end time open-ended.</p>
+    /// </note>
+    pub fn end(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end.as_ref()
+    }
 }
 impl std::fmt::Debug for TimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3948,6 +4438,37 @@ pub struct InstanceInfo {
     /// <p>The tags currently associated with the on-premises instance.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl InstanceInfo {
+    /// <p>The name of the on-premises instance.</p>
+    pub fn instance_name(&self) -> std::option::Option<&str> {
+        self.instance_name.as_deref()
+    }
+    /// <p>The ARN of the IAM session associated with the on-premises instance.</p>
+    pub fn iam_session_arn(&self) -> std::option::Option<&str> {
+        self.iam_session_arn.as_deref()
+    }
+    /// <p>The IAM user ARN associated with the on-premises instance.</p>
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+        self.iam_user_arn.as_deref()
+    }
+    /// <p>The ARN of the on-premises instance.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The time at which the on-premises instance was registered.</p>
+    pub fn register_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.register_time.as_ref()
+    }
+    /// <p>If the on-premises instance was deregistered, the time at which the on-premises
+    /// instance was deregistered.</p>
+    pub fn deregister_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deregister_time.as_ref()
+    }
+    /// <p>The tags currently associated with the on-premises instance.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for InstanceInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceInfo");
@@ -4111,6 +4632,38 @@ pub struct DeploymentTarget {
     /// stack update.</p>
     pub cloud_formation_target: std::option::Option<crate::model::CloudFormationTarget>,
 }
+impl DeploymentTarget {
+    /// <p>The deployment type that is specific to the deployment's compute platform or
+    /// deployments initiated by a CloudFormation stack update.</p>
+    pub fn deployment_target_type(
+        &self,
+    ) -> std::option::Option<&crate::model::DeploymentTargetType> {
+        self.deployment_target_type.as_ref()
+    }
+    /// <p> Information about the target for a deployment that uses the EC2/On-premises compute
+    /// platform. </p>
+    pub fn instance_target(&self) -> std::option::Option<&crate::model::InstanceTarget> {
+        self.instance_target.as_ref()
+    }
+    /// <p> Information about the target for a deployment that uses the AWS Lambda compute
+    /// platform. </p>
+    pub fn lambda_target(&self) -> std::option::Option<&crate::model::LambdaTarget> {
+        self.lambda_target.as_ref()
+    }
+    /// <p> Information about the target for a deployment that uses the Amazon ECS compute
+    /// platform. </p>
+    pub fn ecs_target(&self) -> std::option::Option<&crate::model::EcsTarget> {
+        self.ecs_target.as_ref()
+    }
+    /// <p> Information about the target to be updated by an AWS CloudFormation blue/green
+    /// deployment. This target type is used for all deployments initiated by a CloudFormation
+    /// stack update.</p>
+    pub fn cloud_formation_target(
+        &self,
+    ) -> std::option::Option<&crate::model::CloudFormationTarget> {
+        self.cloud_formation_target.as_ref()
+    }
+}
 impl std::fmt::Debug for DeploymentTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentTarget");
@@ -4256,6 +4809,41 @@ pub struct CloudFormationTarget {
     /// <p>The percentage of production traffic that the target version of an AWS CloudFormation
     /// blue/green deployment receives.</p>
     pub target_version_weight: f64,
+}
+impl CloudFormationTarget {
+    /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique ID of a deployment target that has a type
+    /// of <code>CloudFormationTarget</code>. </p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p> The date and time when the target application was updated by an AWS CloudFormation
+    /// blue/green deployment. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target
+    /// application. </p>
+    pub fn lifecycle_events(&self) -> std::option::Option<&[crate::model::LifecycleEvent]> {
+        self.lifecycle_events.as_deref()
+    }
+    /// <p> The status of an AWS CloudFormation blue/green deployment's target application.
+    /// </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TargetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The percentage of production traffic that the target version of an AWS CloudFormation
+    /// blue/green deployment receives.</p>
+    pub fn target_version_weight(&self) -> f64 {
+        self.target_version_weight
+    }
 }
 impl std::fmt::Debug for CloudFormationTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4528,6 +5116,50 @@ pub struct LifecycleEvent {
     /// </ul>
     pub status: std::option::Option<crate::model::LifecycleEventStatus>,
 }
+impl LifecycleEvent {
+    /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+    /// <code>BeforeInstall</code>, <code>AfterInstall</code>,
+    /// <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
+    pub fn lifecycle_event_name(&self) -> std::option::Option<&str> {
+        self.lifecycle_event_name.as_deref()
+    }
+    /// <p>Diagnostic information about the deployment lifecycle event.</p>
+    pub fn diagnostics(&self) -> std::option::Option<&crate::model::Diagnostics> {
+        self.diagnostics.as_ref()
+    }
+    /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The deployment lifecycle event status:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending: The deployment lifecycle event is pending.</p>
+    /// </li>
+    /// <li>
+    /// <p>InProgress: The deployment lifecycle event is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>Succeeded: The deployment lifecycle event ran successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed: The deployment lifecycle event has failed.</p>
+    /// </li>
+    /// <li>
+    /// <p>Skipped: The deployment lifecycle event has been skipped.</p>
+    /// </li>
+    /// <li>
+    /// <p>Unknown: The deployment lifecycle event is unknown.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::LifecycleEventStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for LifecycleEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LifecycleEvent");
@@ -4716,6 +5348,48 @@ pub struct Diagnostics {
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     pub log_tail: std::option::Option<std::string::String>,
+}
+impl Diagnostics {
+    /// <p>The associated error code:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Success: The specified script ran.</p>
+    /// </li>
+    /// <li>
+    /// <p>ScriptMissing: The specified script was not found in the specified
+    /// location.</p>
+    /// </li>
+    /// <li>
+    /// <p>ScriptNotExecutable: The specified script is not a recognized executable file
+    /// type.</p>
+    /// </li>
+    /// <li>
+    /// <p>ScriptTimedOut: The specified script did not finish running in the specified
+    /// time period.</p>
+    /// </li>
+    /// <li>
+    /// <p>ScriptFailed: The specified script failed to run as expected.</p>
+    /// </li>
+    /// <li>
+    /// <p>UnknownError: The specified script did not run for an unknown reason.</p>
+    /// </li>
+    /// </ul>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::LifecycleErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The name of the script.</p>
+    pub fn script_name(&self) -> std::option::Option<&str> {
+        self.script_name.as_deref()
+    }
+    /// <p>The message associated with the error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The last portion of the diagnostic log.</p>
+    /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+    pub fn log_tail(&self) -> std::option::Option<&str> {
+        self.log_tail.as_deref()
+    }
 }
 impl std::fmt::Debug for Diagnostics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4947,6 +5621,38 @@ pub struct EcsTarget {
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
     pub task_sets_info: std::option::Option<std::vec::Vec<crate::model::EcsTaskSet>>,
 }
+impl EcsTarget {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>.
+    /// </p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p> The date and time when the target Amazon ECS application was updated by a deployment.
+    /// </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
+    pub fn lifecycle_events(&self) -> std::option::Option<&[crate::model::LifecycleEvent]> {
+        self.lifecycle_events.as_deref()
+    }
+    /// <p> The status an Amazon ECS deployment's target ECS application. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TargetStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
+    pub fn task_sets_info(&self) -> std::option::Option<&[crate::model::EcsTaskSet]> {
+        self.task_sets_info.as_deref()
+    }
+}
 impl std::fmt::Debug for EcsTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EcsTarget");
@@ -5151,6 +5857,69 @@ pub struct EcsTaskSet {
     /// <p> A label that identifies whether the ECS task set is an original target
     /// (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub task_set_label: std::option::Option<crate::model::TargetLabel>,
+}
+impl EcsTaskSet {
+    /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
+    pub fn identifer(&self) -> std::option::Option<&str> {
+        self.identifer.as_deref()
+    }
+    /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS
+    /// compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this
+    /// value to determine how many tasks to create. After the updated task set is created,
+    /// CodeDeploy shifts traffic to the new task set. </p>
+    pub fn desired_count(&self) -> i64 {
+        self.desired_count
+    }
+    /// <p> The number of tasks in the task set that are in the <code>PENDING</code> status
+    /// during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing
+    /// to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code>
+    /// status when it launches for the first time, or when it is restarted after being in the
+    /// <code>STOPPED</code> state. </p>
+    pub fn pending_count(&self) -> i64 {
+        self.pending_count
+    }
+    /// <p> The number of tasks in the task set that are in the <code>RUNNING</code> status
+    /// during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and
+    /// ready for use. </p>
+    pub fn running_count(&self) -> i64 {
+        self.running_count
+    }
+    /// <p> The status of the task set. There are three valid task set statuses: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PRIMARY</code>: Indicates the task set is serving production traffic.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and
+    /// their corresponding targets are being deregistered from their target group.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p> The percentage of traffic served by this task set. </p>
+    pub fn traffic_weight(&self) -> f64 {
+        self.traffic_weight
+    }
+    /// <p> The target group associated with the task set. The target group is used by AWS
+    /// CodeDeploy to manage traffic to a task set. </p>
+    pub fn target_group(&self) -> std::option::Option<&crate::model::TargetGroupInfo> {
+        self.target_group.as_ref()
+    }
+    /// <p> A label that identifies whether the ECS task set is an original target
+    /// (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
+    pub fn task_set_label(&self) -> std::option::Option<&crate::model::TargetLabel> {
+        self.task_set_label.as_ref()
+    }
 }
 impl std::fmt::Debug for EcsTaskSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5426,6 +6195,39 @@ pub struct LambdaTarget {
     /// </p>
     pub lambda_function_info: std::option::Option<crate::model::LambdaFunctionInfo>,
 }
+impl LambdaTarget {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>.
+    /// </p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TargetStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The date and time when the target Lambda function was updated by a deployment.
+    /// </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
+    pub fn lifecycle_events(&self) -> std::option::Option<&[crate::model::LifecycleEvent]> {
+        self.lifecycle_events.as_deref()
+    }
+    /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+    /// </p>
+    pub fn lambda_function_info(&self) -> std::option::Option<&crate::model::LambdaFunctionInfo> {
+        self.lambda_function_info.as_ref()
+    }
+}
 impl std::fmt::Debug for LambdaTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaTarget");
@@ -5591,6 +6393,31 @@ pub struct LambdaFunctionInfo {
     /// receives. </p>
     pub target_version_weight: f64,
 }
+impl LambdaFunctionInfo {
+    /// <p> The name of a Lambda function. </p>
+    pub fn function_name(&self) -> std::option::Option<&str> {
+        self.function_name.as_deref()
+    }
+    /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the
+    /// <i>AWS Lambda Developer Guide</i>.</p>
+    pub fn function_alias(&self) -> std::option::Option<&str> {
+        self.function_alias.as_deref()
+    }
+    /// <p> The version of a Lambda function that production traffic points to. </p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p> The version of a Lambda function that production traffic points to after the Lambda
+    /// function is deployed. </p>
+    pub fn target_version(&self) -> std::option::Option<&str> {
+        self.target_version.as_deref()
+    }
+    /// <p> The percentage of production traffic that the target version of a Lambda function
+    /// receives. </p>
+    pub fn target_version_weight(&self) -> f64 {
+        self.target_version_weight
+    }
+}
 impl std::fmt::Debug for LambdaFunctionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionInfo");
@@ -5723,6 +6550,38 @@ pub struct InstanceTarget {
     /// <p> A label that identifies whether the instance is an original target
     /// (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub instance_label: std::option::Option<crate::model::TargetLabel>,
+}
+impl InstanceTarget {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p> The unique ID of a deployment target that has a type of <code>instanceTarget</code>.
+    /// </p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p> The status an EC2/On-premises deployment's target instance. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::TargetStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The date and time when the target instance was updated by a deployment. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p> The lifecycle events of the deployment to this target instance. </p>
+    pub fn lifecycle_events(&self) -> std::option::Option<&[crate::model::LifecycleEvent]> {
+        self.lifecycle_events.as_deref()
+    }
+    /// <p> A label that identifies whether the instance is an original target
+    /// (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
+    pub fn instance_label(&self) -> std::option::Option<&crate::model::TargetLabel> {
+        self.instance_label.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5991,6 +6850,70 @@ pub struct InstanceSummary {
     /// </li>
     /// </ul>
     pub instance_type: std::option::Option<crate::model::InstanceType>,
+}
+impl InstanceSummary {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The instance ID.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The deployment status for this instance:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Pending</code>: The deployment is pending for this instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>In Progress</code>: The deployment is in progress for this
+    /// instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Succeeded</code>: The deployment has succeeded for this instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>: The deployment has failed for this instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Skipped</code>: The deployment has been skipped for this
+    /// instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Unknown</code>: The deployment status is unknown for this
+    /// instance.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp that indicates when the instance information was last updated.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>A list of lifecycle events for this instance.</p>
+    pub fn lifecycle_events(&self) -> std::option::Option<&[crate::model::LifecycleEvent]> {
+        self.lifecycle_events.as_deref()
+    }
+    /// <p>Information about which environment an instance belongs to in a blue/green
+    /// deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>BLUE: The instance is part of the original environment.</p>
+    /// </li>
+    /// <li>
+    /// <p>GREEN: The instance is part of the replacement environment.</p>
+    /// </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+        self.instance_type.as_ref()
+    }
 }
 impl std::fmt::Debug for InstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6270,6 +7193,132 @@ pub struct DeploymentGroupInfo {
     /// is specified as an Amazon ECS cluster and service name pair using the format
     /// <code><clustername>:<servicename></code>. </p>
     pub ecs_services: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
+}
+impl DeploymentGroupInfo {
+    /// <p>The application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The deployment group ID.</p>
+    pub fn deployment_group_id(&self) -> std::option::Option<&str> {
+        self.deployment_group_id.as_deref()
+    }
+    /// <p>The deployment group name.</p>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+    /// <p>The deployment configuration name.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
+    /// with any of the specified tags.</p>
+    pub fn ec2_tag_filters(&self) -> std::option::Option<&[crate::model::Ec2TagFilter]> {
+        self.ec2_tag_filters.as_deref()
+    }
+    /// <p>The on-premises instance tags on which to filter. The deployment group includes
+    /// on-premises instances with any of the specified tags.</p>
+    pub fn on_premises_instance_tag_filters(
+        &self,
+    ) -> std::option::Option<&[crate::model::TagFilter]> {
+        self.on_premises_instance_tag_filters.as_deref()
+    }
+    /// <p>A list of associated Auto Scaling groups.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make
+    /// calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a
+    /// Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+    /// Guide</i>.</p>
+    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+        self.service_role_arn.as_deref()
+    }
+    /// <p>Information about the deployment group's target revision, including type and
+    /// location.</p>
+    pub fn target_revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.target_revision.as_ref()
+    }
+    /// <p>Information about triggers associated with the deployment group.</p>
+    pub fn trigger_configurations(&self) -> std::option::Option<&[crate::model::TriggerConfig]> {
+        self.trigger_configurations.as_deref()
+    }
+    /// <p>A list of alarms associated with the deployment group.</p>
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
+        self.alarm_configuration.as_ref()
+    }
+    /// <p>Information about the automatic rollback configuration associated with the deployment
+    /// group.</p>
+    pub fn auto_rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
+        self.auto_rollback_configuration.as_ref()
+    }
+    /// <p>Information about the type of deployment, either in-place or blue/green, you want to
+    /// run and whether to route deployment traffic behind a load balancer.</p>
+    pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
+        self.deployment_style.as_ref()
+    }
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
+    /// receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
+    /// one or more 'auto-update outdated instances' deployments to apply the deployed
+    /// application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
+    /// deployment to update the new EC2 instances. This may result in instances having
+    /// different revisions.</p>
+    pub fn outdated_instances_strategy(
+        &self,
+    ) -> std::option::Option<&crate::model::OutdatedInstancesStrategy> {
+        self.outdated_instances_strategy.as_ref()
+    }
+    /// <p>Information about blue/green deployment options for a deployment group.</p>
+    pub fn blue_green_deployment_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BlueGreenDeploymentConfiguration> {
+        self.blue_green_deployment_configuration.as_ref()
+    }
+    /// <p>Information about the load balancer to use in a deployment.</p>
+    pub fn load_balancer_info(&self) -> std::option::Option<&crate::model::LoadBalancerInfo> {
+        self.load_balancer_info.as_ref()
+    }
+    /// <p>Information about the most recent successful deployment to the deployment
+    /// group.</p>
+    pub fn last_successful_deployment(
+        &self,
+    ) -> std::option::Option<&crate::model::LastDeploymentInfo> {
+        self.last_successful_deployment.as_ref()
+    }
+    /// <p>Information about the most recent attempted deployment to the deployment group.</p>
+    pub fn last_attempted_deployment(
+        &self,
+    ) -> std::option::Option<&crate::model::LastDeploymentInfo> {
+        self.last_attempted_deployment.as_ref()
+    }
+    /// <p>Information about groups of tags applied to an EC2 instance. The deployment group
+    /// includes only EC2 instances identified by all of the tag groups. Cannot be used in the
+    /// same call as ec2TagFilters.</p>
+    pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
+        self.ec2_tag_set.as_ref()
+    }
+    /// <p>Information about groups of tags applied to an on-premises instance. The deployment
+    /// group includes only on-premises instances identified by all the tag groups. Cannot be
+    /// used in the same call as onPremisesInstanceTagFilters.</p>
+    pub fn on_premises_tag_set(&self) -> std::option::Option<&crate::model::OnPremisesTagSet> {
+        self.on_premises_tag_set.as_ref()
+    }
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+    /// <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to
+    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
+    /// is specified as an Amazon ECS cluster and service name pair using the format
+    /// <code><clustername>:<servicename></code>. </p>
+    pub fn ecs_services(&self) -> std::option::Option<&[crate::model::EcsService]> {
+        self.ecs_services.as_deref()
+    }
 }
 impl std::fmt::Debug for DeploymentGroupInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6850,6 +7899,26 @@ pub struct LastDeploymentInfo {
     /// started.</p>
     pub create_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl LastDeploymentInfo {
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>The status of the most recent deployment.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp that indicates when the most recent deployment to the deployment group was
+    /// complete.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>A timestamp that indicates when the most recent deployment to the deployment group
+    /// started.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+}
 impl std::fmt::Debug for LastDeploymentInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LastDeploymentInfo");
@@ -6964,6 +8033,36 @@ pub struct DeploymentConfigInfo {
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for
     /// deployments with a Lambda or ECS compute platform only.</p>
     pub traffic_routing_config: std::option::Option<crate::model::TrafficRoutingConfig>,
+}
+impl DeploymentConfigInfo {
+    /// <p>The deployment configuration ID.</p>
+    pub fn deployment_config_id(&self) -> std::option::Option<&str> {
+        self.deployment_config_id.as_deref()
+    }
+    /// <p>The deployment configuration name.</p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    pub fn minimum_healthy_hosts(&self) -> std::option::Option<&crate::model::MinimumHealthyHosts> {
+        self.minimum_healthy_hosts.as_ref()
+    }
+    /// <p>The time at which the deployment configuration was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+    /// <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
+    /// <p>The configuration that specifies how the deployment traffic is routed. Used for
+    /// deployments with a Lambda or ECS compute platform only.</p>
+    pub fn traffic_routing_config(
+        &self,
+    ) -> std::option::Option<&crate::model::TrafficRoutingConfig> {
+        self.traffic_routing_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentConfigInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7112,6 +8211,26 @@ pub struct TrafficRoutingConfig {
     /// specified in the deployment's AppSpec file.</p>
     pub time_based_linear: std::option::Option<crate::model::TimeBasedLinear>,
 }
+impl TrafficRoutingConfig {
+    /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+    /// <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TrafficRoutingType> {
+        self.r#type.as_ref()
+    }
+    /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task
+    /// set to another in two increments. The original and target Lambda function versions or
+    /// ECS task sets are specified in the deployment's AppSpec file.</p>
+    pub fn time_based_canary(&self) -> std::option::Option<&crate::model::TimeBasedCanary> {
+        self.time_based_canary.as_ref()
+    }
+    /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task
+    /// set to another in equal increments, with an equal number of minutes between each
+    /// increment. The original and target Lambda function versions or ECS task sets are
+    /// specified in the deployment's AppSpec file.</p>
+    pub fn time_based_linear(&self) -> std::option::Option<&crate::model::TimeBasedLinear> {
+        self.time_based_linear.as_ref()
+    }
+}
 impl std::fmt::Debug for TrafficRoutingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrafficRoutingConfig");
@@ -7214,6 +8333,18 @@ pub struct TimeBasedLinear {
     /// <code>TimeBasedLinear</code> deployment.</p>
     pub linear_interval: i32,
 }
+impl TimeBasedLinear {
+    /// <p>The percentage of traffic that is shifted at the start of each increment of a
+    /// <code>TimeBasedLinear</code> deployment.</p>
+    pub fn linear_percentage(&self) -> i32 {
+        self.linear_percentage
+    }
+    /// <p>The number of minutes between each incremental traffic shift of a
+    /// <code>TimeBasedLinear</code> deployment.</p>
+    pub fn linear_interval(&self) -> i32 {
+        self.linear_interval
+    }
+}
 impl std::fmt::Debug for TimeBasedLinear {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeBasedLinear");
@@ -7284,6 +8415,18 @@ pub struct TimeBasedCanary {
     /// <p>The number of minutes between the first and second traffic shifts of a
     /// <code>TimeBasedCanary</code> deployment.</p>
     pub canary_interval: i32,
+}
+impl TimeBasedCanary {
+    /// <p>The percentage of traffic to shift in the first increment of a
+    /// <code>TimeBasedCanary</code> deployment.</p>
+    pub fn canary_percentage(&self) -> i32 {
+        self.canary_percentage
+    }
+    /// <p>The number of minutes between the first and second traffic shifts of a
+    /// <code>TimeBasedCanary</code> deployment.</p>
+    pub fn canary_interval(&self) -> i32 {
+        self.canary_interval
+    }
 }
 impl std::fmt::Debug for TimeBasedCanary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7441,6 +8584,47 @@ pub struct MinimumHealthyHosts {
     pub r#type: std::option::Option<crate::model::MinimumHealthyHostsType>,
     /// <p>The minimum healthy instance value.</p>
     pub value: i32,
+}
+impl MinimumHealthyHosts {
+    /// <p>The minimum healthy instance type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HOST_COUNT</code>: The minimum number of healthy instances as an
+    /// absolute value.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+    /// percentage of the total number of instances in the deployment.</p>
+    /// </li>
+    /// </ul>
+    /// <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to
+    /// three instances at a time. The deployment is successful if six or more instances are
+    /// deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
+    /// specified, deploy to up to five instances at a time. The deployment is successful if
+    /// four or more instances are deployed to successfully. Otherwise, the deployment
+    /// fails.</p>
+    /// <note>
+    /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime
+    /// returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This
+    /// means a deployment to only one instance at a time. (You cannot set the type to
+    /// MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
+    /// CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances
+    /// but one are kept in a healthy state during the deployment. Although this allows one
+    /// instance at a time to be taken offline for a new deployment, it also means that if
+    /// the deployment to the last instance fails, the overall deployment is still
+    /// successful.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+    /// Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::MinimumHealthyHostsType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The minimum healthy instance value.</p>
+    pub fn value(&self) -> i32 {
+        self.value
+    }
 }
 impl std::fmt::Debug for MinimumHealthyHosts {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7757,6 +8941,206 @@ pub struct DeploymentInfo {
     pub external_id: std::option::Option<std::string::String>,
     /// <p>Information about deployments related to the specified deployment.</p>
     pub related_deployments: std::option::Option<crate::model::RelatedDeployments>,
+}
+impl DeploymentInfo {
+    /// <p>The application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p> The deployment group name. </p>
+    pub fn deployment_group_name(&self) -> std::option::Option<&str> {
+        self.deployment_group_name.as_deref()
+    }
+    /// <p> The deployment configuration name. </p>
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+        self.deployment_config_name.as_deref()
+    }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
+        self.deployment_id.as_deref()
+    }
+    /// <p>Information about the application revision that was deployed to the deployment group
+    /// before the most recent successful deployment.</p>
+    pub fn previous_revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.previous_revision.as_ref()
+    }
+    /// <p>Information about the location of stored application artifacts and the service from
+    /// which to retrieve them.</p>
+    pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.revision.as_ref()
+    }
+    /// <p>The current state of the deployment as a whole.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information about any error associated with this deployment.</p>
+    pub fn error_information(&self) -> std::option::Option<&crate::model::ErrorInformation> {
+        self.error_information.as_ref()
+    }
+    /// <p>A timestamp that indicates when the deployment was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>A timestamp that indicates when the deployment was deployed to the deployment
+    /// group.</p>
+    /// <p>In some cases, the reported value of the start time might be later than the complete
+    /// time. This is due to differences in the clock settings of backend servers that
+    /// participate in the deployment process.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>A timestamp that indicates when the deployment was complete.</p>
+    pub fn complete_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.complete_time.as_ref()
+    }
+    /// <p>A summary of the deployment status of the instances in the deployment.</p>
+    pub fn deployment_overview(&self) -> std::option::Option<&crate::model::DeploymentOverview> {
+        self.deployment_overview.as_ref()
+    }
+    /// <p>A comment about the deployment.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The means by which the deployment was created:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>user</code>: A user created the deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>autoscaling</code>: Amazon EC2 Auto Scaling created the
+    /// deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>codeDeployRollback</code>: A rollback process created the
+    /// deployment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CodeDeployAutoUpdate</code>: An auto-update process created the
+    /// deployment when it detected outdated EC2 instances.</p>
+    /// </li>
+    /// </ul>
+    pub fn creator(&self) -> std::option::Option<&crate::model::DeploymentCreator> {
+        self.creator.as_ref()
+    }
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
+    /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
+    /// the deployment continues to the next deployment lifecycle event. For example, if
+    /// <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If
+    /// <code>BeforeBlockTraffic</code> fails, the deployment continues with
+    /// <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment
+    /// continues with <code>ApplicationStop</code>. </p>
+    ///
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
+    /// instance, that deployment fails. If deployment to that instance is part of an overall
+    /// deployment and the number of healthy hosts is not less than the minimum number of
+    /// healthy hosts, then a deployment to the next instance is attempted. </p>
+    ///
+    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
+    /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
+    /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
+    /// If one of these scripts contains an error and does not run successfully, the deployment
+    /// can fail. </p>
+    ///
+    /// <p> If the cause of the failure is a script from the last successful deployment that will
+    /// never run successfully, create a new deployment and use
+    /// <code>ignoreApplicationStopFailures</code> to specify that the
+    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
+    /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    pub fn ignore_application_stop_failures(&self) -> bool {
+        self.ignore_application_stop_failures
+    }
+    /// <p>Information about the automatic rollback configuration associated with the
+    /// deployment.</p>
+    pub fn auto_rollback_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
+        self.auto_rollback_configuration.as_ref()
+    }
+    /// <p>Indicates whether only instances that are not running the latest application revision
+    /// are to be deployed to.</p>
+    pub fn update_outdated_instances_only(&self) -> bool {
+        self.update_outdated_instances_only
+    }
+    /// <p>Information about a deployment rollback.</p>
+    pub fn rollback_info(&self) -> std::option::Option<&crate::model::RollbackInfo> {
+        self.rollback_info.as_ref()
+    }
+    /// <p>Information about the type of deployment, either in-place or blue/green, you want to
+    /// run and whether to route deployment traffic behind a load balancer.</p>
+    pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
+        self.deployment_style.as_ref()
+    }
+    /// <p>Information about the instances that belong to the replacement environment in a
+    /// blue/green deployment.</p>
+    pub fn target_instances(&self) -> std::option::Option<&crate::model::TargetInstances> {
+        self.target_instances.as_ref()
+    }
+    /// <p>Indicates whether the wait period set for the termination of instances in the original
+    /// environment has started. Status is 'false' if the KEEP_ALIVE option is specified.
+    /// Otherwise, 'true' as soon as the termination wait period starts.</p>
+    pub fn instance_termination_wait_time_started(&self) -> bool {
+        self.instance_termination_wait_time_started
+    }
+    /// <p>Information about blue/green deployment options for this deployment.</p>
+    pub fn blue_green_deployment_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::BlueGreenDeploymentConfiguration> {
+        self.blue_green_deployment_configuration.as_ref()
+    }
+    /// <p>Information about the load balancer used in the deployment.</p>
+    pub fn load_balancer_info(&self) -> std::option::Option<&crate::model::LoadBalancerInfo> {
+        self.load_balancer_info.as_ref()
+    }
+    /// <p>Provides information about the results of a deployment, such as whether instances in
+    /// the original environment in a blue/green deployment were not terminated.</p>
+    pub fn additional_deployment_status_info(&self) -> std::option::Option<&str> {
+        self.additional_deployment_status_info.as_deref()
+    }
+    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
+    /// target location but weren't part of the previous successful deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>DISALLOW</code>: The deployment fails. This is also the default behavior
+    /// if no option is specified.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OVERWRITE</code>: The version of the file from the application revision
+    /// currently being deployed replaces the version already on the instance.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RETAIN</code>: The version of the file already on the instance is kept
+    /// and used as part of the new deployment.</p>
+    /// </li>
+    /// </ul>
+    pub fn file_exists_behavior(&self) -> std::option::Option<&crate::model::FileExistsBehavior> {
+        self.file_exists_behavior.as_ref()
+    }
+    /// <p>Messages that contain information about the status of a deployment.</p>
+    pub fn deployment_status_messages(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_status_messages.as_deref()
+    }
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+    /// <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
+    /// <p>The unique ID for an external resource (for example, a CloudFormation stack ID) that
+    /// is linked to this deployment.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>Information about deployments related to the specified deployment.</p>
+    pub fn related_deployments(&self) -> std::option::Option<&crate::model::RelatedDeployments> {
+        self.related_deployments.as_ref()
+    }
 }
 impl std::fmt::Debug for DeploymentInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8456,6 +9840,21 @@ pub struct RelatedDeployments {
     pub auto_update_outdated_instances_deployment_ids:
         std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl RelatedDeployments {
+    /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
+    pub fn auto_update_outdated_instances_root_deployment_id(&self) -> std::option::Option<&str> {
+        self.auto_update_outdated_instances_root_deployment_id
+            .as_deref()
+    }
+    /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this
+    /// deployment.</p>
+    pub fn auto_update_outdated_instances_deployment_ids(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
+        self.auto_update_outdated_instances_deployment_ids
+            .as_deref()
+    }
+}
 impl std::fmt::Debug for RelatedDeployments {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RelatedDeployments");
@@ -8618,6 +10017,25 @@ pub struct TargetInstances {
     /// deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
 }
+impl TargetInstances {
+    /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a
+    /// replacement environment for a blue/green deployment. Cannot be used in the same call as
+    /// <code>ec2TagSet</code>.</p>
+    pub fn tag_filters(&self) -> std::option::Option<&[crate::model::Ec2TagFilter]> {
+        self.tag_filters.as_deref()
+    }
+    /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for
+    /// a blue/green deployment.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>Information about the groups of EC2 instance tags that an instance must be identified
+    /// by in order for it to be included in the replacement environment for a blue/green
+    /// deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+    pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
+        self.ec2_tag_set.as_ref()
+    }
+}
 impl std::fmt::Debug for TargetInstances {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetInstances");
@@ -8728,6 +10146,22 @@ pub struct RollbackInfo {
     /// <p>Information that describes the status of a deployment rollback (for example, whether
     /// the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
     pub rollback_message: std::option::Option<std::string::String>,
+}
+impl RollbackInfo {
+    /// <p>The ID of the deployment rollback.</p>
+    pub fn rollback_deployment_id(&self) -> std::option::Option<&str> {
+        self.rollback_deployment_id.as_deref()
+    }
+    /// <p>The deployment ID of the deployment that was underway and triggered a rollback
+    /// deployment because it failed or was stopped.</p>
+    pub fn rollback_triggering_deployment_id(&self) -> std::option::Option<&str> {
+        self.rollback_triggering_deployment_id.as_deref()
+    }
+    /// <p>Information that describes the status of a deployment rollback (for example, whether
+    /// the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    pub fn rollback_message(&self) -> std::option::Option<&str> {
+        self.rollback_message.as_deref()
+    }
 }
 impl std::fmt::Debug for RollbackInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8917,6 +10351,34 @@ pub struct DeploymentOverview {
     /// blue/green deployment.</p>
     pub ready: i64,
 }
+impl DeploymentOverview {
+    /// <p>The number of instances in the deployment in a pending state.</p>
+    pub fn pending(&self) -> i64 {
+        self.pending
+    }
+    /// <p>The number of instances in which the deployment is in progress.</p>
+    pub fn in_progress(&self) -> i64 {
+        self.in_progress
+    }
+    /// <p>The number of instances in the deployment to which revisions have been successfully
+    /// deployed.</p>
+    pub fn succeeded(&self) -> i64 {
+        self.succeeded
+    }
+    /// <p>The number of instances in the deployment in a failed state.</p>
+    pub fn failed(&self) -> i64 {
+        self.failed
+    }
+    /// <p>The number of instances in the deployment in a skipped state.</p>
+    pub fn skipped(&self) -> i64 {
+        self.skipped
+    }
+    /// <p>The number of instances in a replacement environment ready to receive traffic in a
+    /// blue/green deployment.</p>
+    pub fn ready(&self) -> i64 {
+        self.ready
+    }
+}
 impl std::fmt::Debug for DeploymentOverview {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentOverview");
@@ -9090,6 +10552,71 @@ pub struct ErrorInformation {
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>An accompanying error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ErrorInformation {
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+    /// CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p>
+    /// <p>The error code:</p>
+    /// <ul>
+    /// <li>
+    /// <p>APPLICATION_MISSING: The application was missing. This error code is most
+    /// likely raised if the application is deleted after the deployment is created, but
+    /// before it is started.</p>
+    /// </li>
+    /// <li>
+    /// <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is
+    /// most likely raised if the deployment group is deleted after the deployment is
+    /// created, but before it is started.</p>
+    /// </li>
+    /// <li>
+    /// <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
+    /// successfully deployed within the instance health constraints specified.</p>
+    /// </li>
+    /// <li>
+    /// <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully deployed
+    /// within the instance health constraints specified.</p>
+    /// </li>
+    /// <li>
+    /// <p>IAM_ROLE_MISSING: The service role cannot be accessed.</p>
+    /// </li>
+    /// <li>
+    /// <p>IAM_ROLE_PERMISSIONS: The service role does not have the correct
+    /// permissions.</p>
+    /// </li>
+    /// <li>
+    /// <p>INTERNAL_ERROR: There was an internal error.</p>
+    /// </li>
+    /// <li>
+    /// <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon
+    /// EC2.</p>
+    /// </li>
+    /// <li>
+    /// <p>NO_INSTANCES: No instances were specified, or no instances can be
+    /// found.</p>
+    /// </li>
+    /// <li>
+    /// <p>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</p>
+    /// </li>
+    /// <li>
+    /// <p>THROTTLED: The operation was throttled because the calling account exceeded
+    /// the throttling limits of one or more AWS services.</p>
+    /// </li>
+    /// <li>
+    /// <p>TIMEOUT: The deployment has timed out.</p>
+    /// </li>
+    /// <li>
+    /// <p>REVISION_MISSING: The revision ID was missing. This error code is most likely
+    /// raised if the revision is deleted after the deployment is created, but before it
+    /// is started.</p>
+    /// </li>
+    /// </ul>
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>An accompanying error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9492,6 +11019,28 @@ pub struct GenericRevisionInfo {
     /// <p>When the revision was registered with AWS CodeDeploy.</p>
     pub register_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GenericRevisionInfo {
+    /// <p>A comment about the revision.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The deployment groups for which this is the current target revision.</p>
+    pub fn deployment_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.deployment_groups.as_deref()
+    }
+    /// <p>When the revision was first used by AWS CodeDeploy.</p>
+    pub fn first_used_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.first_used_time.as_ref()
+    }
+    /// <p>When the revision was last used by AWS CodeDeploy.</p>
+    pub fn last_used_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_used_time.as_ref()
+    }
+    /// <p>When the revision was registered with AWS CodeDeploy.</p>
+    pub fn register_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.register_time.as_ref()
+    }
+}
 impl std::fmt::Debug for GenericRevisionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenericRevisionInfo");
@@ -9621,6 +11170,34 @@ pub struct ApplicationInfo {
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code>
     /// or <code>Server</code>).</p>
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
+}
+impl ApplicationInfo {
+    /// <p>The application ID.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The application name.</p>
+    pub fn application_name(&self) -> std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p>The time at which the application was created.</p>
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_time.as_ref()
+    }
+    /// <p>True if the user has authenticated with GitHub for the specified application.
+    /// Otherwise, false.</p>
+    pub fn linked_to_git_hub(&self) -> bool {
+        self.linked_to_git_hub
+    }
+    /// <p>The name for a connection to a GitHub account.</p>
+    pub fn git_hub_account_name(&self) -> std::option::Option<&str> {
+        self.git_hub_account_name.as_deref()
+    }
+    /// <p>The destination platform type for deployment of the application (<code>Lambda</code>
+    /// or <code>Server</code>).</p>
+    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+        self.compute_platform.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9811,6 +11388,17 @@ pub struct RevisionInfo {
     /// <p>Information about an application revision, including usage details and associated
     /// deployment groups.</p>
     pub generic_revision_info: std::option::Option<crate::model::GenericRevisionInfo>,
+}
+impl RevisionInfo {
+    /// <p>Information about the location and type of an application revision.</p>
+    pub fn revision_location(&self) -> std::option::Option<&crate::model::RevisionLocation> {
+        self.revision_location.as_ref()
+    }
+    /// <p>Information about an application revision, including usage details and associated
+    /// deployment groups.</p>
+    pub fn generic_revision_info(&self) -> std::option::Option<&crate::model::GenericRevisionInfo> {
+        self.generic_revision_info.as_ref()
+    }
 }
 impl std::fmt::Debug for RevisionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

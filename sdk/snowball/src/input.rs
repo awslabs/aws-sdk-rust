@@ -89,10 +89,7 @@ impl CancelClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -241,10 +238,7 @@ impl CancelJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -391,10 +385,7 @@ impl CreateAddressInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_address(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_address(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -855,10 +846,7 @@ impl CreateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1382,10 +1370,7 @@ impl CreateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1570,10 +1555,7 @@ impl CreateLongTermPricingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_long_term_pricing(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1747,10 +1729,7 @@ impl CreateReturnShippingLabelInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_return_shipping_label(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1900,10 +1879,7 @@ impl DescribeAddressInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_address(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_address(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2069,10 +2045,7 @@ impl DescribeAddressesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_addresses(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_addresses(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2222,10 +2195,7 @@ impl DescribeClusterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2376,10 +2346,7 @@ impl DescribeJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_describe_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2532,7 +2499,7 @@ impl DescribeReturnShippingLabelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_return_shipping_label(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_return_shipping_label(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2685,10 +2652,7 @@ impl GetJobManifestInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_job_manifest(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_job_manifest(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2840,10 +2804,7 @@ impl GetJobUnlockCodeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_job_unlock_code(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_job_unlock_code(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2979,10 +2940,7 @@ impl GetSnowballUsageInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_snowball_usage(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_snowball_usage(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3126,10 +3084,7 @@ impl GetSoftwareUpdatesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_software_updates(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_software_updates(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3309,10 +3264,7 @@ impl ListClusterJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_cluster_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_cluster_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3477,10 +3429,7 @@ impl ListClustersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3648,10 +3597,9 @@ impl ListCompatibleImagesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_compatible_images(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_compatible_images(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3814,10 +3762,7 @@ impl ListJobsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3978,10 +3923,9 @@ impl ListLongTermPricingInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_long_term_pricing(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_long_term_pricing(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4259,10 +4203,7 @@ impl UpdateClusterInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4569,10 +4510,7 @@ impl UpdateJobInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4743,10 +4681,7 @@ impl UpdateJobShipmentStateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_job_shipment_state(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4933,10 +4868,7 @@ impl UpdateLongTermPricingInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_long_term_pricing(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5010,6 +4942,21 @@ pub struct UpdateLongTermPricingInput {
     /// device should be automatically renewed before the long-term pricing contract expires.</p>
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
 }
+impl UpdateLongTermPricingInput {
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+        self.long_term_pricing_id.as_deref()
+    }
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+    pub fn replacement_job(&self) -> std::option::Option<&str> {
+        self.replacement_job.as_deref()
+    }
+    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
+    /// device should be automatically renewed before the long-term pricing contract expires.</p>
+    pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
+        self.is_long_term_pricing_auto_renew
+    }
+}
 impl std::fmt::Debug for UpdateLongTermPricingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateLongTermPricingInput");
@@ -5034,6 +4981,19 @@ pub struct UpdateJobShipmentStateInput {
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
     pub shipment_state: std::option::Option<crate::model::ShipmentState>,
+}
+impl UpdateJobShipmentStateInput {
+    /// <p>The job ID of the job whose shipment date you want to update, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The state of a device when it is being shipped. </p>
+    /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
+    /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+    pub fn shipment_state(&self) -> std::option::Option<&crate::model::ShipmentState> {
+        self.shipment_state.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateJobShipmentStateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5082,6 +5042,65 @@ pub struct UpdateJobInput {
     /// <p>The updated ID for the forwarding address for a job. This field is not
     /// supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
+}
+impl UpdateJobInput {
+    /// <p>The job ID of the job that you want to update, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
+    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
+    /// Management (IAM) API action.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The new or updated <a>Notification</a> object.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+        self.resources.as_ref()
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your
+    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+        self.on_device_service_configuration.as_ref()
+    }
+    /// <p>The ID of the updated <a>Address</a> object.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
+    /// object.</p>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+    /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+    /// regions.</p>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn snowball_capacity_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::SnowballCapacity> {
+        self.snowball_capacity_preference.as_ref()
+    }
+    /// <p>The updated ID for the forwarding address for a job. This field is not
+    /// supported in most regions.</p>
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+        self.forwarding_address_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5137,6 +5156,53 @@ pub struct UpdateClusterInput {
     /// supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
 }
+impl UpdateClusterInput {
+    /// <p>The cluster ID of the cluster that you want to update, for example
+    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
+    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+    /// Identity and Access Management (IAM).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The updated description of this cluster.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
+    /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+        self.resources.as_ref()
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your
+    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+        self.on_device_service_configuration.as_ref()
+    }
+    /// <p>The ID of the updated <a>Address</a> object.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
+    /// object.</p>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+    /// <p>The new or updated <a>Notification</a> object.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The updated ID for the forwarding address for a cluster. This field is not
+    /// supported in most regions.</p>
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+        self.forwarding_address_id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterInput");
@@ -5166,6 +5232,17 @@ pub struct ListLongTermPricingInput {
     /// <code>ListLongTermPricing</code> to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListLongTermPricingInput {
+    /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
+    /// <code>ListLongTermPricing</code> to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListLongTermPricingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListLongTermPricingInput");
@@ -5185,6 +5262,18 @@ pub struct ListJobsInput {
     /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
     /// as the starting point for your returned list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListJobsInput {
+    /// <p>The number of <code>JobListEntry</code> objects to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+    /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
+    /// as the starting point for your returned list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5207,6 +5296,19 @@ pub struct ListCompatibleImagesInput {
     /// for your list of returned images.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListCompatibleImagesInput {
+    /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
+    /// Edge device can store 10 AMIs.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+    /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
+    /// for your list of returned images.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListCompatibleImagesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListCompatibleImagesInput");
@@ -5226,6 +5328,18 @@ pub struct ListClustersInput {
     /// <code>ClusterListEntry</code> objects, you have the option of specifying
     /// <code>NextToken</code> as the starting point for your returned list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersInput {
+    /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+    /// <code>ClusterListEntry</code> objects, you have the option of specifying
+    /// <code>NextToken</code> as the starting point for your returned list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5250,6 +5364,23 @@ pub struct ListClusterJobsInput {
     /// as the starting point for your returned list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClusterJobsInput {
+    /// <p>The 39-character ID for the cluster that you want to list, for example
+    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The number of <code>JobListEntry</code> objects to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+    /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
+    /// as the starting point for your returned list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClusterJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClusterJobsInput");
@@ -5267,6 +5398,13 @@ pub struct GetSoftwareUpdatesInput {
     /// <p>The ID for a job that you want to get the software update file for, for example
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl GetSoftwareUpdatesInput {
+    /// <p>The ID for a job that you want to get the software update file for, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSoftwareUpdatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5295,6 +5433,13 @@ pub struct GetJobUnlockCodeInput {
     /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl GetJobUnlockCodeInput {
+    /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
+    /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetJobUnlockCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetJobUnlockCodeInput");
@@ -5310,6 +5455,13 @@ pub struct GetJobManifestInput {
     /// <p>The ID for a job that you want to get the manifest file for, for example
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl GetJobManifestInput {
+    /// <p>The ID for a job that you want to get the manifest file for, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetJobManifestInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5327,6 +5479,13 @@ pub struct DescribeReturnShippingLabelInput {
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeReturnShippingLabelInput {
+    /// <p>The automatically generated ID for a job, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeReturnShippingLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReturnShippingLabelInput");
@@ -5343,6 +5502,13 @@ pub struct DescribeJobInput {
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeJobInput {
+    /// <p>The automatically generated ID for a job, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeJobInput");
@@ -5357,6 +5523,12 @@ impl std::fmt::Debug for DescribeJobInput {
 pub struct DescribeClusterInput {
     /// <p>The automatically generated ID for a cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
+}
+impl DescribeClusterInput {
+    /// <p>The automatically generated ID for a cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5377,6 +5549,18 @@ pub struct DescribeAddressesInput {
     /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAddressesInput {
+    /// <p>The number of <code>ADDRESS</code> objects to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+    /// <code>ADDRESS</code> objects, you have the option of specifying a value for
+    /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAddressesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddressesInput");
@@ -5392,6 +5576,12 @@ impl std::fmt::Debug for DescribeAddressesInput {
 pub struct DescribeAddressInput {
     /// <p>The automatically generated ID for a specific address.</p>
     pub address_id: std::option::Option<std::string::String>,
+}
+impl DescribeAddressInput {
+    /// <p>The automatically generated ID for a specific address.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5413,6 +5603,19 @@ pub struct CreateReturnShippingLabelInput {
     /// destination while in transit. Regional shipping speeds are as follows:</p>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
 }
+impl CreateReturnShippingLabelInput {
+    /// <p>The ID for a job that you want to create the return shipping label for; for example,
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
+    /// This speed represents how quickly it moves to its
+    /// destination while in transit. Regional shipping speeds are as follows:</p>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateReturnShippingLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateReturnShippingLabelInput");
@@ -5433,6 +5636,23 @@ pub struct CreateLongTermPricingInput {
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
     /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
+}
+impl CreateLongTermPricingInput {
+    /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
+    /// long-term pricing.</p>
+    pub fn long_term_pricing_type(
+        &self,
+    ) -> std::option::Option<&crate::model::LongTermPricingType> {
+        self.long_term_pricing_type.as_ref()
+    }
+    /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+    pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
+        self.is_long_term_pricing_auto_renew
+    }
+    /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateLongTermPricingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5558,6 +5778,152 @@ pub struct CreateJobInput {
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
+}
+impl CreateJobInput {
+    /// <p>Defines the type of job that you're creating.
+    /// </p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>Defines the Amazon S3 buckets associated with this job.</p>
+    ///
+    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
+    /// data will be imported into.</p>
+    ///
+    /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
+    /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
+    /// you choose to export a range, you define the length of the range by providing either an
+    /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
+    /// Ranges are UTF-8 binary sorted.</p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+        self.resources.as_ref()
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your
+    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+        self.on_device_service_configuration.as_ref()
+    }
+    /// <p>Defines an optional description of this specific job, for example <code>Important
+    /// Photos 2016-08-11</code>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID for the address that you want the Snow device shipped to.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
+    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
+    /// Service (KMS) API action.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The <code>RoleARN</code> that you want to associate with this job.
+    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+    /// Access Management (IAM) API action.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>If your job is being created in one of the US regions, you have the option of
+    /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
+    /// with 80 TB in storage capacity.</p>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn snowball_capacity_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::SnowballCapacity> {
+        self.snowball_capacity_preference.as_ref()
+    }
+    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
+    /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
+    /// transit. Regional shipping speeds are as follows:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
+    /// express are delivered in about a day.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically,
+    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
+    /// way.</p>
+    /// </li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
+    /// </li>
+    /// </ul>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+    /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
+    /// this job.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
+    /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
+    /// the cluster.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The type of AWS Snow Family device to use for this job.
+    /// </p>
+    /// <note>
+    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
+    /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
+    /// device type for cluster jobs is <code>EDGE</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
+    /// Options</a> in the Snowball Edge Developer Guide.</p>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
+    /// <p>The forwarding address ID for a job. This field is not supported in most
+    /// Regions.</p>
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+        self.forwarding_address_id.as_deref()
+    }
+    /// <p>The tax documents required in your AWS Region.</p>
+    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+        self.tax_documents.as_ref()
+    }
+    /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn device_configuration(&self) -> std::option::Option<&crate::model::DeviceConfiguration> {
+        self.device_configuration.as_ref()
+    }
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
+    /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
+    /// automatically be available when the device arrives at your location. Otherwise, you need to
+    /// use the Snowball Client to manage the device.</p>
+    pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
+        self.remote_management.as_ref()
+    }
+    /// <p>The ID of the long-term pricing type for the device.</p>
+    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+        self.long_term_pricing_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5691,6 +6057,132 @@ pub struct CreateClusterInput {
     /// use the Snowball Client to manage the device.</p>
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
 }
+impl CreateClusterInput {
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
+    /// is <code>LOCAL_USE</code>.</p>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The resources associated with the cluster job. These resources include Amazon S3
+    /// buckets and optional AWS Lambda functions written in the Python language. </p>
+    pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
+        self.resources.as_ref()
+    }
+    /// <p>Specifies the service or services on the Snow Family device that your
+    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
+        self.on_device_service_configuration.as_ref()
+    }
+    /// <p>An optional description of this specific cluster, for example <code>Environmental Data
+    /// Cluster-01</code>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID for the address that you want the cluster shipped to.</p>
+    pub fn address_id(&self) -> std::option::Option<&str> {
+        self.address_id.as_deref()
+    }
+    /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
+    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+    /// Management Service (AWS KMS). </p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
+    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+    /// Identity and Access Management (IAM).</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The type of AWS Snow Family device to use for this cluster.
+    /// </p>
+    /// <note>
+    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
+    ///
+    /// <p>For more information, see
+    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
+        self.snowball_type.as_ref()
+    }
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
+    /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
+    /// its destination while in transit. Regional shipping speeds are as follows:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
+    /// express are delivered in about a day.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically,
+    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
+    /// way.</p>
+    /// </li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and
+    /// two-day shipping.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, devices shipped
+    /// express are delivered in about a day.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically,
+    /// Snow devices shipped express are delivered in about a day. In addition, most countries
+    /// in the EU have access to standard shipping, which typically takes less than a week, one
+    /// way.</p>
+    /// </li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p>
+    /// </li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
+    /// </li>
+    /// </ul>
+    pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
+        self.shipping_option.as_ref()
+    }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
+    /// cluster.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
+        self.notification.as_ref()
+    }
+    /// <p>The forwarding address ID for a cluster. This field is not supported in most
+    /// regions.</p>
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+        self.forwarding_address_id.as_deref()
+    }
+    /// <p>The tax documents required in your AWS Region.</p>
+    pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
+        self.tax_documents.as_ref()
+    }
+    /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
+    /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
+    /// automatically be available when the device arrives at your location. Otherwise, you need to
+    /// use the Snowball Client to manage the device.</p>
+    pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
+        self.remote_management.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
@@ -5721,6 +6213,12 @@ pub struct CreateAddressInput {
     /// <p>The address that you want the Snow device shipped to.</p>
     pub address: std::option::Option<crate::model::Address>,
 }
+impl CreateAddressInput {
+    /// <p>The address that you want the Snow device shipped to.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::Address> {
+        self.address.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateAddressInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAddressInput");
@@ -5737,6 +6235,13 @@ pub struct CancelJobInput {
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CancelJobInput {
+    /// <p>The 39-character job ID for the job that you want to cancel, for example
+    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelJobInput");
@@ -5752,6 +6257,13 @@ pub struct CancelClusterInput {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example
     /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
+}
+impl CancelClusterInput {
+    /// <p>The 39-character ID for the cluster that you want to cancel, for example
+    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -9979,6 +9979,16 @@ pub struct ThrottlingException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");
@@ -10072,6 +10082,16 @@ pub struct ResourceNotFoundException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10167,6 +10187,16 @@ pub struct ResourceInUseException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl ResourceInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInUseException");
@@ -10261,6 +10291,16 @@ pub struct ProvisionedThroughputExceededException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl ProvisionedThroughputExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10358,6 +10398,16 @@ pub struct LimitExceededException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LimitExceededException");
@@ -10453,6 +10503,16 @@ pub struct InvalidParameterException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl InvalidParameterException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidParameterException");
@@ -10547,6 +10607,16 @@ pub struct InternalServerError {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl InternalServerError {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalServerError");
@@ -10640,6 +10710,16 @@ pub struct AccessDeniedException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10739,6 +10819,16 @@ pub struct ServiceQuotaExceededException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceQuotaExceededException");
@@ -10834,6 +10924,16 @@ pub struct VideoTooLargeException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl VideoTooLargeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for VideoTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VideoTooLargeException");
@@ -10927,6 +11027,16 @@ pub struct InvalidS3ObjectException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl InvalidS3ObjectException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidS3ObjectException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11023,6 +11133,16 @@ pub struct IdempotentParameterMismatchException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl IdempotentParameterMismatchException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
@@ -11116,6 +11236,16 @@ pub struct InvalidImageFormatException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl InvalidImageFormatException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidImageFormatException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11213,6 +11343,16 @@ pub struct ImageTooLargeException {
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
 }
+impl ImageTooLargeException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageTooLargeException");
@@ -11306,6 +11446,16 @@ pub struct InvalidPaginationTokenException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl InvalidPaginationTokenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidPaginationTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11402,6 +11552,16 @@ pub struct ResourceNotReadyException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl ResourceNotReadyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11502,6 +11662,28 @@ pub struct HumanLoopQuotaExceededException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl HumanLoopQuotaExceededException {
+    /// <p>The resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The quota code.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The service code.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11638,6 +11820,16 @@ pub struct ResourceAlreadyExistsException {
     pub code: std::option::Option<std::string::String>,
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub logref: std::option::Option<std::string::String>,
+}
+impl ResourceAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn logref(&self) -> std::option::Option<&str> {
+        self.logref.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -22,6 +22,32 @@ pub struct Filter {
     /// to match, such as a <code>Provisioned IOPS</code> volume.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Filter {
+    /// <p>The type of filter that you want to use.</p>
+    /// <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only
+    /// products that match both the given filter field and the given value.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::FilterType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The product metadata field that you want to filter on. You can filter by just the
+    /// service code to see all products for a specific service, filter
+    /// by just the attribute name to see a specific attribute for multiple services, or use both a service code
+    /// and an attribute name to retrieve only products that match both fields.</p>
+    /// <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p>
+    ///
+    /// <p>For example, you can filter by the <code>AmazonEC2</code> service code and the
+    /// <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>
+    pub fn field(&self) -> std::option::Option<&str> {
+        self.field.as_deref()
+    }
+    /// <p>The service code or attribute value that you want to filter by. If you are filtering by
+    /// service code this is the actual service code, such as <code>AmazonEC2</code>. If you are
+    /// filtering by attribute name, this is the attribute value that you want the returned products
+    /// to match, such as a <code>Provisioned IOPS</code> volume.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
@@ -173,6 +199,12 @@ pub struct AttributeValue {
     /// <p>The specific value of an <code>attributeName</code>.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl AttributeValue {
+    /// <p>The specific value of an <code>attributeName</code>.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for AttributeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeValue");
@@ -220,6 +252,16 @@ pub struct Service {
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The attributes that are available for this service.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl Service {
+    /// <p>The code for the Amazon Web Services service.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The attributes that are available for this service.</p>
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.attribute_names.as_deref()
+    }
 }
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

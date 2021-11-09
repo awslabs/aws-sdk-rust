@@ -105,6 +105,29 @@ pub struct StopInferenceSchedulerOutput {
     /// <p>Indicates the status of the inference scheduler. </p>
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
 }
+impl StopInferenceSchedulerOutput {
+    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being
+    /// stopped. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The name of the inference scheduler being stopped. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopInferenceSchedulerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopInferenceSchedulerOutput");
@@ -225,6 +248,29 @@ pub struct StartInferenceSchedulerOutput {
     /// <p>Indicates the status of the inference scheduler. </p>
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
 }
+impl StartInferenceSchedulerOutput {
+    /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+    /// </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the ML model being used by the inference scheduler. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The name of the inference scheduler being started. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartInferenceSchedulerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartInferenceSchedulerOutput");
@@ -338,6 +384,16 @@ pub struct StartDataIngestionJobOutput {
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
+impl StartDataIngestionJobOutput {
+    /// <p>Indicates the job ID of the data ingestion job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for StartDataIngestionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDataIngestionJobOutput");
@@ -402,6 +458,12 @@ pub struct ListTagsForResourceOutput {
     /// <p> Any tags associated with the resource. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p> Any tags associated with the resource. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -460,6 +522,18 @@ pub struct ListModelsOutput {
     /// <p>Provides information on the specified model, including created time, model and dataset
     /// ARNs, and status. </p>
     pub model_summaries: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>,
+}
+impl ListModelsOutput {
+    /// <p> An opaque pagination token indicating where to continue the listing of ML models.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Provides information on the specified model, including created time, model and dataset
+    /// ARNs, and status. </p>
+    pub fn model_summaries(&self) -> std::option::Option<&[crate::model::ModelSummary]> {
+        self.model_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListModelsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -539,6 +613,20 @@ pub struct ListInferenceSchedulersOutput {
     /// frequency, model name and ARN, and status. </p>
     pub inference_scheduler_summaries:
         std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
+}
+impl ListInferenceSchedulersOutput {
+    /// <p> An opaque pagination token indicating where to continue the listing of inference
+    /// schedulers. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Provides information about the specified inference scheduler, including data upload
+    /// frequency, model name and ARN, and status. </p>
+    pub fn inference_scheduler_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceSchedulerSummary]> {
+        self.inference_scheduler_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInferenceSchedulersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -627,6 +715,21 @@ pub struct ListInferenceExecutionsOutput {
     pub inference_execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
 }
+impl ListInferenceExecutionsOutput {
+    /// <p> An opaque pagination token indicating where to continue the listing of inference
+    /// executions. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Provides an array of information about the individual inference executions returned from
+    /// the <code>ListInferenceExecutions</code> operation, including model used, inference
+    /// scheduler, data configuration, and so on. </p>
+    pub fn inference_execution_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::InferenceExecutionSummary]> {
+        self.inference_execution_summaries.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInferenceExecutionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInferenceExecutionsOutput");
@@ -714,6 +817,18 @@ pub struct ListDatasetsOutput {
     /// and status. </p>
     pub dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
 }
+impl ListDatasetsOutput {
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Provides information about the specified dataset, including creation time, dataset ARN,
+    /// and status. </p>
+    pub fn dataset_summaries(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
+        self.dataset_summaries.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDatasetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDatasetsOutput");
@@ -793,6 +908,20 @@ pub struct ListDataIngestionJobsOutput {
     /// status. </p>
     pub data_ingestion_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
+}
+impl ListDataIngestionJobsOutput {
+    /// <p> An opaque pagination token indicating where to continue the listing of data ingestion
+    /// jobs. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies information about the specific data ingestion job, including dataset name and
+    /// status. </p>
+    pub fn data_ingestion_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataIngestionJobSummary]> {
+        self.data_ingestion_job_summaries.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDataIngestionJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -937,6 +1066,118 @@ pub struct DescribeModelOutput {
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub off_condition: std::option::Option<std::string::String>,
+}
+impl DescribeModelOutput {
+    /// <p>The name of the ML model being described. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the dataset being used by the ML being described. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being
+    /// described. </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>A JSON description of the data that is in each time series dataset, including names,
+    /// column names, and data types. </p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>Specifies configuration information about the labels input, including its S3 location.
+    /// </p>
+    pub fn labels_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelsInputConfiguration> {
+        self.labels_input_configuration.as_ref()
+    }
+    /// <p> Indicates the time reference in the dataset that was used to begin the subset of
+    /// training data for the ML model. </p>
+    pub fn training_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_data_start_time.as_ref()
+    }
+    /// <p> Indicates the time reference in the dataset that was used to end the subset of training
+    /// data for the ML model. </p>
+    pub fn training_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_data_end_time.as_ref()
+    }
+    /// <p> Indicates the time reference in the dataset that was used to begin the subset of
+    /// evaluation data for the ML model. </p>
+    pub fn evaluation_data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.evaluation_data_start_time.as_ref()
+    }
+    /// <p> Indicates the time reference in the dataset that was used to end the subset of
+    /// evaluation data for the ML model. </p>
+    pub fn evaluation_data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.evaluation_data_end_time.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
+    /// the ML model being described. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of
+    /// the data after post processing by
+    /// Amazon Lookout for Equipment. For example, if you provide data that
+    /// has been collected at a 1 second level and you want the system to resample
+    /// the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must
+    /// attach the prefix "PT" to the rate you want.  The value for a 1 second rate
+    /// is therefore <i>PT1S</i>, the value for a 15 minute rate
+    /// is <i>PT15M</i>, and the value for a 1 hour rate
+    /// is <i>PT1H</i>
+    /// </p>
+    pub fn data_pre_processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DataPreProcessingConfiguration> {
+        self.data_pre_processing_configuration.as_ref()
+    }
+    /// <p>Specifies the current status of the model being described. Status describes the status
+    /// of the most recent action of the model. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates the time at which the training of the ML model began. </p>
+    pub fn training_execution_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_execution_start_time.as_ref()
+    }
+    /// <p>Indicates the time at which the training of the ML model was completed. </p>
+    pub fn training_execution_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.training_execution_end_time.as_ref()
+    }
+    /// <p>If the training of the ML model failed, this indicates the reason for that failure.
+    /// </p>
+    pub fn failed_reason(&self) -> std::option::Option<&str> {
+        self.failed_reason.as_deref()
+    }
+    /// <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time
+    /// range. This is the JSON content of the metrics created when evaluating the model. </p>
+    pub fn model_metrics(&self) -> std::option::Option<&str> {
+        self.model_metrics.as_deref()
+    }
+    /// <p>Indicates the last time the ML model was updated. The type of update is not specified.
+    /// </p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Indicates the time and date at which the ML model was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+        self.server_side_kms_key_id.as_deref()
+    }
+    /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    pub fn off_condition(&self) -> std::option::Option<&str> {
+        self.off_condition.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1392,6 +1633,77 @@ pub struct DescribeInferenceSchedulerOutput {
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
     pub server_side_kms_key_id: std::option::Option<std::string::String>,
 }
+impl DescribeInferenceSchedulerOutput {
+    /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being
+    /// described. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the ML model of the inference scheduler being described. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The name of the inference scheduler being described. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+        self.status.as_ref()
+    }
+    /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
+    /// starts. For instance, if you select an offset delay time of five minutes, inference will
+    /// not begin on the data until the first data measurement after the five minute mark. For example, if
+    /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
+    /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
+    /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    pub fn data_delay_offset_in_minutes(&self) -> std::option::Option<i64> {
+        self.data_delay_offset_in_minutes
+    }
+    /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This
+    /// value is the length of time between data uploads. For instance, if you select 5 minutes,
+    /// Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This
+    /// frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data.
+    /// In this example, it starts once every 5 minutes. </p>
+    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
+        self.data_upload_frequency.as_ref()
+    }
+    /// <p>Specifies the time at which the inference scheduler was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+    /// <p> Specifies configuration information for the input data for the inference scheduler,
+    /// including delimiter, format, and dataset location. </p>
+    pub fn data_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
+        self.data_input_configuration.as_ref()
+    }
+    /// <p> Specifies information for the output results for the inference scheduler,
+    /// including the output S3 location. </p>
+    pub fn data_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
+        self.data_output_configuration.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
+    /// the inference scheduler being described. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+        self.server_side_kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInferenceSchedulerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInferenceSchedulerOutput");
@@ -1676,6 +1988,43 @@ pub struct DescribeDatasetOutput {
     pub ingestion_input_configuration:
         std::option::Option<crate::model::IngestionInputConfiguration>,
 }
+impl DescribeDatasetOutput {
+    /// <p>The name of the dataset being described. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Specifies the time the dataset was last updated, if it was. </p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>Indicates the status of the dataset. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A JSON description of the data that is in each time series dataset, including names,
+    /// column names, and data types. </p>
+    pub fn schema(&self) -> std::option::Option<&str> {
+        self.schema.as_deref()
+    }
+    /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    pub fn server_side_kms_key_id(&self) -> std::option::Option<&str> {
+        self.server_side_kms_key_id.as_deref()
+    }
+    /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    pub fn ingestion_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+        self.ingestion_input_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDatasetOutput");
@@ -1854,6 +2203,41 @@ pub struct DescribeDataIngestionJobOutput {
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
     pub failed_reason: std::option::Option<std::string::String>,
+}
+impl DescribeDataIngestionJobOutput {
+    /// <p>Indicates the job ID of the data ingestion job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job.
+    /// </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>Specifies the S3 location configuration for the data input for the data ingestion job.
+    /// </p>
+    pub fn ingestion_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+        self.ingestion_input_configuration.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source
+    /// being ingested. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The time at which the data ingestion job was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
+    pub fn failed_reason(&self) -> std::option::Option<&str> {
+        self.failed_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataIngestionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2098,6 +2482,16 @@ pub struct CreateModelOutput {
     /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub status: std::option::Option<crate::model::ModelStatus>,
 }
+impl CreateModelOutput {
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateModelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelOutput");
@@ -2162,6 +2556,20 @@ pub struct CreateInferenceSchedulerOutput {
     pub inference_scheduler_name: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+}
+impl CreateInferenceSchedulerOutput {
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>The name of inference scheduler being created. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInferenceSchedulerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2249,6 +2657,20 @@ pub struct CreateDatasetOutput {
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
+}
+impl CreateDatasetOutput {
+    /// <p>The name of the dataset being created. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

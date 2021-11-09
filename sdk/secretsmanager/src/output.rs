@@ -8,6 +8,16 @@ pub struct ValidateResourcePolicyOutput {
     /// <p>Returns an error message if your policy doesn't pass validatation.</p>
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
 }
+impl ValidateResourcePolicyOutput {
+    /// <p>Returns a message stating that your Reource Policy passed validation. </p>
+    pub fn policy_validation_passed(&self) -> bool {
+        self.policy_validation_passed
+    }
+    /// <p>Returns an error message if your policy doesn't pass validatation.</p>
+    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationErrorsEntry]> {
+        self.validation_errors.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidateResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateResourcePolicyOutput");
@@ -84,6 +94,16 @@ pub struct UpdateSecretVersionStageOutput {
     /// <p>The friendly name of the secret with the modified staging label.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl UpdateSecretVersionStageOutput {
+    /// <p>The ARN of the secret with the modified staging label.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret with the modified staging label.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSecretVersionStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSecretVersionStageOutput");
@@ -156,6 +176,28 @@ pub struct UpdateSecretOutput {
     /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
     /// contains the unique identifier of the new version.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl UpdateSecretOutput {
+    /// <p>The ARN of the secret that was updated.</p>
+    /// <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
+    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
+    /// This ensures that if you create a new secret with the same name as an old secret that you
+    /// previously deleted, then users with access to the old secret <i>don't</i>
+    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret that was updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
+    /// contains the unique identifier of the new version.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -307,6 +349,12 @@ pub struct StopReplicationToReplicaOutput {
     /// <p>Response <code>StopReplicationToReplica</code> of a secret, based on the <code>ARN,</code>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl StopReplicationToReplicaOutput {
+    /// <p>Response <code>StopReplicationToReplica</code> of a secret, based on the <code>ARN,</code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for StopReplicationToReplicaOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopReplicationToReplicaOutput");
@@ -357,6 +405,21 @@ pub struct RotateSecretOutput {
     /// <p>The ID of the new version of the secret created by the rotation started by this
     /// request.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl RotateSecretOutput {
+    /// <p>The ARN of the secret.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the new version of the secret created by the rotation started by this
+    /// request.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RotateSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -436,6 +499,16 @@ pub struct RestoreSecretOutput {
     /// <p>The friendly name of the secret that was restored.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl RestoreSecretOutput {
+    /// <p>The ARN of the secret that was restored.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret that was restored.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for RestoreSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreSecretOutput");
@@ -499,6 +572,19 @@ pub struct ReplicateSecretToRegionsOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Describes the secret replication status as <code>PENDING</code>, <code>SUCCESS</code> or <code>FAIL</code>.</p>
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+}
+impl ReplicateSecretToRegionsOutput {
+    /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>> consisting of a
+    /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Describes the secret replication status as <code>PENDING</code>, <code>SUCCESS</code> or <code>FAIL</code>.</p>
+    pub fn replication_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+        self.replication_status.as_deref()
+    }
 }
 impl std::fmt::Debug for ReplicateSecretToRegionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -577,6 +663,18 @@ pub struct RemoveRegionsFromReplicationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Describes the remaining replication status after you remove regions from the replication list.</p>
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+}
+impl RemoveRegionsFromReplicationOutput {
+    /// <p>The secret <code>ARN</code> removed from replication regions.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Describes the remaining replication status after you remove regions from the replication list.</p>
+    pub fn replication_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+        self.replication_status.as_deref()
+    }
 }
 impl std::fmt::Debug for RemoveRegionsFromReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -659,6 +757,26 @@ pub struct PutSecretValueOutput {
     /// Staging labels are used to track a version as it progresses through the secret rotation
     /// process.</p>
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PutSecretValueOutput {
+    /// <p>The Amazon Resource Name (ARN) for the secret for which you just created a version.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret for which you just created or updated a version.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier of the version of the secret you just created or updated.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The list of staging labels that are currently attached to this version of the secret.
+    /// Staging labels are used to track a version as it progresses through the secret rotation
+    /// process.</p>
+    pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_stages.as_deref()
+    }
 }
 impl std::fmt::Debug for PutSecretValueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -762,6 +880,16 @@ pub struct PutResourcePolicyOutput {
     /// <p>The friendly name of the secret retrieved by the resource-based policy.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl PutResourcePolicyOutput {
+    /// <p>The ARN of the secret retrieved by the resource-based policy.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret retrieved by the resource-based policy.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for PutResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutResourcePolicyOutput");
@@ -841,6 +969,37 @@ pub struct ListSecretVersionIdsOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl ListSecretVersionIdsOutput {
+    /// <p>The list of the currently available versions of the specified secret.</p>
+    pub fn versions(&self) -> std::option::Option<&[crate::model::SecretVersionsListEntry]> {
+        self.versions.as_deref()
+    }
+    /// <p>If present in the response, this value indicates that
+    /// there's more output available than included in the current response. This can
+    /// occur even when the response includes no values at all, such as when you ask for a filtered view
+    /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
+    /// subsequent call to the operation to continue processing and get the next part of the output. You
+    /// should repeat this until the <code>NextToken</code> response element comes back empty (as
+    /// <code>null</code>).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the secret.</p>
+    /// <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
+    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
+    /// This ensures that if you create a new secret with the same name as an old secret that you
+    /// previously deleted, then users with access to the old secret <i>don't</i>
+    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSecretVersionIdsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -973,6 +1132,22 @@ pub struct ListSecretsOutput {
     /// <code>null</code>).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListSecretsOutput {
+    /// <p>A list of the secrets in the account.</p>
+    pub fn secret_list(&self) -> std::option::Option<&[crate::model::SecretListEntry]> {
+        self.secret_list.as_deref()
+    }
+    /// <p>If present in the response, this value indicates that
+    /// there's more output available than included in the current response. This can
+    /// occur even when the response includes no values at all, such as when you ask for a filtered view
+    /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
+    /// subsequent call to the operation to continue processing and get the next part of the output. You
+    /// should repeat this until the <code>NextToken</code> response element comes back empty (as
+    /// <code>null</code>).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListSecretsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSecretsOutput");
@@ -1083,6 +1258,53 @@ pub struct GetSecretValueOutput {
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time that this version of the secret was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetSecretValueOutput {
+    /// <p>The ARN of the secret.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier of this version of the secret.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>The decrypted part of the protected secret information that was originally provided as
+    /// binary data in the form of a byte array. The response parameter represents the binary data as
+    /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
+    /// string.</p>
+    /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
+    /// <p>If you store custom information in this field of the secret, then you must code your
+    /// Lambda rotation function to parse and interpret whatever you store in the
+    /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+    pub fn secret_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.secret_binary.as_ref()
+    }
+    /// <p>The decrypted part of the protected secret information that was originally provided as a
+    /// string.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then only the
+    /// <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a
+    /// JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+    /// <p>If you store custom information in the secret by using the <a>CreateSecret</a>,
+    /// <a>UpdateSecret</a>, or <a>PutSecretValue</a> API operations instead
+    /// of the Secrets Manager console, or by using the <b>Other secret type</b> in
+    /// the console, then you must code your Lambda rotation function to parse and interpret those
+    /// values.</p>
+    pub fn secret_string(&self) -> std::option::Option<&str> {
+        self.secret_string.as_deref()
+    }
+    /// <p>A list of all of the staging labels currently attached to this version of the
+    /// secret.</p>
+    pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
+        self.version_stages.as_deref()
+    }
+    /// <p>The date and time that this version of the secret was created.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
 }
 impl std::fmt::Debug for GetSecretValueOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1270,6 +1492,24 @@ pub struct GetResourcePolicyOutput {
     /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
 }
+impl GetResourcePolicyOutput {
+    /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret that the resource-based policy was retrieved for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A JSON-formatted string that describes the permissions that are associated with the
+    /// attached secret. These permissions are combined with any permissions that are associated with
+    /// the user or role that attempts to access this secret. The combined permissions specify who can
+    /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
+    /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcePolicyOutput");
@@ -1354,6 +1594,12 @@ impl GetResourcePolicyOutput {
 pub struct GetRandomPasswordOutput {
     /// <p>A string with the generated password.</p>
     pub random_password: std::option::Option<std::string::String>,
+}
+impl GetRandomPasswordOutput {
+    /// <p>A string with the generated password.</p>
+    pub fn random_password(&self) -> std::option::Option<&str> {
+        self.random_password.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRandomPasswordOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1462,6 +1708,105 @@ pub struct DescribeSecretOutput {
     /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
     /// </p>
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+}
+impl DescribeSecretOutput {
+    /// <p>The ARN of the secret.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The user-provided friendly name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The user-provided description of the secret.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
+    /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
+    /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
+    /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
+    /// <p>To enable rotation, use <a>RotateSecret</a> with
+    /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
+    /// rotation, use <a>CancelRotateSecret</a>.</p>
+    pub fn rotation_enabled(&self) -> std::option::Option<bool> {
+        self.rotation_enabled
+    }
+    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
+    /// secret either automatically per the schedule or manually by a call to
+    /// <code>RotateSecret</code>.</p>
+    pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
+        self.rotation_lambda_arn.as_deref()
+    }
+    /// <p>A structure with the rotation configuration for this secret. This field is only populated
+    /// if rotation is configured.</p>
+    pub fn rotation_rules(&self) -> std::option::Option<&crate::model::RotationRulesType> {
+        self.rotation_rules.as_ref()
+    }
+    /// <p>The last date and time that the rotation process for this secret was invoked.</p>
+    /// <p>The most recent date and time that the Secrets Manager rotation process successfully
+    /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
+    pub fn last_rotated_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_rotated_date.as_ref()
+    }
+    /// <p>The last date and time that this secret was modified in any way.</p>
+    pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_changed_date.as_ref()
+    }
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
+    /// date and therefore shows only the date, not the time.</p>
+    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_accessed_date.as_ref()
+    }
+    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
+    /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
+    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
+    /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
+    pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deleted_date.as_ref()
+    }
+    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
+    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the
+    /// <code>VersionId</code> that each is attached to. Staging labels are used to keep track of
+    /// the different versions during the rotation process.</p>
+    /// <note>
+    /// <p>A version that does not have any staging labels attached is considered deprecated and
+    /// subject to deletion. Such versions are not included in this list.</p>
+    /// </note>
+    pub fn version_ids_to_stages(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.version_ids_to_stages.as_ref()
+    }
+    /// <p>Returns the name of the service that created this secret.</p>
+    pub fn owning_service(&self) -> std::option::Option<&str> {
+        self.owning_service.as_deref()
+    }
+    /// <p>The date you created the secret.</p>
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_date.as_ref()
+    }
+    /// <p>Specifies the primary region for secret replication. </p>
+    pub fn primary_region(&self) -> std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
+    /// </p>
+    pub fn replication_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+        self.replication_status.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1837,6 +2182,22 @@ pub struct DeleteSecretOutput {
     /// specified in <code>RecoveryWindowInDays</code>.</p>
     pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DeleteSecretOutput {
+    /// <p>The ARN of the secret that is now scheduled for deletion.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret currently scheduled for deletion.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be
+    /// restored. This value is the date and time of the delete request plus the number of days
+    /// specified in <code>RecoveryWindowInDays</code>.</p>
+    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deletion_date.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteSecretOutput");
@@ -1920,6 +2281,16 @@ pub struct DeleteResourcePolicyOutput {
     /// <p>The friendly name of the secret that the resource-based policy was deleted for.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteResourcePolicyOutput {
+    /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret that the resource-based policy was deleted for.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteResourcePolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourcePolicyOutput");
@@ -1993,6 +2364,33 @@ pub struct CreateSecretOutput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.</p>
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+}
+impl CreateSecretOutput {
+    /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
+    /// <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
+    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
+    /// This ensures that if you create a new secret with the same name as an old secret that you
+    /// previously deleted, then users with access to the old secret <i>don't</i>
+    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret that you just created.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier associated with the version of the secret you just created.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.</p>
+    pub fn replication_status(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+        self.replication_status.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2115,6 +2513,24 @@ pub struct CancelRotateSecretOutput {
     /// version to be deleted. Failing to clean up a cancelled rotation can block you from
     /// successfully starting future rotations.</p>
     pub version_id: std::option::Option<std::string::String>,
+}
+impl CancelRotateSecretOutput {
+    /// <p>The ARN of the secret for which rotation was canceled.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The friendly name of the secret for which rotation was canceled.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier of the version of the secret created during the rotation. This
+    /// version might not be complete, and should be evaluated for possible deletion. At the very
+    /// least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this
+    /// version to be deleted. Failing to clean up a cancelled rotation can block you from
+    /// successfully starting future rotations.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelRotateSecretOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

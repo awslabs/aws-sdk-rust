@@ -29,6 +29,62 @@ pub struct KnowledgeBaseData {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl KnowledgeBaseData {
+    /// <p>The the identifier of the knowledge base.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+        self.knowledge_base_arn.as_deref()
+    }
+    /// <p>The name of the knowledge base.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of knowledge base.</p>
+    pub fn knowledge_base_type(&self) -> std::option::Option<&crate::model::KnowledgeBaseType> {
+        self.knowledge_base_type.as_ref()
+    }
+    /// <p>The status of the knowledge base.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::KnowledgeBaseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
+    /// base. If no content exists in a knowledge base, this value is unset.</p>
+    pub fn last_content_modification_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_content_modification_time.as_ref()
+    }
+    /// <p>Source configuration information about the knowledge base.</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>Information about how to render the content.</p>
+    pub fn rendering_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RenderingConfiguration> {
+        self.rendering_configuration.as_ref()
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for KnowledgeBaseData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KnowledgeBaseData");
@@ -265,6 +321,13 @@ pub struct ServerSideEncryptionConfiguration {
     /// <i>AWS Key Management Service Developer Guide</i>. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl ServerSideEncryptionConfiguration {
+    /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the
+    /// <i>AWS Key Management Service Developer Guide</i>. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerSideEncryptionConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerSideEncryptionConfiguration");
@@ -330,6 +393,28 @@ pub struct RenderingConfiguration {
     ///
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
     pub template_uri: std::option::Option<std::string::String>,
+}
+impl RenderingConfiguration {
+    /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format.
+    /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow,
+    /// the variable must be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
+    /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+    /// <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
+    pub fn template_uri(&self) -> std::option::Option<&str> {
+        self.template_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for RenderingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -410,6 +495,15 @@ impl RenderingConfiguration {
 pub enum SourceConfiguration {
     /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
     AppIntegrations(crate::model::AppIntegrationsConfiguration),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl SourceConfiguration {
     #[allow(irrefutable_let_patterns)]
@@ -427,6 +521,10 @@ impl SourceConfiguration {
     /// Returns true if this is a [`AppIntegrations`](crate::model::SourceConfiguration::AppIntegrations).
     pub fn is_app_integrations(&self) -> bool {
         self.as_app_integrations().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }
 
@@ -452,6 +550,30 @@ pub struct AppIntegrationsConfiguration {
     /// <p>Make sure to include additional field(s); these are indexed and used to source
     /// recommendations. </p>
     pub object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AppIntegrationsConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
+    pub fn app_integration_arn(&self) -> std::option::Option<&str> {
+        self.app_integration_arn.as_deref()
+    }
+    /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
+    /// <ul>
+    /// <li>
+    /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
+    /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+    /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
+    /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
+    /// and <code>active</code>. </p>
+    /// </li>
+    /// </ul>
+    /// <p>Make sure to include additional field(s); these are indexed and used to source
+    /// recommendations. </p>
+    pub fn object_fields(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_fields.as_deref()
+    }
 }
 impl std::fmt::Debug for AppIntegrationsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -709,6 +831,59 @@ pub struct ContentSummary {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ContentSummary {
+    /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    pub fn content_arn(&self) -> std::option::Option<&str> {
+        self.content_arn.as_deref()
+    }
+    /// <p>The identifier of the content.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+        self.knowledge_base_arn.as_deref()
+    }
+    /// <p>The the identifier of the knowledge base.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The name of the content.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the revision of the content.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The title of the content.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The media type of the content.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The status of the content.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ContentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ContentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1016,6 +1191,12 @@ pub struct SearchExpression {
     /// <p>The search expression filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
+impl SearchExpression {
+    /// <p>The search expression filters.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchExpression {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchExpression");
@@ -1076,6 +1257,20 @@ pub struct Filter {
     pub operator: std::option::Option<crate::model::FilterOperator>,
     /// <p>The desired field value on which to filter.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Filter {
+    /// <p>The field on which to filter.</p>
+    pub fn field(&self) -> std::option::Option<&crate::model::FilterField> {
+        self.field.as_ref()
+    }
+    /// <p>The operator to use for comparing the field’s value with the provided value.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
+        self.operator.as_ref()
+    }
+    /// <p>The desired field value on which to filter.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Filter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1275,6 +1470,55 @@ pub struct KnowledgeBaseSummary {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl KnowledgeBaseSummary {
+    /// <p>The the identifier of the knowledge base.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+        self.knowledge_base_arn.as_deref()
+    }
+    /// <p>The name of the knowledge base.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of knowledge base.</p>
+    pub fn knowledge_base_type(&self) -> std::option::Option<&crate::model::KnowledgeBaseType> {
+        self.knowledge_base_type.as_ref()
+    }
+    /// <p>The status of the knowledge base summary.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::KnowledgeBaseStatus> {
+        self.status.as_ref()
+    }
+    /// <p>[KEVIN]</p>
+    pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
+        self.source_configuration.as_ref()
+    }
+    /// <p>Information about how to render the content.</p>
+    pub fn rendering_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RenderingConfiguration> {
+        self.rendering_configuration.as_ref()
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+    /// <p>The description of the knowledge base.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for KnowledgeBaseSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1518,6 +1762,71 @@ pub struct ContentData {
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub url_expiry: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ContentData {
+    /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    pub fn content_arn(&self) -> std::option::Option<&str> {
+        self.content_arn.as_deref()
+    }
+    /// <p>The identifier of the content.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+        self.knowledge_base_arn.as_deref()
+    }
+    /// <p>The the identifier of the knowledge base.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The name of the content.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the content revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The title of the content.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The media type of the content.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The status of the content.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ContentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The URI of the content.</p>
+    pub fn link_out_uri(&self) -> std::option::Option<&str> {
+        self.link_out_uri.as_deref()
+    }
+    /// <p>The URL of the content.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.url_expiry.as_ref()
+    }
 }
 impl std::fmt::Debug for ContentData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1790,6 +2099,24 @@ pub struct SessionSummary {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
     pub assistant_arn: std::option::Option<std::string::String>,
 }
+impl SessionSummary {
+    /// <p>The identifier of the session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    pub fn session_arn(&self) -> std::option::Option<&str> {
+        self.session_arn.as_deref()
+    }
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+        self.assistant_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for SessionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SessionSummary");
@@ -1884,6 +2211,20 @@ pub struct ResultData {
     /// <p>The relevance score of the results.</p>
     pub relevance_score: f64,
 }
+impl ResultData {
+    /// <p>The identifier of the result data.</p>
+    pub fn result_id(&self) -> std::option::Option<&str> {
+        self.result_id.as_deref()
+    }
+    /// <p>The document.</p>
+    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+        self.document.as_ref()
+    }
+    /// <p>The relevance score of the results.</p>
+    pub fn relevance_score(&self) -> f64 {
+        self.relevance_score
+    }
+}
 impl std::fmt::Debug for ResultData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResultData");
@@ -1961,6 +2302,20 @@ pub struct Document {
     pub title: std::option::Option<crate::model::DocumentText>,
     /// <p>The excerpt from the document.</p>
     pub excerpt: std::option::Option<crate::model::DocumentText>,
+}
+impl Document {
+    /// <p>A reference to the content resource.</p>
+    pub fn content_reference(&self) -> std::option::Option<&crate::model::ContentReference> {
+        self.content_reference.as_ref()
+    }
+    /// <p>The title of the document.</p>
+    pub fn title(&self) -> std::option::Option<&crate::model::DocumentText> {
+        self.title.as_ref()
+    }
+    /// <p>The excerpt from the document.</p>
+    pub fn excerpt(&self) -> std::option::Option<&crate::model::DocumentText> {
+        self.excerpt.as_ref()
+    }
 }
 impl std::fmt::Debug for Document {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2044,6 +2399,16 @@ pub struct DocumentText {
     /// <p>Highlights in the document text.</p>
     pub highlights: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
 }
+impl DocumentText {
+    /// <p>Text in the document.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Highlights in the document text.</p>
+    pub fn highlights(&self) -> std::option::Option<&[crate::model::Highlight]> {
+        self.highlights.as_deref()
+    }
+}
 impl std::fmt::Debug for DocumentText {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentText");
@@ -2117,6 +2482,16 @@ pub struct Highlight {
     /// <p>The offset for the end of the highlight.</p>
     pub end_offset_exclusive: i32,
 }
+impl Highlight {
+    /// <p>The offset for the start of the highlight.</p>
+    pub fn begin_offset_inclusive(&self) -> i32 {
+        self.begin_offset_inclusive
+    }
+    /// <p>The offset for the end of the highlight.</p>
+    pub fn end_offset_exclusive(&self) -> i32 {
+        self.end_offset_exclusive
+    }
+}
 impl std::fmt::Debug for Highlight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Highlight");
@@ -2183,6 +2558,24 @@ pub struct ContentReference {
     pub content_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the content.</p>
     pub content_id: std::option::Option<std::string::String>,
+}
+impl ContentReference {
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+        self.knowledge_base_arn.as_deref()
+    }
+    /// <p>The the identifier of the knowledge base.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    pub fn content_arn(&self) -> std::option::Option<&str> {
+        self.content_arn.as_deref()
+    }
+    /// <p>The identifier of the content.</p>
+    pub fn content_id(&self) -> std::option::Option<&str> {
+        self.content_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ContentReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2279,6 +2672,16 @@ pub struct NotifyRecommendationsReceivedError {
     /// <p>A recommendation is causing an error.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl NotifyRecommendationsReceivedError {
+    /// <p>The identifier of the recommendation that is in error.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>A recommendation is causing an error.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for NotifyRecommendationsReceivedError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyRecommendationsReceivedError");
@@ -2348,6 +2751,24 @@ pub struct RecommendationData {
     pub relevance_score: f64,
     /// <p>The relevance level of the recommendation.</p>
     pub relevance_level: std::option::Option<crate::model::RelevanceLevel>,
+}
+impl RecommendationData {
+    /// <p>The identifier of the recommendation.</p>
+    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
+    /// <p>The recommended document.</p>
+    pub fn document(&self) -> std::option::Option<&crate::model::Document> {
+        self.document.as_ref()
+    }
+    /// <p>The relevance score of the recommendation.</p>
+    pub fn relevance_score(&self) -> f64 {
+        self.relevance_score
+    }
+    /// <p>The relevance level of the recommendation.</p>
+    pub fn relevance_level(&self) -> std::option::Option<&crate::model::RelevanceLevel> {
+        self.relevance_level.as_ref()
+    }
 }
 impl std::fmt::Debug for RecommendationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2516,6 +2937,45 @@ pub struct AssistantSummary {
     /// <p>The KMS key used for encryption.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+}
+impl AssistantSummary {
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+        self.assistant_arn.as_deref()
+    }
+    /// <p>The name of the assistant.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the assistant.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AssistantType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The status of the assistant.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssistantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The description of the assistant.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for AssistantSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2834,6 +3294,45 @@ pub struct AssistantData {
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
+impl AssistantData {
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+        self.assistant_arn.as_deref()
+    }
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of assistant.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AssistantType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The status of the assistant.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssistantStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The KMS key used for encryption.</p>
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+        self.server_side_encryption_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for AssistantData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssistantData");
@@ -3015,6 +3514,31 @@ pub struct SessionData {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SessionData {
+    /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    pub fn session_arn(&self) -> std::option::Option<&str> {
+        self.session_arn.as_deref()
+    }
+    /// <p>The identifier of the session.</p>
+    pub fn session_id(&self) -> std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
+    /// <p>The name of the session.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the session.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for SessionData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SessionData");
@@ -3144,6 +3668,41 @@ pub struct AssistantAssociationSummary {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AssistantAssociationSummary {
+    /// <p>The identifier of the assistant association.</p>
+    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+        self.assistant_association_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
+    pub fn assistant_association_arn(&self) -> std::option::Option<&str> {
+        self.assistant_association_arn.as_deref()
+    }
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+        self.assistant_arn.as_deref()
+    }
+    /// <p>The type of association.</p>
+    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationType> {
+        self.association_type.as_ref()
+    }
+    /// <p>The association data.</p>
+    pub fn association_data(
+        &self,
+    ) -> std::option::Option<&crate::model::AssistantAssociationOutputData> {
+        self.association_data.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AssistantAssociationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3306,6 +3865,15 @@ impl AssistantAssociationSummary {
 pub enum AssistantAssociationOutputData {
     /// <p>The knowledge base where output data is sent.</p>
     KnowledgeBaseAssociation(crate::model::KnowledgeBaseAssociationData),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AssistantAssociationOutputData {
     #[allow(irrefutable_let_patterns)]
@@ -3324,6 +3892,10 @@ impl AssistantAssociationOutputData {
     pub fn is_knowledge_base_association(&self) -> bool {
         self.as_knowledge_base_association().is_ok()
     }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
+    }
 }
 
 /// <p>Association information about the knowledge base.</p>
@@ -3334,6 +3906,16 @@ pub struct KnowledgeBaseAssociationData {
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: std::option::Option<std::string::String>,
+}
+impl KnowledgeBaseAssociationData {
+    /// <p>The the identifier of the knowledge base.</p>
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+        self.knowledge_base_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for KnowledgeBaseAssociationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3465,6 +4047,41 @@ pub struct AssistantAssociationData {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AssistantAssociationData {
+    /// <p>The identifier of the assistant association.</p>
+    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+        self.assistant_association_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
+    pub fn assistant_association_arn(&self) -> std::option::Option<&str> {
+        self.assistant_association_arn.as_deref()
+    }
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
+        self.assistant_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
+    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+        self.assistant_arn.as_deref()
+    }
+    /// <p>The type of association.</p>
+    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationType> {
+        self.association_type.as_ref()
+    }
+    /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
+    pub fn association_data(
+        &self,
+    ) -> std::option::Option<&crate::model::AssistantAssociationOutputData> {
+        self.association_data.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AssistantAssociationData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3627,6 +4244,15 @@ impl AssistantAssociationData {
 pub enum AssistantAssociationInputData {
     /// <p>The the identifier of the knowledge base.</p>
     KnowledgeBaseId(std::string::String),
+    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
+    /// An unknown enum variant
+    ///
+    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
+    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
+    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
+    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
+    #[non_exhaustive]
+    Unknown,
 }
 impl AssistantAssociationInputData {
     #[allow(irrefutable_let_patterns)]
@@ -3642,5 +4268,9 @@ impl AssistantAssociationInputData {
     /// Returns true if this is a [`KnowledgeBaseId`](crate::model::AssistantAssociationInputData::KnowledgeBaseId).
     pub fn is_knowledge_base_id(&self) -> bool {
         self.as_knowledge_base_id().is_ok()
+    }
+    /// Returns true if the enum instance is the `Unknown` variant.
+    pub fn is_unknown(&self) -> bool {
+        matches!(self, Self::Unknown)
     }
 }

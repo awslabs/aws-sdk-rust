@@ -67,6 +67,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The resource tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -131,6 +140,16 @@ pub struct ListSitesOutput {
     pub sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSitesOutput {
+    /// <p>Information about the sites.</p>
+    pub fn sites(&self) -> std::option::Option<&[crate::model::Site]> {
+        self.sites.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSitesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -203,6 +222,16 @@ pub struct ListOutpostsOutput {
     pub outposts: std::option::Option<std::vec::Vec<crate::model::Outpost>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOutpostsOutput {
+    /// <p>Information about the Outposts.</p>
+    pub fn outposts(&self) -> std::option::Option<&[crate::model::Outpost]> {
+        self.outposts.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOutpostsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -281,6 +310,26 @@ pub struct GetOutpostInstanceTypesOutput {
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
+}
+impl GetOutpostInstanceTypesOutput {
+    /// <p>Information about the instance types.</p>
+    pub fn instance_types(&self) -> std::option::Option<&[crate::model::InstanceTypeItem]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetOutpostInstanceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -382,6 +431,12 @@ impl GetOutpostInstanceTypesOutput {
 pub struct GetOutpostOutput {
     /// <p>Information about an Outpost.</p>
     pub outpost: std::option::Option<crate::model::Outpost>,
+}
+impl GetOutpostOutput {
+    /// <p>Information about an Outpost.</p>
+    pub fn outpost(&self) -> std::option::Option<&crate::model::Outpost> {
+        self.outpost.as_ref()
+    }
 }
 impl std::fmt::Debug for GetOutpostOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -491,6 +546,12 @@ pub struct CreateOutpostOutput {
     /// <p>Information about an Outpost.</p>
     pub outpost: std::option::Option<crate::model::Outpost>,
 }
+impl CreateOutpostOutput {
+    /// <p>Information about an Outpost.</p>
+    pub fn outpost(&self) -> std::option::Option<&crate::model::Outpost> {
+        self.outpost.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateOutpostOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateOutpostOutput");
@@ -538,6 +599,12 @@ impl CreateOutpostOutput {
 pub struct CreateOrderOutput {
     /// <p>Information about this order.</p>
     pub order: std::option::Option<crate::model::Order>,
+}
+impl CreateOrderOutput {
+    /// <p>Information about this order.</p>
+    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+        self.order.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOrderOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

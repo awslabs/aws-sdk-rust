@@ -15,6 +15,29 @@ pub struct UpdateParallelDataOutput {
     /// <p>The time that the most recent update was attempted.</p>
     pub latest_update_attempt_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl UpdateParallelDataOutput {
+    /// <p>The name of the parallel data resource being updated.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the parallel data resource that you are attempting to update. Your update
+    /// request is accepted only if this status is either <code>ACTIVE</code> or
+    /// <code>FAILED</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status of the parallel data update attempt. When the updated parallel data resource is
+    /// ready for you to use, the status is <code>ACTIVE</code>.</p>
+    pub fn latest_update_attempt_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelDataStatus> {
+        self.latest_update_attempt_status.as_ref()
+    }
+    /// <p>The time that the most recent update was attempted.</p>
+    pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_update_attempt_at.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateParallelDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateParallelDataOutput");
@@ -131,6 +154,27 @@ pub struct TranslateTextOutput {
     /// translated text response.</p>
     pub applied_terminologies: std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
 }
+impl TranslateTextOutput {
+    /// <p>The translated text.</p>
+    pub fn translated_text(&self) -> std::option::Option<&str> {
+        self.translated_text.as_deref()
+    }
+    /// <p>The language code for the language of the source text.</p>
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
+        self.source_language_code.as_deref()
+    }
+    /// <p>The language code for the language of the target text. </p>
+    pub fn target_language_code(&self) -> std::option::Option<&str> {
+        self.target_language_code.as_deref()
+    }
+    /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the
+    /// translated text response.</p>
+    pub fn applied_terminologies(
+        &self,
+    ) -> std::option::Option<&[crate::model::AppliedTerminology]> {
+        self.applied_terminologies.as_deref()
+    }
+}
 impl std::fmt::Debug for TranslateTextOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TranslateTextOutput");
@@ -245,6 +289,17 @@ pub struct StopTextTranslationJobOutput {
     /// <code>STOPPED</code>.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl StopTextTranslationJobOutput {
+    /// <p>The job ID of the stopped batch translation job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the designated job. Upon successful completion, the job's status will be
+    /// <code>STOPPED</code>.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for StopTextTranslationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopTextTranslationJobOutput");
@@ -347,6 +402,51 @@ pub struct StartTextTranslationJobOutput {
     /// </li>
     /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl StartTextTranslationJobOutput {
+    /// <p>The identifier generated for the job. To get the status of a job, use this ID with the
+    /// <a>DescribeTextTranslationJob</a> operation.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the job. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SUBMITTED</code> - The job has been received and is queued for
+    /// processing.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IN_PROGRESS</code> - Amazon Translate is processing the job.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code> - The job was successfully completed and the output is
+    /// available.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors can
+    /// be analyzed in the job's output.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - The job did not complete. To get details, use the <a>DescribeTextTranslationJob</a> operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOP_REQUESTED</code> - The user who started the job has requested that it be
+    /// stopped.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPED</code> - The job has been stopped.</p>
+    /// </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
 }
 impl std::fmt::Debug for StartTextTranslationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -486,6 +586,19 @@ pub struct ListTextTranslationJobsOutput {
     /// when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTextTranslationJobsOutput {
+    /// <p>A list containing the properties of each job that is returned.</p>
+    pub fn text_translation_job_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TextTranslationJobProperties]> {
+        self.text_translation_job_properties_list.as_deref()
+    }
+    /// <p>The token to use to retreive the next page of results. This value is <code>null</code>
+    /// when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTextTranslationJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTextTranslationJobsOutput");
@@ -571,6 +684,19 @@ pub struct ListTerminologiesOutput {
     /// group of custom terminologies.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTerminologiesOutput {
+    /// <p>The properties list of the custom terminologies returned on the list request.</p>
+    pub fn terminology_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::TerminologyProperties]> {
+        self.terminology_properties_list.as_deref()
+    }
+    /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next
+    /// group of custom terminologies.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTerminologiesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTerminologiesOutput");
@@ -654,6 +780,19 @@ pub struct ListParallelDataOutput {
     /// response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListParallelDataOutput {
+    /// <p>The properties of the parallel data resources returned by this request.</p>
+    pub fn parallel_data_properties_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ParallelDataProperties]> {
+        self.parallel_data_properties_list.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated
+    /// response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListParallelDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListParallelDataOutput");
@@ -733,6 +872,14 @@ pub struct ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
     pub terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
 }
+impl ImportTerminologyOutput {
+    /// <p>The properties of the custom terminology being imported.</p>
+    pub fn terminology_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::TerminologyProperties> {
+        self.terminology_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for ImportTerminologyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportTerminologyOutput");
@@ -789,6 +936,21 @@ pub struct GetTerminologyOutput {
     /// <p>The data location of the custom terminology being retrieved. The custom terminology file
     /// is returned in a presigned url that has a 30 minute expiration.</p>
     pub terminology_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
+}
+impl GetTerminologyOutput {
+    /// <p>The properties of the custom terminology being retrieved.</p>
+    pub fn terminology_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::TerminologyProperties> {
+        self.terminology_properties.as_ref()
+    }
+    /// <p>The data location of the custom terminology being retrieved. The custom terminology file
+    /// is returned in a presigned url that has a 30 minute expiration.</p>
+    pub fn terminology_data_location(
+        &self,
+    ) -> std::option::Option<&crate::model::TerminologyDataLocation> {
+        self.terminology_data_location.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTerminologyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -880,6 +1042,38 @@ pub struct GetParallelDataOutput {
     /// expiration.</p>
     pub latest_update_attempt_auxiliary_data_location:
         std::option::Option<crate::model::ParallelDataDataLocation>,
+}
+impl GetParallelDataOutput {
+    /// <p>The properties of the parallel data resource that is being retrieved.</p>
+    pub fn parallel_data_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelDataProperties> {
+        self.parallel_data_properties.as_ref()
+    }
+    /// <p>The location of the most recent parallel data input file that was successfully imported
+    /// into Amazon Translate. The location is returned as a presigned URL that has a 30 minute
+    /// expiration.</p>
+    pub fn data_location(&self) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
+        self.data_location.as_ref()
+    }
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced
+    /// by your input file. This file was created when Amazon Translate attempted to create a parallel
+    /// data resource. The location is returned as a presigned URL to that has a 30 minute
+    /// expiration.</p>
+    pub fn auxiliary_data_location(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
+        self.auxiliary_data_location.as_ref()
+    }
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced
+    /// by your input file. This file was created when Amazon Translate attempted to update a parallel
+    /// data resource. The location is returned as a presigned URL to that has a 30 minute
+    /// expiration.</p>
+    pub fn latest_update_attempt_auxiliary_data_location(
+        &self,
+    ) -> std::option::Option<&crate::model::ParallelDataDataLocation> {
+        self.latest_update_attempt_auxiliary_data_location.as_ref()
+    }
 }
 impl std::fmt::Debug for GetParallelDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1014,6 +1208,15 @@ pub struct DescribeTextTranslationJobOutput {
     pub text_translation_job_properties:
         std::option::Option<crate::model::TextTranslationJobProperties>,
 }
+impl DescribeTextTranslationJobOutput {
+    /// <p>An object that contains the properties associated with an asynchronous batch translation
+    /// job.</p>
+    pub fn text_translation_job_properties(
+        &self,
+    ) -> std::option::Option<&crate::model::TextTranslationJobProperties> {
+        self.text_translation_job_properties.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeTextTranslationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeTextTranslationJobOutput");
@@ -1106,6 +1309,16 @@ pub struct DeleteParallelDataOutput {
     /// <p>The status of the parallel data deletion.</p>
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
 }
+impl DeleteParallelDataOutput {
+    /// <p>The name of the parallel data resource that is being deleted.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the parallel data deletion.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteParallelDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteParallelDataOutput");
@@ -1172,6 +1385,17 @@ pub struct CreateParallelDataOutput {
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the
     /// status is <code>ACTIVE</code>.</p>
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
+}
+impl CreateParallelDataOutput {
+    /// <p>The custom name that you assigned to the parallel data resource.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the parallel data resource. When the resource is ready for you to use, the
+    /// status is <code>ACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateParallelDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

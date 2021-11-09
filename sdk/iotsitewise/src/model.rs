@@ -8,6 +8,16 @@ pub struct PortalStatus {
     /// <p>Contains associated error information, if any.</p>
     pub error: std::option::Option<crate::model::MonitorErrorDetails>,
 }
+impl PortalStatus {
+    /// <p>The current state of the portal.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::PortalState> {
+        self.state.as_ref()
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::MonitorErrorDetails> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for PortalStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PortalStatus");
@@ -73,6 +83,16 @@ pub struct MonitorErrorDetails {
     pub code: std::option::Option<crate::model::MonitorErrorCode>,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl MonitorErrorDetails {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::MonitorErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for MonitorErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -271,6 +291,19 @@ pub struct Alarms {
     /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub notification_lambda_arn: std::option::Option<std::string::String>,
 }
+impl Alarms {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
+    /// resources and services, such as IoT Events.</p>
+    pub fn alarm_role_arn(&self) -> std::option::Option<&str> {
+        self.alarm_role_arn.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+    /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+    pub fn notification_lambda_arn(&self) -> std::option::Option<&str> {
+        self.notification_lambda_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for Alarms {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Alarms");
@@ -354,6 +387,16 @@ pub struct Image {
     /// <p>Contains an image file.</p>
     pub file: std::option::Option<crate::model::ImageFile>,
 }
+impl Image {
+    /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Contains an image file.</p>
+    pub fn file(&self) -> std::option::Option<&crate::model::ImageFile> {
+        self.file.as_ref()
+    }
+}
 impl std::fmt::Debug for Image {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Image");
@@ -417,6 +460,17 @@ pub struct ImageFile {
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The file type of the image.</p>
     pub r#type: std::option::Option<crate::model::ImageFileType>,
+}
+impl ImageFile {
+    /// <p>The image file contents, represented as a base64-encoded string. The file size must be
+    /// less than 1 MB.</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+    /// <p>The file type of the image.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ImageFileType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ImageFile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -653,6 +707,16 @@ pub struct AssetModelStatus {
     /// <p>Contains associated error information, if any.</p>
     pub error: std::option::Option<crate::model::ErrorDetails>,
 }
+impl AssetModelStatus {
+    /// <p>The current state of the asset model.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AssetModelState> {
+        self.state.as_ref()
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error.as_ref()
+    }
+}
 impl std::fmt::Debug for AssetModelStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetModelStatus");
@@ -720,6 +784,20 @@ pub struct ErrorDetails {
     pub message: std::option::Option<std::string::String>,
     /// <p> A list of detailed errors. </p>
     pub details: std::option::Option<std::vec::Vec<crate::model::DetailedError>>,
+}
+impl ErrorDetails {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p> A list of detailed errors. </p>
+    pub fn details(&self) -> std::option::Option<&[crate::model::DetailedError]> {
+        self.details.as_deref()
+    }
 }
 impl std::fmt::Debug for ErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -805,6 +883,16 @@ pub struct DetailedError {
     pub code: std::option::Option<crate::model::DetailedErrorCode>,
     /// <p>The error message. </p>
     pub message: std::option::Option<std::string::String>,
+}
+impl DetailedError {
+    /// <p>The error code. </p>
+    pub fn code(&self) -> std::option::Option<&crate::model::DetailedErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message. </p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for DetailedError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1073,6 +1161,25 @@ pub struct AssetModelCompositeModel {
     /// <p>The asset property definitions for this composite model.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
 }
+impl AssetModelCompositeModel {
+    /// <p>The name of the composite model.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the composite model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the composite model. For alarm composite models, this type is
+    /// <code>AWS/ALARM</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The asset property definitions for this composite model.</p>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelProperty]> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetModelCompositeModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetModelCompositeModel");
@@ -1182,6 +1289,34 @@ pub struct AssetModelProperty {
     pub unit: std::option::Option<std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>).</p>
     pub r#type: std::option::Option<crate::model::PropertyType>,
+}
+impl AssetModelProperty {
+    /// <p>The ID of the asset model property.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the asset model property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the asset model property.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data type of the structure for this property. This parameter exists on properties that
+    /// have the <code>STRUCT</code> data type.</p>
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+        self.data_type_spec.as_deref()
+    }
+    /// <p>The unit of the asset model property, such as <code>Newtons</code> or
+    /// <code>RPM</code>.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>The property type (see <code>PropertyType</code>).</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetModelProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1319,6 +1454,30 @@ pub struct PropertyType {
     /// data point, such as to calculate the average hourly temperature.</p>
     pub metric: std::option::Option<crate::model::Metric>,
 }
+impl PropertyType {
+    /// <p>Specifies an asset attribute property. An attribute generally contains static information,
+    /// such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+    pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
+        self.attribute.as_ref()
+    }
+    /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor
+    /// data stream, such as timestamped temperature values or timestamped power values.</p>
+    pub fn measurement(&self) -> std::option::Option<&crate::model::Measurement> {
+        self.measurement.as_ref()
+    }
+    /// <p>Specifies an asset transform property. A transform contains a mathematical expression that
+    /// maps a property's data points from one form to another, such as a unit conversion from Celsius
+    /// to Fahrenheit.</p>
+    pub fn transform(&self) -> std::option::Option<&crate::model::Transform> {
+        self.transform.as_ref()
+    }
+    /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses
+    /// aggregate functions to process all input data points over a time interval and output a single
+    /// data point, such as to calculate the average hourly temperature.</p>
+    pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
+        self.metric.as_ref()
+    }
+}
 impl std::fmt::Debug for PropertyType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PropertyType");
@@ -1447,6 +1606,30 @@ pub struct Metric {
     /// By default, metrics are forwarded to the cloud.</p>
     pub processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
 }
+impl Metric {
+    /// <p>The mathematical expression that defines the metric aggregation function. You can specify
+    /// up to 10 variables per expression. You can specify up to 10 functions
+    /// per expression. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The list of variables used in the expression.</p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::ExpressionVariable]> {
+        self.variables.as_deref()
+    }
+    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
+    /// IoT SiteWise computes one data point per <code>window</code>.</p>
+    pub fn window(&self) -> std::option::Option<&crate::model::MetricWindow> {
+        self.window.as_ref()
+    }
+    /// <p>The processing configuration for the given metric property.
+    /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
+    /// By default, metrics are forwarded to the cloud.</p>
+    pub fn processing_config(&self) -> std::option::Option<&crate::model::MetricProcessingConfig> {
+        self.processing_config.as_ref()
+    }
+}
 impl std::fmt::Debug for Metric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Metric");
@@ -1563,6 +1746,12 @@ pub struct MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
     pub compute_location: std::option::Option<crate::model::ComputeLocation>,
 }
+impl MetricProcessingConfig {
+    /// <p>The compute location for the given metric property. </p>
+    pub fn compute_location(&self) -> std::option::Option<&crate::model::ComputeLocation> {
+        self.compute_location.as_ref()
+    }
+}
 impl std::fmt::Debug for MetricProcessingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricProcessingConfig");
@@ -1669,6 +1858,12 @@ impl AsRef<str> for ComputeLocation {
 pub struct MetricWindow {
     /// <p>The tumbling time interval window.</p>
     pub tumbling: std::option::Option<crate::model::TumblingWindow>,
+}
+impl MetricWindow {
+    /// <p>The tumbling time interval window.</p>
+    pub fn tumbling(&self) -> std::option::Option<&crate::model::TumblingWindow> {
+        self.tumbling.as_ref()
+    }
 }
 impl std::fmt::Debug for MetricWindow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,6 +1986,76 @@ pub struct TumblingWindow {
     /// </li>
     /// </ul>
     pub offset: std::option::Option<std::string::String>,
+}
+impl TumblingWindow {
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
+    /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
+    /// <code>1h</code> interval at the end of each hour, and so on. </p>
+    /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
+    /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
+    /// the end of the interval.</p>
+    pub fn interval(&self) -> std::option::Option<&str> {
+        self.interval.as_deref()
+    }
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The offset time.</p>
+    /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you create the metric before or at 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create the metric after 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The ISO 8601 format.</p>
+    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you create the metric before or at 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create the metric after 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The 24-hour clock.</p>
+    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
+    /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
+    /// you get the first aggregation result at 2:03 PM (UTC).
+    /// You get the second aggregation result at 2:08 PM (UTC). </p>
+    /// </li>
+    /// <li>
+    /// <p>The offset time zone.</p>
+    /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you create the metric before or at 6:00 PM (PST),
+    /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
+    /// </li>
+    /// <li>
+    /// <p>If you create the metric after 6:00 PM (PST),
+    /// you get the first aggregation result at 6 PM (PST) the next day.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn offset(&self) -> std::option::Option<&str> {
+        self.offset.as_deref()
+    }
 }
 impl std::fmt::Debug for TumblingWindow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1975,6 +2240,16 @@ pub struct ExpressionVariable {
     /// <p>The variable that identifies an asset property from which to use values.</p>
     pub value: std::option::Option<crate::model::VariableValue>,
 }
+impl ExpressionVariable {
+    /// <p>The friendly name of the variable to be used in the expression.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The variable that identifies an asset property from which to use values.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::VariableValue> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for ExpressionVariable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExpressionVariable");
@@ -2046,6 +2321,22 @@ pub struct VariableValue {
     /// have separately grouped assets that come from the same asset model. For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: std::option::Option<std::string::String>,
+}
+impl VariableValue {
+    /// <p>The ID of the property to use as the variable. You can use the property <code>name</code>
+    /// if it's from the same asset model.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name
+    /// instead of the hierarchy's ID.</p>
+    /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
+    /// using the same model and therefore the same <code>propertyId</code>. For example, you might
+    /// have separately grouped assets that come from the same asset model. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+        self.hierarchy_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VariableValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2133,6 +2424,27 @@ pub struct Transform {
     /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
     /// You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
+}
+impl Transform {
+    /// <p>The mathematical expression that defines the transformation function. You can specify up
+    /// to 10 variables per expression. You can specify up to 10 functions per
+    /// expression. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The list of variables used in the expression.</p>
+    pub fn variables(&self) -> std::option::Option<&[crate::model::ExpressionVariable]> {
+        self.variables.as_deref()
+    }
+    /// <p>The processing configuration for the given transform property.
+    /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+    /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+    pub fn processing_config(
+        &self,
+    ) -> std::option::Option<&crate::model::TransformProcessingConfig> {
+        self.processing_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Transform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2234,6 +2546,16 @@ pub struct TransformProcessingConfig {
     /// <p>The forwarding configuration for a given property.</p>
     pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
 }
+impl TransformProcessingConfig {
+    /// <p>The compute location for the given transform property. </p>
+    pub fn compute_location(&self) -> std::option::Option<&crate::model::ComputeLocation> {
+        self.compute_location.as_ref()
+    }
+    /// <p>The forwarding configuration for a given property.</p>
+    pub fn forwarding_config(&self) -> std::option::Option<&crate::model::ForwardingConfig> {
+        self.forwarding_config.as_ref()
+    }
+}
 impl std::fmt::Debug for TransformProcessingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TransformProcessingConfig");
@@ -2300,6 +2622,12 @@ impl TransformProcessingConfig {
 pub struct ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
     pub state: std::option::Option<crate::model::ForwardingConfigState>,
+}
+impl ForwardingConfig {
+    /// <p>The forwarding state for the given property. </p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ForwardingConfigState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for ForwardingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2408,6 +2736,16 @@ pub struct Measurement {
     /// By default, measurements are forwarded to the cloud.</p>
     pub processing_config: std::option::Option<crate::model::MeasurementProcessingConfig>,
 }
+impl Measurement {
+    /// <p>The processing configuration for the given measurement property.
+    /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
+    /// By default, measurements are forwarded to the cloud.</p>
+    pub fn processing_config(
+        &self,
+    ) -> std::option::Option<&crate::model::MeasurementProcessingConfig> {
+        self.processing_config.as_ref()
+    }
+}
 impl std::fmt::Debug for Measurement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Measurement");
@@ -2469,6 +2807,12 @@ pub struct MeasurementProcessingConfig {
     /// <p>The forwarding configuration for the given measurement property. </p>
     pub forwarding_config: std::option::Option<crate::model::ForwardingConfig>,
 }
+impl MeasurementProcessingConfig {
+    /// <p>The forwarding configuration for the given measurement property. </p>
+    pub fn forwarding_config(&self) -> std::option::Option<&crate::model::ForwardingConfig> {
+        self.forwarding_config.as_ref()
+    }
+}
 impl std::fmt::Debug for MeasurementProcessingConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeasurementProcessingConfig");
@@ -2523,6 +2867,15 @@ pub struct Attribute {
     /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
     pub default_value: std::option::Option<std::string::String>,
+}
+impl Attribute {
+    /// <p>The default value of the asset model property attribute. All assets that you create from
+    /// the asset model contain this attribute value. You can update an attribute's value after you
+    /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
 }
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2655,6 +3008,22 @@ pub struct AssetModelHierarchy {
     /// <code>childAssetModelId</code> asset model.</p>
     pub child_asset_model_id: std::option::Option<std::string::String>,
 }
+impl AssetModelHierarchy {
+    /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the
+    /// <code>childAssetModelId</code> asset model.</p>
+    pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
+        self.child_asset_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetModelHierarchy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetModelHierarchy");
@@ -2739,6 +3108,16 @@ pub struct AssetStatus {
     pub state: std::option::Option<crate::model::AssetState>,
     /// <p>Contains associated error information, if any.</p>
     pub error: std::option::Option<crate::model::ErrorDetails>,
+}
+impl AssetStatus {
+    /// <p>The current status of the asset.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AssetState> {
+        self.state.as_ref()
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2925,6 +3304,16 @@ pub struct Resource {
     /// <p>A project resource.</p>
     pub project: std::option::Option<crate::model::ProjectResource>,
 }
+impl Resource {
+    /// <p>A portal resource.</p>
+    pub fn portal(&self) -> std::option::Option<&crate::model::PortalResource> {
+        self.portal.as_ref()
+    }
+    /// <p>A project resource.</p>
+    pub fn project(&self) -> std::option::Option<&crate::model::ProjectResource> {
+        self.project.as_ref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -2992,6 +3381,12 @@ pub struct ProjectResource {
     /// <p>The ID of the project.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl ProjectResource {
+    /// <p>The ID of the project.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for ProjectResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProjectResource");
@@ -3037,6 +3432,12 @@ impl ProjectResource {
 pub struct PortalResource {
     /// <p>The ID of the portal.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl PortalResource {
+    /// <p>The ID of the portal.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for PortalResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3093,6 +3494,24 @@ pub struct Identity {
     pub iam_user: std::option::Option<crate::model::IamUserIdentity>,
     /// <p>An IAM role identity.</p>
     pub iam_role: std::option::Option<crate::model::IamRoleIdentity>,
+}
+impl Identity {
+    /// <p>An Amazon Web Services SSO user identity.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::UserIdentity> {
+        self.user.as_ref()
+    }
+    /// <p>An Amazon Web Services SSO group identity.</p>
+    pub fn group(&self) -> std::option::Option<&crate::model::GroupIdentity> {
+        self.group.as_ref()
+    }
+    /// <p>An IAM user identity.</p>
+    pub fn iam_user(&self) -> std::option::Option<&crate::model::IamUserIdentity> {
+        self.iam_user.as_ref()
+    }
+    /// <p>An IAM role identity.</p>
+    pub fn iam_role(&self) -> std::option::Option<&crate::model::IamRoleIdentity> {
+        self.iam_role.as_ref()
+    }
 }
 impl std::fmt::Debug for Identity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3192,6 +3611,13 @@ pub struct IamRoleIdentity {
     /// <i>IAM User Guide</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl IamRoleIdentity {
+    /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for IamRoleIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IamRoleIdentity");
@@ -3245,6 +3671,18 @@ pub struct IamUserIdentity {
     /// exists.</p>
     /// </note>
     pub arn: std::option::Option<std::string::String>,
+}
+impl IamUserIdentity {
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+    /// <i>IAM User Guide</i>.</p>
+    /// <note>
+    /// <p>If you delete the IAM user, access policies that contain this identity include an
+    /// empty <code>arn</code>. You can delete the access policy for the IAM user that no longer
+    /// exists.</p>
+    /// </note>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for IamUserIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3304,6 +3742,12 @@ pub struct GroupIdentity {
     /// <p>The Amazon Web Services SSO ID of the group.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GroupIdentity {
+    /// <p>The Amazon Web Services SSO ID of the group.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GroupIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupIdentity");
@@ -3349,6 +3793,12 @@ impl GroupIdentity {
 pub struct UserIdentity {
     /// <p>The Amazon Web Services SSO ID of the user.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl UserIdentity {
+    /// <p>The Amazon Web Services SSO ID of the user.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for UserIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3397,6 +3847,16 @@ pub struct ConfigurationStatus {
     pub state: std::option::Option<crate::model::ConfigurationState>,
     /// <p>Contains associated error information, if any.</p>
     pub error: std::option::Option<crate::model::ConfigurationErrorDetails>,
+}
+impl ConfigurationStatus {
+    /// <p>The current state of the configuration.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+        self.state.as_ref()
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ConfigurationErrorDetails> {
+        self.error.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfigurationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3466,6 +3926,16 @@ pub struct ConfigurationErrorDetails {
     pub code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl ConfigurationErrorDetails {
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for ConfigurationErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3587,6 +4057,14 @@ pub struct MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
     pub customer_managed_s3_storage: std::option::Option<crate::model::CustomerManagedS3Storage>,
 }
+impl MultiLayerStorage {
+    /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+    pub fn customer_managed_s3_storage(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomerManagedS3Storage> {
+        self.customer_managed_s3_storage.as_ref()
+    }
+}
 impl std::fmt::Debug for MultiLayerStorage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MultiLayerStorage");
@@ -3648,6 +4126,18 @@ pub struct CustomerManagedS3Storage {
     pub s3_resource_arn: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl CustomerManagedS3Storage {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
+    /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
+    /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub fn s3_resource_arn(&self) -> std::option::Option<&str> {
+        self.s3_resource_arn.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomerManagedS3Storage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3771,6 +4261,12 @@ impl AsRef<str> for StorageType {
 pub struct LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     pub level: std::option::Option<crate::model::LoggingLevel>,
+}
+impl LoggingOptions {
+    /// <p>The IoT SiteWise logging verbosity level.</p>
+    pub fn level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
+        self.level.as_ref()
+    }
 }
 impl std::fmt::Debug for LoggingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3940,6 +4436,28 @@ pub struct ProjectSummary {
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ProjectSummary {
+    /// <p>The ID of the project.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the project.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The project's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date the project was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the project was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+}
 impl std::fmt::Debug for ProjectSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProjectSummary");
@@ -4063,6 +4581,44 @@ pub struct PortalSummary {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Contains information about the current status of a portal.</p>
     pub status: std::option::Option<crate::model::PortalStatus>,
+}
+impl PortalSummary {
+    /// <p>The ID of the portal.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the portal.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The portal's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
+    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
+    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    pub fn start_url(&self) -> std::option::Option<&str> {
+        self.start_url.as_deref()
+    }
+    /// <p>The date the portal was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the portal was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Contains information about the current status of a portal.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::PortalStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for PortalSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4233,6 +4789,36 @@ pub struct GatewaySummary {
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl GatewaySummary {
+    /// <p>The ID of the gateway device.</p>
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
+        self.gateway_id.as_deref()
+    }
+    /// <p>The name of the asset.</p>
+    pub fn gateway_name(&self) -> std::option::Option<&str> {
+        self.gateway_name.as_deref()
+    }
+    /// <p>Contains a gateway's platform information.</p>
+    pub fn gateway_platform(&self) -> std::option::Option<&crate::model::GatewayPlatform> {
+        self.gateway_platform.as_ref()
+    }
+    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
+    /// gateway capability defines data sources for the gateway. To retrieve a capability
+    /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    pub fn gateway_capability_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::GatewayCapabilitySummary]> {
+        self.gateway_capability_summaries.as_deref()
+    }
+    /// <p>The date the gateway was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the gateway was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewaySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewaySummary");
@@ -4395,6 +4981,36 @@ pub struct GatewayCapabilitySummary {
     /// </ul>
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
+impl GatewayCapabilitySummary {
+    /// <p>The namespace of the capability configuration.
+    /// For example, if you configure OPC-UA
+    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
+    /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
+    /// <code>1</code>.</p>
+    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+        self.capability_namespace.as_deref()
+    }
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
+    /// </li>
+    /// </ul>
+    pub fn capability_sync_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CapabilitySyncStatus> {
+        self.capability_sync_status.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewayCapabilitySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayCapabilitySummary");
@@ -4500,6 +5116,16 @@ pub struct GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub greengrass_v2: std::option::Option<crate::model::GreengrassV2>,
 }
+impl GatewayPlatform {
+    /// <p>A gateway that runs on IoT Greengrass.</p>
+    pub fn greengrass(&self) -> std::option::Option<&crate::model::Greengrass> {
+        self.greengrass.as_ref()
+    }
+    /// <p>A gateway that runs on IoT Greengrass V2.</p>
+    pub fn greengrass_v2(&self) -> std::option::Option<&crate::model::GreengrassV2> {
+        self.greengrass_v2.as_ref()
+    }
+}
 impl std::fmt::Debug for GatewayPlatform {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GatewayPlatform");
@@ -4572,6 +5198,12 @@ pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
+impl GreengrassV2 {
+    /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
+    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+        self.core_device_thing_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GreengrassV2 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GreengrassV2");
@@ -4627,6 +5259,14 @@ pub struct Greengrass {
     /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
     /// <i>IoT Greengrass API Reference</i>.</p>
     pub group_arn: std::option::Option<std::string::String>,
+}
+impl Greengrass {
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
+    /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
+    /// <i>IoT Greengrass API Reference</i>.</p>
+    pub fn group_arn(&self) -> std::option::Option<&str> {
+        self.group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Greengrass {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4687,6 +5327,28 @@ pub struct DashboardSummary {
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DashboardSummary {
+    /// <p>The ID of the dashboard.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the dashboard</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The dashboard's description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date the dashboard was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
 }
 impl std::fmt::Debug for DashboardSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4810,6 +5472,43 @@ pub struct AssociatedAssetsSummary {
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
     pub hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+}
+impl AssociatedAssetsSummary {
+    /// <p>The ID of the asset.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>
+    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the asset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the asset model used to create the asset.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>The date the asset was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the asset was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+    /// <p>The current status of the asset.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
+    pub fn hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
+        self.hierarchies.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociatedAssetsSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4977,6 +5676,17 @@ pub struct AssetHierarchy {
     /// API operation.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl AssetHierarchy {
+    /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+    /// API operation.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetHierarchy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetHierarchy");
@@ -5111,6 +5821,43 @@ pub struct AssetSummary {
     pub status: std::option::Option<crate::model::AssetStatus>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
     pub hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+}
+impl AssetSummary {
+    /// <p>The ID of the asset.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>
+    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the asset.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the asset model used to create this asset.</p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>The date the asset was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the asset was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+    /// <p>The current status of the asset.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
+    pub fn hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
+        self.hierarchies.as_deref()
+    }
 }
 impl std::fmt::Debug for AssetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5343,6 +6090,27 @@ pub struct AssetRelationshipSummary {
     /// </ul>
     pub relationship_type: std::option::Option<crate::model::AssetRelationshipType>,
 }
+impl AssetRelationshipSummary {
+    /// <p>The assets that are related through an asset hierarchy.</p>
+    /// <p>This object is present if the <code>relationshipType</code> is
+    /// <code>HIERARCHY</code>.</p>
+    pub fn hierarchy_info(&self) -> std::option::Option<&crate::model::AssetHierarchyInfo> {
+        self.hierarchy_info.as_ref()
+    }
+    /// <p>The relationship type of the assets in this relationship. This value is one of the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If
+    /// you specify this relationship type, this asset relationship includes the
+    /// <code>hierarchyInfo</code> object.</p>
+    /// </li>
+    /// </ul>
+    pub fn relationship_type(&self) -> std::option::Option<&crate::model::AssetRelationshipType> {
+        self.relationship_type.as_ref()
+    }
+}
 impl std::fmt::Debug for AssetRelationshipSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetRelationshipSummary");
@@ -5486,6 +6254,16 @@ pub struct AssetHierarchyInfo {
     /// <p>The ID of the child asset in this asset relationship.</p>
     pub child_asset_id: std::option::Option<std::string::String>,
 }
+impl AssetHierarchyInfo {
+    /// <p>The ID of the parent asset in this asset relationship.</p>
+    pub fn parent_asset_id(&self) -> std::option::Option<&str> {
+        self.parent_asset_id.as_deref()
+    }
+    /// <p>The ID of the child asset in this asset relationship.</p>
+    pub fn child_asset_id(&self) -> std::option::Option<&str> {
+        self.child_asset_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetHierarchyInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetHierarchyInfo");
@@ -5618,6 +6396,39 @@ pub struct AssetModelSummary {
     pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current status of the asset model.</p>
     pub status: std::option::Option<crate::model::AssetModelStatus>,
+}
+impl AssetModelSummary {
+    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>
+    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the asset model.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The asset model description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date the asset model was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
+    /// <p>The current status of the asset model.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5771,6 +6582,33 @@ pub struct AccessPolicySummary {
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AccessPolicySummary {
+    /// <p>The ID of the access policy.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).</p>
+    pub fn identity(&self) -> std::option::Option<&crate::model::Identity> {
+        self.identity.as_ref()
+    }
+    /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
+    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+        self.resource.as_ref()
+    }
+    /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is
+    /// also known as a project owner.</p>
+    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+        self.permission.as_ref()
+    }
+    /// <p>The date the access policy was created, in Unix epoch time.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>The date the access policy was last updated, in Unix epoch time.</p>
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_date.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessPolicySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6012,6 +6850,16 @@ pub struct InterpolatedAssetPropertyValue {
     /// <p>Contains an asset property value (of a single type only).</p>
     pub value: std::option::Option<crate::model::Variant>,
 }
+impl InterpolatedAssetPropertyValue {
+    /// <p>Contains a timestamp with optional nanosecond granularity.</p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimeInNanos> {
+        self.timestamp.as_ref()
+    }
+    /// <p>Contains an asset property value (of a single type only).</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::Variant> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for InterpolatedAssetPropertyValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InterpolatedAssetPropertyValue");
@@ -6081,6 +6929,24 @@ pub struct Variant {
     pub double_value: std::option::Option<f64>,
     /// <p>Asset property data of type Boolean (true or false).</p>
     pub boolean_value: std::option::Option<bool>,
+}
+impl Variant {
+    /// <p>Asset property data of type string (sequence of characters).</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>Asset property data of type integer (whole number).</p>
+    pub fn integer_value(&self) -> std::option::Option<i32> {
+        self.integer_value
+    }
+    /// <p>Asset property data of type double (floating point number).</p>
+    pub fn double_value(&self) -> std::option::Option<f64> {
+        self.double_value
+    }
+    /// <p>Asset property data of type Boolean (true or false).</p>
+    pub fn boolean_value(&self) -> std::option::Option<bool> {
+        self.boolean_value
+    }
 }
 impl std::fmt::Debug for Variant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6171,6 +7037,17 @@ pub struct TimeInNanos {
     pub time_in_seconds: std::option::Option<i64>,
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub offset_in_nanos: std::option::Option<i32>,
+}
+impl TimeInNanos {
+    /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is
+    /// provided by <code>offsetInNanos</code>.</p>
+    pub fn time_in_seconds(&self) -> std::option::Option<i64> {
+        self.time_in_seconds
+    }
+    /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
+    pub fn offset_in_nanos(&self) -> std::option::Option<i32> {
+        self.offset_in_nanos
+    }
 }
 impl std::fmt::Debug for TimeInNanos {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6297,6 +7174,20 @@ pub struct AssetPropertyValue {
     pub timestamp: std::option::Option<crate::model::TimeInNanos>,
     /// <p>The quality of the asset property value.</p>
     pub quality: std::option::Option<crate::model::Quality>,
+}
+impl AssetPropertyValue {
+    /// <p>The value of the asset property (see <code>Variant</code>).</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::Variant> {
+        self.value.as_ref()
+    }
+    /// <p>The timestamp of the asset property value.</p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::TimeInNanos> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The quality of the asset property value.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::Quality> {
+        self.quality.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetPropertyValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6435,6 +7326,20 @@ pub struct AggregatedValue {
     /// <p>The value of the aggregates.</p>
     pub value: std::option::Option<crate::model::Aggregates>,
 }
+impl AggregatedValue {
+    /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The quality of the aggregated data.</p>
+    pub fn quality(&self) -> std::option::Option<&crate::model::Quality> {
+        self.quality.as_ref()
+    }
+    /// <p>The value of the aggregates.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::Aggregates> {
+        self.value.as_ref()
+    }
+}
 impl std::fmt::Debug for AggregatedValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AggregatedValue");
@@ -6521,6 +7426,32 @@ pub struct Aggregates {
     pub sum: std::option::Option<f64>,
     /// <p>The standard deviation of the time series over a time interval window.</p>
     pub standard_deviation: std::option::Option<f64>,
+}
+impl Aggregates {
+    /// <p>The average (mean) value of the time series over a time interval window.</p>
+    pub fn average(&self) -> std::option::Option<f64> {
+        self.average
+    }
+    /// <p>The count of data points in the time series over a time interval window.</p>
+    pub fn count(&self) -> std::option::Option<f64> {
+        self.count
+    }
+    /// <p>The maximum value of the time series over a time interval window.</p>
+    pub fn maximum(&self) -> std::option::Option<f64> {
+        self.maximum
+    }
+    /// <p>The minimum value of the time series over a time interval window.</p>
+    pub fn minimum(&self) -> std::option::Option<f64> {
+        self.minimum
+    }
+    /// <p>The sum of the time series over a time interval window.</p>
+    pub fn sum(&self) -> std::option::Option<f64> {
+        self.sum
+    }
+    /// <p>The standard deviation of the time series over a time interval window.</p>
+    pub fn standard_deviation(&self) -> std::option::Option<f64> {
+        self.standard_deviation
+    }
 }
 impl std::fmt::Debug for Aggregates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6771,6 +7702,17 @@ pub struct ImageLocation {
     /// and download the image</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl ImageLocation {
+    /// <p>The ID of the image.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view
+    /// and download the image</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for ImageLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageLocation");
@@ -6837,6 +7779,20 @@ pub struct CompositeModelProperty {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Contains asset property information.</p>
     pub asset_property: std::option::Option<crate::model::Property>,
+}
+impl CompositeModelProperty {
+    /// <p>The name of the property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of the composite model that defines this property.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Contains asset property information.</p>
+    pub fn asset_property(&self) -> std::option::Option<&crate::model::Property> {
+        self.asset_property.as_ref()
+    }
 }
 impl std::fmt::Debug for CompositeModelProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6929,6 +7885,39 @@ pub struct Property {
     pub unit: std::option::Option<std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
     pub r#type: std::option::Option<crate::model::PropertyType>,
+}
+impl Property {
+    /// <p>The ID of the asset property.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::PropertyNotification> {
+        self.notification.as_ref()
+    }
+    /// <p>The property data type.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>The property type (see <code>PropertyType</code>). A property contains one type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Property {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7071,6 +8060,16 @@ pub struct PropertyNotification {
     /// <p>The current notification state.</p>
     pub state: std::option::Option<crate::model::PropertyNotificationState>,
 }
+impl PropertyNotification {
+    /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
+    pub fn topic(&self) -> std::option::Option<&str> {
+        self.topic.as_deref()
+    }
+    /// <p>The current notification state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::PropertyNotificationState> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for PropertyNotification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PropertyNotification");
@@ -7142,6 +8141,25 @@ pub struct AssetCompositeModel {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset properties that this composite model defines.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
+}
+impl AssetCompositeModel {
+    /// <p>The name of the composite model.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the composite model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the composite model. For alarm composite models, this type is
+    /// <code>AWS/ALARM</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The asset properties that this composite model defines.</p>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::AssetProperty]> {
+        self.properties.as_deref()
+    }
 }
 impl std::fmt::Debug for AssetCompositeModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7256,6 +8274,40 @@ pub struct AssetProperty {
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub unit: std::option::Option<std::string::String>,
+}
+impl AssetProperty {
+    /// <p>The ID of the asset property.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the property.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+    pub fn notification(&self) -> std::option::Option<&crate::model::PropertyNotification> {
+        self.notification.as_ref()
+    }
+    /// <p>The data type of the asset property.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data type of the structure for this property. This parameter exists on properties that
+    /// have the <code>STRUCT</code> data type.</p>
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+        self.data_type_spec.as_deref()
+    }
+    /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
 }
 impl std::fmt::Debug for AssetProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7408,6 +8460,25 @@ pub struct AssetModelCompositeModelDefinition {
     /// <p>The asset property definitions for this composite model.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
 }
+impl AssetModelCompositeModelDefinition {
+    /// <p>The name of the composite model.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the composite model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of the composite model. For alarm composite models, this type is
+    /// <code>AWS/ALARM</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The asset property definitions for this composite model.</p>
+    pub fn properties(&self) -> std::option::Option<&[crate::model::AssetModelPropertyDefinition]> {
+        self.properties.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetModelCompositeModelDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetModelCompositeModelDefinition");
@@ -7526,6 +8597,36 @@ pub struct AssetModelPropertyDefinition {
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one
     /// type in a property definition.</p>
     pub r#type: std::option::Option<crate::model::PropertyType>,
+}
+impl AssetModelPropertyDefinition {
+    /// <p>The name of the property definition.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type of the property definition.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to
+    /// identify the type of the structure for this property.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data type of the structure for this property. This parameter is required on properties
+    /// that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you
+    /// define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite
+    /// models.</p>
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+        self.data_type_spec.as_deref()
+    }
+    /// <p>The unit of the property definition, such as <code>Newtons</code> or
+    /// <code>RPM</code>.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+    /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one
+    /// type in a property definition.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetModelPropertyDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7653,6 +8754,17 @@ pub struct AssetModelHierarchyDefinition {
     /// <p>The ID of an asset model for this hierarchy.</p>
     pub child_asset_model_id: std::option::Option<std::string::String>,
 }
+impl AssetModelHierarchyDefinition {
+    /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of an asset model for this hierarchy.</p>
+    pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
+        self.child_asset_model_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetModelHierarchyDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetModelHierarchyDefinition");
@@ -7721,6 +8833,16 @@ pub struct BatchPutAssetPropertyErrorEntry {
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The list of update property value errors.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyError>>,
+}
+impl BatchPutAssetPropertyErrorEntry {
+    /// <p>The ID of the failed entry.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The list of update property value errors.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutAssetPropertyError]> {
+        self.errors.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutAssetPropertyErrorEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7799,6 +8921,22 @@ pub struct BatchPutAssetPropertyError {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>A list of timestamps for each  error, if any.</p>
     pub timestamps: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>,
+}
+impl BatchPutAssetPropertyError {
+    /// <p>The error code.</p>
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::model::BatchPutAssetPropertyValueErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p>The associated error message.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>A list of timestamps for each  error, if any.</p>
+    pub fn timestamps(&self) -> std::option::Option<&[crate::model::TimeInNanos]> {
+        self.timestamps.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutAssetPropertyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8025,6 +9163,33 @@ pub struct PutAssetPropertyValueEntry {
     /// <code>propertyValues</code> array elements. </p>
     pub property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
+impl PutAssetPropertyValueEntry {
+    /// <p>The user specified ID for the entry. You can use this ID to identify which entries
+    /// failed.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The ID of the asset to update.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property for this entry.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
+    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The list of property values to upload. You can specify up to 10
+    /// <code>propertyValues</code> array elements. </p>
+    pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
+        self.property_values.as_deref()
+    }
+}
 impl std::fmt::Debug for PutAssetPropertyValueEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutAssetPropertyValueEntry");
@@ -8154,6 +9319,20 @@ pub struct AssetErrorDetails {
     pub code: std::option::Option<crate::model::AssetErrorCode>,
     /// <p>The error message.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl AssetErrorDetails {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The error code.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::AssetErrorCode> {
+        self.code.as_ref()
+    }
+    /// <p>The error message.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for AssetErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,16 @@ pub struct ValidationExceptionField {
     /// <p>Information about the validation exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
+impl ValidationExceptionField {
+    /// <p>The field that had the validation exception.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the validation exception.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
 impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
@@ -138,6 +148,16 @@ pub struct UpdateRoutingControlStateEntry {
     pub routing_control_arn: std::option::Option<std::string::String>,
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub routing_control_state: std::option::Option<crate::model::RoutingControlState>,
+}
+impl UpdateRoutingControlStateEntry {
+    /// <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
+    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+        self.routing_control_arn.as_deref()
+    }
+    /// <p>The routing control state in a set of routing control state entries.</p>
+    pub fn routing_control_state(&self) -> std::option::Option<&crate::model::RoutingControlState> {
+        self.routing_control_state.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateRoutingControlStateEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

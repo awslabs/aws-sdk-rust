@@ -20,6 +20,40 @@ pub struct SendCommandOutput {
     /// <p>Contains the details of the fetched page.</p>
     pub fetch_page: std::option::Option<crate::model::FetchPageResult>,
 }
+impl SendCommandOutput {
+    /// <p>Contains the details of the started session that includes a session token. This
+    /// <code>SessionToken</code> is required for every subsequent command that is issued during
+    /// the current session.</p>
+    pub fn start_session(&self) -> std::option::Option<&crate::model::StartSessionResult> {
+        self.start_session.as_ref()
+    }
+    /// <p>Contains the details of the started transaction.</p>
+    pub fn start_transaction(&self) -> std::option::Option<&crate::model::StartTransactionResult> {
+        self.start_transaction.as_ref()
+    }
+    /// <p>Contains the details of the ended session.</p>
+    pub fn end_session(&self) -> std::option::Option<&crate::model::EndSessionResult> {
+        self.end_session.as_ref()
+    }
+    /// <p>Contains the details of the committed transaction.</p>
+    pub fn commit_transaction(
+        &self,
+    ) -> std::option::Option<&crate::model::CommitTransactionResult> {
+        self.commit_transaction.as_ref()
+    }
+    /// <p>Contains the details of the aborted transaction.</p>
+    pub fn abort_transaction(&self) -> std::option::Option<&crate::model::AbortTransactionResult> {
+        self.abort_transaction.as_ref()
+    }
+    /// <p>Contains the details of the executed statement.</p>
+    pub fn execute_statement(&self) -> std::option::Option<&crate::model::ExecuteStatementResult> {
+        self.execute_statement.as_ref()
+    }
+    /// <p>Contains the details of the fetched page.</p>
+    pub fn fetch_page(&self) -> std::option::Option<&crate::model::FetchPageResult> {
+        self.fetch_page.as_ref()
+    }
+}
 impl std::fmt::Debug for SendCommandOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendCommandOutput");

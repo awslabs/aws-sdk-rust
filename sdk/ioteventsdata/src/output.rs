@@ -9,6 +9,17 @@ pub struct ListDetectorsOutput {
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDetectorsOutput {
+    /// <p>A list of summary information about the detectors (instances).</p>
+    pub fn detector_summaries(&self) -> std::option::Option<&[crate::model::DetectorSummary]> {
+        self.detector_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDetectorsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDetectorsOutput");
@@ -88,6 +99,17 @@ pub struct ListAlarmsOutput {
     /// or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAlarmsOutput {
+    /// <p>A list that summarizes each alarm.</p>
+    pub fn alarm_summaries(&self) -> std::option::Option<&[crate::model::AlarmSummary]> {
+        self.alarm_summaries.as_deref()
+    }
+    /// <p>The token that you can use to return the next set of results,
+    /// or <code>null</code> if there are no more results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAlarmsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAlarmsOutput");
@@ -160,6 +182,12 @@ pub struct DescribeDetectorOutput {
     /// <p>Information about the detector (instance).</p>
     pub detector: std::option::Option<crate::model::Detector>,
 }
+impl DescribeDetectorOutput {
+    /// <p>Information about the detector (instance).</p>
+    pub fn detector(&self) -> std::option::Option<&crate::model::Detector> {
+        self.detector.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDetectorOutput");
@@ -208,6 +236,12 @@ pub struct DescribeAlarmOutput {
     /// <p>Contains information about an alarm.</p>
     pub alarm: std::option::Option<crate::model::Alarm>,
 }
+impl DescribeAlarmOutput {
+    /// <p>Contains information about an alarm.</p>
+    pub fn alarm(&self) -> std::option::Option<&crate::model::Alarm> {
+        self.alarm.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAlarmOutput");
@@ -255,6 +289,15 @@ pub struct BatchUpdateDetectorOutput {
     /// specific update did not occur.)</p>
     pub batch_update_detector_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
+}
+impl BatchUpdateDetectorOutput {
+    /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the
+    /// specific update did not occur.)</p>
+    pub fn batch_update_detector_error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchUpdateDetectorErrorEntry]> {
+        self.batch_update_detector_error_entries.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchUpdateDetectorOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -323,6 +366,15 @@ pub struct BatchSnoozeAlarmOutput {
     /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
+impl BatchSnoozeAlarmOutput {
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
+    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchSnoozeAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchSnoozeAlarmOutput");
@@ -387,6 +439,15 @@ pub struct BatchResetAlarmOutput {
     /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
+impl BatchResetAlarmOutput {
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
+    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchResetAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchResetAlarmOutput");
@@ -450,6 +511,14 @@ pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
     pub batch_put_message_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
+}
+impl BatchPutMessageOutput {
+    /// <p>A list of any errors encountered when sending the messages.</p>
+    pub fn batch_put_message_error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchPutMessageErrorEntry]> {
+        self.batch_put_message_error_entries.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchPutMessageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,6 +585,15 @@ pub struct BatchEnableAlarmOutput {
     /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
+impl BatchEnableAlarmOutput {
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
+    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchEnableAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchEnableAlarmOutput");
@@ -580,6 +658,15 @@ pub struct BatchDisableAlarmOutput {
     /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
+impl BatchDisableAlarmOutput {
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
+    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
+        self.error_entries.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchDisableAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDisableAlarmOutput");
@@ -643,6 +730,15 @@ pub struct BatchAcknowledgeAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
     /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+}
+impl BatchAcknowledgeAlarmOutput {
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
+    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    pub fn error_entries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
+        self.error_entries.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchAcknowledgeAlarmOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

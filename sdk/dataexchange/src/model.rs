@@ -128,6 +128,12 @@ pub struct Event {
     /// <p>What occurs to start the revision publish action.</p>
     pub revision_published: std::option::Option<crate::model::RevisionPublished>,
 }
+impl Event {
+    /// <p>What occurs to start the revision publish action.</p>
+    pub fn revision_published(&self) -> std::option::Option<&crate::model::RevisionPublished> {
+        self.revision_published.as_ref()
+    }
+}
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Event");
@@ -179,6 +185,12 @@ pub struct RevisionPublished {
     /// <p>The data set ID of the published revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
+impl RevisionPublished {
+    /// <p>The data set ID of the published revision.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RevisionPublished {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevisionPublished");
@@ -227,6 +239,14 @@ pub struct Action {
     /// <p>Details for the export revision to Amazon S3 action.</p>
     pub export_revision_to_s3:
         std::option::Option<crate::model::AutoExportRevisionToS3RequestDetails>,
+}
+impl Action {
+    /// <p>Details for the export revision to Amazon S3 action.</p>
+    pub fn export_revision_to_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoExportRevisionToS3RequestDetails> {
+        self.export_revision_to_s3.as_ref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -284,6 +304,18 @@ pub struct AutoExportRevisionToS3RequestDetails {
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
     pub revision_destination: std::option::Option<crate::model::AutoExportRevisionDestinationEntry>,
+}
+impl AutoExportRevisionToS3RequestDetails {
+    /// <p>Encryption configuration for the auto export job.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::ExportServerSideEncryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
+    pub fn revision_destination(
+        &self,
+    ) -> std::option::Option<&crate::model::AutoExportRevisionDestinationEntry> {
+        self.revision_destination.as_ref()
+    }
 }
 impl std::fmt::Debug for AutoExportRevisionToS3RequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -358,6 +390,16 @@ pub struct AutoExportRevisionDestinationEntry {
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub key_pattern: std::option::Option<std::string::String>,
 }
+impl AutoExportRevisionDestinationEntry {
+    /// <p>The S3 bucket that is the destination for the event action.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+    pub fn key_pattern(&self) -> std::option::Option<&str> {
+        self.key_pattern.as_deref()
+    }
+}
 impl std::fmt::Debug for AutoExportRevisionDestinationEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AutoExportRevisionDestinationEntry");
@@ -420,6 +462,16 @@ pub struct ExportServerSideEncryption {
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub r#type: std::option::Option<crate::model::ServerSideEncryptionTypes>,
+}
+impl ExportServerSideEncryption {
+    /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ServerSideEncryptionTypes> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportServerSideEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -539,6 +591,12 @@ impl AsRef<str> for ServerSideEncryptionTypes {
 pub struct OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
     pub product_id: std::option::Option<std::string::String>,
+}
+impl OriginDetails {
+    /// <p>The product ID of the origin of the data set.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
 }
 impl std::fmt::Debug for OriginDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -700,6 +758,18 @@ pub struct AssetDetails {
     /// <p>The Amazon Redshift datashare that is the asset.</p>
     pub redshift_data_share_asset: std::option::Option<crate::model::RedshiftDataShareAsset>,
 }
+impl AssetDetails {
+    /// <p>The S3 object that is the asset.</p>
+    pub fn s3_snapshot_asset(&self) -> std::option::Option<&crate::model::S3SnapshotAsset> {
+        self.s3_snapshot_asset.as_ref()
+    }
+    /// <p>The Amazon Redshift datashare that is the asset.</p>
+    pub fn redshift_data_share_asset(
+        &self,
+    ) -> std::option::Option<&crate::model::RedshiftDataShareAsset> {
+        self.redshift_data_share_asset.as_ref()
+    }
+}
 impl std::fmt::Debug for AssetDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetDetails");
@@ -771,6 +841,12 @@ pub struct RedshiftDataShareAsset {
     /// The Amazon Resource Name (ARN) of the datashare asset.
     pub arn: std::option::Option<std::string::String>,
 }
+impl RedshiftDataShareAsset {
+    /// The Amazon Resource Name (ARN) of the datashare asset.
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RedshiftDataShareAsset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDataShareAsset");
@@ -816,6 +892,12 @@ impl RedshiftDataShareAsset {
 pub struct S3SnapshotAsset {
     /// <p>The size of the S3 object that is the object.</p>
     pub size: f64,
+}
+impl S3SnapshotAsset {
+    /// <p>The size of the S3 object that is the object.</p>
+    pub fn size(&self) -> f64 {
+        self.size
+    }
 }
 impl std::fmt::Debug for S3SnapshotAsset {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -882,6 +964,48 @@ pub struct AssetEntry {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssetEntry {
+    /// <p>The ARN for the asset.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the asset.</p>
+    pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
+        self.asset_details.as_ref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this asset.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the asset.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this asset.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for AssetEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1073,6 +1197,40 @@ pub struct JobEntry {
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl JobEntry {
+    /// <p>The ARN for the job.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::ResponseDetails> {
+        self.details.as_ref()
+    }
+    /// <p>Errors for jobs.</p>
+    pub fn errors(&self) -> std::option::Option<&[crate::model::JobError]> {
+        self.errors.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The state of the job.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>The job type.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for JobEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1399,6 +1557,36 @@ pub struct JobError {
     /// The type of resource related to the error.
     pub resource_type: std::option::Option<crate::model::JobErrorResourceTypes>,
 }
+impl JobError {
+    /// The code for the job error.
+    pub fn code(&self) -> std::option::Option<&crate::model::Code> {
+        self.code.as_ref()
+    }
+    /// <p>The details about the job error.</p>
+    pub fn details(&self) -> std::option::Option<&crate::model::Details> {
+        self.details.as_ref()
+    }
+    /// <p>The name of the limit that was reached.</p>
+    pub fn limit_name(&self) -> std::option::Option<&crate::model::JobErrorLimitName> {
+        self.limit_name.as_ref()
+    }
+    /// The value of the exceeded limit.
+    pub fn limit_value(&self) -> f64 {
+        self.limit_value
+    }
+    /// The message related to the job error.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// The unique identifier for the resource related to the error.
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// The type of resource related to the error.
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::JobErrorResourceTypes> {
+        self.resource_type.as_ref()
+    }
+}
 impl std::fmt::Debug for JobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobError");
@@ -1661,6 +1849,20 @@ pub struct Details {
     pub import_assets_from_s3_job_error_details:
         std::option::Option<std::vec::Vec<crate::model::AssetSourceEntry>>,
 }
+impl Details {
+    /// <p>Information about the job error.</p>
+    pub fn import_asset_from_signed_url_job_error_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetFromSignedUrlJobErrorDetails> {
+        self.import_asset_from_signed_url_job_error_details.as_ref()
+    }
+    /// <p>Information about the job error.</p>
+    pub fn import_assets_from_s3_job_error_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetSourceEntry]> {
+        self.import_assets_from_s3_job_error_details.as_deref()
+    }
+}
 impl std::fmt::Debug for Details {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Details");
@@ -1754,6 +1956,16 @@ pub struct AssetSourceEntry {
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub key: std::option::Option<std::string::String>,
 }
+impl AssetSourceEntry {
+    /// <p>The S3 bucket that's part of the source of the asset.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name of the object in Amazon S3 for the asset.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetSourceEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetSourceEntry");
@@ -1814,6 +2026,12 @@ impl AssetSourceEntry {
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Information about the job error.</p>
     pub asset_name: std::option::Option<std::string::String>,
+}
+impl ImportAssetFromSignedUrlJobErrorDetails {
+    /// <p>Information about the job error.</p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportAssetFromSignedUrlJobErrorDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1959,6 +2177,44 @@ pub struct ResponseDetails {
     /// <p>Details from an import from Amazon Redshift datashare response.</p>
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails>,
+}
+impl ResponseDetails {
+    /// <p>Details for the export to signed URL response.</p>
+    pub fn export_asset_to_signed_url(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportAssetToSignedUrlResponseDetails> {
+        self.export_asset_to_signed_url.as_ref()
+    }
+    /// <p>Details for the export to Amazon S3 response.</p>
+    pub fn export_assets_to_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportAssetsToS3ResponseDetails> {
+        self.export_assets_to_s3.as_ref()
+    }
+    /// <p>Details for the export revisions to Amazon S3 response.</p>
+    pub fn export_revisions_to_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportRevisionsToS3ResponseDetails> {
+        self.export_revisions_to_s3.as_ref()
+    }
+    /// <p>Details for the import from signed URL response.</p>
+    pub fn import_asset_from_signed_url(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetFromSignedUrlResponseDetails> {
+        self.import_asset_from_signed_url.as_ref()
+    }
+    /// <p>Details for the import from Amazon S3 response.</p>
+    pub fn import_assets_from_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetsFromS3ResponseDetails> {
+        self.import_assets_from_s3.as_ref()
+    }
+    /// <p>Details from an import from Amazon Redshift datashare response.</p>
+    pub fn import_assets_from_redshift_data_shares(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails> {
+        self.import_assets_from_redshift_data_shares.as_ref()
+    }
 }
 impl std::fmt::Debug for ResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2132,6 +2388,22 @@ pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// The unique identifier for the revision associated with this import job.
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl ImportAssetsFromRedshiftDataSharesResponseDetails {
+    /// A list of Amazon Redshift datashare asset sources.
+    pub fn asset_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::RedshiftDataShareAssetSourceEntry]> {
+        self.asset_sources.as_deref()
+    }
+    /// The unique identifier for the data set associated with this import job.
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// The unique identifier for the revision associated with this import job.
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportAssetsFromRedshiftDataSharesResponseDetails");
@@ -2222,6 +2494,12 @@ pub struct RedshiftDataShareAssetSourceEntry {
     /// The Amazon Resource Name (ARN) of the datashare asset.
     pub data_share_arn: std::option::Option<std::string::String>,
 }
+impl RedshiftDataShareAssetSourceEntry {
+    /// The Amazon Resource Name (ARN) of the datashare asset.
+    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+        self.data_share_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RedshiftDataShareAssetSourceEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDataShareAssetSourceEntry");
@@ -2276,6 +2554,20 @@ pub struct ImportAssetsFromS3ResponseDetails {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this import response.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl ImportAssetsFromS3ResponseDetails {
+    /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
+    pub fn asset_sources(&self) -> std::option::Option<&[crate::model::AssetSourceEntry]> {
+        self.asset_sources.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this import response.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportAssetsFromS3ResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2370,6 +2662,32 @@ pub struct ImportAssetFromSignedUrlResponseDetails {
     pub signed_url: std::option::Option<std::string::String>,
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
     pub signed_url_expires_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ImportAssetFromSignedUrlResponseDetails {
+    /// <p>The name for the asset associated with this import job.</p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
+    pub fn md5_hash(&self) -> std::option::Option<&str> {
+        self.md5_hash.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this import response.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The signed URL.</p>
+    pub fn signed_url(&self) -> std::option::Option<&str> {
+        self.signed_url.as_deref()
+    }
+    /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
+    pub fn signed_url_expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.signed_url_expires_at.as_ref()
+    }
 }
 impl std::fmt::Debug for ImportAssetFromSignedUrlResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2494,6 +2812,26 @@ pub struct ExportRevisionsToS3ResponseDetails {
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     pub event_action_arn: std::option::Option<std::string::String>,
 }
+impl ExportRevisionsToS3ResponseDetails {
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>Encryption configuration of the export job.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::ExportServerSideEncryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>The destination in Amazon S3 where the revision is exported.</p>
+    pub fn revision_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RevisionDestinationEntry]> {
+        self.revision_destinations.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event action.</p>
+    pub fn event_action_arn(&self) -> std::option::Option<&str> {
+        self.event_action_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportRevisionsToS3ResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportRevisionsToS3ResponseDetails");
@@ -2604,6 +2942,20 @@ pub struct RevisionDestinationEntry {
     /// <p>The unique identifier for the revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl RevisionDestinationEntry {
+    /// <p>The S3 bucket that is the destination for the assets in the revision.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+    pub fn key_pattern(&self) -> std::option::Option<&str> {
+        self.key_pattern.as_deref()
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RevisionDestinationEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevisionDestinationEntry");
@@ -2683,6 +3035,26 @@ pub struct ExportAssetsToS3ResponseDetails {
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>The unique identifier for the revision associated with this export response.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl ExportAssetsToS3ResponseDetails {
+    /// <p>The destination in Amazon S3 where the asset is exported.</p>
+    pub fn asset_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetDestinationEntry]> {
+        self.asset_destinations.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>Encryption configuration of the export job.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::ExportServerSideEncryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>The unique identifier for the revision associated with this export response.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportAssetsToS3ResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2791,6 +3163,20 @@ pub struct AssetDestinationEntry {
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub key: std::option::Option<std::string::String>,
 }
+impl AssetDestinationEntry {
+    /// <p>The unique identifier for the asset.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The S3 bucket that is the destination for the asset.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The name of the object in Amazon S3 for the asset.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetDestinationEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetDestinationEntry");
@@ -2872,6 +3258,28 @@ pub struct ExportAssetToSignedUrlResponseDetails {
     pub signed_url: std::option::Option<std::string::String>,
     /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
     pub signed_url_expires_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ExportAssetToSignedUrlResponseDetails {
+    /// <p>The unique identifier for the asset associated with this export job.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this export response.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+    /// <p>The signed URL for the export request.</p>
+    pub fn signed_url(&self) -> std::option::Option<&str> {
+        self.signed_url.as_deref()
+    }
+    /// <p>The date and time that the signed URL expires, in ISO 8601 format.</p>
+    pub fn signed_url_expires_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.signed_url_expires_at.as_ref()
+    }
 }
 impl std::fmt::Debug for ExportAssetToSignedUrlResponseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2985,6 +3393,32 @@ pub struct EventActionEntry {
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EventActionEntry {
+    /// <p>What occurs after a certain event.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the event action.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>What occurs to start an action.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+        self.event.as_ref()
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for EventActionEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3122,6 +3556,48 @@ pub struct DataSetEntry {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DataSetEntry {
+    /// <p>The ARN for the data set.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The description for the data set.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the data set.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the data set.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+        self.origin.as_ref()
+    }
+    /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+        self.origin_details.as_ref()
+    }
+    /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSetEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3314,6 +3790,40 @@ pub struct RevisionEntry {
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl RevisionEntry {
+    /// <p>The ARN for the revision.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An optional comment about the revision.</p>
+    pub fn comment(&self) -> std::option::Option<&str> {
+        self.comment.as_deref()
+    }
+    /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The unique identifier for the data set associated with this revision.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    pub fn finalized(&self) -> bool {
+        self.finalized
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    pub fn source_id(&self) -> std::option::Option<&str> {
+        self.source_id.as_deref()
+    }
+    /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for RevisionEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevisionEntry");
@@ -3472,6 +3982,44 @@ pub struct RequestDetails {
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
     pub import_assets_from_redshift_data_shares:
         std::option::Option<crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails>,
+}
+impl RequestDetails {
+    /// <p>Details about the export to signed URL request.</p>
+    pub fn export_asset_to_signed_url(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportAssetToSignedUrlRequestDetails> {
+        self.export_asset_to_signed_url.as_ref()
+    }
+    /// <p>Details about the export to Amazon S3 request.</p>
+    pub fn export_assets_to_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportAssetsToS3RequestDetails> {
+        self.export_assets_to_s3.as_ref()
+    }
+    /// <p>Details about the export to Amazon S3 request.</p>
+    pub fn export_revisions_to_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportRevisionsToS3RequestDetails> {
+        self.export_revisions_to_s3.as_ref()
+    }
+    /// <p>Details about the import from signed URL request.</p>
+    pub fn import_asset_from_signed_url(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetFromSignedUrlRequestDetails> {
+        self.import_asset_from_signed_url.as_ref()
+    }
+    /// <p>Details about the import from Amazon S3 request.</p>
+    pub fn import_assets_from_s3(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetsFromS3RequestDetails> {
+        self.import_assets_from_s3.as_ref()
+    }
+    /// <p>Details from an import from Amazon Redshift datashare request.</p>
+    pub fn import_assets_from_redshift_data_shares(
+        &self,
+    ) -> std::option::Option<&crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails> {
+        self.import_assets_from_redshift_data_shares.as_ref()
+    }
 }
 impl std::fmt::Debug for RequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3645,6 +4193,22 @@ pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// The unique identifier for the revision associated with this import job.
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl ImportAssetsFromRedshiftDataSharesRequestDetails {
+    /// A list of Amazon Redshift datashare assets.
+    pub fn asset_sources(
+        &self,
+    ) -> std::option::Option<&[crate::model::RedshiftDataShareAssetSourceEntry]> {
+        self.asset_sources.as_deref()
+    }
+    /// The unique identifier for the data set associated with this import job.
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// The unique identifier for the revision associated with this import job.
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesRequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportAssetsFromRedshiftDataSharesRequestDetails");
@@ -3739,6 +4303,20 @@ pub struct ImportAssetsFromS3RequestDetails {
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
+impl ImportAssetsFromS3RequestDetails {
+    /// <p>Is a list of S3 bucket and object key pairs.</p>
+    pub fn asset_sources(&self) -> std::option::Option<&[crate::model::AssetSourceEntry]> {
+        self.asset_sources.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this import request.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportAssetsFromS3RequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportAssetsFromS3RequestDetails");
@@ -3828,6 +4406,24 @@ pub struct ImportAssetFromSignedUrlRequestDetails {
     pub md5_hash: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl ImportAssetFromSignedUrlRequestDetails {
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.</p>
+    pub fn asset_name(&self) -> std::option::Option<&str> {
+        self.asset_name.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
+    pub fn md5_hash(&self) -> std::option::Option<&str> {
+        self.md5_hash.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this import request.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportAssetFromSignedUrlRequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3920,6 +4516,22 @@ pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The destination for the revision.</p>
     pub revision_destinations:
         std::option::Option<std::vec::Vec<crate::model::RevisionDestinationEntry>>,
+}
+impl ExportRevisionsToS3RequestDetails {
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>Encryption configuration for the export job.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::ExportServerSideEncryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>The destination for the revision.</p>
+    pub fn revision_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RevisionDestinationEntry]> {
+        self.revision_destinations.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportRevisionsToS3RequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4016,6 +4628,26 @@ pub struct ExportAssetsToS3RequestDetails {
     pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl ExportAssetsToS3RequestDetails {
+    /// <p>The destination for the asset.</p>
+    pub fn asset_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssetDestinationEntry]> {
+        self.asset_destinations.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>Encryption configuration for the export job.</p>
+    pub fn encryption(&self) -> std::option::Option<&crate::model::ExportServerSideEncryption> {
+        self.encryption.as_ref()
+    }
+    /// <p>The unique identifier for the revision associated with this export request.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportAssetsToS3RequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4123,6 +4755,20 @@ pub struct ExportAssetToSignedUrlRequestDetails {
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the revision associated with this export request.</p>
     pub revision_id: std::option::Option<std::string::String>,
+}
+impl ExportAssetToSignedUrlRequestDetails {
+    /// <p>The unique identifier for the asset that is exported to a signed URL.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>The unique identifier for the revision associated with this export request.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportAssetToSignedUrlRequestDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

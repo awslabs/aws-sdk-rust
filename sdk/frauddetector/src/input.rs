@@ -119,10 +119,7 @@ impl BatchCreateVariableInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_variable(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_variable(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -279,10 +276,7 @@ impl BatchGetVariableInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_variable(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_variable(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -436,10 +430,7 @@ impl CancelBatchImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_batch_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -592,10 +583,7 @@ impl CancelBatchPredictionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_batch_prediction_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -821,10 +809,7 @@ impl CreateBatchImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_batch_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1079,10 +1064,7 @@ impl CreateBatchPredictionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_batch_prediction_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1354,10 +1336,7 @@ impl CreateDetectorVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_detector_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1569,10 +1548,7 @@ impl CreateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1818,10 +1794,7 @@ impl CreateModelVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_model_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_model_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2060,10 +2033,7 @@ impl CreateRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2308,10 +2278,8 @@ impl CreateVariableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_variable(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_variable(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2463,10 +2431,7 @@ impl DeleteBatchImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_batch_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2619,10 +2584,7 @@ impl DeleteBatchPredictionJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_batch_prediction_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2771,10 +2733,8 @@ impl DeleteDetectorInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_detector(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_detector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2941,10 +2901,7 @@ impl DeleteDetectorVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_detector_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3092,10 +3049,7 @@ impl DeleteEntityTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_entity_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_entity_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3271,10 +3225,7 @@ impl DeleteEventInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_event(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3430,10 +3381,7 @@ impl DeleteEventsByEventTypeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_events_by_event_type(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3581,10 +3529,7 @@ impl DeleteEventTypeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_event_type(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_event_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3737,10 +3682,7 @@ impl DeleteExternalModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_external_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_external_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3887,10 +3829,7 @@ impl DeleteLabelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_label(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_label(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4054,10 +3993,7 @@ impl DeleteModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4237,10 +4173,7 @@ impl DeleteModelVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_model_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_model_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4387,10 +4320,7 @@ impl DeleteOutcomeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_outcome(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_outcome(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4537,10 +4467,7 @@ impl DeleteRuleInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4687,10 +4614,8 @@ impl DeleteVariableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_variable(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_variable(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4864,10 +4789,7 @@ impl DescribeDetectorInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_detector(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_detector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5073,10 +4995,7 @@ impl DescribeModelVersionsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_model_versions(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5250,10 +5169,7 @@ impl GetBatchImportJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_batch_import_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_batch_import_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5429,10 +5345,7 @@ impl GetBatchPredictionJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5586,7 +5499,7 @@ impl GetDeleteEventsByEventTypeStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_delete_events_by_event_type_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_delete_events_by_event_type_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5760,10 +5673,7 @@ impl GetDetectorsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_detectors(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_detectors(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5928,10 +5838,7 @@ impl GetDetectorVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_detector_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_detector_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6105,10 +6012,7 @@ impl GetEntityTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_entity_types(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_entity_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6270,10 +6174,7 @@ impl GetEventInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_event(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6593,10 +6494,7 @@ impl GetEventPredictionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_event_prediction(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_event_prediction(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6769,10 +6667,8 @@ impl GetEventTypesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_event_types(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_event_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6949,10 +6845,7 @@ impl GetExternalModelsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_external_models(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_external_models(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7088,10 +6981,9 @@ impl GetKmsEncryptionKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_kms_encryption_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_kms_encryption_key(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7254,10 +7146,7 @@ impl GetLabelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_labels(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_labels(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7441,10 +7330,7 @@ impl GetModelsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_models(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_models(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7622,10 +7508,7 @@ impl GetModelVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_model_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_model_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7798,10 +7681,7 @@ impl GetOutcomesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_outcomes(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_outcomes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7996,10 +7876,7 @@ impl GetRulesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_rules(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_rules(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8170,10 +8047,7 @@ impl GetVariablesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_variables(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_variables(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8347,10 +8221,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8547,10 +8420,7 @@ impl PutDetectorInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_detector(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_detector(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8732,10 +8602,8 @@ impl PutEntityTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_entity_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_entity_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8995,10 +8863,7 @@ impl PutEventTypeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_event_type(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_event_type(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9254,10 +9119,7 @@ impl PutExternalModelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_external_model(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_external_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9410,10 +9272,9 @@ impl PutKmsEncryptionKeyInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_kms_encryption_key(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_put_kms_encryption_key(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9593,10 +9454,7 @@ impl PutLabelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_label(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_label(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9776,10 +9634,7 @@ impl PutOutcomeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_outcome(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_outcome(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10036,10 +9891,7 @@ impl SendEventInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_event(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_event(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10207,10 +10059,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10380,10 +10229,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10647,10 +10493,7 @@ impl UpdateDetectorVersionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_detector_version(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10828,7 +10671,7 @@ impl UpdateDetectorVersionMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_detector_version_metadata(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_detector_version_metadata(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11010,7 +10853,7 @@ impl UpdateDetectorVersionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_detector_version_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_detector_version_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -11206,10 +11049,7 @@ impl UpdateEventLabelInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_event_label(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_event_label(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11385,10 +11225,7 @@ impl UpdateModelInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11619,10 +11456,7 @@ impl UpdateModelVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_model_version(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_model_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11820,10 +11654,7 @@ impl UpdateModelVersionStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_model_version_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11985,10 +11816,7 @@ impl UpdateRuleMetadataInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rule_metadata(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_rule_metadata(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12216,10 +12044,7 @@ impl UpdateRuleVersionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_rule_version(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_rule_version(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12410,10 +12235,8 @@ impl UpdateVariableInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_variable(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_variable(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12488,6 +12311,24 @@ pub struct UpdateVariableInput {
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub variable_type: std::option::Option<std::string::String>,
 }
+impl UpdateVariableInput {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The new default value of the variable.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The new description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    pub fn variable_type(&self) -> std::option::Option<&str> {
+        self.variable_type.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateVariableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVariableInput");
@@ -12516,6 +12357,32 @@ pub struct UpdateRuleVersionInput {
     /// <p>The tags to assign to the rule version.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UpdateRuleVersionInput {
+    /// <p>The rule to update.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+        self.rule.as_ref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The rule expression.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The language.</p>
+    pub fn language(&self) -> std::option::Option<&crate::model::Language> {
+        self.language.as_ref()
+    }
+    /// <p>The outcomes.</p>
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+        self.outcomes.as_deref()
+    }
+    /// <p>The tags to assign to the rule version.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRuleVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleVersionInput");
@@ -12538,6 +12405,16 @@ pub struct UpdateRuleMetadataInput {
     /// <p>The rule description.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateRuleMetadataInput {
+    /// <p>The rule to update.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+        self.rule.as_ref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateRuleMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleMetadataInput");
@@ -12559,6 +12436,24 @@ pub struct UpdateModelVersionStatusInput {
     pub model_version_number: std::option::Option<std::string::String>,
     /// <p>The model version status.</p>
     pub status: std::option::Option<crate::model::ModelVersionStatus>,
+}
+impl UpdateModelVersionStatusInput {
+    /// <p>The model ID of the model version to update.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The model version status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelVersionStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateModelVersionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12588,6 +12483,36 @@ pub struct UpdateModelVersionInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl UpdateModelVersionInput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The major version number.</p>
+    pub fn major_version_number(&self) -> std::option::Option<&str> {
+        self.major_version_number.as_deref()
+    }
+    /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    pub fn external_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
+        self.external_events_detail.as_ref()
+    }
+    /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub fn ingested_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
+        self.ingested_events_detail.as_ref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateModelVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateModelVersionInput");
@@ -12612,6 +12537,20 @@ pub struct UpdateModelInput {
     /// <p>The new model description.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateModelInput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The new model description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateModelInput");
@@ -12635,6 +12574,24 @@ pub struct UpdateEventLabelInput {
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub label_timestamp: std::option::Option<std::string::String>,
 }
+impl UpdateEventLabelInput {
+    /// <p>The ID of the event associated with the label to update.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The event type of the event associated with the label to update.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The new label to assign to the event.</p>
+    pub fn assigned_label(&self) -> std::option::Option<&str> {
+        self.assigned_label.as_deref()
+    }
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    pub fn label_timestamp(&self) -> std::option::Option<&str> {
+        self.label_timestamp.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateEventLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEventLabelInput");
@@ -12657,6 +12614,20 @@ pub struct UpdateDetectorVersionStatusInput {
     /// <p>The new status.</p>
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
 }
+impl UpdateDetectorVersionStatusInput {
+    /// <p>The detector ID. </p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The new status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDetectorVersionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDetectorVersionStatusInput");
@@ -12677,6 +12648,20 @@ pub struct UpdateDetectorVersionMetadataInput {
     pub detector_version_id: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
+}
+impl UpdateDetectorVersionMetadataInput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDetectorVersionMetadataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12710,6 +12695,39 @@ pub struct UpdateDetectorVersionInput {
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
 }
+impl UpdateDetectorVersionInput {
+    /// <p>The parent detector ID for the detector version you want to update.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector version ID. </p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
+    pub fn external_model_endpoints(&self) -> std::option::Option<&[std::string::String]> {
+        self.external_model_endpoints.as_deref()
+    }
+    /// <p>The rules to include in the detector version.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The detector version description. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The model versions to include in the detector version.</p>
+    pub fn model_versions(&self) -> std::option::Option<&[crate::model::ModelVersion]> {
+        self.model_versions.as_deref()
+    }
+    /// <p>The rule execution mode to add to the detector.</p>
+    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
+        self.rule_execution_mode.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateDetectorVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDetectorVersionInput");
@@ -12733,6 +12751,16 @@ pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource from which to remove the tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The resource ARN.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -12750,6 +12778,16 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to assign to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12780,6 +12818,39 @@ pub struct SendEventInput {
     /// <p>An array of entities.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
+impl SendEventInput {
+    /// <p>The event ID to upload.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The event type name of the event.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+        self.event_timestamp.as_deref()
+    }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub fn event_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.event_variables.as_ref()
+    }
+    /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+    pub fn assigned_label(&self) -> std::option::Option<&str> {
+        self.assigned_label.as_deref()
+    }
+    /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+    pub fn label_timestamp(&self) -> std::option::Option<&str> {
+        self.label_timestamp.as_deref()
+    }
+    /// <p>An array of entities.</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+}
 impl std::fmt::Debug for SendEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendEventInput");
@@ -12805,6 +12876,20 @@ pub struct PutOutcomeInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutOutcomeInput {
+    /// <p>The name of the outcome.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The outcome description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutOutcomeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutOutcomeInput");
@@ -12826,6 +12911,20 @@ pub struct PutLabelInput {
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutLabelInput {
+    /// <p>The label name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The label description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p></p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutLabelInput");
@@ -12842,6 +12941,12 @@ impl std::fmt::Debug for PutLabelInput {
 pub struct PutKmsEncryptionKeyInput {
     /// <p>The KMS encryption key ARN.</p>
     pub kms_encryption_key_arn: std::option::Option<std::string::String>,
+}
+impl PutKmsEncryptionKeyInput {
+    /// <p>The KMS encryption key ARN.</p>
+    pub fn kms_encryption_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_encryption_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for PutKmsEncryptionKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12869,6 +12974,40 @@ pub struct PutExternalModelInput {
     pub model_endpoint_status: std::option::Option<crate::model::ModelEndpointStatus>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl PutExternalModelInput {
+    /// <p>The model endpoints name.</p>
+    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+        self.model_endpoint.as_deref()
+    }
+    /// <p>The source of the model.</p>
+    pub fn model_source(&self) -> std::option::Option<&crate::model::ModelSource> {
+        self.model_source.as_ref()
+    }
+    /// <p>The IAM role used to invoke the model endpoint.</p>
+    pub fn invoke_model_endpoint_role_arn(&self) -> std::option::Option<&str> {
+        self.invoke_model_endpoint_role_arn.as_deref()
+    }
+    /// <p>The model endpoint input configuration.</p>
+    pub fn input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelInputConfiguration> {
+        self.input_configuration.as_ref()
+    }
+    /// <p>The model endpoint output configuration.</p>
+    pub fn output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelOutputConfiguration> {
+        self.output_configuration.as_ref()
+    }
+    /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+    pub fn model_endpoint_status(&self) -> std::option::Option<&crate::model::ModelEndpointStatus> {
+        self.model_endpoint_status.as_ref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for PutExternalModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12906,6 +13045,36 @@ pub struct PutEventTypeInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutEventTypeInput {
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the event type.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The event type variables.</p>
+    pub fn event_variables(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_variables.as_deref()
+    }
+    /// <p>The event type labels.</p>
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+        self.labels.as_deref()
+    }
+    /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
+    pub fn entity_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.entity_types.as_deref()
+    }
+    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    pub fn event_ingestion(&self) -> std::option::Option<&crate::model::EventIngestion> {
+        self.event_ingestion.as_ref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutEventTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventTypeInput");
@@ -12931,6 +13100,20 @@ pub struct PutEntityTypeInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutEntityTypeInput {
+    /// <p>The name of the entity type.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutEntityTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutEntityTypeInput");
@@ -12954,6 +13137,24 @@ pub struct PutDetectorInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl PutDetectorInput {
+    /// <p>The detector ID. </p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The description of the detector.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for PutDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutDetectorInput");
@@ -12976,6 +13177,20 @@ pub struct ListTagsForResourceInput {
     /// <p>The maximum number of objects to return for the request. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ARN that specifies the resource whose tags you want to list.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The next token from the previous results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -12996,6 +13211,20 @@ pub struct GetVariablesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The max size per page determined for the get variable request. </p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetVariablesInput {
+    /// <p>The name of the variable. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The next page token of the get variable request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The max size per page determined for the get variable request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetVariablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13022,6 +13251,28 @@ pub struct GetRulesInput {
     /// <p>The maximum number of rules to return for the request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetRulesInput {
+    /// <p>The rule ID.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The rule version.</p>
+    pub fn rule_version(&self) -> std::option::Option<&str> {
+        self.rule_version.as_deref()
+    }
+    /// <p>The next page token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of rules to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRulesInput");
@@ -13045,6 +13296,20 @@ pub struct GetOutcomesInput {
     /// <p>The maximum number of objects to return for the request. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetOutcomesInput {
+    /// <p>The name of the outcome or outcomes to get.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The next page token for the request. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetOutcomesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOutcomesInput");
@@ -13065,6 +13330,20 @@ pub struct GetModelVersionInput {
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The model version number.</p>
     pub model_version_number: std::option::Option<std::string::String>,
+}
+impl GetModelVersionInput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
 }
 impl std::fmt::Debug for GetModelVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13089,6 +13368,24 @@ pub struct GetModelsInput {
     /// <p>The maximum number of objects to return for the request. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetModelsInput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetModelsInput");
@@ -13110,6 +13407,20 @@ pub struct GetLabelsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetLabelsInput {
+    /// <p>The name of the label or labels to get.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetLabelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13143,6 +13454,20 @@ pub struct GetExternalModelsInput {
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetExternalModelsInput {
+    /// <p>The Amazon SageMaker model endpoint.</p>
+    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+        self.model_endpoint.as_deref()
+    }
+    /// <p>The next page token for the request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetExternalModelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetExternalModelsInput");
@@ -13163,6 +13488,20 @@ pub struct GetEventTypesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl GetEventTypesInput {
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for GetEventTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13216,6 +13555,65 @@ pub struct GetEventPredictionInput {
         std::collections::HashMap<std::string::String, crate::model::ModelEndpointDataBlob>,
     >,
 }
+impl GetEventPredictionInput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector version ID.</p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+    /// <p>The unique ID used to identify the event.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The event type associated with the detector specified for the prediction.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
+    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+        self.entities.as_deref()
+    }
+    /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+        self.event_timestamp.as_deref()
+    }
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
+    /// their corresponding values for the event you are sending for evaluation.</p>
+    /// <important>         
+    /// <p>You must provide at least one eventVariable</p>        
+    /// </important>
+    ///
+    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
+    ///
+    /// <p>
+    /// <b>For Amazon Fraud Detector trained models:</b>
+    /// </p>
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
+    /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+    ///
+    /// <p>
+    /// <b>For imported SageMaker models:</b>
+    /// </p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
+    /// will use the default value that is provided for the variable. </p>
+    pub fn event_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.event_variables.as_ref()
+    }
+    /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
+    pub fn external_model_endpoint_data_blobs(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ModelEndpointDataBlob>,
+    > {
+        self.external_model_endpoint_data_blobs.as_ref()
+    }
+}
 impl std::fmt::Debug for GetEventPredictionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventPredictionInput");
@@ -13243,6 +13641,16 @@ pub struct GetEventInput {
     /// <p>The event type of the event to retrieve.</p>
     pub event_type_name: std::option::Option<std::string::String>,
 }
+impl GetEventInput {
+    /// <p>The ID of the event to retrieve.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The event type of the event to retrieve.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+}
 impl std::fmt::Debug for GetEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEventInput");
@@ -13263,6 +13671,20 @@ pub struct GetEntityTypesInput {
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetEntityTypesInput {
+    /// <p>The name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetEntityTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetEntityTypesInput");
@@ -13281,6 +13703,16 @@ pub struct GetDetectorVersionInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID.</p>
     pub detector_version_id: std::option::Option<std::string::String>,
+}
+impl GetDetectorVersionInput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The detector version ID.</p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDetectorVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13302,6 +13734,20 @@ pub struct GetDetectorsInput {
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetDetectorsInput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The next token for the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetDetectorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDetectorsInput");
@@ -13318,6 +13764,12 @@ impl std::fmt::Debug for GetDetectorsInput {
 pub struct GetDeleteEventsByEventTypeStatusInput {
     /// <p>Name of event type for which to get the deletion status.</p>
     pub event_type_name: std::option::Option<std::string::String>,
+}
+impl GetDeleteEventsByEventTypeStatusInput {
+    /// <p>Name of event type for which to get the deletion status.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13337,6 +13789,20 @@ pub struct GetBatchPredictionJobsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The next token from the previous request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetBatchPredictionJobsInput {
+    /// <p>The batch prediction job for which to get the details.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The maximum number of objects to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The next token from the previous request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBatchPredictionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13358,6 +13824,20 @@ pub struct GetBatchImportJobsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The next token from the previous request.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetBatchImportJobsInput {
+    /// <p>The ID of the batch import job to get.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The maximum number of objects to return for request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The next token from the previous request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBatchImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13384,6 +13864,28 @@ pub struct DescribeModelVersionsInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeModelVersionsInput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model version number.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The next token from the previous results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeModelVersionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelVersionsInput");
@@ -13407,6 +13909,20 @@ pub struct DescribeDetectorInput {
     /// <p>The maximum number of results to return for the request.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl DescribeDetectorInput {
+    /// <p>The detector ID.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The next token from the previous response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return for the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for DescribeDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeDetectorInput");
@@ -13424,6 +13940,12 @@ pub struct DeleteVariableInput {
     /// <p>The name of the variable to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteVariableInput {
+    /// <p>The name of the variable to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteVariableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVariableInput");
@@ -13439,6 +13961,12 @@ pub struct DeleteRuleInput {
     /// <p>A rule.</p>
     pub rule: std::option::Option<crate::model::Rule>,
 }
+impl DeleteRuleInput {
+    /// <p>A rule.</p>
+    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+        self.rule.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRuleInput");
@@ -13453,6 +13981,12 @@ impl std::fmt::Debug for DeleteRuleInput {
 pub struct DeleteOutcomeInput {
     /// <p>The name of the outcome to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteOutcomeInput {
+    /// <p>The name of the outcome to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOutcomeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13473,6 +14007,20 @@ pub struct DeleteModelVersionInput {
     /// <p>The model version number of the model version to delete.</p>
     pub model_version_number: std::option::Option<std::string::String>,
 }
+impl DeleteModelVersionInput {
+    /// <p>The model ID of the model version to delete.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type of the model version to delete.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model version number of the model version to delete.</p>
+    pub fn model_version_number(&self) -> std::option::Option<&str> {
+        self.model_version_number.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteModelVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelVersionInput");
@@ -13492,6 +14040,16 @@ pub struct DeleteModelInput {
     /// <p>The model type of the model to delete.</p>
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
 }
+impl DeleteModelInput {
+    /// <p>The model ID of the model to delete.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type of the model to delete.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteModelInput");
@@ -13508,6 +14066,12 @@ pub struct DeleteLabelInput {
     /// <p>The name of the label to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteLabelInput {
+    /// <p>The name of the label to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteLabelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteLabelInput");
@@ -13522,6 +14086,12 @@ impl std::fmt::Debug for DeleteLabelInput {
 pub struct DeleteExternalModelInput {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
     pub model_endpoint: std::option::Option<std::string::String>,
+}
+impl DeleteExternalModelInput {
+    /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    pub fn model_endpoint(&self) -> std::option::Option<&str> {
+        self.model_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteExternalModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13538,6 +14108,12 @@ pub struct DeleteEventTypeInput {
     /// <p>The name of the event type to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl DeleteEventTypeInput {
+    /// <p>The name of the event type to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteEventTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventTypeInput");
@@ -13552,6 +14128,12 @@ impl std::fmt::Debug for DeleteEventTypeInput {
 pub struct DeleteEventsByEventTypeInput {
     /// <p>The name of the event type.</p>
     pub event_type_name: std::option::Option<std::string::String>,
+}
+impl DeleteEventsByEventTypeInput {
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEventsByEventTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13572,6 +14154,20 @@ pub struct DeleteEventInput {
     /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
     pub delete_audit_history: std::option::Option<bool>,
 }
+impl DeleteEventInput {
+    /// <p>The ID of the event to delete.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    pub fn delete_audit_history(&self) -> std::option::Option<bool> {
+        self.delete_audit_history
+    }
+}
 impl std::fmt::Debug for DeleteEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventInput");
@@ -13588,6 +14184,12 @@ impl std::fmt::Debug for DeleteEventInput {
 pub struct DeleteEntityTypeInput {
     /// <p>The name of the entity type to delete.</p>
     pub name: std::option::Option<std::string::String>,
+}
+impl DeleteEntityTypeInput {
+    /// <p>The name of the entity type to delete.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteEntityTypeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13606,6 +14208,16 @@ pub struct DeleteDetectorVersionInput {
     /// <p>The ID of the detector version to delete.</p>
     pub detector_version_id: std::option::Option<std::string::String>,
 }
+impl DeleteDetectorVersionInput {
+    /// <p>The ID of the parent detector for the detector version to delete.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The ID of the detector version to delete.</p>
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+        self.detector_version_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDetectorVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDetectorVersionInput");
@@ -13622,6 +14234,12 @@ pub struct DeleteDetectorInput {
     /// <p>The ID of the detector to delete.</p>
     pub detector_id: std::option::Option<std::string::String>,
 }
+impl DeleteDetectorInput {
+    /// <p>The ID of the detector to delete.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDetectorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDetectorInput");
@@ -13637,6 +14255,12 @@ pub struct DeleteBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to delete.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DeleteBatchPredictionJobInput {
+    /// <p>The ID of the batch prediction job to delete.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBatchPredictionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBatchPredictionJobInput");
@@ -13651,6 +14275,12 @@ impl std::fmt::Debug for DeleteBatchPredictionJobInput {
 pub struct DeleteBatchImportJobInput {
     /// <p>The ID of the batch import job to delete. </p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DeleteBatchImportJobInput {
+    /// <p>The ID of the batch import job to delete. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBatchImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13681,6 +14311,39 @@ pub struct CreateVariableInput {
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateVariableInput {
+    /// <p>The name of the variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The data type.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::DataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The source of the data.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+    /// <p>The default value for the variable when no value is received.</p>
+    pub fn default_value(&self) -> std::option::Option<&str> {
+        self.default_value.as_deref()
+    }
+    /// <p>The description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
+    /// </p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
+    /// </p>
+    pub fn variable_type(&self) -> std::option::Option<&str> {
+        self.variable_type.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVariableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13715,6 +14378,36 @@ pub struct CreateRuleInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateRuleInput {
+    /// <p>The rule ID.</p>
+    pub fn rule_id(&self) -> std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
+    /// <p>The detector ID for the rule's parent detector.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The rule description.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The rule expression.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>The language of the rule.</p>
+    pub fn language(&self) -> std::option::Option<&crate::model::Language> {
+        self.language.as_ref()
+    }
+    /// <p>The outcome or outcomes returned when the rule expression matches.</p>
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+        self.outcomes.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleInput");
@@ -13748,6 +14441,42 @@ pub struct CreateModelVersionInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateModelVersionInput {
+    /// <p>The model ID. </p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type.</p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The training data source location in Amazon S3. </p>
+    pub fn training_data_source(
+        &self,
+    ) -> std::option::Option<&crate::model::TrainingDataSourceEnum> {
+        self.training_data_source.as_ref()
+    }
+    /// <p>The training data schema.</p>
+    pub fn training_data_schema(&self) -> std::option::Option<&crate::model::TrainingDataSchema> {
+        self.training_data_schema.as_ref()
+    }
+    /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    pub fn external_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
+        self.external_events_detail.as_ref()
+    }
+    /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub fn ingested_events_detail(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
+        self.ingested_events_detail.as_ref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateModelVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateModelVersionInput");
@@ -13776,6 +14505,28 @@ pub struct CreateModelInput {
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateModelInput {
+    /// <p>The model ID.</p>
+    pub fn model_id(&self) -> std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
+    /// <p>The model type. </p>
+    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+        self.model_type.as_ref()
+    }
+    /// <p>The model description. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13812,6 +14563,40 @@ pub struct CreateDetectorVersionInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDetectorVersionInput {
+    /// <p>The ID of the detector under which you want to create a new version.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The description of the detector version.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
+    pub fn external_model_endpoints(&self) -> std::option::Option<&[std::string::String]> {
+        self.external_model_endpoints.as_deref()
+    }
+    /// <p>The rules to include in the detector version.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+        self.rules.as_deref()
+    }
+    /// <p>The model versions to include in the detector version.</p>
+    pub fn model_versions(&self) -> std::option::Option<&[crate::model::ModelVersion]> {
+        self.model_versions.as_deref()
+    }
+    /// <p>The rule execution mode for the rules included in the detector version.</p>
+    /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
+    /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
+        self.rule_execution_mode.as_ref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDetectorVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDetectorVersionInput");
@@ -13847,6 +14632,40 @@ pub struct CreateBatchPredictionJobInput {
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateBatchPredictionJobInput {
+    /// <p>The ID of the batch prediction job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon S3 location of your training file.</p>
+    pub fn input_path(&self) -> std::option::Option<&str> {
+        self.input_path.as_deref()
+    }
+    /// <p>The Amazon S3 location of your output file.</p>
+    pub fn output_path(&self) -> std::option::Option<&str> {
+        self.output_path.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The name of the detector.</p>
+    pub fn detector_name(&self) -> std::option::Option<&str> {
+        self.detector_name.as_deref()
+    }
+    /// <p>The detector version.</p>
+    pub fn detector_version(&self) -> std::option::Option<&str> {
+        self.detector_version.as_deref()
+    }
+    /// <p>The ARN of the IAM role to use for this job request.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBatchPredictionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBatchPredictionJobInput");
@@ -13880,6 +14699,33 @@ pub struct CreateBatchImportJobInput {
     /// <p>A collection of key-value pairs associated with this request.  </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateBatchImportJobInput {
+    /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+    pub fn input_path(&self) -> std::option::Option<&str> {
+        self.input_path.as_deref()
+    }
+    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    pub fn output_path(&self) -> std::option::Option<&str> {
+        self.output_path.as_deref()
+    }
+    /// <p>The name of the event type.</p>
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
+        self.event_type_name.as_deref()
+    }
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+    /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
+    }
+    /// <p>A collection of key-value pairs associated with this request.  </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBatchImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBatchImportJobInput");
@@ -13900,6 +14746,12 @@ pub struct CancelBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to cancel.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CancelBatchPredictionJobInput {
+    /// <p>The ID of the batch prediction job to cancel.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelBatchPredictionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelBatchPredictionJobInput");
@@ -13916,6 +14768,13 @@ pub struct CancelBatchImportJobInput {
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CancelBatchImportJobInput {
+    /// <p> The ID of an in-progress batch import job to cancel. </p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelBatchImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelBatchImportJobInput");
@@ -13930,6 +14789,12 @@ impl std::fmt::Debug for CancelBatchImportJobInput {
 pub struct BatchGetVariableInput {
     /// <p>The list of variable names to get.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetVariableInput {
+    /// <p>The list of variable names to get.</p>
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+        self.names.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetVariableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13947,6 +14812,16 @@ pub struct BatchCreateVariableInput {
     pub variable_entries: std::option::Option<std::vec::Vec<crate::model::VariableEntry>>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl BatchCreateVariableInput {
+    /// <p>The list of variables for the batch create variable request.</p>
+    pub fn variable_entries(&self) -> std::option::Option<&[crate::model::VariableEntry]> {
+        self.variable_entries.as_deref()
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchCreateVariableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

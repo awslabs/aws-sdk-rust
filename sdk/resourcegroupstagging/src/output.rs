@@ -11,6 +11,19 @@ pub struct UntagResourcesOutput {
         std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
     >,
 }
+impl UntagResourcesOutput {
+    /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The
+    /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
+    /// that contains an error code, a status code, and an error message. If there are no
+    /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+    pub fn failed_resources_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
+    > {
+        self.failed_resources_map.as_ref()
+    }
+}
 impl std::fmt::Debug for UntagResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourcesOutput");
@@ -86,6 +99,19 @@ pub struct TagResourcesOutput {
     pub failed_resources_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
     >,
+}
+impl TagResourcesOutput {
+    /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The
+    /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
+    /// that contains an error code, a status code, and an error message. If there are no
+    /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+    pub fn failed_resources_map(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
+    > {
+        self.failed_resources_map.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -193,6 +219,19 @@ pub struct GetTagValuesOutput {
     /// Region for the calling AWS account.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetTagValuesOutput {
+    /// <p>A string that indicates that there is more data available than this
+    /// response contains. To receive the next part of the response, specify this response value
+    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>A list of all tag values for the specified key currently used in the specified AWS
+    /// Region for the calling AWS account.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTagValuesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTagValuesOutput");
@@ -276,6 +315,18 @@ pub struct GetTagKeysOutput {
     /// <p>A list of all tag keys in the AWS account.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetTagKeysOutput {
+    /// <p>A string that indicates that there is more data available than this
+    /// response contains. To receive the next part of the response, specify this response value
+    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>A list of all tag keys in the AWS account.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for GetTagKeysOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetTagKeysOutput");
@@ -358,6 +409,21 @@ pub struct GetResourcesOutput {
     /// those ARNs.</p>
     pub resource_tag_mapping_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
+}
+impl GetResourcesOutput {
+    /// <p>A string that indicates that there is more data available than this
+    /// response contains. To receive the next part of the response, specify this response value
+    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>A list of resource ARNs and the tags (keys and values) associated with
+    /// those ARNs.</p>
+    pub fn resource_tag_mapping_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceTagMapping]> {
+        self.resource_tag_mapping_list.as_deref()
+    }
 }
 impl std::fmt::Debug for GetResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -445,6 +511,18 @@ pub struct GetComplianceSummaryOutput {
     /// response contains. To receive the next part of the response, specify this response value
     /// as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl GetComplianceSummaryOutput {
+    /// <p>A table that shows counts of noncompliant resources.</p>
+    pub fn summary_list(&self) -> std::option::Option<&[crate::model::Summary]> {
+        self.summary_list.as_deref()
+    }
+    /// <p>A string that indicates that there is more data available than this
+    /// response contains. To receive the next part of the response, specify this response value
+    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetComplianceSummaryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -550,6 +628,46 @@ pub struct DescribeReportCreationOutput {
     pub start_date: std::option::Option<std::string::String>,
     /// <p>Details of the common errors that all operations return.</p>
     pub error_message: std::option::Option<std::string::String>,
+}
+impl DescribeReportCreationOutput {
+    /// <p>Reports the status of the operation.</p>
+    /// <p>The operation status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>RUNNING</code> - Report creation is in progress.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SUCCEEDED</code> - Report creation is complete. You can open the report
+    /// from the Amazon S3 bucket that you specified when you ran
+    /// <code>StartReportCreation</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not
+    /// accessible. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NO REPORT</code> - No report was generated in the last 90 days.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
+    pub fn s3_location(&self) -> std::option::Option<&str> {
+        self.s3_location.as_deref()
+    }
+    /// <p>The date and time that the report was started. </p>
+    pub fn start_date(&self) -> std::option::Option<&str> {
+        self.start_date.as_deref()
+    }
+    /// <p>Details of the common errors that all operations return.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReportCreationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

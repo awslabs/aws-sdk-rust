@@ -18,6 +18,28 @@ pub struct CognitoIdentityProvider {
     /// Authorized error.</p>
     pub server_side_token_check: std::option::Option<bool>,
 }
+impl CognitoIdentityProvider {
+    /// <p>The provider name for an Amazon Cognito user pool. For example,
+    /// <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The client ID for the Amazon Cognito user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>TRUE if server-side token validation is enabled for the identity provider’s
+    /// token.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
+    /// identity pool will check with the integrated user pools to make sure that the user has not
+    /// been globally signed out or deleted before the identity pool provides an OIDC token or AWS
+    /// credentials for the user.</p>
+    /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not
+    /// Authorized error.</p>
+    pub fn server_side_token_check(&self) -> std::option::Option<bool> {
+        self.server_side_token_check
+    }
+}
 impl std::fmt::Debug for CognitoIdentityProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CognitoIdentityProvider");
@@ -124,6 +146,34 @@ pub struct RoleMapping {
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
     /// required.</p>
     pub rules_configuration: std::option::Option<crate::model::RulesConfigurationType>,
+}
+impl RoleMapping {
+    /// <p>The role mapping type. Token will use <code>cognito:roles</code> and
+    /// <code>cognito:preferred_role</code> claims from the Cognito identity provider token to
+    /// map groups to roles. Rules will attempt to match claims from the token to map to a
+    /// role.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RoleMappingType> {
+        self.r#type.as_ref()
+    }
+    /// <p>If you specify Token or Rules as the <code>Type</code>,
+    /// <code>AmbiguousRoleResolution</code> is required.</p>
+    /// <p>Specifies the action to be taken if either no rules match the claim value for the
+    /// <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and
+    /// there are multiple <code>cognito:roles</code> matches for the <code>Token</code>
+    /// type.</p>
+    pub fn ambiguous_role_resolution(
+        &self,
+    ) -> std::option::Option<&crate::model::AmbiguousRoleResolutionType> {
+        self.ambiguous_role_resolution.as_ref()
+    }
+    /// <p>The rules to be used for mapping users to roles.</p>
+    /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
+    /// required.</p>
+    pub fn rules_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RulesConfigurationType> {
+        self.rules_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for RoleMapping {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -233,6 +283,13 @@ pub struct RulesConfigurationType {
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::MappingRule>>,
 }
+impl RulesConfigurationType {
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+    /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::MappingRule]> {
+        self.rules.as_deref()
+    }
+}
 impl std::fmt::Debug for RulesConfigurationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RulesConfigurationType");
@@ -298,6 +355,26 @@ pub struct MappingRule {
     pub value: std::option::Option<std::string::String>,
     /// <p>The role ARN.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl MappingRule {
+    /// <p>The claim name that must be present in the token, for example, "isAdmin" or
+    /// "paid".</p>
+    pub fn claim(&self) -> std::option::Option<&str> {
+        self.claim.as_deref()
+    }
+    /// <p>The match condition that specifies how closely the claim value in the IdP token must
+    /// match <code>Value</code>.</p>
+    pub fn match_type(&self) -> std::option::Option<&crate::model::MappingRuleMatchType> {
+        self.match_type.as_ref()
+    }
+    /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The role ARN.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for MappingRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,6 +645,16 @@ pub struct IdentityPoolShortDescription {
     /// <p>A string that you provide.</p>
     pub identity_pool_name: std::option::Option<std::string::String>,
 }
+impl IdentityPoolShortDescription {
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
+    }
+    /// <p>A string that you provide.</p>
+    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+        self.identity_pool_name.as_deref()
+    }
+}
 impl std::fmt::Debug for IdentityPoolShortDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityPoolShortDescription");
@@ -640,6 +727,24 @@ pub struct IdentityDescription {
     pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Date on which the identity was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl IdentityDescription {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The provider names.</p>
+    pub fn logins(&self) -> std::option::Option<&[std::string::String]> {
+        self.logins.as_deref()
+    }
+    /// <p>Date on which the identity was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_date.as_ref()
+    }
+    /// <p>Date on which the identity was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified_date.as_ref()
+    }
 }
 impl std::fmt::Debug for IdentityDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -749,6 +854,24 @@ pub struct Credentials {
     /// <p>The date at which these credentials will expire.</p>
     pub expiration: std::option::Option<aws_smithy_types::Instant>,
 }
+impl Credentials {
+    /// <p>The Access Key portion of the credentials.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The Secret Access Key portion of the credentials</p>
+    pub fn secret_key(&self) -> std::option::Option<&str> {
+        self.secret_key.as_deref()
+    }
+    /// <p>The Session Token portion of the credentials</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>The date at which these credentials will expire.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.expiration.as_ref()
+    }
+}
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Credentials");
@@ -847,6 +970,16 @@ pub struct UnprocessedIdentityId {
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The error code indicating the type of error that occurred.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
+}
+impl UnprocessedIdentityId {
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn identity_id(&self) -> std::option::Option<&str> {
+        self.identity_id.as_deref()
+    }
+    /// <p>The error code indicating the type of error that occurred.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
 }
 impl std::fmt::Debug for UnprocessedIdentityId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

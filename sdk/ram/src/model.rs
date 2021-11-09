@@ -45,6 +45,69 @@ pub struct ResourceShare {
     /// </ul>
     pub feature_set: std::option::Option<crate::model::ResourceShareFeatureSet>,
 }
+impl ResourceShare {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
+    pub fn owning_account_id(&self) -> std::option::Option<&str> {
+        self.owning_account_id.as_deref()
+    }
+    /// <p>Indicates whether principals outside your organization in Organizations can be associated
+    /// with a resource share.</p>
+    pub fn allow_external_principals(&self) -> std::option::Option<bool> {
+        self.allow_external_principals
+    }
+    /// <p>The status of the resource share.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceShareStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message about the status of the resource share.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The tags for the resource share.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The time when the resource share was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the resource share was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Indicates how the resource share was created. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an
+    /// Amazon Web Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource.
+    /// These resource shares are visible only to the Amazon Web Services account that created it. They cannot
+    /// be modified in RAM.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being
+    /// promoted. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STANDARD</code> - Indicates that the resource share was created in RAM using the
+    /// console or APIs. These resource shares are visible to all principals. They can
+    /// be modified in RAM.</p>
+    /// </li>
+    /// </ul>
+    pub fn feature_set(&self) -> std::option::Option<&crate::model::ResourceShareFeatureSet> {
+        self.feature_set.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceShare {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceShare");
@@ -343,6 +406,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -489,6 +562,48 @@ pub struct ResourceShareInvitation {
     /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
     /// invitation.</p>
     pub receiver_arn: std::option::Option<std::string::String>,
+}
+impl ResourceShareInvitation {
+    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_invitation_arn.as_deref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn resource_share_name(&self) -> std::option::Option<&str> {
+        self.resource_share_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
+    pub fn sender_account_id(&self) -> std::option::Option<&str> {
+        self.sender_account_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
+    pub fn receiver_account_id(&self) -> std::option::Option<&str> {
+        self.receiver_account_id.as_deref()
+    }
+    /// <p>The date and time when the invitation was sent.</p>
+    pub fn invitation_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.invitation_timestamp.as_ref()
+    }
+    /// <p>The status of the invitation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceShareInvitationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>To view the resources associated with a pending resource share invitation, use <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+    /// ListPendingInvitationResources</a>.</p>
+    pub fn resource_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
+        self.resource_share_associations.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+    /// invitation.</p>
+    pub fn receiver_arn(&self) -> std::option::Option<&str> {
+        self.receiver_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceShareInvitation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -723,6 +838,65 @@ pub struct ResourceShareAssociation {
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
     /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
+}
+impl ResourceShareAssociation {
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn resource_share_name(&self) -> std::option::Option<&str> {
+        self.resource_share_name.as_deref()
+    }
+    /// <p>The associated entity. For resource associations, this is the Amazon Resource Name
+    /// (ARN) of the resource. For principal associations, this is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organization in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM role</p>
+    /// </li>
+    /// <li>
+    /// <p>An ARN of an IAM user</p>
+    /// </li>
+    /// </ul>
+    pub fn associated_entity(&self) -> std::option::Option<&str> {
+        self.associated_entity.as_deref()
+    }
+    /// <p>The association type.</p>
+    pub fn association_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceShareAssociationType> {
+        self.association_type.as_ref()
+    }
+    /// <p>The status of the association.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceShareAssociationStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message about the status of the association.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The time when the association was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the association was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+    /// Amazon Web Services account that owns the resource share.</p>
+    pub fn external(&self) -> std::option::Option<bool> {
+        self.external
+    }
 }
 impl std::fmt::Debug for ResourceShareAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1136,6 +1310,16 @@ pub struct ServiceNameAndResourceType {
     /// <p>The name of the Amazon Web Services services to which the resources belong.</p>
     pub service_name: std::option::Option<std::string::String>,
 }
+impl ServiceNameAndResourceType {
+    /// <p>The shareable resource types.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services services to which the resources belong.</p>
+    pub fn service_name(&self) -> std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ServiceNameAndResourceType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceNameAndResourceType");
@@ -1217,6 +1401,46 @@ pub struct ResourceSharePermissionSummary {
     /// <p>Specifies whether the version of the permission is set to the default version for this
     /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
+}
+impl ResourceSharePermissionSummary {
+    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The identifier for the version of the permission.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// permission.</p>
+    pub fn default_version(&self) -> std::option::Option<bool> {
+        self.default_version
+    }
+    /// <p>The name of the permission.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of resource to which the permission applies.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The current status of the permission.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The date and time when the permission was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time when the permission was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// resource type.</p>
+    pub fn is_resource_type_default(&self) -> std::option::Option<bool> {
+        self.is_resource_type_default
+    }
 }
 impl std::fmt::Debug for ResourceSharePermissionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1397,6 +1621,41 @@ pub struct Resource {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the association was last updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Resource {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The resource type.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource group. This value is returned only if
+    /// the resource is a resource group.</p>
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+        self.resource_group_arn.as_deref()
+    }
+    /// <p>The status of the resource.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message about the status of the resource.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The time when the resource was associated with the resource share.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the association was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
 }
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1694,6 +1953,29 @@ pub struct Principal {
     /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
 }
+impl Principal {
+    /// <p>The ID of the principal.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
+    /// <p>The time when the principal was associated with the resource share.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time when the association was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+    /// Amazon Web Services account that owns the resource share.</p>
+    pub fn external(&self) -> std::option::Option<bool> {
+        self.external
+    }
+}
 impl std::fmt::Debug for Principal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Principal");
@@ -1807,6 +2089,16 @@ pub struct TagFilter {
     /// <p>The tag values.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TagFilter {
+    /// <p>The tag key.</p>
+    pub fn tag_key(&self) -> std::option::Option<&str> {
+        self.tag_key.as_deref()
+    }
+    /// <p>The tag values.</p>
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_values.as_deref()
+    }
+}
 impl std::fmt::Debug for TagFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagFilter");
@@ -1896,6 +2188,48 @@ pub struct ResourceSharePermissionDetail {
     /// <p>Specifies whether the version of the permission is set to the default version for this
     /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
+}
+impl ResourceSharePermissionDetail {
+    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The identifier for the version of the permission.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// permission.</p>
+    pub fn default_version(&self) -> std::option::Option<bool> {
+        self.default_version
+    }
+    /// <p>The name of the permission.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The resource type to which the permission applies.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates
+    /// whether the actions are allowed or denied. The <code>actions</code> list the API actions
+    /// to which the principal is granted or denied access.</p>
+    pub fn permission(&self) -> std::option::Option<&str> {
+        self.permission.as_deref()
+    }
+    /// <p>The date and time when the permission was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The date and time when the permission was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>Specifies whether the version of the permission is set to the default version for this
+    /// resource type.</p>
+    pub fn is_resource_type_default(&self) -> std::option::Option<bool> {
+        self.is_resource_type_default
+    }
 }
 impl std::fmt::Debug for ResourceSharePermissionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

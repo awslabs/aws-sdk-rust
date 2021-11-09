@@ -38,6 +38,16 @@ pub struct ListAccountsOutput {
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
     pub account_list: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>,
 }
+impl ListAccountsOutput {
+    /// <p>The page token client that is used to retrieve the list of accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
+    pub fn account_list(&self) -> std::option::Option<&[crate::model::AccountInfo]> {
+        self.account_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountsOutput");
@@ -110,6 +120,16 @@ pub struct ListAccountRolesOutput {
     /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
     pub role_list: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>,
 }
+impl ListAccountRolesOutput {
+    /// <p>The page token client that is used to retrieve the list of accounts.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
+    pub fn role_list(&self) -> std::option::Option<&[crate::model::RoleInfo]> {
+        self.role_list.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountRolesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountRolesOutput");
@@ -179,6 +199,12 @@ impl ListAccountRolesOutput {
 pub struct GetRoleCredentialsOutput {
     /// <p>The credentials for the role that is assigned to the user.</p>
     pub role_credentials: std::option::Option<crate::model::RoleCredentials>,
+}
+impl GetRoleCredentialsOutput {
+    /// <p>The credentials for the role that is assigned to the user.</p>
+    pub fn role_credentials(&self) -> std::option::Option<&crate::model::RoleCredentials> {
+        self.role_credentials.as_ref()
+    }
 }
 impl std::fmt::Debug for GetRoleCredentialsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

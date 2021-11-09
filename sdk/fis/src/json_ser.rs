@@ -2,13 +2,13 @@
 pub fn serialize_structure_crate_input_create_experiment_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateExperimentTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.actions {
         let mut object_2 = object.key("actions").start_object();
         for (key_3, value_4) in var_1 {
             {
                 let mut object_5 = object_2.key(key_3).start_object();
-                crate::json_ser::serialize_structure_crate_model_create_experiment_template_action_input(&mut object_5, value_4);
+                crate::json_ser::serialize_structure_crate_model_create_experiment_template_action_input(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_create_experiment_template_input(
         for item_11 in var_9 {
             {
                 let mut object_12 = array_10.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_create_experiment_template_stop_condition_input(&mut object_12, item_11);
+                crate::json_ser::serialize_structure_crate_model_create_experiment_template_stop_condition_input(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -48,18 +48,19 @@ pub fn serialize_structure_crate_input_create_experiment_template_input(
         for (key_19, value_20) in var_17 {
             {
                 let mut object_21 = object_18.key(key_19).start_object();
-                crate::json_ser::serialize_structure_crate_model_create_experiment_template_target_input(&mut object_21, value_20);
+                crate::json_ser::serialize_structure_crate_model_create_experiment_template_target_input(&mut object_21, value_20)?;
                 object_21.finish();
             }
         }
         object_18.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_start_experiment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartExperimentInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.client_token {
         object.key("clientToken").string(var_22);
     }
@@ -75,12 +76,13 @@ pub fn serialize_structure_crate_input_start_experiment_input(
         }
         object_25.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.tags {
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
@@ -90,18 +92,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         }
         object_29.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_experiment_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateExperimentTemplateInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.actions {
         let mut object_33 = object.key("actions").start_object();
         for (key_34, value_35) in var_32 {
             {
                 let mut object_36 = object_33.key(key_34).start_object();
-                crate::json_ser::serialize_structure_crate_model_update_experiment_template_action_input_item(&mut object_36, value_35);
+                crate::json_ser::serialize_structure_crate_model_update_experiment_template_action_input_item(&mut object_36, value_35)?;
                 object_36.finish();
             }
         }
@@ -118,7 +121,7 @@ pub fn serialize_structure_crate_input_update_experiment_template_input(
         for item_41 in var_39 {
             {
                 let mut object_42 = array_40.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_update_experiment_template_stop_condition_input(&mut object_42, item_41);
+                crate::json_ser::serialize_structure_crate_model_update_experiment_template_stop_condition_input(&mut object_42, item_41)?;
                 object_42.finish();
             }
         }
@@ -129,18 +132,19 @@ pub fn serialize_structure_crate_input_update_experiment_template_input(
         for (key_45, value_46) in var_43 {
             {
                 let mut object_47 = object_44.key(key_45).start_object();
-                crate::json_ser::serialize_structure_crate_model_update_experiment_template_target_input(&mut object_47, value_46);
+                crate::json_ser::serialize_structure_crate_model_update_experiment_template_target_input(&mut object_47, value_46)?;
                 object_47.finish();
             }
         }
         object_44.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_create_experiment_template_action_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateActionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.action_id {
         object.key("actionId").string(var_48);
     }
@@ -174,24 +178,26 @@ pub fn serialize_structure_crate_model_create_experiment_template_action_input(
         }
         array_59.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_create_experiment_template_stop_condition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateStopConditionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.source {
         object.key("source").string(var_61);
     }
     if let Some(var_62) = &input.value {
         object.key("value").string(var_62);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_create_experiment_template_target_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateTargetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.resource_type {
         object.key("resourceType").string(var_63);
     }
@@ -218,7 +224,7 @@ pub fn serialize_structure_crate_model_create_experiment_template_target_input(
         for item_73 in var_71 {
             {
                 let mut object_74 = array_72.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_experiment_template_target_input_filter(&mut object_74, item_73);
+                crate::json_ser::serialize_structure_crate_model_experiment_template_target_input_filter(&mut object_74, item_73)?;
                 object_74.finish();
             }
         }
@@ -227,12 +233,13 @@ pub fn serialize_structure_crate_model_create_experiment_template_target_input(
     if let Some(var_75) = &input.selection_mode {
         object.key("selectionMode").string(var_75);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_update_experiment_template_action_input_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateActionInputItem,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.action_id {
         object.key("actionId").string(var_76);
     }
@@ -266,24 +273,26 @@ pub fn serialize_structure_crate_model_update_experiment_template_action_input_i
         }
         array_87.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_update_experiment_template_stop_condition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateStopConditionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.source {
         object.key("source").string(var_89);
     }
     if let Some(var_90) = &input.value {
         object.key("value").string(var_90);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_update_experiment_template_target_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateTargetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_91) = &input.resource_type {
         object.key("resourceType").string(var_91);
     }
@@ -310,7 +319,7 @@ pub fn serialize_structure_crate_model_update_experiment_template_target_input(
         for item_101 in var_99 {
             {
                 let mut object_102 = array_100.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_experiment_template_target_input_filter(&mut object_102, item_101);
+                crate::json_ser::serialize_structure_crate_model_experiment_template_target_input_filter(&mut object_102, item_101)?;
                 object_102.finish();
             }
         }
@@ -319,12 +328,13 @@ pub fn serialize_structure_crate_model_update_experiment_template_target_input(
     if let Some(var_103) = &input.selection_mode {
         object.key("selectionMode").string(var_103);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_experiment_template_target_input_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExperimentTemplateTargetInputFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_104) = &input.path {
         object.key("path").string(var_104);
     }
@@ -337,4 +347,5 @@ pub fn serialize_structure_crate_model_experiment_template_target_input_filter(
         }
         array_106.finish();
     }
+    Ok(())
 }

@@ -102,6 +102,21 @@ pub struct RevocationConfiguration {
     /// to reflect the new status.</p>
     pub ocsp_configuration: std::option::Option<crate::model::OcspConfiguration>,
 }
+impl RevocationConfiguration {
+    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
+    /// CA. A CRL is typically updated approximately 30 minutes after a certificate
+    /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
+    /// every 15 minutes.</p>
+    pub fn crl_configuration(&self) -> std::option::Option<&crate::model::CrlConfiguration> {
+        self.crl_configuration.as_ref()
+    }
+    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
+    /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
+    /// to reflect the new status.</p>
+    pub fn ocsp_configuration(&self) -> std::option::Option<&crate::model::OcspConfiguration> {
+        self.ocsp_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for RevocationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevocationConfiguration");
@@ -191,6 +206,24 @@ pub struct OcspConfiguration {
     /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
     /// Guide</i>.</p>
     pub ocsp_custom_cname: std::option::Option<std::string::String>,
+}
+impl OcspConfiguration {
+    /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
+    /// certificate revocation status.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
+    /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
+    /// to define a CNAME specifying a customized OCSP domain.</p>
+    /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
+    /// "https://".</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
+    /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
+    /// Guide</i>.</p>
+    pub fn ocsp_custom_cname(&self) -> std::option::Option<&str> {
+        self.ocsp_custom_cname.as_deref()
+    }
 }
 impl std::fmt::Debug for OcspConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -419,6 +452,52 @@ pub struct CrlConfiguration {
     /// bucket</a>.</p>
     pub s3_object_acl: std::option::Option<crate::model::S3ObjectAcl>,
 }
+impl CrlConfiguration {
+    /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
+    /// You can use this value to enable certificate revocation for a new CA when you call the
+    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the
+    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+    /// <p>Validity period of the CRL in days.</p>
+    pub fn expiration_in_days(&self) -> std::option::Option<i32> {
+        self.expiration_in_days
+    }
+    /// <p>Name inserted into the certificate <b>CRL Distribution
+    /// Points</b> extension that enables the use of an alias for the CRL
+    /// distribution point. Use this value if you don't want the name of your S3 bucket to be
+    /// public.</p>
+    pub fn custom_cname(&self) -> std::option::Option<&str> {
+        self.custom_cname.as_deref()
+    }
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
+    /// <b>CustomCname</b> argument, the name of your S3 bucket
+    /// is placed into the <b>CRL Distribution Points</b> extension of
+    /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+    /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL
+    /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
+    /// internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket
+    /// can access the CRL, and your PKI clients may need an alternative method of access. </p>
+    /// <p>If no value is specified, the default is <code>PUBLIC_READ</code>.</p>
+    /// <p>
+    /// <i>Note:</i> This default can cause CA creation to fail in some
+    /// circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3
+    /// account, then you must specify the value of this parameter as
+    /// <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you
+    /// have disabled BPA in S3, then you can specify either
+    /// <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
+    /// value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3
+    /// bucket</a>.</p>
+    pub fn s3_object_acl(&self) -> std::option::Option<&crate::model::S3ObjectAcl> {
+        self.s3_object_acl.as_ref()
+    }
+}
 impl std::fmt::Debug for CrlConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CrlConfiguration");
@@ -633,6 +712,16 @@ pub struct Tag {
     /// <p>Value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>Key (name) of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -799,6 +888,34 @@ pub struct Permission {
     pub actions: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
     /// <p>The name of the policy that is associated with the permission.</p>
     pub policy: std::option::Option<std::string::String>,
+}
+impl Permission {
+    /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was
+    /// issued.</p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+    /// <p>The time at which the permission was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The AWS service or entity that holds the permission. At this time, the only valid
+    /// principal is <code>acm.amazonaws.com</code>.</p>
+    pub fn principal(&self) -> std::option::Option<&str> {
+        self.principal.as_deref()
+    }
+    /// <p>The ID of the account that assigned the permission.</p>
+    pub fn source_account(&self) -> std::option::Option<&str> {
+        self.source_account.as_deref()
+    }
+    /// <p>The private CA actions that can be performed by the designated AWS service.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::ActionType]> {
+        self.actions.as_deref()
+    }
+    /// <p>The name of the policy that is associated with the permission.</p>
+    pub fn policy(&self) -> std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl std::fmt::Debug for Permission {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1040,6 +1157,81 @@ pub struct CertificateAuthority {
     /// be created in this region with the specified security standard."</p>
     pub key_storage_security_standard:
         std::option::Option<crate::model::KeyStorageSecurityStandard>,
+}
+impl CertificateAuthority {
+    /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is
+    /// <code>
+    /// <i>12345678-1234-1234-1234-123456789012</i>
+    /// </code>.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The AWS account ID that owns the certificate authority.</p>
+    pub fn owner_account(&self) -> std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
+    /// <p>Date and time at which your private CA was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Date and time at which your private CA was last updated.</p>
+    pub fn last_state_change_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_state_change_at.as_ref()
+    }
+    /// <p>Type of your private CA.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateAuthorityType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Serial number of your private CA.</p>
+    pub fn serial(&self) -> std::option::Option<&str> {
+        self.serial.as_deref()
+    }
+    /// <p>Status of your private CA.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateAuthorityStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Date and time before which your private CA certificate is not valid.</p>
+    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_before.as_ref()
+    }
+    /// <p>Date and time after which your private CA certificate is not valid.</p>
+    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.not_after.as_ref()
+    }
+    /// <p>Reason the request to create your private CA failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&crate::model::FailureReason> {
+        self.failure_reason.as_ref()
+    }
+    /// <p>Your private CA configuration.</p>
+    pub fn certificate_authority_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CertificateAuthorityConfiguration> {
+        self.certificate_authority_configuration.as_ref()
+    }
+    /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
+    /// certificate revocation list (CRL) created and maintained by your private CA. </p>
+    pub fn revocation_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RevocationConfiguration> {
+        self.revocation_configuration.as_ref()
+    }
+    /// <p>The period during which a deleted CA can be restored. For more information, see the
+    /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
+    pub fn restorable_until(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.restorable_until.as_ref()
+    }
+    /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
+    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+    /// explicitly specify this parameter and value when creating a CA in that Region.
+    /// Specifying a different value (or no value) results in an
+    /// <code>InvalidArgsException</code> with the message "A certificate authority cannot
+    /// be created in this region with the specified security standard."</p>
+    pub fn key_storage_security_standard(
+        &self,
+    ) -> std::option::Option<&crate::model::KeyStorageSecurityStandard> {
+        self.key_storage_security_standard.as_ref()
+    }
 }
 impl std::fmt::Debug for CertificateAuthority {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1408,6 +1600,30 @@ pub struct CertificateAuthorityConfiguration {
     /// request (CSR).</p>
     pub csr_extensions: std::option::Option<crate::model::CsrExtensions>,
 }
+impl CertificateAuthorityConfiguration {
+    /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA
+    /// creates when it issues a certificate. When you create a subordinate CA, you must use a
+    /// key algorithm supported by the parent CA.</p>
+    pub fn key_algorithm(&self) -> std::option::Option<&crate::model::KeyAlgorithm> {
+        self.key_algorithm.as_ref()
+    }
+    /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
+    /// used to sign certificates when they are issued.</p>
+    pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlgorithm> {
+        self.signing_algorithm.as_ref()
+    }
+    /// <p>Structure that contains X.500 distinguished name information for your private
+    /// CA.</p>
+    pub fn subject(&self) -> std::option::Option<&crate::model::Asn1Subject> {
+        self.subject.as_ref()
+    }
+    /// <p>Specifies information to be added to the extension section of the certificate signing
+    /// request (CSR).</p>
+    pub fn csr_extensions(&self) -> std::option::Option<&crate::model::CsrExtensions> {
+        self.csr_extensions.as_ref()
+    }
+}
 impl std::fmt::Debug for CertificateAuthorityConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CertificateAuthorityConfiguration");
@@ -1526,6 +1742,21 @@ pub struct CsrExtensions {
     pub subject_information_access:
         std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
 }
+impl CsrExtensions {
+    /// <p>Indicates the purpose of the certificate and of the key contained in the
+    /// certificate.</p>
+    pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsage> {
+        self.key_usage.as_ref()
+    }
+    /// <p>For CA certificates, provides a path to additional information pertaining to the CA,
+    /// such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
+    /// Access</a> in RFC 5280.</p>
+    pub fn subject_information_access(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccessDescription]> {
+        self.subject_information_access.as_deref()
+    }
+}
 impl std::fmt::Debug for CsrExtensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CsrExtensions");
@@ -1611,6 +1842,16 @@ pub struct AccessDescription {
     pub access_method: std::option::Option<crate::model::AccessMethod>,
     /// <p>The location of <code>AccessDescription</code> information.</p>
     pub access_location: std::option::Option<crate::model::GeneralName>,
+}
+impl AccessDescription {
+    /// <p>The type and format of <code>AccessDescription</code> information.</p>
+    pub fn access_method(&self) -> std::option::Option<&crate::model::AccessMethod> {
+        self.access_method.as_ref()
+    }
+    /// <p>The location of <code>AccessDescription</code> information.</p>
+    pub fn access_location(&self) -> std::option::Option<&crate::model::GeneralName> {
+        self.access_location.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1698,6 +1939,44 @@ pub struct GeneralName {
     pub ip_address: std::option::Option<std::string::String>,
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub registered_id: std::option::Option<std::string::String>,
+}
+impl GeneralName {
+    /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
+    pub fn other_name(&self) -> std::option::Option<&crate::model::OtherName> {
+        self.other_name.as_ref()
+    }
+    /// <p>Represents <code>GeneralName</code> as an <a href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+    pub fn rfc822_name(&self) -> std::option::Option<&str> {
+        self.rfc822_name.as_deref()
+    }
+    /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
+    /// the certificate identifies the entity that owns or controls the public key in the
+    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
+    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
+    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    pub fn directory_name(&self) -> std::option::Option<&crate::model::Asn1Subject> {
+        self.directory_name.as_ref()
+    }
+    /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
+    pub fn edi_party_name(&self) -> std::option::Option<&crate::model::EdiPartyName> {
+        self.edi_party_name.as_ref()
+    }
+    /// <p>Represents <code>GeneralName</code> as a URI.</p>
+    pub fn uniform_resource_identifier(&self) -> std::option::Option<&str> {
+        self.uniform_resource_identifier.as_deref()
+    }
+    /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
+    pub fn ip_address(&self) -> std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
+    /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
+    pub fn registered_id(&self) -> std::option::Option<&str> {
+        self.registered_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GeneralName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1871,6 +2150,16 @@ pub struct EdiPartyName {
     /// <p>Specifies the name assigner.</p>
     pub name_assigner: std::option::Option<std::string::String>,
 }
+impl EdiPartyName {
+    /// <p>Specifies the party name.</p>
+    pub fn party_name(&self) -> std::option::Option<&str> {
+        self.party_name.as_deref()
+    }
+    /// <p>Specifies the name assigner.</p>
+    pub fn name_assigner(&self) -> std::option::Option<&str> {
+        self.name_assigner.as_deref()
+    }
+}
 impl std::fmt::Debug for EdiPartyName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EdiPartyName");
@@ -1977,6 +2266,77 @@ pub struct Asn1Subject {
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for
     /// junior, Sr. for senior, and III for third.</p>
     pub generation_qualifier: std::option::Option<std::string::String>,
+}
+impl Asn1Subject {
+    /// <p>Two-digit code that specifies the country in which the certificate subject
+    /// located.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>Legal name of the organization with which the certificate subject is affiliated.
+    /// </p>
+    pub fn organization(&self) -> std::option::Option<&str> {
+        self.organization.as_deref()
+    }
+    /// <p>A subdivision or unit of the organization (such as sales or finance) with which the
+    /// certificate subject is affiliated.</p>
+    pub fn organizational_unit(&self) -> std::option::Option<&str> {
+        self.organizational_unit.as_deref()
+    }
+    /// <p>Disambiguating information for the certificate subject.</p>
+    pub fn distinguished_name_qualifier(&self) -> std::option::Option<&str> {
+        self.distinguished_name_qualifier.as_deref()
+    }
+    /// <p>State in which the subject of the certificate is located.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any
+    /// string within the length limit. </p>
+    /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified
+    /// domain name (FQDN) associated with the certificate subject.</p>
+    pub fn common_name(&self) -> std::option::Option<&str> {
+        self.common_name.as_deref()
+    }
+    /// <p>The certificate serial number.</p>
+    pub fn serial_number(&self) -> std::option::Option<&str> {
+        self.serial_number.as_deref()
+    }
+    /// <p>The locality (such as a city or town) in which the certificate subject is
+    /// located.</p>
+    pub fn locality(&self) -> std::option::Option<&str> {
+        self.locality.as_deref()
+    }
+    /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the
+    /// certificate subject.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>Family name. In the US and the UK, for example, the surname of an individual is
+    /// ordered last. In Asian cultures the surname is typically ordered first.</p>
+    pub fn surname(&self) -> std::option::Option<&str> {
+        self.surname.as_deref()
+    }
+    /// <p>First name.</p>
+    pub fn given_name(&self) -> std::option::Option<&str> {
+        self.given_name.as_deref()
+    }
+    /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the
+    /// first letter of the <b>Surname</b>.</p>
+    pub fn initials(&self) -> std::option::Option<&str> {
+        self.initials.as_deref()
+    }
+    /// <p>Typically a shortened version of a longer <b>GivenName</b>.
+    /// For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth,
+    /// Liz, or Eliza.</p>
+    pub fn pseudonym(&self) -> std::option::Option<&str> {
+        self.pseudonym.as_deref()
+    }
+    /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for
+    /// junior, Sr. for senior, and III for third.</p>
+    pub fn generation_qualifier(&self) -> std::option::Option<&str> {
+        self.generation_qualifier.as_deref()
+    }
 }
 impl std::fmt::Debug for Asn1Subject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2244,6 +2604,16 @@ pub struct OtherName {
     /// <p>Specifies an OID value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl OtherName {
+    /// <p>Specifies an OID. </p>
+    pub fn type_id(&self) -> std::option::Option<&str> {
+        self.type_id.as_deref()
+    }
+    /// <p>Specifies an OID value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for OtherName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OtherName");
@@ -2311,6 +2681,19 @@ pub struct AccessMethod {
     pub custom_object_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the <code>AccessMethod</code>.</p>
     pub access_method_type: std::option::Option<crate::model::AccessMethodType>,
+}
+impl AccessMethod {
+    /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must
+    /// satisfy the regular expression shown below. For more information, see NIST's definition
+    /// of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+    /// (OID)</a>.</p>
+    pub fn custom_object_identifier(&self) -> std::option::Option<&str> {
+        self.custom_object_identifier.as_deref()
+    }
+    /// <p>Specifies the <code>AccessMethod</code>.</p>
+    pub fn access_method_type(&self) -> std::option::Option<&crate::model::AccessMethodType> {
+        self.access_method_type.as_ref()
+    }
 }
 impl std::fmt::Debug for AccessMethod {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2464,6 +2847,44 @@ pub struct KeyUsage {
     pub encipher_only: bool,
     /// <p>Key can be used only to decipher data.</p>
     pub decipher_only: bool,
+}
+impl KeyUsage {
+    /// <p> Key can be used for digital signing.</p>
+    pub fn digital_signature(&self) -> bool {
+        self.digital_signature
+    }
+    /// <p>Key can be used for non-repudiation.</p>
+    pub fn non_repudiation(&self) -> bool {
+        self.non_repudiation
+    }
+    /// <p>Key can be used to encipher data.</p>
+    pub fn key_encipherment(&self) -> bool {
+        self.key_encipherment
+    }
+    /// <p>Key can be used to decipher data.</p>
+    pub fn data_encipherment(&self) -> bool {
+        self.data_encipherment
+    }
+    /// <p>Key can be used in a key-agreement protocol.</p>
+    pub fn key_agreement(&self) -> bool {
+        self.key_agreement
+    }
+    /// <p>Key can be used to sign certificates.</p>
+    pub fn key_cert_sign(&self) -> bool {
+        self.key_cert_sign
+    }
+    /// <p>Key can be used to sign CRLs.</p>
+    pub fn crl_sign(&self) -> bool {
+        self.crl_sign
+    }
+    /// <p>Key can be used only to encipher data.</p>
+    pub fn encipher_only(&self) -> bool {
+        self.encipher_only
+    }
+    /// <p>Key can be used only to decipher data.</p>
+    pub fn decipher_only(&self) -> bool {
+        self.decipher_only
+    }
 }
 impl std::fmt::Debug for KeyUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2981,6 +3402,59 @@ pub struct Validity {
     /// time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub r#type: std::option::Option<crate::model::ValidityPeriodType>,
 }
+impl Validity {
+    /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
+    pub fn value(&self) -> std::option::Option<i64> {
+        self.value
+    }
+    /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code>
+    /// parameter, an integer. Supported validity types include those listed below. Type
+    /// definitions with values include a sample input value and the resulting output. </p>
+    /// <p>
+    /// <code>END_DATE</code>: The specific date and time when the certificate will expire,
+    /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When
+    /// UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is
+    /// interpreted as 19YY. If the year field is less than 50, the year is interpreted as
+    /// 20YY.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Sample input value: 491231235959 (UTCTime format)</p>
+    /// </li>
+    /// <li>
+    /// <p>Output expiration date/time: 12/31/2049 23:59:59</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate
+    /// will start or expire, expressed in seconds since the Unix Epoch. </p>
+    /// <ul>
+    /// <li>
+    /// <p>Sample input value: 2524608000</p>
+    /// </li>
+    /// <li>
+    /// <p>Output expiration date/time: 01/01/2050 00:00:00</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the
+    /// moment of issuance until the certificate will expire, expressed in days, months, or
+    /// years. </p>
+    /// <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Sample input value: 90</p>
+    /// </li>
+    /// <li>
+    /// <p>Output expiration date: 01/10/2020 12:34:54 UTC</p>
+    /// </li>
+    /// </ul>
+    /// <p>The minimum validity duration for a certificate using relative time
+    /// (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute
+    /// time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ValidityPeriodType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for Validity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Validity");
@@ -3209,6 +3683,20 @@ pub struct ApiPassthrough {
     /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub subject: std::option::Option<crate::model::Asn1Subject>,
 }
+impl ApiPassthrough {
+    /// <p>Specifies X.509 extension information for a certificate.</p>
+    pub fn extensions(&self) -> std::option::Option<&crate::model::Extensions> {
+        self.extensions.as_ref()
+    }
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
+    /// the certificate identifies the entity that owns or controls the public key in the
+    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
+    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
+    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    pub fn subject(&self) -> std::option::Option<&crate::model::Asn1Subject> {
+        self.subject.as_ref()
+    }
+}
 impl std::fmt::Debug for ApiPassthrough {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApiPassthrough");
@@ -3300,6 +3788,35 @@ pub struct Extensions {
     /// the certificate. These identities may be included in addition to or in place of the
     /// identity in the subject field of the certificate.</p>
     pub subject_alternative_names: std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
+}
+impl Extensions {
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of
+    /// an object identifier (OID) and optional qualifiers. For more information, see NIST's
+    /// definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
+    /// Identifier (OID)</a>.</p>
+    /// <p>In an end-entity certificate, these terms indicate the policy under which the
+    /// certificate was issued and the purposes for which it may be used. In a CA certificate,
+    /// these terms limit the set of policies for certification paths that include this
+    /// certificate.</p>
+    pub fn certificate_policies(&self) -> std::option::Option<&[crate::model::PolicyInformation]> {
+        self.certificate_policies.as_deref()
+    }
+    /// <p>Specifies additional purposes for which the certified public key may be used other
+    /// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+    pub fn extended_key_usage(&self) -> std::option::Option<&[crate::model::ExtendedKeyUsage]> {
+        self.extended_key_usage.as_deref()
+    }
+    /// <p>Defines one or more purposes for which the key contained in the certificate can be
+    /// used. Default value for each option is false.</p>
+    pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsage> {
+        self.key_usage.as_ref()
+    }
+    /// <p>The subject alternative name extension allows identities to be bound to the subject of
+    /// the certificate. These identities may be included in addition to or in place of the
+    /// identity in the subject field of the certificate.</p>
+    pub fn subject_alternative_names(&self) -> std::option::Option<&[crate::model::GeneralName]> {
+        self.subject_alternative_names.as_deref()
+    }
 }
 impl std::fmt::Debug for Extensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3452,6 +3969,19 @@ pub struct ExtendedKeyUsage {
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
     /// (OID).</p>
     pub extended_key_usage_object_identifier: std::option::Option<std::string::String>,
+}
+impl ExtendedKeyUsage {
+    /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
+    pub fn extended_key_usage_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ExtendedKeyUsageType> {
+        self.extended_key_usage_type.as_ref()
+    }
+    /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
+    /// (OID).</p>
+    pub fn extended_key_usage_object_identifier(&self) -> std::option::Option<&str> {
+        self.extended_key_usage_object_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for ExtendedKeyUsage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3629,6 +4159,19 @@ pub struct PolicyInformation {
     /// certification practice statement (CPS) qualifier.</p>
     pub policy_qualifiers: std::option::Option<std::vec::Vec<crate::model::PolicyQualifierInfo>>,
 }
+impl PolicyInformation {
+    /// <p>Specifies the object identifier (OID) of the certificate policy under which the
+    /// certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
+    /// (OID)</a>.</p>
+    pub fn cert_policy_id(&self) -> std::option::Option<&str> {
+        self.cert_policy_id.as_deref()
+    }
+    /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the
+    /// certification practice statement (CPS) qualifier.</p>
+    pub fn policy_qualifiers(&self) -> std::option::Option<&[crate::model::PolicyQualifierInfo]> {
+        self.policy_qualifiers.as_deref()
+    }
+}
 impl std::fmt::Debug for PolicyInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyInformation");
@@ -3716,6 +4259,17 @@ pub struct PolicyQualifierInfo {
     /// this field.</p>
     pub qualifier: std::option::Option<crate::model::Qualifier>,
 }
+impl PolicyQualifierInfo {
+    /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
+    pub fn policy_qualifier_id(&self) -> std::option::Option<&crate::model::PolicyQualifierId> {
+        self.policy_qualifier_id.as_ref()
+    }
+    /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in
+    /// this field.</p>
+    pub fn qualifier(&self) -> std::option::Option<&crate::model::Qualifier> {
+        self.qualifier.as_ref()
+    }
+}
 impl std::fmt::Debug for PolicyQualifierInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PolicyQualifierInfo");
@@ -3786,6 +4340,13 @@ pub struct Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the
     /// CA.</p>
     pub cps_uri: std::option::Option<std::string::String>,
+}
+impl Qualifier {
+    /// <p>Contains a pointer to a certification practice statement (CPS) published by the
+    /// CA.</p>
+    pub fn cps_uri(&self) -> std::option::Option<&str> {
+        self.cps_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for Qualifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

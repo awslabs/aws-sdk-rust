@@ -6,6 +6,12 @@ pub struct UpdateQualificationTypeOutput {
     /// <p> Contains a QualificationType data structure.</p>
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
+impl UpdateQualificationTypeOutput {
+    /// <p> Contains a QualificationType data structure.</p>
+    pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
+        self.qualification_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateQualificationTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQualificationTypeOutput");
@@ -301,6 +307,17 @@ pub struct NotifyWorkersOutput {
     pub notify_workers_failure_statuses:
         std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
 }
+impl NotifyWorkersOutput {
+    /// <p> When MTurk sends notifications to the list of Workers, it
+    /// returns back any failures it encounters in this list of
+    /// NotifyWorkersFailureStatus objects.
+    /// </p>
+    pub fn notify_workers_failure_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::NotifyWorkersFailureStatus]> {
+        self.notify_workers_failure_statuses.as_deref()
+    }
+}
 impl std::fmt::Debug for NotifyWorkersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotifyWorkersOutput");
@@ -380,6 +397,26 @@ pub struct ListWorkersWithQualificationTypeOutput {
     /// <p> The list of Qualification elements returned by this call.
     /// </p>
     pub qualifications: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
+}
+impl ListWorkersWithQualificationTypeOutput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The number of Qualifications on this page in the filtered
+    /// results list, equivalent to the number of Qualifications being
+    /// returned by this call.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p> The list of Qualification elements returned by this call.
+    /// </p>
+    pub fn qualifications(&self) -> std::option::Option<&[crate::model::Qualification]> {
+        self.qualifications.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWorkersWithQualificationTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -485,6 +522,26 @@ pub struct ListWorkerBlocksOutput {
     /// <p> The list of WorkerBlocks, containing the collection of
     /// Worker IDs and reasons for blocking.</p>
     pub worker_blocks: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
+}
+impl ListWorkerBlocksOutput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The number of assignments on the page in the filtered
+    /// results list, equivalent to the number of assignments returned by
+    /// this call.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p> The list of WorkerBlocks, containing the collection of
+    /// Worker IDs and reasons for blocking.</p>
+    pub fn worker_blocks(&self) -> std::option::Option<&[crate::model::WorkerBlock]> {
+        self.worker_blocks.as_deref()
+    }
 }
 impl std::fmt::Debug for ListWorkerBlocksOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -599,6 +656,41 @@ pub struct ListReviewPolicyResultsForHitOutput {
     /// to retrieve the next set of results.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListReviewPolicyResultsForHitOutput {
+    /// <p>The HITId of the HIT for which results have been returned.</p>
+    pub fn hit_id(&self) -> std::option::Option<&str> {
+        self.hit_id.as_deref()
+    }
+    /// <p> The name of the Assignment-level Review Policy. This
+    /// contains only the PolicyName element.
+    /// </p>
+    pub fn assignment_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
+        self.assignment_review_policy.as_ref()
+    }
+    /// <p>The name of the HIT-level Review Policy. This contains only
+    /// the PolicyName element.</p>
+    pub fn hit_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
+        self.hit_review_policy.as_ref()
+    }
+    /// <p> Contains both ReviewResult and ReviewAction elements for an
+    /// Assignment.
+    /// </p>
+    pub fn assignment_review_report(&self) -> std::option::Option<&crate::model::ReviewReport> {
+        self.assignment_review_report.as_ref()
+    }
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
+    /// </p>
+    pub fn hit_review_report(&self) -> std::option::Option<&crate::model::ReviewReport> {
+        self.hit_review_report.as_ref()
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListReviewPolicyResultsForHitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -752,6 +844,25 @@ pub struct ListReviewableHiTsOutput {
     /// <p> The list of HIT elements returned by the query.</p>
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
+impl ListReviewableHiTsOutput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The number of HITs on this page in the filtered results
+    /// list, equivalent to the number of HITs being returned by this call.
+    /// </p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p> The list of HIT elements returned by the query.</p>
+    pub fn hi_ts(&self) -> std::option::Option<&[crate::model::Hit]> {
+        self.hi_ts.as_deref()
+    }
+}
 impl std::fmt::Debug for ListReviewableHiTsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListReviewableHiTsOutput");
@@ -856,6 +967,28 @@ pub struct ListQualificationTypesOutput {
     /// query.
     /// </p>
     pub qualification_types: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
+}
+impl ListQualificationTypesOutput {
+    /// <p> The number of Qualification types on this page in the
+    /// filtered results list, equivalent to the number of types this
+    /// operation returns.
+    /// </p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The list of QualificationType elements returned by the
+    /// query.
+    /// </p>
+    pub fn qualification_types(&self) -> std::option::Option<&[crate::model::QualificationType]> {
+        self.qualification_types.as_deref()
+    }
 }
 impl std::fmt::Debug for ListQualificationTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -972,6 +1105,29 @@ pub struct ListQualificationRequestsOutput {
     pub qualification_requests:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
 }
+impl ListQualificationRequestsOutput {
+    /// <p>The number of Qualification requests on this page in the filtered results list,
+    /// equivalent to the number of Qualification requests being returned by this call.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The Qualification request. The response includes one
+    /// QualificationRequest element
+    /// for each Qualification request returned
+    /// by the query.</p>
+    pub fn qualification_requests(
+        &self,
+    ) -> std::option::Option<&[crate::model::QualificationRequest]> {
+        self.qualification_requests.as_deref()
+    }
+}
 impl std::fmt::Debug for ListQualificationRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListQualificationRequestsOutput");
@@ -1081,6 +1237,24 @@ pub struct ListHiTsForQualificationTypeOutput {
     /// <p> The list of HIT elements returned by the query.</p>
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
+impl ListHiTsForQualificationTypeOutput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The number of HITs on this page in the filtered results
+    /// list, equivalent to the number of HITs being returned by this call.  </p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p> The list of HIT elements returned by the query.</p>
+    pub fn hi_ts(&self) -> std::option::Option<&[crate::model::Hit]> {
+        self.hi_ts.as_deref()
+    }
+}
 impl std::fmt::Debug for ListHiTsForQualificationTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListHiTsForQualificationTypeOutput");
@@ -1179,6 +1353,24 @@ pub struct ListHiTsOutput {
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+}
+impl ListHiTsOutput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The number of HITs on this page in the filtered results list,
+    /// equivalent to the number of HITs being returned by this call.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p> The list of HIT elements returned by the query.</p>
+    pub fn hi_ts(&self) -> std::option::Option<&[crate::model::Hit]> {
+        self.hi_ts.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHiTsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1282,6 +1474,28 @@ pub struct ListBonusPaymentsOutput {
     /// returns a list of BonusPayment objects.
     /// </p>
     pub bonus_payments: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
+}
+impl ListBonusPaymentsOutput {
+    /// <p>The number of bonus payments on this page in the filtered
+    /// results list, equivalent to the number of bonus payments being
+    /// returned by this call.
+    /// </p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A successful request to the ListBonusPayments operation
+    /// returns a list of BonusPayment objects.
+    /// </p>
+    pub fn bonus_payments(&self) -> std::option::Option<&[crate::model::BonusPayment]> {
+        self.bonus_payments.as_deref()
+    }
 }
 impl std::fmt::Debug for ListBonusPaymentsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1392,6 +1606,26 @@ pub struct ListAssignmentsForHitOutput {
     /// this call.</p>
     pub assignments: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
 }
+impl ListAssignmentsForHitOutput {
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+    /// returns a pagination token in the response. You can use this pagination token
+    /// to retrieve the next set of results.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The number of assignments on the page in the filtered
+    /// results list, equivalent to the number of assignments returned by
+    /// this call.</p>
+    pub fn num_results(&self) -> std::option::Option<i32> {
+        self.num_results
+    }
+    /// <p> The collection of Assignment data structures returned by
+    /// this call.</p>
+    pub fn assignments(&self) -> std::option::Option<&[crate::model::Assignment]> {
+        self.assignments.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAssignmentsForHitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAssignmentsForHitOutput");
@@ -1487,6 +1721,12 @@ pub struct GetQualificationTypeOutput {
     /// <p> The returned Qualification Type</p>
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
+impl GetQualificationTypeOutput {
+    /// <p> The returned Qualification Type</p>
+    pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
+        self.qualification_type.as_ref()
+    }
+}
 impl std::fmt::Debug for GetQualificationTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetQualificationTypeOutput");
@@ -1540,6 +1780,15 @@ pub struct GetQualificationScoreOutput {
     /// (score).
     /// </p>
     pub qualification: std::option::Option<crate::model::Qualification>,
+}
+impl GetQualificationScoreOutput {
+    /// <p> The Qualification data structure of the Qualification
+    /// assigned to a user, including the Qualification type and the value
+    /// (score).
+    /// </p>
+    pub fn qualification(&self) -> std::option::Option<&crate::model::Qualification> {
+        self.qualification.as_ref()
+    }
 }
 impl std::fmt::Debug for GetQualificationScoreOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1598,6 +1847,12 @@ pub struct GetHitOutput {
     /// <p> Contains the requested HIT data.</p>
     pub hit: std::option::Option<crate::model::Hit>,
 }
+impl GetHitOutput {
+    /// <p> Contains the requested HIT data.</p>
+    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+        self.hit.as_ref()
+    }
+}
 impl std::fmt::Debug for GetHitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHitOutput");
@@ -1645,6 +1900,14 @@ pub struct GetFileUploadUrlOutput {
     /// the answer.
     /// </p>
     pub file_upload_url: std::option::Option<std::string::String>,
+}
+impl GetFileUploadUrlOutput {
+    /// <p> A temporary URL for the file that the Worker uploaded for
+    /// the answer.
+    /// </p>
+    pub fn file_upload_url(&self) -> std::option::Option<&str> {
+        self.file_upload_url.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFileUploadUrlOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1705,6 +1968,19 @@ pub struct GetAssignmentOutput {
     /// <p> The HIT associated with this assignment. The response
     /// includes one HIT element.</p>
     pub hit: std::option::Option<crate::model::Hit>,
+}
+impl GetAssignmentOutput {
+    /// <p> The assignment. The response includes one Assignment
+    /// element.
+    /// </p>
+    pub fn assignment(&self) -> std::option::Option<&crate::model::Assignment> {
+        self.assignment.as_ref()
+    }
+    /// <p> The HIT associated with this assignment. The response
+    /// includes one HIT element.</p>
+    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+        self.hit.as_ref()
+    }
 }
 impl std::fmt::Debug for GetAssignmentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1777,6 +2053,16 @@ pub struct GetAccountBalanceOutput {
     pub available_balance: std::option::Option<std::string::String>,
     /// <p>A string representing a currency amount.</p>
     pub on_hold_balance: std::option::Option<std::string::String>,
+}
+impl GetAccountBalanceOutput {
+    /// <p>A string representing a currency amount.</p>
+    pub fn available_balance(&self) -> std::option::Option<&str> {
+        self.available_balance.as_deref()
+    }
+    /// <p>A string representing a currency amount.</p>
+    pub fn on_hold_balance(&self) -> std::option::Option<&str> {
+        self.on_hold_balance.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccountBalanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1996,6 +2282,13 @@ pub struct CreateQualificationTypeOutput {
     /// QualificationType data structure.</p>
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
+impl CreateQualificationTypeOutput {
+    /// <p>The created Qualification type, returned as a
+    /// QualificationType data structure.</p>
+    pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
+        self.qualification_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateQualificationTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQualificationTypeOutput");
@@ -2052,6 +2345,15 @@ pub struct CreateHitWithHitTypeOutput {
     /// </p>
     pub hit: std::option::Option<crate::model::Hit>,
 }
+impl CreateHitWithHitTypeOutput {
+    /// <p> Contains the newly created HIT data. For a description of
+    /// the HIT data structure as it appears in responses, see the HIT Data
+    /// Structure documentation.
+    /// </p>
+    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+        self.hit.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateHitWithHitTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHitWithHitTypeOutput");
@@ -2104,6 +2406,12 @@ pub struct CreateHitTypeOutput {
     /// <p> The ID of the newly registered HIT type.</p>
     pub hit_type_id: std::option::Option<std::string::String>,
 }
+impl CreateHitTypeOutput {
+    /// <p> The ID of the newly registered HIT type.</p>
+    pub fn hit_type_id(&self) -> std::option::Option<&str> {
+        self.hit_type_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHitTypeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHitTypeOutput");
@@ -2154,6 +2462,15 @@ pub struct CreateHitOutput {
     /// Structure documentation.
     /// </p>
     pub hit: std::option::Option<crate::model::Hit>,
+}
+impl CreateHitOutput {
+    /// <p> Contains the newly created HIT data. For a description of
+    /// the HIT data structure as it appears in responses, see the HIT Data
+    /// Structure documentation.
+    /// </p>
+    pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
+        self.hit.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateHitOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -8,6 +8,13 @@ pub struct SingleMasterConfiguration {
     /// discarded.</p>
     pub message_ttl_seconds: std::option::Option<i32>,
 }
+impl SingleMasterConfiguration {
+    /// <p>The period of time a signaling channel retains underlivered messages before they are
+    /// discarded.</p>
+    pub fn message_ttl_seconds(&self) -> std::option::Option<i32> {
+        self.message_ttl_seconds
+    }
+}
 impl std::fmt::Debug for SingleMasterConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SingleMasterConfiguration");
@@ -115,6 +122,16 @@ pub struct Tag {
     /// <p>The value of the tag that is associated with the specified signaling channel.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag that is associated with the specified signaling channel.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag that is associated with the specified signaling channel.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -192,6 +209,45 @@ pub struct StreamInfo {
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>How long the stream retains data, in hours.</p>
     pub data_retention_in_hours: std::option::Option<i32>,
+}
+impl StreamInfo {
+    /// <p>The name of the device that is associated with the stream.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The name of the stream.</p>
+    pub fn stream_name(&self) -> std::option::Option<&str> {
+        self.stream_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream.</p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p>The <code>MediaType</code> of the stream. </p>
+    pub fn media_type(&self) -> std::option::Option<&str> {
+        self.media_type.as_deref()
+    }
+    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams
+    /// uses to encrypt data on the stream.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The version of the stream.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The status of the stream.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+        self.status.as_ref()
+    }
+    /// <p>A time stamp that indicates when the stream was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>How long the stream retains data, in hours.</p>
+    pub fn data_retention_in_hours(&self) -> std::option::Option<i32> {
+        self.data_retention_in_hours
+    }
 }
 impl std::fmt::Debug for StreamInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -419,6 +475,17 @@ pub struct StreamNameCondition {
     /// <p>A value to compare.</p>
     pub comparison_value: std::option::Option<std::string::String>,
 }
+impl StreamNameCondition {
+    /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code>
+    /// operator, which finds streams whose names start with a given prefix.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>A value to compare.</p>
+    pub fn comparison_value(&self) -> std::option::Option<&str> {
+        self.comparison_value.as_deref()
+    }
+}
 impl std::fmt::Debug for StreamNameCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamNameCondition");
@@ -551,6 +618,39 @@ pub struct ChannelInfo {
     pub single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
     /// <p>The current version of the signaling channel.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl ChannelInfo {
+    /// <p>The name of the signaling channel.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
+        self.channel_arn.as_deref()
+    }
+    /// <p>The type of the signaling channel.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.channel_type.as_ref()
+    }
+    /// <p>Current status of the signaling channel.</p>
+    pub fn channel_status(&self) -> std::option::Option<&crate::model::Status> {
+        self.channel_status.as_ref()
+    }
+    /// <p>The time at which the signaling channel was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
+    /// type.</p>
+    pub fn single_master_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SingleMasterConfiguration> {
+        self.single_master_configuration.as_ref()
+    }
+    /// <p>The current version of the signaling channel.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for ChannelInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -756,6 +856,17 @@ pub struct ChannelNameCondition {
     /// <p>A value to compare.</p>
     pub comparison_value: std::option::Option<std::string::String>,
 }
+impl ChannelNameCondition {
+    /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code>
+    /// operator, which finds signaling channels whose names begin with a given prefix.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>A value to compare.</p>
+    pub fn comparison_value(&self) -> std::option::Option<&str> {
+        self.comparison_value.as_deref()
+    }
+}
 impl std::fmt::Debug for ChannelNameCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelNameCondition");
@@ -829,6 +940,18 @@ pub struct ResourceEndpointListItem {
     /// <p>The endpoint of the signaling channel returned by the
     /// <code>GetSignalingChannelEndpoint</code> API.</p>
     pub resource_endpoint: std::option::Option<std::string::String>,
+}
+impl ResourceEndpointListItem {
+    /// <p>The protocol of the signaling channel returned by the
+    /// <code>GetSignalingChannelEndpoint</code> API.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::ChannelProtocol> {
+        self.protocol.as_ref()
+    }
+    /// <p>The endpoint of the signaling channel returned by the
+    /// <code>GetSignalingChannelEndpoint</code> API.</p>
+    pub fn resource_endpoint(&self) -> std::option::Option<&str> {
+        self.resource_endpoint.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceEndpointListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -966,6 +1089,24 @@ pub struct SingleMasterChannelEndpointConfiguration {
     /// specified, this API returns an endpoint that a client can use only to send offers to
     /// another <code>MASTER</code> client on this signaling channel. </p>
     pub role: std::option::Option<crate::model::ChannelRole>,
+}
+impl SingleMasterChannelEndpointConfiguration {
+    /// <p>This property is used to determine the nature of communication over this
+    /// <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this
+    /// API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns
+    /// an <code>HTTPS</code> endpoint.</p>
+    pub fn protocols(&self) -> std::option::Option<&[crate::model::ChannelProtocol]> {
+        self.protocols.as_deref()
+    }
+    /// <p>This property is used to determine messaging permissions in this
+    /// <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified,
+    /// this API returns an endpoint that a client can use to receive offers from and send
+    /// answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is
+    /// specified, this API returns an endpoint that a client can use only to send offers to
+    /// another <code>MASTER</code> client on this signaling channel. </p>
+    pub fn role(&self) -> std::option::Option<&crate::model::ChannelRole> {
+        self.role.as_ref()
+    }
 }
 impl std::fmt::Debug for SingleMasterChannelEndpointConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

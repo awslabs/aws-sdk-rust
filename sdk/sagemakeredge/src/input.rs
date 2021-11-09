@@ -100,10 +100,7 @@ impl GetDeviceRegistrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_device_registration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -319,10 +316,7 @@ impl SendHeartbeatInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_heartbeat(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_heartbeat(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -399,6 +393,28 @@ pub struct SendHeartbeatInput {
     /// <p>The name of the fleet that the device belongs to.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
+impl SendHeartbeatInput {
+    /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
+    pub fn agent_metrics(&self) -> std::option::Option<&[crate::model::EdgeMetric]> {
+        self.agent_metrics.as_deref()
+    }
+    /// <p>Returns a list of models deployed on the the device.</p>
+    pub fn models(&self) -> std::option::Option<&[crate::model::Model]> {
+        self.models.as_deref()
+    }
+    /// <p>Returns the version of the agent.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+    /// <p>The unique name of the device.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The name of the fleet that the device belongs to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
+}
 impl std::fmt::Debug for SendHeartbeatInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendHeartbeatInput");
@@ -419,6 +435,16 @@ pub struct GetDeviceRegistrationInput {
     pub device_name: std::option::Option<std::string::String>,
     /// <p>The name of the fleet that the device belongs to.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
+}
+impl GetDeviceRegistrationInput {
+    /// <p>The unique name of the device you want to get the registration status from.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>The name of the fleet that the device belongs to.</p>
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+        self.device_fleet_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceRegistrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

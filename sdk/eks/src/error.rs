@@ -4816,6 +4816,20 @@ pub struct ServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ServerException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServerException");
@@ -4932,6 +4946,24 @@ pub struct ResourceNotFoundException {
     pub addon_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The Fargate profile associated with the exception.</p>
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+        self.fargate_profile_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5061,6 +5093,20 @@ pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceInUseException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceInUseException");
@@ -5173,6 +5219,20 @@ pub struct InvalidRequestException {
     pub addon_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidRequestException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5288,6 +5348,24 @@ pub struct InvalidParameterException {
     pub addon_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl InvalidParameterException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The Fargate profile associated with the exception.</p>
+    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+        self.fargate_profile_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
 }
 impl std::fmt::Debug for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5418,6 +5496,20 @@ pub struct ClientException {
     pub addon_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+}
+impl ClientException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn addon_name(&self) -> std::option::Option<&str> {
+        self.addon_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5723,6 +5815,16 @@ pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl ResourceLimitExceededException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceLimitExceededException");
@@ -5824,6 +5926,21 @@ pub struct UnsupportedAvailabilityZoneException {
     /// <p>The supported Availability Zones for your account. Choose subnets in these
     /// Availability Zones for your cluster.</p>
     pub valid_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UnsupportedAvailabilityZoneException {
+    /// <p>The Amazon EKS cluster associated with the exception.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The Amazon EKS managed node group associated with the exception.</p>
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+        self.nodegroup_name.as_deref()
+    }
+    /// <p>The supported Availability Zones for your account. Choose subnets in these
+    /// Availability Zones for your cluster.</p>
+    pub fn valid_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.valid_zones.as_deref()
+    }
 }
 impl std::fmt::Debug for UnsupportedAvailabilityZoneException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

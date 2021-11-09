@@ -24,6 +24,17 @@ pub struct OutputConfig {
     /// prefix will be “textract_output".</p>
     pub s3_prefix: std::option::Option<std::string::String>,
 }
+impl OutputConfig {
+    /// <p>The name of the bucket your output will go to.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The prefix of the object key that the output will be saved to. When not enabled, the
+    /// prefix will be “textract_output".</p>
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+        self.s3_prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for OutputConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OutputConfig");
@@ -89,6 +100,16 @@ pub struct NotificationChannel {
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl NotificationChannel {
+    /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for NotificationChannel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -157,6 +178,12 @@ pub struct DocumentLocation {
     /// <p>The Amazon S3 bucket that contains the input document.</p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
+impl DocumentLocation {
+    /// <p>The Amazon S3 bucket that contains the input document.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for DocumentLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentLocation");
@@ -217,6 +244,22 @@ pub struct S3Object {
     pub name: std::option::Option<std::string::String>,
     /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
     pub version: std::option::Option<std::string::String>,
+}
+impl S3Object {
+    /// <p>The name of the S3 bucket. Note that the # character is not valid in the file
+    /// name.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The file name of the input document. Synchronous operations can use image files that are
+    /// in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -353,6 +396,16 @@ pub struct Warning {
     /// <p>A list of the pages that the warning applies to.</p>
     pub pages: std::option::Option<std::vec::Vec<i32>>,
 }
+impl Warning {
+    /// <p>The error code for the warning.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>A list of the pages that the warning applies to.</p>
+    pub fn pages(&self) -> std::option::Option<&[i32]> {
+        self.pages.as_deref()
+    }
+}
 impl std::fmt::Debug for Warning {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Warning");
@@ -424,6 +477,21 @@ pub struct ExpenseDocument {
     pub summary_fields: std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
     pub line_item_groups: std::option::Option<std::vec::Vec<crate::model::LineItemGroup>>,
+}
+impl ExpenseDocument {
+    /// <p>Denotes which invoice or receipt in the document the information is coming from.
+    /// First document will be 1, the second 2, and so on.</p>
+    pub fn expense_index(&self) -> std::option::Option<i32> {
+        self.expense_index
+    }
+    /// <p>Any information found outside of a table by Amazon Textract.</p>
+    pub fn summary_fields(&self) -> std::option::Option<&[crate::model::ExpenseField]> {
+        self.summary_fields.as_deref()
+    }
+    /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
+    pub fn line_item_groups(&self) -> std::option::Option<&[crate::model::LineItemGroup]> {
+        self.line_item_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ExpenseDocument {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -522,6 +590,16 @@ pub struct LineItemGroup {
     /// <p>The breakdown of information on a particular line of a table. </p>
     pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItemFields>>,
 }
+impl LineItemGroup {
+    /// <p>The number used to identify a specific table in a document. The first table encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
+    pub fn line_item_group_index(&self) -> std::option::Option<i32> {
+        self.line_item_group_index
+    }
+    /// <p>The breakdown of information on a particular line of a table. </p>
+    pub fn line_items(&self) -> std::option::Option<&[crate::model::LineItemFields]> {
+        self.line_items.as_deref()
+    }
+}
 impl std::fmt::Debug for LineItemGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LineItemGroup");
@@ -592,6 +670,12 @@ pub struct LineItemFields {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
     pub line_item_expense_fields: std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
 }
+impl LineItemFields {
+    /// <p>ExpenseFields used to show information from detected lines on a table.</p>
+    pub fn line_item_expense_fields(&self) -> std::option::Option<&[crate::model::ExpenseField]> {
+        self.line_item_expense_fields.as_deref()
+    }
+}
 impl std::fmt::Debug for LineItemFields {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LineItemFields");
@@ -659,6 +743,24 @@ pub struct ExpenseField {
     pub value_detection: std::option::Option<crate::model::ExpenseDetection>,
     /// <p>The page number the value was detected on.</p>
     pub page_number: std::option::Option<i32>,
+}
+impl ExpenseField {
+    /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ExpenseType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The explicitly stated label of a detected element.</p>
+    pub fn label_detection(&self) -> std::option::Option<&crate::model::ExpenseDetection> {
+        self.label_detection.as_ref()
+    }
+    /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
+    pub fn value_detection(&self) -> std::option::Option<&crate::model::ExpenseDetection> {
+        self.value_detection.as_ref()
+    }
+    /// <p>The page number the value was detected on.</p>
+    pub fn page_number(&self) -> std::option::Option<i32> {
+        self.page_number
+    }
 }
 impl std::fmt::Debug for ExpenseField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -758,6 +860,21 @@ pub struct ExpenseDetection {
     /// <p>The confidence in detection, as a percentage</p>
     pub confidence: std::option::Option<f32>,
 }
+impl ExpenseDetection {
+    /// <p>The word or line of text recognized by Amazon Textract</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Information about where the following items are located on a document page: detected
+    /// page, text, key-value pairs, tables, table cells, and selection elements.</p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
+        self.geometry.as_ref()
+    }
+    /// <p>The confidence in detection, as a percentage</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
 impl std::fmt::Debug for ExpenseDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExpenseDetection");
@@ -837,6 +954,17 @@ pub struct Geometry {
     pub bounding_box: std::option::Option<crate::model::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
     pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
+}
+impl Geometry {
+    /// <p>An axis-aligned coarse representation of the location of the recognized item on the
+    /// document page.</p>
+    pub fn bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
+        self.bounding_box.as_ref()
+    }
+    /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
+    pub fn polygon(&self) -> std::option::Option<&[crate::model::Point]> {
+        self.polygon.as_deref()
+    }
 }
 impl std::fmt::Debug for Geometry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,6 +1051,16 @@ pub struct Point {
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
     pub y: f32,
 }
+impl Point {
+    /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+    pub fn x(&self) -> f32 {
+        self.x
+    }
+    /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+    pub fn y(&self) -> f32 {
+        self.y
+    }
+}
 impl std::fmt::Debug for Point {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Point");
@@ -1004,6 +1142,28 @@ pub struct BoundingBox {
     /// <p>The top coordinate of the bounding box as a ratio of overall document page
     /// height.</p>
     pub top: f32,
+}
+impl BoundingBox {
+    /// <p>The width of the bounding box as a ratio of the overall document page
+    /// width.</p>
+    pub fn width(&self) -> f32 {
+        self.width
+    }
+    /// <p>The height of the bounding box as a ratio of the overall document page
+    /// height.</p>
+    pub fn height(&self) -> f32 {
+        self.height
+    }
+    /// <p>The left coordinate of the bounding box as a ratio of overall document page
+    /// width.</p>
+    pub fn left(&self) -> f32 {
+        self.left
+    }
+    /// <p>The top coordinate of the bounding box as a ratio of overall document page
+    /// height.</p>
+    pub fn top(&self) -> f32 {
+        self.top
+    }
 }
 impl std::fmt::Debug for BoundingBox {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1101,6 +1261,16 @@ pub struct ExpenseType {
     pub text: std::option::Option<std::string::String>,
     /// <p>The confidence of accuracy, as a percentage.</p>
     pub confidence: std::option::Option<f32>,
+}
+impl ExpenseType {
+    /// <p>The word or line of text detected by Amazon Textract.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The confidence of accuracy, as a percentage.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
 }
 impl std::fmt::Debug for ExpenseType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1225,6 +1395,12 @@ impl AsRef<str> for JobStatus {
 pub struct DocumentMetadata {
     /// <p>The number of pages that are detected in the document.</p>
     pub pages: std::option::Option<i32>,
+}
+impl DocumentMetadata {
+    /// <p>The number of pages that are detected in the document.</p>
+    pub fn pages(&self) -> std::option::Option<i32> {
+        self.pages
+    }
 }
 impl std::fmt::Debug for DocumentMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1412,6 +1588,168 @@ pub struct Block {
     /// Synchronous operations don't return <code>Page</code> because every input document is
     /// considered to be a single-page document.</p>
     pub page: std::option::Option<i32>,
+}
+impl Block {
+    /// <p>The type of text item that's recognized. In operations for text detection, the following
+    /// types are returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
+    /// that are detected on a document page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>WORD</i> - A word detected on a document page. A word is one or
+    /// more ISO basic Latin script characters that aren't separated by spaces.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+    /// detected on a document page.</p>
+    /// </li>
+    /// </ul>
+    /// <p>In text analysis operations, the following types are returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
+    /// that are detected on a document page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
+    /// objects for linked text that's detected on a document page. Use the
+    /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+    /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>WORD</i> - A word that's detected on a document page. A word is
+    /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+    /// detected on a document page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>TABLE</i> - A table that's detected on a document page. A table
+    /// is grid-based information with two or more rows or columns, with a cell span of one
+    /// row and one column each. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>CELL</i> - A cell within a detected table. The cell is the parent
+    /// of the block that contains the text in the cell.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
+    /// button (radio button) or a check box that's detected on a document page. Use the
+    /// value of <code>SelectionStatus</code> to determine the status of the selection
+    /// element.</p>
+    /// </li>
+    /// </ul>
+    pub fn block_type(&self) -> std::option::Option<&crate::model::BlockType> {
+        self.block_type.as_ref()
+    }
+    /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
+    /// the accuracy of the geometry points around the recognized text.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+    /// <p>The word or line of text that's recognized by Amazon Textract. </p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
+    /// printed text.</p>
+    pub fn text_type(&self) -> std::option::Option<&crate::model::TextType> {
+        self.text_type.as_ref()
+    }
+    /// <p>The row in which a table cell is located. The first row position is 1.
+    /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
+    /// <code>GetDocumentTextDetection</code>.</p>
+    pub fn row_index(&self) -> std::option::Option<i32> {
+        self.row_index
+    }
+    /// <p>The column in which a table cell appears. The first column position is 1.
+    /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
+    /// <code>GetDocumentTextDetection</code>.</p>
+    pub fn column_index(&self) -> std::option::Option<i32> {
+        self.column_index
+    }
+    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
+    /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
+    /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    pub fn row_span(&self) -> std::option::Option<i32> {
+        self.row_span
+    }
+    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
+    /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
+    /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    pub fn column_span(&self) -> std::option::Option<i32> {
+        self.column_span
+    }
+    /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
+    /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
+    /// information. </p>
+    pub fn geometry(&self) -> std::option::Option<&crate::model::Geometry> {
+        self.geometry.as_ref()
+    }
+    /// <p>The identifier for the recognized text. The identifier is only unique for a single
+    /// operation. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
+    /// for each WORD block that's part of the line of text. There aren't Relationship objects in
+    /// the list for relationships that don't exist, such as when the current block has no child
+    /// blocks. The list size can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - The block has no child blocks.</p>
+    /// </li>
+    /// <li>
+    /// <p>1 - The block has child blocks.</p>
+    /// </li>
+    /// </ul>
+    pub fn relationships(&self) -> std::option::Option<&[crate::model::Relationship]> {
+        self.relationships.as_deref()
+    }
+    /// <p>The type of entity. The following can be returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>KEY</i> - An identifier for a field on the document.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>VALUE</i> - The field text.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
+    /// <code>GetDocumentTextDetection</code>.</p>
+    pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityType]> {
+        self.entity_types.as_deref()
+    }
+    /// <p>The selection status of a selection element, such as an option button or check box.
+    /// </p>
+    pub fn selection_status(&self) -> std::option::Option<&crate::model::SelectionStatus> {
+        self.selection_status.as_ref()
+    }
+    /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
+    /// operations. Page values greater than 1 are only returned for multipage documents that are
+    /// in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
+    /// considered to be a single-page document. The value of <code>Page</code> is always 1.
+    /// Synchronous operations don't return <code>Page</code> because every input document is
+    /// considered to be a single-page document.</p>
+    pub fn page(&self) -> std::option::Option<i32> {
+        self.page
+    }
 }
 impl std::fmt::Debug for Block {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1985,6 +2323,23 @@ pub struct Relationship {
     /// <code>Type</code> element.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Relationship {
+    /// <p>The type of relationship that the blocks in the IDs array have with the current block.
+    /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
+    /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
+    /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
+    /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+    /// Selection Elements.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RelationshipType> {
+        self.r#type.as_ref()
+    }
+    /// <p>An
+    /// array of IDs for related blocks. You can get the type of the relationship from the
+    /// <code>Type</code> element.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+}
 impl std::fmt::Debug for Relationship {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Relationship");
@@ -2291,6 +2646,20 @@ pub struct Document {
     /// stored in an S3 bucket is 5 MB.</p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
+impl Document {
+    /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
+    /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+    /// image bytes passed using the <code>Bytes</code> field. </p>
+    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.bytes.as_ref()
+    }
+    /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
+    /// stored in an S3 bucket is 5 MB.</p>
+    pub fn s3_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.s3_object.as_ref()
+    }
+}
 impl std::fmt::Debug for Document {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Document");
@@ -2366,6 +2735,22 @@ pub struct HumanLoopActivationOutput {
     /// human review.</p>
     pub human_loop_activation_conditions_evaluation_results:
         std::option::Option<std::string::String>,
+}
+impl HumanLoopActivationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
+    pub fn human_loop_arn(&self) -> std::option::Option<&str> {
+        self.human_loop_arn.as_deref()
+    }
+    /// <p>Shows if and why human review was needed.</p>
+    pub fn human_loop_activation_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.human_loop_activation_reasons.as_deref()
+    }
+    /// <p>Shows the result of condition evaluations, including those conditions which activated a
+    /// human review.</p>
+    pub fn human_loop_activation_conditions_evaluation_results(&self) -> std::option::Option<&str> {
+        self.human_loop_activation_conditions_evaluation_results
+            .as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopActivationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2479,6 +2864,21 @@ pub struct HumanLoopConfig {
     /// <p>Sets attributes of the input data.</p>
     pub data_attributes: std::option::Option<crate::model::HumanLoopDataAttributes>,
 }
+impl HumanLoopConfig {
+    /// <p>The name of the human workflow used for this image. This should be kept unique within a
+    /// region.</p>
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+        self.human_loop_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+        self.flow_definition_arn.as_deref()
+    }
+    /// <p>Sets attributes of the input data.</p>
+    pub fn data_attributes(&self) -> std::option::Option<&crate::model::HumanLoopDataAttributes> {
+        self.data_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for HumanLoopConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HumanLoopConfig");
@@ -2565,6 +2965,13 @@ pub struct HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information or adult
     /// content.</p>
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
+}
+impl HumanLoopDataAttributes {
+    /// <p>Sets whether the input image is free of personally identifiable information or adult
+    /// content.</p>
+    pub fn content_classifiers(&self) -> std::option::Option<&[crate::model::ContentClassifier]> {
+        self.content_classifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for HumanLoopDataAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

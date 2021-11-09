@@ -113,10 +113,7 @@ impl AddCustomAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_add_custom_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_add_custom_attributes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -292,10 +289,7 @@ impl AdminAddUserToGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_add_user_to_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -546,10 +540,7 @@ impl AdminConfirmSignUpInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_confirm_sign_up(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_confirm_sign_up(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1043,10 +1034,7 @@ impl AdminCreateUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_create_user(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1208,10 +1196,7 @@ impl AdminDeleteUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_delete_user(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1401,10 +1386,7 @@ impl AdminDeleteUserAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_delete_user_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1570,7 +1552,7 @@ impl AdminDisableProviderForUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_disable_provider_for_user(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_disable_provider_for_user(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1733,10 +1715,7 @@ impl AdminDisableUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_disable_user(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_disable_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1898,10 +1877,7 @@ impl AdminEnableUserInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_enable_user(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_enable_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2075,10 +2051,7 @@ impl AdminForgetDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_forget_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_forget_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2252,10 +2225,7 @@ impl AdminGetDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_get_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_get_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2418,10 +2388,7 @@ impl AdminGetUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_admin_get_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_admin_get_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2990,10 +2957,7 @@ impl AdminInitiateAuthInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_initiate_auth(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_initiate_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3236,10 +3200,7 @@ impl AdminLinkProviderForUserInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_link_provider_for_user(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3428,10 +3389,7 @@ impl AdminListDevicesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_list_devices(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_admin_list_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3621,10 +3579,7 @@ impl AdminListGroupsForUserInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_list_groups_for_user(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3813,10 +3768,7 @@ impl AdminListUserAuthEventsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_list_user_auth_events(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3993,10 +3945,7 @@ impl AdminRemoveUserFromGroupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_remove_user_from_group(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4251,10 +4200,7 @@ impl AdminResetUserPasswordInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_reset_user_password(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4694,7 +4640,7 @@ impl AdminRespondToAuthChallengeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_respond_to_auth_challenge(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_respond_to_auth_challenge(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4892,7 +4838,7 @@ impl AdminSetUserMfaPreferenceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_set_user_mfa_preference(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_set_user_mfa_preference(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5085,10 +5031,7 @@ impl AdminSetUserPasswordInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_set_user_password(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5277,10 +5220,7 @@ impl AdminSetUserSettingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_set_user_settings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5470,7 +5410,7 @@ impl AdminUpdateAuthEventFeedbackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_update_auth_event_feedback(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_update_auth_event_feedback(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5667,10 +5607,7 @@ impl AdminUpdateDeviceStatusInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_update_device_status(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5951,10 +5888,7 @@ impl AdminUpdateUserAttributesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_update_user_attributes(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6118,10 +6052,7 @@ impl AdminUserGlobalSignOutInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_user_global_sign_out(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6287,10 +6218,7 @@ impl AssociateSoftwareTokenInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_software_token(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6469,10 +6397,8 @@ impl ChangePasswordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_change_password(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_change_password(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6665,10 +6591,7 @@ impl ConfirmDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_confirm_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_confirm_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7004,10 +6927,7 @@ impl ConfirmForgotPasswordInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_confirm_forgot_password(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7345,10 +7265,8 @@ impl ConfirmSignUpInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_confirm_sign_up(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_confirm_sign_up(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7572,10 +7490,7 @@ impl CreateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8050,10 +7965,7 @@ impl CreateIdentityProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_identity_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8255,10 +8167,9 @@ impl CreateResourceServerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_server(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_server(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8435,10 +8346,9 @@ impl CreateUserImportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_user_import_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_user_import_job(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9011,10 +8921,7 @@ impl CreateUserPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_user_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_user_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9765,10 +9672,7 @@ impl CreateUserPoolClientInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_pool_client(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9957,10 +9861,7 @@ impl CreateUserPoolDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_pool_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10121,10 +10022,7 @@ impl DeleteGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10291,10 +10189,7 @@ impl DeleteIdentityProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_identity_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10456,10 +10351,9 @@ impl DeleteResourceServerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_resource_server(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_resource_server(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10608,10 +10502,7 @@ impl DeleteUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10787,10 +10678,9 @@ impl DeleteUserAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_attributes(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10941,10 +10831,7 @@ impl DeleteUserPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_user_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_user_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11108,10 +10995,7 @@ impl DeleteUserPoolClientInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_pool_client(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11275,10 +11159,7 @@ impl DeleteUserPoolDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_pool_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11446,10 +11327,7 @@ impl DescribeIdentityProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11613,10 +11491,7 @@ impl DescribeResourceServerInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_resource_server(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11781,10 +11656,7 @@ impl DescribeRiskConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_risk_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11948,10 +11820,7 @@ impl DescribeUserImportJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_import_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12101,10 +11970,7 @@ impl DescribeUserPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_user_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_user_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12268,10 +12134,7 @@ impl DescribeUserPoolClientInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_pool_client(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12423,10 +12286,7 @@ impl DescribeUserPoolDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_pool_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12587,10 +12447,7 @@ impl ForgetDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_forget_device(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_forget_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12896,10 +12753,8 @@ impl ForgotPasswordInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_forgot_password(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_forgot_password(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13049,10 +12904,7 @@ impl GetCsvHeaderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_csv_header(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_csv_header(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13211,10 +13063,7 @@ impl GetDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13371,10 +13220,7 @@ impl GetGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13538,7 +13384,7 @@ impl GetIdentityProviderByIdentifierInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_provider_by_identifier(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_provider_by_identifier(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -13691,10 +13537,7 @@ impl GetSigningCertificateInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_signing_certificate(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13856,10 +13699,7 @@ impl GetUiCustomizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_ui_customization(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_ui_customization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14008,10 +13848,7 @@ impl GetUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14271,7 +14108,7 @@ impl GetUserAttributeVerificationCodeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_user_attribute_verification_code(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_user_attribute_verification_code(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14425,10 +14262,7 @@ impl GetUserPoolMfaConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_user_pool_mfa_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14577,10 +14411,8 @@ impl GlobalSignOutInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_global_sign_out(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_global_sign_out(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15116,10 +14948,7 @@ impl InitiateAuthInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_initiate_auth(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_initiate_auth(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15296,10 +15125,7 @@ impl ListDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15474,10 +15300,7 @@ impl ListGroupsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15653,10 +15476,7 @@ impl ListIdentityProvidersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_identity_providers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15830,10 +15650,7 @@ impl ListResourceServersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_servers(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_servers(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15983,10 +15800,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16167,10 +15983,7 @@ impl ListUserImportJobsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_user_import_jobs(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_user_import_jobs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16348,10 +16161,9 @@ impl ListUserPoolClientsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_user_pool_clients(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_user_pool_clients(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16516,10 +16328,8 @@ impl ListUserPoolsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_user_pools(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_user_pools(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16888,10 +16698,7 @@ impl ListUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17077,10 +16884,7 @@ impl ListUsersInGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_users_in_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_users_in_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17385,10 +17189,7 @@ impl ResendConfirmationCodeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resend_confirmation_code(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17830,10 +17631,7 @@ impl RespondToAuthChallengeInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_respond_to_auth_challenge(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18010,10 +17808,7 @@ impl RevokeTokenInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_revoke_token(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_revoke_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18243,10 +18038,9 @@ impl SetRiskConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_risk_configuration(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_risk_configuration(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18435,10 +18229,7 @@ impl SetUiCustomizationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_ui_customization(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_ui_customization(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18624,10 +18415,7 @@ impl SetUserMfaPreferenceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_user_mfa_preference(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -18864,10 +18652,7 @@ impl SetUserPoolMfaConfigInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_user_pool_mfa_config(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19040,10 +18825,7 @@ impl SetUserSettingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_user_settings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_set_user_settings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19402,10 +19184,7 @@ impl SignUpInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_sign_up(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_sign_up(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19566,10 +19345,7 @@ impl StartUserImportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_user_import_job(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_user_import_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19731,10 +19507,7 @@ impl StopUserImportJobInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_stop_user_import_job(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_stop_user_import_job(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -19912,10 +19685,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20085,10 +19855,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20295,10 +20062,7 @@ impl UpdateAuthEventFeedbackInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_auth_event_feedback(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20479,10 +20243,7 @@ impl UpdateDeviceStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_device_status(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_device_status(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20685,10 +20446,7 @@ impl UpdateGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -20936,10 +20694,7 @@ impl UpdateIdentityProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_identity_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21135,10 +20890,9 @@ impl UpdateResourceServerInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_resource_server(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_resource_server(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21402,10 +21156,9 @@ impl UpdateUserAttributesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_attributes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_attributes(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -21893,10 +21646,7 @@ impl UpdateUserPoolInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_user_pool(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_user_pool(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22623,10 +22373,7 @@ impl UpdateUserPoolClientInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_pool_client(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -22817,10 +22564,7 @@ impl UpdateUserPoolDomainInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_pool_domain(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23011,10 +22755,7 @@ impl VerifySoftwareTokenInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_software_token(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_verify_software_token(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23191,10 +22932,7 @@ impl VerifyUserAttributeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_user_attribute(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_verify_user_attribute(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -23268,6 +23006,20 @@ pub struct VerifyUserAttributeInput {
     /// <p>The verification code in the request to verify user attributes.</p>
     pub code: std::option::Option<std::string::String>,
 }
+impl VerifyUserAttributeInput {
+    /// <p>Represents the access token of the request to verify user attributes.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The attribute name in the request to verify user attributes.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>The verification code in the request to verify user attributes.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+}
 impl std::fmt::Debug for VerifyUserAttributeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyUserAttributeInput");
@@ -23291,6 +23043,25 @@ pub struct VerifySoftwareTokenInput {
     pub user_code: std::option::Option<std::string::String>,
     /// <p>The friendly device name.</p>
     pub friendly_device_name: std::option::Option<std::string::String>,
+}
+impl VerifySoftwareTokenInput {
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+    pub fn user_code(&self) -> std::option::Option<&str> {
+        self.user_code.as_deref()
+    }
+    /// <p>The friendly device name.</p>
+    pub fn friendly_device_name(&self) -> std::option::Option<&str> {
+        self.friendly_device_name.as_deref()
+    }
 }
 impl std::fmt::Debug for VerifySoftwareTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23319,6 +23090,28 @@ pub struct UpdateUserPoolDomainInput {
     /// your application. Use this object to specify an SSL certificate that is managed by
     /// ACM.</p>
     pub custom_domain_config: std::option::Option<crate::model::CustomDomainConfigType>,
+}
+impl UpdateUserPoolDomainInput {
+    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
+    /// your application. For example: <code>auth.example.com</code>. </p>
+    /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
+    /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The ID of the user pool that is associated with the custom domain that you are
+    /// updating the certificate for.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
+    /// your application. Use this object to specify an SSL certificate that is managed by
+    /// ACM.</p>
+    pub fn custom_domain_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDomainConfigType> {
+        self.custom_domain_config.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateUserPoolDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23496,6 +23289,215 @@ pub struct UpdateUserPoolClientInput {
     /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub enable_token_revocation: std::option::Option<bool>,
 }
+impl UpdateUserPoolClientInput {
+    /// <p>The user pool ID for the user pool where you want to update the user pool
+    /// client.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The client name from the update user pool client request.</p>
+    pub fn client_name(&self) -> std::option::Option<&str> {
+        self.client_name.as_deref()
+    }
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
+    /// be used.</p>
+    pub fn refresh_token_validity(&self) -> i32 {
+        self.refresh_token_validity
+    }
+    /// <p>The time limit, after which the access token is no longer valid and cannot be
+    /// used.</p>
+    pub fn access_token_validity(&self) -> std::option::Option<i32> {
+        self.access_token_validity
+    }
+    /// <p>The time limit, after which the ID token is no longer valid and cannot be used.</p>
+    pub fn id_token_validity(&self) -> std::option::Option<i32> {
+        self.id_token_validity
+    }
+    /// <p>The units in which the validity times are represented in. Default for RefreshToken is
+    /// days, and default for ID and access tokens are hours.</p>
+    pub fn token_validity_units(
+        &self,
+    ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
+        self.token_validity_units.as_ref()
+    }
+    /// <p>The read-only attributes of the user pool.</p>
+    pub fn read_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.read_attributes.as_deref()
+    }
+    /// <p>The writeable attributes of the user pool.</p>
+    pub fn write_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.write_attributes.as_deref()
+    }
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names
+    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+    /// Cognito receives the password in the request instead of using the SRP (Secure
+    /// Remote Password protocol) protocol to verify passwords.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+    /// authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+    /// authentication. In this flow, Cognito receives the password in the request
+    /// instead of using the SRP protocol to verify passwords.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+    /// tokens.</p>
+    /// </li>
+    /// </ul>
+    pub fn explicit_auth_flows(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
+        self.explicit_auth_flows.as_deref()
+    }
+    /// <p>A list of provider names for the identity providers that are supported on this
+    /// client.</p>
+    pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_identity_providers.as_deref()
+    }
+    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Be an absolute URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>Be registered with the authorization server.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not include a fragment component.</p>
+    /// </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+    /// Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+    /// purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.callback_ur_ls.as_deref()
+    }
+    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    pub fn logout_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.logout_ur_ls.as_deref()
+    }
+    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Be an absolute URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>Be registered with the authorization server.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not include a fragment component.</p>
+    /// </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+    /// Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+    /// purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn default_redirect_uri(&self) -> std::option::Option<&str> {
+        self.default_redirect_uri.as_deref()
+    }
+    /// <p>The allowed OAuth flows.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+    /// authorization code as the response. This code can be exchanged for access tokens with
+    /// the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+    /// (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+    /// a combination of client and client_secret.</p>
+    pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
+        self.allowed_o_auth_flows.as_deref()
+    }
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+    /// in Resource Servers are also supported.</p>
+    pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_o_auth_scopes.as_deref()
+    }
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
+    /// with Cognito user pools.</p>
+    pub fn allowed_o_auth_flows_user_pool_client(&self) -> bool {
+        self.allowed_o_auth_flows_user_pool_client
+    }
+    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
+    /// pool.</p>
+    /// <note>
+    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
+    /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
+    /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
+    /// projects within that same region. </p>
+    /// </note>
+    pub fn analytics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AnalyticsConfigurationType> {
+        self.analytics_configuration.as_ref()
+    }
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
+    /// during authentication, account confirmation, and password recovery when the user does
+    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
+    /// exist, authentication returns an error indicating either the username or password was
+    /// incorrect, and account confirmation and password recovery return a response indicating a
+    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
+    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
+    /// the user pool.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
+    /// existence related errors are not prevented.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
+    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
+    /// is provided.</p>
+    /// </note>
+    pub fn prevent_user_existence_errors(
+        &self,
+    ) -> std::option::Option<&crate::model::PreventUserExistenceErrorTypes> {
+        self.prevent_user_existence_errors.as_ref()
+    }
+    /// <p>Enables or disables token revocation. For more information
+    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
+        self.enable_token_revocation
+    }
+}
 impl std::fmt::Debug for UpdateUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserPoolClientInput");
@@ -23603,6 +23605,120 @@ pub struct UpdateUserPoolInput {
     /// the recovery method where SMS is preferred over email.</p>
     pub account_recovery_setting: std::option::Option<crate::model::AccountRecoverySettingType>,
 }
+impl UpdateUserPoolInput {
+    /// <p>The user pool ID for the user pool you want to update.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>A container with the policies you wish to update in a user pool.</p>
+    pub fn policies(&self) -> std::option::Option<&crate::model::UserPoolPolicyType> {
+        self.policies.as_ref()
+    }
+    /// <p>The Lambda configuration information from the request to update the user
+    /// pool.</p>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaConfigType> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
+    /// request to update user pools.</p>
+    pub fn auto_verified_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
+        self.auto_verified_attributes.as_deref()
+    }
+    /// <p>A container with information about the SMS verification message.</p>
+    pub fn sms_verification_message(&self) -> std::option::Option<&str> {
+        self.sms_verification_message.as_deref()
+    }
+    /// <p>The contents of the email verification message.</p>
+    pub fn email_verification_message(&self) -> std::option::Option<&str> {
+        self.email_verification_message.as_deref()
+    }
+    /// <p>The subject of the email verification message.</p>
+    pub fn email_verification_subject(&self) -> std::option::Option<&str> {
+        self.email_verification_subject.as_deref()
+    }
+    /// <p>The template for verification messages.</p>
+    pub fn verification_message_template(
+        &self,
+    ) -> std::option::Option<&crate::model::VerificationMessageTemplateType> {
+        self.verification_message_template.as_ref()
+    }
+    /// <p>The contents of the SMS authentication message.</p>
+    pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
+        self.sms_authentication_message.as_deref()
+    }
+    /// <p>Can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
+    /// user registration.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ON</code> - MFA tokens are required for all user registrations. You can
+    /// only specify ON when you are initially creating a user pool. You can use the
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing
+    /// user pools. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+    /// token.</p>
+    /// </li>
+    /// </ul>
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
+        self.mfa_configuration.as_ref()
+    }
+    /// <p>Device configuration.</p>
+    pub fn device_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceConfigurationType> {
+        self.device_configuration.as_ref()
+    }
+    /// <p>Email configuration.</p>
+    pub fn email_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailConfigurationType> {
+        self.email_configuration.as_ref()
+    }
+    /// <p>SMS configuration.</p>
+    pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
+        self.sms_configuration.as_ref()
+    }
+    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
+    /// to categorize and manage user pools in different ways, such as by purpose, owner,
+    /// environment, or other criteria.</p>
+    pub fn user_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_pool_tags.as_ref()
+    }
+    /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+    pub fn admin_create_user_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AdminCreateUserConfigType> {
+        self.admin_create_user_config.as_ref()
+    }
+    /// <p>Used to enable advanced security risk detection. Set the key
+    /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    pub fn user_pool_add_ons(&self) -> std::option::Option<&crate::model::UserPoolAddOnsType> {
+        self.user_pool_add_ons.as_ref()
+    }
+    /// <p>Use this setting to define which verified available method a user can use to recover
+    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
+    /// preferred method when a user has more than one method available. With this setting, SMS
+    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
+    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
+    /// the recovery method where SMS is preferred over email.</p>
+    pub fn account_recovery_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountRecoverySettingType> {
+        self.account_recovery_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserPoolInput");
@@ -23683,6 +23799,55 @@ pub struct UpdateUserAttributesInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UpdateUserAttributesInput {
+    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>The access token for the request to update user attributes.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
+    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+    /// invokes this function, it passes a JSON payload, which the function receives as input.
+    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+    /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
+    /// In your function code in Lambda, you can process the <code>clientMetadata</code>
+    /// value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateUserAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserAttributesInput");
@@ -23705,6 +23870,24 @@ pub struct UpdateResourceServerInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The scope values to be set for the resource server.</p>
     pub scopes: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
+}
+impl UpdateResourceServerInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identifier for the resource server.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>The name of the resource server.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The scope values to be set for the resource server.</p>
+    pub fn scopes(&self) -> std::option::Option<&[crate::model::ResourceServerScopeType]> {
+        self.scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateResourceServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23734,6 +23917,35 @@ pub struct UpdateIdentityProviderInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of identity provider identifiers.</p>
     pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateIdentityProviderInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identity provider name.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
+    /// <code>MetadataFile</code>.</p>
+    pub fn provider_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.provider_details.as_ref()
+    }
+    /// <p>The identity provider attribute mapping to be changed.</p>
+    pub fn attribute_mapping(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attribute_mapping.as_ref()
+    }
+    /// <p>A list of identity provider identifiers.</p>
+    pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.idp_identifiers.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateIdentityProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23765,6 +23977,31 @@ pub struct UpdateGroupInput {
     /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub precedence: std::option::Option<i32>,
 }
+impl UpdateGroupInput {
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>A string containing the new description of the group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The new role ARN for the group. This is used for setting the
+    /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
+    /// token.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The new precedence value for the group. For more information about this parameter, see
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+    pub fn precedence(&self) -> std::option::Option<i32> {
+        self.precedence
+    }
+}
 impl std::fmt::Debug for UpdateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupInput");
@@ -23787,6 +24024,22 @@ pub struct UpdateDeviceStatusInput {
     pub device_key: std::option::Option<std::string::String>,
     /// <p>The status of whether a device is remembered.</p>
     pub device_remembered_status: std::option::Option<crate::model::DeviceRememberedStatusType>,
+}
+impl UpdateDeviceStatusInput {
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The status of whether a device is remembered.</p>
+    pub fn device_remembered_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceRememberedStatusType> {
+        self.device_remembered_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDeviceStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23813,6 +24066,28 @@ pub struct UpdateAuthEventFeedbackInput {
     /// <p>The authentication event feedback value.</p>
     pub feedback_value: std::option::Option<crate::model::FeedbackValueType>,
 }
+impl UpdateAuthEventFeedbackInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user pool username.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The event ID.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The feedback token.</p>
+    pub fn feedback_token(&self) -> std::option::Option<&str> {
+        self.feedback_token.as_deref()
+    }
+    /// <p>The authentication event feedback value.</p>
+    pub fn feedback_value(&self) -> std::option::Option<&crate::model::FeedbackValueType> {
+        self.feedback_value.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateAuthEventFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAuthEventFeedbackInput");
@@ -23834,6 +24109,16 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags to remove from the user pool.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags to remove from the user pool.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -23853,6 +24138,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to assign to the user pool.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -23871,6 +24169,16 @@ pub struct StopUserImportJobInput {
     /// <p>The job ID for the user import job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl StopUserImportJobInput {
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The job ID for the user import job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StopUserImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopUserImportJobInput");
@@ -23888,6 +24196,16 @@ pub struct StartUserImportJobInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The job ID for the user import job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl StartUserImportJobInput {
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The job ID for the user import job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for StartUserImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23959,6 +24277,84 @@ pub struct SignUpInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl SignUpInput {
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+    /// user pool client and username plus the client ID in the message.</p>
+    pub fn secret_hash(&self) -> std::option::Option<&str> {
+        self.secret_hash.as_deref()
+    }
+    /// <p>The user name of the user you wish to register.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password of the user you wish to register.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>The validation data in the request to register a user.</p>
+    pub fn validation_data(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.validation_data.as_deref()
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
+    /// calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
+    /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+    /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
+    /// invokes any of these functions, it passes a JSON payload, which the function receives as
+    /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
+    /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
+    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+    /// enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for SignUpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SignUpInput");
@@ -23984,6 +24380,17 @@ pub struct SetUserSettingsInput {
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
     /// delivery.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
+}
+impl SetUserSettingsInput {
+    /// <p>The access token for the set user settings request.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
+    /// delivery.</p>
+    pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
+        self.mfa_options.as_deref()
+    }
 }
 impl std::fmt::Debug for SetUserSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24026,6 +24433,44 @@ pub struct SetUserPoolMfaConfigInput {
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
+impl SetUserPoolMfaConfigInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The SMS text message MFA configuration.</p>
+    pub fn sms_mfa_configuration(&self) -> std::option::Option<&crate::model::SmsMfaConfigType> {
+        self.sms_mfa_configuration.as_ref()
+    }
+    /// <p>The software token MFA configuration.</p>
+    pub fn software_token_mfa_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SoftwareTokenMfaConfigType> {
+        self.software_token_mfa_configuration.as_ref()
+    }
+    /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
+    /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor
+    /// Authentication (MFA) to a User Pool</a> to learn more. Valid values
+    /// include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>OFF</code> MFA will not be used for any users.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ON</code> MFA is required for all users to sign in.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPTIONAL</code> MFA will be required only for individual users who have
+    /// an MFA factor enabled.</p>
+    /// </li>
+    /// </ul>
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
+        self.mfa_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for SetUserPoolMfaConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetUserPoolMfaConfigInput");
@@ -24052,6 +24497,22 @@ pub struct SetUserMfaPreferenceInput {
     /// <p>The access token for the user.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl SetUserMfaPreferenceInput {
+    /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    pub fn sms_mfa_settings(&self) -> std::option::Option<&crate::model::SmsMfaSettingsType> {
+        self.sms_mfa_settings.as_ref()
+    }
+    /// <p>The time-based one-time password software token MFA settings.</p>
+    pub fn software_token_mfa_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SoftwareTokenMfaSettingsType> {
+        self.software_token_mfa_settings.as_ref()
+    }
+    /// <p>The access token for the user.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SetUserMfaPreferenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetUserMfaPreferenceInput");
@@ -24077,6 +24538,24 @@ pub struct SetUiCustomizationInput {
     pub css: std::option::Option<std::string::String>,
     /// <p>The uploaded logo image for the UI customization.</p>
     pub image_file: std::option::Option<aws_smithy_types::Blob>,
+}
+impl SetUiCustomizationInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The client ID for the client app.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The CSS values in the UI customization.</p>
+    pub fn css(&self) -> std::option::Option<&str> {
+        self.css.as_deref()
+    }
+    /// <p>The uploaded logo image for the UI customization.</p>
+    pub fn image_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.image_file.as_ref()
+    }
 }
 impl std::fmt::Debug for SetUiCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24112,6 +24591,39 @@ pub struct SetRiskConfigurationInput {
     pub risk_exception_configuration:
         std::option::Option<crate::model::RiskExceptionConfigurationType>,
 }
+impl SetRiskConfigurationInput {
+    /// <p>The user pool ID. </p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
+    /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk
+    /// configuration is applied to all the clients in the userPool.</p>
+    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
+    /// null, the user pool configuration is overridden and the risk configuration for the
+    /// client is used instead.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The compromised credentials risk configuration.</p>
+    pub fn compromised_credentials_risk_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CompromisedCredentialsRiskConfigurationType> {
+        self.compromised_credentials_risk_configuration.as_ref()
+    }
+    /// <p>The account takeover risk configuration.</p>
+    pub fn account_takeover_risk_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountTakeoverRiskConfigurationType> {
+        self.account_takeover_risk_configuration.as_ref()
+    }
+    /// <p>The configuration to override the risk decision.</p>
+    pub fn risk_exception_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RiskExceptionConfigurationType> {
+        self.risk_exception_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for SetRiskConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetRiskConfigurationInput");
@@ -24143,6 +24655,20 @@ pub struct RevokeTokenInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
     pub client_secret: std::option::Option<std::string::String>,
+}
+impl RevokeTokenInput {
+    /// <p>The token that you want to revoke.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
+    /// <p>The client ID for the token that you want to revoke.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
 }
 impl std::fmt::Debug for RevokeTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24262,6 +24788,129 @@ pub struct RespondToAuthChallengeInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl RespondToAuthChallengeInput {
+    /// <p>The app client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    /// <p>
+    /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
+    /// determines that the caller needs to go through another challenge, they return a session
+    /// with other challenge parameters. This session should be passed as it is to the next
+    /// <code>RespondToAuthChallenge</code> API call.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The challenge responses. These are inputs corresponding to the value of
+    /// <code>ChallengeName</code>, for example:</p>
+    /// <note>
+    /// <p>
+    /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
+    /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+    /// <code>USERNAME</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+    /// required attributes, <code>USERNAME</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+    /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+    /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
+    /// <code>SECRET_HASH</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+    /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
+    /// the session value returned by <code>VerifySoftwareToken</code> in the
+    /// <code>Session</code> parameter.</p>
+    /// </li>
+    /// </ul>
+    pub fn challenge_responses(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.challenge_responses.as_ref()
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+    /// <code>RespondToAuthChallenge</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
+    /// that are assigned to the following triggers: <i>post authentication</i>,
+    /// <i>pre token generation</i>, <i>define auth
+    /// challenge</i>, <i>create auth challenge</i>, and
+    /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+    /// functions, it passes a JSON payload, which the function receives as input. This payload
+    /// contains a <code>clientMetadata</code> attribute, which provides the data that you
+    /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
+    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+    /// enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for RespondToAuthChallengeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RespondToAuthChallengeInput");
@@ -24329,6 +24978,70 @@ pub struct ResendConfirmationCodeInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ResendConfirmationCodeInput {
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+    /// user pool client and username plus the client ID in the message.</p>
+    pub fn secret_hash(&self) -> std::option::Option<&str> {
+        self.secret_hash.as_deref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+    /// <p>The user name of the user to whom you wish to resend a confirmation code.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+    /// <code>ResendConfirmationCode</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
+    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+    /// invokes this function, it passes a JSON payload, which the function receives as input.
+    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+    /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
+    /// request. In your function code in Lambda, you can process the
+    /// <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for ResendConfirmationCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResendConfirmationCodeInput");
@@ -24355,6 +25068,25 @@ pub struct ListUsersInGroupInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUsersInGroupInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The limit of the request to list users.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUsersInGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24463,6 +25195,109 @@ pub struct ListUsersInput {
     /// Developer Guide</i>.</p>
     pub filter: std::option::Option<std::string::String>,
 }
+impl ListUsersInput {
+    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>An array of strings, where each string is the name of a user attribute to be returned
+    /// for each user in the search results. If the array is null, all attributes are
+    /// returned.</p>
+    pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
+        self.attributes_to_get.as_deref()
+    }
+    /// <p>Maximum number of users to be returned.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+    /// <p>A filter string of the form "<i>AttributeName</i>
+    /// <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
+    /// within the filter string must be escaped using the backslash (\) character. For example,
+    /// "<code>family_name</code> = \"Reddy\"".</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>AttributeName</i>: The name of the attribute to search for.
+    /// You can only search for one attribute at a time.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>Filter-Type</i>: For an exact match, use =, for example,
+    /// "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use
+    /// ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>AttributeValue</i>: The attribute value that must be matched
+    /// for each user.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user
+    /// pool.</p>
+    /// <p>You can only search for the following standard attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>username</code> (case-sensitive)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>email</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>phone_number</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>given_name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>family_name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>preferred_username</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>status (called <b>Enabled</b> in the Console)
+    /// (case-sensitive)</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>sub</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Custom attributes are not searchable.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
+    /// Developer Guide</i>.</p>
+    pub fn filter(&self) -> std::option::Option<&str> {
+        self.filter.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
@@ -24486,6 +25321,18 @@ pub struct ListUserPoolsInput {
     /// pools.</p>
     pub max_results: i32,
 }
+impl ListUserPoolsInput {
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return when listing the user
+    /// pools.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListUserPoolsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserPoolsInput");
@@ -24507,6 +25354,22 @@ pub struct ListUserPoolClientsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUserPoolClientsInput {
+    /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The maximum number of results you want the request to return when listing the user
+    /// pool clients.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUserPoolClientsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24531,6 +25394,22 @@ pub struct ListUserImportJobsInput {
     /// jobs in the list.</p>
     pub pagination_token: std::option::Option<std::string::String>,
 }
+impl ListUserImportJobsInput {
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The maximum number of import jobs you want the request to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>An identifier that was returned from the previous call to
+    /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
+    /// jobs in the list.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListUserImportJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListUserImportJobsInput");
@@ -24547,6 +25426,12 @@ impl std::fmt::Debug for ListUserImportJobsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24566,6 +25451,20 @@ pub struct ListResourceServersInput {
     pub max_results: i32,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourceServersInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The maximum number of resource servers to return.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourceServersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24587,6 +25486,20 @@ pub struct ListIdentityProvidersInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIdentityProvidersInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The maximum number of identity providers to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIdentityProvidersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24610,6 +25523,21 @@ pub struct ListGroupsInput {
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListGroupsInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The limit of the request to list groups.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGroupsInput");
@@ -24630,6 +25558,20 @@ pub struct ListDevicesInput {
     pub limit: std::option::Option<i32>,
     /// <p>The pagination token for the list request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesInput {
+    /// <p>The access tokens for the request to list devices.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The limit of the device request.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The pagination token for the list request.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24802,6 +25744,180 @@ pub struct InitiateAuthInput {
     /// security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
 }
+impl InitiateAuthInput {
+    /// <p>The authentication flow for this call to execute. The API action will depend on this
+    /// value. For example: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
+    /// new tokens.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
+    /// <code>SRP_A</code> and return the SRP variables to be used for next
+    /// challenge execution.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+    /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
+    /// (SRP) protocol.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
+    /// flow for refreshing the access token and ID token by supplying a valid refresh
+    /// token.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
+    /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
+    /// flow will invoke the user migration Lambda if the USERNAME is not found in the
+    /// user pool. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
+    /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
+    /// flow. In this flow, Cognito receives the password in the request instead of
+    /// using the SRP process to verify passwords.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    pub fn auth_flow(&self) -> std::option::Option<&crate::model::AuthFlowType> {
+        self.auth_flow.as_ref()
+    }
+    /// <p>The authentication parameters. These are inputs corresponding to the
+    /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
+    /// of <code>AuthFlow</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
+    /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
+    /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+    /// (required), <code>SECRET_HASH</code> (required if the app client is configured
+    /// with a client secret), <code>DEVICE_KEY</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+    /// <code>DEVICE_KEY</code>. To start the authentication flow with password
+    /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+    /// SRP_A Value)</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn auth_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.auth_parameters.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom
+    /// workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
+    /// functions that are specified for various triggers. The ClientMetadata value is passed as
+    /// input to the functions for only the following triggers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pre signup</p>
+    /// </li>
+    /// <li>
+    /// <p>Pre authentication</p>
+    /// </li>
+    /// <li>
+    /// <p>User migration</p>
+    /// </li>
+    /// </ul>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
+    /// payload, which the function receives as input. This payload contains a
+    /// <code>validationData</code> attribute, which provides the data that you assigned to
+    /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
+    /// for your specific needs.</p>
+    /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
+    /// for the following triggers, but it does not provide the ClientMetadata value as
+    /// input:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Post authentication</p>
+    /// </li>
+    /// <li>
+    /// <p>Custom message</p>
+    /// </li>
+    /// <li>
+    /// <p>Pre token generation</p>
+    /// </li>
+    /// <li>
+    /// <p>Create auth challenge</p>
+    /// </li>
+    /// <li>
+    /// <p>Define auth challenge</p>
+    /// </li>
+    /// <li>
+    /// <p>Verify auth challenge</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+    /// <p>The app client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+    /// <code>InitiateAuth</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+}
 impl std::fmt::Debug for InitiateAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateAuthInput");
@@ -24822,6 +25938,12 @@ pub struct GlobalSignOutInput {
     /// <p>The access token.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl GlobalSignOutInput {
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GlobalSignOutInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GlobalSignOutInput");
@@ -24836,6 +25958,12 @@ impl std::fmt::Debug for GlobalSignOutInput {
 pub struct GetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl GetUserPoolMfaConfigInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUserPoolMfaConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24890,6 +26018,56 @@ pub struct GetUserAttributeVerificationCodeInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl GetUserAttributeVerificationCodeInput {
+    /// <p>The access token returned by the server response to get the user attribute
+    /// verification code.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The attribute name returned by the server response to get the user attribute
+    /// verification code.</p>
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
+        self.attribute_name.as_deref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
+    /// function that is assigned to the <i>custom message</i> trigger. When
+    /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
+    /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
+    /// provides the data that you assigned to the ClientMetadata parameter in your
+    /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
+    /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUserAttributeVerificationCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserAttributeVerificationCodeInput");
@@ -24908,6 +26086,13 @@ pub struct GetUserInput {
     /// user.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl GetUserInput {
+    /// <p>The access token returned by the server response to get information about the
+    /// user.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserInput");
@@ -24925,6 +26110,16 @@ pub struct GetUiCustomizationInput {
     /// <p>The client ID for the client app.</p>
     pub client_id: std::option::Option<std::string::String>,
 }
+impl GetUiCustomizationInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The client ID for the client app.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetUiCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUiCustomizationInput");
@@ -24940,6 +26135,12 @@ impl std::fmt::Debug for GetUiCustomizationInput {
 pub struct GetSigningCertificateInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl GetSigningCertificateInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSigningCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24957,6 +26158,16 @@ pub struct GetIdentityProviderByIdentifierInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The identity provider ID.</p>
     pub idp_identifier: std::option::Option<std::string::String>,
+}
+impl GetIdentityProviderByIdentifierInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identity provider ID.</p>
+    pub fn idp_identifier(&self) -> std::option::Option<&str> {
+        self.idp_identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for GetIdentityProviderByIdentifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24976,6 +26187,16 @@ pub struct GetGroupInput {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
 }
+impl GetGroupInput {
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGroupInput");
@@ -24994,6 +26215,16 @@ pub struct GetDeviceInput {
     /// <p>The access token.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl GetDeviceInput {
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceInput");
@@ -25010,6 +26241,12 @@ impl std::fmt::Debug for GetDeviceInput {
 pub struct GetCsvHeaderInput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl GetCsvHeaderInput {
+    /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCsvHeaderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25074,6 +26311,72 @@ pub struct ForgotPasswordInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ForgotPasswordInput {
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+    /// user pool client and username plus the client ID in the message.</p>
+    pub fn secret_hash(&self) -> std::option::Option<&str> {
+        self.secret_hash.as_deref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+    /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
+    /// password.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+    /// <code>ForgotPassword</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
+    /// are assigned to the following triggers: <i>pre sign-up</i>,
+    /// <i>custom message</i>, and <i>user migration</i>. When
+    /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
+    /// function receives as input. This payload contains a <code>clientMetadata</code>
+    /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
+    /// your ForgotPassword request. In your function code in Lambda, you can process the
+    /// <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for ForgotPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForgotPasswordInput");
@@ -25096,6 +26399,16 @@ pub struct ForgetDeviceInput {
     /// <p>The device key.</p>
     pub device_key: std::option::Option<std::string::String>,
 }
+impl ForgetDeviceInput {
+    /// <p>The access token for the forgotten device request.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+}
 impl std::fmt::Debug for ForgetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ForgetDeviceInput");
@@ -25111,6 +26424,12 @@ impl std::fmt::Debug for ForgetDeviceInput {
 pub struct DescribeUserPoolDomainInput {
     /// <p>The domain string.</p>
     pub domain: std::option::Option<std::string::String>,
+}
+impl DescribeUserPoolDomainInput {
+    /// <p>The domain string.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserPoolDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25129,6 +26448,16 @@ pub struct DescribeUserPoolClientInput {
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
 }
+impl DescribeUserPoolClientInput {
+    /// <p>The user pool ID for the user pool you want to describe.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID of the app associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserPoolClientInput");
@@ -25144,6 +26473,12 @@ impl std::fmt::Debug for DescribeUserPoolClientInput {
 pub struct DescribeUserPoolInput {
     /// <p>The user pool ID for the user pool you want to describe.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl DescribeUserPoolInput {
+    /// <p>The user pool ID for the user pool you want to describe.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25161,6 +26496,16 @@ pub struct DescribeUserImportJobInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The job ID for the user import job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeUserImportJobInput {
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The job ID for the user import job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeUserImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25180,6 +26525,16 @@ pub struct DescribeRiskConfigurationInput {
     /// <p>The app client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
 }
+impl DescribeRiskConfigurationInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeRiskConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRiskConfigurationInput");
@@ -25197,6 +26552,16 @@ pub struct DescribeResourceServerInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the resource server</p>
     pub identifier: std::option::Option<std::string::String>,
+}
+impl DescribeResourceServerInput {
+    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identifier for the resource server</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeResourceServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25216,6 +26581,16 @@ pub struct DescribeIdentityProviderInput {
     /// <p>The identity provider name.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
+impl DescribeIdentityProviderInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identity provider name.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeIdentityProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeIdentityProviderInput");
@@ -25233,6 +26608,16 @@ pub struct DeleteUserPoolDomainInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl DeleteUserPoolDomainInput {
+    /// <p>The domain string.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserPoolDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25252,6 +26637,16 @@ pub struct DeleteUserPoolClientInput {
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserPoolClientInput {
+    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID of the app associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserPoolClientInput");
@@ -25267,6 +26662,12 @@ impl std::fmt::Debug for DeleteUserPoolClientInput {
 pub struct DeleteUserPoolInput {
     /// <p>The user pool ID for the user pool you want to delete.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl DeleteUserPoolInput {
+    /// <p>The user pool ID for the user pool you want to delete.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25287,6 +26688,18 @@ pub struct DeleteUserAttributesInput {
     /// <p>The access token used in the request to delete user attributes.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl DeleteUserAttributesInput {
+    /// <p>An array of strings representing the user attribute names you wish to delete.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    pub fn user_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_attribute_names.as_deref()
+    }
+    /// <p>The access token used in the request to delete user attributes.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserAttributesInput");
@@ -25302,6 +26715,12 @@ impl std::fmt::Debug for DeleteUserAttributesInput {
 pub struct DeleteUserInput {
     /// <p>The access token from a request to delete a user.</p>
     pub access_token: std::option::Option<std::string::String>,
+}
+impl DeleteUserInput {
+    /// <p>The access token from a request to delete a user.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25319,6 +26738,16 @@ pub struct DeleteResourceServerInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the resource server.</p>
     pub identifier: std::option::Option<std::string::String>,
+}
+impl DeleteResourceServerInput {
+    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identifier for the resource server.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteResourceServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25338,6 +26767,16 @@ pub struct DeleteIdentityProviderInput {
     /// <p>The identity provider name.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
+impl DeleteIdentityProviderInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identity provider name.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteIdentityProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteIdentityProviderInput");
@@ -25355,6 +26794,16 @@ pub struct DeleteGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl DeleteGroupInput {
+    /// <p>The name of the group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25380,6 +26829,27 @@ pub struct CreateUserPoolDomainInput {
     /// instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
     pub custom_domain_config: std::option::Option<crate::model::CustomDomainConfigType>,
+}
+impl CreateUserPoolDomainInput {
+    /// <p>The domain string.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
+    /// your application.</p>
+    /// <p>Provide this parameter only if you want to use a custom domain for your user pool.
+    /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
+    /// instead.</p>
+    /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
+    pub fn custom_domain_config(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDomainConfigType> {
+        self.custom_domain_config.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateUserPoolDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25569,6 +27039,227 @@ pub struct CreateUserPoolClientInput {
     /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
     pub enable_token_revocation: std::option::Option<bool>,
 }
+impl CreateUserPoolClientInput {
+    /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The client name for the user pool client you would like to create.</p>
+    pub fn client_name(&self) -> std::option::Option<&str> {
+        self.client_name.as_deref()
+    }
+    /// <p>Boolean to specify whether you want to generate a secret for the user pool client
+    /// being created.</p>
+    pub fn generate_secret(&self) -> bool {
+        self.generate_secret
+    }
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
+    /// be used.</p>
+    pub fn refresh_token_validity(&self) -> i32 {
+        self.refresh_token_validity
+    }
+    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
+    /// valid and cannot be used. This value will be overridden if you have entered a value in
+    /// TokenValidityUnits.</p>
+    pub fn access_token_validity(&self) -> std::option::Option<i32> {
+        self.access_token_validity
+    }
+    /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
+    /// valid and cannot be used. This value will be overridden if you have entered a value in
+    /// TokenValidityUnits.</p>
+    pub fn id_token_validity(&self) -> std::option::Option<i32> {
+        self.id_token_validity
+    }
+    /// <p>The units in which the validity times are represented in. Default for RefreshToken is
+    /// days, and default for ID and access tokens are hours.</p>
+    pub fn token_validity_units(
+        &self,
+    ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
+        self.token_validity_units.as_ref()
+    }
+    /// <p>The read attributes.</p>
+    pub fn read_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.read_attributes.as_deref()
+    }
+    /// <p>The user pool attributes that the app client can write to.</p>
+    /// <p>If your app client allows users to sign in through an identity provider, this array
+    /// must include all attributes that are mapped to identity provider attributes. Amazon
+    /// Cognito updates mapped attributes when users sign in to your application through an
+    /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
+    /// Cognito throws an error when it attempts to update the attribute. For more information,
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
+    /// Pool</a>.</p>
+    pub fn write_attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.write_attributes.as_deref()
+    }
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names
+    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+    /// Cognito receives the password in the request instead of using the SRP (Secure
+    /// Remote Password protocol) protocol to verify passwords.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+    /// authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+    /// authentication. In this flow, Cognito receives the password in the request
+    /// instead of using the SRP protocol to verify passwords.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+    /// tokens.</p>
+    /// </li>
+    /// </ul>
+    pub fn explicit_auth_flows(
+        &self,
+    ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
+        self.explicit_auth_flows.as_deref()
+    }
+    /// <p>A list of provider names for the identity providers that are supported on this client.
+    /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+    /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+    pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_identity_providers.as_deref()
+    }
+    /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Be an absolute URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>Be registered with the authorization server.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not include a fragment component.</p>
+    /// </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+    /// Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+    /// purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.callback_ur_ls.as_deref()
+    }
+    /// <p>A list of allowed logout URLs for the identity providers.</p>
+    pub fn logout_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+        self.logout_ur_ls.as_deref()
+    }
+    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Be an absolute URI.</p>
+    /// </li>
+    /// <li>
+    /// <p>Be registered with the authorization server.</p>
+    /// </li>
+    /// <li>
+    /// <p>Not include a fragment component.</p>
+    /// </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+    /// Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+    /// purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn default_redirect_uri(&self) -> std::option::Option<&str> {
+        self.default_redirect_uri.as_deref()
+    }
+    /// <p>The allowed OAuth flows.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+    /// authorization code as the response. This code can be exchanged for access tokens with
+    /// the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+    /// (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+    /// a combination of client and client_secret.</p>
+    pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
+        self.allowed_o_auth_flows.as_deref()
+    }
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+    /// in Resource Servers are also supported.</p>
+    pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+        self.allowed_o_auth_scopes.as_deref()
+    }
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
+    /// with Cognito user pools.</p>
+    pub fn allowed_o_auth_flows_user_pool_client(&self) -> bool {
+        self.allowed_o_auth_flows_user_pool_client
+    }
+    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
+    /// pool.</p>
+    /// <note>
+    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
+    /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
+    /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
+    /// projects within that same region. </p>
+    /// </note>
+    pub fn analytics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::AnalyticsConfigurationType> {
+        self.analytics_configuration.as_ref()
+    }
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
+    /// during authentication, account confirmation, and password recovery when the user does
+    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
+    /// exist, authentication returns an error indicating either the username or password was
+    /// incorrect, and account confirmation and password recovery return a response indicating a
+    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
+    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
+    /// the user pool.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
+    /// existence related errors are not prevented.</p>
+    /// </li>
+    /// </ul>
+    ///
+    ///
+    /// <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
+    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
+    /// is provided.</p>
+    /// </note>
+    pub fn prevent_user_existence_errors(
+        &self,
+    ) -> std::option::Option<&crate::model::PreventUserExistenceErrorTypes> {
+        self.prevent_user_existence_errors.as_ref()
+    }
+    /// <p>Enables or disables token revocation. For more information
+    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
+    pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
+        self.enable_token_revocation
+    }
+}
 impl std::fmt::Debug for CreateUserPoolClientInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserPoolClientInput");
@@ -25683,6 +27374,138 @@ pub struct CreateUserPoolInput {
     /// the recovery method where SMS is preferred over email.</p>
     pub account_recovery_setting: std::option::Option<crate::model::AccountRecoverySettingType>,
 }
+impl CreateUserPoolInput {
+    /// <p>A string used to name the user pool.</p>
+    pub fn pool_name(&self) -> std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
+    /// <p>The policies associated with the new user pool.</p>
+    pub fn policies(&self) -> std::option::Option<&crate::model::UserPoolPolicyType> {
+        self.policies.as_ref()
+    }
+    /// <p>The Lambda trigger configuration information for the new user pool.</p>
+    /// <note>
+    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need
+    /// permission to invoke a function. So you will need to make an extra call to add
+    /// permission for these event sources to invoke your Lambda function.</p>
+    /// <p></p>
+    /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+    /// AddPermission </a>. </p>
+    /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
+    /// </a>.</p>
+    /// </note>
+    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaConfigType> {
+        self.lambda_config.as_ref()
+    }
+    /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
+    pub fn auto_verified_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
+        self.auto_verified_attributes.as_deref()
+    }
+    /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
+    /// <b>preferred_username</b>.</p>
+    pub fn alias_attributes(&self) -> std::option::Option<&[crate::model::AliasAttributeType]> {
+        self.alias_attributes.as_deref()
+    }
+    /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
+    /// a user signs up.</p>
+    pub fn username_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::model::UsernameAttributeType]> {
+        self.username_attributes.as_deref()
+    }
+    /// <p>A string representing the SMS verification message.</p>
+    pub fn sms_verification_message(&self) -> std::option::Option<&str> {
+        self.sms_verification_message.as_deref()
+    }
+    /// <p>A string representing the email verification message. EmailVerificationMessage is
+    /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn email_verification_message(&self) -> std::option::Option<&str> {
+        self.email_verification_message.as_deref()
+    }
+    /// <p>A string representing the email verification subject. EmailVerificationSubject is
+    /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    pub fn email_verification_subject(&self) -> std::option::Option<&str> {
+        self.email_verification_subject.as_deref()
+    }
+    /// <p>The template for the verification message that the user sees when the app requests
+    /// permission to access the user's information.</p>
+    pub fn verification_message_template(
+        &self,
+    ) -> std::option::Option<&crate::model::VerificationMessageTemplateType> {
+        self.verification_message_template.as_ref()
+    }
+    /// <p>A string representing the SMS authentication message.</p>
+    pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
+        self.sms_authentication_message.as_deref()
+    }
+    /// <p>Specifies MFA configuration details.</p>
+    pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
+        self.mfa_configuration.as_ref()
+    }
+    /// <p>The device configuration.</p>
+    pub fn device_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceConfigurationType> {
+        self.device_configuration.as_ref()
+    }
+    /// <p>The email configuration.</p>
+    pub fn email_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EmailConfigurationType> {
+        self.email_configuration.as_ref()
+    }
+    /// <p>The SMS configuration.</p>
+    pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
+        self.sms_configuration.as_ref()
+    }
+    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
+    /// to categorize and manage user pools in different ways, such as by purpose, owner,
+    /// environment, or other criteria.</p>
+    pub fn user_pool_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.user_pool_tags.as_ref()
+    }
+    /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+    pub fn admin_create_user_config(
+        &self,
+    ) -> std::option::Option<&crate::model::AdminCreateUserConfigType> {
+        self.admin_create_user_config.as_ref()
+    }
+    /// <p>An array of schema attributes for the new user pool. These attributes can be standard
+    /// or custom attributes.</p>
+    pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaAttributeType]> {
+        self.schema.as_deref()
+    }
+    /// <p>Used to enable advanced security risk detection. Set the key
+    /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    pub fn user_pool_add_ons(&self) -> std::option::Option<&crate::model::UserPoolAddOnsType> {
+        self.user_pool_add_ons.as_ref()
+    }
+    /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
+    /// option. For example, when this is set to <code>False</code>, users will be able to sign
+    /// in using either "username" or "Username". This configuration is immutable once it has
+    /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+    pub fn username_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UsernameConfigurationType> {
+        self.username_configuration.as_ref()
+    }
+    /// <p>Use this setting to define which verified available method a user can use to recover
+    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
+    /// preferred method when a user has more than one method available. With this setting, SMS
+    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
+    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
+    /// the recovery method where SMS is preferred over email.</p>
+    pub fn account_recovery_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::AccountRecoverySettingType> {
+        self.account_recovery_setting.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateUserPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserPoolInput");
@@ -25734,6 +27557,20 @@ pub struct CreateUserImportJobInput {
     /// <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
 }
+impl CreateUserImportJobInput {
+    /// <p>The job name for the user import job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.</p>
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+        self.cloud_watch_logs_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserImportJobInput");
@@ -25759,6 +27596,27 @@ pub struct CreateResourceServerInput {
     /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
     /// <code>description</code>.</p>
     pub scopes: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
+}
+impl CreateResourceServerInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
+    /// endpoint where the resource server is located. For example,
+    /// <code>https://my-weather-api.example.com</code>.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>A friendly name for the resource server.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
+    /// <code>description</code>.</p>
+    pub fn scopes(&self) -> std::option::Option<&[crate::model::ResourceServerScopeType]> {
+        self.scopes.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateResourceServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25897,6 +27755,145 @@ pub struct CreateIdentityProviderInput {
     /// <p>A list of identity provider identifiers.</p>
     pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl CreateIdentityProviderInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The identity provider name.</p>
+    pub fn provider_name(&self) -> std::option::Option<&str> {
+        self.provider_name.as_deref()
+    }
+    /// <p>The identity provider type.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The identity provider details. The following list describes the provider detail keys
+    /// for each identity provider type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>client_secret</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For Facebook:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>client_secret</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// <li>
+    /// <p>api_version</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>team_id</p>
+    /// </li>
+    /// <li>
+    /// <p>key_id</p>
+    /// </li>
+    /// <li>
+    /// <p>private_key</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>client_id</p>
+    /// </li>
+    /// <li>
+    /// <p>client_secret</p>
+    /// </li>
+    /// <li>
+    /// <p>attributes_request_method</p>
+    /// </li>
+    /// <li>
+    /// <p>oidc_issuer</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_scopes</p>
+    /// </li>
+    /// <li>
+    /// <p>authorize_url <i>if not available from discovery URL specified
+    /// by oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>token_url <i>if not available from discovery URL specified by
+    /// oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>attributes_url <i>if not available from discovery URL specified
+    /// by oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>jwks_uri <i>if not available from discovery URL specified by
+    /// oidc_issuer key</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>For SAML providers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>MetadataFile OR MetadataURL</p>
+    /// </li>
+    /// <li>
+    /// <p>IDPSignout <i>optional</i>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    pub fn provider_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.provider_details.as_ref()
+    }
+    /// <p>A mapping of identity provider attributes to standard and custom user pool
+    /// attributes.</p>
+    pub fn attribute_mapping(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attribute_mapping.as_ref()
+    }
+    /// <p>A list of identity provider identifiers.</p>
+    pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+        self.idp_identifiers.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateIdentityProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIdentityProviderInput");
@@ -25937,6 +27934,41 @@ pub struct CreateGroupInput {
     /// not set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     pub precedence: std::option::Option<i32>,
+}
+impl CreateGroupInput {
+    /// <p>The name of the group. Must be unique.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>A string containing the description of the group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The role ARN for the group.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A nonnegative integer value that specifies the precedence of this group relative to
+    /// the other groups that a user can belong to in the user pool. Zero is the highest
+    /// precedence value. Groups with lower <code>Precedence</code> values take precedence over
+    /// groups with higher or null <code>Precedence</code> values. If a user belongs to two or
+    /// more groups, it is the group with the lowest precedence value whose role ARN will be
+    /// used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in
+    /// the user's tokens.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
+    /// group takes precedence over the other. If two groups with the same
+    /// <code>Precedence</code> have the same role ARN, that role is used in the
+    /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
+    /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
+    /// not set in users' tokens.</p>
+    /// <p>The default <code>Precedence</code> value is null.</p>
+    pub fn precedence(&self) -> std::option::Option<i32> {
+        self.precedence
+    }
 }
 impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26010,6 +28042,82 @@ pub struct ConfirmSignUpInput {
     /// </note>
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ConfirmSignUpInput {
+    /// <p>The ID of the app client associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+    /// user pool client and username plus the client ID in the message.</p>
+    pub fn secret_hash(&self) -> std::option::Option<&str> {
+        self.secret_hash.as_deref()
+    }
+    /// <p>The user name of the user whose registration you wish to confirm.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The confirmation code sent by a user's request to confirm registration.</p>
+    pub fn confirmation_code(&self) -> std::option::Option<&str> {
+        self.confirmation_code.as_deref()
+    }
+    /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
+    /// default set to <code>False</code>. If this parameter is set to <code>True</code> and the
+    /// phone number/email used for sign up confirmation already exists as an alias with a
+    /// different user, the API call will migrate the alias from the previous user to the newly
+    /// created user being confirmed. If set to <code>False</code>, the API will throw an
+    /// <b>AliasExistsException</b> error.</p>
+    pub fn force_alias_creation(&self) -> bool {
+        self.force_alias_creation
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+    /// <code>ConfirmSignUp</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
+    /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
+    /// invokes this function, it passes a JSON payload, which the function receives as input.
+    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+    /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
+    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+    /// enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for ConfirmSignUpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26085,6 +28193,80 @@ pub struct ConfirmForgotPasswordInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ConfirmForgotPasswordInput {
+    /// <p>The app client ID of the app associated with the user pool.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+    /// user pool client and username plus the client ID in the message.</p>
+    pub fn secret_hash(&self) -> std::option::Option<&str> {
+        self.secret_hash.as_deref()
+    }
+    /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
+    /// password.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
+    /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+    pub fn confirmation_code(&self) -> std::option::Option<&str> {
+        self.confirmation_code.as_deref()
+    }
+    /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+    /// <code>ConfirmForgotPassword</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
+        self.user_context_data.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
+    /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
+    /// Cognito invokes this function, it passes a JSON payload, which the function receives as
+    /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
+    /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
+    /// request. In your function code in Lambda, you can process the
+    /// <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfirmForgotPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmForgotPasswordInput");
@@ -26114,6 +28296,26 @@ pub struct ConfirmDeviceInput {
     /// <p>The device name.</p>
     pub device_name: std::option::Option<std::string::String>,
 }
+impl ConfirmDeviceInput {
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The configuration of the device secret verifier.</p>
+    pub fn device_secret_verifier_config(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceSecretVerifierConfigType> {
+        self.device_secret_verifier_config.as_ref()
+    }
+    /// <p>The device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ConfirmDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfirmDeviceInput");
@@ -26139,6 +28341,20 @@ pub struct ChangePasswordInput {
     /// <p>The access token.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
+impl ChangePasswordInput {
+    /// <p>The old password.</p>
+    pub fn previous_password(&self) -> std::option::Option<&str> {
+        self.previous_password.as_deref()
+    }
+    /// <p>The new password.</p>
+    pub fn proposed_password(&self) -> std::option::Option<&str> {
+        self.proposed_password.as_deref()
+    }
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ChangePasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangePasswordInput");
@@ -26159,6 +28375,17 @@ pub struct AssociateSoftwareTokenInput {
     /// service. This allows authentication of the user as part of the MFA setup process.</p>
     pub session: std::option::Option<std::string::String>,
 }
+impl AssociateSoftwareTokenInput {
+    /// <p>The access token.</p>
+    pub fn access_token(&self) -> std::option::Option<&str> {
+        self.access_token.as_deref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. This allows authentication of the user as part of the MFA setup process.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateSoftwareTokenInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSoftwareTokenInput");
@@ -26176,6 +28403,16 @@ pub struct AdminUserGlobalSignOutInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl AdminUserGlobalSignOutInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminUserGlobalSignOutInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26233,6 +28470,60 @@ pub struct AdminUpdateUserAttributesInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AdminUpdateUserAttributesInput {
+    /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user for whom you want to update user attributes.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
+    /// function that is assigned to the <i>custom message</i> trigger. When
+    /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
+    /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
+    /// provides the data that you assigned to the ClientMetadata parameter in your
+    /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
+    /// the <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminUpdateUserAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUpdateUserAttributesInput");
@@ -26257,6 +28548,26 @@ pub struct AdminUpdateDeviceStatusInput {
     /// <p>The status indicating whether a device has been remembered or not.</p>
     pub device_remembered_status: std::option::Option<crate::model::DeviceRememberedStatusType>,
 }
+impl AdminUpdateDeviceStatusInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The status indicating whether a device has been remembered or not.</p>
+    pub fn device_remembered_status(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceRememberedStatusType> {
+        self.device_remembered_status.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminUpdateDeviceStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUpdateDeviceStatusInput");
@@ -26280,6 +28591,24 @@ pub struct AdminUpdateAuthEventFeedbackInput {
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The authentication event feedback value.</p>
     pub feedback_value: std::option::Option<crate::model::FeedbackValueType>,
+}
+impl AdminUpdateAuthEventFeedbackInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user pool username.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The authentication event ID.</p>
+    pub fn event_id(&self) -> std::option::Option<&str> {
+        self.event_id.as_deref()
+    }
+    /// <p>The authentication event feedback value.</p>
+    pub fn feedback_value(&self) -> std::option::Option<&crate::model::FeedbackValueType> {
+        self.feedback_value.as_ref()
+    }
 }
 impl std::fmt::Debug for AdminUpdateAuthEventFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26306,6 +28635,22 @@ pub struct AdminSetUserSettingsInput {
     /// delivery.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
 }
+impl AdminSetUserSettingsInput {
+    /// <p>The ID of the user pool that contains the user that you are setting options
+    /// for.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user that you are setting options for.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
+    /// delivery.</p>
+    pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
+        self.mfa_options.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminSetUserSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserSettingsInput");
@@ -26331,6 +28676,26 @@ pub struct AdminSetUserPasswordInput {
     /// temporary.</p>
     pub permanent: bool,
 }
+impl AdminSetUserPasswordInput {
+    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user whose password you wish to set.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The password for the user.</p>
+    pub fn password(&self) -> std::option::Option<&str> {
+        self.password.as_deref()
+    }
+    /// <p>
+    /// <code>True</code> if the password is permanent, <code>False</code> if it is
+    /// temporary.</p>
+    pub fn permanent(&self) -> bool {
+        self.permanent
+    }
+}
 impl std::fmt::Debug for AdminSetUserPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserPasswordInput");
@@ -26355,6 +28720,26 @@ pub struct AdminSetUserMfaPreferenceInput {
     pub username: std::option::Option<std::string::String>,
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
+}
+impl AdminSetUserMfaPreferenceInput {
+    /// <p>The SMS text message MFA settings.</p>
+    pub fn sms_mfa_settings(&self) -> std::option::Option<&crate::model::SmsMfaSettingsType> {
+        self.sms_mfa_settings.as_ref()
+    }
+    /// <p>The time-based one-time password software token MFA settings.</p>
+    pub fn software_token_mfa_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::SoftwareTokenMfaSettingsType> {
+        self.software_token_mfa_settings.as_ref()
+    }
+    /// <p>The user pool username or alias.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminSetUserMfaPreferenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26474,6 +28859,127 @@ pub struct AdminRespondToAuthChallengeInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AdminRespondToAuthChallengeInput {
+    /// <p>The ID of the Amazon Cognito user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
+        self.challenge_name.as_ref()
+    }
+    /// <p>The challenge responses. These are inputs corresponding to the value of
+    /// <code>ChallengeName</code>, for example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
+    /// <code>SECRET_HASH</code> (if app client is configured with client
+    /// secret).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+    /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+    /// with client secret).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
+    /// <code>SECRET_HASH</code> (if app client is configured with client secret).
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+    /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+    /// client is configured with client secret). </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
+    /// the session value returned by <code>VerifySoftwareToken</code> in the
+    /// <code>Session</code> parameter.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
+    /// not an alias (such as email address or phone number). To make this easier, the
+    /// <code>AdminInitiateAuth</code> response includes the actual username value in the
+    /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
+    /// your call to <code>AdminInitiateAuth</code>.</p>
+    pub fn challenge_responses(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.challenge_responses.as_ref()
+    }
+    /// <p>The session which should be passed both ways in challenge-response calls to the
+    /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
+    /// determines that the caller needs to go through another challenge, they return a session
+    /// with other challenge parameters. This session should be passed as it is to the next
+    /// <code>RespondToAuthChallenge</code> API call.</p>
+    pub fn session(&self) -> std::option::Option<&str> {
+        self.session.as_deref()
+    }
+    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
+    /// <code>AdminRespondToAuthChallenge</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn context_data(&self) -> std::option::Option<&crate::model::ContextDataType> {
+        self.context_data.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
+    /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
+    /// <i>custom message</i>, <i>post authentication</i>,
+    /// <i>user migration</i>, <i>pre token generation</i>,
+    /// <i>define auth challenge</i>, <i>create auth
+    /// challenge</i>, and <i>verify auth challenge response</i>. When
+    /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
+    /// function receives as input. This payload contains a <code>clientMetadata</code>
+    /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
+    /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
+    /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminRespondToAuthChallengeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminRespondToAuthChallengeInput");
@@ -26532,6 +29038,54 @@ pub struct AdminResetUserPasswordInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AdminResetUserPasswordInput {
+    /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user whose password you wish to reset.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
+    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+    /// invokes this function, it passes a JSON payload, which the function receives as input.
+    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+    /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
+    /// request. In your function code in Lambda, you can process the
+    /// <code>clientMetadata</code> value to enhance your workflow for your specific
+    /// needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminResetUserPasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminResetUserPasswordInput");
@@ -26552,6 +29106,20 @@ pub struct AdminRemoveUserFromGroupInput {
     pub username: std::option::Option<std::string::String>,
     /// <p>The group name.</p>
     pub group_name: std::option::Option<std::string::String>,
+}
+impl AdminRemoveUserFromGroupInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The username for the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The group name.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminRemoveUserFromGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26575,6 +29143,24 @@ pub struct AdminListUserAuthEventsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl AdminListUserAuthEventsInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user pool username or an alias.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The maximum number of authentication events to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminListUserAuthEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26601,6 +29187,25 @@ pub struct AdminListGroupsForUserInput {
     /// used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl AdminListGroupsForUserInput {
+    /// <p>The username for the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The limit of the request to list groups.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be
+    /// used to return the next set of items in the list.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminListGroupsForUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminListGroupsForUserInput");
@@ -26624,6 +29229,24 @@ pub struct AdminListDevicesInput {
     pub limit: std::option::Option<i32>,
     /// <p>The pagination token.</p>
     pub pagination_token: std::option::Option<std::string::String>,
+}
+impl AdminListDevicesInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The limit of the devices request.</p>
+    pub fn limit(&self) -> std::option::Option<i32> {
+        self.limit
+    }
+    /// <p>The pagination token.</p>
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
+        self.pagination_token.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminListDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26676,6 +29299,52 @@ pub struct AdminLinkProviderForUserInput {
     /// automatically parse the default unique identifier found in the subject from the SAML
     /// token.</p>
     pub source_user: std::option::Option<crate::model::ProviderUserIdentifierType>,
+}
+impl AdminLinkProviderForUserInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The existing user in the user pool to be linked to the external identity provider user
+    /// account. Can be a native (Username + Password) Cognito User Pools user or a federated
+    /// user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is
+    /// thrown. This is the user that is returned when the new user (with the linked identity
+    /// provider attribute) signs in.</p>
+    /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the
+    /// <code>DestinationUser</code> should be the username in the user pool. For a
+    /// federated user, it should be the provider-specific <code>user_id</code>.</p>
+    /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+    /// ignored.</p>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
+    /// Cognito user pools.</p>
+    pub fn destination_user(
+        &self,
+    ) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
+        self.destination_user.as_ref()
+    }
+    /// <p>An external identity provider account for a user who does not currently exist yet in
+    /// the user pool. This user must be a federated user (for example, a SAML or Facebook
+    /// user), not another native user.</p>
+    /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook,
+    /// Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to
+    /// <code>Cognito_Subject</code>. For social identity providers, the
+    /// <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
+    /// <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook,
+    /// Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
+    /// <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the
+    /// user must be the same value as the <code>id</code>, <code>sub</code>, or
+    /// <code>user_id</code> value found in the social identity provider token.</p>
+    /// <p></p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
+    /// in the SAML assertion. If you wish to link SAML users based on the subject of the SAML
+    /// assertion, you should map the subject to a claim through the SAML identity provider and
+    /// submit that claim name as the <code>ProviderAttributeName</code>. If you set
+    /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
+    /// automatically parse the default unique identifier found in the subject from the SAML
+    /// token.</p>
+    pub fn source_user(&self) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
+        self.source_user.as_ref()
+    }
 }
 impl std::fmt::Debug for AdminLinkProviderForUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26860,6 +29529,194 @@ pub struct AdminInitiateAuthInput {
     /// security.</p>
     pub context_data: std::option::Option<crate::model::ContextDataType>,
 }
+impl AdminInitiateAuthInput {
+    /// <p>The ID of the Amazon Cognito user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The app client ID.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The authentication flow for this call to execute. The API action will depend on this
+    /// value. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
+    /// new tokens.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
+    /// <code>SRP_A</code> and return the SRP variables to be used for next
+    /// challenge execution.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+    /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
+    /// (SRP) protocol.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
+    /// flow for refreshing the access token and ID token by supplying a valid refresh
+    /// token.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in
+    /// the USERNAME and PASSWORD directly if the flow is enabled for calling the app
+    /// client.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
+    /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
+    /// flow will invoke the user migration Lambda if the USERNAME is not found in the
+    /// user pool. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
+    /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
+    /// flow. In this flow, Cognito receives the password in the request instead of
+    /// using the SRP process to verify passwords.</p>
+    /// </li>
+    /// </ul>
+    pub fn auth_flow(&self) -> std::option::Option<&crate::model::AuthFlowType> {
+        self.auth_flow.as_ref()
+    }
+    /// <p>The authentication parameters. These are inputs corresponding to the
+    /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
+    /// of <code>AuthFlow</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
+    /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
+    /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+    /// (required), <code>SECRET_HASH</code> (required if the app client is configured
+    /// with a client secret), <code>DEVICE_KEY</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+    /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+    /// <code>DEVICE_KEY</code>. To start the authentication flow with password
+    /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+    /// SRP_A Value)</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn auth_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.auth_parameters.as_ref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom
+    /// workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
+    /// functions that are specified for various triggers. The ClientMetadata value is passed as
+    /// input to the functions for only the following triggers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pre signup</p>
+    /// </li>
+    /// <li>
+    /// <p>Pre authentication</p>
+    /// </li>
+    /// <li>
+    /// <p>User migration</p>
+    /// </li>
+    /// </ul>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
+    /// payload, which the function receives as input. This payload contains a
+    /// <code>validationData</code> attribute, which provides the data that you assigned to
+    /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
+    /// Lambda, you can process the <code>validationData</code> value to enhance your
+    /// workflow for your specific needs.</p>
+    /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
+    /// functions for the following triggers, but it does not provide the ClientMetadata value
+    /// as input:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Post authentication</p>
+    /// </li>
+    /// <li>
+    /// <p>Custom message</p>
+    /// </li>
+    /// <li>
+    /// <p>Pre token generation</p>
+    /// </li>
+    /// <li>
+    /// <p>Create auth challenge</p>
+    /// </li>
+    /// <li>
+    /// <p>Define auth challenge</p>
+    /// </li>
+    /// <li>
+    /// <p>Verify auth challenge</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
+    /// <code>AdminInitiateAuth</code> calls.</p>
+    pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
+        self.analytics_metadata.as_ref()
+    }
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+    /// security.</p>
+    pub fn context_data(&self) -> std::option::Option<&crate::model::ContextDataType> {
+        self.context_data.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminInitiateAuthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminInitiateAuthInput");
@@ -26884,6 +29741,17 @@ pub struct AdminGetUserInput {
     /// <p>The user name of the user you wish to retrieve.</p>
     pub username: std::option::Option<std::string::String>,
 }
+impl AdminGetUserInput {
+    /// <p>The user pool ID for the user pool where you want to get information about the
+    /// user.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user you wish to retrieve.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminGetUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminGetUserInput");
@@ -26903,6 +29771,20 @@ pub struct AdminGetDeviceInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl AdminGetDeviceInput {
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminGetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26925,6 +29807,20 @@ pub struct AdminForgetDeviceInput {
     /// <p>The device key.</p>
     pub device_key: std::option::Option<std::string::String>,
 }
+impl AdminForgetDeviceInput {
+    /// <p>The user pool ID.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The device key.</p>
+    pub fn device_key(&self) -> std::option::Option<&str> {
+        self.device_key.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminForgetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminForgetDeviceInput");
@@ -26944,6 +29840,16 @@ pub struct AdminEnableUserInput {
     /// <p>The user name of the user you wish to enable.</p>
     pub username: std::option::Option<std::string::String>,
 }
+impl AdminEnableUserInput {
+    /// <p>The user pool ID for the user pool where you want to enable the user.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user you wish to enable.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminEnableUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminEnableUserInput");
@@ -26962,6 +29868,16 @@ pub struct AdminDisableUserInput {
     /// <p>The user name of the user you wish to disable.</p>
     pub username: std::option::Option<std::string::String>,
 }
+impl AdminDisableUserInput {
+    /// <p>The user pool ID for the user pool where you want to disable the user.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user you wish to disable.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminDisableUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminDisableUserInput");
@@ -26979,6 +29895,16 @@ pub struct AdminDisableProviderForUserInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user to be disabled.</p>
     pub user: std::option::Option<crate::model::ProviderUserIdentifierType>,
+}
+impl AdminDisableProviderForUserInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user to be disabled.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for AdminDisableProviderForUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27002,6 +29928,22 @@ pub struct AdminDeleteUserAttributesInput {
     /// attribute name.</p>
     pub user_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AdminDeleteUserAttributesInput {
+    /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user from which you would like to delete attributes.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>An array of strings representing the user attribute names you wish to delete.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    pub fn user_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.user_attribute_names.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminDeleteUserAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminDeleteUserAttributesInput");
@@ -27020,6 +29962,16 @@ pub struct AdminDeleteUserInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user you wish to delete.</p>
     pub username: std::option::Option<std::string::String>,
+}
+impl AdminDeleteUserInput {
+    /// <p>The user pool ID for the user pool where you want to delete the user.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name of the user you wish to delete.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
 }
 impl std::fmt::Debug for AdminDeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27152,6 +30104,146 @@ pub struct AdminCreateUserInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AdminCreateUserInput {
+    /// <p>The user pool ID for the user pool where the user will be created.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
+    /// between 1 and 128 characters. After the user is created, the username cannot be
+    /// changed.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>An array of name-value pairs that contain user attributes and attribute values to be
+    /// set for the user to be created. You can create a user without specifying any attributes
+    /// other than <code>Username</code>. However, any attributes that you specify as required
+    /// (when creating a user pool or in the <b>Attributes</b> tab of
+    /// the console) must be supplied either by you (in your call to
+    /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
+    /// your welcome message).</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+    /// attribute name.</p>
+    /// <p>To send a message inviting the user to sign up, you must specify the user's email
+    /// address or phone number. This can be done in your call to AdminCreateUser or in the
+    /// <b>Users</b> tab of the Amazon Cognito console for
+    /// managing your user pools.</p>
+    /// <p>In your call to <code>AdminCreateUser</code>, you can set the
+    /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
+    /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
+    /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>email</b>: The email address of the user to whom
+    /// the message that contains the code and username will be sent. Required if the
+    /// <code>email_verified</code> attribute is set to <code>True</code>, or if
+    /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+    /// parameter.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>phone_number</b>: The phone number of the user to
+    /// whom the message that contains the code and username will be sent. Required if
+    /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
+    /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+    /// parameter.</p>
+    /// </li>
+    /// </ul>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>The user's validation data. This is an array of name-value pairs that contain user
+    /// attributes and attribute values that you can use for custom validation, such as
+    /// restricting the types of user accounts that can be registered. For example, you might
+    /// choose to allow or disallow user sign-up based on the user's domain.</p>
+    /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
+    /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
+    /// receives the validation data and uses it in the validation process.</p>
+    /// <p>The user's validation data is not persisted.</p>
+    pub fn validation_data(&self) -> std::option::Option<&[crate::model::AttributeType]> {
+        self.validation_data.as_deref()
+    }
+    /// <p>The user's temporary password. This password must conform to the password policy that
+    /// you specified when you created the user pool.</p>
+    /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the
+    /// user must enter the temporary password in the sign-in page along with a new password to
+    /// be used in all future sign-ins.</p>
+    /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito
+    /// generates one for you.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that
+    /// you specified when you created the user pool. To reset the account after that time
+    /// limit, you must call <code>AdminCreateUser</code> again, specifying
+    /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    pub fn temporary_password(&self) -> std::option::Option<&str> {
+        self.temporary_password.as_deref()
+    }
+    /// <p>This parameter is only used if the <code>phone_number_verified</code> or
+    /// <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is
+    /// ignored.</p>
+    /// <p>If this parameter is set to <code>True</code> and the phone number or email address
+    /// specified in the UserAttributes parameter already exists as an alias with a different
+    /// user, the API call will migrate the alias from the previous user to the newly created
+    /// user. The previous user will no longer be able to log in using that alias.</p>
+    /// <p>If this parameter is set to <code>False</code>, the API throws an
+    /// <code>AliasExistsException</code> error if the alias already exists. The default
+    /// value is <code>False</code>.</p>
+    pub fn force_alias_creation(&self) -> bool {
+        self.force_alias_creation
+    }
+    /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
+    /// exists and reset the expiration limit on the user's account. Set to
+    /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+    /// specified.</p>
+    pub fn message_action(&self) -> std::option::Option<&crate::model::MessageActionType> {
+        self.message_action.as_ref()
+    }
+    /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
+    /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
+    /// <code>"SMS"</code>. More than one value can be specified.</p>
+    pub fn desired_delivery_mediums(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeliveryMediumType]> {
+        self.desired_delivery_mediums.as_deref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+    /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
+    /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
+    /// this function, it passes a JSON payload, which the function receives as input. This
+    /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
+    /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
+    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+    /// enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminCreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminCreateUserInput");
@@ -27210,6 +30302,53 @@ pub struct AdminConfirmSignUpInput {
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl AdminConfirmSignUpInput {
+    /// <p>The user pool ID for which you want to confirm user registration.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The user name for which you want to confirm user registration.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+    /// that this action triggers. </p>
+    /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
+    /// invokes the Lambda function that is specified for the <i>post
+    /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
+    /// passes a JSON payload, which the function receives as input. In this payload, the
+    /// <code>clientMetadata</code> attribute provides the data that you assigned to the
+    /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
+    /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
+    /// specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+    /// <i>Amazon Cognito Developer Guide</i>.</p>
+    /// <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata
+    /// parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+    /// available only to Lambda triggers that are assigned to a user pool to
+    /// support custom workflows. If your user pool configuration does not include
+    /// triggers, the ClientMetadata parameter serves no purpose.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+    /// </li>
+    /// <li>
+    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+    /// it to provide sensitive information.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    pub fn client_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.client_metadata.as_ref()
+    }
+}
 impl std::fmt::Debug for AdminConfirmSignUpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminConfirmSignUpInput");
@@ -27231,6 +30370,20 @@ pub struct AdminAddUserToGroupInput {
     /// <p>The group name.</p>
     pub group_name: std::option::Option<std::string::String>,
 }
+impl AdminAddUserToGroupInput {
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>The username for the user.</p>
+    pub fn username(&self) -> std::option::Option<&str> {
+        self.username.as_deref()
+    }
+    /// <p>The group name.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AdminAddUserToGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminAddUserToGroupInput");
@@ -27249,6 +30402,16 @@ pub struct AddCustomAttributesInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
     pub custom_attributes: std::option::Option<std::vec::Vec<crate::model::SchemaAttributeType>>,
+}
+impl AddCustomAttributesInput {
+    /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+        self.user_pool_id.as_deref()
+    }
+    /// <p>An array of custom attributes, such as Mutable and Name.</p>
+    pub fn custom_attributes(&self) -> std::option::Option<&[crate::model::SchemaAttributeType]> {
+        self.custom_attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for AddCustomAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

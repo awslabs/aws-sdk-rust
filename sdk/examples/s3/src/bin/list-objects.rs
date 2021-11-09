@@ -60,8 +60,8 @@ async fn main() -> Result<(), Error> {
 
     println!("Objects:");
 
-    for object in resp.contents.unwrap_or_default() {
-        println!("  {}", object.key.as_deref().unwrap_or_default());
+    for object in resp.contents().unwrap_or_default() {
+        println!("  {}", object.key().unwrap_or_default());
     }
 
     Ok(())

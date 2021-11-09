@@ -8,6 +8,16 @@ pub struct Tag {
     /// <p>The value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The key of the tag.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value of the tag.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -97,6 +107,56 @@ pub struct Backup {
     pub delete_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of tags for the backup.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl Backup {
+    /// <p>The identifier (ID) of the backup.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>The state of the backup.</p>
+    pub fn backup_state(&self) -> std::option::Option<&crate::model::BackupState> {
+        self.backup_state.as_ref()
+    }
+    /// <p>The identifier (ID) of the cluster that was backed up.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The date and time when the backup was created.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+    /// <p>The date and time when the backup was copied from a source backup.</p>
+    pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.copy_timestamp.as_ref()
+    }
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
+    /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    pub fn never_expires(&self) -> std::option::Option<bool> {
+        self.never_expires
+    }
+    /// <p>The AWS Region that contains the source backup from which the new backup was
+    /// copied.</p>
+    pub fn source_region(&self) -> std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
+    /// <p>The identifier (ID) of the source backup from which the new backup was
+    /// copied.</p>
+    pub fn source_backup(&self) -> std::option::Option<&str> {
+        self.source_backup.as_deref()
+    }
+    /// <p>The identifier (ID) of the cluster containing the source backup from which the new
+    /// backup was copied.</p>
+    pub fn source_cluster(&self) -> std::option::Option<&str> {
+        self.source_cluster.as_deref()
+    }
+    /// <p>The date and time when the backup will be permanently deleted.</p>
+    pub fn delete_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.delete_timestamp.as_ref()
+    }
+    /// <p>The list of tags for the backup.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
 }
 impl std::fmt::Debug for Backup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -408,6 +468,75 @@ pub struct Cluster {
     /// <p>The list of tags for the cluster.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl Cluster {
+    /// <p>The cluster's backup policy.</p>
+    pub fn backup_policy(&self) -> std::option::Option<&crate::model::BackupPolicy> {
+        self.backup_policy.as_ref()
+    }
+    /// <p>A policy that defines how the service retains backups.</p>
+    pub fn backup_retention_policy(
+        &self,
+    ) -> std::option::Option<&crate::model::BackupRetentionPolicy> {
+        self.backup_retention_policy.as_ref()
+    }
+    /// <p>The cluster's identifier (ID).</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The date and time when the cluster was created.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+    /// <p>Contains information about the HSMs in the cluster.</p>
+    pub fn hsms(&self) -> std::option::Option<&[crate::model::Hsm]> {
+        self.hsms.as_deref()
+    }
+    /// <p>The type of HSM that the cluster contains.</p>
+    pub fn hsm_type(&self) -> std::option::Option<&str> {
+        self.hsm_type.as_deref()
+    }
+    /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
+    pub fn pre_co_password(&self) -> std::option::Option<&str> {
+        self.pre_co_password.as_deref()
+    }
+    /// <p>The identifier (ID) of the cluster's security group.</p>
+    pub fn security_group(&self) -> std::option::Option<&str> {
+        self.security_group.as_deref()
+    }
+    /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only
+    /// when the cluster was created from a backup.</p>
+    pub fn source_backup_id(&self) -> std::option::Option<&str> {
+        self.source_backup_id.as_deref()
+    }
+    /// <p>The cluster's state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
+    /// <p>A description of the cluster's state.</p>
+    pub fn state_message(&self) -> std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
+    /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
+    pub fn subnet_mapping(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.subnet_mapping.as_ref()
+    }
+    /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
+    /// cluster.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
+    pub fn certificates(&self) -> std::option::Option<&crate::model::Certificates> {
+        self.certificates.as_ref()
+    }
+    /// <p>The list of tags for the cluster.</p>
+    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tag_list.as_deref()
+    }
+}
 impl std::fmt::Debug for Cluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Cluster");
@@ -715,6 +844,30 @@ pub struct Certificates {
     /// the cluster's owner.</p>
     pub cluster_certificate: std::option::Option<std::string::String>,
 }
+impl Certificates {
+    /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
+    /// state is <code>UNINITIALIZED</code>.</p>
+    pub fn cluster_csr(&self) -> std::option::Option<&str> {
+        self.cluster_csr.as_deref()
+    }
+    /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
+    pub fn hsm_certificate(&self) -> std::option::Option<&str> {
+        self.hsm_certificate.as_deref()
+    }
+    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    pub fn aws_hardware_certificate(&self) -> std::option::Option<&str> {
+        self.aws_hardware_certificate.as_deref()
+    }
+    /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
+    pub fn manufacturer_hardware_certificate(&self) -> std::option::Option<&str> {
+        self.manufacturer_hardware_certificate.as_deref()
+    }
+    /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of
+    /// the cluster's owner.</p>
+    pub fn cluster_certificate(&self) -> std::option::Option<&str> {
+        self.cluster_certificate.as_deref()
+    }
+}
 impl std::fmt::Debug for Certificates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Certificates");
@@ -945,6 +1098,40 @@ pub struct Hsm {
     /// <p>A description of the HSM's state.</p>
     pub state_message: std::option::Option<std::string::String>,
 }
+impl Hsm {
+    /// <p>The Availability Zone that contains the HSM.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
+        self.cluster_id.as_deref()
+    }
+    /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
+    pub fn eni_id(&self) -> std::option::Option<&str> {
+        self.eni_id.as_deref()
+    }
+    /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
+    pub fn eni_ip(&self) -> std::option::Option<&str> {
+        self.eni_ip.as_deref()
+    }
+    /// <p>The HSM's identifier (ID).</p>
+    pub fn hsm_id(&self) -> std::option::Option<&str> {
+        self.hsm_id.as_deref()
+    }
+    /// <p>The HSM's state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::HsmState> {
+        self.state.as_ref()
+    }
+    /// <p>A description of the HSM's state.</p>
+    pub fn state_message(&self) -> std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
+}
 impl std::fmt::Debug for Hsm {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Hsm");
@@ -1166,6 +1353,17 @@ pub struct BackupRetentionPolicy {
     /// <p>Use a value between 7 - 379.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl BackupRetentionPolicy {
+    /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is
+    /// the number of days to retain backups.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::BackupRetentionType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Use a value between 7 - 379.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for BackupRetentionPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BackupRetentionPolicy");
@@ -1339,6 +1537,24 @@ pub struct DestinationBackup {
     pub source_backup: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub source_cluster: std::option::Option<std::string::String>,
+}
+impl DestinationBackup {
+    /// <p>The date and time when both the source backup was created.</p>
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.create_timestamp.as_ref()
+    }
+    /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
+    pub fn source_region(&self) -> std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
+    /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
+    pub fn source_backup(&self) -> std::option::Option<&str> {
+        self.source_backup.as_deref()
+    }
+    /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
+    pub fn source_cluster(&self) -> std::option::Option<&str> {
+        self.source_cluster.as_deref()
+    }
 }
 impl std::fmt::Debug for DestinationBackup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -172,6 +172,194 @@ pub struct ScalingInstruction {
     /// <p>The default is enabled (<code>false</code>). </p>
     pub disable_dynamic_scaling: std::option::Option<bool>,
 }
+impl ScalingInstruction {
+    /// <p>The namespace of the AWS service.</p>
+    pub fn service_namespace(&self) -> std::option::Option<&crate::model::ServiceNamespace> {
+        self.service_namespace.as_ref()
+    }
+    /// <p>The ID of the resource. This string consists of the resource type and unique
+    /// identifier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+    /// name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+    /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+    /// Example: <code>table/my-table</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID.
+    /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+    /// Example: <code>cluster:my-db-cluster</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The scalable dimension associated with the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+    /// </li>
+    /// </ul>
+    pub fn scalable_dimension(&self) -> std::option::Option<&crate::model::ScalableDimension> {
+        self.scalable_dimension.as_ref()
+    }
+    /// <p>The minimum capacity of the resource. </p>
+    pub fn min_capacity(&self) -> std::option::Option<i32> {
+        self.min_capacity
+    }
+    /// <p>The maximum capacity of the resource. The exception to this upper limit is if you
+    /// specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
+    pub fn max_capacity(&self) -> std::option::Option<i32> {
+        self.max_capacity
+    }
+    /// <p>The target tracking configurations (up to 10). Each of these structures must specify a
+    /// unique scaling metric and a target value for the metric. </p>
+    pub fn target_tracking_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::TargetTrackingConfiguration]> {
+        self.target_tracking_configurations.as_deref()
+    }
+    /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring
+    /// predictive scaling, and cannot be used otherwise. </p>
+    pub fn predefined_load_metric_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::PredefinedLoadMetricSpecification> {
+        self.predefined_load_metric_specification.as_ref()
+    }
+    /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring
+    /// predictive scaling, and cannot be used otherwise. </p>
+    pub fn customized_load_metric_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomizedLoadMetricSpecification> {
+        self.customized_load_metric_specification.as_ref()
+    }
+    /// <p>The amount of time, in seconds, to buffer the run time of scheduled scaling actions when
+    /// scaling out. For example, if the forecast says to add capacity at 10:00 AM, and the buffer
+    /// time is 5 minutes, then the run time of the corresponding scheduled scaling action will be
+    /// 9:55 AM. The intention is to give resources time to be provisioned. For example, it can
+    /// take a few minutes to launch an EC2 instance. The actual amount of time required depends on
+    /// several factors, such as the size of the instance and whether there are startup scripts to
+    /// complete. </p>
+    /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes).
+    /// The default is 300 seconds. </p>
+    /// <p>Only valid when configuring predictive scaling. </p>
+    pub fn scheduled_action_buffer_time(&self) -> std::option::Option<i32> {
+        self.scheduled_action_buffer_time
+    }
+    /// <p>Defines the behavior that should be applied if the forecast capacity approaches or
+    /// exceeds the maximum capacity specified for the resource. The default value is
+    /// <code>SetForecastCapacityToMaxCapacity</code>.</p>
+    /// <p>The following are possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource
+    /// capacity higher than the maximum capacity. The maximum capacity is enforced as a hard
+    /// limit. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource
+    /// capacity higher than the maximum capacity to equal but not exceed forecast
+    /// capacity.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource
+    /// capacity higher than the maximum capacity by a specified buffer value. The intention
+    /// is to give the target tracking scaling policy extra capacity if unexpected traffic
+    /// occurs. </p>
+    /// </li>
+    /// </ul>
+    /// <p>Only valid when configuring predictive scaling.</p>
+    pub fn predictive_scaling_max_capacity_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::PredictiveScalingMaxCapacityBehavior> {
+        self.predictive_scaling_max_capacity_behavior.as_ref()
+    }
+    /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds
+    /// the maximum capacity. The value is specified as a percentage relative to the forecast
+    /// capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if
+    /// the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum
+    /// capacity is 55.</p>
+    /// <p>Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b> is set to
+    /// <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.</p>
+    /// <p>The range is 1-100.</p>
+    pub fn predictive_scaling_max_capacity_buffer(&self) -> std::option::Option<i32> {
+        self.predictive_scaling_max_capacity_buffer
+    }
+    /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>.
+    /// Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions
+    /// based on the capacity forecast. </p>
+    pub fn predictive_scaling_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::PredictiveScalingMode> {
+        self.predictive_scaling_mode.as_ref()
+    }
+    /// <p>Controls whether a resource's externally created scaling policies are kept or replaced. </p>
+    /// <p>The default value is <code>KeepExternalPolicies</code>. If the parameter is set to
+    /// <code>ReplaceExternalPolicies</code>, any scaling policies that are external to AWS Auto Scaling
+    /// are deleted and new target tracking scaling policies created. </p>
+    /// <p>Only valid when configuring dynamic scaling. </p>
+    /// <p>Condition: The number of existing policies to be replaced must be less than or equal to
+    /// 50. If there are more than 50 policies to be replaced, AWS Auto Scaling keeps all existing policies
+    /// and does not create new ones.</p>
+    pub fn scaling_policy_update_behavior(
+        &self,
+    ) -> std::option::Option<&crate::model::ScalingPolicyUpdateBehavior> {
+        self.scaling_policy_update_behavior.as_ref()
+    }
+    /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is
+    /// enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target
+    /// tracking configurations. </p>
+    /// <p>The default is enabled (<code>false</code>). </p>
+    pub fn disable_dynamic_scaling(&self) -> std::option::Option<bool> {
+        self.disable_dynamic_scaling
+    }
+}
 impl std::fmt::Debug for ScalingInstruction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScalingInstruction");
@@ -922,6 +1110,30 @@ pub struct CustomizedLoadMetricSpecification {
     /// <p>The unit of the metric.</p>
     pub unit: std::option::Option<std::string::String>,
 }
+impl CustomizedLoadMetricSpecification {
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The namespace of the metric.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The dimensions of the metric.</p>
+    /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+    /// dimensions in your customized load metric specification.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::MetricDimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::MetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The unit of the metric.</p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomizedLoadMetricSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomizedLoadMetricSpecification");
@@ -1107,6 +1319,16 @@ pub struct MetricDimension {
     /// <p>The value of the dimension.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl MetricDimension {
+    /// <p>The name of the dimension.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the dimension.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for MetricDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricDimension");
@@ -1194,6 +1416,39 @@ pub struct PredefinedLoadMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
     /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: std::option::Option<std::string::String>,
+}
+impl PredefinedLoadMetricSpecification {
+    /// <p>The metric type.</p>
+    pub fn predefined_load_metric_type(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadMetricType> {
+        self.predefined_load_metric_type.as_ref()
+    }
+    /// <p>Identifies the resource associated with the metric type. You can't specify a resource
+    /// label unless the metric type is <code>ALBTargetGroupRequestCount</code> and there is a
+    /// target group for an Application Load Balancer attached to the Auto Scaling group.</p>
+    /// <p>You create the resource label by appending the final portion of the load balancer ARN
+    /// and the final portion of the target group ARN into a single value, separated by a forward
+    /// slash (/). The format is
+    /// app/<load-balancer-name>/<load-balancer-id>/targetgroup/<target-group-name>/<target-group-id>,
+    /// where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+    /// the load balancer ARN</p>
+    /// </li>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+    /// of the target group ARN.</p>
+    /// </li>
+    /// </ul>
+    /// <p>This is an example:
+    /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+    /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+    /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    pub fn resource_label(&self) -> std::option::Option<&str> {
+        self.resource_label.as_deref()
+    }
 }
 impl std::fmt::Debug for PredefinedLoadMetricSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1411,6 +1666,63 @@ pub struct TargetTrackingConfiguration {
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
     /// CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
     pub estimated_instance_warmup: std::option::Option<i32>,
+}
+impl TargetTrackingConfiguration {
+    /// <p>A predefined metric. You can specify either a predefined metric or a customized
+    /// metric.</p>
+    pub fn predefined_scaling_metric_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::PredefinedScalingMetricSpecification> {
+        self.predefined_scaling_metric_specification.as_ref()
+    }
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.
+    /// </p>
+    pub fn customized_scaling_metric_specification(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomizedScalingMetricSpecification> {
+        self.customized_scaling_metric_specification.as_ref()
+    }
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double,
+    /// it won't accept values that are either too small or too large. Values must be in the range
+    /// of -2^360 to 2^360.</p>
+    pub fn target_value(&self) -> std::option::Option<f64> {
+        self.target_value
+    }
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the
+    /// value is <code>true</code>, scale in is disabled and the target tracking scaling policy
+    /// doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the
+    /// target tracking scaling policy can remove capacity from the scalable resource. </p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn disable_scale_in(&self) -> std::option::Option<bool> {
+        self.disable_scale_in
+    }
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take
+    /// effect. This property is not used if the scalable resource is an Auto Scaling
+    /// group.</p>
+    /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously
+    /// (but not excessively) scale out. After Auto Scaling successfully scales out using a target
+    /// tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't
+    /// increase the desired capacity again unless either a larger scale out is triggered or the
+    /// cooldown period ends.</p>
+    pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
+        self.scale_out_cooldown
+    }
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another
+    /// scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling
+    /// group.</p>
+    /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in
+    /// conservatively to protect your application’s availability, so scale-in activities are blocked
+    /// until the cooldown period has expired. However, if another alarm triggers a scale-out activity
+    /// during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case,
+    /// the scale-in cooldown period stops and doesn't complete.</p>
+    pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
+        self.scale_in_cooldown
+    }
+    /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
+    /// CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
+    pub fn estimated_instance_warmup(&self) -> std::option::Option<i32> {
+        self.estimated_instance_warmup
+    }
 }
 impl std::fmt::Debug for TargetTrackingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1634,6 +1946,30 @@ pub struct CustomizedScalingMetricSpecification {
     /// <p>The unit of the metric. </p>
     pub unit: std::option::Option<std::string::String>,
 }
+impl CustomizedScalingMetricSpecification {
+    /// <p>The name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The namespace of the metric.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The dimensions of the metric.</p>
+    /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+    /// dimensions in your customized scaling metric specification.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::MetricDimension]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The statistic of the metric.</p>
+    pub fn statistic(&self) -> std::option::Option<&crate::model::MetricStatistic> {
+        self.statistic.as_ref()
+    }
+    /// <p>The unit of the metric. </p>
+    pub fn unit(&self) -> std::option::Option<&str> {
+        self.unit.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomizedScalingMetricSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomizedScalingMetricSpecification");
@@ -1775,6 +2111,41 @@ pub struct PredefinedScalingMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
     /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: std::option::Option<std::string::String>,
+}
+impl PredefinedScalingMetricSpecification {
+    /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to
+    /// Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
+    pub fn predefined_scaling_metric_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ScalingMetricType> {
+        self.predefined_scaling_metric_type.as_ref()
+    }
+    /// <p>Identifies the resource associated with the metric type. You can't specify a resource
+    /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target
+    /// group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or
+    /// ECS service.</p>
+    /// <p>You create the resource label by appending the final portion of the load balancer ARN
+    /// and the final portion of the target group ARN into a single value, separated by a forward
+    /// slash (/). The format is
+    /// app/<load-balancer-name>/<load-balancer-id>/targetgroup/<target-group-name>/<target-group-id>,
+    /// where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+    /// the load balancer ARN</p>
+    /// </li>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+    /// of the target group ARN.</p>
+    /// </li>
+    /// </ul>
+    /// <p>This is an example:
+    /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+    /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+    /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    pub fn resource_label(&self) -> std::option::Option<&str> {
+        self.resource_label.as_deref()
+    }
 }
 impl std::fmt::Debug for PredefinedScalingMetricSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2206,6 +2577,16 @@ pub struct ApplicationSource {
     /// <p>A set of tags (up to 50).</p>
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
 }
+impl ApplicationSource {
+    /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
+    pub fn cloud_formation_stack_arn(&self) -> std::option::Option<&str> {
+        self.cloud_formation_stack_arn.as_deref()
+    }
+    /// <p>A set of tags (up to 50).</p>
+    pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
+        self.tag_filters.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplicationSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationSource");
@@ -2281,6 +2662,16 @@ pub struct TagFilter {
     /// <p>The tag values (0 to 20).</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TagFilter {
+    /// <p>The tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag values (0 to 20).</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for TagFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagFilter");
@@ -2352,6 +2743,16 @@ pub struct Datapoint {
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The value of the data point.</p>
     pub value: std::option::Option<f64>,
+}
+impl Datapoint {
+    /// <p>The time stamp for the data point in UTC format.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The value of the data point.</p>
+    pub fn value(&self) -> std::option::Option<f64> {
+        self.value
+    }
 }
 impl std::fmt::Debug for Datapoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2534,6 +2935,76 @@ pub struct ScalingPlan {
     pub status_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ScalingPlan {
+    /// <p>The name of the scaling plan.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>The version number of the scaling plan.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
+    /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application
+    /// source.</p>
+    pub fn application_source(&self) -> std::option::Option<&crate::model::ApplicationSource> {
+        self.application_source.as_ref()
+    }
+    /// <p>The scaling instructions.</p>
+    pub fn scaling_instructions(&self) -> std::option::Option<&[crate::model::ScalingInstruction]> {
+        self.scaling_instructions.as_deref()
+    }
+    /// <p>The status of the scaling plan.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Active</code> - The scaling plan is active.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling
+    /// configuration for one or more resources could not be applied.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreationInProgress</code> - The scaling plan is being created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CreationFailed</code> - The scaling plan could not be created.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DeletionInProgress</code> - The scaling plan is being deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DeletionFailed</code> - The scaling plan could not be deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UpdateInProgress</code> - The scaling plan is being updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UpdateFailed</code> - The scaling plan could not be updated.</p>
+    /// </li>
+    /// </ul>
+    pub fn status_code(&self) -> std::option::Option<&crate::model::ScalingPlanStatusCode> {
+        self.status_code.as_ref()
+    }
+    /// <p>A simple message about the current status of the scaling plan.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
+    pub fn status_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.status_start_time.as_ref()
+    }
+    /// <p>The Unix time stamp when the scaling plan was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ScalingPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2958,6 +3429,119 @@ pub struct ScalingPlanResource {
     /// <p>A simple message about the current scaling status of the resource.</p>
     pub scaling_status_message: std::option::Option<std::string::String>,
 }
+impl ScalingPlanResource {
+    /// <p>The name of the scaling plan.</p>
+    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+        self.scaling_plan_name.as_deref()
+    }
+    /// <p>The version number of the scaling plan.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
+    /// <p>The namespace of the AWS service.</p>
+    pub fn service_namespace(&self) -> std::option::Option<&crate::model::ServiceNamespace> {
+        self.service_namespace.as_ref()
+    }
+    /// <p>The ID of the resource. This string consists of the resource type and unique
+    /// identifier.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+    /// name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+    /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+    /// Example: <code>table/my-table</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID.
+    /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+    /// Example: <code>cluster:my-db-cluster</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The scalable dimension for the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+    /// </li>
+    /// </ul>
+    pub fn scalable_dimension(&self) -> std::option::Option<&crate::model::ScalableDimension> {
+        self.scalable_dimension.as_ref()
+    }
+    /// <p>The scaling policies.</p>
+    pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
+        self.scaling_policies.as_deref()
+    }
+    /// <p>The scaling status of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Active</code> - The scaling configuration is active.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Inactive</code> - The scaling configuration is not active because the
+    /// scaling plan is being created or the scaling configuration could not be applied.
+    /// Check the status message for more information.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PartiallyActive</code> - The scaling configuration is partially active
+    /// because the scaling plan is being created or deleted or the scaling configuration
+    /// could not be fully applied. Check the status message for more information.</p>
+    /// </li>
+    /// </ul>
+    pub fn scaling_status_code(&self) -> std::option::Option<&crate::model::ScalingStatusCode> {
+        self.scaling_status_code.as_ref()
+    }
+    /// <p>A simple message about the current scaling status of the resource.</p>
+    pub fn scaling_status_message(&self) -> std::option::Option<&str> {
+        self.scaling_status_message.as_deref()
+    }
+}
 impl std::fmt::Debug for ScalingPlanResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScalingPlanResource");
@@ -3344,6 +3928,23 @@ pub struct ScalingPolicy {
     /// metrics.</p>
     pub target_tracking_configuration:
         std::option::Option<crate::model::TargetTrackingConfiguration>,
+}
+impl ScalingPolicy {
+    /// <p>The name of the scaling policy.</p>
+    pub fn policy_name(&self) -> std::option::Option<&str> {
+        self.policy_name.as_deref()
+    }
+    /// <p>The type of scaling policy.</p>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+    /// <p>The target tracking scaling policy. Includes support for predefined or customized
+    /// metrics.</p>
+    pub fn target_tracking_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TargetTrackingConfiguration> {
+        self.target_tracking_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ScalingPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

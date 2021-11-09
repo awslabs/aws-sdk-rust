@@ -4152,6 +4152,16 @@ pub struct ThrottlingException {
     /// Originating quota code
     pub quota_code: std::option::Option<std::string::String>,
 }
+impl ThrottlingException {
+    /// Originating service code
+    pub fn service_code(&self) -> std::option::Option<&crate::model::ServiceCode> {
+        self.service_code.as_ref()
+    }
+    /// Originating quota code
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+}
 impl std::fmt::Debug for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThrottlingException");
@@ -4248,6 +4258,16 @@ pub struct ResourceNotFoundException {
     pub resource_identifier: std::option::Option<std::string::String>,
     /// The resource type
     pub resource_type: std::option::Option<crate::model::ResourceType>,
+}
+impl ResourceNotFoundException {
+    /// The identifier for the requested resource
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// The resource type
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4415,6 +4435,20 @@ pub struct ConflictException {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// If present in the output, the operation can be retried after this time
     pub retry_after: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ConflictException {
+    /// The identifier of the requested resource
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// The resource type
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// If present in the output, the operation can be retried after this time
+    pub fn retry_after(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.retry_after.as_ref()
+    }
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4599,6 +4633,24 @@ pub struct ServiceQuotaExceededException {
     pub service_code: std::option::Option<crate::model::ServiceCode>,
     /// Originating quota code
     pub quota_code: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    /// The identifier for the requested resource
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+        self.resource_identifier.as_deref()
+    }
+    /// The resource type
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// Originating service code
+    pub fn service_code(&self) -> std::option::Option<&crate::model::ServiceCode> {
+        self.service_code.as_ref()
+    }
+    /// Originating quota code
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
 }
 impl std::fmt::Debug for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

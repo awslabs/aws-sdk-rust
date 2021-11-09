@@ -127,6 +127,12 @@ pub struct RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
+impl RegisterInstancesWithLoadBalancerOutput {
+    /// <p>The updated list of instances for the load balancer.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterInstancesWithLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterInstancesWithLoadBalancerOutput");
@@ -185,6 +191,18 @@ pub struct ModifyLoadBalancerAttributesOutput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>Information about the load balancer attributes.</p>
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+}
+impl ModifyLoadBalancerAttributesOutput {
+    /// <p>The name of the load balancer.</p>
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+        self.load_balancer_name.as_deref()
+    }
+    /// <p>Information about the load balancer attributes.</p>
+    pub fn load_balancer_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadBalancerAttributes> {
+        self.load_balancer_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for ModifyLoadBalancerAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -257,6 +275,12 @@ pub struct EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl EnableAvailabilityZonesForLoadBalancerOutput {
+    /// <p>The updated list of Availability Zones for the load balancer.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableAvailabilityZonesForLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableAvailabilityZonesForLoadBalancerOutput");
@@ -313,6 +337,12 @@ impl EnableAvailabilityZonesForLoadBalancerOutput {
 pub struct DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisableAvailabilityZonesForLoadBalancerOutput {
+    /// <p>The remaining Availability Zones for the load balancer.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
 }
 impl std::fmt::Debug for DisableAvailabilityZonesForLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,6 +402,12 @@ pub struct DetachLoadBalancerFromSubnetsOutput {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DetachLoadBalancerFromSubnetsOutput {
+    /// <p>The IDs of the remaining subnets for the load balancer.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachLoadBalancerFromSubnetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachLoadBalancerFromSubnetsOutput");
@@ -428,6 +464,12 @@ impl DetachLoadBalancerFromSubnetsOutput {
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     pub tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
+}
+impl DescribeTagsOutput {
+    /// <p>Information about the tags.</p>
+    pub fn tag_descriptions(&self) -> std::option::Option<&[crate::model::TagDescription]> {
+        self.tag_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeTagsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -489,6 +531,18 @@ pub struct DescribeLoadBalancersOutput {
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl DescribeLoadBalancersOutput {
+    /// <p>Information about the load balancers.</p>
+    pub fn load_balancer_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::LoadBalancerDescription]> {
+        self.load_balancer_descriptions.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoadBalancersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,6 +622,14 @@ pub struct DescribeLoadBalancerPolicyTypesOutput {
     pub policy_type_descriptions:
         std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
 }
+impl DescribeLoadBalancerPolicyTypesOutput {
+    /// <p>Information about the policy types.</p>
+    pub fn policy_type_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::PolicyTypeDescription]> {
+        self.policy_type_descriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancerPolicyTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerPolicyTypesOutput");
@@ -628,6 +690,12 @@ impl DescribeLoadBalancerPolicyTypesOutput {
 pub struct DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
     pub policy_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
+}
+impl DescribeLoadBalancerPoliciesOutput {
+    /// <p>Information about the policies.</p>
+    pub fn policy_descriptions(&self) -> std::option::Option<&[crate::model::PolicyDescription]> {
+        self.policy_descriptions.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeLoadBalancerPoliciesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -690,6 +758,14 @@ pub struct DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
+impl DescribeLoadBalancerAttributesOutput {
+    /// <p>Information about the load balancer attributes.</p>
+    pub fn load_balancer_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::LoadBalancerAttributes> {
+        self.load_balancer_attributes.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeLoadBalancerAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLoadBalancerAttributesOutput");
@@ -744,6 +820,12 @@ impl DescribeLoadBalancerAttributesOutput {
 pub struct DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
     pub instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
+}
+impl DescribeInstanceHealthOutput {
+    /// <p>Information about the health of the instances.</p>
+    pub fn instance_states(&self) -> std::option::Option<&[crate::model::InstanceState]> {
+        self.instance_states.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -803,6 +885,16 @@ pub struct DescribeAccountLimitsOutput {
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub next_marker: std::option::Option<std::string::String>,
+}
+impl DescribeAccountLimitsOutput {
+    /// <p>Information about the limits.</p>
+    pub fn limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+        self.limits.as_deref()
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    pub fn next_marker(&self) -> std::option::Option<&str> {
+        self.next_marker.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountLimitsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -873,6 +965,12 @@ impl DescribeAccountLimitsOutput {
 pub struct DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+}
+impl DeregisterInstancesFromLoadBalancerOutput {
+    /// <p>The remaining instances registered with the load balancer.</p>
+    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+        self.instances.as_deref()
+    }
 }
 impl std::fmt::Debug for DeregisterInstancesFromLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1081,6 +1179,12 @@ pub struct CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
     pub dns_name: std::option::Option<std::string::String>,
 }
+impl CreateLoadBalancerOutput {
+    /// <p>The DNS name of the load balancer.</p>
+    pub fn dns_name(&self) -> std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoadBalancerOutput");
@@ -1189,6 +1293,12 @@ pub struct ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
+impl ConfigureHealthCheckOutput {
+    /// <p>The updated health check.</p>
+    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+        self.health_check.as_ref()
+    }
+}
 impl std::fmt::Debug for ConfigureHealthCheckOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConfigureHealthCheckOutput");
@@ -1239,6 +1349,12 @@ impl ConfigureHealthCheckOutput {
 pub struct AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AttachLoadBalancerToSubnetsOutput {
+    /// <p>The IDs of the subnets attached to the load balancer.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachLoadBalancerToSubnetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1296,6 +1412,12 @@ impl AttachLoadBalancerToSubnetsOutput {
 pub struct ApplySecurityGroupsToLoadBalancerOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ApplySecurityGroupsToLoadBalancerOutput {
+    /// <p>The IDs of the security groups associated with the load balancer.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplySecurityGroupsToLoadBalancerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

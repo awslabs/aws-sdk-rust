@@ -244,10 +244,7 @@ impl CreateNotificationRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_notification_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -392,10 +389,7 @@ impl DeleteNotificationRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_notification_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -558,10 +552,7 @@ impl DeleteTargetInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_target(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_target(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -707,10 +698,7 @@ impl DescribeNotificationRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_notification_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -892,10 +880,7 @@ impl ListEventTypesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_event_types(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_event_types(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1091,10 +1076,7 @@ impl ListNotificationRulesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_notification_rules(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1237,10 +1219,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1429,10 +1410,7 @@ impl ListTargetsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_targets(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_targets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1603,10 +1581,7 @@ impl SubscribeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_subscribe(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_subscribe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1777,10 +1752,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1939,10 +1911,7 @@ impl UnsubscribeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_unsubscribe(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_unsubscribe(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2109,10 +2078,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2351,10 +2317,7 @@ impl UpdateNotificationRuleInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_notification_rule(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2437,6 +2400,36 @@ pub struct UpdateNotificationRuleInput {
     /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: std::option::Option<crate::model::DetailType>,
 }
+impl UpdateNotificationRuleInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the notification rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
+    /// disabled (not sending notifications).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of event types associated with this notification rule.</p>
+    pub fn event_type_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_type_ids.as_deref()
+    }
+    /// <p>The address and type of the targets to receive notifications from this notification
+    /// rule.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
+    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
+    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
+        self.detail_type.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateNotificationRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNotificationRuleInput");
@@ -2460,6 +2453,17 @@ pub struct UntagResourceInput {
     /// <p>The key names of the tags to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
+    /// tags.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The key names of the tags to remove.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2477,6 +2481,16 @@ pub struct UnsubscribeInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
     pub target_address: std::option::Option<std::string::String>,
+}
+impl UnsubscribeInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+    pub fn target_address(&self) -> std::option::Option<&str> {
+        self.target_address.as_deref()
+    }
 }
 impl std::fmt::Debug for UnsubscribeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2496,6 +2510,19 @@ pub struct TagResourceInput {
     /// <p>The list of tags to associate with the resource. Tag key names cannot start with "aws".</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The list of tags to associate with the resource. Tag key names cannot start with "aws".</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2517,6 +2544,21 @@ pub struct SubscribeInput {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the
     /// results.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl SubscribeInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>Information about the SNS topics associated with a  notification rule.</p>
+    pub fn target(&self) -> std::option::Option<&crate::model::Target> {
+        self.target.as_ref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SubscribeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2545,6 +2587,26 @@ pub struct ListTargetsInput {
     /// results that can be returned is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTargetsInput {
+    /// <p>The filters to use to return information by service or resource type. Valid filters
+    /// include target type, target address, and target status.</p>
+    /// <note>
+    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ListTargetsFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
+    /// results that can be returned is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTargetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTargetsInput");
@@ -2561,6 +2623,12 @@ impl std::fmt::Debug for ListTargetsInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the notification rule.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2587,6 +2655,26 @@ pub struct ListNotificationRulesInput {
     /// results that can be returned is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListNotificationRulesInput {
+    /// <p>The filters to use to return information by service or resource type. For valid values,
+    /// see <a>ListNotificationRulesFilter</a>.</p>
+    /// <note>
+    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
+    /// </note>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ListNotificationRulesFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
+    /// results that can be returned is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListNotificationRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListNotificationRulesInput");
@@ -2610,6 +2698,22 @@ pub struct ListEventTypesInput {
     /// results that can be returned is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListEventTypesInput {
+    /// <p>The filters to use to return information by service or resource type.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ListEventTypesFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
+    /// results that can be returned is 100.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListEventTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEventTypesInput");
@@ -2626,6 +2730,12 @@ impl std::fmt::Debug for ListEventTypesInput {
 pub struct DescribeNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DescribeNotificationRuleInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeNotificationRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2646,6 +2756,18 @@ pub struct DeleteTargetInput {
     /// notification rule in your AWS account are deleted.</p>
     pub force_unsubscribe_all: bool,
 }
+impl DeleteTargetInput {
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
+    pub fn target_address(&self) -> std::option::Option<&str> {
+        self.target_address.as_deref()
+    }
+    /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
+    /// default value is FALSE. If set to TRUE, all associations between that target and every
+    /// notification rule in your AWS account are deleted.</p>
+    pub fn force_unsubscribe_all(&self) -> bool {
+        self.force_unsubscribe_all
+    }
+}
 impl std::fmt::Debug for DeleteTargetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteTargetInput");
@@ -2661,6 +2783,12 @@ impl std::fmt::Debug for DeleteTargetInput {
 pub struct DeleteNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
     pub arn: std::option::Option<std::string::String>,
+}
+impl DeleteNotificationRuleInput {
+    /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteNotificationRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2705,6 +2833,57 @@ pub struct CreateNotificationRuleInput {
     /// <p>The status of the notification rule. The default value is ENABLED. If the status is
     /// set to DISABLED, notifications aren't sent for the notification rule.</p>
     pub status: std::option::Option<crate::model::NotificationRuleStatus>,
+}
+impl CreateNotificationRuleInput {
+    /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
+    /// account.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of event types associated with this notification rule. For a list of allowed
+    /// events, see <a>EventTypeSummary</a>.</p>
+    pub fn event_type_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_type_ids.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
+    /// repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+    pub fn resource(&self) -> std::option::Option<&str> {
+        self.resource.as_deref()
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the
+    /// notification rule.</p>
+    pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
+        self.targets.as_deref()
+    }
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
+    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
+    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
+        self.detail_type.as_ref()
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+    /// the request cannot be repeated with a changed parameter. If a request with the same
+    /// parameters is received and a token is included, the request returns information about
+    /// the initial request that used that token.</p>
+    /// <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
+    /// idempotency token is created for you.</p>
+    /// </note>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "aws". </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The status of the notification rule. The default value is ENABLED. If the status is
+    /// set to DISABLED, notifications aren't sent for the notification rule.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNotificationRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

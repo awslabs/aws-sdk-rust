@@ -2,16 +2,17 @@
 pub fn serialize_structure_crate_input_cancel_resource_request_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CancelResourceRequestInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.request_token {
         object.key("RequestToken").string(var_1);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.type_name {
         object.key("TypeName").string(var_2);
     }
@@ -27,12 +28,13 @@ pub fn serialize_structure_crate_input_create_resource_input(
     if let Some(var_6) = &input.desired_state {
         object.key("DesiredState").string(var_6);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.type_name {
         object.key("TypeName").string(var_7);
     }
@@ -48,12 +50,13 @@ pub fn serialize_structure_crate_input_delete_resource_input(
     if let Some(var_11) = &input.identifier {
         object.key("Identifier").string(var_11);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.type_name {
         object.key("TypeName").string(var_12);
     }
@@ -66,21 +69,23 @@ pub fn serialize_structure_crate_input_get_resource_input(
     if let Some(var_15) = &input.identifier {
         object.key("Identifier").string(var_15);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_get_resource_request_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceRequestStatusInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.request_token {
         object.key("RequestToken").string(var_16);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_resource_requests_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceRequestsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -95,15 +100,16 @@ pub fn serialize_structure_crate_input_list_resource_requests_input(
         crate::json_ser::serialize_structure_crate_model_resource_request_status_filter(
             &mut object_20,
             var_19,
-        );
+        )?;
         object_20.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourcesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.type_name {
         object.key("TypeName").string(var_21);
     }
@@ -125,12 +131,13 @@ pub fn serialize_structure_crate_input_list_resources_input(
     if let Some(var_26) = &input.resource_model {
         object.key("ResourceModel").string(var_26);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResourceInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.type_name {
         object.key("TypeName").string(var_27);
     }
@@ -149,12 +156,13 @@ pub fn serialize_structure_crate_input_update_resource_input(
     if let Some(var_32) = &input.patch_document {
         object.key("PatchDocument").string(var_32);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource_request_status_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceRequestStatusFilter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.operations {
         let mut array_34 = object.key("Operations").start_array();
         for item_35 in var_33 {
@@ -173,4 +181,5 @@ pub fn serialize_structure_crate_model_resource_request_status_filter(
         }
         array_37.finish();
     }
+    Ok(())
 }

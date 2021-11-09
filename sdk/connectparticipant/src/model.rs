@@ -12,6 +12,24 @@ pub struct UploadMetadata {
     pub headers_to_include:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl UploadMetadata {
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn url_expiry(&self) -> std::option::Option<&str> {
+        self.url_expiry.as_deref()
+    }
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
+    pub fn headers_to_include(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.headers_to_include.as_ref()
+    }
+}
 impl std::fmt::Debug for UploadMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMetadata");
@@ -122,6 +140,46 @@ pub struct Item {
     pub participant_role: std::option::Option<crate::model::ParticipantRole>,
     /// <p>Provides information about the attachments.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentItem>>,
+}
+impl Item {
+    /// <p>The time when the message or event was sent.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+    /// 2019-11-08T02:41:28.172Z.</p>
+    pub fn absolute_time(&self) -> std::option::Option<&str> {
+        self.absolute_time.as_deref()
+    }
+    /// <p>The content of the message or event.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The type of content of the item.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The ID of the item.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Type of the item: message or event. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ChatItemType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The ID of the sender in the session.</p>
+    pub fn participant_id(&self) -> std::option::Option<&str> {
+        self.participant_id.as_deref()
+    }
+    /// <p>The chat display name of the sender.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
+    pub fn participant_role(&self) -> std::option::Option<&crate::model::ParticipantRole> {
+        self.participant_role.as_ref()
+    }
+    /// <p>Provides information about the attachments.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::AttachmentItem]> {
+        self.attachments.as_deref()
+    }
 }
 impl std::fmt::Debug for Item {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -303,6 +361,24 @@ pub struct AttachmentItem {
     pub attachment_name: std::option::Option<std::string::String>,
     /// <p>Status of the attachment.</p>
     pub status: std::option::Option<crate::model::ArtifactStatus>,
+}
+impl AttachmentItem {
+    /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>A unique identifier for the attachment.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>A case-sensitive name of the attachment being uploaded.</p>
+    pub fn attachment_name(&self) -> std::option::Option<&str> {
+        self.attachment_name.as_deref()
+    }
+    /// <p>Status of the attachment.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ArtifactStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for AttachmentItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -643,6 +719,22 @@ pub struct StartPosition {
     /// <p>The start position of the most recent message where you want to start. </p>
     pub most_recent: i32,
 }
+impl StartPosition {
+    /// <p>The ID of the message or event where to start. </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The time in ISO format where to start.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+    /// 2019-11-08T02:41:28.172Z.</p>
+    pub fn absolute_time(&self) -> std::option::Option<&str> {
+        self.absolute_time.as_deref()
+    }
+    /// <p>The start position of the most recent message where you want to start. </p>
+    pub fn most_recent(&self) -> i32 {
+        self.most_recent
+    }
+}
 impl std::fmt::Debug for StartPosition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPosition");
@@ -838,6 +930,18 @@ pub struct ConnectionCredentials {
     /// 2019-11-08T02:41:28.172Z.</p>
     pub expiry: std::option::Option<std::string::String>,
 }
+impl ConnectionCredentials {
+    /// <p>The connection token.</p>
+    pub fn connection_token(&self) -> std::option::Option<&str> {
+        self.connection_token.as_deref()
+    }
+    /// <p>The expiration of the token.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+    /// 2019-11-08T02:41:28.172Z.</p>
+    pub fn expiry(&self) -> std::option::Option<&str> {
+        self.expiry.as_deref()
+    }
+}
 impl std::fmt::Debug for ConnectionCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionCredentials");
@@ -909,6 +1013,18 @@ pub struct Websocket {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
     /// 2019-11-08T02:41:28.172Z.</p>
     pub connection_expiry: std::option::Option<std::string::String>,
+}
+impl Websocket {
+    /// <p>The URL of the websocket.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>The URL expiration timestamp in ISO date format.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+    /// 2019-11-08T02:41:28.172Z.</p>
+    pub fn connection_expiry(&self) -> std::option::Option<&str> {
+        self.connection_expiry.as_deref()
+    }
 }
 impl std::fmt::Debug for Websocket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

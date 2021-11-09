@@ -116,10 +116,7 @@ impl AcceptInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -272,7 +269,7 @@ impl BatchGetCustomDataIdentifiersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_custom_data_identifiers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_custom_data_identifiers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -609,10 +606,7 @@ impl CreateClassificationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_classification_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -880,7 +874,7 @@ impl CreateCustomDataIdentifierInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_data_identifier(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_data_identifier(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1124,10 +1118,9 @@ impl CreateFindingsFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_findings_filter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_findings_filter(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1305,10 +1298,7 @@ impl CreateInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1484,10 +1474,7 @@ impl CreateMemberInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_member(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_member(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1641,10 +1628,9 @@ impl CreateSampleFindingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sample_findings(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_sample_findings(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1798,10 +1784,7 @@ impl DeclineInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2245,10 +2228,7 @@ impl DeleteInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2599,10 +2579,7 @@ impl DescribeBucketsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_buckets(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_buckets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3692,10 +3669,7 @@ impl EnableMacieInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_enable_macie(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_enable_macie(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3859,7 +3833,7 @@ impl EnableOrganizationAdminAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4123,10 +4097,7 @@ impl GetBucketStatisticsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_bucket_statistics(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_bucket_statistics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4560,10 +4531,7 @@ impl GetFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5014,10 +4982,9 @@ impl GetFindingStatisticsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_finding_statistics(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_finding_statistics(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5717,10 +5684,7 @@ impl GetUsageStatisticsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_usage_statistics(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_usage_statistics(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6047,10 +6011,7 @@ impl ListClassificationJobsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_classification_jobs(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6210,10 +6171,7 @@ impl ListCustomDataIdentifiersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_custom_data_identifiers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6399,10 +6357,7 @@ impl ListFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6860,7 +6815,7 @@ impl ListManagedDataIdentifiersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_managed_data_identifiers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_managed_data_identifiers(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7500,7 +7455,7 @@ impl PutClassificationExportConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_classification_export_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_classification_export_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7671,7 +7626,7 @@ impl PutFindingsPublicationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_findings_publication_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_findings_publication_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -7863,10 +7818,7 @@ impl SearchResourcesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_resources(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_resources(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8055,10 +8007,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8272,10 +8221,7 @@ impl TestCustomDataIdentifierInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_test_custom_data_identifier(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8630,10 +8576,7 @@ impl UpdateClassificationJobInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_classification_job(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8874,10 +8817,9 @@ impl UpdateFindingsFilterInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_findings_filter(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_findings_filter(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9041,10 +8983,7 @@ impl UpdateMacieSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_macie_session(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_macie_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9216,10 +9155,7 @@ impl UpdateMemberSessionInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_member_session(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_member_session(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9365,7 +9301,7 @@ impl UpdateOrganizationConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9435,6 +9371,12 @@ pub struct UpdateOrganizationConfigurationInput {
     /// <p>Specifies whether to enable Amazon Macie automatically for each account, when the account is added to the Amazon Web Services organization.</p>
     pub auto_enable: bool,
 }
+impl UpdateOrganizationConfigurationInput {
+    /// <p>Specifies whether to enable Amazon Macie automatically for each account, when the account is added to the Amazon Web Services organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+}
 impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
@@ -9451,6 +9393,16 @@ pub struct UpdateMemberSessionInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub status: std::option::Option<crate::model::MacieStatus>,
+}
+impl UpdateMemberSessionInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MacieStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMemberSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9469,6 +9421,18 @@ pub struct UpdateMacieSessionInput {
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub status: std::option::Option<crate::model::MacieStatus>,
+}
+impl UpdateMacieSessionInput {
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+        self.finding_publishing_frequency.as_ref()
+    }
+    /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MacieStatus> {
+        self.status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateMacieSessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9501,6 +9465,36 @@ pub struct UpdateFindingsFilterInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateFindingsFilterInput {
+    /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
+        self.action.as_ref()
+    }
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see the filter's description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The criteria to use to filter findings.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see the filter's name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    pub fn position(&self) -> i32 {
+        self.position
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFindingsFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFindingsFilterInput");
@@ -9524,6 +9518,16 @@ pub struct UpdateClassificationJobInput {
     /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
+impl UpdateClassificationJobInput {
+    /// <p>The unique identifier for the classification job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClassificationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClassificationJobInput");
@@ -9541,6 +9545,16 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
 }
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9566,6 +9580,28 @@ pub struct TestCustomDataIdentifierInput {
     /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
     pub sample_text: std::option::Option<std::string::String>,
 }
+impl TestCustomDataIdentifierInput {
+    /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
+        self.ignore_words.as_deref()
+    }
+    /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.keywords.as_deref()
+    }
+    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
+    pub fn maximum_match_distance(&self) -> i32 {
+        self.maximum_match_distance
+    }
+    /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    pub fn regex(&self) -> std::option::Option<&str> {
+        self.regex.as_deref()
+    }
+    /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
+    pub fn sample_text(&self) -> std::option::Option<&str> {
+        self.sample_text.as_deref()
+    }
+}
 impl std::fmt::Debug for TestCustomDataIdentifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestCustomDataIdentifierInput");
@@ -9587,6 +9623,19 @@ pub struct TagResourceInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9610,6 +9659,26 @@ pub struct SearchResourcesInput {
     /// <p>The criteria to use to sort the results.</p>
     pub sort_criteria: std::option::Option<crate::model::SearchResourcesSortCriteria>,
 }
+impl SearchResourcesInput {
+    /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
+    pub fn bucket_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::SearchResourcesBucketCriteria> {
+        self.bucket_criteria.as_ref()
+    }
+    /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The criteria to use to sort the results.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SearchResourcesSortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchResourcesInput");
@@ -9630,6 +9699,18 @@ pub struct PutFindingsPublicationConfigurationInput {
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
     pub security_hub_configuration: std::option::Option<crate::model::SecurityHubConfiguration>,
 }
+impl PutFindingsPublicationConfigurationInput {
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
+    pub fn security_hub_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SecurityHubConfiguration> {
+        self.security_hub_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutFindingsPublicationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutFindingsPublicationConfigurationInput");
@@ -9649,6 +9730,14 @@ pub struct PutClassificationExportConfigurationInput {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
+impl PutClassificationExportConfigurationInput {
+    /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ClassificationExportConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutClassificationExportConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutClassificationExportConfigurationInput");
@@ -9663,6 +9752,12 @@ impl std::fmt::Debug for PutClassificationExportConfigurationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9680,6 +9775,16 @@ pub struct ListOrganizationAdminAccountsInput {
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationAdminAccountsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9701,6 +9806,20 @@ pub struct ListMembersInput {
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
     pub only_associated: std::option::Option<std::string::String>,
 }
+impl ListMembersInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
+    pub fn only_associated(&self) -> std::option::Option<&str> {
+        self.only_associated.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersInput");
@@ -9717,6 +9836,12 @@ impl std::fmt::Debug for ListMembersInput {
 pub struct ListManagedDataIdentifiersInput {
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListManagedDataIdentifiersInput {
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListManagedDataIdentifiersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9735,6 +9860,16 @@ pub struct ListInvitationsInput {
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsInput");
@@ -9752,6 +9887,16 @@ pub struct ListFindingsFiltersInput {
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFindingsFiltersInput {
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFindingsFiltersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9775,6 +9920,24 @@ pub struct ListFindingsInput {
     /// <p>The criteria to use to sort the results.</p>
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
+impl ListFindingsInput {
+    /// <p>The criteria to use to filter the results.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The criteria to use to sort the results.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for ListFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsInput");
@@ -9794,6 +9957,16 @@ pub struct ListCustomDataIdentifiersInput {
     pub max_results: i32,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomDataIdentifiersInput {
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomDataIdentifiersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9817,6 +9990,24 @@ pub struct ListClassificationJobsInput {
     /// <p>The criteria to use to sort the results.</p>
     pub sort_criteria: std::option::Option<crate::model::ListJobsSortCriteria>,
 }
+impl ListClassificationJobsInput {
+    /// <p>The criteria to use to filter the results.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::ListJobsFilterCriteria> {
+        self.filter_criteria.as_ref()
+    }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The criteria to use to sort the results.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::ListJobsSortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for ListClassificationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClassificationJobsInput");
@@ -9834,6 +10025,12 @@ impl std::fmt::Debug for ListClassificationJobsInput {
 pub struct GetUsageTotalsInput {
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
     pub time_range: std::option::Option<std::string::String>,
+}
+impl GetUsageTotalsInput {
+    /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
+    pub fn time_range(&self) -> std::option::Option<&str> {
+        self.time_range.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUsageTotalsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9858,6 +10055,28 @@ pub struct GetUsageStatisticsInput {
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
     pub time_range: std::option::Option<crate::model::TimeRange>,
 }
+impl GetUsageStatisticsInput {
+    /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
+    pub fn filter_by(&self) -> std::option::Option<&[crate::model::UsageStatisticsFilter]> {
+        self.filter_by.as_deref()
+    }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::UsageStatisticsSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
+    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.time_range.as_ref()
+    }
+}
 impl std::fmt::Debug for GetUsageStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUsageStatisticsInput");
@@ -9876,6 +10095,12 @@ impl std::fmt::Debug for GetUsageStatisticsInput {
 pub struct GetMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetMemberInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9931,6 +10156,26 @@ pub struct GetFindingStatisticsInput {
     /// <p>The criteria to use to sort the query results.</p>
     pub sort_criteria: std::option::Option<crate::model::FindingStatisticsSortCriteria>,
 }
+impl GetFindingStatisticsInput {
+    /// <p>The criteria to use to filter the query results.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+    pub fn group_by(&self) -> std::option::Option<&crate::model::GroupBy> {
+        self.group_by.as_ref()
+    }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn sort_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingStatisticsSortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFindingStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingStatisticsInput");
@@ -9960,6 +10205,12 @@ pub struct GetFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetFindingsFilterInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFindingsFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingsFilterInput");
@@ -9977,6 +10228,16 @@ pub struct GetFindingsInput {
     /// <p>The criteria for sorting the results of the request.</p>
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
+impl GetFindingsInput {
+    /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+    /// <p>The criteria for sorting the results of the request.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for GetFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingsInput");
@@ -9992,6 +10253,12 @@ impl std::fmt::Debug for GetFindingsInput {
 pub struct GetCustomDataIdentifierInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl GetCustomDataIdentifierInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCustomDataIdentifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10018,6 +10285,12 @@ impl std::fmt::Debug for GetClassificationExportConfigurationInput {
 pub struct GetBucketStatisticsInput {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl GetBucketStatisticsInput {
+    /// <p>The unique identifier for the Amazon Web Services account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetBucketStatisticsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10047,6 +10320,16 @@ pub struct EnableOrganizationAdminAccountInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl EnableOrganizationAdminAccountInput {
+    /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableOrganizationAdminAccountInput");
@@ -10067,6 +10350,22 @@ pub struct EnableMacieInput {
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
     pub status: std::option::Option<crate::model::MacieStatus>,
 }
+impl EnableMacieInput {
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+        self.finding_publishing_frequency.as_ref()
+    }
+    /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MacieStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for EnableMacieInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableMacieInput");
@@ -10086,6 +10385,12 @@ impl std::fmt::Debug for EnableMacieInput {
 pub struct DisassociateMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DisassociateMemberInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10124,6 +10429,12 @@ pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
+impl DisableOrganizationAdminAccountInput {
+    /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
+    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+        self.admin_account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableOrganizationAdminAccountInput");
@@ -10161,6 +10472,12 @@ pub struct DescribeClassificationJobInput {
     /// <p>The unique identifier for the classification job.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl DescribeClassificationJobInput {
+    /// <p>The unique identifier for the classification job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeClassificationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeClassificationJobInput");
@@ -10187,6 +10504,31 @@ pub struct DescribeBucketsInput {
     /// <p>The criteria to use to sort the query results.</p>
     pub sort_criteria: std::option::Option<crate::model::BucketSortCriteria>,
 }
+impl DescribeBucketsInput {
+    /// <p>The criteria to use to filter the query results.</p>
+    pub fn criteria(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            crate::model::BucketCriteriaAdditionalProperties,
+        >,
+    > {
+        self.criteria.as_ref()
+    }
+    /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::BucketSortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeBucketsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBucketsInput");
@@ -10205,6 +10547,12 @@ pub struct DeleteMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteMemberInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMemberInput");
@@ -10219,6 +10567,12 @@ impl std::fmt::Debug for DeleteMemberInput {
 pub struct DeleteInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteInvitationsInput {
+    /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10235,6 +10589,12 @@ pub struct DeleteFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DeleteFindingsFilterInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteFindingsFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFindingsFilterInput");
@@ -10249,6 +10609,12 @@ impl std::fmt::Debug for DeleteFindingsFilterInput {
 pub struct DeleteCustomDataIdentifierInput {
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DeleteCustomDataIdentifierInput {
+    /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteCustomDataIdentifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10265,6 +10631,12 @@ pub struct DeclineInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeclineInvitationsInput {
+    /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DeclineInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeclineInvitationsInput");
@@ -10279,6 +10651,12 @@ impl std::fmt::Debug for DeclineInvitationsInput {
 pub struct CreateSampleFindingsInput {
     /// <p>An array that lists one or more types of findings to include in the set of sample findings. Currently, the only supported value is Policy:IAMUser/S3BucketEncryptionDisabled.</p>
     pub finding_types: std::option::Option<std::vec::Vec<crate::model::FindingType>>,
+}
+impl CreateSampleFindingsInput {
+    /// <p>An array that lists one or more types of findings to include in the set of sample findings. Currently, the only supported value is Policy:IAMUser/S3BucketEncryptionDisabled.</p>
+    pub fn finding_types(&self) -> std::option::Option<&[crate::model::FindingType]> {
+        self.finding_types.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSampleFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10297,6 +10675,19 @@ pub struct CreateMemberInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateMemberInput {
+    /// <p>The details of the account to associate with the administrator account.</p>
+    pub fn account(&self) -> std::option::Option<&crate::model::AccountDetail> {
+        self.account.as_ref()
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10317,6 +10708,20 @@ pub struct CreateInvitationsInput {
     pub disable_email_notification: bool,
     /// <p>A custom message to include in the invitation. Amazon Macie adds this message to the standard content that it sends for an invitation.</p>
     pub message: std::option::Option<std::string::String>,
+}
+impl CreateInvitationsInput {
+    /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+    /// <p>Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To send an email notification to the root user of each account, set this value to true.</p>
+    pub fn disable_email_notification(&self) -> bool {
+        self.disable_email_notification
+    }
+    /// <p>A custom message to include in the invitation. Amazon Macie adds this message to the standard content that it sends for an invitation.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10350,6 +10755,39 @@ pub struct CreateFindingsFilterInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateFindingsFilterInput {
+    /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
+        self.action.as_ref()
+    }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see the filter's description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The criteria to use to filter findings.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see the filter's name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    pub fn position(&self) -> i32 {
+        self.position
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateFindingsFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10386,6 +10824,43 @@ pub struct CreateCustomDataIdentifierInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateCustomDataIdentifierInput {
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see the identifier's description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
+        self.ignore_words.as_deref()
+    }
+    /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.keywords.as_deref()
+    }
+    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern. The distance can be 1-300 characters. The default value is 50.</p>
+    pub fn maximum_match_distance(&self) -> i32 {
+        self.maximum_match_distance
+    }
+    /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see the identifier's name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    pub fn regex(&self) -> std::option::Option<&str> {
+        self.regex.as_deref()
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateCustomDataIdentifierInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10433,6 +10908,61 @@ pub struct CreateClassificationJobInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateClassificationJobInput {
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
+    pub fn custom_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_data_identifier_ids.as_deref()
+    }
+    /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
+    pub fn initial_run(&self) -> bool {
+        self.initial_run
+    }
+    /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    pub fn managed_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.managed_data_identifier_ids.as_deref()
+    }
+    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    pub fn managed_data_identifier_selector(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedDataIdentifierSelector> {
+        self.managed_data_identifier_selector.as_ref()
+    }
+    /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    pub fn s3_job_definition(&self) -> std::option::Option<&crate::model::S3JobDefinition> {
+        self.s3_job_definition.as_ref()
+    }
+    /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
+    pub fn sampling_percentage(&self) -> i32 {
+        self.sampling_percentage
+    }
+    /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
+    pub fn schedule_frequency(&self) -> std::option::Option<&crate::model::JobScheduleFrequency> {
+        self.schedule_frequency.as_ref()
+    }
+    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClassificationJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClassificationJobInput");
@@ -10468,6 +10998,12 @@ pub struct BatchGetCustomDataIdentifiersInput {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BatchGetCustomDataIdentifiersInput {
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+}
 impl std::fmt::Debug for BatchGetCustomDataIdentifiersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchGetCustomDataIdentifiersInput");
@@ -10486,6 +11022,20 @@ pub struct AcceptInvitationInput {
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account: std::option::Option<std::string::String>,
+}
+impl AcceptInvitationInput {
+    /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    pub fn administrator_account_id(&self) -> std::option::Option<&str> {
+        self.administrator_account_id.as_deref()
+    }
+    /// <p>The unique identifier for the invitation to accept.</p>
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
+        self.invitation_id.as_deref()
+    }
+    /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    pub fn master_account(&self) -> std::option::Option<&str> {
+        self.master_account.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

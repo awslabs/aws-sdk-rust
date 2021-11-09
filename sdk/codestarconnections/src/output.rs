@@ -96,6 +96,12 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A list of tag key and value pairs associated with the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -155,6 +161,19 @@ pub struct ListHostsOutput {
     /// list, continue to call this operation with each subsequent token until no more
     /// <code>nextToken</code> values are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListHostsOutput {
+    /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider
+    /// type.</p>
+    pub fn hosts(&self) -> std::option::Option<&[crate::model::Host]> {
+        self.hosts.as_deref()
+    }
+    /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the
+    /// list, continue to call this operation with each subsequent token until no more
+    /// <code>nextToken</code> values are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListHostsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -236,6 +255,19 @@ pub struct ListConnectionsOutput {
     /// items in the list, continue to call this operation with each subsequent token until no more
     /// <code>nextToken</code> values are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConnectionsOutput {
+    /// <p>A list of connections and the details for each connection, such as status, owner, and
+    /// provider type.</p>
+    pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
+        self.connections.as_deref()
+    }
+    /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all
+    /// items in the list, continue to call this operation with each subsequent token until no more
+    /// <code>nextToken</code> values are returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListConnectionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -320,6 +352,28 @@ pub struct GetHostOutput {
     pub provider_endpoint: std::option::Option<std::string::String>,
     /// <p>The VPC configuration of the requested host.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
+}
+impl GetHostOutput {
+    /// <p>The name of the requested host.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the requested host.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
+    pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
+        self.provider_type.as_ref()
+    }
+    /// <p>The endpoint of the infrastructure represented by the requested host.</p>
+    pub fn provider_endpoint(&self) -> std::option::Option<&str> {
+        self.provider_endpoint.as_deref()
+    }
+    /// <p>The VPC configuration of the requested host.</p>
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetHostOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -429,6 +483,12 @@ impl GetHostOutput {
 pub struct GetConnectionOutput {
     /// <p>The connection details, such as status, owner, and provider type.</p>
     pub connection: std::option::Option<crate::model::Connection>,
+}
+impl GetConnectionOutput {
+    /// <p>The connection details, such as status, owner, and provider type.</p>
+    pub fn connection(&self) -> std::option::Option<&crate::model::Connection> {
+        self.connection.as_ref()
+    }
 }
 impl std::fmt::Debug for GetConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -543,6 +603,16 @@ pub struct CreateHostOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateHostOutput {
+    /// <p>The Amazon Resource Name (ARN) of the host to be created.</p>
+    pub fn host_arn(&self) -> std::option::Option<&str> {
+        self.host_arn.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateHostOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHostOutput");
@@ -617,6 +687,20 @@ pub struct CreateConnectionOutput {
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the tags applied to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateConnectionOutput {
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the
+    /// connection reference when the connection is shared between AWS services.</p>
+    /// <note>
+    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// </note>
+    pub fn connection_arn(&self) -> std::option::Option<&str> {
+        self.connection_arn.as_deref()
+    }
+    /// <p>Specifies the tags applied to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConnectionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_scheduled_update_group_action_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ScheduledUpdateGroupActionRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ScheduledActionName");
     if let Some(var_2) = &input.scheduled_action_name {
@@ -53,13 +53,14 @@ pub fn serialize_structure_crate_model_scheduled_update_group_action_request(
     if let Some(var_16) = &input.time_zone {
         scope_15.string(var_16);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_launch_template_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LaunchTemplateSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_17 = writer.prefix("LaunchTemplateId");
     if let Some(var_18) = &input.launch_template_id {
@@ -75,30 +76,32 @@ pub fn serialize_structure_crate_model_launch_template_specification(
     if let Some(var_22) = &input.version {
         scope_21.string(var_22);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_mixed_instances_policy(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MixedInstancesPolicy,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("LaunchTemplate");
     if let Some(var_24) = &input.launch_template {
-        crate::query_ser::serialize_structure_crate_model_launch_template(scope_23, var_24);
+        crate::query_ser::serialize_structure_crate_model_launch_template(scope_23, var_24)?;
     }
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("InstancesDistribution");
     if let Some(var_26) = &input.instances_distribution {
-        crate::query_ser::serialize_structure_crate_model_instances_distribution(scope_25, var_26);
+        crate::query_ser::serialize_structure_crate_model_instances_distribution(scope_25, var_26)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_lifecycle_hook_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LifecycleHookSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_27 = writer.prefix("LifecycleHookName");
     if let Some(var_28) = &input.lifecycle_hook_name {
@@ -137,13 +140,14 @@ pub fn serialize_structure_crate_model_lifecycle_hook_specification(
     if let Some(var_40) = &input.role_arn {
         scope_39.string(var_40);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_41 = writer.prefix("ResourceId");
     if let Some(var_42) = &input.resource_id {
@@ -169,13 +173,14 @@ pub fn serialize_structure_crate_model_tag(
     if let Some(var_50) = &input.propagate_at_launch {
         scope_49.boolean(*var_50);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_block_device_mapping(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BlockDeviceMapping,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_51 = writer.prefix("VirtualName");
     if let Some(var_52) = &input.virtual_name {
@@ -189,32 +194,34 @@ pub fn serialize_structure_crate_model_block_device_mapping(
     #[allow(unused_mut)]
     let mut scope_55 = writer.prefix("Ebs");
     if let Some(var_56) = &input.ebs {
-        crate::query_ser::serialize_structure_crate_model_ebs(scope_55, var_56);
+        crate::query_ser::serialize_structure_crate_model_ebs(scope_55, var_56)?;
     }
     #[allow(unused_mut)]
     let mut scope_57 = writer.prefix("NoDevice");
     if let Some(var_58) = &input.no_device {
         scope_57.boolean(*var_58);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_instance_monitoring(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::InstanceMonitoring,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_59 = writer.prefix("Enabled");
     if let Some(var_60) = &input.enabled {
         scope_59.boolean(*var_60);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_instance_metadata_options(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::InstanceMetadataOptions,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_61 = writer.prefix("HttpTokens");
     if let Some(var_62) = &input.http_tokens {
@@ -233,13 +240,14 @@ pub fn serialize_structure_crate_model_instance_metadata_options(
     if let Some(var_66) = &input.http_endpoint {
         scope_65.string(var_66.as_str());
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Filter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_67 = writer.prefix("Name");
     if let Some(var_68) = &input.name {
@@ -256,13 +264,14 @@ pub fn serialize_structure_crate_model_filter(
         }
         list_72.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_step_adjustment(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StepAdjustment,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_74 = writer.prefix("MetricIntervalLowerBound");
     if let Some(var_75) = &input.metric_interval_lower_bound {
@@ -287,26 +296,27 @@ pub fn serialize_structure_crate_model_step_adjustment(
             aws_smithy_types::Number::NegInt((*var_79).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_target_tracking_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TargetTrackingConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_80 = writer.prefix("PredefinedMetricSpecification");
     if let Some(var_81) = &input.predefined_metric_specification {
         crate::query_ser::serialize_structure_crate_model_predefined_metric_specification(
             scope_80, var_81,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_82 = writer.prefix("CustomizedMetricSpecification");
     if let Some(var_83) = &input.customized_metric_specification {
         crate::query_ser::serialize_structure_crate_model_customized_metric_specification(
             scope_82, var_83,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_84 = writer.prefix("TargetValue");
@@ -321,13 +331,14 @@ pub fn serialize_structure_crate_model_target_tracking_configuration(
     if let Some(var_87) = &input.disable_scale_in {
         scope_86.boolean(*var_87);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_predictive_scaling_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PredictiveScalingConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_88 = writer.prefix("MetricSpecifications");
     if let Some(var_89) = &input.metric_specifications {
@@ -335,7 +346,7 @@ pub fn serialize_structure_crate_model_predictive_scaling_configuration(
         for item_90 in var_89 {
             #[allow(unused_mut)]
             let mut entry_92 = list_91.entry();
-            crate::query_ser::serialize_structure_crate_model_predictive_scaling_metric_specification(entry_92, item_90);
+            crate::query_ser::serialize_structure_crate_model_predictive_scaling_metric_specification(entry_92, item_90)?;
         }
         list_91.finish();
     }
@@ -365,34 +376,36 @@ pub fn serialize_structure_crate_model_predictive_scaling_configuration(
             aws_smithy_types::Number::NegInt((*var_100).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_desired_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DesiredConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_101 = writer.prefix("LaunchTemplate");
     if let Some(var_102) = &input.launch_template {
         crate::query_ser::serialize_structure_crate_model_launch_template_specification(
             scope_101, var_102,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_103 = writer.prefix("MixedInstancesPolicy");
     if let Some(var_104) = &input.mixed_instances_policy {
         crate::query_ser::serialize_structure_crate_model_mixed_instances_policy(
             scope_103, var_104,
-        );
+        )?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_refresh_preferences(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RefreshPreferences,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_105 = writer.prefix("MinHealthyPercentage");
     if let Some(var_106) = &input.min_healthy_percentage {
@@ -436,19 +449,20 @@ pub fn serialize_structure_crate_model_refresh_preferences(
     if let Some(var_117) = &input.skip_matching {
         scope_116.boolean(*var_117);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_launch_template(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LaunchTemplate,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_118 = writer.prefix("LaunchTemplateSpecification");
     if let Some(var_119) = &input.launch_template_specification {
         crate::query_ser::serialize_structure_crate_model_launch_template_specification(
             scope_118, var_119,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_120 = writer.prefix("Overrides");
@@ -459,17 +473,18 @@ pub fn serialize_structure_crate_model_launch_template(
             let mut entry_124 = list_123.entry();
             crate::query_ser::serialize_structure_crate_model_launch_template_overrides(
                 entry_124, item_122,
-            );
+            )?;
         }
         list_123.finish();
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_instances_distribution(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::InstancesDistribution,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_125 = writer.prefix("OnDemandAllocationStrategy");
     if let Some(var_126) = &input.on_demand_allocation_strategy {
@@ -509,13 +524,14 @@ pub fn serialize_structure_crate_model_instances_distribution(
     if let Some(var_136) = &input.spot_max_price {
         scope_135.string(var_136);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_ebs(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Ebs,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_137 = writer.prefix("SnapshotId");
     if let Some(var_138) = &input.snapshot_id {
@@ -560,13 +576,14 @@ pub fn serialize_structure_crate_model_ebs(
             aws_smithy_types::Number::NegInt((*var_150).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_predefined_metric_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PredefinedMetricSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_151 = writer.prefix("PredefinedMetricType");
     if let Some(var_152) = &input.predefined_metric_type {
@@ -577,13 +594,14 @@ pub fn serialize_structure_crate_model_predefined_metric_specification(
     if let Some(var_154) = &input.resource_label {
         scope_153.string(var_154);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_customized_metric_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::CustomizedMetricSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_155 = writer.prefix("MetricName");
     if let Some(var_156) = &input.metric_name {
@@ -601,7 +619,9 @@ pub fn serialize_structure_crate_model_customized_metric_specification(
         for item_161 in var_160 {
             #[allow(unused_mut)]
             let mut entry_163 = list_162.entry();
-            crate::query_ser::serialize_structure_crate_model_metric_dimension(entry_163, item_161);
+            crate::query_ser::serialize_structure_crate_model_metric_dimension(
+                entry_163, item_161,
+            )?;
         }
         list_162.finish();
     }
@@ -615,13 +635,14 @@ pub fn serialize_structure_crate_model_customized_metric_specification(
     if let Some(var_167) = &input.unit {
         scope_166.string(var_167);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_predictive_scaling_metric_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PredictiveScalingMetricSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_168 = writer.prefix("TargetValue");
     if let Some(var_169) = &input.target_value {
@@ -633,29 +654,26 @@ pub fn serialize_structure_crate_model_predictive_scaling_metric_specification(
     #[allow(unused_mut)]
     let mut scope_170 = writer.prefix("PredefinedMetricPairSpecification");
     if let Some(var_171) = &input.predefined_metric_pair_specification {
-        crate::query_ser::serialize_structure_crate_model_predictive_scaling_predefined_metric_pair(
-            scope_170, var_171,
-        );
+        crate::query_ser::serialize_structure_crate_model_predictive_scaling_predefined_metric_pair(scope_170, var_171)?;
     }
     #[allow(unused_mut)]
     let mut scope_172 = writer.prefix("PredefinedScalingMetricSpecification");
     if let Some(var_173) = &input.predefined_scaling_metric_specification {
-        crate::query_ser::serialize_structure_crate_model_predictive_scaling_predefined_scaling_metric(scope_172, var_173);
+        crate::query_ser::serialize_structure_crate_model_predictive_scaling_predefined_scaling_metric(scope_172, var_173)?;
     }
     #[allow(unused_mut)]
     let mut scope_174 = writer.prefix("PredefinedLoadMetricSpecification");
     if let Some(var_175) = &input.predefined_load_metric_specification {
-        crate::query_ser::serialize_structure_crate_model_predictive_scaling_predefined_load_metric(
-            scope_174, var_175,
-        );
+        crate::query_ser::serialize_structure_crate_model_predictive_scaling_predefined_load_metric(scope_174, var_175)?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_launch_template_overrides(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LaunchTemplateOverrides,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_176 = writer.prefix("InstanceType");
     if let Some(var_177) = &input.instance_type {
@@ -671,20 +689,23 @@ pub fn serialize_structure_crate_model_launch_template_overrides(
     if let Some(var_181) = &input.launch_template_specification {
         crate::query_ser::serialize_structure_crate_model_launch_template_specification(
             scope_180, var_181,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_182 = writer.prefix("InstanceRequirements");
     if let Some(var_183) = &input.instance_requirements {
-        crate::query_ser::serialize_structure_crate_model_instance_requirements(scope_182, var_183);
+        crate::query_ser::serialize_structure_crate_model_instance_requirements(
+            scope_182, var_183,
+        )?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_metric_dimension(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MetricDimension,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_184 = writer.prefix("Name");
     if let Some(var_185) = &input.name {
@@ -695,13 +716,14 @@ pub fn serialize_structure_crate_model_metric_dimension(
     if let Some(var_187) = &input.value {
         scope_186.string(var_187);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_predictive_scaling_predefined_metric_pair(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PredictiveScalingPredefinedMetricPair,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_188 = writer.prefix("PredefinedMetricType");
     if let Some(var_189) = &input.predefined_metric_type {
@@ -712,13 +734,14 @@ pub fn serialize_structure_crate_model_predictive_scaling_predefined_metric_pair
     if let Some(var_191) = &input.resource_label {
         scope_190.string(var_191);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_predictive_scaling_predefined_scaling_metric(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PredictiveScalingPredefinedScalingMetric,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_192 = writer.prefix("PredefinedMetricType");
     if let Some(var_193) = &input.predefined_metric_type {
@@ -729,13 +752,14 @@ pub fn serialize_structure_crate_model_predictive_scaling_predefined_scaling_met
     if let Some(var_195) = &input.resource_label {
         scope_194.string(var_195);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_predictive_scaling_predefined_load_metric(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PredictiveScalingPredefinedLoadMetric,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_196 = writer.prefix("PredefinedMetricType");
     if let Some(var_197) = &input.predefined_metric_type {
@@ -746,22 +770,23 @@ pub fn serialize_structure_crate_model_predictive_scaling_predefined_load_metric
     if let Some(var_199) = &input.resource_label {
         scope_198.string(var_199);
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_instance_requirements(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::InstanceRequirements,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_200 = writer.prefix("VCpuCount");
     if let Some(var_201) = &input.v_cpu_count {
-        crate::query_ser::serialize_structure_crate_model_v_cpu_count_request(scope_200, var_201);
+        crate::query_ser::serialize_structure_crate_model_v_cpu_count_request(scope_200, var_201)?;
     }
     #[allow(unused_mut)]
     let mut scope_202 = writer.prefix("MemoryMiB");
     if let Some(var_203) = &input.memory_mi_b {
-        crate::query_ser::serialize_structure_crate_model_memory_mi_b_request(scope_202, var_203);
+        crate::query_ser::serialize_structure_crate_model_memory_mi_b_request(scope_202, var_203)?;
     }
     #[allow(unused_mut)]
     let mut scope_204 = writer.prefix("CpuManufacturers");
@@ -779,7 +804,7 @@ pub fn serialize_structure_crate_model_instance_requirements(
     if let Some(var_210) = &input.memory_gi_b_per_v_cpu {
         crate::query_ser::serialize_structure_crate_model_memory_gi_b_per_v_cpu_request(
             scope_209, var_210,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_211 = writer.prefix("ExcludedInstanceTypes");
@@ -839,7 +864,7 @@ pub fn serialize_structure_crate_model_instance_requirements(
     if let Some(var_232) = &input.network_interface_count {
         crate::query_ser::serialize_structure_crate_model_network_interface_count_request(
             scope_231, var_232,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_233 = writer.prefix("LocalStorage");
@@ -862,14 +887,14 @@ pub fn serialize_structure_crate_model_instance_requirements(
     if let Some(var_241) = &input.total_local_storage_gb {
         crate::query_ser::serialize_structure_crate_model_total_local_storage_gb_request(
             scope_240, var_241,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_242 = writer.prefix("BaselineEbsBandwidthMbps");
     if let Some(var_243) = &input.baseline_ebs_bandwidth_mbps {
         crate::query_ser::serialize_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
             scope_242, var_243,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_244 = writer.prefix("AcceleratorTypes");
@@ -887,7 +912,7 @@ pub fn serialize_structure_crate_model_instance_requirements(
     if let Some(var_250) = &input.accelerator_count {
         crate::query_ser::serialize_structure_crate_model_accelerator_count_request(
             scope_249, var_250,
-        );
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_251 = writer.prefix("AcceleratorManufacturers");
@@ -916,15 +941,16 @@ pub fn serialize_structure_crate_model_instance_requirements(
     if let Some(var_262) = &input.accelerator_total_memory_mi_b {
         crate::query_ser::serialize_structure_crate_model_accelerator_total_memory_mi_b_request(
             scope_261, var_262,
-        );
+        )?;
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_v_cpu_count_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::VCpuCountRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_263 = writer.prefix("Min");
     if let Some(var_264) = &input.min {
@@ -941,13 +967,14 @@ pub fn serialize_structure_crate_model_v_cpu_count_request(
             aws_smithy_types::Number::NegInt((*var_266).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_memory_mi_b_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MemoryMiBRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_267 = writer.prefix("Min");
     if let Some(var_268) = &input.min {
@@ -964,13 +991,14 @@ pub fn serialize_structure_crate_model_memory_mi_b_request(
             aws_smithy_types::Number::NegInt((*var_270).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_memory_gi_b_per_v_cpu_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::MemoryGiBPerVCpuRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_271 = writer.prefix("Min");
     if let Some(var_272) = &input.min {
@@ -987,13 +1015,14 @@ pub fn serialize_structure_crate_model_memory_gi_b_per_v_cpu_request(
             aws_smithy_types::Number::Float((*var_274).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_network_interface_count_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::NetworkInterfaceCountRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_275 = writer.prefix("Min");
     if let Some(var_276) = &input.min {
@@ -1010,13 +1039,14 @@ pub fn serialize_structure_crate_model_network_interface_count_request(
             aws_smithy_types::Number::NegInt((*var_278).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_total_local_storage_gb_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TotalLocalStorageGbRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_279 = writer.prefix("Min");
     if let Some(var_280) = &input.min {
@@ -1033,13 +1063,14 @@ pub fn serialize_structure_crate_model_total_local_storage_gb_request(
             aws_smithy_types::Number::Float((*var_282).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::BaselineEbsBandwidthMbpsRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_283 = writer.prefix("Min");
     if let Some(var_284) = &input.min {
@@ -1056,13 +1087,14 @@ pub fn serialize_structure_crate_model_baseline_ebs_bandwidth_mbps_request(
             aws_smithy_types::Number::NegInt((*var_286).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_accelerator_count_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AcceleratorCountRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_287 = writer.prefix("Min");
     if let Some(var_288) = &input.min {
@@ -1079,13 +1111,14 @@ pub fn serialize_structure_crate_model_accelerator_count_request(
             aws_smithy_types::Number::NegInt((*var_290).into()),
         );
     }
+    Ok(())
 }
 
 #[allow(unused_mut)]
 pub fn serialize_structure_crate_model_accelerator_total_memory_mi_b_request(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AcceleratorTotalMemoryMiBRequest,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_291 = writer.prefix("Min");
     if let Some(var_292) = &input.min {
@@ -1102,4 +1135,5 @@ pub fn serialize_structure_crate_model_accelerator_total_memory_mi_b_request(
             aws_smithy_types::Number::NegInt((*var_294).into()),
         );
     }
+    Ok(())
 }

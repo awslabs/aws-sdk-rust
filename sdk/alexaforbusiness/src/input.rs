@@ -87,10 +87,7 @@ impl ApproveSkillInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_approve_skill(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_approve_skill(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -256,7 +253,7 @@ impl AssociateContactWithAddressBookInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_contact_with_address_book(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_contact_with_address_book(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -423,7 +420,7 @@ impl AssociateDeviceWithNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_device_with_network_profile(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_device_with_network_profile(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -589,10 +586,7 @@ impl AssociateDeviceWithRoomInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_device_with_room(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -758,7 +752,7 @@ impl AssociateSkillGroupWithRoomInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_skill_group_with_room(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_skill_group_with_room(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -925,7 +919,7 @@ impl AssociateSkillWithSkillGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_skill_with_skill_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_skill_with_skill_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1079,10 +1073,7 @@ impl AssociateSkillWithUsersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_skill_with_users(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1285,10 +1276,7 @@ impl CreateAddressBookInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_address_book(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_address_book(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1562,7 +1550,7 @@ impl CreateBusinessReportScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_business_report_schedule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_business_report_schedule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1822,10 +1810,7 @@ impl CreateConferenceProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_conference_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2101,10 +2086,7 @@ impl CreateContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2305,10 +2287,7 @@ impl CreateGatewayGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_gateway_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_gateway_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2632,10 +2611,9 @@ impl CreateNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_network_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2968,10 +2946,7 @@ impl CreateProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3200,10 +3175,7 @@ impl CreateRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3409,10 +3381,7 @@ impl CreateSkillGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_skill_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_skill_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3638,10 +3607,7 @@ impl CreateUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3794,10 +3760,7 @@ impl DeleteAddressBookInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_address_book(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_address_book(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3948,7 +3911,7 @@ impl DeleteBusinessReportScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_business_report_schedule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_business_report_schedule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4105,10 +4068,7 @@ impl DeleteConferenceProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_conference_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4257,10 +4217,7 @@ impl DeleteContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4409,10 +4366,7 @@ impl DeleteDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_device(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4579,10 +4533,7 @@ impl DeleteDeviceUsageDataInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_device_usage_data(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4735,10 +4686,7 @@ impl DeleteGatewayGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_gateway_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_gateway_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4891,10 +4839,9 @@ impl DeleteNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_network_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5043,10 +4990,7 @@ impl DeleteProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5195,10 +5139,7 @@ impl DeleteRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5378,10 +5319,7 @@ impl DeleteRoomSkillParameterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_room_skill_parameter(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5546,10 +5484,7 @@ impl DeleteSkillAuthorizationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_skill_authorization(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5702,10 +5637,7 @@ impl DeleteSkillGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_skill_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_skill_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5869,10 +5801,7 @@ impl DeleteUserInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6038,7 +5967,7 @@ impl DisassociateContactFromAddressBookInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_contact_from_address_book(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_contact_from_address_book(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6190,7 +6119,7 @@ impl DisassociateDeviceFromRoomInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_device_from_room(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_device_from_room(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6357,7 +6286,7 @@ impl DisassociateSkillFromSkillGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_from_skill_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_from_skill_group(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6509,7 +6438,7 @@ impl DisassociateSkillFromUsersInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_from_users(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_from_users(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6678,7 +6607,7 @@ impl DisassociateSkillGroupFromRoomInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_group_from_room(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_group_from_room(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6832,10 +6761,7 @@ impl ForgetSmartHomeAppliancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_forget_smart_home_appliances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6988,10 +6914,7 @@ impl GetAddressBookInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_address_book(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_address_book(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7130,10 +7053,7 @@ impl GetConferencePreferenceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_conference_preference(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7280,10 +7200,7 @@ impl GetConferenceProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_conference_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7432,10 +7349,7 @@ impl GetContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7582,10 +7496,7 @@ impl GetDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7732,10 +7643,7 @@ impl GetGatewayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_gateway(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_gateway(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -7888,10 +7796,7 @@ impl GetGatewayGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_gateway_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_gateway_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8030,10 +7935,7 @@ impl GetInvitationConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_invitation_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8178,10 +8080,7 @@ impl GetNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_network_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8330,10 +8229,7 @@ impl GetProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8480,10 +8376,7 @@ impl GetRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8662,10 +8555,7 @@ impl GetRoomSkillParameterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_room_skill_parameter(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8817,10 +8707,8 @@ impl GetSkillGroupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_skill_group(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_skill_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -8983,7 +8871,7 @@ impl ListBusinessReportSchedulesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_business_report_schedules(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_business_report_schedules(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -9151,10 +9039,7 @@ impl ListConferenceProvidersInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_conference_providers(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9359,10 +9244,7 @@ impl ListDeviceEventsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_device_events(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_device_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9524,10 +9406,7 @@ impl ListGatewayGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_gateway_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_gateway_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9703,10 +9582,7 @@ impl ListGatewaysInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_gateways(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_gateways(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -9920,10 +9796,7 @@ impl ListSkillsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_skills(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_skills(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10088,10 +9961,7 @@ impl ListSkillsStoreCategoriesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_skills_store_categories(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10268,7 +10138,7 @@ impl ListSkillsStoreSkillsByCategoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_skills_store_skills_by_category(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_skills_store_skills_by_category(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -10446,10 +10316,7 @@ impl ListSmartHomeAppliancesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_smart_home_appliances(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10628,10 +10495,7 @@ impl ListTagsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10785,10 +10649,7 @@ impl PutConferencePreferenceInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_conference_preference(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -10984,10 +10845,7 @@ impl PutInvitationConfigurationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_invitation_configuration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11166,10 +11024,7 @@ impl PutRoomSkillParameterInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_room_skill_parameter(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11364,10 +11219,7 @@ impl PutSkillAuthorizationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_skill_authorization(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11611,10 +11463,7 @@ impl RegisterAvsDeviceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_register_avs_device(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_register_avs_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11763,10 +11612,7 @@ impl RejectSkillInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_reject_skill(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_reject_skill(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -11927,10 +11773,7 @@ impl ResolveRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_resolve_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_resolve_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12095,10 +11938,7 @@ impl RevokeInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_invitation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_revoke_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12314,10 +12154,7 @@ impl SearchAddressBooksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_address_books(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_address_books(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12532,10 +12369,8 @@ impl SearchContactsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_contacts(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_contacts(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12756,10 +12591,7 @@ impl SearchDevicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_devices(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_devices(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -12977,10 +12809,7 @@ impl SearchNetworkProfilesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_network_profiles(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13195,10 +13024,8 @@ impl SearchProfilesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_profiles(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_profiles(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13413,10 +13240,7 @@ impl SearchRoomsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_rooms(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_rooms(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13634,10 +13458,7 @@ impl SearchSkillGroupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_skill_groups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_search_skill_groups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -13854,10 +13675,7 @@ impl SearchUsersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_users(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_search_users(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14060,10 +13878,7 @@ impl SendAnnouncementInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_announcement(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_send_announcement(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14212,10 +14027,8 @@ impl SendInvitationInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_send_invitation(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_send_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14398,10 +14211,7 @@ impl StartDeviceSyncInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_device_sync(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_device_sync(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14552,7 +14362,7 @@ impl StartSmartHomeApplianceDiscoveryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_smart_home_appliance_discovery(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_smart_home_appliance_discovery(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -14725,10 +14535,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -14900,10 +14707,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15080,10 +14884,7 @@ impl UpdateAddressBookInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_address_book(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_address_book(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15311,7 +15112,7 @@ impl UpdateBusinessReportScheduleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_business_report_schedule(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_business_report_schedule(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -15532,10 +15333,7 @@ impl UpdateConferenceProviderInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_conference_provider(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15778,10 +15576,7 @@ impl UpdateContactInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_contact(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_contact(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -15942,10 +15737,7 @@ impl UpdateDeviceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_device(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_device(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16135,10 +15927,7 @@ impl UpdateGatewayInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_gateway(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_gateway(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16315,10 +16104,7 @@ impl UpdateGatewayGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_gateway_group(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_gateway_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16572,10 +16358,9 @@ impl UpdateNetworkProfileInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_network_profile(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_network_profile(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -16895,10 +16680,7 @@ impl UpdateProfileInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_profile(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_profile(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17098,10 +16880,7 @@ impl UpdateRoomInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_room(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_room(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17281,10 +17060,7 @@ impl UpdateSkillGroupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_skill_group(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_skill_group(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -17357,6 +17133,20 @@ pub struct UpdateSkillGroupInput {
     /// <p>The updated description for the skill group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateSkillGroupInput {
+    /// <p>The ARN of the skill group to update. </p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The updated name for the skill group.</p>
+    pub fn skill_group_name(&self) -> std::option::Option<&str> {
+        self.skill_group_name.as_deref()
+    }
+    /// <p>The updated description for the skill group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateSkillGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSkillGroupInput");
@@ -17381,6 +17171,28 @@ pub struct UpdateRoomInput {
     pub provider_calendar_id: std::option::Option<std::string::String>,
     /// <p>The updated profile ARN for the room.</p>
     pub profile_arn: std::option::Option<std::string::String>,
+}
+impl UpdateRoomInput {
+    /// <p>The ARN of the room to update. </p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The updated name for the room.</p>
+    pub fn room_name(&self) -> std::option::Option<&str> {
+        self.room_name.as_deref()
+    }
+    /// <p>The updated description for the room.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated provider calendar ARN for the room.</p>
+    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+        self.provider_calendar_id.as_deref()
+    }
+    /// <p>The updated profile ARN for the room.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17429,6 +17241,67 @@ pub struct UpdateProfileInput {
     pub meeting_room_configuration:
         std::option::Option<crate::model::UpdateMeetingRoomConfiguration>,
 }
+impl UpdateProfileInput {
+    /// <p>The ARN of the room profile to update. Required.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+    /// <p>The updated name for the room profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
+    /// default status.</p>
+    pub fn is_default(&self) -> std::option::Option<bool> {
+        self.is_default
+    }
+    /// <p>The updated timezone for the room profile.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The updated address for the room profile.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The updated distance unit for the room profile.</p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+    /// <p>The updated temperature unit for the room profile.</p>
+    pub fn temperature_unit(&self) -> std::option::Option<&crate::model::TemperatureUnit> {
+        self.temperature_unit.as_ref()
+    }
+    /// <p>The updated wake word for the room profile.</p>
+    pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
+        self.wake_word.as_ref()
+    }
+    /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>Whether the setup mode of the profile is enabled.</p>
+    pub fn setup_mode_disabled(&self) -> std::option::Option<bool> {
+        self.setup_mode_disabled
+    }
+    /// <p>The updated maximum volume limit for the room profile.</p>
+    pub fn max_volume_limit(&self) -> std::option::Option<i32> {
+        self.max_volume_limit
+    }
+    /// <p>Whether the PSTN setting of the room profile is enabled.</p>
+    pub fn pstn_enabled(&self) -> std::option::Option<bool> {
+        self.pstn_enabled
+    }
+    /// <p>Whether data retention of the profile is enabled.</p>
+    pub fn data_retention_opt_in(&self) -> std::option::Option<bool> {
+        self.data_retention_opt_in
+    }
+    /// <p>The updated meeting room settings of a room profile.</p>
+    pub fn meeting_room_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateMeetingRoomConfiguration> {
+        self.meeting_room_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProfileInput");
@@ -17476,6 +17349,40 @@ pub struct UpdateNetworkProfileInput {
     /// devices and used to trust your authentication server during EAP negotiation. </p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateNetworkProfileInput {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+        self.network_profile_name.as_deref()
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current password of the Wi-Fi network.</p>
+    pub fn current_password(&self) -> std::option::Option<&str> {
+        self.current_password.as_deref()
+    }
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
+    /// transmitted to the device and is used when the password of the network changes to
+    /// NextPassword. </p>
+    pub fn next_password(&self) -> std::option::Option<&str> {
+        self.next_password.as_deref()
+    }
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
+    /// (ACM). This is used to issue certificates to the devices. </p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+    /// <p>The root certificate(s) of your authentication server that will be installed on your
+    /// devices and used to trust your authentication server during EAP negotiation. </p>
+    pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
+        self.trust_anchors.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNetworkProfileInput");
@@ -17501,6 +17408,20 @@ pub struct UpdateGatewayGroupInput {
     /// <p>The updated description of the gateway group.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateGatewayGroupInput {
+    /// <p>The ARN of the gateway group to update.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
+    /// <p>The updated name of the gateway group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description of the gateway group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGatewayGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayGroupInput");
@@ -17525,6 +17446,25 @@ pub struct UpdateGatewayInput {
     /// software version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
 }
+impl UpdateGatewayInput {
+    /// <p>The ARN of the gateway to update.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
+    /// <p>The updated name of the gateway.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description of the gateway.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The updated software version of the gateway. The gateway automatically updates its
+    /// software version during normal operation.</p>
+    pub fn software_version(&self) -> std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGatewayInput");
@@ -17544,6 +17484,16 @@ pub struct UpdateDeviceInput {
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The updated device name. Required.</p>
     pub device_name: std::option::Option<std::string::String>,
+}
+impl UpdateDeviceInput {
+    /// <p>The ARN of the device to update. Required.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The updated device name. Required.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17575,6 +17525,38 @@ pub struct UpdateContactInput {
     /// <p>The list of SIP addresses for the contact.</p>
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
 }
+impl UpdateContactInput {
+    /// <p>The ARN of the contact to update.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The updated display name of the contact.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The updated first name of the contact.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The updated last name of the contact.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
+    /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
+    /// which lets you specify the phone number type and multiple numbers.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
+        self.sip_addresses.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateContactInput");
@@ -17603,6 +17585,30 @@ pub struct UpdateConferenceProviderInput {
     pub pstn_dial_in: std::option::Option<crate::model::PstnDialIn>,
     /// <p>The meeting settings for the conference provider.</p>
     pub meeting_setting: std::option::Option<crate::model::MeetingSetting>,
+}
+impl UpdateConferenceProviderInput {
+    /// <p>The ARN of the conference provider.</p>
+    pub fn conference_provider_arn(&self) -> std::option::Option<&str> {
+        self.conference_provider_arn.as_deref()
+    }
+    /// <p>The type of the conference provider.</p>
+    pub fn conference_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConferenceProviderType> {
+        self.conference_provider_type.as_ref()
+    }
+    /// <p>The IP endpoint and protocol for calling.</p>
+    pub fn ip_dial_in(&self) -> std::option::Option<&crate::model::IpDialIn> {
+        self.ip_dial_in.as_ref()
+    }
+    /// <p>The information for PSTN conferencing.</p>
+    pub fn pstn_dial_in(&self) -> std::option::Option<&crate::model::PstnDialIn> {
+        self.pstn_dial_in.as_ref()
+    }
+    /// <p>The meeting settings for the conference provider.</p>
+    pub fn meeting_setting(&self) -> std::option::Option<&crate::model::MeetingSetting> {
+        self.meeting_setting.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateConferenceProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17634,6 +17640,33 @@ pub struct UpdateBusinessReportScheduleInput {
     /// <p>The recurrence of the reports.</p>
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
 }
+impl UpdateBusinessReportScheduleInput {
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+        self.schedule_arn.as_deref()
+    }
+    /// <p>The S3 location of the output reports.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of
+    /// individual files).</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The name identifier of the schedule.</p>
+    pub fn schedule_name(&self) -> std::option::Option<&str> {
+        self.schedule_name.as_deref()
+    }
+    /// <p>The recurrence of the reports.</p>
+    pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
+        self.recurrence.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateBusinessReportScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBusinessReportScheduleInput");
@@ -17658,6 +17691,20 @@ pub struct UpdateAddressBookInput {
     /// <p>The updated description of the room.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl UpdateAddressBookInput {
+    /// <p>The ARN of the room to update.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
+    /// <p>The updated name of the room.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The updated description of the room.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAddressBookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAddressBookInput");
@@ -17678,6 +17725,17 @@ pub struct UntagResourceInput {
     /// Required. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags.
+    /// Required. </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -17697,6 +17755,17 @@ pub struct TagResourceInput {
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
+    /// </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -17712,6 +17781,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StartSmartHomeApplianceDiscoveryInput {
     /// <p>The room where smart home appliance discovery was initiated.</p>
     pub room_arn: std::option::Option<std::string::String>,
+}
+impl StartSmartHomeApplianceDiscoveryInput {
+    /// <p>The room where smart home appliance discovery was initiated.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartSmartHomeApplianceDiscoveryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17732,6 +17807,20 @@ pub struct StartDeviceSyncInput {
     /// <p>Request structure to start the device sync. Required.</p>
     pub features: std::option::Option<std::vec::Vec<crate::model::Feature>>,
 }
+impl StartDeviceSyncInput {
+    /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The ARN of the device to sync. Required.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>Request structure to start the device sync. Required.</p>
+    pub fn features(&self) -> std::option::Option<&[crate::model::Feature]> {
+        self.features.as_deref()
+    }
+}
 impl std::fmt::Debug for StartDeviceSyncInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDeviceSyncInput");
@@ -17748,6 +17837,12 @@ impl std::fmt::Debug for StartDeviceSyncInput {
 pub struct SendInvitationInput {
     /// <p>The ARN of the user to whom to send an invitation. Required.</p>
     pub user_arn: std::option::Option<std::string::String>,
+}
+impl SendInvitationInput {
+    /// <p>The ARN of the user to whom to send an invitation. Required.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for SendInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17770,6 +17865,25 @@ pub struct SendAnnouncementInput {
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl SendAnnouncementInput {
+    /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
+    pub fn room_filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.room_filters.as_deref()
+    }
+    /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::Content> {
+        self.content.as_ref()
+    }
+    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+    /// announcement is not delivered.</p>
+    pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
+        self.time_to_live_in_seconds
+    }
+    /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SendAnnouncementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17802,6 +17916,31 @@ pub struct SearchUsersInput {
     /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
+impl SearchUsersInput {
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
+    /// Required.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved. Required.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filters to use for listing a specific set of users. Required. Supported filter
+    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
+    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchUsersInput");
@@ -17833,6 +17972,31 @@ pub struct SearchSkillGroupsInput {
     /// sort key is SkillGroupName. </p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
+impl SearchSkillGroupsInput {
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
+    /// Required.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key
+    /// is SkillGroupName. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported
+    /// sort key is SkillGroupName. </p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchSkillGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchSkillGroupsInput");
@@ -17862,6 +18026,30 @@ pub struct SearchRoomsInput {
     /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
     /// are RoomName and ProfileName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
+}
+impl SearchRoomsInput {
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
+    /// RoomName and ProfileName.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
+    /// are RoomName and ProfileName.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchRoomsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17893,6 +18081,30 @@ pub struct SearchProfilesInput {
     /// keys are ProfileName and Address.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
+impl SearchProfilesInput {
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
+    /// are ProfileName and Address. Required. </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
+    /// keys are ProfileName and Address.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchProfilesInput");
@@ -17922,6 +18134,30 @@ pub struct SearchNetworkProfilesInput {
     /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
     /// includes NetworkProfileName, Ssid, and SecurityType.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
+}
+impl SearchNetworkProfilesInput {
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by MaxResults. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the
+    /// specified MaxResults value, a token is included in the response so that the remaining
+    /// results can be retrieved. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filters to use to list a specified set of network profiles. Valid filters are
+    /// NetworkProfileName, Ssid, and SecurityType.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
+    /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchNetworkProfilesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17956,6 +18192,33 @@ pub struct SearchDevicesInput {
     /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
+impl SearchDevicesInput {
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The filters to use to list a specified set of devices. Supported filter keys are
+    /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
+    /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
+    /// NetworkProfileArn, Feature, and FailureCode.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
+    /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
+    /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
+}
 impl std::fmt::Debug for SearchDevicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchDevicesInput");
@@ -17985,6 +18248,30 @@ pub struct SearchContactsInput {
     /// the specified MaxResults value, a token is included in the response so that the remaining
     /// results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl SearchContactsInput {
+    /// <p>The filters to use to list a specified set of address books. The supported filter
+    /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the specified set of contacts. The supported sort
+    /// keys are DisplayName, FirstName, and LastName.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response only includes
+    /// results beyond the token, up to the value specified by MaxResults.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified MaxResults value, a token is included in the response so that the remaining
+    /// results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for SearchContactsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18016,6 +18303,30 @@ pub struct SearchAddressBooksInput {
     /// results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl SearchAddressBooksInput {
+    /// <p>The filters to use to list a specified set of address books. The supported filter key
+    /// is AddressBookName.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The sort order to use in listing the specified set of address books. The supported
+    /// sort key is AddressBookName.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
+        self.sort_criteria.as_deref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response only includes
+    /// results beyond the token, up to the value specified by MaxResults.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified MaxResults value, a token is included in the response so that the remaining
+    /// results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for SearchAddressBooksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchAddressBooksInput");
@@ -18036,6 +18347,16 @@ pub struct RevokeInvitationInput {
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
     pub enrollment_id: std::option::Option<std::string::String>,
 }
+impl RevokeInvitationInput {
+    /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
+    pub fn enrollment_id(&self) -> std::option::Option<&str> {
+        self.enrollment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for RevokeInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeInvitationInput");
@@ -18054,6 +18375,16 @@ pub struct ResolveRoomInput {
     /// <p>The ARN of the skill that was requested. Required.</p>
     pub skill_id: std::option::Option<std::string::String>,
 }
+impl ResolveRoomInput {
+    /// <p>The ARN of the user. Required.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The ARN of the skill that was requested. Required.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ResolveRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResolveRoomInput");
@@ -18069,6 +18400,12 @@ impl std::fmt::Debug for ResolveRoomInput {
 pub struct RejectSkillInput {
     /// <p>The unique identifier of the skill.</p>
     pub skill_id: std::option::Option<std::string::String>,
+}
+impl RejectSkillInput {
+    /// <p>The unique identifier of the skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RejectSkillInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18102,6 +18439,41 @@ pub struct RegisterAvsDeviceInput {
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl RegisterAvsDeviceInput {
+    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
+    /// device.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
+    /// part of the Device Authorization Request component of the OAuth code-based linking
+    /// specification.</p>
+    pub fn user_code(&self) -> std::option::Option<&str> {
+        self.user_code.as_deref()
+    }
+    /// <p>The product ID used to identify your AVS device during authorization.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
+    /// AVS device.</p>
+    pub fn device_serial_number(&self) -> std::option::Option<&str> {
+        self.device_serial_number.as_deref()
+    }
+    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
+    /// product on Amazon's Developer Console.</p>
+    pub fn amazon_id(&self) -> std::option::Option<&str> {
+        self.amazon_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for RegisterAvsDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterAvsDeviceInput");
@@ -18129,6 +18501,24 @@ pub struct PutSkillAuthorizationInput {
     /// <p>The room that the skill is authorized for.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
+impl PutSkillAuthorizationInput {
+    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
+    /// populated in the AuthorizationResult map to establish the authorization.</p>
+    pub fn authorization_result(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.authorization_result.as_ref()
+    }
+    /// <p>The unique identifier of a skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The room that the skill is authorized for.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for PutSkillAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSkillAuthorizationInput");
@@ -18149,6 +18539,20 @@ pub struct PutRoomSkillParameterInput {
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The updated room skill parameter. Required.</p>
     pub room_skill_parameter: std::option::Option<crate::model::RoomSkillParameter>,
+}
+impl PutRoomSkillParameterInput {
+    /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The updated room skill parameter. Required.</p>
+    pub fn room_skill_parameter(&self) -> std::option::Option<&crate::model::RoomSkillParameter> {
+        self.room_skill_parameter.as_ref()
+    }
 }
 impl std::fmt::Debug for PutRoomSkillParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18173,6 +18577,22 @@ pub struct PutInvitationConfigurationInput {
     /// invitation.</p>
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl PutInvitationConfigurationInput {
+    /// <p>The name of the organization sending the enrollment invite to a user.</p>
+    pub fn organization_name(&self) -> std::option::Option<&str> {
+        self.organization_name.as_deref()
+    }
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
+    /// </p>
+    pub fn contact_email(&self) -> std::option::Option<&str> {
+        self.contact_email.as_deref()
+    }
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
+    /// invitation.</p>
+    pub fn private_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.private_skill_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for PutInvitationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutInvitationConfigurationInput");
@@ -18189,6 +18609,14 @@ impl std::fmt::Debug for PutInvitationConfigurationInput {
 pub struct PutConferencePreferenceInput {
     /// <p>The conference preference of a specific conference provider.</p>
     pub conference_preference: std::option::Option<crate::model::ConferencePreference>,
+}
+impl PutConferencePreferenceInput {
+    /// <p>The conference preference of a specific conference provider.</p>
+    pub fn conference_preference(
+        &self,
+    ) -> std::option::Option<&crate::model::ConferencePreference> {
+        self.conference_preference.as_ref()
+    }
 }
 impl std::fmt::Debug for PutConferencePreferenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18213,6 +18641,24 @@ pub struct ListTagsInput {
     /// the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListTagsInput {
+    /// <p>The ARN of the specified resource for which to list tags.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListTagsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsInput");
@@ -18233,6 +18679,20 @@ pub struct ListSmartHomeAppliancesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSmartHomeAppliancesInput {
+    /// <p>The room that the appliances are associated with.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListSmartHomeAppliancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18256,6 +18716,21 @@ pub struct ListSkillsStoreSkillsByCategoryInput {
     /// <p>The maximum number of skills returned per paginated calls.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListSkillsStoreSkillsByCategoryInput {
+    /// <p>The category ID for which the skills are being retrieved from the skill
+    /// store.</p>
+    pub fn category_id(&self) -> std::option::Option<i64> {
+        self.category_id
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of skills returned per paginated calls.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSkillsStoreSkillsByCategoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSkillsStoreSkillsByCategoryInput");
@@ -18274,6 +18749,16 @@ pub struct ListSkillsStoreCategoriesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of categories returned, per paginated calls.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSkillsStoreCategoriesInput {
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of categories returned, per paginated calls.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSkillsStoreCategoriesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18303,6 +18788,32 @@ pub struct ListSkillsInput {
     /// the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListSkillsInput {
+    /// <p>The ARN of the skill group for which to list enabled skills.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>Whether the skill is enabled under the user's account.</p>
+    pub fn enablement_type(&self) -> std::option::Option<&crate::model::EnablementTypeFilter> {
+        self.enablement_type.as_ref()
+    }
+    /// <p>Whether the skill is publicly available or is a private skill.</p>
+    pub fn skill_type(&self) -> std::option::Option<&crate::model::SkillTypeFilter> {
+        self.skill_type.as_ref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response includes only
+    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than
+    /// the specified <code>MaxResults</code> value, a token is included in the response so that
+    /// the remaining results can be retrieved.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListSkillsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSkillsInput");
@@ -18326,6 +18837,20 @@ pub struct ListGatewaysInput {
     /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListGatewaysInput {
+    /// <p>The gateway group ARN for which to list gateways.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
+    /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListGatewaysInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListGatewaysInput");
@@ -18344,6 +18869,16 @@ pub struct ListGatewayGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListGatewayGroupsInput {
+    /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListGatewayGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18375,6 +18910,32 @@ pub struct ListDeviceEventsInput {
     /// so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListDeviceEventsInput {
+    /// <p>The ARN of a device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a
+    /// list of all device events in reverse chronological order. If EventType is specified, this
+    /// returns a list of device events for that EventType in reverse chronological order.
+    /// </p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::DeviceEventType> {
+        self.event_type.as_ref()
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of
+    /// results from this action. If this parameter is specified, the response only includes
+    /// results beyond the token, up to the value specified by MaxResults. When the end of results
+    /// is reached, the response has a value of null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to include in the response. The default value is 50. If
+    /// more results exist than the specified MaxResults value, a token is included in the response
+    /// so that the remaining results can be retrieved. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListDeviceEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceEventsInput");
@@ -18396,6 +18957,17 @@ pub struct ListConferenceProvidersInput {
     /// calls.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListConferenceProvidersInput {
+    /// <p>The tokens used for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of conference providers to be returned, per paginated
+    /// calls.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListConferenceProvidersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListConferenceProvidersInput");
@@ -18414,6 +18986,16 @@ pub struct ListBusinessReportSchedulesInput {
     /// <p>The maximum number of schedules listed in the call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListBusinessReportSchedulesInput {
+    /// <p>The token used to list the remaining schedules from the previous API call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of schedules listed in the call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListBusinessReportSchedulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListBusinessReportSchedulesInput");
@@ -18429,6 +19011,12 @@ impl std::fmt::Debug for ListBusinessReportSchedulesInput {
 pub struct GetSkillGroupInput {
     /// <p>The ARN of the skill group for which to get details. Required.</p>
     pub skill_group_arn: std::option::Option<std::string::String>,
+}
+impl GetSkillGroupInput {
+    /// <p>The ARN of the skill group for which to get details. Required.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetSkillGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18450,6 +19038,21 @@ pub struct GetRoomSkillParameterInput {
     /// <p>The room skill parameter key for which to get details. Required.</p>
     pub parameter_key: std::option::Option<std::string::String>,
 }
+impl GetRoomSkillParameterInput {
+    /// <p>The ARN of the room from which to get the room skill parameter details. </p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The ARN of the skill from which to get the room skill parameter details.
+    /// Required.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The room skill parameter key for which to get details. Required.</p>
+    pub fn parameter_key(&self) -> std::option::Option<&str> {
+        self.parameter_key.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRoomSkillParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoomSkillParameterInput");
@@ -18467,6 +19070,12 @@ pub struct GetRoomInput {
     /// <p>The ARN of the room for which to request details. Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
+impl GetRoomInput {
+    /// <p>The ARN of the room for which to request details. Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRoomInput");
@@ -18482,6 +19091,12 @@ pub struct GetProfileInput {
     /// <p>The ARN of the room profile for which to request details. Required.</p>
     pub profile_arn: std::option::Option<std::string::String>,
 }
+impl GetProfileInput {
+    /// <p>The ARN of the room profile for which to request details. Required.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetProfileInput");
@@ -18496,6 +19111,12 @@ impl std::fmt::Debug for GetProfileInput {
 pub struct GetNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
     pub network_profile_arn: std::option::Option<std::string::String>,
+}
+impl GetNetworkProfileInput {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18523,6 +19144,12 @@ pub struct GetGatewayGroupInput {
     /// <p>The ARN of the gateway group to get.</p>
     pub gateway_group_arn: std::option::Option<std::string::String>,
 }
+impl GetGatewayGroupInput {
+    /// <p>The ARN of the gateway group to get.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetGatewayGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGatewayGroupInput");
@@ -18537,6 +19164,12 @@ impl std::fmt::Debug for GetGatewayGroupInput {
 pub struct GetGatewayInput {
     /// <p>The ARN of the gateway to get.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl GetGatewayInput {
+    /// <p>The ARN of the gateway to get.</p>
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+        self.gateway_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetGatewayInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18553,6 +19186,12 @@ pub struct GetDeviceInput {
     /// <p>The ARN of the device for which to request details. Required.</p>
     pub device_arn: std::option::Option<std::string::String>,
 }
+impl GetDeviceInput {
+    /// <p>The ARN of the device for which to request details. Required.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceInput");
@@ -18568,6 +19207,12 @@ pub struct GetContactInput {
     /// <p>The ARN of the contact for which to request details.</p>
     pub contact_arn: std::option::Option<std::string::String>,
 }
+impl GetContactInput {
+    /// <p>The ARN of the contact for which to request details.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetContactInput");
@@ -18582,6 +19227,12 @@ impl std::fmt::Debug for GetContactInput {
 pub struct GetConferenceProviderInput {
     /// <p>The ARN of the newly created conference provider.</p>
     pub conference_provider_arn: std::option::Option<std::string::String>,
+}
+impl GetConferenceProviderInput {
+    /// <p>The ARN of the newly created conference provider.</p>
+    pub fn conference_provider_arn(&self) -> std::option::Option<&str> {
+        self.conference_provider_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetConferenceProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18609,6 +19260,12 @@ pub struct GetAddressBookInput {
     /// <p>The ARN of the address book for which to request details.</p>
     pub address_book_arn: std::option::Option<std::string::String>,
 }
+impl GetAddressBookInput {
+    /// <p>The ARN of the address book for which to request details.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAddressBookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAddressBookInput");
@@ -18623,6 +19280,12 @@ impl std::fmt::Debug for GetAddressBookInput {
 pub struct ForgetSmartHomeAppliancesInput {
     /// <p>The room that the appliances are associated with.</p>
     pub room_arn: std::option::Option<std::string::String>,
+}
+impl ForgetSmartHomeAppliancesInput {
+    /// <p>The room that the appliances are associated with.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ForgetSmartHomeAppliancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18642,6 +19305,17 @@ pub struct DisassociateSkillGroupFromRoomInput {
     /// Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
+impl DisassociateSkillGroupFromRoomInput {
+    /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The ARN of the room from which the skill group is to be disassociated.
+    /// Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateSkillGroupFromRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateSkillGroupFromRoomInput");
@@ -18657,6 +19331,12 @@ impl std::fmt::Debug for DisassociateSkillGroupFromRoomInput {
 pub struct DisassociateSkillFromUsersInput {
     /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
     pub skill_id: std::option::Option<std::string::String>,
+}
+impl DisassociateSkillFromUsersInput {
+    /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateSkillFromUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18675,6 +19355,16 @@ pub struct DisassociateSkillFromSkillGroupInput {
     /// <p>The ARN of a skill group to associate to a skill.</p>
     pub skill_id: std::option::Option<std::string::String>,
 }
+impl DisassociateSkillFromSkillGroupInput {
+    /// <p>The unique identifier of a skill. Required.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The ARN of a skill group to associate to a skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DisassociateSkillFromSkillGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateSkillFromSkillGroupInput");
@@ -18690,6 +19380,12 @@ impl std::fmt::Debug for DisassociateSkillFromSkillGroupInput {
 pub struct DisassociateDeviceFromRoomInput {
     /// <p>The ARN of the device to disassociate from a room. Required.</p>
     pub device_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateDeviceFromRoomInput {
+    /// <p>The ARN of the device to disassociate from a room. Required.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateDeviceFromRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18707,6 +19403,16 @@ pub struct DisassociateContactFromAddressBookInput {
     pub contact_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the address from which to disassociate the contact.</p>
     pub address_book_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateContactFromAddressBookInput {
+    /// <p>The ARN of the contact to disassociate from an address book.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The ARN of the address from which to disassociate the contact.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateContactFromAddressBookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18726,6 +19432,16 @@ pub struct DeleteUserInput {
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
     pub enrollment_id: std::option::Option<std::string::String>,
 }
+impl DeleteUserInput {
+    /// <p>The ARN of the user to delete in the organization. Required.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The ARN of the user's enrollment in the organization. Required.</p>
+    pub fn enrollment_id(&self) -> std::option::Option<&str> {
+        self.enrollment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
@@ -18741,6 +19457,12 @@ impl std::fmt::Debug for DeleteUserInput {
 pub struct DeleteSkillGroupInput {
     /// <p>The ARN of the skill group to delete. Required.</p>
     pub skill_group_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSkillGroupInput {
+    /// <p>The ARN of the skill group to delete. Required.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSkillGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18758,6 +19480,16 @@ pub struct DeleteSkillAuthorizationInput {
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room that the skill is authorized for.</p>
     pub room_arn: std::option::Option<std::string::String>,
+}
+impl DeleteSkillAuthorizationInput {
+    /// <p>The unique identifier of a skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The room that the skill is authorized for.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSkillAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18779,6 +19511,20 @@ pub struct DeleteRoomSkillParameterInput {
     /// <p>The room skill parameter key for which to remove details.</p>
     pub parameter_key: std::option::Option<std::string::String>,
 }
+impl DeleteRoomSkillParameterInput {
+    /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+    /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+    /// <p>The room skill parameter key for which to remove details.</p>
+    pub fn parameter_key(&self) -> std::option::Option<&str> {
+        self.parameter_key.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRoomSkillParameterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRoomSkillParameterInput");
@@ -18796,6 +19542,12 @@ pub struct DeleteRoomInput {
     /// <p>The ARN of the room to delete. Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
+impl DeleteRoomInput {
+    /// <p>The ARN of the room to delete. Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRoomInput");
@@ -18810,6 +19562,12 @@ impl std::fmt::Debug for DeleteRoomInput {
 pub struct DeleteProfileInput {
     /// <p>The ARN of the room profile to delete. Required.</p>
     pub profile_arn: std::option::Option<std::string::String>,
+}
+impl DeleteProfileInput {
+    /// <p>The ARN of the room profile to delete. Required.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18826,6 +19584,12 @@ pub struct DeleteNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
     pub network_profile_arn: std::option::Option<std::string::String>,
 }
+impl DeleteNetworkProfileInput {
+    /// <p>The ARN of the network profile associated with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteNetworkProfileInput");
@@ -18840,6 +19604,12 @@ impl std::fmt::Debug for DeleteNetworkProfileInput {
 pub struct DeleteGatewayGroupInput {
     /// <p>The ARN of the gateway group to delete.</p>
     pub gateway_group_arn: std::option::Option<std::string::String>,
+}
+impl DeleteGatewayGroupInput {
+    /// <p>The ARN of the gateway group to delete.</p>
+    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+        self.gateway_group_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGatewayGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18858,6 +19628,16 @@ pub struct DeleteDeviceUsageDataInput {
     /// <p>The type of usage data to delete.</p>
     pub device_usage_type: std::option::Option<crate::model::DeviceUsageType>,
 }
+impl DeleteDeviceUsageDataInput {
+    /// <p>The ARN of the device.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The type of usage data to delete.</p>
+    pub fn device_usage_type(&self) -> std::option::Option<&crate::model::DeviceUsageType> {
+        self.device_usage_type.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceUsageDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceUsageDataInput");
@@ -18874,6 +19654,12 @@ pub struct DeleteDeviceInput {
     /// <p>The ARN of the device for which to request details.</p>
     pub device_arn: std::option::Option<std::string::String>,
 }
+impl DeleteDeviceInput {
+    /// <p>The ARN of the device for which to request details.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDeviceInput");
@@ -18888,6 +19674,12 @@ impl std::fmt::Debug for DeleteDeviceInput {
 pub struct DeleteContactInput {
     /// <p>The ARN of the contact to delete.</p>
     pub contact_arn: std::option::Option<std::string::String>,
+}
+impl DeleteContactInput {
+    /// <p>The ARN of the contact to delete.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18904,6 +19696,12 @@ pub struct DeleteConferenceProviderInput {
     /// <p>The ARN of the conference provider.</p>
     pub conference_provider_arn: std::option::Option<std::string::String>,
 }
+impl DeleteConferenceProviderInput {
+    /// <p>The ARN of the conference provider.</p>
+    pub fn conference_provider_arn(&self) -> std::option::Option<&str> {
+        self.conference_provider_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteConferenceProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteConferenceProviderInput");
@@ -18919,6 +19717,12 @@ pub struct DeleteBusinessReportScheduleInput {
     /// <p>The ARN of the business report schedule.</p>
     pub schedule_arn: std::option::Option<std::string::String>,
 }
+impl DeleteBusinessReportScheduleInput {
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+        self.schedule_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteBusinessReportScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBusinessReportScheduleInput");
@@ -18933,6 +19737,12 @@ impl std::fmt::Debug for DeleteBusinessReportScheduleInput {
 pub struct DeleteAddressBookInput {
     /// <p>The ARN of the address book to delete.</p>
     pub address_book_arn: std::option::Option<std::string::String>,
+}
+impl DeleteAddressBookInput {
+    /// <p>The ARN of the address book to delete.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAddressBookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18960,6 +19770,33 @@ pub struct CreateUserInput {
     /// <p>The tags for the user.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateUserInput {
+    /// <p>The ARN for the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+    /// <p>The first name for the user.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name for the user.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The email address for the user.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags for the user.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
@@ -18986,6 +19823,25 @@ pub struct CreateSkillGroupInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the skill group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateSkillGroupInput {
+    /// <p>The name for the skill group.</p>
+    pub fn skill_group_name(&self) -> std::option::Option<&str> {
+        self.skill_group_name.as_deref()
+    }
+    /// <p>The description for the skill group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags for the skill group.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateSkillGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19015,6 +19871,33 @@ pub struct CreateRoomInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the room.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateRoomInput {
+    /// <p>The name for the room.</p>
+    pub fn room_name(&self) -> std::option::Option<&str> {
+        self.room_name.as_deref()
+    }
+    /// <p>The description for the room.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The profile ARN for the room. This is required.</p>
+    pub fn profile_arn(&self) -> std::option::Option<&str> {
+        self.profile_arn.as_deref()
+    }
+    /// <p>The calendar ARN for the room.</p>
+    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+        self.provider_calendar_id.as_deref()
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
+    /// </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags for the room.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19062,6 +19945,66 @@ pub struct CreateProfileInput {
         std::option::Option<crate::model::CreateMeetingRoomConfiguration>,
     /// <p>The tags for the profile.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateProfileInput {
+    /// <p>The name of a room profile.</p>
+    pub fn profile_name(&self) -> std::option::Option<&str> {
+        self.profile_name.as_deref()
+    }
+    /// <p>The time zone used by a room profile.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The valid address for the room.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The distance unit to be used by devices in the profile.</p>
+    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+        self.distance_unit.as_ref()
+    }
+    /// <p>The temperature unit to be used by devices in the profile.</p>
+    pub fn temperature_unit(&self) -> std::option::Option<&crate::model::TemperatureUnit> {
+        self.temperature_unit.as_ref()
+    }
+    /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
+    pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
+        self.wake_word.as_ref()
+    }
+    /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>The user-specified token that is used during the creation of a profile.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Whether room profile setup is enabled.</p>
+    pub fn setup_mode_disabled(&self) -> std::option::Option<bool> {
+        self.setup_mode_disabled
+    }
+    /// <p>The maximum volume limit for a room profile.</p>
+    pub fn max_volume_limit(&self) -> std::option::Option<i32> {
+        self.max_volume_limit
+    }
+    /// <p>Whether PSTN calling is enabled.</p>
+    pub fn pstn_enabled(&self) -> std::option::Option<bool> {
+        self.pstn_enabled
+    }
+    /// <p>Whether data retention of the profile is enabled.</p>
+    pub fn data_retention_opt_in(&self) -> std::option::Option<bool> {
+        self.data_retention_opt_in
+    }
+    /// <p>The meeting room settings of a room profile.</p>
+    pub fn meeting_room_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateMeetingRoomConfiguration> {
+        self.meeting_room_configuration.as_ref()
+    }
+    /// <p>The tags for the profile.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19120,6 +20063,58 @@ pub struct CreateNetworkProfileInput {
     /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateNetworkProfileInput {
+    /// <p>The name of the network profile associated with a device.</p>
+    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+        self.network_profile_name.as_deref()
+    }
+    /// <p>Detailed information about a device's network profile.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The SSID of the Wi-Fi network.</p>
+    pub fn ssid(&self) -> std::option::Option<&str> {
+        self.ssid.as_deref()
+    }
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
+    /// WEP, or OPEN.</p>
+    pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
+        self.security_type.as_ref()
+    }
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
+    /// supported.</p>
+    pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
+        self.eap_method.as_ref()
+    }
+    /// <p>The current password of the Wi-Fi network.</p>
+    pub fn current_password(&self) -> std::option::Option<&str> {
+        self.current_password.as_deref()
+    }
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
+    /// transmitted to the device and is used when the password of the network changes to
+    /// NextPassword. </p>
+    pub fn next_password(&self) -> std::option::Option<&str> {
+        self.next_password.as_deref()
+    }
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
+    /// (ACM). This is used to issue certificates to the devices. </p>
+    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+        self.certificate_authority_arn.as_deref()
+    }
+    /// <p>The root certificates of your authentication server that is installed on your devices
+    /// and used to trust your authentication server during EAP negotiation. </p>
+    pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
+        self.trust_anchors.as_deref()
+    }
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkProfileInput");
@@ -19150,6 +20145,24 @@ pub struct CreateGatewayGroupInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateGatewayGroupInput {
+    /// <p>The name of the gateway group.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the gateway group.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateGatewayGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19188,6 +20201,45 @@ pub struct CreateContactInput {
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateContactInput {
+    /// <p>The name of the contact to display on the console.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The first name of the contact that is used to call the contact on the
+    /// device.</p>
+    pub fn first_name(&self) -> std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the contact that is used to call the contact on the
+    /// device.</p>
+    pub fn last_name(&self) -> std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
+    /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
+    /// which lets you specify the phone number type and multiple numbers.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+    /// <p>The list of phone numbers for the contact.</p>
+    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+        self.phone_numbers.as_deref()
+    }
+    /// <p>The list of SIP addresses for the contact.</p>
+    pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
+        self.sip_addresses.as_deref()
+    }
+    /// <p>A unique, user-specified identifier for this request that ensures
+    /// idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateContactInput");
@@ -19221,6 +20273,38 @@ pub struct CreateConferenceProviderInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateConferenceProviderInput {
+    /// <p>The name of the conference provider.</p>
+    pub fn conference_provider_name(&self) -> std::option::Option<&str> {
+        self.conference_provider_name.as_deref()
+    }
+    /// <p>Represents a type within a list of predefined types.</p>
+    pub fn conference_provider_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ConferenceProviderType> {
+        self.conference_provider_type.as_ref()
+    }
+    /// <p>The IP endpoint and protocol for calling.</p>
+    pub fn ip_dial_in(&self) -> std::option::Option<&crate::model::IpDialIn> {
+        self.ip_dial_in.as_ref()
+    }
+    /// <p>The information for PSTN conferencing.</p>
+    pub fn pstn_dial_in(&self) -> std::option::Option<&crate::model::PstnDialIn> {
+        self.pstn_dial_in.as_ref()
+    }
+    /// <p>The meeting settings for the conference provider.</p>
+    pub fn meeting_setting(&self) -> std::option::Option<&crate::model::MeetingSetting> {
+        self.meeting_setting.as_ref()
+    }
+    /// <p>The request token of the client.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateConferenceProviderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19260,6 +20344,43 @@ pub struct CreateBusinessReportScheduleInput {
     /// <p>The tags for the business report schedule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateBusinessReportScheduleInput {
+    /// <p>The name identifier of the schedule.</p>
+    pub fn schedule_name(&self) -> std::option::Option<&str> {
+        self.schedule_name.as_deref()
+    }
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
+    /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The S3 key where the report is delivered.</p>
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+        self.s3_key_prefix.as_deref()
+    }
+    /// <p>The format of the generated report (individual CSV files or zipped files of
+    /// individual files).</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
+        self.format.as_ref()
+    }
+    /// <p>The content range of the reports.</p>
+    pub fn content_range(&self) -> std::option::Option<&crate::model::BusinessReportContentRange> {
+        self.content_range.as_ref()
+    }
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be
+    /// delivered one time when the API is called. </p>
+    pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
+        self.recurrence.as_ref()
+    }
+    /// <p>The client request token.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags for the business report schedule.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateBusinessReportScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBusinessReportScheduleInput");
@@ -19289,6 +20410,25 @@ pub struct CreateAddressBookInput {
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateAddressBookInput {
+    /// <p>The name of the address book.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the address book.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A unique, user-specified identifier for the request that ensures
+    /// idempotency.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAddressBookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAddressBookInput");
@@ -19307,6 +20447,12 @@ pub struct AssociateSkillWithUsersInput {
     /// <p>The private skill ID you want to make available to enrolled users.</p>
     pub skill_id: std::option::Option<std::string::String>,
 }
+impl AssociateSkillWithUsersInput {
+    /// <p>The private skill ID you want to make available to enrolled users.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateSkillWithUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSkillWithUsersInput");
@@ -19323,6 +20469,16 @@ pub struct AssociateSkillWithSkillGroupInput {
     pub skill_group_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the skill.</p>
     pub skill_id: std::option::Option<std::string::String>,
+}
+impl AssociateSkillWithSkillGroupInput {
+    /// <p>The ARN of the skill group to associate the skill to. Required.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The unique identifier of the skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateSkillWithSkillGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19342,6 +20498,16 @@ pub struct AssociateSkillGroupWithRoomInput {
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
+impl AssociateSkillGroupWithRoomInput {
+    /// <p>The ARN of the skill group to associate with a room. Required.</p>
+    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+        self.skill_group_arn.as_deref()
+    }
+    /// <p>The ARN of the room with which to associate the skill group. Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateSkillGroupWithRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSkillGroupWithRoomInput");
@@ -19359,6 +20525,16 @@ pub struct AssociateDeviceWithRoomInput {
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the room with which to associate the device. Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
+}
+impl AssociateDeviceWithRoomInput {
+    /// <p>The ARN of the device to associate to a room. Required.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The ARN of the room with which to associate the device. Required.</p>
+    pub fn room_arn(&self) -> std::option::Option<&str> {
+        self.room_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateDeviceWithRoomInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19378,6 +20554,16 @@ pub struct AssociateDeviceWithNetworkProfileInput {
     /// <p>The ARN of the network profile to associate with a device.</p>
     pub network_profile_arn: std::option::Option<std::string::String>,
 }
+impl AssociateDeviceWithNetworkProfileInput {
+    /// <p>The device ARN.</p>
+    pub fn device_arn(&self) -> std::option::Option<&str> {
+        self.device_arn.as_deref()
+    }
+    /// <p>The ARN of the network profile to associate with a device.</p>
+    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+        self.network_profile_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateDeviceWithNetworkProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateDeviceWithNetworkProfileInput");
@@ -19396,6 +20582,16 @@ pub struct AssociateContactWithAddressBookInput {
     /// <p>The ARN of the address book with which to associate the contact.</p>
     pub address_book_arn: std::option::Option<std::string::String>,
 }
+impl AssociateContactWithAddressBookInput {
+    /// <p>The ARN of the contact to associate with an address book.</p>
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
+    /// <p>The ARN of the address book with which to associate the contact.</p>
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+        self.address_book_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AssociateContactWithAddressBookInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateContactWithAddressBookInput");
@@ -19411,6 +20607,12 @@ impl std::fmt::Debug for AssociateContactWithAddressBookInput {
 pub struct ApproveSkillInput {
     /// <p>The unique identifier of the skill.</p>
     pub skill_id: std::option::Option<std::string::String>,
+}
+impl ApproveSkillInput {
+    /// <p>The unique identifier of the skill.</p>
+    pub fn skill_id(&self) -> std::option::Option<&str> {
+        self.skill_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ApproveSkillInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

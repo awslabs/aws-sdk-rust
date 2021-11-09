@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_vpc_with_hosted_zone_input(
     input: &crate::input::AssociateVpcWithHostedZoneInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.comment {
@@ -16,30 +16,32 @@ pub fn serialize_structure_crate_input_associate_vpc_with_hosted_zone_input(
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_2, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_vpc(&var_2, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_change_resource_record_sets_input(
     input: &crate::input::ChangeResourceRecordSetsInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.change_batch {
         let inner_writer = scope
             .start_el("ChangeBatch")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_change_batch(&var_3, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_change_batch(&var_3, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_change_tags_for_resource_input(
     input: &crate::input::ChangeTagsForResourceInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.add_tags {
@@ -52,7 +54,7 @@ pub fn serialize_structure_crate_input_change_tags_for_resource_input(
                 let inner_writer = inner_writer
                     .start_el("Tag")
                     .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_5, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_tag(&list_item_5, inner_writer)?
             }
         }
     }
@@ -72,12 +74,13 @@ pub fn serialize_structure_crate_input_change_tags_for_resource_input(
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_health_check_input(
     input: &crate::input::CreateHealthCheckInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_8) = &input.caller_reference {
@@ -91,15 +94,16 @@ pub fn serialize_structure_crate_input_create_health_check_input(
         let inner_writer = scope
             .start_el("HealthCheckConfig")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_health_check_config(&var_9, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_health_check_config(&var_9, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_hosted_zone_input(
     input: &crate::input::CreateHostedZoneInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_10) = &input.caller_reference {
@@ -120,7 +124,7 @@ pub fn serialize_structure_crate_input_create_hosted_zone_input(
         let inner_writer = scope
             .start_el("HostedZoneConfig")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_hosted_zone_config(&var_12, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_hosted_zone_config(&var_12, inner_writer)?
     }
     if let Some(var_13) = &input.name {
         let mut inner_writer = scope
@@ -133,15 +137,16 @@ pub fn serialize_structure_crate_input_create_hosted_zone_input(
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_14, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_vpc(&var_14, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_key_signing_key_input(
     input: &crate::input::CreateKeySigningKeyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_15) = &input.caller_reference {
@@ -180,12 +185,13 @@ pub fn serialize_structure_crate_input_create_key_signing_key_input(
         inner_writer.data(var_19.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_query_logging_config_input(
     input: &crate::input::CreateQueryLoggingConfigInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_20) = &input.cloud_watch_logs_log_group_arn {
@@ -203,12 +209,13 @@ pub fn serialize_structure_crate_input_create_query_logging_config_input(
         inner_writer.data(var_21.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_reusable_delegation_set_input(
     input: &crate::input::CreateReusableDelegationSetInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_22) = &input.caller_reference {
@@ -226,12 +233,13 @@ pub fn serialize_structure_crate_input_create_reusable_delegation_set_input(
         inner_writer.data(var_23.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_traffic_policy_input(
     input: &crate::input::CreateTrafficPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_24) = &input.comment {
@@ -256,12 +264,13 @@ pub fn serialize_structure_crate_input_create_traffic_policy_input(
         inner_writer.data(var_26.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_traffic_policy_instance_input(
     input: &crate::input::CreateTrafficPolicyInstanceInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_27) = &input.hosted_zone_id {
@@ -300,12 +309,13 @@ pub fn serialize_structure_crate_input_create_traffic_policy_instance_input(
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_31).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_traffic_policy_version_input(
     input: &crate::input::CreateTrafficPolicyVersionInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_32) = &input.comment {
@@ -323,42 +333,45 @@ pub fn serialize_structure_crate_input_create_traffic_policy_version_input(
         inner_writer.data(var_33.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_create_vpc_association_authorization_input(
     input: &crate::input::CreateVpcAssociationAuthorizationInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_34) = &input.vpc {
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_34, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_vpc(&var_34, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_vpc_association_authorization_input(
     input: &crate::input::DeleteVpcAssociationAuthorizationInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_35) = &input.vpc {
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_35, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_vpc(&var_35, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_disassociate_vpc_from_hosted_zone_input(
     input: &crate::input::DisassociateVpcFromHostedZoneInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_36) = &input.comment {
@@ -372,15 +385,16 @@ pub fn serialize_structure_crate_input_disassociate_vpc_from_hosted_zone_input(
         let inner_writer = scope
             .start_el("VPC")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_vpc(&var_37, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_vpc(&var_37, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_list_tags_for_resources_input(
     input: &crate::input::ListTagsForResourcesInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_38) = &input.resource_ids {
@@ -399,19 +413,20 @@ pub fn serialize_structure_crate_input_list_tags_for_resources_input(
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_health_check_input(
     input: &crate::input::UpdateHealthCheckInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_40) = &input.alarm_identifier {
         let inner_writer = scope
             .start_el("AlarmIdentifier")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(&var_40, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(&var_40, inner_writer)?
     }
     if let Some(var_41) = &input.child_health_checks {
         let mut inner_writer = scope
@@ -543,12 +558,13 @@ pub fn serialize_structure_crate_input_update_health_check_input(
         inner_writer.data(var_58.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_hosted_zone_comment_input(
     input: &crate::input::UpdateHostedZoneCommentInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_59) = &input.comment {
@@ -559,12 +575,13 @@ pub fn serialize_structure_crate_input_update_hosted_zone_comment_input(
         inner_writer.data(var_59.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_traffic_policy_comment_input(
     input: &crate::input::UpdateTrafficPolicyCommentInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_60) = &input.comment {
@@ -575,12 +592,13 @@ pub fn serialize_structure_crate_input_update_traffic_policy_comment_input(
         inner_writer.data(var_60.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_update_traffic_policy_instance_input(
     input: &crate::input::UpdateTrafficPolicyInstanceInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_61) = &input.ttl {
@@ -605,12 +623,13 @@ pub fn serialize_structure_crate_input_update_traffic_policy_instance_input(
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_63).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_vpc(
     input: &crate::model::Vpc,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_64) = &input.vpc_region {
@@ -628,12 +647,13 @@ pub fn serialize_structure_crate_model_vpc(
         inner_writer.data(var_65.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_change_batch(
     input: &crate::model::ChangeBatch,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_66) = &input.comment {
@@ -653,17 +673,18 @@ pub fn serialize_structure_crate_model_change_batch(
                 let inner_writer = inner_writer
                     .start_el("Change")
                     .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-                crate::xml_ser::serialize_structure_crate_model_change(&list_item_68, inner_writer)
+                crate::xml_ser::serialize_structure_crate_model_change(&list_item_68, inner_writer)?
             }
         }
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_69) = &input.key {
@@ -681,12 +702,13 @@ pub fn serialize_structure_crate_model_tag(
         inner_writer.data(var_70.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_health_check_config(
     input: &crate::model::HealthCheckConfig,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_71) = &input.ip_address {
@@ -814,7 +836,7 @@ pub fn serialize_structure_crate_model_health_check_config(
         let inner_writer = scope
             .start_el("AlarmIdentifier")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(&var_88, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_alarm_identifier(&var_88, inner_writer)?
     }
     if let Some(var_89) = &input.insufficient_data_health_status {
         let mut inner_writer = scope
@@ -831,12 +853,13 @@ pub fn serialize_structure_crate_model_health_check_config(
         inner_writer.data(var_90.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_hosted_zone_config(
     input: &crate::model::HostedZoneConfig,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_91) = &input.comment {
@@ -854,12 +877,13 @@ pub fn serialize_structure_crate_model_hosted_zone_config(
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.private_zone).encode());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_alarm_identifier(
     input: &crate::model::AlarmIdentifier,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_92) = &input.region {
@@ -877,12 +901,13 @@ pub fn serialize_structure_crate_model_alarm_identifier(
         inner_writer.data(var_93.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_change(
     input: &crate::model::Change,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_94) = &input.action {
@@ -896,15 +921,16 @@ pub fn serialize_structure_crate_model_change(
         let inner_writer = scope
             .start_el("ResourceRecordSet")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_resource_record_set(&var_95, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_resource_record_set(&var_95, inner_writer)?
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource_record_set(
     input: &crate::model::ResourceRecordSet,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_96) = &input.name {
@@ -946,7 +972,7 @@ pub fn serialize_structure_crate_model_resource_record_set(
         let inner_writer = scope
             .start_el("GeoLocation")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_geo_location(&var_101, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_geo_location(&var_101, inner_writer)?
     }
     if let Some(var_102) = &input.failover {
         let mut inner_writer = scope
@@ -982,7 +1008,7 @@ pub fn serialize_structure_crate_model_resource_record_set(
                 crate::xml_ser::serialize_structure_crate_model_resource_record(
                     &list_item_106,
                     inner_writer,
-                )
+                )?
             }
         }
     }
@@ -990,7 +1016,7 @@ pub fn serialize_structure_crate_model_resource_record_set(
         let inner_writer = scope
             .start_el("AliasTarget")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_crate_model_alias_target(&var_107, inner_writer)
+        crate::xml_ser::serialize_structure_crate_model_alias_target(&var_107, inner_writer)?
     }
     if let Some(var_108) = &input.health_check_id {
         let mut inner_writer = scope
@@ -1007,12 +1033,13 @@ pub fn serialize_structure_crate_model_resource_record_set(
         inner_writer.data(var_109.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_geo_location(
     input: &crate::model::GeoLocation,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_110) = &input.continent_code {
@@ -1037,12 +1064,13 @@ pub fn serialize_structure_crate_model_geo_location(
         inner_writer.data(var_112.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_resource_record(
     input: &crate::model::ResourceRecord,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_113) = &input.value {
@@ -1053,12 +1081,13 @@ pub fn serialize_structure_crate_model_resource_record(
         inner_writer.data(var_113.as_ref());
     }
     scope.finish();
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_alias_target(
     input: &crate::model::AliasTarget,
     writer: aws_smithy_xml::encode::ElWriter,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_114) = &input.hosted_zone_id {
@@ -1085,4 +1114,5 @@ pub fn serialize_structure_crate_model_alias_target(
         );
     }
     scope.finish();
+    Ok(())
 }

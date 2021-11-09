@@ -8,6 +8,14 @@ pub struct UpdateResourceOutput {
     /// request.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
+impl UpdateResourceOutput {
+    /// <p>Represents the current status of the resource update request.</p>
+    /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
+    /// request.</p>
+    pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
+        self.progress_event.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceOutput");
@@ -68,6 +76,23 @@ pub struct ListResourcesOutput {
         std::option::Option<std::vec::Vec<crate::model::ResourceDescription>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListResourcesOutput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>Information about the specified resources, including primary identifier and resource
+    /// model.</p>
+    pub fn resource_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceDescription]> {
+        self.resource_descriptions.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -161,6 +186,18 @@ pub struct ListResourceRequestsOutput {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListResourceRequestsOutput {
+    /// <p>The requests that match the specified filter criteria.</p>
+    pub fn resource_request_status_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProgressEvent]> {
+        self.resource_request_status_summaries.as_deref()
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListResourceRequestsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListResourceRequestsOutput");
@@ -238,6 +275,12 @@ pub struct GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
+impl GetResourceRequestStatusOutput {
+    /// <p>Represents the current status of the resource operation request.</p>
+    pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
+        self.progress_event.as_ref()
+    }
+}
 impl std::fmt::Debug for GetResourceRequestStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceRequestStatusOutput");
@@ -290,6 +333,16 @@ pub struct GetResourceOutput {
     pub type_name: std::option::Option<std::string::String>,
     /// <p>Represents information about a provisioned resource.</p>
     pub resource_description: std::option::Option<crate::model::ResourceDescription>,
+}
+impl GetResourceOutput {
+    /// <p>The name of the resource type.</p>
+    pub fn type_name(&self) -> std::option::Option<&str> {
+        self.type_name.as_deref()
+    }
+    /// <p>Represents information about a provisioned resource.</p>
+    pub fn resource_description(&self) -> std::option::Option<&crate::model::ResourceDescription> {
+        self.resource_description.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -358,6 +411,15 @@ pub struct DeleteResourceOutput {
     /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
+impl DeleteResourceOutput {
+    /// <p>Represents the current status of the resource deletion request.</p>
+    /// <p>After you have initiated a resource deletion request, you can monitor the progress of your
+    /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
+    /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
+    pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
+        self.progress_event.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteResourceOutput");
@@ -418,6 +480,15 @@ pub struct CreateResourceOutput {
     /// <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
+impl CreateResourceOutput {
+    /// <p>Represents the current status of the resource creation request.</p>
+    /// <p>After you have initiated a resource creation request, you can monitor the progress of your
+    /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
+    /// <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
+    pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
+        self.progress_event.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateResourceOutput");
@@ -476,6 +547,14 @@ pub struct CancelResourceRequestOutput {
     /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the
     /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
+}
+impl CancelResourceRequestOutput {
+    /// <p>Represents the current status of a resource operation request. For more information, see
+    /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the
+    /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
+        self.progress_event.as_ref()
+    }
 }
 impl std::fmt::Debug for CancelResourceRequestOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

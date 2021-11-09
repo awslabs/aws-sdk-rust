@@ -16,6 +16,32 @@ pub struct InputConfiguration {
     /// <p>The status of the input.</p>
     pub status: std::option::Option<crate::model::InputStatus>,
 }
+impl InputConfiguration {
+    /// <p>The name of the input.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>A brief description of the input.</p>
+    pub fn input_description(&self) -> std::option::Option<&str> {
+        self.input_description.as_deref()
+    }
+    /// <p>The ARN of the input.</p>
+    pub fn input_arn(&self) -> std::option::Option<&str> {
+        self.input_arn.as_deref()
+    }
+    /// <p>The time the input was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the input was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the input.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InputStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputConfiguration");
@@ -205,6 +231,16 @@ pub struct InputDefinition {
     /// this input. </p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
+impl InputDefinition {
+    /// <p>The attributes from the JSON payload that are made available by the input. Inputs are
+    /// derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such
+    /// message contains a JSON payload, and those attributes (and their paired values) specified here
+    /// are available for use in the <code>condition</code> expressions used by detectors that monitor
+    /// this input. </p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for InputDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputDefinition");
@@ -278,6 +314,18 @@ pub struct Attribute {
     /// <p>Syntax: <code><field-name>.<field-name>...</code>
     /// </p>
     pub json_path: std::option::Option<std::string::String>,
+}
+impl Attribute {
+    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to
+    /// specify an attribute from the JSON payload that is made available by the input. Inputs are
+    /// derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains
+    /// a JSON payload. The attribute (and its paired value) specified here are available for use in
+    /// the <code>condition</code> expressions used by detectors. </p>
+    /// <p>Syntax: <code><field-name>.<field-name>...</code>
+    /// </p>
+    pub fn json_path(&self) -> std::option::Option<&str> {
+        self.json_path.as_deref()
+    }
 }
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -363,6 +411,55 @@ pub struct DetectorModelConfiguration {
     /// <p>Information about the order in which events are evaluated and how actions are executed.
     /// </p>
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
+}
+impl DetectorModelConfiguration {
+    /// <p>The name of the detector model.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The version of the detector model.</p>
+    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+        self.detector_model_version.as_deref()
+    }
+    /// <p>A brief description of the detector model.</p>
+    pub fn detector_model_description(&self) -> std::option::Option<&str> {
+        self.detector_model_description.as_deref()
+    }
+    /// <p>The ARN of the detector model.</p>
+    pub fn detector_model_arn(&self) -> std::option::Option<&str> {
+        self.detector_model_arn.as_deref()
+    }
+    /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The time the detector model was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the detector model was last updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the detector model.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorModelVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The value used to identify a detector instance. When a device or system sends input, a new
+    /// detector instance with a unique key value is created. AWS IoT Events can continue to route input to its
+    /// corresponding detector instance based on this identifying information. </p>
+    /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the
+    /// message payload that is used for identification. To route the message to the correct detector
+    /// instance, the device must send a message payload that contains the same
+    /// attribute-value.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed.
+    /// </p>
+    pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
+        self.evaluation_method.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectorModelConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -710,6 +807,16 @@ pub struct DetectorModelDefinition {
     /// <p>The state that is entered at the creation of each detector (instance).</p>
     pub initial_state_name: std::option::Option<std::string::String>,
 }
+impl DetectorModelDefinition {
+    /// <p>Information about the states of the detector.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::State]> {
+        self.states.as_deref()
+    }
+    /// <p>The state that is entered at the creation of each detector (instance).</p>
+    pub fn initial_state_name(&self) -> std::option::Option<&str> {
+        self.initial_state_name.as_deref()
+    }
+}
 impl std::fmt::Debug for DetectorModelDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectorModelDefinition");
@@ -791,6 +898,27 @@ pub struct State {
     /// <p>When exiting this state, perform these <code>actions</code> if the specified
     /// <code>condition</code> is <code>TRUE</code>.</p>
     pub on_exit: std::option::Option<crate::model::OnExitLifecycle>,
+}
+impl State {
+    /// <p>The name of the state.</p>
+    pub fn state_name(&self) -> std::option::Option<&str> {
+        self.state_name.as_deref()
+    }
+    /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified
+    /// <code>actions</code>.</p>
+    pub fn on_input(&self) -> std::option::Option<&crate::model::OnInputLifecycle> {
+        self.on_input.as_ref()
+    }
+    /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code>
+    /// is TRUE.</p>
+    pub fn on_enter(&self) -> std::option::Option<&crate::model::OnEnterLifecycle> {
+        self.on_enter.as_ref()
+    }
+    /// <p>When exiting this state, perform these <code>actions</code> if the specified
+    /// <code>condition</code> is <code>TRUE</code>.</p>
+    pub fn on_exit(&self) -> std::option::Option<&crate::model::OnExitLifecycle> {
+        self.on_exit.as_ref()
+    }
 }
 impl std::fmt::Debug for State {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -896,6 +1024,13 @@ pub struct OnExitLifecycle {
     /// <code>condition</code> is <code>TRUE</code>.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl OnExitLifecycle {
+    /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the
+    /// <code>condition</code> is <code>TRUE</code>.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for OnExitLifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OnExitLifecycle");
@@ -961,6 +1096,22 @@ pub struct Event {
     pub condition: std::option::Option<std::string::String>,
     /// <p>The actions to be performed.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
+}
+impl Event {
+    /// <p>The name of the event.</p>
+    pub fn event_name(&self) -> std::option::Option<&str> {
+        self.event_name.as_deref()
+    }
+    /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be
+    /// performed. If not present, the actions are performed (=TRUE). If the expression result is not
+    /// a Boolean value, the actions are not performed (=FALSE).</p>
+    pub fn condition(&self) -> std::option::Option<&str> {
+        self.condition.as_deref()
+    }
+    /// <p>The actions to be performed.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1087,6 +1238,75 @@ pub struct Action {
     /// <p>Sends information about the detector model instance and the event that triggered the
     /// action to an asset property in AWS IoT SiteWise .</p>
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
+}
+impl Action {
+    /// <p>Sets a variable to a specified value.</p>
+    pub fn set_variable(&self) -> std::option::Option<&crate::model::SetVariableAction> {
+        self.set_variable.as_ref()
+    }
+    /// <p>Sends an Amazon SNS message.</p>
+    pub fn sns(&self) -> std::option::Option<&crate::model::SnsTopicPublishAction> {
+        self.sns.as_ref()
+    }
+    /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
+    pub fn iot_topic_publish(&self) -> std::option::Option<&crate::model::IotTopicPublishAction> {
+        self.iot_topic_publish.as_ref()
+    }
+    /// <p>Information needed to set the timer.</p>
+    pub fn set_timer(&self) -> std::option::Option<&crate::model::SetTimerAction> {
+        self.set_timer.as_ref()
+    }
+    /// <p>Information needed to clear the timer.</p>
+    pub fn clear_timer(&self) -> std::option::Option<&crate::model::ClearTimerAction> {
+        self.clear_timer.as_ref()
+    }
+    /// <p>Information needed to reset the timer.</p>
+    pub fn reset_timer(&self) -> std::option::Option<&crate::model::ResetTimerAction> {
+        self.reset_timer.as_ref()
+    }
+    /// <p>Calls a Lambda function, passing in information about the detector model instance and the
+    /// event that triggered the action.</p>
+    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaAction> {
+        self.lambda.as_ref()
+    }
+    /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the
+    /// event that triggered the action.</p>
+    pub fn iot_events(&self) -> std::option::Option<&crate::model::IotEventsAction> {
+        self.iot_events.as_ref()
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the
+    /// action to an Amazon SQS queue.</p>
+    pub fn sqs(&self) -> std::option::Option<&crate::model::SqsAction> {
+        self.sqs.as_ref()
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the
+    /// action to an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseAction> {
+        self.firehose.as_ref()
+    }
+    /// <p>Writes to the DynamoDB table that you created. The default action payload contains all
+    /// attribute-value pairs that have the information about the detector model instance and the
+    /// event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the
+    /// DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+    /// <i>AWS IoT Events Developer Guide</i>.</p>
+    pub fn dynamo_db(&self) -> std::option::Option<&crate::model::DynamoDbAction> {
+        self.dynamo_db.as_ref()
+    }
+    /// <p>Writes to the DynamoDB table that you created. The default action payload contains all
+    /// attribute-value pairs that have the information about the detector model instance and the
+    /// event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of
+    /// the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+    /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+    /// <i>AWS IoT Events Developer Guide</i>.</p>
+    pub fn dynamo_d_bv2(&self) -> std::option::Option<&crate::model::DynamoDBv2Action> {
+        self.dynamo_d_bv2.as_ref()
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the
+    /// action to an asset property in AWS IoT SiteWise .</p>
+    pub fn iot_site_wise(&self) -> std::option::Option<&crate::model::IotSiteWiseAction> {
+        self.iot_site_wise.as_ref()
+    }
 }
 impl std::fmt::Debug for Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1403,6 +1623,30 @@ pub struct IotSiteWiseAction {
     /// (TQV) information. </p>
     pub property_value: std::option::Option<crate::model::AssetPropertyValue>,
 }
+impl IotSiteWiseAction {
+    /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry
+    /// causes an error in case of failure. The default is a new unique identifier.</p>
+    pub fn entry_id(&self) -> std::option::Option<&str> {
+        self.entry_id.as_deref()
+    }
+    /// <p>The ID of the asset that has the specified property.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias of the asset property.</p>
+    pub fn property_alias(&self) -> std::option::Option<&str> {
+        self.property_alias.as_deref()
+    }
+    /// <p>The value to send to the asset property. This value contains timestamp, quality, and value
+    /// (TQV) information. </p>
+    pub fn property_value(&self) -> std::option::Option<&crate::model::AssetPropertyValue> {
+        self.property_value.as_ref()
+    }
+}
 impl std::fmt::Debug for IotSiteWiseAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotSiteWiseAction");
@@ -1539,6 +1783,22 @@ pub struct AssetPropertyValue {
     /// <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
     pub quality: std::option::Option<std::string::String>,
 }
+impl AssetPropertyValue {
+    /// <p>The value to send to an asset property.</p>
+    pub fn value(&self) -> std::option::Option<&crate::model::AssetPropertyVariant> {
+        self.value.as_ref()
+    }
+    /// <p>The timestamp associated with the asset property value. The default is the current event
+    /// time.</p>
+    pub fn timestamp(&self) -> std::option::Option<&crate::model::AssetPropertyTimestamp> {
+        self.timestamp.as_ref()
+    }
+    /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>,
+    /// <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
+    pub fn quality(&self) -> std::option::Option<&str> {
+        self.quality.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetPropertyValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetPropertyValue");
@@ -1657,6 +1917,18 @@ pub struct AssetPropertyTimestamp {
     /// between 0-999999999.</p>
     pub offset_in_nanos: std::option::Option<std::string::String>,
 }
+impl AssetPropertyTimestamp {
+    /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between
+    /// 1-31556889864403199.</p>
+    pub fn time_in_seconds(&self) -> std::option::Option<&str> {
+        self.time_in_seconds.as_deref()
+    }
+    /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is
+    /// between 0-999999999.</p>
+    pub fn offset_in_nanos(&self) -> std::option::Option<&str> {
+        self.offset_in_nanos.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetPropertyTimestamp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetPropertyTimestamp");
@@ -1772,6 +2044,29 @@ pub struct AssetPropertyVariant {
     /// <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a
     /// Boolean value.</p>
     pub boolean_value: std::option::Option<std::string::String>,
+}
+impl AssetPropertyVariant {
+    /// <p>The asset property value is a string. You must use an expression, and the evaluated result
+    /// should be a string.</p>
+    pub fn string_value(&self) -> std::option::Option<&str> {
+        self.string_value.as_deref()
+    }
+    /// <p>The asset property value is an integer. You must use an expression, and the evaluated
+    /// result should be an integer.</p>
+    pub fn integer_value(&self) -> std::option::Option<&str> {
+        self.integer_value.as_deref()
+    }
+    /// <p>The asset property value is a double. You must use an expression, and the evaluated result
+    /// should be a double.</p>
+    pub fn double_value(&self) -> std::option::Option<&str> {
+        self.double_value.as_deref()
+    }
+    /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or
+    /// <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a
+    /// Boolean value.</p>
+    pub fn boolean_value(&self) -> std::option::Option<&str> {
+        self.boolean_value.as_deref()
+    }
 }
 impl std::fmt::Debug for AssetPropertyVariant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1928,6 +2223,20 @@ pub struct DynamoDBv2Action {
     /// <code>contentExpression</code>.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl DynamoDBv2Action {
+    /// <p>The name of the DynamoDB table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Information needed to configure the payload.</p>
+    /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload
+    /// contains all attribute-value pairs that have the information about the detector model instance
+    /// and the event triggered the action. To configure the action payload, you can use
+    /// <code>contentExpression</code>.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for DynamoDBv2Action {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DynamoDBv2Action");
@@ -2007,6 +2316,21 @@ pub struct Payload {
     /// <p>The value of the payload type can be either <code>STRING</code> or
     /// <code>JSON</code>.</p>
     pub r#type: std::option::Option<crate::model::PayloadType>,
+}
+impl Payload {
+    /// <p>The content of the payload. You can use a string expression that includes quoted strings
+    /// (<code>'<string>'</code>), variables (<code>$variable.<variable-name></code>),
+    /// input values (<code>$input.<input-name>.<path-to-datum></code>), string
+    /// concatenations, and quoted strings that contain <code>${}</code> as the content. The
+    /// recommended maximum size of a content expression is 1 KB.</p>
+    pub fn content_expression(&self) -> std::option::Option<&str> {
+        self.content_expression.as_deref()
+    }
+    /// <p>The value of the payload type can be either <code>STRING</code> or
+    /// <code>JSON</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::PayloadType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for Payload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2257,6 +2581,105 @@ pub struct DynamoDbAction {
     /// and the event triggered the action. To configure the action payload, you can use
     /// <code>contentExpression</code>.</p>
     pub payload: std::option::Option<crate::model::Payload>,
+}
+impl DynamoDbAction {
+    /// <p>The data type for the hash key (also called the partition key). You can specify the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>'STRING'</code> - The hash key is a string.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>'NUMBER'</code> - The hash key is a number.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify <code>hashKeyType</code>, the default value is
+    /// <code>'STRING'</code>.</p>
+    pub fn hash_key_type(&self) -> std::option::Option<&str> {
+        self.hash_key_type.as_deref()
+    }
+    /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code>
+    /// value must match the partition key of the target DynamoDB table.</p>
+    pub fn hash_key_field(&self) -> std::option::Option<&str> {
+        self.hash_key_field.as_deref()
+    }
+    /// <p>The value of the hash key (also called the partition key).</p>
+    pub fn hash_key_value(&self) -> std::option::Option<&str> {
+        self.hash_key_value.as_deref()
+    }
+    /// <p>The data type for the range key (also called the sort key), You can specify the following
+    /// values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>'STRING'</code> - The range key is a string.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>'NUMBER'</code> - The range key is number.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify <code>rangeKeyField</code>, the default value is
+    /// <code>'STRING'</code>.</p>
+    pub fn range_key_type(&self) -> std::option::Option<&str> {
+        self.range_key_type.as_deref()
+    }
+    /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value
+    /// must match the sort key of the target DynamoDB table. </p>
+    pub fn range_key_field(&self) -> std::option::Option<&str> {
+        self.range_key_field.as_deref()
+    }
+    /// <p>The value of the range key (also called the sort key).</p>
+    pub fn range_key_value(&self) -> std::option::Option<&str> {
+        self.range_key_value.as_deref()
+    }
+    /// <p>The type of operation to perform. You can specify the following values: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses
+    /// the specified hash key as a partition key. If you specified a range key, the item uses the
+    /// range key as a sort key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This
+    /// item's partition key must match the specified hash key. If you specified a range key, the
+    /// range key must match the item's sort key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's
+    /// partition key must match the specified hash key. If you specified a range key, the range
+    /// key must match the item's sort key.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code>
+    /// operation.</p>
+    pub fn operation(&self) -> std::option::Option<&str> {
+        self.operation.as_deref()
+    }
+    /// <p>The name of the DynamoDB column that receives the action payload.</p>
+    /// <p>If you don't specify this parameter, the name of the DynamoDB column is
+    /// <code>payload</code>.</p>
+    pub fn payload_field(&self) -> std::option::Option<&str> {
+        self.payload_field.as_deref()
+    }
+    /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of
+    /// the target DynamoDB table. </p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Information needed to configure the payload.</p>
+    /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload
+    /// contains all attribute-value pairs that have the information about the detector model instance
+    /// and the event triggered the action. To configure the action payload, you can use
+    /// <code>contentExpression</code>.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
 }
 impl std::fmt::Debug for DynamoDbAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2566,6 +2989,23 @@ pub struct FirehoseAction {
     /// stream.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl FirehoseAction {
+    /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+        self.delivery_stream_name.as_deref()
+    }
+    /// <p>A character separator that is used to separate records written to the Kinesis Data
+    /// Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+    /// newline), ',' (comma).</p>
+    pub fn separator(&self) -> std::option::Option<&str> {
+        self.separator.as_deref()
+    }
+    /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery
+    /// stream.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for FirehoseAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FirehoseAction");
@@ -2656,6 +3096,22 @@ pub struct SqsAction {
     /// queue.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl SqsAction {
+    /// <p>The URL of the SQS queue where the data is written.</p>
+    pub fn queue_url(&self) -> std::option::Option<&str> {
+        self.queue_url.as_deref()
+    }
+    /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the
+    /// queue. Otherwise, set this to FALSE.</p>
+    pub fn use_base64(&self) -> std::option::Option<bool> {
+        self.use_base64
+    }
+    /// <p>You can configure the action payload when you send a message to an Amazon SQS
+    /// queue.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for SqsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SqsAction");
@@ -2737,6 +3193,16 @@ pub struct IotEventsAction {
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl IotEventsAction {
+    /// <p>The name of the AWS IoT Events input where the data is sent.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for IotEventsAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotEventsAction");
@@ -2801,6 +3267,16 @@ pub struct LambdaAction {
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl LambdaAction {
+    /// <p>The ARN of the Lambda function that is executed.</p>
+    pub fn function_arn(&self) -> std::option::Option<&str> {
+        self.function_arn.as_deref()
+    }
+    /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for LambdaAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaAction");
@@ -2864,6 +3340,12 @@ pub struct ResetTimerAction {
     /// <p>The name of the timer to reset.</p>
     pub timer_name: std::option::Option<std::string::String>,
 }
+impl ResetTimerAction {
+    /// <p>The name of the timer to reset.</p>
+    pub fn timer_name(&self) -> std::option::Option<&str> {
+        self.timer_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ResetTimerAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetTimerAction");
@@ -2911,6 +3393,12 @@ impl ResetTimerAction {
 pub struct ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
     pub timer_name: std::option::Option<std::string::String>,
+}
+impl ClearTimerAction {
+    /// <p>The name of the timer to clear.</p>
+    pub fn timer_name(&self) -> std::option::Option<&str> {
+        self.timer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ClearTimerAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2968,6 +3456,25 @@ pub struct SetTimerAction {
     /// the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds.
     /// The evaluated result of the duration is rounded down to the nearest whole number. </p>
     pub duration_expression: std::option::Option<std::string::String>,
+}
+impl SetTimerAction {
+    /// <p>The name of the timer.</p>
+    pub fn timer_name(&self) -> std::option::Option<&str> {
+        self.timer_name.as_deref()
+    }
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure
+    /// accuracy. The maximum value is 31622400 seconds. </p>
+    pub fn seconds(&self) -> std::option::Option<i32> {
+        self.seconds
+    }
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes
+    /// numbers, variables (<code>$variable.<variable-name></code>), and input values
+    /// (<code>$input.<input-name>.<path-to-datum></code>) as the duration. The range of
+    /// the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds.
+    /// The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    pub fn duration_expression(&self) -> std::option::Option<&str> {
+        self.duration_expression.as_deref()
+    }
 }
 impl std::fmt::Debug for SetTimerAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3061,6 +3568,19 @@ pub struct IotTopicPublishAction {
     /// topic.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl IotTopicPublishAction {
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables
+    /// (<code>$variable.<variable-name></code>) and input values
+    /// (<code>$input.<input-name>.<path-to-datum></code>) as the topic string.</p>
+    pub fn mqtt_topic(&self) -> std::option::Option<&str> {
+        self.mqtt_topic.as_deref()
+    }
+    /// <p>You can configure the action payload when you publish a message to an AWS IoT Core
+    /// topic.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for IotTopicPublishAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotTopicPublishAction");
@@ -3131,6 +3651,17 @@ pub struct SnsTopicPublishAction {
     /// notification.</p>
     pub payload: std::option::Option<crate::model::Payload>,
 }
+impl SnsTopicPublishAction {
+    /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
+    pub fn target_arn(&self) -> std::option::Option<&str> {
+        self.target_arn.as_deref()
+    }
+    /// <p>You can configure the action payload when you send a message as an Amazon SNS push
+    /// notification.</p>
+    pub fn payload(&self) -> std::option::Option<&crate::model::Payload> {
+        self.payload.as_ref()
+    }
+}
 impl std::fmt::Debug for SnsTopicPublishAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SnsTopicPublishAction");
@@ -3195,6 +3726,16 @@ pub struct SetVariableAction {
     pub variable_name: std::option::Option<std::string::String>,
     /// <p>The new value of the variable.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl SetVariableAction {
+    /// <p>The name of the variable.</p>
+    pub fn variable_name(&self) -> std::option::Option<&str> {
+        self.variable_name.as_deref()
+    }
+    /// <p>The new value of the variable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for SetVariableAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3262,6 +3803,13 @@ pub struct OnEnterLifecycle {
     /// <code>condition</code> is <code>TRUE</code>.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
+impl OnEnterLifecycle {
+    /// <p>Specifies the actions that are performed when the state is entered and the
+    /// <code>condition</code> is <code>TRUE</code>.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+}
 impl std::fmt::Debug for OnEnterLifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OnEnterLifecycle");
@@ -3323,6 +3871,17 @@ pub struct OnInputLifecycle {
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code>
     /// evaluates to TRUE.</p>
     pub transition_events: std::option::Option<std::vec::Vec<crate::model::TransitionEvent>>,
+}
+impl OnInputLifecycle {
+    /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+        self.events.as_deref()
+    }
+    /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code>
+    /// evaluates to TRUE.</p>
+    pub fn transition_events(&self) -> std::option::Option<&[crate::model::TransitionEvent]> {
+        self.transition_events.as_deref()
+    }
 }
 impl std::fmt::Debug for OnInputLifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3416,6 +3975,25 @@ pub struct TransitionEvent {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The next state to enter.</p>
     pub next_state: std::option::Option<std::string::String>,
+}
+impl TransitionEvent {
+    /// <p>The name of the transition event.</p>
+    pub fn event_name(&self) -> std::option::Option<&str> {
+        self.event_name.as_deref()
+    }
+    /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the
+    /// <code>nextState</code> to be entered.</p>
+    pub fn condition(&self) -> std::option::Option<&str> {
+        self.condition.as_deref()
+    }
+    /// <p>The actions to be performed.</p>
+    pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
+        self.actions.as_deref()
+    }
+    /// <p>The next state to enter.</p>
+    pub fn next_state(&self) -> std::option::Option<&str> {
+        self.next_state.as_deref()
+    }
 }
 impl std::fmt::Debug for TransitionEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3582,6 +4160,19 @@ pub struct AlarmCapabilities {
     /// <p>Specifies whether to get notified for alarm state changes.</p>
     pub acknowledge_flow: std::option::Option<crate::model::AcknowledgeFlow>,
 }
+impl AlarmCapabilities {
+    /// <p>Specifies the default alarm state.
+    /// The configuration applies to all alarms that were created based on this alarm model.</p>
+    pub fn initialization_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InitializationConfiguration> {
+        self.initialization_configuration.as_ref()
+    }
+    /// <p>Specifies whether to get notified for alarm state changes.</p>
+    pub fn acknowledge_flow(&self) -> std::option::Option<&crate::model::AcknowledgeFlow> {
+        self.acknowledge_flow.as_ref()
+    }
+}
 impl std::fmt::Debug for AlarmCapabilities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlarmCapabilities");
@@ -3662,6 +4253,16 @@ pub struct AcknowledgeFlow {
     /// state when the input property value returns to the specified range.</p>
     pub enabled: std::option::Option<bool>,
 }
+impl AcknowledgeFlow {
+    /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you
+    /// receive a notification when the alarm state changes. You must choose to acknowledge the
+    /// notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>,
+    /// you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code>
+    /// state when the input property value returns to the specified range.</p>
+    pub fn enabled(&self) -> std::option::Option<bool> {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for AcknowledgeFlow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AcknowledgeFlow");
@@ -3721,6 +4322,14 @@ pub struct InitializationConfiguration {
     /// <code>TRUE</code>.</p>
     pub disabled_on_initialization: std::option::Option<bool>,
 }
+impl InitializationConfiguration {
+    /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all
+    /// alarm instances created based on the alarm model are activated. The default value is
+    /// <code>TRUE</code>.</p>
+    pub fn disabled_on_initialization(&self) -> std::option::Option<bool> {
+        self.disabled_on_initialization
+    }
+}
 impl std::fmt::Debug for InitializationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitializationConfiguration");
@@ -3776,6 +4385,13 @@ pub struct AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state
     /// changes.</p>
     pub alarm_actions: std::option::Option<std::vec::Vec<crate::model::AlarmAction>>,
+}
+impl AlarmEventActions {
+    /// <p>Specifies one or more supported actions to receive notifications when the alarm state
+    /// changes.</p>
+    pub fn alarm_actions(&self) -> std::option::Option<&[crate::model::AlarmAction]> {
+        self.alarm_actions.as_deref()
+    }
 }
 impl std::fmt::Debug for AlarmEventActions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3983,6 +4599,175 @@ pub struct AlarmAction {
     /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
     /// in the <i>AWS IoT Events Developer Guide</i>.</p>
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
+}
+impl AlarmAction {
+    /// <p>Information required to publish the Amazon SNS message.</p>
+    pub fn sns(&self) -> std::option::Option<&crate::model::SnsTopicPublishAction> {
+        self.sns.as_ref()
+    }
+    /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
+    pub fn iot_topic_publish(&self) -> std::option::Option<&crate::model::IotTopicPublishAction> {
+        self.iot_topic_publish.as_ref()
+    }
+    /// <p>Calls a Lambda function, passing in information about the detector model instance and the
+    /// event that triggered the action.</p>
+    pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaAction> {
+        self.lambda.as_ref()
+    }
+    /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the
+    /// event that triggered the action.</p>
+    pub fn iot_events(&self) -> std::option::Option<&crate::model::IotEventsAction> {
+        self.iot_events.as_ref()
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the
+    /// action to an Amazon SQS queue.</p>
+    pub fn sqs(&self) -> std::option::Option<&crate::model::SqsAction> {
+        self.sqs.as_ref()
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the
+    /// action to an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn firehose(&self) -> std::option::Option<&crate::model::FirehoseAction> {
+        self.firehose.as_ref()
+    }
+    /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action
+    /// payload contains all the information about the detector model instance and the event that
+    /// triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the
+    /// DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
+    /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions
+    /// accept literals, operators, functions, references, and substitution templates.</p>
+    /// <p class="title">
+    /// <b>Examples</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For references, you must specify either variables or input values. For example, the
+    /// value for the <code>hashKeyField</code> parameter can be
+    /// <code>$input.GreenhouseInput.name</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For a substitution template, you must use <code>${}</code>, and the template must be
+    /// in single quotes. A substitution template can also contain a combination of literals,
+    /// operators, functions, references, and substitution templates.</p>
+    /// <p>In the following example, the value for the <code>hashKeyValue</code> parameter uses a
+    /// substitution template. </p>
+    /// <p>
+    /// <code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For a string concatenation, you must use <code>+</code>. A string concatenation can
+    /// also contain a combination of literals, operators, functions, references, and substitution
+    /// templates.</p>
+    /// <p>In the following example, the value for the <code>tableName</code> parameter uses a
+    /// string concatenation. </p>
+    /// <p>
+    /// <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information,
+    /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+    /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to
+    /// the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text.
+    /// The value for the <code>payloadField</code> parameter is
+    /// <code><payload-field>_raw</code>.</p>
+    pub fn dynamo_db(&self) -> std::option::Option<&crate::model::DynamoDbAction> {
+        self.dynamo_db.as_ref()
+    }
+    /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action
+    /// payload contains all the information about the detector model instance and the event that
+    /// triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of
+    /// the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
+    /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions
+    /// accept literals, operators, functions, references, and substitution templates.</p>
+    /// <p class="title">
+    /// <b>Examples</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>tableName</code> parameter can be
+    /// <code>'GreenhouseTemperatureTable'</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For references, you must specify either variables or input values. For example, the
+    /// value for the <code>tableName</code> parameter can be
+    /// <code>$variable.ddbtableName</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For a substitution template, you must use <code>${}</code>, and the template must be
+    /// in single quotes. A substitution template can also contain a combination of literals,
+    /// operators, functions, references, and substitution templates.</p>
+    /// <p>In the following example, the value for the <code>contentExpression</code> parameter
+    /// in <code>Payload</code> uses a substitution template. </p>
+    /// <p>
+    /// <code>'{\"sensorID\": \"${$input.GreenhouseInput.sensor_id}\", \"temperature\":
+    /// \"${$input.GreenhouseInput.temperature * 9 / 5 + 32}\"}'</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For a string concatenation, you must use <code>+</code>. A string concatenation can
+    /// also contain a combination of literals, operators, functions, references, and substitution
+    /// templates.</p>
+    /// <p>In the following example, the value for the <code>tableName</code> parameter uses a
+    /// string concatenation. </p>
+    /// <p>
+    /// <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information,
+    /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+    /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be
+    /// <code>JSON</code>.</p>
+    pub fn dynamo_d_bv2(&self) -> std::option::Option<&crate::model::DynamoDBv2Action> {
+        self.dynamo_d_bv2.as_ref()
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the
+    /// action to a specified asset property in AWS IoT SiteWise.</p>
+    /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The
+    /// expressions accept literals, operators, functions, references, and substitutions
+    /// templates.</p>
+    /// <p class="title">
+    /// <b>Examples</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>For literal values, the expressions must contain single quotes. For example, the value
+    /// for the <code>propertyAlias</code> parameter can be
+    /// <code>'/company/windfarm/3/turbine/7/temperature'</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For references, you must specify either variables or input values. For example, the
+    /// value for the <code>assetId</code> parameter can be
+    /// <code>$input.TurbineInput.assetId1</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For a substitution template, you must use <code>${}</code>, and the template must be
+    /// in single quotes. A substitution template can also contain a combination of literals,
+    /// operators, functions, references, and substitution templates.</p>
+    /// <p>In the following example, the value for the <code>propertyAlias</code> parameter uses
+    /// a substitution template. </p>
+    /// <p>
+    /// <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/
+    /// ${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and
+    /// <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
+    /// <p>For more information,
+    /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+    /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+    pub fn iot_site_wise(&self) -> std::option::Option<&crate::model::IotSiteWiseAction> {
+        self.iot_site_wise.as_ref()
+    }
 }
 impl std::fmt::Debug for AlarmAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4423,6 +5208,13 @@ pub struct AlarmNotification {
     /// The settings apply to all alarms that were created based on this alarm model.</p>
     pub notification_actions: std::option::Option<std::vec::Vec<crate::model::NotificationAction>>,
 }
+impl AlarmNotification {
+    /// <p>Contains the notification settings of an alarm model.
+    /// The settings apply to all alarms that were created based on this alarm model.</p>
+    pub fn notification_actions(&self) -> std::option::Option<&[crate::model::NotificationAction]> {
+        self.notification_actions.as_deref()
+    }
+}
 impl std::fmt::Debug for AlarmNotification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlarmNotification");
@@ -4491,6 +5283,21 @@ pub struct NotificationAction {
     pub sms_configurations: std::option::Option<std::vec::Vec<crate::model::SmsConfiguration>>,
     /// <p>Contains the configuration information of email notifications.</p>
     pub email_configurations: std::option::Option<std::vec::Vec<crate::model::EmailConfiguration>>,
+}
+impl NotificationAction {
+    /// <p>Specifies an AWS Lambda function to manage alarm notifications.
+    /// You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::NotificationTargetActions> {
+        self.action.as_ref()
+    }
+    /// <p>Contains the configuration information of SMS notifications.</p>
+    pub fn sms_configurations(&self) -> std::option::Option<&[crate::model::SmsConfiguration]> {
+        self.sms_configurations.as_deref()
+    }
+    /// <p>Contains the configuration information of email notifications.</p>
+    pub fn email_configurations(&self) -> std::option::Option<&[crate::model::EmailConfiguration]> {
+        self.email_configurations.as_deref()
+    }
 }
 impl std::fmt::Debug for NotificationAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4608,6 +5415,27 @@ pub struct EmailConfiguration {
     /// </important>
     pub recipients: std::option::Option<crate::model::EmailRecipients>,
 }
+impl EmailConfiguration {
+    /// <p>The email address that sends emails.</p>
+    /// <important>
+    /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+    /// the email address that sends emails in Amazon SES</a>.</p>
+    /// </important>
+    pub fn from(&self) -> std::option::Option<&str> {
+        self.from.as_deref()
+    }
+    /// <p>Contains the subject and message of an email.</p>
+    pub fn content(&self) -> std::option::Option<&crate::model::EmailContent> {
+        self.content.as_ref()
+    }
+    /// <p>Contains the information of one or more recipients who receive the emails.</p>
+    /// <important>
+    /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
+    /// </important>
+    pub fn recipients(&self) -> std::option::Option<&crate::model::EmailRecipients> {
+        self.recipients.as_ref()
+    }
+}
 impl std::fmt::Debug for EmailConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmailConfiguration");
@@ -4705,6 +5533,12 @@ pub struct EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
     pub to: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
 }
+impl EmailRecipients {
+    /// <p>Specifies one or more recipients who receive the email.</p>
+    pub fn to(&self) -> std::option::Option<&[crate::model::RecipientDetail]> {
+        self.to.as_deref()
+    }
+}
 impl std::fmt::Debug for EmailRecipients {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmailRecipients");
@@ -4760,6 +5594,12 @@ pub struct RecipientDetail {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
     pub sso_identity: std::option::Option<crate::model::SsoIdentity>,
 }
+impl RecipientDetail {
+    /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
+    pub fn sso_identity(&self) -> std::option::Option<&crate::model::SsoIdentity> {
+        self.sso_identity.as_ref()
+    }
+}
 impl std::fmt::Debug for RecipientDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecipientDetail");
@@ -4814,6 +5654,16 @@ pub struct SsoIdentity {
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
+}
+impl SsoIdentity {
+    /// <p>The ID of the AWS SSO identity store.</p>
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+        self.identity_store_id.as_deref()
+    }
+    /// <p>The user ID.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SsoIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4880,6 +5730,16 @@ pub struct EmailContent {
     pub subject: std::option::Option<std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub additional_message: std::option::Option<std::string::String>,
+}
+impl EmailContent {
+    /// <p>The subject of the email.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The message that you want to send. The message can be up to 200 characters.</p>
+    pub fn additional_message(&self) -> std::option::Option<&str> {
+        self.additional_message.as_deref()
+    }
 }
 impl std::fmt::Debug for EmailContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4951,6 +5811,23 @@ pub struct SmsConfiguration {
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     pub recipients: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
+}
+impl SmsConfiguration {
+    /// <p>The sender ID.</p>
+    pub fn sender_id(&self) -> std::option::Option<&str> {
+        self.sender_id.as_deref()
+    }
+    /// <p>The message that you want to send. The message can be up to 200 characters.</p>
+    pub fn additional_message(&self) -> std::option::Option<&str> {
+        self.additional_message.as_deref()
+    }
+    /// <p>Specifies one or more recipients who receive the message.</p>
+    /// <important>
+    /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
+    /// </important>
+    pub fn recipients(&self) -> std::option::Option<&[crate::model::RecipientDetail]> {
+        self.recipients.as_deref()
+    }
 }
 impl std::fmt::Debug for SmsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5046,6 +5923,13 @@ pub struct NotificationTargetActions {
     /// event that triggered the action.</p>
     pub lambda_action: std::option::Option<crate::model::LambdaAction>,
 }
+impl NotificationTargetActions {
+    /// <p>Calls a Lambda function, passing in information about the detector model instance and the
+    /// event that triggered the action.</p>
+    pub fn lambda_action(&self) -> std::option::Option<&crate::model::LambdaAction> {
+        self.lambda_action.as_ref()
+    }
+}
 impl std::fmt::Debug for NotificationTargetActions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationTargetActions");
@@ -5098,6 +5982,12 @@ impl NotificationTargetActions {
 pub struct AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
     pub simple_rule: std::option::Option<crate::model::SimpleRule>,
+}
+impl AlarmRule {
+    /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
+    pub fn simple_rule(&self) -> std::option::Option<&crate::model::SimpleRule> {
+        self.simple_rule.as_ref()
+    }
 }
 impl std::fmt::Debug for AlarmRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5155,6 +6045,22 @@ pub struct SimpleRule {
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify
     /// an AWS IoT Events input attribute.</p>
     pub threshold: std::option::Option<std::string::String>,
+}
+impl SimpleRule {
+    /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input
+    /// attribute as an input property.</p>
+    pub fn input_property(&self) -> std::option::Option<&str> {
+        self.input_property.as_deref()
+    }
+    /// <p>The comparison operator.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+        self.comparison_operator.as_ref()
+    }
+    /// <p>The value on the right side of the comparison operator. You can enter a number or specify
+    /// an AWS IoT Events input attribute.</p>
+    pub fn threshold(&self) -> std::option::Option<&str> {
+        self.threshold.as_deref()
+    }
 }
 impl std::fmt::Debug for SimpleRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5320,6 +6226,16 @@ pub struct Tag {
     /// <p>The tag's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -5388,6 +6304,27 @@ pub struct LoggingOptions {
     /// which the logging level is given.</p>
     pub detector_debug_options:
         std::option::Option<std::vec::Vec<crate::model::DetectorDebugOption>>,
+}
+impl LoggingOptions {
+    /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The logging level.</p>
+    pub fn level(&self) -> std::option::Option<&crate::model::LoggingLevel> {
+        self.level.as_ref()
+    }
+    /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>Information that identifies those detector models and their detectors (instances) for
+    /// which the logging level is given.</p>
+    pub fn detector_debug_options(
+        &self,
+    ) -> std::option::Option<&[crate::model::DetectorDebugOption]> {
+        self.detector_debug_options.as_deref()
+    }
 }
 impl std::fmt::Debug for LoggingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5494,6 +6431,17 @@ pub struct DetectorDebugOption {
     /// <p>The value of the input attribute key used to create the detector (the instance of the
     /// detector model).</p>
     pub key_value: std::option::Option<std::string::String>,
+}
+impl DetectorDebugOption {
+    /// <p>The name of the detector model.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The value of the input attribute key used to create the detector (the instance of the
+    /// detector model).</p>
+    pub fn key_value(&self) -> std::option::Option<&str> {
+        self.key_value.as_deref()
+    }
 }
 impl std::fmt::Debug for DetectorDebugOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5630,6 +6578,32 @@ pub struct InputSummary {
     /// <p>The status of the input.</p>
     pub status: std::option::Option<crate::model::InputStatus>,
 }
+impl InputSummary {
+    /// <p>The name of the input.</p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+    /// <p>A brief description of the input.</p>
+    pub fn input_description(&self) -> std::option::Option<&str> {
+        self.input_description.as_deref()
+    }
+    /// <p>The ARN of the input.</p>
+    pub fn input_arn(&self) -> std::option::Option<&str> {
+        self.input_arn.as_deref()
+    }
+    /// <p>The time the input was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the input was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the input.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InputStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for InputSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputSummary");
@@ -5760,6 +6734,20 @@ pub struct RoutedResource {
     /// </p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl RoutedResource {
+    /// <p>
+    /// The name of the routed resource.  
+    /// </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>
+    /// The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+    /// </p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RoutedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoutedResource");
@@ -5837,6 +6825,24 @@ pub struct InputIdentifier {
     /// </p>
     pub iot_site_wise_input_identifier:
         std::option::Option<crate::model::IotSiteWiseInputIdentifier>,
+}
+impl InputIdentifier {
+    /// <p>
+    /// The identifier of the input routed to AWS IoT Events.
+    /// </p>
+    pub fn iot_events_input_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::IotEventsInputIdentifier> {
+        self.iot_events_input_identifier.as_ref()
+    }
+    /// <p>
+    /// The identifer of the input routed from AWS IoT SiteWise.
+    /// </p>
+    pub fn iot_site_wise_input_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::IotSiteWiseInputIdentifier> {
+        self.iot_site_wise_input_identifier.as_ref()
+    }
 }
 impl std::fmt::Debug for InputIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5932,6 +6938,16 @@ pub struct IotSiteWiseInputIdentifier {
     pub iot_site_wise_asset_model_property_identifier:
         std::option::Option<crate::model::IotSiteWiseAssetModelPropertyIdentifier>,
 }
+impl IotSiteWiseInputIdentifier {
+    /// <p>
+    /// The identifier of the AWS IoT SiteWise asset model property.
+    /// </p>
+    pub fn iot_site_wise_asset_model_property_identifier(
+        &self,
+    ) -> std::option::Option<&crate::model::IotSiteWiseAssetModelPropertyIdentifier> {
+        self.iot_site_wise_asset_model_property_identifier.as_ref()
+    }
+}
 impl std::fmt::Debug for IotSiteWiseInputIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotSiteWiseInputIdentifier");
@@ -6002,6 +7018,20 @@ pub struct IotSiteWiseAssetModelPropertyIdentifier {
     /// The ID of the AWS IoT SiteWise asset property.
     /// </p>
     pub property_id: std::option::Option<std::string::String>,
+}
+impl IotSiteWiseAssetModelPropertyIdentifier {
+    /// <p>
+    /// The ID of the AWS IoT SiteWise asset model.
+    /// </p>
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>
+    /// The ID of the AWS IoT SiteWise asset property.
+    /// </p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
 }
 impl std::fmt::Debug for IotSiteWiseAssetModelPropertyIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6079,6 +7109,14 @@ pub struct IotEventsInputIdentifier {
     /// </p>
     pub input_name: std::option::Option<std::string::String>,
 }
+impl IotEventsInputIdentifier {
+    /// <p>
+    /// The name of the input routed to AWS IoT Events.
+    /// </p>
+    pub fn input_name(&self) -> std::option::Option<&str> {
+        self.input_name.as_deref()
+    }
+}
 impl std::fmt::Debug for IotEventsInputIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IotEventsInputIdentifier");
@@ -6145,6 +7183,41 @@ pub struct DetectorModelVersionSummary {
     /// <p>Information about the order in which events are evaluated and how actions are executed.
     /// </p>
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
+}
+impl DetectorModelVersionSummary {
+    /// <p>The name of the detector model.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>The ID of the detector model version.</p>
+    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+        self.detector_model_version.as_deref()
+    }
+    /// <p>The ARN of the detector model version.</p>
+    pub fn detector_model_arn(&self) -> std::option::Option<&str> {
+        self.detector_model_arn.as_deref()
+    }
+    /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The time the detector model version was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last time the detector model version was updated.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the detector model version.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DetectorModelVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Information about the order in which events are evaluated and how actions are executed.
+    /// </p>
+    pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
+        self.evaluation_method.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectorModelVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6312,6 +7385,20 @@ pub struct DetectorModelSummary {
     /// <p>The time the detector model was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl DetectorModelSummary {
+    /// <p>The name of the detector model.</p>
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+        self.detector_model_name.as_deref()
+    }
+    /// <p>A brief description of the detector model.</p>
+    pub fn detector_model_description(&self) -> std::option::Option<&str> {
+        self.detector_model_description.as_deref()
+    }
+    /// <p>The time the detector model was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+}
 impl std::fmt::Debug for DetectorModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectorModelSummary");
@@ -6434,6 +7521,63 @@ pub struct AlarmModelVersionSummary {
     /// Contains information about the status of the alarm model version.
     /// </p>
     pub status_message: std::option::Option<std::string::String>,
+}
+impl AlarmModelVersionSummary {
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+    /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn alarm_model_arn(&self) -> std::option::Option<&str> {
+        self.alarm_model_arn.as_deref()
+    }
+    /// <p>The version of the alarm model.</p>
+    pub fn alarm_model_version(&self) -> std::option::Option<&str> {
+        self.alarm_model_version.as_deref()
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_update_time.as_ref()
+    }
+    /// <p>The status of the alarm model. The status can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
+    /// Activating an alarm model can take up to a few minutes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
+    /// Check your alarm model information and update the alarm model.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
+    /// and try again.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
+        self.status.as_ref()
+    }
+    /// <p>
+    /// Contains information about the status of the alarm model version.
+    /// </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl std::fmt::Debug for AlarmModelVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6645,6 +7789,20 @@ pub struct AlarmModelSummary {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
 }
+impl AlarmModelSummary {
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The description of the alarm model.</p>
+    pub fn alarm_model_description(&self) -> std::option::Option<&str> {
+        self.alarm_model_description.as_deref()
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
+        self.alarm_model_name.as_deref()
+    }
+}
 impl std::fmt::Debug for AlarmModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AlarmModelSummary");
@@ -6795,6 +7953,86 @@ pub struct AnalysisResult {
     /// <p>Contains one or more locations that you can use to locate the fields in your detector
     /// model that the analysis result references.</p>
     pub locations: std::option::Option<std::vec::Vec<crate::model::AnalysisResultLocation>>,
+}
+impl AnalysisResult {
+    /// <p>The type of the analysis result. Analyses fall into the following types based on the
+    /// validators used to generate the analysis result:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>supported-actions</code> - You must specify AWS IoT Events supported actions that work
+    /// with other AWS services in a supported AWS Region.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>service-limits</code> - Resources or API operations can't exceed service
+    /// quotas (also known as limits). Update your detector model or request a quota
+    /// increase.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>structure</code> - The detector model must follow a structure that AWS IoT Events
+    /// supports. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>expression-syntax</code> - Your expression must follow the required
+    /// syntax.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>data-type</code> - Data types referenced in the detector model must be
+    /// compatible.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>referenced-data</code> - You must define the data referenced in your detector
+    /// model before you can use the data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>referenced-resource</code> - Resources that the detector model uses must be
+    /// available.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model
+    /// analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The severity level of the analysis result. Based on the severity level, analysis results
+    /// fall into three general categories:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INFO</code> - An information result tells you about a significant field in your
+    /// detector model. This type of result usually doesn't require immediate action.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your detector model.
+    /// We recommend that you review warnings and take necessary actions
+    /// before you use your detector model in production environments. Otherwise, the detector
+    /// model might not work as expected.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - An error result notifies you about a problem found in your
+    /// detector model. You must fix all errors before you can publish your detector model.</p>
+    /// </li>
+    /// </ul>
+    pub fn level(&self) -> std::option::Option<&crate::model::AnalysisResultLevel> {
+        self.level.as_ref()
+    }
+    /// <p>Contains additional information about the analysis result.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>Contains one or more locations that you can use to locate the fields in your detector
+    /// model that the analysis result references.</p>
+    pub fn locations(&self) -> std::option::Option<&[crate::model::AnalysisResultLocation]> {
+        self.locations.as_deref()
+    }
 }
 impl std::fmt::Debug for AnalysisResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7022,6 +8260,13 @@ pub struct AnalysisResultLocation {
     /// identifies the error field in your detector model.</p>
     pub path: std::option::Option<std::string::String>,
 }
+impl AnalysisResultLocation {
+    /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that
+    /// identifies the error field in your detector model.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+}
 impl std::fmt::Debug for AnalysisResultLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AnalysisResultLocation");
@@ -7130,6 +8375,16 @@ pub struct Input {
     pub input_configuration: std::option::Option<crate::model::InputConfiguration>,
     /// <p>The definition of the input.</p>
     pub input_definition: std::option::Option<crate::model::InputDefinition>,
+}
+impl Input {
+    /// <p>Information about the configuration of an input.</p>
+    pub fn input_configuration(&self) -> std::option::Option<&crate::model::InputConfiguration> {
+        self.input_configuration.as_ref()
+    }
+    /// <p>The definition of the input.</p>
+    pub fn input_definition(&self) -> std::option::Option<&crate::model::InputDefinition> {
+        self.input_definition.as_ref()
+    }
 }
 impl std::fmt::Debug for Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7258,6 +8513,20 @@ pub struct DetectorModel {
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
     /// <p>Information about how the detector is configured.</p>
     pub detector_model_configuration: std::option::Option<crate::model::DetectorModelConfiguration>,
+}
+impl DetectorModel {
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn detector_model_definition(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelDefinition> {
+        self.detector_model_definition.as_ref()
+    }
+    /// <p>Information about how the detector is configured.</p>
+    pub fn detector_model_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DetectorModelConfiguration> {
+        self.detector_model_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DetectorModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

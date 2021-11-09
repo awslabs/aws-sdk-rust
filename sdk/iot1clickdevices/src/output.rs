@@ -66,6 +66,12 @@ pub struct UnclaimDeviceOutput {
     /// <p>The device's final claim state.</p>
     pub state: std::option::Option<std::string::String>,
 }
+impl UnclaimDeviceOutput {
+    /// <p>The device's final claim state.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+}
 impl std::fmt::Debug for UnclaimDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnclaimDeviceOutput");
@@ -147,6 +153,19 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>A collection of key/value pairs defining the resource tags. For example, {
+    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+    /// Tagging Strategies</a>.</p><p>
+    ///
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -219,6 +238,16 @@ pub struct ListDevicesOutput {
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceDescription>>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDevicesOutput {
+    /// <p>A list of devices.</p>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceDescription]> {
+        self.devices.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListDevicesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -293,6 +322,17 @@ pub struct ListDeviceEventsOutput {
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListDeviceEventsOutput {
+    /// <p>An array of zero or more elements describing the event(s) associated with the
+    /// device.</p>
+    pub fn events(&self) -> std::option::Option<&[crate::model::DeviceEvent]> {
+        self.events.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListDeviceEventsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDeviceEventsOutput");
@@ -365,6 +405,12 @@ pub struct InvokeDeviceMethodOutput {
     /// <p>A JSON encoded string containing the device method response.</p>
     pub device_method_response: std::option::Option<std::string::String>,
 }
+impl InvokeDeviceMethodOutput {
+    /// <p>A JSON encoded string containing the device method response.</p>
+    pub fn device_method_response(&self) -> std::option::Option<&str> {
+        self.device_method_response.as_deref()
+    }
+}
 impl std::fmt::Debug for InvokeDeviceMethodOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeDeviceMethodOutput");
@@ -416,6 +462,12 @@ pub struct InitiateDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
     pub state: std::option::Option<std::string::String>,
 }
+impl InitiateDeviceClaimOutput {
+    /// <p>The device's final claim state.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+}
 impl std::fmt::Debug for InitiateDeviceClaimOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateDeviceClaimOutput");
@@ -461,6 +513,12 @@ impl InitiateDeviceClaimOutput {
 pub struct GetDeviceMethodsOutput {
     /// <p>List of available device APIs.</p>
     pub device_methods: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>,
+}
+impl GetDeviceMethodsOutput {
+    /// <p>List of available device APIs.</p>
+    pub fn device_methods(&self) -> std::option::Option<&[crate::model::DeviceMethod]> {
+        self.device_methods.as_deref()
+    }
 }
 impl std::fmt::Debug for GetDeviceMethodsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -519,6 +577,12 @@ pub struct FinalizeDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
     pub state: std::option::Option<std::string::String>,
 }
+impl FinalizeDeviceClaimOutput {
+    /// <p>The device's final claim state.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+}
 impl std::fmt::Debug for FinalizeDeviceClaimOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FinalizeDeviceClaimOutput");
@@ -564,6 +628,12 @@ impl FinalizeDeviceClaimOutput {
 pub struct DescribeDeviceOutput {
     /// <p>Device details.</p>
     pub device_description: std::option::Option<crate::model::DeviceDescription>,
+}
+impl DescribeDeviceOutput {
+    /// <p>Device details.</p>
+    pub fn device_description(&self) -> std::option::Option<&crate::model::DeviceDescription> {
+        self.device_description.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDeviceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -618,6 +688,17 @@ pub struct ClaimDevicesByClaimCodeOutput {
     /// <p>The total number of devices associated with the claim code that has been processed in
     /// the claim request.</p>
     pub total: i32,
+}
+impl ClaimDevicesByClaimCodeOutput {
+    /// <p>The claim code provided by the device manufacturer.</p>
+    pub fn claim_code(&self) -> std::option::Option<&str> {
+        self.claim_code.as_deref()
+    }
+    /// <p>The total number of devices associated with the claim code that has been processed in
+    /// the claim request.</p>
+    pub fn total(&self) -> i32 {
+        self.total
+    }
 }
 impl std::fmt::Debug for ClaimDevicesByClaimCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

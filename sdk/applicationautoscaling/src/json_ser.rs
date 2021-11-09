@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_delete_scaling_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteScalingPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.policy_name {
         object.key("PolicyName").string(var_1);
     }
@@ -15,12 +15,13 @@ pub fn serialize_structure_crate_input_delete_scaling_policy_input(
     if let Some(var_4) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_4.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_delete_scheduled_action_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteScheduledActionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_5.as_str());
     }
@@ -33,12 +34,13 @@ pub fn serialize_structure_crate_input_delete_scheduled_action_input(
     if let Some(var_8) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_8.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_deregister_scalable_target_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeregisterScalableTargetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_9.as_str());
     }
@@ -48,12 +50,13 @@ pub fn serialize_structure_crate_input_deregister_scalable_target_input(
     if let Some(var_11) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_11.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_scalable_targets_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeScalableTargetsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_12.as_str());
     }
@@ -78,12 +81,13 @@ pub fn serialize_structure_crate_input_describe_scalable_targets_input(
     if let Some(var_18) = &input.next_token {
         object.key("NextToken").string(var_18);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_scaling_activities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeScalingActivitiesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_19.as_str());
     }
@@ -102,12 +106,13 @@ pub fn serialize_structure_crate_input_describe_scaling_activities_input(
     if let Some(var_23) = &input.next_token {
         object.key("NextToken").string(var_23);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_scaling_policies_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeScalingPoliciesInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.policy_names {
         let mut array_25 = object.key("PolicyNames").start_array();
         for item_26 in var_24 {
@@ -135,12 +140,13 @@ pub fn serialize_structure_crate_input_describe_scaling_policies_input(
     if let Some(var_31) = &input.next_token {
         object.key("NextToken").string(var_31);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_describe_scheduled_actions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeScheduledActionsInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.scheduled_action_names {
         let mut array_33 = object.key("ScheduledActionNames").start_array();
         for item_34 in var_32 {
@@ -168,12 +174,13 @@ pub fn serialize_structure_crate_input_describe_scheduled_actions_input(
     if let Some(var_39) = &input.next_token {
         object.key("NextToken").string(var_39);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_scaling_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutScalingPolicyInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.policy_name {
         object.key("PolicyName").string(var_40);
     }
@@ -194,22 +201,23 @@ pub fn serialize_structure_crate_input_put_scaling_policy_input(
         crate::json_ser::serialize_structure_crate_model_step_scaling_policy_configuration(
             &mut object_46,
             var_45,
-        );
+        )?;
         object_46.finish();
     }
     if let Some(var_47) = &input.target_tracking_scaling_policy_configuration {
         let mut object_48 = object
             .key("TargetTrackingScalingPolicyConfiguration")
             .start_object();
-        crate::json_ser::serialize_structure_crate_model_target_tracking_scaling_policy_configuration(&mut object_48, var_47);
+        crate::json_ser::serialize_structure_crate_model_target_tracking_scaling_policy_configuration(&mut object_48, var_47)?;
         object_48.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_put_scheduled_action_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutScheduledActionInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_49.as_str());
     }
@@ -243,15 +251,16 @@ pub fn serialize_structure_crate_input_put_scheduled_action_input(
         crate::json_ser::serialize_structure_crate_model_scalable_target_action(
             &mut object_58,
             var_57,
-        );
+        )?;
         object_58.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_input_register_scalable_target_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterScalableTargetInput,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_59.as_str());
     }
@@ -278,15 +287,16 @@ pub fn serialize_structure_crate_input_register_scalable_target_input(
     }
     if let Some(var_65) = &input.suspended_state {
         let mut object_66 = object.key("SuspendedState").start_object();
-        crate::json_ser::serialize_structure_crate_model_suspended_state(&mut object_66, var_65);
+        crate::json_ser::serialize_structure_crate_model_suspended_state(&mut object_66, var_65)?;
         object_66.finish();
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_step_scaling_policy_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StepScalingPolicyConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.adjustment_type {
         object.key("AdjustmentType").string(var_67.as_str());
     }
@@ -298,7 +308,7 @@ pub fn serialize_structure_crate_model_step_scaling_policy_configuration(
                 crate::json_ser::serialize_structure_crate_model_step_adjustment(
                     &mut object_71,
                     item_70,
-                );
+                )?;
                 object_71.finish();
             }
         }
@@ -319,12 +329,13 @@ pub fn serialize_structure_crate_model_step_scaling_policy_configuration(
     if let Some(var_74) = &input.metric_aggregation_type {
         object.key("MetricAggregationType").string(var_74.as_str());
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_target_tracking_scaling_policy_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TargetTrackingScalingPolicyConfiguration,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.target_value {
         object.key("TargetValue").number(
             #[allow(clippy::useless_conversion)]
@@ -336,7 +347,7 @@ pub fn serialize_structure_crate_model_target_tracking_scaling_policy_configurat
         crate::json_ser::serialize_structure_crate_model_predefined_metric_specification(
             &mut object_77,
             var_76,
-        );
+        )?;
         object_77.finish();
     }
     if let Some(var_78) = &input.customized_metric_specification {
@@ -344,7 +355,7 @@ pub fn serialize_structure_crate_model_target_tracking_scaling_policy_configurat
         crate::json_ser::serialize_structure_crate_model_customized_metric_specification(
             &mut object_79,
             var_78,
-        );
+        )?;
         object_79.finish();
     }
     if let Some(var_80) = &input.scale_out_cooldown {
@@ -362,12 +373,13 @@ pub fn serialize_structure_crate_model_target_tracking_scaling_policy_configurat
     if let Some(var_82) = &input.disable_scale_in {
         object.key("DisableScaleIn").boolean(*var_82);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_scalable_target_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScalableTargetAction,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.min_capacity {
         object.key("MinCapacity").number(
             #[allow(clippy::useless_conversion)]
@@ -380,12 +392,13 @@ pub fn serialize_structure_crate_model_scalable_target_action(
             aws_smithy_types::Number::NegInt((*var_84).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_suspended_state(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SuspendedState,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.dynamic_scaling_in_suspended {
         object.key("DynamicScalingInSuspended").boolean(*var_85);
     }
@@ -395,12 +408,13 @@ pub fn serialize_structure_crate_model_suspended_state(
     if let Some(var_87) = &input.scheduled_scaling_suspended {
         object.key("ScheduledScalingSuspended").boolean(*var_87);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_step_adjustment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StepAdjustment,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.metric_interval_lower_bound {
         object.key("MetricIntervalLowerBound").number(
             #[allow(clippy::useless_conversion)]
@@ -419,24 +433,26 @@ pub fn serialize_structure_crate_model_step_adjustment(
             aws_smithy_types::Number::NegInt((*var_90).into()),
         );
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_predefined_metric_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PredefinedMetricSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_91) = &input.predefined_metric_type {
         object.key("PredefinedMetricType").string(var_91.as_str());
     }
     if let Some(var_92) = &input.resource_label {
         object.key("ResourceLabel").string(var_92);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_customized_metric_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CustomizedMetricSpecification,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.metric_name {
         object.key("MetricName").string(var_93);
     }
@@ -451,7 +467,7 @@ pub fn serialize_structure_crate_model_customized_metric_specification(
                 crate::json_ser::serialize_structure_crate_model_metric_dimension(
                     &mut object_98,
                     item_97,
-                );
+                )?;
                 object_98.finish();
             }
         }
@@ -463,16 +479,18 @@ pub fn serialize_structure_crate_model_customized_metric_specification(
     if let Some(var_100) = &input.unit {
         object.key("Unit").string(var_100);
     }
+    Ok(())
 }
 
 pub fn serialize_structure_crate_model_metric_dimension(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MetricDimension,
-) {
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.name {
         object.key("Name").string(var_101);
     }
     if let Some(var_102) = &input.value {
         object.key("Value").string(var_102);
     }
+    Ok(())
 }

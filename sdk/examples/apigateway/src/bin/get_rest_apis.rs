@@ -22,18 +22,12 @@ struct Opt {
 async fn show_apis(client: &Client) -> Result<(), Error> {
     let resp = client.get_rest_apis().send().await?;
 
-    for api in resp.items.unwrap_or_default() {
-        println!("ID:          {}", api.id.as_deref().unwrap_or_default());
-        println!("Name:        {}", api.name.as_deref().unwrap_or_default());
-        println!(
-            "Description: {}",
-            api.description.as_deref().unwrap_or_default()
-        );
-        println!(
-            "Version:     {}",
-            api.version.as_deref().unwrap_or_default()
-        );
-        println!("Created:     {}", api.created_date.unwrap().to_chrono());
+    for api in resp.items().unwrap_or_default() {
+        println!("ID:          {}", api.id().unwrap_or_default());
+        println!("Name:        {}", api.name().unwrap_or_default());
+        println!("Description: {}", api.description().unwrap_or_default());
+        println!("Version:     {}", api.version().unwrap_or_default());
+        println!("Created:     {}", api.created_date().unwrap().to_chrono());
         println!();
     }
 

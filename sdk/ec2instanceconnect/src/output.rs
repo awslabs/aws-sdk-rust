@@ -8,6 +8,16 @@ pub struct SendSshPublicKeyOutput {
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub success: bool,
 }
+impl SendSshPublicKeyOutput {
+    /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>Is true if the request succeeds and an error otherwise.</p>
+    pub fn success(&self) -> bool {
+        self.success
+    }
+}
 impl std::fmt::Debug for SendSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendSshPublicKeyOutput");
@@ -70,6 +80,16 @@ pub struct SendSerialConsoleSshPublicKeyOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub success: bool,
+}
+impl SendSerialConsoleSshPublicKeyOutput {
+    /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>Is true if the request succeeds and an error otherwise.</p>
+    pub fn success(&self) -> bool {
+        self.success
+    }
 }
 impl std::fmt::Debug for SendSerialConsoleSshPublicKeyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

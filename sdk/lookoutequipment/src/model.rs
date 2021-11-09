@@ -10,6 +10,19 @@ pub struct InferenceOutputConfiguration {
     /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
+impl InferenceOutputConfiguration {
+    /// <p> Specifies configuration information for the output results from for the inference,
+    /// output S3 location. </p>
+    pub fn s3_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceS3OutputConfiguration> {
+        self.s3_output_configuration.as_ref()
+    }
+    /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for InferenceOutputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferenceOutputConfiguration");
@@ -83,6 +96,16 @@ pub struct InferenceS3OutputConfiguration {
     /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl InferenceS3OutputConfiguration {
+    /// <p> The bucket containing the output results from the inference </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for InferenceS3OutputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferenceS3OutputConfiguration");
@@ -151,6 +174,26 @@ pub struct InferenceInputConfiguration {
     /// timestamp format and delimiter. </p>
     pub inference_input_name_configuration:
         std::option::Option<crate::model::InferenceInputNameConfiguration>,
+}
+impl InferenceInputConfiguration {
+    /// <p> Specifies configuration information for the input data for the inference, including S3
+    /// location of input data.. </p>
+    pub fn s3_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceS3InputConfiguration> {
+        self.s3_input_configuration.as_ref()
+    }
+    /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
+    pub fn input_time_zone_offset(&self) -> std::option::Option<&str> {
+        self.input_time_zone_offset.as_deref()
+    }
+    /// <p>Specifies configuration information for the input data for the inference, including
+    /// timestamp format and delimiter. </p>
+    pub fn inference_input_name_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputNameConfiguration> {
+        self.inference_input_name_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for InferenceInputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -254,6 +297,17 @@ pub struct InferenceInputNameConfiguration {
     /// <p>Indicates the delimiter character used between items in the data. </p>
     pub component_timestamp_delimiter: std::option::Option<std::string::String>,
 }
+impl InferenceInputNameConfiguration {
+    /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens
+    /// (-). </p>
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+        self.timestamp_format.as_deref()
+    }
+    /// <p>Indicates the delimiter character used between items in the data. </p>
+    pub fn component_timestamp_delimiter(&self) -> std::option::Option<&str> {
+        self.component_timestamp_delimiter.as_deref()
+    }
+}
 impl std::fmt::Debug for InferenceInputNameConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferenceInputNameConfiguration");
@@ -331,6 +385,16 @@ pub struct InferenceS3InputConfiguration {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl InferenceS3InputConfiguration {
+    /// <p>The bucket containing the input dataset for the inference. </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for InferenceS3InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -461,6 +525,16 @@ pub struct Tag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the specified tag. </p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The key for the specified tag. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value for the specified tag. </p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -647,6 +721,15 @@ pub struct IngestionInputConfiguration {
     /// </p>
     pub s3_input_configuration: std::option::Option<crate::model::IngestionS3InputConfiguration>,
 }
+impl IngestionInputConfiguration {
+    /// <p>The location information for the S3 bucket used for input data for the data ingestion.
+    /// </p>
+    pub fn s3_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestionS3InputConfiguration> {
+        self.s3_input_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for IngestionInputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IngestionInputConfiguration");
@@ -707,6 +790,17 @@ pub struct IngestionS3InputConfiguration {
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion.
     /// </p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl IngestionS3InputConfiguration {
+    /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The prefix for the S3 location being used for the input data for the data ingestion.
+    /// </p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for IngestionS3InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -781,6 +875,32 @@ pub struct ModelSummary {
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The time at which the specific model was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ModelSummary {
+    /// <p>The name of the ML model. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the dataset being used for the ML model. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>Indicates the status of the ML model. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time at which the specific model was created. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for ModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -980,6 +1100,46 @@ pub struct InferenceSchedulerSummary {
     /// example, it starts once every 5 minutes. </p>
     pub data_upload_frequency: std::option::Option<crate::model::DataUploadFrequency>,
 }
+impl InferenceSchedulerSummary {
+    /// <p>The name of the ML model used for the inference scheduler. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the inference scheduler. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceSchedulerStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
+    /// starts. For instance, if an offset delay time of five minutes was selected, inference will
+    /// not begin on the data until the first data measurement after the five minute mark. For example, if
+    /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
+    /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
+    /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.
+    /// </p>
+    pub fn data_delay_offset_in_minutes(&self) -> std::option::Option<i64> {
+        self.data_delay_offset_in_minutes
+    }
+    /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the
+    /// length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment
+    /// will upload the real-time data to the source bucket once every 5 minutes. This frequency also
+    /// determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
+    /// example, it starts once every 5 minutes. </p>
+    pub fn data_upload_frequency(&self) -> std::option::Option<&crate::model::DataUploadFrequency> {
+        self.data_upload_frequency.as_ref()
+    }
+}
 impl std::fmt::Debug for InferenceSchedulerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InferenceSchedulerSummary");
@@ -1170,6 +1330,67 @@ pub struct InferenceExecutionSummary {
     pub status: std::option::Option<crate::model::InferenceExecutionStatus>,
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
     pub failed_reason: std::option::Option<std::string::String>,
+}
+impl InferenceExecutionSummary {
+    /// <p>The name of the ML model being used for the inference execution. </p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    pub fn model_arn(&self) -> std::option::Option<&str> {
+        self.model_arn.as_deref()
+    }
+    /// <p>The name of the inference scheduler being used for the inference execution. </p>
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference
+    /// execution. </p>
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+        self.inference_scheduler_arn.as_deref()
+    }
+    /// <p>Indicates the start time at which the inference scheduler began the specific inference
+    /// execution. </p>
+    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.scheduled_start_time.as_ref()
+    }
+    /// <p>Indicates the time reference in the dataset at which the inference execution began.
+    /// </p>
+    pub fn data_start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_start_time.as_ref()
+    }
+    /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
+    /// </p>
+    pub fn data_end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.data_end_time.as_ref()
+    }
+    /// <p> Specifies configuration information for the input data for the inference scheduler,
+    /// including delimiter, format, and dataset location. </p>
+    pub fn data_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceInputConfiguration> {
+        self.data_input_configuration.as_ref()
+    }
+    /// <p> Specifies configuration information for the output results from for the inference
+    /// execution, including the output S3 location. </p>
+    pub fn data_output_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InferenceOutputConfiguration> {
+        self.data_output_configuration.as_ref()
+    }
+    /// <p>
+    /// </p>
+    pub fn customer_result_object(&self) -> std::option::Option<&crate::model::S3Object> {
+        self.customer_result_object.as_ref()
+    }
+    /// <p>Indicates the status of the inference execution. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::InferenceExecutionStatus> {
+        self.status.as_ref()
+    }
+    /// <p> Specifies the reason for failure when an inference execution has failed. </p>
+    pub fn failed_reason(&self) -> std::option::Option<&str> {
+        self.failed_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for InferenceExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1476,6 +1697,17 @@ pub struct S3Object {
     /// Without this key, data in the bucket is not accessible. </p>
     pub key: std::option::Option<std::string::String>,
 }
+impl S3Object {
+    /// <p>The name of the specific S3 bucket. </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object.
+    /// Without this key, data in the bucket is not accessible. </p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Object {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Object");
@@ -1545,6 +1777,24 @@ pub struct DatasetSummary {
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DatasetSummary {
+    /// <p>The name of the dataset. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p>Indicates the status of the dataset. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1709,6 +1959,31 @@ pub struct DataIngestionJobSummary {
     /// <p>Indicates the status of the data ingestion job. </p>
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
 }
+impl DataIngestionJobSummary {
+    /// <p>Indicates the job ID of the data ingestion job. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the dataset used for the data ingestion job. </p>
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
+        self.dataset_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+        self.dataset_arn.as_deref()
+    }
+    /// <p> Specifies information for the input data for the data inference job, including data S3
+    /// location parameters. </p>
+    pub fn ingestion_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::IngestionInputConfiguration> {
+        self.ingestion_input_configuration.as_ref()
+    }
+    /// <p>Indicates the status of the data ingestion job. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::IngestionJobStatus> {
+        self.status.as_ref()
+    }
+}
 impl std::fmt::Debug for DataIngestionJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataIngestionJobSummary");
@@ -1842,6 +2117,21 @@ pub struct DataPreProcessingConfiguration {
     /// is <i>PT1H</i>
     /// </p>
     pub target_sampling_rate: std::option::Option<crate::model::TargetSamplingRate>,
+}
+impl DataPreProcessingConfiguration {
+    /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment.
+    /// For example, if you provide data that has been collected at a 1 second level and
+    /// you want the system to resample the data at a 1 minute rate before training,
+    /// the <code>TargetSamplingRate</code> is 1 minute.</p>
+    /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach
+    /// the prefix "PT" to the rate you want.  The value for a 1 second rate is
+    /// therefore <i>PT1S</i>, the value for a 15 minute
+    /// rate is <i>PT15M</i>, and the value for a 1 hour rate
+    /// is <i>PT1H</i>
+    /// </p>
+    pub fn target_sampling_rate(&self) -> std::option::Option<&crate::model::TargetSamplingRate> {
+        self.target_sampling_rate.as_ref()
+    }
 }
 impl std::fmt::Debug for DataPreProcessingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2007,6 +2297,14 @@ pub struct LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
     pub s3_input_configuration: std::option::Option<crate::model::LabelsS3InputConfiguration>,
 }
+impl LabelsInputConfiguration {
+    /// <p>Contains location information for the S3 location being used for label data. </p>
+    pub fn s3_input_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LabelsS3InputConfiguration> {
+        self.s3_input_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for LabelsInputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelsInputConfiguration");
@@ -2064,6 +2362,16 @@ pub struct LabelsS3InputConfiguration {
     pub bucket: std::option::Option<std::string::String>,
     /// <p> The prefix for the S3 bucket used for the label data. </p>
     pub prefix: std::option::Option<std::string::String>,
+}
+impl LabelsS3InputConfiguration {
+    /// <p>The name of the S3 bucket holding the label data. </p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p> The prefix for the S3 bucket used for the label data. </p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
 }
 impl std::fmt::Debug for LabelsS3InputConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2126,6 +2434,13 @@ pub struct DatasetSchema {
     /// <p>
     /// </p>
     pub inline_data_schema: std::option::Option<std::string::String>,
+}
+impl DatasetSchema {
+    /// <p>
+    /// </p>
+    pub fn inline_data_schema(&self) -> std::option::Option<&str> {
+        self.inline_data_schema.as_deref()
+    }
 }
 impl std::fmt::Debug for DatasetSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

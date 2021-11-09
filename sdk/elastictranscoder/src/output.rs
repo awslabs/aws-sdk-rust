@@ -7,6 +7,12 @@ pub struct UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
+impl UpdatePipelineStatusOutput {
+    /// <p>A section of the response body that provides information about the pipeline.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+        self.pipeline.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdatePipelineStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePipelineStatusOutput");
@@ -55,6 +61,13 @@ pub struct UpdatePipelineNotificationsOutput {
     /// <p>A section of the response body that provides information about the pipeline associated
     /// with this notification.</p>
     pub pipeline: std::option::Option<crate::model::Pipeline>,
+}
+impl UpdatePipelineNotificationsOutput {
+    /// <p>A section of the response body that provides information about the pipeline associated
+    /// with this notification.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+        self.pipeline.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdatePipelineNotificationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -110,6 +123,19 @@ pub struct UpdatePipelineOutput {
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
     /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+}
+impl UpdatePipelineOutput {
+    /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+        self.pipeline.as_ref()
+    }
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the
+    /// pipeline.</p>
+    /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
+    /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -191,6 +217,18 @@ pub struct TestRoleOutput {
     /// of one or more error messages that were generated during the test process.</p>
     pub messages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TestRoleOutput {
+    /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is
+    /// <code>false</code>.</p>
+    pub fn success(&self) -> std::option::Option<&str> {
+        self.success.as_deref()
+    }
+    /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array
+    /// of one or more error messages that were generated during the test process.</p>
+    pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
+        self.messages.as_deref()
+    }
+}
 impl std::fmt::Debug for TestRoleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestRoleOutput");
@@ -265,6 +303,12 @@ pub struct ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
     pub preset: std::option::Option<crate::model::Preset>,
 }
+impl ReadPresetOutput {
+    /// <p>A section of the response body that provides information about the preset.</p>
+    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+        self.preset.as_ref()
+    }
+}
 impl std::fmt::Debug for ReadPresetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReadPresetOutput");
@@ -317,6 +361,19 @@ pub struct ReadPipelineOutput {
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics,
     /// and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+}
+impl ReadPipelineOutput {
+    /// <p>A section of the response body that provides information about the pipeline.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+        self.pipeline.as_ref()
+    }
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region
+    /// as the pipeline.</p>
+    /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics,
+    /// and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
 }
 impl std::fmt::Debug for ReadPipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -394,6 +451,12 @@ pub struct ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
     pub job: std::option::Option<crate::model::Job>,
 }
+impl ReadJobOutput {
+    /// <p>A section of the response body that provides information about the job.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
+}
 impl std::fmt::Debug for ReadJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReadJobOutput");
@@ -443,6 +506,18 @@ pub struct ListPresetsOutput {
     /// the presets fit on one page or when you've reached the last page
     /// of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListPresetsOutput {
+    /// <p>An array of <code>Preset</code> objects.</p>
+    pub fn presets(&self) -> std::option::Option<&[crate::model::Preset]> {
+        self.presets.as_deref()
+    }
+    /// <p>A value that you use to access the second and subsequent pages of results, if any. When
+    /// the presets fit on one page or when you've reached the last page
+    /// of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPresetsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -524,6 +599,18 @@ pub struct ListPipelinesOutput {
     /// the pipelines fit on one page or when you've reached the last page
     /// of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListPipelinesOutput {
+    /// <p>An array of <code>Pipeline</code> objects.</p>
+    pub fn pipelines(&self) -> std::option::Option<&[crate::model::Pipeline]> {
+        self.pipelines.as_deref()
+    }
+    /// <p>A value that you use to access the second and subsequent pages of results, if any. When
+    /// the pipelines fit on one page or when you've reached the last page
+    /// of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPipelinesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -608,6 +695,18 @@ pub struct ListJobsByStatusOutput {
     /// of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
+impl ListJobsByStatusOutput {
+    /// <p>An array of <code>Job</code> objects that have the specified status.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When
+    /// the jobs in the specified pipeline fit on one page or when you've reached the last page
+    /// of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListJobsByStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListJobsByStatusOutput");
@@ -688,6 +787,18 @@ pub struct ListJobsByPipelineOutput {
     /// the jobs in the specified pipeline fit on one page or when you've reached the last page
     /// of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub next_page_token: std::option::Option<std::string::String>,
+}
+impl ListJobsByPipelineOutput {
+    /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
+    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+        self.jobs.as_deref()
+    }
+    /// <p> A value that you use to access the second and subsequent pages of results, if any. When
+    /// the jobs in the specified pipeline fit on one page or when you've reached the last page
+    /// of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
+        self.next_page_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobsByPipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -831,6 +942,19 @@ pub struct CreatePresetOutput {
     /// acceptable output.</p>
     pub warning: std::option::Option<std::string::String>,
 }
+impl CreatePresetOutput {
+    /// <p>A section of the response body that provides information about the preset that is created.</p>
+    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+        self.preset.as_ref()
+    }
+    /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder
+    /// created the preset, this message explains the reason the preset settings don't meet the
+    /// standard. Elastic Transcoder created the preset because the settings might produce
+    /// acceptable output.</p>
+    pub fn warning(&self) -> std::option::Option<&str> {
+        self.warning.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePresetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePresetOutput");
@@ -902,6 +1026,19 @@ pub struct CreatePipelineOutput {
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
     /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+}
+impl CreatePipelineOutput {
+    /// <p>A section of the response body that provides information about the pipeline that is created.</p>
+    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+        self.pipeline.as_ref()
+    }
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as
+    /// the pipeline.</p>
+    /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
+    /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
 }
 impl std::fmt::Debug for CreatePipelineOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -978,6 +1115,12 @@ impl CreatePipelineOutput {
 pub struct CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
     pub job: std::option::Option<crate::model::Job>,
+}
+impl CreateJobOutput {
+    /// <p>A section of the response body that provides information about the job that is created.</p>
+    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+        self.job.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

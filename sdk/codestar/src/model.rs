@@ -21,6 +21,33 @@ pub struct UserProfileSummary {
     /// private key for SSH access.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
+impl UserProfileSummary {
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and
+    /// last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate
+    /// the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the
+    /// display name, the first character that appears after the space will be used as the second
+    /// character in the user initial icon. The initial icon displays a maximum of two characters, so
+    /// a display name with more than one space (for example "Mary Jane Major") would generate an
+    /// initial icon using the first character and the first character after the space ("MJ", not
+    /// "MM").</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The email address associated with the user.</p>
+    pub fn email_address(&self) -> std::option::Option<&str> {
+        self.email_address.as_deref()
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
+    /// user remote access to project resources, this public key will be used along with the user's
+    /// private key for SSH access.</p>
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+        self.ssh_public_key.as_deref()
+    }
+}
 impl std::fmt::Debug for UserProfileSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserProfileSummary");
@@ -139,6 +166,23 @@ pub struct TeamMember {
     /// public/private key pair.</p>
     pub remote_access_allowed: std::option::Option<bool>,
 }
+impl TeamMember {
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn user_arn(&self) -> std::option::Option<&str> {
+        self.user_arn.as_deref()
+    }
+    /// <p>The role assigned to the user in the project. Project roles have different levels of
+    /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
+    /// Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+    pub fn project_role(&self) -> std::option::Option<&str> {
+        self.project_role.as_deref()
+    }
+    /// <p>Whether the user is allowed to remotely access project resources using an SSH
+    /// public/private key pair.</p>
+    pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
+        self.remote_access_allowed
+    }
+}
 impl std::fmt::Debug for TeamMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TeamMember");
@@ -219,6 +263,12 @@ pub struct Resource {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl Resource {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Resource");
@@ -266,6 +316,16 @@ pub struct ProjectSummary {
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub project_arn: std::option::Option<std::string::String>,
+}
+impl ProjectSummary {
+    /// <p>The ID of the project.</p>
+    pub fn project_id(&self) -> std::option::Option<&str> {
+        self.project_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn project_arn(&self) -> std::option::Option<&str> {
+        self.project_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -331,6 +391,17 @@ pub struct ProjectStatus {
     /// <p>In the case of a project creation or deletion failure, a reason for the
     /// failure.</p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl ProjectStatus {
+    /// <p>The phase of completion for a project creation or deletion.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>In the case of a project creation or deletion failure, a reason for the
+    /// failure.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ProjectStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -403,6 +474,26 @@ pub struct Toolchain {
     /// provisioning, if any.</p>
     pub stack_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Toolchain {
+    /// <p>The Amazon S3 location where the toolchain template file provided with the
+    /// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::ToolchainSource> {
+        self.source.as_ref()
+    }
+    /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack
+    /// provisioning.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The list of parameter overrides to be passed into the toolchain template during stack
+    /// provisioning, if any.</p>
+    pub fn stack_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.stack_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for Toolchain {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -506,6 +597,13 @@ pub struct ToolchainSource {
     /// request is stored.</p>
     pub s3: std::option::Option<crate::model::S3Location>,
 }
+impl ToolchainSource {
+    /// <p>The Amazon S3 bucket where the toolchain template file provided with the project
+    /// request is stored.</p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3.as_ref()
+    }
+}
 impl std::fmt::Debug for ToolchainSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ToolchainSource");
@@ -558,6 +656,18 @@ pub struct S3Location {
     /// <p>The Amazon S3 object key where the source code files provided with the project
     /// request are stored.</p>
     pub bucket_key: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The Amazon S3 bucket name where the source code files provided with the project
+    /// request are stored.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 object key where the source code files provided with the project
+    /// request are stored.</p>
+    pub fn bucket_key(&self) -> std::option::Option<&str> {
+        self.bucket_key.as_deref()
+    }
 }
 impl std::fmt::Debug for S3Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -629,6 +739,18 @@ pub struct Code {
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
     /// source code files provided with the project request are placed in the repository.</p>
     pub destination: std::option::Option<crate::model::CodeDestination>,
+}
+impl Code {
+    /// <p>The location where the source code files provided with the project request are
+    /// stored. AWS CodeStar retrieves the files during project creation.</p>
+    pub fn source(&self) -> std::option::Option<&crate::model::CodeSource> {
+        self.source.as_ref()
+    }
+    /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
+    /// source code files provided with the project request are placed in the repository.</p>
+    pub fn destination(&self) -> std::option::Option<&crate::model::CodeDestination> {
+        self.destination.as_ref()
+    }
 }
 impl std::fmt::Debug for Code {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -702,6 +824,18 @@ pub struct CodeDestination {
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
     /// project request will be uploaded after project creation.</p>
     pub git_hub: std::option::Option<crate::model::GitHubCodeDestination>,
+}
+impl CodeDestination {
+    /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
+    /// with the project request will be uploaded after project creation.</p>
+    pub fn code_commit(&self) -> std::option::Option<&crate::model::CodeCommitCodeDestination> {
+        self.code_commit.as_ref()
+    }
+    /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
+    /// project request will be uploaded after project creation.</p>
+    pub fn git_hub(&self) -> std::option::Option<&crate::model::GitHubCodeDestination> {
+        self.git_hub.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -788,6 +922,38 @@ pub struct GitHubCodeDestination {
     pub issues_enabled: bool,
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
     pub token: std::option::Option<std::string::String>,
+}
+impl GitHubCodeDestination {
+    /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in
+    /// GitHub after the repository is created.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should
+    /// be owned by a GitHub organization, provide its name.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>Whether the GitHub repository is to be a private repository.</p>
+    pub fn private_repository(&self) -> bool {
+        self.private_repository
+    }
+    /// <p>Whether to enable issues for the GitHub repository.</p>
+    pub fn issues_enabled(&self) -> bool {
+        self.issues_enabled
+    }
+    /// <p>The GitHub user's personal access token for the GitHub repository.</p>
+    pub fn token(&self) -> std::option::Option<&str> {
+        self.token.as_deref()
+    }
 }
 impl std::fmt::Debug for GitHubCodeDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -920,6 +1086,12 @@ pub struct CodeCommitCodeDestination {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl CodeCommitCodeDestination {
+    /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for CodeCommitCodeDestination {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CodeCommitCodeDestination");
@@ -967,6 +1139,13 @@ pub struct CodeSource {
     /// <p>Information about the Amazon S3 location where the source code files provided with the
     /// project request are stored. </p>
     pub s3: std::option::Option<crate::model::S3Location>,
+}
+impl CodeSource {
+    /// <p>Information about the Amazon S3 location where the source code files provided with the
+    /// project request are stored. </p>
+    pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3.as_ref()
+    }
 }
 impl std::fmt::Debug for CodeSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -12,6 +12,17 @@ pub struct ArtifactConfigInput {
     /// </p>
     pub s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
 }
+impl ArtifactConfigInput {
+    /// <p>A structure that contains the configuration of the encryption-at-rest settings for artifacts that the canary uploads
+    /// to Amazon S3.
+    /// Artifact encryption functionality is available only for canaries that use Synthetics runtime version
+    /// syn-nodejs-puppeteer-3.3 or later. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a>
+    /// </p>
+    pub fn s3_encryption(&self) -> std::option::Option<&crate::model::S3EncryptionConfig> {
+        self.s3_encryption.as_ref()
+    }
+}
 impl std::fmt::Debug for ArtifactConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactConfigInput");
@@ -85,6 +96,23 @@ pub struct S3EncryptionConfig {
     /// for <code>EncryptionMode</code>
     /// </p>
     pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3EncryptionConfig {
+    /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use
+    /// server-side encryption (SSE) with an Amazon S3-managed
+    /// key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
+    /// <p>If you omit this parameter, an
+    /// Amazon Web Services-managed KMS key is used.
+    /// </p>
+    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+        self.encryption_mode.as_ref()
+    }
+    /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code>
+    /// for <code>EncryptionMode</code>
+    /// </p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for S3EncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -231,6 +259,20 @@ pub struct VisualReferenceInput {
     /// CanaryRun</a> from any past run of this canary.</p>
     pub base_canary_run_id: std::option::Option<std::string::String>,
 }
+impl VisualReferenceInput {
+    /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for
+    /// visual monitoring, remove it from this array.</p>
+    pub fn base_screenshots(&self) -> std::option::Option<&[crate::model::BaseScreenshot]> {
+        self.base_screenshots.as_deref()
+    }
+    /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are
+    /// <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run
+    /// before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html">
+    /// CanaryRun</a> from any past run of this canary.</p>
+    pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
+        self.base_canary_run_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VisualReferenceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VisualReferenceInput");
@@ -317,6 +359,18 @@ pub struct BaseScreenshot {
     /// CloudWatch Logs console to draw the boundaries on the screen. For more information, see {LINK}</p>
     pub ignore_coordinates: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl BaseScreenshot {
+    /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that
+    /// specified for this canary to perform visual monitoring.</p>
+    pub fn screenshot_name(&self) -> std::option::Option<&str> {
+        self.screenshot_name.as_deref()
+    }
+    /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the
+    /// CloudWatch Logs console to draw the boundaries on the screen. For more information, see {LINK}</p>
+    pub fn ignore_coordinates(&self) -> std::option::Option<&[std::string::String]> {
+        self.ignore_coordinates.as_deref()
+    }
+}
 impl std::fmt::Debug for BaseScreenshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BaseScreenshot");
@@ -398,6 +452,16 @@ pub struct VpcConfigInput {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups for this canary.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfigInput {
+    /// <p>The IDs of the subnets where this canary is to run.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The IDs of the security groups for this canary.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -501,6 +565,44 @@ pub struct CanaryRunConfigInput {
     /// Runtime environment variables</a>.</p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CanaryRunConfigInput {
+    /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer
+    /// than the frequency of the runs of this canary.</p>
+    /// <p>If you omit this field, the
+    /// frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
+    pub fn memory_in_mb(&self) -> std::option::Option<i32> {
+        self.memory_in_mb
+    }
+    /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing
+    /// enables
+    /// this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does
+    /// not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges.
+    /// For more information, see  <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html">
+    /// Canaries and X-Ray tracing</a>.</p>
+    /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code>
+    /// or later for their canary runtime.</p>
+    pub fn active_tracing(&self) -> std::option::Option<bool> {
+        self.active_tracing
+    }
+    /// <p>Specifies the keys and values to use for any environment variables
+    /// used in the canary script. Use the following format:</p>
+    /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
+    /// <p>Keys must start with a letter and be at least two characters. The total size
+    /// of your environment variables cannot exceed 4 KB. You can't specify any Lambda
+    /// reserved environment variables as the keys for your environment variables. For
+    /// more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+    /// Runtime environment variables</a>.</p>
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment_variables.as_ref()
+    }
 }
 impl std::fmt::Debug for CanaryRunConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -658,6 +760,31 @@ pub struct CanaryScheduleInput {
     /// making runs until you stop it. If you omit this field, the default of 0 is used.</p>
     pub duration_in_seconds: std::option::Option<i64>,
 }
+impl CanaryScheduleInput {
+    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
+    /// <p>For a rate expression, The syntax is
+    /// <code>rate(<i>number unit</i>)</code>. <i>unit</i>
+    /// can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
+    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every
+    /// 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can
+    /// specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
+    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value
+    /// that causes the
+    /// canary to run only once when it is started.</p>
+    /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+    /// expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+    /// Scheduling canary runs using cron</a>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>How long, in seconds, for the canary to continue making regular runs according to
+    /// the schedule in the <code>Expression</code> value. If you specify 0, the canary continues
+    /// making runs until you stop it. If you omit this field, the default of 0 is used.</p>
+    pub fn duration_in_seconds(&self) -> std::option::Option<i64> {
+        self.duration_in_seconds
+    }
+}
 impl std::fmt::Debug for CanaryScheduleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CanaryScheduleInput");
@@ -764,6 +891,32 @@ pub struct CanaryCodeInput {
     /// <p>The entry point to use for the source code when running the canary. This value must end
     /// with the string <code>.handler</code>. The string is limited to 29 characters or fewer.</p>
     pub handler: std::option::Option<std::string::String>,
+}
+impl CanaryCodeInput {
+    /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the
+    /// start of the bucket name.</p>
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+        self.s3_bucket.as_deref()
+    }
+    /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
+    pub fn s3_key(&self) -> std::option::Option<&str> {
+        self.s3_key.as_deref()
+    }
+    /// <p>The S3 version ID of your script.</p>
+    pub fn s3_version(&self) -> std::option::Option<&str> {
+        self.s3_version.as_deref()
+    }
+    /// <p>If you input your canary script directly into the canary instead of referring to an S3
+    /// location, the value of this parameter is the base64-encoded contents of the .zip file that
+    /// contains the script. It must be smaller than 256 Kb.</p>
+    pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.zip_file.as_ref()
+    }
+    /// <p>The entry point to use for the source code when running the canary. This value must end
+    /// with the string <code>.handler</code>. The string is limited to 29 characters or fewer.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
 }
 impl std::fmt::Debug for CanaryCodeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -882,6 +1035,29 @@ pub struct CanaryRun {
     /// the log file, screenshots, and HAR files.</p>
     pub artifact_s3_location: std::option::Option<std::string::String>,
 }
+impl CanaryRun {
+    /// <p>A unique ID that identifies this canary run.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the canary.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of this run.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CanaryRunStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A structure that contains the start and end times of this run.</p>
+    pub fn timeline(&self) -> std::option::Option<&crate::model::CanaryRunTimeline> {
+        self.timeline.as_ref()
+    }
+    /// <p>The location where the canary stored artifacts from the run. Artifacts include
+    /// the log file, screenshots, and HAR files.</p>
+    pub fn artifact_s3_location(&self) -> std::option::Option<&str> {
+        self.artifact_s3_location.as_deref()
+    }
+}
 impl std::fmt::Debug for CanaryRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CanaryRun");
@@ -995,6 +1171,16 @@ pub struct CanaryRunTimeline {
     /// <p>The end time of the run.</p>
     pub completed: std::option::Option<aws_smithy_types::Instant>,
 }
+impl CanaryRunTimeline {
+    /// <p>The start time of the run.</p>
+    pub fn started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started.as_ref()
+    }
+    /// <p>The end time of the run.</p>
+    pub fn completed(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed.as_ref()
+    }
+}
 impl std::fmt::Debug for CanaryRunTimeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CanaryRunTimeline");
@@ -1067,6 +1253,24 @@ pub struct CanaryRunStatus {
     /// canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in
     /// CloudWatch Synthetics.</p>
     pub state_reason_code: std::option::Option<crate::model::CanaryRunStateReasonCode>,
+}
+impl CanaryRunStatus {
+    /// <p>The current state of the run.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CanaryRunState> {
+        self.state.as_ref()
+    }
+    /// <p>If run of the canary failed, this field contains the reason for the error.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the
+    /// canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in
+    /// CloudWatch Synthetics.</p>
+    pub fn state_reason_code(
+        &self,
+    ) -> std::option::Option<&crate::model::CanaryRunStateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
 }
 impl std::fmt::Debug for CanaryRunStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1311,6 +1515,92 @@ pub struct Canary {
     /// <p>A structure that contains the configuration for canary artifacts, including
     /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     pub artifact_config: std::option::Option<crate::model::ArtifactConfigOutput>,
+}
+impl Canary {
+    /// <p>The unique ID of this canary.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the canary.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This structure contains information about the canary's Lambda handler and
+    /// where its code is stored by CloudWatch Synthetics.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::CanaryCodeOutput> {
+        self.code.as_ref()
+    }
+    /// <p>The ARN of the IAM role used to run the canary. This role must include <code>lambda.amazonaws.com</code> as a principal in the trust
+    /// policy.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>A structure that contains information about how often the canary is to run, and when
+    /// these runs are to stop.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::CanaryScheduleOutput> {
+        self.schedule.as_ref()
+    }
+    /// <p>A structure that contains information about a canary run.</p>
+    pub fn run_config(&self) -> std::option::Option<&crate::model::CanaryRunConfigOutput> {
+        self.run_config.as_ref()
+    }
+    /// <p>The number of days to retain data about successful runs of this canary.</p>
+    pub fn success_retention_period_in_days(&self) -> std::option::Option<i32> {
+        self.success_retention_period_in_days
+    }
+    /// <p>The number of days to retain data about failed runs of this canary.</p>
+    pub fn failure_retention_period_in_days(&self) -> std::option::Option<i32> {
+        self.failure_retention_period_in_days
+    }
+    /// <p>A structure that contains information about the canary's status.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CanaryStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A structure that contains information about when the canary was created, modified, and
+    /// most recently run.</p>
+    pub fn timeline(&self) -> std::option::Option<&crate::model::CanaryTimeline> {
+        self.timeline.as_ref()
+    }
+    /// <p>The location in Amazon S3 where Synthetics stores artifacts from the runs of this
+    /// canary. Artifacts include the log file, screenshots, and HAR files.</p>
+    pub fn artifact_s3_location(&self) -> std::option::Option<&str> {
+        self.artifact_s3_location.as_deref()
+    }
+    /// <p>The ARN of the Lambda function that is used as your canary's engine. For more information
+    /// about Lambda ARN format, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources and Conditions for Lambda Actions</a>.</p>
+    pub fn engine_arn(&self) -> std::option::Option<&str> {
+        self.engine_arn.as_deref()
+    }
+    /// <p>Specifies the runtime version to use for the canary. For more information about
+    /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+    /// Canary Runtime Versions</a>.</p>
+    pub fn runtime_version(&self) -> std::option::Option<&str> {
+        self.runtime_version.as_deref()
+    }
+    /// <p>If this canary is to test an endpoint in a VPC, this structure contains
+    /// information about the subnets and security groups of the VPC endpoint.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
+    /// Running a Canary in a VPC</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigOutput> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run to use as the baseline for screenshots, and the coordinates
+    /// of any parts of the screen to ignore during the visual monitoring comparison.</p>
+    pub fn visual_reference(&self) -> std::option::Option<&crate::model::VisualReferenceOutput> {
+        self.visual_reference.as_ref()
+    }
+    /// <p>The list of key-value pairs that are associated with the canary.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A structure that contains the configuration for canary artifacts, including
+    /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+    pub fn artifact_config(&self) -> std::option::Option<&crate::model::ArtifactConfigOutput> {
+        self.artifact_config.as_ref()
+    }
 }
 impl std::fmt::Debug for Canary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1657,6 +1947,12 @@ pub struct ArtifactConfigOutput {
     /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     pub s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
 }
+impl ArtifactConfigOutput {
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
+    pub fn s3_encryption(&self) -> std::option::Option<&crate::model::S3EncryptionConfig> {
+        self.s3_encryption.as_ref()
+    }
+}
 impl std::fmt::Debug for ArtifactConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArtifactConfigOutput");
@@ -1711,6 +2007,16 @@ pub struct VisualReferenceOutput {
     pub base_screenshots: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
     /// <p>The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring comparisons during future runs of this canary.</p>
     pub base_canary_run_id: std::option::Option<std::string::String>,
+}
+impl VisualReferenceOutput {
+    /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
+    pub fn base_screenshots(&self) -> std::option::Option<&[crate::model::BaseScreenshot]> {
+        self.base_screenshots.as_deref()
+    }
+    /// <p>The ID of the canary run that produced the screenshots that are used as the baseline for visual monitoring comparisons during future runs of this canary.</p>
+    pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
+        self.base_canary_run_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VisualReferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1792,6 +2098,20 @@ pub struct VpcConfigOutput {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups for this canary.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfigOutput {
+    /// <p>The IDs of the VPC where this canary is to run.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The IDs of the subnets where this canary is to run.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The IDs of the security groups for this canary.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for VpcConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1890,6 +2210,24 @@ pub struct CanaryTimeline {
     pub last_started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the canary's most recent run ended.</p>
     pub last_stopped: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CanaryTimeline {
+    /// <p>The date and time the canary was created.</p>
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created.as_ref()
+    }
+    /// <p>The date and time the canary was most recently modified.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The date and time that the canary's most recent run started.</p>
+    pub fn last_started(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_started.as_ref()
+    }
+    /// <p>The date and time that the canary's most recent run ended.</p>
+    pub fn last_stopped(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_stopped.as_ref()
+    }
 }
 impl std::fmt::Debug for CanaryTimeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1993,6 +2331,20 @@ pub struct CanaryStatus {
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
     pub state_reason_code: std::option::Option<crate::model::CanaryStateReasonCode>,
+}
+impl CanaryStatus {
+    /// <p>The current state of the canary.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CanaryState> {
+        self.state.as_ref()
+    }
+    /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
+    pub fn state_reason(&self) -> std::option::Option<&str> {
+        self.state_reason.as_deref()
+    }
+    /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
+    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::CanaryStateReasonCode> {
+        self.state_reason_code.as_ref()
+    }
 }
 impl std::fmt::Debug for CanaryStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2213,6 +2565,21 @@ pub struct CanaryRunConfigOutput {
     /// <p>Displays whether this canary run used active X-Ray tracing. </p>
     pub active_tracing: std::option::Option<bool>,
 }
+impl CanaryRunConfigOutput {
+    /// <p>How long the canary is allowed to run before it must stop.</p>
+    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+        self.timeout_in_seconds
+    }
+    /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value
+    /// must be a multiple of 64.</p>
+    pub fn memory_in_mb(&self) -> std::option::Option<i32> {
+        self.memory_in_mb
+    }
+    /// <p>Displays whether this canary run used active X-Ray tracing. </p>
+    pub fn active_tracing(&self) -> std::option::Option<bool> {
+        self.active_tracing
+    }
+}
 impl std::fmt::Debug for CanaryRunConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CanaryRunConfigOutput");
@@ -2306,6 +2673,31 @@ pub struct CanaryScheduleOutput {
     /// was created. The runs are performed according to the schedule in the
     /// <code>Expression</code> value.</p>
     pub duration_in_seconds: std::option::Option<i64>,
+}
+impl CanaryScheduleOutput {
+    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
+    /// <p>For a rate expression, The syntax is
+    /// <code>rate(<i>number unit</i>)</code>. <i>unit</i>
+    /// can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
+    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every
+    /// 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can
+    /// specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
+    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value
+    /// that causes the
+    /// canary to run only once when it is started.</p>
+    /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+    /// expression. For information about the syntax for cron expressions, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+    /// Scheduling canary runs using cron</a>.</p>
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    /// <p>How long, in seconds, for the canary to continue making regular runs after it
+    /// was created. The runs are performed according to the schedule in the
+    /// <code>Expression</code> value.</p>
+    pub fn duration_in_seconds(&self) -> std::option::Option<i64> {
+        self.duration_in_seconds
+    }
 }
 impl std::fmt::Debug for CanaryScheduleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2401,6 +2793,16 @@ pub struct CanaryCodeOutput {
     /// <p>The entry point to use for the source code when running the canary.</p>
     pub handler: std::option::Option<std::string::String>,
 }
+impl CanaryCodeOutput {
+    /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
+    pub fn source_location_arn(&self) -> std::option::Option<&str> {
+        self.source_location_arn.as_deref()
+    }
+    /// <p>The entry point to use for the source code when running the canary.</p>
+    pub fn handler(&self) -> std::option::Option<&str> {
+        self.handler.as_deref()
+    }
+}
 impl std::fmt::Debug for CanaryCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CanaryCodeOutput");
@@ -2474,6 +2876,26 @@ pub struct RuntimeVersion {
     pub release_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
     pub deprecation_date: std::option::Option<aws_smithy_types::Instant>,
+}
+impl RuntimeVersion {
+    /// <p>The name of the runtime version. For a list of valid runtime versions,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+    /// Canary Runtime Versions</a>.</p>
+    pub fn version_name(&self) -> std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
+    /// <p>A description of the runtime version, created by Amazon.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The date that the runtime version was released.</p>
+    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.release_date.as_ref()
+    }
+    /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
+    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.deprecation_date.as_ref()
+    }
 }
 impl std::fmt::Debug for RuntimeVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2573,6 +2995,16 @@ pub struct CanaryLastRun {
     pub canary_name: std::option::Option<std::string::String>,
     /// <p>The results from this canary's most recent run.</p>
     pub last_run: std::option::Option<crate::model::CanaryRun>,
+}
+impl CanaryLastRun {
+    /// <p>The name of the canary.</p>
+    pub fn canary_name(&self) -> std::option::Option<&str> {
+        self.canary_name.as_deref()
+    }
+    /// <p>The results from this canary's most recent run.</p>
+    pub fn last_run(&self) -> std::option::Option<&crate::model::CanaryRun> {
+        self.last_run.as_ref()
+    }
 }
 impl std::fmt::Debug for CanaryLastRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

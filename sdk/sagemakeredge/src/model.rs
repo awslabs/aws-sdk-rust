@@ -14,6 +14,28 @@ pub struct Model {
     /// <p>Information required for model metrics.</p>
     pub model_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
 }
+impl Model {
+    /// <p>The name of the model.</p>
+    pub fn model_name(&self) -> std::option::Option<&str> {
+        self.model_name.as_deref()
+    }
+    /// <p>The version of the model.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The timestamp of the last data sample taken.</p>
+    pub fn latest_sample_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_sample_time.as_ref()
+    }
+    /// <p>The timestamp of the last inference that was made.</p>
+    pub fn latest_inference(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.latest_inference.as_ref()
+    }
+    /// <p>Information required for model metrics.</p>
+    pub fn model_metrics(&self) -> std::option::Option<&[crate::model::EdgeMetric]> {
+        self.model_metrics.as_deref()
+    }
+}
 impl std::fmt::Debug for Model {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Model");
@@ -137,6 +159,24 @@ pub struct EdgeMetric {
     pub value: f64,
     /// <p>Timestamp of when the metric was requested.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl EdgeMetric {
+    /// <p>The dimension of metrics published.</p>
+    pub fn dimension(&self) -> std::option::Option<&str> {
+        self.dimension.as_deref()
+    }
+    /// <p>Returns the name of the metric.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>Returns the value of the metric.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+    /// <p>Timestamp of when the metric was requested.</p>
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.timestamp.as_ref()
+    }
 }
 impl std::fmt::Debug for EdgeMetric {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -123,7 +123,7 @@ impl AttachManagedPolicyToPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_managed_policy_to_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_attach_managed_policy_to_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -350,10 +350,7 @@ impl CreateAccountAssignmentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_account_assignment(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -537,7 +534,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_instance_access_control_attribute_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_instance_access_control_attribute_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -768,10 +765,7 @@ impl CreatePermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_permission_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_permission_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -995,10 +989,7 @@ impl DeleteAccountAssignmentInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_account_assignment(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1167,7 +1158,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_inline_policy_from_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_inline_policy_from_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1322,7 +1313,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_instance_access_control_attribute_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_instance_access_control_attribute_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1492,10 +1483,7 @@ impl DeletePermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_permission_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_permission_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1667,7 +1655,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_creation_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_creation_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1840,7 +1828,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_deletion_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_deletion_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1995,7 +1983,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_access_control_attribute_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_instance_access_control_attribute_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2166,10 +2154,7 @@ impl DescribePermissionSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_permission_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2343,7 +2328,7 @@ impl DescribePermissionSetProvisioningStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_permission_set_provisioning_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_permission_set_provisioning_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2530,7 +2515,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_managed_policy_from_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_detach_managed_policy_from_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2699,7 +2684,7 @@ impl GetInlinePolicyForPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_inline_policy_for_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_inline_policy_for_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2893,7 +2878,7 @@ impl ListAccountAssignmentCreationStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_creation_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_creation_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3087,7 +3072,7 @@ impl ListAccountAssignmentDeletionStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_deletion_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_deletion_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3293,10 +3278,7 @@ impl ListAccountAssignmentsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_account_assignments(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3506,7 +3488,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_accounts_for_provisioned_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_accounts_for_provisioned_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3668,10 +3650,7 @@ impl ListInstancesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3865,7 +3844,7 @@ impl ListManagedPoliciesInPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_managed_policies_in_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_managed_policies_in_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4059,7 +4038,7 @@ impl ListPermissionSetProvisioningStatusInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_set_provisioning_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_permission_set_provisioning_status(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4236,10 +4215,7 @@ impl ListPermissionSetsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4444,7 +4420,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets_provisioned_to_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets_provisioned_to_account(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4621,10 +4597,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4820,10 +4795,7 @@ impl ProvisionPermissionSetInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_provision_permission_set(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5006,7 +4978,7 @@ impl PutInlinePolicyToPermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_inline_policy_to_permission_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_inline_policy_to_permission_set(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5191,10 +5163,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5378,10 +5347,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5555,7 +5521,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_instance_access_control_attribute_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_instance_access_control_attribute_configuration(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5768,10 +5734,7 @@ impl UpdatePermissionSetInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_permission_set(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_permission_set(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5851,6 +5814,31 @@ pub struct UpdatePermissionSetInput {
     /// process.</p>
     pub relay_state: std::option::Option<std::string::String>,
 }
+impl UpdatePermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The description of the <a>PermissionSet</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The length of time that the application user sessions are valid for in the ISO-8601
+    /// standard.</p>
+    pub fn session_duration(&self) -> std::option::Option<&str> {
+        self.session_duration.as_deref()
+    }
+    /// <p>Used to redirect users within the application during the federation authentication
+    /// process.</p>
+    pub fn relay_state(&self) -> std::option::Option<&str> {
+        self.relay_state.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdatePermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePermissionSetInput");
@@ -5872,6 +5860,19 @@ pub struct UpdateInstanceAccessControlAttributeConfigurationInput {
     /// <p>Updates the attributes for your ABAC configuration.</p>
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+}
+impl UpdateInstanceAccessControlAttributeConfigurationInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>Updates the attributes for your ABAC configuration.</p>
+    pub fn instance_access_control_attribute_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
+        self.instance_access_control_attribute_configuration
+            .as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateInstanceAccessControlAttributeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5898,6 +5899,21 @@ pub struct UntagResourceInput {
     /// <p>The keys of tags that are attached to the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the resource with the tags to be listed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of tags that are attached to the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -5920,6 +5936,21 @@ pub struct TagResourceInput {
     /// <p>A set of key-value pairs that are used to manage the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the resource with the tags to be listed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A set of key-value pairs that are used to manage the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -5941,6 +5972,21 @@ pub struct PutInlinePolicyToPermissionSetInput {
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
     pub inline_policy: std::option::Option<std::string::String>,
+}
+impl PutInlinePolicyToPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+    pub fn inline_policy(&self) -> std::option::Option<&str> {
+        self.inline_policy.as_deref()
+    }
 }
 impl std::fmt::Debug for PutInlinePolicyToPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5966,6 +6012,25 @@ pub struct ProvisionPermissionSetInput {
     /// <p>The entity type for which the assignment will be created.</p>
     pub target_type: std::option::Option<crate::model::ProvisionTargetType>,
 }
+impl ProvisionPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The entity type for which the assignment will be created.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::ProvisionTargetType> {
+        self.target_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ProvisionPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProvisionPermissionSetInput");
@@ -5988,6 +6053,21 @@ pub struct ListTagsForResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the resource with the tags to be listed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6015,6 +6095,29 @@ pub struct ListPermissionSetsProvisionedToAccountInput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListPermissionSetsProvisionedToAccountInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The status object for the permission set provisioning operation.</p>
+    pub fn provisioning_status(&self) -> std::option::Option<&crate::model::ProvisioningStatus> {
+        self.provisioning_status.as_ref()
+    }
+    /// <p>The maximum number of results to display for the assignment.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListPermissionSetsProvisionedToAccountInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPermissionSetsProvisionedToAccountInput");
@@ -6039,6 +6142,21 @@ pub struct ListPermissionSetsInput {
     /// <p>The maximum number of results to display for the assignment.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListPermissionSetsInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to display for the assignment.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListPermissionSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPermissionSetsInput");
@@ -6062,6 +6180,25 @@ pub struct ListPermissionSetProvisioningStatusInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results based on the passed attribute value.</p>
     pub filter: std::option::Option<crate::model::OperationStatusFilter>,
+}
+impl ListPermissionSetProvisioningStatusInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The maximum number of results to display for the assignment.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters results based on the passed attribute value.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::OperationStatusFilter> {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ListPermissionSetProvisioningStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6089,6 +6226,26 @@ pub struct ListManagedPoliciesInPermissionSetInput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListManagedPoliciesInPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
+    /// listed.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListManagedPoliciesInPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListManagedPoliciesInPermissionSetInput");
@@ -6108,6 +6265,16 @@ pub struct ListInstancesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInstancesInput {
+    /// <p>The maximum number of results to display for the instance.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInstancesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6134,6 +6301,30 @@ pub struct ListAccountsForProvisionedPermissionSetInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAccountsForProvisionedPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts
+    /// will be listed.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
+    pub fn provisioning_status(&self) -> std::option::Option<&crate::model::ProvisioningStatus> {
+        self.provisioning_status.as_ref()
+    }
+    /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListAccountsForProvisionedPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6163,6 +6354,29 @@ pub struct ListAccountAssignmentsInput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAccountAssignmentsInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The ARN of the permission set from which to list assignments.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The maximum number of results to display for the assignment.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAccountAssignmentsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountAssignmentsInput");
@@ -6189,6 +6403,25 @@ pub struct ListAccountAssignmentDeletionStatusInput {
     /// <p>Filters results based on the passed attribute value.</p>
     pub filter: std::option::Option<crate::model::OperationStatusFilter>,
 }
+impl ListAccountAssignmentDeletionStatusInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The maximum number of results to display for the assignment.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters results based on the passed attribute value.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::OperationStatusFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAccountAssignmentDeletionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountAssignmentDeletionStatusInput");
@@ -6214,6 +6447,25 @@ pub struct ListAccountAssignmentCreationStatusInput {
     /// <p>Filters results based on the passed attribute value.</p>
     pub filter: std::option::Option<crate::model::OperationStatusFilter>,
 }
+impl ListAccountAssignmentCreationStatusInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The maximum number of results to display for the assignment.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Filters results based on the passed attribute value.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::OperationStatusFilter> {
+        self.filter.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAccountAssignmentCreationStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountAssignmentCreationStatusInput");
@@ -6234,6 +6486,17 @@ pub struct GetInlinePolicyForPermissionSetInput {
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set.</p>
     pub permission_set_arn: std::option::Option<std::string::String>,
+}
+impl GetInlinePolicyForPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetInlinePolicyForPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6257,6 +6520,22 @@ pub struct DetachManagedPolicyFromPermissionSetInput {
     /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
     pub managed_policy_arn: std::option::Option<std::string::String>,
 }
+impl DetachManagedPolicyFromPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be
+    /// detached.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
+    pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
+        self.managed_policy_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DetachManagedPolicyFromPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetachManagedPolicyFromPermissionSetInput");
@@ -6277,6 +6556,18 @@ pub struct DescribePermissionSetProvisioningStatusInput {
     /// <p>The identifier that is provided by the <a>ProvisionPermissionSet</a> call to
     /// retrieve the current status of the provisioning workflow.</p>
     pub provision_permission_set_request_id: std::option::Option<std::string::String>,
+}
+impl DescribePermissionSetProvisioningStatusInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The identifier that is provided by the <a>ProvisionPermissionSet</a> call to
+    /// retrieve the current status of the provisioning workflow.</p>
+    pub fn provision_permission_set_request_id(&self) -> std::option::Option<&str> {
+        self.provision_permission_set_request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribePermissionSetProvisioningStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6300,6 +6591,17 @@ pub struct DescribePermissionSetInput {
     /// <p>The ARN of the permission set.</p>
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
+impl DescribePermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribePermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePermissionSetInput");
@@ -6315,6 +6617,12 @@ impl std::fmt::Debug for DescribePermissionSetInput {
 pub struct DescribeInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
     pub instance_arn: std::option::Option<std::string::String>,
+}
+impl DescribeInstanceAccessControlAttributeConfigurationInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeInstanceAccessControlAttributeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6334,6 +6642,17 @@ pub struct DescribeAccountAssignmentDeletionStatusInput {
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The identifier that is used to track the request operation progress.</p>
     pub account_assignment_deletion_request_id: std::option::Option<std::string::String>,
+}
+impl DescribeAccountAssignmentDeletionStatusInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The identifier that is used to track the request operation progress.</p>
+    pub fn account_assignment_deletion_request_id(&self) -> std::option::Option<&str> {
+        self.account_assignment_deletion_request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountAssignmentDeletionStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6357,6 +6676,17 @@ pub struct DescribeAccountAssignmentCreationStatusInput {
     /// <p>The identifier that is used to track the request operation progress.</p>
     pub account_assignment_creation_request_id: std::option::Option<std::string::String>,
 }
+impl DescribeAccountAssignmentCreationStatusInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The identifier that is used to track the request operation progress.</p>
+    pub fn account_assignment_creation_request_id(&self) -> std::option::Option<&str> {
+        self.account_assignment_creation_request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAccountAssignmentCreationStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAccountAssignmentCreationStatusInput");
@@ -6379,6 +6709,17 @@ pub struct DeletePermissionSetInput {
     /// <p>The ARN of the permission set that should be deleted.</p>
     pub permission_set_arn: std::option::Option<std::string::String>,
 }
+impl DeletePermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set that should be deleted.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for DeletePermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePermissionSetInput");
@@ -6394,6 +6735,12 @@ impl std::fmt::Debug for DeletePermissionSetInput {
 pub struct DeleteInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
     pub instance_arn: std::option::Option<std::string::String>,
+}
+impl DeleteInstanceAccessControlAttributeConfigurationInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInstanceAccessControlAttributeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6413,6 +6760,17 @@ pub struct DeleteInlinePolicyFromPermissionSetInput {
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the permission set that will be used to remove access.</p>
     pub permission_set_arn: std::option::Option<std::string::String>,
+}
+impl DeleteInlinePolicyFromPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the permission set that will be used to remove access.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInlinePolicyFromPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6440,6 +6798,33 @@ pub struct DeleteAccountAssignmentInput {
     pub principal_type: std::option::Option<crate::model::PrincipalType>,
     /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
     pub principal_id: std::option::Option<std::string::String>,
+}
+impl DeleteAccountAssignmentInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The entity type for which the assignment will be deleted.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The ARN of the permission set that will be used to remove access.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The entity type for which the assignment will be deleted.</p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
+    }
+    /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteAccountAssignmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6474,6 +6859,35 @@ pub struct CreatePermissionSetInput {
     /// <p>The tags to attach to the new <a>PermissionSet</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreatePermissionSetInput {
+    /// <p>The name of the <a>PermissionSet</a>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the <a>PermissionSet</a>.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The length of time that the application user sessions are valid in the ISO-8601
+    /// standard.</p>
+    pub fn session_duration(&self) -> std::option::Option<&str> {
+        self.session_duration.as_deref()
+    }
+    /// <p>Used to redirect users within the application during the federation authentication
+    /// process.</p>
+    pub fn relay_state(&self) -> std::option::Option<&str> {
+        self.relay_state.as_deref()
+    }
+    /// <p>The tags to attach to the new <a>PermissionSet</a>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreatePermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePermissionSetInput");
@@ -6501,6 +6915,24 @@ pub struct CreateInstanceAccessControlAttributeConfigurationInput {
     /// store.</p>
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+}
+impl CreateInstanceAccessControlAttributeConfigurationInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration.
+    /// When using an external identity provider as an identity source, you can pass attributes
+    /// through the SAML assertion. Doing so provides an alternative to configuring attributes from
+    /// the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services
+    /// SSO will replace the attribute value with the value from the Amazon Web Services SSO identity
+    /// store.</p>
+    pub fn instance_access_control_attribute_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
+        self.instance_access_control_attribute_configuration
+            .as_ref()
+    }
 }
 impl std::fmt::Debug for CreateInstanceAccessControlAttributeConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6534,6 +6966,34 @@ pub struct CreateAccountAssignmentInput {
     /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
     pub principal_id: std::option::Option<std::string::String>,
 }
+impl CreateAccountAssignmentInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    pub fn target_id(&self) -> std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The entity type for which the assignment will be created.</p>
+    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The ARN of the permission set that the admin wants to grant the principal access
+    /// to.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The entity type for which the assignment will be created.</p>
+    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+        self.principal_type.as_ref()
+    }
+    /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
+    pub fn principal_id(&self) -> std::option::Option<&str> {
+        self.principal_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAccountAssignmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountAssignmentInput");
@@ -6559,6 +7019,22 @@ pub struct AttachManagedPolicyToPermissionSetInput {
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
     pub managed_policy_arn: std::option::Option<std::string::String>,
+}
+impl AttachManagedPolicyToPermissionSetInput {
+    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+    /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the <a>PermissionSet</a> that the managed policy should be attached
+    /// to.</p>
+    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+        self.permission_set_arn.as_deref()
+    }
+    /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
+    pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
+        self.managed_policy_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachManagedPolicyToPermissionSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

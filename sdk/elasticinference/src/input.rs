@@ -122,7 +122,7 @@ impl DescribeAcceleratorOfferingsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_offerings(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -346,10 +346,7 @@ impl DescribeAcceleratorsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_accelerators(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_accelerators(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -815,10 +812,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1078,6 +1072,20 @@ pub struct UntagResourceInput {
     /// </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>
+    /// The ARN of the Elastic Inference Accelerator to untag.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// The list of tags to remove from the Elastic Inference Accelerator.
+    /// </p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -1101,6 +1109,23 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>
+    /// The ARN of the Elastic Inference Accelerator to tag.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>
+    /// The tags to add to the Elastic Inference Accelerator.
+    /// </p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -1118,6 +1143,14 @@ pub struct ListTagsForResourceInput {
     /// The ARN of the Elastic Inference Accelerator to list the tags for.
     /// </p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>
+    /// The ARN of the Elastic Inference Accelerator to list the tags for.
+    /// </p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1163,6 +1196,36 @@ pub struct DescribeAcceleratorsInput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeAcceleratorsInput {
+    /// <p>
+    /// The IDs of the accelerators to describe.
+    /// </p>
+    pub fn accelerator_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.accelerator_ids.as_deref()
+    }
+    /// <p>
+    /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
+    /// accelerator-types: can provide a list of accelerator type names to filter for.
+    /// instance-id: can provide a list of EC2 instance ids to filter for.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>
+    /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
+    /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
+    /// Do not use the NextToken response element directly outside of the AWS CLI.
+    /// </p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>
+    /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+    /// </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeAcceleratorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAcceleratorsInput");
@@ -1189,6 +1252,23 @@ pub struct DescribeAcceleratorOfferingsInput {
     /// The list of accelerator types to describe.
     /// </p>
     pub accelerator_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DescribeAcceleratorOfferingsInput {
+    /// <p>
+    /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
+    /// region: will return the accelerator type offering at the regional level.
+    /// availability-zone: will return the accelerator type offering at the availability zone level.
+    /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
+    /// </p>
+    pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
+        self.location_type.as_ref()
+    }
+    /// <p>
+    /// The list of accelerator types to describe.
+    /// </p>
+    pub fn accelerator_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.accelerator_types.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAcceleratorOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

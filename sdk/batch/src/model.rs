@@ -19,6 +19,18 @@ pub struct ComputeEnvironmentOrder {
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment: std::option::Option<std::string::String>,
 }
+impl ComputeEnvironmentOrder {
+    /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two
+    /// compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer
+    /// value is tried for job placement first.</p>
+    pub fn order(&self) -> i32 {
+        self.order
+    }
+    /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    pub fn compute_environment(&self) -> std::option::Option<&str> {
+        self.compute_environment.as_deref()
+    }
+}
 impl std::fmt::Debug for ComputeEnvironmentOrder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComputeEnvironmentOrder");
@@ -171,6 +183,48 @@ pub struct ComputeResourceUpdate {
     /// EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
     /// made.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ComputeResourceUpdate {
+    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn minv_cpus(&self) -> i32 {
+        self.minv_cpus
+    }
+    /// <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+    /// <note>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies,
+    /// Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
+    /// exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among
+    /// those specified in your compute environment.</p>
+    /// </note>
+    pub fn maxv_cpus(&self) -> i32 {
+        self.maxv_cpus
+    }
+    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn desiredv_cpus(&self) -> i32 {
+        self.desiredv_cpus
+    }
+    /// <p>The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
+    /// subnets. Providing an empty list will be handled as if this parameter wasn't specified and no change is made. This
+    /// can't be specified for EC2 compute resources. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon VPC User
+    /// Guide</i>.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
+    /// required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
+    /// EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no change is
+    /// made.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for ComputeResourceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -386,6 +440,13 @@ pub struct JobTimeout {
     /// Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
     pub attempt_duration_seconds: i32,
 }
+impl JobTimeout {
+    /// <p>The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which
+    /// Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.</p>
+    pub fn attempt_duration_seconds(&self) -> i32 {
+        self.attempt_duration_seconds
+    }
+}
 impl std::fmt::Debug for JobTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobTimeout");
@@ -440,6 +501,19 @@ pub struct RetryStrategy {
     /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
     /// parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
     pub evaluate_on_exit: std::option::Option<std::vec::Vec<crate::model::EvaluateOnExit>>,
+}
+impl RetryStrategy {
+    /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10
+    /// attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
+    /// attempts as the value.</p>
+    pub fn attempts(&self) -> i32 {
+        self.attempts
+    }
+    /// <p>Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+    /// parameter is specified, then the <code>attempts</code> parameter must also be specified.</p>
+    pub fn evaluate_on_exit(&self) -> std::option::Option<&[crate::model::EvaluateOnExit]> {
+        self.evaluate_on_exit.as_deref()
+    }
 }
 impl std::fmt::Debug for RetryStrategy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -533,6 +607,33 @@ pub struct EvaluateOnExit {
     /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
     /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
     pub action: std::option::Option<crate::model::RetryAction>,
+}
+impl EvaluateOnExit {
+    /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can be up
+    /// to 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including
+    /// spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
+    /// match.</p>
+    pub fn on_status_reason(&self) -> std::option::Option<&str> {
+        self.on_status_reason.as_deref()
+    }
+    /// <p>Contains a glob pattern to match against the <code>Reason</code> returned for a job. The pattern can be up to
+    /// 512 characters in length. It can contain letters, numbers, periods (.), colons (:), and white space (including spaces
+    /// and tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact
+    /// match.</p>
+    pub fn on_reason(&self) -> std::option::Option<&str> {
+        self.on_reason.as_deref()
+    }
+    /// <p>Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code> returned for a
+    /// job. The pattern can be up to 512 characters in length. It can contain only numbers, and can optionally end with an
+    /// asterisk (*) so that only the start of the string needs to be an exact match.</p>
+    pub fn on_exit_code(&self) -> std::option::Option<&str> {
+        self.on_exit_code.as_deref()
+    }
+    /// <p>Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
+    /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case sensitive.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::RetryAction> {
+        self.action.as_ref()
+    }
 }
 impl std::fmt::Debug for EvaluateOnExit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -720,6 +821,33 @@ pub struct NodeOverrides {
     pub node_property_overrides:
         std::option::Option<std::vec::Vec<crate::model::NodePropertyOverride>>,
 }
+impl NodeOverrides {
+    /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are
+    /// specified in the job definition. To use this override:</p>
+    /// <ul>
+    /// <li>
+    /// <p>There must be at least one node range in your job definition that has an open upper boundary (such as
+    /// <code>:</code> or <code>n:</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>The lower boundary of the node range specified in the job definition must be fewer than the number of nodes
+    /// specified in the override.</p>
+    /// </li>
+    /// <li>
+    /// <p>The main node index specified in the job definition must be fewer than the number of nodes specified in the
+    /// override.</p>
+    /// </li>
+    /// </ul>
+    pub fn num_nodes(&self) -> i32 {
+        self.num_nodes
+    }
+    /// <p>The node property overrides for the job.</p>
+    pub fn node_property_overrides(
+        &self,
+    ) -> std::option::Option<&[crate::model::NodePropertyOverride]> {
+        self.node_property_overrides.as_deref()
+    }
+}
 impl std::fmt::Debug for NodeOverrides {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeOverrides");
@@ -829,6 +957,19 @@ pub struct NodePropertyOverride {
     pub target_nodes: std::option::Option<std::string::String>,
     /// <p>The overrides that should be sent to a node range.</p>
     pub container_overrides: std::option::Option<crate::model::ContainerOverrides>,
+}
+impl NodePropertyOverride {
+    /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates
+    /// nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted
+    /// (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted
+    /// (<code>n:</code>), then the highest possible node index is used to end the range.</p>
+    pub fn target_nodes(&self) -> std::option::Option<&str> {
+        self.target_nodes.as_deref()
+    }
+    /// <p>The overrides that should be sent to a node range.</p>
+    pub fn container_overrides(&self) -> std::option::Option<&crate::model::ContainerOverrides> {
+        self.container_overrides.as_ref()
+    }
 }
 impl std::fmt::Debug for NodePropertyOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -942,6 +1083,66 @@ pub struct ContainerOverrides {
     /// The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub resource_requirements:
         std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
+}
+impl ContainerOverrides {
+    /// <p>This parameter indicates the number of vCPUs reserved for the container.It overrides the <code>vcpus</code>
+    /// parameter that's set in the job definition, but doesn't override any vCPU requirement specified in the
+    /// <code>resourceRequirement</code> structure in the job definition. To override vCPU requirements that are specified
+    /// in the <code>ResourceRequirement</code> structure in the job definition, <code>ResourceRequirement</code> must be
+    /// specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code> and
+    /// <code>value</code> set to the new value.</p>
+    /// <p>This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+    /// Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
+    /// <note>
+    /// <p>This parameter is supported for jobs that run on EC2 resources, but isn't supported for jobs that run on
+    /// Fargate resources. For Fargate resources, you can only use <code>resourceRequirement</code>. For EC2 resources,
+    /// you can use either this parameter or <code>resourceRequirement</code> but not both.</p>
+    /// </note>
+    pub fn vcpus(&self) -> i32 {
+        self.vcpus
+    }
+    /// <p>This parameter indicates the amount of memory (in MiB) that's reserved for the job. It overrides the
+    /// <code>memory</code> parameter set in the job definition, but doesn't override any memory requirement specified in
+    /// the <code>ResourceRequirement</code> structure in the job definition. To override memory requirements that are
+    /// specified in the <code>ResourceRequirement</code> structure in the job definition, <code>ResourceRequirement</code>
+    /// must be specified in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code> and
+    /// <code>value</code> set to the new value.</p>
+    /// <p>This parameter is supported for jobs that run on EC2 resources, but isn't supported for jobs that run on Fargate
+    /// resources. For these resources, use <code>resourceRequirement</code> instead.</p>
+    pub fn memory(&self) -> i32 {
+        self.memory
+    }
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the job
+    /// definition.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The instance type to use for a multi-node parallel job.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
+    /// shouldn't be provided.</p>
+    /// </note>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to
+    /// the container at launch, or you can override the existing environment variables from the Docker image or the job
+    /// definition.</p>
+    /// <note>
+    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+    /// convention is reserved for variables that are set by the Batch service.</p>
+    /// </note>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.environment.as_deref()
+    }
+    /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition.
+    /// The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    pub fn resource_requirements(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
+        self.resource_requirements.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainerOverrides {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1273,6 +1474,133 @@ pub struct ResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>,
     /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub r#type: std::option::Option<crate::model::ResourceType>,
+}
+impl ResourceRequirement {
+    /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the
+    /// <code>type</code> specified.</p>
+    /// <dl>
+    /// <dt>type="GPU"</dt>
+    /// <dd>
+    /// <p>The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a
+    /// job shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.</p>
+    /// <note>
+    /// <p>GPUs are not available for jobs that are running on Fargate resources.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>type="MEMORY"</dt>
+    /// <dd>
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are
+    /// running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+    /// This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+    /// You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for
+    /// multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
+    /// <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+    /// <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <note>
+    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for
+    /// a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+    /// Management</a> in the <i>Batch User Guide</i>.</p>
+    /// </note>
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and
+    /// must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for
+    /// that memory value.</p>
+    /// <dl>
+    /// <dt>value = 512</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 0.25</p>
+    /// </dd>
+    /// <dt>value = 1024</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 0.25 or 0.5</p>
+    /// </dd>
+    /// <dt>value = 2048</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 0.25, 0.5, or 1</p>
+    /// </dd>
+    /// <dt>value = 3072</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 0.5, or 1</p>
+    /// </dd>
+    /// <dt>value = 4096</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 0.5, 1, or 2</p>
+    /// </dd>
+    /// <dt>value = 5120, 6144, or 7168</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 1 or 2</p>
+    /// </dd>
+    /// <dt>value = 8192</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 1, 2, or 4</p>
+    /// </dd>
+    /// <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 2 or 4</p>
+    /// </dd>
+    /// <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt>
+    /// <dd>
+    /// <p>
+    /// <code>VCPU</code> = 4</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// <dt>type="VCPU"</dt>
+    /// <dd>
+    /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to
+    /// <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2
+    /// resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be
+    /// specified for each node at least once.</p>
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported
+    /// values and the <code>MEMORY</code> values must be one of the values supported for that VCPU value. The supported
+    /// values are 0.25, 0.5, 1, 2, and 4</p>
+    /// <dl>
+    /// <dt>value = 0.25</dt>
+    /// <dd>
+    /// <p>
+    /// <code>MEMORY</code> = 512, 1024, or 2048</p>
+    /// </dd>
+    /// <dt>value = 0.5</dt>
+    /// <dd>
+    /// <p>
+    /// <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
+    /// </dd>
+    /// <dt>value = 1</dt>
+    /// <dd>
+    /// <p>
+    /// <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+    /// </dd>
+    /// <dt>value = 2</dt>
+    /// <dd>
+    /// <p>
+    /// <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
+    /// </dd>
+    /// <dt>value = 4</dt>
+    /// <dd>
+    /// <p>
+    /// <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456,
+    /// 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
+    /// </dd>
+    /// </dl>
+    /// </dd>
+    /// </dl>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>,
+    /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for ResourceRequirement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1631,6 +1959,17 @@ pub struct KeyValuePair {
     /// variable.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl KeyValuePair {
+    /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The value of the key-value pair. For environment variables, this is the value of the environment
+    /// variable.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for KeyValuePair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyValuePair");
@@ -1695,6 +2034,16 @@ pub struct JobDependency {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The type of the job dependency.</p>
     pub r#type: std::option::Option<crate::model::ArrayJobDependency>,
+}
+impl JobDependency {
+    /// <p>The job ID of the Batch job associated with this dependency.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The type of the job dependency.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::ArrayJobDependency> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for JobDependency {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1815,6 +2164,12 @@ pub struct ArrayProperties {
     /// <p>The size of the array job.</p>
     pub size: i32,
 }
+impl ArrayProperties {
+    /// <p>The size of the array job.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+}
 impl std::fmt::Debug for ArrayProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArrayProperties");
@@ -1923,6 +2278,21 @@ pub struct NodeProperties {
     /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
     pub node_range_properties: std::option::Option<std::vec::Vec<crate::model::NodeRangeProperty>>,
 }
+impl NodeProperties {
+    /// <p>The number of nodes associated with a multi-node parallel job.</p>
+    pub fn num_nodes(&self) -> i32 {
+        self.num_nodes
+    }
+    /// <p>Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer
+    /// than the number of nodes.</p>
+    pub fn main_node(&self) -> i32 {
+        self.main_node
+    }
+    /// <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>
+    pub fn node_range_properties(&self) -> std::option::Option<&[crate::model::NodeRangeProperty]> {
+        self.node_range_properties.as_deref()
+    }
+}
 impl std::fmt::Debug for NodeProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodeProperties");
@@ -2018,6 +2388,21 @@ pub struct NodeRangeProperty {
     pub target_nodes: std::option::Option<std::string::String>,
     /// <p>The container details for the node range.</p>
     pub container: std::option::Option<crate::model::ContainerProperties>,
+}
+impl NodeRangeProperty {
+    /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of
+    /// <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code>
+    /// is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node
+    /// index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can
+    /// nest node ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the <code>4:5</code> range
+    /// properties override the <code>0:10</code> properties.</p>
+    pub fn target_nodes(&self) -> std::option::Option<&str> {
+        self.target_nodes.as_deref()
+    }
+    /// <p>The container details for the node range.</p>
+    pub fn container(&self) -> std::option::Option<&crate::model::ContainerProperties> {
+        self.container.as_ref()
+    }
 }
 impl std::fmt::Debug for NodeRangeProperty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2247,6 +2632,208 @@ pub struct ContainerProperties {
     /// resources must not specify this parameter.</p>
     pub fargate_platform_configuration:
         std::option::Option<crate::model::FargatePlatformConfiguration>,
+}
+impl ContainerProperties {
+    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
+    /// Hub registry are available by default. Other repositories are specified with
+    /// <code>
+    /// <i>repository-url</i>/<i>image</i>:<i>tag</i>
+    /// </code>.
+    /// Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
+    /// periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of
+    /// the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
+    /// run</a>.</p>
+    /// <note>
+    /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled
+    /// on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>Images in Amazon ECR repositories use the full registry and repository URI (for example,
+    /// <code>012345678910.dkr.ecr.<region-name>.amazonaws.com/<repository-name></code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code> or
+    /// <code>mongo</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>Images in other repositories on Docker Hub are qualified with an organization name (for example,
+    /// <code>amazon/amazon-ecs-agent</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>Images in other online repositories are qualified further by a domain name (for example,
+    /// <code>quay.io/assemblyline/ubuntu</code>).</p>
+    /// </li>
+    /// </ul>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The number of vCPUs reserved for the job. Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to
+    /// <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+    /// <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must
+    /// be specified but can be specified in several places. You must specify it at least once for each node.</p>
+    /// <p>This parameter is supported on EC2 resources but isn't supported for jobs that run on Fargate resources. For
+    /// these resources, use <code>resourceRequirement</code> instead. You can use this parameter or
+    /// <code>resourceRequirements</code> structure but not both.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided. For
+    /// jobs that run on Fargate resources, you must specify the vCPU requirement for the job using
+    /// <code>resourceRequirements</code>.</p>
+    /// </note>
+    pub fn vcpus(&self) -> i32 {
+        self.vcpus
+    }
+    /// <p>This parameter indicates the memory hard limit (in MiB) for a container. If your container attempts to exceed
+    /// the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+    /// memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
+    /// <p>This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+    /// run</a>.</p>
+    /// <p>This parameter is supported on EC2 resources but isn't supported on Fargate resources. For Fargate
+    /// resources, you should specify the memory requirement using <code>resourceRequirement</code>. You can also do this for
+    /// EC2 resources.</p>
+    /// <note>
+    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+    /// particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+    /// Management</a> in the <i>Batch User Guide</i>.</p>
+    /// </note>
+    pub fn memory(&self) -> i32 {
+        self.memory
+    }
+    /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn job_role_arn(&self) -> std::option::Option<&str> {
+        self.job_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must
+    /// provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>A list of data volumes used in a job.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <important>
+    /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential
+    /// data.</p>
+    /// </important>
+    /// <note>
+    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+    /// convention is reserved for variables that are set by the Batch service.</p>
+    /// </note>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.environment.as_deref()
+    }
+    /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    pub fn mount_points(&self) -> std::option::Option<&[crate::model::MountPoint]> {
+        self.mount_points.as_deref()
+    }
+    /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter
+    /// maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and
+    /// the <code>--read-only</code> option to <code>docker run</code>.</p>
+    pub fn readonly_root_filesystem(&self) -> bool {
+        self.readonly_root_filesystem
+    }
+    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar
+    /// to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option to
+    /// <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+    /// specified as false.</p>
+    /// </note>
+    pub fn privileged(&self) -> bool {
+        self.privileged
+    }
+    /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn ulimits(&self) -> std::option::Option<&[crate::model::Ulimit]> {
+        self.ulimits.as_deref()
+    }
+    /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use
+    /// the same instance type.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and
+    /// shouldn't be provided.</p>
+    /// </note>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+    /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    pub fn resource_requirements(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
+        self.resource_requirements.as_deref()
+    }
+    /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
+    pub fn linux_parameters(&self) -> std::option::Option<&crate::model::LinuxParameters> {
+        self.linux_parameters.as_ref()
+    }
+    /// <p>The log configuration specification for the container.</p>
+    /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+    /// By default, containers use the same logging driver that the Docker daemon uses. However the container might use a
+    /// different logging driver than the Docker daemon by specifying a log driver with this parameter in the container
+    /// definition. To use a different logging driver for a container, the log system must be configured properly on the
+    /// container instance (or on a different log server for remote logging options). For more information on the options for
+    /// different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+    /// logging drivers</a> in the Docker documentation.</p>
+    /// <note>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a>LogConfiguration</a> data type).</p>
+    /// </note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your
+    /// container instance. To check the Docker Remote API version on your container instance, log into your
+    /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+    /// </p>
+    /// <note>
+    /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that
+    /// instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that
+    /// instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+    /// <p>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn secrets(&self) -> std::option::Option<&[crate::model::Secret]> {
+        self.secrets.as_deref()
+    }
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+    /// resources must not specify this parameter.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+    /// resources must not specify this parameter.</p>
+    pub fn fargate_platform_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FargatePlatformConfiguration> {
+        self.fargate_platform_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2867,6 +3454,15 @@ pub struct FargatePlatformConfiguration {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
 }
+impl FargatePlatformConfiguration {
+    /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs
+    /// that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by
+    /// default. This uses a recent, approved version of the Fargate platform for compute resources. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+}
 impl std::fmt::Debug for FargatePlatformConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FargatePlatformConfiguration");
@@ -2927,6 +3523,15 @@ pub struct NetworkConfiguration {
     /// requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The
     /// default value is "DISABLED".</p>
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
+}
+impl NetworkConfiguration {
+    /// <p>Indicates whether the job should have a public IP address. For a job that is running on Fargate resources in a
+    /// private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet
+    /// requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a>. The
+    /// default value is "DISABLED".</p>
+    pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
+        self.assign_public_ip.as_ref()
+    }
 }
 impl std::fmt::Debug for NetworkConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3060,6 +3665,22 @@ pub struct Secret {
     /// be specified.</p>
     /// </note>
     pub value_from: std::option::Option<std::string::String>,
+}
+impl Secret {
+    /// <p>The name of the secret.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The secret to expose to the container. The supported values are either the full ARN of the Secrets Manager secret or the
+    /// full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
+    /// <note>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Region as the job you're launching, then you can use
+    /// either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must
+    /// be specified.</p>
+    /// </note>
+    pub fn value_from(&self) -> std::option::Option<&str> {
+        self.value_from.as_deref()
+    }
 }
 impl std::fmt::Debug for Secret {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3199,6 +3820,84 @@ pub struct LogConfiguration {
     /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the
     /// <i>Batch User Guide</i>.</p>
     pub secret_options: std::option::Option<std::vec::Vec<crate::model::Secret>>,
+}
+impl LogConfiguration {
+    /// <p>The log driver to use for the container. The valid values listed for this parameter are log drivers that the
+    /// Amazon ECS container agent can communicate with by default.</p>
+    /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
+    /// <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
+    /// <code>splunk</code>.</p>
+    /// <note>
+    /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code>
+    /// log drivers.</p>
+    /// </note>
+    /// <dl>
+    /// <dt>awslogs</dt>
+    /// <dd>
+    /// <p>Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in the
+    /// <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging driver</a> in the Docker documentation.</p>
+    /// </dd>
+    /// <dt>fluentd</dt>
+    /// <dd>
+    /// <p>Specifies the Fluentd logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+    /// documentation.</p>
+    /// </dd>
+    /// <dt>gelf</dt>
+    /// <dd>
+    /// <p>Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+    /// options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging
+    /// driver</a> in the Docker documentation.</p>
+    /// </dd>
+    /// <dt>journald</dt>
+    /// <dd>
+    /// <p>Specifies the journald logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
+    /// documentation.</p>
+    /// </dd>
+    /// <dt>json-file</dt>
+    /// <dd>
+    /// <p>Specifies the JSON file logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
+    /// documentation.</p>
+    /// </dd>
+    /// <dt>splunk</dt>
+    /// <dd>
+    /// <p>Specifies the Splunk logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+    /// documentation.</p>
+    /// </dd>
+    /// <dt>syslog</dt>
+    /// <dd>
+    /// <p>Specifies the syslog logging driver. For more information, including usage and options, see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+    /// documentation.</p>
+    /// </dd>
+    /// </dl>
+    /// <note>
+    /// <p>If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent, you
+    /// can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on
+    /// GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that
+    /// you want to have included. However, Amazon Web Services doesn't currently support running modified copies of this
+    /// software.</p>
+    /// </note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your
+    /// container instance. To check the Docker Remote API version on your container instance, log into your
+    /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+    /// </p>
+    pub fn log_driver(&self) -> std::option::Option<&crate::model::LogDriver> {
+        self.log_driver.as_ref()
+    }
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your
+    /// container instance. To check the Docker Remote API version on your container instance, log into your
+    /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+    /// </p>
+    pub fn options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.options.as_ref()
+    }
+    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn secret_options(&self) -> std::option::Option<&[crate::model::Secret]> {
+        self.secret_options.as_deref()
+    }
 }
 impl std::fmt::Debug for LogConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3580,6 +4279,94 @@ pub struct LinuxParameters {
     /// </note>
     pub swappiness: i32,
 }
+impl LinuxParameters {
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+        self.devices.as_deref()
+    }
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+    /// parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+    /// This parameter requires version 1.25 of the Docker Remote API or greater on your
+    /// container instance. To check the Docker Remote API version on your container instance, log into your
+    /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+    /// </p>
+    pub fn init_process_enabled(&self) -> bool {
+        self.init_process_enabled
+    }
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+    /// <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn shared_memory_size(&self) -> i32 {
+        self.shared_memory_size
+    }
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+    /// <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn tmpfs(&self) -> std::option::Option<&[crate::model::Tmpfs]> {
+        self.tmpfs.as_deref()
+    }
+    /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
+    /// <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the
+    /// sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+    /// <code>--memory-swap</code> details</a> in the Docker documentation.</p>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values
+    /// are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't
+    /// use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for
+    /// the <code>swappiness</code> parameter to be used.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn max_swap(&self) -> i32 {
+        self.max_swap
+    }
+    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+    /// <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
+    /// <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
+    /// <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
+    /// <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If
+    /// <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the
+    /// <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <p>Consider the following when you use a per-container swap configuration.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p>
+    /// <note>
+    /// <p>The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable swap on the instance to use this
+    /// feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance Store Swap Volumes</a> in the
+    /// <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an
+    /// Amazon EC2 instance by using a swap file?</a>
+    /// </p>
+    /// </note>
+    /// </li>
+    /// <li>
+    /// <p>The swap space parameters are only supported for job definitions using EC2 resources.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
+    /// container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to two
+    /// times the memory reservation of the container.</p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn swappiness(&self) -> i32 {
+        self.swappiness
+    }
+}
 impl std::fmt::Debug for LinuxParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LinuxParameters");
@@ -3850,6 +4637,28 @@ pub struct Tmpfs {
     /// "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl Tmpfs {
+    /// <p>The absolute file path in the container where the tmpfs volume is mounted.</p>
+    pub fn container_path(&self) -> std::option::Option<&str> {
+        self.container_path.as_deref()
+    }
+    /// <p>The size (in MiB) of the tmpfs volume.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+    /// <p>The list of tmpfs volume mount options.</p>
+    /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" |
+    /// "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" |
+    /// "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" |
+    /// "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" |
+    /// "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" |
+    /// "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" |
+    /// "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" |
+    /// "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
+    pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
+        self.mount_options.as_deref()
+    }
+}
 impl std::fmt::Debug for Tmpfs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tmpfs");
@@ -3960,6 +4769,22 @@ pub struct Device {
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions
     /// for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
+}
+impl Device {
+    /// <p>The path for the device on the host container instance.</p>
+    pub fn host_path(&self) -> std::option::Option<&str> {
+        self.host_path.as_deref()
+    }
+    /// <p>The path inside the container that's used to expose the host device. By default, the <code>hostPath</code> value
+    /// is used.</p>
+    pub fn container_path(&self) -> std::option::Option<&str> {
+        self.container_path.as_deref()
+    }
+    /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions
+    /// for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::DeviceCgroupPermission]> {
+        self.permissions.as_deref()
+    }
 }
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4121,6 +4946,20 @@ pub struct Ulimit {
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub soft_limit: i32,
 }
+impl Ulimit {
+    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    pub fn hard_limit(&self) -> i32 {
+        self.hard_limit
+    }
+    /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    pub fn soft_limit(&self) -> i32 {
+        self.soft_limit
+    }
+}
 impl std::fmt::Debug for Ulimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ulimit");
@@ -4201,6 +5040,21 @@ pub struct MountPoint {
     pub read_only: bool,
     /// <p>The name of the volume to mount.</p>
     pub source_volume: std::option::Option<std::string::String>,
+}
+impl MountPoint {
+    /// <p>The path on the container where the host volume is mounted.</p>
+    pub fn container_path(&self) -> std::option::Option<&str> {
+        self.container_path.as_deref()
+    }
+    /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
+    /// can write to the volume. The default value is <code>false</code>.</p>
+    pub fn read_only(&self) -> bool {
+        self.read_only
+    }
+    /// <p>The name of the volume to mount.</p>
+    pub fn source_volume(&self) -> std::option::Option<&str> {
+        self.source_volume.as_deref()
+    }
 }
 impl std::fmt::Debug for MountPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4297,6 +5151,32 @@ pub struct Volume {
     /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs that are running
     /// on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
     pub efs_volume_configuration: std::option::Option<crate::model::EfsVolumeConfiguration>,
+}
+impl Volume {
+    /// <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host
+    /// container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path
+    /// for your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
+    /// running.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be
+    /// provided.</p>
+    /// </note>
+    pub fn host(&self) -> std::option::Option<&crate::model::Host> {
+        self.host.as_ref()
+    }
+    /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
+    /// allowed. This name is referenced in the <code>sourceVolume</code>
+    /// parameter of container definition <code>mountPoints</code>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs that are running
+    /// on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+    pub fn efs_volume_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EfsVolumeConfiguration> {
+        self.efs_volume_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for Volume {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4418,6 +5298,41 @@ pub struct EfsVolumeConfiguration {
     pub transit_encryption_port: i32,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub authorization_config: std::option::Option<crate::model::EfsAuthorizationConfig>,
+}
+impl EfsVolumeConfiguration {
+    /// <p>The Amazon EFS file system ID to use.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is
+    /// omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as omitting this
+    /// parameter. The maximum length is 4,096 characters.</p>
+    /// <important>
+    /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
+    /// either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.</p>
+    /// </important>
+    pub fn root_directory(&self) -> std::option::Option<&str> {
+        self.root_directory.as_deref()
+    }
+    /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.
+    /// Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default
+    /// value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
+    /// <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn transit_encryption(&self) -> std::option::Option<&crate::model::EfsTransitEncryption> {
+        self.transit_encryption.as_ref()
+    }
+    /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't specify a
+    /// transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The value must be
+    /// between 0 and 65,535. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn transit_encryption_port(&self) -> i32 {
+        self.transit_encryption_port
+    }
+    /// <p>The authorization configuration details for the Amazon EFS file system.</p>
+    pub fn authorization_config(
+        &self,
+    ) -> std::option::Option<&crate::model::EfsAuthorizationConfig> {
+        self.authorization_config.as_ref()
+    }
 }
 impl std::fmt::Debug for EfsVolumeConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4562,6 +5477,24 @@ pub struct EfsAuthorizationConfig {
     /// the <i>Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be
     /// <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
     pub iam: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
+}
+impl EfsAuthorizationConfig {
+    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the
+    /// <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set
+    /// on the EFS access point. If an access point is used, transit encryption must be enabled in the
+    /// <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS Access Points</a> in the
+    /// <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn access_point_id(&self) -> std::option::Option<&str> {
+        self.access_point_id.as_deref()
+    }
+    /// <p>Whether or not to use the Batch job IAM role defined in a job definition when mounting the Amazon EFS file system.
+    /// If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
+    /// parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS Access Points</a> in
+    /// the <i>Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be
+    /// <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
+    pub fn iam(&self) -> std::option::Option<&crate::model::EfsAuthorizationConfigIam> {
+        self.iam.as_ref()
+    }
 }
 impl std::fmt::Debug for EfsAuthorizationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4765,6 +5698,19 @@ pub struct Host {
     /// </note>
     pub source_path: std::option::Option<std::string::String>,
 }
+impl Host {
+    /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the
+    /// Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume
+    /// persists at the specified location on the host container instance until you delete it manually. If the source path
+    /// location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the
+    /// contents of the source path folder are exported.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
+    /// </note>
+    pub fn source_path(&self) -> std::option::Option<&str> {
+        self.source_path.as_deref()
+    }
+}
 impl std::fmt::Debug for Host {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Host");
@@ -4910,6 +5856,63 @@ pub struct JobSummary {
     pub node_properties: std::option::Option<crate::model::NodePropertiesSummary>,
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub job_definition: std::option::Option<std::string::String>,
+}
+impl JobSummary {
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The ID of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The Unix timestamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
+    /// entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs,
+    /// this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    pub fn created_at(&self) -> i64 {
+        self.created_at
+    }
+    /// <p>The current status for the job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The Unix timestamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
+    /// to the <code>RUNNING</code> state).</p>
+    pub fn started_at(&self) -> i64 {
+        self.started_at
+    }
+    /// <p>The Unix timestamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state
+    /// to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    pub fn stopped_at(&self) -> i64 {
+        self.stopped_at
+    }
+    /// <p>An object representing the details of the container that's associated with the job.</p>
+    pub fn container(&self) -> std::option::Option<&crate::model::ContainerSummary> {
+        self.container.as_ref()
+    }
+    /// <p>The array properties of the job, if it is an array job.</p>
+    pub fn array_properties(&self) -> std::option::Option<&crate::model::ArrayPropertiesSummary> {
+        self.array_properties.as_ref()
+    }
+    /// <p>The node properties for a single node in a job summary list.</p>
+    /// <note>
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// </note>
+    pub fn node_properties(&self) -> std::option::Option<&crate::model::NodePropertiesSummary> {
+        self.node_properties.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
+    pub fn job_definition(&self) -> std::option::Option<&str> {
+        self.job_definition.as_deref()
+    }
 }
 impl std::fmt::Debug for JobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5136,6 +6139,21 @@ pub struct NodePropertiesSummary {
     /// the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     pub node_index: i32,
 }
+impl NodePropertiesSummary {
+    /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
+    pub fn is_main_node(&self) -> bool {
+        self.is_main_node
+    }
+    /// <p>The number of nodes associated with a multi-node parallel job.</p>
+    pub fn num_nodes(&self) -> i32 {
+        self.num_nodes
+    }
+    /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with
+    /// the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+    pub fn node_index(&self) -> i32 {
+        self.node_index
+    }
+}
 impl std::fmt::Debug for NodePropertiesSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NodePropertiesSummary");
@@ -5215,6 +6233,17 @@ pub struct ArrayPropertiesSummary {
     /// jobs.</p>
     pub index: i32,
 }
+impl ArrayPropertiesSummary {
+    /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+    /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array
+    /// jobs.</p>
+    pub fn index(&self) -> i32 {
+        self.index
+    }
+}
 impl std::fmt::Debug for ArrayPropertiesSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArrayPropertiesSummary");
@@ -5280,6 +6309,17 @@ pub struct ContainerSummary {
     /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
     /// container.</p>
     pub reason: std::option::Option<std::string::String>,
+}
+impl ContainerSummary {
+    /// <p>The exit code to return upon completion.</p>
+    pub fn exit_code(&self) -> i32 {
+        self.exit_code
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
+    /// container.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ContainerSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5430,6 +6470,16 @@ pub struct KeyValuesPair {
     /// <p>The filter values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl KeyValuesPair {
+    /// <p>The name of the filter. Filter names are case sensitive.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The filter values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for KeyValuesPair {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KeyValuesPair");
@@ -5561,6 +6611,122 @@ pub struct JobDetail {
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
     /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+}
+impl JobDetail {
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The ID for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
+    pub fn job_queue(&self) -> std::option::Option<&str> {
+        self.job_queue.as_deref()
+    }
+    /// <p>The current status for the job.</p>
+    /// <note>
+    /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck in RUNNABLE Status</a> in the
+    /// troubleshooting section of the <i>Batch User Guide</i>.</p>
+    /// </note>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A list of job attempts associated with this job.</p>
+    pub fn attempts(&self) -> std::option::Option<&[crate::model::AttemptDetail]> {
+        self.attempts.as_deref()
+    }
+    /// <p>A short, human-readable string to provide additional details about the current status of the job.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs,
+    /// this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called).
+    /// For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+    /// state.</p>
+    pub fn created_at(&self) -> i64 {
+        self.created_at
+    }
+    /// <p>The retry strategy to use for this job if an attempt fails.</p>
+    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
+        self.retry_strategy.as_ref()
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
+    /// <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of
+    /// array jobs or multi-node parallel jobs.</p>
+    pub fn started_at(&self) -> i64 {
+        self.started_at
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the job transitioned from the
+    /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    pub fn stopped_at(&self) -> i64 {
+        self.stopped_at
+    }
+    /// <p>A list of job IDs that this job depends on.</p>
+    pub fn depends_on(&self) -> std::option::Option<&[crate::model::JobDependency]> {
+        self.depends_on.as_deref()
+    }
+    /// <p>The job definition that's used by this job.</p>
+    pub fn job_definition(&self) -> std::option::Option<&str> {
+        self.job_definition.as_deref()
+    }
+    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders or override any
+    /// corresponding parameter defaults from the job definition.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>An object representing the details of the container that's associated with the job.</p>
+    pub fn container(&self) -> std::option::Option<&crate::model::ContainerDetail> {
+        self.container.as_ref()
+    }
+    /// <p>An object representing the details of a node that's associated with a multi-node parallel job.</p>
+    pub fn node_details(&self) -> std::option::Option<&crate::model::NodeDetails> {
+        self.node_details.as_ref()
+    }
+    /// <p>An object representing the node properties of a multi-node parallel job.</p>
+    /// <note>
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// </note>
+    pub fn node_properties(&self) -> std::option::Option<&crate::model::NodeProperties> {
+        self.node_properties.as_ref()
+    }
+    /// <p>The array properties of the job, if it is an array job.</p>
+    pub fn array_properties(&self) -> std::option::Option<&crate::model::ArrayPropertiesDetail> {
+        self.array_properties.as_ref()
+    }
+    /// <p>The timeout configuration for the job.</p>
+    pub fn timeout(&self) -> std::option::Option<&crate::model::JobTimeout> {
+        self.timeout.as_ref()
+    }
+    /// <p>The tags applied to the job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
+    /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
+    /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
+    /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    pub fn propagate_tags(&self) -> bool {
+        self.propagate_tags
+    }
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
+    /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    pub fn platform_capabilities(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlatformCapability]> {
+        self.platform_capabilities.as_deref()
+    }
 }
 impl std::fmt::Debug for JobDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6011,6 +7177,24 @@ pub struct ArrayPropertiesDetail {
     /// children.</p>
     pub index: i32,
 }
+impl ArrayPropertiesDetail {
+    /// <p>A summary of the number of array job children in each available job status. This parameter is returned for
+    /// parent array jobs.</p>
+    pub fn status_summary(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+        self.status_summary.as_ref()
+    }
+    /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+    /// <p>The job index within the array that's associated with this job. This parameter is returned for array job
+    /// children.</p>
+    pub fn index(&self) -> i32 {
+        self.index
+    }
+}
 impl std::fmt::Debug for ArrayPropertiesDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ArrayPropertiesDetail");
@@ -6105,6 +7289,17 @@ pub struct NodeDetails {
     pub node_index: i32,
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     pub is_main_node: bool,
+}
+impl NodeDetails {
+    /// <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with
+    /// the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
+    pub fn node_index(&self) -> i32 {
+        self.node_index
+    }
+    /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
+    pub fn is_main_node(&self) -> bool {
+        self.is_main_node
+    }
 }
 impl std::fmt::Debug for NodeDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6284,6 +7479,182 @@ pub struct ContainerDetail {
     /// resources must not specify this parameter.</p>
     pub fargate_platform_configuration:
         std::option::Option<crate::model::FargatePlatformConfiguration>,
+}
+impl ContainerDetail {
+    /// <p>The image used to start the container.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
+    /// requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both
+    /// the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in
+    /// the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to
+    /// <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must
+    /// specify at least one vCPU. This is required but can be specified in several places. It must be specified for each
+    /// node at least once.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate
+    /// resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
+    /// </note>
+    pub fn vcpus(&self) -> i32 {
+        self.vcpus
+    }
+    /// <p>For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>,
+    /// the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
+    /// <code>resourceRequirements</code>.</p>
+    pub fn memory(&self) -> i32 {
+        self.memory
+    }
+    /// <p>The command that's passed to the container.</p>
+    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+        self.command.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+    pub fn job_role_arn(&self) -> std::option::Option<&str> {
+        self.job_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>A list of volumes associated with the job.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The environment variables to pass to a container.</p>
+    /// <note>
+    /// <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+    /// convention is reserved for variables that are set by the Batch service.</p>
+    /// </note>
+    pub fn environment(&self) -> std::option::Option<&[crate::model::KeyValuePair]> {
+        self.environment.as_deref()
+    }
+    /// <p>The mount points for data volumes in your container.</p>
+    pub fn mount_points(&self) -> std::option::Option<&[crate::model::MountPoint]> {
+        self.mount_points.as_deref()
+    }
+    /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter
+    /// maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and
+    /// the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+    /// <code>docker run</code>
+    /// </a>.</p>
+    pub fn readonly_root_filesystem(&self) -> bool {
+        self.readonly_root_filesystem
+    }
+    /// <p>A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
+    /// </note>
+    pub fn ulimits(&self) -> std::option::Option<&[crate::model::Ulimit]> {
+        self.ulimits.as_deref()
+    }
+    /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar
+    /// to the <code>root</code> user). The default value is false.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or
+    /// specified as false.</p>
+    /// </note>
+    pub fn privileged(&self) -> bool {
+        self.privileged
+    }
+    /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+    pub fn user(&self) -> std::option::Option<&str> {
+        self.user.as_deref()
+    }
+    /// <p>The exit code to return upon completion.</p>
+    pub fn exit_code(&self) -> i32 {
+        self.exit_code
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
+    /// container.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container instance that the container is running on.</p>
+    pub fn container_instance_arn(&self) -> std::option::Option<&str> {
+        self.container_instance_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container job. Each container attempt receives a task
+    /// ARN when they reach the <code>STARTING</code> status.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+    /// <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+    /// <code>RUNNING</code> status.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The instance type of the underlying host infrastructure of a multi-node parallel job.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
+    /// </note>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The network interfaces associated with the job.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+    /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+    /// <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    pub fn resource_requirements(
+        &self,
+    ) -> std::option::Option<&[crate::model::ResourceRequirement]> {
+        self.resource_requirements.as_deref()
+    }
+    /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
+    pub fn linux_parameters(&self) -> std::option::Option<&crate::model::LinuxParameters> {
+        self.linux_parameters.as_ref()
+    }
+    /// <p>The log configuration specification for the container.</p>
+    /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+    /// <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+    /// By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a
+    /// different logging driver than the Docker daemon by specifying a log driver with this parameter in the container
+    /// definition. To use a different logging driver for a container, the log system must be configured properly on the
+    /// container instance. Or, alternatively, it must be configured on a different log server for remote logging options.
+    /// For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+    /// documentation.</p>
+    /// <note>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS
+    /// container agent.</p>
+    /// </note>
+    /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your
+    /// container instance. To check the Docker Remote API version on your container instance, log into your
+    /// container instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
+    /// </p>
+    /// <note>
+    /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that
+    /// instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that
+    /// instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn log_configuration(&self) -> std::option::Option<&crate::model::LogConfiguration> {
+        self.log_configuration.as_ref()
+    }
+    /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn secrets(&self) -> std::option::Option<&[crate::model::Secret]> {
+        self.secrets.as_deref()
+    }
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+    /// resources must not specify this parameter.</p>
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
+    /// resources must not specify this parameter.</p>
+    pub fn fargate_platform_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FargatePlatformConfiguration> {
+        self.fargate_platform_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for ContainerDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6901,6 +8272,20 @@ pub struct NetworkInterface {
     /// <p>The private IPv4 address for the network interface.</p>
     pub private_ipv4_address: std::option::Option<std::string::String>,
 }
+impl NetworkInterface {
+    /// <p>The attachment ID for the network interface.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The private IPv6 address for the network interface.</p>
+    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+        self.ipv6_address.as_deref()
+    }
+    /// <p>The private IPv4 address for the network interface.</p>
+    pub fn private_ipv4_address(&self) -> std::option::Option<&str> {
+        self.private_ipv4_address.as_deref()
+    }
+}
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkInterface");
@@ -6988,6 +8373,26 @@ pub struct AttemptDetail {
     pub stopped_at: i64,
     /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
     pub status_reason: std::option::Option<std::string::String>,
+}
+impl AttemptDetail {
+    /// <p>Details about the container in this job attempt.</p>
+    pub fn container(&self) -> std::option::Option<&crate::model::AttemptContainerDetail> {
+        self.container.as_ref()
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the
+    /// <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+    pub fn started_at(&self) -> i64 {
+        self.started_at
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the
+    /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    pub fn stopped_at(&self) -> i64 {
+        self.stopped_at
+    }
+    /// <p>A short, human-readable string to provide additional details about the current status of the job attempt.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for AttemptDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7099,6 +8504,36 @@ pub struct AttemptContainerDetail {
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The network interfaces associated with the job attempt.</p>
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+}
+impl AttemptContainerDetail {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that hosts the job attempt.</p>
+    pub fn container_instance_arn(&self) -> std::option::Option<&str> {
+        self.container_instance_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task
+    /// ARN when they reach the <code>STARTING</code> status.</p>
+    pub fn task_arn(&self) -> std::option::Option<&str> {
+        self.task_arn.as_deref()
+    }
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered a failure.</p>
+    pub fn exit_code(&self) -> i32 {
+        self.exit_code
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details about a running or stopped
+    /// container.</p>
+    pub fn reason(&self) -> std::option::Option<&str> {
+        self.reason.as_deref()
+    }
+    /// <p>The name of the CloudWatch Logs log stream associated with the container. The log group for Batch jobs is
+    /// <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+    /// <code>RUNNING</code> status.</p>
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+        self.log_stream_name.as_deref()
+    }
+    /// <p>The network interfaces associated with the job attempt.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
 }
 impl std::fmt::Debug for AttemptContainerDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7264,6 +8699,54 @@ pub struct JobQueueDetail {
     /// <i>Batch User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl JobQueueDetail {
+    /// <p>The name of the job queue.</p>
+    pub fn job_queue_name(&self) -> std::option::Option<&str> {
+        self.job_queue_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    pub fn job_queue_arn(&self) -> std::option::Option<&str> {
+        self.job_queue_arn.as_deref()
+    }
+    /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+    /// to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+    /// already in the queue can finish.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
+        self.state.as_ref()
+    }
+    /// <p>The status of the job queue (for example, <code>CREATING</code> or <code>VALID</code>).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JqStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A short, human-readable string to provide additional details about the current status of the job queue.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+    /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
+    /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
+    /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
+    /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
+    /// Fargate compute environments can't be mixed.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred.
+    /// Compute environments are selected for job placement in ascending order.</p>
+    pub fn compute_environment_order(
+        &self,
+    ) -> std::option::Option<&[crate::model::ComputeEnvironmentOrder]> {
+        self.compute_environment_order.as_deref()
+    }
+    /// <p>The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in
+    /// <i>Batch User Guide</i>.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for JobQueueDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7573,6 +9056,82 @@ pub struct JobDefinition {
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
     /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+}
+impl JobDefinition {
+    /// <p>The name of the job definition.</p>
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
+        self.job_definition_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the job definition.</p>
+    pub fn job_definition_arn(&self) -> std::option::Option<&str> {
+        self.job_definition_arn.as_deref()
+    }
+    /// <p>The revision of the job definition.</p>
+    pub fn revision(&self) -> i32 {
+        self.revision
+    }
+    /// <p>The status of the job definition.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
+    /// supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
+    /// specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
+    /// parameter defaults from the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition Parameters</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.parameters.as_ref()
+    }
+    /// <p>The retry strategy to use for failed jobs that are submitted with this job definition.</p>
+    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
+        self.retry_strategy.as_ref()
+    }
+    /// <p>An object with various properties specific to container-based jobs.</p>
+    pub fn container_properties(&self) -> std::option::Option<&crate::model::ContainerProperties> {
+        self.container_properties.as_ref()
+    }
+    /// <p>The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+    /// duration after which Batch terminates your jobs if they haven't finished.</p>
+    pub fn timeout(&self) -> std::option::Option<&crate::model::JobTimeout> {
+        self.timeout.as_ref()
+    }
+    /// <p>An object with various properties specific to multi-node parallel jobs.</p>
+    /// <note>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+    /// <code>containerProperties</code> instead.</p>
+    /// </note>
+    pub fn node_properties(&self) -> std::option::Option<&crate::model::NodeProperties> {
+        self.node_properties.as_ref()
+    }
+    /// <p>The tags applied to the job definition.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
+    /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
+    /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
+    /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    pub fn propagate_tags(&self) -> bool {
+        self.propagate_tags
+    }
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
+    /// <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    pub fn platform_capabilities(
+        &self,
+    ) -> std::option::Option<&[crate::model::PlatformCapability]> {
+        self.platform_capabilities.as_deref()
+    }
 }
 impl std::fmt::Debug for JobDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7900,6 +9459,65 @@ pub struct ComputeEnvironmentDetail {
     /// operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
     /// <i>Batch User Guide</i>.</p>
     pub service_role: std::option::Option<std::string::String>,
+}
+impl ComputeEnvironmentDetail {
+    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+    /// underscores are allowed.</p>
+    pub fn compute_environment_name(&self) -> std::option::Option<&str> {
+        self.compute_environment_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+    pub fn compute_environment_arn(&self) -> std::option::Option<&str> {
+        self.compute_environment_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</p>
+    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+        self.ecs_cluster_arn.as_deref()
+    }
+    /// <p>The tags applied to the compute environment.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CeType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The state of the compute environment. The valid values are <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
+    /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
+    /// its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
+    /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
+    /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
+    /// <code>minvCpus</code> value after instances become idle.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
+        self.state.as_ref()
+    }
+    /// <p>The current status of the compute environment (for example, <code>CREATING</code> or <code>VALID</code>).</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CeStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A short, human-readable string to provide additional details about the current status of the compute
+    /// environment.</p>
+    pub fn status_reason(&self) -> std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn compute_resources(&self) -> std::option::Option<&crate::model::ComputeResource> {
+        self.compute_resources.as_ref()
+    }
+    /// <p>The service role associated with the compute environment that allows Batch to make calls to Amazon Web Services API
+    /// operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
 }
 impl std::fmt::Debug for ComputeEnvironmentDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8318,6 +9936,240 @@ pub struct ComputeResource {
     /// specified.</p>
     /// </note>
     pub ec2_configuration: std::option::Option<std::vec::Vec<crate::model::Ec2Configuration>>,
+}
+impl ComputeResource {
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+    /// <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    /// <p> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+    /// <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet role</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CrType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance
+    /// type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a>
+    /// in the <i>Batch User Guide</i>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    /// <dl>
+    /// <dt>BEST_FIT (default)</dt>
+    /// <dd>
+    /// <p>Batch selects an instance type that best fits the needs of the jobs with a preference for the lowest-cost
+    /// instance type. If additional instances of the selected instance type aren't available, Batch waits for the
+    /// additional instances to be available. If there aren't enough instances available, or if the user is reaching
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>
+    /// then additional jobs aren't run until the currently running jobs have completed. This allocation strategy keeps
+    /// costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM
+    /// Role must be specified.</p>
+    /// </dd>
+    /// <dt>BEST_FIT_PROGRESSIVE</dt>
+    /// <dd>
+    /// <p>Batch will select additional instance types that are large enough to meet the requirements of the jobs in
+    /// the queue, with a preference for instance types with a lower cost per unit vCPU. If additional instances of the
+    /// previously selected instance types aren't available, Batch will select new instance types.</p>
+    /// </dd>
+    /// <dt>SPOT_CAPACITY_OPTIMIZED</dt>
+    /// <dd>
+    /// <p>Batch will select one or more instance types that are large enough to meet the requirements of the jobs in
+    /// the queue, with a preference for instance types that are less likely to be interrupted. This allocation strategy
+    /// is only available for Spot Instance compute resources.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies, Batch might
+    /// need to go above <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+    /// <code>maxvCpus</code> by more than a single instance.</p>
+    pub fn allocation_strategy(&self) -> std::option::Option<&crate::model::CrAllocationStrategy> {
+        self.allocation_strategy.as_ref()
+    }
+    /// <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+    /// <code>DISABLED</code>).</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn minv_cpus(&self) -> i32 {
+        self.minv_cpus
+    }
+    /// <p>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p>
+    /// <note>
+    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies,
+    /// Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
+    /// exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among
+    /// those specified in your compute environment is allocated.</p>
+    /// </note>
+    pub fn maxv_cpus(&self) -> i32 {
+        self.maxv_cpus
+    }
+    /// <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
+    /// and maximum values, based on job queue demand.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn desiredv_cpus(&self) -> i32 {
+        self.desiredv_cpus
+    }
+    /// <p>The instances types that can be launched. You can specify instance families to launch any instance type within
+    /// those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a family
+    /// (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select instance types (from the C4,
+    /// M4, and R4 instance families) that match the demand of your job queues.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    /// <note>
+    /// <p>When you create a compute environment, the instance types that you select for the compute environment must
+    /// share the same architecture. For example, you can't mix x86 and ARM instances in the same compute
+    /// environment.</p>
+    /// </note>
+    /// <note>
+    /// <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance families. In Regions that
+    /// don't have instance types from those instance families, instance types from the C5, M5. and R5 instance families are
+    /// used.</p>
+    /// </note>
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.instance_types.as_deref()
+    }
+    /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is
+    /// overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    /// <note>
+    /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that
+    /// you intend to use for that compute environment. For example, if your compute environment uses A1 instance types,
+    /// the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
+    /// Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized
+    /// Amazon Linux 2 AMI</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </note>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The VPC subnets where the compute resources are launched. These subnets must be within the same VPC. Fargate
+    /// compute resources can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon VPC User
+    /// Guide</i>.</p>
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnets.as_deref()
+    }
+    /// <p>The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security
+    /// groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced in
+    /// <code>launchTemplate</code>. This parameter is required for jobs that are running on Fargate resources and must
+    /// contain at least one security group. Fargate doesn't support launch templates. If security groups are specified
+    /// using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code>
+    /// are used.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The Amazon EC2 key pair that's used for instances launched in the compute environment. You can use this key pair to
+    /// log in to your instances with SSH.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn ec2_key_pair(&self) -> std::option::Option<&str> {
+        self.ec2_key_pair.as_deref()
+    }
+    /// <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name
+    /// or full Amazon Resource Name (ARN) of an instance profile. For example,
+    /// <code>
+    /// <i>ecsInstanceRole</i>
+    /// </code> or
+    /// <code>arn:aws:iam::<i><aws_account_id></i>:instance-profile/<i>ecsInstanceRole</i>
+    /// </code>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+    /// Role</a> in the <i>Batch User Guide</i>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn instance_role(&self) -> std::option::Option<&str> {
+        self.instance_role.as_deref()
+    }
+    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch,
+    /// these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value−for
+    /// example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the
+    /// Amazon EC2 console. These tags can't be updated or removed after the compute environment is created.Aany changes to these
+    /// tags require that you create a new compute environment and remove the old compute environment. These tags aren't seen
+    /// when using the Batch <code>ListTagsForResource</code> API operation.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node parallel
+    /// jobs to your compute environment, you should consider creating a cluster placement group and associate it with your
+    /// compute resources. This keeps your multi-node parallel job on a logical grouping of instances within a single
+    /// Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for
+    /// Linux Instances</i>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn placement_group(&self) -> std::option::Option<&str> {
+        self.placement_group.as_deref()
+    }
+    /// <p>The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+    /// instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must
+    /// be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price and
+    /// never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand
+    /// price.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn bid_percentage(&self) -> i32 {
+        self.bid_percentage
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute environment. This role is
+    /// required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For
+    /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+    /// Role</a> in the <i>Batch User Guide</i>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    /// <important>
+    /// <p>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required permissions to tag Spot
+    /// Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot Instances not tagged on creation</a> in the
+    /// <i>Batch User Guide</i>.</p>
+    /// </important>
+    pub fn spot_iam_fleet_role(&self) -> std::option::Option<&str> {
+        self.spot_iam_fleet_role.as_deref()
+    }
+    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+    /// a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You
+    /// must specify either the launch template ID or launch template name in the request, but not both. For more
+    /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template Support</a> in
+    /// the <i>Batch User Guide</i>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::LaunchTemplateSpecification> {
+        self.launch_template.as_ref()
+    }
+    /// <p>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment.
+    /// If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL1</code>.</p>
+    /// <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources, and shouldn't be
+    /// specified.</p>
+    /// </note>
+    pub fn ec2_configuration(&self) -> std::option::Option<&[crate::model::Ec2Configuration]> {
+        self.ec2_configuration.as_deref()
+    }
 }
 impl std::fmt::Debug for ComputeResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9001,6 +10853,43 @@ pub struct Ec2Configuration {
     /// overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p>
     pub image_id_override: std::option::Option<std::string::String>,
 }
+impl Ec2Configuration {
+    /// <p>The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
+    /// isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized AMI</a> (<code>ECS_AL1</code>) is
+    /// used. Starting on March 31, 2021, this default will be changing to <code>ECS_AL2</code> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>).</p>
+    /// <dl>
+    /// <dt>ECS_AL2</dt>
+    /// <dd>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux
+    /// 2</a>− Default for all Amazon Web Services Graviton-based instance families (for example, <code>C6g</code>,
+    /// <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and can be used for all non-GPU instance types.</p>
+    /// </dd>
+    /// <dt>ECS_AL2_NVIDIA</dt>
+    /// <dd>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux
+    /// 2 (GPU)</a>−Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and
+    /// can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// </dd>
+    /// <dt>ECS_AL1</dt>
+    /// <dd>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
+    /// Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance families. Amazon Linux is reaching the
+    /// end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon
+    /// Linux AMI</a>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn image_type(&self) -> std::option::Option<&str> {
+        self.image_type.as_deref()
+    }
+    /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting
+    /// overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p>
+    pub fn image_id_override(&self) -> std::option::Option<&str> {
+        self.image_id_override.as_deref()
+    }
+}
 impl std::fmt::Debug for Ec2Configuration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Ec2Configuration");
@@ -9138,6 +11027,29 @@ pub struct LaunchTemplateSpecification {
     /// </important>
     /// <p>Default: <code>$Default</code>.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl LaunchTemplateSpecification {
+    /// <p>The ID of the launch template.</p>
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+        self.launch_template_id.as_deref()
+    }
+    /// <p>The name of the launch template.</p>
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+        self.launch_template_name.as_deref()
+    }
+    /// <p>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
+    /// <p>If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+    /// <code>$Default</code>, the default version of the launch template is used.</p>
+    /// <important>
+    /// <p>After the compute environment is created, the launch template version that's used isn't changed, even if the
+    /// <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new launch
+    /// template version, create a new compute environment, add the new compute environment to the existing job queue,
+    /// remove the old compute environment from the job queue, and delete the old compute environment.</p>
+    /// </important>
+    /// <p>Default: <code>$Default</code>.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for LaunchTemplateSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

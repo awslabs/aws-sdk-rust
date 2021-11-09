@@ -10,6 +10,20 @@ pub struct FailedS3Resource {
     /// <p>The error message of a failed item.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
+impl FailedS3Resource {
+    /// <p>The failed S3 resources.</p>
+    pub fn failed_item(&self) -> std::option::Option<&crate::model::S3Resource> {
+        self.failed_item.as_ref()
+    }
+    /// <p>The status code of a failed item.</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// <p>The error message of a failed item.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
 impl std::fmt::Debug for FailedS3Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FailedS3Resource");
@@ -94,6 +108,16 @@ pub struct S3Resource {
     /// <p>The prefix of the S3 bucket. </p>
     pub prefix: std::option::Option<std::string::String>,
 }
+impl S3Resource {
+    /// <p>The name of the S3 bucket.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix of the S3 bucket. </p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
 impl std::fmt::Debug for S3Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3Resource");
@@ -160,6 +184,23 @@ pub struct S3ResourceClassificationUpdate {
     /// <p>The classification type that you want to update for the resource associated with Amazon
     /// Macie Classic. </p>
     pub classification_type_update: std::option::Option<crate::model::ClassificationTypeUpdate>,
+}
+impl S3ResourceClassificationUpdate {
+    /// <p>The name of the S3 bucket whose classification types you want to update.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix of the S3 bucket whose classification types you want to update.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The classification type that you want to update for the resource associated with Amazon
+    /// Macie Classic. </p>
+    pub fn classification_type_update(
+        &self,
+    ) -> std::option::Option<&crate::model::ClassificationTypeUpdate> {
+        self.classification_type_update.as_ref()
+    }
 }
 impl std::fmt::Debug for S3ResourceClassificationUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -253,6 +294,19 @@ pub struct ClassificationTypeUpdate {
     /// Amazon Macie Classic begins performing continuous classification after a bucket is
     /// successfully associated with Macie Classic. </p>
     pub continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
+}
+impl ClassificationTypeUpdate {
+    /// <p>A one-time classification of all of the existing objects in a specified S3 bucket.
+    /// </p>
+    pub fn one_time(&self) -> std::option::Option<&crate::model::S3OneTimeClassificationType> {
+        self.one_time.as_ref()
+    }
+    /// <p>A continuous classification of the objects that are added to a specified S3 bucket.
+    /// Amazon Macie Classic begins performing continuous classification after a bucket is
+    /// successfully associated with Macie Classic. </p>
+    pub fn continuous(&self) -> std::option::Option<&crate::model::S3ContinuousClassificationType> {
+        self.continuous.as_ref()
+    }
 }
 impl std::fmt::Debug for ClassificationTypeUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -442,6 +496,23 @@ pub struct S3ResourceClassification {
     /// Amazon Macie Classic. </p>
     pub classification_type: std::option::Option<crate::model::ClassificationType>,
 }
+impl S3ResourceClassification {
+    /// <p>The name of the S3 bucket that you want to associate with Amazon Macie
+    /// Classic.</p>
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
+        self.bucket_name.as_deref()
+    }
+    /// <p>The prefix of the S3 bucket that you want to associate with Amazon Macie
+    /// Classic.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+    /// <p>The classification type that you want to specify for the resource associated with
+    /// Amazon Macie Classic. </p>
+    pub fn classification_type(&self) -> std::option::Option<&crate::model::ClassificationType> {
+        self.classification_type.as_ref()
+    }
+}
 impl std::fmt::Debug for S3ResourceClassification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3ResourceClassification");
@@ -531,6 +602,19 @@ pub struct ClassificationType {
     /// successfully associated with Macie Classic. </p>
     pub continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
 }
+impl ClassificationType {
+    /// <p>A one-time classification of all of the existing objects in a specified S3 bucket.
+    /// </p>
+    pub fn one_time(&self) -> std::option::Option<&crate::model::S3OneTimeClassificationType> {
+        self.one_time.as_ref()
+    }
+    /// <p>A continuous classification of the objects that are added to a specified S3 bucket.
+    /// Amazon Macie Classic begins performing continuous classification after a bucket is
+    /// successfully associated with Macie Classic. </p>
+    pub fn continuous(&self) -> std::option::Option<&crate::model::S3ContinuousClassificationType> {
+        self.continuous.as_ref()
+    }
+}
 impl std::fmt::Debug for ClassificationType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassificationType");
@@ -603,6 +687,12 @@ impl ClassificationType {
 pub struct MemberAccount {
     /// <p>The AWS account ID of the Amazon Macie Classic member account.</p>
     pub account_id: std::option::Option<std::string::String>,
+}
+impl MemberAccount {
+    /// <p>The AWS account ID of the Amazon Macie Classic member account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MemberAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

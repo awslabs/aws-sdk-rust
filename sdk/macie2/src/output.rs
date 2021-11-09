@@ -98,6 +98,16 @@ pub struct UpdateFindingsFilterOutput {
     /// <p>The unique identifier for the filter that was updated.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl UpdateFindingsFilterOutput {
+    /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the filter that was updated.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFindingsFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFindingsFilterOutput");
@@ -219,6 +229,12 @@ pub struct TestCustomDataIdentifierOutput {
     /// <p>The number of instances of sample text that matched the detection criteria specified in the custom data identifier.</p>
     pub match_count: i32,
 }
+impl TestCustomDataIdentifierOutput {
+    /// <p>The number of instances of sample text that matched the detection criteria specified in the custom data identifier.</p>
+    pub fn match_count(&self) -> i32 {
+        self.match_count
+    }
+}
 impl std::fmt::Debug for TestCustomDataIdentifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestCustomDataIdentifierOutput");
@@ -298,6 +314,16 @@ pub struct SearchResourcesOutput {
     pub matching_resources: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchResourcesOutput {
+    /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+    pub fn matching_resources(&self) -> std::option::Option<&[crate::model::MatchingResource]> {
+        self.matching_resources.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for SearchResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -403,6 +429,14 @@ pub struct PutClassificationExportConfigurationOutput {
     /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
+impl PutClassificationExportConfigurationOutput {
+    /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ClassificationExportConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for PutClassificationExportConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutClassificationExportConfigurationOutput");
@@ -458,6 +492,15 @@ pub struct ListTagsForResourceOutput {
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -523,6 +566,16 @@ pub struct ListOrganizationAdminAccountsOutput {
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListOrganizationAdminAccountsOutput {
+    /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
+    pub fn admin_accounts(&self) -> std::option::Option<&[crate::model::AdminAccount]> {
+        self.admin_accounts.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListOrganizationAdminAccountsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -596,6 +649,16 @@ pub struct ListMembersOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListMembersOutput {
+    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified by the onlyAssociated request parameter.</p>
+    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+        self.members.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListMembersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListMembersOutput");
@@ -667,6 +730,16 @@ pub struct ListManagedDataIdentifiersOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListManagedDataIdentifiersOutput {
+    /// <p>An array of objects, one for each managed data identifier.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::ManagedDataIdentifierSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListManagedDataIdentifiersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -744,6 +817,16 @@ pub struct ListInvitationsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListInvitationsOutput {
+    /// <p>An array of objects, one for each invitation that was received by the account.</p>
+    pub fn invitations(&self) -> std::option::Option<&[crate::model::Invitation]> {
+        self.invitations.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsOutput");
@@ -816,6 +899,18 @@ pub struct ListFindingsFiltersOutput {
         std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListFindingsFiltersOutput {
+    /// <p>An array of objects, one for each filter that's associated with the account.</p>
+    pub fn findings_filter_list_items(
+        &self,
+    ) -> std::option::Option<&[crate::model::FindingsFilterListItem]> {
+        self.findings_filter_list_items.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListFindingsFiltersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -896,6 +991,16 @@ pub struct ListFindingsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFindingsOutput {
+    /// <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.finding_ids.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsOutput");
@@ -967,6 +1072,16 @@ pub struct ListCustomDataIdentifiersOutput {
     pub items: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCustomDataIdentifiersOutput {
+    /// <p>An array of objects, one for each custom data identifier.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::CustomDataIdentifierSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCustomDataIdentifiersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1044,6 +1159,16 @@ pub struct ListClassificationJobsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListClassificationJobsOutput {
+    /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+    pub fn items(&self) -> std::option::Option<&[crate::model::JobSummary]> {
+        self.items.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListClassificationJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListClassificationJobsOutput");
@@ -1115,6 +1240,16 @@ pub struct GetUsageTotalsOutput {
     pub time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
     pub usage_totals: std::option::Option<std::vec::Vec<crate::model::UsageTotal>>,
+}
+impl GetUsageTotalsOutput {
+    /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.time_range.as_ref()
+    }
+    /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
+    pub fn usage_totals(&self) -> std::option::Option<&[crate::model::UsageTotal]> {
+        self.usage_totals.as_deref()
+    }
 }
 impl std::fmt::Debug for GetUsageTotalsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1192,6 +1327,20 @@ pub struct GetUsageStatisticsOutput {
     pub records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub time_range: std::option::Option<crate::model::TimeRange>,
+}
+impl GetUsageStatisticsOutput {
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+    pub fn records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
+        self.records.as_deref()
+    }
+    /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+        self.time_range.as_ref()
+    }
 }
 impl std::fmt::Debug for GetUsageStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1295,6 +1444,47 @@ pub struct GetMemberOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetMemberOutput {
+    /// <p>The Amazon Web Services account ID for the account.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID for the administrator account.</p>
+    pub fn administrator_account_id(&self) -> std::option::Option<&str> {
+        self.administrator_account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The email address for the account.</p>
+    pub fn email(&self) -> std::option::Option<&str> {
+        self.email.as_deref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.invited_at.as_ref()
+    }
+    /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    pub fn master_account_id(&self) -> std::option::Option<&str> {
+        self.master_account_id.as_deref()
+    }
+    /// <p>The current status of the relationship between the account and the administrator account.</p>
+    pub fn relationship_status(&self) -> std::option::Option<&crate::model::RelationshipStatus> {
+        self.relationship_status.as_ref()
+    }
+    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1480,6 +1670,12 @@ pub struct GetMasterAccountOutput {
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub master: std::option::Option<crate::model::Invitation>,
 }
+impl GetMasterAccountOutput {
+    /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    pub fn master(&self) -> std::option::Option<&crate::model::Invitation> {
+        self.master.as_ref()
+    }
+}
 impl std::fmt::Debug for GetMasterAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMasterAccountOutput");
@@ -1535,6 +1731,30 @@ pub struct GetMacieSessionOutput {
     pub status: std::option::Option<crate::model::MacieStatus>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl GetMacieSessionOutput {
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    pub fn finding_publishing_frequency(
+        &self,
+    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+        self.finding_publishing_frequency.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+    /// <p>The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::MacieStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for GetMacieSessionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1652,6 +1872,12 @@ pub struct GetInvitationsCountOutput {
     /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
     pub invitations_count: i64,
 }
+impl GetInvitationsCountOutput {
+    /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
+    pub fn invitations_count(&self) -> i64 {
+        self.invitations_count
+    }
+}
 impl std::fmt::Debug for GetInvitationsCountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetInvitationsCountOutput");
@@ -1699,6 +1925,12 @@ impl GetInvitationsCountOutput {
 pub struct GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::model::GroupCount>>,
+}
+impl GetFindingStatisticsOutput {
+    /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+    pub fn counts_by_group(&self) -> std::option::Option<&[crate::model::GroupCount]> {
+        self.counts_by_group.as_deref()
+    }
 }
 impl std::fmt::Debug for GetFindingStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1756,6 +1988,14 @@ impl GetFindingStatisticsOutput {
 pub struct GetFindingsPublicationConfigurationOutput {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
     pub security_hub_configuration: std::option::Option<crate::model::SecurityHubConfiguration>,
+}
+impl GetFindingsPublicationConfigurationOutput {
+    /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
+    pub fn security_hub_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::SecurityHubConfiguration> {
+        self.security_hub_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFindingsPublicationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1829,6 +2069,43 @@ pub struct GetFindingsFilterOutput {
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetFindingsFilterOutput {
+    /// <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
+        self.action.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the filter.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The custom description of the filter.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The criteria that's used to filter findings.</p>
+    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+        self.finding_criteria.as_ref()
+    }
+    /// <p>The unique identifier for the filter.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The custom name of the filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    pub fn position(&self) -> i32 {
+        self.position
+    }
+    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetFindingsFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1992,6 +2269,12 @@ pub struct GetFindingsOutput {
     /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
 }
+impl GetFindingsOutput {
+    /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+    pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
+        self.findings.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFindingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingsOutput");
@@ -2069,6 +2352,55 @@ pub struct GetCustomDataIdentifierOutput {
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl GetCustomDataIdentifierOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
+    pub fn deleted(&self) -> bool {
+        self.deleted
+    }
+    /// <p>The custom description of the custom data identifier.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the custom data identifier.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+    pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
+        self.ignore_words.as_deref()
+    }
+    /// <p>An array that lists specific character sequences (keywords), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+        self.keywords.as_deref()
+    }
+    /// <p>The maximum number of characters that can exist between text that matches the regex pattern and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regex pattern.</p>
+    pub fn maximum_match_distance(&self) -> i32 {
+        self.maximum_match_distance
+    }
+    /// <p>The custom name of the custom data identifier.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
+    pub fn regex(&self) -> std::option::Option<&str> {
+        self.regex.as_deref()
+    }
+    /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for GetCustomDataIdentifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2286,6 +2618,14 @@ pub struct GetClassificationExportConfigurationOutput {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
+impl GetClassificationExportConfigurationOutput {
+    /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    pub fn configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ClassificationExportConfiguration> {
+        self.configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for GetClassificationExportConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClassificationExportConfigurationOutput");
@@ -2369,6 +2709,72 @@ pub struct GetBucketStatisticsOutput {
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub unclassifiable_object_size_in_bytes:
         std::option::Option<crate::model::ObjectLevelStatistics>,
+}
+impl GetBucketStatisticsOutput {
+    /// <p>The total number of buckets.</p>
+    pub fn bucket_count(&self) -> i64 {
+        self.bucket_count
+    }
+    /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    pub fn bucket_count_by_effective_permission(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketCountByEffectivePermission> {
+        self.bucket_count_by_effective_permission.as_ref()
+    }
+    /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    pub fn bucket_count_by_encryption_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketCountByEncryptionType> {
+        self.bucket_count_by_encryption_type.as_ref()
+    }
+    /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    pub fn bucket_count_by_object_encryption_requirement(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads> {
+        self.bucket_count_by_object_encryption_requirement.as_ref()
+    }
+    /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    pub fn bucket_count_by_shared_access_type(
+        &self,
+    ) -> std::option::Option<&crate::model::BucketCountBySharedAccessType> {
+        self.bucket_count_by_shared_access_type.as_ref()
+    }
+    /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    pub fn classifiable_object_count(&self) -> i64 {
+        self.classifiable_object_count
+    }
+    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    pub fn classifiable_size_in_bytes(&self) -> i64 {
+        self.classifiable_size_in_bytes
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The total number of objects in the buckets.</p>
+    pub fn object_count(&self) -> i64 {
+        self.object_count
+    }
+    /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    pub fn size_in_bytes(&self) -> i64 {
+        self.size_in_bytes
+    }
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    pub fn size_in_bytes_compressed(&self) -> i64 {
+        self.size_in_bytes_compressed
+    }
+    /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn unclassifiable_object_count(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectLevelStatistics> {
+        self.unclassifiable_object_count.as_ref()
+    }
+    /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn unclassifiable_object_size_in_bytes(
+        &self,
+    ) -> std::option::Option<&crate::model::ObjectLevelStatistics> {
+        self.unclassifiable_object_size_in_bytes.as_ref()
+    }
 }
 impl std::fmt::Debug for GetBucketStatisticsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2643,6 +3049,12 @@ pub struct GetAdministratorAccountOutput {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub administrator: std::option::Option<crate::model::Invitation>,
 }
+impl GetAdministratorAccountOutput {
+    /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    pub fn administrator(&self) -> std::option::Option<&crate::model::Invitation> {
+        self.administrator.as_ref()
+    }
+}
 impl std::fmt::Debug for GetAdministratorAccountOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAdministratorAccountOutput");
@@ -2906,6 +3318,16 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the Amazon Web Services organization.</p>
     pub max_account_limit_reached: bool,
 }
+impl DescribeOrganizationConfigurationOutput {
+    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the Amazon Web Services organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the Amazon Web Services organization.</p>
+    pub fn max_account_limit_reached(&self) -> bool {
+        self.max_account_limit_reached
+    }
+}
 impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConfigurationOutput");
@@ -3006,6 +3428,93 @@ pub struct DescribeClassificationJobOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     pub user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
+}
+impl DescribeClassificationJobOutput {
+    /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+    pub fn custom_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.custom_data_identifier_ids.as_deref()
+    }
+    /// <p>The custom description of the job.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
+    pub fn initial_run(&self) -> bool {
+        self.initial_run
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li></ul>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
+    pub fn last_run_error_status(&self) -> std::option::Option<&crate::model::LastRunErrorStatus> {
+        self.last_run_error_status.as_ref()
+    }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.last_run_time.as_ref()
+    }
+    /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+    pub fn managed_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.managed_data_identifier_ids.as_deref()
+    }
+    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    pub fn managed_data_identifier_selector(
+        &self,
+    ) -> std::option::Option<&crate::model::ManagedDataIdentifierSelector> {
+        self.managed_data_identifier_selector.as_ref()
+    }
+    /// <p>The custom name of the job.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    pub fn s3_job_definition(&self) -> std::option::Option<&crate::model::S3JobDefinition> {
+        self.s3_job_definition.as_ref()
+    }
+    /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
+    pub fn sampling_percentage(&self) -> i32 {
+        self.sampling_percentage
+    }
+    /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
+    pub fn schedule_frequency(&self) -> std::option::Option<&crate::model::JobScheduleFrequency> {
+        self.schedule_frequency.as_ref()
+    }
+    /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::Statistics> {
+        self.statistics.as_ref()
+    }
+    /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
+    pub fn user_paused_details(&self) -> std::option::Option<&crate::model::UserPausedDetails> {
+        self.user_paused_details.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeClassificationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3384,6 +3893,16 @@ pub struct DescribeBucketsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBucketsOutput {
+    /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+    pub fn buckets(&self) -> std::option::Option<&[crate::model::BucketMetadata]> {
+        self.buckets.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBucketsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBucketsOutput");
@@ -3483,6 +4002,12 @@ impl DeleteMemberOutput {
 pub struct DeleteInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl DeleteInvitationsOutput {
+    /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3605,6 +4130,12 @@ pub struct DeclineInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
+impl DeclineInvitationsOutput {
+    /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for DeclineInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeclineInvitationsOutput");
@@ -3696,6 +4227,12 @@ pub struct CreateMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
     pub arn: std::option::Option<std::string::String>,
 }
+impl CreateMemberOutput {
+    /// <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMemberOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMemberOutput");
@@ -3741,6 +4278,12 @@ impl CreateMemberOutput {
 pub struct CreateInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl CreateInvitationsOutput {
+    /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateInvitationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3805,6 +4348,16 @@ pub struct CreateFindingsFilterOutput {
     /// <p>The unique identifier for the filter that was created.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl CreateFindingsFilterOutput {
+    /// <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the filter that was created.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFindingsFilterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFindingsFilterOutput");
@@ -3866,6 +4419,12 @@ pub struct CreateCustomDataIdentifierOutput {
     /// <p>The unique identifier for the custom data identifier that was created.</p>
     pub custom_data_identifier_id: std::option::Option<std::string::String>,
 }
+impl CreateCustomDataIdentifierOutput {
+    /// <p>The unique identifier for the custom data identifier that was created.</p>
+    pub fn custom_data_identifier_id(&self) -> std::option::Option<&str> {
+        self.custom_data_identifier_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateCustomDataIdentifierOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateCustomDataIdentifierOutput");
@@ -3918,6 +4477,16 @@ pub struct CreateClassificationJobOutput {
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
+}
+impl CreateClassificationJobOutput {
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClassificationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3982,6 +4551,18 @@ pub struct BatchGetCustomDataIdentifiersOutput {
         std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
     /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
     pub not_found_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetCustomDataIdentifiersOutput {
+    /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+    pub fn custom_data_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchGetCustomDataIdentifierSummary]> {
+        self.custom_data_identifiers.as_deref()
+    }
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
+    pub fn not_found_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.not_found_identifier_ids.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchGetCustomDataIdentifiersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

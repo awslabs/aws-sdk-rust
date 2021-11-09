@@ -75,7 +75,7 @@ impl AssociateServiceQuotaTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_service_quota_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_service_quota_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -246,7 +246,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_service_quota_increase_request_from_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_service_quota_increase_request_from_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -385,7 +385,7 @@ impl DisassociateServiceQuotaTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_service_quota_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_service_quota_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -516,7 +516,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_association_for_service_quota_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_association_for_service_quota_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -672,7 +672,7 @@ impl GetAwsDefaultServiceQuotaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aws_default_service_quota(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aws_default_service_quota(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -824,7 +824,7 @@ impl GetRequestedServiceQuotaChangeInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_requested_service_quota_change(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_requested_service_quota_change(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -987,10 +987,7 @@ impl GetServiceQuotaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_quota(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_get_service_quota(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1168,7 +1165,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_service_quota_increase_request_from_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_service_quota_increase_request_from_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1347,7 +1344,7 @@ impl ListAwsDefaultServiceQuotasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_aws_default_service_quotas(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_aws_default_service_quotas(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1541,7 +1538,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_requested_service_quota_change_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_requested_service_quota_change_history(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1749,7 +1746,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_requested_service_quota_change_history_by_quota(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_requested_service_quota_change_history_by_quota(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -1943,7 +1940,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_quota_increase_requests_in_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_service_quota_increase_requests_in_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2121,10 +2118,7 @@ impl ListServiceQuotasInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_quotas(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_service_quotas(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2287,10 +2281,7 @@ impl ListServicesInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2444,10 +2435,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2637,7 +2627,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_service_quota_increase_request_into_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_service_quota_increase_request_into_template(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2814,7 +2804,7 @@ impl RequestServiceQuotaIncreaseInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_request_service_quota_increase(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_request_service_quota_increase(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2987,10 +2977,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3162,10 +3149,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3237,6 +3221,17 @@ pub struct UntagResourceInput {
     /// <p>The keys of the tags that you want to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
+    /// this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The keys of the tags that you want to remove from the resource.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -3255,6 +3250,17 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags that you want to add to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
+    /// using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags that you want to add to the resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3275,6 +3281,20 @@ pub struct RequestServiceQuotaIncreaseInput {
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The new, increased value for the quota.</p>
     pub desired_value: std::option::Option<f64>,
+}
+impl RequestServiceQuotaIncreaseInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn desired_value(&self) -> std::option::Option<f64> {
+        self.desired_value
+    }
 }
 impl std::fmt::Debug for RequestServiceQuotaIncreaseInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3299,6 +3319,24 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// <p>The new, increased value for the quota.</p>
     pub desired_value: std::option::Option<f64>,
 }
+impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The AWS Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The new, increased value for the quota.</p>
+    pub fn desired_value(&self) -> std::option::Option<f64> {
+        self.desired_value
+    }
+}
 impl std::fmt::Debug for PutServiceQuotaIncreaseRequestIntoTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutServiceQuotaIncreaseRequestIntoTemplateInput");
@@ -3319,6 +3357,14 @@ pub struct ListTagsForResourceInput {
     /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
+    /// can get this information by using the Service Quotas console, or by listing the quotas using the
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -3336,6 +3382,17 @@ pub struct ListServicesInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining
     /// results, if any, make another call with the token returned from this call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServicesInput {
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
+    /// results, if any, make another call with the token returned from this call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServicesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3357,6 +3414,21 @@ pub struct ListServiceQuotasInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining
     /// results, if any, make another call with the token returned from this call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServiceQuotasInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
+    /// results, if any, make another call with the token returned from this call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServiceQuotasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3381,6 +3453,25 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining
     /// results, if any, make another call with the token returned from this call.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListServiceQuotaIncreaseRequestsInTemplateInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The AWS Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
+    /// results, if any, make another call with the token returned from this call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListServiceQuotaIncreaseRequestsInTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3409,6 +3500,29 @@ pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// results, if any, make another call with the token returned from this call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The status value of the quota increase request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RequestStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
+    /// results, if any, make another call with the token returned from this call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryByQuotaInput");
@@ -3435,6 +3549,25 @@ pub struct ListRequestedServiceQuotaChangeHistoryInput {
     /// results, if any, make another call with the token returned from this call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListRequestedServiceQuotaChangeHistoryInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The status of the quota increase request.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RequestStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
+    /// results, if any, make another call with the token returned from this call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListRequestedServiceQuotaChangeHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRequestedServiceQuotaChangeHistoryInput");
@@ -3458,6 +3591,21 @@ pub struct ListAwsDefaultServiceQuotasInput {
     /// results, if any, make another call with the token returned from this call.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAwsDefaultServiceQuotasInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
+    /// results, if any, make another call with the token returned from this call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAwsDefaultServiceQuotasInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAwsDefaultServiceQuotasInput");
@@ -3479,6 +3627,20 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The AWS Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
+impl GetServiceQuotaIncreaseRequestFromTemplateInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The AWS Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceQuotaIncreaseRequestFromTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceQuotaIncreaseRequestFromTemplateInput");
@@ -3498,6 +3660,16 @@ pub struct GetServiceQuotaInput {
     /// <p>The quota identifier.</p>
     pub quota_code: std::option::Option<std::string::String>,
 }
+impl GetServiceQuotaInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+}
 impl std::fmt::Debug for GetServiceQuotaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetServiceQuotaInput");
@@ -3513,6 +3685,12 @@ impl std::fmt::Debug for GetServiceQuotaInput {
 pub struct GetRequestedServiceQuotaChangeInput {
     /// <p>The ID of the quota increase request.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl GetRequestedServiceQuotaChangeInput {
+    /// <p>The ID of the quota increase request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRequestedServiceQuotaChangeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3530,6 +3708,16 @@ pub struct GetAwsDefaultServiceQuotaInput {
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The quota identifier.</p>
     pub quota_code: std::option::Option<std::string::String>,
+}
+impl GetAwsDefaultServiceQuotaInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAwsDefaultServiceQuotaInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3572,6 +3760,20 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     pub quota_code: std::option::Option<std::string::String>,
     /// <p>The AWS Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
+}
+impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
+    /// <p>The service identifier.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The quota identifier.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+    /// <p>The AWS Region.</p>
+    pub fn aws_region(&self) -> std::option::Option<&str> {
+        self.aws_region.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteServiceQuotaIncreaseRequestFromTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -110,10 +110,7 @@ impl ApplyArchiveRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_apply_archive_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_apply_archive_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -467,10 +464,7 @@ impl CreateAccessPreviewInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_access_preview(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_access_preview(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -701,10 +695,8 @@ impl CreateAnalyzerInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_analyzer(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_analyzer(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -928,10 +920,7 @@ impl CreateArchiveRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_archive_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_archive_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2604,10 +2593,7 @@ impl ListAccessPreviewFindingsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_access_preview_findings(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2971,10 +2957,7 @@ impl ListAnalyzedResourcesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_analyzed_resources(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3547,10 +3530,7 @@ impl ListFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4078,10 +4058,7 @@ impl StartPolicyGenerationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_policy_generation(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4242,10 +4219,7 @@ impl StartResourceScanInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_resource_scan(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_resource_scan(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4434,10 +4408,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4856,10 +4827,7 @@ impl UpdateArchiveRuleInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_archive_rule(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_archive_rule(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5072,10 +5040,8 @@ impl UpdateFindingsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_findings(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_findings(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5300,10 +5266,8 @@ impl ValidatePolicyInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_validate_policy(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_validate_policy(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5376,6 +5340,20 @@ pub struct ListAnalyzersInput {
     /// <p>The type of analyzer.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
+impl ListAnalyzersInput {
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The type of analyzer.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for ListAnalyzersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnalyzersInput");
@@ -5405,6 +5383,34 @@ pub struct CreateAnalyzerInput {
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateAnalyzerInput {
+    /// <p>The name of the analyzer to create.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
+    /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
+    /// per organization per Region.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
+    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
+    /// findings that meet the criteria you define for the rule.</p>
+    pub fn archive_rules(&self) -> std::option::Option<&[crate::model::InlineArchiveRule]> {
+        self.archive_rules.as_deref()
+    }
+    /// <p>The tags to apply to the analyzer.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAnalyzerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnalyzerInput");
@@ -5426,6 +5432,16 @@ pub struct DeleteAnalyzerInput {
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl DeleteAnalyzerInput {
+    /// <p>The name of the analyzer to delete.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteAnalyzerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAnalyzerInput");
@@ -5441,6 +5457,12 @@ impl std::fmt::Debug for DeleteAnalyzerInput {
 pub struct GetAnalyzerInput {
     /// <p>The name of the analyzer retrieved.</p>
     pub analyzer_name: std::option::Option<std::string::String>,
+}
+impl GetAnalyzerInput {
+    /// <p>The name of the analyzer retrieved.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAnalyzerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5460,6 +5482,20 @@ pub struct ListArchiveRulesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the request.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListArchiveRulesInput {
+    /// <p>The name of the analyzer to retrieve rules from.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the request.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListArchiveRulesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5486,6 +5522,27 @@ pub struct CreateArchiveRuleInput {
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateArchiveRuleInput {
+    /// <p>The name of the created analyzer.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>The name of the rule to create.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>The criteria for the rule.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
+    {
+        self.filter.as_ref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateArchiveRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateArchiveRuleInput");
@@ -5507,6 +5564,20 @@ pub struct DeleteArchiveRuleInput {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl DeleteArchiveRuleInput {
+    /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>The name of the rule to delete.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteArchiveRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5534,6 +5605,28 @@ pub struct UpdateArchiveRuleInput {
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateArchiveRuleInput {
+    /// <p>The name of the analyzer to update the archive rules for.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>The name of the rule to update.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>A filter to match for the rules to update. Only rules that match the filter are
+    /// updated.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
+    {
+        self.filter.as_ref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateArchiveRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateArchiveRuleInput");
@@ -5553,6 +5646,16 @@ pub struct GetArchiveRuleInput {
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule to retrieve.</p>
     pub rule_name: std::option::Option<std::string::String>,
+}
+impl GetArchiveRuleInput {
+    /// <p>The name of the analyzer to retrieve rules from.</p>
+    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+        self.analyzer_name.as_deref()
+    }
+    /// <p>The name of the rule to retrieve.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
 }
 impl std::fmt::Debug for GetArchiveRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5585,6 +5688,35 @@ pub struct ValidatePolicyInput {
     /// or Amazon S3 bucket policy. </p>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
 }
+impl ValidatePolicyInput {
+    /// <p>The locale to use for localizing the findings.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The JSON policy document to use as the content for the policy.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+    /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
+    /// Identity policies include managed and inline policies for IAM roles, users, and groups.
+    /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
+    /// organization, organizational unit (OU), or an account.</p>
+    /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
+    /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
+    /// input such as identity policy or resource policy or a specific input such as managed policy
+    /// or Amazon S3 bucket policy. </p>
+    pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
+        self.policy_type.as_ref()
+    }
+}
 impl std::fmt::Debug for ValidatePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidatePolicyInput");
@@ -5615,6 +5747,31 @@ pub struct UpdateFindingsInput {
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl UpdateFindingsInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> that generated the findings to update.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The state represents the action to take to update the finding Status. Use
+    /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+    /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatusUpdate> {
+        self.status.as_ref()
+    }
+    /// <p>The IDs of the findings to update.</p>
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.ids.as_deref()
+    }
+    /// <p>The ARN of the resource identified in the finding.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFindingsInput");
@@ -5636,6 +5793,16 @@ pub struct UntagResourceInput {
     /// <p>The key for the tag to add.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the resource to remove the tag from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The key for the tag to add.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -5654,6 +5821,19 @@ pub struct TagResourceInput {
     /// <p>The tags to add to the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the resource to add the tag to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5674,6 +5854,18 @@ pub struct StartResourceScanInput {
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource to scan.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl StartResourceScanInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> to use to scan the policies applied to the specified
+    /// resource.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The ARN of the resource to scan.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for StartResourceScanInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5703,6 +5895,30 @@ pub struct StartPolicyGenerationInput {
     /// SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl StartPolicyGenerationInput {
+    /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
+    /// policy.</p>
+    pub fn policy_generation_details(
+        &self,
+    ) -> std::option::Option<&crate::model::PolicyGenerationDetails> {
+        self.policy_generation_details.as_ref()
+    }
+    /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
+    /// that you want to analyze to generate policies.</p>
+    pub fn cloud_trail_details(&self) -> std::option::Option<&crate::model::CloudTrailDetails> {
+        self.cloud_trail_details.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. Idempotency ensures that an API request completes only once. With an idempotent
+    /// request, if the original request completes successfully, the subsequent retries with the
+    /// same client token return the result from the original successful request and they have no
+    /// additional effect.</p>
+    /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
+    /// SDK.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for StartPolicyGenerationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartPolicyGenerationInput");
@@ -5719,6 +5935,12 @@ impl std::fmt::Debug for StartPolicyGenerationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to retrieve tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource to retrieve tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5740,6 +5962,22 @@ pub struct ListPolicyGenerationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListPolicyGenerationsInput {
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
+    /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
+    /// for a specific principal.</p>
+    pub fn principal_arn(&self) -> std::option::Option<&str> {
+        self.principal_arn.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPolicyGenerationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5769,6 +6007,32 @@ pub struct ListFindingsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListFindingsInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> to retrieve findings from.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>A filter to match for the findings to return.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
+    {
+        self.filter.as_ref()
+    }
+    /// <p>The sort order for the findings returned.</p>
+    pub fn sort(&self) -> std::option::Option<&crate::model::SortCriteria> {
+        self.sort.as_ref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFindingsInput");
@@ -5795,6 +6059,25 @@ pub struct ListAnalyzedResourcesInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListAnalyzedResourcesInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The type of resource.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListAnalyzedResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnalyzedResourcesInput");
@@ -5817,6 +6100,21 @@ pub struct ListAccessPreviewsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAccessPreviewsInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> used to generate the access preview.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAccessPreviewsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5845,6 +6143,32 @@ pub struct ListAccessPreviewFindingsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListAccessPreviewFindingsInput {
+    /// <p>The unique ID for the access preview.</p>
+    pub fn access_preview_id(&self) -> std::option::Option<&str> {
+        self.access_preview_id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> used to generate the access.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>Criteria to filter the returned findings.</p>
+    pub fn filter(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
+    {
+        self.filter.as_ref()
+    }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListAccessPreviewFindingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5879,6 +6203,30 @@ pub struct GetGeneratedPolicyInput {
     /// been used recently to create this service-level template.</p>
     pub include_service_level_template: std::option::Option<bool>,
 }
+impl GetGeneratedPolicyInput {
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
+    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
+    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
+    /// the policy generation request.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The level of detail that you want to generate. You can specify whether to generate
+    /// policies with placeholders for resource ARNs for actions that support resource level
+    /// granularity in policies.</p>
+    /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
+    /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+    pub fn include_resource_placeholders(&self) -> std::option::Option<bool> {
+        self.include_resource_placeholders
+    }
+    /// <p>The level of detail that you want to generate. You can specify whether to generate
+    /// service-level policies. </p>
+    /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
+    /// been used recently to create this service-level template.</p>
+    pub fn include_service_level_template(&self) -> std::option::Option<bool> {
+        self.include_service_level_template
+    }
+}
 impl std::fmt::Debug for GetGeneratedPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetGeneratedPolicyInput");
@@ -5905,6 +6253,17 @@ pub struct GetFindingInput {
     /// <p>The ID of the finding to retrieve.</p>
     pub id: std::option::Option<std::string::String>,
 }
+impl GetFindingInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> that generated the finding.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The ID of the finding to retrieve.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetFindingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFindingInput");
@@ -5924,6 +6283,17 @@ pub struct GetAnalyzedResourceInput {
     /// <p>The ARN of the resource to retrieve information about.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
+impl GetAnalyzedResourceInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> to retrieve information from.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The ARN of the resource to retrieve information about.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for GetAnalyzedResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetAnalyzedResourceInput");
@@ -5942,6 +6312,17 @@ pub struct GetAccessPreviewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
     /// the analyzer</a> used to generate the access preview.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
+}
+impl GetAccessPreviewInput {
+    /// <p>The unique ID for the access preview.</p>
+    pub fn access_preview_id(&self) -> std::option::Option<&str> {
+        self.access_preview_id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the analyzer</a> used to generate the access preview.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetAccessPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5971,6 +6352,30 @@ pub struct CreateAccessPreviewInput {
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
+impl CreateAccessPreviewInput {
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
+    /// the account analyzer</a> used to generate the access preview. You can only create an
+    /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
+    /// status.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>Access control configuration for your resource that is used to generate the access
+    /// preview. The access preview includes findings for external access allowed to the resource
+    /// with the proposed access control configuration. The configuration must contain exactly one
+    /// element.</p>
+    pub fn configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::Configuration>,
+    > {
+        self.configurations.as_ref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateAccessPreviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessPreviewInput");
@@ -5991,6 +6396,15 @@ pub struct CancelPolicyGenerationInput {
     /// the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
+impl CancelPolicyGenerationInput {
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
+    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
+    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
+    /// the policy generation request.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CancelPolicyGenerationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelPolicyGenerationInput");
@@ -6009,6 +6423,20 @@ pub struct ApplyArchiveRuleInput {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A client token.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl ApplyArchiveRuleInput {
+    /// <p>The Amazon resource name (ARN) of the analyzer.</p>
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
+    }
+    /// <p>The name of the rule to apply.</p>
+    pub fn rule_name(&self) -> std::option::Option<&str> {
+        self.rule_name.as_deref()
+    }
+    /// <p>A client token.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ApplyArchiveRuleInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

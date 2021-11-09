@@ -6,6 +6,12 @@ pub struct UpdateNodegroupVersionOutput {
     /// <p>An object representing an asynchronous update.</p>
     pub update: std::option::Option<crate::model::Update>,
 }
+impl UpdateNodegroupVersionOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateNodegroupVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNodegroupVersionOutput");
@@ -53,6 +59,12 @@ impl UpdateNodegroupVersionOutput {
 pub struct UpdateNodegroupConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
     pub update: std::option::Option<crate::model::Update>,
+}
+impl UpdateNodegroupConfigOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateNodegroupConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -102,6 +114,12 @@ pub struct UpdateClusterVersionOutput {
     /// <p>The full description of the specified update</p>
     pub update: std::option::Option<crate::model::Update>,
 }
+impl UpdateClusterVersionOutput {
+    /// <p>The full description of the specified update</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterVersionOutput");
@@ -150,6 +168,12 @@ pub struct UpdateClusterConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
     pub update: std::option::Option<crate::model::Update>,
 }
+impl UpdateClusterConfigOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateClusterConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateClusterConfigOutput");
@@ -197,6 +221,12 @@ impl UpdateClusterConfigOutput {
 pub struct UpdateAddonOutput {
     /// <p>An object representing an asynchronous update.</p>
     pub update: std::option::Option<crate::model::Update>,
+}
+impl UpdateAddonOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateAddonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -306,6 +336,12 @@ pub struct RegisterClusterOutput {
     /// <p>An object representing an Amazon EKS cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl RegisterClusterOutput {
+    /// <p>An object representing an Amazon EKS cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for RegisterClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterClusterOutput");
@@ -359,6 +395,20 @@ pub struct ListUpdatesOutput {
     /// results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListUpdatesOutput {
+    /// <p>A list of all the updates for the specified cluster and Region.</p>
+    pub fn update_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.update_ids.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code>
+    /// request. When the results of a <code>ListUpdates</code> request exceed
+    /// <code>maxResults</code>, you can use this value to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListUpdatesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -439,6 +489,15 @@ pub struct ListTagsForResourceOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl ListTagsForResourceOutput {
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
@@ -507,6 +566,20 @@ pub struct ListNodegroupsOutput {
     /// results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNodegroupsOutput {
+    /// <p>A list of all of the node groups associated with the specified cluster.</p>
+    pub fn nodegroups(&self) -> std::option::Option<&[std::string::String]> {
+        self.nodegroups.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code>
+    /// request. When the results of a <code>ListNodegroups</code> request exceed
+    /// <code>maxResults</code>, you can use this value to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNodegroupsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -591,6 +664,21 @@ pub struct ListIdentityProviderConfigsOutput {
     /// used and the results exceeded the value of that parameter. Pagination continues from the
     /// end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIdentityProviderConfigsOutput {
+    /// <p>The identity provider configurations for the cluster.</p>
+    pub fn identity_provider_configs(
+        &self,
+    ) -> std::option::Option<&[crate::model::IdentityProviderConfig]> {
+        self.identity_provider_configs.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was
+    /// used and the results exceeded the value of that parameter. Pagination continues from the
+    /// end of the previous results that returned the <code>nextToken</code> value.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListIdentityProviderConfigsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -678,6 +766,20 @@ pub struct ListFargateProfilesOutput {
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListFargateProfilesOutput {
+    /// <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
+    pub fn fargate_profile_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.fargate_profile_names.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>ListFargateProfiles</code> request. When the results of a
+    /// <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use
+    /// this value to retrieve the next page of results. This value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListFargateProfilesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListFargateProfilesOutput");
@@ -761,6 +863,20 @@ pub struct ListClustersOutput {
     /// results. This value is <code>null</code> when there are no more results to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersOutput {
+    /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    pub fn clusters(&self) -> std::option::Option<&[std::string::String]> {
+        self.clusters.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
+    /// request. When the results of a <code>ListClusters</code> request exceed
+    /// <code>maxResults</code>, you can use this value to retrieve the next page of
+    /// results. This value is <code>null</code> when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListClustersOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -849,6 +965,23 @@ pub struct ListAddonsOutput {
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAddonsOutput {
+    /// <p>A list of available add-ons.</p>
+    pub fn addons(&self) -> std::option::Option<&[std::string::String]> {
+        self.addons.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the
+    /// results exceeded the value of that parameter. Pagination continues from the end of the
+    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAddonsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAddonsOutput");
@@ -933,6 +1066,12 @@ pub struct DisassociateIdentityProviderConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
     pub update: std::option::Option<crate::model::Update>,
 }
+impl DisassociateIdentityProviderConfigOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
+}
 impl std::fmt::Debug for DisassociateIdentityProviderConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisassociateIdentityProviderConfigOutput");
@@ -981,6 +1120,12 @@ pub struct DescribeUpdateOutput {
     /// <p>The full description of the specified update.</p>
     pub update: std::option::Option<crate::model::Update>,
 }
+impl DescribeUpdateOutput {
+    /// <p>The full description of the specified update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeUpdateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUpdateOutput");
@@ -1028,6 +1173,12 @@ impl DescribeUpdateOutput {
 pub struct DescribeNodegroupOutput {
     /// <p>The full description of your node group.</p>
     pub nodegroup: std::option::Option<crate::model::Nodegroup>,
+}
+impl DescribeNodegroupOutput {
+    /// <p>The full description of your node group.</p>
+    pub fn nodegroup(&self) -> std::option::Option<&crate::model::Nodegroup> {
+        self.nodegroup.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeNodegroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1080,6 +1231,15 @@ pub struct DescribeIdentityProviderConfigOutput {
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider
     /// configuration.</p>
     pub identity_provider_config: std::option::Option<crate::model::IdentityProviderConfigResponse>,
+}
+impl DescribeIdentityProviderConfigOutput {
+    /// <p>The object that represents an OpenID Connect (OIDC) identity provider
+    /// configuration.</p>
+    pub fn identity_provider_config(
+        &self,
+    ) -> std::option::Option<&crate::model::IdentityProviderConfigResponse> {
+        self.identity_provider_config.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeIdentityProviderConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1138,6 +1298,12 @@ pub struct DescribeFargateProfileOutput {
     /// <p>The full description of your Fargate profile.</p>
     pub fargate_profile: std::option::Option<crate::model::FargateProfile>,
 }
+impl DescribeFargateProfileOutput {
+    /// <p>The full description of your Fargate profile.</p>
+    pub fn fargate_profile(&self) -> std::option::Option<&crate::model::FargateProfile> {
+        self.fargate_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeFargateProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFargateProfileOutput");
@@ -1188,6 +1354,12 @@ impl DescribeFargateProfileOutput {
 pub struct DescribeClusterOutput {
     /// <p>The full description of your specified cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl DescribeClusterOutput {
+    /// <p>The full description of your specified cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1245,6 +1417,23 @@ pub struct DescribeAddonVersionsOutput {
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAddonVersionsOutput {
+    /// <p>The list of available versions with Kubernetes version compatibility.</p>
+    pub fn addons(&self) -> std::option::Option<&[crate::model::AddonInfo]> {
+        self.addons.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used
+    /// and the results exceeded the value of that parameter. Pagination continues from the end
+    /// of the previous results that returned the <code>nextToken</code> value.</p>
+    /// <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to
+    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAddonVersionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1330,6 +1519,12 @@ pub struct DescribeAddonOutput {
     /// <p>An Amazon EKS add-on.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
+impl DescribeAddonOutput {
+    /// <p>An Amazon EKS add-on.</p>
+    pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
+        self.addon.as_ref()
+    }
+}
 impl std::fmt::Debug for DescribeAddonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAddonOutput");
@@ -1375,6 +1570,12 @@ impl DescribeAddonOutput {
 pub struct DeregisterClusterOutput {
     /// <p>An object representing an Amazon EKS cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
+}
+impl DeregisterClusterOutput {
+    /// <p>An object representing an Amazon EKS cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
 }
 impl std::fmt::Debug for DeregisterClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1423,6 +1624,12 @@ impl DeregisterClusterOutput {
 pub struct DeleteNodegroupOutput {
     /// <p>The full description of your deleted node group.</p>
     pub nodegroup: std::option::Option<crate::model::Nodegroup>,
+}
+impl DeleteNodegroupOutput {
+    /// <p>The full description of your deleted node group.</p>
+    pub fn nodegroup(&self) -> std::option::Option<&crate::model::Nodegroup> {
+        self.nodegroup.as_ref()
+    }
 }
 impl std::fmt::Debug for DeleteNodegroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1475,6 +1682,12 @@ pub struct DeleteFargateProfileOutput {
     /// <p>The deleted Fargate profile.</p>
     pub fargate_profile: std::option::Option<crate::model::FargateProfile>,
 }
+impl DeleteFargateProfileOutput {
+    /// <p>The deleted Fargate profile.</p>
+    pub fn fargate_profile(&self) -> std::option::Option<&crate::model::FargateProfile> {
+        self.fargate_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteFargateProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFargateProfileOutput");
@@ -1526,6 +1739,12 @@ pub struct DeleteClusterOutput {
     /// <p>The full description of the cluster to delete.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl DeleteClusterOutput {
+    /// <p>The full description of the cluster to delete.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteClusterOutput");
@@ -1574,6 +1793,12 @@ pub struct DeleteAddonOutput {
     /// <p>An Amazon EKS add-on.</p>
     pub addon: std::option::Option<crate::model::Addon>,
 }
+impl DeleteAddonOutput {
+    /// <p>An Amazon EKS add-on.</p>
+    pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
+        self.addon.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteAddonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteAddonOutput");
@@ -1619,6 +1844,12 @@ impl DeleteAddonOutput {
 pub struct CreateNodegroupOutput {
     /// <p>The full description of your new node group.</p>
     pub nodegroup: std::option::Option<crate::model::Nodegroup>,
+}
+impl CreateNodegroupOutput {
+    /// <p>The full description of your new node group.</p>
+    pub fn nodegroup(&self) -> std::option::Option<&crate::model::Nodegroup> {
+        self.nodegroup.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateNodegroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1671,6 +1902,12 @@ pub struct CreateFargateProfileOutput {
     /// <p>The full description of your new Fargate profile.</p>
     pub fargate_profile: std::option::Option<crate::model::FargateProfile>,
 }
+impl CreateFargateProfileOutput {
+    /// <p>The full description of your new Fargate profile.</p>
+    pub fn fargate_profile(&self) -> std::option::Option<&crate::model::FargateProfile> {
+        self.fargate_profile.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateFargateProfileOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFargateProfileOutput");
@@ -1722,6 +1959,12 @@ pub struct CreateClusterOutput {
     /// <p>The full description of your new cluster.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
+impl CreateClusterOutput {
+    /// <p>The full description of your new cluster.</p>
+    pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateClusterOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterOutput");
@@ -1769,6 +2012,12 @@ impl CreateClusterOutput {
 pub struct CreateAddonOutput {
     /// <p>An Amazon EKS add-on.</p>
     pub addon: std::option::Option<crate::model::Addon>,
+}
+impl CreateAddonOutput {
+    /// <p>An Amazon EKS add-on.</p>
+    pub fn addon(&self) -> std::option::Option<&crate::model::Addon> {
+        self.addon.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateAddonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1818,6 +2067,19 @@ pub struct AssociateIdentityProviderConfigOutput {
     /// <p>The tags for the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl AssociateIdentityProviderConfigOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
+    /// <p>The tags for the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateIdentityProviderConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1896,6 +2158,12 @@ impl AssociateIdentityProviderConfigOutput {
 pub struct AssociateEncryptionConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
     pub update: std::option::Option<crate::model::Update>,
+}
+impl AssociateEncryptionConfigOutput {
+    /// <p>An object representing an asynchronous update.</p>
+    pub fn update(&self) -> std::option::Option<&crate::model::Update> {
+        self.update.as_ref()
+    }
 }
 impl std::fmt::Debug for AssociateEncryptionConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

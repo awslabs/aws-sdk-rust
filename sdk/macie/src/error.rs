@@ -822,6 +822,16 @@ pub struct InvalidInputException {
     /// Field that has invalid input
     pub field_name: std::option::Option<std::string::String>,
 }
+impl InvalidInputException {
+    /// Error code for the exception
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// Field that has invalid input
+    pub fn field_name(&self) -> std::option::Option<&str> {
+        self.field_name.as_deref()
+    }
+}
 impl std::fmt::Debug for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidInputException");
@@ -914,6 +924,12 @@ pub struct InternalException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
+impl InternalException {
+    /// Error code for the exception
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
 impl std::fmt::Debug for InternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InternalException");
@@ -992,6 +1008,12 @@ pub struct AccessDeniedException {
     pub message: std::option::Option<std::string::String>,
     /// Resource type that caused the exception
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl AccessDeniedException {
+    /// Resource type that caused the exception
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1077,6 +1099,16 @@ pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
     /// Resource type that caused the exception
     pub resource_type: std::option::Option<std::string::String>,
+}
+impl LimitExceededException {
+    /// Error code for the exception
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+    /// Resource type that caused the exception
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

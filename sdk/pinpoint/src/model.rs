@@ -8,6 +8,16 @@ pub struct MessageBody {
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl MessageBody {
+    /// <p>The message that's returned from the API.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The unique identifier for the request or response.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageBody");
@@ -79,6 +89,35 @@ pub struct VoiceTemplateRequest {
     pub template_description: std::option::Option<std::string::String>,
     /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub voice_id: std::option::Option<std::string::String>,
+}
+impl VoiceTemplateRequest {
+    /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn voice_id(&self) -> std::option::Option<&str> {
+        self.voice_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VoiceTemplateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -236,6 +275,48 @@ pub struct VoiceChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the voice channel.</p>
     pub version: i32,
+}
+impl VoiceChannelResponse {
+    /// <p>The unique identifier for the application that the voice channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the voice channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>Specifies whether the voice channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the voice channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the voice channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the voice channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the voice channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for VoiceChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -414,6 +495,12 @@ pub struct VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     pub enabled: bool,
 }
+impl VoiceChannelRequest {
+    /// <p>Specifies whether to enable the voice channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for VoiceChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceChannelRequest");
@@ -461,6 +548,12 @@ impl VoiceChannelRequest {
 pub struct TemplateActiveVersionRequest {
     /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl TemplateActiveVersionRequest {
+    /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateActiveVersionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -518,6 +611,31 @@ pub struct SmsTemplateRequest {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A custom description of the message template.</p>
     pub template_description: std::option::Option<std::string::String>,
+}
+impl SmsTemplateRequest {
+    /// <p>The message body to use in text messages that are based on the message template.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
 }
 impl std::fmt::Debug for SmsTemplateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -670,6 +788,64 @@ pub struct SmsChannelResponse {
     pub transactional_messages_per_second: i32,
     /// <p>The current version of the SMS channel.</p>
     pub version: i32,
+}
+impl SmsChannelResponse {
+    /// <p>The unique identifier for the application that the SMS channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>Specifies whether the SMS channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the SMS channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the SMS channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
+    pub fn promotional_messages_per_second(&self) -> i32 {
+        self.promotional_messages_per_second
+    }
+    /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
+    pub fn sender_id(&self) -> std::option::Option<&str> {
+        self.sender_id.as_deref()
+    }
+    /// <p>The registered short code to use when you send messages through the SMS channel.</p>
+    pub fn short_code(&self) -> std::option::Option<&str> {
+        self.short_code.as_deref()
+    }
+    /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
+    pub fn transactional_messages_per_second(&self) -> i32 {
+        self.transactional_messages_per_second
+    }
+    /// <p>The current version of the SMS channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for SmsChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -920,6 +1096,20 @@ pub struct SmsChannelRequest {
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
     pub short_code: std::option::Option<std::string::String>,
 }
+impl SmsChannelRequest {
+    /// <p>Specifies whether to enable the SMS channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
+    pub fn sender_id(&self) -> std::option::Option<&str> {
+        self.sender_id.as_deref()
+    }
+    /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
+    pub fn short_code(&self) -> std::option::Option<&str> {
+        self.short_code.as_deref()
+    }
+}
 impl std::fmt::Debug for SmsChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SmsChannelRequest");
@@ -1016,6 +1206,59 @@ pub struct SegmentResponse {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version number of the segment.</p>
     pub version: i32,
+}
+impl SegmentResponse {
+    /// <p>The unique identifier for the application that the segment is associated with.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the segment.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date and time when the segment was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The dimension settings for the segment.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::SegmentDimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The settings for the import job that's associated with the segment.</p>
+    pub fn import_definition(&self) -> std::option::Option<&crate::model::SegmentImportResource> {
+        self.import_definition.as_ref()
+    }
+    /// <p>The date and time when the segment was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The name of the segment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
+    pub fn segment_groups(&self) -> std::option::Option<&crate::model::SegmentGroupList> {
+        self.segment_groups.as_ref()
+    }
+    /// <p>The segment type. Valid values are:</p> <ul><li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li> <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li></ul>
+    pub fn segment_type(&self) -> std::option::Option<&crate::model::SegmentType> {
+        self.segment_type.as_ref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The version number of the segment.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for SegmentResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1303,6 +1546,16 @@ pub struct SegmentGroupList {
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub include: std::option::Option<crate::model::Include>,
 }
+impl SegmentGroupList {
+    /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
+    pub fn groups(&self) -> std::option::Option<&[crate::model::SegmentGroup]> {
+        self.groups.as_deref()
+    }
+    /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
+    pub fn include(&self) -> std::option::Option<&crate::model::Include> {
+        self.include.as_ref()
+    }
+}
 impl std::fmt::Debug for SegmentGroupList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentGroupList");
@@ -1437,6 +1690,24 @@ pub struct SegmentGroup {
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.</p>
     pub r#type: std::option::Option<crate::model::Type>,
+}
+impl SegmentGroup {
+    /// <p>An array that defines the dimensions for the segment.</p>
+    pub fn dimensions(&self) -> std::option::Option<&[crate::model::SegmentDimensions]> {
+        self.dimensions.as_deref()
+    }
+    /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p> <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
+    pub fn source_segments(&self) -> std::option::Option<&[crate::model::SegmentReference]> {
+        self.source_segments.as_deref()
+    }
+    /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+        self.r#type.as_ref()
+    }
 }
 impl std::fmt::Debug for SegmentGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1667,6 +1938,16 @@ pub struct SegmentReference {
     /// <p>The version number of the segment.</p>
     pub version: i32,
 }
+impl SegmentReference {
+    /// <p>The unique identifier for the segment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The version number of the segment.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
+}
 impl std::fmt::Debug for SegmentReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentReference");
@@ -1743,6 +2024,44 @@ pub struct SegmentDimensions {
     pub user_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
     >,
+}
+impl SegmentDimensions {
+    /// <p>One or more custom attributes to use as criteria for the segment.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
+    pub fn behavior(&self) -> std::option::Option<&crate::model::SegmentBehaviors> {
+        self.behavior.as_ref()
+    }
+    /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
+    pub fn demographic(&self) -> std::option::Option<&crate::model::SegmentDemographics> {
+        self.demographic.as_ref()
+    }
+    /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::SegmentLocation> {
+        self.location.as_ref()
+    }
+    /// <p>One or more custom metrics to use as criteria for the segment.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetricDimension>,
+    > {
+        self.metrics.as_ref()
+    }
+    /// <p>One or more custom user attributes to use as criteria for the segment.</p>
+    pub fn user_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
+    > {
+        self.user_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for SegmentDimensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1919,6 +2238,16 @@ pub struct AttributeDimension {
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AttributeDimension {
+    /// <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes' substrings match the values are included in the segment.</li><li>BEFORE - endpoints with attributes read as ISO_INSTANT datetimes before the value are included in the segment.</li><li>AFTER - endpoints with attributes read as ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON - endpoints with attributes read as ISO_INSTANT dates on the value are included in the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints with attributes read as ISO_INSTANT datetimes between the values are included in the segment.</li></p>
+    pub fn attribute_type(&self) -> std::option::Option<&crate::model::AttributeType> {
+        self.attribute_type.as_ref()
+    }
+    /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
 impl std::fmt::Debug for AttributeDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeDimension");
@@ -2077,6 +2406,16 @@ pub struct MetricDimension {
     /// <p>The value to compare.</p>
     pub value: f64,
 }
+impl MetricDimension {
+    /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
+    pub fn comparison_operator(&self) -> std::option::Option<&str> {
+        self.comparison_operator.as_deref()
+    }
+    /// <p>The value to compare.</p>
+    pub fn value(&self) -> f64 {
+        self.value
+    }
+}
 impl std::fmt::Debug for MetricDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricDimension");
@@ -2142,6 +2481,16 @@ pub struct SegmentLocation {
     pub country: std::option::Option<crate::model::SetDimension>,
     /// <p>The GPS location and range for the segment.</p>
     pub gps_point: std::option::Option<crate::model::GpsPointDimension>,
+}
+impl SegmentLocation {
+    /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
+    pub fn country(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.country.as_ref()
+    }
+    /// <p>The GPS location and range for the segment.</p>
+    pub fn gps_point(&self) -> std::option::Option<&crate::model::GpsPointDimension> {
+        self.gps_point.as_ref()
+    }
 }
 impl std::fmt::Debug for SegmentLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2212,6 +2561,16 @@ pub struct GpsPointDimension {
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
     pub range_in_kilometers: f64,
 }
+impl GpsPointDimension {
+    /// <p>The GPS coordinates to measure distance from.</p>
+    pub fn coordinates(&self) -> std::option::Option<&crate::model::GpsCoordinates> {
+        self.coordinates.as_ref()
+    }
+    /// <p>The range, in kilometers, from the GPS coordinates.</p>
+    pub fn range_in_kilometers(&self) -> f64 {
+        self.range_in_kilometers
+    }
+}
 impl std::fmt::Debug for GpsPointDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GpsPointDimension");
@@ -2278,6 +2637,16 @@ pub struct GpsCoordinates {
     /// <p>The longitude coordinate of the location.</p>
     pub longitude: f64,
 }
+impl GpsCoordinates {
+    /// <p>The latitude coordinate of the location.</p>
+    pub fn latitude(&self) -> f64 {
+        self.latitude
+    }
+    /// <p>The longitude coordinate of the location.</p>
+    pub fn longitude(&self) -> f64 {
+        self.longitude
+    }
+}
 impl std::fmt::Debug for GpsCoordinates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GpsCoordinates");
@@ -2340,6 +2709,16 @@ pub struct SetDimension {
     pub dimension_type: std::option::Option<crate::model::DimensionType>,
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl SetDimension {
+    /// <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.</p>
+    pub fn dimension_type(&self) -> std::option::Option<&crate::model::DimensionType> {
+        self.dimension_type.as_ref()
+    }
+    /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for SetDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2479,6 +2858,32 @@ pub struct SegmentDemographics {
     /// <p>The device platform criteria for the segment.</p>
     pub platform: std::option::Option<crate::model::SetDimension>,
 }
+impl SegmentDemographics {
+    /// <p>The app version criteria for the segment.</p>
+    pub fn app_version(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.app_version.as_ref()
+    }
+    /// <p>The channel criteria for the segment.</p>
+    pub fn channel(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.channel.as_ref()
+    }
+    /// <p>The device type criteria for the segment.</p>
+    pub fn device_type(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.device_type.as_ref()
+    }
+    /// <p>The device make criteria for the segment.</p>
+    pub fn make(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.make.as_ref()
+    }
+    /// <p>The device model criteria for the segment.</p>
+    pub fn model(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.model.as_ref()
+    }
+    /// <p>The device platform criteria for the segment.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.platform.as_ref()
+    }
+}
 impl std::fmt::Debug for SegmentDemographics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentDemographics");
@@ -2604,6 +3009,12 @@ pub struct SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     pub recency: std::option::Option<crate::model::RecencyDimension>,
 }
+impl SegmentBehaviors {
+    /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
+    pub fn recency(&self) -> std::option::Option<&crate::model::RecencyDimension> {
+        self.recency.as_ref()
+    }
+}
 impl std::fmt::Debug for SegmentBehaviors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentBehaviors");
@@ -2656,6 +3067,16 @@ pub struct RecencyDimension {
     pub duration: std::option::Option<crate::model::Duration>,
     /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
     pub recency_type: std::option::Option<crate::model::RecencyType>,
+}
+impl RecencyDimension {
+    /// <p>The duration to use when determining whether an endpoint is active or inactive.</p>
+    pub fn duration(&self) -> std::option::Option<&crate::model::Duration> {
+        self.duration.as_ref()
+    }
+    /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
+    pub fn recency_type(&self) -> std::option::Option<&crate::model::RecencyType> {
+        self.recency_type.as_ref()
+    }
 }
 impl std::fmt::Debug for RecencyDimension {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2849,6 +3270,34 @@ pub struct SegmentImportResource {
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
     pub size: i32,
 }
+impl SegmentImportResource {
+    /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
+    pub fn channel_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+        self.channel_counts.as_ref()
+    }
+    /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the endpoint definitions were imported from to create the segment.</p>
+    pub fn s3_url(&self) -> std::option::Option<&str> {
+        self.s3_url.as_deref()
+    }
+    /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
+    pub fn size(&self) -> i32 {
+        self.size
+    }
+}
 impl std::fmt::Debug for SegmentImportResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentImportResource");
@@ -3038,6 +3487,27 @@ pub struct WriteSegmentRequest {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl WriteSegmentRequest {
+    /// <p>The criteria that define the dimensions for the segment.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::SegmentDimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The name of the segment.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The segment group to use and the dimensions to apply to the group's base segments in order to build the segment. A segment group can consist of zero or more base segments. Your request can include only one segment group.</p>
+    pub fn segment_groups(&self) -> std::option::Option<&crate::model::SegmentGroupList> {
+        self.segment_groups.as_ref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for WriteSegmentRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WriteSegmentRequest");
@@ -3170,6 +3640,59 @@ pub struct RecommenderConfigurationResponse {
     pub recommendations_display_name: std::option::Option<std::string::String>,
     /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
     pub recommendations_per_message: i32,
+}
+impl RecommenderConfigurationResponse {
+    /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The date, in extended ISO 8601 format, when the configuration was created for the recommender model.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The custom description of the configuration for the recommender model.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The unique identifier for the recommender model configuration.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date, in extended ISO 8601 format, when the configuration for the recommender model was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The custom name of the configuration for the recommender model.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of Amazon Pinpoint ID that's associated with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Possible values are:</p> <ul><li><p>PINPOINT_ENDPOINT_ID - Each user in the model is associated with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li> <li><p>PINPOINT_USER_ID - Each user in the model is associated with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If this value is specified, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li></ul>
+    pub fn recommendation_provider_id_type(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_id_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
+    pub fn recommendation_provider_role_arn(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommender model that Amazon Pinpoint retrieves the recommendation data from. This value is the ARN of an Amazon Personalize campaign.</p>
+    pub fn recommendation_provider_uri(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_uri.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to perform additional processing of recommendation data that it retrieves from the recommender model.</p>
+    pub fn recommendation_transformer_uri(&self) -> std::option::Option<&str> {
+        self.recommendation_transformer_uri.as_deref()
+    }
+    /// <p>The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.</p> <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
+    pub fn recommendations_display_name(&self) -> std::option::Option<&str> {
+        self.recommendations_display_name.as_deref()
+    }
+    /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
+    pub fn recommendations_per_message(&self) -> i32 {
+        self.recommendations_per_message
+    }
 }
 impl std::fmt::Debug for RecommenderConfigurationResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3450,6 +3973,47 @@ pub struct UpdateRecommenderConfigurationShape {
     /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p> <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
     pub recommendations_per_message: i32,
 }
+impl UpdateRecommenderConfigurationShape {
+    /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p> <ul><li><p>An attribute name must start with a letter or number and it can contain up to 50 characters. The characters can be letters, numbers, underscores (_), or hyphens (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An attribute display name must start with a letter or number and it can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in your request.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>A custom description of the configuration for the recommender model. The description can contain up to 128 characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A custom name of the configuration for the recommender model. The name must start with a letter or number and it can contain up to 128 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of Amazon Pinpoint ID to associate with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Valid values are:</p> <ul><li><p>PINPOINT_ENDPOINT_ID - Associate each user in the model with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li></ul>
+    pub fn recommendation_provider_id_type(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_id_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
+    pub fn recommendation_provider_role_arn(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommender model to retrieve recommendation data from. This value must match the ARN of an Amazon Personalize campaign.</p>
+    pub fn recommendation_provider_uri(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_uri.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function to invoke for additional processing of recommendation data that's retrieved from the recommender model.</p>
+    pub fn recommendation_transformer_uri(&self) -> std::option::Option<&str> {
+        self.recommendation_transformer_uri.as_deref()
+    }
+    /// <p>A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
+    pub fn recommendations_display_name(&self) -> std::option::Option<&str> {
+        self.recommendations_display_name.as_deref()
+    }
+    /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p> <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
+    pub fn recommendations_per_message(&self) -> i32 {
+        self.recommendations_per_message
+    }
+}
 impl std::fmt::Debug for UpdateRecommenderConfigurationShape {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRecommenderConfigurationShape");
@@ -3671,6 +4235,8 @@ pub struct PushNotificationTemplateRequest {
     /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub baidu: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
     /// <p>The default message template to use for push notification channels.</p>
+    ///
+    /// _Note: This member has been renamed from `default`._
     pub default_value: std::option::Option<crate::model::DefaultPushNotificationTemplate>,
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     pub default_substitutions: std::option::Option<std::string::String>,
@@ -3683,6 +4249,51 @@ pub struct PushNotificationTemplateRequest {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A custom description of the message template.</p>
     pub template_description: std::option::Option<std::string::String>,
+}
+impl PushNotificationTemplateRequest {
+    /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn adm(&self) -> std::option::Option<&crate::model::AndroidPushNotificationTemplate> {
+        self.adm.as_ref()
+    }
+    /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn apns(&self) -> std::option::Option<&crate::model::ApnsPushNotificationTemplate> {
+        self.apns.as_ref()
+    }
+    /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn baidu(&self) -> std::option::Option<&crate::model::AndroidPushNotificationTemplate> {
+        self.baidu.as_ref()
+    }
+    /// <p>The default message template to use for push notification channels.</p>
+    ///
+    /// _Note: This member has been renamed from `default`._
+    pub fn default_value(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultPushNotificationTemplate> {
+        self.default_value.as_ref()
+    }
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn gcm(&self) -> std::option::Option<&crate::model::AndroidPushNotificationTemplate> {
+        self.gcm.as_ref()
+    }
+    /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
 }
 impl std::fmt::Debug for PushNotificationTemplateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3896,6 +4507,44 @@ pub struct AndroidPushNotificationTemplate {
     pub title: std::option::Option<std::string::String>,
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl AndroidPushNotificationTemplate {
+    /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The message body to use in a push notification that's based on the message template.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
+    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+        self.image_icon_url.as_deref()
+    }
+    /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
+    pub fn small_image_icon_url(&self) -> std::option::Option<&str> {
+        self.small_image_icon_url.as_deref()
+    }
+    /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for AndroidPushNotificationTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4122,6 +4771,28 @@ pub struct DefaultPushNotificationTemplate {
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl DefaultPushNotificationTemplate {
+    /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The message body to use in push notifications that are based on the message template.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p> <p>For an iOS platform, this value is the key for the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for DefaultPushNotificationTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultPushNotificationTemplate");
@@ -4233,6 +4904,36 @@ pub struct ApnsPushNotificationTemplate {
     pub title: std::option::Option<std::string::String>,
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl ApnsPushNotificationTemplate {
+    /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The message body to use in push notifications that are based on the message template.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The URL of an image or video to display in push notifications that are based on the message template.</p>
+    pub fn media_url(&self) -> std::option::Option<&str> {
+        self.media_url.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for push notifications that are based on the message template. If specified, this value overrides all other content for the message template.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>The key for the sound to play when the recipient receives a push notification that's based on the message template. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for ApnsPushNotificationTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4395,6 +5096,88 @@ pub struct JourneyResponse {
     pub refresh_on_segment_update: bool,
     /// <p>The channel-specific configurations for the journey.</p>
     pub journey_channel_settings: std::option::Option<crate::model::JourneyChannelSettings>,
+}
+impl JourneyResponse {
+    /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
+    pub fn activities(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Activity>>
+    {
+        self.activities.as_ref()
+    }
+    /// <p>The unique identifier for the application that the journey applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the journey was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The messaging and entry limits for the journey.</p>
+    pub fn limits(&self) -> std::option::Option<&crate::model::JourneyLimits> {
+        self.limits.as_ref()
+    }
+    /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
+    pub fn local_time(&self) -> bool {
+        self.local_time
+    }
+    /// <p>The name of the journey.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li></ul> <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
+    pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
+        self.quiet_time.as_ref()
+    }
+    /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
+    pub fn refresh_frequency(&self) -> std::option::Option<&str> {
+        self.refresh_frequency.as_deref()
+    }
+    /// <p>The schedule settings for the journey.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::JourneySchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The unique identifier for the first activity in the journey.</p>
+    pub fn start_activity(&self) -> std::option::Option<&str> {
+        self.start_activity.as_deref()
+    }
+    /// <p>The segment that defines which users are participants in the journey.</p>
+    pub fn start_condition(&self) -> std::option::Option<&crate::model::StartCondition> {
+        self.start_condition.as_ref()
+    }
+    /// <p>The current status of the journey. Possible values are:</p> <ul><li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li></ul>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>This object is not used or supported.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
+    pub fn wait_for_quiet_time(&self) -> bool {
+        self.wait_for_quiet_time
+    }
+    /// <p>Specifies whether a journey should be refreshed on segment update.</p>
+    pub fn refresh_on_segment_update(&self) -> bool {
+        self.refresh_on_segment_update
+    }
+    /// <p>The channel-specific configurations for the journey.</p>
+    pub fn journey_channel_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::JourneyChannelSettings> {
+        self.journey_channel_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for JourneyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4735,6 +5518,16 @@ pub struct JourneyChannelSettings {
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
     pub connect_campaign_execution_role_arn: std::option::Option<std::string::String>,
 }
+impl JourneyChannelSettings {
+    /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
+    pub fn connect_campaign_arn(&self) -> std::option::Option<&str> {
+        self.connect_campaign_arn.as_deref()
+    }
+    /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
+    pub fn connect_campaign_execution_role_arn(&self) -> std::option::Option<&str> {
+        self.connect_campaign_execution_role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for JourneyChannelSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneyChannelSettings");
@@ -4890,6 +5683,20 @@ pub struct StartCondition {
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
     pub segment_start_condition: std::option::Option<crate::model::SegmentCondition>,
 }
+impl StartCondition {
+    /// <p>The custom description of the condition.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
+    pub fn event_start_condition(&self) -> std::option::Option<&crate::model::EventStartCondition> {
+        self.event_start_condition.as_ref()
+    }
+    /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
+    pub fn segment_start_condition(&self) -> std::option::Option<&crate::model::SegmentCondition> {
+        self.segment_start_condition.as_ref()
+    }
+}
 impl std::fmt::Debug for StartCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartCondition");
@@ -4970,6 +5777,12 @@ pub struct SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     pub segment_id: std::option::Option<std::string::String>,
 }
+impl SegmentCondition {
+    /// <p>The unique identifier for the segment to associate with the activity.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SegmentCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentCondition");
@@ -5019,6 +5832,16 @@ pub struct EventStartCondition {
     pub event_filter: std::option::Option<crate::model::EventFilter>,
     #[allow(missing_docs)] // documentation missing in model
     pub segment_id: std::option::Option<std::string::String>,
+}
+impl EventStartCondition {
+    /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
+    pub fn event_filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+        self.event_filter.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for EventStartCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5085,6 +5908,16 @@ pub struct EventFilter {
     pub dimensions: std::option::Option<crate::model::EventDimensions>,
     /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (<link  linkend="apps-application-id-events">Events resource</link>) occurs.</p>
     pub filter_type: std::option::Option<crate::model::FilterType>,
+}
+impl EventFilter {
+    /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::EventDimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (<link  linkend="apps-application-id-events">Events resource</link>) occurs.</p>
+    pub fn filter_type(&self) -> std::option::Option<&crate::model::FilterType> {
+        self.filter_type.as_ref()
+    }
 }
 impl std::fmt::Debug for EventFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5216,6 +6049,28 @@ pub struct EventDimensions {
         std::collections::HashMap<std::string::String, crate::model::MetricDimension>,
     >,
 }
+impl EventDimensions {
+    /// <p>One or more custom attributes that your application reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AttributeDimension>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The name of the event that causes the campaign to be sent or the journey activity to be performed. This can be a standard event that Amazon Pinpoint generates, such as _email.delivered. For campaigns, this can also be a custom event that's specific to your application. For information about standard events, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/event-streams.html">Streaming Amazon Pinpoint Events</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::SetDimension> {
+        self.event_type.as_ref()
+    }
+    /// <p>One or more custom metrics that your application reports to Amazon Pinpoint. You can use these metrics as selection criteria when you create an event filter.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MetricDimension>,
+    > {
+        self.metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for EventDimensions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventDimensions");
@@ -5336,6 +6191,25 @@ pub struct JourneySchedule {
     /// UTC-09:30, UTC-10, and UTC-11.</p>
     pub timezone: std::option::Option<std::string::String>,
 }
+impl JourneySchedule {
+    /// <p>The scheduled time, in ISO 8601 format, when the journey ended or will end.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The scheduled time, in ISO 8601 format, when the journey began or will begin.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+    /// <p>The starting UTC offset for the journey schedule, if the value of the journey's LocalTime property is true. Valid values are: UTC,
+    /// UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30,
+    /// UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+08:45, UTC+09, UTC+09:30,
+    /// UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+12:45, UTC+13, UTC+13:45, UTC-02,
+    /// UTC-02:30, UTC-03, UTC-03:30, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09,
+    /// UTC-09:30, UTC-10, and UTC-11.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+}
 impl std::fmt::Debug for JourneySchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneySchedule");
@@ -5428,6 +6302,16 @@ pub struct QuietTime {
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub start: std::option::Option<std::string::String>,
 }
+impl QuietTime {
+    /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+    /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+}
 impl std::fmt::Debug for QuietTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QuietTime");
@@ -5494,6 +6378,24 @@ pub struct JourneyLimits {
     pub messages_per_second: i32,
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub endpoint_reentry_interval: std::option::Option<std::string::String>,
+}
+impl JourneyLimits {
+    /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
+    pub fn daily_cap(&self) -> i32 {
+        self.daily_cap
+    }
+    /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
+    pub fn endpoint_reentry_cap(&self) -> i32 {
+        self.endpoint_reentry_cap
+    }
+    /// <p>The maximum number of messages that the journey can send each second.</p>
+    pub fn messages_per_second(&self) -> i32 {
+        self.messages_per_second
+    }
+    /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
+    pub fn endpoint_reentry_interval(&self) -> std::option::Option<&str> {
+        self.endpoint_reentry_interval.as_deref()
+    }
 }
 impl std::fmt::Debug for JourneyLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5604,6 +6506,56 @@ pub struct Activity {
     pub wait: std::option::Option<crate::model::WaitActivity>,
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
     pub contact_center: std::option::Option<crate::model::ContactCenterActivity>,
+}
+impl Activity {
+    /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
+    pub fn custom(&self) -> std::option::Option<&crate::model::CustomMessageActivity> {
+        self.custom.as_ref()
+    }
+    /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
+    pub fn conditional_split(
+        &self,
+    ) -> std::option::Option<&crate::model::ConditionalSplitActivity> {
+        self.conditional_split.as_ref()
+    }
+    /// <p>The custom description of the activity.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
+    pub fn email(&self) -> std::option::Option<&crate::model::EmailMessageActivity> {
+        self.email.as_ref()
+    }
+    /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
+    pub fn holdout(&self) -> std::option::Option<&crate::model::HoldoutActivity> {
+        self.holdout.as_ref()
+    }
+    /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
+    pub fn multi_condition(
+        &self,
+    ) -> std::option::Option<&crate::model::MultiConditionalSplitActivity> {
+        self.multi_condition.as_ref()
+    }
+    /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
+    pub fn push(&self) -> std::option::Option<&crate::model::PushMessageActivity> {
+        self.push.as_ref()
+    }
+    /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
+    pub fn random_split(&self) -> std::option::Option<&crate::model::RandomSplitActivity> {
+        self.random_split.as_ref()
+    }
+    /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
+    pub fn sms(&self) -> std::option::Option<&crate::model::SmsMessageActivity> {
+        self.sms.as_ref()
+    }
+    /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
+    pub fn wait(&self) -> std::option::Option<&crate::model::WaitActivity> {
+        self.wait.as_ref()
+    }
+    /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
+    pub fn contact_center(&self) -> std::option::Option<&crate::model::ContactCenterActivity> {
+        self.contact_center.as_ref()
+    }
 }
 impl std::fmt::Debug for Activity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5814,6 +6766,12 @@ pub struct ContactCenterActivity {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
     pub next_activity: std::option::Option<std::string::String>,
 }
+impl ContactCenterActivity {
+    /// <p>The unique identifier for the next activity to perform after the this activity.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+}
 impl std::fmt::Debug for ContactCenterActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContactCenterActivity");
@@ -5866,6 +6824,16 @@ pub struct WaitActivity {
     pub next_activity: std::option::Option<std::string::String>,
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
     pub wait_time: std::option::Option<crate::model::WaitTime>,
+}
+impl WaitActivity {
+    /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
+    pub fn wait_time(&self) -> std::option::Option<&crate::model::WaitTime> {
+        self.wait_time.as_ref()
+    }
 }
 impl std::fmt::Debug for WaitActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5933,6 +6901,16 @@ pub struct WaitTime {
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
     pub wait_until: std::option::Option<std::string::String>,
 }
+impl WaitTime {
+    /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
+    pub fn wait_for(&self) -> std::option::Option<&str> {
+        self.wait_for.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
+    pub fn wait_until(&self) -> std::option::Option<&str> {
+        self.wait_until.as_deref()
+    }
+}
 impl std::fmt::Debug for WaitTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WaitTime");
@@ -5999,6 +6977,24 @@ pub struct SmsMessageActivity {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the SMS template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub template_version: std::option::Option<std::string::String>,
+}
+impl SmsMessageActivity {
+    /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
+    pub fn message_config(&self) -> std::option::Option<&crate::model::JourneySmsMessage> {
+        self.message_config.as_ref()
+    }
+    /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The name of the SMS message template to use for the message. If specified, this value must match the name of an existing message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the SMS template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
+    pub fn template_version(&self) -> std::option::Option<&str> {
+        self.template_version.as_deref()
+    }
 }
 impl std::fmt::Debug for SmsMessageActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6106,6 +7102,28 @@ pub struct JourneySmsMessage {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub template_id: std::option::Option<std::string::String>,
+}
+impl JourneySmsMessage {
+    /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
+    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+        self.message_type.as_ref()
+    }
+    /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
+    pub fn origination_number(&self) -> std::option::Option<&str> {
+        self.origination_number.as_deref()
+    }
+    /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
+    pub fn sender_id(&self) -> std::option::Option<&str> {
+        self.sender_id.as_deref()
+    }
+    /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for JourneySmsMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6268,6 +7286,12 @@ pub struct RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     pub branches: std::option::Option<std::vec::Vec<crate::model::RandomSplitEntry>>,
 }
+impl RandomSplitActivity {
+    /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
+    pub fn branches(&self) -> std::option::Option<&[crate::model::RandomSplitEntry]> {
+        self.branches.as_deref()
+    }
+}
 impl std::fmt::Debug for RandomSplitActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RandomSplitActivity");
@@ -6326,6 +7350,16 @@ pub struct RandomSplitEntry {
     pub next_activity: std::option::Option<std::string::String>,
     /// <p>The percentage of participants to send down the activity path.</p> <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
     pub percentage: i32,
+}
+impl RandomSplitEntry {
+    /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The percentage of participants to send down the activity path.</p> <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
+    pub fn percentage(&self) -> i32 {
+        self.percentage
+    }
 }
 impl std::fmt::Debug for RandomSplitEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6396,6 +7430,24 @@ pub struct PushMessageActivity {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the push notification template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub template_version: std::option::Option<std::string::String>,
+}
+impl PushMessageActivity {
+    /// <p>Specifies the time to live (TTL) value for push notifications that are sent to participants in a journey.</p>
+    pub fn message_config(&self) -> std::option::Option<&crate::model::JourneyPushMessage> {
+        self.message_config.as_ref()
+    }
+    /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The name of the push notification template to use for the message. If specified, this value must match the name of an existing message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the push notification template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
+    pub fn template_version(&self) -> std::option::Option<&str> {
+        self.template_version.as_deref()
+    }
 }
 impl std::fmt::Debug for PushMessageActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6496,6 +7548,12 @@ pub struct JourneyPushMessage {
     /// <p>The number of seconds that the push notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
     pub time_to_live: std::option::Option<std::string::String>,
 }
+impl JourneyPushMessage {
+    /// <p>The number of seconds that the push notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
+    pub fn time_to_live(&self) -> std::option::Option<&str> {
+        self.time_to_live.as_deref()
+    }
+}
 impl std::fmt::Debug for JourneyPushMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneyPushMessage");
@@ -6547,6 +7605,20 @@ pub struct MultiConditionalSplitActivity {
     pub default_activity: std::option::Option<std::string::String>,
     /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
     pub evaluation_wait_time: std::option::Option<crate::model::WaitTime>,
+}
+impl MultiConditionalSplitActivity {
+    /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
+    pub fn branches(&self) -> std::option::Option<&[crate::model::MultiConditionalBranch]> {
+        self.branches.as_deref()
+    }
+    /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
+    pub fn default_activity(&self) -> std::option::Option<&str> {
+        self.default_activity.as_deref()
+    }
+    /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
+    pub fn evaluation_wait_time(&self) -> std::option::Option<&crate::model::WaitTime> {
+        self.evaluation_wait_time.as_ref()
+    }
 }
 impl std::fmt::Debug for MultiConditionalSplitActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6640,6 +7712,16 @@ pub struct MultiConditionalBranch {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     pub next_activity: std::option::Option<std::string::String>,
 }
+impl MultiConditionalBranch {
+    /// <p>The condition to evaluate for the activity path.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::SimpleCondition> {
+        self.condition.as_ref()
+    }
+    /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+}
 impl std::fmt::Debug for MultiConditionalBranch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MultiConditionalBranch");
@@ -6710,6 +7792,20 @@ pub struct SimpleCondition {
     pub segment_condition: std::option::Option<crate::model::SegmentCondition>,
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
     pub segment_dimensions: std::option::Option<crate::model::SegmentDimensions>,
+}
+impl SimpleCondition {
+    /// <p>The dimension settings for the event that's associated with the activity.</p>
+    pub fn event_condition(&self) -> std::option::Option<&crate::model::EventCondition> {
+        self.event_condition.as_ref()
+    }
+    /// <p>The segment that's associated with the activity.</p>
+    pub fn segment_condition(&self) -> std::option::Option<&crate::model::SegmentCondition> {
+        self.segment_condition.as_ref()
+    }
+    /// <p>The dimension settings for the segment that's associated with the activity.</p>
+    pub fn segment_dimensions(&self) -> std::option::Option<&crate::model::SegmentDimensions> {
+        self.segment_dimensions.as_ref()
+    }
 }
 impl std::fmt::Debug for SimpleCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6796,6 +7892,16 @@ pub struct EventCondition {
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
     pub message_activity: std::option::Option<std::string::String>,
 }
+impl EventCondition {
+    /// <p>The dimensions for the event filter to use for the activity.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::EventDimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
+    pub fn message_activity(&self) -> std::option::Option<&str> {
+        self.message_activity.as_deref()
+    }
+}
 impl std::fmt::Debug for EventCondition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventCondition");
@@ -6864,6 +7970,16 @@ pub struct HoldoutActivity {
     pub next_activity: std::option::Option<std::string::String>,
     /// <p>The percentage of participants who shouldn't continue the journey.</p> <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
     pub percentage: i32,
+}
+impl HoldoutActivity {
+    /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The percentage of participants who shouldn't continue the journey.</p> <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
+    pub fn percentage(&self) -> i32 {
+        self.percentage
+    }
 }
 impl std::fmt::Debug for HoldoutActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6934,6 +8050,24 @@ pub struct EmailMessageActivity {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the email template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub template_version: std::option::Option<std::string::String>,
+}
+impl EmailMessageActivity {
+    /// <p>Specifies the sender address for an email message that's sent to participants in the journey.</p>
+    pub fn message_config(&self) -> std::option::Option<&crate::model::JourneyEmailMessage> {
+        self.message_config.as_ref()
+    }
+    /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The name of the email message template to use for the message. If specified, this value must match the name of an existing message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the email template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
+    pub fn template_version(&self) -> std::option::Option<&str> {
+        self.template_version.as_deref()
+    }
 }
 impl std::fmt::Debug for EmailMessageActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7034,6 +8168,12 @@ pub struct JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub from_address: std::option::Option<std::string::String>,
 }
+impl JourneyEmailMessage {
+    /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
+    pub fn from_address(&self) -> std::option::Option<&str> {
+        self.from_address.as_deref()
+    }
+}
 impl std::fmt::Debug for JourneyEmailMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneyEmailMessage");
@@ -7087,6 +8227,24 @@ pub struct ConditionalSplitActivity {
     pub false_activity: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
     pub true_activity: std::option::Option<std::string::String>,
+}
+impl ConditionalSplitActivity {
+    /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
+    pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
+        self.condition.as_ref()
+    }
+    /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
+    pub fn evaluation_wait_time(&self) -> std::option::Option<&crate::model::WaitTime> {
+        self.evaluation_wait_time.as_ref()
+    }
+    /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
+    pub fn false_activity(&self) -> std::option::Option<&str> {
+        self.false_activity.as_deref()
+    }
+    /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
+    pub fn true_activity(&self) -> std::option::Option<&str> {
+        self.true_activity.as_deref()
+    }
 }
 impl std::fmt::Debug for ConditionalSplitActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7188,6 +8346,16 @@ pub struct Condition {
     pub conditions: std::option::Option<std::vec::Vec<crate::model::SimpleCondition>>,
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
     pub operator: std::option::Option<crate::model::Operator>,
+}
+impl Condition {
+    /// <p>The conditions to evaluate for the activity.</p>
+    pub fn conditions(&self) -> std::option::Option<&[crate::model::SimpleCondition]> {
+        self.conditions.as_deref()
+    }
+    /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
+        self.operator.as_ref()
+    }
 }
 impl std::fmt::Debug for Condition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7323,6 +8491,32 @@ pub struct CustomMessageActivity {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub template_version: std::option::Option<std::string::String>,
+}
+impl CustomMessageActivity {
+    /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li> <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li></ul>
+    pub fn delivery_uri(&self) -> std::option::Option<&str> {
+        self.delivery_uri.as_deref()
+    }
+    /// <p>The types of endpoints to send the custom message to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
+    pub fn endpoint_types(&self) -> std::option::Option<&[crate::model::EndpointTypesElement]> {
+        self.endpoint_types.as_deref()
+    }
+    /// <p>Specifies the message data included in a custom channel message that's sent to participants in a journey.</p>
+    pub fn message_config(&self) -> std::option::Option<&crate::model::JourneyCustomMessage> {
+        self.message_config.as_ref()
+    }
+    /// <p>The unique identifier for the next activity to perform, after Amazon Pinpoint calls the AWS Lambda function or web hook.</p>
+    pub fn next_activity(&self) -> std::option::Option<&str> {
+        self.next_activity.as_deref()
+    }
+    /// <p>The name of the custom message template to use for the message. If specified, this value must match the name of an existing message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
+    pub fn template_version(&self) -> std::option::Option<&str> {
+        self.template_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CustomMessageActivity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7461,6 +8655,12 @@ impl CustomMessageActivity {
 pub struct JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     pub data: std::option::Option<std::string::String>,
+}
+impl JourneyCustomMessage {
+    /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
 }
 impl std::fmt::Debug for JourneyCustomMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7621,6 +8821,12 @@ pub struct JourneyStateRequest {
     /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
     pub state: std::option::Option<crate::model::State>,
 }
+impl JourneyStateRequest {
+    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+}
 impl std::fmt::Debug for JourneyStateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneyStateRequest");
@@ -7693,6 +8899,67 @@ pub struct WriteJourneyRequest {
     pub wait_for_quiet_time: bool,
     /// <p>Specifies whether a journey should be refreshed on segment update.</p>
     pub refresh_on_segment_update: bool,
+}
+impl WriteJourneyRequest {
+    /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
+    pub fn activities(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Activity>>
+    {
+        self.activities.as_ref()
+    }
+    /// <p>The date, in ISO 8601 format, when the journey was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The messaging and entry limits for the journey.</p>
+    pub fn limits(&self) -> std::option::Option<&crate::model::JourneyLimits> {
+        self.limits.as_ref()
+    }
+    /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. To base the schedule on each participant's local time, set this value to true.</p>
+    pub fn local_time(&self) -> bool {
+        self.local_time
+    }
+    /// <p>The name of the journey. A journey name can contain a maximum of 150 characters. The characters can be alphanumeric characters or symbols, such as underscores (_) or hyphens (-). A journey name can't contain any spaces.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li></ul> <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
+    pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
+        self.quiet_time.as_ref()
+    }
+    /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
+    pub fn refresh_frequency(&self) -> std::option::Option<&str> {
+        self.refresh_frequency.as_deref()
+    }
+    /// <p>The schedule settings for the journey.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::JourneySchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The unique identifier for the first activity in the journey. The identifier for this activity can contain a maximum of 128 characters. The characters must be alphanumeric characters.</p>
+    pub fn start_activity(&self) -> std::option::Option<&str> {
+        self.start_activity.as_deref()
+    }
+    /// <p>The segment that defines which users are participants in the journey.</p>
+    pub fn start_condition(&self) -> std::option::Option<&crate::model::StartCondition> {
+        self.start_condition.as_ref()
+    }
+    /// <p>The status of the journey. Valid values are:</p> <ul><li><p>DRAFT - Saves the journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the <link  linkend="apps-application-id-journeys-journey-id-state">Journey State</link> resource.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+        self.state.as_ref()
+    }
+    /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
+    pub fn wait_for_quiet_time(&self) -> bool {
+        self.wait_for_quiet_time
+    }
+    /// <p>Specifies whether a journey should be refreshed on segment update.</p>
+    pub fn refresh_on_segment_update(&self) -> bool {
+        self.refresh_on_segment_update
+    }
 }
 impl std::fmt::Debug for WriteJourneyRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7962,6 +9229,34 @@ pub struct InAppTemplateRequest {
     /// <p>The description of the template.</p>
     pub template_description: std::option::Option<std::string::String>,
 }
+impl InAppTemplateRequest {
+    /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
+    pub fn content(&self) -> std::option::Option<&[crate::model::InAppMessageContent]> {
+        self.content.as_deref()
+    }
+    /// <p>Custom config to be sent to client.</p>
+    pub fn custom_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_config.as_ref()
+    }
+    /// <p>The layout of the message.</p>
+    pub fn layout(&self) -> std::option::Option<&crate::model::Layout> {
+        self.layout.as_ref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The description of the template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+}
 impl std::fmt::Debug for InAppTemplateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InAppTemplateRequest");
@@ -8196,6 +9491,32 @@ pub struct InAppMessageContent {
     /// <p>The second button inside message.</p>
     pub secondary_btn: std::option::Option<crate::model::InAppMessageButton>,
 }
+impl InAppMessageContent {
+    /// <p>The background color for the message.</p>
+    pub fn background_color(&self) -> std::option::Option<&str> {
+        self.background_color.as_deref()
+    }
+    /// <p>The configuration for the message body.</p>
+    pub fn body_config(&self) -> std::option::Option<&crate::model::InAppMessageBodyConfig> {
+        self.body_config.as_ref()
+    }
+    /// <p>The configuration for the message header.</p>
+    pub fn header_config(&self) -> std::option::Option<&crate::model::InAppMessageHeaderConfig> {
+        self.header_config.as_ref()
+    }
+    /// <p>The image url for the background of message.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The first button inside the message.</p>
+    pub fn primary_btn(&self) -> std::option::Option<&crate::model::InAppMessageButton> {
+        self.primary_btn.as_ref()
+    }
+    /// <p>The second button inside message.</p>
+    pub fn secondary_btn(&self) -> std::option::Option<&crate::model::InAppMessageButton> {
+        self.secondary_btn.as_ref()
+    }
+}
 impl std::fmt::Debug for InAppMessageContent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InAppMessageContent");
@@ -8330,6 +9651,24 @@ pub struct InAppMessageButton {
     /// <p>Default button content.</p>
     pub web: std::option::Option<crate::model::OverrideButtonConfiguration>,
 }
+impl InAppMessageButton {
+    /// <p>Default button content.</p>
+    pub fn android(&self) -> std::option::Option<&crate::model::OverrideButtonConfiguration> {
+        self.android.as_ref()
+    }
+    /// <p>Default button content.</p>
+    pub fn default_config(&self) -> std::option::Option<&crate::model::DefaultButtonConfiguration> {
+        self.default_config.as_ref()
+    }
+    /// <p>Default button content.</p>
+    pub fn ios(&self) -> std::option::Option<&crate::model::OverrideButtonConfiguration> {
+        self.ios.as_ref()
+    }
+    /// <p>Default button content.</p>
+    pub fn web(&self) -> std::option::Option<&crate::model::OverrideButtonConfiguration> {
+        self.web.as_ref()
+    }
+}
 impl std::fmt::Debug for InAppMessageButton {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InAppMessageButton");
@@ -8430,6 +9769,16 @@ pub struct OverrideButtonConfiguration {
     pub button_action: std::option::Option<crate::model::ButtonAction>,
     /// <p>Button destination.</p>
     pub link: std::option::Option<std::string::String>,
+}
+impl OverrideButtonConfiguration {
+    /// <p>Action triggered by the button.</p>
+    pub fn button_action(&self) -> std::option::Option<&crate::model::ButtonAction> {
+        self.button_action.as_ref()
+    }
+    /// <p>Button destination.</p>
+    pub fn link(&self) -> std::option::Option<&str> {
+        self.link.as_deref()
+    }
 }
 impl std::fmt::Debug for OverrideButtonConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8564,6 +9913,32 @@ pub struct DefaultButtonConfiguration {
     /// <p>The text color of the button.</p>
     pub text_color: std::option::Option<std::string::String>,
 }
+impl DefaultButtonConfiguration {
+    /// <p>The background color of the button.</p>
+    pub fn background_color(&self) -> std::option::Option<&str> {
+        self.background_color.as_deref()
+    }
+    /// <p>The border radius of the button.</p>
+    pub fn border_radius(&self) -> i32 {
+        self.border_radius
+    }
+    /// <p>Action triggered by the button.</p>
+    pub fn button_action(&self) -> std::option::Option<&crate::model::ButtonAction> {
+        self.button_action.as_ref()
+    }
+    /// <p>Button destination.</p>
+    pub fn link(&self) -> std::option::Option<&str> {
+        self.link.as_deref()
+    }
+    /// <p>Button text.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>The text color of the button.</p>
+    pub fn text_color(&self) -> std::option::Option<&str> {
+        self.text_color.as_deref()
+    }
+}
 impl std::fmt::Debug for DefaultButtonConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultButtonConfiguration");
@@ -8686,6 +10061,20 @@ pub struct InAppMessageHeaderConfig {
     pub header: std::option::Option<std::string::String>,
     /// <p>The text color.</p>
     pub text_color: std::option::Option<std::string::String>,
+}
+impl InAppMessageHeaderConfig {
+    /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    pub fn alignment(&self) -> std::option::Option<&crate::model::Alignment> {
+        self.alignment.as_ref()
+    }
+    /// <p>Message Header.</p>
+    pub fn header(&self) -> std::option::Option<&str> {
+        self.header.as_deref()
+    }
+    /// <p>The text color.</p>
+    pub fn text_color(&self) -> std::option::Option<&str> {
+        self.text_color.as_deref()
+    }
 }
 impl std::fmt::Debug for InAppMessageHeaderConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8827,6 +10216,20 @@ pub struct InAppMessageBodyConfig {
     /// <p>The text color.</p>
     pub text_color: std::option::Option<std::string::String>,
 }
+impl InAppMessageBodyConfig {
+    /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    pub fn alignment(&self) -> std::option::Option<&crate::model::Alignment> {
+        self.alignment.as_ref()
+    }
+    /// <p>Message Body.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The text color.</p>
+    pub fn text_color(&self) -> std::option::Option<&str> {
+        self.text_color.as_deref()
+    }
+}
 impl std::fmt::Debug for InAppMessageBodyConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InAppMessageBodyConfig");
@@ -8923,6 +10326,52 @@ pub struct GcmChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the GCM channel.</p>
     pub version: i32,
+}
+impl GcmChannelResponse {
+    /// <p>The unique identifier for the application that the GCM channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the GCM channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
+    pub fn credential(&self) -> std::option::Option<&str> {
+        self.credential.as_deref()
+    }
+    /// <p>Specifies whether the GCM channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the GCM channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the GCM channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the GCM channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the GCM channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for GcmChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9116,6 +10565,16 @@ pub struct GcmChannelRequest {
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub enabled: bool,
 }
+impl GcmChannelRequest {
+    /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>Specifies whether to enable the GCM channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for GcmChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GcmChannelRequest");
@@ -9176,6 +10635,12 @@ impl GcmChannelRequest {
 pub struct EndpointBatchRequest {
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
     pub item: std::option::Option<std::vec::Vec<crate::model::EndpointBatchItem>>,
+}
+impl EndpointBatchRequest {
+    /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::EndpointBatchItem]> {
+        self.item.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointBatchRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9255,6 +10720,62 @@ pub struct EndpointBatchItem {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
     pub user: std::option::Option<crate::model::EndpointUser>,
+}
+impl EndpointBatchItem {
+    /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The channel to use when sending messages or push notifications to the endpoint.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.channel_type.as_ref()
+    }
+    /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
+    pub fn demographic(&self) -> std::option::Option<&crate::model::EndpointDemographic> {
+        self.demographic.as_ref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the endpoint was created or updated.</p>
+    pub fn effective_date(&self) -> std::option::Option<&str> {
+        self.effective_date.as_deref()
+    }
+    /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The unique identifier for the endpoint in the context of the batch.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The geographic information for the endpoint.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::EndpointLocation> {
+        self.location.as_ref()
+    }
+    /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.metrics.as_ref()
+    }
+    /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
+    pub fn opt_out(&self) -> std::option::Option<&str> {
+        self.opt_out.as_deref()
+    }
+    /// <p>The unique identifier for the request to create or update the endpoint.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for EndpointBatchItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9493,6 +11014,20 @@ pub struct EndpointUser {
     /// <p>The unique identifier for the user.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
+impl EndpointUser {
+    /// <p>One or more custom attributes that describe the user by associating a name with an array of values. For example, the value of an attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
+    pub fn user_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.user_attributes.as_ref()
+    }
+    /// <p>The unique identifier for the user.</p>
+    pub fn user_id(&self) -> std::option::Option<&str> {
+        self.user_id.as_deref()
+    }
+}
 impl std::fmt::Debug for EndpointUser {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointUser");
@@ -9580,6 +11115,32 @@ pub struct EndpointLocation {
     pub postal_code: std::option::Option<std::string::String>,
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
     pub region: std::option::Option<std::string::String>,
+}
+impl EndpointLocation {
+    /// <p>The name of the city where the endpoint is located.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
+    pub fn latitude(&self) -> f64 {
+        self.latitude
+    }
+    /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
+    pub fn longitude(&self) -> f64 {
+        self.longitude
+    }
+    /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+    /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointLocation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9707,6 +11268,40 @@ pub struct EndpointDemographic {
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
     pub timezone: std::option::Option<std::string::String>,
+}
+impl EndpointDemographic {
+    /// <p>The version of the app that's associated with the endpoint.</p>
+    pub fn app_version(&self) -> std::option::Option<&str> {
+        self.app_version.as_deref()
+    }
+    /// <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2 value.</p>
+    pub fn locale(&self) -> std::option::Option<&str> {
+        self.locale.as_deref()
+    }
+    /// <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
+    pub fn make(&self) -> std::option::Option<&str> {
+        self.make.as_deref()
+    }
+    /// <p>The model name or number of the endpoint device, such as iPhone or SM-G900F.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The model version of the endpoint device.</p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p>The platform of the endpoint device, such as ios.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The platform version of the endpoint device.</p>
+    pub fn platform_version(&self) -> std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
+    /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointDemographic {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9988,6 +11583,58 @@ pub struct EndpointRequest {
     /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
     pub user: std::option::Option<crate::model::EndpointUser>,
 }
+impl EndpointRequest {
+    /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The channel to use when sending messages or push notifications to the endpoint.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.channel_type.as_ref()
+    }
+    /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
+    pub fn demographic(&self) -> std::option::Option<&crate::model::EndpointDemographic> {
+        self.demographic.as_ref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the endpoint is updated.</p>
+    pub fn effective_date(&self) -> std::option::Option<&str> {
+        self.effective_date.as_deref()
+    }
+    /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The geographic information for the endpoint.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::EndpointLocation> {
+        self.location.as_ref()
+    }
+    /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.metrics.as_ref()
+    }
+    /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
+    pub fn opt_out(&self) -> std::option::Option<&str> {
+        self.opt_out.as_deref()
+    }
+    /// <p>The unique identifier for the most recent request to update the endpoint.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
+        self.user.as_ref()
+    }
+}
 impl std::fmt::Debug for EndpointRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointRequest");
@@ -10221,6 +11868,39 @@ pub struct EmailTemplateRequest {
     /// <p>The message body, in plain text format, to use in email messages that are based on the message template. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub text_part: std::option::Option<std::string::String>,
 }
+impl EmailTemplateRequest {
+    /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The message body, in HTML format, to use in email messages that are based on the message template. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
+    pub fn html_part(&self) -> std::option::Option<&str> {
+        self.html_part.as_deref()
+    }
+    /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>The subject line, or title, to use in email messages that are based on the message template.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>A custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The message body, in plain text format, to use in email messages that are based on the message template. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
+    pub fn text_part(&self) -> std::option::Option<&str> {
+        self.text_part.as_deref()
+    }
+}
 impl std::fmt::Debug for EmailTemplateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmailTemplateRequest");
@@ -10400,6 +12080,68 @@ pub struct EmailChannelResponse {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the email channel.</p>
     pub version: i32,
+}
+impl EmailChannelResponse {
+    /// <p>The unique identifier for the application that the email channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that's applied to messages that are sent through the channel.</p>
+    pub fn configuration_set(&self) -> std::option::Option<&str> {
+        self.configuration_set.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the email channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>Specifies whether the email channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The verified email address that email is sent from when you send email through the channel.</p>
+    pub fn from_address(&self) -> std::option::Option<&str> {
+        self.from_address.as_deref()
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's used when you send email through the channel.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>Specifies whether the email channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the email channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the email channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The maximum number of emails that can be sent through the channel each second.</p>
+    pub fn messages_per_second(&self) -> i32 {
+        self.messages_per_second
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related event data for the channel.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The current version of the email channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for EmailChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10654,6 +12396,28 @@ pub struct EmailChannelRequest {
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl EmailChannelRequest {
+    /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
+    pub fn configuration_set(&self) -> std::option::Option<&str> {
+        self.configuration_set.as_deref()
+    }
+    /// <p>Specifies whether to enable the email channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
+    pub fn from_address(&self) -> std::option::Option<&str> {
+        self.from_address.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
+    pub fn identity(&self) -> std::option::Option<&str> {
+        self.identity.as_deref()
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for EmailChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmailChannelRequest");
@@ -10806,6 +12570,117 @@ pub struct CampaignResponse {
     pub version: i32,
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub priority: i32,
+}
+impl CampaignResponse {
+    /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
+    pub fn additional_treatments(&self) -> std::option::Option<&[crate::model::TreatmentResource]> {
+        self.additional_treatments.as_deref()
+    }
+    /// <p>The unique identifier for the application that the campaign applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the campaign was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
+    pub fn custom_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDeliveryConfiguration> {
+        self.custom_delivery_configuration.as_ref()
+    }
+    /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
+    pub fn default_state(&self) -> std::option::Option<&crate::model::CampaignState> {
+        self.default_state.as_ref()
+    }
+    /// <p>The custom description of the campaign.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
+    pub fn holdout_percent(&self) -> i32 {
+        self.holdout_percent
+    }
+    /// <p>The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
+    pub fn hook(&self) -> std::option::Option<&crate::model::CampaignHook> {
+        self.hook.as_ref()
+    }
+    /// <p>The unique identifier for the campaign.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
+    pub fn is_paused(&self) -> bool {
+        self.is_paused
+    }
+    /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The messaging limits for the campaign.</p>
+    pub fn limits(&self) -> std::option::Option<&crate::model::CampaignLimits> {
+        self.limits.as_ref()
+    }
+    /// <p>The message configuration settings for the campaign.</p>
+    pub fn message_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageConfiguration> {
+        self.message_configuration.as_ref()
+    }
+    /// <p>The name of the campaign.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The schedule settings for the campaign.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The unique identifier for the segment that's associated with the campaign.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The version number of the segment that's associated with the campaign.</p>
+    pub fn segment_version(&self) -> i32 {
+        self.segment_version
+    }
+    /// <p>The current status of the campaign.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CampaignState> {
+        self.state.as_ref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The message template that’s used for the campaign.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
+    /// <p>The custom description of the default treatment for the campaign.</p>
+    pub fn treatment_description(&self) -> std::option::Option<&str> {
+        self.treatment_description.as_deref()
+    }
+    /// <p>The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
+    pub fn treatment_name(&self) -> std::option::Option<&str> {
+        self.treatment_name.as_deref()
+    }
+    /// <p>The version number of the campaign.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
+    /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
 }
 impl std::fmt::Debug for CampaignResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11246,6 +13121,24 @@ pub struct TemplateConfiguration {
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
     pub voice_template: std::option::Option<crate::model::Template>,
 }
+impl TemplateConfiguration {
+    /// <p>The email template to use for the message.</p>
+    pub fn email_template(&self) -> std::option::Option<&crate::model::Template> {
+        self.email_template.as_ref()
+    }
+    /// <p>The push notification template to use for the message.</p>
+    pub fn push_template(&self) -> std::option::Option<&crate::model::Template> {
+        self.push_template.as_ref()
+    }
+    /// <p>The SMS template to use for the message.</p>
+    pub fn sms_template(&self) -> std::option::Option<&crate::model::Template> {
+        self.sms_template.as_ref()
+    }
+    /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
+    pub fn voice_template(&self) -> std::option::Option<&crate::model::Template> {
+        self.voice_template.as_ref()
+    }
+}
 impl std::fmt::Debug for TemplateConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateConfiguration");
@@ -11347,6 +13240,16 @@ pub struct Template {
     /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl Template {
+    /// <p>The name of the message template to use for the message. If specified, this value must match the name of an existing message template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for Template {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Template");
@@ -11407,6 +13310,12 @@ impl Template {
 pub struct CampaignState {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
     pub campaign_status: std::option::Option<crate::model::CampaignStatus>,
+}
+impl CampaignState {
+    /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
+    pub fn campaign_status(&self) -> std::option::Option<&crate::model::CampaignStatus> {
+        self.campaign_status.as_ref()
+    }
 }
 impl std::fmt::Debug for CampaignState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11556,6 +13465,39 @@ pub struct Schedule {
     /// UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06,
     /// UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
     pub timezone: std::option::Option<std::string::String>,
+}
+impl Schedule {
+    /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+    /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
+    pub fn event_filter(&self) -> std::option::Option<&crate::model::CampaignEventFilter> {
+        self.event_filter.as_ref()
+    }
+    /// <p>Specifies how often the campaign is sent or whether the campaign is sent in response to a specific event.</p>
+    pub fn frequency(&self) -> std::option::Option<&crate::model::Frequency> {
+        self.frequency.as_ref()
+    }
+    /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
+    pub fn is_local_time(&self) -> bool {
+        self.is_local_time
+    }
+    /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
+    pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
+        self.quiet_time.as_ref()
+    }
+    /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05,
+    /// UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30,
+    /// UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06,
+    /// UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
 }
 impl std::fmt::Debug for Schedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11783,6 +13725,16 @@ pub struct CampaignEventFilter {
     /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link  linkend="apps-application-id-events">Events</link> resource) occurs.</p>
     pub filter_type: std::option::Option<crate::model::FilterType>,
 }
+impl CampaignEventFilter {
+    /// <p>The dimension settings of the event filter for the campaign.</p>
+    pub fn dimensions(&self) -> std::option::Option<&crate::model::EventDimensions> {
+        self.dimensions.as_ref()
+    }
+    /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link  linkend="apps-application-id-events">Events</link> resource) occurs.</p>
+    pub fn filter_type(&self) -> std::option::Option<&crate::model::FilterType> {
+        self.filter_type.as_ref()
+    }
+}
 impl std::fmt::Debug for CampaignEventFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignEventFilter");
@@ -11865,6 +13817,44 @@ pub struct MessageConfiguration {
     pub sms_message: std::option::Option<crate::model::CampaignSmsMessage>,
     /// <p>The in-app message configuration.</p>
     pub in_app_message: std::option::Option<crate::model::CampaignInAppMessage>,
+}
+impl MessageConfiguration {
+    /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
+    pub fn adm_message(&self) -> std::option::Option<&crate::model::Message> {
+        self.adm_message.as_ref()
+    }
+    /// <p>The message that the campaign sends through the APNs (Apple Push Notification service) channel. If specified, this message overrides the default message.</p>
+    pub fn apns_message(&self) -> std::option::Option<&crate::model::Message> {
+        self.apns_message.as_ref()
+    }
+    /// <p>The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this message overrides the default message.</p>
+    pub fn baidu_message(&self) -> std::option::Option<&crate::model::Message> {
+        self.baidu_message.as_ref()
+    }
+    /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
+    pub fn custom_message(&self) -> std::option::Option<&crate::model::CampaignCustomMessage> {
+        self.custom_message.as_ref()
+    }
+    /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
+    pub fn default_message(&self) -> std::option::Option<&crate::model::Message> {
+        self.default_message.as_ref()
+    }
+    /// <p>The message that the campaign sends through the email channel. If specified, this message overrides the default message.</p>
+    pub fn email_message(&self) -> std::option::Option<&crate::model::CampaignEmailMessage> {
+        self.email_message.as_ref()
+    }
+    /// <p>The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. If specified, this message overrides the default message.</p>
+    pub fn gcm_message(&self) -> std::option::Option<&crate::model::Message> {
+        self.gcm_message.as_ref()
+    }
+    /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
+    pub fn sms_message(&self) -> std::option::Option<&crate::model::CampaignSmsMessage> {
+        self.sms_message.as_ref()
+    }
+    /// <p>The in-app message configuration.</p>
+    pub fn in_app_message(&self) -> std::option::Option<&crate::model::CampaignInAppMessage> {
+        self.in_app_message.as_ref()
+    }
 }
 impl std::fmt::Debug for MessageConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12052,6 +14042,27 @@ pub struct CampaignInAppMessage {
     /// <p>In-app message layout.</p>
     pub layout: std::option::Option<crate::model::Layout>,
 }
+impl CampaignInAppMessage {
+    /// <p>The message body of the notification, the email body or the text message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>In-app message content.</p>
+    pub fn content(&self) -> std::option::Option<&[crate::model::InAppMessageContent]> {
+        self.content.as_deref()
+    }
+    /// <p>Custom config to be sent to client.</p>
+    pub fn custom_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_config.as_ref()
+    }
+    /// <p>In-app message layout.</p>
+    pub fn layout(&self) -> std::option::Option<&crate::model::Layout> {
+        self.layout.as_ref()
+    }
+}
 impl std::fmt::Debug for CampaignInAppMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignInAppMessage");
@@ -12174,6 +14185,32 @@ pub struct CampaignSmsMessage {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub template_id: std::option::Option<std::string::String>,
+}
+impl CampaignSmsMessage {
+    /// <p>The body of the SMS message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
+    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+        self.message_type.as_ref()
+    }
+    /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
+    pub fn origination_number(&self) -> std::option::Option<&str> {
+        self.origination_number.as_deref()
+    }
+    /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
+    pub fn sender_id(&self) -> std::option::Option<&str> {
+        self.sender_id.as_deref()
+    }
+    /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CampaignSmsMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12315,6 +14352,56 @@ pub struct Message {
     pub title: std::option::Option<std::string::String>,
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl Message {
+    /// <p>The action to occur if a recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of iOS and Android.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The body of the notification message. The maximum number of characters is 200.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The URL of the image to display as the push-notification icon, such as the icon for the app.</p>
+    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+        self.image_icon_url.as_deref()
+    }
+    /// <p>The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the app.</p>
+    pub fn image_small_icon_url(&self) -> std::option::Option<&str> {
+        self.image_small_icon_url.as_deref()
+    }
+    /// <p>The URL of an image to display in the push notification.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The JSON payload to use for a silent push notification.</p>
+    pub fn json_body(&self) -> std::option::Option<&str> {
+        self.json_body.as_deref()
+    }
+    /// <p>The URL of the image or video to display in the push notification.</p>
+    pub fn media_url(&self) -> std::option::Option<&str> {
+        self.media_url.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration, displaying messages in an in-app message center, or supporting phone home functionality.</p>
+    pub fn silent_push(&self) -> bool {
+        self.silent_push
+    }
+    /// <p>The number of seconds that the push-notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
+    pub fn time_to_live(&self) -> i32 {
+        self.time_to_live
+    }
+    /// <p>The title to display above the notification message on a recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12519,6 +14606,24 @@ pub struct CampaignEmailMessage {
     /// <p>The subject line, or title, of the email.</p>
     pub title: std::option::Option<std::string::String>,
 }
+impl CampaignEmailMessage {
+    /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
+    pub fn from_address(&self) -> std::option::Option<&str> {
+        self.from_address.as_deref()
+    }
+    /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
+    pub fn html_body(&self) -> std::option::Option<&str> {
+        self.html_body.as_deref()
+    }
+    /// <p>The subject line, or title, of the email.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+}
 impl std::fmt::Debug for CampaignEmailMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignEmailMessage");
@@ -12606,6 +14711,12 @@ pub struct CampaignCustomMessage {
     /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
     pub data: std::option::Option<std::string::String>,
 }
+impl CampaignCustomMessage {
+    /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+}
 impl std::fmt::Debug for CampaignCustomMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignCustomMessage");
@@ -12659,6 +14770,28 @@ pub struct CampaignLimits {
     pub total: i32,
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
     pub session: i32,
+}
+impl CampaignLimits {
+    /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
+    pub fn daily(&self) -> i32 {
+        self.daily
+    }
+    /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
+    pub fn maximum_duration(&self) -> i32 {
+        self.maximum_duration
+    }
+    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
+    pub fn messages_per_second(&self) -> i32 {
+        self.messages_per_second
+    }
+    /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
+    pub fn total(&self) -> i32 {
+        self.total
+    }
+    /// <p>The maximum total number of messages that the campaign can send per user session.</p>
+    pub fn session(&self) -> i32 {
+        self.session
+    }
 }
 impl std::fmt::Debug for CampaignLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12763,6 +14896,20 @@ pub struct CampaignHook {
     pub mode: std::option::Option<crate::model::Mode>,
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
     pub web_url: std::option::Option<std::string::String>,
+}
+impl CampaignHook {
+    /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
+    pub fn lambda_function_name(&self) -> std::option::Option<&str> {
+        self.lambda_function_name.as_deref()
+    }
+    /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li></ul>
+    pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
+        self.mode.as_ref()
+    }
+    /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
+    pub fn web_url(&self) -> std::option::Option<&str> {
+        self.web_url.as_deref()
+    }
 }
 impl std::fmt::Debug for CampaignHook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12898,6 +15045,16 @@ pub struct CustomDeliveryConfiguration {
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
     pub endpoint_types: std::option::Option<std::vec::Vec<crate::model::EndpointTypesElement>>,
 }
+impl CustomDeliveryConfiguration {
+    /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li> <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li></ul>
+    pub fn delivery_uri(&self) -> std::option::Option<&str> {
+        self.delivery_uri.as_deref()
+    }
+    /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
+    pub fn endpoint_types(&self) -> std::option::Option<&[crate::model::EndpointTypesElement]> {
+        self.endpoint_types.as_deref()
+    }
+}
 impl std::fmt::Debug for CustomDeliveryConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CustomDeliveryConfiguration");
@@ -12988,6 +15145,50 @@ pub struct TreatmentResource {
     pub treatment_description: std::option::Option<std::string::String>,
     /// <p>The custom name of the treatment.</p>
     pub treatment_name: std::option::Option<std::string::String>,
+}
+impl TreatmentResource {
+    /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
+    pub fn custom_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDeliveryConfiguration> {
+        self.custom_delivery_configuration.as_ref()
+    }
+    /// <p>The unique identifier for the treatment.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The message configuration settings for the treatment.</p>
+    pub fn message_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageConfiguration> {
+        self.message_configuration.as_ref()
+    }
+    /// <p>The schedule settings for the treatment.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
+    pub fn size_percent(&self) -> i32 {
+        self.size_percent
+    }
+    /// <p>The current status of the treatment.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::CampaignState> {
+        self.state.as_ref()
+    }
+    /// <p>The message template to use for the treatment.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
+    /// <p>The custom description of the treatment.</p>
+    pub fn treatment_description(&self) -> std::option::Option<&str> {
+        self.treatment_description.as_deref()
+    }
+    /// <p>The custom name of the treatment.</p>
+    pub fn treatment_name(&self) -> std::option::Option<&str> {
+        self.treatment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for TreatmentResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13203,6 +15404,87 @@ pub struct WriteCampaignRequest {
     pub treatment_name: std::option::Option<std::string::String>,
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub priority: i32,
+}
+impl WriteCampaignRequest {
+    /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
+    pub fn additional_treatments(
+        &self,
+    ) -> std::option::Option<&[crate::model::WriteTreatmentResource]> {
+        self.additional_treatments.as_deref()
+    }
+    /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
+    pub fn custom_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDeliveryConfiguration> {
+        self.custom_delivery_configuration.as_ref()
+    }
+    /// <p>A custom description of the campaign.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
+    pub fn holdout_percent(&self) -> i32 {
+        self.holdout_percent
+    }
+    /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
+    pub fn hook(&self) -> std::option::Option<&crate::model::CampaignHook> {
+        self.hook.as_ref()
+    }
+    /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
+    pub fn is_paused(&self) -> bool {
+        self.is_paused
+    }
+    /// <p>The messaging limits for the campaign.</p>
+    pub fn limits(&self) -> std::option::Option<&crate::model::CampaignLimits> {
+        self.limits.as_ref()
+    }
+    /// <p>The message configuration settings for the campaign.</p>
+    pub fn message_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageConfiguration> {
+        self.message_configuration.as_ref()
+    }
+    /// <p>A custom name for the campaign.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The schedule settings for the campaign.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The unique identifier for the segment to associate with the campaign.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The version of the segment to associate with the campaign.</p>
+    pub fn segment_version(&self) -> i32 {
+        self.segment_version
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The message template to use for the campaign.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
+    /// <p>A custom description of the default treatment for the campaign.</p>
+    pub fn treatment_description(&self) -> std::option::Option<&str> {
+        self.treatment_description.as_deref()
+    }
+    /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
+    pub fn treatment_name(&self) -> std::option::Option<&str> {
+        self.treatment_name.as_deref()
+    }
+    /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
 }
 impl std::fmt::Debug for WriteCampaignRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13531,6 +15813,42 @@ pub struct WriteTreatmentResource {
     /// <p>A custom name for the treatment.</p>
     pub treatment_name: std::option::Option<std::string::String>,
 }
+impl WriteTreatmentResource {
+    /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
+    pub fn custom_delivery_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomDeliveryConfiguration> {
+        self.custom_delivery_configuration.as_ref()
+    }
+    /// <p>The message configuration settings for the treatment.</p>
+    pub fn message_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageConfiguration> {
+        self.message_configuration.as_ref()
+    }
+    /// <p>The schedule settings for the treatment.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
+    pub fn size_percent(&self) -> i32 {
+        self.size_percent
+    }
+    /// <p>The message template to use for the treatment.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
+    /// <p>A custom description of the treatment.</p>
+    pub fn treatment_description(&self) -> std::option::Option<&str> {
+        self.treatment_description.as_deref()
+    }
+    /// <p>A custom name for the treatment.</p>
+    pub fn treatment_name(&self) -> std::option::Option<&str> {
+        self.treatment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for WriteTreatmentResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WriteTreatmentResource");
@@ -13701,6 +16019,52 @@ pub struct BaiduChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the Baidu channel.</p>
     pub version: i32,
+}
+impl BaiduChannelResponse {
+    /// <p>The unique identifier for the application that the Baidu channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the Baidu channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn credential(&self) -> std::option::Option<&str> {
+        self.credential.as_deref()
+    }
+    /// <p>Specifies whether the Baidu channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the Baidu channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the Baidu channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the Baidu channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the Baidu channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the Baidu channel, this value is BAIDU.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the Baidu channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for BaiduChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13896,6 +16260,20 @@ pub struct BaiduChannelRequest {
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     pub secret_key: std::option::Option<std::string::String>,
 }
+impl BaiduChannelRequest {
+    /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn api_key(&self) -> std::option::Option<&str> {
+        self.api_key.as_deref()
+    }
+    /// <p>Specifies whether to enable the Baidu channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    pub fn secret_key(&self) -> std::option::Option<&str> {
+        self.secret_key.as_deref()
+    }
+}
 impl std::fmt::Debug for BaiduChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BaiduChannelRequest");
@@ -13977,6 +16355,28 @@ pub struct ApplicationSettingsResource {
     pub limits: std::option::Option<crate::model::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     pub quiet_time: std::option::Option<crate::model::QuietTime>,
+}
+impl ApplicationSettingsResource {
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
+    pub fn campaign_hook(&self) -> std::option::Option<&crate::model::CampaignHook> {
+        self.campaign_hook.as_ref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The default sending limits for campaigns in the application.</p>
+    pub fn limits(&self) -> std::option::Option<&crate::model::CampaignLimits> {
+        self.limits.as_ref()
+    }
+    /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
+    pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
+        self.quiet_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationSettingsResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14100,6 +16500,28 @@ pub struct WriteApplicationSettingsRequest {
     pub limits: std::option::Option<crate::model::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p> <p>To override the default quiet time settings for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource to define a custom quiet time for the campaign or journey.</p>
     pub quiet_time: std::option::Option<crate::model::QuietTime>,
+}
+impl WriteApplicationSettingsRequest {
+    /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p> <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.</p>
+    pub fn campaign_hook(&self) -> std::option::Option<&crate::model::CampaignHook> {
+        self.campaign_hook.as_ref()
+    }
+    /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
+    pub fn cloud_watch_metrics_enabled(&self) -> bool {
+        self.cloud_watch_metrics_enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn event_tagging_enabled(&self) -> bool {
+        self.event_tagging_enabled
+    }
+    /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.</p>
+    pub fn limits(&self) -> std::option::Option<&crate::model::CampaignLimits> {
+        self.limits.as_ref()
+    }
+    /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p> <p>To override the default quiet time settings for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource to define a custom quiet time for the campaign or journey.</p>
+    pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
+        self.quiet_time.as_ref()
+    }
 }
 impl std::fmt::Debug for WriteApplicationSettingsRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14234,6 +16656,56 @@ pub struct ApnsVoipSandboxChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the APNs VoIP sandbox channel.</p>
     pub version: i32,
+}
+impl ApnsVoipSandboxChannelResponse {
+    /// <p>The unique identifier for the application that the APNs VoIP sandbox channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the APNs VoIP sandbox channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with the APNs sandbox environment for this channel, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether the APNs VoIP sandbox channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>Specifies whether the APNs VoIP sandbox channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
+    pub fn has_token_key(&self) -> bool {
+        self.has_token_key
+    }
+    /// <p>(Deprecated) An identifier for the APNs VoIP sandbox channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the APNs VoIP sandbox channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the APNs VoIP sandbox channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the APNs VoIP sandbox channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the APNs VoIP sandbox channel, this value is APNS_VOIP_SANDBOX.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the APNs VoIP sandbox channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for ApnsVoipSandboxChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14461,6 +16933,40 @@ pub struct ApnsVoipSandboxChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
     pub token_key_id: std::option::Option<std::string::String>,
 }
+impl ApnsVoipSandboxChannelRequest {
+    /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether the APNs VoIP sandbox channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
+    pub fn team_id(&self) -> std::option::Option<&str> {
+        self.team_id.as_deref()
+    }
+    /// <p>The authentication key to use for APNs tokens.</p>
+    pub fn token_key(&self) -> std::option::Option<&str> {
+        self.token_key.as_deref()
+    }
+    /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
+    pub fn token_key_id(&self) -> std::option::Option<&str> {
+        self.token_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ApnsVoipSandboxChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApnsVoipSandboxChannelRequest");
@@ -14630,6 +17136,56 @@ pub struct ApnsVoipChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the APNs VoIP channel.</p>
     pub version: i32,
+}
+impl ApnsVoipChannelResponse {
+    /// <p>The unique identifier for the application that the APNs VoIP channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the APNs VoIP channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether the APNs VoIP channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
+    pub fn has_token_key(&self) -> bool {
+        self.has_token_key
+    }
+    /// <p>(Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the APNs VoIP channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the APNs VoIP channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the APNs VoIP channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is APNS_VOIP.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the APNs VoIP channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for ApnsVoipChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14857,6 +17413,40 @@ pub struct ApnsVoipChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
     pub token_key_id: std::option::Option<std::string::String>,
 }
+impl ApnsVoipChannelRequest {
+    /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether to enable the APNs VoIP channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
+    pub fn team_id(&self) -> std::option::Option<&str> {
+        self.team_id.as_deref()
+    }
+    /// <p>The authentication key to use for APNs tokens.</p>
+    pub fn token_key(&self) -> std::option::Option<&str> {
+        self.token_key.as_deref()
+    }
+    /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
+    pub fn token_key_id(&self) -> std::option::Option<&str> {
+        self.token_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ApnsVoipChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApnsVoipChannelRequest");
@@ -15026,6 +17616,56 @@ pub struct ApnsSandboxChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the APNs sandbox channel.</p>
     pub version: i32,
+}
+impl ApnsSandboxChannelResponse {
+    /// <p>The unique identifier for the application that the APNs sandbox channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the APNs sandbox channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with the APNs sandbox environment for this channel, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether the APNs sandbox channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>Specifies whether the APNs sandbox channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
+    pub fn has_token_key(&self) -> bool {
+        self.has_token_key
+    }
+    /// <p>(Deprecated) An identifier for the APNs sandbox channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the APNs sandbox channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the APNs sandbox channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the APNs sandbox channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the APNs sandbox channel, this value is APNS_SANDBOX.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the APNs sandbox channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for ApnsSandboxChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15253,6 +17893,40 @@ pub struct ApnsSandboxChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
     pub token_key_id: std::option::Option<std::string::String>,
 }
+impl ApnsSandboxChannelRequest {
+    /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether to enable the APNs sandbox channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
+    pub fn team_id(&self) -> std::option::Option<&str> {
+        self.team_id.as_deref()
+    }
+    /// <p>The authentication key to use for APNs tokens.</p>
+    pub fn token_key(&self) -> std::option::Option<&str> {
+        self.token_key.as_deref()
+    }
+    /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
+    pub fn token_key_id(&self) -> std::option::Option<&str> {
+        self.token_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ApnsSandboxChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApnsSandboxChannelRequest");
@@ -15422,6 +18096,56 @@ pub struct ApnsChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the APNs channel.</p>
     pub version: i32,
+}
+impl ApnsChannelResponse {
+    /// <p>The unique identifier for the application that the APNs channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the APNs channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether the APNs channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>Specifies whether the APNs channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
+    pub fn has_token_key(&self) -> bool {
+        self.has_token_key
+    }
+    /// <p>(Deprecated) An identifier for the APNs channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the APNs channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the APNs channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the APNs channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the APNs channel, this value is APNS.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the APNs channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for ApnsChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15649,6 +18373,40 @@ pub struct ApnsChannelRequest {
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
     pub token_key_id: std::option::Option<std::string::String>,
 }
+impl ApnsChannelRequest {
+    /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
+    pub fn bundle_id(&self) -> std::option::Option<&str> {
+        self.bundle_id.as_deref()
+    }
+    /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.</p>
+    pub fn default_authentication_method(&self) -> std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
+    /// <p>Specifies whether to enable the APNs channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
+    pub fn team_id(&self) -> std::option::Option<&str> {
+        self.team_id.as_deref()
+    }
+    /// <p>The authentication key to use for APNs tokens.</p>
+    pub fn token_key(&self) -> std::option::Option<&str> {
+        self.token_key.as_deref()
+    }
+    /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
+    pub fn token_key_id(&self) -> std::option::Option<&str> {
+        self.token_key_id.as_deref()
+    }
+}
 impl std::fmt::Debug for ApnsChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApnsChannelRequest");
@@ -15814,6 +18572,48 @@ pub struct AdmChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the ADM channel.</p>
     pub version: i32,
+}
+impl AdmChannelResponse {
+    /// <p>The unique identifier for the application that the ADM channel applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time when the ADM channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>Specifies whether the ADM channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the ADM channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the ADM channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time when the ADM channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.</p>
+    pub fn platform(&self) -> std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The current version of the ADM channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for AdmChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15996,6 +18796,20 @@ pub struct AdmChannelRequest {
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
     pub enabled: bool,
 }
+impl AdmChannelRequest {
+    /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
+    pub fn client_id(&self) -> std::option::Option<&str> {
+        self.client_id.as_deref()
+    }
+    /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
+    pub fn client_secret(&self) -> std::option::Option<&str> {
+        self.client_secret.as_deref()
+    }
+    /// <p>Specifies whether to enable the ADM channel for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+}
 impl std::fmt::Debug for AdmChannelRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdmChannelRequest");
@@ -16074,6 +18888,15 @@ pub struct TagsModel {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagsModel {
+    /// <p>A string-to-string map of key-value pairs that defines the tags for an application, campaign, message template, or segment. Each of these resources can have a maximum of 50 tags.</p> <p>Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagsModel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagsModel");
@@ -16145,6 +18968,27 @@ pub struct SendUsersMessageResponse {
             std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>,
         >,
     >,
+}
+impl SendUsersMessageResponse {
+    /// <p>The unique identifier for the application that was used to send the message.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier that was assigned to the message request.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an EndpointMessageResult object.</p>
+    pub fn result(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>,
+        >,
+    > {
+        self.result.as_ref()
+    }
 }
 impl std::fmt::Debug for SendUsersMessageResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16260,6 +19104,32 @@ pub struct EndpointMessageResult {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub updated_token: std::option::Option<std::string::String>,
+}
+impl EndpointMessageResult {
+    /// <p>The endpoint address that the message was delivered to.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The delivery status of the message. Possible values are:</p> <ul> <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
+    pub fn delivery_status(&self) -> std::option::Option<&crate::model::DeliveryStatus> {
+        self.delivery_status.as_ref()
+    }
+    /// <p>The unique identifier for the message that was sent.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The downstream service status code for delivering the message.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+    /// <p>The status message for delivering the message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
+    pub fn updated_token(&self) -> std::option::Option<&str> {
+        self.updated_token.as_deref()
+    }
 }
 impl std::fmt::Debug for EndpointMessageResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16477,6 +19347,39 @@ pub struct SendUsersMessageRequest {
         std::collections::HashMap<std::string::String, crate::model::EndpointSendConfiguration>,
     >,
 }
+impl SendUsersMessageRequest {
+    /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+    /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
+    pub fn message_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectMessageConfiguration> {
+        self.message_configuration.as_ref()
+    }
+    /// <p>The message template to use for the message.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
+    /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
+    pub fn trace_id(&self) -> std::option::Option<&str> {
+        self.trace_id.as_deref()
+    }
+    /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
+    pub fn users(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::EndpointSendConfiguration>,
+    > {
+        self.users.as_ref()
+    }
+}
 impl std::fmt::Debug for SendUsersMessageRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SendUsersMessageRequest");
@@ -16638,6 +19541,35 @@ pub struct EndpointSendConfiguration {
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
     pub title_override: std::option::Option<std::string::String>,
 }
+impl EndpointSendConfiguration {
+    /// <p>The body of the message. If specified, this value overrides the default message body.</p>
+    pub fn body_override(&self) -> std::option::Option<&str> {
+        self.body_override.as_deref()
+    }
+    /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p> <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
+    pub fn title_override(&self) -> std::option::Option<&str> {
+        self.title_override.as_deref()
+    }
+}
 impl std::fmt::Debug for EndpointSendConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointSendConfiguration");
@@ -16794,6 +19726,46 @@ pub struct DirectMessageConfiguration {
     pub sms_message: std::option::Option<crate::model::SmsMessage>,
     /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
     pub voice_message: std::option::Option<crate::model::VoiceMessage>,
+}
+impl DirectMessageConfiguration {
+    /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
+    pub fn adm_message(&self) -> std::option::Option<&crate::model::AdmMessage> {
+        self.adm_message.as_ref()
+    }
+    /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
+    pub fn apns_message(&self) -> std::option::Option<&crate::model::ApnsMessage> {
+        self.apns_message.as_ref()
+    }
+    /// <p>The default push notification message for the Baidu (Baidu Cloud Push) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
+    pub fn baidu_message(&self) -> std::option::Option<&crate::model::BaiduMessage> {
+        self.baidu_message.as_ref()
+    }
+    /// <p>The default message for all channels.</p>
+    pub fn default_message(&self) -> std::option::Option<&crate::model::DefaultMessage> {
+        self.default_message.as_ref()
+    }
+    /// <p>The default push notification message for all push notification channels.</p>
+    pub fn default_push_notification_message(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultPushNotificationMessage> {
+        self.default_push_notification_message.as_ref()
+    }
+    /// <p>The default message for the email channel. This message overrides the default message (DefaultMessage).</p>
+    pub fn email_message(&self) -> std::option::Option<&crate::model::EmailMessage> {
+        self.email_message.as_ref()
+    }
+    /// <p>The default push notification message for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
+    pub fn gcm_message(&self) -> std::option::Option<&crate::model::GcmMessage> {
+        self.gcm_message.as_ref()
+    }
+    /// <p>The default message for the SMS channel. This message overrides the default message (DefaultMessage).</p>
+    pub fn sms_message(&self) -> std::option::Option<&crate::model::SmsMessage> {
+        self.sms_message.as_ref()
+    }
+    /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
+    pub fn voice_message(&self) -> std::option::Option<&crate::model::VoiceMessage> {
+        self.voice_message.as_ref()
+    }
 }
 impl std::fmt::Debug for DirectMessageConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16991,6 +19963,32 @@ pub struct VoiceMessage {
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub voice_id: std::option::Option<std::string::String>,
 }
+impl VoiceMessage {
+    /// <p>The text of the script to use for the voice message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+    /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
+    pub fn origination_number(&self) -> std::option::Option<&str> {
+        self.origination_number.as_deref()
+    }
+    /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn voice_id(&self) -> std::option::Option<&str> {
+        self.voice_id.as_deref()
+    }
+}
 impl std::fmt::Debug for VoiceMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceMessage");
@@ -17131,6 +20129,48 @@ pub struct SmsMessage {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub template_id: std::option::Option<std::string::String>,
+}
+impl SmsMessage {
+    /// <p>The body of the SMS message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
+    pub fn keyword(&self) -> std::option::Option<&str> {
+        self.keyword.as_deref()
+    }
+    /// <p>This field is reserved for future use.</p>
+    pub fn media_url(&self) -> std::option::Option<&str> {
+        self.media_url.as_deref()
+    }
+    /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
+    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+        self.message_type.as_ref()
+    }
+    /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
+    pub fn origination_number(&self) -> std::option::Option<&str> {
+        self.origination_number.as_deref()
+    }
+    /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
+    pub fn sender_id(&self) -> std::option::Option<&str> {
+        self.sender_id.as_deref()
+    }
+    /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
+    pub fn entity_id(&self) -> std::option::Option<&str> {
+        self.entity_id.as_deref()
+    }
+    /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
+    pub fn template_id(&self) -> std::option::Option<&str> {
+        self.template_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SmsMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17341,6 +20381,83 @@ pub struct GcmMessage {
     pub title: std::option::Option<std::string::String>,
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl GcmMessage {
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The body of the notification message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>An arbitrary string that identifies a group of messages that can be collapsed to ensure that only the last message is sent when delivery can resume. This helps avoid sending too many instances of the same messages when the recipient's device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it sends the notification message to FCM.</p>
+    pub fn collapse_key(&self) -> std::option::Option<&str> {
+        self.collapse_key.as_deref()
+    }
+    /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn data(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.data.as_ref()
+    }
+    /// <p>The icon image name of the asset saved in your app.</p>
+    pub fn icon_reference(&self) -> std::option::Option<&str> {
+        self.icon_reference.as_deref()
+    }
+    /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
+    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+        self.image_icon_url.as_deref()
+    }
+    /// <p>The URL of an image to display in the push notification.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>para>normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem> <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p> <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
+    pub fn priority(&self) -> std::option::Option<&str> {
+        self.priority.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>The package name of the application where registration tokens must match in order for the recipient to receive the message.</p>
+    pub fn restricted_package_name(&self) -> std::option::Option<&str> {
+        self.restricted_package_name.as_deref()
+    }
+    /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
+    pub fn silent_push(&self) -> bool {
+        self.silent_push
+    }
+    /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
+    pub fn small_image_icon_url(&self) -> std::option::Option<&str> {
+        self.small_image_icon_url.as_deref()
+    }
+    /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p> <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
+    pub fn time_to_live(&self) -> i32 {
+        self.time_to_live
+    }
+    /// <p>The title to display above the notification message on the recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for GcmMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17658,6 +20775,40 @@ pub struct EmailMessage {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl EmailMessage {
+    /// <p>The body of the email message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
+    pub fn feedback_forwarding_address(&self) -> std::option::Option<&str> {
+        self.feedback_forwarding_address.as_deref()
+    }
+    /// <p>The verified email address to send the email message from. The default value is the FromAddress specified for the email channel.</p>
+    pub fn from_address(&self) -> std::option::Option<&str> {
+        self.from_address.as_deref()
+    }
+    /// <p>The email message, represented as a raw MIME message.</p>
+    pub fn raw_email(&self) -> std::option::Option<&crate::model::RawEmail> {
+        self.raw_email.as_ref()
+    }
+    /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
+    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.reply_to_addresses.as_deref()
+    }
+    /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
+    pub fn simple_email(&self) -> std::option::Option<&crate::model::SimpleEmail> {
+        self.simple_email.as_ref()
+    }
+    /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+}
 impl std::fmt::Debug for EmailMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmailMessage");
@@ -17826,6 +20977,20 @@ pub struct SimpleEmail {
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub text_part: std::option::Option<crate::model::SimpleEmailPart>,
 }
+impl SimpleEmail {
+    /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
+    pub fn html_part(&self) -> std::option::Option<&crate::model::SimpleEmailPart> {
+        self.html_part.as_ref()
+    }
+    /// <p>The subject line, or title, of the email.</p>
+    pub fn subject(&self) -> std::option::Option<&crate::model::SimpleEmailPart> {
+        self.subject.as_ref()
+    }
+    /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
+    pub fn text_part(&self) -> std::option::Option<&crate::model::SimpleEmailPart> {
+        self.text_part.as_ref()
+    }
+}
 impl std::fmt::Debug for SimpleEmail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimpleEmail");
@@ -17911,6 +21076,16 @@ pub struct SimpleEmailPart {
     /// <p>The textual data of the message content.</p>
     pub data: std::option::Option<std::string::String>,
 }
+impl SimpleEmailPart {
+    /// <p>The applicable character set for the message content.</p>
+    pub fn charset(&self) -> std::option::Option<&str> {
+        self.charset.as_deref()
+    }
+    /// <p>The textual data of the message content.</p>
+    pub fn data(&self) -> std::option::Option<&str> {
+        self.data.as_deref()
+    }
+}
 impl std::fmt::Debug for SimpleEmailPart {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SimpleEmailPart");
@@ -17972,6 +21147,12 @@ pub struct RawEmail {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
+impl RawEmail {
+    /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
+}
 impl std::fmt::Debug for RawEmail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RawEmail");
@@ -18032,6 +21213,43 @@ pub struct DefaultPushNotificationMessage {
     pub title: std::option::Option<std::string::String>,
     /// <p>The default URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl DefaultPushNotificationMessage {
+    /// <p>The default action to occur if a recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The default body of the notification message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The JSON data payload to use for the default push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn data(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.data.as_ref()
+    }
+    /// <p>Specifies whether the default notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or delivering messages to an in-app notification center.</p>
+    pub fn silent_push(&self) -> bool {
+        self.silent_push
+    }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The default title to display above the notification message on a recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The default URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for DefaultPushNotificationMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18197,6 +21415,20 @@ pub struct DefaultMessage {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
+impl DefaultMessage {
+    /// <p>The default body of the message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+}
 impl std::fmt::Debug for DefaultMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DefaultMessage");
@@ -18303,6 +21535,71 @@ pub struct BaiduMessage {
     pub title: std::option::Option<std::string::String>,
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl BaiduMessage {
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The body of the notification message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn data(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.data.as_ref()
+    }
+    /// <p>The icon image name of the asset saved in your app.</p>
+    pub fn icon_reference(&self) -> std::option::Option<&str> {
+        self.icon_reference.as_deref()
+    }
+    /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
+    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+        self.image_icon_url.as_deref()
+    }
+    /// <p>The URL of an image to display in the push notification.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
+    pub fn silent_push(&self) -> bool {
+        self.silent_push
+    }
+    /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
+    pub fn small_image_icon_url(&self) -> std::option::Option<&str> {
+        self.small_image_icon_url.as_deref()
+    }
+    /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).</p>
+    pub fn time_to_live(&self) -> i32 {
+        self.time_to_live
+    }
+    /// <p>The title to display above the notification message on the recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for BaiduMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18600,6 +21897,87 @@ pub struct ApnsMessage {
     pub title: std::option::Option<std::string::String>,
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
+}
+impl ApnsMessage {
+    /// <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert - For a standard notification that's displayed on recipients' devices and prompts a recipient to interact with the notification.</p></li> <li><p>background - For a silent notification that delivers content in the background and isn't displayed on recipients' devices.</p></li> <li><p>complication - For a notification that contains update information for an app’s complication timeline.</p></li> <li><p>fileprovider - For a notification that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a notification that tells managed devices to contact the MDM server.</p></li> <li><p>voip - For a notification that provides information about an incoming VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the apns-push-type request header when it sends the notification message to APNs. If you don't specify a value for this property, Amazon Pinpoint sets the value to alert or background automatically, based on the value that you specify for the SilentPush or RawContent property of the message.</p> <p>For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending Notification Requests to APNs</a> on the Apple Developer website.</p>
+    pub fn apns_push_type(&self) -> std::option::Option<&str> {
+        self.apns_push_type.as_deref()
+    }
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
+    pub fn badge(&self) -> i32 {
+        self.badge
+    }
+    /// <p>The body of the notification message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The key that indicates the notification type for the push notification. This key is a value that's defined by the identifier property of one of your app's registered categories.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single push notification instead of delivering each message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification message to APNs.</p>
+    pub fn collapse_id(&self) -> std::option::Option<&str> {
+        self.collapse_id.as_deref()
+    }
+    /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn data(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.data.as_ref()
+    }
+    /// <p>The URL of an image or video to display in the push notification.</p>
+    pub fn media_url(&self) -> std::option::Option<&str> {
+        self.media_url.as_deref()
+    }
+    /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
+    pub fn preferred_authentication_method(&self) -> std::option::Option<&str> {
+        self.preferred_authentication_method.as_deref()
+    }
+    /// <p>para>5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
+    pub fn priority(&self) -> std::option::Option<&str> {
+        self.priority.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p> <note><p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. The value of the content-available key has to be an integer, and can only be 0 or 1. If you're sending a standard notification, set the value of content-available to 0. If you're sending a silent (background) notification, set the value of content-available to 1. Additionally, silent notification payloads can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p></note>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>Specifies whether the notification is a silent push notification. A silent (or background) push notification isn't displayed on recipients' devices. You can use silent push notifications to make small updates to your app, or to display messages in an in-app message center.</p> <p>Amazon Pinpoint uses this property to determine the correct value for the apns-push-type request header when it sends the notification message to APNs. If you specify a value of true for this property, Amazon Pinpoint sets the value for the apns-push-type header field to background.</p> <note><p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. For silent (background) notifications, set the value of content-available to 1. Additionally, the message payload for a silent notification can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p> <p>Apple has indicated that they will throttle "excessive" background notifications based on current traffic volumes. To prevent your notifications being throttled, Apple recommends that you send no more than 3 silent push notifications to each recipient per hour.</p></note>
+    pub fn silent_push(&self) -> bool {
+        self.silent_push
+    }
+    /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
+    pub fn thread_id(&self) -> std::option::Option<&str> {
+        self.thread_id.as_deref()
+    }
+    /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message to APNs.</p>
+    pub fn time_to_live(&self) -> i32 {
+        self.time_to_live
+    }
+    /// <p>The title to display above the notification message on the recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl std::fmt::Debug for ApnsMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18949,6 +22327,79 @@ pub struct AdmMessage {
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub url: std::option::Option<std::string::String>,
 }
+impl AdmMessage {
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
+    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+        self.action.as_ref()
+    }
+    /// <p>The body of the notification message.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
+    pub fn consolidation_key(&self) -> std::option::Option<&str> {
+        self.consolidation_key.as_deref()
+    }
+    /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn data(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.data.as_ref()
+    }
+    /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
+    pub fn expires_after(&self) -> std::option::Option<&str> {
+        self.expires_after.as_deref()
+    }
+    /// <p>The icon image name of the asset saved in your app.</p>
+    pub fn icon_reference(&self) -> std::option::Option<&str> {
+        self.icon_reference.as_deref()
+    }
+    /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
+    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+        self.image_icon_url.as_deref()
+    }
+    /// <p>The URL of an image to display in the push notification.</p>
+    pub fn image_url(&self) -> std::option::Option<&str> {
+        self.image_url.as_deref()
+    }
+    /// <p>The base64-encoded, MD5 checksum of the value specified by the Data property. ADM uses the MD5 value to verify the integrity of the data.</p>
+    pub fn md5(&self) -> std::option::Option<&str> {
+        self.md5.as_deref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
+    pub fn silent_push(&self) -> bool {
+        self.silent_push
+    }
+    /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
+    pub fn small_image_icon_url(&self) -> std::option::Option<&str> {
+        self.small_image_icon_url.as_deref()
+    }
+    /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
+    pub fn sound(&self) -> std::option::Option<&str> {
+        self.sound.as_deref()
+    }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The title to display above the notification message on the recipient's device.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
 impl std::fmt::Debug for AdmMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdmMessage");
@@ -19251,6 +22702,32 @@ pub struct MessageResponse {
         std::collections::HashMap<std::string::String, crate::model::MessageResult>,
     >,
 }
+impl MessageResponse {
+    /// <p>The unique identifier for the application that was used to send the message.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
+    pub fn endpoint_result(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>,
+    > {
+        self.endpoint_result.as_ref()
+    }
+    /// <p>The identifier for the original request that the message was delivered for.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
+    pub fn result(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageResult>,
+    > {
+        self.result.as_ref()
+    }
+}
 impl std::fmt::Debug for MessageResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageResponse");
@@ -19383,6 +22860,28 @@ pub struct MessageResult {
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     pub updated_token: std::option::Option<std::string::String>,
 }
+impl MessageResult {
+    /// <p>The delivery status of the message. Possible values are:</p> <ul> <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>   <li><p>OPT_OUT - The user who's associated with the endpoint address has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>   <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint address.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
+    pub fn delivery_status(&self) -> std::option::Option<&crate::model::DeliveryStatus> {
+        self.delivery_status.as_ref()
+    }
+    /// <p>The unique identifier for the message that was sent.</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The downstream service status code for delivering the message.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+    /// <p>The status message for delivering the message.</p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
+    pub fn updated_token(&self) -> std::option::Option<&str> {
+        self.updated_token.as_deref()
+    }
+}
 impl std::fmt::Debug for MessageResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageResult");
@@ -19506,6 +23005,47 @@ pub struct MessageRequest {
     pub template_configuration: std::option::Option<crate::model::TemplateConfiguration>,
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
     pub trace_id: std::option::Option<std::string::String>,
+}
+impl MessageRequest {
+    /// <p>A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object. An address can be a push notification token, a phone number, or an email address. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object to tailor the message for an address by specifying settings such as content overrides and message variables.</p>
+    pub fn addresses(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::AddressConfiguration>,
+    > {
+        self.addresses.as_ref()
+    }
+    /// <p>A map of custom attributes to attach to the message. For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+    /// <p>A map of key-value pairs, where each key is an endpoint ID and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for an endpoint by specifying settings such as content overrides and message variables.</p>
+    pub fn endpoints(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::EndpointSendConfiguration>,
+    > {
+        self.endpoints.as_ref()
+    }
+    /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
+    pub fn message_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DirectMessageConfiguration> {
+        self.message_configuration.as_ref()
+    }
+    /// <p>The message template to use for the message.</p>
+    pub fn template_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::TemplateConfiguration> {
+        self.template_configuration.as_ref()
+    }
+    /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
+    pub fn trace_id(&self) -> std::option::Option<&str> {
+        self.trace_id.as_deref()
+    }
 }
 impl std::fmt::Debug for MessageRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19700,6 +23240,39 @@ pub struct AddressConfiguration {
     /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
     pub title_override: std::option::Option<std::string::String>,
 }
+impl AddressConfiguration {
+    /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
+    pub fn body_override(&self) -> std::option::Option<&str> {
+        self.body_override.as_deref()
+    }
+    /// <p>The channel to use when sending the message.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.channel_type.as_ref()
+    }
+    /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p> <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.context.as_ref()
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
+    pub fn raw_content(&self) -> std::option::Option<&str> {
+        self.raw_content.as_deref()
+    }
+    /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.substitutions.as_ref()
+    }
+    /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
+    pub fn title_override(&self) -> std::option::Option<&str> {
+        self.title_override.as_deref()
+    }
+}
 impl std::fmt::Debug for AddressConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AddressConfiguration");
@@ -19860,6 +23433,20 @@ pub struct AttributesResource {
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
     pub attributes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl AttributesResource {
+    /// <p>The unique identifier for the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li></ul>
+    pub fn attribute_type(&self) -> std::option::Option<&str> {
+        self.attribute_type.as_deref()
+    }
+    /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
+    pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
+        self.attributes.as_deref()
+    }
+}
 impl std::fmt::Debug for AttributesResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AttributesResource");
@@ -19949,6 +23536,12 @@ pub struct UpdateAttributesRequest {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     pub blacklist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UpdateAttributesRequest {
+    /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
+    pub fn blacklist(&self) -> std::option::Option<&[std::string::String]> {
+        self.blacklist.as_deref()
+    }
+}
 impl std::fmt::Debug for UpdateAttributesRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAttributesRequest");
@@ -20017,6 +23610,34 @@ pub struct EventStream {
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     pub role_arn: std::option::Option<std::string::String>,
+}
+impl EventStream {
+    /// <p>The unique identifier for the application to publish event data for.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p> <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+    /// </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+    /// </p>
+    pub fn destination_stream_arn(&self) -> std::option::Option<&str> {
+        self.destination_stream_arn.as_deref()
+    }
+    /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The IAM user who last modified the event stream.</p>
+    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
+    /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for EventStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20151,6 +23772,18 @@ pub struct WriteEventStream {
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
+impl WriteEventStream {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream that you want to publish event data to.</p> <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+    /// </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+    /// </p>
+    pub fn destination_stream_arn(&self) -> std::option::Option<&str> {
+        self.destination_stream_arn.as_deref()
+    }
+    /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for WriteEventStream {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WriteEventStream");
@@ -20221,6 +23854,16 @@ pub struct EventsResponse {
         std::collections::HashMap<std::string::String, crate::model::ItemResponse>,
     >,
 }
+impl EventsResponse {
+    /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
+    pub fn results(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ItemResponse>,
+    > {
+        self.results.as_ref()
+    }
+}
 impl std::fmt::Debug for EventsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventsResponse");
@@ -20289,6 +23932,22 @@ pub struct ItemResponse {
     pub events_item_response: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::EventItemResponse>,
     >,
+}
+impl ItemResponse {
+    /// <p>The response that was received after the endpoint data was accepted.</p>
+    pub fn endpoint_item_response(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointItemResponse> {
+        self.endpoint_item_response.as_ref()
+    }
+    /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
+    pub fn events_item_response(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::EventItemResponse>,
+    > {
+        self.events_item_response.as_ref()
+    }
 }
 impl std::fmt::Debug for ItemResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20373,6 +24032,16 @@ pub struct EventItemResponse {
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
     pub status_code: i32,
 }
+impl EventItemResponse {
+    /// <p>A custom message that's returned in the response as a result of processing the event.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+}
 impl std::fmt::Debug for EventItemResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventItemResponse");
@@ -20436,6 +24105,16 @@ pub struct EndpointItemResponse {
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub status_code: i32,
 }
+impl EndpointItemResponse {
+    /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
+}
 impl std::fmt::Debug for EndpointItemResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointItemResponse");
@@ -20498,6 +24177,16 @@ pub struct EventsRequest {
     pub batch_item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::EventsBatch>,
     >,
+}
+impl EventsRequest {
+    /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
+    pub fn batch_item(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::EventsBatch>,
+    > {
+        self.batch_item.as_ref()
+    }
 }
 impl std::fmt::Debug for EventsRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20566,6 +24255,19 @@ pub struct EventsBatch {
     /// <p>A set of properties that are associated with the event.</p>
     pub events:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Event>>,
+}
+impl EventsBatch {
+    /// <p>A set of properties and attributes that are associated with the endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&crate::model::PublicEndpoint> {
+        self.endpoint.as_ref()
+    }
+    /// <p>A set of properties that are associated with the event.</p>
+    pub fn events(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Event>>
+    {
+        self.events.as_ref()
+    }
 }
 impl std::fmt::Debug for EventsBatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20666,6 +24368,53 @@ pub struct Event {
     pub session: std::option::Option<crate::model::Session>,
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
     pub timestamp: std::option::Option<std::string::String>,
+}
+impl Event {
+    /// <p>The package name of the app that's recording the event.</p>
+    pub fn app_package_name(&self) -> std::option::Option<&str> {
+        self.app_package_name.as_deref()
+    }
+    /// <p>The title of the app that's recording the event.</p>
+    pub fn app_title(&self) -> std::option::Option<&str> {
+        self.app_title.as_deref()
+    }
+    /// <p>The version number of the app that's recording the event.</p>
+    pub fn app_version_code(&self) -> std::option::Option<&str> {
+        self.app_version_code.as_deref()
+    }
+    /// <p>One or more custom attributes that are associated with the event.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>The version of the SDK that's running on the client device.</p>
+    pub fn client_sdk_version(&self) -> std::option::Option<&str> {
+        self.client_sdk_version.as_deref()
+    }
+    /// <p>The name of the event.</p>
+    pub fn event_type(&self) -> std::option::Option<&str> {
+        self.event_type.as_deref()
+    }
+    /// <p>One or more custom metrics that are associated with the event.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.metrics.as_ref()
+    }
+    /// <p>The name of the SDK that's being used to record the event.</p>
+    pub fn sdk_name(&self) -> std::option::Option<&str> {
+        self.sdk_name.as_deref()
+    }
+    /// <p>Information about the session in which the event occurred.</p>
+    pub fn session(&self) -> std::option::Option<&crate::model::Session> {
+        self.session.as_ref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20874,6 +24623,24 @@ pub struct Session {
     /// <p>The date and time when the session ended.</p>
     pub stop_timestamp: std::option::Option<std::string::String>,
 }
+impl Session {
+    /// <p>The duration of the session, in milliseconds.</p>
+    pub fn duration(&self) -> i32 {
+        self.duration
+    }
+    /// <p>The unique identifier for the session.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The date and time when the session began.</p>
+    pub fn start_timestamp(&self) -> std::option::Option<&str> {
+        self.start_timestamp.as_deref()
+    }
+    /// <p>The date and time when the session ended.</p>
+    pub fn stop_timestamp(&self) -> std::option::Option<&str> {
+        self.stop_timestamp.as_deref()
+    }
+}
 impl std::fmt::Debug for Session {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Session");
@@ -20988,6 +24755,58 @@ pub struct PublicEndpoint {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
     pub user: std::option::Option<crate::model::EndpointUser>,
+}
+impl PublicEndpoint {
+    /// <p>The unique identifier for the recipient, such as a device token, email address, or mobile phone number.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. You can use these attributes as filter criteria when you create segments.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.channel_type.as_ref()
+    }
+    /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
+    pub fn demographic(&self) -> std::option::Option<&crate::model::EndpointDemographic> {
+        self.demographic.as_ref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
+    pub fn effective_date(&self) -> std::option::Option<&str> {
+        self.effective_date.as_deref()
+    }
+    /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The geographic information for the endpoint.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::EndpointLocation> {
+        self.location.as_ref()
+    }
+    /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.metrics.as_ref()
+    }
+    /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
+    pub fn opt_out(&self) -> std::option::Option<&str> {
+        self.opt_out.as_deref()
+    }
+    /// <p>A unique identifier that's generated each time the endpoint is updated.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for PublicEndpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21235,6 +25054,65 @@ pub struct NumberValidateResponse {
     pub timezone: std::option::Option<std::string::String>,
     /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
     pub zip_code: std::option::Option<std::string::String>,
+}
+impl NumberValidateResponse {
+    /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
+    pub fn carrier(&self) -> std::option::Option<&str> {
+        self.carrier.as_deref()
+    }
+    /// <p>The name of the city where the phone number was originally registered.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
+    pub fn cleansed_phone_number_e164(&self) -> std::option::Option<&str> {
+        self.cleansed_phone_number_e164.as_deref()
+    }
+    /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
+    pub fn cleansed_phone_number_national(&self) -> std::option::Option<&str> {
+        self.cleansed_phone_number_national.as_deref()
+    }
+    /// <p>The name of the country or region where the phone number was originally registered.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    pub fn country_code_iso2(&self) -> std::option::Option<&str> {
+        self.country_code_iso2.as_deref()
+    }
+    /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
+    pub fn country_code_numeric(&self) -> std::option::Option<&str> {
+        self.country_code_numeric.as_deref()
+    }
+    /// <p>The name of the county where the phone number was originally registered.</p>
+    pub fn county(&self) -> std::option::Option<&str> {
+        self.county.as_deref()
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
+    pub fn original_country_code_iso2(&self) -> std::option::Option<&str> {
+        self.original_country_code_iso2.as_deref()
+    }
+    /// <p>The phone number that was sent in the request body.</p>
+    pub fn original_phone_number(&self) -> std::option::Option<&str> {
+        self.original_phone_number.as_deref()
+    }
+    /// <p>The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP,
+    /// INVALID, PREPAID, and OTHER.</p>
+    pub fn phone_type(&self) -> std::option::Option<&str> {
+        self.phone_type.as_deref()
+    }
+    /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
+    pub fn phone_type_code(&self) -> i32 {
+        self.phone_type_code
+    }
+    /// <p>The time zone for the location where the phone number was originally registered.</p>
+    pub fn timezone(&self) -> std::option::Option<&str> {
+        self.timezone.as_deref()
+    }
+    /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
+    pub fn zip_code(&self) -> std::option::Option<&str> {
+        self.zip_code.as_deref()
+    }
 }
 impl std::fmt::Debug for NumberValidateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21487,6 +25365,16 @@ pub struct NumberValidateRequest {
     /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
     pub phone_number: std::option::Option<std::string::String>,
 }
+impl NumberValidateRequest {
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+        self.iso_country_code.as_deref()
+    }
+    /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
+    pub fn phone_number(&self) -> std::option::Option<&str> {
+        self.phone_number.as_deref()
+    }
+}
 impl std::fmt::Debug for NumberValidateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NumberValidateRequest");
@@ -21556,6 +25444,24 @@ pub struct TemplateVersionsResponse {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
     pub request_id: std::option::Option<std::string::String>,
+}
+impl TemplateVersionsResponse {
+    /// <p>An array of responses, one for each version of the message template.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::TemplateVersionResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateVersionsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21664,6 +25570,36 @@ pub struct TemplateVersionResponse {
     pub template_type: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl TemplateVersionResponse {
+    /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>A JSON object that specifies the default values that are used for message variables in the version of the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the version of the message template was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The custom description of the version of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn template_type(&self) -> std::option::Option<&str> {
+        self.template_type.as_deref()
+    }
+    /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateVersionResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21811,6 +25747,16 @@ pub struct TemplatesResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl TemplatesResponse {
+    /// <p>An array of responses, one for each message template that's associated with your Amazon Pinpoint account and meets any filter criteria that you specified in the request.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::TemplateResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplatesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplatesResponse");
@@ -21897,6 +25843,47 @@ pub struct TemplateResponse {
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl TemplateResponse {
+    /// <p>The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>A map of key-value pairs that identifies the tags that are associated with the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The custom description of the message template. This value isn't included in a TemplateResponse object. To retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for TemplateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22154,6 +26141,16 @@ pub struct JourneysResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl JourneysResponse {
+    /// <p>An array of responses, one for each journey that's associated with the application.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::JourneyResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for JourneysResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneysResponse");
@@ -22246,6 +26243,59 @@ pub struct VoiceTemplateResponse {
     pub version: std::option::Option<std::string::String>,
     /// <p>The name of the voice that's used when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub voice_id: std::option::Option<std::string::String>,
+}
+impl VoiceTemplateResponse {
+    /// <p>The Amazon Resource Name (ARN) of the message template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The text of the script that's used in messages that are based on the message template, in plain text format.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The code for the language that's used when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn language_code(&self) -> std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. For a voice template, this value is VOICE.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The name of the voice that's used when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn voice_id(&self) -> std::option::Option<&str> {
+        self.voice_id.as_deref()
+    }
 }
 impl std::fmt::Debug for VoiceTemplateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22476,6 +26526,12 @@ pub struct EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     pub item: std::option::Option<std::vec::Vec<crate::model::EndpointResponse>>,
 }
+impl EndpointsResponse {
+    /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::EndpointResponse]> {
+        self.item.as_deref()
+    }
+}
 impl std::fmt::Debug for EndpointsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointsResponse");
@@ -22560,6 +26616,74 @@ pub struct EndpointResponse {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
     pub user: std::option::Option<crate::model::EndpointUser>,
+}
+impl EndpointResponse {
+    /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
+    pub fn address(&self) -> std::option::Option<&str> {
+        self.address.as_deref()
+    }
+    /// <p>The unique identifier for the application that's associated with the endpoint.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
+        self.attributes.as_ref()
+    }
+    /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
+    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+        self.channel_type.as_ref()
+    }
+    /// <p>A number from 0-99 that represents the cohort that the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an application. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for campaigns.</p>
+    pub fn cohort_id(&self) -> std::option::Option<&str> {
+        self.cohort_id.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
+    pub fn demographic(&self) -> std::option::Option<&crate::model::EndpointDemographic> {
+        self.demographic.as_ref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
+    pub fn effective_date(&self) -> std::option::Option<&str> {
+        self.effective_date.as_deref()
+    }
+    /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
+    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+        self.endpoint_status.as_deref()
+    }
+    /// <p>The unique identifier that you assigned to the endpoint. The identifier should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint identifiers that are associated with the application.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The geographic information for the endpoint.</p>
+    pub fn location(&self) -> std::option::Option<&crate::model::EndpointLocation> {
+        self.location.as_ref()
+    }
+    /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+        self.metrics.as_ref()
+    }
+    /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
+    pub fn opt_out(&self) -> std::option::Option<&str> {
+        self.opt_out.as_deref()
+    }
+    /// <p>The unique identifier for the most recent request to update the endpoint.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
+    pub fn user(&self) -> std::option::Option<&crate::model::EndpointUser> {
+        self.user.as_ref()
+    }
 }
 impl std::fmt::Debug for EndpointResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22860,6 +26984,55 @@ pub struct SmsTemplateResponse {
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub version: std::option::Option<std::string::String>,
 }
+impl SmsTemplateResponse {
+    /// <p>The Amazon Resource Name (ARN) of the message template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The message body that's used in text messages that are based on the message template.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The unique identifier for the recommender model that's used by the message template.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. For an SMS template, this value is SMS.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+}
 impl std::fmt::Debug for SmsTemplateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SmsTemplateResponse");
@@ -23078,6 +27251,16 @@ pub struct SegmentsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl SegmentsResponse {
+    /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::SegmentResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for SegmentsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SegmentsResponse");
@@ -23149,6 +27332,16 @@ pub struct ImportJobsResponse {
     pub item: std::option::Option<std::vec::Vec<crate::model::ImportJobResponse>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ImportJobsResponse {
+    /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::ImportJobResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportJobsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23243,6 +27436,60 @@ pub struct ImportJobResponse {
     pub total_processed: i32,
     /// <p>The job type. This value is IMPORT for import jobs.</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl ImportJobResponse {
+    /// <p>The unique identifier for the application that's associated with the import job.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
+    pub fn completed_pieces(&self) -> i32 {
+        self.completed_pieces
+    }
+    /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
+    pub fn completion_date(&self) -> std::option::Option<&str> {
+        self.completion_date.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the import job was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The resource settings that apply to the import job.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::ImportJobResource> {
+        self.definition.as_ref()
+    }
+    /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
+    pub fn failed_pieces(&self) -> i32 {
+        self.failed_pieces
+    }
+    /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
+    pub fn failures(&self) -> std::option::Option<&[std::string::String]> {
+        self.failures.as_deref()
+    }
+    /// <p>The unique identifier for the import job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
+    pub fn total_failures(&self) -> i32 {
+        self.total_failures
+    }
+    /// <p>The total number of pieces that must be processed to complete the import job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the import job.</p>
+    pub fn total_pieces(&self) -> i32 {
+        self.total_pieces
+    }
+    /// <p>The total number of endpoint definitions that were processed by the import job.</p>
+    pub fn total_processed(&self) -> i32 {
+        self.total_processed
+    }
+    /// <p>The job type. This value is IMPORT for import jobs.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportJobResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23579,6 +27826,40 @@ pub struct ImportJobResource {
     /// <p>The custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
     pub segment_name: std::option::Option<std::string::String>,
 }
+impl ImportJobResource {
+    /// <p>Specifies whether the import job creates a segment that contains the endpoints, when the endpoint definitions are imported.</p>
+    pub fn define_segment(&self) -> bool {
+        self.define_segment
+    }
+    /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p> <p>If the files are stored in an Amazon S3 location and that location contains multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>Specifies whether the import job registers the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
+    pub fn register_endpoints(&self) -> bool {
+        self.register_endpoints
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p> <p>The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/<replaceable>file-name</replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
+    pub fn s3_url(&self) -> std::option::Option<&str> {
+        self.s3_url.as_deref()
+    }
+    /// <p>The identifier for the segment that the import job updates or adds endpoint definitions to, if the import job updates an existing segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
+    pub fn segment_name(&self) -> std::option::Option<&str> {
+        self.segment_name.as_deref()
+    }
+}
 impl std::fmt::Debug for ImportJobResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportJobResource");
@@ -23720,6 +28001,16 @@ pub struct ExportJobsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ExportJobsResponse {
+    /// <p>An array of responses, one for each export job that's associated with the application (Export Jobs resource) or segment (Segment Export Jobs resource).</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::ExportJobResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ExportJobsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportJobsResponse");
@@ -23813,6 +28104,60 @@ pub struct ExportJobResponse {
     pub total_processed: i32,
     /// <p>The job type. This value is EXPORT for export jobs.</p>
     pub r#type: std::option::Option<std::string::String>,
+}
+impl ExportJobResponse {
+    /// <p>The unique identifier for the application that's associated with the export job.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
+    pub fn completed_pieces(&self) -> i32 {
+        self.completed_pieces
+    }
+    /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
+    pub fn completion_date(&self) -> std::option::Option<&str> {
+        self.completion_date.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the export job was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The resource settings that apply to the export job.</p>
+    pub fn definition(&self) -> std::option::Option<&crate::model::ExportJobResource> {
+        self.definition.as_ref()
+    }
+    /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
+    pub fn failed_pieces(&self) -> i32 {
+        self.failed_pieces
+    }
+    /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
+    pub fn failures(&self) -> std::option::Option<&[std::string::String]> {
+        self.failures.as_deref()
+    }
+    /// <p>The unique identifier for the export job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
+    pub fn total_failures(&self) -> i32 {
+        self.total_failures
+    }
+    /// <p>The total number of pieces that must be processed to complete the export job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the export job.</p>
+    pub fn total_pieces(&self) -> i32 {
+        self.total_pieces
+    }
+    /// <p>The total number of endpoint definitions that were processed by the export job.</p>
+    pub fn total_processed(&self) -> i32 {
+        self.total_processed
+    }
+    /// <p>The job type. This value is EXPORT for export jobs.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl std::fmt::Debug for ExportJobResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24048,6 +28393,24 @@ pub struct ExportJobResource {
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
     pub segment_version: i32,
 }
+impl ExportJobResource {
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
+    pub fn s3_url_prefix(&self) -> std::option::Option<&str> {
+        self.s3_url_prefix.as_deref()
+    }
+    /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The version of the segment that the endpoint definitions were exported from.</p>
+    pub fn segment_version(&self) -> i32 {
+        self.segment_version
+    }
+}
 impl std::fmt::Debug for ExportJobResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportJobResource");
@@ -24140,6 +28503,16 @@ pub struct ListRecommenderConfigurationsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListRecommenderConfigurationsResponse {
+    /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::RecommenderConfigurationResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListRecommenderConfigurationsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecommenderConfigurationsResponse");
@@ -24224,6 +28597,8 @@ pub struct PushNotificationTemplateResponse {
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>The default message template that's used for push notification channels.</p>
+    ///
+    /// _Note: This member has been renamed from `default`._
     pub default_value: std::option::Option<crate::model::DefaultPushNotificationTemplate>,
     /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
     pub default_substitutions: std::option::Option<std::string::String>,
@@ -24244,6 +28619,75 @@ pub struct PushNotificationTemplateResponse {
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl PushNotificationTemplateResponse {
+    /// <p>The message template that's used for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn adm(&self) -> std::option::Option<&crate::model::AndroidPushNotificationTemplate> {
+        self.adm.as_ref()
+    }
+    /// <p>The message template that's used for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn apns(&self) -> std::option::Option<&crate::model::ApnsPushNotificationTemplate> {
+        self.apns.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the message template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The message template that's used for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn baidu(&self) -> std::option::Option<&crate::model::AndroidPushNotificationTemplate> {
+        self.baidu.as_ref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The default message template that's used for push notification channels.</p>
+    ///
+    /// _Note: This member has been renamed from `default`._
+    pub fn default_value(
+        &self,
+    ) -> std::option::Option<&crate::model::DefaultPushNotificationTemplate> {
+        self.default_value.as_ref()
+    }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The message template that's used for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn gcm(&self) -> std::option::Option<&crate::model::AndroidPushNotificationTemplate> {
+        self.gcm.as_ref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The unique identifier for the recommender model that's used by the message template.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. For a push notification template, this value is PUSH.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for PushNotificationTemplateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24539,6 +28983,27 @@ pub struct JourneyExecutionMetricsResponse {
     pub metrics:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl JourneyExecutionMetricsResponse {
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey that the metric applies to.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
+    pub fn last_evaluated_time(&self) -> std::option::Option<&str> {
+        self.last_evaluated_time.as_deref()
+    }
+    /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metrics.as_ref()
+    }
+}
 impl std::fmt::Debug for JourneyExecutionMetricsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneyExecutionMetricsResponse");
@@ -24659,6 +29124,35 @@ pub struct JourneyExecutionActivityMetricsResponse {
     /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub metrics:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl JourneyExecutionActivityMetricsResponse {
+    /// <p>The type of activity that the metric applies to. Possible values are:</p> <ul><li><p>CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li> <li><p>HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li> <li><p>MESSAGE - For an email activity, which is an activity that sends an email message to participants.</p></li> <li><p>MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li> <li><p>RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li> <li><p>WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li></ul>
+    pub fn activity_type(&self) -> std::option::Option<&str> {
+        self.activity_type.as_deref()
+    }
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the activity that the metric applies to.</p>
+    pub fn journey_activity_id(&self) -> std::option::Option<&str> {
+        self.journey_activity_id.as_deref()
+    }
+    /// <p>The unique identifier for the journey that the metric applies to.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity and updated the data for the metric.</p>
+    pub fn last_evaluated_time(&self) -> std::option::Option<&str> {
+        self.last_evaluated_time.as_deref()
+    }
+    /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metrics.as_ref()
+    }
 }
 impl std::fmt::Debug for JourneyExecutionActivityMetricsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24814,6 +29308,36 @@ pub struct JourneyDateRangeKpiResponse {
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
+impl JourneyDateRangeKpiResponse {
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The unique identifier for the journey that the metric applies to.</p>
+    pub fn journey_id(&self) -> std::option::Option<&str> {
+        self.journey_id.as_deref()
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn kpi_name(&self) -> std::option::Option<&str> {
+        self.kpi_name.as_deref()
+    }
+    /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
+    pub fn kpi_result(&self) -> std::option::Option<&crate::model::BaseKpiResult> {
+        self.kpi_result.as_ref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Journey Engagement Metrics resource because the resource returns all results in a single page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
+}
 impl std::fmt::Debug for JourneyDateRangeKpiResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JourneyDateRangeKpiResponse");
@@ -24952,6 +29476,12 @@ pub struct BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     pub rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
 }
+impl BaseKpiResult {
+    /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
+    pub fn rows(&self) -> std::option::Option<&[crate::model::ResultRow]> {
+        self.rows.as_deref()
+    }
+}
 impl std::fmt::Debug for BaseKpiResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BaseKpiResult");
@@ -25008,6 +29538,16 @@ pub struct ResultRow {
     pub grouped_bys: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
     pub values: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
+}
+impl ResultRow {
+    /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
+    pub fn grouped_bys(&self) -> std::option::Option<&[crate::model::ResultRowValue]> {
+        self.grouped_bys.as_deref()
+    }
+    /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
+    pub fn values(&self) -> std::option::Option<&[crate::model::ResultRowValue]> {
+        self.values.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultRow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25091,6 +29631,20 @@ pub struct ResultRowValue {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ResultRowValue {
+    /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The data type of the value specified by the Value property.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ResultRowValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25187,6 +29741,58 @@ pub struct InAppTemplateResponse {
     pub template_type: std::option::Option<crate::model::TemplateType>,
     /// <p>The version id of the template.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl InAppTemplateResponse {
+    /// <p>The resource arn of the template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
+    pub fn content(&self) -> std::option::Option<&[crate::model::InAppMessageContent]> {
+        self.content.as_deref()
+    }
+    /// <p>The creation date of the template.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>Custom config to be sent to client.</p>
+    pub fn custom_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_config.as_ref()
+    }
+    /// <p>The last modified date of the template.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The layout of the message.</p>
+    pub fn layout(&self) -> std::option::Option<&crate::model::Layout> {
+        self.layout.as_ref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The description of the template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of the template.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The version id of the template.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for InAppTemplateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25425,6 +30031,14 @@ pub struct InAppMessagesResponse {
     pub in_app_message_campaigns:
         std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
 }
+impl InAppMessagesResponse {
+    /// <p>List of targeted in-app message campaigns.</p>
+    pub fn in_app_message_campaigns(
+        &self,
+    ) -> std::option::Option<&[crate::model::InAppMessageCampaign]> {
+        self.in_app_message_campaigns.as_deref()
+    }
+}
 impl std::fmt::Debug for InAppMessagesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InAppMessagesResponse");
@@ -25499,6 +30113,40 @@ pub struct InAppMessageCampaign {
     pub total_cap: i32,
     /// <p>Treatment id of the campaign.</p>
     pub treatment_id: std::option::Option<std::string::String>,
+}
+impl InAppMessageCampaign {
+    /// <p>Campaign id of the corresponding campaign.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
+    pub fn daily_cap(&self) -> i32 {
+        self.daily_cap
+    }
+    /// <p>In-app message content with all fields required for rendering an in-app message.</p>
+    pub fn in_app_message(&self) -> std::option::Option<&crate::model::InAppMessage> {
+        self.in_app_message.as_ref()
+    }
+    /// <p>Priority of the in-app message.</p>
+    pub fn priority(&self) -> i32 {
+        self.priority
+    }
+    /// <p>Schedule of the campaign.</p>
+    pub fn schedule(&self) -> std::option::Option<&crate::model::InAppCampaignSchedule> {
+        self.schedule.as_ref()
+    }
+    /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
+    pub fn session_cap(&self) -> i32 {
+        self.session_cap
+    }
+    /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
+    pub fn total_cap(&self) -> i32 {
+        self.total_cap
+    }
+    /// <p>Treatment id of the campaign.</p>
+    pub fn treatment_id(&self) -> std::option::Option<&str> {
+        self.treatment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for InAppMessageCampaign {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25649,6 +30297,20 @@ pub struct InAppCampaignSchedule {
     /// <p>Time during which the in-app message should not be shown to the user.</p>
     pub quiet_time: std::option::Option<crate::model::QuietTime>,
 }
+impl InAppCampaignSchedule {
+    /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
+    pub fn end_date(&self) -> std::option::Option<&str> {
+        self.end_date.as_deref()
+    }
+    /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
+    pub fn event_filter(&self) -> std::option::Option<&crate::model::CampaignEventFilter> {
+        self.event_filter.as_ref()
+    }
+    /// <p>Time during which the in-app message should not be shown to the user.</p>
+    pub fn quiet_time(&self) -> std::option::Option<&crate::model::QuietTime> {
+        self.quiet_time.as_ref()
+    }
+}
 impl std::fmt::Debug for InAppCampaignSchedule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InAppCampaignSchedule");
@@ -25733,6 +30395,23 @@ pub struct InAppMessage {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The layout of the message.</p>
     pub layout: std::option::Option<crate::model::Layout>,
+}
+impl InAppMessage {
+    /// <p>In-app message content.</p>
+    pub fn content(&self) -> std::option::Option<&[crate::model::InAppMessageContent]> {
+        self.content.as_deref()
+    }
+    /// <p>Custom config to be sent to SDK.</p>
+    pub fn custom_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.custom_config.as_ref()
+    }
+    /// <p>The layout of the message.</p>
+    pub fn layout(&self) -> std::option::Option<&crate::model::Layout> {
+        self.layout.as_ref()
+    }
 }
 impl std::fmt::Debug for InAppMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25858,6 +30537,63 @@ pub struct EmailTemplateResponse {
     pub text_part: std::option::Option<std::string::String>,
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub version: std::option::Option<std::string::String>,
+}
+impl EmailTemplateResponse {
+    /// <p>The Amazon Resource Name (ARN) of the message template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
+        self.default_substitutions.as_deref()
+    }
+    /// <p>The message body, in HTML format, that's used in email messages that are based on the message template.</p>
+    pub fn html_part(&self) -> std::option::Option<&str> {
+        self.html_part.as_deref()
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The unique identifier for the recommender model that's used by the message template.</p>
+    pub fn recommender_id(&self) -> std::option::Option<&str> {
+        self.recommender_id.as_deref()
+    }
+    /// <p>The subject line, or title, that's used in email messages that are based on the message template.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>The custom description of the message template.</p>
+    pub fn template_description(&self) -> std::option::Option<&str> {
+        self.template_description.as_deref()
+    }
+    /// <p>The name of the message template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The type of channel that the message template is designed for. For an email template, this value is EMAIL.</p>
+    pub fn template_type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.template_type.as_ref()
+    }
+    /// <p>The message body, in plain text format, that's used in email messages that are based on the message template.</p>
+    pub fn text_part(&self) -> std::option::Option<&str> {
+        self.text_part.as_deref()
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
 }
 impl std::fmt::Debug for EmailTemplateResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26103,6 +30839,16 @@ pub struct ChannelsResponse {
         std::collections::HashMap<std::string::String, crate::model::ChannelResponse>,
     >,
 }
+impl ChannelsResponse {
+    /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
+    pub fn channels(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::ChannelResponse>,
+    > {
+        self.channels.as_ref()
+    }
+}
 impl std::fmt::Debug for ChannelsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelsResponse");
@@ -26183,6 +30929,44 @@ pub struct ChannelResponse {
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>The current version of the channel.</p>
     pub version: i32,
+}
+impl ChannelResponse {
+    /// <p>The unique identifier for the application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
+    pub fn creation_date(&self) -> std::option::Option<&str> {
+        self.creation_date.as_deref()
+    }
+    /// <p>Specifies whether the channel is enabled for the application.</p>
+    pub fn enabled(&self) -> bool {
+        self.enabled
+    }
+    /// <p>(Not used) This property is retained only for backward compatibility.</p>
+    pub fn has_credential(&self) -> bool {
+        self.has_credential
+    }
+    /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the channel is archived.</p>
+    pub fn is_archived(&self) -> bool {
+        self.is_archived
+    }
+    /// <p>The user who last modified the channel.</p>
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+        self.last_modified_by.as_deref()
+    }
+    /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+        self.last_modified_date.as_deref()
+    }
+    /// <p>The current version of the channel.</p>
+    pub fn version(&self) -> i32 {
+        self.version
+    }
 }
 impl std::fmt::Debug for ChannelResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26350,6 +31134,16 @@ pub struct CampaignsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl CampaignsResponse {
+    /// <p>An array of responses, one for each campaign that's associated with the application.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::CampaignResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for CampaignsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CampaignsResponse");
@@ -26431,6 +31225,36 @@ pub struct CampaignDateRangeKpiResponse {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl CampaignDateRangeKpiResponse {
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign that the metric applies to.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn kpi_name(&self) -> std::option::Option<&str> {
+        self.kpi_name.as_deref()
+    }
+    /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
+    pub fn kpi_result(&self) -> std::option::Option<&crate::model::BaseKpiResult> {
+        self.kpi_result.as_ref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Campaign Metrics resource because the resource returns all results in a single page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CampaignDateRangeKpiResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26572,6 +31396,16 @@ pub struct ActivitiesResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ActivitiesResponse {
+    /// <p>An array of responses, one for each activity that was performed by the campaign.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::ActivityResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ActivitiesResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivitiesResponse");
@@ -26665,6 +31499,60 @@ pub struct ActivityResponse {
     pub total_endpoint_count: i32,
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
     pub treatment_id: std::option::Option<std::string::String>,
+}
+impl ActivityResponse {
+    /// <p>The unique identifier for the application that the campaign applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The unique identifier for the campaign that the activity applies to.</p>
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
+        self.campaign_id.as_deref()
+    }
+    /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
+    pub fn end(&self) -> std::option::Option<&str> {
+        self.end.as_deref()
+    }
+    /// <p>The unique identifier for the activity.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
+    pub fn result(&self) -> std::option::Option<&str> {
+        self.result.as_deref()
+    }
+    /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
+    pub fn scheduled_start(&self) -> std::option::Option<&str> {
+        self.scheduled_start.as_deref()
+    }
+    /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
+    pub fn start(&self) -> std::option::Option<&str> {
+        self.start.as_deref()
+    }
+    /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
+    pub fn successful_endpoint_count(&self) -> i32 {
+        self.successful_endpoint_count
+    }
+    /// <p>The total number of time zones that were completed.</p>
+    pub fn timezones_completed_count(&self) -> i32 {
+        self.timezones_completed_count
+    }
+    /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
+    pub fn timezones_total_count(&self) -> i32 {
+        self.timezones_total_count
+    }
+    /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
+    pub fn total_endpoint_count(&self) -> i32 {
+        self.total_endpoint_count
+    }
+    /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
+    pub fn treatment_id(&self) -> std::option::Option<&str> {
+        self.treatment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ActivityResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26878,6 +31766,16 @@ pub struct ApplicationsResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ApplicationsResponse {
+    /// <p>An array of responses, one for each application that was returned.</p>
+    pub fn item(&self) -> std::option::Option<&[crate::model::ApplicationResponse]> {
+        self.item.as_deref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ApplicationsResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationsResponse");
@@ -26954,6 +31852,27 @@ pub struct ApplicationResponse {
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each tag consists of a required tag key and an associated tag value.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ApplicationResponse {
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27068,6 +31987,32 @@ pub struct ApplicationDateRangeKpiResponse {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub start_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl ApplicationDateRangeKpiResponse {
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_time.as_ref()
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn kpi_name(&self) -> std::option::Option<&str> {
+        self.kpi_name.as_deref()
+    }
+    /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
+    pub fn kpi_result(&self) -> std::option::Option<&crate::model::BaseKpiResult> {
+        self.kpi_result.as_ref()
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Application Metrics resource because the resource returns all results in a single page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.start_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ApplicationDateRangeKpiResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27198,6 +32143,20 @@ pub struct CreateTemplateMessageBody {
     /// <p>The unique identifier for the request to create the message template.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl CreateTemplateMessageBody {
+    /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The message that's returned from the API for the request to create the message template.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The unique identifier for the request to create the message template.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateTemplateMessageBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTemplateMessageBody");
@@ -27288,6 +32247,47 @@ pub struct CreateRecommenderConfigurationShape {
     pub recommendations_display_name: std::option::Option<std::string::String>,
     /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p> <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
     pub recommendations_per_message: i32,
+}
+impl CreateRecommenderConfigurationShape {
+    /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p> <ul><li><p>An attribute name must start with a letter or number and it can contain up to 50 characters. The characters can be letters, numbers, underscores (_), or hyphens (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An attribute display name must start with a letter or number and it can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in your request.</p>
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.attributes.as_ref()
+    }
+    /// <p>A custom description of the configuration for the recommender model. The description can contain up to 128 characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A custom name of the configuration for the recommender model. The name must start with a letter or number and it can contain up to 128 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of Amazon Pinpoint ID to associate with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Valid values are:</p> <ul><li><p>PINPOINT_ENDPOINT_ID - Associate each user in the model with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li></ul>
+    pub fn recommendation_provider_id_type(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_id_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
+    pub fn recommendation_provider_role_arn(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommender model to retrieve recommendation data from. This value must match the ARN of an Amazon Personalize campaign.</p>
+    pub fn recommendation_provider_uri(&self) -> std::option::Option<&str> {
+        self.recommendation_provider_uri.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function to invoke for additional processing of recommendation data that's retrieved from the recommender model.</p>
+    pub fn recommendation_transformer_uri(&self) -> std::option::Option<&str> {
+        self.recommendation_transformer_uri.as_deref()
+    }
+    /// <p>A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
+    pub fn recommendations_display_name(&self) -> std::option::Option<&str> {
+        self.recommendations_display_name.as_deref()
+    }
+    /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p> <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
+    pub fn recommendations_per_message(&self) -> i32 {
+        self.recommendations_per_message
+    }
 }
 impl std::fmt::Debug for CreateRecommenderConfigurationShape {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27510,6 +32510,20 @@ pub struct TemplateCreateMessageBody {
     /// <p>The unique identifier for the request to create the message template.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
+impl TemplateCreateMessageBody {
+    /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The message that's returned from the API for the request to create the message template.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The unique identifier for the request to create the message template.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+}
 impl std::fmt::Debug for TemplateCreateMessageBody {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TemplateCreateMessageBody");
@@ -27597,6 +32611,40 @@ pub struct ImportJobRequest {
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
     pub segment_name: std::option::Option<std::string::String>,
+}
+impl ImportJobRequest {
+    /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
+    pub fn define_segment(&self) -> bool {
+        self.define_segment
+    }
+    /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
+    pub fn external_id(&self) -> std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
+    /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
+    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+        self.format.as_ref()
+    }
+    /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
+    pub fn register_endpoints(&self) -> bool {
+        self.register_endpoints
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p> <p>The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/<replaceable>file-name</replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
+    pub fn s3_url(&self) -> std::option::Option<&str> {
+        self.s3_url.as_deref()
+    }
+    /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
+    pub fn segment_name(&self) -> std::option::Option<&str> {
+        self.segment_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ImportJobRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27743,6 +32791,24 @@ pub struct ExportJobRequest {
     /// <p>The version of the segment to export endpoint definitions from, if specified.</p>
     pub segment_version: i32,
 }
+impl ExportJobRequest {
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export endpoint definitions to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
+    pub fn s3_url_prefix(&self) -> std::option::Option<&str> {
+        self.s3_url_prefix.as_deref()
+    }
+    /// <p>The identifier for the segment to export endpoint definitions from. If you don't specify this value, Amazon Pinpoint exports definitions for all the endpoints that are associated with the application.</p>
+    pub fn segment_id(&self) -> std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The version of the segment to export endpoint definitions from, if specified.</p>
+    pub fn segment_version(&self) -> i32 {
+        self.segment_version
+    }
+}
 impl std::fmt::Debug for ExportJobRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportJobRequest");
@@ -27835,6 +32901,19 @@ pub struct CreateApplicationRequest {
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag consists of a required tag key and an associated tag value.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateApplicationRequest {
+    /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateApplicationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

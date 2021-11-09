@@ -92,10 +92,7 @@ impl AddNotificationChannelInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_notification_channel(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -390,10 +387,7 @@ impl DescribeAccountOverviewInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_overview(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -690,10 +684,7 @@ impl DescribeFeedbackInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_feedback(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_feedback(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1694,10 +1685,7 @@ impl ListAnomaliesForInsightInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_anomalies_for_insight(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1876,10 +1864,7 @@ impl ListEventsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_events(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_events(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2058,10 +2043,7 @@ impl ListInsightsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_insights(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_insights(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2211,10 +2193,7 @@ impl ListNotificationChannelsInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_notification_channels(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2389,10 +2368,7 @@ impl ListRecommendationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_recommendations(&self)
-                .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_recommendations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2543,10 +2519,7 @@ impl PutFeedbackInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_put_feedback(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_feedback(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2909,10 +2882,8 @@ impl SearchInsightsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_search_insights(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_insights(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3079,10 +3050,7 @@ impl StartCostEstimationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_cost_estimation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_start_cost_estimation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3260,10 +3228,7 @@ impl UpdateResourceCollectionInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resource_collection(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3424,10 +3389,7 @@ impl UpdateServiceIntegrationInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_integration(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3499,6 +3461,17 @@ pub struct UpdateServiceIntegrationInput {
     /// </p>
     pub service_integration: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
 }
+impl UpdateServiceIntegrationInput {
+    /// <p>
+    /// An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you
+    /// want to update it to enabled or disabled.
+    /// </p>
+    pub fn service_integration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateServiceIntegrationConfig> {
+        self.service_integration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateServiceIntegrationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceIntegrationInput");
@@ -3520,6 +3493,22 @@ pub struct UpdateResourceCollectionInput {
     /// </p>
     pub resource_collection: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
 }
+impl UpdateResourceCollectionInput {
+    /// <p>
+    /// Specifies if the resource collection in the request is added or deleted to the resource collection.
+    /// </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::UpdateResourceCollectionAction> {
+        self.action.as_ref()
+    }
+    /// <p>
+    /// Contains information used to update a collection of AWS resources.
+    /// </p>
+    pub fn resource_collection(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateResourceCollectionFilter> {
+        self.resource_collection.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateResourceCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateResourceCollectionInput");
@@ -3538,6 +3527,18 @@ pub struct StartCostEstimationInput {
         std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
     /// <p>The idempotency token used to identify each cost estimate request.</p>
     pub client_token: std::option::Option<std::string::String>,
+}
+impl StartCostEstimationInput {
+    /// <p>The collection of AWS resources used to create a monthly DevOps Guru cost estimate.</p>
+    pub fn resource_collection(
+        &self,
+    ) -> std::option::Option<&crate::model::CostEstimationResourceCollectionFilter> {
+        self.resource_collection.as_ref()
+    }
+    /// <p>The idempotency token used to identify each cost estimate request.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl std::fmt::Debug for StartCostEstimationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3571,6 +3572,36 @@ pub struct SearchInsightsInput {
     /// </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
+impl SearchInsightsInput {
+    /// <p>
+    /// The start of the time range passed in. Returned insights occurred after this time.
+    /// </p>
+    pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
+        self.start_time_range.as_ref()
+    }
+    /// <p>
+    /// A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::SearchInsightsFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>
+    /// The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+    /// </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
+        self.r#type.as_ref()
+    }
+}
 impl std::fmt::Debug for SearchInsightsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchInsightsInput");
@@ -3592,6 +3623,14 @@ pub struct RemoveNotificationChannelInput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl RemoveNotificationChannelInput {
+    /// <p>
+    /// The ID of the notification channel to be removed.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for RemoveNotificationChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveNotificationChannelInput");
@@ -3608,6 +3647,14 @@ pub struct PutFeedbackInput {
     /// The feedback from customers is about the recommendations in this insight.
     /// </p>
     pub insight_feedback: std::option::Option<crate::model::InsightFeedback>,
+}
+impl PutFeedbackInput {
+    /// <p>
+    /// The feedback from customers is about the recommendations in this insight.
+    /// </p>
+    pub fn insight_feedback(&self) -> std::option::Option<&crate::model::InsightFeedback> {
+        self.insight_feedback.as_ref()
+    }
 }
 impl std::fmt::Debug for PutFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3631,6 +3678,23 @@ pub struct ListRecommendationsInput {
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
+impl ListRecommendationsInput {
+    /// <p>
+    /// The ID of the requested insight.
+    /// </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A locale that specifies the language to use for recommendations.</p>
+    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+        self.locale.as_ref()
+    }
+}
 impl std::fmt::Debug for ListRecommendationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRecommendationsInput");
@@ -3648,6 +3712,13 @@ pub struct ListNotificationChannelsInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListNotificationChannelsInput {
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListNotificationChannelsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3671,6 +3742,24 @@ pub struct ListInsightsInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListInsightsInput {
+    /// <p>
+    /// A filter used to filter the returned insights by their status. You can specify one status filter.
+    /// </p>
+    pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
+        self.status_filter.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListInsightsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3696,6 +3785,24 @@ pub struct ListEventsInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventsInput {
+    /// <p>
+    /// A <code>ListEventsFilters</code> object used to specify which events to return.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&crate::model::ListEventsFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for ListEventsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3727,6 +3834,31 @@ pub struct ListAnomaliesForInsightInput {
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListAnomaliesForInsightInput {
+    /// <p>
+    /// The ID of the insight. The returned anomalies belong to this insight.
+    /// </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+    /// <p>
+    /// A time range used to specify when the requested anomalies started. All returned anomalies started
+    /// during this time range.
+    /// </p>
+    pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
+        self.start_time_range.as_ref()
+    }
+    /// <p>The maximum number of results to return with a single call.
+    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListAnomaliesForInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAnomaliesForInsightInput");
@@ -3751,6 +3883,22 @@ pub struct GetResourceCollectionInput {
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl GetResourceCollectionInput {
+    /// <p>
+    /// The type of AWS resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for
+    /// AWS CloudFormation stacks.
+    /// </p>
+    pub fn resource_collection_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceCollectionType> {
+        self.resource_collection_type.as_ref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for GetResourceCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceCollectionInput");
@@ -3767,6 +3915,13 @@ pub struct GetCostEstimationInput {
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCostEstimationInput {
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for GetCostEstimationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3800,6 +3955,22 @@ pub struct DescribeResourceCollectionHealthInput {
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeResourceCollectionHealthInput {
+    /// <p>
+    /// An AWS resource collection type. This type specifies how analyzed AWS resources are defined. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+    /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.       
+    /// </p>
+    pub fn resource_collection_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceCollectionType> {
+        self.resource_collection_type.as_ref()
+    }
+    /// <p>The pagination token to use to retrieve
+    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourceCollectionHealthInput");
@@ -3818,6 +3989,14 @@ pub struct DescribeInsightInput {
     /// </p>
     pub id: std::option::Option<std::string::String>,
 }
+impl DescribeInsightInput {
+    /// <p>
+    /// The ID of the insight.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeInsightInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeInsightInput");
@@ -3835,6 +4014,14 @@ pub struct DescribeFeedbackInput {
     /// </p>
     pub insight_id: std::option::Option<std::string::String>,
 }
+impl DescribeFeedbackInput {
+    /// <p>
+    /// The ID of the insight for which the feedback was provided.
+    /// </p>
+    pub fn insight_id(&self) -> std::option::Option<&str> {
+        self.insight_id.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFeedbackInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFeedbackInput");
@@ -3851,6 +4038,14 @@ pub struct DescribeAnomalyInput {
     /// The ID of the anomaly.
     /// </p>
     pub id: std::option::Option<std::string::String>,
+}
+impl DescribeAnomalyInput {
+    /// <p>
+    /// The ID of the anomaly.
+    /// </p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeAnomalyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3874,6 +4069,22 @@ pub struct DescribeAccountOverviewInput {
     /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
     /// </p>
     pub to_time: std::option::Option<aws_smithy_types::Instant>,
+}
+impl DescribeAccountOverviewInput {
+    /// <p>
+    /// The start of the time range passed in. The start time granularity is at the
+    /// day level. The floor of the start time is used. Returned information occurred after this day.
+    /// </p>
+    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.from_time.as_ref()
+    }
+    /// <p>
+    /// The end of the time range passed in. The start time granularity is at the
+    /// day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
+    /// </p>
+    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.to_time.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeAccountOverviewInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3903,6 +4114,14 @@ pub struct AddNotificationChannelInput {
     /// notification channel to add. The one
     /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     pub config: std::option::Option<crate::model::NotificationChannelConfig>,
+}
+impl AddNotificationChannelInput {
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
+    /// notification channel to add. The one
+    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    pub fn config(&self) -> std::option::Option<&crate::model::NotificationChannelConfig> {
+        self.config.as_ref()
+    }
 }
 impl std::fmt::Debug for AddNotificationChannelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

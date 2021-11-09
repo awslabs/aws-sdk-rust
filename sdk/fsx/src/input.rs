@@ -175,7 +175,7 @@ impl AssociateFileSystemAliasesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_file_system_aliases(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_file_system_aliases(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -329,10 +329,7 @@ impl CancelDataRepositoryTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_data_repository_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -598,10 +595,7 @@ impl CopyBackupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_copy_backup(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_copy_backup(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -812,10 +806,7 @@ impl CreateBackupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_backup(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_backup(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1079,10 +1070,7 @@ impl CreateDataRepositoryTaskInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_data_repository_task(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1601,10 +1589,7 @@ impl CreateFileSystemInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_file_system(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_create_file_system(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2006,7 +1991,7 @@ impl CreateFileSystemFromBackupInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_file_system_from_backup(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_file_system_from_backup(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2315,7 +2300,7 @@ impl CreateStorageVirtualMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_storage_virtual_machine(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_storage_virtual_machine(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -2542,10 +2527,7 @@ impl CreateVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_volume(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2771,10 +2753,7 @@ impl CreateVolumeFromBackupInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_volume_from_backup(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2945,10 +2924,7 @@ impl DeleteBackupInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_backup(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_backup(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3165,10 +3141,7 @@ impl DeleteFileSystemInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_file_system(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_delete_file_system(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3344,7 +3317,7 @@ impl DeleteStorageVirtualMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_storage_virtual_machine(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_storage_virtual_machine(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -3537,10 +3510,7 @@ impl DeleteVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_volume(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3760,10 +3730,7 @@ impl DescribeBackupsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_backups(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_backups(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -3979,7 +3946,7 @@ impl DescribeDataRepositoryTasksInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_data_repository_tasks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_repository_tasks(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4194,10 +4161,7 @@ impl DescribeFileSystemAliasesInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_file_system_aliases(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4392,10 +4356,7 @@ impl DescribeFileSystemsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_file_systems(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_file_systems(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -4614,7 +4575,7 @@ impl DescribeStorageVirtualMachinesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_storage_virtual_machines(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_storage_virtual_machines(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -4825,10 +4786,7 @@ impl DescribeVolumesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_volumes(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_describe_volumes(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5025,7 +4983,7 @@ impl DisassociateFileSystemAliasesInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_file_system_aliases(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_file_system_aliases(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -5210,10 +5168,9 @@ impl ListTagsForResourceInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+                &self,
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5387,10 +5344,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5562,10 +5516,7 @@ impl UntagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -5863,10 +5814,7 @@ impl UpdateFileSystemInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_file_system(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_update_file_system(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6076,7 +6024,7 @@ impl UpdateStorageVirtualMachineInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_storage_virtual_machine(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_storage_virtual_machine(&self)?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
@@ -6267,10 +6215,7 @@ impl UpdateVolumeInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_update_volume(&self)
-            .map_err(|err| {
-            aws_smithy_http::operation::BuildError::SerializationError(err.into())
-        })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_volume(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -6345,6 +6290,24 @@ pub struct UpdateVolumeInput {
     /// <p>The <code>ONTAP</code> configuration of the volume you are updating.</p>
     pub ontap_configuration: std::option::Option<crate::model::UpdateOntapVolumeConfiguration>,
 }
+impl UpdateVolumeInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Specifies the volume that you want to update, formatted <code>fsvol-0123456789abcdef0</code>.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The <code>ONTAP</code> configuration of the volume you are updating.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateOntapVolumeConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVolumeInput");
@@ -6370,6 +6333,28 @@ pub struct UpdateStorageVirtualMachineInput {
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
     /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
     pub svm_admin_password: std::option::Option<std::string::String>,
+}
+impl UpdateStorageVirtualMachineInput {
+    /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    pub fn active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateSvmActiveDirectoryConfiguration> {
+        self.active_directory_configuration.as_ref()
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_id.as_deref()
+    }
+    /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    pub fn svm_admin_password(&self) -> std::option::Option<&str> {
+        self.svm_admin_password.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateStorageVirtualMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6436,6 +6421,67 @@ pub struct UpdateFileSystemInput {
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
     pub ontap_configuration: std::option::Option<crate::model::UpdateFileSystemOntapConfiguration>,
 }
+impl UpdateFileSystemInput {
+    /// <p>Identifies the file system that you are updating.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+    /// idempotent updates. This string is automatically filled on your behalf when you use
+    /// the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server
+    /// or Amazon FSx for Lustre file system.
+    /// Specifies the storage capacity target value, GiB, to increase the storage capacity for the
+    /// file system that you're updating. You cannot make a storage capacity increase request if
+    /// there is an existing storage capacity increase request in progress.</p>
+    /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent
+    /// (%) greater than the current storage capacity value. In order to increase storage capacity,
+    /// the file system must have at least 16 MB/s of throughput capacity.</p>
+    /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values
+    /// are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for
+    /// 12 MB/s/TiB file systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater
+    /// than the current storage capacity.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+    /// capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
+    /// and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre
+    /// User Guide</i>.</p>
+    pub fn storage_capacity(&self) -> std::option::Option<i32> {
+        self.storage_capacity
+    }
+    /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
+    pub fn windows_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateFileSystemWindowsConfiguration> {
+        self.windows_configuration.as_ref()
+    }
+    /// <p>The configuration object for Amazon FSx for Lustre file systems used in the
+    /// <code>UpdateFileSystem</code> operation.</p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateFileSystemLustreConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+    /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::UpdateFileSystemOntapConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for UpdateFileSystemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemInput");
@@ -6459,6 +6505,17 @@ pub struct UntagResourceInput {
     /// the call will still succeed to be idempotent.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the Amazon FSx resource to untag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist,
+    /// the call will still succeed to be idempotent.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -6478,6 +6535,18 @@ pub struct TagResourceInput {
     /// <p>A list of tags for the resource. If a tag with a given key already exists, the
     /// value is replaced by the one specified in this parameter.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
+    /// tag.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>A list of tags for the resource. If a tag with a given key already exists, the
+    /// value is replaced by the one specified in this parameter.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6504,6 +6573,25 @@ pub struct ListTagsForResourceInput {
     /// continues the list from where the returning call left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Maximum number of tags to return in the response (integer). This
+    /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
+    /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
+    /// service's internal maximum number of items per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Opaque pagination token returned from a previous
+    /// <code>ListTagsForResource</code> operation (String). If a token present, the action
+    /// continues the list from where the returning call left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceInput");
@@ -6526,6 +6614,22 @@ pub struct DisassociateFileSystemAliasesInput {
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
     pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DisassociateFileSystemAliasesInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
+    pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateFileSystemAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6553,6 +6657,27 @@ pub struct DescribeVolumesInput {
     /// the previous <code>NextToken</code> value left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeVolumesInput {
+    /// <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+    pub fn volume_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.volume_ids.as_deref()
+    }
+    /// <p>Enter a filter name:value pair to view a select set of volumes.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::VolumeFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of resources to return in the response. This value must be an
+    /// integer greater than zero.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeVolumesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeVolumesInput");
@@ -6579,6 +6704,27 @@ pub struct DescribeStorageVirtualMachinesInput {
     /// present, this token indicates from what point you can continue processing the request, where
     /// the previous <code>NextToken</code> value left off.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeStorageVirtualMachinesInput {
+    /// <p>Enter the ID of one or more SVMs that you want to view.</p>
+    pub fn storage_virtual_machine_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.storage_virtual_machine_ids.as_deref()
+    }
+    /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::StorageVirtualMachineFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of resources to return in the response. This value must be an
+    /// integer greater than zero.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeStorageVirtualMachinesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6611,6 +6757,26 @@ pub struct DescribeFileSystemsInput {
     /// continues the list from where the returning call left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFileSystemsInput {
+    /// <p>IDs of the file systems whose descriptions you want to retrieve
+    /// (String).</p>
+    pub fn file_system_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.file_system_ids.as_deref()
+    }
+    /// <p>Maximum number of file systems to return in the response (integer). This
+    /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
+    /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
+    /// service's internal maximum number of items per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Opaque pagination token returned from a previous
+    /// <code>DescribeFileSystems</code> operation (String). If a token present, the action
+    /// continues the list from where the returning call left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFileSystemsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFileSystemsInput");
@@ -6642,6 +6808,32 @@ pub struct DescribeFileSystemAliasesInput {
     /// continues the list from where the previous returning call left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeFileSystemAliasesInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ID of the file system to return the associated DNS aliases for
+    /// (String).</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>Maximum number of DNS aliases to return in the response (integer). This
+    /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
+    /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
+    /// service's internal maximum number of items per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Opaque pagination token returned from a previous
+    /// <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action
+    /// continues the list from where the previous returning call left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeFileSystemAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFileSystemAliasesInput");
@@ -6670,6 +6862,29 @@ pub struct DescribeDataRepositoryTasksInput {
     /// present, this token indicates from what point you can continue processing the request, where
     /// the previous <code>NextToken</code> value left off.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeDataRepositoryTasksInput {
+    /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve
+    /// (String).</p>
+    pub fn task_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.task_ids.as_deref()
+    }
+    /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to
+    /// include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::DataRepositoryTaskFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of resources to return in the response. This value must be an
+    /// integer greater than zero.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
+    /// present, this token indicates from what point you can continue processing the request, where
+    /// the previous <code>NextToken</code> value left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeDataRepositoryTasksInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6703,6 +6918,32 @@ pub struct DescribeBackupsInput {
     /// continues the list from where the returning call left off.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl DescribeBackupsInput {
+    /// <p>IDs of the backups you want to retrieve (String). This overrides any
+    /// filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+    pub fn backup_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.backup_ids.as_deref()
+    }
+    /// <p>Filters structure. Supported names are <code>file-system-id</code>,
+    /// <code>backup-type</code>, <code>file-system-type</code>, and
+    /// <code>volume-id</code>.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+    /// <p>Maximum number of backups to return in the response (integer). This
+    /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
+    /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
+    /// service's internal maximum number of items per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Opaque pagination token returned from a previous
+    /// <code>DescribeBackups</code> operation (String). If a token present, the action
+    /// continues the list from where the returning call left off.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for DescribeBackupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeBackupsInput");
@@ -6728,6 +6969,25 @@ pub struct DeleteVolumeInput {
     /// a final backup of the volume, and apply tags to the backup.</p>
     pub ontap_configuration: std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
 }
+impl DeleteVolumeInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ID of the volume you are deleting.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>For Amazon FSx for ONTAP volumes, specify whether to take
+    /// a final backup of the volume, and apply tags to the backup.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteVolumeOntapConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteVolumeInput");
@@ -6748,6 +7008,18 @@ pub struct DeleteStorageVirtualMachineInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The ID of the SVM that you want to delete.</p>
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
+}
+impl DeleteStorageVirtualMachineInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ID of the SVM that you want to delete.</p>
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
+        self.storage_virtual_machine_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteStorageVirtualMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6780,6 +7052,32 @@ pub struct DeleteFileSystemInput {
     pub lustre_configuration:
         std::option::Option<crate::model::DeleteFileSystemLustreConfiguration>,
 }
+impl DeleteFileSystemInput {
+    /// <p>The ID of the file system you want to delete.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+    /// idempotent deletion. This is automatically filled on your behalf when using the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The configuration object for the Microsoft Windows file system used in the
+    /// <code>DeleteFileSystem</code> operation.</p>
+    pub fn windows_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteFileSystemWindowsConfiguration> {
+        self.windows_configuration.as_ref()
+    }
+    /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the
+    /// <code>DeleteFileSystem</code> operation.</p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DeleteFileSystemLustreConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+}
 impl std::fmt::Debug for DeleteFileSystemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFileSystemInput");
@@ -6801,6 +7099,18 @@ pub struct DeleteBackupInput {
     /// idempotent deletion. This is automatically filled on your behalf when using
     /// the CLI or SDK.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+}
+impl DeleteBackupInput {
+    /// <p>The ID of the backup you want to delete.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+    /// idempotent deletion. This is automatically filled on your behalf when using
+    /// the CLI or SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6827,6 +7137,32 @@ pub struct CreateVolumeFromBackupInput {
     pub ontap_configuration: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateVolumeFromBackupInput {
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The name of the new volume you're creating.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateOntapVolumeConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVolumeFromBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6856,6 +7192,32 @@ pub struct CreateVolumeInput {
     pub ontap_configuration: std::option::Option<crate::model::CreateOntapVolumeConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateVolumeInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid volume type.</p>
+    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+        self.volume_type.as_ref()
+    }
+    /// <p>Specifies the name of the volume you're creating.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Specifies the <code>ONTAP</code> configuration to use in creating the volume.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateOntapVolumeConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateVolumeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6914,6 +7276,65 @@ pub struct CreateStorageVirtualMachineInput {
     /// </ul>
     pub root_volume_security_style:
         std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
+}
+impl CreateStorageVirtualMachineInput {
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
+    /// Joining an Active Directory provides user authentication and access control for SMB clients,
+    /// including Microsoft Windows and macOS client accessing the file system.</p>
+    pub fn active_directory_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateSvmActiveDirectoryConfiguration> {
+        self.active_directory_configuration.as_ref()
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>The name of the SVM.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
+    /// If you do not specify a password, you can still use the file system's
+    /// <code>fsxadmin</code> user to manage the SVM.</p>
+    pub fn svm_admin_password(&self) -> std::option::Option<&str> {
+        self.svm_admin_password.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>UNIX</code> if the file system is managed by a UNIX
+    /// administrator, the majority of users are NFS clients, and an application
+    /// accessing the data uses a UNIX user as the service account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NTFS</code> if the file system is managed by a Windows
+    /// administrator, the majority of users are SMB clients, and an application
+    /// accessing the data uses a Windows user as the service account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MIXED</code> if the file system is managed by both UNIX
+    /// and Windows administrators and users consist of both NFS and SMB clients.</p>
+    /// </li>
+    /// </ul>
+    pub fn root_volume_security_style(
+        &self,
+    ) -> std::option::Option<&crate::model::StorageVirtualMachineRootVolumeSecurityStyle> {
+        self.root_volume_security_style.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStorageVirtualMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7007,6 +7428,97 @@ pub struct CreateFileSystemFromBackupInput {
     /// If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the
     /// value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub file_system_type_version: std::option::Option<std::string::String>,
+}
+impl CreateFileSystemFromBackupInput {
+    /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
+    pub fn backup_id(&self) -> std::option::Option<&str> {
+        self.backup_id.as_deref()
+    }
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+    /// idempotent creation. This string is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
+    /// file system deployment types, provide exactly two subnet IDs, one for the preferred file server
+    /// and one for the standby file server. You specify one of these subnets as the preferred subnet
+    /// using the <code>WindowsConfiguration > PreferredSubnetID</code> property.</p>
+    /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+    /// types and Lustre file systems, provide exactly one subnet ID.
+    /// The file server is launched in that subnet's Availability Zone.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of IDs for the security groups that apply to the specified network
+    /// interfaces created for file system access. These security groups apply to all network
+    /// interfaces. This value isn't returned in later DescribeFileSystem requests.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The tags to be applied to the file system at file system creation. The key value of
+    /// the <code>Name</code> tag appears in the console as the file system
+    /// name.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The configuration for this Microsoft Windows file system.</p>
+    pub fn windows_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateFileSystemWindowsConfiguration> {
+        self.windows_configuration.as_ref()
+    }
+    /// <p>The Lustre configuration for the file system being created.
+    /// </p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateFileSystemLustreConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+    /// <p>Sets the storage type for the Windows file system you're creating from a backup.
+    /// Valid values are <code>SSD</code> and <code>HDD</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage.
+    /// Supported on all Windows deployment types.</p>
+    /// </li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage.
+    /// Supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// Default value is <code>SSD</code>.
+    /// </p>
+    /// <note>
+    /// <p>HDD and SSD storage types have different minimum storage capacity requirements.
+    /// A restored file system's storage capacity is tied to the file system that was backed up.
+    /// You can create a file system that uses HDD storage from a backup of a file system that
+    /// used SSD storage only if the original SSD file system had a storage capacity of at least 2000 GiB.
+    /// </p>
+    /// </note>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+    /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Sets the version for the Amazon FSx for Lustre file system you're creating from a backup.
+    /// Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
+    /// be applied using the backup's <code>FileSystemTypeVersion</code> setting.
+    /// If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the
+    /// value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+    pub fn file_system_type_version(&self) -> std::option::Option<&str> {
+        self.file_system_type_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateFileSystemFromBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7143,6 +7655,149 @@ pub struct CreateFileSystemInput {
     /// <p>Default value is <code>2.10</code>.</p>
     pub file_system_type_version: std::option::Option<std::string::String>,
 }
+impl CreateFileSystemInput {
+    /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+    /// idempotent creation. This string is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>,
+    /// <code>LUSTRE</code>, and <code>ONTAP</code>.</p>
+    pub fn file_system_type(&self) -> std::option::Option<&crate::model::FileSystemType> {
+        self.file_system_type.as_ref()
+    }
+    /// <p>Sets the storage capacity of the file system that you're creating.</p>      
+    /// <p>For Lustre file systems:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are
+    /// 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for
+    /// 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p>
+    /// </li>
+    /// <li>
+    /// <p>For <code>SCRATCH_1</code> deployment type, valid values are
+    /// 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For Windows file systems:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).</p>
+    /// </li>
+    /// <li>
+    /// <p>If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).</p>
+    /// </li>
+    /// </ul>
+    /// <p>For ONTAP file systems:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Valid values are 1024 GiB - 196,608 GiB (192 TiB).</p>
+    /// </li>
+    /// </ul>
+    pub fn storage_capacity(&self) -> std::option::Option<i32> {
+        self.storage_capacity
+    }
+    /// <p>Sets the storage type for the file system you're creating.
+    /// Valid values are <code>SSD</code> and <code>HDD</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage.
+    /// SSD is supported on all Windows, Lustre, and ONTAP deployment types.</p>
+    /// </li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage.
+    /// HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types,
+    /// and on <code>PERSISTENT</code> Lustre file system deployment types.
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// Default value is <code>SSD</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
+    /// Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage Options</a>
+    /// in the <i>Amazon FSx for Lustre User Guide</i>.
+    /// </p>
+    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+    /// and ONTAP <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs,
+    /// one for the preferred file server and one for the standby file server. You specify one of these
+    /// subnets as the preferred subnet using the <code>WindowsConfiguration > PreferredSubnetID</code>
+    /// or <code>OntapConfiguration > PreferredSubnetID</code> properties. For more information,
+    /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+    /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
+    /// <i>Amazon FSx for Windows User Guide</i> and
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
+    /// Availability and durability</a> in the
+    /// <i>Amazon FSx for ONTAP User Guide</i>.</p>
+    /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems, provide exactly one subnet ID.
+    /// The file server is launched in that subnet's Availability Zone.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>A list of IDs specifying the security groups to apply to all network interfaces
+    /// created for file system access. This list isn't returned in later requests to
+    /// describe the file system.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+    /// <p>The tags to apply to the file system being created. The key value of
+    /// the <code>Name</code> tag appears in the console as the file system name.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+    /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The Microsoft Windows configuration for the file system being created.
+    /// </p>
+    pub fn windows_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateFileSystemWindowsConfiguration> {
+        self.windows_configuration.as_ref()
+    }
+    /// <p>The Lustre configuration for the file system being created.
+    /// </p>
+    pub fn lustre_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateFileSystemLustreConfiguration> {
+        self.lustre_configuration.as_ref()
+    }
+    /// <p>The ONTAP configuration properties of the FSx for NetApp ONTAP file system that you are creating.</p>
+    pub fn ontap_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateFileSystemOntapConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
+    /// <p>Sets the version of the Amazon FSx for Lustre file system you're creating.
+    /// Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Set the value to <code>2.10</code> to create a Lustre 2.10
+    /// file system.</p>
+    /// </li>
+    /// <li>
+    /// <p>Set the value to <code>2.12</code> to create a Lustre 2.12
+    /// file system.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Default value is <code>2.10</code>.</p>
+    pub fn file_system_type_version(&self) -> std::option::Option<&str> {
+        self.file_system_type_version.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateFileSystemInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFileSystemInput");
@@ -7188,6 +7843,41 @@ pub struct CreateDataRepositoryTaskInput {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CreateDataRepositoryTaskInput {
+    /// <p>Specifies the type of data repository task to create.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::DataRepositoryTaskType> {
+        self.r#type.as_ref()
+    }
+    /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed.
+    /// The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system.
+    /// If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
+    /// file on the file system you want to export, then the path to provide is <code>path1</code>.
+    /// If a path that you provide isn't valid, the task fails.</p>
+    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.paths.as_deref()
+    }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed.
+    /// A CompletionReport provides a detailed  report on the files that Amazon FSx processed that meet the criteria specified by the
+    /// <code>Scope</code> parameter. For more information, see
+    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+    pub fn report(&self) -> std::option::Option<&crate::model::CompletionReport> {
+        self.report.as_ref()
+    }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateDataRepositoryTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDataRepositoryTaskInput");
@@ -7217,6 +7907,28 @@ pub struct CreateBackupInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
     pub volume_id: std::option::Option<std::string::String>,
+}
+impl CreateBackupInput {
+    /// <p>The ID of the file system to back up.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+    /// idempotent creation. This string is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the
+    /// <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and
+    /// you specify one or more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file system to the backup.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7264,6 +7976,50 @@ pub struct CopyBackupInput {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
+impl CopyBackupInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>The ID of the source backup. Specifies the ID of the backup that is
+    /// being copied.</p>
+    pub fn source_backup_id(&self) -> std::option::Option<&str> {
+        self.source_backup_id.as_deref()
+    }
+    /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which
+    /// the backup is being copied. The source and destination Regions must be in
+    /// the same Amazon Web Services partition. If you don't specify a Region, it defaults to
+    /// the Region where the request is sent from (in-Region copy).</p>
+    pub fn source_region(&self) -> std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+    /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+    /// Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. If not specified, the Amazon FSx
+    /// managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems
+    /// are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+    /// in the <i>Key Management Service API Reference</i>.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>A boolean flag indicating whether tags from the source backup
+    /// should be copied to the backup copy. This value defaults to false.</p>
+    /// <p>If you set <code>CopyTags</code> to true and the source backup has
+    /// existing tags, you can use the <code>Tags</code> parameter to create new
+    /// tags, provided that the sum of the source backup tags and the new tags
+    /// doesn't exceed 50. Both sets of tags are merged. If there are tag
+    /// conflicts (for example, two tags with the same key but different values),
+    /// the tags created with the <code>Tags</code> parameter take precedence.</p>
+    pub fn copy_tags(&self) -> std::option::Option<bool> {
+        self.copy_tags
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
 impl std::fmt::Debug for CopyBackupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyBackupInput");
@@ -7283,6 +8039,12 @@ impl std::fmt::Debug for CopyBackupInput {
 pub struct CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
     pub task_id: std::option::Option<std::string::String>,
+}
+impl CancelDataRepositoryTaskInput {
+    /// <p>Specifies the data repository task to cancel.</p>
+    pub fn task_id(&self) -> std::option::Option<&str> {
+        self.task_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CancelDataRepositoryTaskInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7324,6 +8086,42 @@ pub struct AssociateFileSystemAliasesInput {
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
     /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AssociateFileSystemAliasesInput {
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
+    /// ASCII characters. This token is automatically filled on your behalf when you use the
+    /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p>An array of one or more DNS alias names to associate with the file system.
+    /// The alias name has to comply with the following formatting requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Formatted as a fully-qualified domain name (FQDN), <i>
+    /// <code>hostname.domain</code>
+    /// </i>,
+    /// for example, <code>accounting.corp.example.com</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can contain alphanumeric characters and the hyphen (-).</p>
+    /// </li>
+    /// <li>
+    /// <p>Cannot start or end with a hyphen.</p>
+    /// </li>
+    /// <li>
+    /// <p>Can start with a numeric.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
+    /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+    pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
+        self.aliases.as_deref()
+    }
 }
 impl std::fmt::Debug for AssociateFileSystemAliasesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

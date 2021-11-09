@@ -888,6 +888,17 @@ pub struct AgentAlreadyRunningAssessment {
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
+impl AgentAlreadyRunningAssessment {
+    /// <p>ID of the agent that is running on an EC2 instance that is already participating in
+    /// another started assessment run.</p>
+    pub fn agent_id(&self) -> std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The ARN of the assessment run that has already been started.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for AgentAlreadyRunningAssessment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AgentAlreadyRunningAssessment");
@@ -956,6 +967,16 @@ pub struct Tag {
     /// <p>A value assigned to a tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
+impl Tag {
+    /// <p>A tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>A value assigned to a tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
@@ -1019,6 +1040,17 @@ pub struct FailedItemDetails {
     /// <p>Indicates whether you can immediately retry a request for this item for a specified
     /// resource.</p>
     pub retryable: std::option::Option<bool>,
+}
+impl FailedItemDetails {
+    /// <p>The status code of a failed item.</p>
+    pub fn failure_code(&self) -> std::option::Option<&crate::model::FailedItemErrorCode> {
+        self.failure_code.as_ref()
+    }
+    /// <p>Indicates whether you can immediately retry a request for this item for a specified
+    /// resource.</p>
+    pub fn retryable(&self) -> std::option::Option<bool> {
+        self.retryable
+    }
 }
 impl std::fmt::Debug for FailedItemDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1181,6 +1213,44 @@ pub struct AgentPreview {
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is
     /// installed.</p>
     pub ipv4_address: std::option::Option<std::string::String>,
+}
+impl AgentPreview {
+    /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is
+    /// installed.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The ID of the EC2 instance where the agent is installed.</p>
+    pub fn agent_id(&self) -> std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
+    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group.as_deref()
+    }
+    /// <p>The health status of the Amazon Inspector Agent.</p>
+    pub fn agent_health(&self) -> std::option::Option<&crate::model::AgentHealth> {
+        self.agent_health.as_ref()
+    }
+    /// <p>The version of the Amazon Inspector Agent.</p>
+    pub fn agent_version(&self) -> std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
+    /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent
+    /// is installed.</p>
+    pub fn operating_system(&self) -> std::option::Option<&str> {
+        self.operating_system.as_deref()
+    }
+    /// <p>The kernel version of the operating system running on the EC2 instance on which the
+    /// Amazon Inspector Agent is installed.</p>
+    pub fn kernel_version(&self) -> std::option::Option<&str> {
+        self.kernel_version.as_deref()
+    }
+    /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is
+    /// installed.</p>
+    pub fn ipv4_address(&self) -> std::option::Option<&str> {
+        self.ipv4_address.as_deref()
+    }
 }
 impl std::fmt::Debug for AgentPreview {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1428,6 +1498,50 @@ pub struct FindingFilter {
     /// <p>The time range during which the finding is generated.</p>
     pub creation_time_range: std::option::Option<crate::model::TimestampRange>,
 }
+impl FindingFilter {
+    /// <p>For a record to match a filter, one of the values that is specified for this data
+    /// type property must be the exact match of the value of the <b>agentId</b> property of the <a>Finding</a> data type.</p>
+    pub fn agent_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.agent_ids.as_deref()
+    }
+    /// <p>For a record to match a filter, one of the values that is specified for this data
+    /// type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <a>Finding</a> data
+    /// type.</p>
+    pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.auto_scaling_groups.as_deref()
+    }
+    /// <p>For a record to match a filter, one of the values that is specified for this data
+    /// type property must be the exact match of the value of the <b>ruleName</b> property of the <a>Finding</a> data type.</p>
+    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.rule_names.as_deref()
+    }
+    /// <p>For a record to match a filter, one of the values that is specified for this data
+    /// type property must be the exact match of the value of the <b>severity</b> property of the <a>Finding</a> data type.</p>
+    pub fn severities(&self) -> std::option::Option<&[crate::model::Severity]> {
+        self.severities.as_deref()
+    }
+    /// <p>For a record to match a filter, one of the values that is specified for this data
+    /// type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <a>Finding</a> data
+    /// type.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p>For a record to match a filter, the list of values that are specified for this data
+    /// type property must be contained in the list of values of the <b>attributes</b> property of the <a>Finding</a> data type.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>For a record to match a filter, the value that is specified for this data type
+    /// property must be contained in the list of values of the <b>userAttributes</b> property of the <a>Finding</a> data
+    /// type.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>The time range during which the finding is generated.</p>
+    pub fn creation_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+        self.creation_time_range.as_ref()
+    }
+}
 impl std::fmt::Debug for FindingFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FindingFilter");
@@ -1656,6 +1770,16 @@ pub struct TimestampRange {
     /// <p>The maximum value of the timestamp range.</p>
     pub end_date: std::option::Option<aws_smithy_types::Instant>,
 }
+impl TimestampRange {
+    /// <p>The minimum value of the timestamp range.</p>
+    pub fn begin_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.begin_date.as_ref()
+    }
+    /// <p>The maximum value of the timestamp range.</p>
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.end_date.as_ref()
+    }
+}
 impl std::fmt::Debug for TimestampRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimestampRange");
@@ -1725,6 +1849,16 @@ pub struct Attribute {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value assigned to the attribute key.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Attribute {
+    /// <p>The attribute key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value assigned to the attribute key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Attribute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1860,6 +1994,22 @@ pub struct Subscription {
     /// <p>The list of existing event subscriptions.</p>
     pub event_subscriptions: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
+impl Subscription {
+    /// <p>The ARN of the assessment template that is used during the event for which the SNS
+    /// notification is sent.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS
+    /// notifications are sent.</p>
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
+        self.topic_arn.as_deref()
+    }
+    /// <p>The list of existing event subscriptions.</p>
+    pub fn event_subscriptions(&self) -> std::option::Option<&[crate::model::EventSubscription]> {
+        self.event_subscriptions.as_deref()
+    }
+}
 impl std::fmt::Debug for Subscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Subscription");
@@ -1954,6 +2104,17 @@ pub struct EventSubscription {
     /// <p>The time at which <a>SubscribeToEvent</a> is called.</p>
     pub subscribed_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl EventSubscription {
+    /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are
+    /// sent.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
+        self.event.as_ref()
+    }
+    /// <p>The time at which <a>SubscribeToEvent</a> is called.</p>
+    pub fn subscribed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.subscribed_at.as_ref()
+    }
+}
 impl std::fmt::Debug for EventSubscription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventSubscription");
@@ -2033,6 +2194,26 @@ pub struct AssessmentTemplateFilter {
     /// property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
     /// type.</p>
     pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AssessmentTemplateFilter {
+    /// <p>For a record to match a filter, an explicit value or a string that contains a
+    /// wildcard that is specified for this data type property must match the value of the
+    /// <b>assessmentTemplateName</b> property of the <a>AssessmentTemplate</a> data type.</p>
+    pub fn name_pattern(&self) -> std::option::Option<&str> {
+        self.name_pattern.as_deref()
+    }
+    /// <p>For a record to match a filter, the value specified for this data type property must
+    /// inclusively match any value between the specified minimum and maximum values of the
+    /// <b>durationInSeconds</b> property of the <a>AssessmentTemplate</a> data type.</p>
+    pub fn duration_range(&self) -> std::option::Option<&crate::model::DurationRange> {
+        self.duration_range.as_ref()
+    }
+    /// <p>For a record to match a filter, the values that are specified for this data type
+    /// property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
+    /// type.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
 }
 impl std::fmt::Debug for AssessmentTemplateFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2136,6 +2317,17 @@ pub struct DurationRange {
     /// (1 week).</p>
     pub max_seconds: i32,
 }
+impl DurationRange {
+    /// <p>The minimum value of the duration range. Must be greater than zero.</p>
+    pub fn min_seconds(&self) -> i32 {
+        self.min_seconds
+    }
+    /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds
+    /// (1 week).</p>
+    pub fn max_seconds(&self) -> i32 {
+        self.max_seconds
+    }
+}
 impl std::fmt::Debug for DurationRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DurationRange");
@@ -2201,6 +2393,14 @@ pub struct AssessmentTargetFilter {
     /// wildcard that is specified for this data type property must match the value of the
     /// <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data type.</p>
     pub assessment_target_name_pattern: std::option::Option<std::string::String>,
+}
+impl AssessmentTargetFilter {
+    /// <p>For a record to match a filter, an explicit value or a string that contains a
+    /// wildcard that is specified for this data type property must match the value of the
+    /// <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data type.</p>
+    pub fn assessment_target_name_pattern(&self) -> std::option::Option<&str> {
+        self.assessment_target_name_pattern.as_deref()
+    }
 }
 impl std::fmt::Debug for AssessmentTargetFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2289,6 +2489,50 @@ pub struct AssessmentRunFilter {
     /// property must match the <b>stateChangedAt</b> property of the
     /// <a>AssessmentRun</a> data type.</p>
     pub state_change_time_range: std::option::Option<crate::model::TimestampRange>,
+}
+impl AssessmentRunFilter {
+    /// <p>For a record to match a filter, an explicit value or a string containing a wildcard
+    /// that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <a>AssessmentRun</a>
+    /// data type.</p>
+    pub fn name_pattern(&self) -> std::option::Option<&str> {
+        self.name_pattern.as_deref()
+    }
+    /// <p>For a record to match a filter, one of the values specified for this data type
+    /// property must be the exact match of the value of the <b>assessmentRunState</b> property of the <a>AssessmentRun</a> data
+    /// type.</p>
+    pub fn states(&self) -> std::option::Option<&[crate::model::AssessmentRunState]> {
+        self.states.as_deref()
+    }
+    /// <p>For a record to match a filter, the value that is specified for this data type
+    /// property must inclusively match any value between the specified minimum and maximum values
+    /// of the <b>durationInSeconds</b> property of the <a>AssessmentRun</a> data type.</p>
+    pub fn duration_range(&self) -> std::option::Option<&crate::model::DurationRange> {
+        self.duration_range.as_ref()
+    }
+    /// <p>For a record to match a filter, the value that is specified for this data type
+    /// property must be contained in the list of values of the <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
+    /// type.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p>For a record to match a filter, the value that is specified for this data type
+    /// property must inclusively match any value between the specified minimum and maximum values
+    /// of the <b>startTime</b> property of the <a>AssessmentRun</a> data type.</p>
+    pub fn start_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+        self.start_time_range.as_ref()
+    }
+    /// <p>For a record to match a filter, the value that is specified for this data type
+    /// property must inclusively match any value between the specified minimum and maximum values
+    /// of the <b>completedAt</b> property of the <a>AssessmentRun</a> data type.</p>
+    pub fn completion_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+        self.completion_time_range.as_ref()
+    }
+    /// <p>For a record to match a filter, the value that is specified for this data type
+    /// property must match the <b>stateChangedAt</b> property of the
+    /// <a>AssessmentRun</a> data type.</p>
+    pub fn state_change_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+        self.state_change_time_range.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentRunFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2606,6 +2850,38 @@ pub struct AssessmentRunAgent {
     /// agent.</p>
     pub telemetry_metadata: std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
 }
+impl AssessmentRunAgent {
+    /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
+    pub fn agent_id(&self) -> std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The ARN of the assessment run that is associated with the agent.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+    /// <p>The current health state of the agent.</p>
+    pub fn agent_health(&self) -> std::option::Option<&crate::model::AgentHealth> {
+        self.agent_health.as_ref()
+    }
+    /// <p>The detailed health state of the agent.</p>
+    pub fn agent_health_code(&self) -> std::option::Option<&crate::model::AgentHealthCode> {
+        self.agent_health_code.as_ref()
+    }
+    /// <p>The description for the agent health code.</p>
+    pub fn agent_health_details(&self) -> std::option::Option<&str> {
+        self.agent_health_details.as_deref()
+    }
+    /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent
+    /// ID.</p>
+    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group.as_deref()
+    }
+    /// <p>The Amazon Inspector application data metrics that are collected by the
+    /// agent.</p>
+    pub fn telemetry_metadata(&self) -> std::option::Option<&[crate::model::TelemetryMetadata]> {
+        self.telemetry_metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for AssessmentRunAgent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentRunAgent");
@@ -2770,6 +3046,21 @@ pub struct TelemetryMetadata {
     /// service.</p>
     pub data_size: std::option::Option<i64>,
 }
+impl TelemetryMetadata {
+    /// <p>A specific type of behavioral data that is collected by the agent.</p>
+    pub fn message_type(&self) -> std::option::Option<&str> {
+        self.message_type.as_deref()
+    }
+    /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
+    pub fn count(&self) -> std::option::Option<i64> {
+        self.count
+    }
+    /// <p>The data size of messages that the agent sends to the Amazon Inspector
+    /// service.</p>
+    pub fn data_size(&self) -> std::option::Option<i64> {
+        self.data_size
+    }
+}
 impl std::fmt::Debug for TelemetryMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TelemetryMetadata");
@@ -2927,6 +3218,16 @@ pub struct AgentFilter {
     /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
     pub agent_health_codes: std::option::Option<std::vec::Vec<crate::model::AgentHealthCode>>,
 }
+impl AgentFilter {
+    /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
+    pub fn agent_healths(&self) -> std::option::Option<&[crate::model::AgentHealth]> {
+        self.agent_healths.as_deref()
+    }
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
+    pub fn agent_health_codes(&self) -> std::option::Option<&[crate::model::AgentHealthCode]> {
+        self.agent_health_codes.as_deref()
+    }
+}
 impl std::fmt::Debug for AgentFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AgentFilter");
@@ -3018,6 +3319,28 @@ pub struct ExclusionPreview {
     pub scopes: std::option::Option<std::vec::Vec<crate::model::Scope>>,
     /// <p>The system-defined attributes for the exclusion preview.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+}
+impl ExclusionPreview {
+    /// <p>The name of the exclusion preview.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The description of the exclusion preview.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The recommendation for the exclusion preview.</p>
+    pub fn recommendation(&self) -> std::option::Option<&str> {
+        self.recommendation.as_deref()
+    }
+    /// <p>The AWS resources for which the exclusion preview pertains.</p>
+    pub fn scopes(&self) -> std::option::Option<&[crate::model::Scope]> {
+        self.scopes.as_deref()
+    }
+    /// <p>The system-defined attributes for the exclusion preview.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for ExclusionPreview {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3142,6 +3465,16 @@ pub struct Scope {
     pub key: std::option::Option<crate::model::ScopeType>,
     /// <p>The resource identifier for the specified scope type.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl Scope {
+    /// <p>The type of the scope.</p>
+    pub fn key(&self) -> std::option::Option<&crate::model::ScopeType> {
+        self.key.as_ref()
+    }
+    /// <p>The resource identifier for the specified scope type.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for Scope {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3543,6 +3876,28 @@ pub struct RulesPackage {
     /// <p>The description of the rules package.</p>
     pub description: std::option::Option<std::string::String>,
 }
+impl RulesPackage {
+    /// <p>The ARN of the rules package.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the rules package.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The version ID of the rules package.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The provider of the rules package.</p>
+    pub fn provider(&self) -> std::option::Option<&str> {
+        self.provider.as_deref()
+    }
+    /// <p>The description of the rules package.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
 impl std::fmt::Debug for RulesPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RulesPackage");
@@ -3651,6 +4006,21 @@ pub struct ResourceGroup {
     /// <p>The time at which resource group is created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl ResourceGroup {
+    /// <p>The ARN of the resource group.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The tags (key and value pairs) of the resource group. This data type property is used
+    /// in the <a>CreateResourceGroup</a> action.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceGroupTag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The time at which resource group is created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+}
 impl std::fmt::Debug for ResourceGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceGroup");
@@ -3741,6 +4111,16 @@ pub struct ResourceGroupTag {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value assigned to a tag key.</p>
     pub value: std::option::Option<std::string::String>,
+}
+impl ResourceGroupTag {
+    /// <p>A tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value assigned to a tag key.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
 }
 impl std::fmt::Debug for ResourceGroupTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3838,6 +4218,83 @@ pub struct Finding {
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when <a>AddAttributesToFindings</a> is called.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl Finding {
+    /// <p>The ARN that specifies the finding.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The schema version of this data type.</p>
+    pub fn schema_version(&self) -> i32 {
+        self.schema_version
+    }
+    /// <p>The data element is set to "Inspector".</p>
+    pub fn service(&self) -> std::option::Option<&str> {
+        self.service.as_deref()
+    }
+    /// <p>This data type is used in the <a>Finding</a> data type.</p>
+    pub fn service_attributes(
+        &self,
+    ) -> std::option::Option<&crate::model::InspectorServiceAttributes> {
+        self.service_attributes.as_ref()
+    }
+    /// <p>The type of the host from which the finding is generated.</p>
+    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+        self.asset_type.as_ref()
+    }
+    /// <p>A collection of attributes of the host from which the finding is generated.</p>
+    pub fn asset_attributes(&self) -> std::option::Option<&crate::model::AssetAttributes> {
+        self.asset_attributes.as_ref()
+    }
+    /// <p>The ID of the finding.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the finding.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The description of the finding.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The recommendation for the finding.</p>
+    pub fn recommendation(&self) -> std::option::Option<&str> {
+        self.recommendation.as_deref()
+    }
+    /// <p>The finding severity. Values can be set to High, Medium, Low, and
+    /// Informational.</p>
+    pub fn severity(&self) -> std::option::Option<&crate::model::Severity> {
+        self.severity.as_ref()
+    }
+    /// <p>The numeric value of the finding severity.</p>
+    pub fn numeric_severity(&self) -> f64 {
+        self.numeric_severity
+    }
+    /// <p>This data element is currently not used.</p>
+    pub fn confidence(&self) -> i32 {
+        self.confidence
+    }
+    /// <p>This data element is currently not used.</p>
+    pub fn indicator_of_compromise(&self) -> std::option::Option<bool> {
+        self.indicator_of_compromise
+    }
+    /// <p>The system-defined attributes for the finding.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p>The user-defined attributes that are assigned to the finding.</p>
+    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.user_attributes.as_deref()
+    }
+    /// <p>The time when the finding was generated.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
 }
 impl std::fmt::Debug for Finding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4168,6 +4625,44 @@ pub struct AssetAttributes {
     /// finding is generated.</p>
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
 }
+impl AssetAttributes {
+    /// <p>The schema version of this data type.</p>
+    pub fn schema_version(&self) -> i32 {
+        self.schema_version
+    }
+    /// <p>The ID of the agent that is installed on the EC2 instance where the finding is
+    /// generated.</p>
+    pub fn agent_id(&self) -> std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
+    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+        self.auto_scaling_group.as_deref()
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where
+    /// the finding is generated.</p>
+    pub fn ami_id(&self) -> std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The hostname of the EC2 instance where the finding is generated.</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>The list of IP v4 addresses of the EC2 instance where the finding is
+    /// generated.</p>
+    pub fn ipv4_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ipv4_addresses.as_deref()
+    }
+    /// <p>The tags related to the EC2 instance where the finding is generated.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>An array of the network interfaces interacting with the EC2 instance where the
+    /// finding is generated.</p>
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+        self.network_interfaces.as_deref()
+    }
+}
 impl std::fmt::Debug for AssetAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssetAttributes");
@@ -4370,6 +4865,50 @@ pub struct NetworkInterface {
     /// <p>A list of the security groups associated with the network interface. Includes the
     /// groupId and groupName.</p>
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
+}
+impl NetworkInterface {
+    /// <p>The ID of the network interface.</p>
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+        self.network_interface_id.as_deref()
+    }
+    /// <p>The ID of a subnet associated with the network interface.</p>
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
+        self.subnet_id.as_deref()
+    }
+    /// <p>The ID of a VPC associated with the network interface.</p>
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>The name of a private DNS associated with the network interface.</p>
+    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+        self.private_dns_name.as_deref()
+    }
+    /// <p>The private IP address associated with the network interface.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
+    /// <p>A list of the private IP addresses associated with the network interface. Includes
+    /// the privateDnsName and privateIpAddress.</p>
+    pub fn private_ip_addresses(&self) -> std::option::Option<&[crate::model::PrivateIp]> {
+        self.private_ip_addresses.as_deref()
+    }
+    /// <p>The name of a public DNS associated with the network interface.</p>
+    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+        self.public_dns_name.as_deref()
+    }
+    /// <p>The public IP address from which the network interface is reachable.</p>
+    pub fn public_ip(&self) -> std::option::Option<&str> {
+        self.public_ip.as_deref()
+    }
+    /// <p>The IP addresses associated with the network interface.</p>
+    pub fn ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.ipv6_addresses.as_deref()
+    }
+    /// <p>A list of the security groups associated with the network interface. Includes the
+    /// groupId and groupName.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroup]> {
+        self.security_groups.as_deref()
+    }
 }
 impl std::fmt::Debug for NetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4584,6 +5123,16 @@ pub struct SecurityGroup {
     /// <p>The ID of the security group.</p>
     pub group_id: std::option::Option<std::string::String>,
 }
+impl SecurityGroup {
+    /// <p>The name of the security group.</p>
+    pub fn group_name(&self) -> std::option::Option<&str> {
+        self.group_name.as_deref()
+    }
+    /// <p>The ID of the security group.</p>
+    pub fn group_id(&self) -> std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
+}
 impl std::fmt::Debug for SecurityGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SecurityGroup");
@@ -4648,6 +5197,16 @@ pub struct PrivateIp {
     pub private_dns_name: std::option::Option<std::string::String>,
     /// <p>The full IP address of the network inteface.</p>
     pub private_ip_address: std::option::Option<std::string::String>,
+}
+impl PrivateIp {
+    /// <p>The DNS name of the private IP address.</p>
+    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+        self.private_dns_name.as_deref()
+    }
+    /// <p>The full IP address of the network inteface.</p>
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+        self.private_ip_address.as_deref()
+    }
 }
 impl std::fmt::Debug for PrivateIp {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4771,6 +5330,20 @@ pub struct InspectorServiceAttributes {
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
     pub rules_package_arn: std::option::Option<std::string::String>,
 }
+impl InspectorServiceAttributes {
+    /// <p>The schema version of this data type.</p>
+    pub fn schema_version(&self) -> i32 {
+        self.schema_version
+    }
+    /// <p>The ARN of the assessment run during which the finding is generated.</p>
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.assessment_run_arn.as_deref()
+    }
+    /// <p>The ARN of the rules package that is used to generate the finding.</p>
+    pub fn rules_package_arn(&self) -> std::option::Option<&str> {
+        self.rules_package_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for InspectorServiceAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InspectorServiceAttributes");
@@ -4860,6 +5433,32 @@ pub struct Exclusion {
     pub scopes: std::option::Option<std::vec::Vec<crate::model::Scope>>,
     /// <p>The system-defined attributes for the exclusion.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+}
+impl Exclusion {
+    /// <p>The ARN that specifies the exclusion.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the exclusion.</p>
+    pub fn title(&self) -> std::option::Option<&str> {
+        self.title.as_deref()
+    }
+    /// <p>The description of the exclusion.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The recommendation for the exclusion.</p>
+    pub fn recommendation(&self) -> std::option::Option<&str> {
+        self.recommendation.as_deref()
+    }
+    /// <p>The AWS resources for which the exclusion pertains.</p>
+    pub fn scopes(&self) -> std::option::Option<&[crate::model::Scope]> {
+        self.scopes.as_deref()
+    }
+    /// <p>The system-defined attributes for the exclusion.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.attributes.as_deref()
+    }
 }
 impl std::fmt::Debug for Exclusion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5018,6 +5617,50 @@ pub struct AssessmentTemplate {
     pub assessment_run_count: std::option::Option<i32>,
     /// <p>The time at which the assessment template is created.</p>
     pub created_at: std::option::Option<aws_smithy_types::Instant>,
+}
+impl AssessmentTemplate {
+    /// <p>The ARN of the assessment template.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the assessment template.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the assessment target that corresponds to this assessment
+    /// template.</p>
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+        self.assessment_target_arn.as_deref()
+    }
+    /// <p>The duration in seconds specified for this assessment template. The default value is
+    /// 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
+    pub fn duration_in_seconds(&self) -> i32 {
+        self.duration_in_seconds
+    }
+    /// <p>The rules packages that are specified for this assessment template.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p>The user-defined attributes that are assigned to every generated finding from the
+    /// assessment run that uses this assessment template.</p>
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.user_attributes_for_findings.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this
+    /// assessment template. This value exists only when the value of assessmentRunCount is
+    /// greaterpa than zero.</p>
+    pub fn last_assessment_run_arn(&self) -> std::option::Option<&str> {
+        self.last_assessment_run_arn.as_deref()
+    }
+    /// <p>The number of existing assessment runs associated with this assessment template. This
+    /// value can be zero or a positive integer.</p>
+    pub fn assessment_run_count(&self) -> std::option::Option<i32> {
+        self.assessment_run_count
+    }
+    /// <p>The time at which the assessment template is created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentTemplate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5227,6 +5870,29 @@ pub struct AssessmentTarget {
     /// <p>The time at which <a>UpdateAssessmentTarget</a> is called.</p>
     pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
+impl AssessmentTarget {
+    /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the Amazon Inspector assessment target.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN that specifies the resource group that is associated with the assessment
+    /// target.</p>
+    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+        self.resource_group_arn.as_deref()
+    }
+    /// <p>The time at which the assessment target is created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time at which <a>UpdateAssessmentTarget</a> is called.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.updated_at.as_ref()
+    }
+}
 impl std::fmt::Debug for AssessmentTarget {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentTarget");
@@ -5372,6 +6038,74 @@ pub struct AssessmentRun {
     pub notifications: std::option::Option<std::vec::Vec<crate::model::AssessmentRunNotification>>,
     /// <p>Provides a total count of generated findings per severity.</p>
     pub finding_counts: std::option::Option<std::collections::HashMap<crate::model::Severity, i32>>,
+}
+impl AssessmentRun {
+    /// <p>The ARN of the assessment run.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The auto-generated name for the assessment run.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The ARN of the assessment template that is associated with the assessment
+    /// run.</p>
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+        self.assessment_template_arn.as_deref()
+    }
+    /// <p>The state of the assessment run.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AssessmentRunState> {
+        self.state.as_ref()
+    }
+    /// <p>The duration of the assessment run.</p>
+    pub fn duration_in_seconds(&self) -> i32 {
+        self.duration_in_seconds
+    }
+    /// <p>The rules packages selected for the assessment run.</p>
+    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.rules_package_arns.as_deref()
+    }
+    /// <p>The user-defined attributes that are assigned to every generated finding.</p>
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
+        self.user_attributes_for_findings.as_deref()
+    }
+    /// <p>The time when <a>StartAssessmentRun</a> was called.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.created_at.as_ref()
+    }
+    /// <p>The time when <a>StartAssessmentRun</a> was called.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.started_at.as_ref()
+    }
+    /// <p>The assessment run completion time that corresponds to the rules packages evaluation
+    /// completion time or failure.</p>
+    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.completed_at.as_ref()
+    }
+    /// <p>The last time when the assessment run's state changed.</p>
+    pub fn state_changed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.state_changed_at.as_ref()
+    }
+    /// <p>A Boolean value (true or false) that specifies whether the process of collecting data
+    /// from the agents is completed.</p>
+    pub fn data_collected(&self) -> std::option::Option<bool> {
+        self.data_collected
+    }
+    /// <p>A list of the assessment run state changes.</p>
+    pub fn state_changes(&self) -> std::option::Option<&[crate::model::AssessmentRunStateChange]> {
+        self.state_changes.as_deref()
+    }
+    /// <p>A list of notifications for the event subscriptions. A notification about a
+    /// particular generated finding is added to this list only once.</p>
+    pub fn notifications(&self) -> std::option::Option<&[crate::model::AssessmentRunNotification]> {
+        self.notifications.as_deref()
+    }
+    /// <p>Provides a total count of generated findings per severity.</p>
+    pub fn finding_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::model::Severity, i32>> {
+        self.finding_counts.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5707,6 +6441,35 @@ pub struct AssessmentRunNotification {
     pub sns_publish_status_code:
         std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>,
 }
+impl AssessmentRunNotification {
+    /// <p>The date of the notification.</p>
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.date.as_ref()
+    }
+    /// <p>The event for which a notification is sent.</p>
+    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
+        self.event.as_ref()
+    }
+    /// <p>The message included in the notification.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The Boolean value that specifies whether the notification represents an
+    /// error.</p>
+    pub fn error(&self) -> std::option::Option<bool> {
+        self.error
+    }
+    /// <p>The SNS topic to which the SNS notification is sent.</p>
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+        self.sns_topic_arn.as_deref()
+    }
+    /// <p>The status code of the SNS notification.</p>
+    pub fn sns_publish_status_code(
+        &self,
+    ) -> std::option::Option<&crate::model::AssessmentRunNotificationSnsStatusCode> {
+        self.sns_publish_status_code.as_ref()
+    }
+}
 impl std::fmt::Debug for AssessmentRunNotification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AssessmentRunNotification");
@@ -5905,6 +6668,16 @@ pub struct AssessmentRunStateChange {
     pub state_changed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The assessment run state.</p>
     pub state: std::option::Option<crate::model::AssessmentRunState>,
+}
+impl AssessmentRunStateChange {
+    /// <p>The last time the assessment run state changed.</p>
+    pub fn state_changed_at(&self) -> std::option::Option<&aws_smithy_types::Instant> {
+        self.state_changed_at.as_ref()
+    }
+    /// <p>The assessment run state.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::AssessmentRunState> {
+        self.state.as_ref()
+    }
 }
 impl std::fmt::Debug for AssessmentRunStateChange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

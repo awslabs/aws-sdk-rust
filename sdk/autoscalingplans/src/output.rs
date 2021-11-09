@@ -36,6 +36,12 @@ pub struct GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
     pub datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
 }
+impl GetScalingPlanResourceForecastDataOutput {
+    /// <p>The data points to return.</p>
+    pub fn datapoints(&self) -> std::option::Option<&[crate::model::Datapoint]> {
+        self.datapoints.as_deref()
+    }
+}
 impl std::fmt::Debug for GetScalingPlanResourceForecastDataOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetScalingPlanResourceForecastDataOutput");
@@ -95,6 +101,17 @@ pub struct DescribeScalingPlansOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScalingPlansOutput {
+    /// <p>Information about the scaling plans.</p>
+    pub fn scaling_plans(&self) -> std::option::Option<&[crate::model::ScalingPlan]> {
+        self.scaling_plans.as_deref()
+    }
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalingPlansOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -171,6 +188,19 @@ pub struct DescribeScalingPlanResourcesOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if
     /// there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeScalingPlanResourcesOutput {
+    /// <p>Information about the scalable resources.</p>
+    pub fn scaling_plan_resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::ScalingPlanResource]> {
+        self.scaling_plan_resources.as_deref()
+    }
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeScalingPlanResourcesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -278,6 +308,13 @@ pub struct CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently,
     /// you cannot have multiple scaling plan versions.</p>
     pub scaling_plan_version: std::option::Option<i64>,
+}
+impl CreateScalingPlanOutput {
+    /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently,
+    /// you cannot have multiple scaling plan versions.</p>
+    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+        self.scaling_plan_version
+    }
 }
 impl std::fmt::Debug for CreateScalingPlanOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

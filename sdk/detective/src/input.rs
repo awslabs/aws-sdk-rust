@@ -87,10 +87,7 @@ impl AcceptInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -253,10 +250,7 @@ impl CreateGraphInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_graph(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_graph(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -457,10 +451,7 @@ impl CreateMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -604,10 +595,7 @@ impl DeleteGraphInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_graph(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_graph(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -774,10 +762,7 @@ impl DeleteMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -928,10 +913,7 @@ impl DisassociateMembershipInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_membership(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1102,10 +1084,7 @@ impl GetMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1267,10 +1246,7 @@ impl ListGraphsInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_graphs(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_graphs(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1435,10 +1411,7 @@ impl ListInvitationsInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_invitations(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_list_invitations(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1612,10 +1585,7 @@ impl ListMembersInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_list_members(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_members(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1911,10 +1881,7 @@ impl RejectInvitationInput {
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_invitation(&self)
-                .map_err(|err| {
-                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
+            crate::operation_ser::serialize_operation_crate_operation_reject_invitation(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2077,10 +2044,7 @@ impl StartMonitoringMemberInput {
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_monitoring_member(
                 &self,
-            )
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+            )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2273,10 +2237,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2527,6 +2488,17 @@ pub struct UntagResourceInput {
     /// at a time.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The ARN of the behavior graph to remove the tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
+    /// at a time.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2548,6 +2520,21 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The ARN of the behavior graph to assign the tags to.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
+    /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
+    /// tag value can contain up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2568,6 +2555,18 @@ pub struct StartMonitoringMemberInput {
     /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub account_id: std::option::Option<std::string::String>,
 }
+impl StartMonitoringMemberInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The account ID of the member account to try to enable.</p>
+    /// <p>The account must be an invited member account with a status of
+    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
 impl std::fmt::Debug for StartMonitoringMemberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartMonitoringMemberInput");
@@ -2586,6 +2585,14 @@ pub struct RejectInvitationInput {
     /// <code>INVITED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
+impl RejectInvitationInput {
+    /// <p>The ARN of the behavior graph to reject the invitation to.</p>
+    /// <p>The member account's current member status in the behavior graph must be
+    /// <code>INVITED</code>.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+}
 impl std::fmt::Debug for RejectInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectInvitationInput");
@@ -2600,6 +2607,12 @@ impl std::fmt::Debug for RejectInvitationInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2622,6 +2635,23 @@ pub struct ListMembersInput {
     /// <p>The maximum number of member accounts to include in the response. The total must be less
     /// than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListMembersInput {
+    /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>For requests to retrieve the next page of member account results, the pagination token
+    /// that was returned with the previous page of results. The initial request does not include a
+    /// pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of member accounts to include in the response. The total must be less
+    /// than the overall limit on the number of results to return, which is currently 200.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2646,6 +2676,20 @@ pub struct ListInvitationsInput {
     /// 200.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl ListInvitationsInput {
+    /// <p>For requests to retrieve the next page of results, the pagination token that was
+    /// returned with the previous page of results. The initial request does not include a
+    /// pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of behavior graph invitations to return in the response. The total
+    /// must be less than the overall limit on the number of results to return, which is currently
+    /// 200.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for ListInvitationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListInvitationsInput");
@@ -2666,6 +2710,19 @@ pub struct ListGraphsInput {
     /// <p>The maximum number of graphs to return at a time. The total must be less than the
     /// overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListGraphsInput {
+    /// <p>For requests to get the next page of results, the pagination token that was returned
+    /// with the previous set of results. The initial request does not include a pagination
+    /// token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of graphs to return at a time. The total must be less than the
+    /// overall limit on the number of results to return, which is currently 200.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListGraphsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2688,6 +2745,19 @@ pub struct GetMembersInput {
     /// that were removed from the behavior graph.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl GetMembersInput {
+    /// <p>The ARN of the behavior graph for which to request the member details.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The list of AWS account identifiers for the member account for which to return member
+    /// details. You can request details for up to 50 member accounts at a time.</p>
+    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
+    /// that were removed from the behavior graph.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for GetMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMembersInput");
@@ -2705,6 +2775,14 @@ pub struct DisassociateMembershipInput {
     /// <p>The member account's member status in the behavior graph must be
     /// <code>ENABLED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
+}
+impl DisassociateMembershipInput {
+    /// <p>The ARN of the behavior graph to remove the member account from.</p>
+    /// <p>The member account's member status in the behavior graph must be
+    /// <code>ENABLED</code>.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DisassociateMembershipInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2724,6 +2802,17 @@ pub struct DeleteMembersInput {
     /// behavior graph. You can delete up to 50 member accounts at a time.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl DeleteMembersInput {
+    /// <p>The ARN of the behavior graph to delete members from.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The list of AWS account identifiers for the member accounts to delete from the
+    /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
 impl std::fmt::Debug for DeleteMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMembersInput");
@@ -2739,6 +2828,12 @@ impl std::fmt::Debug for DeleteMembersInput {
 pub struct DeleteGraphInput {
     /// <p>The ARN of the behavior graph to disable.</p>
     pub graph_arn: std::option::Option<std::string::String>,
+}
+impl DeleteGraphInput {
+    /// <p>The ARN of the behavior graph to disable.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2767,6 +2862,30 @@ pub struct CreateMembersInput {
     /// contains the account identifier and the AWS account root user email address.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
 }
+impl CreateMembersInput {
+    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
+    /// to.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>Customized message text to include in the invitation email message to the invited member
+    /// accounts.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>if set to <code>true</code>, then the member accounts do not receive email
+    /// notifications. By default, this is set to <code>false</code>, and the member accounts
+    /// receive email notifications.</p>
+    pub fn disable_email_notification(&self) -> bool {
+        self.disable_email_notification
+    }
+    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
+    /// You can invite up to 50 accounts at a time. For each invited account, the account list
+    /// contains the account identifier and the AWS account root user email address.</p>
+    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+        self.accounts.as_deref()
+    }
+}
 impl std::fmt::Debug for CreateMembersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMembersInput");
@@ -2791,6 +2910,17 @@ pub struct CreateGraphInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl CreateGraphInput {
+    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
+    /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
+    /// Each tag value can contain up to 256 characters.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for CreateGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGraphInput");
@@ -2807,6 +2937,14 @@ pub struct AcceptInvitationInput {
     /// for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
+}
+impl AcceptInvitationInput {
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation
+    /// for.</p>
+    /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for AcceptInvitationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

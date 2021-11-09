@@ -140,10 +140,7 @@ impl CreateOrderInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_order(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_order(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -370,10 +367,7 @@ impl CreateOutpostInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_create_outpost(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_outpost(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -1781,10 +1775,7 @@ impl TagResourceInput {
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| {
-                aws_smithy_http::operation::BuildError::SerializationError(err.into())
-            })?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
         let mut request = aws_smithy_http::operation::Request::from_parts(
@@ -2032,6 +2023,16 @@ pub struct UntagResourceInput {
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
 impl std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
@@ -2051,6 +2052,19 @@ pub struct TagResourceInput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags to add to the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
 impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
@@ -2066,6 +2080,12 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2083,6 +2103,16 @@ pub struct ListSitesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
+}
+impl ListSitesInput {
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum page size.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl std::fmt::Debug for ListSitesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2123,6 +2153,43 @@ pub struct ListOutpostsInput {
     /// specified values. </p>
     pub availability_zone_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl ListOutpostsInput {
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum page size.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>
+    /// A filter for the lifecycle status of the Outpost.
+    /// </p>
+    /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+    /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+    /// specified values. </p>
+    pub fn life_cycle_status_filter(&self) -> std::option::Option<&[std::string::String]> {
+        self.life_cycle_status_filter.as_deref()
+    }
+    /// <p> A filter for the Availibility Zone (<code>us-east-1a</code>) of the Outpost. </p>
+    ///
+    /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+    /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+    /// specified values. </p>
+    pub fn availability_zone_filter(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zone_filter.as_deref()
+    }
+    /// <p>
+    /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
+    /// </p>
+    ///
+    /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
+    /// are joined with an <code>OR</code>, and the request returns all results that match any of the
+    /// specified values. </p>
+    pub fn availability_zone_id_filter(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zone_id_filter.as_deref()
+    }
+}
 impl std::fmt::Debug for ListOutpostsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListOutpostsInput");
@@ -2151,6 +2218,22 @@ pub struct GetOutpostInstanceTypesInput {
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
 }
+impl GetOutpostInstanceTypesInput {
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum page size.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
 impl std::fmt::Debug for GetOutpostInstanceTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOutpostInstanceTypesInput");
@@ -2170,6 +2253,14 @@ pub struct GetOutpostInput {
     /// </p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
+impl GetOutpostInput {
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+}
 impl std::fmt::Debug for GetOutpostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOutpostInput");
@@ -2184,6 +2275,12 @@ impl std::fmt::Debug for GetOutpostInput {
 pub struct DeleteSiteInput {
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
+}
+impl DeleteSiteInput {
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteSiteInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2201,6 +2298,14 @@ pub struct DeleteOutpostInput {
     /// The ID of the Outpost.
     /// </p>
     pub outpost_id: std::option::Option<std::string::String>,
+}
+impl DeleteOutpostInput {
+    /// <p>
+    /// The ID of the Outpost.
+    /// </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteOutpostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2227,6 +2332,35 @@ pub struct CreateOutpostInput {
     /// <p>The tags to apply to the Outpost.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl CreateOutpostInput {
+    /// <p>The name of the Outpost.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the Outpost.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The ID of the site.</p>
+    pub fn site_id(&self) -> std::option::Option<&str> {
+        self.site_id.as_deref()
+    }
+    /// <p>The Availability Zone.</p>
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
+    /// <p>The tags to apply to the Outpost.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOutpostInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2255,6 +2389,26 @@ pub struct CreateOrderInput {
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The payment terms for the order.</p>
     pub payment_term: std::option::Option<crate::model::PaymentTerm>,
+}
+impl CreateOrderInput {
+    /// <p>
+    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
+    /// </p>
+    pub fn outpost_identifier(&self) -> std::option::Option<&str> {
+        self.outpost_identifier.as_deref()
+    }
+    /// <p>The line items that make up the order.</p>
+    pub fn line_items(&self) -> std::option::Option<&[crate::model::LineItemRequest]> {
+        self.line_items.as_deref()
+    }
+    /// <p>The payment option for the order.</p>
+    pub fn payment_option(&self) -> std::option::Option<&crate::model::PaymentOption> {
+        self.payment_option.as_ref()
+    }
+    /// <p>The payment terms for the order.</p>
+    pub fn payment_term(&self) -> std::option::Option<&crate::model::PaymentTerm> {
+        self.payment_term.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateOrderInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

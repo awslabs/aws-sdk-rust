@@ -37,6 +37,47 @@ pub struct TrustedAdvisorCheckRefreshStatus {
     /// refresh.</p>
     pub millis_until_next_refreshable: i64,
 }
+impl TrustedAdvisorCheckRefreshStatus {
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn check_id(&self) -> std::option::Option<&str> {
+        self.check_id.as_deref()
+    }
+    /// <p>The status of the Trusted Advisor check for which a refresh has been requested:
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>none</code> - The check is not refreshed or the non-success status
+    /// exceeds the timeout</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>enqueued</code> - The check refresh requests has entered the refresh
+    /// queue</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>processing</code> - The check refresh request is picked up by the rule
+    /// processing engine</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>success</code> - The check is successfully refreshed</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>abandoned</code> - The check refresh has failed</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
+    /// refresh.</p>
+    pub fn millis_until_next_refreshable(&self) -> i64 {
+        self.millis_until_next_refreshable
+    }
+}
 impl std::fmt::Debug for TrustedAdvisorCheckRefreshStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrustedAdvisorCheckRefreshStatus");
@@ -187,6 +228,38 @@ pub struct TrustedAdvisorCheckSummary {
     pub category_specific_summary:
         std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
 }
+impl TrustedAdvisorCheckSummary {
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn check_id(&self) -> std::option::Option<&str> {
+        self.check_id.as_deref()
+    }
+    /// <p>The time of the last refresh of the check.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
+    /// "not_available".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
+    pub fn has_flagged_resources(&self) -> bool {
+        self.has_flagged_resources
+    }
+    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+    pub fn resources_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::TrustedAdvisorResourcesSummary> {
+        self.resources_summary.as_ref()
+    }
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
+    /// only category that is currently supported.</p>
+    pub fn category_specific_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::TrustedAdvisorCategorySpecificSummary> {
+        self.category_specific_summary.as_ref()
+    }
+}
 impl std::fmt::Debug for TrustedAdvisorCheckSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrustedAdvisorCheckSummary");
@@ -319,6 +392,15 @@ pub struct TrustedAdvisorCategorySpecificSummary {
     /// Cost Optimizing category.</p>
     pub cost_optimizing: std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
 }
+impl TrustedAdvisorCategorySpecificSummary {
+    /// <p>The summary information about cost savings for a Trusted Advisor check that is in the
+    /// Cost Optimizing category.</p>
+    pub fn cost_optimizing(
+        &self,
+    ) -> std::option::Option<&crate::model::TrustedAdvisorCostOptimizingSummary> {
+        self.cost_optimizing.as_ref()
+    }
+}
 impl std::fmt::Debug for TrustedAdvisorCategorySpecificSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrustedAdvisorCategorySpecificSummary");
@@ -380,6 +462,18 @@ pub struct TrustedAdvisorCostOptimizingSummary {
     /// <p>The estimated percentage of savings that might be realized if the recommended
     /// operations are taken.</p>
     pub estimated_percent_monthly_savings: f64,
+}
+impl TrustedAdvisorCostOptimizingSummary {
+    /// <p>The estimated monthly savings that might be realized if the recommended operations are
+    /// taken.</p>
+    pub fn estimated_monthly_savings(&self) -> f64 {
+        self.estimated_monthly_savings
+    }
+    /// <p>The estimated percentage of savings that might be realized if the recommended
+    /// operations are taken.</p>
+    pub fn estimated_percent_monthly_savings(&self) -> f64 {
+        self.estimated_percent_monthly_savings
+    }
 }
 impl std::fmt::Debug for TrustedAdvisorCostOptimizingSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -462,6 +556,27 @@ pub struct TrustedAdvisorResourcesSummary {
     /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
     /// suppressed by the user.</p>
     pub resources_suppressed: i64,
+}
+impl TrustedAdvisorResourcesSummary {
+    /// <p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>
+    pub fn resources_processed(&self) -> i64 {
+        self.resources_processed
+    }
+    /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
+    /// check.</p>
+    pub fn resources_flagged(&self) -> i64 {
+        self.resources_flagged
+    }
+    /// <p>The number of AWS resources ignored by Trusted Advisor because information was
+    /// unavailable.</p>
+    pub fn resources_ignored(&self) -> i64 {
+        self.resources_ignored
+    }
+    /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
+    /// suppressed by the user.</p>
+    pub fn resources_suppressed(&self) -> i64 {
+        self.resources_suppressed
+    }
 }
 impl std::fmt::Debug for TrustedAdvisorResourcesSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,6 +683,33 @@ pub struct TrustedAdvisorCheckDescription {
     /// shown in the Excel download, even in those cases where the UI shows just summary data.
     /// </p>
     pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl TrustedAdvisorCheckDescription {
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The display name for the Trusted Advisor check.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the Trusted Advisor check, which includes the alert criteria and
+    /// recommended operations (contains HTML markup).</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The category of the Trusted Advisor check.</p>
+    pub fn category(&self) -> std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
+    /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
+    /// for the check. <b>Metadata</b> contains all the data that is
+    /// shown in the Excel download, even in those cases where the UI shows just summary data.
+    /// </p>
+    pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
+        self.metadata.as_deref()
+    }
 }
 impl std::fmt::Debug for TrustedAdvisorCheckDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -701,6 +843,40 @@ pub struct TrustedAdvisorCheckResult {
     /// <p>The details about each resource listed in the check result.</p>
     pub flagged_resources:
         std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorResourceDetail>>,
+}
+impl TrustedAdvisorCheckResult {
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn check_id(&self) -> std::option::Option<&str> {
+        self.check_id.as_deref()
+    }
+    /// <p>The time of the last refresh of the check.</p>
+    pub fn timestamp(&self) -> std::option::Option<&str> {
+        self.timestamp.as_deref()
+    }
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
+    /// "not_available".</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+    pub fn resources_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::TrustedAdvisorResourcesSummary> {
+        self.resources_summary.as_ref()
+    }
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
+    /// only category that is currently supported.</p>
+    pub fn category_specific_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::TrustedAdvisorCategorySpecificSummary> {
+        self.category_specific_summary.as_ref()
+    }
+    /// <p>The details about each resource listed in the check result.</p>
+    pub fn flagged_resources(
+        &self,
+    ) -> std::option::Option<&[crate::model::TrustedAdvisorResourceDetail]> {
+        self.flagged_resources.as_deref()
+    }
 }
 impl std::fmt::Debug for TrustedAdvisorCheckResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -858,6 +1034,32 @@ pub struct TrustedAdvisorResourceDetail {
     /// download, even in those cases where the UI shows just summary data.</p>
     pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
 }
+impl TrustedAdvisorResourceDetail {
+    /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The AWS Region in which the identified resource is located.</p>
+    pub fn region(&self) -> std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>The unique identifier for the identified resource.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was
+    /// marked as suppressed by the user.</p>
+    pub fn is_suppressed(&self) -> bool {
+        self.is_suppressed
+    }
+    /// <p>Additional information about the identified resource. The exact metadata and its order
+    /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
+    /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
+    /// download, even in those cases where the UI shows just summary data.</p>
+    pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
+        self.metadata.as_deref()
+    }
+}
 impl std::fmt::Debug for TrustedAdvisorResourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrustedAdvisorResourceDetail");
@@ -1013,6 +1215,49 @@ pub struct SeverityLevel {
     /// severity</a> in the <i>AWS Support User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl SeverityLevel {
+    /// <p>The code for case severity level.</p>
+    /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> |
+    /// <code>urgent</code> | <code>critical</code>
+    /// </p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The name of the severity level that corresponds to the severity level code.</p>
+    /// <note>
+    /// <p>The values returned by the API are different from the values that appear in the
+    /// AWS Support Center. For example, the API uses the code <code>low</code>, but the name
+    /// appears as General guidance in Support Center. </p>
+    /// <p>The following are the API code names and how they appear in the console:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>low</code> - General guidance</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>normal</code> - System impaired</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>high</code> - Production system impaired</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>urgent</code> - Production system down</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>critical</code> - Business-critical system down</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+    /// severity</a> in the <i>AWS Support User Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for SeverityLevel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SeverityLevel");
@@ -1149,6 +1394,24 @@ pub struct Service {
     /// passed to AWS Support when you call <a>CreateCase</a>.</p>
     pub categories: std::option::Option<std::vec::Vec<crate::model::Category>>,
 }
+impl Service {
+    /// <p>The code for an AWS service returned by the <a>DescribeServices</a>
+    /// response. The <code>name</code> element contains the corresponding friendly name.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The friendly name for an AWS service. The <code>code</code> element contains the
+    /// corresponding code.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A list of categories that describe the type of support issue a case describes.
+    /// Categories consist of a category name and a category code. Category names and codes are
+    /// passed to AWS Support when you call <a>CreateCase</a>.</p>
+    pub fn categories(&self) -> std::option::Option<&[crate::model::Category]> {
+        self.categories.as_deref()
+    }
+}
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Service");
@@ -1244,6 +1507,16 @@ pub struct Category {
     /// <p>The category name for the support case.</p>
     pub name: std::option::Option<std::string::String>,
 }
+impl Category {
+    /// <p>The category code for the support case.</p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The category name for the support case.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
 impl std::fmt::Debug for Category {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Category");
@@ -1321,6 +1594,35 @@ pub struct Communication {
     pub time_created: std::option::Option<std::string::String>,
     /// <p>Information about the attachments to the case communication.</p>
     pub attachment_set: std::option::Option<std::vec::Vec<crate::model::AttachmentDetails>>,
+}
+impl Communication {
+    /// <p>The support case ID requested or returned in the call. The case ID is an
+    /// alphanumeric string formatted as shown in this example:
+    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+    /// </p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+    /// <p>The text of the communication between the customer and AWS Support.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>The identity of the account that submitted, or responded to, the support case.
+    /// Customer entries include the role or IAM user as well as the email address. For example,
+    /// "AdminRole (Role) <janedoe@example.com>. Entries from the AWS Support team display
+    /// "Amazon Web Services," and don't show an email address.
+    /// </p>
+    pub fn submitted_by(&self) -> std::option::Option<&str> {
+        self.submitted_by.as_deref()
+    }
+    /// <p>The time the communication was created.</p>
+    pub fn time_created(&self) -> std::option::Option<&str> {
+        self.time_created.as_deref()
+    }
+    /// <p>Information about the attachments to the case communication.</p>
+    pub fn attachment_set(&self) -> std::option::Option<&[crate::model::AttachmentDetails]> {
+        self.attachment_set.as_deref()
+    }
 }
 impl std::fmt::Debug for Communication {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1448,6 +1750,16 @@ pub struct AttachmentDetails {
     pub attachment_id: std::option::Option<std::string::String>,
     /// <p>The file name of the attachment.</p>
     pub file_name: std::option::Option<std::string::String>,
+}
+impl AttachmentDetails {
+    /// <p>The ID of the attachment.</p>
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The file name of the attachment.</p>
+    pub fn file_name(&self) -> std::option::Option<&str> {
+        self.file_name.as_deref()
+    }
 }
 impl std::fmt::Debug for AttachmentDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1677,6 +1989,100 @@ pub struct CaseDetails {
     /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
     /// passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
+}
+impl CaseDetails {
+    /// <p>The support case ID requested or returned in the call. The case ID is an
+    /// alphanumeric string formatted as shown in this example:
+    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+    /// </p>
+    pub fn case_id(&self) -> std::option::Option<&str> {
+        self.case_id.as_deref()
+    }
+    /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric
+    /// string.</p>
+    pub fn display_id(&self) -> std::option::Option<&str> {
+        self.display_id.as_deref()
+    }
+    /// <p>The subject line for the case in the AWS Support Center.</p>
+    pub fn subject(&self) -> std::option::Option<&str> {
+        self.subject.as_deref()
+    }
+    /// <p>The status of the case.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>opened</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>pending-customer-action</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>reopened</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>resolved</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unassigned</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>work-in-progress</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The code for the AWS service. You can get a list of codes and the corresponding
+    /// service names by calling <a>DescribeServices</a>.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The category of problem for the support case.</p>
+    pub fn category_code(&self) -> std::option::Option<&str> {
+        self.category_code.as_deref()
+    }
+    /// <p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>
+    pub fn severity_code(&self) -> std::option::Option<&str> {
+        self.severity_code.as_deref()
+    }
+    /// <p>The email address of the account that submitted the case.</p>
+    pub fn submitted_by(&self) -> std::option::Option<&str> {
+        self.submitted_by.as_deref()
+    }
+    /// <p>The time that the case was created in the AWS Support Center.</p>
+    pub fn time_created(&self) -> std::option::Option<&str> {
+        self.time_created.as_deref()
+    }
+    /// <p>The five most recent communications between you and AWS Support Center, including the
+    /// IDs of any attachments to the communications. Also includes a <code>nextToken</code>
+    /// that you can use to retrieve earlier communications.</p>
+    pub fn recent_communications(
+        &self,
+    ) -> std::option::Option<&crate::model::RecentCaseCommunications> {
+        self.recent_communications.as_ref()
+    }
+    /// <p>The email addresses that receive copies of communication about the case.</p>
+    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.cc_email_addresses.as_deref()
+    }
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+    /// passed explicitly for operations that take them.</p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
 }
 impl std::fmt::Debug for CaseDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1977,6 +2383,16 @@ pub struct RecentCaseCommunications {
     /// <p>A resumption point for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
+impl RecentCaseCommunications {
+    /// <p>The five most recent communications associated with the case.</p>
+    pub fn communications(&self) -> std::option::Option<&[crate::model::Communication]> {
+        self.communications.as_deref()
+    }
+    /// <p>A resumption point for pagination.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
 impl std::fmt::Debug for RecentCaseCommunications {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RecentCaseCommunications");
@@ -2049,6 +2465,16 @@ pub struct Attachment {
     pub file_name: std::option::Option<std::string::String>,
     /// <p>The content of the attachment file.</p>
     pub data: std::option::Option<aws_smithy_types::Blob>,
+}
+impl Attachment {
+    /// <p>The name of the attachment file.</p>
+    pub fn file_name(&self) -> std::option::Option<&str> {
+        self.file_name.as_deref()
+    }
+    /// <p>The content of the attachment file.</p>
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.data.as_ref()
+    }
 }
 impl std::fmt::Debug for Attachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
